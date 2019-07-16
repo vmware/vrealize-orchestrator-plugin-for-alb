@@ -19,6 +19,7 @@ Inputs:
    - lbCustomHeadername  -> Consistent hash header value.
    - PoolServers         -> pool servers added by user.
    - serverType          -> type of server v4 or v6.
+   - healthMonitor       -> List of the selected HealthMonitors.
    - rollbackList        -> List of all created and updated objects.
 
 

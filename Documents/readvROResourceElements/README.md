@@ -5,8 +5,9 @@ Description:
 	This action is contains default values in resource elements.
 
 Inputs:
-   - fileContent      -> resource element file name.
-   - enterKey         -> Key of specific value from the file.
+   - resourceName          -> resource element name.
+   - keyName               -> Key of specific value from the resource element.
+   - appProfile            -> Name of the application profile.
 
 Outputs:
     The output of this action is return value from resource elements based on user inputs.
