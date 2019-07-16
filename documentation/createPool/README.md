@@ -12,7 +12,7 @@ Inputs:
    - Tenant 	  		 -> AVI Controller Tenant name.
    - CreatehealthMonitor -> Checkbox for create HealthMonitor.
    - HealthmonitorName   -> Healthmonitor name.
-   - healthmonitor       -> If select existing HealthMonitor.
+   - healthmonitor       -> List of the selected multiple HealthMonitors.
    - loadBalancerAlgo 	 -> Load balancer type.
    - lbConsistentHash    -> Consistent Hash data if Load Balancer type is Consistent Hash.
    - lbCustomHeadername  -> Consistent hash header value.
