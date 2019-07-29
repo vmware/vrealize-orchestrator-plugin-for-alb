@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module name="sdk" version="${project.version}" build-number="${build.number}" image="images/default-16x16.png">
+    <description>avisdk plug-in for vRealize Orchestrator</description>
+    <installation mode="${installation.mode}">
+        <action resource="packages/${project.artifactId}-package-${project.version}.package" type="install-package"/>
+    </installation>
+    <finder-datasources>
+        <finder-datasource name="main-datasource" adaptor-class="com.avi.sdk.sdkPluginAdaptor" concurrent-call="false" anonymous-login-mode="internal"/>
+    </finder-datasources>
+    <scripting-objects>
+        <object script-name="_sdkGreeter" java-class="com.avi.sdk.model.sdkGreeter" strict="false" is-deprecated="false">
+            <description></description>
+            <methods>
+                <method script-name="greet" java-name="greet" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="name"/>
+                    </parameters>
+                </method>
+            </methods>
+            <singleton script-name="sdkGreeter" datasource="main-datasource"/>
+        </object>
+    </scripting-objects>
+</module>

@@ -1,0 +1,5 @@
+com\avi\sdk\model\sdkGreetingService.class
+com\avi\sdk\sdkPluginAdaptor.class
+com\avi\sdk\sdkPluginFactory.class
+com\avi\sdk\sdkModuleBuilder.class
+com\avi\sdk\model\sdkGreeter.class

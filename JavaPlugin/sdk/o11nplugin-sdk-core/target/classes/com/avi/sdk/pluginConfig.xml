@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util" xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="com.avi.sdk" scope-resolver="com.vmware.o11n.plugin.sdk.spring.VsoAnnotationsScopeResolver">
+            <context:include-filter type="annotation" expression="com.vmware.o11n.plugin.sdk.annotation.VsoFinder"/>
+        <context:include-filter type="annotation" expression="com.vmware.o11n.plugin.sdk.annotation.VsoObject"/>
+    </context:component-scan>
+
+    <import resource="classpath:com/vmware/o11n/plugin/sdk/spring/pluginEnv.xml"/>
+    
+    <bean class="com.avi.sdk.sdkPluginFactory" id="pluginFactory" autowire-candidate="false" scope="prototype">
+    </bean>
+
+    <task:executor id="taskExecutor" pool-size="4" />
+    <bean id="asyncPluginTaskExecutor" class="com.vmware.o11n.plugin.sdk.spring.task.DefaultAsyncPluginTaskExecutor">
+        <property name="executorService" ref="taskExecutor" />
+        <property name="watchRequestService" ref="watchRequestService" />
+    </bean>
+    <bean id="asyncScriptingMethodAnnotationSupport" class="com.vmware.o11n.plugin.sdk.spring.task.AsyncScriptingMethodAnnotationBeanPostProcessor">
+        <property name="asyncPluginTaskExecutor" ref="asyncPluginTaskExecutor" />
+    </bean>
+</beans>
