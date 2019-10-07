@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<workflow xmlns="http://vmware.com/vco/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd" root-name="item1" 
+object-name="Workflow:name=generic" id="9993475837951223458723498969809698064"  version="0.0.0" api-version="3.1.0" allowed-operations="vef" restartMode="1" resumeFromFailedMode="0" >
+<display-name><![CDATA[Hello world]]></display-name>
+<position x='100.0' y='50.0'/>
+<input><param name='name' type='string' >
+</param>
+</input><output><param name='greeting' type='string' >
+</param>
+</output><workflow-item name='item0' type='end' end-mode='0' >
+<position x='404.5' y='45.40909090909091'/>
+</workflow-item>
+<workflow-item name='item1' out-name='item0' type='task' >
+<display-name><![CDATA[Scriptable task]]></display-name>
+<script encoded='false'><![CDATA[
+
+greeting = aviGreeter.greet(name);]]></script>
+<in-binding><bind name='name' type='string' export-name="name" ></bind>
+</in-binding><out-binding><bind name='greeting' type='string' export-name="greeting" ></bind>
+</out-binding><position x='224.5' y='55.40909090909091'/>
+</workflow-item>
+<presentation>
+<p-param name="name"><desc><![CDATA[name]]></desc>
+</p-param>
+</presentation></workflow>

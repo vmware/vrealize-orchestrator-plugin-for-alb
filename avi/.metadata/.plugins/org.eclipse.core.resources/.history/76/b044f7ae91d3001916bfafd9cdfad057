@@ -1,0 +1,36 @@
+package com.avi.avi.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ch.dunes.vso.sdk.api.IPluginFactory;
+
+import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
+import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+import com.vmware.o11n.plugin.sdk.spring.AbstractSpringPluginFactory;
+import org.json.*;
+
+@VsoObject(singleton = true)
+public class virtualServiceObject {
+    public static final String TYPE = "virtualServiceObject";
+    
+    @Autowired
+    private virtualServiceObjectService service;
+
+    public virtualServiceObject() {
+    }
+    
+    public static virtualServiceObject createScriptingSingleton(IPluginFactory factory) {
+        return ((AbstractSpringPluginFactory) factory).createScriptingObject(virtualServiceObject.class);
+    }
+
+    @VsoMethod
+    public String set(String key, String value) {
+        return service.set(key, value);
+    }
+    
+    @VsoMethod
+    public JSONArray get() {
+        return service.get();
+    }
+    
+}
