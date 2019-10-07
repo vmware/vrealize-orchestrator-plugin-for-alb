@@ -1,24 +1,27 @@
 package com.avi.avi.model;
 
 import org.json.JSONObject;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONValue;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.util.ArrayList;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-
-import org.springframework.web.client.RestTemplate;
-import org.apache.commons.codec.binary.Base64;
-
-import java.util.Arrays;
+//import java.nio.charset.Charset;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.http.HttpEntity;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.http.HttpMethod;
+//import org.springframework.http.MediaType;
+//import org.springframework.http.ResponseEntity;
+//
+//import org.springframework.web.client.RestTemplate;
+//import org.apache.commons.codec.binary.Base64;
+import com.avi.avi.model.AviSession;
 
 
 public class VirtualService {
+	
+	//Get AVI session class from AviSession
+	public AviSession service = new AviSession();
 	
 	//All attributes
 	JSONObject jsonData = new JSONObject();
@@ -52,11 +55,13 @@ public class VirtualService {
 	private String  removeListeningPortOnVsDown;
 	private Integer redisPort; 
 	private String  networkSecurityPolicyRef;
-	private JSONArray servicePort = new JSONArray();
-	private JSONArray vip = new JSONArray();
+//	private JSONArray servicePort = new JSONArray();
+//	private JSONArray vip = new JSONArray();
+	private ArrayList servicePort = new ArrayList(); 
+	private ArrayList vip = new ArrayList(); 
 
-	@SuppressWarnings("unchecked")
-	public JSONArray setVip(String value){
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public ArrayList setVip(String value){
 		JSONObject singleVip = new JSONObject();
 		JSONObject ip = new JSONObject();
 		ip.put("type", "V4");
@@ -73,8 +78,8 @@ public class VirtualService {
 		return vip;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public JSONArray setServicePort(Integer value) { 
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public ArrayList setServicePort(Integer value) { 
 		JSONObject serv = new JSONObject();
 		serv.put("enable_ssl", false);
 		serv.put("port_range_end", value);
@@ -92,6 +97,7 @@ public class VirtualService {
 	public Integer setWeight(Integer value){
 	    this.weight = value;
 	    return this.weight;
+	    
 	}
 	
 	public Boolean setEnabled(Boolean value){
@@ -361,18 +367,18 @@ public class VirtualService {
 	    return this.redisPort;
 	}
 	
-	public JSONArray getVip(){
+	public ArrayList getVip(){
 		return this.vip;
 	}
 	
-	public JSONArray getServicePort() { 
+	public ArrayList getServicePort() { 
 		return this.servicePort;
 	}
-	
 	
 	public String getNetworkSecurityPolicyRef(){
 	    return this.networkSecurityPolicyRef;
 	}	
+	
 	
 	public String getVirtualServiceObject() {
 		jsonData.put("name", this.name);
@@ -408,54 +414,18 @@ public class VirtualService {
 		this.data = JSONValue.toJSONString(jsonData);
 		return data;
 	}
-	      
-	public String createObject(String controllerIP, String username, String password) throws IOException {
-			   
-	   this.getVirtualServiceObject();
-   
-	   String postUrl = controllerIP + "/api/virtualservice";
-	   String auth = username + ":" + password;		   
-	   byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-	   String authHeader = "Basic " + new String(encodedAuth);
-	   		   
-	   HttpHeaders headers = new HttpHeaders();
-	   headers.set("Authorization", authHeader);
-	   headers.set("X-Avi-Version", "18.2.3");
-	   
-	   headers.setContentType(MediaType.APPLICATION_JSON);
-	   
-	   RestTemplate restTemplate = new RestTemplate();
-	   
-	   HttpEntity<String> request = new HttpEntity<String>(data, headers);
-	    
-	   
-       ResponseEntity<String>  response = restTemplate.exchange(postUrl, HttpMethod.POST, request, String.class);
-	   this.data = response.getBody();
-	   return data;		   
+	
+	public String getObject(String controllerIP, String username, String password, String objectType, String objectName) throws IOException {
+		return service.getObject(controllerIP, username, password, objectType, objectName);
 	}
 	
-	public String deleteObject(String controllerIP, String username, String password) throws IOException {
-		
-		JSONObject jObject = new JSONObject(data);
-		String uuid = (String) jObject.get("uuid");
-		String postUrl = controllerIP + "/api/virtualservice/"+ uuid;
-		
-		String auth = username + ":" + password;		   
-		byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-		String authHeader = "Basic " + new String(encodedAuth);
-		   		   
-		HttpHeaders headers = new HttpHeaders();
-		headers.set("Authorization", authHeader);
-		headers.set("X-Avi-Version", "18.2.3");
-		   
-		RestTemplate restTemplate = new RestTemplate();
-		
-		HttpEntity<String> request = new HttpEntity<String>(headers);
-		  		     
-		ResponseEntity<String>  response = restTemplate.exchange(postUrl, HttpMethod.DELETE, request, String.class);
-		String result = response.getStatusCode().toString();
-		
-		return "Object Deleted!"+ result;
+	public String createObject(String controllerIP, String username, String password, String objectType) throws IOException {
+		this.getVirtualServiceObject();
+		return service.createObject(controllerIP, username, password, objectType, this.data);
 	}
 	
+	public String deleteObject(String controllerIP, String username, String password, String objectType) throws IOException {
+		return service.deleteObject(controllerIP, username, password, objectType, this.data);
+	}
+		
 }

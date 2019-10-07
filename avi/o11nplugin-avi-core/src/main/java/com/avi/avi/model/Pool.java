@@ -1,23 +1,27 @@
 package com.avi.avi.model;
 
 import org.json.JSONObject;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+//import org.springframework.http.MediaType;
+//import org.springframework.http.ResponseEntity;
 import org.json.simple.JSONValue;
-//import org.json.simple.JSONArray;
 
-import java.nio.charset.Charset;
+import java.util.ArrayList;
+//import java.nio.charset.Charset;
 import java.io.IOException;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.web.client.RestTemplate;
-import org.apache.commons.codec.binary.Base64;
+//import org.springframework.http.HttpEntity;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.http.HttpMethod;
+//import org.springframework.web.client.RestTemplate;
+//import org.apache.commons.codec.binary.Base64;
+import com.avi.avi.model.AviSession;
 
 
 
 public class Pool {
+	
+	// Set rest call 
+	private AviSession service = new AviSession();
 	
 	// Store response as string
 	private String data;
@@ -32,6 +36,7 @@ public class Pool {
 	private String tenantRef;
 	private String cloudRef;
 	private LBAlgorithmType LBAlgorithm;
+	private LBAlgorithmHashType LBAlgorithmHash;
 	private Boolean useServicePort;
 	private Boolean rewriteHostHeaderToServerName;
 	private Boolean hostCheckEnabled;
@@ -41,7 +46,6 @@ public class Pool {
 	private Integer fewestTasksFeedbackDelay;
 	private Integer capacityEstimationTtfbThresh;
 	private Boolean lookupServerByName;
-	private LBAlgorithmHashType LBAlgorithmHash;
 	private String analyticsProfileRef;
 	private Integer lbAlgorithmCoreNonaffinity;
 	private Integer gracefulDisableTimeout;
@@ -54,6 +58,7 @@ public class Pool {
 	private Boolean requestQueueEnabled;
 	private Integer maxConcurrentConnectionsPerServer;
 	private Integer connectionRampDuration;
+	private ArrayList healthMonitorRefs = new ArrayList();
 	
 	public String  setName(String value){
 		this.name = value;
@@ -148,6 +153,12 @@ public class Pool {
 	public Boolean setInlineHealthMonitor(Boolean value){
 		this.inlineHealthMonitor = value;
 		return this.inlineHealthMonitor;
+	}
+	
+	@SuppressWarnings({"unchecked", "rawtypes"})
+	public ArrayList setHealthMonitorRefs(String value) {
+		healthMonitorRefs.add(value);
+		return this.healthMonitorRefs;
 	}
 	
 	public Integer setDefaultServerPort(Integer value){
@@ -261,6 +272,11 @@ public class Pool {
 		return this.inlineHealthMonitor;
 	}
 	
+	@SuppressWarnings("rawtypes")
+	public ArrayList getHealthMonitorRefs() {
+		return this.healthMonitorRefs;
+	}
+	
 	public Integer getDefaultServerPort(){
 		return this.defaultServerPort;
 	}
@@ -312,6 +328,7 @@ public class Pool {
 		jsonData.put("graceful_disable_timeout", this.gracefulDisableTimeout);
 		jsonData.put("vrf_ref", this.vrfRef);
 		jsonData.put("inline_health_monitor", this.inlineHealthMonitor);
+		jsonData.put("health_monitor_refs", this.healthMonitorRefs);
 		jsonData.put("request_queue_depth", this.requestQueueDepth);
 		jsonData.put("sni_enabled", this.sniEnabled);
 		jsonData.put("server_timeout", this.serverTimeout);
@@ -322,53 +339,18 @@ public class Pool {
 		return data;
 	
 	}
-	
-	public String createObject(String controllerIP, String username, String password) throws IOException {
 		
-		// Set all values
+	public String getObject(String controllerIP, String username, String password, String objectType, String objectName) throws IOException {
+		return service.getObject(controllerIP, username, password, objectType, objectName);	
+	}
+	
+	public String createObject(String controllerIP, String username, String password, String objectType) throws IOException{
 		this.getPoolObject();
-		
-		String postUrl = controllerIP + "/api/pool/";
-		String auth = username + ":" + password;		   
-		byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-		String authHeader = "Basic " + new String(encodedAuth);
-		
-		RestTemplate restTemplate = new RestTemplate();
-		HttpHeaders headers = new HttpHeaders();
-		headers.set("Authorization", authHeader);
-		headers.set("X-Avi-Version", "18.2.3");
-		headers.setContentType(MediaType.APPLICATION_JSON);
-	   	   
-		HttpEntity<String> request = new HttpEntity<String>(data, headers);
-	   	   
-		ResponseEntity<String>  response = restTemplate.exchange(postUrl, HttpMethod.POST, request, String.class);
-		this.data = response.getBody();
-		return data;
-		
+		return service.createObject(controllerIP, username, password, objectType, this.data);
 	}
 	
-
-	public String deleteObject(String controllerIP, String username, String password) throws IOException {
-		
-		JSONObject jObject = new JSONObject(data);
-		String uuid = (String) jObject.get("uuid");
-		String postUrl = controllerIP + "/api/pool/"+ uuid;
-		
-		String auth = username + ":" + password;		   
-		byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-		String authHeader = "Basic " + new String(encodedAuth);
-		   		   
-		HttpHeaders headers = new HttpHeaders();
-		headers.set("Authorization", authHeader);
-		headers.set("X-Avi-Version", "18.2.3");
-		   
-		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<String> request = new HttpEntity<String>(headers);  		     
-		
-		ResponseEntity<String>  response = restTemplate.exchange(postUrl, HttpMethod.DELETE, request, String.class);
-		String result = response.getStatusCode().toString();
-		
-		return "Object Deleted!"+ result;				  
+	public String deleteObject(String controllerIP, String username, String password, String objectType) throws IOException {
+		return service.deleteObject(controllerIP, username, password, objectType, this.data);
 	}
-	
+		
 }

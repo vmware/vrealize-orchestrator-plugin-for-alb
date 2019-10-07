@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/o11nplugin-avi" element2="/o11nplugin-avi-core" element3="/o11nplugin-avi-package" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1569498868455"/>&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/Servers" element2="/Servers2" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1569498876930"/>
-</session>

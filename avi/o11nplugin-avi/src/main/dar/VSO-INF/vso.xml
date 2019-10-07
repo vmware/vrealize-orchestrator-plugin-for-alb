@@ -11,17 +11,17 @@
         <object script-name="_aviSDK" java-class="com.avi.avi.model.SDK" strict="false" is-deprecated="false">
             <description></description>
             <methods>
-                <method script-name="createObject" java-name="createObject" return-type="Any" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="objectType"/>
-                    </parameters>
-                </method>
                 <method script-name="makeVSObject" java-name="makeVSObject" return-type="com.avi.avi.model.VirtualService" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
                 <method script-name="makePoolObject" java-name="makePoolObject" return-type="com.avi.avi.model.Pool" show-in-api="true" is-deprecated="false">
                     <description></description>
+                </method>
+                <method script-name="createObject" java-name="createObject" return-type="Any" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                    </parameters>
                 </method>
             </methods>
             <singleton script-name="aviSDK" datasource="main-datasource"/>
