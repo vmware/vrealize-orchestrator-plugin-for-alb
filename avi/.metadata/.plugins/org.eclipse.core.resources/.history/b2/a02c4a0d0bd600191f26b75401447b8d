@@ -1,0 +1,186 @@
+package com.avi.avi.model;
+
+import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.json.simple.JSONValue;
+
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+import java.io.IOException;
+
+public class Pool {
+	public String data;
+	
+	// Pool properties go here
+	private String url; //": "https://10.10.28.108/api/pool/pool-9aff8ea2-cf14-49bb-8a15-93e7c9fa3242",
+	private String uuid;//": "pool-9aff8ea2-cf14-49bb-8a15-93e7c9fa3242",
+	private String  name;//": "browser-pool",
+	private Boolean enabled;//": true,
+	private String tenant_ref;//": "https://10.10.28.108/api/tenant/admin",
+	private String cloud_ref;// ": "https://10.10.28.108/api/cloud/cloud-5c3620c9-e301-4c00-948a-be929809141b",
+	private String last_modified; //": "1568184545389821",
+	private enum lb_algorithm {LB_ALGORITHM_LEAST_CONNECTIONS};
+	private Boolean use_service_port; //": false,
+	private Boolean rewrite_host_header_to_server_name;//": false,
+	host_check_enabled": false,
+	conn_pool_properties": {
+	upstream_connpool_conn_life_tmo": 600000,
+	upstream_connpool_server_max_cache": 0,
+	upstream_connpool_conn_max_reuse": 0,
+	upstream_connpool_conn_idle_tmo": 60000
+	},
+	rewrite_host_header_to_sni": false,
+	delete_server_on_dns_refresh": true,
+	capacity_estimation": false,
+	fewest_tasks_feedback_delay": 10,
+	capacity_estimation_ttfb_thresh": 0,
+	fail_action": {
+	type": "FAIL_ACTION_CLOSE_CONN"
+	},
+	lookup_server_by_name": false,
+	lb_algorithm_hash": "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS",
+	private String analytics_profile_ref;//": "https://10.10.28.108/api/analyticsprofile/analyticsprofile-e0219c6a-6100-41bb-9aaf-ca2e2b5d0c5c",
+	lb_algorithm_core_nonaffinity": 2,
+	graceful_disable_timeout": 1,
+	private String vrf_ref;//": "https://10.10.28.108/api/vrfcontext/vrfcontext-ebd4b655-bc82-458a-8bdc-bff5ce06160d",
+	inline_health_monitor": true,
+	default_server_port": 80,
+	request_queue_depth": 128,
+	server_reselect": {
+	retry_nonidempotent": false,
+	enabled": false,
+	retry_timeout": 0,
+	num_retries": 4
+	},
+	sni_enabled": true,
+	server_timeout": 0,
+	request_queue_enabled": false,
+	max_concurrent_connections_per_server": 0,
+	connection_ramp_duration": 10,
+	analytics_policy": {
+	enable_realtime_metrics": false
+	}
+	}
+	
+	
+	// Property setter functions go here
+	
+	
+	// Property getter functions go here
+	
+	public String set(HashMap values) {
+		this.data = JSONValue.toJSONString(values);
+		return data;
+	}
+
+	public String get() {
+		return data;
+	}
+
+	public String setJSONData(String jsonData) {
+		this.data = jsonData;
+		return data;
+	}
+
+	public String create(String controllerIP, String username, String password) throws IOException {
+		try {
+			String postURL = controllerIP + "/api/pool/";
+			URL url = new URL(postURL);
+			String creds = username + ":" + password;
+			String encoding = Base64.getEncoder().encodeToString((creds).getBytes("UTF-8"));
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("POST");
+			con.setRequestProperty("Content-Type", "application/json");
+			con.setRequestProperty("X-Avi-Version", "18.2.3");
+			con.setRequestProperty("Authorization", "Basic " + encoding);
+
+			con.setDoOutput(true);
+
+			// Send data of object
+			this.sendData(con, this.data);
+
+			// Read response from REST call
+			this.data = this.read(con.getInputStream());
+			return data;
+		} catch (IOException exception) {
+			return exception.toString();
+		}
+	}
+
+	public void sendData(HttpURLConnection con, String data) throws IOException {
+		DataOutputStream wr = null;
+		try {
+			wr = new DataOutputStream(con.getOutputStream());
+			wr.writeBytes(data);
+			wr.flush();
+			wr.close();
+		} catch (IOException exception) {
+			throw exception;
+		} finally {
+			this.closeQuietly(wr);
+		}
+	}
+
+	public String read(InputStream is) throws IOException {
+		BufferedReader in = null;
+		String inputLine;
+		StringBuilder body;
+		try {
+			in = new BufferedReader(new InputStreamReader(is));
+
+			body = new StringBuilder();
+
+			while ((inputLine = in.readLine()) != null) {
+				body.append(inputLine);
+			}
+			in.close();
+
+			return body.toString();
+		} catch (IOException ioe) {
+			throw ioe;
+		} finally {
+			this.closeQuietly(in);
+		}
+	}
+
+	public void closeQuietly(Closeable closeable) {
+		try {
+			if (closeable != null) {
+				closeable.close();
+			}
+		} catch (IOException ex) {
+
+		}
+	}
+
+	public boolean delete(String controllerIP, String username, String password) throws IOException {
+		 JSONObject jObject = new JSONObject(data);
+		 String uuid = (String) jObject.get("uuid");
+		 String postURL = controllerIP + "/api/pool/"+ uuid;
+		 URL url = new URL(postURL);
+		 String creds = username + ":" + password;
+		 String encoding = Base64.getEncoder().encodeToString((creds).getBytes("UTF-8"));
+		 HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		 con.setRequestMethod("DELETE");
+		 con.setRequestProperty("X-Avi-Version", "18.2.3");
+		 con.setRequestProperty("Authorization", "Basic " + encoding);
+		  
+		 con.setDoOutput(true);
+		 
+		 this.read(con.getInputStream());
+		 this.data = null;
+		 return true;
+		 
+	}
+}

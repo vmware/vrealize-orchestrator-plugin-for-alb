@@ -1,0 +1,36 @@
+package com.avi.avi.model;
+
+import org.json.JSONObject;
+import org.json.simple.JSONValue;
+
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+
+public class virtualService {
+	public String data;
+	
+	
+	public String set(HashMap values) {
+		this.data = JSONValue.toJSONString(values);
+		return data;
+	}
+	
+	public String get() {
+		String obj = JSONValue.toJSONString(data);
+		return obj;
+	}
+	
+	public String createObject(String controllerIP, String username, String password) throws IOException {
+		return aviSession.createAviObject(controllerIP, username, password, "virtualservice", data);
+		
+	}
+}

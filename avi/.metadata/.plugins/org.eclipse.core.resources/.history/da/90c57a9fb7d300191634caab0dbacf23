@@ -1,0 +1,128 @@
+package com.avi.avi.model;
+
+import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.simple.JSONValue;
+
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+import java.io.IOException;
+
+public class pool {
+	public String data;
+	
+//	public AviSession c;
+	
+	
+	public String set(HashMap values) {
+		this.data = JSONValue.toJSONString(values);
+		return data;
+	}
+	
+	public String get() {
+		return data;
+	}
+	
+	public String setJSONData(String jsonData) {
+		this.data = jsonData;
+		return data;
+	}
+	
+//	public boolean deleteObject(String controllerIP, String username, String password) throws IOException {
+//		JSONObject jsnobject = (JSONObject) JSONValue.parse(data);
+//		String uuid = (String) jsnobject.get("uuid");
+//		c.aviDelete(controllerIP, username, password, "pool", uuid);
+//		return true;
+//	}
+	
+	public String create(String controllerIP, String username, String password) throws IOException {
+		try {
+		   String postURL = controllerIP+"/api/pool/";
+	       URL url = new URL(postURL);
+	       String creds = username + ":" + password; 
+	       String encoding = Base64.getEncoder().encodeToString((creds).getBytes("UTF-8"));
+	       HttpURLConnection con = (HttpURLConnection) url.openConnection();
+	       con.setRequestMethod("POST");
+	       con.setRequestProperty("Content-Type", "application/json");
+	       con.setRequestProperty("X-Avi-Version", "18.2.3");
+	       con.setRequestProperty("Authorization", "Basic " + encoding);
+
+	       con.setDoOutput(true);
+
+	       // Send data of object
+	       this.sendData(con, this.data);
+	       
+	       // Read response from REST call 
+	       this.data = this.read(con.getInputStream());
+	       return data;
+		} catch (IOException exception) {
+			return exception.toString();
+		}
+	   }
+	   
+	   public void sendData(HttpURLConnection con, String data) throws IOException {
+	       DataOutputStream wr = null;
+	       try {
+	           wr = new DataOutputStream(con.getOutputStream());
+	           wr.writeBytes(data);
+	           wr.flush();
+	           wr.close();
+	       } catch(IOException exception) {
+	           throw exception;
+	       } finally {
+	           this.closeQuietly(wr);
+	       }
+	   }
+
+	   public String read(InputStream is) throws IOException {
+	       BufferedReader in = null;
+	       String inputLine;
+	       StringBuilder body;
+	       try {
+	           in = new BufferedReader(new InputStreamReader(is));
+
+	           body = new StringBuilder();
+
+	           while ((inputLine = in.readLine()) != null) {
+	               body.append(inputLine);
+	           }
+	           in.close();
+
+	           return body.toString();
+	       } catch(IOException ioe) {
+	           throw ioe;
+	       } finally {
+	           this.closeQuietly(in);
+	       }
+	   }
+
+	   public void closeQuietly(Closeable closeable) {
+	       try {
+	           if( closeable != null ) {
+	               closeable.close();
+	           }
+	       } catch(IOException ex) {
+
+	       }
+	   }
+	   
+	   public String delete(String controllerIP, String username, String password) throws IOException {
+	        try {
+	    		JSONObject jsnobject = (JSONObject) JSONValue.parse(this.data);
+	    		String uuid = (String) jsnobject.get("uuid");
+	    		return uuid;
+			
+	        } catch (IOException exception) {
+	            return exception.toString();
+	        }
+	   }
+}
