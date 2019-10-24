@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module name="sdk" version="${project.version}" build-number="${build.number}" image="images/default-16x16.png">
+    <description>sdk plug-in for vRealize Orchestrator</description>
+    <installation mode="${installation.mode}">
+        <action resource="packages/${project.artifactId}-package-${project.version}.package" type="install-package"/>
+    </installation>
+    <finder-datasources>
+        <finder-datasource name="main-datasource" adaptor-class="com.avi.sdk.sdkPluginAdaptor" concurrent-call="false" anonymous-login-mode="internal"/>
+    </finder-datasources>
+    <scripting-objects>
+        <object script-name="_sdkAvi" java-class="com.avi.sdk.model.Avi" strict="false" is-deprecated="false">
+            <description></description>
+            <methods>
+                <method script-name="makeVSObject" java-name="makeVSObject" return-type="com.avi.sdk.model.VirtualService" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
+                <method script-name="makePoolObject" java-name="makePoolObject" return-type="com.avi.sdk.model.Pool" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
+                <method script-name="createSerialize" java-name="createSerialize" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="controllerIP"/>
+                        <parameter type="String" name="username"/>
+                        <parameter type="String" name="password"/>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="data"/>
+                    </parameters>
+                </method>
+                <method script-name="createObject" java-name="createObject" return-type="Any" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                    </parameters>
+                </method>
+            </methods>
+            <singleton script-name="sdkAvi" datasource="main-datasource"/>
+        </object>
+    </scripting-objects>
+</module>
