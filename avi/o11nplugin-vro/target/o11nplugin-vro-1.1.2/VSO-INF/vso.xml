@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module name="avi" version="1.1.2" build-number="${build.number}" image="images/default-16x16.png">
+    <description>vro plug-in for vRealize Orchestrator</description>
+    <installation mode="${installation.mode}">
+        <action resource="packages/o11nplugin-vro-package-1.1.2.package" type="install-package"/>
+    </installation>
+    <finder-datasources>
+        <finder-datasource name="main-datasource" adaptor-class="com.vmware.avi.vro.VroPluginAdaptor" concurrent-call="false" anonymous-login-mode="internal"/>
+    </finder-datasources>
+    <scripting-objects>
+        <object script-name="_aviVro" java-class="com.vmware.avi.vro.Vro" strict="false" is-deprecated="false">
+            <description></description>
+            <methods>
+                <method script-name="createSerialize" java-name="createSerialize" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="controllerIP"/>
+                        <parameter type="String" name="username"/>
+                        <parameter type="String" name="password"/>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="data"/>
+                    </parameters>
+                </method>
+                <method script-name="createObject" java-name="createObject" return-type="Any" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                    </parameters>
+                </method>
+            </methods>
+            <singleton script-name="aviVro" datasource="main-datasource"/>
+        </object>
+    </scripting-objects>
+</module>
