@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module name="AviVro" version="${project.version}" build-number="${build.number}" image="images/default-16x16.png" display-name="AviVro">
+    <description>vro plug-in for vRealize Orchestrator</description>
+    <installation mode="${installation.mode}">
+        <action resource="packages/${project.artifactId}-package-${project.version}.package" type="install-package"/>
+    </installation>
+    <finder-datasources>
+        <finder-datasource name="main-datasource" adaptor-class="com.vmware.avi.vro.VroPluginAdaptor" concurrent-call="false" anonymous-login-mode="internal"/>
+    </finder-datasources>
+    <finders>
+        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.Vro" script-object="_AviVroVro">
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+    </finders>
+    <scripting-objects>
+        <object script-name="AviVroClient" java-class="com.vmware.avi.vro.AviVroClient" strict="false" is-deprecated="false">
+            <description></description>
+            <constructors/>
+        </object>
+        <object script-name="_AviVroVro" java-class="com.vmware.avi.vro.Vro" strict="false" is-deprecated="false">
+            <description></description>
+            <methods>
+                <method script-name="connect" java-name="connect" return-type="AviVroClient" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="controller"/>
+                        <parameter type="String" name="username"/>
+                        <parameter type="String" name="password"/>
+                        <parameter type="String" name="tenant"/>
+                        <parameter type="String" name="version"/>
+                    </parameters>
+                </method>
+            </methods>
+            <singleton script-name="AviVroVro" datasource="main-datasource"/>
+        </object>
+    </scripting-objects>
+</module>

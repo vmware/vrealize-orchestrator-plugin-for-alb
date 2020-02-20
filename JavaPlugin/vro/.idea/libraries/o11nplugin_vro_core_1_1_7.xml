@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="o11nplugin-vro-core-1.1.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/o11nplugin-vro-core/target/o11nplugin-vro-core-1.1.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
