@@ -134,7 +134,7 @@ public class AviVroClient {
 						response = session.put(aviObjectMetadata.getObjectType(), mergedObject);
 						logger.info(aviObjectMetadata.getObjectType() + " updated and response is " + response);
 
-					}
+					}	
 
 				} else if (operation.equals(OPERATION.DELETE.toString())) {
 
@@ -198,7 +198,7 @@ public class AviVroClient {
 		try {
 			LinkedList<AviObjectMetadata> metadataList = (LinkedList<AviObjectMetadata>) metadata;
 			logger.info("Inide Rollback :" + metadataList);
-			for (int counter = count; counter > 0; counter--) {
+			for (int counter = count; counter >= 0; counter--) {
 				AviObjectMetadata currentObjectData = metadataList.get(counter);
 				JSONObject existingObjectData = metadataList.get(counter).getExistingObject();
 				String operationType = currentObjectData.getOperation();
