@@ -109,6 +109,7 @@ public class AviVroClient {
 	@VsoMethod
 	public String executeWorkflow() throws Exception {
 		int count = 0;
+		logger.debug("Executing workflow");
 		ArrayList<JSONObject> jsonResponse = new ArrayList<JSONObject>();
 		logger.info("Inside executeWorkflow :" + workflowDataQueue);
 		try {
@@ -119,14 +120,16 @@ public class AviVroClient {
 				String operation = aviObjectMetadata.getOperation();
 				Map<String, String> params = new HashMap<>();
 				params.put("name", aviObjectMetadata.getNewObject().get("name").toString());
-				JSONArray resource = get(aviObjectMetadata.getObjectType(), params);
+				JSONArray resource = getExistingData(aviObjectMetadata.getObjectType(), params);
 
 				if (operation.equals(OPERATION.ADD.toString())) {
 
 					if (resource.isEmpty()) {
+						logger.debug("Creating " + aviObjectMetadata.getObjectType());
 						response = session.post(aviObjectMetadata.getObjectType(), aviObjectMetadata.getNewObject());
 						logger.info(aviObjectMetadata.getObjectType() + " created and response is " + response);
 					} else {
+						logger.debug("Updating  " + aviObjectMetadata.getObjectType());
 						aviObjectMetadata.setOperation(OPERATION.UPDATE.toString());
 						JSONObject resourceObj = (JSONObject) resource.get(0);
 						aviObjectMetadata.setExistingObject(resourceObj);
@@ -134,10 +137,10 @@ public class AviVroClient {
 						response = session.put(aviObjectMetadata.getObjectType(), mergedObject);
 						logger.info(aviObjectMetadata.getObjectType() + " updated and response is " + response);
 
-					}	
+					}
 
 				} else if (operation.equals(OPERATION.DELETE.toString())) {
-
+					logger.debug("Deleting " + aviObjectMetadata.getObjectType());
 					JSONObject resourceObj = (JSONObject) resource.get(0);
 					String resourceUUID = resourceObj.get("uuid").toString();
 					aviObjectMetadata.setExistingObject(resourceObj);
@@ -151,6 +154,7 @@ public class AviVroClient {
 				count++;
 			}
 		} catch (AviApiException e) {
+			jsonResponse.add(new JSONObject(e.getMessage()));
 			this.rollback(count - 1, workflowDataQueue, e);
 		} finally {
 			clearQueue();
@@ -162,7 +166,7 @@ public class AviVroClient {
 	/**
 	 * method for clearing the queue
 	 */
-	public void clearQueue() {
+	private void clearQueue() {
 		if (!this.workflowDataQueue.isEmpty()) {
 			this.workflowDataQueue.clear();
 		}
@@ -176,10 +180,10 @@ public class AviVroClient {
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public JSONArray get(String objectType, Map<String, String> params) throws Exception {
+	private JSONArray getExistingData(String objectType, Map<String, String> params) throws Exception {
 		AviApi session = getSession();
 		JSONObject data = session.get(objectType, params);
-		logger.info("Session : " + data);
+		logger.info("Existing data of " + objectType + " : " + data);
 		return (JSONArray) data.get("results");
 	}
 
@@ -189,27 +193,27 @@ public class AviVroClient {
 	 * @param metadata contains the AviObjectMetadata which used for the rollback.
 	 * @throws Exception
 	 */
-	@SuppressWarnings("unused")
 	@VsoMethod
 	public void rollback(int count, Queue<AviObjectMetadata> metadata, Exception exception) throws Exception {
 		AviApi session = getSession();
 		String rollBackMsg = null;
 		JSONObject response = null;
+		logger.debug("Doing rollback :");
 		try {
 			LinkedList<AviObjectMetadata> metadataList = (LinkedList<AviObjectMetadata>) metadata;
-			logger.info("Inide Rollback :" + metadataList);
+			logger.info("Rollback Object List:" + metadataList);
 			for (int counter = count; counter >= 0; counter--) {
 				AviObjectMetadata currentObjectData = metadataList.get(counter);
-				JSONObject existingObjectData = metadataList.get(counter).getExistingObject();
+				JSONObject existingObjectData = currentObjectData.getExistingObject();
 				String operationType = currentObjectData.getOperation();
 				if (OPERATION.ADD.toString().equals(operationType)) {
-					String loggerMsg = " Deleting " + currentObjectData.getObjectType() + "\n";
+					String loggerMsg = " Deleting " + currentObjectData.getObjectType() + " :: ";
 					logger.info(loggerMsg);
 					rollBackMsg = rollBackMsg + loggerMsg;
 					Map<String, String> params = new HashMap<>();
 					params.put("name", currentObjectData.getNewObject().get("name").toString());
 					JSONArray resource = null;
-					resource = get(currentObjectData.getObjectType(), params);
+					resource = getExistingData(currentObjectData.getObjectType(), params);
 					JSONObject resourceObj = (JSONObject) resource.get(0);
 					String resourceUUID = resourceObj.get("uuid").toString();
 					if ((!("").equals(resourceUUID)) || (!(null == resourceUUID))) {
@@ -217,17 +221,17 @@ public class AviVroClient {
 					}
 					logger.info(currentObjectData.getObjectType() + "deleted");
 				} else if (OPERATION.UPDATE.toString().equals(operationType)) {
-					String loggerMsg = "Inside Rollback :: Creating " + currentObjectData.getObjectType() + "\n";
+					String loggerMsg = " Restoring " + currentObjectData.getObjectType() + " :: ";
 					logger.info(loggerMsg);
 					rollBackMsg = rollBackMsg + loggerMsg;
 
 					if (!existingObjectData.isEmpty()) {
 						response = session.post(currentObjectData.getObjectType(),
 								currentObjectData.getExistingObject());
-						logger.info(currentObjectData.getObjectType() + "created");
+						logger.info(currentObjectData.getObjectType() + "created :" + response);
 					}
 				} else {
-					String loggerMsg = "Inside Rollback :: Creating " + currentObjectData.getObjectType() + "\n";
+					String loggerMsg = " Creating " + currentObjectData.getObjectType() + " :: ";
 					logger.info(loggerMsg);
 					rollBackMsg = rollBackMsg + loggerMsg;
 					if (!existingObjectData.isEmpty()) {
@@ -236,19 +240,18 @@ public class AviVroClient {
 						}
 						response = session.post(currentObjectData.getObjectType(),
 								currentObjectData.getExistingObject());
-						logger.info(currentObjectData.getObjectType() + "created ");
+						logger.info(currentObjectData.getObjectType() + "created :" + response);
 					}
 				}
-				throw new Exception(exception.getMessage() + rollBackMsg);
 			}
+			throw new Exception("\n" + exception.getMessage() + ":: Inside Rollback ::" + rollBackMsg + "\n");
 		} catch (AviApiException e) {
 			logger.error(e.getMessage());
-			throw new Exception(e.getMessage() + rollBackMsg);
+			throw new Exception(e.getMessage() + "::" + rollBackMsg);
+
 		} catch (Exception e) {
 			logger.error(e.getMessage());
-			throw new Exception(e.getMessage() + rollBackMsg);
-		} finally {
-			clearQueue();
+			throw new Exception(e.getMessage() + "::" + rollBackMsg);
 		}
 
 	}
@@ -262,13 +265,17 @@ public class AviVroClient {
 	 */
 	private JSONObject mergeJSONObjects(JSONObject json1, JSONObject json2) {
 		JSONObject mergedJSON = new JSONObject();
+		logger.debug("Merging JSON objects : ");
+		logger.info("\n first object :" + json1 + "\n second object :" + json2);
 		try {
 			mergedJSON = new JSONObject(json1, JSONObject.getNames(json1));
 			for (String crunchifyKey : JSONObject.getNames(json2)) {
 				mergedJSON.put(crunchifyKey, json2.get(crunchifyKey));
 			}
+			logger.info("Merged Object : " + mergedJSON);
 
 		} catch (JSONException e) {
+			logger.error(e.getMessage());
 			throw new RuntimeException("JSON Exception" + e);
 		}
 		return mergedJSON;
