@@ -30,6 +30,13 @@
                 </constructor>
             </constructors>
             <methods>
+                <method script-name="getExistingData" java-name="getExistingData" return-type="org.json.JSONArray" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="java.util.Map" name="params"/>
+                    </parameters>
+                </method>
                 <method script-name="executeWorkflow" java-name="executeWorkflow" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -46,13 +53,6 @@
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="objectData"/>
-                    </parameters>
-                </method>
-                <method script-name="get" java-name="get" return-type="org.json.JSONArray" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="objectType"/>
-                        <parameter type="java.util.Map" name="params"/>
                     </parameters>
                 </method>
                 <method script-name="delete" java-name="delete" return-type="void" show-in-api="true" is-deprecated="false">

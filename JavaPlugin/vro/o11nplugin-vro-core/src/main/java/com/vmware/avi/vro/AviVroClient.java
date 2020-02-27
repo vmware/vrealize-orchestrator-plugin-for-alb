@@ -154,7 +154,7 @@ public class AviVroClient {
 				count++;
 			}
 		} catch (AviApiException e) {
-			jsonResponse.add(new JSONObject(e.getMessage()));
+			jsonResponse.add(new JSONObject().put("error", e.getMessage()));
 			this.rollback(count - 1, workflowDataQueue, e);
 		} finally {
 			clearQueue();
