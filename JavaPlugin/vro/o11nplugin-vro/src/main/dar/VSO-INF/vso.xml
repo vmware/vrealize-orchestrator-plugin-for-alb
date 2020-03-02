@@ -30,13 +30,6 @@
                 </constructor>
             </constructors>
             <methods>
-                <method script-name="getExistingData" java-name="getExistingData" return-type="org.json.JSONArray" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="objectType"/>
-                        <parameter type="java.util.Map" name="params"/>
-                    </parameters>
-                </method>
                 <method script-name="executeWorkflow" java-name="executeWorkflow" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -48,11 +41,32 @@
                         <parameter type="java.lang.Exception" name="exception"/>
                     </parameters>
                 </method>
+                <method script-name="getObjectDataByName" java-name="getObjectDataByName" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="objectName"/>
+                    </parameters>
+                </method>
+                <method script-name="getObjectDataByUUID" java-name="getObjectDataByUUID" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="uuid"/>
+                    </parameters>
+                </method>
                 <method script-name="add" java-name="add" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="objectData"/>
+                    </parameters>
+                </method>
+                <method script-name="get" java-name="get" return-type="org.json.JSONArray" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="java.util.Map" name="params"/>
                     </parameters>
                 </method>
                 <method script-name="delete" java-name="delete" return-type="void" show-in-api="true" is-deprecated="false">
