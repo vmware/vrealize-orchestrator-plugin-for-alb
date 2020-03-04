@@ -2,13 +2,14 @@ package com.vmware.avi.vro;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -130,8 +131,9 @@ public class AviVroClient {
 				} else {
 					resource = getObjectDataByName(aviObjectMetadata.getObjectType(), nameOfObject);
 				}
+				int noOfRecords = Integer.parseInt(resource.get("count").toString());
 				if (operation.equals(OPERATION.ADD.toString())) {
-					if ((0 == Integer.parseInt(resource.get("count").toString()))) {
+					if (noOfRecords == 0) {
 						logger.debug("Creating " + aviObjectMetadata.getObjectType());
 						response = session.post(aviObjectMetadata.getObjectType(), aviObjectMetadata.getNewObject());
 						logger.info(aviObjectMetadata.getObjectType() + " created and response is " + response);
@@ -150,7 +152,14 @@ public class AviVroClient {
 
 				} else if (operation.equals(OPERATION.DELETE.toString())) {
 					logger.debug("Deleting " + aviObjectMetadata.getObjectType());
-					this.deleteObject(resource, aviObjectMetadata, "executeWorkflow");
+					if (noOfRecords > 0) {
+						this.deleteObject(resource, aviObjectMetadata, "executeWorkflow", count);
+					} else {
+						if (count > 0) {
+							this.rollback(count - 1, workflowDataQueue, new Exception(""));
+						}
+
+					}
 
 				}
 
@@ -208,9 +217,11 @@ public class AviVroClient {
 		AviApi session = getSession();
 		JSONObject data = null;
 		String path = null;
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("include_name", "true");
 		if ((null != objectName) && ("" != objectName)) {
 			path = objectType + "?name=" + objectName;
-			data = session.get(path, null);
+			data = session.get(path, map);
 		} else {
 			logger.debug("Incorrect " + objectType + " name ");
 			throw new AviApiException("Please provide name of the " + objectType);
@@ -232,9 +243,11 @@ public class AviVroClient {
 		AviApi session = getSession();
 		String path = null;
 		JSONObject data = null;
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("include_name", "true");
 		if ((null != uuid) && ("" != uuid)) {
 			path = objectType + "/" + uuid;
-			data = session.get(path, null);
+			data = session.get(path, map);
 		} else {
 			logger.debug("Incorrect " + objectType + " uuid ");
 			throw new AviApiException("Please provide uuid of the " + objectType);
@@ -245,7 +258,7 @@ public class AviVroClient {
 
 	/***
 	 * 
-	 * @param count    which tells how many objects needs to rollback.
+	 * @param count    indicating how many objects needs to rollback.
 	 * @param metadata contains the AviObjectMetadata which used for the rollback.
 	 * @throws Exception
 	 */
@@ -268,7 +281,7 @@ public class AviVroClient {
 					rollBackMsg = rollBackMsg + loggerMsg;
 					JSONObject resource = getObjectDataByName(currentObjectData.getObjectType(),
 							currentObjectData.getNewObject().get("name").toString());
-					this.deleteObject(resource, currentObjectData, "rollback");
+					this.deleteObject(resource, currentObjectData, "rollback", 0);
 				} else if (OPERATION.UPDATE.toString().equals(operationType)) {
 					String loggerMsg = " Restoring " + currentObjectData.getObjectType() + " :: ";
 					logger.info(loggerMsg);
@@ -300,9 +313,8 @@ public class AviVroClient {
 						if (currentObjectData.getObjectType().equals("virtualservice")) {
 							existingObjectData.remove("vsvip_ref");
 						}
-						JSONArray obj = (JSONArray) currentObjectData.getExistingObject().get("results");
-						JSONObject dataObject = obj.getJSONObject(0);
-						response = session.post(currentObjectData.getObjectType(), dataObject);
+						JSONObject updatedObject = transformRef(existingObjectData);
+						response = session.post(currentObjectData.getObjectType(), updatedObject);
 						logger.info(currentObjectData.getObjectType() + " : " + "created & response is:- " + response);
 					}
 				}
@@ -342,12 +354,24 @@ public class AviVroClient {
 			}
 		}
 		object2.remove("_last_modified");
-		// object2.put("_last_modified", object1.get("_last_modified"));
 		return object2;
 	}
 
-	private JSONObject deleteObject(JSONObject resource, AviObjectMetadata aviObjectMetadata, String action)
-			throws JSONException, AviApiException {
+	/***
+	 * 
+	 * @param resource          is a response containing uuid needed for delete
+	 *                          operation.
+	 * @param aviObjectMetadata contains the AviObjectMetadata which used for the
+	 *                          rollback.
+	 * @param action            define from where the deleteObect method
+	 *                          called(executeWorkflow or rollback).
+	 * @param count             indicating how many objects needs to rollback.
+	 * @return
+	 * @throws Exception
+	 */
+	private JSONObject deleteObject(JSONObject resource, AviObjectMetadata aviObjectMetadata, String action, int count)
+			throws Exception {
+
 		AviApi session = getSession();
 		JSONObject response = null;
 		JSONObject copyOfObject = null;
@@ -364,11 +388,59 @@ public class AviVroClient {
 				logger.info(aviObjectMetadata.getObjectType() + " deleted and response is " + response);
 			}
 		} else {
-			throw new AviApiException("Object with name " + aviObjectMetadata.getNewObject().get("name").toString()
-					+ " is not found on controller " + cred.getController());
-		}
 
+			if ("executeWorkflow".equals(action)) {
+				this.rollback(count - 1, workflowDataQueue,
+						new AviApiException(
+								"Object with name " + aviObjectMetadata.getNewObject().get("name").toString()
+										+ " is not found on controller " + cred.getController()));
+			}
+
+		}
 		return copyOfObject;
+	}
+
+	/***
+	 * 
+	 * @param jsonObject is the object which needs to be modified (references).
+	 * @return JSONObject with updated references.
+	 */
+	private JSONObject transformRef(JSONObject jsonObject) {
+		if (!jsonObject.isEmpty()) {
+			Set<String> keys = jsonObject.keySet();
+			for (String key : keys) {
+				Object value = jsonObject.get(key);
+				if (key.endsWith("_ref")) {
+					String valueOfKey = value.toString();
+					String updatedRef = createReference(valueOfKey);
+					jsonObject.put(key, updatedRef);
+				} else if (key.endsWith("_refs")) {
+					JSONArray stringArray = (JSONArray) value;
+					ArrayList<String> updatedList = new ArrayList<String>();
+					for (Object s : stringArray) {
+						String updatedValue = createReference(s.toString());
+						updatedList.add(updatedValue);
+					}
+					jsonObject.put(key, updatedList);
+
+				} else {
+
+				}
+			}
+		}
+		return jsonObject;
+	}
+
+	/***
+	 * 
+	 * @param str
+	 * @return the String which replace uuid with name condition.
+	 */
+	private String createReference(String str) {
+		if ((null != str) && ("" != str)) {
+			return str.substring(0, str.lastIndexOf("/")) + "/?name=" + str.substring(str.indexOf("#") + 1);
+		}
+		return null;
 	}
 
 }
