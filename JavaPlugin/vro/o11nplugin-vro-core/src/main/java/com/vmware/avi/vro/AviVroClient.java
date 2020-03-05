@@ -131,20 +131,19 @@ public class AviVroClient {
 				} else {
 					resource = getObjectDataByName(aviObjectMetadata.getObjectType(), nameOfObject);
 				}
-				int noOfRecords = Integer.parseInt(resource.get("count").toString());
 				if (operation.equals(OPERATION.ADD.toString())) {
-					if (noOfRecords == 0) {
+					if (null == resource) {
 						logger.debug("Creating " + aviObjectMetadata.getObjectType());
 						response = session.post(aviObjectMetadata.getObjectType(), aviObjectMetadata.getNewObject());
 						logger.info(aviObjectMetadata.getObjectType() + " created and response is " + response);
 					} else {
 						logger.debug("Updating  " + aviObjectMetadata.getObjectType());
 						aviObjectMetadata.setOperation(OPERATION.UPDATE.toString());
-						JSONArray objectArray = (JSONArray) resource.get("results");
-						JSONObject object = (JSONObject) objectArray.get(0);
-						JSONObject copyOfObject = new JSONObject(object.toString());
+						// JSONArray objectArray = (JSONArray) resource.get("results");
+						// JSONObject object = (JSONObject) objectArray.get(0);
+						JSONObject copyOfObject = new JSONObject(resource.toString());
 						aviObjectMetadata.setExistingObject(copyOfObject);
-						JSONObject mergedObject = this.mergeJsonObjects(object, aviObjectMetadata.getNewObject());
+						JSONObject mergedObject = this.mergeJsonObjects(resource, aviObjectMetadata.getNewObject());
 						response = session.put(aviObjectMetadata.getObjectType(), mergedObject);
 						logger.info(aviObjectMetadata.getObjectType() + " updated and response is " + response);
 
@@ -152,16 +151,9 @@ public class AviVroClient {
 
 				} else if (operation.equals(OPERATION.DELETE.toString())) {
 					logger.debug("Deleting " + aviObjectMetadata.getObjectType());
-					if (noOfRecords > 0) {
+					if (null == resource) {
 						this.deleteObject(resource, aviObjectMetadata, "executeWorkflow", count);
-					} else {
-						if (count > 0) {
-							this.rollback(count - 1, workflowDataQueue, new Exception("Object with name " + nameOfObject
-									+ " is not found on controller " + cred.getController()));
-						}
-
 					}
-
 				}
 
 				jsonResponse.add(response);
@@ -217,6 +209,7 @@ public class AviVroClient {
 	public JSONObject getObjectDataByName(String objectType, String objectName) throws Exception {
 		AviApi session = getSession();
 		JSONObject data = null;
+		JSONObject result = null;
 		String path = null;
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("include_name", "true");
@@ -227,8 +220,13 @@ public class AviVroClient {
 			logger.debug("Incorrect " + objectType + " name ");
 			throw new AviApiException("Please provide name of the " + objectType);
 		}
+
 		logger.info("Existing data of " + objectType + " : " + data);
-		return data;
+		if (Integer.parseInt(data.get("count").toString()) > 0) {
+			JSONArray objectArray = (JSONArray) data.get("results");
+			result = (JSONObject) objectArray.get(0);
+		}
+		return result;
 	}
 
 	/**
@@ -293,14 +291,14 @@ public class AviVroClient {
 					if (!existingObjectData.isEmpty()) {
 						JSONObject resource = getObjectDataByName(currentObjectData.getObjectType(),
 								currentObjectData.getNewObject().get("name").toString());
-						if (resource.isEmpty()) {
+						if (resource == null) {
 							response = session.post(currentObjectData.getObjectType(),
 									currentObjectData.getExistingObject());
 							logger.info(
 									currentObjectData.getObjectType() + " : " + "created & response is:- " + response);
 						} else {
-							JSONArray obj = (JSONArray) resource.get("results");
-							JSONObject mergedObject = this.mergeJsonObjects(obj.getJSONObject(0),
+							// JSONArray obj = (JSONArray) resource.get("results");
+							JSONObject mergedObject = this.mergeJsonObjects(resource,
 									currentObjectData.getExistingObject());
 
 							response = session.put(currentObjectData.getObjectType(), mergedObject);
@@ -380,14 +378,14 @@ public class AviVroClient {
 		AviApi session = getSession();
 		JSONObject response = null;
 		JSONObject copyOfObject = null;
-		JSONArray objectArray = (JSONArray) resource.get("results");
-		if (objectArray.length() > 0) {
-			JSONObject object = (JSONObject) objectArray.get(0);
-			copyOfObject = new JSONObject(object, JSONObject.getNames(object));
+		// JSONArray objectArray = (JSONArray) resource.get("results");
+		if (null != resource) {
+			//JSONObject object = (JSONObject) objectArray.get(0);
+			copyOfObject = new JSONObject(resource, JSONObject.getNames(resource));
 			if ("executeWorkflow".equals(action)) {
 				aviObjectMetadata.setExistingObject(copyOfObject);
 			}
-			String resourceUUID = object.get("uuid").toString();
+			String resourceUUID = resource.get("uuid").toString();
 			if ((!("").equals(resourceUUID)) || (null != resourceUUID)) {
 				response = session.delete(aviObjectMetadata.getObjectType(), resourceUUID);
 				logger.info(aviObjectMetadata.getObjectType() + " deleted and response is " + response);
