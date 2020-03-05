@@ -151,7 +151,7 @@ public class AviVroClient {
 
 				} else if (operation.equals(OPERATION.DELETE.toString())) {
 					logger.debug("Deleting " + aviObjectMetadata.getObjectType());
-					if (null == resource) {
+					if (null != resource) {
 						this.deleteObject(resource, aviObjectMetadata, "executeWorkflow", count);
 					}
 				}
@@ -380,7 +380,7 @@ public class AviVroClient {
 		JSONObject copyOfObject = null;
 		// JSONArray objectArray = (JSONArray) resource.get("results");
 		if (null != resource) {
-			//JSONObject object = (JSONObject) objectArray.get(0);
+			// JSONObject object = (JSONObject) objectArray.get(0);
 			copyOfObject = new JSONObject(resource, JSONObject.getNames(resource));
 			if ("executeWorkflow".equals(action)) {
 				aviObjectMetadata.setExistingObject(copyOfObject);
