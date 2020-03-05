@@ -108,7 +108,7 @@ public class AviVroClient {
 	 * This method fetch data from the Queue and perform the actions based on its
 	 * operation.
 	 * 
-	 * @return
+	 * @return String the output of the all actions.
 	 * @throws Exception
 	 */
 	@VsoMethod
@@ -156,7 +156,8 @@ public class AviVroClient {
 						this.deleteObject(resource, aviObjectMetadata, "executeWorkflow", count);
 					} else {
 						if (count > 0) {
-							this.rollback(count - 1, workflowDataQueue, new Exception(""));
+							this.rollback(count - 1, workflowDataQueue, new Exception("Object with name " + nameOfObject
+									+ " is not found on controller " + cred.getController()));
 						}
 
 					}
@@ -257,6 +258,8 @@ public class AviVroClient {
 	}
 
 	/***
+	 * This method is perform roll back task i.e. if something wents wrong during
+	 * the workflow execution all the previous actions will be rool back.
 	 * 
 	 * @param count    indicating how many objects needs to rollback.
 	 * @param metadata contains the AviObjectMetadata which used for the rollback.
@@ -306,10 +309,10 @@ public class AviVroClient {
 
 					}
 				} else {
-					String loggerMsg = " Creating " + currentObjectData.getObjectType() + " :: ";
-					logger.info(loggerMsg);
-					rollBackMsg = rollBackMsg + loggerMsg;
-					if (!existingObjectData.isEmpty()) {
+					if (null != existingObjectData) {
+						String loggerMsg = " Creating " + currentObjectData.getObjectType() + " :: ";
+						logger.info(loggerMsg);
+						rollBackMsg = rollBackMsg + loggerMsg;
 						if (currentObjectData.getObjectType().equals("virtualservice")) {
 							existingObjectData.remove("vsvip_ref");
 						}
@@ -359,6 +362,8 @@ public class AviVroClient {
 
 	/***
 	 * 
+	 * This method makes the REST delete call..
+	 * 
 	 * @param resource          is a response containing uuid needed for delete
 	 *                          operation.
 	 * @param aviObjectMetadata contains the AviObjectMetadata which used for the
@@ -401,6 +406,8 @@ public class AviVroClient {
 	}
 
 	/***
+	 * This method will check keys of the json object if it found object reference
+	 * or references it will replace the uuid with the name in condition.
 	 * 
 	 * @param jsonObject is the object which needs to be modified (references).
 	 * @return JSONObject with updated references.
@@ -432,9 +439,10 @@ public class AviVroClient {
 	}
 
 	/***
+	 * this method modified the string and appending name condition.
 	 * 
 	 * @param str
-	 * @return the String which replace uuid with name condition.
+	 * @return the String which replace uuid with name in condition.
 	 */
 	private String createReference(String str) {
 		if ((null != str) && ("" != str)) {
