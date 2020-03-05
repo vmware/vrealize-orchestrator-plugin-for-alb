@@ -8,11 +8,15 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
+import org.springframework.beans.FatalBeanException;
 
 import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.avi.vro.AviVroClient;
@@ -468,9 +472,10 @@ public class AviSdkTest {
 
 			// After rollback we should get original send_interval value of hm which is 20
 			JSONObject dataHmAfterUpdate = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			JSONObject results = (JSONObject) dataHmAfterUpdate.get("results");
-			Long resp = (Long) results.get("send_interval");
-			assertTrue("Rollback failed, not get expected send_interval value of hm", resp == 20);
+			JSONArray results = (JSONArray) dataHmAfterUpdate.get("results");
+            JSONObject resp = (JSONObject)results.get(0);
+			Integer sendInterval = (Integer) resp.get("send_interval");
+			assertTrue("Rollback failed, not get expected send_interval value of hm", sendInterval == 20);
 
 			// delete virtualservice and its refered objects
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -748,7 +753,7 @@ public class AviSdkTest {
 			testingVRO.delete("virtualservice", testObject.deleteVS());
 			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.delete("pool", testObject.deletePool());
-			
+
 			try {
 				testingVRO.executeWorkflow();
 			} catch (Exception e) {
@@ -770,7 +775,7 @@ public class AviSdkTest {
 			// delete virtualservice, pool and hm
 			testingVRO.delete("virtualservice", testObject.deleteVS());
 			testingVRO.delete("pool", testObject.deletePool());
-			testingVRO.delete("healthmonitor", testObject.deleteInvalidHM());
+			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
@@ -904,6 +909,51 @@ public class AviSdkTest {
 			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.executeWorkflow();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * Create hm and get hm by uuid and update hm and verify its updated.
+	 * 
+	 * @throws java.text.ParseException
+	 */
+	@Test
+	public void testObjectByUUID() throws java.text.ParseException {
+		AviSdkTest testObject = new AviSdkTest();
+		AviVroClient testingVRO = new AviVroClient();
+		testingVRO.setCred(AviSdkTest.getCreds());
+
+		try {
+
+			// add healthmonitor
+			testingVRO.add("healthmonitor", testObject.getHMData());
+			
+			// execute workflow
+			testingVRO.executeWorkflow();
+
+			// get object by name
+			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
+			JSONArray results = (JSONArray) dataHm.get("results");
+            JSONObject resp = (JSONObject)results.get(0);
+			String uuid = (String) resp.get("uuid");
+			
+			// get object by uuid
+			JSONObject dataHm1 = testingVRO.getObjectDataByUUID("healthmonitor", uuid);
+            dataHm1.put("name", "test-hm-new");
+            String hmStr = dataHm1.toString();
+            
+            // update hm name
+            testingVRO.add("healthmonitor", hmStr);
+            String response = testingVRO.executeWorkflow();
+            assertTrue("healthmonitor not updated", response.contains("test-hm-new"));
+            
+			// delete hm			
+			testingVRO.delete("healthmonitor", testObject.deleteHM()); //
+			testingVRO.executeWorkflow(); //
+			 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
