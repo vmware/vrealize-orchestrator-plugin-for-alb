@@ -1,0 +1,308 @@
+{
+"poolData":
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "health_monitor_refs":["/api/healthmonitor?name=test-hm-1"],
+   "lb_algorithm":"LB_ALGORITHM_LEAST_CONNECTIONS",
+   "default_server_port":80,
+   "enabled":true,
+   "servers":[
+      {
+         "enabled":false,
+         "ip":{
+            "addr":"192.0.0.1",
+            "type":"V4"
+         }
+      }
+   ],
+   "name":"test-pool-1"
+},
+"poolDataVs3":
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "health_monitor_refs":["/api/healthmonitor?name=test-hm-3"],
+   "lb_algorithm":"LB_ALGORITHM_LEAST_CONNECTIONS",
+   "default_server_port":80,
+   "enabled":true,
+   "servers":[
+      {
+         "enabled":false,
+         "ip":{
+            "addr":"192.0.0.1",
+            "type":"V4"
+         }
+      }
+   ],
+   "name":"test-pool-3"
+},
+"poolDataUpdate":
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "lb_algorithm":"LB_ALGORITHM_LEAST_CONNECTIONS",
+   "default_server_port":80,
+   "enabled":false,
+   "servers":[
+      {
+         "enabled":false,
+         "ip":{
+            "addr":"192.0.0.2",
+            "type":"V4"
+         }
+      }
+   ],
+   "name":"pool-1"
+},
+"poolData1":
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "lb_algorithm":"LB_ALGORITHM_LEAST_CONNECTIONS",
+   "default_server_port":80,
+   "enabled":true,
+   "servers":[
+      {
+         "enabled":false,
+         "ip":{
+            "addr":"192.0.0.2",
+            "type":"V4"
+         }
+      }
+   ],
+   "name":"pool-1"
+},
+"poolData2":
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "lb_algorithm":"LB_ALGORITHM_LEAST_CONNECTIONS",
+   "default_server_port":80,
+   "enabled":true,
+   "servers":[
+      {
+         "enabled":false,
+         "ip":{
+            "addr":"192.0.0.3",
+            "type":"V4"
+         }
+      }
+   ],
+   "name":"pool-2"
+},
+"poolData3":
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "lb_algorithm":"LB_ALGORITHM_LEAST_CONNECTIONS",
+   "default_server_port":80,
+   "enabled":true,
+   "servers":[
+      {
+         "enabled":false,
+         "ip":{
+            "addr":"192.0.0.4",
+            "type":"V4"
+         }
+      }
+   ],
+   "name":"pool-3"
+},
+"vsData" : 
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V4",
+            "addr":"192.0.0.1"
+         }
+      }
+   ],
+   "services":[
+      {
+         "port":80
+      }
+   ],
+   "pool_ref":"/api/pool?name=test-pool-1",
+   "name":"test-vs-1"
+},
+"vsDataWithPoolGroup" : 
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V4",
+            "addr":"192.0.0.1"
+         }
+      }
+   ],
+   "services":[
+      {
+         "port":80
+      }
+   ],
+   "poolgroup_ref":"/api/poolgroup?name=poolgroup-1",
+   "name":"vs-1"
+},
+"vsDataWithSameIp" : 
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V4",
+            "addr":"192.0.0.1"
+         }
+      }
+   ],
+   "services":[
+      {
+         "port":80
+      }
+   ],
+   "pool_ref":"/api/pool?name=test-pool-1",
+   "name":"test-vs-2"
+},
+"vsDataWithInvalidConfig" : 
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V",
+            "addr":"192.0.0.1"
+         }
+      }
+   ],
+   "services":[
+      {
+         "port":80
+      }
+   ],
+   "pool_ref":"/api/pool?name=test-pool-3",
+   "name":"test-vs-3"
+},
+
+"vsDataWithInvalidConfigPg" : 
+{
+   "tenant_ref":"/api/tenant?name=admin",
+   "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V",
+            "addr":"192.0.0.1"
+         }
+      }
+   ],
+   "services":[
+      {
+         "port":80
+      }
+   ],
+   "pool_ref":"/api/poolgroup?name=poolgroup-2",
+   "name":"test-vs-4"
+},
+"hmData":
+{
+	"type": "HEALTH_MONITOR_PING",
+	"name": "test-hm-1",
+	"send_interval": 20
+},
+"hmDataVs3":
+{
+	"type": "HEALTH_MONITOR_PING",
+	"name": "test-hm-3",
+	"send_interval": 20
+},
+"hmUpdatedData":
+{
+	"type": "HEALTH_MONITOR_PING",
+	"name": "test-hm-1",
+	"send_interval": 30
+},
+"hmInvalidData":
+{
+	"type": "HEALTH_MONITOR_PIN",
+	"name": "test-hm-1",
+	"send_interval": 40
+},
+"poolgroupData":
+{
+  "name": "poolgroup-1",
+  "tenant_ref": "/api/tenant?name=admin",
+  "implicit_priority_labels": false,
+  "min_servers": 1,
+  "members": [
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-1"
+    },
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-2"
+    },
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-3"
+    }
+  ],
+  "fail_action": {
+    "type": "FAIL_ACTION_CLOSE_CONN"  
+}
+},
+"poolgroupData1":
+{
+  "name": "poolgroup-1",
+  "tenant_ref": "/api/tenant?name=admin",
+  "implicit_priority_labels": false,
+  "min_servers": 1,
+  "members": [
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-1"
+    },
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-2"
+    }
+  ],
+  "fail_action": {
+    "type": "FAIL_ACTION_CLOSE_CONN"  
+}
+},
+"poolgroupInvalidData":
+{
+  "name": "poolgroup-2",
+  "tenant_ref": "/api/tenant?name=admin",
+  "implicit_priority_labels": false,
+  "members": [
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-1"
+    },
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-2"
+    },
+    {
+      "ratio": 1,
+      "pool_ref": "/api/pool?name=pool-3"
+    }
+  ],
+  "fail_action": {
+    "type": "FAIL_ACTION_CLOSE_CON"  
+}
+}
+}
