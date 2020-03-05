@@ -17,8 +17,6 @@ import org.junit.Test;
 import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.avi.vro.AviVroClient;
 
-import net.sf.saxon.instruct.Message;
-
 public class AviSdkTest {
 	private static final Logger logger = Logger.getLogger(AviSdkTest.class);
 
@@ -209,7 +207,7 @@ public class AviSdkTest {
 	 * @throws java.text.ParseException
 	 */
 
-	// @Test
+	@Test
 	public void testVroExecuteWorkFlowWithValidSequence() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -271,7 +269,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	// @Test
+	@Test
 	public void testVroExecuteWorkFlowWithInvalidSequence() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -304,7 +302,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	// @Test
+	@Test
 	public void testVroRollbackWhenVsFailedToCreate() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -344,7 +342,7 @@ public class AviSdkTest {
 	 * create pools and PG and failed at vs creation so it will delete pools as well
 	 * as PG.
 	 */
-	// @Test
+	@Test
 	public void testVsCreatewithInvalidConfig() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -395,7 +393,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	// @Test
+	@Test
 	public void testVroExecuteFlowOfUpdate() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -439,7 +437,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	// @Test
+	@Test
 	public void testVroRollbackOfUpdate() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -494,7 +492,7 @@ public class AviSdkTest {
 	 * @throws java.text.ParseException
 	 */
 
-	// @Test
+	@Test
 	public void testVroExecuteflowForOverlappingIps() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -547,7 +545,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	// @Test
+	@Test
 	public void testPoolgroupCreateTwice() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -606,7 +604,7 @@ public class AviSdkTest {
 	 * Create, update and delete pool group with pool. In this test case we are
 	 * updating pool object attached to poolgroup.
 	 */
-	// @Test
+	@Test
 	public void testPoolgroupUpdate() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -645,7 +643,7 @@ public class AviSdkTest {
 	 * Create, update and delete pool group with pool. In this test case we are
 	 * updating poolgroup by removing pool-3 from it.
 	 */
-	// @Test
+	@Test
 	public void testPoolgroupCreateAndUpdateAndDelete() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -684,7 +682,7 @@ public class AviSdkTest {
 	 * Create pools but pool group creation failed due to invalid config then it
 	 * should rollback and delete created pool which refereed in pool group.
 	 */
-	// @Test
+	@Test
 	public void testPoolgroupCreatewithInvalidConfig() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -727,7 +725,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	//@Test
+	@Test
 	public void testRollbackOfDelete() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
@@ -748,14 +746,15 @@ public class AviSdkTest {
 
 			// delete virtualservice
 			testingVRO.delete("virtualservice", testObject.deleteVS());
+			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.delete("pool", testObject.deletePool());
-			testingVRO.delete("healthmonitor", testObject.deleteInvalidHM());
+			
 			try {
-			testingVRO.executeWorkflow();
-			}catch (Exception e) {
+				testingVRO.executeWorkflow();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+
 			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
 			int countValue = (int) dataHm.get("count");
 			assertTrue("Hm object not deleted", countValue == 1);
@@ -767,13 +766,12 @@ public class AviSdkTest {
 			JSONObject dataVs = testingVRO.getObjectDataByName("virtualservice", "test-vs-1");
 			int countValue2 = (int) dataVs.get("count");
 			assertTrue("Vs object not deleted", countValue2 == 1);
-			
+
 			// delete virtualservice, pool and hm
 			testingVRO.delete("virtualservice", testObject.deleteVS());
 			testingVRO.delete("pool", testObject.deletePool());
 			testingVRO.delete("healthmonitor", testObject.deleteInvalidHM());
 			testingVRO.executeWorkflow();
-
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -788,16 +786,66 @@ public class AviSdkTest {
 	 * @throws java.text.ParseException
 	 */
 	@Test
-	public void testDeleteObjectWhichNotPresentOnController() throws java.text.ParseException {
+	public void testDeleteExecuteworkflowandRollback() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviSdkTest.getCreds());
 
 		try {
-			// delete virtualservice, pool and hm
+
+			// add healthmonitor
+			testingVRO.add("healthmonitor", testObject.getHMData());
+			testingVRO.executeWorkflow();
+
+			String vsData = "{\n" + "\"name\": \"test-vs-5\"\n" + "}";
+			String poolData = "{\n" + "\"name\": \"test-pool-5\"\n" + "}";
+
+			// delete virtualservice, pool which not present on controller and hm which is
+			// present on controller
+			testingVRO.delete("virtualservice", vsData);
+			testingVRO.delete("pool", poolData);
+			testingVRO.delete("healthmonitor", testObject.deleteHM());
+			testingVRO.executeWorkflow();
+
+			// add healthmonitor
+			testingVRO.add("healthmonitor", testObject.getHMData());
+
+			// add pool
+			testingVRO.add("pool", testObject.getPoolData());
+
+			// add virtualservice
+			testingVRO.add("virtualservice", testObject.getVSData());
+
+			// delete vs
 			testingVRO.delete("virtualservice", testObject.deleteVS());
+
+			// execute workflow
+			testingVRO.executeWorkflow();
+
+			// delete virtualservice which not present
+			testingVRO.delete("virtualservice", testObject.deleteVS());
+			testingVRO.executeWorkflow();
+
+			// delete hm which present on controller but it will not delete because we have
+			// refered it in pool and it will rollback
+			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.delete("pool", testObject.deletePool());
-			testingVRO.delete("healthmonitor", testObject.deleteInvalidHM());
+			try {
+				testingVRO.executeWorkflow();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			JSONObject dataPool = testingVRO.getObjectDataByName("pool", "test-pool-1");
+			int countValue1 = (int) dataPool.get("count");
+			assertTrue("Pool object test-pool-1 is not present", countValue1 == 1);
+
+			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
+			int countValue2 = (int) dataHm.get("count");
+			assertTrue("Hm object test-hm-1 is not present", countValue2 == 1);
+
+			testingVRO.delete("pool", testObject.deletePool());
+			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
@@ -813,7 +861,7 @@ public class AviSdkTest {
 	 * 
 	 * @throws java.text.ParseException
 	 */
-	//@Test
+	@Test
 	public void testVroRollbackVsDeleteAndCreate() throws java.text.ParseException {
 		AviSdkTest testObject = new AviSdkTest();
 		AviVroClient testingVRO = new AviVroClient();
