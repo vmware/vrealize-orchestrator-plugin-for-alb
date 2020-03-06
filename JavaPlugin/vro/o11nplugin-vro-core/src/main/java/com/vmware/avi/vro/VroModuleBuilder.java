@@ -14,7 +14,7 @@ public final class VroModuleBuilder extends ModuleBuilder {
 				.withDescription(DESCRIPTION).withImage("images/default-16x16.png")
 				.basePackages(VroModuleBuilder.class.getPackage().getName()).version("${project.version}");
 
-		installation(InstallationMode.BUILD).action(ActionType.INSTALL_PACKAGE,
+		installation(InstallationMode.VERSION).action(ActionType.INSTALL_PACKAGE,
 				"packages/${project.artifactId}-package-${project.version}.package");
 
 		finderDatasource(VroPluginAdaptor.class, DATASOURCE).anonymousLogin(LoginMode.INTERNAL);

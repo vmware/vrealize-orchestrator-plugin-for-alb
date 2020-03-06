@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <module name="Avi" version="${project.version}" build-number="${build.number}" image="images/default-16x16.png" display-name="Avi">
     <description>vro plug-in for vRealize Orchestrator</description>
-    <installation mode="${installation.mode}">
+    <installation mode="version">
         <action resource="packages/${project.artifactId}-package-${project.version}.package" type="install-package"/>
     </installation>
     <inventory type="roots"/>
