@@ -1,6 +1,8 @@
 package com.vmware.avi.test;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
@@ -8,22 +10,15 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.apache.log4j.Logger;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
-import org.springframework.beans.FatalBeanException;
 
 import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.avi.vro.AviVroClient;
 
-public class AviSdkTest {
-	private static final Logger logger = Logger.getLogger(AviSdkTest.class);
-
+public class AviVroTest {
 	private static final String CONTROLLER = System.getenv("AVI_CONTROLLER");
 	private static final String USERNAME = System.getenv("AVI_USERNAME");
 	private static final String PASSWORD = System.getenv("AVI_PASSWORD");
@@ -33,13 +28,13 @@ public class AviSdkTest {
 	private static AviCredentials creds = null;
 
 	static AviCredentials getCreds() {
-		if (null == AviSdkTest.creds) {
-			AviSdkTest.creds = new AviCredentials(AviSdkTest.CONTROLLER, AviSdkTest.USERNAME, AviSdkTest.PASSWORD);
-			creds.setVersion(AviSdkTest.VERSION);
-			creds.setTenant(AviSdkTest.TENANT);
+		if (null == AviVroTest.creds) {
+			AviVroTest.creds = new AviCredentials(AviVroTest.CONTROLLER, AviVroTest.USERNAME, AviVroTest.PASSWORD);
+			creds.setVersion(AviVroTest.VERSION);
+			creds.setTenant(AviVroTest.TENANT);
 			return creds;
 		} else {
-			return AviSdkTest.creds;
+			return AviVroTest.creds;
 		}
 	}
 
@@ -213,9 +208,9 @@ public class AviSdkTest {
 
 	@Test
 	public void testVroExecuteWorkFlowWithValidSequence() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add healthmonitor
@@ -230,17 +225,10 @@ public class AviSdkTest {
 			// exceute workflow
 			testingVRO.executeWorkflow();
 
-			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			int countValue = (int) dataHm.get("count");
-			assertTrue("Hm object not deleted", countValue == 1);
-
-			JSONObject dataPool = testingVRO.getObjectDataByName("pool", "test-pool-1");
-			int countValue1 = (int) dataPool.get("count");
-			assertTrue("Pool object not deleted", countValue1 == 1);
-
-			JSONObject dataVs = testingVRO.getObjectDataByName("virtualservice", "test-vs-1");
-			int countValue2 = (int) dataVs.get("count");
-			assertTrue("Vs object not deleted", countValue2 == 1);
+			// verify object is created
+			assertNotNull(testingVRO.getObjectDataByName("healthmonitor", "test-hm-1"));
+			assertNotNull(testingVRO.getObjectDataByName("pool", "test-pool-1"));
+			assertNotNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1"));
 
 			// add vs, pool, hm to delete
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -248,17 +236,10 @@ public class AviSdkTest {
 			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.executeWorkflow();
 
-			JSONObject dataHmAfterDelete = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			int countValue3 = (int) dataHmAfterDelete.get("count");
-			assertTrue("Hm test-hm-1 object not deleted", countValue3 == 0);
-
-			JSONObject dataPoolAfterDelete = testingVRO.getObjectDataByName("pool", "test-pool-1");
-			int countValue4 = (int) dataPoolAfterDelete.get("count");
-			assertTrue("Pool test-pool-1 object not deleted", countValue4 == 0);
-
-			JSONObject dataVsAfterDelete = testingVRO.getObjectDataByName("virtualservice", "test-vs-1");
-			int countValue5 = (int) dataVsAfterDelete.get("count");
-			assertTrue("Vs test-vs-1 object not deleted", countValue5 == 0);
+			// verify object is deleted
+			assertNull(testingVRO.getObjectDataByName("healthmonitor", "tes-hm-1"));
+			assertNull(testingVRO.getObjectDataByName("pool", "test-pool-1"));
+			assertNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -275,9 +256,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testVroExecuteWorkFlowWithInvalidSequence() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add virtualservice
@@ -289,9 +270,12 @@ public class AviSdkTest {
 			// add healthmonitor
 			testingVRO.add("healthmonitor", testObject.getHMData());
 
-			String response1 = testingVRO.executeWorkflow();
-			logger.info("Workflow execution completed :" + response1);
-			assertTrue(response1.contains("Pool object not found!"));
+			testingVRO.executeWorkflow();
+
+			// verify none of the object is created
+			assertNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1"));
+			assertNull(testingVRO.getObjectDataByName("pool", "test-pool-1"));
+			assertNull(testingVRO.getObjectDataByName("healthmonitor", "test-hm-1"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -308,9 +292,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testVroRollbackWhenVsFailedToCreate() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add healthmonitor
@@ -328,13 +312,9 @@ public class AviSdkTest {
 				e.printStackTrace();
 			}
 
-			JSONObject dataHmAfterDelete = testingVRO.getObjectDataByName("healthmonitor", "test-hm-3");
-			int countValue3 = (int) dataHmAfterDelete.get("count");
-			assertTrue("test-hm-3 object not deleted", countValue3 == 0);
-
-			JSONObject dataPoolAfterDelete = testingVRO.getObjectDataByName("pool", "test-pool-3");
-			int countValue4 = (int) dataPoolAfterDelete.get("count");
-			assertTrue("test-pool-3 object not deleted", countValue4 == 0);
+			// verify object is not created
+			assertNull(testingVRO.getObjectDataByName("healthmonitor", "tes-hm-3"));
+			assertNull(testingVRO.getObjectDataByName("pool", "test-pool-3"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -348,9 +328,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testVsCreatewithInvalidConfig() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add pools
@@ -369,21 +349,11 @@ public class AviSdkTest {
 				e.printStackTrace();
 			}
 
-			JSONObject dataPool1 = testingVRO.getObjectDataByName("pool", "pool-1");
-			int countValue1 = (int) dataPool1.get("count");
-			assertTrue("pool-1 object not deleted", countValue1 == 0);
-
-			JSONObject dataPool2 = testingVRO.getObjectDataByName("pool", "pool-2");
-			int countValue2 = (int) dataPool2.get("count");
-			assertTrue("Pool-2 object not deleted", countValue2 == 0);
-
-			JSONObject dataPool3 = testingVRO.getObjectDataByName("pool", "pool-3");
-			int countValue3 = (int) dataPool3.get("count");
-			assertTrue("Pool-3  object not deleted", countValue3 == 0);
-
-			JSONObject dataPoolgroup = testingVRO.getObjectDataByName("poolgroup", "poolgroup-1");
-			int countValue4 = (int) dataPoolgroup.get("count");
-			assertTrue("Pool-3  object not deleted", countValue4 == 0);
+			// verify object is not created
+			assertNull(testingVRO.getObjectDataByName("pool", "pool-1"));
+			assertNull(testingVRO.getObjectDataByName("pool", "pool-2"));
+			assertNull(testingVRO.getObjectDataByName("pool", "pool-3"));
+			assertNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -399,9 +369,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testVroExecuteFlowOfUpdate() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add healthmonitor and execute it
@@ -443,9 +413,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testVroRollbackOfUpdate() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add healthmonitor and execute it
@@ -472,9 +442,7 @@ public class AviSdkTest {
 
 			// After rollback we should get original send_interval value of hm which is 20
 			JSONObject dataHmAfterUpdate = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			JSONArray results = (JSONArray) dataHmAfterUpdate.get("results");
-            JSONObject resp = (JSONObject)results.get(0);
-			Integer sendInterval = (Integer) resp.get("send_interval");
+			Integer sendInterval = (Integer) dataHmAfterUpdate.get("send_interval");
 			assertTrue("Rollback failed, not get expected send_interval value of hm", sendInterval == 20);
 
 			// delete virtualservice and its refered objects
@@ -499,9 +467,9 @@ public class AviSdkTest {
 
 	@Test
 	public void testVroExecuteflowForOverlappingIps() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 
@@ -515,8 +483,7 @@ public class AviSdkTest {
 			testingVRO.add("virtualservice", testObject.getVSData());
 
 			// execute workflow
-			String response = testingVRO.executeWorkflow();
-			logger.info("Workflow execution completed :" + response);
+			testingVRO.executeWorkflow();
 
 			/*
 			 * add virtualservice with different name but same configuration as previous vs
@@ -552,9 +519,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testPoolgroupCreateTwice() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add pools
@@ -565,23 +532,14 @@ public class AviSdkTest {
 			// add poolgroup
 			testingVRO.add("poolgroup", testObject.getPoolgroup());
 
+			// execute work flow
 			testingVRO.executeWorkflow();
 
-			JSONObject dataPool1 = testingVRO.getObjectDataByName("pool", "pool-1");
-			int countValue1 = (int) dataPool1.get("count");
-			assertTrue("pool-1 object not created", countValue1 == 1);
-
-			JSONObject dataPool2 = testingVRO.getObjectDataByName("pool", "pool-2");
-			int countValue2 = (int) dataPool2.get("count");
-			assertTrue("Pool-2 object not created", countValue2 == 1);
-
-			JSONObject dataPool3 = testingVRO.getObjectDataByName("pool", "pool-3");
-			int countValue3 = (int) dataPool3.get("count");
-			assertTrue("Pool-3  object not created", countValue3 == 1);
-
-			JSONObject dataPoolgroup = testingVRO.getObjectDataByName("poolgroup", "poolgroup-1");
-			int countValue4 = (int) dataPoolgroup.get("count");
-			assertTrue("Poolgroup-1  object not created", countValue4 == 1);
+			// verify object is created
+			assertNotNull(testingVRO.getObjectDataByName("pool", "pool-1"));
+			assertNotNull(testingVRO.getObjectDataByName("pool", "pool-2"));
+			assertNotNull(testingVRO.getObjectDataByName("pool", "pool-3"));
+			assertNotNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1"));
 
 			// add pools
 			testingVRO.add("pool", testObject.getPoolData1());
@@ -590,8 +548,9 @@ public class AviSdkTest {
 
 			// add poolgroup
 			testingVRO.add("poolgroup", testObject.getPoolgroup());
-			String response1 = testingVRO.executeWorkflow();
-			assertTrue("poolgroup not created", response1.contains("#poolgroup-1"));
+
+			// verify poolgroup is created
+			assertNotNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1"));
 
 			// delete all objects
 			testingVRO.delete("poolgroup", testObject.deletePoolgroup());
@@ -611,9 +570,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testPoolgroupUpdate() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add pools
@@ -624,10 +583,12 @@ public class AviSdkTest {
 			// add poolgroup
 			testingVRO.add("poolgroup", testObject.getPoolgroup());
 
-			String response = testingVRO.executeWorkflow();
-			assertTrue("poolgroup not created", response.contains("#poolgroup-1"));
+			testingVRO.executeWorkflow();
 
-			// add pools
+			// verify poolgroup is created
+			assertNotNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1"));
+
+			// add pools and check pool is updated or not
 			testingVRO.add("pool", testObject.getPoolDataUpdate());
 			String response1 = testingVRO.executeWorkflow();
 			assertTrue("poolgroup not created", response1.contains("\"enabled\":false"));
@@ -650,9 +611,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testPoolgroupCreateAndUpdateAndDelete() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add pools
@@ -663,14 +624,17 @@ public class AviSdkTest {
 			// add poolgroup
 			testingVRO.add("poolgroup", testObject.getPoolgroup());
 
-			String response = testingVRO.executeWorkflow();
-			assertTrue("poolgroup not created", response.contains("poolgroup-1"));
+			testingVRO.executeWorkflow();
+
+			// verify poolgroup is created
+			assertNotNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1"));
 
 			testingVRO.add("poolgroup", testObject.getUpdatedPoolgroup());
 			String response1 = testingVRO.executeWorkflow();
 			assertFalse("poolgroup not updated correctly, pool-3 is still attched to poolgroup",
 					response1.contains("#pool-3"));
 
+			// delete objects
 			testingVRO.delete("poolgroup", testObject.deletePoolgroup());
 			testingVRO.delete("pool", testObject.deletePool1());
 			testingVRO.delete("pool", testObject.deletePool2());
@@ -689,9 +653,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testPoolgroupCreatewithInvalidConfig() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add pools
@@ -706,17 +670,12 @@ public class AviSdkTest {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			JSONObject dataPool1 = testingVRO.getObjectDataByName("pool", "pool-1");
-			int countValue1 = (int) dataPool1.get("count");
-			assertTrue("pool-1 object not deleted", countValue1 == 0);
 
-			JSONObject dataPool2 = testingVRO.getObjectDataByName("pool", "pool-2");
-			int countValue2 = (int) dataPool2.get("count");
-			assertTrue("Pool-2 object not deleted", countValue2 == 0);
-
-			JSONObject dataPool3 = testingVRO.getObjectDataByName("pool", "pool-3");
-			int countValue3 = (int) dataPool3.get("count");
-			assertTrue("Pool-3  object not deleted", countValue3 == 0);
+			// verify pool and poolgroup not created
+			assertNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1"));
+			assertNull(testingVRO.getObjectDataByName("pool", "pool-1"));
+			assertNull(testingVRO.getObjectDataByName("pool", "pool-2"));
+			assertNull(testingVRO.getObjectDataByName("pool", "pool-3"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -732,9 +691,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testRollbackOfDelete() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 			// add healthmonitor
@@ -760,17 +719,10 @@ public class AviSdkTest {
 				e.printStackTrace();
 			}
 
-			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			int countValue = (int) dataHm.get("count");
-			assertTrue("Hm object not deleted", countValue == 1);
-
-			JSONObject dataPool = testingVRO.getObjectDataByName("pool", "test-pool-1");
-			int countValue1 = (int) dataPool.get("count");
-			assertTrue("Pool object not deleted", countValue1 == 1);
-
-			JSONObject dataVs = testingVRO.getObjectDataByName("virtualservice", "test-vs-1");
-			int countValue2 = (int) dataVs.get("count");
-			assertTrue("Vs object not deleted", countValue2 == 1);
+			// Verify object is not deleted
+			assertNotNull(testingVRO.getObjectDataByName("healthmonitor", "test-hm-1"));
+			assertNotNull(testingVRO.getObjectDataByName("pool", "test-pool-1"));
+			assertNotNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1"));
 
 			// delete virtualservice, pool and hm
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -792,9 +744,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testDeleteExecuteworkflowandRollback() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 
@@ -841,13 +793,9 @@ public class AviSdkTest {
 				e.printStackTrace();
 			}
 
-			JSONObject dataPool = testingVRO.getObjectDataByName("pool", "test-pool-1");
-			int countValue1 = (int) dataPool.get("count");
-			assertTrue("Pool object test-pool-1 is not present", countValue1 == 1);
-
-			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			int countValue2 = (int) dataHm.get("count");
-			assertTrue("Hm object test-hm-1 is not present", countValue2 == 1);
+			// Verify object is not deleted
+			assertNotNull(testingVRO.getObjectDataByName("healthmonitor", "test-hm-1"));
+			assertNotNull(testingVRO.getObjectDataByName("pool", "test-pool-1"));
 
 			testingVRO.delete("pool", testObject.deletePool());
 			testingVRO.delete("healthmonitor", testObject.deleteHM());
@@ -868,9 +816,9 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testVroRollbackVsDeleteAndCreate() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 
@@ -884,8 +832,7 @@ public class AviSdkTest {
 			testingVRO.add("virtualservice", testObject.getVSData());
 
 			// execute workflow
-			String response = testingVRO.executeWorkflow();
-			logger.info("Workflow execution copmleted :" + response);
+			testingVRO.executeWorkflow();
 
 			// add object for delete
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -899,9 +846,9 @@ public class AviSdkTest {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			JSONObject dataVs = testingVRO.getObjectDataByName("virtualservice", "test-vs-1");
-			int countValue2 = (int) dataVs.get("count");
-			assertTrue("Vs object not created", countValue2 == 1);
+
+			// Verify object is not deleted as we rollback action performed
+			assertNotNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1"));
 
 			// add vs, pool, hm to delete
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -922,38 +869,43 @@ public class AviSdkTest {
 	 */
 	@Test
 	public void testObjectByUUID() throws java.text.ParseException {
-		AviSdkTest testObject = new AviSdkTest();
+		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
-		testingVRO.setCred(AviSdkTest.getCreds());
+		testingVRO.setCred(AviVroTest.getCreds());
 
 		try {
 
 			// add healthmonitor
 			testingVRO.add("healthmonitor", testObject.getHMData());
-			
+
 			// execute workflow
 			testingVRO.executeWorkflow();
 
 			// get object by name
 			JSONObject dataHm = testingVRO.getObjectDataByName("healthmonitor", "test-hm-1");
-			JSONArray results = (JSONArray) dataHm.get("results");
-            JSONObject resp = (JSONObject)results.get(0);
-			String uuid = (String) resp.get("uuid");
-			
+			String uuid = (String) dataHm.get("uuid");
+			String name = (String) dataHm.get("name");
+
 			// get object by uuid
 			JSONObject dataHm1 = testingVRO.getObjectDataByUUID("healthmonitor", uuid);
-            dataHm1.put("name", "test-hm-new");
-            String hmStr = dataHm1.toString();
-            
-            // update hm name
-            testingVRO.add("healthmonitor", hmStr);
-            String response = testingVRO.executeWorkflow();
-            assertTrue("healthmonitor not updated", response.contains("test-hm-new"));
-            
-			// delete hm			
-			testingVRO.delete("healthmonitor", testObject.deleteHM()); //
-			testingVRO.executeWorkflow(); //
-			 
+			dataHm1.put("name", "test-hm-new");
+			String hmStr = dataHm1.toString();
+
+			// update hm name
+			testingVRO.add("healthmonitor", hmStr);
+			String response = testingVRO.executeWorkflow();
+			assertTrue("healthmonitor not updated", response.contains("test-hm-new"));
+
+			// verify name is updated or not
+			JSONObject dataHmUpdated = testingVRO.getObjectDataByUUID("healthmonitor", uuid);
+			String nameUpdated = (String) dataHmUpdated.get("name");
+			assertTrue("Hm not updated", name != nameUpdated);
+
+			// delete hm
+			String hmData = "{\n" + "\"name\": \"test-hm-new\"\n" + "}";
+			testingVRO.delete("healthmonitor", hmData);
+			testingVRO.executeWorkflow();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
