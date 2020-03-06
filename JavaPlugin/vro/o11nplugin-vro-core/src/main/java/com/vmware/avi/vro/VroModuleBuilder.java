@@ -10,14 +10,16 @@ public final class VroModuleBuilder extends ModuleBuilder {
 
 	@Override
 	public void configure() {
-		module(Constants.PLUGIN_NAME).displayName(Constants.PLUGIN_NAME).withDescription(DESCRIPTION)
-				.withImage("images/default-16x16.png").basePackages(VroModuleBuilder.class.getPackage().getName())
-				.version("${project.version}");
+		module(Constants.PLUGIN_NAME).displayName(Constants.PLUGIN_NAME).inventory(VroPluginAdaptor.REL_ROOTS)
+				.withDescription(DESCRIPTION).withImage("images/default-16x16.png")
+				.basePackages(VroModuleBuilder.class.getPackage().getName()).version("${project.version}");
 
 		installation(InstallationMode.BUILD).action(ActionType.INSTALL_PACKAGE,
 				"packages/${project.artifactId}-package-${project.version}.package");
 
 		finderDatasource(VroPluginAdaptor.class, DATASOURCE).anonymousLogin(LoginMode.INTERNAL);
-		finder(Constants.FINDER_VRO_PLUGIN, DATASOURCE);
+		finder(VroPluginAdaptor.REL_ROOTS, DATASOURCE)
+				.addRelation(Constants.FINDER_VRO_PLUGIN, Constants.FINDER_VRO_PLUGIN)
+				.addRelation(Constants.FINDER_AVI_VRO_CLIENT).hide(false);
 	}
 }

@@ -12,14 +12,14 @@ import ch.dunes.vso.sdk.api.IPluginFactory;
 
 @VsoObject(singleton = true, create = false)
 @VsoFinder(name = Constants.FINDER_VRO_PLUGIN)
-public class VroPulgin {
+public class VroPlugin {
 	public static final String TYPE = "Vro";
 
 	@Autowired
 	private AviVroClient service;
 
-	public static VroPulgin createScriptingSingleton(IPluginFactory factory) {
-		return ((AbstractSpringPluginFactory) factory).createScriptingObject(VroPulgin.class);
+	public static VroPlugin createScriptingSingleton(IPluginFactory factory) {
+		return ((AbstractSpringPluginFactory) factory).createScriptingObject(VroPlugin.class);
 	}
 
 	@VsoMethod

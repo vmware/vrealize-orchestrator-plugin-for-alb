@@ -4,17 +4,29 @@
     <installation mode="${installation.mode}">
         <action resource="packages/${project.artifactId}-package-${project.version}.package" type="install-package"/>
     </installation>
+    <inventory type="roots"/>
     <finder-datasources>
         <finder-datasource name="main-datasource" adaptor-class="com.vmware.avi.vro.VroPluginAdaptor" concurrent-call="false" anonymous-login-mode="internal"/>
     </finder-datasources>
     <finders>
-        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPulgin" script-object="_AviVroPulgin">
+        <finder type="roots" datasource="main-datasource" hidden="false">
+            <inventory-children>
+                <relation-link name="Vro"/>
+                <relation-link name="AviVroClient"/>
+            </inventory-children>
+            <relations>
+                <relation name="Vro" type="Vro"/>
+                <relation name="AviVroClient" type="AviVroClient"/>
+            </relations>
+        </finder>
+        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
         <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
+            <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
@@ -78,7 +90,7 @@
                 </method>
             </methods>
         </object>
-        <object script-name="_AviVroPulgin" java-class="com.vmware.avi.vro.VroPulgin" strict="false" is-deprecated="false">
+        <object script-name="_AviVroPlugin" java-class="com.vmware.avi.vro.VroPlugin" strict="false" is-deprecated="false">
             <description></description>
             <methods>
                 <method script-name="connect" java-name="connect" return-type="AviVroClient" show-in-api="true" is-deprecated="false">
@@ -92,7 +104,7 @@
                     </parameters>
                 </method>
             </methods>
-            <singleton script-name="AviVroPulgin" datasource="main-datasource"/>
+            <singleton script-name="AviVroPlugin" datasource="main-datasource"/>
         </object>
     </scripting-objects>
 </module>

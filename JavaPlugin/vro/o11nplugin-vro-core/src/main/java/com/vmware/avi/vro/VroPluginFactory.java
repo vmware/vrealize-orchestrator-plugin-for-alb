@@ -14,7 +14,7 @@ public final class VroPluginFactory extends AbstractSpringPluginFactory {
 		if (ref.isOfType(Constants.FINDER_AVI_VRO_CLIENT)) {
 			return new AviVroClient();
 		} else if (ref.isOfType(Constants.FINDER_VRO_PLUGIN)) {
-			return new VroPulgin();
+			return new VroPlugin();
 		} else {
 			throw new UnsupportedOperationException("implement me");
 		}
