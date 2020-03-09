@@ -24,6 +24,8 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 
 /***
+ * This class acts as a service in Plugin. It performs the actions from the
+ * workflow and perform rollback if needed.
  * 
  * @author tushar
  *
@@ -59,6 +61,11 @@ public class AviVroClient {
 		this.cred = cred;
 	}
 
+	/**
+	 * This method will instantiate the AviApi if the current instance is null
+	 * 
+	 * @return instance of AviApi
+	 */
 	public AviApi getSession() {
 		if (AVI_API == null) {
 			synchronized (AviApi.class) {
@@ -139,8 +146,6 @@ public class AviVroClient {
 					} else {
 						logger.debug("Updating  " + aviObjectMetadata.getObjectType());
 						aviObjectMetadata.setOperation(OPERATION.UPDATE.toString());
-						// JSONArray objectArray = (JSONArray) resource.get("results");
-						// JSONObject object = (JSONObject) objectArray.get(0);
 						JSONObject copyOfObject = new JSONObject(resource.toString());
 						aviObjectMetadata.setExistingObject(copyOfObject);
 						JSONObject mergedObject = this.mergeJsonObjects(resource, aviObjectMetadata.getNewObject());
@@ -297,7 +302,6 @@ public class AviVroClient {
 							logger.info(
 									currentObjectData.getObjectType() + " : " + "created & response is:- " + response);
 						} else {
-							// JSONArray obj = (JSONArray) resource.get("results");
 							JSONObject mergedObject = this.mergeJsonObjects(resource,
 									currentObjectData.getExistingObject());
 
@@ -378,9 +382,7 @@ public class AviVroClient {
 		AviApi session = getSession();
 		JSONObject response = null;
 		JSONObject copyOfObject = null;
-		// JSONArray objectArray = (JSONArray) resource.get("results");
 		if (null != resource) {
-			// JSONObject object = (JSONObject) objectArray.get(0);
 			copyOfObject = new JSONObject(resource, JSONObject.getNames(resource));
 			if ("executeWorkflow".equals(action)) {
 				aviObjectMetadata.setExistingObject(copyOfObject);

@@ -7,6 +7,11 @@ import com.vmware.o11n.plugin.sdk.spring.InventoryRef;
 
 import ch.dunes.vso.sdk.api.QueryResult;
 
+/**
+ * 
+ * @author tushar
+ *
+ */
 public final class VroPluginFactory extends AbstractSpringPluginFactory {
 
 	@Override

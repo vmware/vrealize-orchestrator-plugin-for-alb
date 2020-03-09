@@ -5,6 +5,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.vmware.o11n.plugin.sdk.spring.AbstractSpringPluginAdaptor;
 
+/**
+ * This class instantiate the Application context.
+ * 
+ * @author tushar
+ *
+ */
 public final class VroPluginAdaptor extends AbstractSpringPluginAdaptor {
 
 	private static final String DEFAULT_CONFIG = "com/vmware/avi/vro/pluginConfig.xml";

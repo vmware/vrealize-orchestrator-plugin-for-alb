@@ -2,6 +2,12 @@ package com.vmware.avi.vro;
 
 import com.vmware.o11n.plugin.sdk.module.ModuleBuilder;
 
+/**
+ * This class contains all the configuration stuff.
+ * 
+ * @author tushar
+ *
+ */
 public final class VroModuleBuilder extends ModuleBuilder {
 
 	private static final String DESCRIPTION = "vro plug-in for vRealize Orchestrator";
