@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module name="Avi" version="${project.version}" build-number="${build.number}" image="images/default-16x16.png" display-name="Avi">
+    <description>vro plug-in for vRealize Orchestrator</description>
+    <installation mode="version">
+        <action resource="packages/${project.artifactId}-package-${project.version}.package" type="install-package"/>
+    </installation>
+    <inventory type="roots"/>
+    <finder-datasources>
+        <finder-datasource name="main-datasource" adaptor-class="com.vmware.avi.vro.VroPluginAdaptor" concurrent-call="false" anonymous-login-mode="internal"/>
+    </finder-datasources>
+    <finders>
+        <finder type="roots" datasource="main-datasource" hidden="false">
+            <inventory-children>
+                <relation-link name="Vro"/>
+                <relation-link name="AviVroClient"/>
+            </inventory-children>
+            <relations>
+                <relation name="Vro" type="Vro"/>
+                <relation name="AviVroClient" type="AviVroClient"/>
+            </relations>
+        </finder>
+        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+    </finders>
+    <scripting-objects>
+        <object script-name="AviVroClient" java-class="com.vmware.avi.vro.AviVroClient" strict="false" is-deprecated="false">
+            <description></description>
+            <constructors>
+                <constructor>
+                    <description></description>
+                </constructor>
+            </constructors>
+            <methods>
+                <method script-name="getObjectDataByName" java-name="getObjectDataByName" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="objectName"/>
+                    </parameters>
+                </method>
+                <method script-name="getObjectDataByUUID" java-name="getObjectDataByUUID" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="uuid"/>
+                    </parameters>
+                </method>
+                <method script-name="executeWorkflow" java-name="executeWorkflow" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
+                <method script-name="rollback" java-name="rollback" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="int" name="count"/>
+                        <parameter type="[com.vmware.avi.vro.AviObjectMetadata" name="metadata"/>
+                        <parameter type="java.lang.Exception" name="exception"/>
+                    </parameters>
+                </method>
+                <method script-name="add" java-name="add" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="objectData"/>
+                    </parameters>
+                </method>
+                <method script-name="get" java-name="get" return-type="org.json.JSONArray" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="java.util.Map" name="params"/>
+                    </parameters>
+                </method>
+                <method script-name="delete" java-name="delete" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="objectData"/>
+                    </parameters>
+                </method>
+            </methods>
+        </object>
+        <object script-name="_AviVroPlugin" java-class="com.vmware.avi.vro.VroPlugin" strict="false" is-deprecated="false">
+            <description></description>
+            <methods>
+                <method script-name="connect" java-name="connect" return-type="AviVroClient" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="controller"/>
+                        <parameter type="String" name="username"/>
+                        <parameter type="String" name="password"/>
+                        <parameter type="String" name="tenant"/>
+                        <parameter type="String" name="version"/>
+                    </parameters>
+                </method>
+            </methods>
+            <singleton script-name="AviVroPlugin" datasource="main-datasource"/>
+        </object>
+    </scripting-objects>
+</module>
