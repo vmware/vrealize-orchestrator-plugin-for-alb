@@ -1,9 +1,0 @@
-com/vmware/avi/vro/VroPluginAdaptor.class
-com/vmware/avi/vro/model/Pool$LBAlgorithmHashType.class
-com/vmware/avi/vro/model/Pool.class
-com/vmware/avi/vro/model/Pool$LBAlgorithmType.class
-com/vmware/avi/vro/VroPluginFactory.class
-com/vmware/avi/vro/Vro.class
-com/vmware/avi/vro/VroModuleBuilder.class
-com/vmware/avi/vro/model/VirtualService.class
-com/vmware/avi/vro/AviSession.class
