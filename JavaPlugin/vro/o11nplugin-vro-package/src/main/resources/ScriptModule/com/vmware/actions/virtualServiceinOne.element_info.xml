@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.actions</entry>
+<entry key="name">virtualServiceinOne</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">66e60e9d-f9b1-41a0-aa0b-6246b74b4a71</entry>
+</properties>
