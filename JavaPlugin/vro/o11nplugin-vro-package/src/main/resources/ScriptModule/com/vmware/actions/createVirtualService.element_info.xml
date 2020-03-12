@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.actions</entry>
+<entry key="name">createVirtualService</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">ef8cbb75-f0c1-463f-9e6d-c5e76240cba2</entry>
+</properties>
