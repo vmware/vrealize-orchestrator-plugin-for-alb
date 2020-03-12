@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">Library.vro</entry>
-<entry key="name">Create Virtual Service</entry>
+<entry key="name">CreateVirtualService</entry>
 <entry key="type">Workflow</entry>
 <entry key="id">c750de68-2d65-459e-b7ed-283ffc11d60f</entry>
 </properties>

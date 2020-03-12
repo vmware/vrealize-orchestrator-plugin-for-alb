@@ -45,14 +45,6 @@
                 <method script-name="executeWorkflow" java-name="executeWorkflow" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
-                <method script-name="rollback" java-name="rollback" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="int" name="count"/>
-                        <parameter type="[com.vmware.avi.vro.AviObjectMetadata" name="metadata"/>
-                        <parameter type="java.lang.Exception" name="exception"/>
-                    </parameters>
-                </method>
                 <method script-name="getObjectDataByName" java-name="getObjectDataByName" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
@@ -65,6 +57,14 @@
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="uuid"/>
+                    </parameters>
+                </method>
+                <method script-name="rollback" java-name="rollback" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="int" name="count"/>
+                        <parameter type="[com.vmware.avi.vro.AviObjectMetadata" name="metadata"/>
+                        <parameter type="java.lang.Exception" name="exception"/>
                     </parameters>
                 </method>
                 <method script-name="add" java-name="add" return-type="void" show-in-api="true" is-deprecated="false">

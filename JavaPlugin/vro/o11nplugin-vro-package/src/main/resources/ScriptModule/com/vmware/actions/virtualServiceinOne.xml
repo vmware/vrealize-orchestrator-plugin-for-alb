@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<dunes-script-module name="virtualServiceinOne" result-type="String" api-version="6.0.0" id="4be91a8d-f540-46ac-acb3-9ecc1ab6a904" version="0.0.0" allowed-operations="vfe">
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="virtualServiceinOne" result-type="String" api-version="6.0.0" id="4be91a8d-f540-46ac-acb3-9ecc1ab6a904" version="0.0.8" allowed-operations="vfe">
   <param n="tenant" t="string"><![CDATA[]]></param>
   <param n="loadBalancerAlgo" t="string"><![CDATA[]]></param>
   <param n="enablePool" t="boolean"><![CDATA[]]></param>
@@ -133,8 +133,7 @@ var vsVipProperties = {
 			aviVroClient.add("virtualservice", vsData)
 			
 			resp = aviVroClient.executeWorkflow();
-			return "Object Created:-> "+ JSON.stringify(resp)
-			//System.log("Object Created:-> "+ JSON.stringify(resp));
+			System.log("Object Created:-> "+ JSON.stringify(resp));
 
 } catch (e) {
 	throw "Error while virtual service object : " + e
