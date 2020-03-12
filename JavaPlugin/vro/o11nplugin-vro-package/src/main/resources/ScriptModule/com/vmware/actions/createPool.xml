@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createPool"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="daeebf98-7141-41ed-8168-833a5f99ceb7" version="0.1.1"
+	allowed-operations="vfe">
+	<param n="PoolServers" t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[Pool servers list ]]></param>
+  <param n="enablePool" t="boolean"><![CDATA[Pool status]]></param>
+  <param n="CreateHealthMonitor" t="boolean"><![CDATA[Check create healthmonitor or not]]></param>
+  <param n="poolName" t="string"><![CDATA[Pool name]]></param>
+  <param n="defaultServerPort" t="string"><![CDATA[Default server port]]></param>
+  <param n="loadBalancerAlgo" t="string"><![CDATA[Pool LB algorithm type]]></param>
+  <param n="serverType" t="string"><![CDATA[Server type]]></param>
+  <param n="lbConsistentHash" t="string"><![CDATA[Consistent hash data for load balancer algorithm type is consistent hash]]></param>
+  <param n="lbCustomHeaderName" t="string"><![CDATA[Custom headers consistent hash type]]></param>
+  <param n="ServerCloud" t="string"><![CDATA[Servercloud name]]></param>
+  <param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
+  <param n="HealthMonitorName" t="string"><![CDATA[New healthmonitor name]]></param>
+  <param n="healthMonitor" t="Array/string"><![CDATA[List of existing healthmonitors name]]></param>
+  <param n="Version" t="string"><![CDATA[Avi api version]]></param>
+  <param n="activePassiveHM" t="boolean"><![CDATA[Active passive healthmonitor]]></param>
+  <param n="capacityEstimation" t="boolean"><![CDATA[Add capacity estimation]]></param>
+  <param n="capacityEstimationThresh" t="number"><![CDATA[Add capacity estimation thresh]]></param>
+  <param n="cloudConfigCksum" t="string"><![CDATA[Add cloud config cksum ]]></param>
+  <param n="deleteServerRefresh" t="boolean"><![CDATA[Delete server on dns refresh]]></param>
+  <param n="gracefulDisableTimeout" t="number"><![CDATA[Add graceful disable timeout]]></param>
+  <param n="hostCheckEnabled" t="boolean"><![CDATA[Add host check enabled]]></param>
+  <param n="lookupServerByName" t="boolean"><![CDATA[Add lookup server by name]]></param>
+  <param n="rewriteHostHeaderServerName" t="boolean"><![CDATA[Add rewrite host header server name]]></param>
+  <param n="maxConcurrentConnectionsPerServer" t="number"><![CDATA[Add max concurrent connections per server]]></param>
+  <param n="domainName" t="string"><![CDATA[Add domain name]]></param>
+  <param n="fewestTasksFeedbackDelay" t="number"><![CDATA[Add fewest tasks feedback delay]]></param>
+  <param n="connectionRampDuration" t="number"><![CDATA[Connection ramp]]></param>
+  <param n="upstreamConnpoolConnIdleTmo" t="number"><![CDATA[Connection Idle Timeout]]></param>
+  <param n="upstreamConnpoolConnLifeTmo" t="number"><![CDATA[Connection Life Timeout]]></param>
+  <param n="upstreamConnpoolConnMaxReuse" t="number"><![CDATA[Connection Max Used Times]]></param>
+  <param n="upstreamConnpoolServerMaxCache" t="number"><![CDATA[Max Cache Connections Per Server]]></param>
+  <param n="requestQueueEnabled" t="boolean"><![CDATA[Add request queue enabled]]></param>
+  <param n="useServicePort" t="boolean"><![CDATA[Disable Port Translation]]></param>
+  <param n="sniEnabled" t="boolean"><![CDATA[Add sni enabled]]></param>
+  <param n="serverTimeout" t="number"><![CDATA[Default Server Timeout]]></param>
+  <param n="enableRealtimeMetrics" t="boolean"><![CDATA[Enable real time metrics]]></param>
+  <param n="statusCode" t="string"><![CDATA[Status code for fail action type of pool]]></param>
+  <param n="failActionURL" t="string"><![CDATA[Redirect url for fail action type of pool]]></param>
+  <param n="statusProtocol" t="string"><![CDATA[Add status protocol for pool fail action]]></param>
+  <param n="failActiontype" t="string"><![CDATA[Pool fail action type]]></param>
+  <param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+  <script encoded="false"><![CDATA[/**************************************************
+* This script initializes pool properties objects *
+* and creats pool object. 						  *
+**************************************************/
+
+try{
+
+	// Initialize pool property object
+	var properties = new Object();
+	
+	// Set the healthmonitor details bassed on user inputs
+	// Check if selected healthmonitor or create new
+	if (CreateHealthMonitor == false){
+		var HM_refs = []
+		for (i=0; i<=healthMonitor.length-1; i++){
+			var HealthMonitor_ref = "/api/healthmonitor?name="+healthMonitor[i]
+			HM_refs.push(HealthMonitor_ref)		
+		}
+		// Set the healthmonitor reference
+		properties.health_monitor_refs = HM_refs
+	}else{
+		properties.health_monitor_refs = [ "/api/healthmonitor?name="+ HealthMonitorName ]
+	}
+	
+	// Form a load balancer alogorithm type based on user input
+	var algorithm = loadBalancerAlgo.toUpperCase();
+	algorithm = "LB_ALGORITHM_"+algorithm.replace(" ", "_");
+	// Set load balancer algorithm in properties
+	properties.lb_algorithm = algorithm;
+	
+	// Set consistent hash data if load balancer algorithm is consistent hash type
+	if (algorithm == "LB_ALGORITHM_CONSISTENT_HASH") {
+		var lbConsistentHashValue = lbConsistentHash.toUpperCase();
+		lbConsistentHashValue = lbConsistentHashValue.split(" ");
+		lbConsistentHashValue = "LB_ALGORITHM_CONSISTENT_HASH_"+lbConsistentHashValue.join("_");
+		properties.lb_algorithm_hash = lbConsistentHashValue;
+		
+		// Set consistent hash header value to pool properties
+		// consistent hash type is custom headers
+		if(lbConsistentHashValue == "LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER") {
+			properties.lb_algorithm_consistent_hash_hdr = lbCustomHeaderName;
+		}
+	}
+	
+	// Set cloud server
+	properties.cloud_ref = "/api/cloud?name="+ServerCloud;
+	
+	// Set tenant
+	properties.tenant_ref = "/api/tenant?name="+Tenant;
+	
+	//Set the passive healthmonitor is active or not
+	properties.inline_health_monitor = activePassiveHM;
+		
+	// Set defaut port in properties
+	properties.default_server_port = defaultServerPort;
+	
+	// Set pool status
+	properties.enabled = enablePool;	
+	
+	// Set capacity_estimation
+	properties.capacity_estimation = capacityEstimation;
+	
+	// Set capacity_estimation_ttfb_thresh
+	properties.capacity_estimation_ttfb_thresh = capacityEstimationThresh;
+	
+	// Set cloud_config_cksum
+	properties.cloud_config_cksum = cloudConfigCksum;
+	
+	// Set delete_server_on_dns_refresh
+	properties.delete_server_on_dns_refresh = deleteServerRefresh;
+	
+	// Set graceful_disable_timeout
+	properties.graceful_disable_timeout = gracefulDisableTimeout;
+	
+	// Set host_check_enabled
+	properties.host_check_enabled = hostCheckEnabled;
+	
+	// Set lookup_server_by_name
+	properties.lookup_server_by_name = lookupServerByName;
+	
+	//Set rewrite_host_header_to_server_name
+	properties.rewrite_host_header_to_server_name = rewriteHostHeaderServerName;
+	
+	//Set max_concurrent_connections_per_server //Max Connections per Server
+	properties.max_concurrent_connections_per_server = maxConcurrentConnectionsPerServer;
+
+	// Set fewest_tasks_feedback_delay
+	properties.fewest_tasks_feedback_delay = fewestTasksFeedbackDelay;
+	
+	// Set connection_ramp_duration
+	properties.connection_ramp_duration = connectionRampDuration; 
+
+	// Set conn_pool_properties, Connection Pool Settings
+	if (upstreamConnpoolConnIdleTmo, upstreamConnpoolConnLifeTmo, upstreamConnpoolConnMaxReuse, upstreamConnpoolServerMaxCache != ""){
+		properties.conn_pool_properties = {
+						    "upstream_connpool_conn_idle_tmo": upstreamConnpoolConnIdleTmo,
+						    "upstream_connpool_conn_life_tmo": upstreamConnpoolConnLifeTmo,
+						    "upstream_connpool_conn_max_reuse": upstreamConnpoolConnMaxReuse,
+						    "upstream_connpool_server_max_cache": upstreamConnpoolServerMaxCache
+						  }
+	}
+
+	// Set request_queue_enabled
+	properties.request_queue_enabled = requestQueueEnabled;
+
+	// Set use_service_port
+	properties.use_service_port = useServicePort;
+
+	// Set sni_enabled
+	properties.sni_enabled = sniEnabled;
+
+	// Set server_timeout
+	properties.server_timeout = serverTimeout;
+
+	// Set analytics_policy 
+	properties.analytics_policy = { "enable_realtime_metrics": enableRealtimeMetrics };
+
+	// Set poolname to properties
+	properties.name = poolName;
+
+	// Set fail action type
+	if (failActiontype != "" || failActiontype == "Close Connection"){
+		properties.fail_action = { "type": "FAIL_ACTION_CLOSE_CONN" }
+	}else if (failActiontype != "" || failActiontype == "HTTP Redirect"){
+		var status_code = "HTTP_REDIRECT_STATUS_CODE_"+ statusCode //Status Code
+		var urlParts = /^(?:\w+\:\/\/)?([^\/]+)(.*)$/.exec(failActionURL); //URL
+		var host = urlParts[1]
+		var path = urlParts[2]
+		properties.fail_action = {
+							    "redirect": {
+									"path": path,
+							        "host": host,
+							        "protocol": statusProtocol, //HTTP/HTTPS
+							        "status_code": status_code,
+							        "query": ""
+							    },
+							    "type": "FAIL_ACTION_HTTP_REDIRECT"
+		}
+	}
+	
+	// Initialize server list for get server details from user inputs.
+	var servers = [];
+	
+	// Get the IP, Ratio, ServerType and Port from list of servers and push into JSON.
+	for (index in PoolServers){
+		var IP = PoolServers[index].IP;
+		var ratio = PoolServers[index].Ratio;
+		var port = PoolServers[index].Port;
+		servers[index] = {"ip":{"addr":IP,"type":serverType}, "port":port, "ratio":ratio};
+	}	
+	// Set servers object in properties
+	properties.servers = servers;
+		
+	// Convert properties object into JSON string
+	var jsonData = JSON.stringify(properties);	
+
+//	return jsonData
+	aviVroClient.add("pool", jsonData)
+	return aviVroClient
+
+} catch (e) {
+	throw "Error while creating pool object : " + e
+}
+]]></script>
+</dunes-script-module>
