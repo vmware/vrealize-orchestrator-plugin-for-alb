@@ -27,7 +27,7 @@ mvn install:install-file -Dfile=o11nplugin-vro-core/lib/aviSDK-1.8.jar -DgroupId
 if [ $IS_FINAL = true ]; then
     mvn versions:set -DnewVersion=$REL
 else
-	mvn versions:set -DnewVersion=$REL-SNAPSHOT
+	mvn versions:set -DnewVersion=$REL-beta-$BUILD_NUMBER
 fi
 mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dbuild.number=$BUILD_NUMBER
 
