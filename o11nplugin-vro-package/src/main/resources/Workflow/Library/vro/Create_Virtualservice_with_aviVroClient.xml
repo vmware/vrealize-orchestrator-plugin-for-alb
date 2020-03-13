@@ -871,7 +871,6 @@ actionResult = System.getModule("com.vmware.actions").createHealthmonitor(Tenant
 				<desc><![CDATA[Enable SSL ]]></desc>
 				<p-qual kind="ognl" name="dataBinding" type="boolean"><![CDATA[#ApplicationProfile == "HTTPS" ? true : false ]]></p-qual>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[false]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="CreateSSL">
 				<desc><![CDATA[Create SSL certificate]]></desc>
@@ -883,7 +882,6 @@ actionResult = System.getModule("com.vmware.actions").createHealthmonitor(Tenant
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#CreateSSL==true || #SSLCert==false]]></p-qual>
 				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "SSLCertificate" , #ApplicationProfile , #resourceElement )]]></p-qual>
-				<p-qual kind="static" name="genericEnumeration" type="Array/string"><![CDATA[#{#string#System-Default-Cert#;#string#System-Default-Cert-EC#}#]]></p-qual>
 			</p-param>
 			<p-param name="servicePort">
 				<desc><![CDATA[Add VS service port]]></desc>
