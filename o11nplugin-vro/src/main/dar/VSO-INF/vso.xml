@@ -19,14 +19,14 @@
                 <relation name="AviVroClient" type="AviVroClient"/>
             </relations>
         </finder>
-        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
+        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
+            <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
-            <id accessor="getObjectID()"/>
+        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
             <description></description>
             <relations/>
             <inventory-tabs/>
