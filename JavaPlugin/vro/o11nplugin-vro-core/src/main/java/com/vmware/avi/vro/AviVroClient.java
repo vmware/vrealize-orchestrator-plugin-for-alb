@@ -228,11 +228,10 @@ public class AviVroClient {
 		}
 
 		logger.info("Existing data of " + objectType + " : " + data);
-		if (data.has("count")) {
-			if (Integer.parseInt(data.get("count").toString()) > 0) {
-				JSONArray objectArray = (JSONArray) data.get("results");
-				result = (JSONObject) objectArray.get(0);
-			}
+		// if (data.has("count")) {
+		if ((data.has("count")) && (Integer.parseInt(data.get("count").toString()) > 0)) {
+			JSONArray objectArray = (JSONArray) data.get("results");
+			result = (JSONObject) objectArray.get(0);
 		}
 		return result;
 	}
