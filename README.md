@@ -1,21 +1,37 @@
-# avi-vrealize-orchestrator-plugin
+## avi-vrealize-orchestrator-plugin
 Avi vRealize Orchestrator Plugin
 
-This project contains AVI vRO workflow packages
-To use packages, follow the steps
+- This project contains AVI vRO Plugin.
+- To install plugin on the VRO, follow the steps
 
-* Clone the repo to your local
+##Clone the repo to your local
 > https://github.com/avinetworks/avi-vrealize-orchestrator-plugin.git
 
-* Import to vRealize Orchestrator
-    * Open Orchestrator client in Administrator mode
-    * Click on packages icon at top left panel
-    * Click on import icon on top of main panel
-    * Local package present in repo in popup window
-    * click open
-    
-  ![alt text](images/2020-03-12 21-58-17.png "Description goes here")
-  
-  ![alt tag](http://domain.com/path/to/img.png "Description goes here")
 
+## Installing plugin to vRealize Orchestrator
+
+    * Open controller in browser(e.g. https://10.79.170.170:8281/vco/)
+   ![alt text](images/login.png)
+    
+    * Click on Orchestrator Control Center.
+   ![alt text](images/control_center.png)
+    
+    * Cick on Manage Plug-ins & Browse Plugin
+   ![alt text](images/manage_plugins.png)
+    
+    * Select the dar file from the location where we clone the repo.
+   [alt text](images/browse.png)
+    
+    * Click on install 
+   ![alt text](images/install.png)
+    * After installation, Open Orchestrator.
+    
+    * Refresh the VRO you can see the workflow under Workflows tab inside Library > vro folder and actions under Actions tab inside com.vmware.actions folder  
+
+```
+
+
+
+
+  
 Check workflows. There will be new imported workflows.
