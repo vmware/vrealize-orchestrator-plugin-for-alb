@@ -1,4 +1,0 @@
-To update orchestrator objects in src folder from the vCO database, use the import-package maven goal.
-
-Example:
-mvn o11n-package:import-package -DserverUrl=user:pass@localhost:8281
