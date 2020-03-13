@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createPoolGroup"
+	result-type="String" api-version="6.0.0"
+	id="9e09d709-67db-41bd-a791-ae34efbaba33" version="0.0.5"
+	allowed-operations="vfe">
+	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
+	<param n="PoolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
+	<param n="serverCloud" t="string"><![CDATA[Server cloud]]></param>
+	<param n="servers" t="string"><![CDATA[Minimum numbers of servers]]></param>
+	<param n="failActionType" t="string"><![CDATA[Poolgroup failaction type]]></param>
+	<param n="enabled" t="boolean"><![CDATA[Poolgroup status]]></param>
+	<param n="CreateHealthMonitor" t="boolean"><![CDATA[Check create healthmonitor or not]]></param>
+	<param n="defaultServerPort" t="string"><![CDATA[Default server port for pool]]></param>
+	<param n="loadBalancerAlgo" t="string"><![CDATA[Pool LB algorithm type]]></param>
+	<param n="serverType" t="string"><![CDATA[Server type for pool servers]]></param>
+	<param n="lbConsistentHash" t="string"><![CDATA[Consistent hash data for load balancer algorithm type is consistent hash]]></param>
+	<param n="lbCustomHeaderName" t="string"><![CDATA[Custom header name for consistent type LB algorithm]]></param>
+	<param n="HealthMonitorName" t="string"><![CDATA[New heealthmonitor name]]></param>
+	<param n="healthMonitor" t="Array/string"><![CDATA[List of existing healthmonitors]]></param>
+	<param n="PoolServers"
+		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[List of pool servers]]></param>
+	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
+	<param n="persistenceProfile" t="string"><![CDATA[Persistent profile name]]></param>
+	<param n="failActionURL" t="string"><![CDATA[Redirect url for fail action type of poolgroup]]></param>
+	<param n="statusCode" t="string"><![CDATA[Status code for  fail action type of poolgroup]]></param>
+	<param n="statusProtocol" t="string"><![CDATA[Protocol for fail action type of poolgroup]]></param>
+	<param n="activePassiveHM" t="boolean"><![CDATA[Active passive healthmonitor for pool]]></param>
+	<param n="implicitPriorityLabels" t="boolean"><![CDATA[Add implicit priority labels]]></param>
+	<param n="cloudConfigCksum" t="string"><![CDATA[Add cloud config cksum ]]></param>
+	<param n="deploymentPolicyRef" t="string"><![CDATA[Add deployment policy reference]]></param>
+	<param n="autoscalePolicyRef" t="string"><![CDATA[Add autoscale policy reference for pool]]></param>
+	<param n="capacityEstimation" t="boolean"><![CDATA[Add capacity_estimation for pool]]></param>
+	<param n="capacityEstimationThresh" t="number"><![CDATA[Add capacity estimation thresh]]></param>
+	<param n="deleteServerRefresh" t="boolean"><![CDATA[Delete server on refresh for Pool]]></param>
+	<param n="gracefulDisableTimeout" t="number"><![CDATA[Add graceful disable timeout]]></param>
+	<param n="hostCheckEnabled" t="boolean"><![CDATA[Add host check enabled]]></param>
+	<param n="ipaddrgroupRef" t="string"><![CDATA[Add ipaddrgroup reference]]></param>
+	<param n="lookupServerByName" t="boolean"><![CDATA[Add lookup server by name]]></param>
+	<param n="rewriteHostHeaderServerName" t="boolean"><![CDATA[Rewrite host header to server name]]></param>
+	<param n="maxConcurrentConnectionsPerServer" t="number"><![CDATA[Add max concurrent connections per server for pool]]></param>
+	<param n="domainName" t="string"><![CDATA[Add domain name]]></param>
+	<param n="fewestTasksFeedbackDelay" t="number"><![CDATA[Add fewest task feedback delay]]></param>
+	<param n="pkiProfileRef" t="string"><![CDATA[Add pki profile reference]]></param>
+	<param n="autoscaleLaunchConfigRef" t="string"><![CDATA[Add auto scale launch reference]]></param>
+	<param n="connectionRampDuration" t="number"><![CDATA[Add connection ramp duration]]></param>
+	<param n="upstreamConnpoolConnIdleTmo" t="number"><![CDATA[Add upstream connection pool tmo]]></param>
+	<param n="upstreamConnpoolConnLifeTmo" t="number"><![CDATA[Add upstreamConnpoolConnLifeTmo]]></param>
+	<param n="upstreamConnpoolConnMaxReuse" t="number"><![CDATA[Add upstreamConnpoolConnMaxReuse]]></param>
+	<param n="upstreamConnpoolServerMaxCache" t="number"><![CDATA[Add upstreamConnpoolServerMaxCache]]></param>
+	<param n="nsxSecuritygroup" t="string"><![CDATA[Add nsx security group]]></param>
+	<param n="requestQueueEnabled" t="boolean"><![CDATA[Add request queue enabled]]></param>
+	<param n="useServicePort" t="boolean"><![CDATA[Use service port]]></param>
+	<param n="sniEnabled" t="boolean"><![CDATA[sni enabled]]></param>
+	<param n="serverTimeout" t="number"><![CDATA[server timeout ]]></param>
+	<param n="enableRealtimeMetrics" t="boolean"><![CDATA[Enabled realtime metrics ]]></param>
+	<param n="failActiontype" t="string"><![CDATA[fail action type]]></param>
+	<param n="networks" t="string"><![CDATA[Add networks reference]]></param>
+	<script encoded="false"><![CDATA[/************************************************************
+* This action initializes poolgroup properties objects *
+* and puts user input into the poolgroup object        *
+*************************************************************/
+
+try{
+	
+	//Create pools based on numbers server which added into server list.
+	var pName = ""
+	var serversList = []
+	
+	if (PoolServers.length >= 0){
+		var name = Name + "_pool"
+//		pools.push(name)
+		pName = name
+		for (count=0; count<=PoolServers.length-1; count++){
+			serversList.push(PoolServers[count])
+		}
+	}
+	
+	// Initialize pool property object
+	var properties = new Object();
+	
+	// Set poolgroup name
+	properties.name = PoolgroupName;
+
+	// Set tenant reference
+	properties.tenant_ref = "/api/tenant?name="+Tenant;
+	
+	// Set cloud reference
+	properties.cloud_ref = "/api/cloud?name="+serverCloud;
+	
+	// Set implicit priority labels 
+	properties.implicit_priority_labels = implicitPriorityLabels;
+	
+	// Set cloud_config_cksum
+	properties.cloud_config_cksum = cloudConfigCksum;
+	
+	// Set deployment_policy_ref
+	if (deploymentPolicyRef != ""){
+		properties.deployment_policy_ref = "/api/poolgroupdeploymentpolicy?name="+ deploymentPolicyRef;
+	}
+	
+	// Set the minimum servers
+	properties.min_servers = servers
+	
+	// Set the pool reference in poolgroup which is created based on servers IP.
+	var pgmembers =  []
+	if (pName != ""){
+		var pool_ref = { "pool_ref": "/api/pool?name="+ pName }//pools[pName] }
+		pgmembers.push(pool_ref)		
+		properties.members = pgmembers
+	}else{
+		properties.members = pgmembers
+	}
+		
+	// Fail action type based on user input
+	//FAIL_ACTION_HTTP_REDIRECT
+	if (failActionType == "Close Connection") {
+		properties.fail_action = { "type": "FAIL_ACTION_CLOSE_CONN" }
+	}else if (failActionType == "HTTP Redirect"){
+		var status_code = "HTTP_REDIRECT_STATUS_CODE_"+ statusCode
+		var urlParts = /^(?:\w+\:\/\/)?([^\/]+)(.*)$/.exec(failActionURL);
+		var host = urlParts[1]
+		var path = urlParts[2]
+		properties.fail_action = {
+								    "redirect": {
+										"path": path,
+								        "host": host,
+								        "query": "",
+								        "protocol": statusProtocol,
+								        "status_code": status_code
+								    },
+								    "type": "FAIL_ACTION_HTTP_REDIRECT"
+								 }
+	}
+	
+			
+	// Convert properties object into JSON string
+	var jsonData = JSON.stringify(properties);
+	
+	return jsonData
+
+} catch (e) {
+	throw "Error when create poolgroup: "+ e
+}
+]]></script>
+</dunes-script-module>

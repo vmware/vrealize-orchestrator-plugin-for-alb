@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">Library.vro</entry>
+<entry key="name">Create_Virtualservice_with_aviVroClient</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">069621f3-0be2-4ceb-98ae-ba1b6c35c354</entry>
+</properties>
