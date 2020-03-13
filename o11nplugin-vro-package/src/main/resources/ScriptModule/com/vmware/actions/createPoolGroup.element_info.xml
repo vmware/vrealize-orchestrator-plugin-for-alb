@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.actions</entry>
+<entry key="name">createPoolGroup</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">9e09d709-67db-41bd-a791-ae34efbaba33</entry>
+</properties>
