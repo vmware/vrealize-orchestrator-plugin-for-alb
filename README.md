@@ -26,10 +26,10 @@ Avi vRealize Orchestrator Plugin
    ![alt text](images/install.png)
     * After installation, Open Orchestrator.
     
-    * Refresh the VRO you can see the workflow under Workflows tab inside Library > vro folder and actions under Actions tab inside com.vmware.actions folder
+    * Refresh the VRO.
    
    ![alt text](images/refresh_vro.png)
 
-   * Afrer refresh, Check workflows. There will be new imported workflows.
+   * Afrer refresh, you can see the workflow under Workflows tab inside Library > vro folder and actions under Actions tab inside com.vmware.actions folder.
 ```  
 
