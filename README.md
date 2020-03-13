@@ -10,8 +10,7 @@ Avi vRealize Orchestrator Plugin
 
 ## Installing plugin to vRealize Orchestrator
 
-    * Open controller in browser(e.g. https://10.79.170.170:8281/vco/)
-   ![alt text](images/login.png)
+    * Enter the Ip of Vro instance in browser
     
     * Click on Orchestrator Control Center.
    ![alt text](images/control_center.png)
@@ -19,11 +18,12 @@ Avi vRealize Orchestrator Plugin
     * Cick on Manage Plug-ins & Browse Plugin
    ![alt text](images/manage_plugins.png)
     
-    * Select the dar file from the location where we clone the repo.
+    * Select the downloaded dar file from the git repo.
    ![alt text](images/browse.png)
     
-    * Click on install 
+    * Click on install.(after installation VRO will restart this may take some time)
    ![alt text](images/install.png)
+   
     * After installation, Open Orchestrator.
     
     * Refresh the VRO.
