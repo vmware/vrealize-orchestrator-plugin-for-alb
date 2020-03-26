@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item6" object-name="workflow:name=generic"
-	id="069621f3-0be2-4ceb-98ae-ba1b6c35c354" version="0.1.1"
+	id="069621f3-0be2-4ceb-98ae-ba1b6c35c354" version="0.1.3"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Create_Virtualservice_with_aviVroClient]]></display-name>
+	<display-name><![CDATA[VS Creation Using Action For Each Object]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
 		<param name="Name" type="string">
@@ -489,10 +489,10 @@ aviVroClient = AviVroPlugin.connect(controller, username, password, Tenant, vers
 	</workflow-item>
 	<workflow-item name="item1" out-name="item2"
 		throw-bind-name="configJSONError" type="task"
-		script-module="com.vmware.actions/createVirtualService">
+		script-module="com.vmware.avi/createVirtualService">
 		<display-name><![CDATA[createVirtualService]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.actions").createVirtualService(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,aviVroClient) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVirtualService(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,aviVroClient) ;]]></script>
 		<in-binding>
 			<bind name="addClientLogFliter" type="boolean"
 				export-name="addClientLogFliter"></bind>
@@ -580,10 +580,10 @@ actionResult = System.getModule("com.vmware.actions").createVirtualService(Name,
 	</workflow-item>
 	<workflow-item name="item15" out-name="item3"
 		throw-bind-name="createPoolError" type="task"
-		script-module="com.vmware.actions/createPool">
+		script-module="com.vmware.avi/createPool">
 		<display-name><![CDATA[createPool]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.actions").createPool(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createPool(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers"
 				type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"
@@ -693,10 +693,10 @@ System.log("Object Created:-> "+ JSON.stringify(resp));
 		<position y="19.045454545454543" x="484.5"></position>
 	</workflow-item>
 	<workflow-item name="item3" out-name="item1" type="task"
-		script-module="com.vmware.actions/createVsVIP">
+		script-module="com.vmware.avi/createVsVIP">
 		<display-name><![CDATA[createVsVIP]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.actions").createVsVIP(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,aviVroClient) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVsVIP(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,aviVroClient) ;]]></script>
 		<in-binding>
 			<bind name="autoAllocateFloatingIp" type="boolean"
 				export-name="autoAllocateFloatingIp"></bind>
@@ -730,10 +730,10 @@ actionResult = System.getModule("com.vmware.actions").createVsVIP(Tenant,name,IP
 		<position y="82.68181818181817" x="344.5"></position>
 	</workflow-item>
 	<workflow-item name="item4" out-name="item15" type="task"
-		script-module="com.vmware.actions/createHealthmonitor">
+		script-module="com.vmware.avi/createHealthMonitor">
 		<display-name><![CDATA[createHealthmonitor]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.actions").createHealthmonitor(Tenant,monitorType,HealthMonitorName,Command,Request,DNSData,ResponseCode,HTTPSResponse,isFederated,monitorPort,receiveTimeout,sendInterval,successfulChecks,Description,tcpHalfOpen,tcpResponse,tcpRequest,maintenanceResponse,failedChecks,aviVroClient) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,monitorType,HealthMonitorName,Command,Request,DNSData,ResponseCode,HTTPSResponse,isFederated,monitorPort,receiveTimeout,sendInterval,successfulChecks,Description,tcpHalfOpen,tcpResponse,tcpRequest,maintenanceResponse,failedChecks,aviVroClient) ;]]></script>
 		<in-binding>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>

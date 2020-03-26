@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dunes-script-module name="createHealthmonitor"
+<dunes-script-module name="createHealthMonitor"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="a4663dab-6f17-4f09-8237-00df4bfabc77" version="0.1.1"
+	id="a4663dab-6f17-4f09-8237-00df4bfabc77" version="0.1.2"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
   <param n="monitorType" t="string"><![CDATA[Healthmonitor type ]]></param>
