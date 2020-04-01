@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="Workflow:name=generic"
-	id="c750de68-2d65-459e-b7ed-283ffc11d60f" version="0.0.8"
+	id="c750de68-2d65-459e-b7ed-283ffc11d60f" version="0.1.0"
 	api-version="3.1.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[CreateVirtualService]]></display-name>
+	<display-name><![CDATA[VS Creation Using Single Action]]></display-name>
 	<position y="50.0" x="100.0"></position>
   <input>
     <param name="Name" type="string">
@@ -135,10 +135,10 @@ aviVroClient = AviVroPlugin.connect(controller, username, password, Tenant, vers
     </out-binding>
     <position y="55.40909090909091" x="184.5"></position>
   </workflow-item>
-  <workflow-item name="item2" out-name="item0" type="task" script-module="com.vmware.actions/virtualServiceinOne">
+  <workflow-item name="item2" out-name="item0" type="task" script-module="com.vmware.avi/virtualServiceinOne">
     <display-name><![CDATA[virtualServiceinOne]]></display-name>
     <script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.actions").virtualServiceinOne(tenant,loadBalancerAlgo,enablePool,poolName,Tenant,PoolServers,serverType,eastWestPlacement,vsVipName,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,IPAddress,aviVroClient,SSLCertificate,servicePort,Name,ApplicationProfile,poolOrPoolgroup,SSLCert,existingVIP) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").virtualServiceinOne(tenant,loadBalancerAlgo,enablePool,poolName,Tenant,PoolServers,serverType,eastWestPlacement,vsVipName,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,IPAddress,aviVroClient,SSLCertificate,servicePort,Name,ApplicationProfile,poolOrPoolgroup,SSLCert,existingVIP) ;]]></script>
     <in-binding>
       <bind name="autoAllocateFloatingIp" type="boolean" export-name="autoAllocateFloatingIp"></bind>
       <bind name="autoAllocateIp" type="boolean" export-name="autoAllocateIp"></bind>
