@@ -24,8 +24,8 @@ public final class VroModuleBuilder extends ModuleBuilder {
 				"packages/${project.artifactId}-package-${project.version}.package");
 
 		finderDatasource(VroPluginAdaptor.class, DATASOURCE).anonymousLogin(LoginMode.INTERNAL);
-		finder(VroPluginAdaptor.REL_ROOTS, DATASOURCE)
-				.addRelation(Constants.FINDER_VRO_PLUGIN, Constants.FINDER_VRO_PLUGIN)
-				.addRelation(Constants.FINDER_AVI_VRO_CLIENT).hide(false);
+		finder(VroPluginAdaptor.REL_ROOTS, DATASOURCE);
+				//.addRelation(Constants.FINDER_VRO_PLUGIN, Constants.FINDER_VRO_PLUGIN)
+				//.addRelation(Constants.FINDER_AVI_VRO_CLIENT).hide(false);
 	}
 }
