@@ -10,14 +10,14 @@
     </finder-datasources>
     <finders>
         <finder type="roots" datasource="main-datasource"/>
-        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
-            <id accessor="getObjectID()"/>
+        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
+        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
+            <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
@@ -44,18 +44,18 @@
                         <parameter type="java.lang.Exception" name="exception"/>
                     </parameters>
                 </method>
-                <method script-name="getObjectDataByUUID" java-name="getObjectDataByUUID" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="objectType"/>
-                        <parameter type="String" name="uuid"/>
-                    </parameters>
-                </method>
                 <method script-name="getObjectDataByName" java-name="getObjectDataByName" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="objectName"/>
+                    </parameters>
+                </method>
+                <method script-name="getObjectDataByUUID" java-name="getObjectDataByUUID" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="uuid"/>
                     </parameters>
                 </method>
                 <method script-name="add" java-name="add" return-type="void" show-in-api="true" is-deprecated="false">

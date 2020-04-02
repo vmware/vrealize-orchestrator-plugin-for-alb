@@ -48,8 +48,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vmware.avi.sdk</groupId>
-			<artifactId>aviSDK</artifactId>
-			<version>1.8</version>
+			<artifactId>avisdk</artifactId>
+			<version>18.2.8-beta-1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
