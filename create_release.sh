@@ -21,9 +21,6 @@ if [ -z $BUILD_NUMBER ]; then
     echo "Build number is $BUILD_NUMBER for release version $REL"
 fi
 
-mvn install:install-file -Dfile=o11nplugin-vro-core/lib/aviSDK-1.8.jar -DgroupId=com.vmware.avi.sdk -DartifactId=aviSDK -Dversion=1.8 -Dpackaging=jar -DgeneratePom=true
-
-
 if [ $IS_FINAL = true ]; then
     mvn versions:set -DnewVersion=$REL
 else
