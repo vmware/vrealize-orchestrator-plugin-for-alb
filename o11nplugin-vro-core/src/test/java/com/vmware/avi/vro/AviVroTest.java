@@ -1,4 +1,4 @@
-package com.vmware.avi.test;
+package com.vmware.avi.vro;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
