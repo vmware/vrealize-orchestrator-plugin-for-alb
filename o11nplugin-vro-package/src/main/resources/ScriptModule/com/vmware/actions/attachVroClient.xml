@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="attachVroClient"
+	result-type="void" api-version="6.0.0"
+	id="3ce70638-7356-430e-bbc0-27c6ca39c4d5" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[]]>
+	</param>
+	<param n="username" t="string"><![CDATA[]]>
+	</param>
+	<param n="password" t="SecureString"><![CDATA[]]>
+	</param>
+	<param n="tenant" t="string"><![CDATA[]]>
+	</param>
+	<param n="version" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[AviVroPlugin.addVroClient(controller, username, password, tenant, version);]]></script>
+</dunes-script-module>

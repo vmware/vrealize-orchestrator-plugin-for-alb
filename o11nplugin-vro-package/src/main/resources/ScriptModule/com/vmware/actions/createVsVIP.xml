@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVsVIP"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="c929c1fa-a1ef-4c1a-bf59-628215fb972e" version="0.1.2"
+	id="c929c1fa-a1ef-4c1a-bf59-628215fb972e" version="0.1.5"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
-  <param n="name" t="string"><![CDATA[Vs vip name]]></param>
-  <param n="IPAddress" t="string"><![CDATA[Vs vip IP address]]></param>
-  <param n="eastWestPlacement" t="boolean"><![CDATA[Add east west  placement]]></param>
-  <param n="aviAllocatedFIp" t="boolean"><![CDATA[Allocate FIP]]></param>
-  <param n="autoAllocateIp" t="boolean"><![CDATA[Auto allocate IP]]></param>
-  <param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
-  <param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
-  <param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
-  <param n="serverType" t="string"><![CDATA[Server type]]></param>
-  <param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
-  <script encoded="false"><![CDATA[/************************************************************
+	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
+	<param n="IPAddress" t="string"><![CDATA[Vs vip IP address]]></param>
+	<param n="eastWestPlacement" t="boolean"><![CDATA[Add east west  placement]]></param>
+	<param n="aviAllocatedFIp" t="boolean"><![CDATA[Allocate FIP]]></param>
+	<param n="autoAllocateIp" t="boolean"><![CDATA[Auto allocate IP]]></param>
+	<param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
+	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
+	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
+	<param n="serverType" t="string"><![CDATA[Server type]]></param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<script encoded="false"><![CDATA[/************************************************************
 * This action initializes VS_VIP properties objects         *
 * and puts user input into the VS_VIP object        		*
 *************************************************************/

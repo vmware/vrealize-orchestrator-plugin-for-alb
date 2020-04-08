@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="updatePool"
+	result-type="void" api-version="6.0.0"
+	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef6d" version="0.0.2" allowed-operations="vfe">
+	<param n="controller" t="string"></param>
+	<param n="poolname" t="string"></param>
+	<param n="serverType" t="string"></param>
+	<param n="serverArray"
+		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"></param>
+	<script encoded="false"><![CDATA[try{
+
+	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+	var aviVroClientObj= null;
+	for each(avivroClient in vroClientArray){
+		if(avivroClient !=null){
+			vroController=avivroClient.cred.controller;
+			if(vroController==controller){
+				aviVroClientObj= avivroClient;
+			}
+		}	
+	}
+	var param=new Object();
+	param.name=poolname;	
+	var response = aviVroClientObj.get("pool",param);
+	response = JSON.parse(response);
+	var jsonData=response[0];
+	jsonData.servers=[];
+	var updatedServers=[];
+	
+	for (index in serverArray){
+		var IP = serverArray[index].IP;
+		var ratio = serverArray[index].Ratio;
+		var port = serverArray[index].Port;
+		updatedServers[index] = {"ip":{"addr":IP,"type":serverType}, "port":port, "ratio":ratio};
+	}
+	jsonData.servers=updatedServers;	
+	jsonData=JSON.stringify(jsonData);
+	aviVroClientObj.add("pool",jsonData);
+	aviVroClientObj.executeWorkflow();
+	System.log("Pool "+poolname+" updated successfully")	
+			
+} catch (e) {
+	throw "Error while creating pool object : " + e
+}]]></script>
+</dunes-script-module>

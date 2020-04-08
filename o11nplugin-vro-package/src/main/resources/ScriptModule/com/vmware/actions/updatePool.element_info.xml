@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">updatePool</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">0164e6e8-7b7a-403f-8f8c-d9cdf8dbef6d</entry>
+</properties>

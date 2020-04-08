@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="getObjectReference"
+	result-type="string" api-version="6.0.0"
+	id="33f01eb1-694f-4fa2-a2bd-7d492b2f20d1" version="0.0.2"
+	allowed-operations="vef">
+	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
+	<param n="objectName" t="string"><![CDATA[Object name]]></param>
+	<param n="objectType" t="string"><![CDATA[Add object type ]]></param>
+	<param n="field" t="string"><![CDATA[Add input parameter to display]]></param>
+	<script encoded="false"><![CDATA[try{
+	if(controller == null){
+	  return null;
+	}
+	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+	var aviPlugin = null;
+	for each(aviVroClient in vroClientArray){
+		if(aviVroClient != null){
+			vroController = aviVroClient.cred.controller;
+			if(vroController == controller){
+				aviPlugin = aviVroClient;
+		  	}
+		}
+	}
+	if (aviPlugin != null){
+		var objectList = new Array();
+		var params = {};
+		params["name"] = objectName;
+		
+		var response = aviPlugin.get(objectType,params);
+		var objectData = JSON.parse(response);
+		
+		if(field == "objectName"){
+			for each(index in objectData){
+				objectList.push(index.name);
+			}
+			return objectList;
+		}
+		if(field == "pool"){
+			var reference = objectData[0].pool_ref;
+			var path = reference.split("/")
+			var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+			var objectData = JSON.parse(response);
+			var referenceName = objectData.name;		
+			return referenceName;
+		}
+		if(field == "poolgroup"){
+			var reference = objectData[0].pool_group_ref;
+			var path = reference.split("/")
+			var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+			var objectData = JSON.parse(response);
+			var referenceName = objectData.name;		
+			return referenceName;
+		}
+//		if(field == "healthmonitor"){
+//			var hmNameList = new Array();
+//			var reference = objectData[0].health_monitor_refs;
+//			for (index=0; index<=reference.length-1; index++){
+//				var hmName = reference[index];
+//				var path = hmName.split("/")
+//				var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+//				var objectData = JSON.parse(response);
+//				var referenceName = objectData.name;
+//				hmNameList.push(referenceName);
+//			}
+//			return hmNameList;
+//		}
+//		if (field == "" || field == null) {
+//			for each(index in objectData){
+//				objectList.push(index.name);
+//			}
+//			return objectList;
+//		}
+	}
+	
+}catch(e){
+	throw "Error when fetch AVI object --> "+ e
+}
+]]></script>
+</dunes-script-module>

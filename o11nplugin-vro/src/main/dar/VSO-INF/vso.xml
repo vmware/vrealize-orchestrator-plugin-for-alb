@@ -84,6 +84,22 @@
         <object script-name="_AviVroPlugin" java-class="com.vmware.avi.vro.VroPlugin" strict="false" is-deprecated="false">
             <description></description>
             <methods>
+                <method script-name="addVroClient" java-name="addVroClient" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="controller"/>
+                        <parameter type="String" name="username"/>
+                        <parameter type="String" name="password"/>
+                        <parameter type="String" name="tenant"/>
+                        <parameter type="String" name="version"/>
+                    </parameters>
+                </method>
+                <method script-name="removeVroClient" java-name="removeVroClient" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="controller"/>
+                    </parameters>
+                </method>
                 <method script-name="connect" java-name="connect" return-type="AviVroClient" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
