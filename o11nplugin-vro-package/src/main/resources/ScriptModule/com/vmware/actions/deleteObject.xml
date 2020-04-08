@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="deleteObject"
+	result-type="void" api-version="6.0.0"
+	id="92fad669-73f4-4259-a1b6-bdff82fd67a8" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[]]>
+	</param>
+	<param n="deleteVS" t="boolean"><![CDATA[]]>
+	</param>
+	<param n="vsname" t="Array/string"><![CDATA[]]>
+	</param>
+	<param n="deletePool" t="boolean"><![CDATA[]]>
+	</param>
+	<param n="poolname" t="string"><![CDATA[]]>
+	</param>
+	<param n="deletePoolGroup" t="boolean"><![CDATA[]]>
+	</param>
+	<param n="poolgroupname" t="string"><![CDATA[]]>
+	</param>
+	<param n="deleteHm" t="boolean"><![CDATA[]]>
+	</param>
+	<param n="hmnameArray" t="Array/string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[try{
+
+	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+	var aviVroClientObj= null;
+	for each(avivroClient in vroClientArray){
+		if(avivroClient !=null){
+			vroController=avivroClient.cred.controller;
+			if(vroController==controller){
+				aviVroClientObj= avivroClient;
+			}
+		}	
+	}
+	var msgArray=[];
+	if(aviVroClientObj!=null)
+	{			
+		if(deleteVS){
+		var vsObject=getUUIDOfObject(aviVroClientObj,"virtualservice",vsname);
+		aviVroClientObj.delete("virtualservice",JSON.stringify(vsObject));
+		}
+		
+		if(deletePoolGroup){
+		//aviVroClientObj.delete("poolgroup",poolgroupname)
+		}
+		if(deletePool){
+		var poolObj=getUUIDOfObject(aviVroClientObj,"pool",poolname);
+		aviVroClientObj.delete("pool",JSON.stringify(poolObj));
+		}
+		if(deleteHm){
+		
+		for (index in hmnameArray){
+				var hmName=hmnameArray[index];
+				var hmlObj=getUUIDOfObject(aviVroClientObj,"healthmonitor",hmName);
+				aviVroClientObj.delete("healthmonitor",JSON.stringify(hmlObj))
+			}
+		
+		}
+		aviVroClientObj.executeWorkflow();
+		for (index in msgArray){
+		System.log(msgArray[index]);
+		}
+	}
+}catch(e){
+System.log("Error occured while deleting object : "+e)
+}
+function getUUIDOfObject(aviVroClientObj,objectType,name){
+	var param=new Object();
+	param.name=name;
+	var resultArray=aviVroClientObj.get(objectType,param);
+	resultArray=JSON.parse(resultArray);
+	var jsonObj=resultArray[0];
+	var msg =objectType+" "+name+" Deleted successfully.";
+	msgArray.push(msg);
+	return jsonObj;
+}]]></script>
+</dunes-script-module>

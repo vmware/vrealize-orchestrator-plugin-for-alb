@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="fetchObjectsNames"
+	result-type="Array/string" api-version="6.0.0"
+	id="aab1273f-20f0-4cef-ad2b-da6832d71018" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
+	<param n="objectType" t="string"><![CDATA[Add object type ]]></param>
+	<param n="cloudName" t="string"><![CDATA[Add controller cloud name]]></param>
+	<script encoded="false"><![CDATA[/************************************************************
+* This action fetch AVI object names                   *
+* and puts all names  into the list                    *
+*************************************************************/
+
+try{
+	if(controller == null){
+	  return null;
+	}
+	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+	var aviPlugin = null;
+	for each(aviVroClient in vroClientArray){
+		if(aviVroClient != null){
+			vroController = aviVroClient.cred.controller;
+			if(vroController == controller){
+			    System.log("Found client with the given IP");
+				aviPlugin = aviVroClient;
+		  	}
+		}
+	}
+	if (aviPlugin != null){
+		if(cloudName == "" || cloudName == null){
+			var objectList = new Array();
+			var response = aviPlugin.get(objectType,null);
+			var objectData = JSON.parse(response);
+		
+			for each(index in objectData){
+				objectList.push(index.name);
+			}
+			return objectList;
+		}else {
+			var cloudRef = new Object();
+			var response = aviPlugin.getObjectDataByName("cloud",cloudName);
+			var objectData = JSON.parse(response);
+			cloudUuid = objectData.uuid;
+			cloudRef.cloud_uuid = cloudUuid;
+			var objectList = new Array();
+			var response = aviPlugin.get(objectType,cloudRef);
+			var objectData = JSON.parse(response);
+		
+			for each(index in objectData){
+				objectList.push(index.name);
+			}
+			return objectList;
+		}
+	}
+}catch(e){
+	throw "Error when fetch AVI object --> "+ e
+}
+]]></script>
+</dunes-script-module>

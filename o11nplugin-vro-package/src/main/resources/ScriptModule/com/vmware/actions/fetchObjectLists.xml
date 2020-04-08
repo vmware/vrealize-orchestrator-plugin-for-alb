@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="fetchObjectLists"
+	result-type="Any" api-version="6.0.0"
+	id="c8fdba15-adb3-4335-9a34-ec8e3825606c" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
+	<param n="objectName" t="string"><![CDATA[Add object name]]></param>
+	<param n="objectType" t="string"><![CDATA[Add object type ]]></param>
+	<param n="field" t="string"><![CDATA[Add input parameter]]></param>
+	<script encoded="false"><![CDATA[try{
+	// Check the restHost is selected ot not.
+	if(controller == null){
+	  return null;
+	}
+	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+	var aviPlugin = null;
+	for each(aviVroClient in vroClientArray){
+		if(aviVroClient != null){
+			vroController = aviVroClient.cred.controller;
+			if(vroController == controller){
+			    System.log("Found client with the given IP");
+				aviPlugin = aviVroClient;
+	    	}
+  		}
+	}
+	if (aviPlugin != null){
+		var objectList = new Array();
+		var params = {};
+		if (objectName != "" || objectName != null){
+			params.name = objectName;
+		}else {
+			params = null;
+		}
+		var response = aviPlugin.get(objectType,params);
+		var objectData = JSON.parse(response);
+		// Initilize the empty list and return PGName based on users input.
+//		var list = []
+//		if (searchPGNames != "" || searchPGNames != null){
+//			for each(index in objectList){
+//				var result = index.indexOf(searchPGNames);
+//				if(result > -1){
+//					list.push(index);
+//				}
+//			}
+//			return list;
+//		}else {
+		if (field == "existingMembers"){
+			var pools = objectData[0].members;
+			var poolServers = new Array();
+			for each(index in pools){
+				var poolUrl = index.pool_ref;
+				var path = poolUrl.split("/");
+				var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+				var objectData = JSON.parse(response);
+				var poolName = objectData.name;
+	
+				var poolDetails = new Properties();
+				poolDetails.put("Pool",poolName);
+				poolDetails.put("Ratio",index.ratio);
+				poolDetails.put("Priority",index.priority_label);
+				poolServers.push(poolDetails);
+			}
+			return poolServers;
+		}else if (field == "addNewMembers"){
+			var pools = objectData[0].members;
+			var poolServers = new Array();
+			for each(index in pools){
+				var poolUrl = index.pool_ref;
+				var path = poolUrl.split("/");
+				var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+				var objectData = JSON.parse(response);
+				var poolName = objectData.name;
+	
+				var poolDetails = new Properties();
+				poolDetails.put("DeploymentState", index.deployment_state);
+				poolDetails.put("PoolName",poolName);
+				poolDetails.put("Priority",index.priority_label);
+				poolDetails.put("Ratio",index.ratio);
+				poolServers.push(poolDetails);
+			}
+			return poolServers;
+		}else if(field == "poolPGNames"){
+			var response = aviPlugin.get("pool",null);
+			var objectData = JSON.parse(response);
+			var poolNames = [];
+			for each(poolIndex in objectData){
+				poolNames.push(poolIndex.name);
+			}
+			var poolServers = new Array();
+			var poolDetails = new Properties();
+			poolDetails.put("PoolName",poolNames);
+			poolServers.push(poolDetails);
+			
+			return poolServers;
+		}else if(field == "servers"){
+			var servers = objectData[0].servers;
+			var defaultPort = objectData[0].default_server_port;
+			for each(index in servers){
+				var serverDetails = new Properties();
+				var Port = index.port == null ? defaultPort : index.port
+				serverDetails.put("IP",index.ip.addr);
+				serverDetails.put("Ratio",index.ratio);
+				serverDetails.put("Port",Port);
+				objectList.push(serverDetails);
+			}
+			
+			return objectList;
+		}
+	}
+		
+}catch(e){
+	throw "Error when fetch AVI object --> "+ e
+}
+]]></script>
+</dunes-script-module>
