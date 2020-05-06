@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createHealthMonitorObj" result-type="Avi:AviVroClient" api-version="6.0.0" id="5e0422b3-2b15-47e4-942d-3cb7fc20665f" version="0.0.0" allowed-operations="vfe">
+  <param n="healthMonitorObj" t="Avi:HealthMonitor"><![CDATA[Health monitor object]]></param>
+  <param n="healthMonitorUDPObj" t="Avi:HealthMonitorUdp"><![CDATA[Health monitor UDP object]]></param>
+  <param n="healthMonitorType" t="string"><![CDATA[Health monitor type]]></param>
+  <param n="healthMonitorDNSObj" t="Avi:HealthMonitorDNS"><![CDATA[Health monitor DNS object]]></param>
+  <param n="healthMonitorExternalObj" t="Avi:HealthMonitorExternal"><![CDATA[Health monitor external object]]></param>
+  <param n="healthMonitorHTTPObj" t="Avi:HealthMonitorHttp"><![CDATA[Health monitor HTTP object]]></param>
+  <param n="healthMonitorTCPObj" t="Avi:HealthMonitorTcp"><![CDATA[Health monitor TCP object]]></param>
+  <param n="sslMonitorObj" t="Avi:HealthMonitorSSLAttributes"><![CDATA[ssl monitor object]]></param>
+  <param n="hm_type" t="string"><![CDATA[Health monitor type]]></param>
+  <param n="hm_name" t="string"><![CDATA[Health monitor name]]></param>
+  <param n="hm_description" t="string"><![CDATA[Health monitor description]]></param>
+  <param n="is_federated" t="boolean"><![CDATA[is federated]]></param>
+  <param n="monitor_port" t="number"><![CDATA[Monitor port]]></param>
+  <param n="time_out" t="number"><![CDATA[Time out]]></param>
+  <param n="send_interval" t="number"><![CDATA[Send interval]]></param>
+  <param n="successful_check" t="number"><![CDATA[Successful Check]]></param>
+  <param n="failed_check" t="number"><![CDATA[Failed check]]></param>
+  <param n="command_code" t="string"><![CDATA[Command code]]></param>
+  <param n="udp_request" t="string"><![CDATA[UDP request]]></param>
+  <param n="dns_query_name" t="string"><![CDATA[DNS query name]]></param>
+  <param n="http_response_code" t="Array/string"><![CDATA[HTTP Response code]]></param>
+  <param n="tcp_request" t="string"><![CDATA[TCP request]]></param>
+  <param n="tcp_response" t="string"><![CDATA[TCP Response]]></param>
+  <param n="tcp_half_open" t="boolean"><![CDATA[TCP half open]]></param>
+  <param n="maintenance_code" t="string"><![CDATA[Maintenance code]]></param>
+  <param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Avi vro client]]></param>
+  <param n="https_response_code" t="Array/string"><![CDATA[https response code]]></param>
+  <script encoded="false"><![CDATA[try{
+	if(aviVroClient!=null){
+		healthMonitorObj = Server.findForType('Avi:HealthMonitor', System.getObjectId(healthMonitorObj));
+		var Tenant=aviVroClient.cred.tenant;
+		healthMonitorObj.setTenantRef("/api/tenant?name="+Tenant);
+		healthMonitorObj.setName(hm_name);
+		healthMonitorObj.setDescription(hm_description)
+		healthMonitorObj.setIsFederated(is_federated);
+		healthMonitorObj.setMonitorPort(monitor_port);
+		healthMonitorObj.setReceiveTimeout(time_out);
+		healthMonitorObj.setSendInterval(send_interval);
+		healthMonitorObj.setSuccessfulChecks(successful_check);
+		healthMonitorObj.setFailedChecks(failed_check);
+		
+		//never used anywhere
+		healthMonitorObj.setDisableQuickstart();
+
+		// Check the Response Code 
+		var Response ="";
+		if (healthMonitorType == "HTTP"){
+			Response = http_response_code
+		}else if(healthMonitorType == "HTTPS"){
+			Response = https_response_code
+		}
+			
+
+		var type = healthMonitorType.toUpperCase();
+		type = "HEALTH_MONITOR_"+type.replace(" ", "_");
+		if (type == "HEALTH_MONITOR_EXTERNAL") {
+				healthMonitorExternalObj = Server.findForType('Avi:HealthMonitorExternal', System.getObjectId(healthMonitorExternalObj));
+				healthMonitorExternalObj.setCommandCode(command_code);
+				healthMonitorObj.setExternalMonitor(healthMonitorExternalObj);
+				//properties.external_monitor = { "command_code": Command};
+			}else if (type == "HEALTH_MONITOR_UDP") {
+				healthMonitorUDPObj = Server.findForType('Avi:HealthMonitorUdp', System.getObjectId(healthMonitorUDPObj));
+				healthMonitorUDPObj.setUdpRequest(udp_request);
+				healthMonitorObj.setUdpMonitor(healthMonitorUDPObj);
+				//properties.udp_monitor = { "udp_request": Request};
+			}else if (type == "HEALTH_MONITOR_DNS") {
+				healthMonitorDNSObj = Server.findForType('Avi:HealthMonitorDNS', System.getObjectId(healthMonitorDNSObj));
+				healthMonitorDNSObj.setQueryName(dns_query_name);
+				healthMonitorObj.setDnsMonitor(healthMonitorDNSObj);
+				//properties.dns_monitor = { "query_name": DNSData };
+			}else if (type == "HEALTH_MONITOR_HTTP") {
+				healthMonitorHTTPObj = Server.findForType('Avi:HealthMonitorHttp', System.getObjectId(healthMonitorHTTPObj));
+				for (i=0; i<Response.length; i++) {
+					var code = "HTTP_" + Response[i]
+					healthMonitorHTTPObj.addHttpResponseCodeItem(code);	
+				}
+				healthMonitorObj.setHttpMonitor(healthMonitorHTTPObj);
+				//properties.http_monitor = { "http_response_code": Response };
+			}else if (type == "HEALTH_MONITOR_HTTPS") {
+				sslMonitorObj = Server.findForType('Avi:HealthMonitorSSLAttributes', System.getObjectId(sslMonitorObj));
+				sslMonitorObj.setSslProfileRef("/api/sslprofile?name=System-Standard");
+				sslMonitorObj.setSslKeyAndCertificateRef("/api/sslkeyandcertificate?name=System-Default-Cert");
+				healthMonitorHTTPObj = Server.findForType('Avi:HealthMonitorHttp', System.getObjectId(healthMonitorHTTPObj));
+				for (i=0; i<Response.length; i++) {
+					var code = "HTTP_" + Response[i]
+					healthMonitorHTTPObj.addHttpResponseCodeItem(code);	
+				}
+				healthMonitorHTTPObj.setSslAttributes(sslMonitorObj);
+				healthMonitorObj.setHttpsMonitor(healthMonitorHTTPObj);
+				//properties.https_monitor = { 
+				//	"ssl_attributes": {
+				//		"ssl_profile_ref": "/api/sslprofile?name=System-Standard",
+				//		"ssl_key_and_certificate_ref": "/api/sslkeyandcertificate?name=System-Default-Cert"
+				//	},
+				//	"http_response_code": Response 
+				//};
+				//https monitor not found
+				//healthMonitorObj.set
+			}else if (type == "HEALTH_MONITOR_TCP") {
+				healthMonitorTCPObj = Server.findForType('Avi:HealthMonitorTcp', System.getObjectId(healthMonitorTCPObj));
+				if (tcp_half_open != false){
+					healthMonitorTCPObj.setTcpRequest(tcp_request);
+					healthMonitorTCPObj.setTcpResponse(tcp_response);
+					healthMonitorTCPObj.setTcpHalfOpen(tcp_half_open);
+				}else{
+					healthMonitorTCPObj.setTcpRequest(tcp_request);
+					healthMonitorTCPObj.setTcpResponse(tcp_response);
+					healthMonitorTCPObj.setTcpHalfOpen(tcp_half_open);
+					healthMonitorTCPObj.setMaintenanceResponse(maintenance_code);
+				}
+				healthMonitorObj.setTcpMonitor(healthMonitorTCPObj);
+			}
+		}
+		healthMonitorObj.setType(type);
+		System.log("healthMonitorObj : "+healthMonitorObj);
+		aviVroClient.addObject(healthMonitorObj);
+	return aviVroClient;
+	} catch (e) {
+	throw "Error when create HealthMonitor -> "+ e
+}
+	]]></script>
+</dunes-script-module>

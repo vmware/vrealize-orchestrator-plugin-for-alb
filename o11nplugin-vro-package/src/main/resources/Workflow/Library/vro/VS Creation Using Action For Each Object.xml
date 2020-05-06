@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item6" object-name="workflow:name=generic"
-	id="069621f3-0be2-4ceb-98ae-ba1b6c35c354" version="0.1.6"
+	id="069621f3-0be2-4ceb-98ae-ba1b6c35c354" version="0.1.7"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[VS Creation Using Action For Each Object]]></display-name>
+	<display-name><![CDATA[VS creation using action for each object]]></display-name>
   <position y="9.545454545454543" x="5.0"></position>
   <input>
     <param name="Name" type="string">
@@ -569,7 +569,7 @@ actionResult = System.getModule("com.vmware.avi").createPool(PoolServers,enableP
     <display-name><![CDATA[createObject]]></display-name>
     <script encoded="false"><![CDATA[controllerIP = aviVroClient.getCred();
 resp = aviVroClient.executeWorkflow();
-System.log("Object Created:-> "+ JSON.stringify(resp));
+System.log("Object Created Successfully.");
 ]]></script>
     <in-binding>
       <bind name="controller" type="string" export-name="controller"></bind>
@@ -728,11 +728,11 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,mon
         <desc><![CDATA[Add VS IP]]></desc>
         <p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
         <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#vsVIP == false]]></p-qual>
-        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
       </p-param>
       <p-param name="serviceEngine">
         <desc><![CDATA[Select servicengine group]]></desc>
-        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "serviceEngine" , #ApplicationProfile , #resourceElement )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "serviceEngine" , #ApplicationProfile , #resourceElement )]]></p-qual>
         <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
       </p-param>
       <p-param name="SSLCert">
@@ -744,13 +744,13 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,mon
       <p-param name="CreateSSL">
         <desc><![CDATA[Create SSL certificate]]></desc>
         <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
-        <p-qual kind="ognl" name="dataBinding" type="boolean"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "CreateSSL" , #ApplicationProfile , #resourceElement )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="boolean"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "CreateSSL" , #ApplicationProfile , #resourceElement )]]></p-qual>
       </p-param>
       <p-param name="SSLCertificate">
         <desc><![CDATA[Select certificate]]></desc>
         <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
         <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#CreateSSL==true || #SSLCert==false]]></p-qual>
-        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "SSLCertificate" , #ApplicationProfile , #resourceElement )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "SSLCertificate" , #ApplicationProfile , #resourceElement )]]></p-qual>
         <p-qual kind="static" name="genericEnumeration" type="Array/string"><![CDATA[#{#string#System-Default-Cert#;#string#System-Default-Cert-EC#}#]]></p-qual>
       </p-param>
       <p-param name="servicePort">
@@ -773,7 +773,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,mon
       <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#poolOrPoolgroups == true]]></p-qual>
       <p-param name="failActionType">
         <desc><![CDATA[Fail action type]]></desc>
-        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "failActionType" , #ApplicationProfile , #resourceElement )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "failActionType" , #ApplicationProfile , #resourceElement )]]></p-qual>
         <p-qual kind="static" name="genericEnumeration" type="Array/string"><![CDATA[#{#string#Close Connection#;#string#HTTP Redirect#}#]]></p-qual>
       </p-param>
       <p-param name="statusCode">
@@ -797,7 +797,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,mon
         <desc><![CDATA[Select pool LB algorithm]]></desc>
         <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#poolOrPoolgrous != true]]></p-qual>
         <p-qual kind="static" name="genericEnumeration" type="Array/string"><![CDATA[#{#string#Least Connections#;#string#Round Robin#;#string#Least Load#;#string#Fewest Servers#;#string#Consistent Hash#;#string#Fastest Response#;#string#Core Affinity#}#]]></p-qual>
-        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
       </p-param>
       <p-param name="lbConsistentHash">
         <desc><![CDATA[Load balancer consistent hash]]></desc>
@@ -866,7 +866,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,mon
       <p-param name="IPGroup">
         <desc><![CDATA[Select IP group]]></desc>
         <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#AddServers=="IP Group"]]></p-qual>
-        <p-qual kind="ognl" name="genericEnumeration" type="Array/string"><![CDATA[GetAction("com.avi","fetchObjectList").call( #controller , "ipaddrgroup" , #Tenant , "" , #version )]]></p-qual>
+        <p-qual kind="ognl" name="genericEnumeration" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "ipaddrgroup" , #Tenant , "" , #version )]]></p-qual>
         <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddServers!="IP Group"]]></p-qual>
       </p-param>
       <p-param name="PGNames">
@@ -878,12 +878,12 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitor(Tenant,mon
       <p-param name="Network">
         <desc><![CDATA[Select server networks]]></desc>
         <p-qual kind="ognl" name="visible" type="boolean"><![CDATA[ #AddExistingServerIPs == true ]]></p-qual>
-        <p-qual kind="ognl" name="genericEnumeration" type="Array/string"><![CDATA[GetAction("com.avi","fetchObjectList").call( #controller , "vimgrnwruntime" , #Tenant , #PGNames , #version )]]></p-qual>
+        <p-qual kind="ognl" name="genericEnumeration" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "vimgrnwruntime" , #Tenant , #PGNames , #version )]]></p-qual>
         <p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddExistingServerIPs != true || #AddServers != "Select by network"]]></p-qual>
       </p-param>
       <p-param name="PoolServers">
         <desc><![CDATA[Select servers to add]]></desc>
-        <p-qual kind="ognl" name="dataBinding" type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
+        <p-qual kind="ognl" name="dataBinding" type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.vmware.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
       </p-param>
       <p-param name="serverType">
         <desc><![CDATA[Server type]]></desc>

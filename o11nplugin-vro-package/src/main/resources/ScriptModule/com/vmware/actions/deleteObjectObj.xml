@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="deleteObjectObj"
+	result-type="void" api-version="6.0.0"
+	id="5f94610e-e90f-49a6-afb5-4f7901ceea28" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="deleteVS" t="boolean"><![CDATA[Delete VS indicator]]></param>
+	<param n="vsname" t="string"><![CDATA[VS name which needs to delete]]></param>
+	<param n="deletePool" t="boolean"><![CDATA[Delete pool indicator]]></param>
+	<param n="poolname" t="string"><![CDATA[Pool name which needs to delete]]></param>
+	<param n="deletePoolGroup" t="boolean"><![CDATA[Delete pool group indicator]]></param>
+	<param n="poolgroupname" t="string"><![CDATA[Pool group name which needs to delete]]></param>
+	<param n="deleteHm" t="boolean"><![CDATA[Delete health monitor indicator]]></param>
+	<param n="hmnameArray" t="Array/string"><![CDATA[Health Monitor names which needs to delete]]></param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Avi controller]]></param>
+	<script encoded="false"><![CDATA[/*************************************************************
+* This script deletes Virtual service dependent objects.     *
+*                                                            *
+**************************************************************/
+
+try{
+
+	var msgArray=[];
+	if(aviVroClient!=null)
+	{			
+		if(deleteVS){
+			aviVroClient.deleteObjectByName("virtualservice",vsname);
+			var msg = vsname+" Deleted successfully.";
+			msgArray.push(msg);
+		}
+		if(deletePool){
+			aviVroClient.deleteObjectByName("pool",poolname);
+			var msg = poolname+" Deleted successfully.";
+			msgArray.push(msg);
+		}
+		if(deleteHm){
+			for (index in hmnameArray){
+				var hmName=hmnameArray[index];
+				aviVroClient.deleteObjectByName("healthmonitor",hmName);
+				var msg = hmName+" Deleted successfully.";
+				msgArray.push(msg);
+			}
+		}
+		aviVroClient.executeWorkflow();
+		for (index in msgArray){
+			System.log(msgArray[index]);
+		}
+	}
+}catch(e){
+	System.log("Error occured while deleting object : "+e)
+}]]></script>
+</dunes-script-module>

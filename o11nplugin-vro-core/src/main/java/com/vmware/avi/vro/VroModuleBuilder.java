@@ -4,8 +4,8 @@ import com.vmware.o11n.plugin.sdk.module.ModuleBuilder;
 
 /**
  * This class contains all the configuration stuff.
+ * Auto-generated class stub
  * 
- * @author tushar
  *
  */
 public final class VroModuleBuilder extends ModuleBuilder {
@@ -16,7 +16,7 @@ public final class VroModuleBuilder extends ModuleBuilder {
 
 	@Override
 	public void configure() {
-		module(Constants.PLUGIN_NAME).displayName(Constants.PLUGIN_NAME).inventory(VroPluginAdaptor.REL_ROOTS)
+		module(Constants.FINDER_VRO_PLUGIN_NAME).displayName(Constants.FINDER_VRO_PLUGIN_NAME).inventory(VroPluginAdaptor.REL_ROOTS)
 				.withDescription(DESCRIPTION).withImage("images/default-16x16.png")
 				.basePackages(VroModuleBuilder.class.getPackage().getName()).version("${project.version}");
 

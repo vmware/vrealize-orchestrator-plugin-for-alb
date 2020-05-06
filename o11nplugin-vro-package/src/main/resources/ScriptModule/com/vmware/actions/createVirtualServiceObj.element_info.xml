@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">createVirtualServiceObj</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">d84d0b9a-93f0-4339-8db7-db20f3c43123</entry>
+</properties>

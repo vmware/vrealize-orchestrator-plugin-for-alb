@@ -191,7 +191,7 @@ try {
 	"pool_group_ref": poolgroup_ref,
 	"pool_ref": pool_ref,
 	"application_profile_ref": "/api/applicationprofile?name="+AppProfile,
-	"se_group_ref": serviceEngine_ref,
+	//"se_group_ref": serviceEngine_ref,
 	"analytics_profile_ref": analyticsProfile_ref,
 	"name": Name, 
 	"ssl_profile_ref": ssl_profile_ref,
