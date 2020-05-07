@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Exported from [server]</comment>
+	<entry key="categoryPath">Library.Avi</entry>
+	<entry key="name">Delete Vs with dependent objects using model</entry>
+	<entry key="type">Workflow</entry>
+	<entry key="id">bd36bdb3-8266-436e-bac7-c01174effa6e</entry>
+</properties>

@@ -14,6 +14,23 @@ public class AviObjectMetadata {
 	private JSONObject newObject;
 	private JSONObject existingObject;
 	private String operation;
+	private String tenant;
+
+	public AviObjectMetadata(String objectType, JSONObject newObject, String operation, String tenant) {
+		super();
+		this.objectType = objectType;
+		this.newObject = newObject;
+		this.operation = operation;
+		this.tenant = tenant;
+	}
+
+	public String getTenant() {
+		return tenant;
+	}
+
+	public void setTenant(String tenant) {
+		this.tenant = tenant;
+	}
 
 	/***
 	 * Constructor to instantiate class with mandatory parameters
@@ -63,7 +80,7 @@ public class AviObjectMetadata {
 	@Override
 	public String toString() {
 		return "AviObjectMetadata [objectType=" + objectType + ", newObject=" + newObject + ", existingObject="
-				+ existingObject + ", operation=" + operation + "]";
+				+ existingObject + ", operation=" + operation + ", tenant=" + tenant + "]";
 	}
 
 }

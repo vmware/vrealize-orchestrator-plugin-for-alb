@@ -231,7 +231,7 @@ actionResult = System.getModule("com.vmware.avi").virtualServiceinOne(loadBalanc
 			<p-param name="IPAddress">
 				<desc><![CDATA[Add VS IP]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#vsVIP == false]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="SSLCert">
@@ -244,7 +244,7 @@ actionResult = System.getModule("com.vmware.avi").virtualServiceinOne(loadBalanc
 				<desc><![CDATA[Select certificate]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#CreateSSL==true || #SSLCert==false]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","getSSLCertificate").call(controller, username, password, tenant, version)]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getSSLCertificate").call(controller, username, password, tenant, version)]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#System-Default-Cert#;#string#System-Default-Cert-EC#}#]]></p-qual>
 			</p-param>
@@ -271,7 +271,7 @@ actionResult = System.getModule("com.vmware.avi").virtualServiceinOne(loadBalanc
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#poolOrPoolgrous != true]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#Least Connections#;#string#Round Robin#;#string#Least Load#;#string#Fewest Servers#;#string#Consistent Hash#;#string#Fastest Response#;#string#Core Affinity#}#]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi`","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi`","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
@@ -279,7 +279,7 @@ actionResult = System.getModule("com.vmware.avi").virtualServiceinOne(loadBalanc
 			<p-param name="PoolServers">
 				<desc><![CDATA[Select servers to add]]></desc>
 				<p-qual kind="ognl" name="dataBinding"
-					type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
+					type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.vmware.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
 			</p-param>
 			<p-param name="serverType">
 				<desc><![CDATA[server Type]]></desc>

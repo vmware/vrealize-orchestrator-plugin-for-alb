@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Exported from [server]</comment>
+	<entry key="categoryPath">Library.Avi</entry>
+	<entry key="name">Create pool using model</entry>
+	<entry key="type">Workflow</entry>
+	<entry key="id">26e35159-76d5-4ae9-85e8-650384374e25</entry>
+</properties>

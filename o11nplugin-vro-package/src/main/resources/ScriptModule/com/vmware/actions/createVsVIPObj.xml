@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createVsVIPObj"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="cbc96b90-dab9-4801-85a7-de03725e9f87" version="0.1.6"
+	allowed-operations="vfe">
+	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
+	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
+	<param n="IPAddress" t="string"><![CDATA[Vs vip IP address]]></param>
+	<param n="eastWestPlacement" t="boolean"><![CDATA[Add east west  placement]]></param>
+	<param n="aviAllocatedFIp" t="boolean"><![CDATA[Allocate FIP]]></param>
+	<param n="autoAllocateIp" t="boolean"><![CDATA[Auto allocate IP]]></param>
+	<param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
+	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
+	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
+	<param n="serverType" t="string"><![CDATA[Server type]]></param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="vsVipObject" t="Avi:VsVip"><![CDATA[]]>
+	</param>
+	<param n="vipObject" t="Avi:Vip"><![CDATA[]]>
+	</param>
+	<param n="ipAddressObject" t="Avi:IpAddr"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[/************************************************************
+* This action initializes VS_VIP properties objects         *
+* and puts user input into the VS_VIP object        		*
+*************************************************************/
+
+try{
+	if(aviVroClient!=null){
+			vsVipObject = Server.findForType('Avi:VsVip', System.getObjectId(vsVipObject));
+			// Set Configuration for create VsVip
+			vsVipObject.setTenantRef("/api/tenant?name="+Tenant);
+			vsVipObject.setEastWestPlacement(eastWestPlacement);
+			vsVipObject.setName(name);
+			vipObject = Server.findForType('Avi:Vip', System.getObjectId(vipObject));
+			var vsVipList = new Array();
+			vipObject.setVipId(1);
+			vipObject.setAviAllocatedFip(aviAllocatedFIp);
+			vipObject.setAutoAllocateIp(autoAllocateIp);
+			vipObject.setEnabled(enabled);
+			vipObject.setAutoAllocateFloatingIp(autoAllocateFloatingIp);
+			vipObject.setAviAllocatedVip(aviAllocatedVip);
+			vipObject.setAutoAllocateIpType("V4_ONLY");
+			vsVipList.push(vipObject);
+			ipAddressObject = Server.findForType('Avi:IpAddr', System.getObjectId(ipAddressObject));
+			ipAddressObject.setType(serverType);
+			ipAddressObject.setAddr(IPAddress);
+			vipObject.setIpAddress(ipAddressObject);
+			vsVipObject.setVip(vsVipList);
+
+			aviVroClient.addObject(vsVipObject);
+			System.log("vsVipObject : "+vsVipObject);
+			return aviVroClient
+		}
+		else{
+			System.log("Avi controller is null..please attach Avi controller. ")
+		}
+} catch (e) {
+	throw "Error when create vsVip -> "+ e
+}
+]]></script>
+</dunes-script-module>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item2" object-name="workflow:name=generic"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.3"
+	api-version="6.0.0" allowed-operations="vef" restartMode="1"
+	resumeFromFailedMode="0">
+	<display-name><![CDATA[Edit Servers in Pool using model]]></display-name>
+	<position y="9.545454545454543" x="5.0"></position>
+	<input>
+		<param name="Name" type="string">
+			<description><![CDATA[Add pool name]]></description>
+		</param>
+		<param name="controller" type="string">
+			<description><![CDATA[AVI Controller(AVI controller on which resources to be deployed).]]></description>
+		</param>
+		<param name="PoolServers"
+			type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer">
+			<description><![CDATA[Server details]]></description>
+		</param>
+		<param name="cloud" type="string">
+			<description><![CDATA[Select Cloud]]></description>
+		</param>
+		<param name="tenant" type="string">
+			<description><![CDATA[Select Tenant]]></description>
+		</param>
+	</input>
+	<attrib name="actionEerrorCode" type="string" read-only="false">
+		<value encoded="n"><![CDATA[
+		]]></value>
+	</attrib>
+	<attrib name="serverType" type="string" read-only="false">
+		<value encoded="n"><![CDATA[V4]]></value>
+		<description><![CDATA[Server Type]]></description>
+	</attrib>
+	<attrib name="actionResult1" type="Avi:AviVroClient"
+		read-only="false">
+		<value encoded="n"><![CDATA[__NULL__]]></value>
+	</attrib>
+	<workflow-item name="item0"
+		throw-bind-name="actionEerrorCode" type="end" end-mode="0">
+		<position y="9.545454545454543" x="484.5"></position>
+	</workflow-item>
+	<workflow-item name="item1" out-name="item0" type="task"
+		script-module="com.vmware.avi/updatePoolObj">
+		<display-name><![CDATA[updatePoolObj]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,tenant,aviVroClient) ;]]></script>
+		<in-binding>
+			<bind name="poolname" type="string" export-name="Name"></bind>
+			<bind name="serverType" type="string" export-name="serverType"></bind>
+			<bind name="serverArray"
+				type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"
+				export-name="PoolServers"></bind>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="actionResult1"></bind>
+			<bind name="cloud" type="string" export-name="cloud"></bind>
+			<bind name="tenant" type="string" export-name="tenant"></bind>
+		</in-binding>
+		<out-binding></out-binding>
+		<position y="19.045454545454543" x="285.0"></position>
+	</workflow-item>
+	<workflow-item name="item2" out-name="item1" type="task"
+		script-module="com.vmware.avi/getAviVroClient">
+		<display-name><![CDATA[getAviVroClient]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="actionResult1"></bind>
+		</out-binding>
+		<position y="19.045454545454543" x="144.5"></position>
+	</workflow-item>
+	<presentation>
+		<desc><![CDATA[<b>Update Pool</b> ]]></desc>
+		<p-param name="controller">
+			<desc><![CDATA[Select AVI controller]]></desc>
+			<p-qual kind="ognl" name="genericEnumeration"
+				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
+			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+		</p-param>
+		<p-param name="cloud">
+			<desc><![CDATA[Select Cloud]]></desc>
+			<p-qual kind="ognl" name="genericEnumeration"
+				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "cloud" )]]></p-qual>
+		</p-param>
+		<p-param name="tenant">
+			<desc><![CDATA[Select Tenant]]></desc>
+			<p-qual kind="ognl" name="genericEnumeration"
+				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "tenant" )]]></p-qual>
+		</p-param>
+		<p-param name="Name">
+			<desc><![CDATA[Pool name]]></desc>
+			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			<p-qual kind="ognl" name="genericEnumeration"
+				type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectsNames").call( #controller , "pool" , #cloud , #tenant )]]></p-qual>
+		</p-param>
+		<p-param name="PoolServers">
+			<desc><![CDATA[Select servers to add]]></desc>
+			<p-qual kind="ognl" name="dataBinding"
+				type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "servers" )]]></p-qual>
+		</p-param>
+	</presentation>
+</workflow>
