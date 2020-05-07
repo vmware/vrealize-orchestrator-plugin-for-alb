@@ -569,10 +569,10 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		<position y="19.045454545454543" x="104.5"></position>
 	</workflow-item>
 	<workflow-item name="item4" out-name="item7" type="task"
-		script-module="com.avi/createHealthMonitorObj">
+		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.avi").createHealthMonitorObj(healthMonitorObj,healthMonitorUDPObj,healthMonitorType,healthMonitorDNSObj,healthMonitorExternalObj,healthMonitorHTTPObj,healthMonitorTCPObj,sslMonitorObj,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorObj,healthMonitorUDPObj,healthMonitorType,healthMonitorDNSObj,healthMonitorExternalObj,healthMonitorHTTPObj,healthMonitorTCPObj,sslMonitorObj,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorObj" type="Avi:HealthMonitor"
 				export-name="healthMonitorObj">
@@ -685,10 +685,10 @@ actionResult = System.getModule("com.avi").createHealthMonitorObj(healthMonitorO
 		<position y="73.59090909090908" x="244.5"></position>
 	</workflow-item>
 	<workflow-item name="item7" out-name="item3" type="task"
-		script-module="com.avi/createPoolObj">
+		script-module="com.vmware.avi/createPoolObj">
 		<display-name><![CDATA[createPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,poolObject,failActionObject,failActionHttpRedirectObject,serverObject,poolAnalyticsPolicy,ipAddressObject) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,poolObject,failActionObject,failActionHttpRedirectObject,serverObject,poolAnalyticsPolicy,ipAddressObject) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers"
 				type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"
@@ -866,10 +866,10 @@ actionResult = System.getModule("com.avi").createPoolObj(PoolServers,enablePool,
 		<position y="19.045454545454543" x="245.0"></position>
 	</workflow-item>
 	<workflow-item name="item3" out-name="item1" type="task"
-		script-module="com.avi/createVsVIPObj">
+		script-module="com.vmware.avi/createVsVIPObj">
 		<display-name><![CDATA[createVsVIPObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,aviVroClient,vsVipObject,vipObject,ipAddressObject) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,aviVroClient,vsVipObject,vipObject,ipAddressObject) ;]]></script>
 		<in-binding>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
@@ -923,10 +923,10 @@ actionResult = System.getModule("com.avi").createVsVIPObj(Tenant,name,IPAddress,
 		<position y="19.045454545454543" x="384.5"></position>
 	</workflow-item>
 	<workflow-item name="item1" out-name="item2" type="task"
-		script-module="com.avi/createVirtualServiceObj">
+		script-module="com.vmware.avi/createVirtualServiceObj">
 		<display-name><![CDATA[createVirtualServiceObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,aviVroClient,virtualServiceObject,serviceObject) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,aviVroClient,virtualServiceObject,serviceObject) ;]]></script>
 		<in-binding>
 			<bind name="Name" type="string" export-name="Name">
 				<description><![CDATA[Virtual service name]]></description>
@@ -1153,11 +1153,11 @@ actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgrou
 				<desc><![CDATA[Add VS IP]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#vsVIP == false]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
 			<p-param name="serviceEngine">
 				<desc><![CDATA[Select servicengine group]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "serviceEngine" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "serviceEngine" , #ApplicationProfile , #resourceElement )]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="SSLCert">
@@ -1169,13 +1169,13 @@ actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgrou
 			<p-param name="CreateSSL">
 				<desc><![CDATA[Create SSL certificate]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="boolean"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "CreateSSL" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="boolean"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "CreateSSL" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
 			<p-param name="SSLCertificate">
 				<desc><![CDATA[Select certificate]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#CreateSSL==true || #SSLCert==false]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "SSLCertificate" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "SSLCertificate" , #ApplicationProfile , #resourceElement )]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#System-Default-Cert#;#string#System-Default-Cert-EC#}#]]></p-qual>
 			</p-param>
@@ -1199,7 +1199,7 @@ actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgrou
 			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#poolOrPoolgroups == true]]></p-qual>
 			<p-param name="failActionType">
 				<desc><![CDATA[Fail action type]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "failActionType" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "failActionType" , #ApplicationProfile , #resourceElement )]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#Close Connection#;#string#HTTP Redirect#}#]]></p-qual>
 			</p-param>
@@ -1227,7 +1227,7 @@ actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgrou
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#poolOrPoolgrous != true]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#Least Connections#;#string#Round Robin#;#string#Least Load#;#string#Fewest Servers#;#string#Consistent Hash#;#string#Fastest Response#;#string#Core Affinity#}#]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.avi","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
 			<p-param name="lbConsistentHash">
 				<desc><![CDATA[Load balancer consistent hash]]></desc>
@@ -1292,7 +1292,7 @@ actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgrou
 				<desc><![CDATA[Select IP group]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#AddServers=="IP Group"]]></p-qual>
 				<p-qual kind="ognl" name="genericEnumeration"
-					type="Array/string"><![CDATA[GetAction("com.avi","fetchObjectList").call( #controller , "ipaddrgroup" , #Tenant , "" , #version )]]></p-qual>
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "ipaddrgroup" , #Tenant , "" , #version )]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddServers!="IP Group"]]></p-qual>
 			</p-param>
 			<p-param name="PGNames">
@@ -1305,13 +1305,13 @@ actionResult = System.getModule("com.avi").createVirtualServiceObj(Name,poolgrou
 				<desc><![CDATA[Select server networks]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[ #AddExistingServerIPs == true ]]></p-qual>
 				<p-qual kind="ognl" name="genericEnumeration"
-					type="Array/string"><![CDATA[GetAction("com.avi","fetchObjectList").call( #controller , "vimgrnwruntime" , #Tenant , #PGNames , #version )]]></p-qual>
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "vimgrnwruntime" , #Tenant , #PGNames , #version )]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddExistingServerIPs != true || #AddServers != "Select by network"]]></p-qual>
 			</p-param>
 			<p-param name="PoolServers">
 				<desc><![CDATA[Select servers to add]]></desc>
 				<p-qual kind="ognl" name="dataBinding"
-					type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
+					type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.vmware.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
 			</p-param>
 			<p-param name="serverType">
 				<desc><![CDATA[Server type]]></desc>

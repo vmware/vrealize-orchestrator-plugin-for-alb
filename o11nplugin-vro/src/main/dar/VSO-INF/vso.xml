@@ -10,84 +10,7 @@
     </finder-datasources>
     <finders>
         <finder type="roots" datasource="main-datasource"/>
-        <finder type="AnalyticsPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AnalyticsPolicy" script-object="AviAnalyticsPolicy">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ServerScaleInParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServerScaleInParams" script-object="AviServerScaleInParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitorExternal" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorExternal" script-object="AviHealthMonitorExternal">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DnsAAAARdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsAAAARdata" script-object="AviDnsAAAARdata">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="SAMLSPConfig" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SAMLSPConfig" script-object="AviSAMLSPConfig">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="MetricsRealTimeUpdate" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.MetricsRealTimeUpdate" script-object="AviMetricsRealTimeUpdate">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="Service" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Service" script-object="AviService">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="SSOPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SSOPolicy" script-object="AviSSOPolicy">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DnsCnameRdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsCnameRdata" script-object="AviDnsCnameRdata">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ReplaceStringVar" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ReplaceStringVar" script-object="AviReplaceStringVar">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="URIParamToken" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.URIParamToken" script-object="AviURIParamToken">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitor" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitor" script-object="AviHealthMonitor">
+        <finder type="DiscoveredNetwork" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DiscoveredNetwork" script-object="AviDiscoveredNetwork">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -101,175 +24,21 @@
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="HttpCacheObjFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HttpCacheObjFilter" script-object="AviHttpCacheObjFilter">
+        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="PersistenceFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PersistenceFilter" script-object="AviPersistenceFilter">
+        <finder type="HealthMonitor" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitor" script-object="AviHealthMonitor">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="IpAddr" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddr" script-object="AviIpAddr">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="SSLProfileSelector" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SSLProfileSelector" script-object="AviSSLProfileSelector">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VsResyncParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsResyncParams" script-object="AviVsResyncParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HTTPLocalFile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPLocalFile" script-object="AviHTTPLocalFile">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="Vip" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Vip" script-object="AviVip">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="Pool" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Pool" script-object="AviPool">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HostHdrMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HostHdrMatch" script-object="AviHostHdrMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DnsPolicies" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsPolicies" script-object="AviDnsPolicies">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HTTPPolicies" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPPolicies" script-object="AviHTTPPolicies">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="FullClientLogs" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FullClientLogs" script-object="AviFullClientLogs">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VsScaleoutParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsScaleoutParams" script-object="AviVsScaleoutParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthorizationMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthorizationMatch" script-object="AviAuthorizationMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ClientInsightsSampling" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ClientInsightsSampling" script-object="AviClientInsightsSampling">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="NetworkFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.NetworkFilter" script-object="AviNetworkFilter">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthAttributeMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthAttributeMatch" script-object="AviAuthAttributeMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="GeoLocation" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.GeoLocation" script-object="AviGeoLocation">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ContentRewriteProfile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ContentRewriteProfile" script-object="AviContentRewriteProfile">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HttpCookiePersistenceKey" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HttpCookiePersistenceKey" script-object="AviHttpCookiePersistenceKey">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="IpAddrMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddrMatch" script-object="AviIpAddrMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="MatchReplacePair" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.MatchReplacePair" script-object="AviMatchReplacePair">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="RetryPlacementParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.RetryPlacementParams" script-object="AviRetryPlacementParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HTTPServerReselect" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPServerReselect" script-object="AviHTTPServerReselect">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="PlacementNetwork" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PlacementNetwork" script-object="AviPlacementNetwork">
+        <finder type="SSOPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SSOPolicy" script-object="AviSSOPolicy">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -283,320 +52,6 @@
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="PoolApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PoolApiResponse" script-object="AviPoolApiResponse">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="FailActionHTTPLocalResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailActionHTTPLocalResponse" script-object="AviFailActionHTTPLocalResponse">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ServerScaleOutParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServerScaleOutParams" script-object="AviServerScaleOutParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="PathMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PathMatch" script-object="AviPathMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HTTPRedirectAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPRedirectAction" script-object="AviHTTPRedirectAction">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="StringMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.StringMatch" script-object="AviStringMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ServerId" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServerId" script-object="AviServerId">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AbPool" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AbPool" script-object="AviAbPool">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="APICNetworkRel" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.APICNetworkRel" script-object="AviAPICNetworkRel">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DnsRecord" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsRecord" script-object="AviDnsRecord">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitorApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorApiResponse" script-object="AviHealthMonitorApiResponse">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DnsARdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsARdata" script-object="AviDnsARdata">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitorRadius" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorRadius" script-object="AviHealthMonitorRadius">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="IpAddrRange" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddrRange" script-object="AviIpAddrRange">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="SidebandProfile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SidebandProfile" script-object="AviSidebandProfile">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="SSOPolicyApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SSOPolicyApiResponse" script-object="AviSSOPolicyApiResponse">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ServicePoolSelector" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServicePoolSelector" script-object="AviServicePoolSelector">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VirtualService" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VirtualService" script-object="AviVirtualService">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="RateLimiterAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.RateLimiterAction" script-object="AviRateLimiterAction">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VsVip" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsVip" script-object="AviVsVip">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthenticationRule" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationRule" script-object="AviAuthenticationRule">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ApicVSPlacementReq" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ApicVSPlacementReq" script-object="AviApicVSPlacementReq">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitorDNS" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorDNS" script-object="AviHealthMonitorDNS">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthorizationAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthorizationAction" script-object="AviAuthorizationAction">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DiscoveredNetwork" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DiscoveredNetwork" script-object="AviDiscoveredNetwork">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ConnectionClearFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ConnectionClearFilter" script-object="AviConnectionClearFilter">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="DnsInfo" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsInfo" script-object="AviDnsInfo">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="URIParam" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.URIParam" script-object="AviURIParam">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="IpAddrPrefix" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddrPrefix" script-object="AviIpAddrPrefix">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="MethodMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.MethodMatch" script-object="AviMethodMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthenticationPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationPolicy" script-object="AviAuthenticationPolicy">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VipPlacementNetwork" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VipPlacementNetwork" script-object="AviVipPlacementNetwork">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VsScaleinParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsScaleinParams" script-object="AviVsScaleinParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="FailAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailAction" script-object="AviFailAction">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HTTPReselectRespCode" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPReselectRespCode" script-object="AviHTTPReselectRespCode">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitorSIP" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorSIP" script-object="AviHealthMonitorSIP">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthenticationAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationAction" script-object="AviAuthenticationAction">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="Lif" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Lif" script-object="AviLif">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="PoolAnalyticsPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PoolAnalyticsPolicy" script-object="AviPoolAnalyticsPolicy">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ConnPoolProperties" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ConnPoolProperties" script-object="AviConnPoolProperties">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="L4Policies" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.L4Policies" script-object="AviL4Policies">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VsVipApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsVipApiResponse" script-object="AviVsVipApiResponse">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ConnpoolFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ConnpoolFilter" script-object="AviConnpoolFilter">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HealthMonitorHttp" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorHttp" script-object="AviHealthMonitorHttp">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
         <finder type="HealthMonitorSSLAttributes" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorSSLAttributes" script-object="AviHealthMonitorSSLAttributes">
             <id accessor="getObjectID()"/>
             <description></description>
@@ -604,63 +59,7 @@
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="AviVroClient" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.AviVroClient" script-object="AviVroClient">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="ClientLogFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ClientLogFilter" script-object="AviClientLogFilter">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="IPNetworkSubnet" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IPNetworkSubnet" script-object="AviIPNetworkSubnet">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="VsMigrateParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsMigrateParams" script-object="AviVsMigrateParams">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="FailActionHTTPRedirect" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailActionHTTPRedirect" script-object="AviFailActionHTTPRedirect">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthenticationMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationMatch" script-object="AviAuthenticationMatch">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="HTTPStatusRange" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPStatusRange" script-object="AviHTTPStatusRange">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="AuthorizationPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthorizationPolicy" script-object="AviAuthorizationPolicy">
-            <id accessor="getObjectID()"/>
-            <description></description>
-            <relations/>
-            <inventory-tabs/>
-            <events/>
-        </finder>
-        <finder type="RateProfile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.RateProfile" script-object="AviRateProfile">
+        <finder type="HTTPPolicies" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPPolicies" script-object="AviHTTPPolicies">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -674,21 +73,28 @@
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="VSDataScripts" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VSDataScripts" script-object="AviVSDataScripts">
+        <finder type="HealthMonitorHttp" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorHttp" script-object="AviHealthMonitorHttp">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="DnsSrvRdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsSrvRdata" script-object="AviDnsSrvRdata">
+        <finder type="Service" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Service" script-object="AviService">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="VirtualServiceApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VirtualServiceApiResponse" script-object="AviVirtualServiceApiResponse">
+        <finder type="IpAddrPrefix" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddrPrefix" script-object="AviIpAddrPrefix">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VsResyncParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsResyncParams" script-object="AviVsResyncParams">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -702,14 +108,21 @@
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="DnsNsRdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsNsRdata" script-object="AviDnsNsRdata">
+        <finder type="VsVipApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsVipApiResponse" script-object="AviVsVipApiResponse">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
             <inventory-tabs/>
             <events/>
         </finder>
-        <finder type="Cif" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Cif" script-object="AviCif">
+        <finder type="DnsPolicies" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsPolicies" script-object="AviDnsPolicies">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ClientLogFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ClientLogFilter" script-object="AviClientLogFilter">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -723,7 +136,203 @@
             <inventory-tabs/>
             <events/>
         </finder>
+        <finder type="DnsRecord" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsRecord" script-object="AviDnsRecord">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="DnsNsRdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsNsRdata" script-object="AviDnsNsRdata">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="IpAddrRange" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddrRange" script-object="AviIpAddrRange">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthorizationPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthorizationPolicy" script-object="AviAuthorizationPolicy">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HealthMonitorExternal" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorExternal" script-object="AviHealthMonitorExternal">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="FailActionHTTPRedirect" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailActionHTTPRedirect" script-object="AviFailActionHTTPRedirect">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthorizationMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthorizationMatch" script-object="AviAuthorizationMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="DnsSrvRdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsSrvRdata" script-object="AviDnsSrvRdata">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HealthMonitorRadius" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorRadius" script-object="AviHealthMonitorRadius">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="PathMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PathMatch" script-object="AviPathMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthenticationAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationAction" script-object="AviAuthenticationAction">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="URIParamToken" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.URIParamToken" script-object="AviURIParamToken">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="MetricsRealTimeUpdate" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.MetricsRealTimeUpdate" script-object="AviMetricsRealTimeUpdate">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HTTPRedirectAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPRedirectAction" script-object="AviHTTPRedirectAction">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="FailActionHTTPLocalResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailActionHTTPLocalResponse" script-object="AviFailActionHTTPLocalResponse">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="URIParam" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.URIParam" script-object="AviURIParam">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VsScaleoutParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsScaleoutParams" script-object="AviVsScaleoutParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="APICNetworkRel" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.APICNetworkRel" script-object="AviAPICNetworkRel">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HTTPStatusRange" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPStatusRange" script-object="AviHTTPStatusRange">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthenticationPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationPolicy" script-object="AviAuthenticationPolicy">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ReplaceStringVar" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ReplaceStringVar" script-object="AviReplaceStringVar">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="RateProfile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.RateProfile" script-object="AviRateProfile">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ServerScaleInParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServerScaleInParams" script-object="AviServerScaleInParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
         <finder type="VsSwitchoverParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsSwitchoverParams" script-object="AviVsSwitchoverParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="MatchReplacePair" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.MatchReplacePair" script-object="AviMatchReplacePair">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="IpAddr" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddr" script-object="AviIpAddr">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HTTPReselectRespCode" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPReselectRespCode" script-object="AviHTTPReselectRespCode">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="StringMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.StringMatch" script-object="AviStringMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="PoolAnalyticsPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PoolAnalyticsPolicy" script-object="AviPoolAnalyticsPolicy">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -737,7 +346,398 @@
             <inventory-tabs/>
             <events/>
         </finder>
+        <finder type="L4Policies" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.L4Policies" script-object="AviL4Policies">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="GeoLocation" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.GeoLocation" script-object="AviGeoLocation">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="IpAddrMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IpAddrMatch" script-object="AviIpAddrMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="RetryPlacementParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.RetryPlacementParams" script-object="AviRetryPlacementParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VsVip" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsVip" script-object="AviVsVip">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="FailAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailAction" script-object="AviFailAction">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ConnpoolFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ConnpoolFilter" script-object="AviConnpoolFilter">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="IPNetworkSubnet" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.IPNetworkSubnet" script-object="AviIPNetworkSubnet">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HealthMonitorDNS" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorDNS" script-object="AviHealthMonitorDNS">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="Vip" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Vip" script-object="AviVip">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ConnPoolProperties" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ConnPoolProperties" script-object="AviConnPoolProperties">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ServicePoolSelector" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServicePoolSelector" script-object="AviServicePoolSelector">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="SSLProfileSelector" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SSLProfileSelector" script-object="AviSSLProfileSelector">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VsMigrateParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsMigrateParams" script-object="AviVsMigrateParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ServerId" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServerId" script-object="AviServerId">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="Lif" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Lif" script-object="AviLif">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="DnsARdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsARdata" script-object="AviDnsARdata">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ClientInsightsSampling" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ClientInsightsSampling" script-object="AviClientInsightsSampling">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthenticationRule" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationRule" script-object="AviAuthenticationRule">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="Cif" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Cif" script-object="AviCif">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="FullClientLogs" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FullClientLogs" script-object="AviFullClientLogs">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AnalyticsPolicy" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AnalyticsPolicy" script-object="AviAnalyticsPolicy">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="DnsCnameRdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsCnameRdata" script-object="AviDnsCnameRdata">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ApicVSPlacementReq" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ApicVSPlacementReq" script-object="AviApicVSPlacementReq">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HTTPLocalFile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPLocalFile" script-object="AviHTTPLocalFile">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="Pool" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.Pool" script-object="AviPool">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VirtualServiceApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VirtualServiceApiResponse" script-object="AviVirtualServiceApiResponse">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
         <finder type="FailActionBackupPool" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.FailActionBackupPool" script-object="AviFailActionBackupPool">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ContentRewriteProfile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ContentRewriteProfile" script-object="AviContentRewriteProfile">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HealthMonitorApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorApiResponse" script-object="AviHealthMonitorApiResponse">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VSDataScripts" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VSDataScripts" script-object="AviVSDataScripts">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthenticationMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthenticationMatch" script-object="AviAuthenticationMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ServerScaleOutParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ServerScaleOutParams" script-object="AviServerScaleOutParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HttpCookiePersistenceKey" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HttpCookiePersistenceKey" script-object="AviHttpCookiePersistenceKey">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HTTPServerReselect" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HTTPServerReselect" script-object="AviHTTPServerReselect">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VirtualService" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VirtualService" script-object="AviVirtualService">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="DnsAAAARdata" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsAAAARdata" script-object="AviDnsAAAARdata">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HostHdrMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HostHdrMatch" script-object="AviHostHdrMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="DnsInfo" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.DnsInfo" script-object="AviDnsInfo">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="RateLimiterAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.RateLimiterAction" script-object="AviRateLimiterAction">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="SAMLSPConfig" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SAMLSPConfig" script-object="AviSAMLSPConfig">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="PlacementNetwork" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PlacementNetwork" script-object="AviPlacementNetwork">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="MethodMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.MethodMatch" script-object="AviMethodMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VipPlacementNetwork" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VipPlacementNetwork" script-object="AviVipPlacementNetwork">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="PersistenceFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PersistenceFilter" script-object="AviPersistenceFilter">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="Vro" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.VroPlugin" script-object="_AviVroPlugin">
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HealthMonitorSIP" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HealthMonitorSIP" script-object="AviHealthMonitorSIP">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthorizationAction" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthorizationAction" script-object="AviAuthorizationAction">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="NetworkFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.NetworkFilter" script-object="AviNetworkFilter">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="SidebandProfile" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SidebandProfile" script-object="AviSidebandProfile">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="PoolApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.PoolApiResponse" script-object="AviPoolApiResponse">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="HttpCacheObjFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.HttpCacheObjFilter" script-object="AviHttpCacheObjFilter">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AuthAttributeMatch" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AuthAttributeMatch" script-object="AviAuthAttributeMatch">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="ConnectionClearFilter" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.ConnectionClearFilter" script-object="AviConnectionClearFilter">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="AbPool" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.AbPool" script-object="AviAbPool">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="VsScaleinParams" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.VsScaleinParams" script-object="AviVsScaleinParams">
+            <id accessor="getObjectID()"/>
+            <description></description>
+            <relations/>
+            <inventory-tabs/>
+            <events/>
+        </finder>
+        <finder type="SSOPolicyApiResponse" dynamic-finder="false" dynamic-types="false" datasource="main-datasource" hidden="false" java-class="com.vmware.avi.vro.model.SSOPolicyApiResponse" script-object="AviSSOPolicyApiResponse">
             <id accessor="getObjectID()"/>
             <description></description>
             <relations/>
@@ -957,6 +957,12 @@
                 <method script-name="getAttributeName" java-name="getAttributeName" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
+                <method script-name="setAttributeName" java-name="setAttributeName" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="attributeName"/>
+                    </parameters>
+                </method>
                 <method script-name="getAttributeValueList" java-name="getAttributeValueList" return-type="AviStringMatch" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -964,12 +970,6 @@
                     <description></description>
                     <parameters>
                         <parameter type="AviStringMatch" name="attributeValueList"/>
-                    </parameters>
-                </method>
-                <method script-name="setAttributeName" java-name="setAttributeName" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="attributeName"/>
                     </parameters>
                 </method>
             </methods>
@@ -1008,14 +1008,14 @@
                         <parameter type="AviHostHdrMatch" name="hostHdr"/>
                     </parameters>
                 </method>
-                <method script-name="getClientIp" java-name="getClientIp" return-type="AviIpAddrMatch" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="setClientIp" java-name="setClientIp" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="AviIpAddrMatch" name="clientIp"/>
                     </parameters>
+                </method>
+                <method script-name="getClientIp" java-name="getClientIp" return-type="AviIpAddrMatch" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
                 <method script-name="getPath" java-name="getPath" return-type="AviPathMatch" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -1077,6 +1077,9 @@
                         <parameter type="String" name="spMetadata"/>
                     </parameters>
                 </method>
+                <method script-name="getAuthProfileRef" java-name="getAuthProfileRef" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setAuthProfileRef" java-name="setAuthProfileRef" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
@@ -1100,9 +1103,6 @@
                     <parameters>
                         <parameter type="String" name="defaultAuthProfileRef"/>
                     </parameters>
-                </method>
-                <method script-name="getAuthProfileRef" java-name="getAuthProfileRef" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="getKey" java-name="getKey" return-type="[AviHttpCookiePersistenceKey" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -1311,14 +1311,14 @@
                         <parameter type="String" name="adapter"/>
                     </parameters>
                 </method>
+                <method script-name="getSeUuid" java-name="getSeUuid" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setSeUuid" java-name="setSeUuid" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="seUuid"/>
                     </parameters>
-                </method>
-                <method script-name="getSeUuid" java-name="getSeUuid" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="getCif" java-name="getCif" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -1347,14 +1347,14 @@
             <description></description>
             <constructors/>
             <methods>
-                <method script-name="getClientIp" java-name="getClientIp" return-type="AviIpAddrMatch" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="setClientIp" java-name="setClientIp" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="AviIpAddrMatch" name="clientIp"/>
                     </parameters>
+                </method>
+                <method script-name="getClientIp" java-name="getClientIp" return-type="AviIpAddrMatch" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
                 <method script-name="getSampleUris" java-name="getSampleUris" return-type="AviStringMatch" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -1383,12 +1383,6 @@
                 <method script-name="getIndex" java-name="getIndex" return-type="Integer" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
-                <method script-name="setIndex" java-name="setIndex" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="Integer" name="index"/>
-                    </parameters>
-                </method>
                 <method script-name="setEnabled" java-name="setEnabled" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
@@ -1398,13 +1392,19 @@
                 <method script-name="isEnabled" java-name="isEnabled" return-type="Boolean" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
+                <method script-name="setIndex" java-name="setIndex" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="Integer" name="index"/>
+                    </parameters>
+                </method>
                 <method script-name="getUri" java-name="getUri" return-type="AviStringMatch" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
-                <method script-name="setUri" java-name="setUri" return-type="void" show-in-api="true" is-deprecated="false">
+                <method script-name="setClientIp" java-name="setClientIp" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
-                        <parameter type="AviStringMatch" name="uri"/>
+                        <parameter type="AviIpAddrMatch" name="clientIp"/>
                     </parameters>
                 </method>
                 <method script-name="isAllHeaders" java-name="isAllHeaders" return-type="Boolean" show-in-api="true" is-deprecated="false">
@@ -1419,12 +1419,6 @@
                 <method script-name="getClientIp" java-name="getClientIp" return-type="AviIpAddrMatch" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
-                <method script-name="setClientIp" java-name="setClientIp" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="AviIpAddrMatch" name="clientIp"/>
-                    </parameters>
-                </method>
                 <method script-name="setDuration" java-name="setDuration" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
@@ -1433,6 +1427,12 @@
                 </method>
                 <method script-name="getDuration" java-name="getDuration" return-type="Integer" show-in-api="true" is-deprecated="false">
                     <description></description>
+                </method>
+                <method script-name="setUri" java-name="setUri" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="AviStringMatch" name="uri"/>
+                    </parameters>
                 </method>
                 <method script-name="getName" java-name="getName" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -1641,14 +1641,14 @@
             <description></description>
             <constructors/>
             <methods>
+                <method script-name="getIp6Address" java-name="getIp6Address" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setIp6Address" java-name="setIp6Address" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="AviIpAddr" name="ip6Address"/>
                     </parameters>
-                </method>
-                <method script-name="getIp6Address" java-name="getIp6Address" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
             </methods>
         </object>
@@ -1755,14 +1755,14 @@
             <description></description>
             <constructors/>
             <methods>
+                <method script-name="getIp6Address" java-name="getIp6Address" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setIp6Address" java-name="setIp6Address" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="AviIpAddr" name="ip6Address"/>
                     </parameters>
-                </method>
-                <method script-name="getIp6Address" java-name="getIp6Address" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="getIpAddress" java-name="getIpAddress" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -1839,22 +1839,13 @@
                         <parameter type="String" name="metadata"/>
                     </parameters>
                 </method>
+                <method script-name="getIp6Address" java-name="getIp6Address" return-type="[AviDnsAAAARdata" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setIp6Address" java-name="setIp6Address" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="[AviDnsAAAARdata" name="ip6Address"/>
-                    </parameters>
-                </method>
-                <method script-name="getIp6Address" java-name="getIp6Address" return-type="[AviDnsAAAARdata" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
-                <method script-name="getIpAddress" java-name="getIpAddress" return-type="[AviDnsARdata" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
-                <method script-name="setIpAddress" java-name="setIpAddress" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="[AviDnsARdata" name="ipAddress"/>
                     </parameters>
                 </method>
                 <method script-name="setAlgorithm" java-name="setAlgorithm" return-type="void" show-in-api="true" is-deprecated="false">
@@ -1897,6 +1888,15 @@
                     <description></description>
                     <parameters>
                         <parameter type="Integer" name="ttl"/>
+                    </parameters>
+                </method>
+                <method script-name="getIpAddress" java-name="getIpAddress" return-type="[AviDnsARdata" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
+                <method script-name="setIpAddress" java-name="setIpAddress" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="[AviDnsARdata" name="ipAddress"/>
                     </parameters>
                 </method>
                 <method script-name="isDelegated" java-name="isDelegated" return-type="Boolean" show-in-api="true" is-deprecated="false">
@@ -2028,14 +2028,14 @@
             <description></description>
             <constructors/>
             <methods>
-                <method script-name="getBackupPoolRef" java-name="getBackupPoolRef" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="setBackupPoolRef" java-name="setBackupPoolRef" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="backupPoolRef"/>
                     </parameters>
+                </method>
+                <method script-name="getBackupPoolRef" java-name="getBackupPoolRef" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
             </methods>
         </object>
@@ -2088,16 +2088,16 @@
                         <parameter type="String" name="statusCode"/>
                     </parameters>
                 </method>
-                <method script-name="setQuery" java-name="setQuery" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="query"/>
-                    </parameters>
-                </method>
                 <method script-name="setPath" java-name="setPath" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="path"/>
+                    </parameters>
+                </method>
+                <method script-name="setQuery" java-name="setQuery" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="query"/>
                     </parameters>
                 </method>
                 <method script-name="getPath" java-name="getPath" return-type="String" show-in-api="true" is-deprecated="false">
@@ -2217,14 +2217,14 @@
                         <parameter type="String" name="type"/>
                     </parameters>
                 </method>
+                <method script-name="getAuthProfileRef" java-name="getAuthProfileRef" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setAuthProfileRef" java-name="setAuthProfileRef" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="authProfileRef"/>
                     </parameters>
-                </method>
-                <method script-name="getAuthProfileRef" java-name="getAuthProfileRef" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="getRequestUriPath" java-name="getRequestUriPath" return-type="AviStringMatch" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -2253,14 +2253,14 @@
                         <parameter type="String" name="contentType"/>
                     </parameters>
                 </method>
-                <method script-name="getFileContent" java-name="getFileContent" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="setFileContent" java-name="setFileContent" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="fileContent"/>
                     </parameters>
+                </method>
+                <method script-name="getFileContent" java-name="getFileContent" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
             </methods>
         </object>
@@ -2496,6 +2496,15 @@
                         <parameter type="String" name="uuid"/>
                     </parameters>
                 </method>
+                <method script-name="getTenantRef" java-name="getTenantRef" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
+                <method script-name="setTenantRef" java-name="setTenantRef" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="tenantRef"/>
+                    </parameters>
+                </method>
                 <method script-name="isDisableQuickstart" java-name="isDisableQuickstart" return-type="Boolean" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -2507,15 +2516,6 @@
                 </method>
                 <method script-name="getDnsMonitor" java-name="getDnsMonitor" return-type="AviHealthMonitorDNS" show-in-api="true" is-deprecated="false">
                     <description></description>
-                </method>
-                <method script-name="getTenantRef" java-name="getTenantRef" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
-                <method script-name="setTenantRef" java-name="setTenantRef" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="tenantRef"/>
-                    </parameters>
                 </method>
                 <method script-name="setDnsMonitor" java-name="setDnsMonitor" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -3390,15 +3390,6 @@
             <description></description>
             <constructors/>
             <methods>
-                <method script-name="setMatchString" java-name="setMatchString" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="matchString"/>
-                    </parameters>
-                </method>
-                <method script-name="getMatchString" java-name="getMatchString" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="getReplacementString" java-name="getReplacementString" return-type="AviReplaceStringVar" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -3407,6 +3398,15 @@
                     <parameters>
                         <parameter type="AviReplaceStringVar" name="replacementString"/>
                     </parameters>
+                </method>
+                <method script-name="setMatchString" java-name="setMatchString" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="matchString"/>
+                    </parameters>
+                </method>
+                <method script-name="getMatchString" java-name="getMatchString" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
             </methods>
         </object>
@@ -3561,6 +3561,9 @@
                         <parameter type="String" name="persistenceCookie"/>
                     </parameters>
                 </method>
+                <method script-name="getPersistenceIp" java-name="getPersistenceIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="getPersistenceEndIp" java-name="getPersistenceEndIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -3569,9 +3572,6 @@
                     <parameters>
                         <parameter type="AviIpAddr" name="persistenceEndIp"/>
                     </parameters>
-                </method>
-                <method script-name="getPersistenceIp" java-name="getPersistenceIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="setPersistenceIp" java-name="setPersistenceIp" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -4263,14 +4263,14 @@
             <description></description>
             <constructors/>
             <methods>
+                <method script-name="isEnableRealtimeMetrics" java-name="isEnableRealtimeMetrics" return-type="Boolean" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setEnableRealtimeMetrics" java-name="setEnableRealtimeMetrics" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="Boolean" name="enableRealtimeMetrics"/>
                     </parameters>
-                </method>
-                <method script-name="isEnableRealtimeMetrics" java-name="isEnableRealtimeMetrics" return-type="Boolean" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
             </methods>
         </object>
@@ -4608,6 +4608,9 @@
                         <parameter type="String" name="tenantRef"/>
                     </parameters>
                 </method>
+                <method script-name="getAuthenticationPolicy" java-name="getAuthenticationPolicy" return-type="AviAuthenticationPolicy" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setAuthenticationPolicy" java-name="setAuthenticationPolicy" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
@@ -4622,9 +4625,6 @@
                     <parameters>
                         <parameter type="AviAuthorizationPolicy" name="authorizationPolicy"/>
                     </parameters>
-                </method>
-                <method script-name="getAuthenticationPolicy" java-name="getAuthenticationPolicy" return-type="AviAuthenticationPolicy" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="getName" java-name="getName" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -4932,12 +4932,6 @@
                         <parameter type="[AviServerId" name="servers"/>
                     </parameters>
                 </method>
-                <method script-name="setReason" java-name="setReason" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="reason"/>
-                    </parameters>
-                </method>
                 <method script-name="getUuid" java-name="getUuid" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -4945,6 +4939,12 @@
                     <description></description>
                     <parameters>
                         <parameter type="String" name="uuid"/>
+                    </parameters>
+                </method>
+                <method script-name="setReason" java-name="setReason" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="reason"/>
                     </parameters>
                 </method>
             </methods>
@@ -4956,12 +4956,6 @@
                 <method script-name="getReason" java-name="getReason" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
-                <method script-name="setReason" java-name="setReason" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="reason"/>
-                    </parameters>
-                </method>
                 <method script-name="getUuid" java-name="getUuid" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -4969,6 +4963,12 @@
                     <description></description>
                     <parameters>
                         <parameter type="String" name="uuid"/>
+                    </parameters>
+                </method>
+                <method script-name="setReason" java-name="setReason" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="reason"/>
                     </parameters>
                 </method>
             </methods>
@@ -5160,9 +5160,6 @@
             <description></description>
             <constructors/>
             <methods>
-                <method script-name="getEndIndex" java-name="getEndIndex" return-type="Integer" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="setEndIndex" java-name="setEndIndex" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
@@ -5174,6 +5171,9 @@
                     <parameters>
                         <parameter type="String" name="type"/>
                     </parameters>
+                </method>
+                <method script-name="getEndIndex" java-name="getEndIndex" return-type="Integer" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
                 <method script-name="getStartIndex" java-name="getStartIndex" return-type="Integer" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -5235,14 +5235,14 @@
                 <method script-name="isEnabled" java-name="isEnabled" return-type="Boolean" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
+                <method script-name="getIp6Address" java-name="getIp6Address" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setIp6Address" java-name="setIp6Address" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="AviIpAddr" name="ip6Address"/>
                     </parameters>
-                </method>
-                <method script-name="getIp6Address" java-name="getIp6Address" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
                 <method script-name="getVipId" java-name="getVipId" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -5316,9 +5316,6 @@
                         <parameter type="[AviDiscoveredNetwork" name="discoveredNetworks"/>
                     </parameters>
                 </method>
-                <method script-name="getFloatingIp" java-name="getFloatingIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="getNetworkRef" java-name="getNetworkRef" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -5336,6 +5333,9 @@
                     <parameters>
                         <parameter type="AviIpAddrPrefix" name="subnet"/>
                     </parameters>
+                </method>
+                <method script-name="getFloatingIp" java-name="getFloatingIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
                 <method script-name="setFloatingIp" java-name="setFloatingIp" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -5472,12 +5472,6 @@
             <description></description>
             <constructors/>
             <methods>
-                <method script-name="setClientAuth" java-name="setClientAuth" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="AviHTTPClientAuthenticationParams" name="clientAuth"/>
-                    </parameters>
-                </method>
                 <method script-name="getLastModified" java-name="getLastModified" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -5583,9 +5577,6 @@
                         <parameter type="[AviDiscoveredNetwork" name="discoveredNetworks"/>
                     </parameters>
                 </method>
-                <method script-name="getFloatingIp" java-name="getFloatingIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
                 <method script-name="getNetworkRef" java-name="getNetworkRef" return-type="String" show-in-api="true" is-deprecated="false">
                     <description></description>
                 </method>
@@ -5603,6 +5594,24 @@
                     <parameters>
                         <parameter type="AviIpAddrPrefix" name="subnet"/>
                     </parameters>
+                </method>
+                <method script-name="setWeight" java-name="setWeight" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="Integer" name="weight"/>
+                    </parameters>
+                </method>
+                <method script-name="getFqdn" java-name="getFqdn" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
+                <method script-name="setFqdn" java-name="setFqdn" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="fqdn"/>
+                    </parameters>
+                </method>
+                <method script-name="getFloatingIp" java-name="getFloatingIp" return-type="AviIpAddr" show-in-api="true" is-deprecated="false">
+                    <description></description>
                 </method>
                 <method script-name="setFloatingIp" java-name="setFloatingIp" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -5653,21 +5662,6 @@
                     <description></description>
                     <parameters>
                         <parameter type="String" name="subnetUuid"/>
-                    </parameters>
-                </method>
-                <method script-name="getFqdn" java-name="getFqdn" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                </method>
-                <method script-name="setFqdn" java-name="setFqdn" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="fqdn"/>
-                    </parameters>
-                </method>
-                <method script-name="setWeight" java-name="setWeight" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="Integer" name="weight"/>
                     </parameters>
                 </method>
                 <method script-name="getPoolRef" java-name="getPoolRef" return-type="String" show-in-api="true" is-deprecated="false">
@@ -5861,6 +5855,12 @@
                 </method>
                 <method script-name="getClientAuth" java-name="getClientAuth" return-type="AviHTTPClientAuthenticationParams" show-in-api="true" is-deprecated="false">
                     <description></description>
+                </method>
+                <method script-name="setClientAuth" java-name="setClientAuth" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="AviHTTPClientAuthenticationParams" name="clientAuth"/>
+                    </parameters>
                 </method>
                 <method script-name="isCloseClientConnOnConfigUpdate" java-name="isCloseClientConnOnConfigUpdate" return-type="Boolean" show-in-api="true" is-deprecated="false">
                     <description></description>
@@ -6417,31 +6417,11 @@
                         <parameter type="java.lang.Exception" name="exception"/>
                     </parameters>
                 </method>
-                <method script-name="deleteObject" java-name="deleteObject" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="com.vmware.avi.vro.model.AviRestResource" name="objectData"/>
-                    </parameters>
-                </method>
-                <method script-name="deleteObjectByName" java-name="deleteObjectByName" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="String" name="objectType"/>
-                        <parameter type="String" name="name"/>
-                        <parameter type="String" name="tenant"/>
-                    </parameters>
-                </method>
-                <method script-name="deleteObjectByUUID" java-name="deleteObjectByUUID" return-type="void" show-in-api="true" is-deprecated="false">
+                <method script-name="getObjectByUUID" java-name="getObjectByUUID" return-type="com.vmware.avi.vro.model.AviRestResource" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="uuid"/>
-                    </parameters>
-                </method>
-                <method script-name="addObject" java-name="addObject" return-type="void" show-in-api="true" is-deprecated="false">
-                    <description></description>
-                    <parameters>
-                        <parameter type="com.vmware.avi.vro.model.AviRestResource" name="objectData"/>
                     </parameters>
                 </method>
                 <method script-name="getObjectDataByName" java-name="getObjectDataByName" return-type="org.json.JSONObject" show-in-api="true" is-deprecated="false">
@@ -6465,9 +6445,30 @@
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="objectName"/>
+                        <parameter type="String" name="tenant"/>
                     </parameters>
                 </method>
-                <method script-name="getObjectByUUID" java-name="getObjectByUUID" return-type="com.vmware.avi.vro.model.AviRestResource" show-in-api="true" is-deprecated="false">
+                <method script-name="addObject" java-name="addObject" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="com.vmware.avi.vro.model.AviRestResource" name="objectData"/>
+                    </parameters>
+                </method>
+                <method script-name="deleteObject" java-name="deleteObject" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="com.vmware.avi.vro.model.AviRestResource" name="objectData"/>
+                        <parameter type="String" name="tenant"/>
+                    </parameters>
+                </method>
+                <method script-name="deleteObjectByName" java-name="deleteObjectByName" return-type="void" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                    <parameters>
+                        <parameter type="String" name="objectType"/>
+                        <parameter type="String" name="name"/>
+                    </parameters>
+                </method>
+                <method script-name="deleteObjectByUUID" java-name="deleteObjectByUUID" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="objectType"/>
@@ -6479,6 +6480,7 @@
                     <parameters>
                         <parameter type="String" name="objectType"/>
                         <parameter type="String" name="objectData"/>
+                        <parameter type="String" name="tenant"/>
                     </parameters>
                 </method>
                 <method script-name="get" java-name="get" return-type="org.json.JSONArray" show-in-api="true" is-deprecated="false">
@@ -6740,14 +6742,14 @@
                         <parameter type="String" name="vipId"/>
                     </parameters>
                 </method>
+                <method script-name="getSeUuid" java-name="getSeUuid" return-type="String" show-in-api="true" is-deprecated="false">
+                    <description></description>
+                </method>
                 <method script-name="setSeUuid" java-name="setSeUuid" return-type="void" show-in-api="true" is-deprecated="false">
                     <description></description>
                     <parameters>
                         <parameter type="String" name="seUuid"/>
                     </parameters>
-                </method>
-                <method script-name="getSeUuid" java-name="getSeUuid" return-type="String" show-in-api="true" is-deprecated="false">
-                    <description></description>
                 </method>
             </methods>
         </object>

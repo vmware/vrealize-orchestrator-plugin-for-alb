@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">getAviVroClient</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">038aa112-fb3e-463f-8a4b-82c0a9e6fafb</entry>
+</properties>
