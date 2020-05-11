@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.2"
+	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.3"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Attach Avi Controller]]></display-name>

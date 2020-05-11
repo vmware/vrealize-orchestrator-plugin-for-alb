@@ -115,7 +115,7 @@ public class AviVroClient {
 	}
 
 	/***
-	 * this method add the data into the queue with add operation and if the data is
+	 * This method add the data into the queue with add operation and if the data is
 	 * already exist it add operation ad update
 	 * 
 	 * @param objectTypeis the type of object.
@@ -124,14 +124,11 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public void add(String objectType, String objectData) {
-		JSONObject jsonObj = new JSONObject(objectData);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString());
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		this.add(objectType, objectData, null);
 	}
 
 	/**
-	 * this method add the data into the queue with add operation and if the data is
+	 * This method add the data into the queue with add operation and if the data is
 	 * already exist it add operation ad update
 	 * 
 	 * @param objectType is the type of object.a
@@ -148,6 +145,7 @@ public class AviVroClient {
 	}
 
 	/**
+	 * This method add the data into the queue with delete operation.
 	 * 
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
@@ -155,17 +153,11 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public void deleteObject(AviRestResource objectData) throws JsonProcessingException {
-		String objectType = objectData.getClass().getSimpleName();
-		mapper.setSerializationInclusion(Include.NON_NULL);
-		String jsonStr = mapper.writeValueAsString(objectData);
-		JSONObject jsonObj = new JSONObject(jsonStr);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.DELETE.toString());
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		this.deleteObject(objectData, null);
 	}
 
 	/***
-	 * Method for deleting object data based on its name.
+	 * This method add the data into the queue with delete operation.
 	 * 
 	 * @param objectType type of the object
 	 * @param name       name of the Object
@@ -174,15 +166,11 @@ public class AviVroClient {
 
 	@VsoMethod
 	public void deleteObjectByName(String objectType, String name) throws Exception {
-		JSONObject jsonObject = this.getObjectDataByName(objectType, name, null);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject,
-				OPERATION.DELETE.toString());
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		this.deleteObjectByName(objectType, name, null);
 	}
 
 	/***
-	 * Method for deleting object data based on its uuid.
+	 * This method add the data into the queue with delete operation.
 	 * 
 	 * @param objectType type of the Object.
 	 * @param uuid       uuid of the object.
@@ -190,11 +178,7 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public void deleteObjectByUUID(String objectType, String uuid) throws Exception {
-		JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, null);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject,
-				OPERATION.DELETE.toString());
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		this.deleteObjectByUUID(objectType, uuid, null);
 	}
 
 	/**
@@ -209,7 +193,7 @@ public class AviVroClient {
 		JSONObject jsonObj = new JSONObject(objectData);
 		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.DELETE.toString());
 		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue + " for deletion");
 	}
 
 	/***
@@ -227,14 +211,16 @@ public class AviVroClient {
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		String jsonStr = mapper.writeValueAsString(objectData);
 		JSONObject jsonObj = new JSONObject(jsonStr);
+		String uuid = jsonObj.getString("uuid").toString();
 		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.DELETE.toString(),
 				tenant);
 		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		logger.info(
+				"Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue + " for deletion");
 	}
 
 	/***
-	 * Method for deleting object data based on its name.
+	 * This method add the data into the queue with delete operation
 	 * 
 	 * @param objectType type of the Object.
 	 * @param name       name of the object.
@@ -244,14 +230,17 @@ public class AviVroClient {
 	@VsoMethod
 	public void deleteObjectByName(String objectType, String name, String tenant) throws Exception {
 		JSONObject jsonObject = this.getObjectDataByName(objectType, name, null);
+		String uuid = jsonObject.getString("uuid").toString();
 		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject, OPERATION.DELETE.toString(),
 				tenant);
 		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		logger.info(
+				"Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue + " for deletion");
+
 	}
 
 	/***
-	 * Method for deleting object data based on its uuid.
+	 * This method add the data into the queue with delete operation
 	 * 
 	 * @param objectType type of the Object.
 	 * @param uuid       uuid of the object.
@@ -264,7 +253,9 @@ public class AviVroClient {
 		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject, OPERATION.DELETE.toString(),
 				tenant);
 		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		logger.info(
+				"Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue + " for deletion");
+
 	}
 
 	/**
@@ -405,6 +396,7 @@ public class AviVroClient {
 	}
 
 	/***
+	 * Method for getting object data.
 	 * 
 	 * @param objectType is the type of object.
 	 * @param objectName name of the object.
@@ -440,6 +432,7 @@ public class AviVroClient {
 	}
 
 	/***
+	 * Method for getting object data.
 	 * 
 	 * @param objectType is the type of object.
 	 * @param uuid       uuid of the object.
@@ -477,18 +470,7 @@ public class AviVroClient {
 
 	@VsoMethod
 	public List<AviRestResource> getObject(String objectType, Map<String, String> params) throws Exception {
-		AviApi session = getSession();
-		JSONObject data = session.get(objectType, params);
-		JSONArray array = (JSONArray) data.get("results");
-		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
-		AviRestResource object = this.getAviRestResourceObject(objectType);
-		for (int counter = 0; counter < array.length(); counter++) {
-			JSONObject result = array.getJSONObject(counter);
-			object = mapper.readValue(result.toString(), object.getClass());
-			objectList.add(object);
-		}
-		logger.info("ObjectList : " + objectList);
-		return objectList;
+		return this.getObject(objectType, params, null);
 	}
 
 	/**
@@ -503,10 +485,7 @@ public class AviVroClient {
 
 	@VsoMethod
 	public AviRestResource getObjectByName(String objectType, String objectName) throws Exception {
-		AviRestResource object = this.getAviRestResourceObject(objectType);
-		JSONObject jsonObject = this.getObjectDataByName(objectType, objectName, null);
-		object = mapper.readValue(jsonObject.toString(), object.getClass());
-		return object;
+		return this.getObjectByName(objectType, objectName, null);
 
 	}
 
@@ -522,10 +501,7 @@ public class AviVroClient {
 
 	@VsoMethod
 	public AviRestResource getObjectByUUID(String objectType, String uuid) throws Exception {
-		AviRestResource object = this.getAviRestResourceObject(objectType);
-		JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, null);
-		object = mapper.readValue(jsonObject.toString(), object.getClass());
-		return object;
+		return this.getObjectByUUID(objectType, uuid, null);
 
 	}
 

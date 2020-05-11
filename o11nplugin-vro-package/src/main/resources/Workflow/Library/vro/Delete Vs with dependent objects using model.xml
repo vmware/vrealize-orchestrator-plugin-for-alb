@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="bd36bdb3-8266-436e-bac7-c01174effa6e" version="0.0.7"
+	id="bd36bdb3-8266-436e-bac7-c01174effa6e" version="0.0.i"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Delete VS with dependent objects using model]]></display-name>
