@@ -101,17 +101,22 @@ public class AviVroClient {
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
 	 * @throws JsonProcessingException
+	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void addObject(AviRestResource objectData) throws JsonProcessingException {
-		String objectType = objectData.getClass().getSimpleName();
-		mapper.setSerializationInclusion(Include.NON_NULL);
-		String jsonStr = mapper.writeValueAsString(objectData);
-		JSONObject jsonObj = new JSONObject(jsonStr);
-
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString());
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+	public void addObject(AviRestResource objectData) throws JsonProcessingException, AviApiException {
+		if (null != objectData) {
+			String objectType = objectData.getClass().getSimpleName();
+			mapper.setSerializationInclusion(Include.NON_NULL);
+			String jsonStr = mapper.writeValueAsString(objectData);
+			JSONObject jsonObj = new JSONObject(jsonStr);
+			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString());
+			workflowDataQueue.add(aviObjectMetadata);
+			logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		} else {
+			logger.info("Object data is empty");
+			throw new AviApiException("Object data is empty");
+		}
 	}
 
 	/***
@@ -121,9 +126,10 @@ public class AviVroClient {
 	 * @param objectTypeis the type of object.
 	 * @param objectData   contains the actual data which is used of creating object
 	 *                     on the controller
+	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void add(String objectType, String objectData) {
+	public void add(String objectType, String objectData) throws AviApiException {
 		this.add(objectType, objectData, null);
 	}
 
@@ -134,14 +140,20 @@ public class AviVroClient {
 	 * @param objectType is the type of object.a
 	 * @param objectData contains the actual data which is used of creating object
 	 * @param tenant     name of Tenant. on the controller
+	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void add(String objectType, String objectData, String tenant) {
-		JSONObject jsonObj = new JSONObject(objectData);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString(),
-				tenant);
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+	public void add(String objectType, String objectData, String tenant) throws AviApiException {
+		if (((null != objectType) && (!objectType.isEmpty())) && ((null != objectData) && (!objectData.isEmpty()))) {
+			JSONObject jsonObj = new JSONObject(objectData);
+			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString(),
+					tenant);
+			workflowDataQueue.add(aviObjectMetadata);
+			logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
+		} else {
+			logger.debug("Object type or object data is empty");
+			throw new AviApiException("Object type or object data is empty");
+		}
 	}
 
 	/**
@@ -150,9 +162,10 @@ public class AviVroClient {
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
 	 * @throws JsonProcessingException
+	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void deleteObject(AviRestResource objectData) throws JsonProcessingException {
+	public void deleteObject(AviRestResource objectData) throws JsonProcessingException, AviApiException {
 		this.deleteObject(objectData, null);
 	}
 
@@ -187,13 +200,26 @@ public class AviVroClient {
 	 * @param objectType is the type of object.
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
+	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void delete(String objectType, String objectData) {
-		JSONObject jsonObj = new JSONObject(objectData);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.DELETE.toString());
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info("Adding " + objectType + " into queue :" + workflowDataQueue + " for deletion");
+	public void delete(String objectType, String objectData) throws AviApiException {
+		if (((null != objectType) && (!objectType.isEmpty())) && ((null != objectData) && (!objectData.isEmpty()))) {
+			logger.debug("ObjectType is empty");
+			JSONObject jsonObj = new JSONObject(objectData);
+			if ((jsonObj.has("uuid")) || (jsonObj.has("name"))) {
+				AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj,
+						OPERATION.DELETE.toString());
+				workflowDataQueue.add(aviObjectMetadata);
+				logger.info("Adding " + objectType + " into queue :" + workflowDataQueue + " for deletion");
+			} else {
+				logger.debug("Name or UUID is missing");
+				throw new AviApiException("Please provide name or uuid");
+			}
+		} else {
+			logger.debug("Object type or object data is empty");
+			throw new AviApiException("Object type or object data is empty");
+		}
 	}
 
 	/***
@@ -204,19 +230,31 @@ public class AviVroClient {
 	 *                   on the controller
 	 * @param tenant     name of Tenant.
 	 * @throws JsonProcessingException
+	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void deleteObject(AviRestResource objectData, String tenant) throws JsonProcessingException {
-		String objectType = objectData.getClass().getSimpleName();
-		mapper.setSerializationInclusion(Include.NON_NULL);
-		String jsonStr = mapper.writeValueAsString(objectData);
-		JSONObject jsonObj = new JSONObject(jsonStr);
-		String uuid = jsonObj.getString("uuid").toString();
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.DELETE.toString(),
-				tenant);
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info(
-				"Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue + " for deletion");
+	public void deleteObject(AviRestResource objectData, String tenant)
+			throws JsonProcessingException, AviApiException {
+		if (objectData != null) {
+			String objectType = objectData.getClass().getSimpleName();
+			mapper.setSerializationInclusion(Include.NON_NULL);
+			String jsonStr = mapper.writeValueAsString(objectData);
+			JSONObject jsonObj = new JSONObject(jsonStr);
+			if ((jsonObj != null) && ((jsonObj.has("uuid")) || (jsonObj.has("name")))) {
+				String uuid = jsonObj.getString("uuid").toString();
+				AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj,
+						OPERATION.DELETE.toString(), tenant);
+				workflowDataQueue.add(aviObjectMetadata);
+				logger.info("Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue
+						+ " for deletion");
+			} else {
+				logger.debug("Name or UUID is missing");
+				throw new AviApiException("Please provide name or uuid");
+			}
+		} else {
+			logger.debug("Object data is empty");
+			throw new AviApiException("Object data is empty");
+		}
 	}
 
 	/***
@@ -229,14 +267,19 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public void deleteObjectByName(String objectType, String name, String tenant) throws Exception {
-		JSONObject jsonObject = this.getObjectDataByName(objectType, name, null);
-		String uuid = jsonObject.getString("uuid").toString();
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject, OPERATION.DELETE.toString(),
-				tenant);
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info(
-				"Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue + " for deletion");
-
+		if ((null != objectType) && (!objectType.isEmpty())) {
+			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
+			JSONObject jsonObject = this.getObjectDataByName(objectType, name, userHeader);
+			String uuid = jsonObject.getString("uuid").toString();
+			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject,
+					OPERATION.DELETE.toString(), tenant);
+			workflowDataQueue.add(aviObjectMetadata);
+			logger.info("Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue
+					+ " for deletion");
+		} else {
+			logger.debug("ObjectType is empty");
+			throw new AviApiException("Please provide object type");
+		}
 	}
 
 	/***
@@ -249,13 +292,18 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public void deleteObjectByUUID(String objectType, String uuid, String tenant) throws Exception {
-		JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, null);
-		AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject, OPERATION.DELETE.toString(),
-				tenant);
-		workflowDataQueue.add(aviObjectMetadata);
-		logger.info(
-				"Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue + " for deletion");
-
+		if ((null != objectType) && (!objectType.isEmpty())) {
+			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
+			JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, userHeader);
+			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObject,
+					OPERATION.DELETE.toString(), tenant);
+			workflowDataQueue.add(aviObjectMetadata);
+			logger.info("Adding " + objectType + " with uuid " + uuid + "into queue :" + workflowDataQueue
+					+ " for deletion");
+		} else {
+			logger.debug("ObjectType is empty");
+			throw new AviApiException("Please provide object type");
+		}
 	}
 
 	/**
@@ -389,10 +437,30 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public JSONArray get(String objectType, Map<String, String> params) throws Exception {
+		return this.get(objectType, params, null);
+	}
+
+	/***
+	 * Method for getting object data.
+	 * 
+	 * @param objectType is the type of object.
+	 * @param params     is a map containing the key and values.
+	 * @param tenant     name of the Tenant
+	 * @return the JSONArray of the response.
+	 * @throws Exception
+	 */
+	@VsoMethod
+	public JSONArray get(String objectType, Map<String, String> params, String tenant) throws Exception {
 		AviApi session = getSession();
-		JSONObject data = session.get(objectType, params);
-		logger.info("Existing data of " + objectType + " : " + data);
-		return (JSONArray) data.get("results");
+		if ((null != objectType) && (!objectType.isEmpty())) {
+			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
+			JSONObject data = session.get(objectType, params, userHeader);
+			logger.info("Existing data of " + objectType + " : " + data);
+			return (JSONArray) data.get("results");
+		} else {
+			logger.debug("ObjectType is empty");
+			throw new AviApiException("Please provide objectType");
+		}
 	}
 
 	/***
@@ -414,7 +482,7 @@ public class AviVroClient {
 		String path = null;
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("include_name", "true");
-		if ((null != objectName) && ("" != objectName)) {
+		if ((null != objectName) && (!objectName.isEmpty())) {
 			path = objectType + "?name=" + objectName;
 			data = session.get(path, map, userHeader);
 		} else {
@@ -423,7 +491,6 @@ public class AviVroClient {
 		}
 
 		logger.info("Existing data of " + objectType + " : " + data);
-		// if (data.has("count")) {
 		if ((data.has("count")) && (Integer.parseInt(data.get("count").toString()) > 0)) {
 			JSONArray objectArray = (JSONArray) data.get("results");
 			result = (JSONObject) objectArray.get(0);
@@ -448,7 +515,7 @@ public class AviVroClient {
 		JSONObject data = null;
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("include_name", "true");
-		if ((null != uuid) && ("" != uuid)) {
+		if ((null != uuid) && (!uuid.isEmpty())) {
 			path = objectType + "/" + uuid;
 			data = session.get(path, map, userHeader);
 		} else {
@@ -517,10 +584,7 @@ public class AviVroClient {
 	@VsoMethod
 	public List<AviRestResource> getObject(String objectType, Map<String, String> params, String tenant)
 			throws Exception {
-		AviApi session = getSession();
-		HashMap<String, String> userHeader = this.getTenantHeader(tenant);
-		JSONObject data = session.get(objectType, params, userHeader);
-		JSONArray array = (JSONArray) data.get("results");
+		JSONArray array = this.get(objectType, params, tenant);
 		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
 		System.out.println("objectType : " + objectType);
 		AviRestResource object = this.getAviRestResourceObject(objectType);
@@ -547,11 +611,16 @@ public class AviVroClient {
 
 	@VsoMethod
 	public AviRestResource getObjectByName(String objectType, String objectName, String tenant) throws Exception {
-		AviRestResource object = this.getAviRestResourceObject(objectType);
-		HashMap<String, String> userHeader = this.getTenantHeader(tenant);
-		JSONObject jsonObject = this.getObjectDataByName(objectType, objectName, userHeader);
-		object = mapper.readValue(jsonObject.toString(), object.getClass());
-		return object;
+		if ((null != objectType) && ("" != objectType)) {
+			AviRestResource object = this.getAviRestResourceObject(objectType);
+			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
+			JSONObject jsonObject = this.getObjectDataByName(objectType, objectName, userHeader);
+			object = mapper.readValue(jsonObject.toString(), object.getClass());
+			return object;
+		} else {
+			logger.debug("ObjectType is empty");
+			throw new AviApiException("Please provide object type");
+		}
 
 	}
 
@@ -568,12 +637,16 @@ public class AviVroClient {
 
 	@VsoMethod
 	public AviRestResource getObjectByUUID(String objectType, String uuid, String tenant) throws Exception {
-		AviRestResource object = this.getAviRestResourceObject(objectType);
-		HashMap<String, String> userHeader = this.getTenantHeader(tenant);
-		JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, userHeader);
-		object = mapper.readValue(jsonObject.toString(), object.getClass());
-		return object;
-
+		if ((null != objectType) && ("" != objectType)) {
+			AviRestResource object = this.getAviRestResourceObject(objectType);
+			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
+			JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, userHeader);
+			object = mapper.readValue(jsonObject.toString(), object.getClass());
+			return object;
+		} else {
+			logger.debug("ObjectType is empty");
+			throw new AviApiException("Please provide object type");
+		}
 	}
 
 	/***
