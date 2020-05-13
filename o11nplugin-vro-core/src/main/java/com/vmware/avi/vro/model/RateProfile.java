@@ -3,6 +3,7 @@ package com.vmware.avi.vro.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.vmware.avi.vro.model.RateLimiter;
 import com.vmware.avi.vro.model.RateLimiterAction;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,12 +15,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * RateProfile
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "RateProfile")
 @VsoFinder(name = Constants.FINDER_VRO_RATEPROFILE, idAccessor = "getObjectID()")
@@ -49,6 +49,9 @@ public class RateProfile extends AviRestResource  {
   @JsonProperty("period")
   private Integer period = 1;
 
+  @JsonProperty("rate_limiter")
+  private RateLimiter rateLimiter = null;
+
   
   /**
    * Action to perform upon rate limiting.
@@ -72,10 +75,10 @@ public class RateProfile extends AviRestResource  {
 
   
   /**
-   * Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- 'automatic'.
+   * Maximum number of connections or requests or packets to be let through instantaneously. (deprecated). Allowed values are 10-2500. Special values are 0- 'automatic'.
    * @return burstSz
   **/
-  @ApiModelProperty(value = "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- 'automatic'.")
+  @ApiModelProperty(value = "Maximum number of connections or requests or packets to be let through instantaneously. (deprecated). Allowed values are 10-2500. Special values are 0- 'automatic'.")
 
 
  
@@ -91,10 +94,10 @@ public class RateProfile extends AviRestResource  {
 
   
   /**
-   * Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- 'unlimited'.
+   * Maximum number of connections or requests or packets. (deprecated). Allowed values are 1-1000000000. Special values are 0- 'unlimited'.
    * @return count
   **/
-  @ApiModelProperty(value = "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- 'unlimited'.")
+  @ApiModelProperty(value = "Maximum number of connections or requests or packets. (deprecated). Allowed values are 1-1000000000. Special values are 0- 'unlimited'.")
 
 
  
@@ -186,10 +189,10 @@ public class RateProfile extends AviRestResource  {
 
   
   /**
-   * Time value in seconds to enforce rate count. Allowed values are 1-300.
+   * Time value in seconds to enforce rate count. (deprecated). Allowed values are 1-300.
    * @return period
   **/
-  @ApiModelProperty(value = "Time value in seconds to enforce rate count. Allowed values are 1-300.")
+  @ApiModelProperty(value = "Time value in seconds to enforce rate count. (deprecated). Allowed values are 1-300.")
 
 
  
@@ -201,6 +204,27 @@ public class RateProfile extends AviRestResource  {
   @VsoMethod
   public void setPeriod(Integer period) {
     this.period = period;
+  }
+
+  
+  /**
+   * The rate limiter configuration for this rate profile. Field introduced in 20.1.1.
+   * @return rateLimiter
+  **/
+  @ApiModelProperty(required = true, value = "The rate limiter configuration for this rate profile. Field introduced in 20.1.1.")
+  @NotNull
+
+  @Valid
+
+ 
+  @VsoMethod  
+  public RateLimiter getRateLimiter() {
+    return rateLimiter;
+  }
+    
+  @VsoMethod
+  public void setRateLimiter(RateLimiter rateLimiter) {
+    this.rateLimiter = rateLimiter;
   }
 
   
@@ -224,12 +248,13 @@ public class RateProfile extends AviRestResource  {
         Objects.equals(this.fineGrain, rateProfile.fineGrain) &&
         Objects.equals(this.httpCookie, rateProfile.httpCookie) &&
         Objects.equals(this.httpHeader, rateProfile.httpHeader) &&
-        Objects.equals(this.period, rateProfile.period);
+        Objects.equals(this.period, rateProfile.period) &&
+        Objects.equals(this.rateLimiter, rateProfile.rateLimiter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, burstSz, count, explicitTracking, fineGrain, httpCookie, httpHeader, period);
+    return Objects.hash(action, burstSz, count, explicitTracking, fineGrain, httpCookie, httpHeader, period, rateLimiter);
   }
 
   @Override
@@ -245,6 +270,7 @@ public class RateProfile extends AviRestResource  {
     sb.append("    httpCookie: ").append(toIndentedString(httpCookie)).append("\n");
     sb.append("    httpHeader: ").append(toIndentedString(httpHeader)).append("\n");
     sb.append("    period: ").append(toIndentedString(period)).append("\n");
+    sb.append("    rateLimiter: ").append(toIndentedString(rateLimiter)).append("\n");
     sb.append("}");
     return sb.toString();
   }

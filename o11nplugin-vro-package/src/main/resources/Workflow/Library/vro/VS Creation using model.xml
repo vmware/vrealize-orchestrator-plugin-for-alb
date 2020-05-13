@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item5" object-name="workflow:name=generic"
-	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.0.7"
+	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.0"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Create Vs using model]]></display-name>
+	<display-name><![CDATA[Create Vs]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
 		<param name="Name" type="string">
@@ -482,8 +482,8 @@
 		<description><![CDATA[Failed check]]></description>
 	</attrib>
 	<attrib name="tcp_response" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[TCP Response]]></description>
 	</attrib>
 	<attrib name="tcp_half_open" type="boolean" read-only="false">
@@ -491,8 +491,8 @@
 		<description><![CDATA[TCP half open]]></description>
 	</attrib>
 	<attrib name="maintenance_code" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[Maintenance code]]></description>
 	</attrib>
 	<attrib name="time_out" type="number" read-only="false">
@@ -1269,10 +1269,14 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 			<p-param name="http_response_code">
 				<desc><![CDATA[HTTP Response code]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTP"]]></p-qual>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 			<p-param name="https_response_code">
 				<desc><![CDATA[HTTPS response code]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTPS"]]></p-qual>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>

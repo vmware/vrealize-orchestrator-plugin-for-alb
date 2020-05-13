@@ -15,12 +15,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * AuthorizationRule
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "AuthorizationRule")
 @VsoFinder(name = Constants.FINDER_VRO_AUTHORIZATIONRULE, idAccessor = "getObjectID()")
@@ -46,7 +45,8 @@ public class AuthorizationRule extends AviRestResource  {
    * Authorization action when rule is matched. Field introduced in 18.2.5.
    * @return action
   **/
-  @ApiModelProperty(value = "Authorization action when rule is matched. Field introduced in 18.2.5.")
+  @ApiModelProperty(required = true, value = "Authorization action when rule is matched. Field introduced in 18.2.5.")
+  @NotNull
 
   @Valid
 
@@ -106,7 +106,8 @@ public class AuthorizationRule extends AviRestResource  {
    * Authorization match criteria for the rule. Field introduced in 18.2.5.
    * @return match
   **/
-  @ApiModelProperty(value = "Authorization match criteria for the rule. Field introduced in 18.2.5.")
+  @ApiModelProperty(required = true, value = "Authorization match criteria for the rule. Field introduced in 18.2.5.")
+  @NotNull
 
   @Valid
 

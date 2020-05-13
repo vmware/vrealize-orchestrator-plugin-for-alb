@@ -1,7 +1,5 @@
 package com.vmware.avi.vro;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vmware.avi.sdk.AviApi;
 import com.vmware.avi.sdk.AviApiException;
@@ -41,6 +38,16 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 @VsoFinder(name = Constants.FINDER_VRO_CLIENT, idAccessor = "getObjectID()")
 @Service
 public class AviVroClient {
+	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
+	static {
+		try {
+			VroPluginFactory.initializeModelMap();
+			//System.out.println("Object Map :"+VroPluginFactory.getModelMap());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
+		}
+	}
 
 	public String getObjectID() {
 		return cred.getController() + cred.getUsername() + cred.getPort();
@@ -50,20 +57,10 @@ public class AviVroClient {
 	public AviVroClient() {
 	}
 
-	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
 	private AviCredentials cred = null;
 	private Queue<AviObjectMetadata> workflowDataQueue = new LinkedList<>();
 	private AviApi AVI_API = null;
 	private ObjectMapper mapper = new ObjectMapper();
-
-	static {
-		try {
-			VroPluginFactory.initializeModelMap();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			logger.error(e.getMessage());
-		}
-	}
 
 	public enum OPERATION {
 
@@ -214,7 +211,7 @@ public class AviVroClient {
 				logger.info("Adding " + objectType + " into queue :" + workflowDataQueue + " for deletion");
 			} else {
 				logger.debug("Name or UUID is missing");
-				throw new AviApiException("Please provide name or uuid");
+				throw new AviApiException("Please provide name or uuid of the " + objectType);
 			}
 		} else {
 			logger.debug("Object type or object data is empty");
@@ -249,7 +246,7 @@ public class AviVroClient {
 						+ " for deletion");
 			} else {
 				logger.debug("Name or UUID is missing");
-				throw new AviApiException("Please provide name or uuid");
+				throw new AviApiException("Please provide name or uuid of the " + objectType);
 			}
 		} else {
 			logger.debug("Object data is empty");
@@ -586,7 +583,6 @@ public class AviVroClient {
 			throws Exception {
 		JSONArray array = this.get(objectType, params, tenant);
 		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
-		System.out.println("objectType : " + objectType);
 		AviRestResource object = this.getAviRestResourceObject(objectType);
 		ObjectMapper mapper = new ObjectMapper();
 		for (int counter = 0; counter < array.length(); counter++) {

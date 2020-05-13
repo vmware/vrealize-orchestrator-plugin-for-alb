@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.vmware.avi.vro.model.DnsAAAARdata;
 import com.vmware.avi.vro.model.DnsARdata;
 import com.vmware.avi.vro.model.DnsCnameRdata;
+import com.vmware.avi.vro.model.DnsMxRdata;
 import com.vmware.avi.vro.model.DnsNsRdata;
 import com.vmware.avi.vro.model.DnsSrvRdata;
+import com.vmware.avi.vro.model.DnsTxtRdata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -20,12 +22,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * DnsRecord
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "DnsRecord")
 @VsoFinder(name = Constants.FINDER_VRO_DNSRECORD, idAccessor = "getObjectID()")
@@ -58,6 +59,10 @@ public class DnsRecord extends AviRestResource  {
   @JsonProperty("metadata")
   private String metadata = null;
 
+  @JsonProperty("mx_records")
+  @Valid
+  private List<DnsMxRdata> mxRecords = null;
+
   @JsonProperty("ns")
   @Valid
   private List<DnsNsRdata> ns = null;
@@ -71,6 +76,10 @@ public class DnsRecord extends AviRestResource  {
 
   @JsonProperty("ttl")
   private Integer ttl = null;
+
+  @JsonProperty("txt_records")
+  @Valid
+  private List<DnsTxtRdata> txtRecords = null;
 
   @JsonProperty("type")
   private String type = null;
@@ -258,6 +267,34 @@ public class DnsRecord extends AviRestResource  {
   }
 
   
+  public DnsRecord addMxRecordsItem(DnsMxRdata mxRecordsItem) {
+    if (this.mxRecords == null) {
+      this.mxRecords = new ArrayList<DnsMxRdata>();
+    }
+    this.mxRecords.add(mxRecordsItem);
+    return this;
+  }
+  
+  /**
+   * MX record. Field introduced in 20.1.1.
+   * @return mxRecords
+  **/
+  @ApiModelProperty(value = "MX record. Field introduced in 20.1.1.")
+
+  @Valid
+
+ 
+  @VsoMethod  
+  public List<DnsMxRdata> getMxRecords() {
+    return mxRecords;
+  }
+    
+  @VsoMethod
+  public void setMxRecords(List<DnsMxRdata> mxRecords) {
+    this.mxRecords = mxRecords;
+  }
+
+  
   public DnsRecord addNsItem(DnsNsRdata nsItem) {
     if (this.ns == null) {
       this.ns = new ArrayList<DnsNsRdata>();
@@ -352,6 +389,34 @@ public class DnsRecord extends AviRestResource  {
   }
 
   
+  public DnsRecord addTxtRecordsItem(DnsTxtRdata txtRecordsItem) {
+    if (this.txtRecords == null) {
+      this.txtRecords = new ArrayList<DnsTxtRdata>();
+    }
+    this.txtRecords.add(txtRecordsItem);
+    return this;
+  }
+  
+  /**
+   * Text record. Field introduced in 20.1.1.
+   * @return txtRecords
+  **/
+  @ApiModelProperty(value = "Text record. Field introduced in 20.1.1.")
+
+  @Valid
+
+ 
+  @VsoMethod  
+  public List<DnsTxtRdata> getTxtRecords() {
+    return txtRecords;
+  }
+    
+  @VsoMethod
+  public void setTxtRecords(List<DnsTxtRdata> txtRecords) {
+    this.txtRecords = txtRecords;
+  }
+
+  
   /**
    * DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
    * @return type
@@ -412,17 +477,19 @@ public class DnsRecord extends AviRestResource  {
         Objects.equals(this.ip6Address, dnsRecord.ip6Address) &&
         Objects.equals(this.ipAddress, dnsRecord.ipAddress) &&
         Objects.equals(this.metadata, dnsRecord.metadata) &&
+        Objects.equals(this.mxRecords, dnsRecord.mxRecords) &&
         Objects.equals(this.ns, dnsRecord.ns) &&
         Objects.equals(this.numRecordsInResponse, dnsRecord.numRecordsInResponse) &&
         Objects.equals(this.serviceLocator, dnsRecord.serviceLocator) &&
         Objects.equals(this.ttl, dnsRecord.ttl) &&
+        Objects.equals(this.txtRecords, dnsRecord.txtRecords) &&
         Objects.equals(this.type, dnsRecord.type) &&
         Objects.equals(this.wildcardMatch, dnsRecord.wildcardMatch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(algorithm, cname, delegated, description, fqdn, ip6Address, ipAddress, metadata, ns, numRecordsInResponse, serviceLocator, ttl, type, wildcardMatch);
+    return Objects.hash(algorithm, cname, delegated, description, fqdn, ip6Address, ipAddress, metadata, mxRecords, ns, numRecordsInResponse, serviceLocator, ttl, txtRecords, type, wildcardMatch);
   }
 
   @Override
@@ -438,10 +505,12 @@ public class DnsRecord extends AviRestResource  {
     sb.append("    ip6Address: ").append(toIndentedString(ip6Address)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    mxRecords: ").append(toIndentedString(mxRecords)).append("\n");
     sb.append("    ns: ").append(toIndentedString(ns)).append("\n");
     sb.append("    numRecordsInResponse: ").append(toIndentedString(numRecordsInResponse)).append("\n");
     sb.append("    serviceLocator: ").append(toIndentedString(serviceLocator)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
+    sb.append("    txtRecords: ").append(toIndentedString(txtRecords)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    wildcardMatch: ").append(toIndentedString(wildcardMatch)).append("\n");
     sb.append("}");

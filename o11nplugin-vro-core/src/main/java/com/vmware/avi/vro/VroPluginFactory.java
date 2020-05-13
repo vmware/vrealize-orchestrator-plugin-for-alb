@@ -1,6 +1,10 @@
 package com.vmware.avi.vro;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,6 +17,8 @@ import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.vmware.o11n.plugin.sdk.spring.AbstractSpringPluginFactory;
 import com.vmware.o11n.plugin.sdk.spring.InventoryRef;
@@ -25,20 +31,26 @@ import ch.dunes.vso.sdk.api.QueryResult;
  *
  */
 public class VroPluginFactory extends AbstractSpringPluginFactory {
-
+	private static final Logger logger = LoggerFactory.getLogger(VroPluginFactory.class);
 	public static Map<String, AviVroClient> aviVroClientMap = new HashMap<String, AviVroClient>();
 	public static Map<String, String> modelMap = new HashMap<String, String>();
-	
+
+	/***
+	 * This method initialize modelMap.
+	 * 
+	 * @throws ClassNotFoundException
+	 */
 	public static void initializeModelMap() throws ClassNotFoundException {
 		VroPluginFactory.fetchClassNames("com.vmware.avi.vro.model");
+		System.out.println("Object map after fetchClassNames " + VroPluginFactory.getModelMap());
 		VroPluginFactory.modelMap.put("PLUGIN", "Vro");
 		VroPluginFactory.modelMap.put("CLIENT", "AviVroClient");
 		VroPluginFactory.modelMap.put("PLUGIN_NAME", "Avi");
 	}
-	
+
 	@Override
 	public Object find(InventoryRef ref) {
-		System.out.println("Reference :: "+ ref);
+		System.out.println("Reference :: " + ref);
 		String objectName = modelMap.get(ref.getType().toUpperCase());
 		if (ref.isOfType(objectName)) {
 			String location = "com.vmware.avi.vro.model." + objectName;
@@ -51,17 +63,11 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 				e.printStackTrace();
 			}
 			return obj;
-		}else {
+		} else {
 			throw new UnsupportedOperationException("Error in find..");
 		}
 	}
 
-	/*
-	 * @Overridetype
-	 * 
-	 * public QueryResult findAll(String type, String query) { throw new
-	 * UnsupportedOperationException("implement me"); }
-	 */
 	@Override
 	public QueryResult findAll(String type, String query) {
 		return new QueryResult(getListOfAviVroClientList());
@@ -82,37 +88,96 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 		return listOfAviVroClient;
 	}
 
+	/**
+	 * This method return modelMap.
+	 * 
+	 * @return modelMap
+	 */
 	public static Map<String, String> getModelMap() {
 		return modelMap;
 	}
-	
+
+	/**
+	 * This method return aviVroClientMap.
+	 * 
+	 * @return aviVroClientMap
+	 */
 	public static Map<String, AviVroClient> getListOfAviVroClientMap() {
 		return aviVroClientMap;
 	}
-	
-	/*
-	 * fetchClassNames() which will fetch autogenrated class names from the
-	 * package.
-	 * @param package_name
+
+	/**
+	 * This method will add Class names from the package into the modelMap.
+	 * 
+	 * @param packageName fully qualified package name
+	 * @throws ClassNotFoundException
 	 */
 	public static void fetchClassNames(String packageName) throws ClassNotFoundException {
-		List<ClassLoader> classLoadersList = new LinkedList<ClassLoader>();
-		classLoadersList.add(ClasspathHelper.contextClassLoader());
-		classLoadersList.add(ClasspathHelper.staticClassLoader());
+		Class[] classes = null;
+		try {
+			classes = getClasses(packageName);
+		} catch (IOException e) {
 
-		Reflections reflections = new Reflections(new ConfigurationBuilder()
-				.setScanners(new SubTypesScanner(false), new ResourcesScanner())
-				.setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0])))
-				.filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix(packageName))));
-		
-		Set<Class<?>> classes = reflections.getSubTypesOf(Object.class);
-		for (Class<?> className : classes) {
-			String value = className.getSimpleName();
-			String key = value.toUpperCase();
-		    modelMap.put(key, value);
+			logger.info("Unable to fetch class names : " + e.getMessage());
 		}
+		for (Class c : classes) {
+
+			modelMap.put(c.getSimpleName().toUpperCase(), c.getSimpleName());
+		}
+
 	}
-	public static void main(String[] args) throws ClassNotFoundException {
-		fetchClassNames("com.vmware.avi.vro.model");
+
+	/**
+	 * Scans all classes accessible from the context class loader which belong to
+	 * the given package and subpackages.
+	 *
+	 * @param packageName The base package
+	 * @return The classes
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 */
+	private static Class[] getClasses(String packageName) throws ClassNotFoundException, IOException {
+		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		assert classLoader != null;
+		String path = packageName.replace('.', '/');
+		Enumeration resources = classLoader.getResources(path);
+		List<File> dirs = new ArrayList();
+		while (resources.hasMoreElements()) {
+			URL resource = (URL) resources.nextElement();
+			dirs.add(new File(resource.getFile()));
+		}
+		ArrayList classes = new ArrayList();
+		for (File directory : dirs) {
+			classes.addAll(findClasses(directory, packageName));
+		}
+		return (Class[]) classes.toArray(new Class[classes.size()]);
 	}
+
+	/**
+	 * Recursive method used to find all classes in a given directory and subdirs.
+	 *
+	 * @param directory   The base directory
+	 * @param packageName The package name for classes found inside the base
+	 *                    directory
+	 * @return The classes
+	 * @throws ClassNotFoundException
+	 */
+	private static List findClasses(File directory, String packageName) throws ClassNotFoundException {
+		List classes = new ArrayList();
+		if (!directory.exists()) {
+			return classes;
+		}
+		File[] files = directory.listFiles();
+		for (File file : files) {
+			if (file.isDirectory()) {
+				assert !file.getName().contains(".");
+				classes.addAll(findClasses(file, packageName + "." + file.getName()));
+			} else if (file.getName().endsWith(".class")) {
+				classes.add(
+						Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+			}
+		}
+		return classes;
+	}
+
 }

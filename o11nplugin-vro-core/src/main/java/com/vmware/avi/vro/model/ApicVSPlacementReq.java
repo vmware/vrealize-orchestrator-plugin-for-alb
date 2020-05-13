@@ -17,12 +17,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * ApicVSPlacementReq
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "ApicVSPlacementReq")
 @VsoFinder(name = Constants.FINDER_VRO_APICVSPLACEMENTREQ, idAccessor = "getObjectID()")

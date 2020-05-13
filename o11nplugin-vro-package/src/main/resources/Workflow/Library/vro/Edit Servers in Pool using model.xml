@@ -3,10 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item2" object-name="workflow:name=generic"
-	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.4"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.6"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Edit Servers in Pool using model]]></display-name>
+	<display-name><![CDATA[Edit Servers in Pool]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
 		<param name="Name" type="string">

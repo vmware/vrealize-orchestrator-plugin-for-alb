@@ -16,12 +16,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * SAMLSPConfig
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "SAMLSPConfig")
 @VsoFinder(name = Constants.FINDER_VRO_SAMLSPCONFIG, idAccessor = "getObjectID()")
@@ -48,6 +47,9 @@ public class SAMLSPConfig extends AviRestResource  {
 
   @JsonProperty("sp_metadata")
   private String spMetadata = null;
+
+  @JsonProperty("use_idp_session_timeout")
+  private Boolean useIdpSessionTimeout = null;
 
   
   /**
@@ -137,10 +139,10 @@ public class SAMLSPConfig extends AviRestResource  {
 
   
   /**
-   * SP will use this SSL certificate to sign assertions going to the IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3.
+   * SP will use this SSL certificate to sign requests going to the IdP and decrypt the assertions coming from IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3.
    * @return signingSslKeyAndCertificateRef
   **/
-  @ApiModelProperty(value = "SP will use this SSL certificate to sign assertions going to the IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3.")
+  @ApiModelProperty(value = "SP will use this SSL certificate to sign requests going to the IdP and decrypt the assertions coming from IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3.")
 
 
  
@@ -194,6 +196,25 @@ public class SAMLSPConfig extends AviRestResource  {
   }
 
   
+  /**
+   * By enabling this field IdP can control how long the SP session can exist through the SessionNotOnOrAfter field in the AuthNStatement of SAML Response. Field introduced in 18.2.7.
+   * @return useIdpSessionTimeout
+  **/
+  @ApiModelProperty(value = "By enabling this field IdP can control how long the SP session can exist through the SessionNotOnOrAfter field in the AuthNStatement of SAML Response. Field introduced in 18.2.7.")
+
+
+ 
+  @VsoMethod  
+  public Boolean isUseIdpSessionTimeout() {
+    return useIdpSessionTimeout;
+  }
+    
+  @VsoMethod
+  public void setUseIdpSessionTimeout(Boolean useIdpSessionTimeout) {
+    this.useIdpSessionTimeout = useIdpSessionTimeout;
+  }
+
+  
   public String getObjectID() {
 		return "SAMLSPConfig";
   }
@@ -213,12 +234,13 @@ public class SAMLSPConfig extends AviRestResource  {
         Objects.equals(this.key, saMLSPConfig.key) &&
         Objects.equals(this.signingSslKeyAndCertificateRef, saMLSPConfig.signingSslKeyAndCertificateRef) &&
         Objects.equals(this.singleSignonUrl, saMLSPConfig.singleSignonUrl) &&
-        Objects.equals(this.spMetadata, saMLSPConfig.spMetadata);
+        Objects.equals(this.spMetadata, saMLSPConfig.spMetadata) &&
+        Objects.equals(this.useIdpSessionTimeout, saMLSPConfig.useIdpSessionTimeout);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cookieName, cookieTimeout, entityId, key, signingSslKeyAndCertificateRef, singleSignonUrl, spMetadata);
+    return Objects.hash(cookieName, cookieTimeout, entityId, key, signingSslKeyAndCertificateRef, singleSignonUrl, spMetadata, useIdpSessionTimeout);
   }
 
   @Override
@@ -233,6 +255,7 @@ public class SAMLSPConfig extends AviRestResource  {
     sb.append("    signingSslKeyAndCertificateRef: ").append(toIndentedString(signingSslKeyAndCertificateRef)).append("\n");
     sb.append("    singleSignonUrl: ").append(toIndentedString(singleSignonUrl)).append("\n");
     sb.append("    spMetadata: ").append(toIndentedString(spMetadata)).append("\n");
+    sb.append("    useIdpSessionTimeout: ").append(toIndentedString(useIdpSessionTimeout)).append("\n");
     sb.append("}");
     return sb.toString();
   }

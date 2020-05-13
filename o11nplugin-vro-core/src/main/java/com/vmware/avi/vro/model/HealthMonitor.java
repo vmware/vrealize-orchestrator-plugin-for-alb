@@ -3,6 +3,7 @@ package com.vmware.avi.vro.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.vmware.avi.vro.model.HealthMonitorAuthInfo;
 import com.vmware.avi.vro.model.HealthMonitorDNS;
 import com.vmware.avi.vro.model.HealthMonitorExternal;
 import com.vmware.avi.vro.model.HealthMonitorHttp;
@@ -20,12 +21,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * HealthMonitor
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:14:41.363+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "HealthMonitor")
 @VsoFinder(name = Constants.FINDER_VRO_HEALTHMONITOR, idAccessor = "getObjectID()")
@@ -33,6 +33,12 @@ import org.springframework.stereotype.Service;
 public class HealthMonitor extends AviRestResource  {
   @JsonProperty("_last_modified")
   private String lastModified = null;
+
+  @JsonProperty("allow_duplicate_monitors")
+  private Boolean allowDuplicateMonitors = null;
+
+  @JsonProperty("authentication")
+  private HealthMonitorAuthInfo authentication = null;
 
   @JsonProperty("description")
   private String description = null;
@@ -114,6 +120,45 @@ public class HealthMonitor extends AviRestResource  {
   @VsoMethod
   public void setLastModified(String lastModified) {
     this.lastModified = lastModified;
+  }
+
+  
+  /**
+   * By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently. In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not desired. Use this knob to allow duplicates. Field introduced in 18.2.8.
+   * @return allowDuplicateMonitors
+  **/
+  @ApiModelProperty(value = "By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently. In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not desired. Use this knob to allow duplicates. Field introduced in 18.2.8.")
+
+
+ 
+  @VsoMethod  
+  public Boolean isAllowDuplicateMonitors() {
+    return allowDuplicateMonitors;
+  }
+    
+  @VsoMethod
+  public void setAllowDuplicateMonitors(Boolean allowDuplicateMonitors) {
+    this.allowDuplicateMonitors = allowDuplicateMonitors;
+  }
+
+  
+  /**
+   * Authentication information for username/password. Field introduced in 20.1.1.
+   * @return authentication
+  **/
+  @ApiModelProperty(value = "Authentication information for username/password. Field introduced in 20.1.1.")
+
+  @Valid
+
+ 
+  @VsoMethod  
+  public HealthMonitorAuthInfo getAuthentication() {
+    return authentication;
+  }
+    
+  @VsoMethod
+  public void setAuthentication(HealthMonitorAuthInfo authentication) {
+    this.authentication = authentication;
   }
 
   
@@ -540,6 +585,8 @@ public class HealthMonitor extends AviRestResource  {
     }
     HealthMonitor healthMonitor = (HealthMonitor) o;
     return Objects.equals(this.lastModified, healthMonitor.lastModified) &&
+        Objects.equals(this.allowDuplicateMonitors, healthMonitor.allowDuplicateMonitors) &&
+        Objects.equals(this.authentication, healthMonitor.authentication) &&
         Objects.equals(this.description, healthMonitor.description) &&
         Objects.equals(this.disableQuickstart, healthMonitor.disableQuickstart) &&
         Objects.equals(this.dnsMonitor, healthMonitor.dnsMonitor) &&
@@ -565,7 +612,7 @@ public class HealthMonitor extends AviRestResource  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastModified, description, disableQuickstart, dnsMonitor, externalMonitor, failedChecks, httpMonitor, httpsMonitor, isFederated, monitorPort, name, radiusMonitor, receiveTimeout, sendInterval, sipMonitor, successfulChecks, tcpMonitor, tenantRef, type, udpMonitor, url, uuid);
+    return Objects.hash(lastModified, allowDuplicateMonitors, authentication, description, disableQuickstart, dnsMonitor, externalMonitor, failedChecks, httpMonitor, httpsMonitor, isFederated, monitorPort, name, radiusMonitor, receiveTimeout, sendInterval, sipMonitor, successfulChecks, tcpMonitor, tenantRef, type, udpMonitor, url, uuid);
   }
 
   @Override
@@ -574,6 +621,8 @@ public class HealthMonitor extends AviRestResource  {
     sb.append("class HealthMonitor {\n");
     
     sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
+    sb.append("    allowDuplicateMonitors: ").append(toIndentedString(allowDuplicateMonitors)).append("\n");
+    sb.append("    authentication: ").append(toIndentedString(authentication)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    disableQuickstart: ").append(toIndentedString(disableQuickstart)).append("\n");
     sb.append("    dnsMonitor: ").append(toIndentedString(dnsMonitor)).append("\n");
