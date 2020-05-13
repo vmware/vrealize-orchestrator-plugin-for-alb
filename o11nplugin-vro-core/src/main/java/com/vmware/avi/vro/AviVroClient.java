@@ -40,13 +40,7 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 public class AviVroClient {
 	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
 	static {
-		try {
-			VroPluginFactory.initializeModelMap();
-			//System.out.println("Object Map :"+VroPluginFactory.getModelMap());
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			logger.error(e.getMessage());
-		}
+		VroPluginFactory.initializeModelMap();
 	}
 
 	public String getObjectID() {
@@ -406,8 +400,8 @@ public class AviVroClient {
 					.forName("com.vmware.avi.vro.model." + className);
 			object = obj.newInstance();
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.debug("Exception : "+e.getMessage());
+		
 		}
 
 		return object;
