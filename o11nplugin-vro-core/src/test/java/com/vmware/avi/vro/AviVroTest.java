@@ -17,10 +17,9 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 import com.vmware.avi.sdk.AviCredentials;
-import com.vmware.avi.vro.AviVroClient;
 import com.vmware.avi.vro.model.AviRestResource;
 import com.vmware.avi.vro.model.HealthMonitor;
-import com.vmware.avi.vro.model.VirtualService;
+import com.vmware.avi.vro.model.Pool;
 
 public class AviVroTest {
 	private static final String CONTROLLER = System.getenv("AVI_CONTROLLER");
@@ -207,11 +206,11 @@ public class AviVroTest {
 	/**
 	 * Given objects in sequence to execute workflow like hm, pool and vs.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 
 	@Test
-	public void testVroExecuteWorkFlowWithValidSequence() throws java.text.ParseException {
+	public void testVroExecuteWorkFlowWithValidSequence() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -246,7 +245,8 @@ public class AviVroTest {
 			assertNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1", null));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -256,10 +256,10 @@ public class AviVroTest {
 	 * It will raise an error while creating vs that pool object not found as we
 	 * have given pool reference in vs.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testVroExecuteWorkFlowWithInvalidSequence() throws java.text.ParseException {
+	public void testVroExecuteWorkFlowWithInvalidSequence() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -274,7 +274,11 @@ public class AviVroTest {
 			// add healthmonitor
 			testingVRO.add("healthmonitor", testObject.getHMData());
 
-			testingVRO.executeWorkflow();
+			try {
+				testingVRO.executeWorkflow();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 			// verify none of the object is created
 			assertNull(testingVRO.getObjectDataByName("virtualservice", "test-vs-1", null));
@@ -282,7 +286,8 @@ public class AviVroTest {
 			assertNull(testingVRO.getObjectDataByName("healthmonitor", "test-hm-1", null));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -292,10 +297,10 @@ public class AviVroTest {
 	 * Create hm, pool and vs but vs creation failed then it will rollback and
 	 * delete hm and pool also.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testVroRollbackWhenVsFailedToCreate() throws java.text.ParseException {
+	public void testVroRollbackWhenVsFailedToCreate() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -321,7 +326,8 @@ public class AviVroTest {
 			assertNull(testingVRO.getObjectDataByName("pool", "test-pool-3", null));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -329,9 +335,11 @@ public class AviVroTest {
 	/**
 	 * create pools and PG and failed at vs creation so it will delete pools as well
 	 * as PG.
+	 * 
+	 * @throws Exception
 	 */
-	//@Test
-	public void testVsCreatewithInvalidConfig() throws java.text.ParseException {
+	// @Test
+	public void testVsCreatewithInvalidConfig() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -360,7 +368,8 @@ public class AviVroTest {
 			assertNull(testingVRO.getObjectDataByName("poolgroup", "poolgroup-1", null));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -369,10 +378,10 @@ public class AviVroTest {
 	 * create hm , pool, vs. Update hm and verify it is updated and delete all the
 	 * objects
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testVroExecuteFlowOfUpdate() throws java.text.ParseException {
+	public void testVroExecuteFlowOfUpdate() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -397,7 +406,7 @@ public class AviVroTest {
 			testingVRO.add("healthmonitor", testObject.getUpdatedHMData());
 			ArrayList<AviRestResource> response1 = testingVRO.executeWorkflow();
 			HealthMonitor healthMonitor2 = (HealthMonitor) response1.get(0);
-			
+
 			assertTrue("send_interval value not as expected", healthMonitor2.getSendInterval() == 30);
 
 			// delete virtualservice and its refered objects
@@ -407,7 +416,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -417,10 +427,10 @@ public class AviVroTest {
 	 * fail and it will roll back to previous workflow stage. Need to cleanup object
 	 * at the end of test execution
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testVroRollbackOfUpdate() throws java.text.ParseException {
+	public void testVroRollbackOfUpdate() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -461,7 +471,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -471,11 +482,11 @@ public class AviVroTest {
 	 * another vs with different name but the same config as previous vs then it
 	 * will fail with an error like overlapping IPs.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 
 	@Test
-	public void testVroExecuteflowForOverlappingIps() throws java.text.ParseException {
+	public void testVroExecuteflowForOverlappingIps() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -515,7 +526,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -524,10 +536,10 @@ public class AviVroTest {
 	 * Create a pool group with pools and try to create the same pool group again
 	 * and it should pass.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testPoolgroupCreateTwice() throws java.text.ParseException {
+	public void testPoolgroupCreateTwice() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -569,16 +581,19 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 	}
 
 	/**
 	 * Create, update and delete pool group with pool. In this test case we are
 	 * updating pool object attached to poolgroup.
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void testPoolgroupUpdate() throws java.text.ParseException {
+	public void testPoolgroupUpdate() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -600,8 +615,8 @@ public class AviVroTest {
 			// add pools and check pool is updated or not
 			testingVRO.add("pool", testObject.getPoolDataUpdate());
 			ArrayList<AviRestResource> response1 = testingVRO.executeWorkflow();
-
-			assertTrue("poolgroup not created", response1.contains("\"enabled\":false"));
+			Pool pool = (Pool) response1.get(0);
+			assertTrue("poolgroup not updated", pool.isEnabled() == false);
 
 			// delete all objects
 			testingVRO.delete("poolgroup", testObject.deletePoolgroup());
@@ -611,16 +626,19 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 	}
 
 	/**
 	 * Create, update and delete pool group with pool. In this test case we are
 	 * updating poolgroup by removing pool-3 from it.
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void testPoolgroupCreateAndUpdateAndDelete() throws java.text.ParseException {
+	public void testPoolgroupCreateAndUpdateAndDelete() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -652,7 +670,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -660,9 +679,11 @@ public class AviVroTest {
 	/**
 	 * Create pools but pool group creation failed due to invalid config then it
 	 * should rollback and delete created pool which refereed in pool group.
+	 * 
+	 * @throws Exception
 	 */
-	//@Test
-	public void testPoolgroupCreatewithInvalidConfig() throws java.text.ParseException {
+	// @Test
+	public void testPoolgroupCreatewithInvalidConfig() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -688,7 +709,8 @@ public class AviVroTest {
 			assertNull(testingVRO.getObjectDataByName("pool", "pool-3", null));
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -697,10 +719,10 @@ public class AviVroTest {
 	 * Delete hm , pool and vs but vs deletion failed then it will rollback and
 	 * create vs, hm and pool.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testRollbackOfDelete() throws java.text.ParseException {
+	public void testRollbackOfDelete() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -741,7 +763,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -750,10 +773,10 @@ public class AviVroTest {
 	 * Test deletion of object which is not present on controller. In this case it
 	 * will not generate error instead of that it silently ignore this.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testDeleteExecuteworkflowandRollback() throws java.text.ParseException {
+	public void testDeleteExecuteworkflowandRollback() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -812,7 +835,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -822,10 +846,10 @@ public class AviVroTest {
 	 * create vs with invalid config in the second workflow then it will rollback
 	 * and create deleted vs.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testVroRollbackVsDeleteAndCreate() throws java.text.ParseException {
+	public void testVroRollbackVsDeleteAndCreate() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -867,7 +891,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}
@@ -875,10 +900,10 @@ public class AviVroTest {
 	/**
 	 * Create hm and get hm by uuid and update hm and verify its updated.
 	 * 
-	 * @throws java.text.ParseException
+	 * @throws Exception
 	 */
 	@Test
-	public void testObjectByUUID() throws java.text.ParseException {
+	public void testObjectByUUID() throws Exception {
 		AviVroTest testObject = new AviVroTest();
 		AviVroClient testingVRO = new AviVroClient();
 		testingVRO.setCred(AviVroTest.getCreds());
@@ -918,7 +943,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(System.err);
+			throw e;
 		}
 
 	}

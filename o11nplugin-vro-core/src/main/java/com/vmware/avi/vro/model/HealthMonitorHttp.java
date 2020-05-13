@@ -16,22 +16,27 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * HealthMonitorHttp
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:14:41.363+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "HealthMonitorHttp")
 @VsoFinder(name = Constants.FINDER_VRO_HEALTHMONITORHTTP, idAccessor = "getObjectID()")
 @Service
 public class HealthMonitorHttp extends AviRestResource  {
+  @JsonProperty("auth_type")
+  private String authType = null;
+
   @JsonProperty("exact_http_request")
   private Boolean exactHttpRequest = null;
 
   @JsonProperty("http_request")
   private String httpRequest = "GET / HTTP/1.0";
+
+  @JsonProperty("http_request_body")
+  private String httpRequestBody = null;
 
   @JsonProperty("http_response")
   private String httpResponse = null;
@@ -49,6 +54,25 @@ public class HealthMonitorHttp extends AviRestResource  {
 
   @JsonProperty("ssl_attributes")
   private HealthMonitorSSLAttributes sslAttributes = null;
+
+  
+  /**
+   * Type of the authentication method. Enum options - AUTH_BASIC, AUTH_NTLM. Field introduced in 20.1.1.
+   * @return authType
+  **/
+  @ApiModelProperty(value = "Type of the authentication method. Enum options - AUTH_BASIC, AUTH_NTLM. Field introduced in 20.1.1.")
+
+
+ 
+  @VsoMethod  
+  public String getAuthType() {
+    return authType;
+  }
+    
+  @VsoMethod
+  public void setAuthType(String authType) {
+    this.authType = authType;
+  }
 
   
   /**
@@ -86,6 +110,25 @@ public class HealthMonitorHttp extends AviRestResource  {
   @VsoMethod
   public void setHttpRequest(String httpRequest) {
     this.httpRequest = httpRequest;
+  }
+
+  
+  /**
+   * HTTP request body. Field introduced in 20.1.1.
+   * @return httpRequestBody
+  **/
+  @ApiModelProperty(value = "HTTP request body. Field introduced in 20.1.1.")
+
+
+ 
+  @VsoMethod  
+  public String getHttpRequestBody() {
+    return httpRequestBody;
+  }
+    
+  @VsoMethod
+  public void setHttpRequestBody(String httpRequestBody) {
+    this.httpRequestBody = httpRequestBody;
   }
 
   
@@ -214,8 +257,10 @@ public class HealthMonitorHttp extends AviRestResource  {
       return false;
     }
     HealthMonitorHttp healthMonitorHttp = (HealthMonitorHttp) o;
-    return Objects.equals(this.exactHttpRequest, healthMonitorHttp.exactHttpRequest) &&
+    return Objects.equals(this.authType, healthMonitorHttp.authType) &&
+        Objects.equals(this.exactHttpRequest, healthMonitorHttp.exactHttpRequest) &&
         Objects.equals(this.httpRequest, healthMonitorHttp.httpRequest) &&
+        Objects.equals(this.httpRequestBody, healthMonitorHttp.httpRequestBody) &&
         Objects.equals(this.httpResponse, healthMonitorHttp.httpResponse) &&
         Objects.equals(this.httpResponseCode, healthMonitorHttp.httpResponseCode) &&
         Objects.equals(this.maintenanceCode, healthMonitorHttp.maintenanceCode) &&
@@ -225,7 +270,7 @@ public class HealthMonitorHttp extends AviRestResource  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(exactHttpRequest, httpRequest, httpResponse, httpResponseCode, maintenanceCode, maintenanceResponse, sslAttributes);
+    return Objects.hash(authType, exactHttpRequest, httpRequest, httpRequestBody, httpResponse, httpResponseCode, maintenanceCode, maintenanceResponse, sslAttributes);
   }
 
   @Override
@@ -233,8 +278,10 @@ public class HealthMonitorHttp extends AviRestResource  {
     StringBuilder sb = new StringBuilder();
     sb.append("class HealthMonitorHttp {\n");
     
+    sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
     sb.append("    exactHttpRequest: ").append(toIndentedString(exactHttpRequest)).append("\n");
     sb.append("    httpRequest: ").append(toIndentedString(httpRequest)).append("\n");
+    sb.append("    httpRequestBody: ").append(toIndentedString(httpRequestBody)).append("\n");
     sb.append("    httpResponse: ").append(toIndentedString(httpResponse)).append("\n");
     sb.append("    httpResponseCode: ").append(toIndentedString(httpResponseCode)).append("\n");
     sb.append("    maintenanceCode: ").append(toIndentedString(maintenanceCode)).append("\n");

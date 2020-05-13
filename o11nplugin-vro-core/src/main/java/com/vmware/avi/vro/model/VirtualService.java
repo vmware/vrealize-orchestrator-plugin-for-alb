@@ -36,12 +36,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
-
 /**
  * VirtualService
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "VirtualService")
 @VsoFinder(name = Constants.FINDER_VRO_VIRTUALSERVICE, idAccessor = "getObjectID()")
@@ -52,6 +51,9 @@ public class VirtualService extends AviRestResource  {
 
   @JsonProperty("active_standby_se_tag")
   private String activeStandbySeTag = "ACTIVE_STANDBY_SE_1";
+
+  @JsonProperty("advertise_down_vs")
+  private Boolean advertiseDownVs = null;
 
   @JsonProperty("allow_invalid_client_cert")
   private Boolean allowInvalidClientCert = null;
@@ -402,6 +404,25 @@ public class VirtualService extends AviRestResource  {
   @VsoMethod
   public void setActiveStandbySeTag(String activeStandbySeTag) {
     this.activeStandbySeTag = activeStandbySeTag;
+  }
+
+  
+  /**
+   * Keep advertising Virtual Service via BGP even if it is marked down by health monitor. This setting takes effect for future Virtual Service flaps. To advertise current VSes that are down, please disable and re-enable the Virtual Service. Field introduced in 20.1.1.
+   * @return advertiseDownVs
+  **/
+  @ApiModelProperty(value = "Keep advertising Virtual Service via BGP even if it is marked down by health monitor. This setting takes effect for future Virtual Service flaps. To advertise current VSes that are down, please disable and re-enable the Virtual Service. Field introduced in 20.1.1.")
+
+
+ 
+  @VsoMethod  
+  public Boolean isAdvertiseDownVs() {
+    return advertiseDownVs;
+  }
+    
+  @VsoMethod
+  public void setAdvertiseDownVs(Boolean advertiseDownVs) {
+    this.advertiseDownVs = advertiseDownVs;
   }
 
   
@@ -2462,6 +2483,7 @@ public class VirtualService extends AviRestResource  {
     VirtualService virtualService = (VirtualService) o;
     return Objects.equals(this.lastModified, virtualService.lastModified) &&
         Objects.equals(this.activeStandbySeTag, virtualService.activeStandbySeTag) &&
+        Objects.equals(this.advertiseDownVs, virtualService.advertiseDownVs) &&
         Objects.equals(this.allowInvalidClientCert, virtualService.allowInvalidClientCert) &&
         Objects.equals(this.analyticsPolicy, virtualService.analyticsPolicy) &&
         Objects.equals(this.analyticsProfileRef, virtualService.analyticsProfileRef) &&
@@ -2564,7 +2586,7 @@ public class VirtualService extends AviRestResource  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastModified, activeStandbySeTag, allowInvalidClientCert, analyticsPolicy, analyticsProfileRef, apicContractGraph, applicationProfileRef, autoAllocateFloatingIp, autoAllocateIp, availabilityZone, aviAllocatedFip, aviAllocatedVip, azureAvailabilitySet, bulkSyncKvcache, clientAuth, closeClientConnOnConfigUpdate, cloudConfigCksum, cloudRef, cloudType, connectionsRateLimit, contentRewrite, createdBy, delayFairness, description, discoveredNetworkRef, discoveredNetworks, discoveredSubnet, dnsInfo, dnsPolicies, eastWestPlacement, enableAutogw, enableRhi, enableRhiSnat, enabled, errorPageProfileRef, floatingIp, floatingSubnetUuid, flowDist, flowLabelType, fqdn, hostNameXlate, httpPolicies, ignPoolNetReach, ipAddress, ipamNetworkSubnet, l4Policies, limitDoser, maxCpsPerClient, microserviceRef, minPoolsUp, name, networkProfileRef, networkRef, networkSecurityPolicyRef, nsxSecuritygroup, performanceLimits, poolGroupRef, poolRef, portUuid, removeListeningPortOnVsDown, requestsRateLimit, samlSpConfig, scaleoutEcmp, seGroupRef, securityPolicyRef, serverNetworkProfileRef, serviceMetadata, servicePoolSelect, services, sidebandProfile, snatIp, spPoolRefs, sslKeyAndCertificateRefs, sslProfileRef, sslProfileSelectors, sslSessCacheAvgSize, ssoPolicy, ssoPolicyRef, staticDnsRecords, subnet, subnetUuid, tenantRef, testSeDatastoreLevel1Ref, topologyPolicies, trafficCloneProfileRef, trafficEnabled, type, url, useBridgeIpAsVip, useVipAsSnat, uuid, vhDomainName, vhParentVsUuid, vip, vrfContextRef, vsDatascripts, vsvipCloudConfigCksum, vsvipRef, wafPolicyRef, weight);
+    return Objects.hash(lastModified, activeStandbySeTag, advertiseDownVs, allowInvalidClientCert, analyticsPolicy, analyticsProfileRef, apicContractGraph, applicationProfileRef, autoAllocateFloatingIp, autoAllocateIp, availabilityZone, aviAllocatedFip, aviAllocatedVip, azureAvailabilitySet, bulkSyncKvcache, clientAuth, closeClientConnOnConfigUpdate, cloudConfigCksum, cloudRef, cloudType, connectionsRateLimit, contentRewrite, createdBy, delayFairness, description, discoveredNetworkRef, discoveredNetworks, discoveredSubnet, dnsInfo, dnsPolicies, eastWestPlacement, enableAutogw, enableRhi, enableRhiSnat, enabled, errorPageProfileRef, floatingIp, floatingSubnetUuid, flowDist, flowLabelType, fqdn, hostNameXlate, httpPolicies, ignPoolNetReach, ipAddress, ipamNetworkSubnet, l4Policies, limitDoser, maxCpsPerClient, microserviceRef, minPoolsUp, name, networkProfileRef, networkRef, networkSecurityPolicyRef, nsxSecuritygroup, performanceLimits, poolGroupRef, poolRef, portUuid, removeListeningPortOnVsDown, requestsRateLimit, samlSpConfig, scaleoutEcmp, seGroupRef, securityPolicyRef, serverNetworkProfileRef, serviceMetadata, servicePoolSelect, services, sidebandProfile, snatIp, spPoolRefs, sslKeyAndCertificateRefs, sslProfileRef, sslProfileSelectors, sslSessCacheAvgSize, ssoPolicy, ssoPolicyRef, staticDnsRecords, subnet, subnetUuid, tenantRef, testSeDatastoreLevel1Ref, topologyPolicies, trafficCloneProfileRef, trafficEnabled, type, url, useBridgeIpAsVip, useVipAsSnat, uuid, vhDomainName, vhParentVsUuid, vip, vrfContextRef, vsDatascripts, vsvipCloudConfigCksum, vsvipRef, wafPolicyRef, weight);
   }
 
   @Override
@@ -2574,6 +2596,7 @@ public class VirtualService extends AviRestResource  {
     
     sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    activeStandbySeTag: ").append(toIndentedString(activeStandbySeTag)).append("\n");
+    sb.append("    advertiseDownVs: ").append(toIndentedString(advertiseDownVs)).append("\n");
     sb.append("    allowInvalidClientCert: ").append(toIndentedString(allowInvalidClientCert)).append("\n");
     sb.append("    analyticsPolicy: ").append(toIndentedString(analyticsPolicy)).append("\n");
     sb.append("    analyticsProfileRef: ").append(toIndentedString(analyticsProfileRef)).append("\n");

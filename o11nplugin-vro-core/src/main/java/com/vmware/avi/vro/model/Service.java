@@ -12,17 +12,19 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
-
 /**
  * Service
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "Service")
 @VsoFinder(name = Constants.FINDER_VRO_SERVICE, idAccessor = "getObjectID()")
 @org.springframework.stereotype.Service
 public class Service extends AviRestResource  {
+  @JsonProperty("enable_http2")
+  private Boolean enableHttp2 = null;
+
   @JsonProperty("enable_ssl")
   private Boolean enableSsl = null;
 
@@ -37,6 +39,25 @@ public class Service extends AviRestResource  {
 
   @JsonProperty("port_range_end")
   private Integer portRangeEnd = null;
+
+  
+  /**
+   * Enable HTTP2 on this port. Field introduced in 20.1.1.
+   * @return enableHttp2
+  **/
+  @ApiModelProperty(value = "Enable HTTP2 on this port. Field introduced in 20.1.1.")
+
+
+ 
+  @VsoMethod  
+  public Boolean isEnableHttp2() {
+    return enableHttp2;
+  }
+    
+  @VsoMethod
+  public void setEnableHttp2(Boolean enableHttp2) {
+    this.enableHttp2 = enableHttp2;
+  }
 
   
   /**
@@ -148,7 +169,8 @@ public class Service extends AviRestResource  {
       return false;
     }
     Service service = (Service) o;
-    return Objects.equals(this.enableSsl, service.enableSsl) &&
+    return Objects.equals(this.enableHttp2, service.enableHttp2) &&
+        Objects.equals(this.enableSsl, service.enableSsl) &&
         Objects.equals(this.overrideApplicationProfileRef, service.overrideApplicationProfileRef) &&
         Objects.equals(this.overrideNetworkProfileRef, service.overrideNetworkProfileRef) &&
         Objects.equals(this.port, service.port) &&
@@ -157,7 +179,7 @@ public class Service extends AviRestResource  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableSsl, overrideApplicationProfileRef, overrideNetworkProfileRef, port, portRangeEnd);
+    return Objects.hash(enableHttp2, enableSsl, overrideApplicationProfileRef, overrideNetworkProfileRef, port, portRangeEnd);
   }
 
   @Override
@@ -165,6 +187,7 @@ public class Service extends AviRestResource  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Service {\n");
     
+    sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
     sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
     sb.append("    overrideApplicationProfileRef: ").append(toIndentedString(overrideApplicationProfileRef)).append("\n");
     sb.append("    overrideNetworkProfileRef: ").append(toIndentedString(overrideNetworkProfileRef)).append("\n");

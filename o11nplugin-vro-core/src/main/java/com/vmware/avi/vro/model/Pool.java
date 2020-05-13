@@ -24,12 +24,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * Pool
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:16:36.466+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "Pool")
 @VsoFinder(name = Constants.FINDER_VRO_POOL, idAccessor = "getObjectID()")
@@ -106,6 +105,9 @@ public class Pool extends AviRestResource  {
   @JsonProperty("east_west")
   private Boolean eastWest = null;
 
+  @JsonProperty("enable_http2")
+  private Boolean enableHttp2 = null;
+
   @JsonProperty("enabled")
   private Boolean enabled = true;
 
@@ -131,6 +133,9 @@ public class Pool extends AviRestResource  {
 
   @JsonProperty("host_check_enabled")
   private Boolean hostCheckEnabled = null;
+
+  @JsonProperty("ignore_server_port")
+  private Boolean ignoreServerPort = null;
 
   @JsonProperty("inline_health_monitor")
   private Boolean inlineHealthMonitor = true;
@@ -702,6 +707,25 @@ public class Pool extends AviRestResource  {
 
   
   /**
+   * Enable HTTP/2 for traffic from VirtualService to all backend servers in this pool. Field introduced in 20.1.1.
+   * @return enableHttp2
+  **/
+  @ApiModelProperty(value = "Enable HTTP/2 for traffic from VirtualService to all backend servers in this pool. Field introduced in 20.1.1.")
+
+
+ 
+  @VsoMethod  
+  public Boolean isEnableHttp2() {
+    return enableHttp2;
+  }
+    
+  @VsoMethod
+  public void setEnableHttp2(Boolean enableHttp2) {
+    this.enableHttp2 = enableHttp2;
+  }
+
+  
+  /**
    * Enable or disable the pool.  Disabling will terminate all open connections and pause health monitors.
    * @return enabled
   **/
@@ -871,6 +895,25 @@ public class Pool extends AviRestResource  {
 
   
   /**
+   * Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1.
+   * @return ignoreServerPort
+  **/
+  @ApiModelProperty(value = "Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1.")
+
+
+ 
+  @VsoMethod  
+  public Boolean isIgnoreServerPort() {
+    return ignoreServerPort;
+  }
+    
+  @VsoMethod
+  public void setIgnoreServerPort(Boolean ignoreServerPort) {
+    this.ignoreServerPort = ignoreServerPort;
+  }
+
+  
+  /**
    * The Passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.  This may alter the expected behavior of the LB method, such as Round Robin.
    * @return inlineHealthMonitor
   **/
@@ -909,10 +952,10 @@ public class Pool extends AviRestResource  {
 
   
   /**
-   * The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY.
+   * The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
    * @return lbAlgorithm
   **/
-  @ApiModelProperty(value = "The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY.")
+  @ApiModelProperty(value = "The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.")
 
 
  
@@ -1628,6 +1671,7 @@ public class Pool extends AviRestResource  {
         Objects.equals(this.description, pool.description) &&
         Objects.equals(this.domainName, pool.domainName) &&
         Objects.equals(this.eastWest, pool.eastWest) &&
+        Objects.equals(this.enableHttp2, pool.enableHttp2) &&
         Objects.equals(this.enabled, pool.enabled) &&
         Objects.equals(this.externalAutoscaleGroups, pool.externalAutoscaleGroups) &&
         Objects.equals(this.failAction, pool.failAction) &&
@@ -1636,6 +1680,7 @@ public class Pool extends AviRestResource  {
         Objects.equals(this.gslbSpEnabled, pool.gslbSpEnabled) &&
         Objects.equals(this.healthMonitorRefs, pool.healthMonitorRefs) &&
         Objects.equals(this.hostCheckEnabled, pool.hostCheckEnabled) &&
+        Objects.equals(this.ignoreServerPort, pool.ignoreServerPort) &&
         Objects.equals(this.inlineHealthMonitor, pool.inlineHealthMonitor) &&
         Objects.equals(this.ipaddrgroupRef, pool.ipaddrgroupRef) &&
         Objects.equals(this.lbAlgorithm, pool.lbAlgorithm) &&
@@ -1676,7 +1721,7 @@ public class Pool extends AviRestResource  {
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastModified, aPool, abPool, abPriority, analyticsPolicy, analyticsProfileRef, apicEpgName, applicationPersistenceProfileRef, autoscaleLaunchConfigRef, autoscaleNetworks, autoscalePolicyRef, capacityEstimation, capacityEstimationTtfbThresh, cloudConfigCksum, cloudRef, connPoolProperties, connectionRampDuration, createdBy, defaultServerPort, deleteServerOnDnsRefresh, description, domainName, eastWest, enabled, externalAutoscaleGroups, failAction, fewestTasksFeedbackDelay, gracefulDisableTimeout, gslbSpEnabled, healthMonitorRefs, hostCheckEnabled, inlineHealthMonitor, ipaddrgroupRef, lbAlgorithm, lbAlgorithmConsistentHashHdr, lbAlgorithmCoreNonaffinity, lbAlgorithmHash, lookupServerByName, maxConcurrentConnectionsPerServer, maxConnRatePerServer, minHealthMonitorsUp, minServersUp, name, networks, nsxSecuritygroup, pkiProfileRef, placementNetworks, prstHdrName, requestQueueDepth, requestQueueEnabled, rewriteHostHeaderToServerName, rewriteHostHeaderToSni, serverAutoScale, serverCount, serverName, serverReselect, serverTimeout, servers, serviceMetadata, sniEnabled, sslKeyAndCertificateRef, sslProfileRef, tenantRef, url, useServicePort, uuid, vrfRef);
+    return Objects.hash(lastModified, aPool, abPool, abPriority, analyticsPolicy, analyticsProfileRef, apicEpgName, applicationPersistenceProfileRef, autoscaleLaunchConfigRef, autoscaleNetworks, autoscalePolicyRef, capacityEstimation, capacityEstimationTtfbThresh, cloudConfigCksum, cloudRef, connPoolProperties, connectionRampDuration, createdBy, defaultServerPort, deleteServerOnDnsRefresh, description, domainName, eastWest, enableHttp2, enabled, externalAutoscaleGroups, failAction, fewestTasksFeedbackDelay, gracefulDisableTimeout, gslbSpEnabled, healthMonitorRefs, hostCheckEnabled, ignoreServerPort, inlineHealthMonitor, ipaddrgroupRef, lbAlgorithm, lbAlgorithmConsistentHashHdr, lbAlgorithmCoreNonaffinity, lbAlgorithmHash, lookupServerByName, maxConcurrentConnectionsPerServer, maxConnRatePerServer, minHealthMonitorsUp, minServersUp, name, networks, nsxSecuritygroup, pkiProfileRef, placementNetworks, prstHdrName, requestQueueDepth, requestQueueEnabled, rewriteHostHeaderToServerName, rewriteHostHeaderToSni, serverAutoScale, serverCount, serverName, serverReselect, serverTimeout, servers, serviceMetadata, sniEnabled, sslKeyAndCertificateRef, sslProfileRef, tenantRef, url, useServicePort, uuid, vrfRef);
   }
 
   @Override
@@ -1707,6 +1752,7 @@ public class Pool extends AviRestResource  {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
     sb.append("    eastWest: ").append(toIndentedString(eastWest)).append("\n");
+    sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    externalAutoscaleGroups: ").append(toIndentedString(externalAutoscaleGroups)).append("\n");
     sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
@@ -1715,6 +1761,7 @@ public class Pool extends AviRestResource  {
     sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
     sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
     sb.append("    hostCheckEnabled: ").append(toIndentedString(hostCheckEnabled)).append("\n");
+    sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
     sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
     sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
     sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");

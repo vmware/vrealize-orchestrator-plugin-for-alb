@@ -14,12 +14,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * AuthAttributeMatch
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:17:08.927+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "AuthAttributeMatch")
 @VsoFinder(name = Constants.FINDER_VRO_AUTHATTRIBUTEMATCH, idAccessor = "getObjectID()")
@@ -36,7 +35,8 @@ public class AuthAttributeMatch extends AviRestResource  {
    * Attribute name whose values will be looked up in the access lists. Field introduced in 18.2.5.
    * @return attributeName
   **/
-  @ApiModelProperty(value = "Attribute name whose values will be looked up in the access lists. Field introduced in 18.2.5.")
+  @ApiModelProperty(required = true, value = "Attribute name whose values will be looked up in the access lists. Field introduced in 18.2.5.")
+  @NotNull
 
 
  
@@ -55,7 +55,8 @@ public class AuthAttributeMatch extends AviRestResource  {
    * Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5.
    * @return attributeValueList
   **/
-  @ApiModelProperty(value = "Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5.")
+  @ApiModelProperty(required = true, value = "Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5.")
+  @NotNull
 
   @Valid
 

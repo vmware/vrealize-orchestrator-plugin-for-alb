@@ -24,6 +24,16 @@ public class VroPlugin {
 		return ((AbstractSpringPluginFactory) factory).createScriptingObject(VroPlugin.class);
 	}
 
+	/***
+	 * Method will create AVI API session.
+	 * 
+	 * @param controller controller IP.
+	 * @param username   username of the controller
+	 * @param password   password of the controller
+	 * @param tenant     tenant name
+	 * @param version    version
+	 * @return instance of AviVroClient
+	 */
 	@VsoMethod
 	public AviVroClient connect(String controller, String username, String password, String tenant, String version) {
 		AviCredentials creds = new AviCredentials(controller, username, password);
@@ -32,6 +42,16 @@ public class VroPlugin {
 		service.setCred(creds);
 		return service;
 	}
+
+	/****
+	 * This method add controller into the Plugin.
+	 * 
+	 * @param controller controller IP.
+	 * @param username   username of the controller
+	 * @param password   password of the controller
+	 * @param tenant     tenant name
+	 * @param version    version
+	 */
 	@VsoMethod
 	public void addVroClient(String controller, String username, String password, String tenant, String version) {
 
@@ -40,12 +60,14 @@ public class VroPlugin {
 		aviCredentials.setVersion(version);
 		AviVroClient aviVroClient = new AviVroClient();
 		aviVroClient.setCred(aviCredentials);
-		// List<AviVroClient> listOfAviVroClients = VroPluginFactory.listOfAviVroClient;
-		// VroPluginFactory.listOfAviVroClient.add(aviVroClient);
-		
 		VroPluginFactory.aviVroClientMap.put(controller, aviVroClient);
 	}
 
+	/**
+	 * This method remove controller from the Plugin
+	 * 
+	 * @param controller controller IP.
+	 */
 	@VsoMethod
 	public void removeVroClient(String controller) {
 		Map<String, AviVroClient> aviVroClientsMap = VroPluginFactory.getListOfAviVroClientMap();

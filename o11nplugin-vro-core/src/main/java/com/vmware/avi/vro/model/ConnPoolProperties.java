@@ -13,12 +13,11 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-
 /**
  * ConnPoolProperties
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-06T12:16:36.466+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
 @VsoObject(create = false, name = "ConnPoolProperties")
 @VsoFinder(name = Constants.FINDER_VRO_CONNPOOLPROPERTIES, idAccessor = "getObjectID()")
@@ -76,10 +75,10 @@ public class ConnPoolProperties extends AviRestResource  {
 
   
   /**
-   * Connection max used times. Field introduced in 18.2.1.
+   * Maximum number of times a connection can be reused. Special values are 0- 'unlimited'. Field introduced in 18.2.1.
    * @return upstreamConnpoolConnMaxReuse
   **/
-  @ApiModelProperty(value = "Connection max used times. Field introduced in 18.2.1.")
+  @ApiModelProperty(value = "Maximum number of times a connection can be reused. Special values are 0- 'unlimited'. Field introduced in 18.2.1.")
 
 
  
@@ -95,10 +94,10 @@ public class ConnPoolProperties extends AviRestResource  {
 
   
   /**
-   * Max cache connections per server. Field introduced in 18.2.1.
+   * Maximum number of connections a server can cache. Special values are 0- 'unlimited'. Field introduced in 18.2.1.
    * @return upstreamConnpoolServerMaxCache
   **/
-  @ApiModelProperty(value = "Max cache connections per server. Field introduced in 18.2.1.")
+  @ApiModelProperty(value = "Maximum number of connections a server can cache. Special values are 0- 'unlimited'. Field introduced in 18.2.1.")
 
 
  
