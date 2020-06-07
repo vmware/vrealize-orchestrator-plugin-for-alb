@@ -39,12 +39,9 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 @Service
 public class AviVroClient {
 	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
-	static {
-		VroPluginFactory.initializeModelMap();
-	}
-
 	public String getObjectID() {
-		return cred.getController() + cred.getUsername() + cred.getPort();
+		return cred.getController();
+		//return cred.getController() + cred.getUsername() + cred.getPort();
 	}
 
 	@VsoConstructor
@@ -308,7 +305,8 @@ public class AviVroClient {
 	public ArrayList<AviRestResource> executeWorkflow() throws Exception {
 		int count = 0;
 		logger.debug("Executing workflow");
-		ObjectMapper mapper = new ObjectMapper();
+		//ObjectMapper mapper = new ObjectMapper();
+		mapper.setSerializationInclusion(Include.NON_NULL);		
 		ArrayList<AviRestResource> jsonResponse = new ArrayList<AviRestResource>();
 		logger.info("Inside executeWorkflow :" + workflowDataQueue);
 		try {
@@ -578,7 +576,8 @@ public class AviVroClient {
 		JSONArray array = this.get(objectType, params, tenant);
 		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
 		AviRestResource object = this.getAviRestResourceObject(objectType);
-		ObjectMapper mapper = new ObjectMapper();
+		//ObjectMapper mapper = new ObjectMapper();
+		mapper.setSerializationInclusion(Include.NON_NULL);		
 		for (int counter = 0; counter < array.length(); counter++) {
 			JSONObject result = array.getJSONObject(counter);
 			object = mapper.readValue(result.toString(), object.getClass());

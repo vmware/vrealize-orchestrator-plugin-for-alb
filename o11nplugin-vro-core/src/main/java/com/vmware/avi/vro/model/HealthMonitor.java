@@ -1,26 +1,20 @@
 package com.vmware.avi.vro.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.HealthMonitorAuthInfo;
-import com.vmware.avi.vro.model.HealthMonitorDNS;
-import com.vmware.avi.vro.model.HealthMonitorExternal;
-import com.vmware.avi.vro.model.HealthMonitorHttp;
-import com.vmware.avi.vro.model.HealthMonitorRadius;
-import com.vmware.avi.vro.model.HealthMonitorSIP;
-import com.vmware.avi.vro.model.HealthMonitorTcp;
-import com.vmware.avi.vro.model.HealthMonitorUdp;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vmware.avi.vro.Constants;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
-import com.vmware.avi.vro.Constants;
-import org.springframework.stereotype.Service;
+
+import io.swagger.annotations.ApiModelProperty;
 /**
  * HealthMonitor
  */
@@ -572,7 +566,7 @@ public class HealthMonitor extends AviRestResource  {
 
   
   public String getObjectID() {
-		return "HealthMonitor";
+	  return name + "(" + uuid + ")";
   }
 
   @Override

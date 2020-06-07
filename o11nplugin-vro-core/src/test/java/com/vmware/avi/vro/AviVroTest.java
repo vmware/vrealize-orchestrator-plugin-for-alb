@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONObject;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.vmware.avi.sdk.AviCredentials;
@@ -29,6 +30,11 @@ public class AviVroTest {
 	private static final String TENANT = System.getenv("AVI_TENANT");
 
 	private static AviCredentials creds = null;
+	
+	@Before
+	public void init() {
+		VroPluginFactory.initializeModelMap();
+	}
 
 	static AviCredentials getCreds() {
 		if (null == AviVroTest.creds) {

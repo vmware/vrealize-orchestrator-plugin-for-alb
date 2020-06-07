@@ -1,24 +1,22 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.BurstResource;
-import com.vmware.avi.vro.model.CumulativeLicense;
-import com.vmware.avi.vro.model.SEBandwidthLimit;
-import com.vmware.avi.vro.model.SingleLicense;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.validation.annotation.Validated;
+import java.util.Objects;
+
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vmware.avi.vro.Constants;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
-import com.vmware.avi.vro.Constants;
-import org.springframework.stereotype.Service;
+
+import io.swagger.annotations.ApiModelProperty;
 /**
  * ControllerLicense
  */
