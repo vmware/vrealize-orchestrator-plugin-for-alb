@@ -1,190 +1,191 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * MicroServiceContainer
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The MicroServiceContainer is a POJO class extends AviRestResource that used for creating
+ * MicroServiceContainer.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "MicroServiceContainer")
-@VsoFinder(name = Constants.FINDER_VRO_MICROSERVICECONTAINER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_MICROSERVICECONTAINER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MicroServiceContainer extends AviRestResource  {
+public class MicroServiceContainer extends AviRestResource {
   @JsonProperty("container_id")
+  @JsonInclude(Include.NON_NULL)
   private String containerId = null;
 
   @JsonProperty("host")
+  @JsonInclude(Include.NON_NULL)
   private String host = null;
 
   @JsonProperty("ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ip = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private Integer port = null;
 
   @JsonProperty("task_id")
+  @JsonInclude(Include.NON_NULL)
   private String taskId = null;
 
-  
+
+
   /**
-   * ID of the container.
+   * This is the getter method this will return the attribute value.
+   * Id of the container.
    * @return containerId
-  **/
-  @ApiModelProperty(value = "ID of the container.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getContainerId() {
     return containerId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Id of the container.
+   * @param containerId set the containerId.
+   */
   @VsoMethod
-  public void setContainerId(String containerId) {
+  public void setContainerId(String  containerId) {
     this.containerId = containerId;
   }
 
-  
   /**
-   * ID or name of the host where the container is.
+   * This is the getter method this will return the attribute value.
+   * Id or name of the host where the container is.
    * @return host
-  **/
-  @ApiModelProperty(value = "ID or name of the host where the container is.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHost() {
     return host;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Id or name of the host where the container is.
+   * @param host set the host.
+   */
   @VsoMethod
-  public void setHost(String host) {
+  public void setHost(String  host) {
     this.host = host;
   }
 
-  
   /**
-   * IP Address of the container.
+   * This is the getter method this will return the attribute value.
+   * Ip address of the container.
    * @return ip
-  **/
-  @ApiModelProperty(required = true, value = "IP Address of the container.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIp() {
     return ip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address of the container.
+   * @param ip set the ip.
+   */
   @VsoMethod
   public void setIp(IpAddr ip) {
     this.ip = ip;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Port nunber of the instance.
    * @return port
-  **/
-  @ApiModelProperty(value = "Port nunber of the instance.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Port nunber of the instance.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(Integer port) {
+  public void setPort(Integer  port) {
     this.port = port;
   }
 
-  
   /**
-   * Marathon Task ID of the instance.
+   * This is the getter method this will return the attribute value.
+   * Marathon task id of the instance.
    * @return taskId
-  **/
-  @ApiModelProperty(value = "Marathon Task ID of the instance.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTaskId() {
     return taskId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Marathon task id of the instance.
+   * @param taskId set the taskId.
+   */
   @VsoMethod
-  public void setTaskId(String taskId) {
+  public void setTaskId(String  taskId) {
     this.taskId = taskId;
   }
 
-  
-  public String getObjectID() {
-		return "MicroServiceContainer";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MicroServiceContainer microServiceContainer = (MicroServiceContainer) o;
-    return Objects.equals(this.containerId, microServiceContainer.containerId) &&
-        Objects.equals(this.host, microServiceContainer.host) &&
-        Objects.equals(this.ip, microServiceContainer.ip) &&
-        Objects.equals(this.port, microServiceContainer.port) &&
-        Objects.equals(this.taskId, microServiceContainer.taskId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(containerId, host, ip, port, taskId);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MicroServiceContainer {\n");
-    
-    sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
-    sb.append("    host: ").append(toIndentedString(host)).append("\n");
-    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  MicroServiceContainer objMicroServiceContainer = (MicroServiceContainer) o;
+  return   Objects.equals(this.ip, objMicroServiceContainer.ip)&&
+  Objects.equals(this.host, objMicroServiceContainer.host)&&
+  Objects.equals(this.containerId, objMicroServiceContainer.containerId)&&
+  Objects.equals(this.port, objMicroServiceContainer.port)&&
+  Objects.equals(this.taskId, objMicroServiceContainer.taskId);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MicroServiceContainer {\n");
+      sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

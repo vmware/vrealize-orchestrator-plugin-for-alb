@@ -1,188 +1,204 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ServicePoolSelector
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ServicePoolSelector is a POJO class extends AviRestResource that used for creating
+ * ServicePoolSelector.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ServicePoolSelector")
-@VsoFinder(name = Constants.FINDER_VRO_SERVICEPOOLSELECTOR, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SERVICEPOOLSELECTOR)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ServicePoolSelector extends AviRestResource  {
+public class ServicePoolSelector extends AviRestResource {
   @JsonProperty("service_pool_group_ref")
+  @JsonInclude(Include.NON_NULL)
   private String servicePoolGroupRef = null;
 
   @JsonProperty("service_pool_ref")
+  @JsonInclude(Include.NON_NULL)
   private String servicePoolRef = null;
 
   @JsonProperty("service_port")
+  @JsonInclude(Include.NON_NULL)
   private Integer servicePort = null;
 
   @JsonProperty("service_port_range_end")
-  private Integer servicePortRangeEnd = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer servicePortRangeEnd = 0;
 
   @JsonProperty("service_protocol")
+  @JsonInclude(Include.NON_NULL)
   private String serviceProtocol = null;
 
-  
+
+
   /**
-   *  It is a reference to an object of type PoolGroup.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type poolgroup.
    * @return servicePoolGroupRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type PoolGroup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServicePoolGroupRef() {
     return servicePoolGroupRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type poolgroup.
+   * @param servicePoolGroupRef set the servicePoolGroupRef.
+   */
   @VsoMethod
-  public void setServicePoolGroupRef(String servicePoolGroupRef) {
+  public void setServicePoolGroupRef(String  servicePoolGroupRef) {
     this.servicePoolGroupRef = servicePoolGroupRef;
   }
 
-  
   /**
-   *  It is a reference to an object of type Pool.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type pool.
    * @return servicePoolRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Pool.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServicePoolRef() {
     return servicePoolRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type pool.
+   * @param servicePoolRef set the servicePoolRef.
+   */
   @VsoMethod
-  public void setServicePoolRef(String servicePoolRef) {
+  public void setServicePoolRef(String  servicePoolRef) {
     this.servicePoolRef = servicePoolRef;
   }
 
-  
   /**
-   * Pool based destination port. Allowed values are 1-65535.
+   * This is the getter method this will return the attribute value.
+   * Pool based destination port.
+   * Allowed values are 1-65535.
    * @return servicePort
-  **/
-  @ApiModelProperty(required = true, value = "Pool based destination port. Allowed values are 1-65535.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getServicePort() {
     return servicePort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Pool based destination port.
+   * Allowed values are 1-65535.
+   * @param servicePort set the servicePort.
+   */
   @VsoMethod
-  public void setServicePort(Integer servicePort) {
+  public void setServicePort(Integer  servicePort) {
     this.servicePort = servicePort;
   }
 
-  
   /**
-   * The end of the Service port number range. Allowed values are 1-65535. Special values are 0- 'single port'. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * The end of the service port number range.
+   * Allowed values are 1-65535.
+   * Special values are 0- 'single port'.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return servicePortRangeEnd
-  **/
-  @ApiModelProperty(value = "The end of the Service port number range. Allowed values are 1-65535. Special values are 0- 'single port'. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getServicePortRangeEnd() {
     return servicePortRangeEnd;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The end of the service port number range.
+   * Allowed values are 1-65535.
+   * Special values are 0- 'single port'.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param servicePortRangeEnd set the servicePortRangeEnd.
+   */
   @VsoMethod
-  public void setServicePortRangeEnd(Integer servicePortRangeEnd) {
+  public void setServicePortRangeEnd(Integer  servicePortRangeEnd) {
     this.servicePortRangeEnd = servicePortRangeEnd;
   }
 
-  
   /**
-   * Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
+   * This is the getter method this will return the attribute value.
+   * Destination protocol to match for the pool selection.
+   * If not specified, it will match any protocol.
+   * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
    * @return serviceProtocol
-  **/
-  @ApiModelProperty(value = "Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServiceProtocol() {
     return serviceProtocol;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Destination protocol to match for the pool selection.
+   * If not specified, it will match any protocol.
+   * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
+   * @param serviceProtocol set the serviceProtocol.
+   */
   @VsoMethod
-  public void setServiceProtocol(String serviceProtocol) {
+  public void setServiceProtocol(String  serviceProtocol) {
     this.serviceProtocol = serviceProtocol;
   }
 
-  
-  public String getObjectID() {
-		return "ServicePoolSelector";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ServicePoolSelector servicePoolSelector = (ServicePoolSelector) o;
-    return Objects.equals(this.servicePoolGroupRef, servicePoolSelector.servicePoolGroupRef) &&
-        Objects.equals(this.servicePoolRef, servicePoolSelector.servicePoolRef) &&
-        Objects.equals(this.servicePort, servicePoolSelector.servicePort) &&
-        Objects.equals(this.servicePortRangeEnd, servicePoolSelector.servicePortRangeEnd) &&
-        Objects.equals(this.serviceProtocol, servicePoolSelector.serviceProtocol);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(servicePoolGroupRef, servicePoolRef, servicePort, servicePortRangeEnd, serviceProtocol);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ServicePoolSelector {\n");
-    
-    sb.append("    servicePoolGroupRef: ").append(toIndentedString(servicePoolGroupRef)).append("\n");
-    sb.append("    servicePoolRef: ").append(toIndentedString(servicePoolRef)).append("\n");
-    sb.append("    servicePort: ").append(toIndentedString(servicePort)).append("\n");
-    sb.append("    servicePortRangeEnd: ").append(toIndentedString(servicePortRangeEnd)).append("\n");
-    sb.append("    serviceProtocol: ").append(toIndentedString(serviceProtocol)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ServicePoolSelector objServicePoolSelector = (ServicePoolSelector) o;
+  return   Objects.equals(this.serviceProtocol, objServicePoolSelector.serviceProtocol)&&
+  Objects.equals(this.servicePort, objServicePoolSelector.servicePort)&&
+  Objects.equals(this.servicePortRangeEnd, objServicePoolSelector.servicePortRangeEnd)&&
+  Objects.equals(this.servicePoolRef, objServicePoolSelector.servicePoolRef)&&
+  Objects.equals(this.servicePoolGroupRef, objServicePoolSelector.servicePoolGroupRef);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ServicePoolSelector {\n");
+      sb.append("    servicePoolGroupRef: ").append(toIndentedString(servicePoolGroupRef)).append("\n");
+        sb.append("    servicePoolRef: ").append(toIndentedString(servicePoolRef)).append("\n");
+        sb.append("    servicePort: ").append(toIndentedString(servicePort)).append("\n");
+        sb.append("    servicePortRangeEnd: ").append(toIndentedString(servicePortRangeEnd)).append("\n");
+        sb.append("    serviceProtocol: ").append(toIndentedString(serviceProtocol)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

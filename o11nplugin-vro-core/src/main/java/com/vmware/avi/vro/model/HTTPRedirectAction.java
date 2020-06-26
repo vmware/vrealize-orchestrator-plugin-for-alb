@@ -1,215 +1,228 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.URIParam;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.URIParam;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HTTPRedirectAction
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HTTPRedirectAction is a POJO class extends AviRestResource that used for creating
+ * HTTPRedirectAction.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HTTPRedirectAction")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPREDIRECTACTION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPREDIRECTACTION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HTTPRedirectAction extends AviRestResource  {
+public class HTTPRedirectAction extends AviRestResource {
   @JsonProperty("host")
+  @JsonInclude(Include.NON_NULL)
   private URIParam host = null;
 
   @JsonProperty("keep_query")
+  @JsonInclude(Include.NON_NULL)
   private Boolean keepQuery = true;
 
   @JsonProperty("path")
+  @JsonInclude(Include.NON_NULL)
   private URIParam path = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private Integer port = null;
 
   @JsonProperty("protocol")
+  @JsonInclude(Include.NON_NULL)
   private String protocol = null;
 
   @JsonProperty("status_code")
+  @JsonInclude(Include.NON_NULL)
   private String statusCode = "HTTP_REDIRECT_STATUS_CODE_302";
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Host config.
    * @return host
-  **/
-  @ApiModelProperty(value = "Host config.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public URIParam getHost() {
     return host;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Host config.
+   * @param host set the host.
+   */
   @VsoMethod
   public void setHost(URIParam host) {
     this.host = host;
   }
 
-  
   /**
-   * Keep or drop the query of the incoming request URI in the redirected URI.
+   * This is the getter method this will return the attribute value.
+   * Keep or drop the query of the incoming request uri in the redirected uri.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return keepQuery
-  **/
-  @ApiModelProperty(value = "Keep or drop the query of the incoming request URI in the redirected URI.")
-
-
- 
-  @VsoMethod  
-  public Boolean isKeepQuery() {
+   */
+  @VsoMethod
+  public Boolean getKeepQuery() {
     return keepQuery;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Keep or drop the query of the incoming request uri in the redirected uri.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param keepQuery set the keepQuery.
+   */
   @VsoMethod
-  public void setKeepQuery(Boolean keepQuery) {
+  public void setKeepQuery(Boolean  keepQuery) {
     this.keepQuery = keepQuery;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Path config.
    * @return path
-  **/
-  @ApiModelProperty(value = "Path config.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public URIParam getPath() {
     return path;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Path config.
+   * @param path set the path.
+   */
   @VsoMethod
   public void setPath(URIParam path) {
     this.path = path;
   }
 
-  
   /**
-   * Port to which redirect the request. Allowed values are 1-65535.
+   * This is the getter method this will return the attribute value.
+   * Port to which redirect the request.
+   * Allowed values are 1-65535.
    * @return port
-  **/
-  @ApiModelProperty(value = "Port to which redirect the request. Allowed values are 1-65535.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Port to which redirect the request.
+   * Allowed values are 1-65535.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(Integer port) {
+  public void setPort(Integer  port) {
     this.port = port;
   }
 
-  
   /**
-   * Protocol type. Enum options - HTTP, HTTPS.
+   * This is the getter method this will return the attribute value.
+   * Protocol type.
+   * Enum options - HTTP, HTTPS.
    * @return protocol
-  **/
-  @ApiModelProperty(required = true, value = "Protocol type. Enum options - HTTP, HTTPS.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getProtocol() {
     return protocol;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Protocol type.
+   * Enum options - HTTP, HTTPS.
+   * @param protocol set the protocol.
+   */
   @VsoMethod
-  public void setProtocol(String protocol) {
+  public void setProtocol(String  protocol) {
     this.protocol = protocol;
   }
 
-  
   /**
-   * HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
+   * This is the getter method this will return the attribute value.
+   * Http redirect status code.
+   * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
+   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_REDIRECT_STATUS_CODE_302.
    * @return statusCode
-  **/
-  @ApiModelProperty(value = "HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getStatusCode() {
     return statusCode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http redirect status code.
+   * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
+   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_REDIRECT_STATUS_CODE_302.
+   * @param statusCode set the statusCode.
+   */
   @VsoMethod
-  public void setStatusCode(String statusCode) {
+  public void setStatusCode(String  statusCode) {
     this.statusCode = statusCode;
   }
 
-  
-  public String getObjectID() {
-		return "HTTPRedirectAction";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HTTPRedirectAction htTPRedirectAction = (HTTPRedirectAction) o;
-    return Objects.equals(this.host, htTPRedirectAction.host) &&
-        Objects.equals(this.keepQuery, htTPRedirectAction.keepQuery) &&
-        Objects.equals(this.path, htTPRedirectAction.path) &&
-        Objects.equals(this.port, htTPRedirectAction.port) &&
-        Objects.equals(this.protocol, htTPRedirectAction.protocol) &&
-        Objects.equals(this.statusCode, htTPRedirectAction.statusCode);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(host, keepQuery, path, port, protocol, statusCode);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HTTPRedirectAction {\n");
-    
-    sb.append("    host: ").append(toIndentedString(host)).append("\n");
-    sb.append("    keepQuery: ").append(toIndentedString(keepQuery)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HTTPRedirectAction objHTTPRedirectAction = (HTTPRedirectAction) o;
+  return   Objects.equals(this.protocol, objHTTPRedirectAction.protocol)&&
+  Objects.equals(this.statusCode, objHTTPRedirectAction.statusCode)&&
+  Objects.equals(this.host, objHTTPRedirectAction.host)&&
+  Objects.equals(this.keepQuery, objHTTPRedirectAction.keepQuery)&&
+  Objects.equals(this.path, objHTTPRedirectAction.path)&&
+  Objects.equals(this.port, objHTTPRedirectAction.port);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HTTPRedirectAction {\n");
+      sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    keepQuery: ").append(toIndentedString(keepQuery)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

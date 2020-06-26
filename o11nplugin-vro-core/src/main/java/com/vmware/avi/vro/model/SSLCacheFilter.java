@@ -1,91 +1,88 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SSLCacheFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SSLCacheFilter is a POJO class extends AviRestResource that used for creating
+ * SSLCacheFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SSLCacheFilter")
-@VsoFinder(name = Constants.FINDER_VRO_SSLCACHEFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SSLCACHEFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SSLCacheFilter extends AviRestResource  {
+public class SSLCacheFilter extends AviRestResource {
   @JsonProperty("ssl_session_id")
+  @JsonInclude(Include.NON_NULL)
   private String sslSessionId = null;
 
-  
+
+
   /**
-   * Hexadecimal representation of the SSL session ID. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Hexadecimal representation of the ssl session id.
+   * Field introduced in 20.1.1.
    * @return sslSessionId
-  **/
-  @ApiModelProperty(value = "Hexadecimal representation of the SSL session ID. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSslSessionId() {
     return sslSessionId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Hexadecimal representation of the ssl session id.
+   * Field introduced in 20.1.1.
+   * @param sslSessionId set the sslSessionId.
+   */
   @VsoMethod
-  public void setSslSessionId(String sslSessionId) {
+  public void setSslSessionId(String  sslSessionId) {
     this.sslSessionId = sslSessionId;
   }
 
-  
-  public String getObjectID() {
-		return "SSLCacheFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SSLCacheFilter ssLCacheFilter = (SSLCacheFilter) o;
-    return Objects.equals(this.sslSessionId, ssLCacheFilter.sslSessionId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(sslSessionId);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SSLCacheFilter {\n");
-    
-    sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SSLCacheFilter objSSLCacheFilter = (SSLCacheFilter) o;
+  return   Objects.equals(this.sslSessionId, objSSLCacheFilter.sslSessionId);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SSLCacheFilter {\n");
+      sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

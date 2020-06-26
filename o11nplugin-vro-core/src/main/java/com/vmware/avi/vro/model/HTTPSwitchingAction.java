@@ -1,216 +1,228 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.HTTPLocalFile;
 import com.vmware.avi.vro.model.PoolServer;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HTTPSwitchingAction
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HTTPSwitchingAction is a POJO class extends AviRestResource that used for creating
+ * HTTPSwitchingAction.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HTTPSwitchingAction")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPSWITCHINGACTION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPSWITCHINGACTION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HTTPSwitchingAction extends AviRestResource  {
+public class HTTPSwitchingAction extends AviRestResource {
   @JsonProperty("action")
+  @JsonInclude(Include.NON_NULL)
   private String action = null;
 
   @JsonProperty("file")
+  @JsonInclude(Include.NON_NULL)
   private HTTPLocalFile file = null;
 
   @JsonProperty("pool_group_ref")
+  @JsonInclude(Include.NON_NULL)
   private String poolGroupRef = null;
 
   @JsonProperty("pool_ref")
+  @JsonInclude(Include.NON_NULL)
   private String poolRef = null;
 
   @JsonProperty("server")
+  @JsonInclude(Include.NON_NULL)
   private PoolServer server = null;
 
   @JsonProperty("status_code")
+  @JsonInclude(Include.NON_NULL)
   private String statusCode = null;
 
-  
+
+
   /**
-   * Content switching action type. Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
+   * This is the getter method this will return the attribute value.
+   * Content switching action type.
+   * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
    * @return action
-  **/
-  @ApiModelProperty(required = true, value = "Content switching action type. Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAction() {
     return action;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Content switching action type.
+   * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
+   * @param action set the action.
+   */
   @VsoMethod
-  public void setAction(String action) {
+  public void setAction(String  action) {
     this.action = action;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * File from which to serve local response to the request.
    * @return file
-  **/
-  @ApiModelProperty(value = "File from which to serve local response to the request.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HTTPLocalFile getFile() {
     return file;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * File from which to serve local response to the request.
+   * @param file set the file.
+   */
   @VsoMethod
   public void setFile(HTTPLocalFile file) {
     this.file = file;
   }
 
-  
   /**
-   * UUID of the pool group to serve the request. It is a reference to an object of type PoolGroup.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the pool group to serve the request.
+   * It is a reference to an object of type poolgroup.
    * @return poolGroupRef
-  **/
-  @ApiModelProperty(value = "UUID of the pool group to serve the request. It is a reference to an object of type PoolGroup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPoolGroupRef() {
     return poolGroupRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the pool group to serve the request.
+   * It is a reference to an object of type poolgroup.
+   * @param poolGroupRef set the poolGroupRef.
+   */
   @VsoMethod
-  public void setPoolGroupRef(String poolGroupRef) {
+  public void setPoolGroupRef(String  poolGroupRef) {
     this.poolGroupRef = poolGroupRef;
   }
 
-  
   /**
-   * UUID of the pool of servers to serve the request. It is a reference to an object of type Pool.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the pool of servers to serve the request.
+   * It is a reference to an object of type pool.
    * @return poolRef
-  **/
-  @ApiModelProperty(value = "UUID of the pool of servers to serve the request. It is a reference to an object of type Pool.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPoolRef() {
     return poolRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the pool of servers to serve the request.
+   * It is a reference to an object of type pool.
+   * @param poolRef set the poolRef.
+   */
   @VsoMethod
-  public void setPoolRef(String poolRef) {
+  public void setPoolRef(String  poolRef) {
     this.poolRef = poolRef;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Specific pool server to select.
    * @return server
-  **/
-  @ApiModelProperty(value = "Specific pool server to select.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PoolServer getServer() {
     return server;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specific pool server to select.
+   * @param server set the server.
+   */
   @VsoMethod
   public void setServer(PoolServer server) {
     this.server = server;
   }
 
-  
   /**
-   * HTTP status code to use when serving local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+   * This is the getter method this will return the attribute value.
+   * Http status code to use when serving local response.
+   * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
+   * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
    * @return statusCode
-  **/
-  @ApiModelProperty(value = "HTTP status code to use when serving local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getStatusCode() {
     return statusCode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http status code to use when serving local response.
+   * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
+   * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+   * @param statusCode set the statusCode.
+   */
   @VsoMethod
-  public void setStatusCode(String statusCode) {
+  public void setStatusCode(String  statusCode) {
     this.statusCode = statusCode;
   }
 
-  
-  public String getObjectID() {
-		return "HTTPSwitchingAction";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HTTPSwitchingAction htTPSwitchingAction = (HTTPSwitchingAction) o;
-    return Objects.equals(this.action, htTPSwitchingAction.action) &&
-        Objects.equals(this.file, htTPSwitchingAction.file) &&
-        Objects.equals(this.poolGroupRef, htTPSwitchingAction.poolGroupRef) &&
-        Objects.equals(this.poolRef, htTPSwitchingAction.poolRef) &&
-        Objects.equals(this.server, htTPSwitchingAction.server) &&
-        Objects.equals(this.statusCode, htTPSwitchingAction.statusCode);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(action, file, poolGroupRef, poolRef, server, statusCode);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HTTPSwitchingAction {\n");
-    
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    file: ").append(toIndentedString(file)).append("\n");
-    sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
-    sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
-    sb.append("    server: ").append(toIndentedString(server)).append("\n");
-    sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HTTPSwitchingAction objHTTPSwitchingAction = (HTTPSwitchingAction) o;
+  return   Objects.equals(this.poolGroupRef, objHTTPSwitchingAction.poolGroupRef)&&
+  Objects.equals(this.statusCode, objHTTPSwitchingAction.statusCode)&&
+  Objects.equals(this.server, objHTTPSwitchingAction.server)&&
+  Objects.equals(this.file, objHTTPSwitchingAction.file)&&
+  Objects.equals(this.action, objHTTPSwitchingAction.action)&&
+  Objects.equals(this.poolRef, objHTTPSwitchingAction.poolRef);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HTTPSwitchingAction {\n");
+      sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    file: ").append(toIndentedString(file)).append("\n");
+        sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
+        sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

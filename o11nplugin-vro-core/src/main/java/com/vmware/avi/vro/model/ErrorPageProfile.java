@@ -1,117 +1,140 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.ErrorPage;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ErrorPageProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ErrorPageProfile is a POJO class extends AviRestResource that used for creating
+ * ErrorPageProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ErrorPageProfile")
 @VsoFinder(name = Constants.FINDER_VRO_ERRORPAGEPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ErrorPageProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class ErrorPageProfile extends AviRestResource {
   @JsonProperty("app_name")
+  @JsonInclude(Include.NON_NULL)
   private String appName = null;
 
   @JsonProperty("company_name")
+  @JsonInclude(Include.NON_NULL)
   private String companyName = null;
 
   @JsonProperty("error_pages")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<ErrorPage> errorPages = null;
 
   @JsonProperty("host_name")
+  @JsonInclude(Include.NON_NULL)
   private String hostName = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Name of the Virtual Service which generated the error page. Field deprecated in 18.1.1. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Name of the virtual service which generated the error page.
+   * Field deprecated in 18.1.1.
+   * Field introduced in 17.2.4.
    * @return appName
-  **/
-  @ApiModelProperty(value = "Name of the Virtual Service which generated the error page. Field deprecated in 18.1.1. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAppName() {
     return appName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the virtual service which generated the error page.
+   * Field deprecated in 18.1.1.
+   * Field introduced in 17.2.4.
+   * @param appName set the appName.
+   */
   @VsoMethod
-  public void setAppName(String appName) {
+  public void setAppName(String  appName) {
     this.appName = appName;
   }
 
-  
   /**
-   * Name of the company to show in error page. Field deprecated in 18.1.1. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Name of the company to show in error page.
+   * Field deprecated in 18.1.1.
+   * Field introduced in 17.2.4.
    * @return companyName
-  **/
-  @ApiModelProperty(value = "Name of the company to show in error page. Field deprecated in 18.1.1. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCompanyName() {
     return companyName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the company to show in error page.
+   * Field deprecated in 18.1.1.
+   * Field introduced in 17.2.4.
+   * @param companyName set the companyName.
+   */
   @VsoMethod
-  public void setCompanyName(String companyName) {
+  public void setCompanyName(String  companyName) {
     this.companyName = companyName;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Defined error pages for http status codes.
+   * Field introduced in 17.2.4.
+   * @return errorPages
+   */
+  @VsoMethod
+  public List<ErrorPage> getErrorPages() {
+    return errorPages;
+  }
+
+  /**
+   * This is the setter method. this will set the errorPages
+   * Defined error pages for http status codes.
+   * Field introduced in 17.2.4.
+   * @return errorPages
+   */
+  @VsoMethod
+  public void setErrorPages(List<ErrorPage>  errorPages) {
+    this.errorPages = errorPages;
+  }
+
+  /**
+   * This is the setter method this will set the errorPages
+   * Defined error pages for http status codes.
+   * Field introduced in 17.2.4.
+   * @return errorPages
+   */
+  @VsoMethod
   public ErrorPageProfile addErrorPagesItem(ErrorPage errorPagesItem) {
     if (this.errorPages == null) {
       this.errorPages = new ArrayList<ErrorPage>();
@@ -119,179 +142,159 @@ public class ErrorPageProfile extends AviRestResource  {
     this.errorPages.add(errorPagesItem);
     return this;
   }
-  
+
+
   /**
-   * Defined Error Pages for HTTP status codes. Field introduced in 17.2.4.
-   * @return errorPages
-  **/
-  @ApiModelProperty(value = "Defined Error Pages for HTTP status codes. Field introduced in 17.2.4.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<ErrorPage> getErrorPages() {
-    return errorPages;
-  }
-    
-  @VsoMethod
-  public void setErrorPages(List<ErrorPage> errorPages) {
-    this.errorPages = errorPages;
-  }
-
-  
-  /**
-   * Fully qualified domain name for which the error page is generated. Field deprecated in 18.1.1. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Fully qualified domain name for which the error page is generated.
+   * Field deprecated in 18.1.1.
+   * Field introduced in 17.2.4.
    * @return hostName
-  **/
-  @ApiModelProperty(value = "Fully qualified domain name for which the error page is generated. Field deprecated in 18.1.1. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHostName() {
     return hostName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Fully qualified domain name for which the error page is generated.
+   * Field deprecated in 18.1.1.
+   * Field introduced in 17.2.4.
+   * @param hostName set the hostName.
+   */
   @VsoMethod
-  public void setHostName(String hostName) {
+  public void setHostName(String  hostName) {
     this.hostName = hostName;
   }
 
-  
   /**
-   *  Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.4.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = " Field introduced in 17.2.4.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.4.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.2.4.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.2.4.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   *  Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.4.
    * @return uuid
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.4.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "ErrorPageProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ErrorPageProfile errorPageProfile = (ErrorPageProfile) o;
-    return Objects.equals(this.lastModified, errorPageProfile.lastModified) &&
-        Objects.equals(this.appName, errorPageProfile.appName) &&
-        Objects.equals(this.companyName, errorPageProfile.companyName) &&
-        Objects.equals(this.errorPages, errorPageProfile.errorPages) &&
-        Objects.equals(this.hostName, errorPageProfile.hostName) &&
-        Objects.equals(this.name, errorPageProfile.name) &&
-        Objects.equals(this.tenantRef, errorPageProfile.tenantRef) &&
-        Objects.equals(this.url, errorPageProfile.url) &&
-        Objects.equals(this.uuid, errorPageProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, appName, companyName, errorPages, hostName, name, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorPageProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
-    sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
-    sb.append("    errorPages: ").append(toIndentedString(errorPages)).append("\n");
-    sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ErrorPageProfile objErrorPageProfile = (ErrorPageProfile) o;
+  return   Objects.equals(this.appName, objErrorPageProfile.appName)&&
+  Objects.equals(this.name, objErrorPageProfile.name)&&
+  Objects.equals(this.errorPages, objErrorPageProfile.errorPages)&&
+  Objects.equals(this.companyName, objErrorPageProfile.companyName)&&
+  Objects.equals(this.hostName, objErrorPageProfile.hostName)&&
+  Objects.equals(this.tenantRef, objErrorPageProfile.tenantRef)&&
+  Objects.equals(this.uuid, objErrorPageProfile.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ErrorPageProfile {\n");
+      sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+        sb.append("    errorPages: ").append(toIndentedString(errorPages)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

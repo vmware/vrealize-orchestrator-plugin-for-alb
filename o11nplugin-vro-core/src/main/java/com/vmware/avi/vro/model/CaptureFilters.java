@@ -1,335 +1,382 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.CaptureIPC;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.DebugIpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.CaptureIPC;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CaptureFilters
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CaptureFilters is a POJO class extends AviRestResource that used for creating
+ * CaptureFilters.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CaptureFilters")
-@VsoFinder(name = Constants.FINDER_VRO_CAPTUREFILTERS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CAPTUREFILTERS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CaptureFilters extends AviRestResource  {
+public class CaptureFilters extends AviRestResource {
   @JsonProperty("capture_ip")
+  @JsonInclude(Include.NON_NULL)
   private DebugIpAddr captureIp = null;
 
   @JsonProperty("capture_ipc")
+  @JsonInclude(Include.NON_NULL)
   private CaptureIPC captureIpc = null;
 
   @JsonProperty("dst_port_end")
+  @JsonInclude(Include.NON_NULL)
   private Integer dstPortEnd = null;
 
   @JsonProperty("dst_port_start")
+  @JsonInclude(Include.NON_NULL)
   private Integer dstPortStart = null;
 
   @JsonProperty("eth_proto")
+  @JsonInclude(Include.NON_NULL)
   private String ethProto = null;
 
   @JsonProperty("ip_proto")
+  @JsonInclude(Include.NON_NULL)
   private String ipProto = null;
 
   @JsonProperty("src_port")
+  @JsonInclude(Include.NON_NULL)
   private Integer srcPort = null;
 
   @JsonProperty("tcp_ack")
+  @JsonInclude(Include.NON_NULL)
   private Boolean tcpAck = null;
 
   @JsonProperty("tcp_fin")
+  @JsonInclude(Include.NON_NULL)
   private Boolean tcpFin = null;
 
   @JsonProperty("tcp_push")
+  @JsonInclude(Include.NON_NULL)
   private Boolean tcpPush = null;
 
   @JsonProperty("tcp_syn")
+  @JsonInclude(Include.NON_NULL)
   private Boolean tcpSyn = null;
 
-  
+
+
   /**
-   * Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Per packet ip filter.
+   * Matches with source and destination address.
+   * Curently not applicable for debugserviceengine.
+   * Field introduced in 18.2.5.
    * @return captureIp
-  **/
-  @ApiModelProperty(value = "Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DebugIpAddr getCaptureIp() {
     return captureIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Per packet ip filter.
+   * Matches with source and destination address.
+   * Curently not applicable for debugserviceengine.
+   * Field introduced in 18.2.5.
+   * @param captureIp set the captureIp.
+   */
   @VsoMethod
   public void setCaptureIp(DebugIpAddr captureIp) {
     this.captureIp = captureIp;
   }
 
-  
   /**
-   * Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Capture filter for se ipc.
+   * Not applicable for debug virtual service.
+   * Field introduced in 18.2.5.
    * @return captureIpc
-  **/
-  @ApiModelProperty(value = "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public CaptureIPC getCaptureIpc() {
     return captureIpc;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Capture filter for se ipc.
+   * Not applicable for debug virtual service.
+   * Field introduced in 18.2.5.
+   * @param captureIpc set the captureIpc.
+   */
   @VsoMethod
   public void setCaptureIpc(CaptureIPC captureIpc) {
     this.captureIpc = captureIpc;
   }
 
-  
   /**
-   * Destination Port range filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Destination port range filter.
+   * Field introduced in 18.2.5.
    * @return dstPortEnd
-  **/
-  @ApiModelProperty(value = "Destination Port range filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDstPortEnd() {
     return dstPortEnd;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Destination port range filter.
+   * Field introduced in 18.2.5.
+   * @param dstPortEnd set the dstPortEnd.
+   */
   @VsoMethod
-  public void setDstPortEnd(Integer dstPortEnd) {
+  public void setDstPortEnd(Integer  dstPortEnd) {
     this.dstPortEnd = dstPortEnd;
   }
 
-  
   /**
-   * Destination Port range filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Destination port range filter.
+   * Field introduced in 18.2.5.
    * @return dstPortStart
-  **/
-  @ApiModelProperty(value = "Destination Port range filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDstPortStart() {
     return dstPortStart;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Destination port range filter.
+   * Field introduced in 18.2.5.
+   * @param dstPortStart set the dstPortStart.
+   */
   @VsoMethod
-  public void setDstPortStart(Integer dstPortStart) {
+  public void setDstPortStart(Integer  dstPortStart) {
     this.dstPortStart = dstPortStart;
   }
 
-  
   /**
-   * Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Ethernet proto filter.
+   * Enum options - ETH_TYPE_IPV4.
+   * Field introduced in 18.2.5.
    * @return ethProto
-  **/
-  @ApiModelProperty(value = "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEthProto() {
     return ethProto;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ethernet proto filter.
+   * Enum options - ETH_TYPE_IPV4.
+   * Field introduced in 18.2.5.
+   * @param ethProto set the ethProto.
+   */
   @VsoMethod
-  public void setEthProto(String ethProto) {
+  public void setEthProto(String  ethProto) {
     this.ethProto = ethProto;
   }
 
-  
   /**
-   * IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Ip proto filter.
+   * Support for tcp only for now.
+   * Enum options - IP_TYPE_TCP.
+   * Field introduced in 18.2.5.
    * @return ipProto
-  **/
-  @ApiModelProperty(value = "IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpProto() {
     return ipProto;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip proto filter.
+   * Support for tcp only for now.
+   * Enum options - IP_TYPE_TCP.
+   * Field introduced in 18.2.5.
+   * @param ipProto set the ipProto.
+   */
   @VsoMethod
-  public void setIpProto(String ipProto) {
+  public void setIpProto(String  ipProto) {
     this.ipProto = ipProto;
   }
 
-  
   /**
-   * Source Port filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Source port filter.
+   * Field introduced in 18.2.5.
    * @return srcPort
-  **/
-  @ApiModelProperty(value = "Source Port filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSrcPort() {
     return srcPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Source port filter.
+   * Field introduced in 18.2.5.
+   * @param srcPort set the srcPort.
+   */
   @VsoMethod
-  public void setSrcPort(Integer srcPort) {
+  public void setSrcPort(Integer  srcPort) {
     this.srcPort = srcPort;
   }
 
-  
   /**
-   * TCP ACK flag filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Tcp ack flag filter.
+   * Field introduced in 18.2.5.
    * @return tcpAck
-  **/
-  @ApiModelProperty(value = "TCP ACK flag filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isTcpAck() {
+   */
+  @VsoMethod
+  public Boolean getTcpAck() {
     return tcpAck;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp ack flag filter.
+   * Field introduced in 18.2.5.
+   * @param tcpAck set the tcpAck.
+   */
   @VsoMethod
-  public void setTcpAck(Boolean tcpAck) {
+  public void setTcpAck(Boolean  tcpAck) {
     this.tcpAck = tcpAck;
   }
 
-  
   /**
-   * TCP FIN flag filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Tcp fin flag filter.
+   * Field introduced in 18.2.5.
    * @return tcpFin
-  **/
-  @ApiModelProperty(value = "TCP FIN flag filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isTcpFin() {
+   */
+  @VsoMethod
+  public Boolean getTcpFin() {
     return tcpFin;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp fin flag filter.
+   * Field introduced in 18.2.5.
+   * @param tcpFin set the tcpFin.
+   */
   @VsoMethod
-  public void setTcpFin(Boolean tcpFin) {
+  public void setTcpFin(Boolean  tcpFin) {
     this.tcpFin = tcpFin;
   }
 
-  
   /**
-   * TCP PUSH flag filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Tcp push flag filter.
+   * Field introduced in 18.2.5.
    * @return tcpPush
-  **/
-  @ApiModelProperty(value = "TCP PUSH flag filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isTcpPush() {
+   */
+  @VsoMethod
+  public Boolean getTcpPush() {
     return tcpPush;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp push flag filter.
+   * Field introduced in 18.2.5.
+   * @param tcpPush set the tcpPush.
+   */
   @VsoMethod
-  public void setTcpPush(Boolean tcpPush) {
+  public void setTcpPush(Boolean  tcpPush) {
     this.tcpPush = tcpPush;
   }
 
-  
   /**
-   * TCP SYN flag filter. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Tcp syn flag filter.
+   * Field introduced in 18.2.5.
    * @return tcpSyn
-  **/
-  @ApiModelProperty(value = "TCP SYN flag filter. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isTcpSyn() {
+   */
+  @VsoMethod
+  public Boolean getTcpSyn() {
     return tcpSyn;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp syn flag filter.
+   * Field introduced in 18.2.5.
+   * @param tcpSyn set the tcpSyn.
+   */
   @VsoMethod
-  public void setTcpSyn(Boolean tcpSyn) {
+  public void setTcpSyn(Boolean  tcpSyn) {
     this.tcpSyn = tcpSyn;
   }
 
-  
-  public String getObjectID() {
-		return "CaptureFilters";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CaptureFilters captureFilters = (CaptureFilters) o;
-    return Objects.equals(this.captureIp, captureFilters.captureIp) &&
-        Objects.equals(this.captureIpc, captureFilters.captureIpc) &&
-        Objects.equals(this.dstPortEnd, captureFilters.dstPortEnd) &&
-        Objects.equals(this.dstPortStart, captureFilters.dstPortStart) &&
-        Objects.equals(this.ethProto, captureFilters.ethProto) &&
-        Objects.equals(this.ipProto, captureFilters.ipProto) &&
-        Objects.equals(this.srcPort, captureFilters.srcPort) &&
-        Objects.equals(this.tcpAck, captureFilters.tcpAck) &&
-        Objects.equals(this.tcpFin, captureFilters.tcpFin) &&
-        Objects.equals(this.tcpPush, captureFilters.tcpPush) &&
-        Objects.equals(this.tcpSyn, captureFilters.tcpSyn);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(captureIp, captureIpc, dstPortEnd, dstPortStart, ethProto, ipProto, srcPort, tcpAck, tcpFin, tcpPush, tcpSyn);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CaptureFilters {\n");
-    
-    sb.append("    captureIp: ").append(toIndentedString(captureIp)).append("\n");
-    sb.append("    captureIpc: ").append(toIndentedString(captureIpc)).append("\n");
-    sb.append("    dstPortEnd: ").append(toIndentedString(dstPortEnd)).append("\n");
-    sb.append("    dstPortStart: ").append(toIndentedString(dstPortStart)).append("\n");
-    sb.append("    ethProto: ").append(toIndentedString(ethProto)).append("\n");
-    sb.append("    ipProto: ").append(toIndentedString(ipProto)).append("\n");
-    sb.append("    srcPort: ").append(toIndentedString(srcPort)).append("\n");
-    sb.append("    tcpAck: ").append(toIndentedString(tcpAck)).append("\n");
-    sb.append("    tcpFin: ").append(toIndentedString(tcpFin)).append("\n");
-    sb.append("    tcpPush: ").append(toIndentedString(tcpPush)).append("\n");
-    sb.append("    tcpSyn: ").append(toIndentedString(tcpSyn)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CaptureFilters objCaptureFilters = (CaptureFilters) o;
+  return   Objects.equals(this.tcpFin, objCaptureFilters.tcpFin)&&
+  Objects.equals(this.dstPortStart, objCaptureFilters.dstPortStart)&&
+  Objects.equals(this.dstPortEnd, objCaptureFilters.dstPortEnd)&&
+  Objects.equals(this.srcPort, objCaptureFilters.srcPort)&&
+  Objects.equals(this.captureIpc, objCaptureFilters.captureIpc)&&
+  Objects.equals(this.tcpPush, objCaptureFilters.tcpPush)&&
+  Objects.equals(this.captureIp, objCaptureFilters.captureIp)&&
+  Objects.equals(this.tcpSyn, objCaptureFilters.tcpSyn)&&
+  Objects.equals(this.ipProto, objCaptureFilters.ipProto)&&
+  Objects.equals(this.tcpAck, objCaptureFilters.tcpAck)&&
+  Objects.equals(this.ethProto, objCaptureFilters.ethProto);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CaptureFilters {\n");
+      sb.append("    captureIp: ").append(toIndentedString(captureIp)).append("\n");
+        sb.append("    captureIpc: ").append(toIndentedString(captureIpc)).append("\n");
+        sb.append("    dstPortEnd: ").append(toIndentedString(dstPortEnd)).append("\n");
+        sb.append("    dstPortStart: ").append(toIndentedString(dstPortStart)).append("\n");
+        sb.append("    ethProto: ").append(toIndentedString(ethProto)).append("\n");
+        sb.append("    ipProto: ").append(toIndentedString(ipProto)).append("\n");
+        sb.append("    srcPort: ").append(toIndentedString(srcPort)).append("\n");
+        sb.append("    tcpAck: ").append(toIndentedString(tcpAck)).append("\n");
+        sb.append("    tcpFin: ").append(toIndentedString(tcpFin)).append("\n");
+        sb.append("    tcpPush: ").append(toIndentedString(tcpPush)).append("\n");
+        sb.append("    tcpSyn: ").append(toIndentedString(tcpSyn)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

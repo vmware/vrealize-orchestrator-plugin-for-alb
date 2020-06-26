@@ -1,213 +1,233 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.OshiftDockerRegistryMetaData;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DockerRegistry
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DockerRegistry is a POJO class extends AviRestResource that used for creating
+ * DockerRegistry.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DockerRegistry")
-@VsoFinder(name = Constants.FINDER_VRO_DOCKERREGISTRY, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DOCKERREGISTRY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DockerRegistry extends AviRestResource  {
+public class DockerRegistry extends AviRestResource {
   @JsonProperty("oshift_registry")
+  @JsonInclude(Include.NON_NULL)
   private OshiftDockerRegistryMetaData oshiftRegistry = null;
 
   @JsonProperty("password")
+  @JsonInclude(Include.NON_NULL)
   private String password = null;
 
   @JsonProperty("private")
-  private Boolean _private = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean privates = false;
 
   @JsonProperty("registry")
+  @JsonInclude(Include.NON_NULL)
   private String registry = "avinetworks/se";
 
   @JsonProperty("se_repository_push")
+  @JsonInclude(Include.NON_NULL)
   private Boolean seRepositoryPush = null;
 
   @JsonProperty("username")
+  @JsonInclude(Include.NON_NULL)
   private String username = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Openshift integrated registry config.
    * @return oshiftRegistry
-  **/
-  @ApiModelProperty(value = "Openshift integrated registry config.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public OshiftDockerRegistryMetaData getOshiftRegistry() {
     return oshiftRegistry;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Openshift integrated registry config.
+   * @param oshiftRegistry set the oshiftRegistry.
+   */
   @VsoMethod
   public void setOshiftRegistry(OshiftDockerRegistryMetaData oshiftRegistry) {
     this.oshiftRegistry = oshiftRegistry;
   }
 
-  
   /**
-   * Password for docker registry. Authorized 'regular user' password if registry is Openshift integrated registry.
+   * This is the getter method this will return the attribute value.
+   * Password for docker registry.
+   * Authorized 'regular user' password if registry is openshift integrated registry.
    * @return password
-  **/
-  @ApiModelProperty(value = "Password for docker registry. Authorized 'regular user' password if registry is Openshift integrated registry.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPassword() {
     return password;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Password for docker registry.
+   * Authorized 'regular user' password if registry is openshift integrated registry.
+   * @param password set the password.
+   */
   @VsoMethod
-  public void setPassword(String password) {
+  public void setPassword(String  password) {
     this.password = password;
   }
 
-  
   /**
-   * Set if docker registry is private. Avi controller will not attempt to push SE image to the registry, unless se_repository_push is set.
-   * @return _private
-  **/
-  @ApiModelProperty(value = "Set if docker registry is private. Avi controller will not attempt to push SE image to the registry, unless se_repository_push is set.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPrivate() {
-    return _private;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Set if docker registry is private.
+   * Avi controller will not attempt to push se image to the registry, unless se_repository_push is set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return privates
+   */
   @VsoMethod
-  public void setPrivate(Boolean _private) {
-    this._private = _private;
+  public Boolean getPrivate() {
+    return privates;
   }
 
-  
   /**
-   * Avi ServiceEngine repository name. For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry port/namespace/repo.
+   * This is the setter method to the attribute.
+   * Set if docker registry is private.
+   * Avi controller will not attempt to push se image to the registry, unless se_repository_push is set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param privates set the privates.
+   */
+  @VsoMethod
+  public void setPrivate(Boolean  privates) {
+    this.privates = privates;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Avi serviceengine repository name.
+   * For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry
+   * port/namespace/repo.
+   * Default value when not specified in API or module is interpreted by Avi Controller as avinetworks/se.
    * @return registry
-  **/
-  @ApiModelProperty(value = "Avi ServiceEngine repository name. For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry port/namespace/repo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getRegistry() {
     return registry;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Avi serviceengine repository name.
+   * For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry
+   * port/namespace/repo.
+   * Default value when not specified in API or module is interpreted by Avi Controller as avinetworks/se.
+   * @param registry set the registry.
+   */
   @VsoMethod
-  public void setRegistry(String registry) {
+  public void setRegistry(String  registry) {
     this.registry = registry;
   }
 
-  
   /**
-   * Avi Controller will push ServiceEngine image to docker repository. Field deprecated in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Avi controller will push serviceengine image to docker repository.
+   * Field deprecated in 18.2.6.
    * @return seRepositoryPush
-  **/
-  @ApiModelProperty(value = "Avi Controller will push ServiceEngine image to docker repository. Field deprecated in 18.2.6.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeRepositoryPush() {
+   */
+  @VsoMethod
+  public Boolean getSeRepositoryPush() {
     return seRepositoryPush;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Avi controller will push serviceengine image to docker repository.
+   * Field deprecated in 18.2.6.
+   * @param seRepositoryPush set the seRepositoryPush.
+   */
   @VsoMethod
-  public void setSeRepositoryPush(Boolean seRepositoryPush) {
+  public void setSeRepositoryPush(Boolean  seRepositoryPush) {
     this.seRepositoryPush = seRepositoryPush;
   }
 
-  
   /**
-   * Username for docker registry. Authorized 'regular user' if registry is Openshift integrated registry.
+   * This is the getter method this will return the attribute value.
+   * Username for docker registry.
+   * Authorized 'regular user' if registry is openshift integrated registry.
    * @return username
-  **/
-  @ApiModelProperty(value = "Username for docker registry. Authorized 'regular user' if registry is Openshift integrated registry.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUsername() {
     return username;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Username for docker registry.
+   * Authorized 'regular user' if registry is openshift integrated registry.
+   * @param username set the username.
+   */
   @VsoMethod
-  public void setUsername(String username) {
+  public void setUsername(String  username) {
     this.username = username;
   }
 
-  
-  public String getObjectID() {
-		return "DockerRegistry";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DockerRegistry dockerRegistry = (DockerRegistry) o;
-    return Objects.equals(this.oshiftRegistry, dockerRegistry.oshiftRegistry) &&
-        Objects.equals(this.password, dockerRegistry.password) &&
-        Objects.equals(this._private, dockerRegistry._private) &&
-        Objects.equals(this.registry, dockerRegistry.registry) &&
-        Objects.equals(this.seRepositoryPush, dockerRegistry.seRepositoryPush) &&
-        Objects.equals(this.username, dockerRegistry.username);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(oshiftRegistry, password, _private, registry, seRepositoryPush, username);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DockerRegistry {\n");
-    
-    sb.append("    oshiftRegistry: ").append(toIndentedString(oshiftRegistry)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
-    sb.append("    registry: ").append(toIndentedString(registry)).append("\n");
-    sb.append("    seRepositoryPush: ").append(toIndentedString(seRepositoryPush)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DockerRegistry objDockerRegistry = (DockerRegistry) o;
+  return   Objects.equals(this.username, objDockerRegistry.username)&&
+  Objects.equals(this.oshiftRegistry, objDockerRegistry.oshiftRegistry)&&
+  Objects.equals(this.privates, objDockerRegistry.privates)&&
+  Objects.equals(this.registry, objDockerRegistry.registry)&&
+  Objects.equals(this.password, objDockerRegistry.password)&&
+  Objects.equals(this.seRepositoryPush, objDockerRegistry.seRepositoryPush);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DockerRegistry {\n");
+      sb.append("    oshiftRegistry: ").append(toIndentedString(oshiftRegistry)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    privates: ").append(toIndentedString(privates)).append("\n");
+        sb.append("    registry: ").append(toIndentedString(registry)).append("\n");
+        sb.append("    seRepositoryPush: ").append(toIndentedString(seRepositoryPush)).append("\n");
+        sb.append("    username: ").append(toIndentedString(username)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

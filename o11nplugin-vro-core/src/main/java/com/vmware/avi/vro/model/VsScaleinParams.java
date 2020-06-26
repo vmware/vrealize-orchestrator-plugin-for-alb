@@ -1,188 +1,192 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VsScaleinParams
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VsScaleinParams is a POJO class extends AviRestResource that used for creating
+ * VsScaleinParams.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VsScaleinParams")
-@VsoFinder(name = Constants.FINDER_VRO_VSSCALEINPARAMS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VSSCALEINPARAMS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VsScaleinParams extends AviRestResource  {
+public class VsScaleinParams extends AviRestResource {
   @JsonProperty("admin_down")
-  private Boolean adminDown = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean adminDown = false;
 
   @JsonProperty("from_se_ref")
+  @JsonInclude(Include.NON_NULL)
   private String fromSeRef = null;
 
   @JsonProperty("scalein_primary")
+  @JsonInclude(Include.NON_NULL)
   private Boolean scaleinPrimary = null;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vip_id")
+  @JsonInclude(Include.NON_NULL)
   private String vipId = null;
 
-  
+
+
   /**
-   * Placeholder for description of property admin_down of obj type VsScaleinParams field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property admin_down of obj type vsscaleinparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return adminDown
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property admin_down of obj type VsScaleinParams field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isAdminDown() {
+   */
+  @VsoMethod
+  public Boolean getAdminDown() {
     return adminDown;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property admin_down of obj type vsscaleinparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param adminDown set the adminDown.
+   */
   @VsoMethod
-  public void setAdminDown(Boolean adminDown) {
+  public void setAdminDown(Boolean  adminDown) {
     this.adminDown = adminDown;
   }
 
-  
   /**
-   *  It is a reference to an object of type ServiceEngine.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceengine.
    * @return fromSeRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFromSeRef() {
     return fromSeRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceengine.
+   * @param fromSeRef set the fromSeRef.
+   */
   @VsoMethod
-  public void setFromSeRef(String fromSeRef) {
+  public void setFromSeRef(String  fromSeRef) {
     this.fromSeRef = fromSeRef;
   }
 
-  
   /**
-   * Placeholder for description of property scalein_primary of obj type VsScaleinParams field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property scalein_primary of obj type vsscaleinparams field type str  type boolean.
    * @return scaleinPrimary
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property scalein_primary of obj type VsScaleinParams field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isScaleinPrimary() {
+   */
+  @VsoMethod
+  public Boolean getScaleinPrimary() {
     return scaleinPrimary;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property scalein_primary of obj type vsscaleinparams field type str  type boolean.
+   * @param scaleinPrimary set the scaleinPrimary.
+   */
   @VsoMethod
-  public void setScaleinPrimary(Boolean scaleinPrimary) {
+  public void setScaleinPrimary(Boolean  scaleinPrimary) {
     this.scaleinPrimary = scaleinPrimary;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   *  Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1.
    * @return vipId
-  **/
-  @ApiModelProperty(required = true, value = " Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVipId() {
     return vipId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.1.
+   * @param vipId set the vipId.
+   */
   @VsoMethod
-  public void setVipId(String vipId) {
+  public void setVipId(String  vipId) {
     this.vipId = vipId;
   }
 
-  
-  public String getObjectID() {
-		return "VsScaleinParams";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VsScaleinParams vsScaleinParams = (VsScaleinParams) o;
-    return Objects.equals(this.adminDown, vsScaleinParams.adminDown) &&
-        Objects.equals(this.fromSeRef, vsScaleinParams.fromSeRef) &&
-        Objects.equals(this.scaleinPrimary, vsScaleinParams.scaleinPrimary) &&
-        Objects.equals(this.uuid, vsScaleinParams.uuid) &&
-        Objects.equals(this.vipId, vsScaleinParams.vipId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(adminDown, fromSeRef, scaleinPrimary, uuid, vipId);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VsScaleinParams {\n");
-    
-    sb.append("    adminDown: ").append(toIndentedString(adminDown)).append("\n");
-    sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
-    sb.append("    scaleinPrimary: ").append(toIndentedString(scaleinPrimary)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VsScaleinParams objVsScaleinParams = (VsScaleinParams) o;
+  return   Objects.equals(this.scaleinPrimary, objVsScaleinParams.scaleinPrimary)&&
+  Objects.equals(this.vipId, objVsScaleinParams.vipId)&&
+  Objects.equals(this.uuid, objVsScaleinParams.uuid)&&
+  Objects.equals(this.adminDown, objVsScaleinParams.adminDown)&&
+  Objects.equals(this.fromSeRef, objVsScaleinParams.fromSeRef);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VsScaleinParams {\n");
+      sb.append("    adminDown: ").append(toIndentedString(adminDown)).append("\n");
+        sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
+        sb.append("    scaleinPrimary: ").append(toIndentedString(scaleinPrimary)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

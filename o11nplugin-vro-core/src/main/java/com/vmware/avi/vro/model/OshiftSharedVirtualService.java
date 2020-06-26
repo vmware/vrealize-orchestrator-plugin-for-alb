@@ -1,92 +1,90 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * OshiftSharedVirtualService
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The OshiftSharedVirtualService is a POJO class extends AviRestResource that used for creating
+ * OshiftSharedVirtualService.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "OshiftSharedVirtualService")
-@VsoFinder(name = Constants.FINDER_VRO_OSHIFTSHAREDVIRTUALSERVICE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_OSHIFTSHAREDVIRTUALSERVICE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class OshiftSharedVirtualService extends AviRestResource  {
+public class OshiftSharedVirtualService extends AviRestResource {
   @JsonProperty("virtualservice_name")
+  @JsonInclude(Include.NON_NULL)
   private String virtualserviceName = null;
 
-  
+
+
   /**
-   * Name of shared virtualservice. VirtualService will be created automatically by Cloud Connector. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Name of shared virtualservice.
+   * Virtualservice will be created automatically by cloud connector.
+   * Field introduced in 17.1.1.
    * @return virtualserviceName
-  **/
-  @ApiModelProperty(required = true, value = "Name of shared virtualservice. VirtualService will be created automatically by Cloud Connector. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVirtualserviceName() {
     return virtualserviceName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of shared virtualservice.
+   * Virtualservice will be created automatically by cloud connector.
+   * Field introduced in 17.1.1.
+   * @param virtualserviceName set the virtualserviceName.
+   */
   @VsoMethod
-  public void setVirtualserviceName(String virtualserviceName) {
+  public void setVirtualserviceName(String  virtualserviceName) {
     this.virtualserviceName = virtualserviceName;
   }
 
-  
-  public String getObjectID() {
-		return "OshiftSharedVirtualService";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    OshiftSharedVirtualService oshiftSharedVirtualService = (OshiftSharedVirtualService) o;
-    return Objects.equals(this.virtualserviceName, oshiftSharedVirtualService.virtualserviceName);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(virtualserviceName);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OshiftSharedVirtualService {\n");
-    
-    sb.append("    virtualserviceName: ").append(toIndentedString(virtualserviceName)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  OshiftSharedVirtualService objOshiftSharedVirtualService = (OshiftSharedVirtualService) o;
+  return   Objects.equals(this.virtualserviceName, objOshiftSharedVirtualService.virtualserviceName);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class OshiftSharedVirtualService {\n");
+      sb.append("    virtualserviceName: ").append(toIndentedString(virtualserviceName)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

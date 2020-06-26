@@ -1,140 +1,140 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * MemberInterface
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The MemberInterface is a POJO class extends AviRestResource that used for creating
+ * MemberInterface.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "MemberInterface")
-@VsoFinder(name = Constants.FINDER_VRO_MEMBERINTERFACE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_MEMBERINTERFACE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MemberInterface extends AviRestResource  {
+public class MemberInterface extends AviRestResource {
   @JsonProperty("active")
-  private Boolean active = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean active = false;
 
   @JsonProperty("if_name")
+  @JsonInclude(Include.NON_NULL)
   private String ifName = null;
 
   @JsonProperty("mac_address")
+  @JsonInclude(Include.NON_NULL)
   private String macAddress = null;
 
-  
+
+
   /**
-   * Placeholder for description of property active of obj type MemberInterface field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property active of obj type memberinterface field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return active
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property active of obj type MemberInterface field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isActive() {
+   */
+  @VsoMethod
+  public Boolean getActive() {
     return active;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property active of obj type memberinterface field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param active set the active.
+   */
   @VsoMethod
-  public void setActive(Boolean active) {
+  public void setActive(Boolean  active) {
     this.active = active;
   }
 
-  
   /**
-   * if_name of MemberInterface.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property if_name of obj type memberinterface field type str  type string.
    * @return ifName
-  **/
-  @ApiModelProperty(required = true, value = "if_name of MemberInterface.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIfName() {
     return ifName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property if_name of obj type memberinterface field type str  type string.
+   * @param ifName set the ifName.
+   */
   @VsoMethod
-  public void setIfName(String ifName) {
+  public void setIfName(String  ifName) {
     this.ifName = ifName;
   }
 
-  
   /**
-   *  Field introduced in 17.1.5.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.5.
    * @return macAddress
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.1.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMacAddress() {
     return macAddress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.5.
+   * @param macAddress set the macAddress.
+   */
   @VsoMethod
-  public void setMacAddress(String macAddress) {
+  public void setMacAddress(String  macAddress) {
     this.macAddress = macAddress;
   }
 
-  
-  public String getObjectID() {
-		return "MemberInterface";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MemberInterface memberInterface = (MemberInterface) o;
-    return Objects.equals(this.active, memberInterface.active) &&
-        Objects.equals(this.ifName, memberInterface.ifName) &&
-        Objects.equals(this.macAddress, memberInterface.macAddress);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(active, ifName, macAddress);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MemberInterface {\n");
-    
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    ifName: ").append(toIndentedString(ifName)).append("\n");
-    sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  MemberInterface objMemberInterface = (MemberInterface) o;
+  return   Objects.equals(this.active, objMemberInterface.active)&&
+  Objects.equals(this.ifName, objMemberInterface.ifName)&&
+  Objects.equals(this.macAddress, objMemberInterface.macAddress);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MemberInterface {\n");
+      sb.append("    active: ").append(toIndentedString(active)).append("\n");
+        sb.append("    ifName: ").append(toIndentedString(ifName)).append("\n");
+        sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

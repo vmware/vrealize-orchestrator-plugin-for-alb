@@ -1,172 +1,207 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.VIAdminCredentials;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.VISeVmOvaParams;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.VIAdminCredentials;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VICreateSEReq
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VICreateSEReq is a POJO class extends AviRestResource that used for creating
+ * VICreateSEReq.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VICreateSEReq")
-@VsoFinder(name = Constants.FINDER_VRO_VICREATESEREQ, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VICREATESEREQ)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VICreateSEReq extends AviRestResource  {
+public class VICreateSEReq extends AviRestResource {
   @JsonProperty("cloud_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String cloudUuid = null;
 
   @JsonProperty("cookie")
+  @JsonInclude(Include.NON_NULL)
   private String cookie = null;
 
   @JsonProperty("se_grp_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String seGrpUuid = null;
 
   @JsonProperty("se_params")
+  @JsonInclude(Include.NON_NULL)
   private VISeVmOvaParams seParams = null;
 
   @JsonProperty("tenant_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String tenantUuid = null;
 
   @JsonProperty("vcenter_admin")
+  @JsonInclude(Include.NON_NULL)
   private VIAdminCredentials vcenterAdmin = null;
 
   @JsonProperty("vcenter_vnic_portgroups")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> vcenterVnicPortgroups = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
    * @return cloudUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of cloud.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudUuid() {
     return cloudUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of cloud.
+   * @param cloudUuid set the cloudUuid.
+   */
   @VsoMethod
-  public void setCloudUuid(String cloudUuid) {
+  public void setCloudUuid(String  cloudUuid) {
     this.cloudUuid = cloudUuid;
   }
 
-  
   /**
-   * cookie of VICreateSEReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property cookie of obj type vicreatesereq field type str  type string.
    * @return cookie
-  **/
-  @ApiModelProperty(value = "cookie of VICreateSEReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCookie() {
     return cookie;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property cookie of obj type vicreatesereq field type str  type string.
+   * @param cookie set the cookie.
+   */
   @VsoMethod
-  public void setCookie(String cookie) {
+  public void setCookie(String  cookie) {
     this.cookie = cookie;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of se_grp.
    * @return seGrpUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of se_grp.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeGrpUuid() {
     return seGrpUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of se_grp.
+   * @param seGrpUuid set the seGrpUuid.
+   */
   @VsoMethod
-  public void setSeGrpUuid(String seGrpUuid) {
+  public void setSeGrpUuid(String  seGrpUuid) {
     this.seGrpUuid = seGrpUuid;
   }
 
-  
   /**
-   * Placeholder for description of property se_params of obj type VICreateSEReq field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property se_params of obj type vicreatesereq field type str  type ref.
    * @return seParams
-  **/
-  @ApiModelProperty(required = true, value = "Placeholder for description of property se_params of obj type VICreateSEReq field type str  type object")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public VISeVmOvaParams getSeParams() {
     return seParams;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property se_params of obj type vicreatesereq field type str  type ref.
+   * @param seParams set the seParams.
+   */
   @VsoMethod
   public void setSeParams(VISeVmOvaParams seParams) {
     this.seParams = seParams;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of tenant.
    * @return tenantUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantUuid() {
     return tenantUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of tenant.
+   * @param tenantUuid set the tenantUuid.
+   */
   @VsoMethod
-  public void setTenantUuid(String tenantUuid) {
+  public void setTenantUuid(String  tenantUuid) {
     this.tenantUuid = tenantUuid;
   }
 
-  
   /**
-   * Placeholder for description of property vcenter_admin of obj type VICreateSEReq field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_admin of obj type vicreatesereq field type str  type ref.
    * @return vcenterAdmin
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vcenter_admin of obj type VICreateSEReq field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public VIAdminCredentials getVcenterAdmin() {
     return vcenterAdmin;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_admin of obj type vicreatesereq field type str  type ref.
+   * @param vcenterAdmin set the vcenterAdmin.
+   */
   @VsoMethod
   public void setVcenterAdmin(VIAdminCredentials vcenterAdmin) {
     this.vcenterAdmin = vcenterAdmin;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+   * @return vcenterVnicPortgroups
+   */
+  @VsoMethod
+  public List<String> getVcenterVnicPortgroups() {
+    return vcenterVnicPortgroups;
+  }
+
+  /**
+   * This is the setter method. this will set the vcenterVnicPortgroups
+   * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+   * @return vcenterVnicPortgroups
+   */
+  @VsoMethod
+  public void setVcenterVnicPortgroups(List<String>  vcenterVnicPortgroups) {
+    this.vcenterVnicPortgroups = vcenterVnicPortgroups;
+  }
+
+  /**
+   * This is the setter method this will set the vcenterVnicPortgroups
+   * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+   * @return vcenterVnicPortgroups
+   */
+  @VsoMethod
   public VICreateSEReq addVcenterVnicPortgroupsItem(String vcenterVnicPortgroupsItem) {
     if (this.vcenterVnicPortgroups == null) {
       this.vcenterVnicPortgroups = new ArrayList<String>();
@@ -174,78 +209,51 @@ public class VICreateSEReq extends AviRestResource  {
     this.vcenterVnicPortgroups.add(vcenterVnicPortgroupsItem);
     return this;
   }
-  
-  /**
-   * vcenter_vnic_portgroups of VICreateSEReq.
-   * @return vcenterVnicPortgroups
-  **/
-  @ApiModelProperty(value = "vcenter_vnic_portgroups of VICreateSEReq.")
 
 
- 
-  @VsoMethod  
-  public List<String> getVcenterVnicPortgroups() {
-    return vcenterVnicPortgroups;
-  }
-    
-  @VsoMethod
-  public void setVcenterVnicPortgroups(List<String> vcenterVnicPortgroups) {
-    this.vcenterVnicPortgroups = vcenterVnicPortgroups;
-  }
 
-  
-  public String getObjectID() {
-		return "VICreateSEReq";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VICreateSEReq viCreateSEReq = (VICreateSEReq) o;
-    return Objects.equals(this.cloudUuid, viCreateSEReq.cloudUuid) &&
-        Objects.equals(this.cookie, viCreateSEReq.cookie) &&
-        Objects.equals(this.seGrpUuid, viCreateSEReq.seGrpUuid) &&
-        Objects.equals(this.seParams, viCreateSEReq.seParams) &&
-        Objects.equals(this.tenantUuid, viCreateSEReq.tenantUuid) &&
-        Objects.equals(this.vcenterAdmin, viCreateSEReq.vcenterAdmin) &&
-        Objects.equals(this.vcenterVnicPortgroups, viCreateSEReq.vcenterVnicPortgroups);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cloudUuid, cookie, seGrpUuid, seParams, tenantUuid, vcenterAdmin, vcenterVnicPortgroups);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VICreateSEReq {\n");
-    
-    sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
-    sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
-    sb.append("    seGrpUuid: ").append(toIndentedString(seGrpUuid)).append("\n");
-    sb.append("    seParams: ").append(toIndentedString(seParams)).append("\n");
-    sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
-    sb.append("    vcenterAdmin: ").append(toIndentedString(vcenterAdmin)).append("\n");
-    sb.append("    vcenterVnicPortgroups: ").append(toIndentedString(vcenterVnicPortgroups)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VICreateSEReq objVICreateSEReq = (VICreateSEReq) o;
+  return   Objects.equals(this.seParams, objVICreateSEReq.seParams)&&
+  Objects.equals(this.cloudUuid, objVICreateSEReq.cloudUuid)&&
+  Objects.equals(this.vcenterVnicPortgroups, objVICreateSEReq.vcenterVnicPortgroups)&&
+  Objects.equals(this.cookie, objVICreateSEReq.cookie)&&
+  Objects.equals(this.seGrpUuid, objVICreateSEReq.seGrpUuid)&&
+  Objects.equals(this.vcenterAdmin, objVICreateSEReq.vcenterAdmin)&&
+  Objects.equals(this.tenantUuid, objVICreateSEReq.tenantUuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VICreateSEReq {\n");
+      sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
+        sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
+        sb.append("    seGrpUuid: ").append(toIndentedString(seGrpUuid)).append("\n");
+        sb.append("    seParams: ").append(toIndentedString(seParams)).append("\n");
+        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
+        sb.append("    vcenterAdmin: ").append(toIndentedString(vcenterAdmin)).append("\n");
+        sb.append("    vcenterVnicPortgroups: ").append(toIndentedString(vcenterVnicPortgroups)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

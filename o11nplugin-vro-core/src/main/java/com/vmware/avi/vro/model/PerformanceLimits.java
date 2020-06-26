@@ -1,115 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * PerformanceLimits
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The PerformanceLimits is a POJO class extends AviRestResource that used for creating
+ * PerformanceLimits.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "PerformanceLimits")
-@VsoFinder(name = Constants.FINDER_VRO_PERFORMANCELIMITS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_PERFORMANCELIMITS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class PerformanceLimits extends AviRestResource  {
+public class PerformanceLimits extends AviRestResource {
   @JsonProperty("max_concurrent_connections")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxConcurrentConnections = null;
 
   @JsonProperty("max_throughput")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxThroughput = null;
 
-  
+
+
   /**
-   * The maximum number of concurrent client conections allowed to the Virtual Service.
+   * This is the getter method this will return the attribute value.
+   * The maximum number of concurrent client conections allowed to the virtual service.
    * @return maxConcurrentConnections
-  **/
-  @ApiModelProperty(value = "The maximum number of concurrent client conections allowed to the Virtual Service.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxConcurrentConnections() {
     return maxConcurrentConnections;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum number of concurrent client conections allowed to the virtual service.
+   * @param maxConcurrentConnections set the maxConcurrentConnections.
+   */
   @VsoMethod
-  public void setMaxConcurrentConnections(Integer maxConcurrentConnections) {
+  public void setMaxConcurrentConnections(Integer  maxConcurrentConnections) {
     this.maxConcurrentConnections = maxConcurrentConnections;
   }
 
-  
   /**
-   * The maximum throughput per second for all clients allowed through the client side of the Virtual Service.
+   * This is the getter method this will return the attribute value.
+   * The maximum throughput per second for all clients allowed through the client side of the virtual service.
    * @return maxThroughput
-  **/
-  @ApiModelProperty(value = "The maximum throughput per second for all clients allowed through the client side of the Virtual Service.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxThroughput() {
     return maxThroughput;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum throughput per second for all clients allowed through the client side of the virtual service.
+   * @param maxThroughput set the maxThroughput.
+   */
   @VsoMethod
-  public void setMaxThroughput(Integer maxThroughput) {
+  public void setMaxThroughput(Integer  maxThroughput) {
     this.maxThroughput = maxThroughput;
   }
 
-  
-  public String getObjectID() {
-		return "PerformanceLimits";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PerformanceLimits performanceLimits = (PerformanceLimits) o;
-    return Objects.equals(this.maxConcurrentConnections, performanceLimits.maxConcurrentConnections) &&
-        Objects.equals(this.maxThroughput, performanceLimits.maxThroughput);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(maxConcurrentConnections, maxThroughput);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PerformanceLimits {\n");
-    
-    sb.append("    maxConcurrentConnections: ").append(toIndentedString(maxConcurrentConnections)).append("\n");
-    sb.append("    maxThroughput: ").append(toIndentedString(maxThroughput)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  PerformanceLimits objPerformanceLimits = (PerformanceLimits) o;
+  return   Objects.equals(this.maxConcurrentConnections, objPerformanceLimits.maxConcurrentConnections)&&
+  Objects.equals(this.maxThroughput, objPerformanceLimits.maxThroughput);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class PerformanceLimits {\n");
+      sb.append("    maxConcurrentConnections: ").append(toIndentedString(maxConcurrentConnections)).append("\n");
+        sb.append("    maxThroughput: ").append(toIndentedString(maxThroughput)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,109 +1,130 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.DnsInfo;
-import com.vmware.avi.vro.model.Vip;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VsVip
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VsVip is a POJO class extends AviRestResource that used for creating
+ * VsVip.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VsVip")
 @VsoFinder(name = Constants.FINDER_VRO_VSVIP, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VsVip extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class VsVip extends AviRestResource {
   @JsonProperty("cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudRef = null;
 
   @JsonProperty("dns_info")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<DnsInfo> dnsInfo = null;
 
   @JsonProperty("east_west_placement")
-  private Boolean eastWestPlacement = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean eastWestPlacement = false;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
+  @JsonProperty("tier1_lr")
+  @JsonInclude(Include.NON_NULL)
+  private String tier1Lr = null;
+
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("use_standard_alb")
+  @JsonInclude(Include.NON_NULL)
   private Boolean useStandardAlb = null;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vip")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Vip> vip = null;
 
   @JsonProperty("vrf_context_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vrfContextRef = null;
 
   @JsonProperty("vsvip_cloud_config_cksum")
+  @JsonInclude(Include.NON_NULL)
   private String vsvipCloudConfigCksum = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type Cloud. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 17.1.1.
    * @return cloudRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Cloud. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudRef() {
     return cloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 17.1.1.
+   * @param cloudRef set the cloudRef.
+   */
   @VsoMethod
-  public void setCloudRef(String cloudRef) {
+  public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+   * Field introduced in 17.1.1.
+   * @return dnsInfo
+   */
+  @VsoMethod
+  public List<DnsInfo> getDnsInfo() {
+    return dnsInfo;
+  }
+
+  /**
+   * This is the setter method. this will set the dnsInfo
+   * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+   * Field introduced in 17.1.1.
+   * @return dnsInfo
+   */
+  @VsoMethod
+  public void setDnsInfo(List<DnsInfo>  dnsInfo) {
+    this.dnsInfo = dnsInfo;
+  }
+
+  /**
+   * This is the setter method this will set the dnsInfo
+   * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+   * Field introduced in 17.1.1.
+   * @return dnsInfo
+   */
+  @VsoMethod
   public VsVip addDnsInfoItem(DnsInfo dnsInfoItem) {
     if (this.dnsInfo == null) {
       this.dnsInfo = new ArrayList<DnsInfo>();
@@ -111,142 +132,194 @@ public class VsVip extends AviRestResource  {
     this.dnsInfo.add(dnsInfoItem);
     return this;
   }
-  
+
+
   /**
-   * Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Field introduced in 17.1.1.
-   * @return dnsInfo
-  **/
-  @ApiModelProperty(value = "Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<DnsInfo> getDnsInfo() {
-    return dnsInfo;
-  }
-    
-  @VsoMethod
-  public void setDnsInfo(List<DnsInfo> dnsInfo) {
-    this.dnsInfo = dnsInfo;
-  }
-
-  
-  /**
-   * Force placement on all Service Engines in the Service Engine Group (Container clouds only). Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Force placement on all service engines in the service engine group (container clouds only).
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return eastWestPlacement
-  **/
-  @ApiModelProperty(value = "Force placement on all Service Engines in the Service Engine Group (Container clouds only). Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEastWestPlacement() {
+   */
+  @VsoMethod
+  public Boolean getEastWestPlacement() {
     return eastWestPlacement;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Force placement on all service engines in the service engine group (container clouds only).
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param eastWestPlacement set the eastWestPlacement.
+   */
   @VsoMethod
-  public void setEastWestPlacement(Boolean eastWestPlacement) {
+  public void setEastWestPlacement(Boolean  eastWestPlacement) {
     this.eastWestPlacement = eastWestPlacement;
   }
 
-  
   /**
-   * Name for the VsVip object. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Name for the vsvip object.
+   * Field introduced in 17.1.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name for the VsVip object. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name for the vsvip object.
+   * Field introduced in 17.1.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
-   * url
+   * This is the getter method this will return the attribute value.
+   * This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
+   * Field introduced in 20.1.1.
+   * @return tier1Lr
+   */
+  @VsoMethod
+  public String getTier1Lr() {
+    return tier1Lr;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
+   * Field introduced in 20.1.1.
+   * @param tier1Lr set the tier1Lr.
+   */
+  @VsoMethod
+  public void setTier1Lr(String  tier1Lr) {
+    this.tier1Lr = tier1Lr;
+  }
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
+   * set.
+   * This is only used when fip is used for vs on azure cloud.
+   * Field introduced in 18.2.3.
    * @return useStandardAlb
-  **/
-  @ApiModelProperty(value = "This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseStandardAlb() {
+   */
+  @VsoMethod
+  public Boolean getUseStandardAlb() {
     return useStandardAlb;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
+   * set.
+   * This is only used when fip is used for vs on azure cloud.
+   * Field introduced in 18.2.3.
+   * @param useStandardAlb set the useStandardAlb.
+   */
   @VsoMethod
-  public void setUseStandardAlb(Boolean useStandardAlb) {
+  public void setUseStandardAlb(Boolean  useStandardAlb) {
     this.useStandardAlb = useStandardAlb;
   }
 
-  
   /**
-   * UUID of the VsVip object. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the vsvip object.
+   * Field introduced in 17.1.1.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the VsVip object. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the vsvip object.
+   * Field introduced in 17.1.1.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of virtual service ips and other shareable entities.
+   * Field introduced in 17.1.1.
+   * @return vip
+   */
+  @VsoMethod
+  public List<Vip> getVip() {
+    return vip;
+  }
+
+  /**
+   * This is the setter method. this will set the vip
+   * List of virtual service ips and other shareable entities.
+   * Field introduced in 17.1.1.
+   * @return vip
+   */
+  @VsoMethod
+  public void setVip(List<Vip>  vip) {
+    this.vip = vip;
+  }
+
+  /**
+   * This is the setter method this will set the vip
+   * List of virtual service ips and other shareable entities.
+   * Field introduced in 17.1.1.
+   * @return vip
+   */
+  @VsoMethod
   public VsVip addVipItem(Vip vipItem) {
     if (this.vip == null) {
       this.vip = new ArrayList<Vip>();
@@ -254,127 +327,112 @@ public class VsVip extends AviRestResource  {
     this.vip.add(vipItem);
     return this;
   }
-  
+
+
   /**
-   * List of Virtual Service IPs and other shareable entities. Field introduced in 17.1.1.
-   * @return vip
-  **/
-  @ApiModelProperty(value = "List of Virtual Service IPs and other shareable entities. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<Vip> getVip() {
-    return vip;
-  }
-    
-  @VsoMethod
-  public void setVip(List<Vip> vip) {
-    this.vip = vip;
-  }
-
-  
-  /**
-   * Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Virtual routing context that the virtual service is bound to.
+   * This is used to provide the isolation of the set of networks the application is attached to.
+   * It is a reference to an object of type vrfcontext.
+   * Field introduced in 17.1.1.
    * @return vrfContextRef
-  **/
-  @ApiModelProperty(value = "Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVrfContextRef() {
     return vrfContextRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Virtual routing context that the virtual service is bound to.
+   * This is used to provide the isolation of the set of networks the application is attached to.
+   * It is a reference to an object of type vrfcontext.
+   * Field introduced in 17.1.1.
+   * @param vrfContextRef set the vrfContextRef.
+   */
   @VsoMethod
-  public void setVrfContextRef(String vrfContextRef) {
+  public void setVrfContextRef(String  vrfContextRef) {
     this.vrfContextRef = vrfContextRef;
   }
 
-  
   /**
-   * Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Checksum of cloud configuration for vsvip.
+   * Internally set by cloud connector.
+   * Field introduced in 17.2.9, 18.1.2.
    * @return vsvipCloudConfigCksum
-  **/
-  @ApiModelProperty(value = "Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVsvipCloudConfigCksum() {
     return vsvipCloudConfigCksum;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Checksum of cloud configuration for vsvip.
+   * Internally set by cloud connector.
+   * Field introduced in 17.2.9, 18.1.2.
+   * @param vsvipCloudConfigCksum set the vsvipCloudConfigCksum.
+   */
   @VsoMethod
-  public void setVsvipCloudConfigCksum(String vsvipCloudConfigCksum) {
+  public void setVsvipCloudConfigCksum(String  vsvipCloudConfigCksum) {
     this.vsvipCloudConfigCksum = vsvipCloudConfigCksum;
   }
 
-  
+
   public String getObjectID() {
-		return "VsVip";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VsVip vsVip = (VsVip) o;
-    return Objects.equals(this.lastModified, vsVip.lastModified) &&
-        Objects.equals(this.cloudRef, vsVip.cloudRef) &&
-        Objects.equals(this.dnsInfo, vsVip.dnsInfo) &&
-        Objects.equals(this.eastWestPlacement, vsVip.eastWestPlacement) &&
-        Objects.equals(this.name, vsVip.name) &&
-        Objects.equals(this.tenantRef, vsVip.tenantRef) &&
-        Objects.equals(this.url, vsVip.url) &&
-        Objects.equals(this.useStandardAlb, vsVip.useStandardAlb) &&
-        Objects.equals(this.uuid, vsVip.uuid) &&
-        Objects.equals(this.vip, vsVip.vip) &&
-        Objects.equals(this.vrfContextRef, vsVip.vrfContextRef) &&
-        Objects.equals(this.vsvipCloudConfigCksum, vsVip.vsvipCloudConfigCksum);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, cloudRef, dnsInfo, eastWestPlacement, name, tenantRef, url, useStandardAlb, uuid, vip, vrfContextRef, vsvipCloudConfigCksum);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VsVip {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-    sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
-    sb.append("    eastWestPlacement: ").append(toIndentedString(eastWestPlacement)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
-    sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
-    sb.append("    vsvipCloudConfigCksum: ").append(toIndentedString(vsvipCloudConfigCksum)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VsVip objVsVip = (VsVip) o;
+  return   Objects.equals(this.vrfContextRef, objVsVip.vrfContextRef)&&
+  Objects.equals(this.eastWestPlacement, objVsVip.eastWestPlacement)&&
+  Objects.equals(this.uuid, objVsVip.uuid)&&
+  Objects.equals(this.dnsInfo, objVsVip.dnsInfo)&&
+  Objects.equals(this.tier1Lr, objVsVip.tier1Lr)&&
+  Objects.equals(this.tenantRef, objVsVip.tenantRef)&&
+  Objects.equals(this.vip, objVsVip.vip)&&
+  Objects.equals(this.vsvipCloudConfigCksum, objVsVip.vsvipCloudConfigCksum)&&
+  Objects.equals(this.useStandardAlb, objVsVip.useStandardAlb)&&
+  Objects.equals(this.cloudRef, objVsVip.cloudRef)&&
+  Objects.equals(this.name, objVsVip.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VsVip {\n");
+      sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
+        sb.append("    eastWestPlacement: ").append(toIndentedString(eastWestPlacement)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    tier1Lr: ").append(toIndentedString(tier1Lr)).append("\n");
+            sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
+        sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
+        sb.append("    vsvipCloudConfigCksum: ").append(toIndentedString(vsvipCloudConfigCksum)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

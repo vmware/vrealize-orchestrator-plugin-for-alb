@@ -1,116 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AlertFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AlertFilter is a POJO class extends AviRestResource that used for creating
+ * AlertFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AlertFilter")
-@VsoFinder(name = Constants.FINDER_VRO_ALERTFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_ALERTFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AlertFilter extends AviRestResource  {
+public class AlertFilter extends AviRestResource {
   @JsonProperty("filter_action")
+  @JsonInclude(Include.NON_NULL)
   private String filterAction = null;
 
   @JsonProperty("filter_string")
+  @JsonInclude(Include.NON_NULL)
   private String filterString = null;
 
-  
+
+
   /**
-   * filter_action of AlertFilter.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property filter_action of obj type alertfilter field type str  type string.
    * @return filterAction
-  **/
-  @ApiModelProperty(value = "filter_action of AlertFilter.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFilterAction() {
     return filterAction;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property filter_action of obj type alertfilter field type str  type string.
+   * @param filterAction set the filterAction.
+   */
   @VsoMethod
-  public void setFilterAction(String filterAction) {
+  public void setFilterAction(String  filterAction) {
     this.filterAction = filterAction;
   }
 
-  
   /**
-   * filter_string of AlertFilter.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property filter_string of obj type alertfilter field type str  type string.
    * @return filterString
-  **/
-  @ApiModelProperty(required = true, value = "filter_string of AlertFilter.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFilterString() {
     return filterString;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property filter_string of obj type alertfilter field type str  type string.
+   * @param filterString set the filterString.
+   */
   @VsoMethod
-  public void setFilterString(String filterString) {
+  public void setFilterString(String  filterString) {
     this.filterString = filterString;
   }
 
-  
-  public String getObjectID() {
-		return "AlertFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AlertFilter alertFilter = (AlertFilter) o;
-    return Objects.equals(this.filterAction, alertFilter.filterAction) &&
-        Objects.equals(this.filterString, alertFilter.filterString);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(filterAction, filterString);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AlertFilter {\n");
-    
-    sb.append("    filterAction: ").append(toIndentedString(filterAction)).append("\n");
-    sb.append("    filterString: ").append(toIndentedString(filterString)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AlertFilter objAlertFilter = (AlertFilter) o;
+  return   Objects.equals(this.filterAction, objAlertFilter.filterAction)&&
+  Objects.equals(this.filterString, objAlertFilter.filterString);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AlertFilter {\n");
+      sb.append("    filterAction: ").append(toIndentedString(filterAction)).append("\n");
+        sb.append("    filterString: ").append(toIndentedString(filterString)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

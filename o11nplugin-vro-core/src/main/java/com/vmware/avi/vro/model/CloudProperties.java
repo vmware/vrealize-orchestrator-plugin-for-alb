@@ -1,97 +1,108 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.CCProperties;
-import com.vmware.avi.vro.model.CloudInfo;
-import com.vmware.avi.vro.model.HypervisorProperties;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.CC_Properties;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CloudProperties
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CloudProperties is a POJO class extends AviRestResource that used for creating
+ * CloudProperties.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CloudProperties")
 @VsoFinder(name = Constants.FINDER_VRO_CLOUDPROPERTIES, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CloudProperties extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class CloudProperties extends AviRestResource {
   @JsonProperty("cc_props")
-  private CCProperties ccProps = null;
+  @JsonInclude(Include.NON_NULL)
+  private CC_Properties ccProps = null;
 
   @JsonProperty("cc_vtypes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> ccVtypes = null;
 
   @JsonProperty("hyp_props")
-  @Valid
-  private List<HypervisorProperties> hypProps = null;
+  @JsonInclude(Include.NON_NULL)
+  private List<Hypervisor_Properties> hypProps = null;
 
   @JsonProperty("info")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<CloudInfo> info = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * CloudConnector properties.
+   * This is the getter method this will return the attribute value.
+   * Cloudconnector properties.
    * @return ccProps
-  **/
-  @ApiModelProperty(value = "CloudConnector properties.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public CCProperties getCcProps() {
+   */
+  @VsoMethod
+  public CC_Properties getCcProps() {
     return ccProps;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloudconnector properties.
+   * @param ccProps set the ccProps.
+   */
   @VsoMethod
-  public void setCcProps(CCProperties ccProps) {
+  public void setCcProps(CC_Properties ccProps) {
     this.ccProps = ccProps;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Cloud types supported by cloudconnector.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * @return ccVtypes
+   */
+  @VsoMethod
+  public List<String> getCcVtypes() {
+    return ccVtypes;
+  }
+
+  /**
+   * This is the setter method. this will set the ccVtypes
+   * Cloud types supported by cloudconnector.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * @return ccVtypes
+   */
+  @VsoMethod
+  public void setCcVtypes(List<String>  ccVtypes) {
+    this.ccVtypes = ccVtypes;
+  }
+
+  /**
+   * This is the setter method this will set the ccVtypes
+   * Cloud types supported by cloudconnector.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * @return ccVtypes
+   */
+  @VsoMethod
   public CloudProperties addCcVtypesItem(String ccVtypesItem) {
     if (this.ccVtypes == null) {
       this.ccVtypes = new ArrayList<String>();
@@ -99,54 +110,69 @@ public class CloudProperties extends AviRestResource  {
     this.ccVtypes.add(ccVtypesItem);
     return this;
   }
-  
+
+
   /**
-   * Cloud types supported by CloudConnector. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP.
-   * @return ccVtypes
-  **/
-  @ApiModelProperty(value = "Cloud types supported by CloudConnector. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP.")
-
-
- 
-  @VsoMethod  
-  public List<String> getCcVtypes() {
-    return ccVtypes;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Hypervisor properties.
+   * @return hypProps
+   */
   @VsoMethod
-  public void setCcVtypes(List<String> ccVtypes) {
-    this.ccVtypes = ccVtypes;
+  public List<Hypervisor_Properties> getHypProps() {
+    return hypProps;
   }
 
-  
-  public CloudProperties addHypPropsItem(HypervisorProperties hypPropsItem) {
+  /**
+   * This is the setter method. this will set the hypProps
+   * Hypervisor properties.
+   * @return hypProps
+   */
+  @VsoMethod
+  public void setHypProps(List<Hypervisor_Properties>  hypProps) {
+    this.hypProps = hypProps;
+  }
+
+  /**
+   * This is the setter method this will set the hypProps
+   * Hypervisor properties.
+   * @return hypProps
+   */
+  @VsoMethod
+  public CloudProperties addHypPropsItem(Hypervisor_Properties hypPropsItem) {
     if (this.hypProps == null) {
-      this.hypProps = new ArrayList<HypervisorProperties>();
+      this.hypProps = new ArrayList<Hypervisor_Properties>();
     }
     this.hypProps.add(hypPropsItem);
     return this;
   }
-  
+
+
   /**
-   * Hypervisor properties.
-   * @return hypProps
-  **/
-  @ApiModelProperty(value = "Hypervisor properties.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HypervisorProperties> getHypProps() {
-    return hypProps;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Properties specific to a cloud type.
+   * @return info
+   */
   @VsoMethod
-  public void setHypProps(List<HypervisorProperties> hypProps) {
-    this.hypProps = hypProps;
+  public List<CloudInfo> getInfo() {
+    return info;
   }
 
-  
+  /**
+   * This is the setter method. this will set the info
+   * Properties specific to a cloud type.
+   * @return info
+   */
+  @VsoMethod
+  public void setInfo(List<CloudInfo>  info) {
+    this.info = info;
+  }
+
+  /**
+   * This is the setter method this will set the info
+   * Properties specific to a cloud type.
+   * @return info
+   */
+  @VsoMethod
   public CloudProperties addInfoItem(CloudInfo infoItem) {
     if (this.info == null) {
       this.info = new ArrayList<CloudInfo>();
@@ -154,117 +180,89 @@ public class CloudProperties extends AviRestResource  {
     this.info.add(infoItem);
     return this;
   }
-  
-  /**
-   * Properties specific to a cloud type.
-   * @return info
-  **/
-  @ApiModelProperty(value = "Properties specific to a cloud type.")
 
-  @Valid
-
- 
-  @VsoMethod  
-  public List<CloudInfo> getInfo() {
-    return info;
-  }
-    
-  @VsoMethod
-  public void setInfo(List<CloudInfo> info) {
-    this.info = info;
-  }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "CloudProperties";
+    return "CloudProperties" + "(" + uuid + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CloudProperties cloudProperties = (CloudProperties) o;
-    return Objects.equals(this.lastModified, cloudProperties.lastModified) &&
-        Objects.equals(this.ccProps, cloudProperties.ccProps) &&
-        Objects.equals(this.ccVtypes, cloudProperties.ccVtypes) &&
-        Objects.equals(this.hypProps, cloudProperties.hypProps) &&
-        Objects.equals(this.info, cloudProperties.info) &&
-        Objects.equals(this.url, cloudProperties.url) &&
-        Objects.equals(this.uuid, cloudProperties.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, ccProps, ccVtypes, hypProps, info, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CloudProperties {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    ccProps: ").append(toIndentedString(ccProps)).append("\n");
-    sb.append("    ccVtypes: ").append(toIndentedString(ccVtypes)).append("\n");
-    sb.append("    hypProps: ").append(toIndentedString(hypProps)).append("\n");
-    sb.append("    info: ").append(toIndentedString(info)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CloudProperties objCloudProperties = (CloudProperties) o;
+  return   Objects.equals(this.info, objCloudProperties.info)&&
+  Objects.equals(this.hypProps, objCloudProperties.hypProps)&&
+  Objects.equals(this.uuid, objCloudProperties.uuid)&&
+  Objects.equals(this.ccProps, objCloudProperties.ccProps)&&
+  Objects.equals(this.ccVtypes, objCloudProperties.ccVtypes);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CloudProperties {\n");
+      sb.append("    ccProps: ").append(toIndentedString(ccProps)).append("\n");
+        sb.append("    ccVtypes: ").append(toIndentedString(ccVtypes)).append("\n");
+        sb.append("    hypProps: ").append(toIndentedString(hypProps)).append("\n");
+        sb.append("    info: ").append(toIndentedString(info)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,119 +1,113 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpAddrPrefix
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpAddrPrefix is a POJO class extends AviRestResource that used for creating
+ * IpAddrPrefix.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpAddrPrefix")
-@VsoFinder(name = Constants.FINDER_VRO_IPADDRPREFIX, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_IPADDRPREFIX)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpAddrPrefix extends AviRestResource  {
+public class IpAddrPrefix extends AviRestResource {
   @JsonProperty("ip_addr")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ipAddr = null;
 
   @JsonProperty("mask")
+  @JsonInclude(Include.NON_NULL)
   private Integer mask = null;
 
-  
+
+
   /**
-   * Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_addr of obj type ipaddrprefix field type str  type ref.
    * @return ipAddr
-  **/
-  @ApiModelProperty(required = true, value = "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIpAddr() {
     return ipAddr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ip_addr of obj type ipaddrprefix field type str  type ref.
+   * @param ipAddr set the ipAddr.
+   */
   @VsoMethod
   public void setIpAddr(IpAddr ipAddr) {
     this.ipAddr = ipAddr;
   }
 
-  
   /**
-   * Number of mask.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property mask of obj type ipaddrprefix field type str  type integer.
    * @return mask
-  **/
-  @ApiModelProperty(required = true, value = "Number of mask.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMask() {
     return mask;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property mask of obj type ipaddrprefix field type str  type integer.
+   * @param mask set the mask.
+   */
   @VsoMethod
-  public void setMask(Integer mask) {
+  public void setMask(Integer  mask) {
     this.mask = mask;
   }
 
-  
-  public String getObjectID() {
-		return "IpAddrPrefix";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpAddrPrefix ipAddrPrefix = (IpAddrPrefix) o;
-    return Objects.equals(this.ipAddr, ipAddrPrefix.ipAddr) &&
-        Objects.equals(this.mask, ipAddrPrefix.mask);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ipAddr, mask);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpAddrPrefix {\n");
-    
-    sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
-    sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpAddrPrefix objIpAddrPrefix = (IpAddrPrefix) o;
+  return   Objects.equals(this.mask, objIpAddrPrefix.mask)&&
+  Objects.equals(this.ipAddr, objIpAddrPrefix.ipAddr);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpAddrPrefix {\n");
+      sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
+        sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

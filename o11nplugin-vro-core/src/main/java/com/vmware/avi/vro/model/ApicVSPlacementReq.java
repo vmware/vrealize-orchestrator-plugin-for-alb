@@ -1,72 +1,101 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.APICNetworkRel;
-import com.vmware.avi.vro.model.Lif;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ApicVSPlacementReq
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ApicVSPlacementReq is a POJO class extends AviRestResource that used for creating
+ * ApicVSPlacementReq.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ApicVSPlacementReq")
-@VsoFinder(name = Constants.FINDER_VRO_APICVSPLACEMENTREQ, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_APICVSPLACEMENTREQ)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ApicVSPlacementReq extends AviRestResource  {
+public class ApicVSPlacementReq extends AviRestResource {
   @JsonProperty("graph")
+  @JsonInclude(Include.NON_NULL)
   private String graph = null;
 
   @JsonProperty("lifs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Lif> lifs = null;
 
   @JsonProperty("network_rel")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<APICNetworkRel> networkRel = null;
 
   @JsonProperty("tenant_name")
+  @JsonInclude(Include.NON_NULL)
   private String tenantName = null;
 
   @JsonProperty("vdev")
+  @JsonInclude(Include.NON_NULL)
   private String vdev = null;
 
   @JsonProperty("vgrp")
+  @JsonInclude(Include.NON_NULL)
   private String vgrp = null;
 
-  
+
+
   /**
-   * graph of ApicVSPlacementReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property graph of obj type apicvsplacementreq field type str  type string.
    * @return graph
-  **/
-  @ApiModelProperty(value = "graph of ApicVSPlacementReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getGraph() {
     return graph;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property graph of obj type apicvsplacementreq field type str  type string.
+   * @param graph set the graph.
+   */
   @VsoMethod
-  public void setGraph(String graph) {
+  public void setGraph(String  graph) {
     this.graph = graph;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
+   * @return lifs
+   */
+  @VsoMethod
+  public List<Lif> getLifs() {
+    return lifs;
+  }
+
+  /**
+   * This is the setter method. this will set the lifs
+   * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
+   * @return lifs
+   */
+  @VsoMethod
+  public void setLifs(List<Lif>  lifs) {
+    this.lifs = lifs;
+  }
+
+  /**
+   * This is the setter method this will set the lifs
+   * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
+   * @return lifs
+   */
+  @VsoMethod
   public ApicVSPlacementReq addLifsItem(Lif lifsItem) {
     if (this.lifs == null) {
       this.lifs = new ArrayList<Lif>();
@@ -74,27 +103,34 @@ public class ApicVSPlacementReq extends AviRestResource  {
     this.lifs.add(lifsItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property lifs of obj type ApicVSPlacementReq field type str  type object
-   * @return lifs
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property lifs of obj type ApicVSPlacementReq field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<Lif> getLifs() {
-    return lifs;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
+   * @return networkRel
+   */
   @VsoMethod
-  public void setLifs(List<Lif> lifs) {
-    this.lifs = lifs;
+  public List<APICNetworkRel> getNetworkRel() {
+    return networkRel;
   }
 
-  
+  /**
+   * This is the setter method. this will set the networkRel
+   * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
+   * @return networkRel
+   */
+  @VsoMethod
+  public void setNetworkRel(List<APICNetworkRel>  networkRel) {
+    this.networkRel = networkRel;
+  }
+
+  /**
+   * This is the setter method this will set the networkRel
+   * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
+   * @return networkRel
+   */
+  @VsoMethod
   public ApicVSPlacementReq addNetworkRelItem(APICNetworkRel networkRelItem) {
     if (this.networkRel == null) {
       this.networkRel = new ArrayList<APICNetworkRel>();
@@ -102,134 +138,109 @@ public class ApicVSPlacementReq extends AviRestResource  {
     this.networkRel.add(networkRelItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property network_rel of obj type ApicVSPlacementReq field type str  type object
-   * @return networkRel
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property network_rel of obj type ApicVSPlacementReq field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<APICNetworkRel> getNetworkRel() {
-    return networkRel;
-  }
-    
-  @VsoMethod
-  public void setNetworkRel(List<APICNetworkRel> networkRel) {
-    this.networkRel = networkRel;
-  }
-
-  
-  /**
-   * tenant_name of ApicVSPlacementReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property tenant_name of obj type apicvsplacementreq field type str  type string.
    * @return tenantName
-  **/
-  @ApiModelProperty(value = "tenant_name of ApicVSPlacementReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantName() {
     return tenantName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property tenant_name of obj type apicvsplacementreq field type str  type string.
+   * @param tenantName set the tenantName.
+   */
   @VsoMethod
-  public void setTenantName(String tenantName) {
+  public void setTenantName(String  tenantName) {
     this.tenantName = tenantName;
   }
 
-  
   /**
-   * vdev of ApicVSPlacementReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vdev of obj type apicvsplacementreq field type str  type string.
    * @return vdev
-  **/
-  @ApiModelProperty(value = "vdev of ApicVSPlacementReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVdev() {
     return vdev;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vdev of obj type apicvsplacementreq field type str  type string.
+   * @param vdev set the vdev.
+   */
   @VsoMethod
-  public void setVdev(String vdev) {
+  public void setVdev(String  vdev) {
     this.vdev = vdev;
   }
 
-  
   /**
-   * vgrp of ApicVSPlacementReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vgrp of obj type apicvsplacementreq field type str  type string.
    * @return vgrp
-  **/
-  @ApiModelProperty(value = "vgrp of ApicVSPlacementReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVgrp() {
     return vgrp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vgrp of obj type apicvsplacementreq field type str  type string.
+   * @param vgrp set the vgrp.
+   */
   @VsoMethod
-  public void setVgrp(String vgrp) {
+  public void setVgrp(String  vgrp) {
     this.vgrp = vgrp;
   }
 
-  
-  public String getObjectID() {
-		return "ApicVSPlacementReq";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ApicVSPlacementReq apicVSPlacementReq = (ApicVSPlacementReq) o;
-    return Objects.equals(this.graph, apicVSPlacementReq.graph) &&
-        Objects.equals(this.lifs, apicVSPlacementReq.lifs) &&
-        Objects.equals(this.networkRel, apicVSPlacementReq.networkRel) &&
-        Objects.equals(this.tenantName, apicVSPlacementReq.tenantName) &&
-        Objects.equals(this.vdev, apicVSPlacementReq.vdev) &&
-        Objects.equals(this.vgrp, apicVSPlacementReq.vgrp);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(graph, lifs, networkRel, tenantName, vdev, vgrp);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ApicVSPlacementReq {\n");
-    
-    sb.append("    graph: ").append(toIndentedString(graph)).append("\n");
-    sb.append("    lifs: ").append(toIndentedString(lifs)).append("\n");
-    sb.append("    networkRel: ").append(toIndentedString(networkRel)).append("\n");
-    sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
-    sb.append("    vdev: ").append(toIndentedString(vdev)).append("\n");
-    sb.append("    vgrp: ").append(toIndentedString(vgrp)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ApicVSPlacementReq objApicVSPlacementReq = (ApicVSPlacementReq) o;
+  return   Objects.equals(this.vgrp, objApicVSPlacementReq.vgrp)&&
+  Objects.equals(this.graph, objApicVSPlacementReq.graph)&&
+  Objects.equals(this.vdev, objApicVSPlacementReq.vdev)&&
+  Objects.equals(this.networkRel, objApicVSPlacementReq.networkRel)&&
+  Objects.equals(this.lifs, objApicVSPlacementReq.lifs)&&
+  Objects.equals(this.tenantName, objApicVSPlacementReq.tenantName);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ApicVSPlacementReq {\n");
+      sb.append("    graph: ").append(toIndentedString(graph)).append("\n");
+        sb.append("    lifs: ").append(toIndentedString(lifs)).append("\n");
+        sb.append("    networkRel: ").append(toIndentedString(networkRel)).append("\n");
+        sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
+        sb.append("    vdev: ").append(toIndentedString(vdev)).append("\n");
+        sb.append("    vgrp: ").append(toIndentedString(vgrp)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

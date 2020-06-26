@@ -1,145 +1,147 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.HostHdrMatch;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.HostHdrMatch;
 import com.vmware.avi.vro.model.PathMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AuthenticationMatch
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AuthenticationMatch is a POJO class extends AviRestResource that used for creating
+ * AuthenticationMatch.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AuthenticationMatch")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONMATCH, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONMATCH)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthenticationMatch extends AviRestResource  {
+public class AuthenticationMatch extends AviRestResource {
   @JsonProperty("client_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch clientIp = null;
 
   @JsonProperty("host_hdr")
+  @JsonInclude(Include.NON_NULL)
   private HostHdrMatch hostHdr = null;
 
   @JsonProperty("path")
+  @JsonInclude(Include.NON_NULL)
   private PathMatch path = null;
 
-  
+
+
   /**
-   * Configure client ip addresses. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Configure client ip addresses.
+   * Field introduced in 18.2.5.
    * @return clientIp
-  **/
-  @ApiModelProperty(value = "Configure client ip addresses. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getClientIp() {
     return clientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure client ip addresses.
+   * Field introduced in 18.2.5.
+   * @param clientIp set the clientIp.
+   */
   @VsoMethod
   public void setClientIp(IpAddrMatch clientIp) {
     this.clientIp = clientIp;
   }
 
-  
   /**
-   * Configure the host header. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Configure the host header.
+   * Field introduced in 18.2.5.
    * @return hostHdr
-  **/
-  @ApiModelProperty(value = "Configure the host header. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HostHdrMatch getHostHdr() {
     return hostHdr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure the host header.
+   * Field introduced in 18.2.5.
+   * @param hostHdr set the hostHdr.
+   */
   @VsoMethod
   public void setHostHdr(HostHdrMatch hostHdr) {
     this.hostHdr = hostHdr;
   }
 
-  
   /**
-   * Configure request paths. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Configure request paths.
+   * Field introduced in 18.2.5.
    * @return path
-  **/
-  @ApiModelProperty(value = "Configure request paths. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PathMatch getPath() {
     return path;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure request paths.
+   * Field introduced in 18.2.5.
+   * @param path set the path.
+   */
   @VsoMethod
   public void setPath(PathMatch path) {
     this.path = path;
   }
 
-  
-  public String getObjectID() {
-		return "AuthenticationMatch";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AuthenticationMatch authenticationMatch = (AuthenticationMatch) o;
-    return Objects.equals(this.clientIp, authenticationMatch.clientIp) &&
-        Objects.equals(this.hostHdr, authenticationMatch.hostHdr) &&
-        Objects.equals(this.path, authenticationMatch.path);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(clientIp, hostHdr, path);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticationMatch {\n");
-    
-    sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-    sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AuthenticationMatch objAuthenticationMatch = (AuthenticationMatch) o;
+  return   Objects.equals(this.path, objAuthenticationMatch.path)&&
+  Objects.equals(this.clientIp, objAuthenticationMatch.clientIp)&&
+  Objects.equals(this.hostHdr, objAuthenticationMatch.hostHdr);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AuthenticationMatch {\n");
+      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

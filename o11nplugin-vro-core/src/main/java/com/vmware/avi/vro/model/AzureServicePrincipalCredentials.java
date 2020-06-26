@@ -1,139 +1,150 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AzureServicePrincipalCredentials
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AzureServicePrincipalCredentials is a POJO class extends AviRestResource that used for creating
+ * AzureServicePrincipalCredentials.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AzureServicePrincipalCredentials")
-@VsoFinder(name = Constants.FINDER_VRO_AZURESERVICEPRINCIPALCREDENTIALS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_AZURESERVICEPRINCIPALCREDENTIALS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AzureServicePrincipalCredentials extends AviRestResource  {
+public class AzureServicePrincipalCredentials extends AviRestResource {
   @JsonProperty("application_id")
+  @JsonInclude(Include.NON_NULL)
   private String applicationId = null;
 
   @JsonProperty("authentication_token")
+  @JsonInclude(Include.NON_NULL)
   private String authenticationToken = null;
 
   @JsonProperty("tenant_id")
+  @JsonInclude(Include.NON_NULL)
   private String tenantId = null;
 
-  
+
+
   /**
-   * Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Application id created for avi controller.
+   * Required for application id based authentication only.
+   * Field introduced in 17.2.1.
    * @return applicationId
-  **/
-  @ApiModelProperty(value = "Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getApplicationId() {
     return applicationId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Application id created for avi controller.
+   * Required for application id based authentication only.
+   * Field introduced in 17.2.1.
+   * @param applicationId set the applicationId.
+   */
   @VsoMethod
-  public void setApplicationId(String applicationId) {
+  public void setApplicationId(String  applicationId) {
     this.applicationId = applicationId;
   }
 
-  
   /**
-   * Authentication token created for the Avi Controller application. Required for application id based authentication only. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Authentication token created for the avi controller application.
+   * Required for application id based authentication only.
+   * Field introduced in 17.2.1.
    * @return authenticationToken
-  **/
-  @ApiModelProperty(value = "Authentication token created for the Avi Controller application. Required for application id based authentication only. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAuthenticationToken() {
     return authenticationToken;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Authentication token created for the avi controller application.
+   * Required for application id based authentication only.
+   * Field introduced in 17.2.1.
+   * @param authenticationToken set the authenticationToken.
+   */
   @VsoMethod
-  public void setAuthenticationToken(String authenticationToken) {
+  public void setAuthenticationToken(String  authenticationToken) {
     this.authenticationToken = authenticationToken;
   }
 
-  
   /**
-   * Tenant ID for the subscription. Required for application id based authentication only. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Tenant id for the subscription.
+   * Required for application id based authentication only.
+   * Field introduced in 17.2.1.
    * @return tenantId
-  **/
-  @ApiModelProperty(value = "Tenant ID for the subscription. Required for application id based authentication only. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantId() {
     return tenantId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant id for the subscription.
+   * Required for application id based authentication only.
+   * Field introduced in 17.2.1.
+   * @param tenantId set the tenantId.
+   */
   @VsoMethod
-  public void setTenantId(String tenantId) {
+  public void setTenantId(String  tenantId) {
     this.tenantId = tenantId;
   }
 
-  
-  public String getObjectID() {
-		return "AzureServicePrincipalCredentials";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AzureServicePrincipalCredentials azureServicePrincipalCredentials = (AzureServicePrincipalCredentials) o;
-    return Objects.equals(this.applicationId, azureServicePrincipalCredentials.applicationId) &&
-        Objects.equals(this.authenticationToken, azureServicePrincipalCredentials.authenticationToken) &&
-        Objects.equals(this.tenantId, azureServicePrincipalCredentials.tenantId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(applicationId, authenticationToken, tenantId);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AzureServicePrincipalCredentials {\n");
-    
-    sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
-    sb.append("    authenticationToken: ").append(toIndentedString(authenticationToken)).append("\n");
-    sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AzureServicePrincipalCredentials objAzureServicePrincipalCredentials = (AzureServicePrincipalCredentials) o;
+  return   Objects.equals(this.tenantId, objAzureServicePrincipalCredentials.tenantId)&&
+  Objects.equals(this.applicationId, objAzureServicePrincipalCredentials.applicationId)&&
+  Objects.equals(this.authenticationToken, objAzureServicePrincipalCredentials.authenticationToken);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AzureServicePrincipalCredentials {\n");
+      sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("    authenticationToken: ").append(toIndentedString(authenticationToken)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

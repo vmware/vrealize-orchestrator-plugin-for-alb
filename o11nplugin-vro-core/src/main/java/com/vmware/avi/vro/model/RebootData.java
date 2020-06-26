@@ -1,115 +1,116 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * RebootData
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The RebootData is a POJO class extends AviRestResource that used for creating
+ * RebootData.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "RebootData")
-@VsoFinder(name = Constants.FINDER_VRO_REBOOTDATA, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_REBOOTDATA)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class RebootData extends AviRestResource  {
+public class RebootData extends AviRestResource {
   @JsonProperty("patch_version")
+  @JsonInclude(Include.NON_NULL)
   private String patchVersion = null;
 
   @JsonProperty("reboot")
+  @JsonInclude(Include.NON_NULL)
   private Boolean reboot = null;
 
-  
+
+
   /**
-   * Patch version for which reboot flag need to be computed. Field introduced in 18.2.8, 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Patch version for which reboot flag need to be computed.
+   * Field introduced in 18.2.8, 20.1.1.
    * @return patchVersion
-  **/
-  @ApiModelProperty(value = "Patch version for which reboot flag need to be computed. Field introduced in 18.2.8, 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPatchVersion() {
     return patchVersion;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Patch version for which reboot flag need to be computed.
+   * Field introduced in 18.2.8, 20.1.1.
+   * @param patchVersion set the patchVersion.
+   */
   @VsoMethod
-  public void setPatchVersion(String patchVersion) {
+  public void setPatchVersion(String  patchVersion) {
     this.patchVersion = patchVersion;
   }
 
-  
   /**
-   * This variable tells whether reboot has to be performed. Field introduced in 18.2.8, 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * This variable tells whether reboot has to be performed.
+   * Field introduced in 18.2.8, 20.1.1.
    * @return reboot
-  **/
-  @ApiModelProperty(value = "This variable tells whether reboot has to be performed. Field introduced in 18.2.8, 20.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isReboot() {
+   */
+  @VsoMethod
+  public Boolean getReboot() {
     return reboot;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This variable tells whether reboot has to be performed.
+   * Field introduced in 18.2.8, 20.1.1.
+   * @param reboot set the reboot.
+   */
   @VsoMethod
-  public void setReboot(Boolean reboot) {
+  public void setReboot(Boolean  reboot) {
     this.reboot = reboot;
   }
 
-  
-  public String getObjectID() {
-		return "RebootData";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    RebootData rebootData = (RebootData) o;
-    return Objects.equals(this.patchVersion, rebootData.patchVersion) &&
-        Objects.equals(this.reboot, rebootData.reboot);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(patchVersion, reboot);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class RebootData {\n");
-    
-    sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
-    sb.append("    reboot: ").append(toIndentedString(reboot)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  RebootData objRebootData = (RebootData) o;
+  return   Objects.equals(this.patchVersion, objRebootData.patchVersion)&&
+  Objects.equals(this.reboot, objRebootData.reboot);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class RebootData {\n");
+      sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
+        sb.append("    reboot: ").append(toIndentedString(reboot)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

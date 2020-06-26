@@ -1,45 +1,73 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.Cif;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * Lif
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The Lif is a POJO class extends AviRestResource that used for creating
+ * Lif.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "Lif")
-@VsoFinder(name = Constants.FINDER_VRO_LIF, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_LIF)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Lif extends AviRestResource  {
+public class Lif extends AviRestResource {
   @JsonProperty("cifs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Cif> cifs = null;
 
   @JsonProperty("lif")
+  @JsonInclude(Include.NON_NULL)
   private String lif = null;
 
   @JsonProperty("lif_label")
+  @JsonInclude(Include.NON_NULL)
   private String lifLabel = null;
 
   @JsonProperty("subnet")
+  @JsonInclude(Include.NON_NULL)
   private String subnet = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property cifs of obj type lif field type str  type array.
+   * @return cifs
+   */
+  @VsoMethod
+  public List<Cif> getCifs() {
+    return cifs;
+  }
+
+  /**
+   * This is the setter method. this will set the cifs
+   * Placeholder for description of property cifs of obj type lif field type str  type array.
+   * @return cifs
+   */
+  @VsoMethod
+  public void setCifs(List<Cif>  cifs) {
+    this.cifs = cifs;
+  }
+
+  /**
+   * This is the setter method this will set the cifs
+   * Placeholder for description of property cifs of obj type lif field type str  type array.
+   * @return cifs
+   */
+  @VsoMethod
   public Lif addCifsItem(Cif cifsItem) {
     if (this.cifs == null) {
       this.cifs = new ArrayList<Cif>();
@@ -47,130 +75,105 @@ public class Lif extends AviRestResource  {
     this.cifs.add(cifsItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property cifs of obj type Lif field type str  type object
-   * @return cifs
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property cifs of obj type Lif field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<Cif> getCifs() {
-    return cifs;
-  }
-    
-  @VsoMethod
-  public void setCifs(List<Cif> cifs) {
-    this.cifs = cifs;
-  }
-
-  
-  /**
-   * lif of Lif.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property lif of obj type lif field type str  type string.
    * @return lif
-  **/
-  @ApiModelProperty(value = "lif of Lif.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLif() {
     return lif;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property lif of obj type lif field type str  type string.
+   * @param lif set the lif.
+   */
   @VsoMethod
-  public void setLif(String lif) {
+  public void setLif(String  lif) {
     this.lif = lif;
   }
 
-  
   /**
-   * lif_label of Lif.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property lif_label of obj type lif field type str  type string.
    * @return lifLabel
-  **/
-  @ApiModelProperty(value = "lif_label of Lif.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLifLabel() {
     return lifLabel;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property lif_label of obj type lif field type str  type string.
+   * @param lifLabel set the lifLabel.
+   */
   @VsoMethod
-  public void setLifLabel(String lifLabel) {
+  public void setLifLabel(String  lifLabel) {
     this.lifLabel = lifLabel;
   }
 
-  
   /**
-   * subnet of Lif.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property subnet of obj type lif field type str  type string.
    * @return subnet
-  **/
-  @ApiModelProperty(value = "subnet of Lif.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSubnet() {
     return subnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property subnet of obj type lif field type str  type string.
+   * @param subnet set the subnet.
+   */
   @VsoMethod
-  public void setSubnet(String subnet) {
+  public void setSubnet(String  subnet) {
     this.subnet = subnet;
   }
 
-  
-  public String getObjectID() {
-		return "Lif";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Lif lif = (Lif) o;
-    return Objects.equals(this.cifs, lif.cifs) &&
-        Objects.equals(this.lif, lif.lif) &&
-        Objects.equals(this.lifLabel, lif.lifLabel) &&
-        Objects.equals(this.subnet, lif.subnet);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(cifs, lif, lifLabel, subnet);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Lif {\n");
-    
-    sb.append("    cifs: ").append(toIndentedString(cifs)).append("\n");
-    sb.append("    lif: ").append(toIndentedString(lif)).append("\n");
-    sb.append("    lifLabel: ").append(toIndentedString(lifLabel)).append("\n");
-    sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  Lif objLif = (Lif) o;
+  return   Objects.equals(this.subnet, objLif.subnet)&&
+  Objects.equals(this.lif, objLif.lif)&&
+  Objects.equals(this.cifs, objLif.cifs)&&
+  Objects.equals(this.lifLabel, objLif.lifLabel);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class Lif {\n");
+      sb.append("    cifs: ").append(toIndentedString(cifs)).append("\n");
+        sb.append("    lif: ").append(toIndentedString(lif)).append("\n");
+        sb.append("    lifLabel: ").append(toIndentedString(lifLabel)).append("\n");
+        sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

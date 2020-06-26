@@ -1,289 +1,283 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.PoolServer;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * PingAccessAgent
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The PingAccessAgent is a POJO class extends AviRestResource that used for creating
+ * PingAccessAgent.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "PingAccessAgent")
 @VsoFinder(name = Constants.FINDER_VRO_PINGACCESSAGENT, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class PingAccessAgent extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class PingAccessAgent extends AviRestResource {
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("pingaccess_pool_ref")
+  @JsonInclude(Include.NON_NULL)
   private String pingaccessPoolRef = null;
 
   @JsonProperty("primary_server")
+  @JsonInclude(Include.NON_NULL)
   private PoolServer primaryServer = null;
 
   @JsonProperty("properties_file_data")
+  @JsonInclude(Include.NON_NULL)
   private String propertiesFileData = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   *  Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 18.2.3.
    * @return description
-  **/
-  @ApiModelProperty(value = " Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 18.2.3.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Name of the PingAccess Agent. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Name of the pingaccess agent.
+   * Field introduced in 18.2.3.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the PingAccess Agent. Field introduced in 18.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the pingaccess agent.
+   * Field introduced in 18.2.3.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Pool containing a primary PingAccess Server, as well as any failover servers included in the agent.properties file. It is a reference to an object of type Pool. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Pool containing a primary pingaccess server, as well as any failover servers included in the agent.properties file.
+   * It is a reference to an object of type pool.
+   * Field introduced in 18.2.3.
    * @return pingaccessPoolRef
-  **/
-  @ApiModelProperty(required = true, value = "Pool containing a primary PingAccess Server, as well as any failover servers included in the agent.properties file. It is a reference to an object of type Pool. Field introduced in 18.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPingaccessPoolRef() {
     return pingaccessPoolRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Pool containing a primary pingaccess server, as well as any failover servers included in the agent.properties file.
+   * It is a reference to an object of type pool.
+   * Field introduced in 18.2.3.
+   * @param pingaccessPoolRef set the pingaccessPoolRef.
+   */
   @VsoMethod
-  public void setPingaccessPoolRef(String pingaccessPoolRef) {
+  public void setPingaccessPoolRef(String  pingaccessPoolRef) {
     this.pingaccessPoolRef = pingaccessPoolRef;
   }
 
-  
   /**
-   * The ip and port of the primary PingAccess Server. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * The ip and port of the primary pingaccess server.
+   * Field introduced in 18.2.3.
    * @return primaryServer
-  **/
-  @ApiModelProperty(required = true, value = "The ip and port of the primary PingAccess Server. Field introduced in 18.2.3.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PoolServer getPrimaryServer() {
     return primaryServer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The ip and port of the primary pingaccess server.
+   * Field introduced in 18.2.3.
+   * @param primaryServer set the primaryServer.
+   */
   @VsoMethod
   public void setPrimaryServer(PoolServer primaryServer) {
     this.primaryServer = primaryServer;
   }
 
-  
   /**
-   * PingAccessAgent's agent.properties file generated by PingAccess server. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Pingaccessagent's agent.properties file generated by pingaccess server.
+   * Field introduced in 18.2.3.
    * @return propertiesFileData
-  **/
-  @ApiModelProperty(required = true, value = "PingAccessAgent's agent.properties file generated by PingAccess server. Field introduced in 18.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPropertiesFileData() {
     return propertiesFileData;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Pingaccessagent's agent.properties file generated by pingaccess server.
+   * Field introduced in 18.2.3.
+   * @param propertiesFileData set the propertiesFileData.
+   */
   @VsoMethod
-  public void setPropertiesFileData(String propertiesFileData) {
+  public void setPropertiesFileData(String  propertiesFileData) {
     this.propertiesFileData = propertiesFileData;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.3.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.3.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the PingAccess Agent. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the pingaccess agent.
+   * Field introduced in 18.2.3.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the PingAccess Agent. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the pingaccess agent.
+   * Field introduced in 18.2.3.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "PingAccessAgent";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PingAccessAgent pingAccessAgent = (PingAccessAgent) o;
-    return Objects.equals(this.lastModified, pingAccessAgent.lastModified) &&
-        Objects.equals(this.description, pingAccessAgent.description) &&
-        Objects.equals(this.name, pingAccessAgent.name) &&
-        Objects.equals(this.pingaccessPoolRef, pingAccessAgent.pingaccessPoolRef) &&
-        Objects.equals(this.primaryServer, pingAccessAgent.primaryServer) &&
-        Objects.equals(this.propertiesFileData, pingAccessAgent.propertiesFileData) &&
-        Objects.equals(this.tenantRef, pingAccessAgent.tenantRef) &&
-        Objects.equals(this.url, pingAccessAgent.url) &&
-        Objects.equals(this.uuid, pingAccessAgent.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, description, name, pingaccessPoolRef, primaryServer, propertiesFileData, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PingAccessAgent {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    pingaccessPoolRef: ").append(toIndentedString(pingaccessPoolRef)).append("\n");
-    sb.append("    primaryServer: ").append(toIndentedString(primaryServer)).append("\n");
-    sb.append("    propertiesFileData: ").append(toIndentedString(propertiesFileData)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  PingAccessAgent objPingAccessAgent = (PingAccessAgent) o;
+  return   Objects.equals(this.propertiesFileData, objPingAccessAgent.propertiesFileData)&&
+  Objects.equals(this.uuid, objPingAccessAgent.uuid)&&
+  Objects.equals(this.description, objPingAccessAgent.description)&&
+  Objects.equals(this.pingaccessPoolRef, objPingAccessAgent.pingaccessPoolRef)&&
+  Objects.equals(this.tenantRef, objPingAccessAgent.tenantRef)&&
+  Objects.equals(this.primaryServer, objPingAccessAgent.primaryServer)&&
+  Objects.equals(this.name, objPingAccessAgent.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class PingAccessAgent {\n");
+      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    pingaccessPoolRef: ").append(toIndentedString(pingaccessPoolRef)).append("\n");
+        sb.append("    primaryServer: ").append(toIndentedString(primaryServer)).append("\n");
+        sb.append("    propertiesFileData: ").append(toIndentedString(propertiesFileData)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

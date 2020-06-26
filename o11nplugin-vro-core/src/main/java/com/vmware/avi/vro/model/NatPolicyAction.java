@@ -1,39 +1,68 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.NatAddrInfo;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * NatPolicyAction
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The NatPolicyAction is a POJO class extends AviRestResource that used for creating
+ * NatPolicyAction.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "NatPolicyAction")
-@VsoFinder(name = Constants.FINDER_VRO_NATPOLICYACTION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_NATPOLICYACTION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class NatPolicyAction extends AviRestResource  {
+public class NatPolicyAction extends AviRestResource {
   @JsonProperty("nat_info")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<NatAddrInfo> natInfo = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Pool of ip addresses used for nat.
+   * Field introduced in 18.2.5.
+   * @return natInfo
+   */
+  @VsoMethod
+  public List<NatAddrInfo> getNatInfo() {
+    return natInfo;
+  }
+
+  /**
+   * This is the setter method. this will set the natInfo
+   * Pool of ip addresses used for nat.
+   * Field introduced in 18.2.5.
+   * @return natInfo
+   */
+  @VsoMethod
+  public void setNatInfo(List<NatAddrInfo>  natInfo) {
+    this.natInfo = natInfo;
+  }
+
+  /**
+   * This is the setter method this will set the natInfo
+   * Pool of ip addresses used for nat.
+   * Field introduced in 18.2.5.
+   * @return natInfo
+   */
+  @VsoMethod
   public NatPolicyAction addNatInfoItem(NatAddrInfo natInfoItem) {
     if (this.natInfo == null) {
       this.natInfo = new ArrayList<NatAddrInfo>();
@@ -41,89 +70,65 @@ public class NatPolicyAction extends AviRestResource  {
     this.natInfo.add(natInfoItem);
     return this;
   }
-  
+
+
   /**
-   * Pool of IP Addresses used for Nat. Field introduced in 18.2.5.
-   * @return natInfo
-  **/
-  @ApiModelProperty(value = "Pool of IP Addresses used for Nat. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<NatAddrInfo> getNatInfo() {
-    return natInfo;
-  }
-    
-  @VsoMethod
-  public void setNatInfo(List<NatAddrInfo> natInfo) {
-    this.natInfo = natInfo;
-  }
-
-  
-  /**
-   * Nat Action Type. Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Nat action type.
+   * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
+   * Field introduced in 18.2.5.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = "Nat Action Type. Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Nat action type.
+   * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
+   * Field introduced in 18.2.5.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
 
-  
-  public String getObjectID() {
-		return "NatPolicyAction";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    NatPolicyAction natPolicyAction = (NatPolicyAction) o;
-    return Objects.equals(this.natInfo, natPolicyAction.natInfo) &&
-        Objects.equals(this.type, natPolicyAction.type);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(natInfo, type);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NatPolicyAction {\n");
-    
-    sb.append("    natInfo: ").append(toIndentedString(natInfo)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  NatPolicyAction objNatPolicyAction = (NatPolicyAction) o;
+  return   Objects.equals(this.natInfo, objNatPolicyAction.natInfo)&&
+  Objects.equals(this.type, objNatPolicyAction.type);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class NatPolicyAction {\n");
+      sb.append("    natInfo: ").append(toIndentedString(natInfo)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

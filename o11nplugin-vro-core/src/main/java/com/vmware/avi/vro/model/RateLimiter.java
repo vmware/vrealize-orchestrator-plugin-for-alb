@@ -1,165 +1,188 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * RateLimiter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The RateLimiter is a POJO class extends AviRestResource that used for creating
+ * RateLimiter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "RateLimiter")
-@VsoFinder(name = Constants.FINDER_VRO_RATELIMITER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_RATELIMITER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class RateLimiter extends AviRestResource  {
+public class RateLimiter extends AviRestResource {
   @JsonProperty("burst_sz")
-  private Integer burstSz = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer burstSz = 0;
 
   @JsonProperty("count")
-  private Integer count = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer count = 1000000000;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("period")
-  private Integer period = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer period = 1;
 
-  
+
+
   /**
-   * Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 0-1000000000. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Maximum number of connections, requests or packets to be let through instantaneously.
+   * If this is less than count, it will have no effect.
+   * Allowed values are 0-1000000000.
+   * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return burstSz
-  **/
-  @ApiModelProperty(value = "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 0-1000000000. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getBurstSz() {
     return burstSz;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of connections, requests or packets to be let through instantaneously.
+   * If this is less than count, it will have no effect.
+   * Allowed values are 0-1000000000.
+   * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param burstSz set the burstSz.
+   */
   @VsoMethod
-  public void setBurstSz(Integer burstSz) {
+  public void setBurstSz(Integer  burstSz) {
     this.burstSz = burstSz;
   }
 
-  
   /**
-   * Maximum number of connections, requests or packets, should be less than burst size. Allowed values are 1-1000000000. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Maximum number of connections, requests or packets permitted each period.
+   * Allowed values are 1-1000000000.
+   * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000000000.
    * @return count
-  **/
-  @ApiModelProperty(required = true, value = "Maximum number of connections, requests or packets, should be less than burst size. Allowed values are 1-1000000000. Field introduced in 20.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getCount() {
     return count;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of connections, requests or packets permitted each period.
+   * Allowed values are 1-1000000000.
+   * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000000000.
+   * @param count set the count.
+   */
   @VsoMethod
-  public void setCount(Integer count) {
+  public void setCount(Integer  count) {
     this.count = count;
   }
 
-  
   /**
-   * Identifier for Rate Limit. Constructed according to context. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Identifier for rate limit.
+   * Constructed according to context.
+   * Field introduced in 18.2.9.
    * @return name
-  **/
-  @ApiModelProperty(value = "Identifier for Rate Limit. Constructed according to context. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Identifier for rate limit.
+   * Constructed according to context.
+   * Field introduced in 18.2.9.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Time value in seconds to enforce rate count.
+   * Allowed values are 1-1000000000.
+   * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return period
-  **/
-  @ApiModelProperty(required = true, value = "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 20.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPeriod() {
     return period;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Time value in seconds to enforce rate count.
+   * Allowed values are 1-1000000000.
+   * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @param period set the period.
+   */
   @VsoMethod
-  public void setPeriod(Integer period) {
+  public void setPeriod(Integer  period) {
     this.period = period;
   }
 
-  
-  public String getObjectID() {
-		return "RateLimiter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    RateLimiter rateLimiter = (RateLimiter) o;
-    return Objects.equals(this.burstSz, rateLimiter.burstSz) &&
-        Objects.equals(this.count, rateLimiter.count) &&
-        Objects.equals(this.name, rateLimiter.name) &&
-        Objects.equals(this.period, rateLimiter.period);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(burstSz, count, name, period);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class RateLimiter {\n");
-    
-    sb.append("    burstSz: ").append(toIndentedString(burstSz)).append("\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    period: ").append(toIndentedString(period)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  RateLimiter objRateLimiter = (RateLimiter) o;
+  return   Objects.equals(this.count, objRateLimiter.count)&&
+  Objects.equals(this.burstSz, objRateLimiter.burstSz)&&
+  Objects.equals(this.period, objRateLimiter.period)&&
+  Objects.equals(this.name, objRateLimiter.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class RateLimiter {\n");
+      sb.append("    burstSz: ").append(toIndentedString(burstSz)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,119 +1,167 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IPReputationServiceStatus;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IPReputationDB
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IPReputationDB is a POJO class extends AviRestResource that used for creating
+ * IPReputationDB.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IPReputationDB")
 @VsoFinder(name = Constants.FINDER_VRO_IPREPUTATIONDB, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IPReputationDB extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
-  @JsonProperty("base_file_ref")
-  private String baseFileRef = null;
+public class IPReputationDB extends AviRestResource {
+  @JsonProperty("base_file_refs")
+  @JsonInclude(Include.NON_NULL)
+  private List<String> baseFileRefs = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("incremental_file_refs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> incrementalFileRefs = null;
 
-  @JsonProperty("last_modified")
-  private Long lastModifiedL = null;
-
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
+  @JsonProperty("service_status")
+  @JsonInclude(Include.NON_NULL)
+  private IPReputationServiceStatus serviceStatus = null;
+
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vendor")
+  @JsonInclude(Include.NON_NULL)
   private String vendor = null;
 
-  
+  @JsonProperty("version")
+  @JsonInclude(Include.NON_NULL)
+  private String version = null;
+
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Ip reputation db base file.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 20.1.1.
+   * @return baseFileRefs
+   */
   @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
+  public List<String> getBaseFileRefs() {
+    return baseFileRefs;
   }
 
-  
   /**
-   * IP reputation DB base file. It is a reference to an object of type FileObject. Field introduced in 20.1.1.
-   * @return baseFileRef
-  **/
-  @ApiModelProperty(value = "IP reputation DB base file. It is a reference to an object of type FileObject. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
-  public String getBaseFileRef() {
-    return baseFileRef;
-  }
-    
+   * This is the setter method. this will set the baseFileRefs
+   * Ip reputation db base file.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 20.1.1.
+   * @return baseFileRefs
+   */
   @VsoMethod
-  public void setBaseFileRef(String baseFileRef) {
-    this.baseFileRef = baseFileRef;
+  public void setBaseFileRefs(List<String>  baseFileRefs) {
+    this.baseFileRefs = baseFileRefs;
   }
 
-  
   /**
-   * Description. Field introduced in 20.1.1.
+   * This is the setter method this will set the baseFileRefs
+   * Ip reputation db base file.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 20.1.1.
+   * @return baseFileRefs
+   */
+  @VsoMethod
+  public IPReputationDB addBaseFileRefsItem(String baseFileRefsItem) {
+    if (this.baseFileRefs == null) {
+      this.baseFileRefs = new ArrayList<String>();
+    }
+    this.baseFileRefs.add(baseFileRefsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Description.
+   * Field introduced in 20.1.1.
    * @return description
-  **/
-  @ApiModelProperty(value = "Description. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Description.
+   * Field introduced in 20.1.1.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ip reputation db incremental update files.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 20.1.1.
+   * @return incrementalFileRefs
+   */
+  @VsoMethod
+  public List<String> getIncrementalFileRefs() {
+    return incrementalFileRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the incrementalFileRefs
+   * Ip reputation db incremental update files.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 20.1.1.
+   * @return incrementalFileRefs
+   */
+  @VsoMethod
+  public void setIncrementalFileRefs(List<String>  incrementalFileRefs) {
+    this.incrementalFileRefs = incrementalFileRefs;
+  }
+
+  /**
+   * This is the setter method this will set the incrementalFileRefs
+   * Ip reputation db incremental update files.
+   * It is a reference to an object of type fileobject.
+   * Field introduced in 20.1.1.
+   * @return incrementalFileRefs
+   */
+  @VsoMethod
   public IPReputationDB addIncrementalFileRefsItem(String incrementalFileRefsItem) {
     if (this.incrementalFileRefs == null) {
       this.incrementalFileRefs = new ArrayList<String>();
@@ -121,201 +169,215 @@ public class IPReputationDB extends AviRestResource  {
     this.incrementalFileRefs.add(incrementalFileRefsItem);
     return this;
   }
-  
+
+
   /**
-   * IP reputation DB incremental update files. It is a reference to an object of type FileObject. Field introduced in 20.1.1.
-   * @return incrementalFileRefs
-  **/
-  @ApiModelProperty(value = "IP reputation DB incremental update files. It is a reference to an object of type FileObject. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getIncrementalFileRefs() {
-    return incrementalFileRefs;
-  }
-    
-  @VsoMethod
-  public void setIncrementalFileRefs(List<String> incrementalFileRefs) {
-    this.incrementalFileRefs = incrementalFileRefs;
-  }
-
-  
-  /**
-   * Timestamp of the last change made to this IP reputation DB. Field introduced in 20.1.1.
-   * @return lastModified
-  **/
-  @ApiModelProperty(required = true, value = "Timestamp of the last change made to this IP reputation DB. Field introduced in 20.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
-  public Long getLastModifiedL() {
-    return lastModifiedL;
-  }
-    
-  @VsoMethod
-  public void setLastModifiedL(Long lastModifiedL) {
-    this.lastModifiedL = lastModifiedL;
-  }
-
-  
-  /**
-   * IP reputation DB name. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ip reputation db name.
+   * Field introduced in 20.1.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "IP reputation DB name. Field introduced in 20.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip reputation db name.
+   * Field introduced in 20.1.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * If this object is managed by the ip reputation service, this field contain the status of this syncronization.
+   * Field introduced in 20.1.1.
+   * @return serviceStatus
+   */
+  @VsoMethod
+  public IPReputationServiceStatus getServiceStatus() {
+    return serviceStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If this object is managed by the ip reputation service, this field contain the status of this syncronization.
+   * Field introduced in 20.1.1.
+   * @param serviceStatus set the serviceStatus.
+   */
+  @VsoMethod
+  public void setServiceStatus(IPReputationServiceStatus serviceStatus) {
+    this.serviceStatus = serviceStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant that this object belongs to.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 20.1.1.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant that this object belongs to.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 20.1.1.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of this object. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Uuid of this object.
+   * Field introduced in 20.1.1.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of this object. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of this object.
+   * Field introduced in 20.1.1.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * Organization providing IP reputation data. Enum options - IP_REPUTATION_VENDOR_WEBROOT. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Organization providing ip reputation data.
+   * Enum options - IP_REPUTATION_VENDOR_WEBROOT.
+   * Field introduced in 20.1.1.
    * @return vendor
-  **/
-  @ApiModelProperty(required = true, value = "Organization providing IP reputation data. Enum options - IP_REPUTATION_VENDOR_WEBROOT. Field introduced in 20.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVendor() {
     return vendor;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Organization providing ip reputation data.
+   * Enum options - IP_REPUTATION_VENDOR_WEBROOT.
+   * Field introduced in 20.1.1.
+   * @param vendor set the vendor.
+   */
   @VsoMethod
-  public void setVendor(String vendor) {
+  public void setVendor(String  vendor) {
     this.vendor = vendor;
   }
 
-  
-  public String getObjectID() {
-		return "IPReputationDB";
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IPReputationDB ipReputationDB = (IPReputationDB) o;
-    return Objects.equals(this.lastModified, ipReputationDB.lastModified) &&
-        Objects.equals(this.baseFileRef, ipReputationDB.baseFileRef) &&
-        Objects.equals(this.description, ipReputationDB.description) &&
-        Objects.equals(this.incrementalFileRefs, ipReputationDB.incrementalFileRefs) &&
-        Objects.equals(this.lastModified, ipReputationDB.lastModified) &&
-        Objects.equals(this.name, ipReputationDB.name) &&
-        Objects.equals(this.tenantRef, ipReputationDB.tenantRef) &&
-        Objects.equals(this.url, ipReputationDB.url) &&
-        Objects.equals(this.uuid, ipReputationDB.uuid) &&
-        Objects.equals(this.vendor, ipReputationDB.vendor);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, baseFileRef, description, incrementalFileRefs, lastModified, name, tenantRef, url, uuid, vendor);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IPReputationDB {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    baseFileRef: ").append(toIndentedString(baseFileRef)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    incrementalFileRefs: ").append(toIndentedString(incrementalFileRefs)).append("\n");
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  /**
+   * This is the getter method this will return the attribute value.
+   * A version number for this database object.
+   * This is informal for the consumer of this api only, a tool which manages this object can store version information here.
+   * Field introduced in 20.1.1.
+   * @return version
+   */
+  @VsoMethod
+  public String getVersion() {
+    return version;
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * This is the setter method to the attribute.
+   * A version number for this database object.
+   * This is informal for the consumer of this api only, a tool which manages this object can store version information here.
+   * Field introduced in 20.1.1.
+   * @param version set the version.
    */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+  @VsoMethod
+  public void setVersion(String  version) {
+    this.version = version;
   }
+
+
+  public String getObjectID() {
+    return name + "(" + uuid  + ")";
+  }
+
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
+  }
+  if (o == null || getClass() != o.getClass()) {
+    return false;
+  }
+  IPReputationDB objIPReputationDB = (IPReputationDB) o;
+  return   Objects.equals(this.vendor, objIPReputationDB.vendor)&&
+  Objects.equals(this.description, objIPReputationDB.description)&&
+  Objects.equals(this.incrementalFileRefs, objIPReputationDB.incrementalFileRefs)&&
+  Objects.equals(this.name, objIPReputationDB.name)&&
+  Objects.equals(this.version, objIPReputationDB.version)&&
+  Objects.equals(this.serviceStatus, objIPReputationDB.serviceStatus)&&
+  Objects.equals(this.tenantRef, objIPReputationDB.tenantRef)&&
+  Objects.equals(this.baseFileRefs, objIPReputationDB.baseFileRefs)&&
+  Objects.equals(this.uuid, objIPReputationDB.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IPReputationDB {\n");
+      sb.append("    baseFileRefs: ").append(toIndentedString(baseFileRefs)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    incrementalFileRefs: ").append(toIndentedString(incrementalFileRefs)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    serviceStatus: ").append(toIndentedString(serviceStatus)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

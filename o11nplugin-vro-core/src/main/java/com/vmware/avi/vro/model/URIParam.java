@@ -1,39 +1,65 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.URIParamToken;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * URIParam
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The URIParam is a POJO class extends AviRestResource that used for creating
+ * URIParam.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "URIParam")
-@VsoFinder(name = Constants.FINDER_VRO_URIPARAM, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_URIPARAM)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class URIParam extends AviRestResource  {
+public class URIParam extends AviRestResource {
   @JsonProperty("tokens")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<URIParamToken> tokens = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Token config either for the uri components or a constant string.
+   * @return tokens
+   */
+  @VsoMethod
+  public List<URIParamToken> getTokens() {
+    return tokens;
+  }
+
+  /**
+   * This is the setter method. this will set the tokens
+   * Token config either for the uri components or a constant string.
+   * @return tokens
+   */
+  @VsoMethod
+  public void setTokens(List<URIParamToken>  tokens) {
+    this.tokens = tokens;
+  }
+
+  /**
+   * This is the setter method this will set the tokens
+   * Token config either for the uri components or a constant string.
+   * @return tokens
+   */
+  @VsoMethod
   public URIParam addTokensItem(URIParamToken tokensItem) {
     if (this.tokens == null) {
       this.tokens = new ArrayList<URIParamToken>();
@@ -41,89 +67,63 @@ public class URIParam extends AviRestResource  {
     this.tokens.add(tokensItem);
     return this;
   }
-  
+
+
   /**
-   * Token config either for the URI components or a constant string.
-   * @return tokens
-  **/
-  @ApiModelProperty(value = "Token config either for the URI components or a constant string.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<URIParamToken> getTokens() {
-    return tokens;
-  }
-    
-  @VsoMethod
-  public void setTokens(List<URIParamToken> tokens) {
-    this.tokens = tokens;
-  }
-
-  
-  /**
-   * URI param type. Enum options - URI_PARAM_TYPE_TOKENIZED.
+   * This is the getter method this will return the attribute value.
+   * Uri param type.
+   * Enum options - URI_PARAM_TYPE_TOKENIZED.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = "URI param type. Enum options - URI_PARAM_TYPE_TOKENIZED.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uri param type.
+   * Enum options - URI_PARAM_TYPE_TOKENIZED.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
 
-  
-  public String getObjectID() {
-		return "URIParam";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    URIParam urIParam = (URIParam) o;
-    return Objects.equals(this.tokens, urIParam.tokens) &&
-        Objects.equals(this.type, urIParam.type);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(tokens, type);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class URIParam {\n");
-    
-    sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  URIParam objURIParam = (URIParam) o;
+  return   Objects.equals(this.tokens, objURIParam.tokens)&&
+  Objects.equals(this.type, objURIParam.type);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class URIParam {\n");
+      sb.append("    tokens: ").append(toIndentedString(tokens)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

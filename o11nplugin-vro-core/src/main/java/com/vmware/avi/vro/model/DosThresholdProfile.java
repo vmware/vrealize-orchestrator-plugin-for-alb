@@ -1,39 +1,65 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.DosThreshold;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DosThresholdProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DosThresholdProfile is a POJO class extends AviRestResource that used for creating
+ * DosThresholdProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DosThresholdProfile")
-@VsoFinder(name = Constants.FINDER_VRO_DOSTHRESHOLDPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DOSTHRESHOLDPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DosThresholdProfile extends AviRestResource  {
+public class DosThresholdProfile extends AviRestResource {
   @JsonProperty("thresh_info")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<DosThreshold> threshInfo = null;
 
   @JsonProperty("thresh_period")
+  @JsonInclude(Include.NON_NULL)
   private Integer threshPeriod = 5;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Attack type, min and max values for dos attack detection.
+   * @return threshInfo
+   */
+  @VsoMethod
+  public List<DosThreshold> getThreshInfo() {
+    return threshInfo;
+  }
+
+  /**
+   * This is the setter method. this will set the threshInfo
+   * Attack type, min and max values for dos attack detection.
+   * @return threshInfo
+   */
+  @VsoMethod
+  public void setThreshInfo(List<DosThreshold>  threshInfo) {
+    this.threshInfo = threshInfo;
+  }
+
+  /**
+   * This is the setter method this will set the threshInfo
+   * Attack type, min and max values for dos attack detection.
+   * @return threshInfo
+   */
+  @VsoMethod
   public DosThresholdProfile addThreshInfoItem(DosThreshold threshInfoItem) {
     if (this.threshInfo == null) {
       this.threshInfo = new ArrayList<DosThreshold>();
@@ -41,89 +67,63 @@ public class DosThresholdProfile extends AviRestResource  {
     this.threshInfo.add(threshInfoItem);
     return this;
   }
-  
+
+
   /**
-   * Attack type, min and max values for DoS attack detection.
-   * @return threshInfo
-  **/
-  @ApiModelProperty(value = "Attack type, min and max values for DoS attack detection.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<DosThreshold> getThreshInfo() {
-    return threshInfo;
-  }
-    
-  @VsoMethod
-  public void setThreshInfo(List<DosThreshold> threshInfo) {
-    this.threshInfo = threshInfo;
-  }
-
-  
-  /**
-   * Timer value in seconds to collect DoS attack metrics based on threshold on the Service Engine for this Virtual Service.
+   * This is the getter method this will return the attribute value.
+   * Timer value in seconds to collect dos attack metrics based on threshold on the service engine for this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return threshPeriod
-  **/
-  @ApiModelProperty(required = true, value = "Timer value in seconds to collect DoS attack metrics based on threshold on the Service Engine for this Virtual Service.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getThreshPeriod() {
     return threshPeriod;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timer value in seconds to collect dos attack metrics based on threshold on the service engine for this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param threshPeriod set the threshPeriod.
+   */
   @VsoMethod
-  public void setThreshPeriod(Integer threshPeriod) {
+  public void setThreshPeriod(Integer  threshPeriod) {
     this.threshPeriod = threshPeriod;
   }
 
-  
-  public String getObjectID() {
-		return "DosThresholdProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DosThresholdProfile dosThresholdProfile = (DosThresholdProfile) o;
-    return Objects.equals(this.threshInfo, dosThresholdProfile.threshInfo) &&
-        Objects.equals(this.threshPeriod, dosThresholdProfile.threshPeriod);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(threshInfo, threshPeriod);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DosThresholdProfile {\n");
-    
-    sb.append("    threshInfo: ").append(toIndentedString(threshInfo)).append("\n");
-    sb.append("    threshPeriod: ").append(toIndentedString(threshPeriod)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DosThresholdProfile objDosThresholdProfile = (DosThresholdProfile) o;
+  return   Objects.equals(this.threshPeriod, objDosThresholdProfile.threshPeriod)&&
+  Objects.equals(this.threshInfo, objDosThresholdProfile.threshInfo);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DosThresholdProfile {\n");
+      sb.append("    threshInfo: ").append(toIndentedString(threshInfo)).append("\n");
+        sb.append("    threshPeriod: ").append(toIndentedString(threshPeriod)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

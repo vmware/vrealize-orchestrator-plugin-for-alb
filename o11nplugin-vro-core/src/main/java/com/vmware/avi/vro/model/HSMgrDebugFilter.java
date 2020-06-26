@@ -1,211 +1,218 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HSMgrDebugFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HSMgrDebugFilter is a POJO class extends AviRestResource that used for creating
+ * HSMgrDebugFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HSMgrDebugFilter")
-@VsoFinder(name = Constants.FINDER_VRO_HSMGRDEBUGFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HSMGRDEBUGFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HSMgrDebugFilter extends AviRestResource  {
+public class HSMgrDebugFilter extends AviRestResource {
   @JsonProperty("entity")
+  @JsonInclude(Include.NON_NULL)
   private String entity = null;
 
   @JsonProperty("metric_entity")
+  @JsonInclude(Include.NON_NULL)
   private String metricEntity = null;
 
   @JsonProperty("period")
+  @JsonInclude(Include.NON_NULL)
   private Integer period = null;
 
   @JsonProperty("pool")
+  @JsonInclude(Include.NON_NULL)
   private String pool = null;
 
   @JsonProperty("server")
+  @JsonInclude(Include.NON_NULL)
   private String server = null;
 
   @JsonProperty("skip_hs_db_writes")
+  @JsonInclude(Include.NON_NULL)
   private Boolean skipHsDbWrites = null;
 
-  
+
+
   /**
-   * entity of HSMgrDebugFilter.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property entity of obj type hsmgrdebugfilter field type str  type string.
    * @return entity
-  **/
-  @ApiModelProperty(value = "entity of HSMgrDebugFilter.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEntity() {
     return entity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property entity of obj type hsmgrdebugfilter field type str  type string.
+   * @param entity set the entity.
+   */
   @VsoMethod
-  public void setEntity(String entity) {
+  public void setEntity(String  entity) {
     this.entity = entity;
   }
 
-  
   /**
-   *  Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * This is the getter method this will return the attribute value.
+   * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
+   * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
    * @return metricEntity
-  **/
-  @ApiModelProperty(value = " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMetricEntity() {
     return metricEntity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
+   * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * @param metricEntity set the metricEntity.
+   */
   @VsoMethod
-  public void setMetricEntity(String metricEntity) {
+  public void setMetricEntity(String  metricEntity) {
     this.metricEntity = metricEntity;
   }
 
-  
   /**
-   * Number of period.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property period of obj type hsmgrdebugfilter field type str  type integer.
    * @return period
-  **/
-  @ApiModelProperty(value = "Number of period.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPeriod() {
     return period;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property period of obj type hsmgrdebugfilter field type str  type integer.
+   * @param period set the period.
+   */
   @VsoMethod
-  public void setPeriod(Integer period) {
+  public void setPeriod(Integer  period) {
     this.period = period;
   }
 
-  
   /**
-   * pool of HSMgrDebugFilter.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property pool of obj type hsmgrdebugfilter field type str  type string.
    * @return pool
-  **/
-  @ApiModelProperty(value = "pool of HSMgrDebugFilter.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPool() {
     return pool;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property pool of obj type hsmgrdebugfilter field type str  type string.
+   * @param pool set the pool.
+   */
   @VsoMethod
-  public void setPool(String pool) {
+  public void setPool(String  pool) {
     this.pool = pool;
   }
 
-  
   /**
-   * server of HSMgrDebugFilter.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property server of obj type hsmgrdebugfilter field type str  type string.
    * @return server
-  **/
-  @ApiModelProperty(value = "server of HSMgrDebugFilter.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServer() {
     return server;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property server of obj type hsmgrdebugfilter field type str  type string.
+   * @param server set the server.
+   */
   @VsoMethod
-  public void setServer(String server) {
+  public void setServer(String  server) {
     this.server = server;
   }
 
-  
   /**
-   * Placeholder for description of property skip_hs_db_writes of obj type HSMgrDebugFilter field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property skip_hs_db_writes of obj type hsmgrdebugfilter field type str  type boolean.
    * @return skipHsDbWrites
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property skip_hs_db_writes of obj type HSMgrDebugFilter field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isSkipHsDbWrites() {
+   */
+  @VsoMethod
+  public Boolean getSkipHsDbWrites() {
     return skipHsDbWrites;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property skip_hs_db_writes of obj type hsmgrdebugfilter field type str  type boolean.
+   * @param skipHsDbWrites set the skipHsDbWrites.
+   */
   @VsoMethod
-  public void setSkipHsDbWrites(Boolean skipHsDbWrites) {
+  public void setSkipHsDbWrites(Boolean  skipHsDbWrites) {
     this.skipHsDbWrites = skipHsDbWrites;
   }
 
-  
-  public String getObjectID() {
-		return "HSMgrDebugFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HSMgrDebugFilter hsMgrDebugFilter = (HSMgrDebugFilter) o;
-    return Objects.equals(this.entity, hsMgrDebugFilter.entity) &&
-        Objects.equals(this.metricEntity, hsMgrDebugFilter.metricEntity) &&
-        Objects.equals(this.period, hsMgrDebugFilter.period) &&
-        Objects.equals(this.pool, hsMgrDebugFilter.pool) &&
-        Objects.equals(this.server, hsMgrDebugFilter.server) &&
-        Objects.equals(this.skipHsDbWrites, hsMgrDebugFilter.skipHsDbWrites);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(entity, metricEntity, period, pool, server, skipHsDbWrites);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HSMgrDebugFilter {\n");
-    
-    sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
-    sb.append("    metricEntity: ").append(toIndentedString(metricEntity)).append("\n");
-    sb.append("    period: ").append(toIndentedString(period)).append("\n");
-    sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
-    sb.append("    server: ").append(toIndentedString(server)).append("\n");
-    sb.append("    skipHsDbWrites: ").append(toIndentedString(skipHsDbWrites)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HSMgrDebugFilter objHSMgrDebugFilter = (HSMgrDebugFilter) o;
+  return   Objects.equals(this.period, objHSMgrDebugFilter.period)&&
+  Objects.equals(this.entity, objHSMgrDebugFilter.entity)&&
+  Objects.equals(this.skipHsDbWrites, objHSMgrDebugFilter.skipHsDbWrites)&&
+  Objects.equals(this.server, objHSMgrDebugFilter.server)&&
+  Objects.equals(this.pool, objHSMgrDebugFilter.pool)&&
+  Objects.equals(this.metricEntity, objHSMgrDebugFilter.metricEntity);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HSMgrDebugFilter {\n");
+      sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
+        sb.append("    metricEntity: ").append(toIndentedString(metricEntity)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    pool: ").append(toIndentedString(pool)).append("\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("    skipHsDbWrites: ").append(toIndentedString(skipHsDbWrites)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

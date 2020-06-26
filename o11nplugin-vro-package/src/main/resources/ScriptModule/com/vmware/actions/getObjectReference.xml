@@ -51,25 +51,14 @@
 			var referenceName = objectData.name;		
 			return referenceName;
 		}
-//		if(field == "healthmonitor"){
-//			var hmNameList = new Array();
-//			var reference = objectData[0].health_monitor_refs;
-//			for (index=0; index<=reference.length-1; index++){
-//				var hmName = reference[index];
-//				var path = hmName.split("/")
-//				var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
-//				var objectData = JSON.parse(response);
-//				var referenceName = objectData.name;
-//				hmNameList.push(referenceName);
-//			}
-//			return hmNameList;
-//		}
-//		if (field == "" || field == null) {
-//			for each(index in objectData){
-//				objectList.push(index.name);
-//			}
-//			return objectList;
-//		}
+		if(field == "vsvip"){
+			var reference = objectData[0].vsvip_ref;
+			var path = reference.split("/")
+			var response = aviPlugin.getObjectDataByUUID(path[path.length-2],path[path.length-1]);
+			var objectData = JSON.parse(response);
+			var referenceName = objectData.name;		
+			return referenceName;
+		}
 	}
 	
 }catch(e){

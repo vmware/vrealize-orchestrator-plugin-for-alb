@@ -1,136 +1,145 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.SubJob;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * JobEntry
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The JobEntry is a POJO class extends AviRestResource that used for creating
+ * JobEntry.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "JobEntry")
 @VsoFinder(name = Constants.FINDER_VRO_JOBENTRY, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class JobEntry extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class JobEntry extends AviRestResource {
   @JsonProperty("expires_at")
+  @JsonInclude(Include.NON_NULL)
   private String expiresAt = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("obj_key")
+  @JsonInclude(Include.NON_NULL)
   private String objKey = null;
 
   @JsonProperty("subjobs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<SubJob> subjobs = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * expires_at of JobEntry.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property expires_at of obj type jobentry field type str  type string.
    * @return expiresAt
-  **/
-  @ApiModelProperty(required = true, value = "expires_at of JobEntry.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getExpiresAt() {
     return expiresAt;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property expires_at of obj type jobentry field type str  type string.
+   * @param expiresAt set the expiresAt.
+   */
   @VsoMethod
-  public void setExpiresAt(String expiresAt) {
+  public void setExpiresAt(String  expiresAt) {
     this.expiresAt = expiresAt;
   }
 
-  
   /**
-   *  Field introduced in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 18.1.2.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = " Field introduced in 18.1.2.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 18.1.2.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * obj_key of JobEntry.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property obj_key of obj type jobentry field type str  type string.
    * @return objKey
-  **/
-  @ApiModelProperty(required = true, value = "obj_key of JobEntry.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getObjKey() {
     return objKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property obj_key of obj type jobentry field type str  type string.
+   * @param objKey set the objKey.
+   */
   @VsoMethod
-  public void setObjKey(String objKey) {
+  public void setObjKey(String  objKey) {
     this.objKey = objKey;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 18.1.1.
+   * @return subjobs
+   */
+  @VsoMethod
+  public List<SubJob> getSubjobs() {
+    return subjobs;
+  }
+
+  /**
+   * This is the setter method. this will set the subjobs
+   * Field introduced in 18.1.1.
+   * @return subjobs
+   */
+  @VsoMethod
+  public void setSubjobs(List<SubJob>  subjobs) {
+    this.subjobs = subjobs;
+  }
+
+  /**
+   * This is the setter method this will set the subjobs
+   * Field introduced in 18.1.1.
+   * @return subjobs
+   */
+  @VsoMethod
   public JobEntry addSubjobsItem(SubJob subjobsItem) {
     if (this.subjobs == null) {
       this.subjobs = new ArrayList<SubJob>();
@@ -138,138 +147,111 @@ public class JobEntry extends AviRestResource  {
     this.subjobs.add(subjobsItem);
     return this;
   }
-  
+
+
   /**
-   *  Field introduced in 18.1.1.
-   * @return subjobs
-  **/
-  @ApiModelProperty(value = " Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<SubJob> getSubjobs() {
-    return subjobs;
-  }
-    
-  @VsoMethod
-  public void setSubjobs(List<SubJob> subjobs) {
-    this.subjobs = subjobs;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "JobEntry";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    JobEntry jobEntry = (JobEntry) o;
-    return Objects.equals(this.lastModified, jobEntry.lastModified) &&
-        Objects.equals(this.expiresAt, jobEntry.expiresAt) &&
-        Objects.equals(this.name, jobEntry.name) &&
-        Objects.equals(this.objKey, jobEntry.objKey) &&
-        Objects.equals(this.subjobs, jobEntry.subjobs) &&
-        Objects.equals(this.tenantRef, jobEntry.tenantRef) &&
-        Objects.equals(this.url, jobEntry.url) &&
-        Objects.equals(this.uuid, jobEntry.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, expiresAt, name, objKey, subjobs, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class JobEntry {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    objKey: ").append(toIndentedString(objKey)).append("\n");
-    sb.append("    subjobs: ").append(toIndentedString(subjobs)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  JobEntry objJobEntry = (JobEntry) o;
+  return   Objects.equals(this.uuid, objJobEntry.uuid)&&
+  Objects.equals(this.expiresAt, objJobEntry.expiresAt)&&
+  Objects.equals(this.objKey, objJobEntry.objKey)&&
+  Objects.equals(this.subjobs, objJobEntry.subjobs)&&
+  Objects.equals(this.tenantRef, objJobEntry.tenantRef)&&
+  Objects.equals(this.name, objJobEntry.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class JobEntry {\n");
+      sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    objKey: ").append(toIndentedString(objKey)).append("\n");
+        sb.append("    subjobs: ").append(toIndentedString(subjobs)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

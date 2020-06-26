@@ -1,142 +1,145 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * PoolServer
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The PoolServer is a POJO class extends AviRestResource that used for creating
+ * PoolServer.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "PoolServer")
-@VsoFinder(name = Constants.FINDER_VRO_POOLSERVER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_POOLSERVER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class PoolServer extends AviRestResource  {
+public class PoolServer extends AviRestResource {
   @JsonProperty("hostname")
+  @JsonInclude(Include.NON_NULL)
   private String hostname = null;
 
   @JsonProperty("ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ip = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private Integer port = null;
 
-  
+
+
   /**
-   * DNS resolvable name of the server.  May be used in place of the IP address.
+   * This is the getter method this will return the attribute value.
+   * Dns resolvable name of the server.
+   * May be used in place of the ip address.
    * @return hostname
-  **/
-  @ApiModelProperty(value = "DNS resolvable name of the server.  May be used in place of the IP address.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHostname() {
     return hostname;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Dns resolvable name of the server.
+   * May be used in place of the ip address.
+   * @param hostname set the hostname.
+   */
   @VsoMethod
-  public void setHostname(String hostname) {
+  public void setHostname(String  hostname) {
     this.hostname = hostname;
   }
 
-  
   /**
-   * IP address of the server in the poool.
+   * This is the getter method this will return the attribute value.
+   * Ip address of the server in the poool.
    * @return ip
-  **/
-  @ApiModelProperty(required = true, value = "IP address of the server in the poool.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIp() {
     return ip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address of the server in the poool.
+   * @param ip set the ip.
+   */
   @VsoMethod
   public void setIp(IpAddr ip) {
     this.ip = ip;
   }
 
-  
   /**
-   * Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535.
+   * This is the getter method this will return the attribute value.
+   * Port of the pool server listening for http/https.
+   * Default value is the default port in the pool.
+   * Allowed values are 1-65535.
    * @return port
-  **/
-  @ApiModelProperty(value = "Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Port of the pool server listening for http/https.
+   * Default value is the default port in the pool.
+   * Allowed values are 1-65535.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(Integer port) {
+  public void setPort(Integer  port) {
     this.port = port;
   }
 
-  
-  public String getObjectID() {
-		return "PoolServer";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PoolServer poolServer = (PoolServer) o;
-    return Objects.equals(this.hostname, poolServer.hostname) &&
-        Objects.equals(this.ip, poolServer.ip) &&
-        Objects.equals(this.port, poolServer.port);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(hostname, ip, port);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PoolServer {\n");
-    
-    sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
-    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  PoolServer objPoolServer = (PoolServer) o;
+  return   Objects.equals(this.ip, objPoolServer.ip)&&
+  Objects.equals(this.hostname, objPoolServer.hostname)&&
+  Objects.equals(this.port, objPoolServer.port);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class PoolServer {\n");
+      sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

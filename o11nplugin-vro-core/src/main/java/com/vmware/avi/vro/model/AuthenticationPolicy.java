@@ -1,81 +1,122 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.AuthenticationRule;
-import com.vmware.avi.vro.model.HttpCookiePersistenceKey;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AuthenticationPolicy
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AuthenticationPolicy is a POJO class extends AviRestResource that used for creating
+ * AuthenticationPolicy.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AuthenticationPolicy")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONPOLICY, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONPOLICY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthenticationPolicy extends AviRestResource  {
+public class AuthenticationPolicy extends AviRestResource {
   @JsonProperty("auth_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String authProfileRef = null;
 
   @JsonProperty("authn_rules")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<AuthenticationRule> authnRules = null;
 
   @JsonProperty("cookie_name")
+  @JsonInclude(Include.NON_NULL)
   private String cookieName = null;
 
   @JsonProperty("cookie_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer cookieTimeout = 60;
 
   @JsonProperty("default_auth_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String defaultAuthProfileRef = null;
 
   @JsonProperty("entity_id")
+  @JsonInclude(Include.NON_NULL)
   private String entityId = null;
 
   @JsonProperty("key")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<HttpCookiePersistenceKey> key = null;
 
   @JsonProperty("single_signon_url")
+  @JsonInclude(Include.NON_NULL)
   private String singleSignonUrl = null;
 
   @JsonProperty("sp_metadata")
+  @JsonInclude(Include.NON_NULL)
   private String spMetadata = null;
 
-  
+
+
   /**
-   * Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field deprecated in 18.2.3. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Auth profile to use for validating users.
+   * It is a reference to an object of type authprofile.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
    * @return authProfileRef
-  **/
-  @ApiModelProperty(value = "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAuthProfileRef() {
     return authProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Auth profile to use for validating users.
+   * It is a reference to an object of type authprofile.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @param authProfileRef set the authProfileRef.
+   */
   @VsoMethod
-  public void setAuthProfileRef(String authProfileRef) {
+  public void setAuthProfileRef(String  authProfileRef) {
     this.authProfileRef = authProfileRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Add rules to apply auth profile to specific targets.
+   * Field introduced in 18.2.5.
+   * @return authnRules
+   */
+  @VsoMethod
+  public List<AuthenticationRule> getAuthnRules() {
+    return authnRules;
+  }
+
+  /**
+   * This is the setter method. this will set the authnRules
+   * Add rules to apply auth profile to specific targets.
+   * Field introduced in 18.2.5.
+   * @return authnRules
+   */
+  @VsoMethod
+  public void setAuthnRules(List<AuthenticationRule>  authnRules) {
+    this.authnRules = authnRules;
+  }
+
+  /**
+   * This is the setter method this will set the authnRules
+   * Add rules to apply auth profile to specific targets.
+   * Field introduced in 18.2.5.
+   * @return authnRules
+   */
+  @VsoMethod
   public AuthenticationPolicy addAuthnRulesItem(AuthenticationRule authnRulesItem) {
     if (this.authnRules == null) {
       this.authnRules = new ArrayList<AuthenticationRule>();
@@ -83,104 +124,142 @@ public class AuthenticationPolicy extends AviRestResource  {
     this.authnRules.add(authnRulesItem);
     return this;
   }
-  
+
+
   /**
-   * Add rules to apply auth profile to specific targets. Field introduced in 18.2.5.
-   * @return authnRules
-  **/
-  @ApiModelProperty(value = "Add rules to apply auth profile to specific targets. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<AuthenticationRule> getAuthnRules() {
-    return authnRules;
-  }
-    
-  @VsoMethod
-  public void setAuthnRules(List<AuthenticationRule> authnRules) {
-    this.authnRules = authnRules;
-  }
-
-  
-  /**
-   * HTTP cookie name for authenticated session. Field deprecated in 18.2.3. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Http cookie name for authenticated session.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
    * @return cookieName
-  **/
-  @ApiModelProperty(value = "HTTP cookie name for authenticated session. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCookieName() {
     return cookieName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http cookie name for authenticated session.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @param cookieName set the cookieName.
+   */
   @VsoMethod
-  public void setCookieName(String cookieName) {
+  public void setCookieName(String  cookieName) {
     this.cookieName = cookieName;
   }
 
-  
   /**
-   * Cookie timeout in minutes. Allowed values are 1-1440. Field deprecated in 18.2.3. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Cookie timeout in minutes.
+   * Allowed values are 1-1440.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cookieTimeout
-  **/
-  @ApiModelProperty(value = "Cookie timeout in minutes. Allowed values are 1-1440. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getCookieTimeout() {
     return cookieTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cookie timeout in minutes.
+   * Allowed values are 1-1440.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param cookieTimeout set the cookieTimeout.
+   */
   @VsoMethod
-  public void setCookieTimeout(Integer cookieTimeout) {
+  public void setCookieTimeout(Integer  cookieTimeout) {
     this.cookieTimeout = cookieTimeout;
   }
 
-  
   /**
-   * Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Auth profile to use for validating users.
+   * It is a reference to an object of type authprofile.
+   * Field introduced in 18.2.3.
    * @return defaultAuthProfileRef
-  **/
-  @ApiModelProperty(required = true, value = "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field introduced in 18.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDefaultAuthProfileRef() {
     return defaultAuthProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Auth profile to use for validating users.
+   * It is a reference to an object of type authprofile.
+   * Field introduced in 18.2.3.
+   * @param defaultAuthProfileRef set the defaultAuthProfileRef.
+   */
   @VsoMethod
-  public void setDefaultAuthProfileRef(String defaultAuthProfileRef) {
+  public void setDefaultAuthProfileRef(String  defaultAuthProfileRef) {
     this.defaultAuthProfileRef = defaultAuthProfileRef;
   }
 
-  
   /**
-   * Globally unique entityID for this node. Entity ID on the IDP should match this. Field deprecated in 18.2.3. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Globally unique entityid for this node.
+   * Entity id on the idp should match this.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
    * @return entityId
-  **/
-  @ApiModelProperty(value = "Globally unique entityID for this node. Entity ID on the IDP should match this. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEntityId() {
     return entityId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Globally unique entityid for this node.
+   * Entity id on the idp should match this.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @param entityId set the entityId.
+   */
   @VsoMethod
-  public void setEntityId(String entityId) {
+  public void setEntityId(String  entityId) {
     this.entityId = entityId;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key to generate the cookie.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @return key
+   */
+  @VsoMethod
+  public List<HttpCookiePersistenceKey> getKey() {
+    return key;
+  }
+
+  /**
+   * This is the setter method. this will set the key
+   * Key to generate the cookie.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @return key
+   */
+  @VsoMethod
+  public void setKey(List<HttpCookiePersistenceKey>  key) {
+    this.key = key;
+  }
+
+  /**
+   * This is the setter method this will set the key
+   * Key to generate the cookie.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @return key
+   */
+  @VsoMethod
   public AuthenticationPolicy addKeyItem(HttpCookiePersistenceKey keyItem) {
     if (this.key == null) {
       this.key = new ArrayList<HttpCookiePersistenceKey>();
@@ -188,121 +267,103 @@ public class AuthenticationPolicy extends AviRestResource  {
     this.key.add(keyItem);
     return this;
   }
-  
+
+
   /**
-   * Key to generate the cookie. Field deprecated in 18.2.3. Field introduced in 18.2.1.
-   * @return key
-  **/
-  @ApiModelProperty(value = "Key to generate the cookie. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HttpCookiePersistenceKey> getKey() {
-    return key;
-  }
-    
-  @VsoMethod
-  public void setKey(List<HttpCookiePersistenceKey> key) {
-    this.key = key;
-  }
-
-  
-  /**
-   * Single Signon URL to be programmed on the IDP. Field deprecated in 18.2.3. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Single signon url to be programmed on the idp.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
    * @return singleSignonUrl
-  **/
-  @ApiModelProperty(value = "Single Signon URL to be programmed on the IDP. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSingleSignonUrl() {
     return singleSignonUrl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Single signon url to be programmed on the idp.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @param singleSignonUrl set the singleSignonUrl.
+   */
   @VsoMethod
-  public void setSingleSignonUrl(String singleSignonUrl) {
+  public void setSingleSignonUrl(String  singleSignonUrl) {
     this.singleSignonUrl = singleSignonUrl;
   }
 
-  
   /**
-   * SAML SP metadata. Field deprecated in 18.2.3. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Saml sp metadata.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
    * @return spMetadata
-  **/
-  @ApiModelProperty(readOnly = true, value = "SAML SP metadata. Field deprecated in 18.2.3. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSpMetadata() {
     return spMetadata;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Saml sp metadata.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.2.1.
+   * @param spMetadata set the spMetadata.
+   */
   @VsoMethod
-  public void setSpMetadata(String spMetadata) {
+  public void setSpMetadata(String  spMetadata) {
     this.spMetadata = spMetadata;
   }
 
-  
-  public String getObjectID() {
-		return "AuthenticationPolicy";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AuthenticationPolicy authenticationPolicy = (AuthenticationPolicy) o;
-    return Objects.equals(this.authProfileRef, authenticationPolicy.authProfileRef) &&
-        Objects.equals(this.authnRules, authenticationPolicy.authnRules) &&
-        Objects.equals(this.cookieName, authenticationPolicy.cookieName) &&
-        Objects.equals(this.cookieTimeout, authenticationPolicy.cookieTimeout) &&
-        Objects.equals(this.defaultAuthProfileRef, authenticationPolicy.defaultAuthProfileRef) &&
-        Objects.equals(this.entityId, authenticationPolicy.entityId) &&
-        Objects.equals(this.key, authenticationPolicy.key) &&
-        Objects.equals(this.singleSignonUrl, authenticationPolicy.singleSignonUrl) &&
-        Objects.equals(this.spMetadata, authenticationPolicy.spMetadata);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(authProfileRef, authnRules, cookieName, cookieTimeout, defaultAuthProfileRef, entityId, key, singleSignonUrl, spMetadata);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticationPolicy {\n");
-    
-    sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
-    sb.append("    authnRules: ").append(toIndentedString(authnRules)).append("\n");
-    sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
-    sb.append("    cookieTimeout: ").append(toIndentedString(cookieTimeout)).append("\n");
-    sb.append("    defaultAuthProfileRef: ").append(toIndentedString(defaultAuthProfileRef)).append("\n");
-    sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    singleSignonUrl: ").append(toIndentedString(singleSignonUrl)).append("\n");
-    sb.append("    spMetadata: ").append(toIndentedString(spMetadata)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AuthenticationPolicy objAuthenticationPolicy = (AuthenticationPolicy) o;
+  return   Objects.equals(this.entityId, objAuthenticationPolicy.entityId)&&
+  Objects.equals(this.defaultAuthProfileRef, objAuthenticationPolicy.defaultAuthProfileRef)&&
+  Objects.equals(this.spMetadata, objAuthenticationPolicy.spMetadata)&&
+  Objects.equals(this.cookieName, objAuthenticationPolicy.cookieName)&&
+  Objects.equals(this.singleSignonUrl, objAuthenticationPolicy.singleSignonUrl)&&
+  Objects.equals(this.authnRules, objAuthenticationPolicy.authnRules)&&
+  Objects.equals(this.key, objAuthenticationPolicy.key)&&
+  Objects.equals(this.authProfileRef, objAuthenticationPolicy.authProfileRef)&&
+  Objects.equals(this.cookieTimeout, objAuthenticationPolicy.cookieTimeout);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AuthenticationPolicy {\n");
+      sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
+        sb.append("    authnRules: ").append(toIndentedString(authnRules)).append("\n");
+        sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
+        sb.append("    cookieTimeout: ").append(toIndentedString(cookieTimeout)).append("\n");
+        sb.append("    defaultAuthProfileRef: ").append(toIndentedString(defaultAuthProfileRef)).append("\n");
+        sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
+        sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    singleSignonUrl: ").append(toIndentedString(singleSignonUrl)).append("\n");
+        sb.append("    spMetadata: ").append(toIndentedString(spMetadata)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

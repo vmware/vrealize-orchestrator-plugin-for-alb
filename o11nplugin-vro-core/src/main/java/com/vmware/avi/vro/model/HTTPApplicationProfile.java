@@ -1,1419 +1,1806 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.HttpCacheConfig;
 import com.vmware.avi.vro.model.CompressionProfile;
 import com.vmware.avi.vro.model.HTTP2ApplicationProfile;
-import com.vmware.avi.vro.model.HttpCacheConfig;
 import com.vmware.avi.vro.model.SSLClientCertificateAction;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HTTPApplicationProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HTTPApplicationProfile is a POJO class extends AviRestResource that used for creating
+ * HTTPApplicationProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HTTPApplicationProfile")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPAPPLICATIONPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPAPPLICATIONPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HTTPApplicationProfile extends AviRestResource  {
+public class HTTPApplicationProfile extends AviRestResource {
   @JsonProperty("allow_dots_in_header_name")
-  private Boolean allowDotsInHeaderName = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean allowDotsInHeaderName = false;
 
   @JsonProperty("cache_config")
+  @JsonInclude(Include.NON_NULL)
   private HttpCacheConfig cacheConfig = null;
 
   @JsonProperty("client_body_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer clientBodyTimeout = 30000;
 
   @JsonProperty("client_header_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer clientHeaderTimeout = 10000;
 
   @JsonProperty("client_max_body_size")
-  private Long clientMaxBodySize = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer clientMaxBodySize = 0;
 
   @JsonProperty("client_max_header_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer clientMaxHeaderSize = 12;
 
   @JsonProperty("client_max_request_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer clientMaxRequestSize = 48;
 
   @JsonProperty("compression_profile")
+  @JsonInclude(Include.NON_NULL)
   private CompressionProfile compressionProfile = null;
 
   @JsonProperty("connection_multiplexing_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean connectionMultiplexingEnabled = true;
 
   @JsonProperty("disable_keepalive_posts_msie6")
+  @JsonInclude(Include.NON_NULL)
   private Boolean disableKeepalivePostsMsie6 = true;
 
   @JsonProperty("disable_sni_hostname_check")
-  private Boolean disableSniHostnameCheck = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableSniHostnameCheck = false;
 
   @JsonProperty("enable_chunk_merge")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enableChunkMerge = true;
 
   @JsonProperty("enable_fire_and_forget")
-  private Boolean enableFireAndForget = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableFireAndForget = false;
 
   @JsonProperty("enable_request_body_buffering")
-  private Boolean enableRequestBodyBuffering = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableRequestBodyBuffering = false;
 
   @JsonProperty("enable_request_body_metrics")
-  private Boolean enableRequestBodyMetrics = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableRequestBodyMetrics = false;
 
   @JsonProperty("fwd_close_hdr_for_bound_connections")
+  @JsonInclude(Include.NON_NULL)
   private Boolean fwdCloseHdrForBoundConnections = true;
 
   @JsonProperty("hsts_enabled")
-  private Boolean hstsEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean hstsEnabled = false;
 
   @JsonProperty("hsts_max_age")
-  private Long hstsMaxAge = 365l;
+  @JsonInclude(Include.NON_NULL)
+  private Integer hstsMaxAge = 365;
 
   @JsonProperty("hsts_subdomains_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean hstsSubdomainsEnabled = true;
 
   @JsonProperty("http2_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean http2Enabled = null;
 
   @JsonProperty("http2_profile")
+  @JsonInclude(Include.NON_NULL)
   private HTTP2ApplicationProfile http2Profile = null;
 
   @JsonProperty("http_to_https")
-  private Boolean httpToHttps = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean httpToHttps = false;
 
   @JsonProperty("http_upstream_buffer_size")
-  private Integer httpUpstreamBufferSize = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer httpUpstreamBufferSize = 0;
 
   @JsonProperty("httponly_enabled")
-  private Boolean httponlyEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean httponlyEnabled = false;
 
   @JsonProperty("keepalive_header")
-  private Boolean keepaliveHeader = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean keepaliveHeader = false;
 
   @JsonProperty("keepalive_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer keepaliveTimeout = 30000;
 
   @JsonProperty("max_bad_rps_cip")
-  private Integer maxBadRpsCip = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxBadRpsCip = 0;
 
   @JsonProperty("max_bad_rps_cip_uri")
-  private Integer maxBadRpsCipUri = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxBadRpsCipUri = 0;
 
   @JsonProperty("max_bad_rps_uri")
-  private Integer maxBadRpsUri = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxBadRpsUri = 0;
 
   @JsonProperty("max_http2_concurrent_streams_per_connection")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxHttp2ConcurrentStreamsPerConnection = null;
 
   @JsonProperty("max_http2_control_frames_per_connection")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxHttp2ControlFramesPerConnection = null;
 
   @JsonProperty("max_http2_empty_data_frames_per_connection")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxHttp2EmptyDataFramesPerConnection = null;
 
   @JsonProperty("max_http2_queued_frames_to_client_per_connection")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxHttp2QueuedFramesToClientPerConnection = null;
 
   @JsonProperty("max_keepalive_requests")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxKeepaliveRequests = 100;
 
   @JsonProperty("max_response_headers_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxResponseHeadersSize = 48;
 
   @JsonProperty("max_rps_cip")
-  private Integer maxRpsCip = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxRpsCip = 0;
 
   @JsonProperty("max_rps_cip_uri")
-  private Integer maxRpsCipUri = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxRpsCipUri = 0;
 
   @JsonProperty("max_rps_unknown_cip")
-  private Integer maxRpsUnknownCip = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxRpsUnknownCip = 0;
 
   @JsonProperty("max_rps_unknown_uri")
-  private Integer maxRpsUnknownUri = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxRpsUnknownUri = 0;
 
   @JsonProperty("max_rps_uri")
-  private Integer maxRpsUri = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxRpsUri = 0;
 
   @JsonProperty("pki_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String pkiProfileRef = null;
 
   @JsonProperty("post_accept_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer postAcceptTimeout = 30000;
 
   @JsonProperty("reset_conn_http_on_ssl_port")
-  private Boolean resetConnHttpOnSslPort = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean resetConnHttpOnSslPort = false;
 
   @JsonProperty("respond_with_100_continue")
+  @JsonInclude(Include.NON_NULL)
   private Boolean respondWith100Continue = true;
 
   @JsonProperty("secure_cookie_enabled")
-  private Boolean secureCookieEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean secureCookieEnabled = false;
 
   @JsonProperty("server_side_redirect_to_https")
-  private Boolean serverSideRedirectToHttps = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean serverSideRedirectToHttps = false;
 
   @JsonProperty("spdy_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean spdyEnabled = null;
 
   @JsonProperty("spdy_fwd_proxy_mode")
+  @JsonInclude(Include.NON_NULL)
   private Boolean spdyFwdProxyMode = null;
 
   @JsonProperty("ssl_client_certificate_action")
+  @JsonInclude(Include.NON_NULL)
   private SSLClientCertificateAction sslClientCertificateAction = null;
 
   @JsonProperty("ssl_client_certificate_mode")
+  @JsonInclude(Include.NON_NULL)
   private String sslClientCertificateMode = "SSL_CLIENT_CERTIFICATE_NONE";
 
   @JsonProperty("ssl_everywhere_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean sslEverywhereEnabled = null;
 
   @JsonProperty("use_app_keepalive_timeout")
-  private Boolean useAppKeepaliveTimeout = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useAppKeepaliveTimeout = false;
 
   @JsonProperty("websockets_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean websocketsEnabled = true;
 
   @JsonProperty("x_forwarded_proto_enabled")
-  private Boolean xForwardedProtoEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean xForwardedProtoEnabled = false;
 
   @JsonProperty("xff_alternate_name")
-  private String xffAlternateName = "X-Forwarded-For";
+  @JsonInclude(Include.NON_NULL)
+  private String xffAlternateName = "x-forwarded-for";
 
   @JsonProperty("xff_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean xffEnabled = true;
 
-  
+
+
   /**
-   * Allow use of dot (.) in HTTP header names, for instance Header.app.special  PickAppVersionX.
+   * This is the getter method this will return the attribute value.
+   * Allow use of dot (.) in http header names, for instance header.app.special  pickappversionx.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allowDotsInHeaderName
-  **/
-  @ApiModelProperty(value = "Allow use of dot (.) in HTTP header names, for instance Header.app.special  PickAppVersionX.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAllowDotsInHeaderName() {
+   */
+  @VsoMethod
+  public Boolean getAllowDotsInHeaderName() {
     return allowDotsInHeaderName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Allow use of dot (.) in http header names, for instance header.app.special  pickappversionx.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param allowDotsInHeaderName set the allowDotsInHeaderName.
+   */
   @VsoMethod
-  public void setAllowDotsInHeaderName(Boolean allowDotsInHeaderName) {
+  public void setAllowDotsInHeaderName(Boolean  allowDotsInHeaderName) {
     this.allowDotsInHeaderName = allowDotsInHeaderName;
   }
 
-  
   /**
-   * HTTP Caching config to use with this HTTP Profile.
+   * This is the getter method this will return the attribute value.
+   * Http caching config to use with this http profile.
    * @return cacheConfig
-  **/
-  @ApiModelProperty(value = "HTTP Caching config to use with this HTTP Profile.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HttpCacheConfig getCacheConfig() {
     return cacheConfig;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http caching config to use with this http profile.
+   * @param cacheConfig set the cacheConfig.
+   */
   @VsoMethod
   public void setCacheConfig(HttpCacheConfig cacheConfig) {
     this.cacheConfig = cacheConfig;
   }
 
-  
   /**
-   * The maximum length of time allowed between consecutive read operations for a client request body. The value '0' specifies no timeout. This setting generally impacts the length of time allowed for a client to send a POST. Allowed values are 0-100000000.
+   * This is the getter method this will return the attribute value.
+   * The maximum length of time allowed between consecutive read operations for a client request body.
+   * The value '0' specifies no timeout.
+   * This setting generally impacts the length of time allowed for a client to send a post.
+   * Allowed values are 0-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return clientBodyTimeout
-  **/
-  @ApiModelProperty(value = "The maximum length of time allowed between consecutive read operations for a client request body. The value '0' specifies no timeout. This setting generally impacts the length of time allowed for a client to send a POST. Allowed values are 0-100000000.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getClientBodyTimeout() {
     return clientBodyTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum length of time allowed between consecutive read operations for a client request body.
+   * The value '0' specifies no timeout.
+   * This setting generally impacts the length of time allowed for a client to send a post.
+   * Allowed values are 0-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
+   * @param clientBodyTimeout set the clientBodyTimeout.
+   */
   @VsoMethod
-  public void setClientBodyTimeout(Integer clientBodyTimeout) {
+  public void setClientBodyTimeout(Integer  clientBodyTimeout) {
     this.clientBodyTimeout = clientBodyTimeout;
   }
 
-  
   /**
-   * The maximum length of time allowed for a client to transmit an entire request header. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000.
+   * This is the getter method this will return the attribute value.
+   * The maximum length of time allowed for a client to transmit an entire request header.
+   * This helps mitigate various forms of slowloris attacks.
+   * Allowed values are 10-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return clientHeaderTimeout
-  **/
-  @ApiModelProperty(value = "The maximum length of time allowed for a client to transmit an entire request header. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getClientHeaderTimeout() {
     return clientHeaderTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum length of time allowed for a client to transmit an entire request header.
+   * This helps mitigate various forms of slowloris attacks.
+   * Allowed values are 10-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @param clientHeaderTimeout set the clientHeaderTimeout.
+   */
   @VsoMethod
-  public void setClientHeaderTimeout(Integer clientHeaderTimeout) {
+  public void setClientHeaderTimeout(Integer  clientHeaderTimeout) {
     this.clientHeaderTimeout = clientHeaderTimeout;
   }
 
-  
   /**
-   * Maximum size for the client request body.  This limits the size of the client data that can be uploaded/posted as part of a single HTTP Request.  Default 0 => Unlimited.
+   * This is the getter method this will return the attribute value.
+   * Maximum size for the client request body.
+   * This limits the size of the client data that can be uploaded/posted as part of a single http request.
+   * Default 0 => unlimited.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return clientMaxBodySize
-  **/
-  @ApiModelProperty(value = "Maximum size for the client request body.  This limits the size of the client data that can be uploaded/posted as part of a single HTTP Request.  Default 0 => Unlimited.")
-
-
- 
-  @VsoMethod  
-  public Long getClientMaxBodySize() {
+   */
+  @VsoMethod
+  public Integer getClientMaxBodySize() {
     return clientMaxBodySize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size for the client request body.
+   * This limits the size of the client data that can be uploaded/posted as part of a single http request.
+   * Default 0 => unlimited.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param clientMaxBodySize set the clientMaxBodySize.
+   */
   @VsoMethod
-  public void setClientMaxBodySize(Long clientMaxBodySize) {
+  public void setClientMaxBodySize(Integer  clientMaxBodySize) {
     this.clientMaxBodySize = clientMaxBodySize;
   }
 
-  
   /**
-   * Maximum size in Kbytes of a single HTTP header in the client request. Allowed values are 1-64.
+   * This is the getter method this will return the attribute value.
+   * Maximum size in kbytes of a single http header in the client request.
+   * Allowed values are 1-64.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @return clientMaxHeaderSize
-  **/
-  @ApiModelProperty(value = "Maximum size in Kbytes of a single HTTP header in the client request. Allowed values are 1-64.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getClientMaxHeaderSize() {
     return clientMaxHeaderSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size in kbytes of a single http header in the client request.
+   * Allowed values are 1-64.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 12.
+   * @param clientMaxHeaderSize set the clientMaxHeaderSize.
+   */
   @VsoMethod
-  public void setClientMaxHeaderSize(Integer clientMaxHeaderSize) {
+  public void setClientMaxHeaderSize(Integer  clientMaxHeaderSize) {
     this.clientMaxHeaderSize = clientMaxHeaderSize;
   }
 
-  
   /**
-   * Maximum size in Kbytes of all the client HTTP request headers. Allowed values are 1-256.
+   * This is the getter method this will return the attribute value.
+   * Maximum size in kbytes of all the client http request headers.
+   * Allowed values are 1-256.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @return clientMaxRequestSize
-  **/
-  @ApiModelProperty(value = "Maximum size in Kbytes of all the client HTTP request headers. Allowed values are 1-256.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getClientMaxRequestSize() {
     return clientMaxRequestSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size in kbytes of all the client http request headers.
+   * Allowed values are 1-256.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 48.
+   * @param clientMaxRequestSize set the clientMaxRequestSize.
+   */
   @VsoMethod
-  public void setClientMaxRequestSize(Integer clientMaxRequestSize) {
+  public void setClientMaxRequestSize(Integer  clientMaxRequestSize) {
     this.clientMaxRequestSize = clientMaxRequestSize;
   }
 
-  
   /**
-   * HTTP Compression settings to use with this HTTP Profile.
+   * This is the getter method this will return the attribute value.
+   * Http compression settings to use with this http profile.
    * @return compressionProfile
-  **/
-  @ApiModelProperty(value = "HTTP Compression settings to use with this HTTP Profile.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public CompressionProfile getCompressionProfile() {
     return compressionProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http compression settings to use with this http profile.
+   * @param compressionProfile set the compressionProfile.
+   */
   @VsoMethod
   public void setCompressionProfile(CompressionProfile compressionProfile) {
     this.compressionProfile = compressionProfile;
   }
 
-  
   /**
-   * Allows HTTP requests, not just TCP connections, to be load balanced across servers.  Proxied TCP connections to servers may be reused by multiple clients to improve performance. Not compatible with Preserve Client IP.
+   * This is the getter method this will return the attribute value.
+   * Allows http requests, not just tcp connections, to be load balanced across servers.
+   * Proxied tcp connections to servers may be reused by multiple clients to improve performance.
+   * Not compatible with preserve client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return connectionMultiplexingEnabled
-  **/
-  @ApiModelProperty(value = "Allows HTTP requests, not just TCP connections, to be load balanced across servers.  Proxied TCP connections to servers may be reused by multiple clients to improve performance. Not compatible with Preserve Client IP.")
-
-
- 
-  @VsoMethod  
-  public Boolean isConnectionMultiplexingEnabled() {
+   */
+  @VsoMethod
+  public Boolean getConnectionMultiplexingEnabled() {
     return connectionMultiplexingEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Allows http requests, not just tcp connections, to be load balanced across servers.
+   * Proxied tcp connections to servers may be reused by multiple clients to improve performance.
+   * Not compatible with preserve client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param connectionMultiplexingEnabled set the connectionMultiplexingEnabled.
+   */
   @VsoMethod
-  public void setConnectionMultiplexingEnabled(Boolean connectionMultiplexingEnabled) {
+  public void setConnectionMultiplexingEnabled(Boolean  connectionMultiplexingEnabled) {
     this.connectionMultiplexingEnabled = connectionMultiplexingEnabled;
   }
 
-  
   /**
-   * Disable keep-alive client side connections for older browsers based off MS Internet Explorer 6.0 (MSIE6). For some applications, this might break NTLM authentication for older clients based off MSIE6. For such applications, set this option to false to allow keep-alive connections.
+   * This is the getter method this will return the attribute value.
+   * Disable keep-alive client side connections for older browsers based off ms internet explorer 6.0 (msie6).
+   * For some applications, this might break ntlm authentication for older clients based off msie6.
+   * For such applications, set this option to false to allow keep-alive connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return disableKeepalivePostsMsie6
-  **/
-  @ApiModelProperty(value = "Disable keep-alive client side connections for older browsers based off MS Internet Explorer 6.0 (MSIE6). For some applications, this might break NTLM authentication for older clients based off MSIE6. For such applications, set this option to false to allow keep-alive connections.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableKeepalivePostsMsie6() {
+   */
+  @VsoMethod
+  public Boolean getDisableKeepalivePostsMsie6() {
     return disableKeepalivePostsMsie6;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Disable keep-alive client side connections for older browsers based off ms internet explorer 6.0 (msie6).
+   * For some applications, this might break ntlm authentication for older clients based off msie6.
+   * For such applications, set this option to false to allow keep-alive connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param disableKeepalivePostsMsie6 set the disableKeepalivePostsMsie6.
+   */
   @VsoMethod
-  public void setDisableKeepalivePostsMsie6(Boolean disableKeepalivePostsMsie6) {
+  public void setDisableKeepalivePostsMsie6(Boolean  disableKeepalivePostsMsie6) {
     this.disableKeepalivePostsMsie6 = disableKeepalivePostsMsie6;
   }
 
-  
   /**
-   * Disable strict check between TLS servername and HTTP Host name. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Disable strict check between tls servername and http host name.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableSniHostnameCheck
-  **/
-  @ApiModelProperty(value = "Disable strict check between TLS servername and HTTP Host name. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableSniHostnameCheck() {
+   */
+  @VsoMethod
+  public Boolean getDisableSniHostnameCheck() {
     return disableSniHostnameCheck;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Disable strict check between tls servername and http host name.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableSniHostnameCheck set the disableSniHostnameCheck.
+   */
   @VsoMethod
-  public void setDisableSniHostnameCheck(Boolean disableSniHostnameCheck) {
+  public void setDisableSniHostnameCheck(Boolean  disableSniHostnameCheck) {
     this.disableSniHostnameCheck = disableSniHostnameCheck;
   }
 
-  
   /**
-   * Enable chunk body merge for chunked transfer encoding response. Field introduced in 18.2.7.
+   * This is the getter method this will return the attribute value.
+   * Enable chunk body merge for chunked transfer encoding response.
+   * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableChunkMerge
-  **/
-  @ApiModelProperty(value = "Enable chunk body merge for chunked transfer encoding response. Field introduced in 18.2.7.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableChunkMerge() {
+   */
+  @VsoMethod
+  public Boolean getEnableChunkMerge() {
     return enableChunkMerge;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable chunk body merge for chunked transfer encoding response.
+   * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableChunkMerge set the enableChunkMerge.
+   */
   @VsoMethod
-  public void setEnableChunkMerge(Boolean enableChunkMerge) {
+  public void setEnableChunkMerge(Boolean  enableChunkMerge) {
     this.enableChunkMerge = enableChunkMerge;
   }
 
-  
   /**
-   * Enable support for fire and forget feature. If enabled, request from client is forwarded to server even if client prematurely closes the connection. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Enable support for fire and forget feature.
+   * If enabled, request from client is forwarded to server even if client prematurely closes the connection.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableFireAndForget
-  **/
-  @ApiModelProperty(value = "Enable support for fire and forget feature. If enabled, request from client is forwarded to server even if client prematurely closes the connection. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableFireAndForget() {
+   */
+  @VsoMethod
+  public Boolean getEnableFireAndForget() {
     return enableFireAndForget;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable support for fire and forget feature.
+   * If enabled, request from client is forwarded to server even if client prematurely closes the connection.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableFireAndForget set the enableFireAndForget.
+   */
   @VsoMethod
-  public void setEnableFireAndForget(Boolean enableFireAndForget) {
+  public void setEnableFireAndForget(Boolean  enableFireAndForget) {
     this.enableFireAndForget = enableFireAndForget;
   }
 
-  
   /**
-   * Enable request body buffering for POST requests. If enabled, max buffer size is set to lower of 32M or the value (non-zero) configured in client_max_body_size.
+   * This is the getter method this will return the attribute value.
+   * Enable request body buffering for post requests.
+   * If enabled, max buffer size is set to lower of 32m or the value (non-zero) configured in client_max_body_size.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableRequestBodyBuffering
-  **/
-  @ApiModelProperty(value = "Enable request body buffering for POST requests. If enabled, max buffer size is set to lower of 32M or the value (non-zero) configured in client_max_body_size.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableRequestBodyBuffering() {
+   */
+  @VsoMethod
+  public Boolean getEnableRequestBodyBuffering() {
     return enableRequestBodyBuffering;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable request body buffering for post requests.
+   * If enabled, max buffer size is set to lower of 32m or the value (non-zero) configured in client_max_body_size.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableRequestBodyBuffering set the enableRequestBodyBuffering.
+   */
   @VsoMethod
-  public void setEnableRequestBodyBuffering(Boolean enableRequestBodyBuffering) {
+  public void setEnableRequestBodyBuffering(Boolean  enableRequestBodyBuffering) {
     this.enableRequestBodyBuffering = enableRequestBodyBuffering;
   }
 
-  
   /**
-   * Enable HTTP request body metrics. If enabled, requests from clients are parsed and relevant statistics about them are gathered. Currently, it processes HTTP POST requests with Content-Type application/x-www-form-urlencoded or multipart/form-data, and adds the number of detected parameters to the l7_client.http_params_count. This is an experimental feature and it may have performance impact. Use it when detailed information about the number of HTTP POST parameters is needed, e.g. for WAF sizing. Field introduced in 18.1.5, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Enable http request body metrics.
+   * If enabled, requests from clients are parsed and relevant statistics about them are gathered.
+   * Currently, it processes http post requests with content-type application/x-www-form-urlencoded or multipart/form-data, and adds the number of
+   * detected parameters to the l7_client.http_params_count.
+   * This is an experimental feature and it may have performance impact.
+   * Use it when detailed information about the number of http post parameters is needed, e.g.
+   * For waf sizing.
+   * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableRequestBodyMetrics
-  **/
-  @ApiModelProperty(value = "Enable HTTP request body metrics. If enabled, requests from clients are parsed and relevant statistics about them are gathered. Currently, it processes HTTP POST requests with Content-Type application/x-www-form-urlencoded or multipart/form-data, and adds the number of detected parameters to the l7_client.http_params_count. This is an experimental feature and it may have performance impact. Use it when detailed information about the number of HTTP POST parameters is needed, e.g. for WAF sizing. Field introduced in 18.1.5, 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableRequestBodyMetrics() {
+   */
+  @VsoMethod
+  public Boolean getEnableRequestBodyMetrics() {
     return enableRequestBodyMetrics;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable http request body metrics.
+   * If enabled, requests from clients are parsed and relevant statistics about them are gathered.
+   * Currently, it processes http post requests with content-type application/x-www-form-urlencoded or multipart/form-data, and adds the number of
+   * detected parameters to the l7_client.http_params_count.
+   * This is an experimental feature and it may have performance impact.
+   * Use it when detailed information about the number of http post parameters is needed, e.g.
+   * For waf sizing.
+   * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableRequestBodyMetrics set the enableRequestBodyMetrics.
+   */
   @VsoMethod
-  public void setEnableRequestBodyMetrics(Boolean enableRequestBodyMetrics) {
+  public void setEnableRequestBodyMetrics(Boolean  enableRequestBodyMetrics) {
     this.enableRequestBodyMetrics = enableRequestBodyMetrics;
   }
 
-  
   /**
-   * Forward the Connection  Close header coming from backend server to the client if connection-switching is enabled, i.e. front-end and backend connections are bound together. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Forward the connection  close header coming from backend server to the client if connection-switching is enabled, i.e.
+   * Front-end and backend connections are bound together.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return fwdCloseHdrForBoundConnections
-  **/
-  @ApiModelProperty(value = "Forward the Connection  Close header coming from backend server to the client if connection-switching is enabled, i.e. front-end and backend connections are bound together. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFwdCloseHdrForBoundConnections() {
+   */
+  @VsoMethod
+  public Boolean getFwdCloseHdrForBoundConnections() {
     return fwdCloseHdrForBoundConnections;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Forward the connection  close header coming from backend server to the client if connection-switching is enabled, i.e.
+   * Front-end and backend connections are bound together.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param fwdCloseHdrForBoundConnections set the fwdCloseHdrForBoundConnections.
+   */
   @VsoMethod
-  public void setFwdCloseHdrForBoundConnections(Boolean fwdCloseHdrForBoundConnections) {
+  public void setFwdCloseHdrForBoundConnections(Boolean  fwdCloseHdrForBoundConnections) {
     this.fwdCloseHdrForBoundConnections = fwdCloseHdrForBoundConnections;
   }
 
-  
   /**
-   * Inserts HTTP Strict-Transport-Security header in the HTTPS response.  HSTS can help mitigate man-in-the-middle attacks by telling browsers that support HSTS that they should only access this site via HTTPS.
+   * This is the getter method this will return the attribute value.
+   * Inserts http strict-transport-security header in the https response.
+   * Hsts can help mitigate man-in-the-middle attacks by telling browsers that support hsts that they should only access this site via https.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return hstsEnabled
-  **/
-  @ApiModelProperty(value = "Inserts HTTP Strict-Transport-Security header in the HTTPS response.  HSTS can help mitigate man-in-the-middle attacks by telling browsers that support HSTS that they should only access this site via HTTPS.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHstsEnabled() {
+   */
+  @VsoMethod
+  public Boolean getHstsEnabled() {
     return hstsEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Inserts http strict-transport-security header in the https response.
+   * Hsts can help mitigate man-in-the-middle attacks by telling browsers that support hsts that they should only access this site via https.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param hstsEnabled set the hstsEnabled.
+   */
   @VsoMethod
-  public void setHstsEnabled(Boolean hstsEnabled) {
+  public void setHstsEnabled(Boolean  hstsEnabled) {
     this.hstsEnabled = hstsEnabled;
   }
 
-  
   /**
-   * Number of days for which the client should regard this virtual service as a known HSTS host. Allowed values are 0-10000.
+   * This is the getter method this will return the attribute value.
+   * Number of days for which the client should regard this virtual service as a known hsts host.
+   * Allowed values are 0-10000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 365.
    * @return hstsMaxAge
-  **/
-  @ApiModelProperty(value = "Number of days for which the client should regard this virtual service as a known HSTS host. Allowed values are 0-10000.")
-
-
- 
-  @VsoMethod  
-  public Long getHstsMaxAge() {
+   */
+  @VsoMethod
+  public Integer getHstsMaxAge() {
     return hstsMaxAge;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of days for which the client should regard this virtual service as a known hsts host.
+   * Allowed values are 0-10000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 365.
+   * @param hstsMaxAge set the hstsMaxAge.
+   */
   @VsoMethod
-  public void setHstsMaxAge(Long hstsMaxAge) {
+  public void setHstsMaxAge(Integer  hstsMaxAge) {
     this.hstsMaxAge = hstsMaxAge;
   }
 
-  
   /**
-   * Insert the 'includeSubdomains' directive in the HTTP Strict-Transport-Security header. Adding the includeSubdomains directive signals the User-Agent that the HSTS Policy applies to this HSTS Host as well as any subdomains of the host's domain name. Field introduced in 17.2.13, 18.1.4, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Insert the 'includesubdomains' directive in the http strict-transport-security header.
+   * Adding the includesubdomains directive signals the user-agent that the hsts policy applies to this hsts host as well as any subdomains of the
+   * host's domain name.
+   * Field introduced in 17.2.13, 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return hstsSubdomainsEnabled
-  **/
-  @ApiModelProperty(value = "Insert the 'includeSubdomains' directive in the HTTP Strict-Transport-Security header. Adding the includeSubdomains directive signals the User-Agent that the HSTS Policy applies to this HSTS Host as well as any subdomains of the host's domain name. Field introduced in 17.2.13, 18.1.4, 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHstsSubdomainsEnabled() {
+   */
+  @VsoMethod
+  public Boolean getHstsSubdomainsEnabled() {
     return hstsSubdomainsEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Insert the 'includesubdomains' directive in the http strict-transport-security header.
+   * Adding the includesubdomains directive signals the user-agent that the hsts policy applies to this hsts host as well as any subdomains of the
+   * host's domain name.
+   * Field introduced in 17.2.13, 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param hstsSubdomainsEnabled set the hstsSubdomainsEnabled.
+   */
   @VsoMethod
-  public void setHstsSubdomainsEnabled(Boolean hstsSubdomainsEnabled) {
+  public void setHstsSubdomainsEnabled(Boolean  hstsSubdomainsEnabled) {
     this.hstsSubdomainsEnabled = hstsSubdomainsEnabled;
   }
 
-  
   /**
-   * Enable HTTP2 for traffic from clients to the virtual service. Field deprecated in 20.1.1. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Enable http2 for traffic from clients to the virtual service.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.1.1.
    * @return http2Enabled
-  **/
-  @ApiModelProperty(value = "Enable HTTP2 for traffic from clients to the virtual service. Field deprecated in 20.1.1. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHttp2Enabled() {
+   */
+  @VsoMethod
+  public Boolean getHttp2Enabled() {
     return http2Enabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable http2 for traffic from clients to the virtual service.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.1.1.
+   * @param http2Enabled set the http2Enabled.
+   */
   @VsoMethod
-  public void setHttp2Enabled(Boolean http2Enabled) {
+  public void setHttp2Enabled(Boolean  http2Enabled) {
     this.http2Enabled = http2Enabled;
   }
 
-  
   /**
-   * Specifies the HTTP/2 specific application profile parameters. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Specifies the http/2 specific application profile parameters.
+   * Field introduced in 20.1.1.
    * @return http2Profile
-  **/
-  @ApiModelProperty(value = "Specifies the HTTP/2 specific application profile parameters. Field introduced in 20.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HTTP2ApplicationProfile getHttp2Profile() {
     return http2Profile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies the http/2 specific application profile parameters.
+   * Field introduced in 20.1.1.
+   * @param http2Profile set the http2Profile.
+   */
   @VsoMethod
   public void setHttp2Profile(HTTP2ApplicationProfile http2Profile) {
     this.http2Profile = http2Profile;
   }
 
-  
   /**
-   * Client requests received via HTTP will be redirected to HTTPS.
+   * This is the getter method this will return the attribute value.
+   * Client requests received via http will be redirected to https.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httpToHttps
-  **/
-  @ApiModelProperty(value = "Client requests received via HTTP will be redirected to HTTPS.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHttpToHttps() {
+   */
+  @VsoMethod
+  public Boolean getHttpToHttps() {
     return httpToHttps;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Client requests received via http will be redirected to https.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param httpToHttps set the httpToHttps.
+   */
   @VsoMethod
-  public void setHttpToHttps(Boolean httpToHttps) {
+  public void setHttpToHttps(Boolean  httpToHttps) {
     this.httpToHttps = httpToHttps;
   }
 
-  
   /**
-   * Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- 'Auto compute the size of buffer'. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Size of http buffer in kb.
+   * Allowed values are 1-256.
+   * Special values are 0- 'auto compute the size of buffer'.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return httpUpstreamBufferSize
-  **/
-  @ApiModelProperty(value = "Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- 'Auto compute the size of buffer'. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getHttpUpstreamBufferSize() {
     return httpUpstreamBufferSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Size of http buffer in kb.
+   * Allowed values are 1-256.
+   * Special values are 0- 'auto compute the size of buffer'.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param httpUpstreamBufferSize set the httpUpstreamBufferSize.
+   */
   @VsoMethod
-  public void setHttpUpstreamBufferSize(Integer httpUpstreamBufferSize) {
+  public void setHttpUpstreamBufferSize(Integer  httpUpstreamBufferSize) {
     this.httpUpstreamBufferSize = httpUpstreamBufferSize;
   }
 
-  
   /**
-   * Mark HTTP cookies as HTTPonly.  This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript.
+   * This is the getter method this will return the attribute value.
+   * Mark http cookies as httponly.
+   * This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httponlyEnabled
-  **/
-  @ApiModelProperty(value = "Mark HTTP cookies as HTTPonly.  This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHttponlyEnabled() {
+   */
+  @VsoMethod
+  public Boolean getHttponlyEnabled() {
     return httponlyEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Mark http cookies as httponly.
+   * This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param httponlyEnabled set the httponlyEnabled.
+   */
   @VsoMethod
-  public void setHttponlyEnabled(Boolean httponlyEnabled) {
+  public void setHttponlyEnabled(Boolean  httponlyEnabled) {
     this.httponlyEnabled = httponlyEnabled;
   }
 
-  
   /**
-   * Send HTTP 'Keep-Alive' header to the client. By default, the timeout specified in the 'Keep-Alive Timeout' field will be used unless the 'Use App Keepalive Timeout' flag is set, in which case the timeout sent by the application will be honored.
+   * This is the getter method this will return the attribute value.
+   * Send http 'keep-alive' header to the client.
+   * By default, the timeout specified in the 'keep-alive timeout' field will be used unless the 'use app keepalive timeout' flag is set, in which
+   * case the timeout sent by the application will be honored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return keepaliveHeader
-  **/
-  @ApiModelProperty(value = "Send HTTP 'Keep-Alive' header to the client. By default, the timeout specified in the 'Keep-Alive Timeout' field will be used unless the 'Use App Keepalive Timeout' flag is set, in which case the timeout sent by the application will be honored.")
-
-
- 
-  @VsoMethod  
-  public Boolean isKeepaliveHeader() {
+   */
+  @VsoMethod
+  public Boolean getKeepaliveHeader() {
     return keepaliveHeader;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Send http 'keep-alive' header to the client.
+   * By default, the timeout specified in the 'keep-alive timeout' field will be used unless the 'use app keepalive timeout' flag is set, in which
+   * case the timeout sent by the application will be honored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param keepaliveHeader set the keepaliveHeader.
+   */
   @VsoMethod
-  public void setKeepaliveHeader(Boolean keepaliveHeader) {
+  public void setKeepaliveHeader(Boolean  keepaliveHeader) {
     this.keepaliveHeader = keepaliveHeader;
   }
 
-  
   /**
-   * The max idle time allowed between HTTP requests over a Keep-alive connection. Allowed values are 10-100000000.
+   * This is the getter method this will return the attribute value.
+   * The max idle time allowed between http requests over a keep-alive connection.
+   * Allowed values are 10-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return keepaliveTimeout
-  **/
-  @ApiModelProperty(value = "The max idle time allowed between HTTP requests over a Keep-alive connection. Allowed values are 10-100000000.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getKeepaliveTimeout() {
     return keepaliveTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max idle time allowed between http requests over a keep-alive connection.
+   * Allowed values are 10-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
+   * @param keepaliveTimeout set the keepaliveTimeout.
+   */
   @VsoMethod
-  public void setKeepaliveTimeout(Integer keepaliveTimeout) {
+  public void setKeepaliveTimeout(Integer  keepaliveTimeout) {
     this.keepaliveTimeout = keepaliveTimeout;
   }
 
-  
   /**
-   * Maximum bad requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum bad requests per second per client ip.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxBadRpsCip
-  **/
-  @ApiModelProperty(value = "Maximum bad requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxBadRpsCip() {
     return maxBadRpsCip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum bad requests per second per client ip.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxBadRpsCip set the maxBadRpsCip.
+   */
   @VsoMethod
-  public void setMaxBadRpsCip(Integer maxBadRpsCip) {
+  public void setMaxBadRpsCip(Integer  maxBadRpsCip) {
     this.maxBadRpsCip = maxBadRpsCip;
   }
 
-  
   /**
-   * Maximum bad requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum bad requests per second per client ip and uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxBadRpsCipUri
-  **/
-  @ApiModelProperty(value = "Maximum bad requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxBadRpsCipUri() {
     return maxBadRpsCipUri;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum bad requests per second per client ip and uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxBadRpsCipUri set the maxBadRpsCipUri.
+   */
   @VsoMethod
-  public void setMaxBadRpsCipUri(Integer maxBadRpsCipUri) {
+  public void setMaxBadRpsCipUri(Integer  maxBadRpsCipUri) {
     this.maxBadRpsCipUri = maxBadRpsCipUri;
   }
 
-  
   /**
-   * Maximum bad requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum bad requests per second per uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxBadRpsUri
-  **/
-  @ApiModelProperty(value = "Maximum bad requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxBadRpsUri() {
     return maxBadRpsUri;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum bad requests per second per uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxBadRpsUri set the maxBadRpsUri.
+   */
   @VsoMethod
-  public void setMaxBadRpsUri(Integer maxBadRpsUri) {
+  public void setMaxBadRpsUri(Integer  maxBadRpsUri) {
     this.maxBadRpsUri = maxBadRpsUri;
   }
 
-  
   /**
-   * The max number of concurrent streams over a client side HTTP/2 connection. Allowed values are 1-256. Field deprecated in 20.1.1. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * The max number of concurrent streams over a client side http/2 connection.
+   * Allowed values are 1-256.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
    * @return maxHttp2ConcurrentStreamsPerConnection
-  **/
-  @ApiModelProperty(value = "The max number of concurrent streams over a client side HTTP/2 connection. Allowed values are 1-256. Field deprecated in 20.1.1. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxHttp2ConcurrentStreamsPerConnection() {
     return maxHttp2ConcurrentStreamsPerConnection;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max number of concurrent streams over a client side http/2 connection.
+   * Allowed values are 1-256.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
+   * @param maxHttp2ConcurrentStreamsPerConnection set the maxHttp2ConcurrentStreamsPerConnection.
+   */
   @VsoMethod
-  public void setMaxHttp2ConcurrentStreamsPerConnection(Integer maxHttp2ConcurrentStreamsPerConnection) {
+  public void setMaxHttp2ConcurrentStreamsPerConnection(Integer  maxHttp2ConcurrentStreamsPerConnection) {
     this.maxHttp2ConcurrentStreamsPerConnection = maxHttp2ConcurrentStreamsPerConnection;
   }
 
-  
   /**
-   * The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited control frames on a client side HTTP/2 connection'. Field deprecated in 20.1.1. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * The max number of control frames that client can send over an http/2 connection.
+   * '0' means unlimited.
+   * Allowed values are 0-10000.
+   * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
    * @return maxHttp2ControlFramesPerConnection
-  **/
-  @ApiModelProperty(value = "The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited control frames on a client side HTTP/2 connection'. Field deprecated in 20.1.1. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxHttp2ControlFramesPerConnection() {
     return maxHttp2ControlFramesPerConnection;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max number of control frames that client can send over an http/2 connection.
+   * '0' means unlimited.
+   * Allowed values are 0-10000.
+   * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
+   * @param maxHttp2ControlFramesPerConnection set the maxHttp2ControlFramesPerConnection.
+   */
   @VsoMethod
-  public void setMaxHttp2ControlFramesPerConnection(Integer maxHttp2ControlFramesPerConnection) {
+  public void setMaxHttp2ControlFramesPerConnection(Integer  maxHttp2ControlFramesPerConnection) {
     this.maxHttp2ControlFramesPerConnection = maxHttp2ControlFramesPerConnection;
   }
 
-  
   /**
-   * The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited empty data frames over a client side HTTP/2 connection'. Field deprecated in 20.1.1. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * The max number of empty data frames that client can send over an http/2 connection.
+   * '0' means unlimited.
+   * Allowed values are 0-10000.
+   * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
    * @return maxHttp2EmptyDataFramesPerConnection
-  **/
-  @ApiModelProperty(value = "The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited empty data frames over a client side HTTP/2 connection'. Field deprecated in 20.1.1. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxHttp2EmptyDataFramesPerConnection() {
     return maxHttp2EmptyDataFramesPerConnection;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max number of empty data frames that client can send over an http/2 connection.
+   * '0' means unlimited.
+   * Allowed values are 0-10000.
+   * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
+   * @param maxHttp2EmptyDataFramesPerConnection set the maxHttp2EmptyDataFramesPerConnection.
+   */
   @VsoMethod
-  public void setMaxHttp2EmptyDataFramesPerConnection(Integer maxHttp2EmptyDataFramesPerConnection) {
+  public void setMaxHttp2EmptyDataFramesPerConnection(Integer  maxHttp2EmptyDataFramesPerConnection) {
     this.maxHttp2EmptyDataFramesPerConnection = maxHttp2EmptyDataFramesPerConnection;
   }
 
-  
   /**
-   * The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited frames can be queued on a client side HTTP/2 connection'. Field deprecated in 20.1.1. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * The max number of frames that can be queued waiting to be sent over a client side http/2 connection at any given time.
+   * '0' means unlimited.
+   * Allowed values are 0-10000.
+   * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
    * @return maxHttp2QueuedFramesToClientPerConnection
-  **/
-  @ApiModelProperty(value = "The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited frames can be queued on a client side HTTP/2 connection'. Field deprecated in 20.1.1. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxHttp2QueuedFramesToClientPerConnection() {
     return maxHttp2QueuedFramesToClientPerConnection;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max number of frames that can be queued waiting to be sent over a client side http/2 connection at any given time.
+   * '0' means unlimited.
+   * Allowed values are 0-10000.
+   * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.6.
+   * @param maxHttp2QueuedFramesToClientPerConnection set the maxHttp2QueuedFramesToClientPerConnection.
+   */
   @VsoMethod
-  public void setMaxHttp2QueuedFramesToClientPerConnection(Integer maxHttp2QueuedFramesToClientPerConnection) {
+  public void setMaxHttp2QueuedFramesToClientPerConnection(Integer  maxHttp2QueuedFramesToClientPerConnection) {
     this.maxHttp2QueuedFramesToClientPerConnection = maxHttp2QueuedFramesToClientPerConnection;
   }
 
-  
   /**
-   * The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- 'Unlimited requests on a connection'. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * The max number of http requests that can be sent over a keep-alive connection.
+   * '0' means unlimited.
+   * Allowed values are 0-1000000.
+   * Special values are 0- 'unlimited requests on a connection'.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return maxKeepaliveRequests
-  **/
-  @ApiModelProperty(value = "The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- 'Unlimited requests on a connection'. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxKeepaliveRequests() {
     return maxKeepaliveRequests;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max number of http requests that can be sent over a keep-alive connection.
+   * '0' means unlimited.
+   * Allowed values are 0-1000000.
+   * Special values are 0- 'unlimited requests on a connection'.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param maxKeepaliveRequests set the maxKeepaliveRequests.
+   */
   @VsoMethod
-  public void setMaxKeepaliveRequests(Integer maxKeepaliveRequests) {
+  public void setMaxKeepaliveRequests(Integer  maxKeepaliveRequests) {
     this.maxKeepaliveRequests = maxKeepaliveRequests;
   }
 
-  
   /**
-   * Maximum size in Kbytes of all the HTTP response headers. Allowed values are 1-256.
+   * This is the getter method this will return the attribute value.
+   * Maximum size in kbytes of all the http response headers.
+   * Allowed values are 1-256.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @return maxResponseHeadersSize
-  **/
-  @ApiModelProperty(value = "Maximum size in Kbytes of all the HTTP response headers. Allowed values are 1-256.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxResponseHeadersSize() {
     return maxResponseHeadersSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size in kbytes of all the http response headers.
+   * Allowed values are 1-256.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 48.
+   * @param maxResponseHeadersSize set the maxResponseHeadersSize.
+   */
   @VsoMethod
-  public void setMaxResponseHeadersSize(Integer maxResponseHeadersSize) {
+  public void setMaxResponseHeadersSize(Integer  maxResponseHeadersSize) {
     this.maxResponseHeadersSize = maxResponseHeadersSize;
   }
 
-  
   /**
-   * Maximum requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum requests per second per client ip.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxRpsCip
-  **/
-  @ApiModelProperty(value = "Maximum requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxRpsCip() {
     return maxRpsCip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum requests per second per client ip.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxRpsCip set the maxRpsCip.
+   */
   @VsoMethod
-  public void setMaxRpsCip(Integer maxRpsCip) {
+  public void setMaxRpsCip(Integer  maxRpsCip) {
     this.maxRpsCip = maxRpsCip;
   }
 
-  
   /**
-   * Maximum requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum requests per second per client ip and uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxRpsCipUri
-  **/
-  @ApiModelProperty(value = "Maximum requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxRpsCipUri() {
     return maxRpsCipUri;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum requests per second per client ip and uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxRpsCipUri set the maxRpsCipUri.
+   */
   @VsoMethod
-  public void setMaxRpsCipUri(Integer maxRpsCipUri) {
+  public void setMaxRpsCipUri(Integer  maxRpsCipUri) {
     this.maxRpsCipUri = maxRpsCipUri;
   }
 
-  
   /**
-   * Maximum unknown client IPs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum unknown client ips per second.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxRpsUnknownCip
-  **/
-  @ApiModelProperty(value = "Maximum unknown client IPs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxRpsUnknownCip() {
     return maxRpsUnknownCip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum unknown client ips per second.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxRpsUnknownCip set the maxRpsUnknownCip.
+   */
   @VsoMethod
-  public void setMaxRpsUnknownCip(Integer maxRpsUnknownCip) {
+  public void setMaxRpsUnknownCip(Integer  maxRpsUnknownCip) {
     this.maxRpsUnknownCip = maxRpsUnknownCip;
   }
 
-  
   /**
-   * Maximum unknown URIs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum unknown uris per second.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxRpsUnknownUri
-  **/
-  @ApiModelProperty(value = "Maximum unknown URIs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxRpsUnknownUri() {
     return maxRpsUnknownUri;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum unknown uris per second.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxRpsUnknownUri set the maxRpsUnknownUri.
+   */
   @VsoMethod
-  public void setMaxRpsUnknownUri(Integer maxRpsUnknownUri) {
+  public void setMaxRpsUnknownUri(Integer  maxRpsUnknownUri) {
     this.maxRpsUnknownUri = maxRpsUnknownUri;
   }
 
-  
   /**
-   * Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum requests per second per uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxRpsUri
-  **/
-  @ApiModelProperty(value = "Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxRpsUri() {
     return maxRpsUri;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum requests per second per uri.
+   * Allowed values are 10-1000.
+   * Special values are 0- 'unlimited'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxRpsUri set the maxRpsUri.
+   */
   @VsoMethod
-  public void setMaxRpsUri(Integer maxRpsUri) {
+  public void setMaxRpsUri(Integer  maxRpsUri) {
     this.maxRpsUri = maxRpsUri;
   }
 
-  
   /**
-   * Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile.
+   * This is the getter method this will return the attribute value.
+   * Select the pki profile to be associated with the virtual service.
+   * This profile defines the certificate authority and revocation list.
+   * It is a reference to an object of type pkiprofile.
    * @return pkiProfileRef
-  **/
-  @ApiModelProperty(value = "Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPkiProfileRef() {
     return pkiProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Select the pki profile to be associated with the virtual service.
+   * This profile defines the certificate authority and revocation list.
+   * It is a reference to an object of type pkiprofile.
+   * @param pkiProfileRef set the pkiProfileRef.
+   */
   @VsoMethod
-  public void setPkiProfileRef(String pkiProfileRef) {
+  public void setPkiProfileRef(String  pkiProfileRef) {
     this.pkiProfileRef = pkiProfileRef;
   }
 
-  
   /**
-   * The max allowed length of time between a client establishing a TCP connection until Avi receives the first byte of the client's HTTP request. Allowed values are 10-100000000.
+   * This is the getter method this will return the attribute value.
+   * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
+   * Allowed values are 10-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return postAcceptTimeout
-  **/
-  @ApiModelProperty(value = "The max allowed length of time between a client establishing a TCP connection until Avi receives the first byte of the client's HTTP request. Allowed values are 10-100000000.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPostAcceptTimeout() {
     return postAcceptTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
+   * Allowed values are 10-100000000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
+   * @param postAcceptTimeout set the postAcceptTimeout.
+   */
   @VsoMethod
-  public void setPostAcceptTimeout(Integer postAcceptTimeout) {
+  public void setPostAcceptTimeout(Integer  postAcceptTimeout) {
     this.postAcceptTimeout = postAcceptTimeout;
   }
 
-  
   /**
-   * If enabled, an HTTP request on an SSL port will result in connection close instead of a 400 response. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * If enabled, an http request on an ssl port will result in connection close instead of a 400 response.
+   * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resetConnHttpOnSslPort
-  **/
-  @ApiModelProperty(value = "If enabled, an HTTP request on an SSL port will result in connection close instead of a 400 response. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
-  public Boolean isResetConnHttpOnSslPort() {
+   */
+  @VsoMethod
+  public Boolean getResetConnHttpOnSslPort() {
     return resetConnHttpOnSslPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled, an http request on an ssl port will result in connection close instead of a 400 response.
+   * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param resetConnHttpOnSslPort set the resetConnHttpOnSslPort.
+   */
   @VsoMethod
-  public void setResetConnHttpOnSslPort(Boolean resetConnHttpOnSslPort) {
+  public void setResetConnHttpOnSslPort(Boolean  resetConnHttpOnSslPort) {
     this.resetConnHttpOnSslPort = resetConnHttpOnSslPort;
   }
 
-  
   /**
-   * Avi will respond with 100-Continue response if Expect  100-Continue header received from client. Field introduced in 17.2.8.
+   * This is the getter method this will return the attribute value.
+   * Avi will respond with 100-continue response if expect  100-continue header received from client.
+   * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return respondWith100Continue
-  **/
-  @ApiModelProperty(value = "Avi will respond with 100-Continue response if Expect  100-Continue header received from client. Field introduced in 17.2.8.")
-
-
- 
-  @VsoMethod  
-  public Boolean isRespondWith100Continue() {
+   */
+  @VsoMethod
+  public Boolean getRespondWith100Continue() {
     return respondWith100Continue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Avi will respond with 100-continue response if expect  100-continue header received from client.
+   * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param respondWith100Continue set the respondWith100Continue.
+   */
   @VsoMethod
-  public void setRespondWith100Continue(Boolean respondWith100Continue) {
+  public void setRespondWith100Continue(Boolean  respondWith100Continue) {
     this.respondWith100Continue = respondWith100Continue;
   }
 
-  
   /**
-   * Mark server cookies with the 'Secure' attribute.  Client browsers will not send a cookie marked as secure over an unencrypted connection.  If Avi is terminating SSL from clients and passing it as HTTP to the server, the server may return cookies without the secure flag set.
+   * This is the getter method this will return the attribute value.
+   * Mark server cookies with the 'secure' attribute.
+   * Client browsers will not send a cookie marked as secure over an unencrypted connection.
+   * If avi is terminating ssl from clients and passing it as http to the server, the server may return cookies without the secure flag set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return secureCookieEnabled
-  **/
-  @ApiModelProperty(value = "Mark server cookies with the 'Secure' attribute.  Client browsers will not send a cookie marked as secure over an unencrypted connection.  If Avi is terminating SSL from clients and passing it as HTTP to the server, the server may return cookies without the secure flag set.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSecureCookieEnabled() {
+   */
+  @VsoMethod
+  public Boolean getSecureCookieEnabled() {
     return secureCookieEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Mark server cookies with the 'secure' attribute.
+   * Client browsers will not send a cookie marked as secure over an unencrypted connection.
+   * If avi is terminating ssl from clients and passing it as http to the server, the server may return cookies without the secure flag set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param secureCookieEnabled set the secureCookieEnabled.
+   */
   @VsoMethod
-  public void setSecureCookieEnabled(Boolean secureCookieEnabled) {
+  public void setSecureCookieEnabled(Boolean  secureCookieEnabled) {
     this.secureCookieEnabled = secureCookieEnabled;
   }
 
-  
   /**
-   * When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server's redirect responses for this virtual service from HTTP to HTTPS.
+   * This is the getter method this will return the attribute value.
+   * When terminating client ssl sessions at avi, servers may incorrectly send redirect to clients as http.
+   * This option will rewrite the server's redirect responses for this virtual service from http to https.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return serverSideRedirectToHttps
-  **/
-  @ApiModelProperty(value = "When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server's redirect responses for this virtual service from HTTP to HTTPS.")
-
-
- 
-  @VsoMethod  
-  public Boolean isServerSideRedirectToHttps() {
+   */
+  @VsoMethod
+  public Boolean getServerSideRedirectToHttps() {
     return serverSideRedirectToHttps;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * When terminating client ssl sessions at avi, servers may incorrectly send redirect to clients as http.
+   * This option will rewrite the server's redirect responses for this virtual service from http to https.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param serverSideRedirectToHttps set the serverSideRedirectToHttps.
+   */
   @VsoMethod
-  public void setServerSideRedirectToHttps(Boolean serverSideRedirectToHttps) {
+  public void setServerSideRedirectToHttps(Boolean  serverSideRedirectToHttps) {
     this.serverSideRedirectToHttps = serverSideRedirectToHttps;
   }
 
-  
   /**
-   * This field is deprecated. Field deprecated in 18.2.8.
+   * This is the getter method this will return the attribute value.
+   * This field is deprecated.
+   * Field deprecated in 18.2.8.
    * @return spdyEnabled
-  **/
-  @ApiModelProperty(value = "This field is deprecated. Field deprecated in 18.2.8.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSpdyEnabled() {
+   */
+  @VsoMethod
+  public Boolean getSpdyEnabled() {
     return spdyEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This field is deprecated.
+   * Field deprecated in 18.2.8.
+   * @param spdyEnabled set the spdyEnabled.
+   */
   @VsoMethod
-  public void setSpdyEnabled(Boolean spdyEnabled) {
+  public void setSpdyEnabled(Boolean  spdyEnabled) {
     this.spdyEnabled = spdyEnabled;
   }
 
-  
   /**
-   * This field is deprecated. Field deprecated in 18.2.8.
+   * This is the getter method this will return the attribute value.
+   * This field is deprecated.
+   * Field deprecated in 18.2.8.
    * @return spdyFwdProxyMode
-  **/
-  @ApiModelProperty(value = "This field is deprecated. Field deprecated in 18.2.8.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSpdyFwdProxyMode() {
+   */
+  @VsoMethod
+  public Boolean getSpdyFwdProxyMode() {
     return spdyFwdProxyMode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This field is deprecated.
+   * Field deprecated in 18.2.8.
+   * @param spdyFwdProxyMode set the spdyFwdProxyMode.
+   */
   @VsoMethod
-  public void setSpdyFwdProxyMode(Boolean spdyFwdProxyMode) {
+  public void setSpdyFwdProxyMode(Boolean  spdyFwdProxyMode) {
     this.spdyFwdProxyMode = spdyFwdProxyMode;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Set of match/action rules that govern what happens when the client certificate request is enabled.
    * @return sslClientCertificateAction
-  **/
-  @ApiModelProperty(value = "Set of match/action rules that govern what happens when the client certificate request is enabled.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SSLClientCertificateAction getSslClientCertificateAction() {
     return sslClientCertificateAction;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Set of match/action rules that govern what happens when the client certificate request is enabled.
+   * @param sslClientCertificateAction set the sslClientCertificateAction.
+   */
   @VsoMethod
   public void setSslClientCertificateAction(SSLClientCertificateAction sslClientCertificateAction) {
     this.sslClientCertificateAction = sslClientCertificateAction;
   }
 
-  
   /**
-   * Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
+   * This is the getter method this will return the attribute value.
+   * Specifies whether the client side verification is set to none, request or require.
+   * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CLIENT_CERTIFICATE_NONE.
    * @return sslClientCertificateMode
-  **/
-  @ApiModelProperty(value = "Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSslClientCertificateMode() {
     return sslClientCertificateMode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies whether the client side verification is set to none, request or require.
+   * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CLIENT_CERTIFICATE_NONE.
+   * @param sslClientCertificateMode set the sslClientCertificateMode.
+   */
   @VsoMethod
-  public void setSslClientCertificateMode(String sslClientCertificateMode) {
+  public void setSslClientCertificateMode(String  sslClientCertificateMode) {
     this.sslClientCertificateMode = sslClientCertificateMode;
   }
 
-  
   /**
-   * Enable common settings to increase the level of security for  virtual services running HTTP and HTTPS. For sites that are  HTTP only, these settings will have no effect. Field deprecated in 18.2.7.
+   * This is the getter method this will return the attribute value.
+   * Enable common settings to increase the level of security for  virtual services running http and https.
+   * For sites that are  http only, these settings will have no effect.
+   * Field deprecated in 18.2.7.
    * @return sslEverywhereEnabled
-  **/
-  @ApiModelProperty(value = "Enable common settings to increase the level of security for  virtual services running HTTP and HTTPS. For sites that are  HTTP only, these settings will have no effect. Field deprecated in 18.2.7.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSslEverywhereEnabled() {
+   */
+  @VsoMethod
+  public Boolean getSslEverywhereEnabled() {
     return sslEverywhereEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable common settings to increase the level of security for  virtual services running http and https.
+   * For sites that are  http only, these settings will have no effect.
+   * Field deprecated in 18.2.7.
+   * @param sslEverywhereEnabled set the sslEverywhereEnabled.
+   */
   @VsoMethod
-  public void setSslEverywhereEnabled(Boolean sslEverywhereEnabled) {
+  public void setSslEverywhereEnabled(Boolean  sslEverywhereEnabled) {
     this.sslEverywhereEnabled = sslEverywhereEnabled;
   }
 
-  
   /**
-   * Use 'Keep-Alive' header timeout sent by application instead of sending the HTTP Keep-Alive Timeout.
+   * This is the getter method this will return the attribute value.
+   * Use 'keep-alive' header timeout sent by application instead of sending the http keep-alive timeout.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useAppKeepaliveTimeout
-  **/
-  @ApiModelProperty(value = "Use 'Keep-Alive' header timeout sent by application instead of sending the HTTP Keep-Alive Timeout.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseAppKeepaliveTimeout() {
+   */
+  @VsoMethod
+  public Boolean getUseAppKeepaliveTimeout() {
     return useAppKeepaliveTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use 'keep-alive' header timeout sent by application instead of sending the http keep-alive timeout.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useAppKeepaliveTimeout set the useAppKeepaliveTimeout.
+   */
   @VsoMethod
-  public void setUseAppKeepaliveTimeout(Boolean useAppKeepaliveTimeout) {
+  public void setUseAppKeepaliveTimeout(Boolean  useAppKeepaliveTimeout) {
     this.useAppKeepaliveTimeout = useAppKeepaliveTimeout;
   }
 
-  
   /**
-   * Enable Websockets proxy for traffic from clients to the virtual service. Connections to this VS start in HTTP mode. If the client requests an Upgrade to Websockets, and the server responds back with success, then the connection is upgraded to WebSockets mode. .
+   * This is the getter method this will return the attribute value.
+   * Enable websockets proxy for traffic from clients to the virtual service.
+   * Connections to this vs start in http mode.
+   * If the client requests an upgrade to websockets, and the server responds back with success, then the connection is upgraded to websockets mode.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return websocketsEnabled
-  **/
-  @ApiModelProperty(value = "Enable Websockets proxy for traffic from clients to the virtual service. Connections to this VS start in HTTP mode. If the client requests an Upgrade to Websockets, and the server responds back with success, then the connection is upgraded to WebSockets mode. .")
-
-
- 
-  @VsoMethod  
-  public Boolean isWebsocketsEnabled() {
+   */
+  @VsoMethod
+  public Boolean getWebsocketsEnabled() {
     return websocketsEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable websockets proxy for traffic from clients to the virtual service.
+   * Connections to this vs start in http mode.
+   * If the client requests an upgrade to websockets, and the server responds back with success, then the connection is upgraded to websockets mode.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param websocketsEnabled set the websocketsEnabled.
+   */
   @VsoMethod
-  public void setWebsocketsEnabled(Boolean websocketsEnabled) {
+  public void setWebsocketsEnabled(Boolean  websocketsEnabled) {
     this.websocketsEnabled = websocketsEnabled;
   }
 
-  
   /**
-   * Insert an X-Forwarded-Proto header in the request sent to the server.  When the client connects via SSL, Avi terminates the SSL, and then forwards the requests to the servers via HTTP, so the servers can determine the original protocol via this header.  In this example, the value will be 'https'.
+   * This is the getter method this will return the attribute value.
+   * Insert an x-forwarded-proto header in the request sent to the server.
+   * When the client connects via ssl, avi terminates the ssl, and then forwards the requests to the servers via http, so the servers can determine
+   * the original protocol via this header.
+   * In this example, the value will be 'https'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return xForwardedProtoEnabled
-  **/
-  @ApiModelProperty(value = "Insert an X-Forwarded-Proto header in the request sent to the server.  When the client connects via SSL, Avi terminates the SSL, and then forwards the requests to the servers via HTTP, so the servers can determine the original protocol via this header.  In this example, the value will be 'https'.")
-
-
- 
-  @VsoMethod  
-  public Boolean isXForwardedProtoEnabled() {
+   */
+  @VsoMethod
+  public Boolean getXForwardedProtoEnabled() {
     return xForwardedProtoEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Insert an x-forwarded-proto header in the request sent to the server.
+   * When the client connects via ssl, avi terminates the ssl, and then forwards the requests to the servers via http, so the servers can determine
+   * the original protocol via this header.
+   * In this example, the value will be 'https'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param xForwardedProtoEnabled set the xForwardedProtoEnabled.
+   */
   @VsoMethod
-  public void setXForwardedProtoEnabled(Boolean xForwardedProtoEnabled) {
+  public void setXForwardedProtoEnabled(Boolean  xForwardedProtoEnabled) {
     this.xForwardedProtoEnabled = xForwardedProtoEnabled;
   }
 
-  
   /**
-   * Provide a custom name for the X-Forwarded-For header sent to the servers.
+   * This is the getter method this will return the attribute value.
+   * Provide a custom name for the x-forwarded-for header sent to the servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as x-forwarded-for.
    * @return xffAlternateName
-  **/
-  @ApiModelProperty(value = "Provide a custom name for the X-Forwarded-For header sent to the servers.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getXffAlternateName() {
     return xffAlternateName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provide a custom name for the x-forwarded-for header sent to the servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as x-forwarded-for.
+   * @param xffAlternateName set the xffAlternateName.
+   */
   @VsoMethod
-  public void setXffAlternateName(String xffAlternateName) {
+  public void setXffAlternateName(String  xffAlternateName) {
     this.xffAlternateName = xffAlternateName;
   }
 
-  
   /**
-   * The client's original IP address is inserted into an HTTP request header sent to the server.  Servers may use this address for logging or other purposes, rather than Avi's source NAT address used in the Avi to server IP connection.
+   * This is the getter method this will return the attribute value.
+   * The client's original ip address is inserted into an http request header sent to the server.
+   * Servers may use this address for logging or other purposes, rather than avi's source nat address used in the avi to server ip connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return xffEnabled
-  **/
-  @ApiModelProperty(value = "The client's original IP address is inserted into an HTTP request header sent to the server.  Servers may use this address for logging or other purposes, rather than Avi's source NAT address used in the Avi to server IP connection.")
-
-
- 
-  @VsoMethod  
-  public Boolean isXffEnabled() {
+   */
+  @VsoMethod
+  public Boolean getXffEnabled() {
     return xffEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The client's original ip address is inserted into an http request header sent to the server.
+   * Servers may use this address for logging or other purposes, rather than avi's source nat address used in the avi to server ip connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param xffEnabled set the xffEnabled.
+   */
   @VsoMethod
-  public void setXffEnabled(Boolean xffEnabled) {
+  public void setXffEnabled(Boolean  xffEnabled) {
     this.xffEnabled = xffEnabled;
   }
 
-  
-  public String getObjectID() {
-		return "HTTPApplicationProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HTTPApplicationProfile htTPApplicationProfile = (HTTPApplicationProfile) o;
-    return Objects.equals(this.allowDotsInHeaderName, htTPApplicationProfile.allowDotsInHeaderName) &&
-        Objects.equals(this.cacheConfig, htTPApplicationProfile.cacheConfig) &&
-        Objects.equals(this.clientBodyTimeout, htTPApplicationProfile.clientBodyTimeout) &&
-        Objects.equals(this.clientHeaderTimeout, htTPApplicationProfile.clientHeaderTimeout) &&
-        Objects.equals(this.clientMaxBodySize, htTPApplicationProfile.clientMaxBodySize) &&
-        Objects.equals(this.clientMaxHeaderSize, htTPApplicationProfile.clientMaxHeaderSize) &&
-        Objects.equals(this.clientMaxRequestSize, htTPApplicationProfile.clientMaxRequestSize) &&
-        Objects.equals(this.compressionProfile, htTPApplicationProfile.compressionProfile) &&
-        Objects.equals(this.connectionMultiplexingEnabled, htTPApplicationProfile.connectionMultiplexingEnabled) &&
-        Objects.equals(this.disableKeepalivePostsMsie6, htTPApplicationProfile.disableKeepalivePostsMsie6) &&
-        Objects.equals(this.disableSniHostnameCheck, htTPApplicationProfile.disableSniHostnameCheck) &&
-        Objects.equals(this.enableChunkMerge, htTPApplicationProfile.enableChunkMerge) &&
-        Objects.equals(this.enableFireAndForget, htTPApplicationProfile.enableFireAndForget) &&
-        Objects.equals(this.enableRequestBodyBuffering, htTPApplicationProfile.enableRequestBodyBuffering) &&
-        Objects.equals(this.enableRequestBodyMetrics, htTPApplicationProfile.enableRequestBodyMetrics) &&
-        Objects.equals(this.fwdCloseHdrForBoundConnections, htTPApplicationProfile.fwdCloseHdrForBoundConnections) &&
-        Objects.equals(this.hstsEnabled, htTPApplicationProfile.hstsEnabled) &&
-        Objects.equals(this.hstsMaxAge, htTPApplicationProfile.hstsMaxAge) &&
-        Objects.equals(this.hstsSubdomainsEnabled, htTPApplicationProfile.hstsSubdomainsEnabled) &&
-        Objects.equals(this.http2Enabled, htTPApplicationProfile.http2Enabled) &&
-        Objects.equals(this.http2Profile, htTPApplicationProfile.http2Profile) &&
-        Objects.equals(this.httpToHttps, htTPApplicationProfile.httpToHttps) &&
-        Objects.equals(this.httpUpstreamBufferSize, htTPApplicationProfile.httpUpstreamBufferSize) &&
-        Objects.equals(this.httponlyEnabled, htTPApplicationProfile.httponlyEnabled) &&
-        Objects.equals(this.keepaliveHeader, htTPApplicationProfile.keepaliveHeader) &&
-        Objects.equals(this.keepaliveTimeout, htTPApplicationProfile.keepaliveTimeout) &&
-        Objects.equals(this.maxBadRpsCip, htTPApplicationProfile.maxBadRpsCip) &&
-        Objects.equals(this.maxBadRpsCipUri, htTPApplicationProfile.maxBadRpsCipUri) &&
-        Objects.equals(this.maxBadRpsUri, htTPApplicationProfile.maxBadRpsUri) &&
-        Objects.equals(this.maxHttp2ConcurrentStreamsPerConnection, htTPApplicationProfile.maxHttp2ConcurrentStreamsPerConnection) &&
-        Objects.equals(this.maxHttp2ControlFramesPerConnection, htTPApplicationProfile.maxHttp2ControlFramesPerConnection) &&
-        Objects.equals(this.maxHttp2EmptyDataFramesPerConnection, htTPApplicationProfile.maxHttp2EmptyDataFramesPerConnection) &&
-        Objects.equals(this.maxHttp2QueuedFramesToClientPerConnection, htTPApplicationProfile.maxHttp2QueuedFramesToClientPerConnection) &&
-        Objects.equals(this.maxKeepaliveRequests, htTPApplicationProfile.maxKeepaliveRequests) &&
-        Objects.equals(this.maxResponseHeadersSize, htTPApplicationProfile.maxResponseHeadersSize) &&
-        Objects.equals(this.maxRpsCip, htTPApplicationProfile.maxRpsCip) &&
-        Objects.equals(this.maxRpsCipUri, htTPApplicationProfile.maxRpsCipUri) &&
-        Objects.equals(this.maxRpsUnknownCip, htTPApplicationProfile.maxRpsUnknownCip) &&
-        Objects.equals(this.maxRpsUnknownUri, htTPApplicationProfile.maxRpsUnknownUri) &&
-        Objects.equals(this.maxRpsUri, htTPApplicationProfile.maxRpsUri) &&
-        Objects.equals(this.pkiProfileRef, htTPApplicationProfile.pkiProfileRef) &&
-        Objects.equals(this.postAcceptTimeout, htTPApplicationProfile.postAcceptTimeout) &&
-        Objects.equals(this.resetConnHttpOnSslPort, htTPApplicationProfile.resetConnHttpOnSslPort) &&
-        Objects.equals(this.respondWith100Continue, htTPApplicationProfile.respondWith100Continue) &&
-        Objects.equals(this.secureCookieEnabled, htTPApplicationProfile.secureCookieEnabled) &&
-        Objects.equals(this.serverSideRedirectToHttps, htTPApplicationProfile.serverSideRedirectToHttps) &&
-        Objects.equals(this.spdyEnabled, htTPApplicationProfile.spdyEnabled) &&
-        Objects.equals(this.spdyFwdProxyMode, htTPApplicationProfile.spdyFwdProxyMode) &&
-        Objects.equals(this.sslClientCertificateAction, htTPApplicationProfile.sslClientCertificateAction) &&
-        Objects.equals(this.sslClientCertificateMode, htTPApplicationProfile.sslClientCertificateMode) &&
-        Objects.equals(this.sslEverywhereEnabled, htTPApplicationProfile.sslEverywhereEnabled) &&
-        Objects.equals(this.useAppKeepaliveTimeout, htTPApplicationProfile.useAppKeepaliveTimeout) &&
-        Objects.equals(this.websocketsEnabled, htTPApplicationProfile.websocketsEnabled) &&
-        Objects.equals(this.xForwardedProtoEnabled, htTPApplicationProfile.xForwardedProtoEnabled) &&
-        Objects.equals(this.xffAlternateName, htTPApplicationProfile.xffAlternateName) &&
-        Objects.equals(this.xffEnabled, htTPApplicationProfile.xffEnabled);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(allowDotsInHeaderName, cacheConfig, clientBodyTimeout, clientHeaderTimeout, clientMaxBodySize, clientMaxHeaderSize, clientMaxRequestSize, compressionProfile, connectionMultiplexingEnabled, disableKeepalivePostsMsie6, disableSniHostnameCheck, enableChunkMerge, enableFireAndForget, enableRequestBodyBuffering, enableRequestBodyMetrics, fwdCloseHdrForBoundConnections, hstsEnabled, hstsMaxAge, hstsSubdomainsEnabled, http2Enabled, http2Profile, httpToHttps, httpUpstreamBufferSize, httponlyEnabled, keepaliveHeader, keepaliveTimeout, maxBadRpsCip, maxBadRpsCipUri, maxBadRpsUri, maxHttp2ConcurrentStreamsPerConnection, maxHttp2ControlFramesPerConnection, maxHttp2EmptyDataFramesPerConnection, maxHttp2QueuedFramesToClientPerConnection, maxKeepaliveRequests, maxResponseHeadersSize, maxRpsCip, maxRpsCipUri, maxRpsUnknownCip, maxRpsUnknownUri, maxRpsUri, pkiProfileRef, postAcceptTimeout, resetConnHttpOnSslPort, respondWith100Continue, secureCookieEnabled, serverSideRedirectToHttps, spdyEnabled, spdyFwdProxyMode, sslClientCertificateAction, sslClientCertificateMode, sslEverywhereEnabled, useAppKeepaliveTimeout, websocketsEnabled, xForwardedProtoEnabled, xffAlternateName, xffEnabled);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HTTPApplicationProfile {\n");
-    
-    sb.append("    allowDotsInHeaderName: ").append(toIndentedString(allowDotsInHeaderName)).append("\n");
-    sb.append("    cacheConfig: ").append(toIndentedString(cacheConfig)).append("\n");
-    sb.append("    clientBodyTimeout: ").append(toIndentedString(clientBodyTimeout)).append("\n");
-    sb.append("    clientHeaderTimeout: ").append(toIndentedString(clientHeaderTimeout)).append("\n");
-    sb.append("    clientMaxBodySize: ").append(toIndentedString(clientMaxBodySize)).append("\n");
-    sb.append("    clientMaxHeaderSize: ").append(toIndentedString(clientMaxHeaderSize)).append("\n");
-    sb.append("    clientMaxRequestSize: ").append(toIndentedString(clientMaxRequestSize)).append("\n");
-    sb.append("    compressionProfile: ").append(toIndentedString(compressionProfile)).append("\n");
-    sb.append("    connectionMultiplexingEnabled: ").append(toIndentedString(connectionMultiplexingEnabled)).append("\n");
-    sb.append("    disableKeepalivePostsMsie6: ").append(toIndentedString(disableKeepalivePostsMsie6)).append("\n");
-    sb.append("    disableSniHostnameCheck: ").append(toIndentedString(disableSniHostnameCheck)).append("\n");
-    sb.append("    enableChunkMerge: ").append(toIndentedString(enableChunkMerge)).append("\n");
-    sb.append("    enableFireAndForget: ").append(toIndentedString(enableFireAndForget)).append("\n");
-    sb.append("    enableRequestBodyBuffering: ").append(toIndentedString(enableRequestBodyBuffering)).append("\n");
-    sb.append("    enableRequestBodyMetrics: ").append(toIndentedString(enableRequestBodyMetrics)).append("\n");
-    sb.append("    fwdCloseHdrForBoundConnections: ").append(toIndentedString(fwdCloseHdrForBoundConnections)).append("\n");
-    sb.append("    hstsEnabled: ").append(toIndentedString(hstsEnabled)).append("\n");
-    sb.append("    hstsMaxAge: ").append(toIndentedString(hstsMaxAge)).append("\n");
-    sb.append("    hstsSubdomainsEnabled: ").append(toIndentedString(hstsSubdomainsEnabled)).append("\n");
-    sb.append("    http2Enabled: ").append(toIndentedString(http2Enabled)).append("\n");
-    sb.append("    http2Profile: ").append(toIndentedString(http2Profile)).append("\n");
-    sb.append("    httpToHttps: ").append(toIndentedString(httpToHttps)).append("\n");
-    sb.append("    httpUpstreamBufferSize: ").append(toIndentedString(httpUpstreamBufferSize)).append("\n");
-    sb.append("    httponlyEnabled: ").append(toIndentedString(httponlyEnabled)).append("\n");
-    sb.append("    keepaliveHeader: ").append(toIndentedString(keepaliveHeader)).append("\n");
-    sb.append("    keepaliveTimeout: ").append(toIndentedString(keepaliveTimeout)).append("\n");
-    sb.append("    maxBadRpsCip: ").append(toIndentedString(maxBadRpsCip)).append("\n");
-    sb.append("    maxBadRpsCipUri: ").append(toIndentedString(maxBadRpsCipUri)).append("\n");
-    sb.append("    maxBadRpsUri: ").append(toIndentedString(maxBadRpsUri)).append("\n");
-    sb.append("    maxHttp2ConcurrentStreamsPerConnection: ").append(toIndentedString(maxHttp2ConcurrentStreamsPerConnection)).append("\n");
-    sb.append("    maxHttp2ControlFramesPerConnection: ").append(toIndentedString(maxHttp2ControlFramesPerConnection)).append("\n");
-    sb.append("    maxHttp2EmptyDataFramesPerConnection: ").append(toIndentedString(maxHttp2EmptyDataFramesPerConnection)).append("\n");
-    sb.append("    maxHttp2QueuedFramesToClientPerConnection: ").append(toIndentedString(maxHttp2QueuedFramesToClientPerConnection)).append("\n");
-    sb.append("    maxKeepaliveRequests: ").append(toIndentedString(maxKeepaliveRequests)).append("\n");
-    sb.append("    maxResponseHeadersSize: ").append(toIndentedString(maxResponseHeadersSize)).append("\n");
-    sb.append("    maxRpsCip: ").append(toIndentedString(maxRpsCip)).append("\n");
-    sb.append("    maxRpsCipUri: ").append(toIndentedString(maxRpsCipUri)).append("\n");
-    sb.append("    maxRpsUnknownCip: ").append(toIndentedString(maxRpsUnknownCip)).append("\n");
-    sb.append("    maxRpsUnknownUri: ").append(toIndentedString(maxRpsUnknownUri)).append("\n");
-    sb.append("    maxRpsUri: ").append(toIndentedString(maxRpsUri)).append("\n");
-    sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
-    sb.append("    postAcceptTimeout: ").append(toIndentedString(postAcceptTimeout)).append("\n");
-    sb.append("    resetConnHttpOnSslPort: ").append(toIndentedString(resetConnHttpOnSslPort)).append("\n");
-    sb.append("    respondWith100Continue: ").append(toIndentedString(respondWith100Continue)).append("\n");
-    sb.append("    secureCookieEnabled: ").append(toIndentedString(secureCookieEnabled)).append("\n");
-    sb.append("    serverSideRedirectToHttps: ").append(toIndentedString(serverSideRedirectToHttps)).append("\n");
-    sb.append("    spdyEnabled: ").append(toIndentedString(spdyEnabled)).append("\n");
-    sb.append("    spdyFwdProxyMode: ").append(toIndentedString(spdyFwdProxyMode)).append("\n");
-    sb.append("    sslClientCertificateAction: ").append(toIndentedString(sslClientCertificateAction)).append("\n");
-    sb.append("    sslClientCertificateMode: ").append(toIndentedString(sslClientCertificateMode)).append("\n");
-    sb.append("    sslEverywhereEnabled: ").append(toIndentedString(sslEverywhereEnabled)).append("\n");
-    sb.append("    useAppKeepaliveTimeout: ").append(toIndentedString(useAppKeepaliveTimeout)).append("\n");
-    sb.append("    websocketsEnabled: ").append(toIndentedString(websocketsEnabled)).append("\n");
-    sb.append("    xForwardedProtoEnabled: ").append(toIndentedString(xForwardedProtoEnabled)).append("\n");
-    sb.append("    xffAlternateName: ").append(toIndentedString(xffAlternateName)).append("\n");
-    sb.append("    xffEnabled: ").append(toIndentedString(xffEnabled)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HTTPApplicationProfile objHTTPApplicationProfile = (HTTPApplicationProfile) o;
+  return   Objects.equals(this.maxKeepaliveRequests, objHTTPApplicationProfile.maxKeepaliveRequests)&&
+  Objects.equals(this.enableChunkMerge, objHTTPApplicationProfile.enableChunkMerge)&&
+  Objects.equals(this.maxRpsUri, objHTTPApplicationProfile.maxRpsUri)&&
+  Objects.equals(this.fwdCloseHdrForBoundConnections, objHTTPApplicationProfile.fwdCloseHdrForBoundConnections)&&
+  Objects.equals(this.keepaliveHeader, objHTTPApplicationProfile.keepaliveHeader)&&
+  Objects.equals(this.maxRpsCipUri, objHTTPApplicationProfile.maxRpsCipUri)&&
+  Objects.equals(this.xForwardedProtoEnabled, objHTTPApplicationProfile.xForwardedProtoEnabled)&&
+  Objects.equals(this.connectionMultiplexingEnabled, objHTTPApplicationProfile.connectionMultiplexingEnabled)&&
+  Objects.equals(this.websocketsEnabled, objHTTPApplicationProfile.websocketsEnabled)&&
+  Objects.equals(this.enableRequestBodyMetrics, objHTTPApplicationProfile.enableRequestBodyMetrics)&&
+  Objects.equals(this.maxHttp2EmptyDataFramesPerConnection, objHTTPApplicationProfile.maxHttp2EmptyDataFramesPerConnection)&&
+  Objects.equals(this.http2Enabled, objHTTPApplicationProfile.http2Enabled)&&
+  Objects.equals(this.enableRequestBodyBuffering, objHTTPApplicationProfile.enableRequestBodyBuffering)&&
+  Objects.equals(this.hstsEnabled, objHTTPApplicationProfile.hstsEnabled)&&
+  Objects.equals(this.compressionProfile, objHTTPApplicationProfile.compressionProfile)&&
+  Objects.equals(this.xffEnabled, objHTTPApplicationProfile.xffEnabled)&&
+  Objects.equals(this.resetConnHttpOnSslPort, objHTTPApplicationProfile.resetConnHttpOnSslPort)&&
+  Objects.equals(this.disableKeepalivePostsMsie6, objHTTPApplicationProfile.disableKeepalivePostsMsie6)&&
+  Objects.equals(this.keepaliveTimeout, objHTTPApplicationProfile.keepaliveTimeout)&&
+  Objects.equals(this.sslClientCertificateMode, objHTTPApplicationProfile.sslClientCertificateMode)&&
+  Objects.equals(this.httpToHttps, objHTTPApplicationProfile.httpToHttps)&&
+  Objects.equals(this.disableSniHostnameCheck, objHTTPApplicationProfile.disableSniHostnameCheck)&&
+  Objects.equals(this.spdyEnabled, objHTTPApplicationProfile.spdyEnabled)&&
+  Objects.equals(this.respondWith100Continue, objHTTPApplicationProfile.respondWith100Continue)&&
+  Objects.equals(this.clientBodyTimeout, objHTTPApplicationProfile.clientBodyTimeout)&&
+  Objects.equals(this.pkiProfileRef, objHTTPApplicationProfile.pkiProfileRef)&&
+  Objects.equals(this.httponlyEnabled, objHTTPApplicationProfile.httponlyEnabled)&&
+  Objects.equals(this.hstsMaxAge, objHTTPApplicationProfile.hstsMaxAge)&&
+  Objects.equals(this.sslClientCertificateAction, objHTTPApplicationProfile.sslClientCertificateAction)&&
+  Objects.equals(this.serverSideRedirectToHttps, objHTTPApplicationProfile.serverSideRedirectToHttps)&&
+  Objects.equals(this.clientMaxHeaderSize, objHTTPApplicationProfile.clientMaxHeaderSize)&&
+  Objects.equals(this.clientMaxRequestSize, objHTTPApplicationProfile.clientMaxRequestSize)&&
+  Objects.equals(this.maxHttp2ControlFramesPerConnection, objHTTPApplicationProfile.maxHttp2ControlFramesPerConnection)&&
+  Objects.equals(this.maxHttp2ConcurrentStreamsPerConnection, objHTTPApplicationProfile.maxHttp2ConcurrentStreamsPerConnection)&&
+  Objects.equals(this.cacheConfig, objHTTPApplicationProfile.cacheConfig)&&
+  Objects.equals(this.maxRpsUnknownUri, objHTTPApplicationProfile.maxRpsUnknownUri)&&
+  Objects.equals(this.sslEverywhereEnabled, objHTTPApplicationProfile.sslEverywhereEnabled)&&
+  Objects.equals(this.spdyFwdProxyMode, objHTTPApplicationProfile.spdyFwdProxyMode)&&
+  Objects.equals(this.httpUpstreamBufferSize, objHTTPApplicationProfile.httpUpstreamBufferSize)&&
+  Objects.equals(this.maxHttp2QueuedFramesToClientPerConnection, objHTTPApplicationProfile.maxHttp2QueuedFramesToClientPerConnection)&&
+  Objects.equals(this.maxBadRpsCip, objHTTPApplicationProfile.maxBadRpsCip)&&
+  Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile)&&
+  Objects.equals(this.allowDotsInHeaderName, objHTTPApplicationProfile.allowDotsInHeaderName)&&
+  Objects.equals(this.clientHeaderTimeout, objHTTPApplicationProfile.clientHeaderTimeout)&&
+  Objects.equals(this.postAcceptTimeout, objHTTPApplicationProfile.postAcceptTimeout)&&
+  Objects.equals(this.secureCookieEnabled, objHTTPApplicationProfile.secureCookieEnabled)&&
+  Objects.equals(this.maxResponseHeadersSize, objHTTPApplicationProfile.maxResponseHeadersSize)&&
+  Objects.equals(this.xffAlternateName, objHTTPApplicationProfile.xffAlternateName)&&
+  Objects.equals(this.maxRpsCip, objHTTPApplicationProfile.maxRpsCip)&&
+  Objects.equals(this.clientMaxBodySize, objHTTPApplicationProfile.clientMaxBodySize)&&
+  Objects.equals(this.enableFireAndForget, objHTTPApplicationProfile.enableFireAndForget)&&
+  Objects.equals(this.maxRpsUnknownCip, objHTTPApplicationProfile.maxRpsUnknownCip)&&
+  Objects.equals(this.hstsSubdomainsEnabled, objHTTPApplicationProfile.hstsSubdomainsEnabled)&&
+  Objects.equals(this.maxBadRpsCipUri, objHTTPApplicationProfile.maxBadRpsCipUri)&&
+  Objects.equals(this.maxBadRpsUri, objHTTPApplicationProfile.maxBadRpsUri)&&
+  Objects.equals(this.useAppKeepaliveTimeout, objHTTPApplicationProfile.useAppKeepaliveTimeout);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HTTPApplicationProfile {\n");
+      sb.append("    allowDotsInHeaderName: ").append(toIndentedString(allowDotsInHeaderName)).append("\n");
+        sb.append("    cacheConfig: ").append(toIndentedString(cacheConfig)).append("\n");
+        sb.append("    clientBodyTimeout: ").append(toIndentedString(clientBodyTimeout)).append("\n");
+        sb.append("    clientHeaderTimeout: ").append(toIndentedString(clientHeaderTimeout)).append("\n");
+        sb.append("    clientMaxBodySize: ").append(toIndentedString(clientMaxBodySize)).append("\n");
+        sb.append("    clientMaxHeaderSize: ").append(toIndentedString(clientMaxHeaderSize)).append("\n");
+        sb.append("    clientMaxRequestSize: ").append(toIndentedString(clientMaxRequestSize)).append("\n");
+        sb.append("    compressionProfile: ").append(toIndentedString(compressionProfile)).append("\n");
+        sb.append("    connectionMultiplexingEnabled: ").append(toIndentedString(connectionMultiplexingEnabled)).append("\n");
+        sb.append("    disableKeepalivePostsMsie6: ").append(toIndentedString(disableKeepalivePostsMsie6)).append("\n");
+        sb.append("    disableSniHostnameCheck: ").append(toIndentedString(disableSniHostnameCheck)).append("\n");
+        sb.append("    enableChunkMerge: ").append(toIndentedString(enableChunkMerge)).append("\n");
+        sb.append("    enableFireAndForget: ").append(toIndentedString(enableFireAndForget)).append("\n");
+        sb.append("    enableRequestBodyBuffering: ").append(toIndentedString(enableRequestBodyBuffering)).append("\n");
+        sb.append("    enableRequestBodyMetrics: ").append(toIndentedString(enableRequestBodyMetrics)).append("\n");
+        sb.append("    fwdCloseHdrForBoundConnections: ").append(toIndentedString(fwdCloseHdrForBoundConnections)).append("\n");
+        sb.append("    hstsEnabled: ").append(toIndentedString(hstsEnabled)).append("\n");
+        sb.append("    hstsMaxAge: ").append(toIndentedString(hstsMaxAge)).append("\n");
+        sb.append("    hstsSubdomainsEnabled: ").append(toIndentedString(hstsSubdomainsEnabled)).append("\n");
+        sb.append("    http2Enabled: ").append(toIndentedString(http2Enabled)).append("\n");
+        sb.append("    http2Profile: ").append(toIndentedString(http2Profile)).append("\n");
+        sb.append("    httpToHttps: ").append(toIndentedString(httpToHttps)).append("\n");
+        sb.append("    httpUpstreamBufferSize: ").append(toIndentedString(httpUpstreamBufferSize)).append("\n");
+        sb.append("    httponlyEnabled: ").append(toIndentedString(httponlyEnabled)).append("\n");
+        sb.append("    keepaliveHeader: ").append(toIndentedString(keepaliveHeader)).append("\n");
+        sb.append("    keepaliveTimeout: ").append(toIndentedString(keepaliveTimeout)).append("\n");
+        sb.append("    maxBadRpsCip: ").append(toIndentedString(maxBadRpsCip)).append("\n");
+        sb.append("    maxBadRpsCipUri: ").append(toIndentedString(maxBadRpsCipUri)).append("\n");
+        sb.append("    maxBadRpsUri: ").append(toIndentedString(maxBadRpsUri)).append("\n");
+        sb.append("    maxHttp2ConcurrentStreamsPerConnection: ").append(toIndentedString(maxHttp2ConcurrentStreamsPerConnection)).append("\n");
+        sb.append("    maxHttp2ControlFramesPerConnection: ").append(toIndentedString(maxHttp2ControlFramesPerConnection)).append("\n");
+        sb.append("    maxHttp2EmptyDataFramesPerConnection: ").append(toIndentedString(maxHttp2EmptyDataFramesPerConnection)).append("\n");
+        sb.append("    maxHttp2QueuedFramesToClientPerConnection: ").append(toIndentedString(maxHttp2QueuedFramesToClientPerConnection)).append("\n");
+        sb.append("    maxKeepaliveRequests: ").append(toIndentedString(maxKeepaliveRequests)).append("\n");
+        sb.append("    maxResponseHeadersSize: ").append(toIndentedString(maxResponseHeadersSize)).append("\n");
+        sb.append("    maxRpsCip: ").append(toIndentedString(maxRpsCip)).append("\n");
+        sb.append("    maxRpsCipUri: ").append(toIndentedString(maxRpsCipUri)).append("\n");
+        sb.append("    maxRpsUnknownCip: ").append(toIndentedString(maxRpsUnknownCip)).append("\n");
+        sb.append("    maxRpsUnknownUri: ").append(toIndentedString(maxRpsUnknownUri)).append("\n");
+        sb.append("    maxRpsUri: ").append(toIndentedString(maxRpsUri)).append("\n");
+        sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
+        sb.append("    postAcceptTimeout: ").append(toIndentedString(postAcceptTimeout)).append("\n");
+        sb.append("    resetConnHttpOnSslPort: ").append(toIndentedString(resetConnHttpOnSslPort)).append("\n");
+        sb.append("    respondWith100Continue: ").append(toIndentedString(respondWith100Continue)).append("\n");
+        sb.append("    secureCookieEnabled: ").append(toIndentedString(secureCookieEnabled)).append("\n");
+        sb.append("    serverSideRedirectToHttps: ").append(toIndentedString(serverSideRedirectToHttps)).append("\n");
+        sb.append("    spdyEnabled: ").append(toIndentedString(spdyEnabled)).append("\n");
+        sb.append("    spdyFwdProxyMode: ").append(toIndentedString(spdyFwdProxyMode)).append("\n");
+        sb.append("    sslClientCertificateAction: ").append(toIndentedString(sslClientCertificateAction)).append("\n");
+        sb.append("    sslClientCertificateMode: ").append(toIndentedString(sslClientCertificateMode)).append("\n");
+        sb.append("    sslEverywhereEnabled: ").append(toIndentedString(sslEverywhereEnabled)).append("\n");
+        sb.append("    useAppKeepaliveTimeout: ").append(toIndentedString(useAppKeepaliveTimeout)).append("\n");
+        sb.append("    websocketsEnabled: ").append(toIndentedString(websocketsEnabled)).append("\n");
+        sb.append("    xForwardedProtoEnabled: ").append(toIndentedString(xForwardedProtoEnabled)).append("\n");
+        sb.append("    xffAlternateName: ").append(toIndentedString(xffAlternateName)).append("\n");
+        sb.append("    xffEnabled: ").append(toIndentedString(xffEnabled)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,112 +1,146 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.CookieMatch;
-import com.vmware.avi.vro.model.HTTPVersionMatch;
-import com.vmware.avi.vro.model.HdrMatch;
-import com.vmware.avi.vro.model.HostHdrMatch;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.CookieMatch;
+import com.vmware.avi.vro.model.HostHdrMatch;
 import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
-import com.vmware.avi.vro.model.PortMatch;
 import com.vmware.avi.vro.model.ProtocolMatch;
 import com.vmware.avi.vro.model.QueryMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.HTTPVersionMatch;
+import com.vmware.avi.vro.model.PortMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * MatchTarget
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The MatchTarget is a POJO class extends AviRestResource that used for creating
+ * MatchTarget.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "MatchTarget")
-@VsoFinder(name = Constants.FINDER_VRO_MATCHTARGET, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_MATCHTARGET)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MatchTarget extends AviRestResource  {
+public class MatchTarget extends AviRestResource {
   @JsonProperty("client_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch clientIp = null;
 
   @JsonProperty("cookie")
+  @JsonInclude(Include.NON_NULL)
   private CookieMatch cookie = null;
 
   @JsonProperty("hdrs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<HdrMatch> hdrs = null;
 
   @JsonProperty("host_hdr")
+  @JsonInclude(Include.NON_NULL)
   private HostHdrMatch hostHdr = null;
 
   @JsonProperty("method")
+  @JsonInclude(Include.NON_NULL)
   private MethodMatch method = null;
 
   @JsonProperty("path")
+  @JsonInclude(Include.NON_NULL)
   private PathMatch path = null;
 
   @JsonProperty("protocol")
+  @JsonInclude(Include.NON_NULL)
   private ProtocolMatch protocol = null;
 
   @JsonProperty("query")
+  @JsonInclude(Include.NON_NULL)
   private QueryMatch query = null;
 
   @JsonProperty("version")
+  @JsonInclude(Include.NON_NULL)
   private HTTPVersionMatch version = null;
 
   @JsonProperty("vs_port")
+  @JsonInclude(Include.NON_NULL)
   private PortMatch vsPort = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Configure client ip addresses.
    * @return clientIp
-  **/
-  @ApiModelProperty(value = "Configure client ip addresses.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getClientIp() {
     return clientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure client ip addresses.
+   * @param clientIp set the clientIp.
+   */
   @VsoMethod
   public void setClientIp(IpAddrMatch clientIp) {
     this.clientIp = clientIp;
   }
 
-  
   /**
-   * Configure HTTP cookie(s).
+   * This is the getter method this will return the attribute value.
+   * Configure http cookie(s).
    * @return cookie
-  **/
-  @ApiModelProperty(value = "Configure HTTP cookie(s).")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public CookieMatch getCookie() {
     return cookie;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure http cookie(s).
+   * @param cookie set the cookie.
+   */
   @VsoMethod
   public void setCookie(CookieMatch cookie) {
     this.cookie = cookie;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configure http header(s).
+   * @return hdrs
+   */
+  @VsoMethod
+  public List<HdrMatch> getHdrs() {
+    return hdrs;
+  }
+
+  /**
+   * This is the setter method. this will set the hdrs
+   * Configure http header(s).
+   * @return hdrs
+   */
+  @VsoMethod
+  public void setHdrs(List<HdrMatch>  hdrs) {
+    this.hdrs = hdrs;
+  }
+
+  /**
+   * This is the setter method this will set the hdrs
+   * Configure http header(s).
+   * @return hdrs
+   */
+  @VsoMethod
   public MatchTarget addHdrsItem(HdrMatch hdrsItem) {
     if (this.hdrs == null) {
       this.hdrs = new ArrayList<HdrMatch>();
@@ -114,225 +148,197 @@ public class MatchTarget extends AviRestResource  {
     this.hdrs.add(hdrsItem);
     return this;
   }
-  
+
+
   /**
-   * Configure HTTP header(s).
-   * @return hdrs
-  **/
-  @ApiModelProperty(value = "Configure HTTP header(s).")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HdrMatch> getHdrs() {
-    return hdrs;
-  }
-    
-  @VsoMethod
-  public void setHdrs(List<HdrMatch> hdrs) {
-    this.hdrs = hdrs;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Configure the host header.
    * @return hostHdr
-  **/
-  @ApiModelProperty(value = "Configure the host header.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HostHdrMatch getHostHdr() {
     return hostHdr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure the host header.
+   * @param hostHdr set the hostHdr.
+   */
   @VsoMethod
   public void setHostHdr(HostHdrMatch hostHdr) {
     this.hostHdr = hostHdr;
   }
 
-  
   /**
-   * Configure HTTP methods.
+   * This is the getter method this will return the attribute value.
+   * Configure http methods.
    * @return method
-  **/
-  @ApiModelProperty(value = "Configure HTTP methods.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public MethodMatch getMethod() {
     return method;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure http methods.
+   * @param method set the method.
+   */
   @VsoMethod
   public void setMethod(MethodMatch method) {
     this.method = method;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Configure request paths.
    * @return path
-  **/
-  @ApiModelProperty(value = "Configure request paths.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PathMatch getPath() {
     return path;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure request paths.
+   * @param path set the path.
+   */
   @VsoMethod
   public void setPath(PathMatch path) {
     this.path = path;
   }
 
-  
   /**
-   * Configure the type of HTTP protocol.
+   * This is the getter method this will return the attribute value.
+   * Configure the type of http protocol.
    * @return protocol
-  **/
-  @ApiModelProperty(value = "Configure the type of HTTP protocol.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public ProtocolMatch getProtocol() {
     return protocol;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure the type of http protocol.
+   * @param protocol set the protocol.
+   */
   @VsoMethod
   public void setProtocol(ProtocolMatch protocol) {
     this.protocol = protocol;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Configure request query.
    * @return query
-  **/
-  @ApiModelProperty(value = "Configure request query.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public QueryMatch getQuery() {
     return query;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure request query.
+   * @param query set the query.
+   */
   @VsoMethod
   public void setQuery(QueryMatch query) {
     this.query = query;
   }
 
-  
   /**
-   * Configure versions of the HTTP protocol.
+   * This is the getter method this will return the attribute value.
+   * Configure versions of the http protocol.
    * @return version
-  **/
-  @ApiModelProperty(value = "Configure versions of the HTTP protocol.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HTTPVersionMatch getVersion() {
     return version;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure versions of the http protocol.
+   * @param version set the version.
+   */
   @VsoMethod
   public void setVersion(HTTPVersionMatch version) {
     this.version = version;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Configure virtual service ports.
    * @return vsPort
-  **/
-  @ApiModelProperty(value = "Configure virtual service ports.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PortMatch getVsPort() {
     return vsPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure virtual service ports.
+   * @param vsPort set the vsPort.
+   */
   @VsoMethod
   public void setVsPort(PortMatch vsPort) {
     this.vsPort = vsPort;
   }
 
-  
-  public String getObjectID() {
-		return "MatchTarget";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MatchTarget matchTarget = (MatchTarget) o;
-    return Objects.equals(this.clientIp, matchTarget.clientIp) &&
-        Objects.equals(this.cookie, matchTarget.cookie) &&
-        Objects.equals(this.hdrs, matchTarget.hdrs) &&
-        Objects.equals(this.hostHdr, matchTarget.hostHdr) &&
-        Objects.equals(this.method, matchTarget.method) &&
-        Objects.equals(this.path, matchTarget.path) &&
-        Objects.equals(this.protocol, matchTarget.protocol) &&
-        Objects.equals(this.query, matchTarget.query) &&
-        Objects.equals(this.version, matchTarget.version) &&
-        Objects.equals(this.vsPort, matchTarget.vsPort);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(clientIp, cookie, hdrs, hostHdr, method, path, protocol, query, version, vsPort);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MatchTarget {\n");
-    
-    sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-    sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
-    sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
-    sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  MatchTarget objMatchTarget = (MatchTarget) o;
+  return   Objects.equals(this.clientIp, objMatchTarget.clientIp)&&
+  Objects.equals(this.protocol, objMatchTarget.protocol)&&
+  Objects.equals(this.hdrs, objMatchTarget.hdrs)&&
+  Objects.equals(this.hostHdr, objMatchTarget.hostHdr)&&
+  Objects.equals(this.vsPort, objMatchTarget.vsPort)&&
+  Objects.equals(this.version, objMatchTarget.version)&&
+  Objects.equals(this.cookie, objMatchTarget.cookie)&&
+  Objects.equals(this.query, objMatchTarget.query)&&
+  Objects.equals(this.path, objMatchTarget.path)&&
+  Objects.equals(this.method, objMatchTarget.method);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MatchTarget {\n");
+      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
+        sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
+        sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+        sb.append("    method: ").append(toIndentedString(method)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    query: ").append(toIndentedString(query)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

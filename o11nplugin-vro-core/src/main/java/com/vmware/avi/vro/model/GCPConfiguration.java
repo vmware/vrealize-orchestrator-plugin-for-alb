@@ -1,106 +1,152 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.GCPNetworkConfig;
 import com.vmware.avi.vro.model.GCPVIPAllocation;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * GCPConfiguration
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The GCPConfiguration is a POJO class extends AviRestResource that used for creating
+ * GCPConfiguration.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "GCPConfiguration")
-@VsoFinder(name = Constants.FINDER_VRO_GCPCONFIGURATION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_GCPCONFIGURATION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class GCPConfiguration extends AviRestResource  {
+public class GCPConfiguration extends AviRestResource {
   @JsonProperty("cloud_credentials_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudCredentialsRef = null;
 
   @JsonProperty("encryption_key_id")
+  @JsonInclude(Include.NON_NULL)
   private String encryptionKeyId = null;
 
   @JsonProperty("firewall_target_tags")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> firewallTargetTags = null;
 
   @JsonProperty("gcs_bucket_name")
+  @JsonInclude(Include.NON_NULL)
   private String gcsBucketName = null;
 
   @JsonProperty("gcs_project_id")
+  @JsonInclude(Include.NON_NULL)
   private String gcsProjectId = null;
 
   @JsonProperty("match_se_group_subnet")
-  private Boolean matchSeGroupSubnet = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean matchSeGroupSubnet = false;
 
   @JsonProperty("network_config")
+  @JsonInclude(Include.NON_NULL)
   private GCPNetworkConfig networkConfig = null;
 
   @JsonProperty("region_name")
+  @JsonInclude(Include.NON_NULL)
   private String regionName = null;
 
   @JsonProperty("se_project_id")
+  @JsonInclude(Include.NON_NULL)
   private String seProjectId = null;
 
   @JsonProperty("vip_allocation_strategy")
+  @JsonInclude(Include.NON_NULL)
   private GCPVIPAllocation vipAllocationStrategy = null;
 
   @JsonProperty("zones")
-  @Valid
-  private List<String> zones = new ArrayList<String>();
+  @JsonInclude(Include.NON_NULL)
+  private List<String> zones = null;
 
-  
+
+
   /**
-   * Credentials to access Google Cloud Platform APIs. It is a reference to an object of type CloudConnectorUser. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Credentials to access google cloud platform apis.
+   * It is a reference to an object of type cloudconnectoruser.
+   * Field introduced in 18.2.1.
    * @return cloudCredentialsRef
-  **/
-  @ApiModelProperty(value = "Credentials to access Google Cloud Platform APIs. It is a reference to an object of type CloudConnectorUser. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudCredentialsRef() {
     return cloudCredentialsRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Credentials to access google cloud platform apis.
+   * It is a reference to an object of type cloudconnectoruser.
+   * Field introduced in 18.2.1.
+   * @param cloudCredentialsRef set the cloudCredentialsRef.
+   */
   @VsoMethod
-  public void setCloudCredentialsRef(String cloudCredentialsRef) {
+  public void setCloudCredentialsRef(String  cloudCredentialsRef) {
     this.cloudCredentialsRef = cloudCredentialsRef;
   }
 
-  
   /**
-   * Key Resource ID of Customer-Managed Encryption Key (CMEK) used to encrypt Service Engine disks and images. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Key resource id of customer-managed encryption key (cmek) used to encrypt service engine disks and images.
+   * Field introduced in 20.1.1.
    * @return encryptionKeyId
-  **/
-  @ApiModelProperty(value = "Key Resource ID of Customer-Managed Encryption Key (CMEK) used to encrypt Service Engine disks and images. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEncryptionKeyId() {
     return encryptionKeyId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Key resource id of customer-managed encryption key (cmek) used to encrypt service engine disks and images.
+   * Field introduced in 20.1.1.
+   * @param encryptionKeyId set the encryptionKeyId.
+   */
   @VsoMethod
-  public void setEncryptionKeyId(String encryptionKeyId) {
+  public void setEncryptionKeyId(String  encryptionKeyId) {
     this.encryptionKeyId = encryptionKeyId;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
+   * Field introduced in 18.2.1.
+   * @return firewallTargetTags
+   */
+  @VsoMethod
+  public List<String> getFirewallTargetTags() {
+    return firewallTargetTags;
+  }
+
+  /**
+   * This is the setter method. this will set the firewallTargetTags
+   * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
+   * Field introduced in 18.2.1.
+   * @return firewallTargetTags
+   */
+  @VsoMethod
+  public void setFirewallTargetTags(List<String>  firewallTargetTags) {
+    this.firewallTargetTags = firewallTargetTags;
+  }
+
+  /**
+   * This is the setter method this will set the firewallTargetTags
+   * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
+   * Field introduced in 18.2.1.
+   * @return firewallTargetTags
+   */
+  @VsoMethod
   public GCPConfiguration addFirewallTargetTagsItem(String firewallTargetTagsItem) {
     if (this.firewallTargetTags == null) {
       this.firewallTargetTags = new ArrayList<String>();
@@ -108,250 +154,265 @@ public class GCPConfiguration extends AviRestResource  {
     this.firewallTargetTags.add(firewallTargetTagsItem);
     return this;
   }
-  
+
+
   /**
-   * Firewall rule network target tags which will be applied on Service Engines to allow ingress and egress traffic for Service Engines. Field introduced in 18.2.1.
-   * @return firewallTargetTags
-  **/
-  @ApiModelProperty(value = "Firewall rule network target tags which will be applied on Service Engines to allow ingress and egress traffic for Service Engines. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getFirewallTargetTags() {
-    return firewallTargetTags;
-  }
-    
-  @VsoMethod
-  public void setFirewallTargetTags(List<String> firewallTargetTags) {
-    this.firewallTargetTags = firewallTargetTags;
-  }
-
-  
-  /**
-   * Google Cloud Storage Bucket Name where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, a bucket will be created if this field is not specified. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Google cloud storage bucket name where service engine image will be uploaded.
+   * This image will be deleted once the image is created in google compute images.
+   * By default, a bucket will be created if this field is not specified.
+   * Field introduced in 18.2.1.
    * @return gcsBucketName
-  **/
-  @ApiModelProperty(value = "Google Cloud Storage Bucket Name where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, a bucket will be created if this field is not specified. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getGcsBucketName() {
     return gcsBucketName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Google cloud storage bucket name where service engine image will be uploaded.
+   * This image will be deleted once the image is created in google compute images.
+   * By default, a bucket will be created if this field is not specified.
+   * Field introduced in 18.2.1.
+   * @param gcsBucketName set the gcsBucketName.
+   */
   @VsoMethod
-  public void setGcsBucketName(String gcsBucketName) {
+  public void setGcsBucketName(String  gcsBucketName) {
     this.gcsBucketName = gcsBucketName;
   }
 
-  
   /**
-   * Google Cloud Storage Project ID where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, Service Engine Project ID will be used. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Google cloud storage project id where service engine image will be uploaded.
+   * This image will be deleted once the image is created in google compute images.
+   * By default, service engine project id will be used.
+   * Field introduced in 18.2.1.
    * @return gcsProjectId
-  **/
-  @ApiModelProperty(value = "Google Cloud Storage Project ID where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, Service Engine Project ID will be used. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getGcsProjectId() {
     return gcsProjectId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Google cloud storage project id where service engine image will be uploaded.
+   * This image will be deleted once the image is created in google compute images.
+   * By default, service engine project id will be used.
+   * Field introduced in 18.2.1.
+   * @param gcsProjectId set the gcsProjectId.
+   */
   @VsoMethod
-  public void setGcsProjectId(String gcsProjectId) {
+  public void setGcsProjectId(String  gcsProjectId) {
     this.gcsProjectId = gcsProjectId;
   }
 
-  
   /**
-   * Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated, please use match_se_group_subnet in routes mode in.
+   * Vip_allocation_strategy.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return matchSeGroupSubnet
-  **/
-  @ApiModelProperty(value = "Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isMatchSeGroupSubnet() {
+   */
+  @VsoMethod
+  public Boolean getMatchSeGroupSubnet() {
     return matchSeGroupSubnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated, please use match_se_group_subnet in routes mode in.
+   * Vip_allocation_strategy.
+   * Field deprecated in 20.1.1.
+   * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param matchSeGroupSubnet set the matchSeGroupSubnet.
+   */
   @VsoMethod
-  public void setMatchSeGroupSubnet(Boolean matchSeGroupSubnet) {
+  public void setMatchSeGroupSubnet(Boolean  matchSeGroupSubnet) {
     this.matchSeGroupSubnet = matchSeGroupSubnet;
   }
 
-  
   /**
-   * Google Cloud Platform VPC Network configuration for the Service Engines. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Google cloud platform vpc network configuration for the service engines.
+   * Field introduced in 18.2.1.
    * @return networkConfig
-  **/
-  @ApiModelProperty(required = true, value = "Google Cloud Platform VPC Network configuration for the Service Engines. Field introduced in 18.2.1.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public GCPNetworkConfig getNetworkConfig() {
     return networkConfig;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Google cloud platform vpc network configuration for the service engines.
+   * Field introduced in 18.2.1.
+   * @param networkConfig set the networkConfig.
+   */
   @VsoMethod
   public void setNetworkConfig(GCPNetworkConfig networkConfig) {
     this.networkConfig = networkConfig;
   }
 
-  
   /**
-   * Google Cloud Platform Region Name where Service Engines will be spawned. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Google cloud platform region name where service engines will be spawned.
+   * Field introduced in 18.2.1.
    * @return regionName
-  **/
-  @ApiModelProperty(required = true, value = "Google Cloud Platform Region Name where Service Engines will be spawned. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getRegionName() {
     return regionName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Google cloud platform region name where service engines will be spawned.
+   * Field introduced in 18.2.1.
+   * @param regionName set the regionName.
+   */
   @VsoMethod
-  public void setRegionName(String regionName) {
+  public void setRegionName(String  regionName) {
     this.regionName = regionName;
   }
 
-  
   /**
-   * Google Cloud Platform Project ID where Service Engines will be spawned. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Google cloud platform project id where service engines will be spawned.
+   * Field introduced in 18.2.1.
    * @return seProjectId
-  **/
-  @ApiModelProperty(required = true, value = "Google Cloud Platform Project ID where Service Engines will be spawned. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeProjectId() {
     return seProjectId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Google cloud platform project id where service engines will be spawned.
+   * Field introduced in 18.2.1.
+   * @param seProjectId set the seProjectId.
+   */
   @VsoMethod
-  public void setSeProjectId(String seProjectId) {
+  public void setSeProjectId(String  seProjectId) {
     this.seProjectId = seProjectId;
   }
 
-  
   /**
-   * VIP allocation strategy defines how the VIPs will be created in Google Cloud. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Vip allocation strategy defines how the vips will be created in google cloud.
+   * Field introduced in 20.1.1.
    * @return vipAllocationStrategy
-  **/
-  @ApiModelProperty(required = true, value = "VIP allocation strategy defines how the VIPs will be created in Google Cloud. Field introduced in 20.1.1.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public GCPVIPAllocation getVipAllocationStrategy() {
     return vipAllocationStrategy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip allocation strategy defines how the vips will be created in google cloud.
+   * Field introduced in 20.1.1.
+   * @param vipAllocationStrategy set the vipAllocationStrategy.
+   */
   @VsoMethod
   public void setVipAllocationStrategy(GCPVIPAllocation vipAllocationStrategy) {
     this.vipAllocationStrategy = vipAllocationStrategy;
   }
 
-  
-  public GCPConfiguration addZonesItem(String zonesItem) {
-    this.zones.add(zonesItem);
-    return this;
-  }
-  
   /**
-   * Google Cloud Platform Zones where Service Engines will be distributed for HA. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Google cloud platform zones where service engines will be distributed for ha.
+   * Field introduced in 18.2.1.
    * @return zones
-  **/
-  @ApiModelProperty(required = true, value = "Google Cloud Platform Zones where Service Engines will be distributed for HA. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public List<String> getZones() {
     return zones;
   }
-    
+
+  /**
+   * This is the setter method. this will set the zones
+   * Google cloud platform zones where service engines will be distributed for ha.
+   * Field introduced in 18.2.1.
+   * @return zones
+   */
   @VsoMethod
-  public void setZones(List<String> zones) {
+  public void setZones(List<String>  zones) {
     this.zones = zones;
   }
 
-  
-  public String getObjectID() {
-		return "GCPConfiguration";
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GCPConfiguration gcPConfiguration = (GCPConfiguration) o;
-    return Objects.equals(this.cloudCredentialsRef, gcPConfiguration.cloudCredentialsRef) &&
-        Objects.equals(this.encryptionKeyId, gcPConfiguration.encryptionKeyId) &&
-        Objects.equals(this.firewallTargetTags, gcPConfiguration.firewallTargetTags) &&
-        Objects.equals(this.gcsBucketName, gcPConfiguration.gcsBucketName) &&
-        Objects.equals(this.gcsProjectId, gcPConfiguration.gcsProjectId) &&
-        Objects.equals(this.matchSeGroupSubnet, gcPConfiguration.matchSeGroupSubnet) &&
-        Objects.equals(this.networkConfig, gcPConfiguration.networkConfig) &&
-        Objects.equals(this.regionName, gcPConfiguration.regionName) &&
-        Objects.equals(this.seProjectId, gcPConfiguration.seProjectId) &&
-        Objects.equals(this.vipAllocationStrategy, gcPConfiguration.vipAllocationStrategy) &&
-        Objects.equals(this.zones, gcPConfiguration.zones);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cloudCredentialsRef, encryptionKeyId, firewallTargetTags, gcsBucketName, gcsProjectId, matchSeGroupSubnet, networkConfig, regionName, seProjectId, vipAllocationStrategy, zones);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GCPConfiguration {\n");
-    
-    sb.append("    cloudCredentialsRef: ").append(toIndentedString(cloudCredentialsRef)).append("\n");
-    sb.append("    encryptionKeyId: ").append(toIndentedString(encryptionKeyId)).append("\n");
-    sb.append("    firewallTargetTags: ").append(toIndentedString(firewallTargetTags)).append("\n");
-    sb.append("    gcsBucketName: ").append(toIndentedString(gcsBucketName)).append("\n");
-    sb.append("    gcsProjectId: ").append(toIndentedString(gcsProjectId)).append("\n");
-    sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");
-    sb.append("    networkConfig: ").append(toIndentedString(networkConfig)).append("\n");
-    sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
-    sb.append("    seProjectId: ").append(toIndentedString(seProjectId)).append("\n");
-    sb.append("    vipAllocationStrategy: ").append(toIndentedString(vipAllocationStrategy)).append("\n");
-    sb.append("    zones: ").append(toIndentedString(zones)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * This is the setter method this will set the zones
+   * Google cloud platform zones where service engines will be distributed for ha.
+   * Field introduced in 18.2.1.
+   * @return zones
    */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+  @VsoMethod
+  public GCPConfiguration addZonesItem(String zonesItem) {
+    if (this.zones == null) {
+      this.zones = new ArrayList<String>();
     }
-    return o.toString().replace("\n", "\n    ");
+    this.zones.add(zonesItem);
+    return this;
   }
+
+
+
+
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
+  }
+  if (o == null || getClass() != o.getClass()) {
+    return false;
+  }
+  GCPConfiguration objGCPConfiguration = (GCPConfiguration) o;
+  return   Objects.equals(this.gcsBucketName, objGCPConfiguration.gcsBucketName)&&
+  Objects.equals(this.regionName, objGCPConfiguration.regionName)&&
+  Objects.equals(this.vipAllocationStrategy, objGCPConfiguration.vipAllocationStrategy)&&
+  Objects.equals(this.gcsProjectId, objGCPConfiguration.gcsProjectId)&&
+  Objects.equals(this.cloudCredentialsRef, objGCPConfiguration.cloudCredentialsRef)&&
+  Objects.equals(this.zones, objGCPConfiguration.zones)&&
+  Objects.equals(this.matchSeGroupSubnet, objGCPConfiguration.matchSeGroupSubnet)&&
+  Objects.equals(this.encryptionKeyId, objGCPConfiguration.encryptionKeyId)&&
+  Objects.equals(this.seProjectId, objGCPConfiguration.seProjectId)&&
+  Objects.equals(this.firewallTargetTags, objGCPConfiguration.firewallTargetTags)&&
+  Objects.equals(this.networkConfig, objGCPConfiguration.networkConfig);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class GCPConfiguration {\n");
+      sb.append("    cloudCredentialsRef: ").append(toIndentedString(cloudCredentialsRef)).append("\n");
+        sb.append("    encryptionKeyId: ").append(toIndentedString(encryptionKeyId)).append("\n");
+        sb.append("    firewallTargetTags: ").append(toIndentedString(firewallTargetTags)).append("\n");
+        sb.append("    gcsBucketName: ").append(toIndentedString(gcsBucketName)).append("\n");
+        sb.append("    gcsProjectId: ").append(toIndentedString(gcsProjectId)).append("\n");
+        sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");
+        sb.append("    networkConfig: ").append(toIndentedString(networkConfig)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    seProjectId: ").append(toIndentedString(seProjectId)).append("\n");
+        sb.append("    vipAllocationStrategy: ").append(toIndentedString(vipAllocationStrategy)).append("\n");
+        sb.append("    zones: ").append(toIndentedString(zones)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

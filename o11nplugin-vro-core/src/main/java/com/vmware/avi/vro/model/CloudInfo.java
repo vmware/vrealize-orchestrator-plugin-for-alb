@@ -1,94 +1,123 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.CCAgentProperties;
-import com.vmware.avi.vro.model.CloudFlavor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.CC_AgentProperties;
 import com.vmware.avi.vro.model.ControllerProperties;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CloudInfo
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CloudInfo is a POJO class extends AviRestResource that used for creating
+ * CloudInfo.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CloudInfo")
-@VsoFinder(name = Constants.FINDER_VRO_CLOUDINFO, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CLOUDINFO)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CloudInfo extends AviRestResource  {
+public class CloudInfo extends AviRestResource {
   @JsonProperty("cca_props")
-  private CCAgentProperties ccaProps = null;
+  @JsonInclude(Include.NON_NULL)
+  private CC_AgentProperties ccaProps = null;
 
   @JsonProperty("controller_props")
+  @JsonInclude(Include.NON_NULL)
   private ControllerProperties controllerProps = null;
 
   @JsonProperty("flavor_props")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<CloudFlavor> flavorProps = null;
 
   @JsonProperty("flavor_regex_filter")
+  @JsonInclude(Include.NON_NULL)
   private String flavorRegexFilter = null;
 
   @JsonProperty("htypes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> htypes = null;
 
   @JsonProperty("vtype")
+  @JsonInclude(Include.NON_NULL)
   private String vtype = null;
 
-  
+
+
   /**
-   * CloudConnectorAgent properties specific to this cloud type.
+   * This is the getter method this will return the attribute value.
+   * Cloudconnectoragent properties specific to this cloud type.
    * @return ccaProps
-  **/
-  @ApiModelProperty(value = "CloudConnectorAgent properties specific to this cloud type.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public CCAgentProperties getCcaProps() {
+   */
+  @VsoMethod
+  public CC_AgentProperties getCcaProps() {
     return ccaProps;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloudconnectoragent properties specific to this cloud type.
+   * @param ccaProps set the ccaProps.
+   */
   @VsoMethod
-  public void setCcaProps(CCAgentProperties ccaProps) {
+  public void setCcaProps(CC_AgentProperties ccaProps) {
     this.ccaProps = ccaProps;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Controller properties specific to this cloud type.
    * @return controllerProps
-  **/
-  @ApiModelProperty(value = "Controller properties specific to this cloud type.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public ControllerProperties getControllerProps() {
     return controllerProps;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Controller properties specific to this cloud type.
+   * @param controllerProps set the controllerProps.
+   */
   @VsoMethod
   public void setControllerProps(ControllerProperties controllerProps) {
     this.controllerProps = controllerProps;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Flavor properties specific to this cloud type.
+   * @return flavorProps
+   */
+  @VsoMethod
+  public List<CloudFlavor> getFlavorProps() {
+    return flavorProps;
+  }
+
+  /**
+   * This is the setter method. this will set the flavorProps
+   * Flavor properties specific to this cloud type.
+   * @return flavorProps
+   */
+  @VsoMethod
+  public void setFlavorProps(List<CloudFlavor>  flavorProps) {
+    this.flavorProps = flavorProps;
+  }
+
+  /**
+   * This is the setter method this will set the flavorProps
+   * Flavor properties specific to this cloud type.
+   * @return flavorProps
+   */
+  @VsoMethod
   public CloudInfo addFlavorPropsItem(CloudFlavor flavorPropsItem) {
     if (this.flavorProps == null) {
       this.flavorProps = new ArrayList<CloudFlavor>();
@@ -96,46 +125,57 @@ public class CloudInfo extends AviRestResource  {
     this.flavorProps.add(flavorPropsItem);
     return this;
   }
-  
+
+
   /**
-   * Flavor properties specific to this cloud type.
-   * @return flavorProps
-  **/
-  @ApiModelProperty(value = "Flavor properties specific to this cloud type.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<CloudFlavor> getFlavorProps() {
-    return flavorProps;
-  }
-    
-  @VsoMethod
-  public void setFlavorProps(List<CloudFlavor> flavorProps) {
-    this.flavorProps = flavorProps;
-  }
-
-  
-  /**
-   * flavor_regex_filter of CloudInfo.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property flavor_regex_filter of obj type cloudinfo field type str  type string.
    * @return flavorRegexFilter
-  **/
-  @ApiModelProperty(value = "flavor_regex_filter of CloudInfo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFlavorRegexFilter() {
     return flavorRegexFilter;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property flavor_regex_filter of obj type cloudinfo field type str  type string.
+   * @param flavorRegexFilter set the flavorRegexFilter.
+   */
   @VsoMethod
-  public void setFlavorRegexFilter(String flavorRegexFilter) {
+  public void setFlavorRegexFilter(String  flavorRegexFilter) {
     this.flavorRegexFilter = flavorRegexFilter;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Supported hypervisors.
+   * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * @return htypes
+   */
+  @VsoMethod
+  public List<String> getHtypes() {
+    return htypes;
+  }
+
+  /**
+   * This is the setter method. this will set the htypes
+   * Supported hypervisors.
+   * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * @return htypes
+   */
+  @VsoMethod
+  public void setHtypes(List<String>  htypes) {
+    this.htypes = htypes;
+  }
+
+  /**
+   * This is the setter method this will set the htypes
+   * Supported hypervisors.
+   * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * @return htypes
+   */
+  @VsoMethod
   public CloudInfo addHtypesItem(String htypesItem) {
     if (this.htypes == null) {
       this.htypes = new ArrayList<String>();
@@ -143,96 +183,73 @@ public class CloudInfo extends AviRestResource  {
     this.htypes.add(htypesItem);
     return this;
   }
-  
+
+
   /**
-   * Supported hypervisors. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * @return htypes
-  **/
-  @ApiModelProperty(value = "Supported hypervisors. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.")
-
-
- 
-  @VsoMethod  
-  public List<String> getHtypes() {
-    return htypes;
-  }
-    
-  @VsoMethod
-  public void setHtypes(List<String> htypes) {
-    this.htypes = htypes;
-  }
-
-  
-  /**
-   * Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP.
+   * This is the getter method this will return the attribute value.
+   * Cloud type.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
    * @return vtype
-  **/
-  @ApiModelProperty(required = true, value = "Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVtype() {
     return vtype;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloud type.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * @param vtype set the vtype.
+   */
   @VsoMethod
-  public void setVtype(String vtype) {
+  public void setVtype(String  vtype) {
     this.vtype = vtype;
   }
 
-  
-  public String getObjectID() {
-		return "CloudInfo";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CloudInfo cloudInfo = (CloudInfo) o;
-    return Objects.equals(this.ccaProps, cloudInfo.ccaProps) &&
-        Objects.equals(this.controllerProps, cloudInfo.controllerProps) &&
-        Objects.equals(this.flavorProps, cloudInfo.flavorProps) &&
-        Objects.equals(this.flavorRegexFilter, cloudInfo.flavorRegexFilter) &&
-        Objects.equals(this.htypes, cloudInfo.htypes) &&
-        Objects.equals(this.vtype, cloudInfo.vtype);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ccaProps, controllerProps, flavorProps, flavorRegexFilter, htypes, vtype);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CloudInfo {\n");
-    
-    sb.append("    ccaProps: ").append(toIndentedString(ccaProps)).append("\n");
-    sb.append("    controllerProps: ").append(toIndentedString(controllerProps)).append("\n");
-    sb.append("    flavorProps: ").append(toIndentedString(flavorProps)).append("\n");
-    sb.append("    flavorRegexFilter: ").append(toIndentedString(flavorRegexFilter)).append("\n");
-    sb.append("    htypes: ").append(toIndentedString(htypes)).append("\n");
-    sb.append("    vtype: ").append(toIndentedString(vtype)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CloudInfo objCloudInfo = (CloudInfo) o;
+  return   Objects.equals(this.flavorRegexFilter, objCloudInfo.flavorRegexFilter)&&
+  Objects.equals(this.flavorProps, objCloudInfo.flavorProps)&&
+  Objects.equals(this.htypes, objCloudInfo.htypes)&&
+  Objects.equals(this.vtype, objCloudInfo.vtype)&&
+  Objects.equals(this.controllerProps, objCloudInfo.controllerProps)&&
+  Objects.equals(this.ccaProps, objCloudInfo.ccaProps);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CloudInfo {\n");
+      sb.append("    ccaProps: ").append(toIndentedString(ccaProps)).append("\n");
+        sb.append("    controllerProps: ").append(toIndentedString(controllerProps)).append("\n");
+        sb.append("    flavorProps: ").append(toIndentedString(flavorProps)).append("\n");
+        sb.append("    flavorRegexFilter: ").append(toIndentedString(flavorRegexFilter)).append("\n");
+        sb.append("    htypes: ").append(toIndentedString(htypes)).append("\n");
+        sb.append("    vtype: ").append(toIndentedString(vtype)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

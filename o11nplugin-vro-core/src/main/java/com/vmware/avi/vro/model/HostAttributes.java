@@ -1,116 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HostAttributes
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HostAttributes is a POJO class extends AviRestResource that used for creating
+ * HostAttributes.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HostAttributes")
-@VsoFinder(name = Constants.FINDER_VRO_HOSTATTRIBUTES, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HOSTATTRIBUTES)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HostAttributes extends AviRestResource  {
+public class HostAttributes extends AviRestResource {
   @JsonProperty("attr_key")
+  @JsonInclude(Include.NON_NULL)
   private String attrKey = null;
 
   @JsonProperty("attr_val")
+  @JsonInclude(Include.NON_NULL)
   private String attrVal = null;
 
-  
+
+
   /**
-   * attr_key of HostAttributes.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property attr_key of obj type hostattributes field type str  type string.
    * @return attrKey
-  **/
-  @ApiModelProperty(required = true, value = "attr_key of HostAttributes.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAttrKey() {
     return attrKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property attr_key of obj type hostattributes field type str  type string.
+   * @param attrKey set the attrKey.
+   */
   @VsoMethod
-  public void setAttrKey(String attrKey) {
+  public void setAttrKey(String  attrKey) {
     this.attrKey = attrKey;
   }
 
-  
   /**
-   * attr_val of HostAttributes.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property attr_val of obj type hostattributes field type str  type string.
    * @return attrVal
-  **/
-  @ApiModelProperty(value = "attr_val of HostAttributes.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAttrVal() {
     return attrVal;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property attr_val of obj type hostattributes field type str  type string.
+   * @param attrVal set the attrVal.
+   */
   @VsoMethod
-  public void setAttrVal(String attrVal) {
+  public void setAttrVal(String  attrVal) {
     this.attrVal = attrVal;
   }
 
-  
-  public String getObjectID() {
-		return "HostAttributes";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HostAttributes hostAttributes = (HostAttributes) o;
-    return Objects.equals(this.attrKey, hostAttributes.attrKey) &&
-        Objects.equals(this.attrVal, hostAttributes.attrVal);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(attrKey, attrVal);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HostAttributes {\n");
-    
-    sb.append("    attrKey: ").append(toIndentedString(attrKey)).append("\n");
-    sb.append("    attrVal: ").append(toIndentedString(attrVal)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HostAttributes objHostAttributes = (HostAttributes) o;
+  return   Objects.equals(this.attrKey, objHostAttributes.attrKey)&&
+  Objects.equals(this.attrVal, objHostAttributes.attrVal);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HostAttributes {\n");
+      sb.append("    attrKey: ").append(toIndentedString(attrKey)).append("\n");
+        sb.append("    attrVal: ").append(toIndentedString(attrVal)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,190 +1,205 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.HTTPReselectRespCode;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HTTPServerReselect
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HTTPServerReselect is a POJO class extends AviRestResource that used for creating
+ * HTTPServerReselect.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HTTPServerReselect")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPSERVERRESELECT, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPSERVERRESELECT)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HTTPServerReselect extends AviRestResource  {
+public class HTTPServerReselect extends AviRestResource {
   @JsonProperty("enabled")
-  private Boolean enabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enabled = false;
 
   @JsonProperty("num_retries")
+  @JsonInclude(Include.NON_NULL)
   private Integer numRetries = 4;
 
   @JsonProperty("retry_nonidempotent")
-  private Boolean retryNonidempotent = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean retryNonidempotent = false;
 
   @JsonProperty("retry_timeout")
-  private Integer retryTimeout = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer retryTimeout = 0;
 
   @JsonProperty("svr_resp_code")
+  @JsonInclude(Include.NON_NULL)
   private HTTPReselectRespCode svrRespCode = null;
 
-  
+
+
   /**
-   * Enable HTTP request reselect when server responds with specific response codes.
+   * This is the getter method this will return the attribute value.
+   * Enable http request reselect when server responds with specific response codes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
-  **/
-  @ApiModelProperty(required = true, value = "Enable HTTP request reselect when server responds with specific response codes.")
-  @NotNull
-
-
- 
-  @VsoMethod  
-  public Boolean isEnabled() {
+   */
+  @VsoMethod
+  public Boolean getEnabled() {
     return enabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable http request reselect when server responds with specific response codes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enabled set the enabled.
+   */
   @VsoMethod
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(Boolean  enabled) {
     this.enabled = enabled;
   }
 
-  
   /**
-   * Number of times to retry an HTTP request when server responds with configured status codes.
+   * This is the getter method this will return the attribute value.
+   * Number of times to retry an http request when server responds with configured status codes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return numRetries
-  **/
-  @ApiModelProperty(value = "Number of times to retry an HTTP request when server responds with configured status codes.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNumRetries() {
     return numRetries;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of times to retry an http request when server responds with configured status codes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param numRetries set the numRetries.
+   */
   @VsoMethod
-  public void setNumRetries(Integer numRetries) {
+  public void setNumRetries(Integer  numRetries) {
     this.numRetries = numRetries;
   }
 
-  
   /**
-   * Allow retry of non-idempotent HTTP requests.
+   * This is the getter method this will return the attribute value.
+   * Allow retry of non-idempotent http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return retryNonidempotent
-  **/
-  @ApiModelProperty(value = "Allow retry of non-idempotent HTTP requests.")
-
-
- 
-  @VsoMethod  
-  public Boolean isRetryNonidempotent() {
+   */
+  @VsoMethod
+  public Boolean getRetryNonidempotent() {
     return retryNonidempotent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Allow retry of non-idempotent http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param retryNonidempotent set the retryNonidempotent.
+   */
   @VsoMethod
-  public void setRetryNonidempotent(Boolean retryNonidempotent) {
+  public void setRetryNonidempotent(Boolean  retryNonidempotent) {
     this.retryNonidempotent = retryNonidempotent;
   }
 
-  
   /**
-   * Timeout per retry attempt, for a given request. Value of 0 indicates default timeout. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Timeout per retry attempt, for a given request.
+   * Value of 0 indicates default timeout.
+   * Allowed values are 0-3600000.
+   * Field introduced in 18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return retryTimeout
-  **/
-  @ApiModelProperty(value = "Timeout per retry attempt, for a given request. Value of 0 indicates default timeout. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getRetryTimeout() {
     return retryTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timeout per retry attempt, for a given request.
+   * Value of 0 indicates default timeout.
+   * Allowed values are 0-3600000.
+   * Field introduced in 18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param retryTimeout set the retryTimeout.
+   */
   @VsoMethod
-  public void setRetryTimeout(Integer retryTimeout) {
+  public void setRetryTimeout(Integer  retryTimeout) {
     this.retryTimeout = retryTimeout;
   }
 
-  
   /**
-   * Server response codes which will trigger an HTTP request retry.
+   * This is the getter method this will return the attribute value.
+   * Server response codes which will trigger an http request retry.
    * @return svrRespCode
-  **/
-  @ApiModelProperty(value = "Server response codes which will trigger an HTTP request retry.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HTTPReselectRespCode getSvrRespCode() {
     return svrRespCode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Server response codes which will trigger an http request retry.
+   * @param svrRespCode set the svrRespCode.
+   */
   @VsoMethod
   public void setSvrRespCode(HTTPReselectRespCode svrRespCode) {
     this.svrRespCode = svrRespCode;
   }
 
-  
-  public String getObjectID() {
-		return "HTTPServerReselect";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HTTPServerReselect htTPServerReselect = (HTTPServerReselect) o;
-    return Objects.equals(this.enabled, htTPServerReselect.enabled) &&
-        Objects.equals(this.numRetries, htTPServerReselect.numRetries) &&
-        Objects.equals(this.retryNonidempotent, htTPServerReselect.retryNonidempotent) &&
-        Objects.equals(this.retryTimeout, htTPServerReselect.retryTimeout) &&
-        Objects.equals(this.svrRespCode, htTPServerReselect.svrRespCode);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(enabled, numRetries, retryNonidempotent, retryTimeout, svrRespCode);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HTTPServerReselect {\n");
-    
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    numRetries: ").append(toIndentedString(numRetries)).append("\n");
-    sb.append("    retryNonidempotent: ").append(toIndentedString(retryNonidempotent)).append("\n");
-    sb.append("    retryTimeout: ").append(toIndentedString(retryTimeout)).append("\n");
-    sb.append("    svrRespCode: ").append(toIndentedString(svrRespCode)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HTTPServerReselect objHTTPServerReselect = (HTTPServerReselect) o;
+  return   Objects.equals(this.retryNonidempotent, objHTTPServerReselect.retryNonidempotent)&&
+  Objects.equals(this.svrRespCode, objHTTPServerReselect.svrRespCode)&&
+  Objects.equals(this.numRetries, objHTTPServerReselect.numRetries)&&
+  Objects.equals(this.retryTimeout, objHTTPServerReselect.retryTimeout)&&
+  Objects.equals(this.enabled, objHTTPServerReselect.enabled);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HTTPServerReselect {\n");
+      sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    numRetries: ").append(toIndentedString(numRetries)).append("\n");
+        sb.append("    retryNonidempotent: ").append(toIndentedString(retryNonidempotent)).append("\n");
+        sb.append("    retryTimeout: ").append(toIndentedString(retryTimeout)).append("\n");
+        sb.append("    svrRespCode: ").append(toIndentedString(svrRespCode)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

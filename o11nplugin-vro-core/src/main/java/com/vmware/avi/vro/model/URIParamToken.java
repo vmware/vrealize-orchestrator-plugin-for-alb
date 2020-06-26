@@ -1,164 +1,170 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * URIParamToken
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The URIParamToken is a POJO class extends AviRestResource that used for creating
+ * URIParamToken.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "URIParamToken")
-@VsoFinder(name = Constants.FINDER_VRO_URIPARAMTOKEN, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_URIPARAMTOKEN)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class URIParamToken extends AviRestResource  {
+public class URIParamToken extends AviRestResource {
   @JsonProperty("end_index")
+  @JsonInclude(Include.NON_NULL)
   private Integer endIndex = null;
 
   @JsonProperty("start_index")
+  @JsonInclude(Include.NON_NULL)
   private Integer startIndex = null;
 
   @JsonProperty("str_value")
+  @JsonInclude(Include.NON_NULL)
   private String strValue = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
-  
+
+
   /**
-   * Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - 'end of string'.
+   * This is the getter method this will return the attribute value.
+   * Index of the ending token in the incoming uri.
+   * Allowed values are 0-65534.
+   * Special values are 65535 - 'end of string'.
    * @return endIndex
-  **/
-  @ApiModelProperty(value = "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - 'end of string'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getEndIndex() {
     return endIndex;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Index of the ending token in the incoming uri.
+   * Allowed values are 0-65534.
+   * Special values are 65535 - 'end of string'.
+   * @param endIndex set the endIndex.
+   */
   @VsoMethod
-  public void setEndIndex(Integer endIndex) {
+  public void setEndIndex(Integer  endIndex) {
     this.endIndex = endIndex;
   }
 
-  
   /**
-   * Index of the starting token in the incoming URI.
+   * This is the getter method this will return the attribute value.
+   * Index of the starting token in the incoming uri.
    * @return startIndex
-  **/
-  @ApiModelProperty(value = "Index of the starting token in the incoming URI.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getStartIndex() {
     return startIndex;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Index of the starting token in the incoming uri.
+   * @param startIndex set the startIndex.
+   */
   @VsoMethod
-  public void setStartIndex(Integer startIndex) {
+  public void setStartIndex(Integer  startIndex) {
     this.startIndex = startIndex;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Constant string to use as a token.
    * @return strValue
-  **/
-  @ApiModelProperty(value = "Constant string to use as a token.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getStrValue() {
     return strValue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Constant string to use as a token.
+   * @param strValue set the strValue.
+   */
   @VsoMethod
-  public void setStrValue(String strValue) {
+  public void setStrValue(String  strValue) {
     this.strValue = strValue;
   }
 
-  
   /**
-   * Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX.
+   * This is the getter method this will return the attribute value.
+   * Token type for constructing the uri.
+   * Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = "Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Token type for constructing the uri.
+   * Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
 
-  
-  public String getObjectID() {
-		return "URIParamToken";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    URIParamToken urIParamToken = (URIParamToken) o;
-    return Objects.equals(this.endIndex, urIParamToken.endIndex) &&
-        Objects.equals(this.startIndex, urIParamToken.startIndex) &&
-        Objects.equals(this.strValue, urIParamToken.strValue) &&
-        Objects.equals(this.type, urIParamToken.type);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(endIndex, startIndex, strValue, type);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class URIParamToken {\n");
-    
-    sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
-    sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
-    sb.append("    strValue: ").append(toIndentedString(strValue)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  URIParamToken objURIParamToken = (URIParamToken) o;
+  return   Objects.equals(this.strValue, objURIParamToken.strValue)&&
+  Objects.equals(this.type, objURIParamToken.type)&&
+  Objects.equals(this.startIndex, objURIParamToken.startIndex)&&
+  Objects.equals(this.endIndex, objURIParamToken.endIndex);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class URIParamToken {\n");
+      sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
+        sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
+        sb.append("    strValue: ").append(toIndentedString(strValue)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

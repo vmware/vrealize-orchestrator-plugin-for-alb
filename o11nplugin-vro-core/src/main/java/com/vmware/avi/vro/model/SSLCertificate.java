@@ -1,398 +1,460 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SSLCertificateDescription;
 import com.vmware.avi.vro.model.SSLKeyParams;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.SSLCertificateDescription;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SSLCertificate
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SSLCertificate is a POJO class extends AviRestResource that used for creating
+ * SSLCertificate.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SSLCertificate")
-@VsoFinder(name = Constants.FINDER_VRO_SSLCERTIFICATE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SSLCERTIFICATE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SSLCertificate extends AviRestResource  {
+public class SSLCertificate extends AviRestResource {
   @JsonProperty("certificate")
+  @JsonInclude(Include.NON_NULL)
   private String certificate = null;
 
   @JsonProperty("certificate_signing_request")
+  @JsonInclude(Include.NON_NULL)
   private String certificateSigningRequest = null;
 
   @JsonProperty("chain_verified")
+  @JsonInclude(Include.NON_NULL)
   private Boolean chainVerified = null;
 
   @JsonProperty("days_until_expire")
+  @JsonInclude(Include.NON_NULL)
   private Integer daysUntilExpire = 365;
 
   @JsonProperty("expiry_status")
+  @JsonInclude(Include.NON_NULL)
   private String expiryStatus = "SSL_CERTIFICATE_GOOD";
 
   @JsonProperty("fingerprint")
+  @JsonInclude(Include.NON_NULL)
   private String fingerprint = null;
 
   @JsonProperty("issuer")
+  @JsonInclude(Include.NON_NULL)
   private SSLCertificateDescription issuer = null;
 
   @JsonProperty("key_params")
+  @JsonInclude(Include.NON_NULL)
   private SSLKeyParams keyParams = null;
 
   @JsonProperty("not_after")
+  @JsonInclude(Include.NON_NULL)
   private String notAfter = null;
 
   @JsonProperty("not_before")
+  @JsonInclude(Include.NON_NULL)
   private String notBefore = null;
 
   @JsonProperty("public_key")
+  @JsonInclude(Include.NON_NULL)
   private String publicKey = null;
 
   @JsonProperty("self_signed")
+  @JsonInclude(Include.NON_NULL)
   private Boolean selfSigned = null;
 
   @JsonProperty("serial_number")
+  @JsonInclude(Include.NON_NULL)
   private String serialNumber = null;
 
   @JsonProperty("signature")
+  @JsonInclude(Include.NON_NULL)
   private String signature = null;
 
   @JsonProperty("signature_algorithm")
+  @JsonInclude(Include.NON_NULL)
   private String signatureAlgorithm = null;
 
   @JsonProperty("subject")
+  @JsonInclude(Include.NON_NULL)
   private SSLCertificateDescription subject = null;
 
   @JsonProperty("subject_alt_names")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> subjectAltNames = null;
 
   @JsonProperty("text")
+  @JsonInclude(Include.NON_NULL)
   private String text = null;
 
   @JsonProperty("version")
+  @JsonInclude(Include.NON_NULL)
   private String version = null;
 
-  
+
+
   /**
-   * certificate of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property certificate of obj type sslcertificate field type str  type string.
    * @return certificate
-  **/
-  @ApiModelProperty(value = "certificate of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCertificate() {
     return certificate;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property certificate of obj type sslcertificate field type str  type string.
+   * @param certificate set the certificate.
+   */
   @VsoMethod
-  public void setCertificate(String certificate) {
+  public void setCertificate(String  certificate) {
     this.certificate = certificate;
   }
 
-  
   /**
-   * certificate_signing_request of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property certificate_signing_request of obj type sslcertificate field type str  type string.
    * @return certificateSigningRequest
-  **/
-  @ApiModelProperty(value = "certificate_signing_request of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCertificateSigningRequest() {
     return certificateSigningRequest;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property certificate_signing_request of obj type sslcertificate field type str  type string.
+   * @param certificateSigningRequest set the certificateSigningRequest.
+   */
   @VsoMethod
-  public void setCertificateSigningRequest(String certificateSigningRequest) {
+  public void setCertificateSigningRequest(String  certificateSigningRequest) {
     this.certificateSigningRequest = certificateSigningRequest;
   }
 
-  
   /**
-   * Placeholder for description of property chain_verified of obj type SSLCertificate field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property chain_verified of obj type sslcertificate field type str  type boolean.
    * @return chainVerified
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property chain_verified of obj type SSLCertificate field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isChainVerified() {
+   */
+  @VsoMethod
+  public Boolean getChainVerified() {
     return chainVerified;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property chain_verified of obj type sslcertificate field type str  type boolean.
+   * @param chainVerified set the chainVerified.
+   */
   @VsoMethod
-  public void setChainVerified(Boolean chainVerified) {
+  public void setChainVerified(Boolean  chainVerified) {
     this.chainVerified = chainVerified;
   }
 
-  
   /**
-   * Number of days_until_expire.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property days_until_expire of obj type sslcertificate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 365.
    * @return daysUntilExpire
-  **/
-  @ApiModelProperty(value = "Number of days_until_expire.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDaysUntilExpire() {
     return daysUntilExpire;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property days_until_expire of obj type sslcertificate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 365.
+   * @param daysUntilExpire set the daysUntilExpire.
+   */
   @VsoMethod
-  public void setDaysUntilExpire(Integer daysUntilExpire) {
+  public void setDaysUntilExpire(Integer  daysUntilExpire) {
     this.daysUntilExpire = daysUntilExpire;
   }
 
-  
   /**
-   *  Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED.
+   * This is the getter method this will return the attribute value.
+   * Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CERTIFICATE_GOOD.
    * @return expiryStatus
-  **/
-  @ApiModelProperty(value = " Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getExpiryStatus() {
     return expiryStatus;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CERTIFICATE_GOOD.
+   * @param expiryStatus set the expiryStatus.
+   */
   @VsoMethod
-  public void setExpiryStatus(String expiryStatus) {
+  public void setExpiryStatus(String  expiryStatus) {
     this.expiryStatus = expiryStatus;
   }
 
-  
   /**
-   * fingerprint of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property fingerprint of obj type sslcertificate field type str  type string.
    * @return fingerprint
-  **/
-  @ApiModelProperty(value = "fingerprint of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFingerprint() {
     return fingerprint;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property fingerprint of obj type sslcertificate field type str  type string.
+   * @param fingerprint set the fingerprint.
+   */
   @VsoMethod
-  public void setFingerprint(String fingerprint) {
+  public void setFingerprint(String  fingerprint) {
     this.fingerprint = fingerprint;
   }
 
-  
   /**
-   * Placeholder for description of property issuer of obj type SSLCertificate field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property issuer of obj type sslcertificate field type str  type ref.
    * @return issuer
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property issuer of obj type SSLCertificate field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SSLCertificateDescription getIssuer() {
     return issuer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property issuer of obj type sslcertificate field type str  type ref.
+   * @param issuer set the issuer.
+   */
   @VsoMethod
   public void setIssuer(SSLCertificateDescription issuer) {
     this.issuer = issuer;
   }
 
-  
   /**
-   * Placeholder for description of property key_params of obj type SSLCertificate field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property key_params of obj type sslcertificate field type str  type ref.
    * @return keyParams
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property key_params of obj type SSLCertificate field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SSLKeyParams getKeyParams() {
     return keyParams;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property key_params of obj type sslcertificate field type str  type ref.
+   * @param keyParams set the keyParams.
+   */
   @VsoMethod
   public void setKeyParams(SSLKeyParams keyParams) {
     this.keyParams = keyParams;
   }
 
-  
   /**
-   * not_after of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property not_after of obj type sslcertificate field type str  type string.
    * @return notAfter
-  **/
-  @ApiModelProperty(value = "not_after of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNotAfter() {
     return notAfter;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property not_after of obj type sslcertificate field type str  type string.
+   * @param notAfter set the notAfter.
+   */
   @VsoMethod
-  public void setNotAfter(String notAfter) {
+  public void setNotAfter(String  notAfter) {
     this.notAfter = notAfter;
   }
 
-  
   /**
-   * not_before of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property not_before of obj type sslcertificate field type str  type string.
    * @return notBefore
-  **/
-  @ApiModelProperty(value = "not_before of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNotBefore() {
     return notBefore;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property not_before of obj type sslcertificate field type str  type string.
+   * @param notBefore set the notBefore.
+   */
   @VsoMethod
-  public void setNotBefore(String notBefore) {
+  public void setNotBefore(String  notBefore) {
     this.notBefore = notBefore;
   }
 
-  
   /**
-   * public_key of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property public_key of obj type sslcertificate field type str  type string.
    * @return publicKey
-  **/
-  @ApiModelProperty(value = "public_key of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPublicKey() {
     return publicKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property public_key of obj type sslcertificate field type str  type string.
+   * @param publicKey set the publicKey.
+   */
   @VsoMethod
-  public void setPublicKey(String publicKey) {
+  public void setPublicKey(String  publicKey) {
     this.publicKey = publicKey;
   }
 
-  
   /**
-   * Placeholder for description of property self_signed of obj type SSLCertificate field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property self_signed of obj type sslcertificate field type str  type boolean.
    * @return selfSigned
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property self_signed of obj type SSLCertificate field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isSelfSigned() {
+   */
+  @VsoMethod
+  public Boolean getSelfSigned() {
     return selfSigned;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property self_signed of obj type sslcertificate field type str  type boolean.
+   * @param selfSigned set the selfSigned.
+   */
   @VsoMethod
-  public void setSelfSigned(Boolean selfSigned) {
+  public void setSelfSigned(Boolean  selfSigned) {
     this.selfSigned = selfSigned;
   }
 
-  
   /**
-   * serial_number of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property serial_number of obj type sslcertificate field type str  type string.
    * @return serialNumber
-  **/
-  @ApiModelProperty(value = "serial_number of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSerialNumber() {
     return serialNumber;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property serial_number of obj type sslcertificate field type str  type string.
+   * @param serialNumber set the serialNumber.
+   */
   @VsoMethod
-  public void setSerialNumber(String serialNumber) {
+  public void setSerialNumber(String  serialNumber) {
     this.serialNumber = serialNumber;
   }
 
-  
   /**
-   * signature of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property signature of obj type sslcertificate field type str  type string.
    * @return signature
-  **/
-  @ApiModelProperty(value = "signature of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSignature() {
     return signature;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property signature of obj type sslcertificate field type str  type string.
+   * @param signature set the signature.
+   */
   @VsoMethod
-  public void setSignature(String signature) {
+  public void setSignature(String  signature) {
     this.signature = signature;
   }
 
-  
   /**
-   * signature_algorithm of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property signature_algorithm of obj type sslcertificate field type str  type string.
    * @return signatureAlgorithm
-  **/
-  @ApiModelProperty(value = "signature_algorithm of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSignatureAlgorithm() {
     return signatureAlgorithm;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property signature_algorithm of obj type sslcertificate field type str  type string.
+   * @param signatureAlgorithm set the signatureAlgorithm.
+   */
   @VsoMethod
-  public void setSignatureAlgorithm(String signatureAlgorithm) {
+  public void setSignatureAlgorithm(String  signatureAlgorithm) {
     this.signatureAlgorithm = signatureAlgorithm;
   }
 
-  
   /**
-   * Placeholder for description of property subject of obj type SSLCertificate field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property subject of obj type sslcertificate field type str  type ref.
    * @return subject
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property subject of obj type SSLCertificate field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SSLCertificateDescription getSubject() {
     return subject;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property subject of obj type sslcertificate field type str  type ref.
+   * @param subject set the subject.
+   */
   @VsoMethod
   public void setSubject(SSLCertificateDescription subject) {
     this.subject = subject;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Subjectaltname that provides additional subject identities.
+   * @return subjectAltNames
+   */
+  @VsoMethod
+  public List<String> getSubjectAltNames() {
+    return subjectAltNames;
+  }
+
+  /**
+   * This is the setter method. this will set the subjectAltNames
+   * Subjectaltname that provides additional subject identities.
+   * @return subjectAltNames
+   */
+  @VsoMethod
+  public void setSubjectAltNames(List<String>  subjectAltNames) {
+    this.subjectAltNames = subjectAltNames;
+  }
+
+  /**
+   * This is the setter method this will set the subjectAltNames
+   * Subjectaltname that provides additional subject identities.
+   * @return subjectAltNames
+   */
+  @VsoMethod
   public SSLCertificate addSubjectAltNamesItem(String subjectAltNamesItem) {
     if (this.subjectAltNames == null) {
       this.subjectAltNames = new ArrayList<String>();
@@ -400,140 +462,115 @@ public class SSLCertificate extends AviRestResource  {
     this.subjectAltNames.add(subjectAltNamesItem);
     return this;
   }
-  
+
+
   /**
-   * subjectAltName that provides additional subject identities.
-   * @return subjectAltNames
-  **/
-  @ApiModelProperty(value = "subjectAltName that provides additional subject identities.")
-
-
- 
-  @VsoMethod  
-  public List<String> getSubjectAltNames() {
-    return subjectAltNames;
-  }
-    
-  @VsoMethod
-  public void setSubjectAltNames(List<String> subjectAltNames) {
-    this.subjectAltNames = subjectAltNames;
-  }
-
-  
-  /**
-   * text of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property text of obj type sslcertificate field type str  type string.
    * @return text
-  **/
-  @ApiModelProperty(value = "text of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getText() {
     return text;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property text of obj type sslcertificate field type str  type string.
+   * @param text set the text.
+   */
   @VsoMethod
-  public void setText(String text) {
+  public void setText(String  text) {
     this.text = text;
   }
 
-  
   /**
-   * version of SSLCertificate.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property version of obj type sslcertificate field type str  type string.
    * @return version
-  **/
-  @ApiModelProperty(value = "version of SSLCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVersion() {
     return version;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property version of obj type sslcertificate field type str  type string.
+   * @param version set the version.
+   */
   @VsoMethod
-  public void setVersion(String version) {
+  public void setVersion(String  version) {
     this.version = version;
   }
 
-  
-  public String getObjectID() {
-		return "SSLCertificate";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SSLCertificate ssLCertificate = (SSLCertificate) o;
-    return Objects.equals(this.certificate, ssLCertificate.certificate) &&
-        Objects.equals(this.certificateSigningRequest, ssLCertificate.certificateSigningRequest) &&
-        Objects.equals(this.chainVerified, ssLCertificate.chainVerified) &&
-        Objects.equals(this.daysUntilExpire, ssLCertificate.daysUntilExpire) &&
-        Objects.equals(this.expiryStatus, ssLCertificate.expiryStatus) &&
-        Objects.equals(this.fingerprint, ssLCertificate.fingerprint) &&
-        Objects.equals(this.issuer, ssLCertificate.issuer) &&
-        Objects.equals(this.keyParams, ssLCertificate.keyParams) &&
-        Objects.equals(this.notAfter, ssLCertificate.notAfter) &&
-        Objects.equals(this.notBefore, ssLCertificate.notBefore) &&
-        Objects.equals(this.publicKey, ssLCertificate.publicKey) &&
-        Objects.equals(this.selfSigned, ssLCertificate.selfSigned) &&
-        Objects.equals(this.serialNumber, ssLCertificate.serialNumber) &&
-        Objects.equals(this.signature, ssLCertificate.signature) &&
-        Objects.equals(this.signatureAlgorithm, ssLCertificate.signatureAlgorithm) &&
-        Objects.equals(this.subject, ssLCertificate.subject) &&
-        Objects.equals(this.subjectAltNames, ssLCertificate.subjectAltNames) &&
-        Objects.equals(this.text, ssLCertificate.text) &&
-        Objects.equals(this.version, ssLCertificate.version);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(certificate, certificateSigningRequest, chainVerified, daysUntilExpire, expiryStatus, fingerprint, issuer, keyParams, notAfter, notBefore, publicKey, selfSigned, serialNumber, signature, signatureAlgorithm, subject, subjectAltNames, text, version);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SSLCertificate {\n");
-    
-    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-    sb.append("    certificateSigningRequest: ").append(toIndentedString(certificateSigningRequest)).append("\n");
-    sb.append("    chainVerified: ").append(toIndentedString(chainVerified)).append("\n");
-    sb.append("    daysUntilExpire: ").append(toIndentedString(daysUntilExpire)).append("\n");
-    sb.append("    expiryStatus: ").append(toIndentedString(expiryStatus)).append("\n");
-    sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
-    sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
-    sb.append("    keyParams: ").append(toIndentedString(keyParams)).append("\n");
-    sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
-    sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
-    sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
-    sb.append("    selfSigned: ").append(toIndentedString(selfSigned)).append("\n");
-    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
-    sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
-    sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
-    sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
-    sb.append("    subjectAltNames: ").append(toIndentedString(subjectAltNames)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SSLCertificate objSSLCertificate = (SSLCertificate) o;
+  return   Objects.equals(this.subjectAltNames, objSSLCertificate.subjectAltNames)&&
+  Objects.equals(this.publicKey, objSSLCertificate.publicKey)&&
+  Objects.equals(this.selfSigned, objSSLCertificate.selfSigned)&&
+  Objects.equals(this.certificate, objSSLCertificate.certificate)&&
+  Objects.equals(this.certificateSigningRequest, objSSLCertificate.certificateSigningRequest)&&
+  Objects.equals(this.notAfter, objSSLCertificate.notAfter)&&
+  Objects.equals(this.fingerprint, objSSLCertificate.fingerprint)&&
+  Objects.equals(this.signature, objSSLCertificate.signature)&&
+  Objects.equals(this.daysUntilExpire, objSSLCertificate.daysUntilExpire)&&
+  Objects.equals(this.expiryStatus, objSSLCertificate.expiryStatus)&&
+  Objects.equals(this.chainVerified, objSSLCertificate.chainVerified)&&
+  Objects.equals(this.version, objSSLCertificate.version)&&
+  Objects.equals(this.text, objSSLCertificate.text)&&
+  Objects.equals(this.signatureAlgorithm, objSSLCertificate.signatureAlgorithm)&&
+  Objects.equals(this.keyParams, objSSLCertificate.keyParams)&&
+  Objects.equals(this.serialNumber, objSSLCertificate.serialNumber)&&
+  Objects.equals(this.issuer, objSSLCertificate.issuer)&&
+  Objects.equals(this.notBefore, objSSLCertificate.notBefore)&&
+  Objects.equals(this.subject, objSSLCertificate.subject);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SSLCertificate {\n");
+      sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+        sb.append("    certificateSigningRequest: ").append(toIndentedString(certificateSigningRequest)).append("\n");
+        sb.append("    chainVerified: ").append(toIndentedString(chainVerified)).append("\n");
+        sb.append("    daysUntilExpire: ").append(toIndentedString(daysUntilExpire)).append("\n");
+        sb.append("    expiryStatus: ").append(toIndentedString(expiryStatus)).append("\n");
+        sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
+        sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+        sb.append("    keyParams: ").append(toIndentedString(keyParams)).append("\n");
+        sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
+        sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
+        sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
+        sb.append("    selfSigned: ").append(toIndentedString(selfSigned)).append("\n");
+        sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
+        sb.append("    signature: ").append(toIndentedString(signature)).append("\n");
+        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
+        sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
+        sb.append("    subjectAltNames: ").append(toIndentedString(subjectAltNames)).append("\n");
+        sb.append("    text: ").append(toIndentedString(text)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

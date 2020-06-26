@@ -1,386 +1,520 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.AppHdr;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.DosThresholdProfile;
-import com.vmware.avi.vro.model.IpAddrPrefix;
-import com.vmware.avi.vro.model.PortRange;
-import com.vmware.avi.vro.model.SeRateLimiters;
 import com.vmware.avi.vro.model.SeRuntimeCompressionProperties;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.SeRateLimiters;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SeRuntimeProperties
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SeRuntimeProperties is a POJO class extends AviRestResource that used for creating
+ * SeRuntimeProperties.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SeRuntimeProperties")
-@VsoFinder(name = Constants.FINDER_VRO_SERUNTIMEPROPERTIES, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SERUNTIMEPROPERTIES)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SeRuntimeProperties extends AviRestResource  {
+public class SeRuntimeProperties extends AviRestResource {
   @JsonProperty("admin_ssh_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean adminSshEnabled = true;
 
   @JsonProperty("app_headers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<AppHdr> appHeaders = null;
 
   @JsonProperty("baremetal_dispatcher_handles_flows")
-  private Boolean baremetalDispatcherHandlesFlows = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean baremetalDispatcherHandlesFlows = false;
 
   @JsonProperty("connections_lossy_log_rate_limiter_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer connectionsLossyLogRateLimiterThreshold = 1000;
 
   @JsonProperty("connections_udfnf_log_rate_limiter_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer connectionsUdfnfLogRateLimiterThreshold = 1000;
 
   @JsonProperty("disable_flow_probes")
-  private Boolean disableFlowProbes = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableFlowProbes = false;
 
   @JsonProperty("disable_gro")
-  private Boolean disableGro = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableGro = false;
 
   @JsonProperty("disable_tso")
-  private Boolean disableTso = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableTso = false;
 
   @JsonProperty("dos_profile")
+  @JsonInclude(Include.NON_NULL)
   private DosThresholdProfile dosProfile = null;
 
   @JsonProperty("downstream_send_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer downstreamSendTimeout = 3600000;
 
   @JsonProperty("dp_aggressive_hb_frequency")
+  @JsonInclude(Include.NON_NULL)
   private Integer dpAggressiveHbFrequency = 100;
 
   @JsonProperty("dp_aggressive_hb_timeout_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer dpAggressiveHbTimeoutCount = 10;
 
   @JsonProperty("dp_hb_frequency")
+  @JsonInclude(Include.NON_NULL)
   private Integer dpHbFrequency = 100;
 
   @JsonProperty("dp_hb_timeout_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer dpHbTimeoutCount = 10;
 
   @JsonProperty("dupip_frequency")
-  private Integer dupipFrequency = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer dupipFrequency = 0;
 
   @JsonProperty("dupip_timeout_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer dupipTimeoutCount = 5;
 
   @JsonProperty("enable_hsm_log")
-  private Boolean enableHsmLog = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableHsmLog = false;
 
   @JsonProperty("feproxy_vips_enable_proxy_arp")
+  @JsonInclude(Include.NON_NULL)
   private Boolean feproxyVipsEnableProxyArp = true;
 
   @JsonProperty("flow_table_batch_push_frequency")
+  @JsonInclude(Include.NON_NULL)
   private Integer flowTableBatchPushFrequency = 5;
 
   @JsonProperty("flow_table_max_entries_deprecated")
+  @JsonInclude(Include.NON_NULL)
   private Integer flowTableMaxEntriesDeprecated = 100000000;
 
   @JsonProperty("flow_table_new_syn_max_entries")
+  @JsonInclude(Include.NON_NULL)
   private Integer flowTableNewSynMaxEntries = 40000;
 
   @JsonProperty("global_mtu")
-  private Integer globalMtu = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer globalMtu = 0;
 
   @JsonProperty("http_rum_console_log")
-  private Boolean httpRumConsoleLog = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean httpRumConsoleLog = false;
 
   @JsonProperty("http_rum_min_content_length")
+  @JsonInclude(Include.NON_NULL)
   private Integer httpRumMinContentLength = 64;
 
   @JsonProperty("lb_batch_push_frequency")
+  @JsonInclude(Include.NON_NULL)
   private Integer lbBatchPushFrequency = 5;
 
   @JsonProperty("lb_fail_max_time")
+  @JsonInclude(Include.NON_NULL)
   private Integer lbFailMaxTime = 5;
 
   @JsonProperty("lbaction_num_requests_to_dispatch")
+  @JsonInclude(Include.NON_NULL)
   private Integer lbactionNumRequestsToDispatch = 4;
 
   @JsonProperty("lbaction_rq_per_request_max_retries")
+  @JsonInclude(Include.NON_NULL)
   private Integer lbactionRqPerRequestMaxRetries = 22;
 
   @JsonProperty("log_agent_compress_logs")
+  @JsonInclude(Include.NON_NULL)
   private Boolean logAgentCompressLogs = true;
 
   @JsonProperty("log_agent_conn_send_buffer_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentConnSendBufferSize = 16384;
 
   @JsonProperty("log_agent_export_msg_buffer_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentExportMsgBufferSize = 524288;
 
   @JsonProperty("log_agent_export_wait_time")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentExportWaitTime = 100;
 
   @JsonProperty("log_agent_file_sz_appl")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentFileSzAppl = 4;
 
   @JsonProperty("log_agent_file_sz_conn")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentFileSzConn = 4;
 
   @JsonProperty("log_agent_file_sz_debug")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentFileSzDebug = 4;
 
   @JsonProperty("log_agent_file_sz_event")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentFileSzEvent = 4;
 
   @JsonProperty("log_agent_log_storage_min_sz")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentLogStorageMinSz = 1024;
 
   @JsonProperty("log_agent_max_active_adf_files_per_vs")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentMaxActiveAdfFilesPerVs = 100;
 
   @JsonProperty("log_agent_max_concurrent_rsync")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentMaxConcurrentRsync = 1024;
 
   @JsonProperty("log_agent_max_logmessage_proto_sz")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentMaxLogmessageProtoSz = 65536;
 
   @JsonProperty("log_agent_max_storage_excess_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentMaxStorageExcessPercent = 110;
 
   @JsonProperty("log_agent_max_storage_ignore_percent")
-  private Float logAgentMaxStorageIgnorePercent = 20.0f;
+  @JsonInclude(Include.NON_NULL)
+  private float logAgentMaxStorageIgnorePercent = 20.0f;
 
   @JsonProperty("log_agent_min_storage_per_vs")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentMinStoragePerVs = 10;
 
   @JsonProperty("log_agent_pause_interval")
-  private Integer logAgentPauseInterval = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer logAgentPauseInterval = 0;
 
   @JsonProperty("log_agent_sleep_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentSleepInterval = 10;
 
   @JsonProperty("log_agent_unknown_vs_timer")
+  @JsonInclude(Include.NON_NULL)
   private Integer logAgentUnknownVsTimer = 1800;
 
   @JsonProperty("log_message_max_file_list_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer logMessageMaxFileListSize = 64;
 
   @JsonProperty("max_throughput")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxThroughput = 10000;
 
   @JsonProperty("mcache_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean mcacheEnabled = null;
 
   @JsonProperty("mcache_fetch_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean mcacheFetchEnabled = null;
 
   @JsonProperty("mcache_max_cache_size")
-  private Long mcacheMaxCacheSize = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer mcacheMaxCacheSize = null;
 
   @JsonProperty("mcache_store_in_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean mcacheStoreInEnabled = null;
 
   @JsonProperty("mcache_store_in_max_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer mcacheStoreInMaxSize = null;
 
   @JsonProperty("mcache_store_in_min_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer mcacheStoreInMinSize = null;
 
   @JsonProperty("mcache_store_out_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean mcacheStoreOutEnabled = null;
 
   @JsonProperty("mcache_store_se_max_size")
-  private Long mcacheStoreSeMaxSize = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer mcacheStoreSeMaxSize = null;
 
   @JsonProperty("ngx_free_connection_stack")
-  private Boolean ngxFreeConnectionStack = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean ngxFreeConnectionStack = false;
 
   @JsonProperty("persistence_entries_low_watermark")
+  @JsonInclude(Include.NON_NULL)
   private Integer persistenceEntriesLowWatermark = 20000;
 
   @JsonProperty("persistence_mem_max")
-  private Integer persistenceMemMax = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer persistenceMemMax = 0;
 
   @JsonProperty("scaleout_udp_per_pkt")
+  @JsonInclude(Include.NON_NULL)
   private Boolean scaleoutUdpPerPkt = true;
 
   @JsonProperty("se_auth_ldap_bind_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer seAuthLdapBindTimeout = 5000;
 
   @JsonProperty("se_auth_ldap_cache_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer seAuthLdapCacheSize = 100000;
 
   @JsonProperty("se_auth_ldap_connect_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer seAuthLdapConnectTimeout = 10000;
 
   @JsonProperty("se_auth_ldap_conns_per_server")
+  @JsonInclude(Include.NON_NULL)
   private Integer seAuthLdapConnsPerServer = 1;
 
   @JsonProperty("se_auth_ldap_reconnect_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer seAuthLdapReconnectTimeout = 10000;
 
   @JsonProperty("se_auth_ldap_request_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer seAuthLdapRequestTimeout = 10000;
 
   @JsonProperty("se_auth_ldap_servers_failover_only")
-  private Boolean seAuthLdapServersFailoverOnly = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean seAuthLdapServersFailoverOnly = false;
 
   @JsonProperty("se_dp_compression")
+  @JsonInclude(Include.NON_NULL)
   private SeRuntimeCompressionProperties seDpCompression = null;
 
   @JsonProperty("se_dp_hm_drops")
-  private Integer seDpHmDrops = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer seDpHmDrops = 0;
 
   @JsonProperty("se_dp_if_state_poll_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpIfStatePollInterval = 10;
 
   @JsonProperty("se_dp_log_nf_enqueue_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpLogNfEnqueuePercent = 70;
 
   @JsonProperty("se_dp_log_udf_enqueue_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpLogUdfEnqueuePercent = 90;
 
   @JsonProperty("se_dp_vnic_queue_stall_event_sleep")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpVnicQueueStallEventSleep = null;
 
   @JsonProperty("se_dp_vnic_queue_stall_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpVnicQueueStallThreshold = null;
 
   @JsonProperty("se_dp_vnic_queue_stall_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpVnicQueueStallTimeout = null;
 
   @JsonProperty("se_dp_vnic_restart_on_queue_stall_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpVnicRestartOnQueueStallCount = null;
 
   @JsonProperty("se_dp_vnic_stall_se_restart_window")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpVnicStallSeRestartWindow = null;
 
   @JsonProperty("se_dump_core_on_assert")
-  private Boolean seDumpCoreOnAssert = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean seDumpCoreOnAssert = false;
 
   @JsonProperty("se_handle_interface_routes")
-  private Boolean seHandleInterfaceRoutes = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean seHandleInterfaceRoutes = false;
 
   @JsonProperty("se_hb_persist_fudge_bits")
+  @JsonInclude(Include.NON_NULL)
   private Integer seHbPersistFudgeBits = 3;
 
   @JsonProperty("se_mac_error_threshold_to_disable_promiscious")
+  @JsonInclude(Include.NON_NULL)
   private Integer seMacErrorThresholdToDisablePromiscious = 1000;
 
   @JsonProperty("se_malloc_thresh")
-  private Integer seMallocThresh = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer seMallocThresh = 0;
 
   @JsonProperty("se_memory_poison")
+  @JsonInclude(Include.NON_NULL)
   private Boolean seMemoryPoison = true;
 
   @JsonProperty("se_metrics_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer seMetricsInterval = 60000;
 
   @JsonProperty("se_metrics_rt_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean seMetricsRtEnabled = true;
 
   @JsonProperty("se_metrics_rt_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer seMetricsRtInterval = 1000;
 
   @JsonProperty("se_packet_buffer_max")
-  private Integer sePacketBufferMax = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer sePacketBufferMax = 0;
 
   @JsonProperty("se_random_tcp_drops")
-  private Boolean seRandomTcpDrops = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean seRandomTcpDrops = false;
 
   @JsonProperty("se_rate_limiters")
+  @JsonInclude(Include.NON_NULL)
   private SeRateLimiters seRateLimiters = null;
 
   @JsonProperty("service_ip_subnets")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddrPrefix> serviceIpSubnets = null;
 
   @JsonProperty("service_port_ranges")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<PortRange> servicePortRanges = null;
 
   @JsonProperty("services_accessible_all_interfaces")
-  private Boolean servicesAccessibleAllInterfaces = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean servicesAccessibleAllInterfaces = false;
 
   @JsonProperty("spdy_fwd_proxy_parse_enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean spdyFwdProxyParseEnable = true;
 
   @JsonProperty("tcp_syn_cache_max")
+  @JsonInclude(Include.NON_NULL)
   private Integer tcpSynCacheMax = 32768;
 
   @JsonProperty("tcp_syncache_max_retransmit_default")
+  @JsonInclude(Include.NON_NULL)
   private Integer tcpSyncacheMaxRetransmitDefault = 4;
 
   @JsonProperty("upstream_connect_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnectTimeout = 3600000;
 
   @JsonProperty("upstream_connpool_cache_thresh")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolCacheThresh = -1;
 
   @JsonProperty("upstream_connpool_conn_idle_thresh_tmo")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolConnIdleThreshTmo = -1;
 
   @JsonProperty("upstream_connpool_conn_idle_tmo")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolConnIdleTmo = null;
 
   @JsonProperty("upstream_connpool_conn_life_tmo")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolConnLifeTmo = null;
 
   @JsonProperty("upstream_connpool_conn_max_reuse")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolConnMaxReuse = null;
 
   @JsonProperty("upstream_connpool_core_max_cache")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolCoreMaxCache = -1;
 
   @JsonProperty("upstream_connpool_enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean upstreamConnpoolEnable = true;
 
   @JsonProperty("upstream_connpool_server_max_cache")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolServerMaxCache = null;
 
   @JsonProperty("upstream_connpool_strategy")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamConnpoolStrategy = -1;
 
   @JsonProperty("upstream_keepalive")
-  private Boolean upstreamKeepalive = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean upstreamKeepalive = false;
 
   @JsonProperty("upstream_read_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamReadTimeout = 3600000;
 
   @JsonProperty("upstream_send_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer upstreamSendTimeout = 3600000;
 
   @JsonProperty("user_defined_metric_age")
+  @JsonInclude(Include.NON_NULL)
   private Integer userDefinedMetricAge = 60;
 
-  
+
+
   /**
-   * Allow admin user ssh access to SE. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Allow admin user ssh access to se.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return adminSshEnabled
-  **/
-  @ApiModelProperty(value = "Allow admin user ssh access to SE. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAdminSshEnabled() {
+   */
+  @VsoMethod
+  public Boolean getAdminSshEnabled() {
     return adminSshEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Allow admin user ssh access to se.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param adminSshEnabled set the adminSshEnabled.
+   */
   @VsoMethod
-  public void setAdminSshEnabled(Boolean adminSshEnabled) {
+  public void setAdminSshEnabled(Boolean  adminSshEnabled) {
     this.adminSshEnabled = adminSshEnabled;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * @return appHeaders
+   */
+  @VsoMethod
+  public List<AppHdr> getAppHeaders() {
+    return appHeaders;
+  }
+
+  /**
+   * This is the setter method. this will set the appHeaders
+   * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * @return appHeaders
+   */
+  @VsoMethod
+  public void setAppHeaders(List<AppHdr>  appHeaders) {
+    this.appHeaders = appHeaders;
+  }
+
+  /**
+   * This is the setter method this will set the appHeaders
+   * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * @return appHeaders
+   */
+  @VsoMethod
   public SeRuntimeProperties addAppHeadersItem(AppHdr appHeadersItem) {
     if (this.appHeaders == null) {
       this.appHeaders = new ArrayList<AppHdr>();
@@ -388,1683 +522,2002 @@ public class SeRuntimeProperties extends AviRestResource  {
     this.appHeaders.add(appHeadersItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property app_headers of obj type SeRuntimeProperties field type str  type object
-   * @return appHeaders
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property app_headers of obj type SeRuntimeProperties field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<AppHdr> getAppHeaders() {
-    return appHeaders;
-  }
-    
-  @VsoMethod
-  public void setAppHeaders(List<AppHdr> appHeaders) {
-    this.appHeaders = appHeaders;
-  }
-
-  
-  /**
-   * Control if dispatcher core also handles TCP flows in baremetal SE.
+   * This is the getter method this will return the attribute value.
+   * Control if dispatcher core also handles tcp flows in baremetal se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return baremetalDispatcherHandlesFlows
-  **/
-  @ApiModelProperty(value = "Control if dispatcher core also handles TCP flows in baremetal SE.")
-
-
- 
-  @VsoMethod  
-  public Boolean isBaremetalDispatcherHandlesFlows() {
+   */
+  @VsoMethod
+  public Boolean getBaremetalDispatcherHandlesFlows() {
     return baremetalDispatcherHandlesFlows;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Control if dispatcher core also handles tcp flows in baremetal se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param baremetalDispatcherHandlesFlows set the baremetalDispatcherHandlesFlows.
+   */
   @VsoMethod
-  public void setBaremetalDispatcherHandlesFlows(Boolean baremetalDispatcherHandlesFlows) {
+  public void setBaremetalDispatcherHandlesFlows(Boolean  baremetalDispatcherHandlesFlows) {
     this.baremetalDispatcherHandlesFlows = baremetalDispatcherHandlesFlows;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Rate limit on maximum adf lossy log to pushper second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return connectionsLossyLogRateLimiterThreshold
-  **/
-  @ApiModelProperty(value = "Rate limit on maximum adf lossy log to pushper second.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getConnectionsLossyLogRateLimiterThreshold() {
     return connectionsLossyLogRateLimiterThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limit on maximum adf lossy log to pushper second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @param connectionsLossyLogRateLimiterThreshold set the connectionsLossyLogRateLimiterThreshold.
+   */
   @VsoMethod
-  public void setConnectionsLossyLogRateLimiterThreshold(Integer connectionsLossyLogRateLimiterThreshold) {
+  public void setConnectionsLossyLogRateLimiterThreshold(Integer  connectionsLossyLogRateLimiterThreshold) {
     this.connectionsLossyLogRateLimiterThreshold = connectionsLossyLogRateLimiterThreshold;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Rate limit on maximum adf udf or nf log to pushper second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return connectionsUdfnfLogRateLimiterThreshold
-  **/
-  @ApiModelProperty(value = "Rate limit on maximum adf udf or nf log to pushper second.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getConnectionsUdfnfLogRateLimiterThreshold() {
     return connectionsUdfnfLogRateLimiterThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limit on maximum adf udf or nf log to pushper second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @param connectionsUdfnfLogRateLimiterThreshold set the connectionsUdfnfLogRateLimiterThreshold.
+   */
   @VsoMethod
-  public void setConnectionsUdfnfLogRateLimiterThreshold(Integer connectionsUdfnfLogRateLimiterThreshold) {
+  public void setConnectionsUdfnfLogRateLimiterThreshold(Integer  connectionsUdfnfLogRateLimiterThreshold) {
     this.connectionsUdfnfLogRateLimiterThreshold = connectionsUdfnfLogRateLimiterThreshold;
   }
 
-  
   /**
-   * Disable Flow Probes for Scaled out VS'es. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Disable flow probes for scaled out vs'es.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableFlowProbes
-  **/
-  @ApiModelProperty(value = "Disable Flow Probes for Scaled out VS'es. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableFlowProbes() {
+   */
+  @VsoMethod
+  public Boolean getDisableFlowProbes() {
     return disableFlowProbes;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Disable flow probes for scaled out vs'es.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableFlowProbes set the disableFlowProbes.
+   */
   @VsoMethod
-  public void setDisableFlowProbes(Boolean disableFlowProbes) {
+  public void setDisableFlowProbes(Boolean  disableFlowProbes) {
     this.disableFlowProbes = disableFlowProbes;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.2.5. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.2.5.
+   * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableGro
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.2.5. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableGro() {
+   */
+  @VsoMethod
+  public Boolean getDisableGro() {
     return disableGro;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.2.5.
+   * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableGro set the disableGro.
+   */
   @VsoMethod
-  public void setDisableGro(Boolean disableGro) {
+  public void setDisableGro(Boolean  disableGro) {
     this.disableGro = disableGro;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.2.5. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.2.5.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableTso
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.2.5. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableTso() {
+   */
+  @VsoMethod
+  public Boolean getDisableTso() {
     return disableTso;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.2.5.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableTso set the disableTso.
+   */
   @VsoMethod
-  public void setDisableTso(Boolean disableTso) {
+  public void setDisableTso(Boolean  disableTso) {
     this.disableTso = disableTso;
   }
 
-  
   /**
-   * Placeholder for description of property dos_profile of obj type SeRuntimeProperties field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property dos_profile of obj type seruntimeproperties field type str  type ref.
    * @return dosProfile
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property dos_profile of obj type SeRuntimeProperties field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DosThresholdProfile getDosProfile() {
     return dosProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property dos_profile of obj type seruntimeproperties field type str  type ref.
+   * @param dosProfile set the dosProfile.
+   */
   @VsoMethod
   public void setDosProfile(DosThresholdProfile dosProfile) {
     this.dosProfile = dosProfile;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Timeout for downstream to become writable.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return downstreamSendTimeout
-  **/
-  @ApiModelProperty(value = "Timeout for downstream to become writable.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDownstreamSendTimeout() {
     return downstreamSendTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timeout for downstream to become writable.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
+   * @param downstreamSendTimeout set the downstreamSendTimeout.
+   */
   @VsoMethod
-  public void setDownstreamSendTimeout(Integer downstreamSendTimeout) {
+  public void setDownstreamSendTimeout(Integer  downstreamSendTimeout) {
     this.downstreamSendTimeout = downstreamSendTimeout;
   }
 
-  
   /**
-   * Frequency of SE - SE HB messages when aggressive failure mode detection is enabled.
+   * This is the getter method this will return the attribute value.
+   * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpAggressiveHbFrequency
-  **/
-  @ApiModelProperty(value = "Frequency of SE - SE HB messages when aggressive failure mode detection is enabled.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDpAggressiveHbFrequency() {
     return dpAggressiveHbFrequency;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param dpAggressiveHbFrequency set the dpAggressiveHbFrequency.
+   */
   @VsoMethod
-  public void setDpAggressiveHbFrequency(Integer dpAggressiveHbFrequency) {
+  public void setDpAggressiveHbFrequency(Integer  dpAggressiveHbFrequency) {
     this.dpAggressiveHbFrequency = dpAggressiveHbFrequency;
   }
 
-  
   /**
-   * Consecutive HB failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
+   * This is the getter method this will return the attribute value.
+   * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpAggressiveHbTimeoutCount
-  **/
-  @ApiModelProperty(value = "Consecutive HB failures after which failure is reported to controller,when aggressive failure mode detection is enabled.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDpAggressiveHbTimeoutCount() {
     return dpAggressiveHbTimeoutCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param dpAggressiveHbTimeoutCount set the dpAggressiveHbTimeoutCount.
+   */
   @VsoMethod
-  public void setDpAggressiveHbTimeoutCount(Integer dpAggressiveHbTimeoutCount) {
+  public void setDpAggressiveHbTimeoutCount(Integer  dpAggressiveHbTimeoutCount) {
     this.dpAggressiveHbTimeoutCount = dpAggressiveHbTimeoutCount;
   }
 
-  
   /**
-   * Frequency of SE - SE HB messages when aggressive failure mode detection is not enabled.
+   * This is the getter method this will return the attribute value.
+   * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpHbFrequency
-  **/
-  @ApiModelProperty(value = "Frequency of SE - SE HB messages when aggressive failure mode detection is not enabled.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDpHbFrequency() {
     return dpHbFrequency;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param dpHbFrequency set the dpHbFrequency.
+   */
   @VsoMethod
-  public void setDpHbFrequency(Integer dpHbFrequency) {
+  public void setDpHbFrequency(Integer  dpHbFrequency) {
     this.dpHbFrequency = dpHbFrequency;
   }
 
-  
   /**
-   * Consecutive HB failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
+   * This is the getter method this will return the attribute value.
+   * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpHbTimeoutCount
-  **/
-  @ApiModelProperty(value = "Consecutive HB failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDpHbTimeoutCount() {
     return dpHbTimeoutCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param dpHbTimeoutCount set the dpHbTimeoutCount.
+   */
   @VsoMethod
-  public void setDpHbTimeoutCount(Integer dpHbTimeoutCount) {
+  public void setDpHbTimeoutCount(Integer  dpHbTimeoutCount) {
     this.dpHbTimeoutCount = dpHbTimeoutCount;
   }
 
-  
   /**
-   * Frequency of ARP requests sent by SE for each VIP to detect duplicate IP when it loses conectivity to controller.
+   * This is the getter method this will return the attribute value.
+   * Frequency of arp requests sent by se for each vip to detect duplicate ip when it loses conectivity to controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return dupipFrequency
-  **/
-  @ApiModelProperty(value = "Frequency of ARP requests sent by SE for each VIP to detect duplicate IP when it loses conectivity to controller.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDupipFrequency() {
     return dupipFrequency;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Frequency of arp requests sent by se for each vip to detect duplicate ip when it loses conectivity to controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param dupipFrequency set the dupipFrequency.
+   */
   @VsoMethod
-  public void setDupipFrequency(Integer dupipFrequency) {
+  public void setDupipFrequency(Integer  dupipFrequency) {
     this.dupipFrequency = dupipFrequency;
   }
 
-  
   /**
-   * Number of ARP responses received for the VIP after which SE decides that the VIP has been moved and disables the VIP.
+   * This is the getter method this will return the attribute value.
+   * Number of arp responses received for the vip after which se decides that the vip has been moved and disables the vip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return dupipTimeoutCount
-  **/
-  @ApiModelProperty(value = "Number of ARP responses received for the VIP after which SE decides that the VIP has been moved and disables the VIP.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDupipTimeoutCount() {
     return dupipTimeoutCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of arp responses received for the vip after which se decides that the vip has been moved and disables the vip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param dupipTimeoutCount set the dupipTimeoutCount.
+   */
   @VsoMethod
-  public void setDupipTimeoutCount(Integer dupipTimeoutCount) {
+  public void setDupipTimeoutCount(Integer  dupipTimeoutCount) {
     this.dupipTimeoutCount = dupipTimeoutCount;
   }
 
-  
   /**
-   * Enable HSM luna engine logs. Field introduced in 16.4.8, 17.1.11, 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Enable hsm luna engine logs.
+   * Field introduced in 16.4.8, 17.1.11, 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableHsmLog
-  **/
-  @ApiModelProperty(value = "Enable HSM luna engine logs. Field introduced in 16.4.8, 17.1.11, 17.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableHsmLog() {
+   */
+  @VsoMethod
+  public Boolean getEnableHsmLog() {
     return enableHsmLog;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable hsm luna engine logs.
+   * Field introduced in 16.4.8, 17.1.11, 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableHsmLog set the enableHsmLog.
+   */
   @VsoMethod
-  public void setEnableHsmLog(Boolean enableHsmLog) {
+  public void setEnableHsmLog(Boolean  enableHsmLog) {
     this.enableHsmLog = enableHsmLog;
   }
 
-  
   /**
-   * Enable proxy ARP from Host interface for Front End  proxies.
+   * This is the getter method this will return the attribute value.
+   * Enable proxy arp from host interface for front end  proxies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return feproxyVipsEnableProxyArp
-  **/
-  @ApiModelProperty(value = "Enable proxy ARP from Host interface for Front End  proxies.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFeproxyVipsEnableProxyArp() {
+   */
+  @VsoMethod
+  public Boolean getFeproxyVipsEnableProxyArp() {
     return feproxyVipsEnableProxyArp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable proxy arp from host interface for front end  proxies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param feproxyVipsEnableProxyArp set the feproxyVipsEnableProxyArp.
+   */
   @VsoMethod
-  public void setFeproxyVipsEnableProxyArp(Boolean feproxyVipsEnableProxyArp) {
+  public void setFeproxyVipsEnableProxyArp(Boolean  feproxyVipsEnableProxyArp) {
     this.feproxyVipsEnableProxyArp = feproxyVipsEnableProxyArp;
   }
 
-  
   /**
-   * How often to push the flow table IPC messages in the main loop. The value is the number of times through the loop before pushing the batch. i.e, a value of 1 means every time through the loop.
+   * This is the getter method this will return the attribute value.
+   * How often to push the flow table ipc messages in the main loop.
+   * The value is the number of times through the loop before pushing the batch.
+   * I.e, a value of 1 means every time through the loop.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return flowTableBatchPushFrequency
-  **/
-  @ApiModelProperty(value = "How often to push the flow table IPC messages in the main loop. The value is the number of times through the loop before pushing the batch. i.e, a value of 1 means every time through the loop.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFlowTableBatchPushFrequency() {
     return flowTableBatchPushFrequency;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * How often to push the flow table ipc messages in the main loop.
+   * The value is the number of times through the loop before pushing the batch.
+   * I.e, a value of 1 means every time through the loop.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param flowTableBatchPushFrequency set the flowTableBatchPushFrequency.
+   */
   @VsoMethod
-  public void setFlowTableBatchPushFrequency(Integer flowTableBatchPushFrequency) {
+  public void setFlowTableBatchPushFrequency(Integer  flowTableBatchPushFrequency) {
     this.flowTableBatchPushFrequency = flowTableBatchPushFrequency;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100000000.
    * @return flowTableMaxEntriesDeprecated
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFlowTableMaxEntriesDeprecated() {
     return flowTableMaxEntriesDeprecated;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100000000.
+   * @param flowTableMaxEntriesDeprecated set the flowTableMaxEntriesDeprecated.
+   */
   @VsoMethod
-  public void setFlowTableMaxEntriesDeprecated(Integer flowTableMaxEntriesDeprecated) {
+  public void setFlowTableMaxEntriesDeprecated(Integer  flowTableMaxEntriesDeprecated) {
     this.flowTableMaxEntriesDeprecated = flowTableMaxEntriesDeprecated;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 40000.
    * @return flowTableNewSynMaxEntries
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFlowTableNewSynMaxEntries() {
     return flowTableNewSynMaxEntries;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 40000.
+   * @param flowTableNewSynMaxEntries set the flowTableNewSynMaxEntries.
+   */
   @VsoMethod
-  public void setFlowTableNewSynMaxEntries(Integer flowTableNewSynMaxEntries) {
+  public void setFlowTableNewSynMaxEntries(Integer  flowTableNewSynMaxEntries) {
     this.flowTableNewSynMaxEntries = flowTableNewSynMaxEntries;
   }
 
-  
   /**
-   * Overrides the MTU value received via DHCP or some other means. Use this when the infrastructure advertises an MTU that is not supported by all devices in the network. For example, in AWS or when an overlay is used.
+   * This is the getter method this will return the attribute value.
+   * Overrides the mtu value received via dhcp or some other means.
+   * Use this when the infrastructure advertises an mtu that is not supported by all devices in the network.
+   * For example, in aws or when an overlay is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return globalMtu
-  **/
-  @ApiModelProperty(value = "Overrides the MTU value received via DHCP or some other means. Use this when the infrastructure advertises an MTU that is not supported by all devices in the network. For example, in AWS or when an overlay is used.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getGlobalMtu() {
     return globalMtu;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Overrides the mtu value received via dhcp or some other means.
+   * Use this when the infrastructure advertises an mtu that is not supported by all devices in the network.
+   * For example, in aws or when an overlay is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param globalMtu set the globalMtu.
+   */
   @VsoMethod
-  public void setGlobalMtu(Integer globalMtu) {
+  public void setGlobalMtu(Integer  globalMtu) {
     this.globalMtu = globalMtu;
   }
 
-  
   /**
-   * Enable Javascript console logs on the client browser when collecting client insights.
+   * This is the getter method this will return the attribute value.
+   * Enable javascript console logs on the client browser when collecting client insights.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httpRumConsoleLog
-  **/
-  @ApiModelProperty(value = "Enable Javascript console logs on the client browser when collecting client insights.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHttpRumConsoleLog() {
+   */
+  @VsoMethod
+  public Boolean getHttpRumConsoleLog() {
     return httpRumConsoleLog;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable javascript console logs on the client browser when collecting client insights.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param httpRumConsoleLog set the httpRumConsoleLog.
+   */
   @VsoMethod
-  public void setHttpRumConsoleLog(Boolean httpRumConsoleLog) {
+  public void setHttpRumConsoleLog(Boolean  httpRumConsoleLog) {
     this.httpRumConsoleLog = httpRumConsoleLog;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Minimum response size content length to sample for client insights.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return httpRumMinContentLength
-  **/
-  @ApiModelProperty(value = "Minimum response size content length to sample for client insights.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getHttpRumMinContentLength() {
     return httpRumMinContentLength;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum response size content length to sample for client insights.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
+   * @param httpRumMinContentLength set the httpRumMinContentLength.
+   */
   @VsoMethod
-  public void setHttpRumMinContentLength(Integer httpRumMinContentLength) {
+  public void setHttpRumMinContentLength(Integer  httpRumMinContentLength) {
     this.httpRumMinContentLength = httpRumMinContentLength;
   }
 
-  
   /**
-   * How often to push the LB IPC messages in the main loop. The value is the number of times the loop has to run before pushing the batch. i.e, a value of 1 means the batch is pushed every time the loop runs. Field deprecated in 18.1.3. Field introduced in 17.2.8.
+   * This is the getter method this will return the attribute value.
+   * How often to push the lb ipc messages in the main loop.
+   * The value is the number of times the loop has to run before pushing the batch.
+   * I.e, a value of 1 means the batch is pushed every time the loop runs.
+   * Field deprecated in 18.1.3.
+   * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return lbBatchPushFrequency
-  **/
-  @ApiModelProperty(value = "How often to push the LB IPC messages in the main loop. The value is the number of times the loop has to run before pushing the batch. i.e, a value of 1 means the batch is pushed every time the loop runs. Field deprecated in 18.1.3. Field introduced in 17.2.8.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLbBatchPushFrequency() {
     return lbBatchPushFrequency;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * How often to push the lb ipc messages in the main loop.
+   * The value is the number of times the loop has to run before pushing the batch.
+   * I.e, a value of 1 means the batch is pushed every time the loop runs.
+   * Field deprecated in 18.1.3.
+   * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param lbBatchPushFrequency set the lbBatchPushFrequency.
+   */
   @VsoMethod
-  public void setLbBatchPushFrequency(Integer lbBatchPushFrequency) {
+  public void setLbBatchPushFrequency(Integer  lbBatchPushFrequency) {
     this.lbBatchPushFrequency = lbBatchPushFrequency;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return lbFailMaxTime
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLbFailMaxTime() {
     return lbFailMaxTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param lbFailMaxTime set the lbFailMaxTime.
+   */
   @VsoMethod
-  public void setLbFailMaxTime(Integer lbFailMaxTime) {
+  public void setLbFailMaxTime(Integer  lbFailMaxTime) {
     this.lbFailMaxTime = lbFailMaxTime;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Number of requests to dispatch from the request queue at a regular interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return lbactionNumRequestsToDispatch
-  **/
-  @ApiModelProperty(value = "Number of requests to dispatch from the request queue at a regular interval.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLbactionNumRequestsToDispatch() {
     return lbactionNumRequestsToDispatch;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of requests to dispatch from the request queue at a regular interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param lbactionNumRequestsToDispatch set the lbactionNumRequestsToDispatch.
+   */
   @VsoMethod
-  public void setLbactionNumRequestsToDispatch(Integer lbactionNumRequestsToDispatch) {
+  public void setLbactionNumRequestsToDispatch(Integer  lbactionNumRequestsToDispatch) {
     this.lbactionNumRequestsToDispatch = lbactionNumRequestsToDispatch;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum retries per request in the request queue.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 22.
    * @return lbactionRqPerRequestMaxRetries
-  **/
-  @ApiModelProperty(value = "Maximum retries per request in the request queue.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLbactionRqPerRequestMaxRetries() {
     return lbactionRqPerRequestMaxRetries;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum retries per request in the request queue.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 22.
+   * @param lbactionRqPerRequestMaxRetries set the lbactionRqPerRequestMaxRetries.
+   */
   @VsoMethod
-  public void setLbactionRqPerRequestMaxRetries(Integer lbactionRqPerRequestMaxRetries) {
+  public void setLbactionRqPerRequestMaxRetries(Integer  lbactionRqPerRequestMaxRetries) {
     this.lbactionRqPerRequestMaxRetries = lbactionRqPerRequestMaxRetries;
   }
 
-  
   /**
-   * Flag to indicate if log files are compressed upon full on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Flag to indicate if log files are compressed upon full on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return logAgentCompressLogs
-  **/
-  @ApiModelProperty(value = "Flag to indicate if log files are compressed upon full on the Service Engine.")
-
-
- 
-  @VsoMethod  
-  public Boolean isLogAgentCompressLogs() {
+   */
+  @VsoMethod
+  public Boolean getLogAgentCompressLogs() {
     return logAgentCompressLogs;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Flag to indicate if log files are compressed upon full on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param logAgentCompressLogs set the logAgentCompressLogs.
+   */
   @VsoMethod
-  public void setLogAgentCompressLogs(Boolean logAgentCompressLogs) {
+  public void setLogAgentCompressLogs(Boolean  logAgentCompressLogs) {
     this.logAgentCompressLogs = logAgentCompressLogs;
   }
 
-  
   /**
-   * Log-agent test property used to simulate slow TCP connections.
+   * This is the getter method this will return the attribute value.
+   * Log-agent test property used to simulate slow tcp connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @return logAgentConnSendBufferSize
-  **/
-  @ApiModelProperty(value = "Log-agent test property used to simulate slow TCP connections.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentConnSendBufferSize() {
     return logAgentConnSendBufferSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Log-agent test property used to simulate slow tcp connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
+   * @param logAgentConnSendBufferSize set the logAgentConnSendBufferSize.
+   */
   @VsoMethod
-  public void setLogAgentConnSendBufferSize(Integer logAgentConnSendBufferSize) {
+  public void setLogAgentConnSendBufferSize(Integer  logAgentConnSendBufferSize) {
     this.logAgentConnSendBufferSize = logAgentConnSendBufferSize;
   }
 
-  
   /**
-   * Maximum size of data sent by log-agent to Controller over the TCP connection.
+   * This is the getter method this will return the attribute value.
+   * Maximum size of data sent by log-agent to controller over the tcp connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
    * @return logAgentExportMsgBufferSize
-  **/
-  @ApiModelProperty(value = "Maximum size of data sent by log-agent to Controller over the TCP connection.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentExportMsgBufferSize() {
     return logAgentExportMsgBufferSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size of data sent by log-agent to controller over the tcp connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
+   * @param logAgentExportMsgBufferSize set the logAgentExportMsgBufferSize.
+   */
   @VsoMethod
-  public void setLogAgentExportMsgBufferSize(Integer logAgentExportMsgBufferSize) {
+  public void setLogAgentExportMsgBufferSize(Integer  logAgentExportMsgBufferSize) {
     this.logAgentExportMsgBufferSize = logAgentExportMsgBufferSize;
   }
 
-  
   /**
-   * Time log-agent waits before sending data to the Controller.
+   * This is the getter method this will return the attribute value.
+   * Time log-agent waits before sending data to the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return logAgentExportWaitTime
-  **/
-  @ApiModelProperty(value = "Time log-agent waits before sending data to the Controller.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentExportWaitTime() {
     return logAgentExportWaitTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Time log-agent waits before sending data to the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param logAgentExportWaitTime set the logAgentExportWaitTime.
+   */
   @VsoMethod
-  public void setLogAgentExportWaitTime(Integer logAgentExportWaitTime) {
+  public void setLogAgentExportWaitTime(Integer  logAgentExportWaitTime) {
     this.logAgentExportWaitTime = logAgentExportWaitTime;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum application log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzAppl
-  **/
-  @ApiModelProperty(value = "Maximum application log file size before rollover.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentFileSzAppl() {
     return logAgentFileSzAppl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum application log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param logAgentFileSzAppl set the logAgentFileSzAppl.
+   */
   @VsoMethod
-  public void setLogAgentFileSzAppl(Integer logAgentFileSzAppl) {
+  public void setLogAgentFileSzAppl(Integer  logAgentFileSzAppl) {
     this.logAgentFileSzAppl = logAgentFileSzAppl;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum connection log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzConn
-  **/
-  @ApiModelProperty(value = "Maximum connection log file size before rollover.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentFileSzConn() {
     return logAgentFileSzConn;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum connection log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param logAgentFileSzConn set the logAgentFileSzConn.
+   */
   @VsoMethod
-  public void setLogAgentFileSzConn(Integer logAgentFileSzConn) {
+  public void setLogAgentFileSzConn(Integer  logAgentFileSzConn) {
     this.logAgentFileSzConn = logAgentFileSzConn;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum debug log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzDebug
-  **/
-  @ApiModelProperty(value = "Maximum debug log file size before rollover.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentFileSzDebug() {
     return logAgentFileSzDebug;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum debug log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param logAgentFileSzDebug set the logAgentFileSzDebug.
+   */
   @VsoMethod
-  public void setLogAgentFileSzDebug(Integer logAgentFileSzDebug) {
+  public void setLogAgentFileSzDebug(Integer  logAgentFileSzDebug) {
     this.logAgentFileSzDebug = logAgentFileSzDebug;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum event log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzEvent
-  **/
-  @ApiModelProperty(value = "Maximum event log file size before rollover.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentFileSzEvent() {
     return logAgentFileSzEvent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum event log file size before rollover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param logAgentFileSzEvent set the logAgentFileSzEvent.
+   */
   @VsoMethod
-  public void setLogAgentFileSzEvent(Integer logAgentFileSzEvent) {
+  public void setLogAgentFileSzEvent(Integer  logAgentFileSzEvent) {
     this.logAgentFileSzEvent = logAgentFileSzEvent;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Minimum storage allocated for logs irrespective of memory and cores.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return logAgentLogStorageMinSz
-  **/
-  @ApiModelProperty(value = "Minimum storage allocated for logs irrespective of memory and cores.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentLogStorageMinSz() {
     return logAgentLogStorageMinSz;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum storage allocated for logs irrespective of memory and cores.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+   * @param logAgentLogStorageMinSz set the logAgentLogStorageMinSz.
+   */
   @VsoMethod
-  public void setLogAgentLogStorageMinSz(Integer logAgentLogStorageMinSz) {
+  public void setLogAgentLogStorageMinSz(Integer  logAgentLogStorageMinSz) {
     this.logAgentLogStorageMinSz = logAgentLogStorageMinSz;
   }
 
-  
   /**
-   * Maximum number of Virtual Service log files maintained for significant logs on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Maximum number of virtual service log files maintained for significant logs on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return logAgentMaxActiveAdfFilesPerVs
-  **/
-  @ApiModelProperty(value = "Maximum number of Virtual Service log files maintained for significant logs on the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentMaxActiveAdfFilesPerVs() {
     return logAgentMaxActiveAdfFilesPerVs;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of virtual service log files maintained for significant logs on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param logAgentMaxActiveAdfFilesPerVs set the logAgentMaxActiveAdfFilesPerVs.
+   */
   @VsoMethod
-  public void setLogAgentMaxActiveAdfFilesPerVs(Integer logAgentMaxActiveAdfFilesPerVs) {
+  public void setLogAgentMaxActiveAdfFilesPerVs(Integer  logAgentMaxActiveAdfFilesPerVs) {
     this.logAgentMaxActiveAdfFilesPerVs = logAgentMaxActiveAdfFilesPerVs;
   }
 
-  
   /**
-   * Maximum concurrent rsync requests initiated from log-agent to the Controller.
+   * This is the getter method this will return the attribute value.
+   * Maximum concurrent rsync requests initiated from log-agent to the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return logAgentMaxConcurrentRsync
-  **/
-  @ApiModelProperty(value = "Maximum concurrent rsync requests initiated from log-agent to the Controller.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentMaxConcurrentRsync() {
     return logAgentMaxConcurrentRsync;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum concurrent rsync requests initiated from log-agent to the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+   * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
+   */
   @VsoMethod
-  public void setLogAgentMaxConcurrentRsync(Integer logAgentMaxConcurrentRsync) {
+  public void setLogAgentMaxConcurrentRsync(Integer  logAgentMaxConcurrentRsync) {
     this.logAgentMaxConcurrentRsync = logAgentMaxConcurrentRsync;
   }
 
-  
   /**
-   * Maximum size of serialized log message on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Maximum size of serialized log message on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
    * @return logAgentMaxLogmessageProtoSz
-  **/
-  @ApiModelProperty(value = "Maximum size of serialized log message on the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentMaxLogmessageProtoSz() {
     return logAgentMaxLogmessageProtoSz;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size of serialized log message on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
+   * @param logAgentMaxLogmessageProtoSz set the logAgentMaxLogmessageProtoSz.
+   */
   @VsoMethod
-  public void setLogAgentMaxLogmessageProtoSz(Integer logAgentMaxLogmessageProtoSz) {
+  public void setLogAgentMaxLogmessageProtoSz(Integer  logAgentMaxLogmessageProtoSz) {
     this.logAgentMaxLogmessageProtoSz = logAgentMaxLogmessageProtoSz;
   }
 
-  
   /**
-   * Excess percentage threshold of disk size to trigger cleanup of logs on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 110.
    * @return logAgentMaxStorageExcessPercent
-  **/
-  @ApiModelProperty(value = "Excess percentage threshold of disk size to trigger cleanup of logs on the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentMaxStorageExcessPercent() {
     return logAgentMaxStorageExcessPercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 110.
+   * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
+   */
   @VsoMethod
-  public void setLogAgentMaxStorageExcessPercent(Integer logAgentMaxStorageExcessPercent) {
+  public void setLogAgentMaxStorageExcessPercent(Integer  logAgentMaxStorageExcessPercent) {
     this.logAgentMaxStorageExcessPercent = logAgentMaxStorageExcessPercent;
   }
 
-  
   /**
-   * Maximum storage on the disk not allocated for logs on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Maximum storage on the disk not allocated for logs on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0.
    * @return logAgentMaxStorageIgnorePercent
-  **/
-  @ApiModelProperty(value = "Maximum storage on the disk not allocated for logs on the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Float getLogAgentMaxStorageIgnorePercent() {
     return logAgentMaxStorageIgnorePercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum storage on the disk not allocated for logs on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0.
+   * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
+   */
   @VsoMethod
-  public void setLogAgentMaxStorageIgnorePercent(Float logAgentMaxStorageIgnorePercent) {
+  public void setLogAgentMaxStorageIgnorePercent(Float  logAgentMaxStorageIgnorePercent) {
     this.logAgentMaxStorageIgnorePercent = logAgentMaxStorageIgnorePercent;
   }
 
-  
   /**
-   * Minimum storage allocated to any given VirtualService on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Minimum storage allocated to any given virtualservice on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return logAgentMinStoragePerVs
-  **/
-  @ApiModelProperty(value = "Minimum storage allocated to any given VirtualService on the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentMinStoragePerVs() {
     return logAgentMinStoragePerVs;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum storage allocated to any given virtualservice on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
+   */
   @VsoMethod
-  public void setLogAgentMinStoragePerVs(Integer logAgentMinStoragePerVs) {
+  public void setLogAgentMinStoragePerVs(Integer  logAgentMinStoragePerVs) {
     this.logAgentMinStoragePerVs = logAgentMinStoragePerVs;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Time interval log-agent pauses between logs obtained from the dataplane.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return logAgentPauseInterval
-  **/
-  @ApiModelProperty(value = "Time interval log-agent pauses between logs obtained from the dataplane.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentPauseInterval() {
     return logAgentPauseInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Time interval log-agent pauses between logs obtained from the dataplane.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param logAgentPauseInterval set the logAgentPauseInterval.
+   */
   @VsoMethod
-  public void setLogAgentPauseInterval(Integer logAgentPauseInterval) {
+  public void setLogAgentPauseInterval(Integer  logAgentPauseInterval) {
     this.logAgentPauseInterval = logAgentPauseInterval;
   }
 
-  
   /**
-   * Internal timer to stall log-agent and prevent it from hogging CPU cycles on the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return logAgentSleepInterval
-  **/
-  @ApiModelProperty(value = "Internal timer to stall log-agent and prevent it from hogging CPU cycles on the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentSleepInterval() {
     return logAgentSleepInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param logAgentSleepInterval set the logAgentSleepInterval.
+   */
   @VsoMethod
-  public void setLogAgentSleepInterval(Integer logAgentSleepInterval) {
+  public void setLogAgentSleepInterval(Integer  logAgentSleepInterval) {
     this.logAgentSleepInterval = logAgentSleepInterval;
   }
 
-  
   /**
-   * Timeout to purge unknown Virtual Service logs from the Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Timeout to purge unknown virtual service logs from the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @return logAgentUnknownVsTimer
-  **/
-  @ApiModelProperty(value = "Timeout to purge unknown Virtual Service logs from the Service Engine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogAgentUnknownVsTimer() {
     return logAgentUnknownVsTimer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timeout to purge unknown virtual service logs from the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+   * @param logAgentUnknownVsTimer set the logAgentUnknownVsTimer.
+   */
   @VsoMethod
-  public void setLogAgentUnknownVsTimer(Integer logAgentUnknownVsTimer) {
+  public void setLogAgentUnknownVsTimer(Integer  logAgentUnknownVsTimer) {
     this.logAgentUnknownVsTimer = logAgentUnknownVsTimer;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of file names in a log message.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return logMessageMaxFileListSize
-  **/
-  @ApiModelProperty(value = "Maximum number of file names in a log message.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLogMessageMaxFileListSize() {
     return logMessageMaxFileListSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of file names in a log message.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
+   * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
+   */
   @VsoMethod
-  public void setLogMessageMaxFileListSize(Integer logMessageMaxFileListSize) {
+  public void setLogMessageMaxFileListSize(Integer  logMessageMaxFileListSize) {
     this.logMessageMaxFileListSize = logMessageMaxFileListSize;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return maxThroughput
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxThroughput() {
     return maxThroughput;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @param maxThroughput set the maxThroughput.
+   */
   @VsoMethod
-  public void setMaxThroughput(Integer maxThroughput) {
+  public void setMaxThroughput(Integer  maxThroughput) {
     this.maxThroughput = maxThroughput;
   }
 
-  
   /**
-   * enables mcache - controls fetch/store/store_out.
+   * This is the getter method this will return the attribute value.
+   * Enables mcache - controls fetch/store/store_out.
    * @return mcacheEnabled
-  **/
-  @ApiModelProperty(value = "enables mcache - controls fetch/store/store_out.")
-
-
- 
-  @VsoMethod  
-  public Boolean isMcacheEnabled() {
+   */
+  @VsoMethod
+  public Boolean getMcacheEnabled() {
     return mcacheEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables mcache - controls fetch/store/store_out.
+   * @param mcacheEnabled set the mcacheEnabled.
+   */
   @VsoMethod
-  public void setMcacheEnabled(Boolean mcacheEnabled) {
+  public void setMcacheEnabled(Boolean  mcacheEnabled) {
     this.mcacheEnabled = mcacheEnabled;
   }
 
-  
   /**
-   * enables mcache_fetch.
+   * This is the getter method this will return the attribute value.
+   * Enables mcache_fetch.
    * @return mcacheFetchEnabled
-  **/
-  @ApiModelProperty(value = "enables mcache_fetch.")
-
-
- 
-  @VsoMethod  
-  public Boolean isMcacheFetchEnabled() {
+   */
+  @VsoMethod
+  public Boolean getMcacheFetchEnabled() {
     return mcacheFetchEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables mcache_fetch.
+   * @param mcacheFetchEnabled set the mcacheFetchEnabled.
+   */
   @VsoMethod
-  public void setMcacheFetchEnabled(Boolean mcacheFetchEnabled) {
+  public void setMcacheFetchEnabled(Boolean  mcacheFetchEnabled) {
     this.mcacheFetchEnabled = mcacheFetchEnabled;
   }
 
-  
   /**
-   * Use SE Group's app_cache_percent to set cache memory usage limit on SE. Field deprecated in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Use se group's app_cache_percent to set cache memory usage limit on se.
+   * Field deprecated in 18.2.3.
    * @return mcacheMaxCacheSize
-  **/
-  @ApiModelProperty(value = "Use SE Group's app_cache_percent to set cache memory usage limit on SE. Field deprecated in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Long getMcacheMaxCacheSize() {
+   */
+  @VsoMethod
+  public Integer getMcacheMaxCacheSize() {
     return mcacheMaxCacheSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use se group's app_cache_percent to set cache memory usage limit on se.
+   * Field deprecated in 18.2.3.
+   * @param mcacheMaxCacheSize set the mcacheMaxCacheSize.
+   */
   @VsoMethod
-  public void setMcacheMaxCacheSize(Long mcacheMaxCacheSize) {
+  public void setMcacheMaxCacheSize(Integer  mcacheMaxCacheSize) {
     this.mcacheMaxCacheSize = mcacheMaxCacheSize;
   }
 
-  
   /**
-   * enables mcache_store.
+   * This is the getter method this will return the attribute value.
+   * Enables mcache_store.
    * @return mcacheStoreInEnabled
-  **/
-  @ApiModelProperty(value = "enables mcache_store.")
-
-
- 
-  @VsoMethod  
-  public Boolean isMcacheStoreInEnabled() {
+   */
+  @VsoMethod
+  public Boolean getMcacheStoreInEnabled() {
     return mcacheStoreInEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables mcache_store.
+   * @param mcacheStoreInEnabled set the mcacheStoreInEnabled.
+   */
   @VsoMethod
-  public void setMcacheStoreInEnabled(Boolean mcacheStoreInEnabled) {
+  public void setMcacheStoreInEnabled(Boolean  mcacheStoreInEnabled) {
     this.mcacheStoreInEnabled = mcacheStoreInEnabled;
   }
 
-  
   /**
-   * max object size.
+   * This is the getter method this will return the attribute value.
+   * Max object size.
    * @return mcacheStoreInMaxSize
-  **/
-  @ApiModelProperty(value = "max object size.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMcacheStoreInMaxSize() {
     return mcacheStoreInMaxSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Max object size.
+   * @param mcacheStoreInMaxSize set the mcacheStoreInMaxSize.
+   */
   @VsoMethod
-  public void setMcacheStoreInMaxSize(Integer mcacheStoreInMaxSize) {
+  public void setMcacheStoreInMaxSize(Integer  mcacheStoreInMaxSize) {
     this.mcacheStoreInMaxSize = mcacheStoreInMaxSize;
   }
 
-  
   /**
-   * min object size.
+   * This is the getter method this will return the attribute value.
+   * Min object size.
    * @return mcacheStoreInMinSize
-  **/
-  @ApiModelProperty(value = "min object size.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMcacheStoreInMinSize() {
     return mcacheStoreInMinSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Min object size.
+   * @param mcacheStoreInMinSize set the mcacheStoreInMinSize.
+   */
   @VsoMethod
-  public void setMcacheStoreInMinSize(Integer mcacheStoreInMinSize) {
+  public void setMcacheStoreInMinSize(Integer  mcacheStoreInMinSize) {
     this.mcacheStoreInMinSize = mcacheStoreInMinSize;
   }
 
-  
   /**
-   * enables mcache_store_out.
+   * This is the getter method this will return the attribute value.
+   * Enables mcache_store_out.
    * @return mcacheStoreOutEnabled
-  **/
-  @ApiModelProperty(value = "enables mcache_store_out.")
-
-
- 
-  @VsoMethod  
-  public Boolean isMcacheStoreOutEnabled() {
+   */
+  @VsoMethod
+  public Boolean getMcacheStoreOutEnabled() {
     return mcacheStoreOutEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables mcache_store_out.
+   * @param mcacheStoreOutEnabled set the mcacheStoreOutEnabled.
+   */
   @VsoMethod
-  public void setMcacheStoreOutEnabled(Boolean mcacheStoreOutEnabled) {
+  public void setMcacheStoreOutEnabled(Boolean  mcacheStoreOutEnabled) {
     this.mcacheStoreOutEnabled = mcacheStoreOutEnabled;
   }
 
-  
   /**
-   * Use SE Group's app_cache_percent to set cache memory usage limit on SE. Field deprecated in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Use se group's app_cache_percent to set cache memory usage limit on se.
+   * Field deprecated in 18.2.3.
    * @return mcacheStoreSeMaxSize
-  **/
-  @ApiModelProperty(value = "Use SE Group's app_cache_percent to set cache memory usage limit on SE. Field deprecated in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Long getMcacheStoreSeMaxSize() {
+   */
+  @VsoMethod
+  public Integer getMcacheStoreSeMaxSize() {
     return mcacheStoreSeMaxSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use se group's app_cache_percent to set cache memory usage limit on se.
+   * Field deprecated in 18.2.3.
+   * @param mcacheStoreSeMaxSize set the mcacheStoreSeMaxSize.
+   */
   @VsoMethod
-  public void setMcacheStoreSeMaxSize(Long mcacheStoreSeMaxSize) {
+  public void setMcacheStoreSeMaxSize(Integer  mcacheStoreSeMaxSize) {
     this.mcacheStoreSeMaxSize = mcacheStoreSeMaxSize;
   }
 
-  
   /**
-   * Placeholder for description of property ngx_free_connection_stack of obj type SeRuntimeProperties field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ngx_free_connection_stack of obj type seruntimeproperties field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ngxFreeConnectionStack
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property ngx_free_connection_stack of obj type SeRuntimeProperties field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isNgxFreeConnectionStack() {
+   */
+  @VsoMethod
+  public Boolean getNgxFreeConnectionStack() {
     return ngxFreeConnectionStack;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ngx_free_connection_stack of obj type seruntimeproperties field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param ngxFreeConnectionStack set the ngxFreeConnectionStack.
+   */
   @VsoMethod
-  public void setNgxFreeConnectionStack(Boolean ngxFreeConnectionStack) {
+  public void setNgxFreeConnectionStack(Boolean  ngxFreeConnectionStack) {
     this.ngxFreeConnectionStack = ngxFreeConnectionStack;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
    * @return persistenceEntriesLowWatermark
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPersistenceEntriesLowWatermark() {
     return persistenceEntriesLowWatermark;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
+   * @param persistenceEntriesLowWatermark set the persistenceEntriesLowWatermark.
+   */
   @VsoMethod
-  public void setPersistenceEntriesLowWatermark(Integer persistenceEntriesLowWatermark) {
+  public void setPersistenceEntriesLowWatermark(Integer  persistenceEntriesLowWatermark) {
     this.persistenceEntriesLowWatermark = persistenceEntriesLowWatermark;
   }
 
-  
   /**
-   * Maximum memory in bytes allocated for persistence entries. Allowed values are 0-33554432.
+   * This is the getter method this will return the attribute value.
+   * Maximum memory in bytes allocated for persistence entries.
+   * Allowed values are 0-33554432.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return persistenceMemMax
-  **/
-  @ApiModelProperty(value = "Maximum memory in bytes allocated for persistence entries. Allowed values are 0-33554432.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPersistenceMemMax() {
     return persistenceMemMax;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum memory in bytes allocated for persistence entries.
+   * Allowed values are 0-33554432.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param persistenceMemMax set the persistenceMemMax.
+   */
   @VsoMethod
-  public void setPersistenceMemMax(Integer persistenceMemMax) {
+  public void setPersistenceMemMax(Integer  persistenceMemMax) {
     this.persistenceMemMax = persistenceMemMax;
   }
 
-  
   /**
-   * Enable punting of UDP packets from primary to other Service Engines. This applies to Virtual Services with Per-Packet Loadbalancing enabled.
+   * This is the getter method this will return the attribute value.
+   * Enable punting of udp packets from primary to other service engines.
+   * This applies to virtual services with per-packet loadbalancing enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return scaleoutUdpPerPkt
-  **/
-  @ApiModelProperty(value = "Enable punting of UDP packets from primary to other Service Engines. This applies to Virtual Services with Per-Packet Loadbalancing enabled.")
-
-
- 
-  @VsoMethod  
-  public Boolean isScaleoutUdpPerPkt() {
+   */
+  @VsoMethod
+  public Boolean getScaleoutUdpPerPkt() {
     return scaleoutUdpPerPkt;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable punting of udp packets from primary to other service engines.
+   * This applies to virtual services with per-packet loadbalancing enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param scaleoutUdpPerPkt set the scaleoutUdpPerPkt.
+   */
   @VsoMethod
-  public void setScaleoutUdpPerPkt(Boolean scaleoutUdpPerPkt) {
+  public void setScaleoutUdpPerPkt(Boolean  scaleoutUdpPerPkt) {
     this.scaleoutUdpPerPkt = scaleoutUdpPerPkt;
   }
 
-  
   /**
-   * LDAP basicauth default bind timeout enforced on connections to LDAP server.
+   * This is the getter method this will return the attribute value.
+   * Ldap basicauth default bind timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return seAuthLdapBindTimeout
-  **/
-  @ApiModelProperty(value = "LDAP basicauth default bind timeout enforced on connections to LDAP server.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeAuthLdapBindTimeout() {
     return seAuthLdapBindTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ldap basicauth default bind timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+   * @param seAuthLdapBindTimeout set the seAuthLdapBindTimeout.
+   */
   @VsoMethod
-  public void setSeAuthLdapBindTimeout(Integer seAuthLdapBindTimeout) {
+  public void setSeAuthLdapBindTimeout(Integer  seAuthLdapBindTimeout) {
     this.seAuthLdapBindTimeout = seAuthLdapBindTimeout;
   }
 
-  
   /**
-   * Size of LDAP basicauth credentials cache used on the dataplane.
+   * This is the getter method this will return the attribute value.
+   * Size of ldap basicauth credentials cache used on the dataplane.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
    * @return seAuthLdapCacheSize
-  **/
-  @ApiModelProperty(value = "Size of LDAP basicauth credentials cache used on the dataplane.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeAuthLdapCacheSize() {
     return seAuthLdapCacheSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Size of ldap basicauth credentials cache used on the dataplane.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
+   * @param seAuthLdapCacheSize set the seAuthLdapCacheSize.
+   */
   @VsoMethod
-  public void setSeAuthLdapCacheSize(Integer seAuthLdapCacheSize) {
+  public void setSeAuthLdapCacheSize(Integer  seAuthLdapCacheSize) {
     this.seAuthLdapCacheSize = seAuthLdapCacheSize;
   }
 
-  
   /**
-   * LDAP basicauth default connection timeout enforced on connections to LDAP server.
+   * This is the getter method this will return the attribute value.
+   * Ldap basicauth default connection timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapConnectTimeout
-  **/
-  @ApiModelProperty(value = "LDAP basicauth default connection timeout enforced on connections to LDAP server.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeAuthLdapConnectTimeout() {
     return seAuthLdapConnectTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ldap basicauth default connection timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @param seAuthLdapConnectTimeout set the seAuthLdapConnectTimeout.
+   */
   @VsoMethod
-  public void setSeAuthLdapConnectTimeout(Integer seAuthLdapConnectTimeout) {
+  public void setSeAuthLdapConnectTimeout(Integer  seAuthLdapConnectTimeout) {
     this.seAuthLdapConnectTimeout = seAuthLdapConnectTimeout;
   }
 
-  
   /**
-   * Number of concurrent connections to LDAP server by a single basic auth LDAP process.
+   * This is the getter method this will return the attribute value.
+   * Number of concurrent connections to ldap server by a single basic auth ldap process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return seAuthLdapConnsPerServer
-  **/
-  @ApiModelProperty(value = "Number of concurrent connections to LDAP server by a single basic auth LDAP process.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeAuthLdapConnsPerServer() {
     return seAuthLdapConnsPerServer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of concurrent connections to ldap server by a single basic auth ldap process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @param seAuthLdapConnsPerServer set the seAuthLdapConnsPerServer.
+   */
   @VsoMethod
-  public void setSeAuthLdapConnsPerServer(Integer seAuthLdapConnsPerServer) {
+  public void setSeAuthLdapConnsPerServer(Integer  seAuthLdapConnsPerServer) {
     this.seAuthLdapConnsPerServer = seAuthLdapConnsPerServer;
   }
 
-  
   /**
-   * LDAP basicauth default reconnect timeout enforced on connections to LDAP server.
+   * This is the getter method this will return the attribute value.
+   * Ldap basicauth default reconnect timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapReconnectTimeout
-  **/
-  @ApiModelProperty(value = "LDAP basicauth default reconnect timeout enforced on connections to LDAP server.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeAuthLdapReconnectTimeout() {
     return seAuthLdapReconnectTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ldap basicauth default reconnect timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @param seAuthLdapReconnectTimeout set the seAuthLdapReconnectTimeout.
+   */
   @VsoMethod
-  public void setSeAuthLdapReconnectTimeout(Integer seAuthLdapReconnectTimeout) {
+  public void setSeAuthLdapReconnectTimeout(Integer  seAuthLdapReconnectTimeout) {
     this.seAuthLdapReconnectTimeout = seAuthLdapReconnectTimeout;
   }
 
-  
   /**
-   * LDAP basicauth default login or group search request timeout enforced on connections to LDAP server.
+   * This is the getter method this will return the attribute value.
+   * Ldap basicauth default login or group search request timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapRequestTimeout
-  **/
-  @ApiModelProperty(value = "LDAP basicauth default login or group search request timeout enforced on connections to LDAP server.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeAuthLdapRequestTimeout() {
     return seAuthLdapRequestTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ldap basicauth default login or group search request timeout enforced on connections to ldap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * @param seAuthLdapRequestTimeout set the seAuthLdapRequestTimeout.
+   */
   @VsoMethod
-  public void setSeAuthLdapRequestTimeout(Integer seAuthLdapRequestTimeout) {
+  public void setSeAuthLdapRequestTimeout(Integer  seAuthLdapRequestTimeout) {
     this.seAuthLdapRequestTimeout = seAuthLdapRequestTimeout;
   }
 
-  
   /**
-   * LDAP basicauth uses multiple ldap servers in the event of a failover only.
+   * This is the getter method this will return the attribute value.
+   * Ldap basicauth uses multiple ldap servers in the event of a failover only.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seAuthLdapServersFailoverOnly
-  **/
-  @ApiModelProperty(value = "LDAP basicauth uses multiple ldap servers in the event of a failover only.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeAuthLdapServersFailoverOnly() {
+   */
+  @VsoMethod
+  public Boolean getSeAuthLdapServersFailoverOnly() {
     return seAuthLdapServersFailoverOnly;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ldap basicauth uses multiple ldap servers in the event of a failover only.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seAuthLdapServersFailoverOnly set the seAuthLdapServersFailoverOnly.
+   */
   @VsoMethod
-  public void setSeAuthLdapServersFailoverOnly(Boolean seAuthLdapServersFailoverOnly) {
+  public void setSeAuthLdapServersFailoverOnly(Boolean  seAuthLdapServersFailoverOnly) {
     this.seAuthLdapServersFailoverOnly = seAuthLdapServersFailoverOnly;
   }
 
-  
   /**
-   * Placeholder for description of property se_dp_compression of obj type SeRuntimeProperties field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property se_dp_compression of obj type seruntimeproperties field type str  type ref.
    * @return seDpCompression
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property se_dp_compression of obj type SeRuntimeProperties field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SeRuntimeCompressionProperties getSeDpCompression() {
     return seDpCompression;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property se_dp_compression of obj type seruntimeproperties field type str  type ref.
+   * @param seDpCompression set the seDpCompression.
+   */
   @VsoMethod
   public void setSeDpCompression(SeRuntimeCompressionProperties seDpCompression) {
     this.seDpCompression = seDpCompression;
   }
 
-  
   /**
-   * Internal only. Used to simulate SE - SE HB failure.
+   * This is the getter method this will return the attribute value.
+   * Internal only.
+   * Used to simulate se - se hb failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seDpHmDrops
-  **/
-  @ApiModelProperty(value = "Internal only. Used to simulate SE - SE HB failure.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpHmDrops() {
     return seDpHmDrops;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal only.
+   * Used to simulate se - se hb failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seDpHmDrops set the seDpHmDrops.
+   */
   @VsoMethod
-  public void setSeDpHmDrops(Integer seDpHmDrops) {
+  public void setSeDpHmDrops(Integer  seDpHmDrops) {
     this.seDpHmDrops = seDpHmDrops;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Number of jiffies between polling interface state.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return seDpIfStatePollInterval
-  **/
-  @ApiModelProperty(value = "Number of jiffies between polling interface state.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpIfStatePollInterval() {
     return seDpIfStatePollInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of jiffies between polling interface state.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param seDpIfStatePollInterval set the seDpIfStatePollInterval.
+   */
   @VsoMethod
-  public void setSeDpIfStatePollInterval(Integer seDpIfStatePollInterval) {
+  public void setSeDpIfStatePollInterval(Integer  seDpIfStatePollInterval) {
     this.seDpIfStatePollInterval = seDpIfStatePollInterval;
   }
 
-  
   /**
-   * Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned.
+   * This is the getter method this will return the attribute value.
+   * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 70.
    * @return seDpLogNfEnqueuePercent
-  **/
-  @ApiModelProperty(value = "Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpLogNfEnqueuePercent() {
     return seDpLogNfEnqueuePercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 70.
+   * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
+   */
   @VsoMethod
-  public void setSeDpLogNfEnqueuePercent(Integer seDpLogNfEnqueuePercent) {
+  public void setSeDpLogNfEnqueuePercent(Integer  seDpLogNfEnqueuePercent) {
     this.seDpLogNfEnqueuePercent = seDpLogNfEnqueuePercent;
   }
 
-  
   /**
-   * Internal buffer full indicator on the Service Engine beyond which the user filtered logs are abandoned.
+   * This is the getter method this will return the attribute value.
+   * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @return seDpLogUdfEnqueuePercent
-  **/
-  @ApiModelProperty(value = "Internal buffer full indicator on the Service Engine beyond which the user filtered logs are abandoned.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpLogUdfEnqueuePercent() {
     return seDpLogUdfEnqueuePercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 90.
+   * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.
+   */
   @VsoMethod
-  public void setSeDpLogUdfEnqueuePercent(Integer seDpLogUdfEnqueuePercent) {
+  public void setSeDpLogUdfEnqueuePercent(Integer  seDpLogUdfEnqueuePercent) {
     this.seDpLogUdfEnqueuePercent = seDpLogUdfEnqueuePercent;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.1.
    * @return seDpVnicQueueStallEventSleep
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpVnicQueueStallEventSleep() {
     return seDpVnicQueueStallEventSleep;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.1.
+   * @param seDpVnicQueueStallEventSleep set the seDpVnicQueueStallEventSleep.
+   */
   @VsoMethod
-  public void setSeDpVnicQueueStallEventSleep(Integer seDpVnicQueueStallEventSleep) {
+  public void setSeDpVnicQueueStallEventSleep(Integer  seDpVnicQueueStallEventSleep) {
     this.seDpVnicQueueStallEventSleep = seDpVnicQueueStallEventSleep;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.1.
    * @return seDpVnicQueueStallThreshold
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpVnicQueueStallThreshold() {
     return seDpVnicQueueStallThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.1.
+   * @param seDpVnicQueueStallThreshold set the seDpVnicQueueStallThreshold.
+   */
   @VsoMethod
-  public void setSeDpVnicQueueStallThreshold(Integer seDpVnicQueueStallThreshold) {
+  public void setSeDpVnicQueueStallThreshold(Integer  seDpVnicQueueStallThreshold) {
     this.seDpVnicQueueStallThreshold = seDpVnicQueueStallThreshold;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.1.
    * @return seDpVnicQueueStallTimeout
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpVnicQueueStallTimeout() {
     return seDpVnicQueueStallTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.1.
+   * @param seDpVnicQueueStallTimeout set the seDpVnicQueueStallTimeout.
+   */
   @VsoMethod
-  public void setSeDpVnicQueueStallTimeout(Integer seDpVnicQueueStallTimeout) {
+  public void setSeDpVnicQueueStallTimeout(Integer  seDpVnicQueueStallTimeout) {
     this.seDpVnicQueueStallTimeout = seDpVnicQueueStallTimeout;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.14, 17.2.5, 18.1.1.
    * @return seDpVnicRestartOnQueueStallCount
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.14, 17.2.5, 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpVnicRestartOnQueueStallCount() {
     return seDpVnicRestartOnQueueStallCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * @param seDpVnicRestartOnQueueStallCount set the seDpVnicRestartOnQueueStallCount.
+   */
   @VsoMethod
-  public void setSeDpVnicRestartOnQueueStallCount(Integer seDpVnicRestartOnQueueStallCount) {
+  public void setSeDpVnicRestartOnQueueStallCount(Integer  seDpVnicRestartOnQueueStallCount) {
     this.seDpVnicRestartOnQueueStallCount = seDpVnicRestartOnQueueStallCount;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.14, 17.2.5, 18.1.1.
    * @return seDpVnicStallSeRestartWindow
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.14, 17.2.5, 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpVnicStallSeRestartWindow() {
     return seDpVnicStallSeRestartWindow;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * Field introduced in 17.1.14, 17.2.5, 18.1.1.
+   * @param seDpVnicStallSeRestartWindow set the seDpVnicStallSeRestartWindow.
+   */
   @VsoMethod
-  public void setSeDpVnicStallSeRestartWindow(Integer seDpVnicStallSeRestartWindow) {
+  public void setSeDpVnicStallSeRestartWindow(Integer  seDpVnicStallSeRestartWindow) {
     this.seDpVnicStallSeRestartWindow = seDpVnicStallSeRestartWindow;
   }
 
-  
   /**
-   * Enable core dump on assert. Field introduced in 18.1.3, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Enable core dump on assert.
+   * Field introduced in 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seDumpCoreOnAssert
-  **/
-  @ApiModelProperty(value = "Enable core dump on assert. Field introduced in 18.1.3, 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeDumpCoreOnAssert() {
+   */
+  @VsoMethod
+  public Boolean getSeDumpCoreOnAssert() {
     return seDumpCoreOnAssert;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable core dump on assert.
+   * Field introduced in 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seDumpCoreOnAssert set the seDumpCoreOnAssert.
+   */
   @VsoMethod
-  public void setSeDumpCoreOnAssert(Boolean seDumpCoreOnAssert) {
+  public void setSeDumpCoreOnAssert(Boolean  seDumpCoreOnAssert) {
     this.seDumpCoreOnAssert = seDumpCoreOnAssert;
   }
 
-  
   /**
-   * Accept/ignore interface routes (i.e, no next hop IP address).
+   * This is the getter method this will return the attribute value.
+   * Accept/ignore interface routes (i.e, no next hop ip address).
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seHandleInterfaceRoutes
-  **/
-  @ApiModelProperty(value = "Accept/ignore interface routes (i.e, no next hop IP address).")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeHandleInterfaceRoutes() {
+   */
+  @VsoMethod
+  public Boolean getSeHandleInterfaceRoutes() {
     return seHandleInterfaceRoutes;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Accept/ignore interface routes (i.e, no next hop ip address).
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seHandleInterfaceRoutes set the seHandleInterfaceRoutes.
+   */
   @VsoMethod
-  public void setSeHandleInterfaceRoutes(Boolean seHandleInterfaceRoutes) {
+  public void setSeHandleInterfaceRoutes(Boolean  seHandleInterfaceRoutes) {
     this.seHandleInterfaceRoutes = seHandleInterfaceRoutes;
   }
 
-  
   /**
-   * Internal use only. Allowed values are 0-7.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * Allowed values are 0-7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return seHbPersistFudgeBits
-  **/
-  @ApiModelProperty(value = "Internal use only. Allowed values are 0-7.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeHbPersistFudgeBits() {
     return seHbPersistFudgeBits;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * Allowed values are 0-7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+   * @param seHbPersistFudgeBits set the seHbPersistFudgeBits.
+   */
   @VsoMethod
-  public void setSeHbPersistFudgeBits(Integer seHbPersistFudgeBits) {
+  public void setSeHbPersistFudgeBits(Integer  seHbPersistFudgeBits) {
     this.seHbPersistFudgeBits = seHbPersistFudgeBits;
   }
 
-  
   /**
-   * Number of packets with wrong mac after which SE attempts to disable promiscious mode.
+   * This is the getter method this will return the attribute value.
+   * Number of packets with wrong mac after which se attempts to disable promiscious mode.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return seMacErrorThresholdToDisablePromiscious
-  **/
-  @ApiModelProperty(value = "Number of packets with wrong mac after which SE attempts to disable promiscious mode.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeMacErrorThresholdToDisablePromiscious() {
     return seMacErrorThresholdToDisablePromiscious;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of packets with wrong mac after which se attempts to disable promiscious mode.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @param seMacErrorThresholdToDisablePromiscious set the seMacErrorThresholdToDisablePromiscious.
+   */
   @VsoMethod
-  public void setSeMacErrorThresholdToDisablePromiscious(Integer seMacErrorThresholdToDisablePromiscious) {
+  public void setSeMacErrorThresholdToDisablePromiscious(Integer  seMacErrorThresholdToDisablePromiscious) {
     this.seMacErrorThresholdToDisablePromiscious = seMacErrorThresholdToDisablePromiscious;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seMallocThresh
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeMallocThresh() {
     return seMallocThresh;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seMallocThresh set the seMallocThresh.
+   */
   @VsoMethod
-  public void setSeMallocThresh(Integer seMallocThresh) {
+  public void setSeMallocThresh(Integer  seMallocThresh) {
     this.seMallocThresh = seMallocThresh;
   }
 
-  
   /**
-   * Internal use only. Enables poisoning of freed memory blocks.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * Enables poisoning of freed memory blocks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seMemoryPoison
-  **/
-  @ApiModelProperty(value = "Internal use only. Enables poisoning of freed memory blocks.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeMemoryPoison() {
+   */
+  @VsoMethod
+  public Boolean getSeMemoryPoison() {
     return seMemoryPoison;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * Enables poisoning of freed memory blocks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param seMemoryPoison set the seMemoryPoison.
+   */
   @VsoMethod
-  public void setSeMemoryPoison(Boolean seMemoryPoison) {
+  public void setSeMemoryPoison(Boolean  seMemoryPoison) {
     this.seMemoryPoison = seMemoryPoison;
   }
 
-  
   /**
-   * Internal use only. Frequency (ms) of metrics updates from SE to controller.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * Frequency (ms) of metrics updates from se to controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return seMetricsInterval
-  **/
-  @ApiModelProperty(value = "Internal use only. Frequency (ms) of metrics updates from SE to controller.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeMetricsInterval() {
     return seMetricsInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * Frequency (ms) of metrics updates from se to controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
+   * @param seMetricsInterval set the seMetricsInterval.
+   */
   @VsoMethod
-  public void setSeMetricsInterval(Integer seMetricsInterval) {
+  public void setSeMetricsInterval(Integer  seMetricsInterval) {
     this.seMetricsInterval = seMetricsInterval;
   }
 
-  
   /**
-   * Internal use only. Enable or disable real time metrics irrespective of virtualservice or SE group configuration.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seMetricsRtEnabled
-  **/
-  @ApiModelProperty(value = "Internal use only. Enable or disable real time metrics irrespective of virtualservice or SE group configuration.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeMetricsRtEnabled() {
+   */
+  @VsoMethod
+  public Boolean getSeMetricsRtEnabled() {
     return seMetricsRtEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param seMetricsRtEnabled set the seMetricsRtEnabled.
+   */
   @VsoMethod
-  public void setSeMetricsRtEnabled(Boolean seMetricsRtEnabled) {
+  public void setSeMetricsRtEnabled(Boolean  seMetricsRtEnabled) {
     this.seMetricsRtEnabled = seMetricsRtEnabled;
   }
 
-  
   /**
-   * Internal use only. Frequency (ms) of realtime metrics updates from SE to controller.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * Frequency (ms) of realtime metrics updates from se to controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return seMetricsRtInterval
-  **/
-  @ApiModelProperty(value = "Internal use only. Frequency (ms) of realtime metrics updates from SE to controller.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeMetricsRtInterval() {
     return seMetricsRtInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * Frequency (ms) of realtime metrics updates from se to controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @param seMetricsRtInterval set the seMetricsRtInterval.
+   */
   @VsoMethod
-  public void setSeMetricsRtInterval(Integer seMetricsRtInterval) {
+  public void setSeMetricsRtInterval(Integer  seMetricsRtInterval) {
     this.seMetricsRtInterval = seMetricsRtInterval;
   }
 
-  
   /**
-   * Internal use only. Used to artificially reduce the available number of packet buffers.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * Used to artificially reduce the available number of packet buffers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return sePacketBufferMax
-  **/
-  @ApiModelProperty(value = "Internal use only. Used to artificially reduce the available number of packet buffers.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSePacketBufferMax() {
     return sePacketBufferMax;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * Used to artificially reduce the available number of packet buffers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param sePacketBufferMax set the sePacketBufferMax.
+   */
   @VsoMethod
-  public void setSePacketBufferMax(Integer sePacketBufferMax) {
+  public void setSePacketBufferMax(Integer  sePacketBufferMax) {
     this.sePacketBufferMax = sePacketBufferMax;
   }
 
-  
   /**
-   * Internal use only. If enabled, randomly packets are dropped.
+   * This is the getter method this will return the attribute value.
+   * Internal use only.
+   * If enabled, randomly packets are dropped.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seRandomTcpDrops
-  **/
-  @ApiModelProperty(value = "Internal use only. If enabled, randomly packets are dropped.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeRandomTcpDrops() {
+   */
+  @VsoMethod
+  public Boolean getSeRandomTcpDrops() {
     return seRandomTcpDrops;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal use only.
+   * If enabled, randomly packets are dropped.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seRandomTcpDrops set the seRandomTcpDrops.
+   */
   @VsoMethod
-  public void setSeRandomTcpDrops(Boolean seRandomTcpDrops) {
+  public void setSeRandomTcpDrops(Boolean  seRandomTcpDrops) {
     this.seRandomTcpDrops = seRandomTcpDrops;
   }
 
-  
   /**
-   * SE rate limiters.
+   * This is the getter method this will return the attribute value.
+   * Se rate limiters.
    * @return seRateLimiters
-  **/
-  @ApiModelProperty(value = "SE rate limiters.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SeRateLimiters getSeRateLimiters() {
     return seRateLimiters;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Se rate limiters.
+   * @param seRateLimiters set the seRateLimiters.
+   */
   @VsoMethod
   public void setSeRateLimiters(SeRateLimiters seRateLimiters) {
     this.seRateLimiters = seRateLimiters;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * @return serviceIpSubnets
+   */
+  @VsoMethod
+  public List<IpAddrPrefix> getServiceIpSubnets() {
+    return serviceIpSubnets;
+  }
+
+  /**
+   * This is the setter method. this will set the serviceIpSubnets
+   * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * @return serviceIpSubnets
+   */
+  @VsoMethod
+  public void setServiceIpSubnets(List<IpAddrPrefix>  serviceIpSubnets) {
+    this.serviceIpSubnets = serviceIpSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the serviceIpSubnets
+   * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * @return serviceIpSubnets
+   */
+  @VsoMethod
   public SeRuntimeProperties addServiceIpSubnetsItem(IpAddrPrefix serviceIpSubnetsItem) {
     if (this.serviceIpSubnets == null) {
       this.serviceIpSubnets = new ArrayList<IpAddrPrefix>();
@@ -2072,27 +2525,37 @@ public class SeRuntimeProperties extends AviRestResource  {
     this.serviceIpSubnets.add(serviceIpSubnetsItem);
     return this;
   }
-  
+
+
   /**
-   * IP ranges on which there may be virtual services (for configuring iptables/routes).
-   * @return serviceIpSubnets
-  **/
-  @ApiModelProperty(value = "IP ranges on which there may be virtual services (for configuring iptables/routes).")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddrPrefix> getServiceIpSubnets() {
-    return serviceIpSubnets;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Port ranges on which there may be virtual services (for configuring iptables).
+   * Applicable in container ecosystems like mesos.
+   * @return servicePortRanges
+   */
   @VsoMethod
-  public void setServiceIpSubnets(List<IpAddrPrefix> serviceIpSubnets) {
-    this.serviceIpSubnets = serviceIpSubnets;
+  public List<PortRange> getServicePortRanges() {
+    return servicePortRanges;
   }
 
-  
+  /**
+   * This is the setter method. this will set the servicePortRanges
+   * Port ranges on which there may be virtual services (for configuring iptables).
+   * Applicable in container ecosystems like mesos.
+   * @return servicePortRanges
+   */
+  @VsoMethod
+  public void setServicePortRanges(List<PortRange>  servicePortRanges) {
+    this.servicePortRanges = servicePortRanges;
+  }
+
+  /**
+   * This is the setter method this will set the servicePortRanges
+   * Port ranges on which there may be virtual services (for configuring iptables).
+   * Applicable in container ecosystems like mesos.
+   * @return servicePortRanges
+   */
+  @VsoMethod
   public SeRuntimeProperties addServicePortRangesItem(PortRange servicePortRangesItem) {
     if (this.servicePortRanges == null) {
       this.servicePortRanges = new ArrayList<PortRange>();
@@ -2100,625 +2563,659 @@ public class SeRuntimeProperties extends AviRestResource  {
     this.servicePortRanges.add(servicePortRangesItem);
     return this;
   }
-  
+
+
   /**
-   * Port ranges on which there may be virtual services (for configuring iptables). Applicable in container ecosystems like Mesos.
-   * @return servicePortRanges
-  **/
-  @ApiModelProperty(value = "Port ranges on which there may be virtual services (for configuring iptables). Applicable in container ecosystems like Mesos.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<PortRange> getServicePortRanges() {
-    return servicePortRanges;
-  }
-    
-  @VsoMethod
-  public void setServicePortRanges(List<PortRange> servicePortRanges) {
-    this.servicePortRanges = servicePortRanges;
-  }
-
-  
-  /**
-   * Make service ports accessible on all Host interfaces in addition to East-West VIP and/or bridge IP.
+   * This is the getter method this will return the attribute value.
+   * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return servicesAccessibleAllInterfaces
-  **/
-  @ApiModelProperty(value = "Make service ports accessible on all Host interfaces in addition to East-West VIP and/or bridge IP.")
-
-
- 
-  @VsoMethod  
-  public Boolean isServicesAccessibleAllInterfaces() {
+   */
+  @VsoMethod
+  public Boolean getServicesAccessibleAllInterfaces() {
     return servicesAccessibleAllInterfaces;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param servicesAccessibleAllInterfaces set the servicesAccessibleAllInterfaces.
+   */
   @VsoMethod
-  public void setServicesAccessibleAllInterfaces(Boolean servicesAccessibleAllInterfaces) {
+  public void setServicesAccessibleAllInterfaces(Boolean  servicesAccessibleAllInterfaces) {
     this.servicesAccessibleAllInterfaces = servicesAccessibleAllInterfaces;
   }
 
-  
   /**
-   * Placeholder for description of property spdy_fwd_proxy_parse_enable of obj type SeRuntimeProperties field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property spdy_fwd_proxy_parse_enable of obj type seruntimeproperties field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return spdyFwdProxyParseEnable
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property spdy_fwd_proxy_parse_enable of obj type SeRuntimeProperties field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isSpdyFwdProxyParseEnable() {
+   */
+  @VsoMethod
+  public Boolean getSpdyFwdProxyParseEnable() {
     return spdyFwdProxyParseEnable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property spdy_fwd_proxy_parse_enable of obj type seruntimeproperties field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param spdyFwdProxyParseEnable set the spdyFwdProxyParseEnable.
+   */
   @VsoMethod
-  public void setSpdyFwdProxyParseEnable(Boolean spdyFwdProxyParseEnable) {
+  public void setSpdyFwdProxyParseEnable(Boolean  spdyFwdProxyParseEnable) {
     this.spdyFwdProxyParseEnable = spdyFwdProxyParseEnable;
   }
 
-  
   /**
-   * Maximum size of the SYN cache table. After this limit is reached, SYN cookies are used. This is per core of the serviceengine. Field deprecated in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Maximum size of the syn cache table.
+   * After this limit is reached, syn cookies are used.
+   * This is per core of the serviceengine.
+   * Field deprecated in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
    * @return tcpSynCacheMax
-  **/
-  @ApiModelProperty(value = "Maximum size of the SYN cache table. After this limit is reached, SYN cookies are used. This is per core of the serviceengine. Field deprecated in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTcpSynCacheMax() {
     return tcpSynCacheMax;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum size of the syn cache table.
+   * After this limit is reached, syn cookies are used.
+   * This is per core of the serviceengine.
+   * Field deprecated in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
+   * @param tcpSynCacheMax set the tcpSynCacheMax.
+   */
   @VsoMethod
-  public void setTcpSynCacheMax(Integer tcpSynCacheMax) {
+  public void setTcpSynCacheMax(Integer  tcpSynCacheMax) {
     this.tcpSynCacheMax = tcpSynCacheMax;
   }
 
-  
   /**
-   * Default value for max number of retransmissions for a SYN packet.
+   * This is the getter method this will return the attribute value.
+   * Default value for max number of retransmissions for a syn packet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return tcpSyncacheMaxRetransmitDefault
-  **/
-  @ApiModelProperty(value = "Default value for max number of retransmissions for a SYN packet.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTcpSyncacheMaxRetransmitDefault() {
     return tcpSyncacheMaxRetransmitDefault;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Default value for max number of retransmissions for a syn packet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param tcpSyncacheMaxRetransmitDefault set the tcpSyncacheMaxRetransmitDefault.
+   */
   @VsoMethod
-  public void setTcpSyncacheMaxRetransmitDefault(Integer tcpSyncacheMaxRetransmitDefault) {
+  public void setTcpSyncacheMaxRetransmitDefault(Integer  tcpSyncacheMaxRetransmitDefault) {
     this.tcpSyncacheMaxRetransmitDefault = tcpSyncacheMaxRetransmitDefault;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Timeout for backend connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamConnectTimeout
-  **/
-  @ApiModelProperty(value = "Timeout for backend connection.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnectTimeout() {
     return upstreamConnectTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timeout for backend connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
+   * @param upstreamConnectTimeout set the upstreamConnectTimeout.
+   */
   @VsoMethod
-  public void setUpstreamConnectTimeout(Integer upstreamConnectTimeout) {
+  public void setUpstreamConnectTimeout(Integer  upstreamConnectTimeout) {
     this.upstreamConnectTimeout = upstreamConnectTimeout;
   }
 
-  
   /**
-   * L7 Upstream Connection pool cache threshold in percentage.
+   * This is the getter method this will return the attribute value.
+   * L7 upstream connection pool cache threshold in percentage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolCacheThresh
-  **/
-  @ApiModelProperty(value = "L7 Upstream Connection pool cache threshold in percentage.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolCacheThresh() {
     return upstreamConnpoolCacheThresh;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * L7 upstream connection pool cache threshold in percentage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+   * @param upstreamConnpoolCacheThresh set the upstreamConnpoolCacheThresh.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolCacheThresh(Integer upstreamConnpoolCacheThresh) {
+  public void setUpstreamConnpoolCacheThresh(Integer  upstreamConnpoolCacheThresh) {
     this.upstreamConnpoolCacheThresh = upstreamConnpoolCacheThresh;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Idle timeout value for a connection in the upstream connection pool, when the current cache size is above the threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolConnIdleThreshTmo
-  **/
-  @ApiModelProperty(value = "Idle timeout value for a connection in the upstream connection pool, when the current cache size is above the threshold.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolConnIdleThreshTmo() {
     return upstreamConnpoolConnIdleThreshTmo;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Idle timeout value for a connection in the upstream connection pool, when the current cache size is above the threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+   * @param upstreamConnpoolConnIdleThreshTmo set the upstreamConnpoolConnIdleThreshTmo.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolConnIdleThreshTmo(Integer upstreamConnpoolConnIdleThreshTmo) {
+  public void setUpstreamConnpoolConnIdleThreshTmo(Integer  upstreamConnpoolConnIdleThreshTmo) {
     this.upstreamConnpoolConnIdleThreshTmo = upstreamConnpoolConnIdleThreshTmo;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
    * @return upstreamConnpoolConnIdleTmo
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolConnIdleTmo() {
     return upstreamConnpoolConnIdleTmo;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
+   * @param upstreamConnpoolConnIdleTmo set the upstreamConnpoolConnIdleTmo.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolConnIdleTmo(Integer upstreamConnpoolConnIdleTmo) {
+  public void setUpstreamConnpoolConnIdleTmo(Integer  upstreamConnpoolConnIdleTmo) {
     this.upstreamConnpoolConnIdleTmo = upstreamConnpoolConnIdleTmo;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
    * @return upstreamConnpoolConnLifeTmo
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolConnLifeTmo() {
     return upstreamConnpoolConnLifeTmo;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
+   * @param upstreamConnpoolConnLifeTmo set the upstreamConnpoolConnLifeTmo.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolConnLifeTmo(Integer upstreamConnpoolConnLifeTmo) {
+  public void setUpstreamConnpoolConnLifeTmo(Integer  upstreamConnpoolConnLifeTmo) {
     this.upstreamConnpoolConnLifeTmo = upstreamConnpoolConnLifeTmo;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
    * @return upstreamConnpoolConnMaxReuse
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolConnMaxReuse() {
     return upstreamConnpoolConnMaxReuse;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
+   * @param upstreamConnpoolConnMaxReuse set the upstreamConnpoolConnMaxReuse.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolConnMaxReuse(Integer upstreamConnpoolConnMaxReuse) {
+  public void setUpstreamConnpoolConnMaxReuse(Integer  upstreamConnpoolConnMaxReuse) {
     this.upstreamConnpoolConnMaxReuse = upstreamConnpoolConnMaxReuse;
   }
 
-  
   /**
-   * L7 Upstream Connection pool max cache size per core.
+   * This is the getter method this will return the attribute value.
+   * L7 upstream connection pool max cache size per core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolCoreMaxCache
-  **/
-  @ApiModelProperty(value = "L7 Upstream Connection pool max cache size per core.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolCoreMaxCache() {
     return upstreamConnpoolCoreMaxCache;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * L7 upstream connection pool max cache size per core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+   * @param upstreamConnpoolCoreMaxCache set the upstreamConnpoolCoreMaxCache.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolCoreMaxCache(Integer upstreamConnpoolCoreMaxCache) {
+  public void setUpstreamConnpoolCoreMaxCache(Integer  upstreamConnpoolCoreMaxCache) {
     this.upstreamConnpoolCoreMaxCache = upstreamConnpoolCoreMaxCache;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Enable upstream connection pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return upstreamConnpoolEnable
-  **/
-  @ApiModelProperty(value = "Enable upstream connection pool.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUpstreamConnpoolEnable() {
+   */
+  @VsoMethod
+  public Boolean getUpstreamConnpoolEnable() {
     return upstreamConnpoolEnable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable upstream connection pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param upstreamConnpoolEnable set the upstreamConnpoolEnable.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolEnable(Boolean upstreamConnpoolEnable) {
+  public void setUpstreamConnpoolEnable(Boolean  upstreamConnpoolEnable) {
     this.upstreamConnpoolEnable = upstreamConnpoolEnable;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
    * @return upstreamConnpoolServerMaxCache
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolServerMaxCache() {
     return upstreamConnpoolServerMaxCache;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.1.
+   * @param upstreamConnpoolServerMaxCache set the upstreamConnpoolServerMaxCache.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolServerMaxCache(Integer upstreamConnpoolServerMaxCache) {
+  public void setUpstreamConnpoolServerMaxCache(Integer  upstreamConnpoolServerMaxCache) {
     this.upstreamConnpoolServerMaxCache = upstreamConnpoolServerMaxCache;
   }
 
-  
   /**
-   * Number of upstream_connpool_strategy.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property upstream_connpool_strategy of obj type seruntimeproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
    * @return upstreamConnpoolStrategy
-  **/
-  @ApiModelProperty(value = "Number of upstream_connpool_strategy.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamConnpoolStrategy() {
     return upstreamConnpoolStrategy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property upstream_connpool_strategy of obj type seruntimeproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+   * @param upstreamConnpoolStrategy set the upstreamConnpoolStrategy.
+   */
   @VsoMethod
-  public void setUpstreamConnpoolStrategy(Integer upstreamConnpoolStrategy) {
+  public void setUpstreamConnpoolStrategy(Integer  upstreamConnpoolStrategy) {
     this.upstreamConnpoolStrategy = upstreamConnpoolStrategy;
   }
 
-  
   /**
-   * Placeholder for description of property upstream_keepalive of obj type SeRuntimeProperties field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property upstream_keepalive of obj type seruntimeproperties field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return upstreamKeepalive
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property upstream_keepalive of obj type SeRuntimeProperties field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isUpstreamKeepalive() {
+   */
+  @VsoMethod
+  public Boolean getUpstreamKeepalive() {
     return upstreamKeepalive;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property upstream_keepalive of obj type seruntimeproperties field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param upstreamKeepalive set the upstreamKeepalive.
+   */
   @VsoMethod
-  public void setUpstreamKeepalive(Boolean upstreamKeepalive) {
+  public void setUpstreamKeepalive(Boolean  upstreamKeepalive) {
     this.upstreamKeepalive = upstreamKeepalive;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Timeout for data to be received from backend.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamReadTimeout
-  **/
-  @ApiModelProperty(value = "Timeout for data to be received from backend.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamReadTimeout() {
     return upstreamReadTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timeout for data to be received from backend.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
+   * @param upstreamReadTimeout set the upstreamReadTimeout.
+   */
   @VsoMethod
-  public void setUpstreamReadTimeout(Integer upstreamReadTimeout) {
+  public void setUpstreamReadTimeout(Integer  upstreamReadTimeout) {
     this.upstreamReadTimeout = upstreamReadTimeout;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Timeout for upstream to become writable.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamSendTimeout
-  **/
-  @ApiModelProperty(value = "Timeout for upstream to become writable.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUpstreamSendTimeout() {
     return upstreamSendTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Timeout for upstream to become writable.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
+   * @param upstreamSendTimeout set the upstreamSendTimeout.
+   */
   @VsoMethod
-  public void setUpstreamSendTimeout(Integer upstreamSendTimeout) {
+  public void setUpstreamSendTimeout(Integer  upstreamSendTimeout) {
     this.upstreamSendTimeout = upstreamSendTimeout;
   }
 
-  
   /**
-   * Defines in seconds how long before an unused user-defined-metric is garbage collected. Field introduced in 17.1.5.
+   * This is the getter method this will return the attribute value.
+   * Defines in seconds how long before an unused user-defined-metric is garbage collected.
+   * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return userDefinedMetricAge
-  **/
-  @ApiModelProperty(value = "Defines in seconds how long before an unused user-defined-metric is garbage collected. Field introduced in 17.1.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getUserDefinedMetricAge() {
     return userDefinedMetricAge;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Defines in seconds how long before an unused user-defined-metric is garbage collected.
+   * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param userDefinedMetricAge set the userDefinedMetricAge.
+   */
   @VsoMethod
-  public void setUserDefinedMetricAge(Integer userDefinedMetricAge) {
+  public void setUserDefinedMetricAge(Integer  userDefinedMetricAge) {
     this.userDefinedMetricAge = userDefinedMetricAge;
   }
 
-  
-  public String getObjectID() {
-		return "SeRuntimeProperties";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SeRuntimeProperties seRuntimeProperties = (SeRuntimeProperties) o;
-    return Objects.equals(this.adminSshEnabled, seRuntimeProperties.adminSshEnabled) &&
-        Objects.equals(this.appHeaders, seRuntimeProperties.appHeaders) &&
-        Objects.equals(this.baremetalDispatcherHandlesFlows, seRuntimeProperties.baremetalDispatcherHandlesFlows) &&
-        Objects.equals(this.connectionsLossyLogRateLimiterThreshold, seRuntimeProperties.connectionsLossyLogRateLimiterThreshold) &&
-        Objects.equals(this.connectionsUdfnfLogRateLimiterThreshold, seRuntimeProperties.connectionsUdfnfLogRateLimiterThreshold) &&
-        Objects.equals(this.disableFlowProbes, seRuntimeProperties.disableFlowProbes) &&
-        Objects.equals(this.disableGro, seRuntimeProperties.disableGro) &&
-        Objects.equals(this.disableTso, seRuntimeProperties.disableTso) &&
-        Objects.equals(this.dosProfile, seRuntimeProperties.dosProfile) &&
-        Objects.equals(this.downstreamSendTimeout, seRuntimeProperties.downstreamSendTimeout) &&
-        Objects.equals(this.dpAggressiveHbFrequency, seRuntimeProperties.dpAggressiveHbFrequency) &&
-        Objects.equals(this.dpAggressiveHbTimeoutCount, seRuntimeProperties.dpAggressiveHbTimeoutCount) &&
-        Objects.equals(this.dpHbFrequency, seRuntimeProperties.dpHbFrequency) &&
-        Objects.equals(this.dpHbTimeoutCount, seRuntimeProperties.dpHbTimeoutCount) &&
-        Objects.equals(this.dupipFrequency, seRuntimeProperties.dupipFrequency) &&
-        Objects.equals(this.dupipTimeoutCount, seRuntimeProperties.dupipTimeoutCount) &&
-        Objects.equals(this.enableHsmLog, seRuntimeProperties.enableHsmLog) &&
-        Objects.equals(this.feproxyVipsEnableProxyArp, seRuntimeProperties.feproxyVipsEnableProxyArp) &&
-        Objects.equals(this.flowTableBatchPushFrequency, seRuntimeProperties.flowTableBatchPushFrequency) &&
-        Objects.equals(this.flowTableMaxEntriesDeprecated, seRuntimeProperties.flowTableMaxEntriesDeprecated) &&
-        Objects.equals(this.flowTableNewSynMaxEntries, seRuntimeProperties.flowTableNewSynMaxEntries) &&
-        Objects.equals(this.globalMtu, seRuntimeProperties.globalMtu) &&
-        Objects.equals(this.httpRumConsoleLog, seRuntimeProperties.httpRumConsoleLog) &&
-        Objects.equals(this.httpRumMinContentLength, seRuntimeProperties.httpRumMinContentLength) &&
-        Objects.equals(this.lbBatchPushFrequency, seRuntimeProperties.lbBatchPushFrequency) &&
-        Objects.equals(this.lbFailMaxTime, seRuntimeProperties.lbFailMaxTime) &&
-        Objects.equals(this.lbactionNumRequestsToDispatch, seRuntimeProperties.lbactionNumRequestsToDispatch) &&
-        Objects.equals(this.lbactionRqPerRequestMaxRetries, seRuntimeProperties.lbactionRqPerRequestMaxRetries) &&
-        Objects.equals(this.logAgentCompressLogs, seRuntimeProperties.logAgentCompressLogs) &&
-        Objects.equals(this.logAgentConnSendBufferSize, seRuntimeProperties.logAgentConnSendBufferSize) &&
-        Objects.equals(this.logAgentExportMsgBufferSize, seRuntimeProperties.logAgentExportMsgBufferSize) &&
-        Objects.equals(this.logAgentExportWaitTime, seRuntimeProperties.logAgentExportWaitTime) &&
-        Objects.equals(this.logAgentFileSzAppl, seRuntimeProperties.logAgentFileSzAppl) &&
-        Objects.equals(this.logAgentFileSzConn, seRuntimeProperties.logAgentFileSzConn) &&
-        Objects.equals(this.logAgentFileSzDebug, seRuntimeProperties.logAgentFileSzDebug) &&
-        Objects.equals(this.logAgentFileSzEvent, seRuntimeProperties.logAgentFileSzEvent) &&
-        Objects.equals(this.logAgentLogStorageMinSz, seRuntimeProperties.logAgentLogStorageMinSz) &&
-        Objects.equals(this.logAgentMaxActiveAdfFilesPerVs, seRuntimeProperties.logAgentMaxActiveAdfFilesPerVs) &&
-        Objects.equals(this.logAgentMaxConcurrentRsync, seRuntimeProperties.logAgentMaxConcurrentRsync) &&
-        Objects.equals(this.logAgentMaxLogmessageProtoSz, seRuntimeProperties.logAgentMaxLogmessageProtoSz) &&
-        Objects.equals(this.logAgentMaxStorageExcessPercent, seRuntimeProperties.logAgentMaxStorageExcessPercent) &&
-        Objects.equals(this.logAgentMaxStorageIgnorePercent, seRuntimeProperties.logAgentMaxStorageIgnorePercent) &&
-        Objects.equals(this.logAgentMinStoragePerVs, seRuntimeProperties.logAgentMinStoragePerVs) &&
-        Objects.equals(this.logAgentPauseInterval, seRuntimeProperties.logAgentPauseInterval) &&
-        Objects.equals(this.logAgentSleepInterval, seRuntimeProperties.logAgentSleepInterval) &&
-        Objects.equals(this.logAgentUnknownVsTimer, seRuntimeProperties.logAgentUnknownVsTimer) &&
-        Objects.equals(this.logMessageMaxFileListSize, seRuntimeProperties.logMessageMaxFileListSize) &&
-        Objects.equals(this.maxThroughput, seRuntimeProperties.maxThroughput) &&
-        Objects.equals(this.mcacheEnabled, seRuntimeProperties.mcacheEnabled) &&
-        Objects.equals(this.mcacheFetchEnabled, seRuntimeProperties.mcacheFetchEnabled) &&
-        Objects.equals(this.mcacheMaxCacheSize, seRuntimeProperties.mcacheMaxCacheSize) &&
-        Objects.equals(this.mcacheStoreInEnabled, seRuntimeProperties.mcacheStoreInEnabled) &&
-        Objects.equals(this.mcacheStoreInMaxSize, seRuntimeProperties.mcacheStoreInMaxSize) &&
-        Objects.equals(this.mcacheStoreInMinSize, seRuntimeProperties.mcacheStoreInMinSize) &&
-        Objects.equals(this.mcacheStoreOutEnabled, seRuntimeProperties.mcacheStoreOutEnabled) &&
-        Objects.equals(this.mcacheStoreSeMaxSize, seRuntimeProperties.mcacheStoreSeMaxSize) &&
-        Objects.equals(this.ngxFreeConnectionStack, seRuntimeProperties.ngxFreeConnectionStack) &&
-        Objects.equals(this.persistenceEntriesLowWatermark, seRuntimeProperties.persistenceEntriesLowWatermark) &&
-        Objects.equals(this.persistenceMemMax, seRuntimeProperties.persistenceMemMax) &&
-        Objects.equals(this.scaleoutUdpPerPkt, seRuntimeProperties.scaleoutUdpPerPkt) &&
-        Objects.equals(this.seAuthLdapBindTimeout, seRuntimeProperties.seAuthLdapBindTimeout) &&
-        Objects.equals(this.seAuthLdapCacheSize, seRuntimeProperties.seAuthLdapCacheSize) &&
-        Objects.equals(this.seAuthLdapConnectTimeout, seRuntimeProperties.seAuthLdapConnectTimeout) &&
-        Objects.equals(this.seAuthLdapConnsPerServer, seRuntimeProperties.seAuthLdapConnsPerServer) &&
-        Objects.equals(this.seAuthLdapReconnectTimeout, seRuntimeProperties.seAuthLdapReconnectTimeout) &&
-        Objects.equals(this.seAuthLdapRequestTimeout, seRuntimeProperties.seAuthLdapRequestTimeout) &&
-        Objects.equals(this.seAuthLdapServersFailoverOnly, seRuntimeProperties.seAuthLdapServersFailoverOnly) &&
-        Objects.equals(this.seDpCompression, seRuntimeProperties.seDpCompression) &&
-        Objects.equals(this.seDpHmDrops, seRuntimeProperties.seDpHmDrops) &&
-        Objects.equals(this.seDpIfStatePollInterval, seRuntimeProperties.seDpIfStatePollInterval) &&
-        Objects.equals(this.seDpLogNfEnqueuePercent, seRuntimeProperties.seDpLogNfEnqueuePercent) &&
-        Objects.equals(this.seDpLogUdfEnqueuePercent, seRuntimeProperties.seDpLogUdfEnqueuePercent) &&
-        Objects.equals(this.seDpVnicQueueStallEventSleep, seRuntimeProperties.seDpVnicQueueStallEventSleep) &&
-        Objects.equals(this.seDpVnicQueueStallThreshold, seRuntimeProperties.seDpVnicQueueStallThreshold) &&
-        Objects.equals(this.seDpVnicQueueStallTimeout, seRuntimeProperties.seDpVnicQueueStallTimeout) &&
-        Objects.equals(this.seDpVnicRestartOnQueueStallCount, seRuntimeProperties.seDpVnicRestartOnQueueStallCount) &&
-        Objects.equals(this.seDpVnicStallSeRestartWindow, seRuntimeProperties.seDpVnicStallSeRestartWindow) &&
-        Objects.equals(this.seDumpCoreOnAssert, seRuntimeProperties.seDumpCoreOnAssert) &&
-        Objects.equals(this.seHandleInterfaceRoutes, seRuntimeProperties.seHandleInterfaceRoutes) &&
-        Objects.equals(this.seHbPersistFudgeBits, seRuntimeProperties.seHbPersistFudgeBits) &&
-        Objects.equals(this.seMacErrorThresholdToDisablePromiscious, seRuntimeProperties.seMacErrorThresholdToDisablePromiscious) &&
-        Objects.equals(this.seMallocThresh, seRuntimeProperties.seMallocThresh) &&
-        Objects.equals(this.seMemoryPoison, seRuntimeProperties.seMemoryPoison) &&
-        Objects.equals(this.seMetricsInterval, seRuntimeProperties.seMetricsInterval) &&
-        Objects.equals(this.seMetricsRtEnabled, seRuntimeProperties.seMetricsRtEnabled) &&
-        Objects.equals(this.seMetricsRtInterval, seRuntimeProperties.seMetricsRtInterval) &&
-        Objects.equals(this.sePacketBufferMax, seRuntimeProperties.sePacketBufferMax) &&
-        Objects.equals(this.seRandomTcpDrops, seRuntimeProperties.seRandomTcpDrops) &&
-        Objects.equals(this.seRateLimiters, seRuntimeProperties.seRateLimiters) &&
-        Objects.equals(this.serviceIpSubnets, seRuntimeProperties.serviceIpSubnets) &&
-        Objects.equals(this.servicePortRanges, seRuntimeProperties.servicePortRanges) &&
-        Objects.equals(this.servicesAccessibleAllInterfaces, seRuntimeProperties.servicesAccessibleAllInterfaces) &&
-        Objects.equals(this.spdyFwdProxyParseEnable, seRuntimeProperties.spdyFwdProxyParseEnable) &&
-        Objects.equals(this.tcpSynCacheMax, seRuntimeProperties.tcpSynCacheMax) &&
-        Objects.equals(this.tcpSyncacheMaxRetransmitDefault, seRuntimeProperties.tcpSyncacheMaxRetransmitDefault) &&
-        Objects.equals(this.upstreamConnectTimeout, seRuntimeProperties.upstreamConnectTimeout) &&
-        Objects.equals(this.upstreamConnpoolCacheThresh, seRuntimeProperties.upstreamConnpoolCacheThresh) &&
-        Objects.equals(this.upstreamConnpoolConnIdleThreshTmo, seRuntimeProperties.upstreamConnpoolConnIdleThreshTmo) &&
-        Objects.equals(this.upstreamConnpoolConnIdleTmo, seRuntimeProperties.upstreamConnpoolConnIdleTmo) &&
-        Objects.equals(this.upstreamConnpoolConnLifeTmo, seRuntimeProperties.upstreamConnpoolConnLifeTmo) &&
-        Objects.equals(this.upstreamConnpoolConnMaxReuse, seRuntimeProperties.upstreamConnpoolConnMaxReuse) &&
-        Objects.equals(this.upstreamConnpoolCoreMaxCache, seRuntimeProperties.upstreamConnpoolCoreMaxCache) &&
-        Objects.equals(this.upstreamConnpoolEnable, seRuntimeProperties.upstreamConnpoolEnable) &&
-        Objects.equals(this.upstreamConnpoolServerMaxCache, seRuntimeProperties.upstreamConnpoolServerMaxCache) &&
-        Objects.equals(this.upstreamConnpoolStrategy, seRuntimeProperties.upstreamConnpoolStrategy) &&
-        Objects.equals(this.upstreamKeepalive, seRuntimeProperties.upstreamKeepalive) &&
-        Objects.equals(this.upstreamReadTimeout, seRuntimeProperties.upstreamReadTimeout) &&
-        Objects.equals(this.upstreamSendTimeout, seRuntimeProperties.upstreamSendTimeout) &&
-        Objects.equals(this.userDefinedMetricAge, seRuntimeProperties.userDefinedMetricAge);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(adminSshEnabled, appHeaders, baremetalDispatcherHandlesFlows, connectionsLossyLogRateLimiterThreshold, connectionsUdfnfLogRateLimiterThreshold, disableFlowProbes, disableGro, disableTso, dosProfile, downstreamSendTimeout, dpAggressiveHbFrequency, dpAggressiveHbTimeoutCount, dpHbFrequency, dpHbTimeoutCount, dupipFrequency, dupipTimeoutCount, enableHsmLog, feproxyVipsEnableProxyArp, flowTableBatchPushFrequency, flowTableMaxEntriesDeprecated, flowTableNewSynMaxEntries, globalMtu, httpRumConsoleLog, httpRumMinContentLength, lbBatchPushFrequency, lbFailMaxTime, lbactionNumRequestsToDispatch, lbactionRqPerRequestMaxRetries, logAgentCompressLogs, logAgentConnSendBufferSize, logAgentExportMsgBufferSize, logAgentExportWaitTime, logAgentFileSzAppl, logAgentFileSzConn, logAgentFileSzDebug, logAgentFileSzEvent, logAgentLogStorageMinSz, logAgentMaxActiveAdfFilesPerVs, logAgentMaxConcurrentRsync, logAgentMaxLogmessageProtoSz, logAgentMaxStorageExcessPercent, logAgentMaxStorageIgnorePercent, logAgentMinStoragePerVs, logAgentPauseInterval, logAgentSleepInterval, logAgentUnknownVsTimer, logMessageMaxFileListSize, maxThroughput, mcacheEnabled, mcacheFetchEnabled, mcacheMaxCacheSize, mcacheStoreInEnabled, mcacheStoreInMaxSize, mcacheStoreInMinSize, mcacheStoreOutEnabled, mcacheStoreSeMaxSize, ngxFreeConnectionStack, persistenceEntriesLowWatermark, persistenceMemMax, scaleoutUdpPerPkt, seAuthLdapBindTimeout, seAuthLdapCacheSize, seAuthLdapConnectTimeout, seAuthLdapConnsPerServer, seAuthLdapReconnectTimeout, seAuthLdapRequestTimeout, seAuthLdapServersFailoverOnly, seDpCompression, seDpHmDrops, seDpIfStatePollInterval, seDpLogNfEnqueuePercent, seDpLogUdfEnqueuePercent, seDpVnicQueueStallEventSleep, seDpVnicQueueStallThreshold, seDpVnicQueueStallTimeout, seDpVnicRestartOnQueueStallCount, seDpVnicStallSeRestartWindow, seDumpCoreOnAssert, seHandleInterfaceRoutes, seHbPersistFudgeBits, seMacErrorThresholdToDisablePromiscious, seMallocThresh, seMemoryPoison, seMetricsInterval, seMetricsRtEnabled, seMetricsRtInterval, sePacketBufferMax, seRandomTcpDrops, seRateLimiters, serviceIpSubnets, servicePortRanges, servicesAccessibleAllInterfaces, spdyFwdProxyParseEnable, tcpSynCacheMax, tcpSyncacheMaxRetransmitDefault, upstreamConnectTimeout, upstreamConnpoolCacheThresh, upstreamConnpoolConnIdleThreshTmo, upstreamConnpoolConnIdleTmo, upstreamConnpoolConnLifeTmo, upstreamConnpoolConnMaxReuse, upstreamConnpoolCoreMaxCache, upstreamConnpoolEnable, upstreamConnpoolServerMaxCache, upstreamConnpoolStrategy, upstreamKeepalive, upstreamReadTimeout, upstreamSendTimeout, userDefinedMetricAge);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SeRuntimeProperties {\n");
-    
-    sb.append("    adminSshEnabled: ").append(toIndentedString(adminSshEnabled)).append("\n");
-    sb.append("    appHeaders: ").append(toIndentedString(appHeaders)).append("\n");
-    sb.append("    baremetalDispatcherHandlesFlows: ").append(toIndentedString(baremetalDispatcherHandlesFlows)).append("\n");
-    sb.append("    connectionsLossyLogRateLimiterThreshold: ").append(toIndentedString(connectionsLossyLogRateLimiterThreshold)).append("\n");
-    sb.append("    connectionsUdfnfLogRateLimiterThreshold: ").append(toIndentedString(connectionsUdfnfLogRateLimiterThreshold)).append("\n");
-    sb.append("    disableFlowProbes: ").append(toIndentedString(disableFlowProbes)).append("\n");
-    sb.append("    disableGro: ").append(toIndentedString(disableGro)).append("\n");
-    sb.append("    disableTso: ").append(toIndentedString(disableTso)).append("\n");
-    sb.append("    dosProfile: ").append(toIndentedString(dosProfile)).append("\n");
-    sb.append("    downstreamSendTimeout: ").append(toIndentedString(downstreamSendTimeout)).append("\n");
-    sb.append("    dpAggressiveHbFrequency: ").append(toIndentedString(dpAggressiveHbFrequency)).append("\n");
-    sb.append("    dpAggressiveHbTimeoutCount: ").append(toIndentedString(dpAggressiveHbTimeoutCount)).append("\n");
-    sb.append("    dpHbFrequency: ").append(toIndentedString(dpHbFrequency)).append("\n");
-    sb.append("    dpHbTimeoutCount: ").append(toIndentedString(dpHbTimeoutCount)).append("\n");
-    sb.append("    dupipFrequency: ").append(toIndentedString(dupipFrequency)).append("\n");
-    sb.append("    dupipTimeoutCount: ").append(toIndentedString(dupipTimeoutCount)).append("\n");
-    sb.append("    enableHsmLog: ").append(toIndentedString(enableHsmLog)).append("\n");
-    sb.append("    feproxyVipsEnableProxyArp: ").append(toIndentedString(feproxyVipsEnableProxyArp)).append("\n");
-    sb.append("    flowTableBatchPushFrequency: ").append(toIndentedString(flowTableBatchPushFrequency)).append("\n");
-    sb.append("    flowTableMaxEntriesDeprecated: ").append(toIndentedString(flowTableMaxEntriesDeprecated)).append("\n");
-    sb.append("    flowTableNewSynMaxEntries: ").append(toIndentedString(flowTableNewSynMaxEntries)).append("\n");
-    sb.append("    globalMtu: ").append(toIndentedString(globalMtu)).append("\n");
-    sb.append("    httpRumConsoleLog: ").append(toIndentedString(httpRumConsoleLog)).append("\n");
-    sb.append("    httpRumMinContentLength: ").append(toIndentedString(httpRumMinContentLength)).append("\n");
-    sb.append("    lbBatchPushFrequency: ").append(toIndentedString(lbBatchPushFrequency)).append("\n");
-    sb.append("    lbFailMaxTime: ").append(toIndentedString(lbFailMaxTime)).append("\n");
-    sb.append("    lbactionNumRequestsToDispatch: ").append(toIndentedString(lbactionNumRequestsToDispatch)).append("\n");
-    sb.append("    lbactionRqPerRequestMaxRetries: ").append(toIndentedString(lbactionRqPerRequestMaxRetries)).append("\n");
-    sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");
-    sb.append("    logAgentConnSendBufferSize: ").append(toIndentedString(logAgentConnSendBufferSize)).append("\n");
-    sb.append("    logAgentExportMsgBufferSize: ").append(toIndentedString(logAgentExportMsgBufferSize)).append("\n");
-    sb.append("    logAgentExportWaitTime: ").append(toIndentedString(logAgentExportWaitTime)).append("\n");
-    sb.append("    logAgentFileSzAppl: ").append(toIndentedString(logAgentFileSzAppl)).append("\n");
-    sb.append("    logAgentFileSzConn: ").append(toIndentedString(logAgentFileSzConn)).append("\n");
-    sb.append("    logAgentFileSzDebug: ").append(toIndentedString(logAgentFileSzDebug)).append("\n");
-    sb.append("    logAgentFileSzEvent: ").append(toIndentedString(logAgentFileSzEvent)).append("\n");
-    sb.append("    logAgentLogStorageMinSz: ").append(toIndentedString(logAgentLogStorageMinSz)).append("\n");
-    sb.append("    logAgentMaxActiveAdfFilesPerVs: ").append(toIndentedString(logAgentMaxActiveAdfFilesPerVs)).append("\n");
-    sb.append("    logAgentMaxConcurrentRsync: ").append(toIndentedString(logAgentMaxConcurrentRsync)).append("\n");
-    sb.append("    logAgentMaxLogmessageProtoSz: ").append(toIndentedString(logAgentMaxLogmessageProtoSz)).append("\n");
-    sb.append("    logAgentMaxStorageExcessPercent: ").append(toIndentedString(logAgentMaxStorageExcessPercent)).append("\n");
-    sb.append("    logAgentMaxStorageIgnorePercent: ").append(toIndentedString(logAgentMaxStorageIgnorePercent)).append("\n");
-    sb.append("    logAgentMinStoragePerVs: ").append(toIndentedString(logAgentMinStoragePerVs)).append("\n");
-    sb.append("    logAgentPauseInterval: ").append(toIndentedString(logAgentPauseInterval)).append("\n");
-    sb.append("    logAgentSleepInterval: ").append(toIndentedString(logAgentSleepInterval)).append("\n");
-    sb.append("    logAgentUnknownVsTimer: ").append(toIndentedString(logAgentUnknownVsTimer)).append("\n");
-    sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
-    sb.append("    maxThroughput: ").append(toIndentedString(maxThroughput)).append("\n");
-    sb.append("    mcacheEnabled: ").append(toIndentedString(mcacheEnabled)).append("\n");
-    sb.append("    mcacheFetchEnabled: ").append(toIndentedString(mcacheFetchEnabled)).append("\n");
-    sb.append("    mcacheMaxCacheSize: ").append(toIndentedString(mcacheMaxCacheSize)).append("\n");
-    sb.append("    mcacheStoreInEnabled: ").append(toIndentedString(mcacheStoreInEnabled)).append("\n");
-    sb.append("    mcacheStoreInMaxSize: ").append(toIndentedString(mcacheStoreInMaxSize)).append("\n");
-    sb.append("    mcacheStoreInMinSize: ").append(toIndentedString(mcacheStoreInMinSize)).append("\n");
-    sb.append("    mcacheStoreOutEnabled: ").append(toIndentedString(mcacheStoreOutEnabled)).append("\n");
-    sb.append("    mcacheStoreSeMaxSize: ").append(toIndentedString(mcacheStoreSeMaxSize)).append("\n");
-    sb.append("    ngxFreeConnectionStack: ").append(toIndentedString(ngxFreeConnectionStack)).append("\n");
-    sb.append("    persistenceEntriesLowWatermark: ").append(toIndentedString(persistenceEntriesLowWatermark)).append("\n");
-    sb.append("    persistenceMemMax: ").append(toIndentedString(persistenceMemMax)).append("\n");
-    sb.append("    scaleoutUdpPerPkt: ").append(toIndentedString(scaleoutUdpPerPkt)).append("\n");
-    sb.append("    seAuthLdapBindTimeout: ").append(toIndentedString(seAuthLdapBindTimeout)).append("\n");
-    sb.append("    seAuthLdapCacheSize: ").append(toIndentedString(seAuthLdapCacheSize)).append("\n");
-    sb.append("    seAuthLdapConnectTimeout: ").append(toIndentedString(seAuthLdapConnectTimeout)).append("\n");
-    sb.append("    seAuthLdapConnsPerServer: ").append(toIndentedString(seAuthLdapConnsPerServer)).append("\n");
-    sb.append("    seAuthLdapReconnectTimeout: ").append(toIndentedString(seAuthLdapReconnectTimeout)).append("\n");
-    sb.append("    seAuthLdapRequestTimeout: ").append(toIndentedString(seAuthLdapRequestTimeout)).append("\n");
-    sb.append("    seAuthLdapServersFailoverOnly: ").append(toIndentedString(seAuthLdapServersFailoverOnly)).append("\n");
-    sb.append("    seDpCompression: ").append(toIndentedString(seDpCompression)).append("\n");
-    sb.append("    seDpHmDrops: ").append(toIndentedString(seDpHmDrops)).append("\n");
-    sb.append("    seDpIfStatePollInterval: ").append(toIndentedString(seDpIfStatePollInterval)).append("\n");
-    sb.append("    seDpLogNfEnqueuePercent: ").append(toIndentedString(seDpLogNfEnqueuePercent)).append("\n");
-    sb.append("    seDpLogUdfEnqueuePercent: ").append(toIndentedString(seDpLogUdfEnqueuePercent)).append("\n");
-    sb.append("    seDpVnicQueueStallEventSleep: ").append(toIndentedString(seDpVnicQueueStallEventSleep)).append("\n");
-    sb.append("    seDpVnicQueueStallThreshold: ").append(toIndentedString(seDpVnicQueueStallThreshold)).append("\n");
-    sb.append("    seDpVnicQueueStallTimeout: ").append(toIndentedString(seDpVnicQueueStallTimeout)).append("\n");
-    sb.append("    seDpVnicRestartOnQueueStallCount: ").append(toIndentedString(seDpVnicRestartOnQueueStallCount)).append("\n");
-    sb.append("    seDpVnicStallSeRestartWindow: ").append(toIndentedString(seDpVnicStallSeRestartWindow)).append("\n");
-    sb.append("    seDumpCoreOnAssert: ").append(toIndentedString(seDumpCoreOnAssert)).append("\n");
-    sb.append("    seHandleInterfaceRoutes: ").append(toIndentedString(seHandleInterfaceRoutes)).append("\n");
-    sb.append("    seHbPersistFudgeBits: ").append(toIndentedString(seHbPersistFudgeBits)).append("\n");
-    sb.append("    seMacErrorThresholdToDisablePromiscious: ").append(toIndentedString(seMacErrorThresholdToDisablePromiscious)).append("\n");
-    sb.append("    seMallocThresh: ").append(toIndentedString(seMallocThresh)).append("\n");
-    sb.append("    seMemoryPoison: ").append(toIndentedString(seMemoryPoison)).append("\n");
-    sb.append("    seMetricsInterval: ").append(toIndentedString(seMetricsInterval)).append("\n");
-    sb.append("    seMetricsRtEnabled: ").append(toIndentedString(seMetricsRtEnabled)).append("\n");
-    sb.append("    seMetricsRtInterval: ").append(toIndentedString(seMetricsRtInterval)).append("\n");
-    sb.append("    sePacketBufferMax: ").append(toIndentedString(sePacketBufferMax)).append("\n");
-    sb.append("    seRandomTcpDrops: ").append(toIndentedString(seRandomTcpDrops)).append("\n");
-    sb.append("    seRateLimiters: ").append(toIndentedString(seRateLimiters)).append("\n");
-    sb.append("    serviceIpSubnets: ").append(toIndentedString(serviceIpSubnets)).append("\n");
-    sb.append("    servicePortRanges: ").append(toIndentedString(servicePortRanges)).append("\n");
-    sb.append("    servicesAccessibleAllInterfaces: ").append(toIndentedString(servicesAccessibleAllInterfaces)).append("\n");
-    sb.append("    spdyFwdProxyParseEnable: ").append(toIndentedString(spdyFwdProxyParseEnable)).append("\n");
-    sb.append("    tcpSynCacheMax: ").append(toIndentedString(tcpSynCacheMax)).append("\n");
-    sb.append("    tcpSyncacheMaxRetransmitDefault: ").append(toIndentedString(tcpSyncacheMaxRetransmitDefault)).append("\n");
-    sb.append("    upstreamConnectTimeout: ").append(toIndentedString(upstreamConnectTimeout)).append("\n");
-    sb.append("    upstreamConnpoolCacheThresh: ").append(toIndentedString(upstreamConnpoolCacheThresh)).append("\n");
-    sb.append("    upstreamConnpoolConnIdleThreshTmo: ").append(toIndentedString(upstreamConnpoolConnIdleThreshTmo)).append("\n");
-    sb.append("    upstreamConnpoolConnIdleTmo: ").append(toIndentedString(upstreamConnpoolConnIdleTmo)).append("\n");
-    sb.append("    upstreamConnpoolConnLifeTmo: ").append(toIndentedString(upstreamConnpoolConnLifeTmo)).append("\n");
-    sb.append("    upstreamConnpoolConnMaxReuse: ").append(toIndentedString(upstreamConnpoolConnMaxReuse)).append("\n");
-    sb.append("    upstreamConnpoolCoreMaxCache: ").append(toIndentedString(upstreamConnpoolCoreMaxCache)).append("\n");
-    sb.append("    upstreamConnpoolEnable: ").append(toIndentedString(upstreamConnpoolEnable)).append("\n");
-    sb.append("    upstreamConnpoolServerMaxCache: ").append(toIndentedString(upstreamConnpoolServerMaxCache)).append("\n");
-    sb.append("    upstreamConnpoolStrategy: ").append(toIndentedString(upstreamConnpoolStrategy)).append("\n");
-    sb.append("    upstreamKeepalive: ").append(toIndentedString(upstreamKeepalive)).append("\n");
-    sb.append("    upstreamReadTimeout: ").append(toIndentedString(upstreamReadTimeout)).append("\n");
-    sb.append("    upstreamSendTimeout: ").append(toIndentedString(upstreamSendTimeout)).append("\n");
-    sb.append("    userDefinedMetricAge: ").append(toIndentedString(userDefinedMetricAge)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SeRuntimeProperties objSeRuntimeProperties = (SeRuntimeProperties) o;
+  return   Objects.equals(this.upstreamConnpoolConnLifeTmo, objSeRuntimeProperties.upstreamConnpoolConnLifeTmo)&&
+  Objects.equals(this.mcacheStoreOutEnabled, objSeRuntimeProperties.mcacheStoreOutEnabled)&&
+  Objects.equals(this.disableTso, objSeRuntimeProperties.disableTso)&&
+  Objects.equals(this.logAgentMaxActiveAdfFilesPerVs, objSeRuntimeProperties.logAgentMaxActiveAdfFilesPerVs)&&
+  Objects.equals(this.seAuthLdapConnsPerServer, objSeRuntimeProperties.seAuthLdapConnsPerServer)&&
+  Objects.equals(this.logAgentFileSzAppl, objSeRuntimeProperties.logAgentFileSzAppl)&&
+  Objects.equals(this.sePacketBufferMax, objSeRuntimeProperties.sePacketBufferMax)&&
+  Objects.equals(this.logAgentMaxLogmessageProtoSz, objSeRuntimeProperties.logAgentMaxLogmessageProtoSz)&&
+  Objects.equals(this.seMallocThresh, objSeRuntimeProperties.seMallocThresh)&&
+  Objects.equals(this.seHbPersistFudgeBits, objSeRuntimeProperties.seHbPersistFudgeBits)&&
+  Objects.equals(this.seDpVnicStallSeRestartWindow, objSeRuntimeProperties.seDpVnicStallSeRestartWindow)&&
+  Objects.equals(this.upstreamConnpoolConnMaxReuse, objSeRuntimeProperties.upstreamConnpoolConnMaxReuse)&&
+  Objects.equals(this.upstreamConnpoolServerMaxCache, objSeRuntimeProperties.upstreamConnpoolServerMaxCache)&&
+  Objects.equals(this.dosProfile, objSeRuntimeProperties.dosProfile)&&
+  Objects.equals(this.dpAggressiveHbTimeoutCount, objSeRuntimeProperties.dpAggressiveHbTimeoutCount)&&
+  Objects.equals(this.seMetricsRtInterval, objSeRuntimeProperties.seMetricsRtInterval)&&
+  Objects.equals(this.serviceIpSubnets, objSeRuntimeProperties.serviceIpSubnets)&&
+  Objects.equals(this.persistenceMemMax, objSeRuntimeProperties.persistenceMemMax)&&
+  Objects.equals(this.httpRumConsoleLog, objSeRuntimeProperties.httpRumConsoleLog)&&
+  Objects.equals(this.logAgentLogStorageMinSz, objSeRuntimeProperties.logAgentLogStorageMinSz)&&
+  Objects.equals(this.seRandomTcpDrops, objSeRuntimeProperties.seRandomTcpDrops)&&
+  Objects.equals(this.seDpIfStatePollInterval, objSeRuntimeProperties.seDpIfStatePollInterval)&&
+  Objects.equals(this.seAuthLdapCacheSize, objSeRuntimeProperties.seAuthLdapCacheSize)&&
+  Objects.equals(this.logMessageMaxFileListSize, objSeRuntimeProperties.logMessageMaxFileListSize)&&
+  Objects.equals(this.adminSshEnabled, objSeRuntimeProperties.adminSshEnabled)&&
+  Objects.equals(this.servicesAccessibleAllInterfaces, objSeRuntimeProperties.servicesAccessibleAllInterfaces)&&
+  Objects.equals(this.dupipTimeoutCount, objSeRuntimeProperties.dupipTimeoutCount)&&
+  Objects.equals(this.baremetalDispatcherHandlesFlows, objSeRuntimeProperties.baremetalDispatcherHandlesFlows)&&
+  Objects.equals(this.upstreamConnpoolCacheThresh, objSeRuntimeProperties.upstreamConnpoolCacheThresh)&&
+  Objects.equals(this.mcacheFetchEnabled, objSeRuntimeProperties.mcacheFetchEnabled)&&
+  Objects.equals(this.connectionsLossyLogRateLimiterThreshold, objSeRuntimeProperties.connectionsLossyLogRateLimiterThreshold)&&
+  Objects.equals(this.upstreamConnpoolConnIdleTmo, objSeRuntimeProperties.upstreamConnpoolConnIdleTmo)&&
+  Objects.equals(this.mcacheStoreInEnabled, objSeRuntimeProperties.mcacheStoreInEnabled)&&
+  Objects.equals(this.logAgentUnknownVsTimer, objSeRuntimeProperties.logAgentUnknownVsTimer)&&
+  Objects.equals(this.upstreamConnpoolStrategy, objSeRuntimeProperties.upstreamConnpoolStrategy)&&
+  Objects.equals(this.upstreamConnpoolConnIdleThreshTmo, objSeRuntimeProperties.upstreamConnpoolConnIdleThreshTmo)&&
+  Objects.equals(this.logAgentMinStoragePerVs, objSeRuntimeProperties.logAgentMinStoragePerVs)&&
+  Objects.equals(this.feproxyVipsEnableProxyArp, objSeRuntimeProperties.feproxyVipsEnableProxyArp)&&
+  Objects.equals(this.servicePortRanges, objSeRuntimeProperties.servicePortRanges)&&
+  Objects.equals(this.mcacheMaxCacheSize, objSeRuntimeProperties.mcacheMaxCacheSize)&&
+  Objects.equals(this.seDpLogNfEnqueuePercent, objSeRuntimeProperties.seDpLogNfEnqueuePercent)&&
+  Objects.equals(this.logAgentConnSendBufferSize, objSeRuntimeProperties.logAgentConnSendBufferSize)&&
+  Objects.equals(this.flowTableBatchPushFrequency, objSeRuntimeProperties.flowTableBatchPushFrequency)&&
+  Objects.equals(this.logAgentFileSzConn, objSeRuntimeProperties.logAgentFileSzConn)&&
+  Objects.equals(this.seMacErrorThresholdToDisablePromiscious, objSeRuntimeProperties.seMacErrorThresholdToDisablePromiscious)&&
+  Objects.equals(this.mcacheStoreSeMaxSize, objSeRuntimeProperties.mcacheStoreSeMaxSize)&&
+  Objects.equals(this.disableFlowProbes, objSeRuntimeProperties.disableFlowProbes)&&
+  Objects.equals(this.lbactionRqPerRequestMaxRetries, objSeRuntimeProperties.lbactionRqPerRequestMaxRetries)&&
+  Objects.equals(this.lbactionNumRequestsToDispatch, objSeRuntimeProperties.lbactionNumRequestsToDispatch)&&
+  Objects.equals(this.logAgentFileSzDebug, objSeRuntimeProperties.logAgentFileSzDebug)&&
+  Objects.equals(this.seDpVnicRestartOnQueueStallCount, objSeRuntimeProperties.seDpVnicRestartOnQueueStallCount)&&
+  Objects.equals(this.connectionsUdfnfLogRateLimiterThreshold, objSeRuntimeProperties.connectionsUdfnfLogRateLimiterThreshold)&&
+  Objects.equals(this.upstreamSendTimeout, objSeRuntimeProperties.upstreamSendTimeout)&&
+  Objects.equals(this.logAgentMaxStorageIgnorePercent, objSeRuntimeProperties.logAgentMaxStorageIgnorePercent)&&
+  Objects.equals(this.seAuthLdapReconnectTimeout, objSeRuntimeProperties.seAuthLdapReconnectTimeout)&&
+  Objects.equals(this.logAgentMaxConcurrentRsync, objSeRuntimeProperties.logAgentMaxConcurrentRsync)&&
+  Objects.equals(this.logAgentCompressLogs, objSeRuntimeProperties.logAgentCompressLogs)&&
+  Objects.equals(this.upstreamConnpoolCoreMaxCache, objSeRuntimeProperties.upstreamConnpoolCoreMaxCache)&&
+  Objects.equals(this.dpHbFrequency, objSeRuntimeProperties.dpHbFrequency)&&
+  Objects.equals(this.dupipFrequency, objSeRuntimeProperties.dupipFrequency)&&
+  Objects.equals(this.seDpCompression, objSeRuntimeProperties.seDpCompression)&&
+  Objects.equals(this.disableGro, objSeRuntimeProperties.disableGro)&&
+  Objects.equals(this.dpAggressiveHbFrequency, objSeRuntimeProperties.dpAggressiveHbFrequency)&&
+  Objects.equals(this.logAgentPauseInterval, objSeRuntimeProperties.logAgentPauseInterval)&&
+  Objects.equals(this.userDefinedMetricAge, objSeRuntimeProperties.userDefinedMetricAge)&&
+  Objects.equals(this.seRateLimiters, objSeRuntimeProperties.seRateLimiters)&&
+  Objects.equals(this.seMetricsRtEnabled, objSeRuntimeProperties.seMetricsRtEnabled)&&
+  Objects.equals(this.upstreamConnpoolEnable, objSeRuntimeProperties.upstreamConnpoolEnable)&&
+  Objects.equals(this.seDpVnicQueueStallThreshold, objSeRuntimeProperties.seDpVnicQueueStallThreshold)&&
+  Objects.equals(this.persistenceEntriesLowWatermark, objSeRuntimeProperties.persistenceEntriesLowWatermark)&&
+  Objects.equals(this.flowTableNewSynMaxEntries, objSeRuntimeProperties.flowTableNewSynMaxEntries)&&
+  Objects.equals(this.seAuthLdapConnectTimeout, objSeRuntimeProperties.seAuthLdapConnectTimeout)&&
+  Objects.equals(this.logAgentExportMsgBufferSize, objSeRuntimeProperties.logAgentExportMsgBufferSize)&&
+  Objects.equals(this.logAgentMaxStorageExcessPercent, objSeRuntimeProperties.logAgentMaxStorageExcessPercent)&&
+  Objects.equals(this.enableHsmLog, objSeRuntimeProperties.enableHsmLog)&&
+  Objects.equals(this.seAuthLdapRequestTimeout, objSeRuntimeProperties.seAuthLdapRequestTimeout)&&
+  Objects.equals(this.upstreamConnectTimeout, objSeRuntimeProperties.upstreamConnectTimeout)&&
+  Objects.equals(this.flowTableMaxEntriesDeprecated, objSeRuntimeProperties.flowTableMaxEntriesDeprecated)&&
+  Objects.equals(this.downstreamSendTimeout, objSeRuntimeProperties.downstreamSendTimeout)&&
+  Objects.equals(this.logAgentFileSzEvent, objSeRuntimeProperties.logAgentFileSzEvent)&&
+  Objects.equals(this.seDpLogUdfEnqueuePercent, objSeRuntimeProperties.seDpLogUdfEnqueuePercent)&&
+  Objects.equals(this.spdyFwdProxyParseEnable, objSeRuntimeProperties.spdyFwdProxyParseEnable)&&
+  Objects.equals(this.seDpVnicQueueStallTimeout, objSeRuntimeProperties.seDpVnicQueueStallTimeout)&&
+  Objects.equals(this.scaleoutUdpPerPkt, objSeRuntimeProperties.scaleoutUdpPerPkt)&&
+  Objects.equals(this.seDpHmDrops, objSeRuntimeProperties.seDpHmDrops)&&
+  Objects.equals(this.seMemoryPoison, objSeRuntimeProperties.seMemoryPoison)&&
+  Objects.equals(this.lbFailMaxTime, objSeRuntimeProperties.lbFailMaxTime)&&
+  Objects.equals(this.seDumpCoreOnAssert, objSeRuntimeProperties.seDumpCoreOnAssert)&&
+  Objects.equals(this.seMetricsInterval, objSeRuntimeProperties.seMetricsInterval)&&
+  Objects.equals(this.logAgentExportWaitTime, objSeRuntimeProperties.logAgentExportWaitTime)&&
+  Objects.equals(this.seDpVnicQueueStallEventSleep, objSeRuntimeProperties.seDpVnicQueueStallEventSleep)&&
+  Objects.equals(this.seAuthLdapBindTimeout, objSeRuntimeProperties.seAuthLdapBindTimeout)&&
+  Objects.equals(this.mcacheStoreInMinSize, objSeRuntimeProperties.mcacheStoreInMinSize)&&
+  Objects.equals(this.seAuthLdapServersFailoverOnly, objSeRuntimeProperties.seAuthLdapServersFailoverOnly)&&
+  Objects.equals(this.httpRumMinContentLength, objSeRuntimeProperties.httpRumMinContentLength)&&
+  Objects.equals(this.globalMtu, objSeRuntimeProperties.globalMtu)&&
+  Objects.equals(this.upstreamReadTimeout, objSeRuntimeProperties.upstreamReadTimeout)&&
+  Objects.equals(this.seHandleInterfaceRoutes, objSeRuntimeProperties.seHandleInterfaceRoutes)&&
+  Objects.equals(this.mcacheEnabled, objSeRuntimeProperties.mcacheEnabled)&&
+  Objects.equals(this.upstreamKeepalive, objSeRuntimeProperties.upstreamKeepalive)&&
+  Objects.equals(this.tcpSyncacheMaxRetransmitDefault, objSeRuntimeProperties.tcpSyncacheMaxRetransmitDefault)&&
+  Objects.equals(this.tcpSynCacheMax, objSeRuntimeProperties.tcpSynCacheMax)&&
+  Objects.equals(this.logAgentSleepInterval, objSeRuntimeProperties.logAgentSleepInterval)&&
+  Objects.equals(this.maxThroughput, objSeRuntimeProperties.maxThroughput)&&
+  Objects.equals(this.ngxFreeConnectionStack, objSeRuntimeProperties.ngxFreeConnectionStack)&&
+  Objects.equals(this.dpHbTimeoutCount, objSeRuntimeProperties.dpHbTimeoutCount)&&
+  Objects.equals(this.appHeaders, objSeRuntimeProperties.appHeaders)&&
+  Objects.equals(this.mcacheStoreInMaxSize, objSeRuntimeProperties.mcacheStoreInMaxSize)&&
+  Objects.equals(this.lbBatchPushFrequency, objSeRuntimeProperties.lbBatchPushFrequency);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SeRuntimeProperties {\n");
+      sb.append("    adminSshEnabled: ").append(toIndentedString(adminSshEnabled)).append("\n");
+        sb.append("    appHeaders: ").append(toIndentedString(appHeaders)).append("\n");
+        sb.append("    baremetalDispatcherHandlesFlows: ").append(toIndentedString(baremetalDispatcherHandlesFlows)).append("\n");
+        sb.append("    connectionsLossyLogRateLimiterThreshold: ").append(toIndentedString(connectionsLossyLogRateLimiterThreshold)).append("\n");
+        sb.append("    connectionsUdfnfLogRateLimiterThreshold: ").append(toIndentedString(connectionsUdfnfLogRateLimiterThreshold)).append("\n");
+        sb.append("    disableFlowProbes: ").append(toIndentedString(disableFlowProbes)).append("\n");
+        sb.append("    disableGro: ").append(toIndentedString(disableGro)).append("\n");
+        sb.append("    disableTso: ").append(toIndentedString(disableTso)).append("\n");
+        sb.append("    dosProfile: ").append(toIndentedString(dosProfile)).append("\n");
+        sb.append("    downstreamSendTimeout: ").append(toIndentedString(downstreamSendTimeout)).append("\n");
+        sb.append("    dpAggressiveHbFrequency: ").append(toIndentedString(dpAggressiveHbFrequency)).append("\n");
+        sb.append("    dpAggressiveHbTimeoutCount: ").append(toIndentedString(dpAggressiveHbTimeoutCount)).append("\n");
+        sb.append("    dpHbFrequency: ").append(toIndentedString(dpHbFrequency)).append("\n");
+        sb.append("    dpHbTimeoutCount: ").append(toIndentedString(dpHbTimeoutCount)).append("\n");
+        sb.append("    dupipFrequency: ").append(toIndentedString(dupipFrequency)).append("\n");
+        sb.append("    dupipTimeoutCount: ").append(toIndentedString(dupipTimeoutCount)).append("\n");
+        sb.append("    enableHsmLog: ").append(toIndentedString(enableHsmLog)).append("\n");
+        sb.append("    feproxyVipsEnableProxyArp: ").append(toIndentedString(feproxyVipsEnableProxyArp)).append("\n");
+        sb.append("    flowTableBatchPushFrequency: ").append(toIndentedString(flowTableBatchPushFrequency)).append("\n");
+        sb.append("    flowTableMaxEntriesDeprecated: ").append(toIndentedString(flowTableMaxEntriesDeprecated)).append("\n");
+        sb.append("    flowTableNewSynMaxEntries: ").append(toIndentedString(flowTableNewSynMaxEntries)).append("\n");
+        sb.append("    globalMtu: ").append(toIndentedString(globalMtu)).append("\n");
+        sb.append("    httpRumConsoleLog: ").append(toIndentedString(httpRumConsoleLog)).append("\n");
+        sb.append("    httpRumMinContentLength: ").append(toIndentedString(httpRumMinContentLength)).append("\n");
+        sb.append("    lbBatchPushFrequency: ").append(toIndentedString(lbBatchPushFrequency)).append("\n");
+        sb.append("    lbFailMaxTime: ").append(toIndentedString(lbFailMaxTime)).append("\n");
+        sb.append("    lbactionNumRequestsToDispatch: ").append(toIndentedString(lbactionNumRequestsToDispatch)).append("\n");
+        sb.append("    lbactionRqPerRequestMaxRetries: ").append(toIndentedString(lbactionRqPerRequestMaxRetries)).append("\n");
+        sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");
+        sb.append("    logAgentConnSendBufferSize: ").append(toIndentedString(logAgentConnSendBufferSize)).append("\n");
+        sb.append("    logAgentExportMsgBufferSize: ").append(toIndentedString(logAgentExportMsgBufferSize)).append("\n");
+        sb.append("    logAgentExportWaitTime: ").append(toIndentedString(logAgentExportWaitTime)).append("\n");
+        sb.append("    logAgentFileSzAppl: ").append(toIndentedString(logAgentFileSzAppl)).append("\n");
+        sb.append("    logAgentFileSzConn: ").append(toIndentedString(logAgentFileSzConn)).append("\n");
+        sb.append("    logAgentFileSzDebug: ").append(toIndentedString(logAgentFileSzDebug)).append("\n");
+        sb.append("    logAgentFileSzEvent: ").append(toIndentedString(logAgentFileSzEvent)).append("\n");
+        sb.append("    logAgentLogStorageMinSz: ").append(toIndentedString(logAgentLogStorageMinSz)).append("\n");
+        sb.append("    logAgentMaxActiveAdfFilesPerVs: ").append(toIndentedString(logAgentMaxActiveAdfFilesPerVs)).append("\n");
+        sb.append("    logAgentMaxConcurrentRsync: ").append(toIndentedString(logAgentMaxConcurrentRsync)).append("\n");
+        sb.append("    logAgentMaxLogmessageProtoSz: ").append(toIndentedString(logAgentMaxLogmessageProtoSz)).append("\n");
+        sb.append("    logAgentMaxStorageExcessPercent: ").append(toIndentedString(logAgentMaxStorageExcessPercent)).append("\n");
+        sb.append("    logAgentMaxStorageIgnorePercent: ").append(toIndentedString(logAgentMaxStorageIgnorePercent)).append("\n");
+        sb.append("    logAgentMinStoragePerVs: ").append(toIndentedString(logAgentMinStoragePerVs)).append("\n");
+        sb.append("    logAgentPauseInterval: ").append(toIndentedString(logAgentPauseInterval)).append("\n");
+        sb.append("    logAgentSleepInterval: ").append(toIndentedString(logAgentSleepInterval)).append("\n");
+        sb.append("    logAgentUnknownVsTimer: ").append(toIndentedString(logAgentUnknownVsTimer)).append("\n");
+        sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
+        sb.append("    maxThroughput: ").append(toIndentedString(maxThroughput)).append("\n");
+        sb.append("    mcacheEnabled: ").append(toIndentedString(mcacheEnabled)).append("\n");
+        sb.append("    mcacheFetchEnabled: ").append(toIndentedString(mcacheFetchEnabled)).append("\n");
+        sb.append("    mcacheMaxCacheSize: ").append(toIndentedString(mcacheMaxCacheSize)).append("\n");
+        sb.append("    mcacheStoreInEnabled: ").append(toIndentedString(mcacheStoreInEnabled)).append("\n");
+        sb.append("    mcacheStoreInMaxSize: ").append(toIndentedString(mcacheStoreInMaxSize)).append("\n");
+        sb.append("    mcacheStoreInMinSize: ").append(toIndentedString(mcacheStoreInMinSize)).append("\n");
+        sb.append("    mcacheStoreOutEnabled: ").append(toIndentedString(mcacheStoreOutEnabled)).append("\n");
+        sb.append("    mcacheStoreSeMaxSize: ").append(toIndentedString(mcacheStoreSeMaxSize)).append("\n");
+        sb.append("    ngxFreeConnectionStack: ").append(toIndentedString(ngxFreeConnectionStack)).append("\n");
+        sb.append("    persistenceEntriesLowWatermark: ").append(toIndentedString(persistenceEntriesLowWatermark)).append("\n");
+        sb.append("    persistenceMemMax: ").append(toIndentedString(persistenceMemMax)).append("\n");
+        sb.append("    scaleoutUdpPerPkt: ").append(toIndentedString(scaleoutUdpPerPkt)).append("\n");
+        sb.append("    seAuthLdapBindTimeout: ").append(toIndentedString(seAuthLdapBindTimeout)).append("\n");
+        sb.append("    seAuthLdapCacheSize: ").append(toIndentedString(seAuthLdapCacheSize)).append("\n");
+        sb.append("    seAuthLdapConnectTimeout: ").append(toIndentedString(seAuthLdapConnectTimeout)).append("\n");
+        sb.append("    seAuthLdapConnsPerServer: ").append(toIndentedString(seAuthLdapConnsPerServer)).append("\n");
+        sb.append("    seAuthLdapReconnectTimeout: ").append(toIndentedString(seAuthLdapReconnectTimeout)).append("\n");
+        sb.append("    seAuthLdapRequestTimeout: ").append(toIndentedString(seAuthLdapRequestTimeout)).append("\n");
+        sb.append("    seAuthLdapServersFailoverOnly: ").append(toIndentedString(seAuthLdapServersFailoverOnly)).append("\n");
+        sb.append("    seDpCompression: ").append(toIndentedString(seDpCompression)).append("\n");
+        sb.append("    seDpHmDrops: ").append(toIndentedString(seDpHmDrops)).append("\n");
+        sb.append("    seDpIfStatePollInterval: ").append(toIndentedString(seDpIfStatePollInterval)).append("\n");
+        sb.append("    seDpLogNfEnqueuePercent: ").append(toIndentedString(seDpLogNfEnqueuePercent)).append("\n");
+        sb.append("    seDpLogUdfEnqueuePercent: ").append(toIndentedString(seDpLogUdfEnqueuePercent)).append("\n");
+        sb.append("    seDpVnicQueueStallEventSleep: ").append(toIndentedString(seDpVnicQueueStallEventSleep)).append("\n");
+        sb.append("    seDpVnicQueueStallThreshold: ").append(toIndentedString(seDpVnicQueueStallThreshold)).append("\n");
+        sb.append("    seDpVnicQueueStallTimeout: ").append(toIndentedString(seDpVnicQueueStallTimeout)).append("\n");
+        sb.append("    seDpVnicRestartOnQueueStallCount: ").append(toIndentedString(seDpVnicRestartOnQueueStallCount)).append("\n");
+        sb.append("    seDpVnicStallSeRestartWindow: ").append(toIndentedString(seDpVnicStallSeRestartWindow)).append("\n");
+        sb.append("    seDumpCoreOnAssert: ").append(toIndentedString(seDumpCoreOnAssert)).append("\n");
+        sb.append("    seHandleInterfaceRoutes: ").append(toIndentedString(seHandleInterfaceRoutes)).append("\n");
+        sb.append("    seHbPersistFudgeBits: ").append(toIndentedString(seHbPersistFudgeBits)).append("\n");
+        sb.append("    seMacErrorThresholdToDisablePromiscious: ").append(toIndentedString(seMacErrorThresholdToDisablePromiscious)).append("\n");
+        sb.append("    seMallocThresh: ").append(toIndentedString(seMallocThresh)).append("\n");
+        sb.append("    seMemoryPoison: ").append(toIndentedString(seMemoryPoison)).append("\n");
+        sb.append("    seMetricsInterval: ").append(toIndentedString(seMetricsInterval)).append("\n");
+        sb.append("    seMetricsRtEnabled: ").append(toIndentedString(seMetricsRtEnabled)).append("\n");
+        sb.append("    seMetricsRtInterval: ").append(toIndentedString(seMetricsRtInterval)).append("\n");
+        sb.append("    sePacketBufferMax: ").append(toIndentedString(sePacketBufferMax)).append("\n");
+        sb.append("    seRandomTcpDrops: ").append(toIndentedString(seRandomTcpDrops)).append("\n");
+        sb.append("    seRateLimiters: ").append(toIndentedString(seRateLimiters)).append("\n");
+        sb.append("    serviceIpSubnets: ").append(toIndentedString(serviceIpSubnets)).append("\n");
+        sb.append("    servicePortRanges: ").append(toIndentedString(servicePortRanges)).append("\n");
+        sb.append("    servicesAccessibleAllInterfaces: ").append(toIndentedString(servicesAccessibleAllInterfaces)).append("\n");
+        sb.append("    spdyFwdProxyParseEnable: ").append(toIndentedString(spdyFwdProxyParseEnable)).append("\n");
+        sb.append("    tcpSynCacheMax: ").append(toIndentedString(tcpSynCacheMax)).append("\n");
+        sb.append("    tcpSyncacheMaxRetransmitDefault: ").append(toIndentedString(tcpSyncacheMaxRetransmitDefault)).append("\n");
+        sb.append("    upstreamConnectTimeout: ").append(toIndentedString(upstreamConnectTimeout)).append("\n");
+        sb.append("    upstreamConnpoolCacheThresh: ").append(toIndentedString(upstreamConnpoolCacheThresh)).append("\n");
+        sb.append("    upstreamConnpoolConnIdleThreshTmo: ").append(toIndentedString(upstreamConnpoolConnIdleThreshTmo)).append("\n");
+        sb.append("    upstreamConnpoolConnIdleTmo: ").append(toIndentedString(upstreamConnpoolConnIdleTmo)).append("\n");
+        sb.append("    upstreamConnpoolConnLifeTmo: ").append(toIndentedString(upstreamConnpoolConnLifeTmo)).append("\n");
+        sb.append("    upstreamConnpoolConnMaxReuse: ").append(toIndentedString(upstreamConnpoolConnMaxReuse)).append("\n");
+        sb.append("    upstreamConnpoolCoreMaxCache: ").append(toIndentedString(upstreamConnpoolCoreMaxCache)).append("\n");
+        sb.append("    upstreamConnpoolEnable: ").append(toIndentedString(upstreamConnpoolEnable)).append("\n");
+        sb.append("    upstreamConnpoolServerMaxCache: ").append(toIndentedString(upstreamConnpoolServerMaxCache)).append("\n");
+        sb.append("    upstreamConnpoolStrategy: ").append(toIndentedString(upstreamConnpoolStrategy)).append("\n");
+        sb.append("    upstreamKeepalive: ").append(toIndentedString(upstreamKeepalive)).append("\n");
+        sb.append("    upstreamReadTimeout: ").append(toIndentedString(upstreamReadTimeout)).append("\n");
+        sb.append("    upstreamSendTimeout: ").append(toIndentedString(upstreamSendTimeout)).append("\n");
+        sb.append("    userDefinedMetricAge: ").append(toIndentedString(userDefinedMetricAge)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,144 +1,141 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.StringMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.StringMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ClientInsightsSampling
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ClientInsightsSampling is a POJO class extends AviRestResource that used for creating
+ * ClientInsightsSampling.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ClientInsightsSampling")
-@VsoFinder(name = Constants.FINDER_VRO_CLIENTINSIGHTSSAMPLING, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CLIENTINSIGHTSSAMPLING)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ClientInsightsSampling extends AviRestResource  {
+public class ClientInsightsSampling extends AviRestResource {
   @JsonProperty("client_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch clientIp = null;
 
   @JsonProperty("sample_uris")
+  @JsonInclude(Include.NON_NULL)
   private StringMatch sampleUris = null;
 
   @JsonProperty("skip_uris")
+  @JsonInclude(Include.NON_NULL)
   private StringMatch skipUris = null;
 
-  
+
+
   /**
-   * Client IP addresses to check when inserting RUM script.
+   * This is the getter method this will return the attribute value.
+   * Client ip addresses to check when inserting rum script.
    * @return clientIp
-  **/
-  @ApiModelProperty(value = "Client IP addresses to check when inserting RUM script.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getClientIp() {
     return clientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Client ip addresses to check when inserting rum script.
+   * @param clientIp set the clientIp.
+   */
   @VsoMethod
   public void setClientIp(IpAddrMatch clientIp) {
     this.clientIp = clientIp;
   }
 
-  
   /**
-   * URL patterns to check when inserting RUM script.
+   * This is the getter method this will return the attribute value.
+   * Url patterns to check when inserting rum script.
    * @return sampleUris
-  **/
-  @ApiModelProperty(value = "URL patterns to check when inserting RUM script.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public StringMatch getSampleUris() {
     return sampleUris;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Url patterns to check when inserting rum script.
+   * @param sampleUris set the sampleUris.
+   */
   @VsoMethod
   public void setSampleUris(StringMatch sampleUris) {
     this.sampleUris = sampleUris;
   }
 
-  
   /**
-   * URL patterns to avoid when inserting RUM script.
+   * This is the getter method this will return the attribute value.
+   * Url patterns to avoid when inserting rum script.
    * @return skipUris
-  **/
-  @ApiModelProperty(value = "URL patterns to avoid when inserting RUM script.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public StringMatch getSkipUris() {
     return skipUris;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Url patterns to avoid when inserting rum script.
+   * @param skipUris set the skipUris.
+   */
   @VsoMethod
   public void setSkipUris(StringMatch skipUris) {
     this.skipUris = skipUris;
   }
 
-  
-  public String getObjectID() {
-		return "ClientInsightsSampling";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ClientInsightsSampling clientInsightsSampling = (ClientInsightsSampling) o;
-    return Objects.equals(this.clientIp, clientInsightsSampling.clientIp) &&
-        Objects.equals(this.sampleUris, clientInsightsSampling.sampleUris) &&
-        Objects.equals(this.skipUris, clientInsightsSampling.skipUris);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(clientIp, sampleUris, skipUris);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ClientInsightsSampling {\n");
-    
-    sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-    sb.append("    sampleUris: ").append(toIndentedString(sampleUris)).append("\n");
-    sb.append("    skipUris: ").append(toIndentedString(skipUris)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ClientInsightsSampling objClientInsightsSampling = (ClientInsightsSampling) o;
+  return   Objects.equals(this.skipUris, objClientInsightsSampling.skipUris)&&
+  Objects.equals(this.clientIp, objClientInsightsSampling.clientIp)&&
+  Objects.equals(this.sampleUris, objClientInsightsSampling.sampleUris);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ClientInsightsSampling {\n");
+      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    sampleUris: ").append(toIndentedString(sampleUris)).append("\n");
+        sb.append("    skipUris: ").append(toIndentedString(skipUris)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

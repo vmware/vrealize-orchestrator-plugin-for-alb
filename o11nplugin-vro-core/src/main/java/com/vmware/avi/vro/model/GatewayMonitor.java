@@ -1,192 +1,208 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddrPrefix;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * GatewayMonitor
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The GatewayMonitor is a POJO class extends AviRestResource that used for creating
+ * GatewayMonitor.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "GatewayMonitor")
-@VsoFinder(name = Constants.FINDER_VRO_GATEWAYMONITOR, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_GATEWAYMONITOR)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class GatewayMonitor extends AviRestResource  {
+public class GatewayMonitor extends AviRestResource {
   @JsonProperty("gateway_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr gatewayIp = null;
 
   @JsonProperty("gateway_monitor_fail_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer gatewayMonitorFailThreshold = 10;
 
   @JsonProperty("gateway_monitor_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer gatewayMonitorInterval = 1000;
 
   @JsonProperty("gateway_monitor_success_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer gatewayMonitorSuccessThreshold = 15;
 
   @JsonProperty("subnet")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrPrefix subnet = null;
 
-  
+
+
   /**
-   * IP address of next hop gateway to be monitored.
+   * This is the getter method this will return the attribute value.
+   * Ip address of next hop gateway to be monitored.
    * @return gatewayIp
-  **/
-  @ApiModelProperty(required = true, value = "IP address of next hop gateway to be monitored.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getGatewayIp() {
     return gatewayIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address of next hop gateway to be monitored.
+   * @param gatewayIp set the gatewayIp.
+   */
   @VsoMethod
   public void setGatewayIp(IpAddr gatewayIp) {
     this.gatewayIp = gatewayIp;
   }
 
-  
   /**
-   * The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50.
+   * This is the getter method this will return the attribute value.
+   * The number of consecutive failed gateway health checks before a gateway is marked down.
+   * Allowed values are 3-50.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return gatewayMonitorFailThreshold
-  **/
-  @ApiModelProperty(value = "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getGatewayMonitorFailThreshold() {
     return gatewayMonitorFailThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The number of consecutive failed gateway health checks before a gateway is marked down.
+   * Allowed values are 3-50.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param gatewayMonitorFailThreshold set the gatewayMonitorFailThreshold.
+   */
   @VsoMethod
-  public void setGatewayMonitorFailThreshold(Integer gatewayMonitorFailThreshold) {
+  public void setGatewayMonitorFailThreshold(Integer  gatewayMonitorFailThreshold) {
     this.gatewayMonitorFailThreshold = gatewayMonitorFailThreshold;
   }
 
-  
   /**
-   * The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000.
+   * This is the getter method this will return the attribute value.
+   * The interval between two ping requests sent by the gateway monitor in milliseconds.
+   * If a value is not specified, requests are sent every second.
+   * Allowed values are 100-60000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return gatewayMonitorInterval
-  **/
-  @ApiModelProperty(value = "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getGatewayMonitorInterval() {
     return gatewayMonitorInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The interval between two ping requests sent by the gateway monitor in milliseconds.
+   * If a value is not specified, requests are sent every second.
+   * Allowed values are 100-60000.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * @param gatewayMonitorInterval set the gatewayMonitorInterval.
+   */
   @VsoMethod
-  public void setGatewayMonitorInterval(Integer gatewayMonitorInterval) {
+  public void setGatewayMonitorInterval(Integer  gatewayMonitorInterval) {
     this.gatewayMonitorInterval = gatewayMonitorInterval;
   }
 
-  
   /**
-   * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50.
+   * This is the getter method this will return the attribute value.
+   * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.
+   * Allowed values are 3-50.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return gatewayMonitorSuccessThreshold
-  **/
-  @ApiModelProperty(value = "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getGatewayMonitorSuccessThreshold() {
     return gatewayMonitorSuccessThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up.
+   * Allowed values are 3-50.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+   * @param gatewayMonitorSuccessThreshold set the gatewayMonitorSuccessThreshold.
+   */
   @VsoMethod
-  public void setGatewayMonitorSuccessThreshold(Integer gatewayMonitorSuccessThreshold) {
+  public void setGatewayMonitorSuccessThreshold(Integer  gatewayMonitorSuccessThreshold) {
     this.gatewayMonitorSuccessThreshold = gatewayMonitorSuccessThreshold;
   }
 
-  
   /**
-   * Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Subnet providing reachability for multi-hop gateway.
+   * Field introduced in 18.1.1.
    * @return subnet
-  **/
-  @ApiModelProperty(value = "Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrPrefix getSubnet() {
     return subnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Subnet providing reachability for multi-hop gateway.
+   * Field introduced in 18.1.1.
+   * @param subnet set the subnet.
+   */
   @VsoMethod
   public void setSubnet(IpAddrPrefix subnet) {
     this.subnet = subnet;
   }
 
-  
-  public String getObjectID() {
-		return "GatewayMonitor";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GatewayMonitor gatewayMonitor = (GatewayMonitor) o;
-    return Objects.equals(this.gatewayIp, gatewayMonitor.gatewayIp) &&
-        Objects.equals(this.gatewayMonitorFailThreshold, gatewayMonitor.gatewayMonitorFailThreshold) &&
-        Objects.equals(this.gatewayMonitorInterval, gatewayMonitor.gatewayMonitorInterval) &&
-        Objects.equals(this.gatewayMonitorSuccessThreshold, gatewayMonitor.gatewayMonitorSuccessThreshold) &&
-        Objects.equals(this.subnet, gatewayMonitor.subnet);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(gatewayIp, gatewayMonitorFailThreshold, gatewayMonitorInterval, gatewayMonitorSuccessThreshold, subnet);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GatewayMonitor {\n");
-    
-    sb.append("    gatewayIp: ").append(toIndentedString(gatewayIp)).append("\n");
-    sb.append("    gatewayMonitorFailThreshold: ").append(toIndentedString(gatewayMonitorFailThreshold)).append("\n");
-    sb.append("    gatewayMonitorInterval: ").append(toIndentedString(gatewayMonitorInterval)).append("\n");
-    sb.append("    gatewayMonitorSuccessThreshold: ").append(toIndentedString(gatewayMonitorSuccessThreshold)).append("\n");
-    sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  GatewayMonitor objGatewayMonitor = (GatewayMonitor) o;
+  return   Objects.equals(this.gatewayMonitorSuccessThreshold, objGatewayMonitor.gatewayMonitorSuccessThreshold)&&
+  Objects.equals(this.subnet, objGatewayMonitor.subnet)&&
+  Objects.equals(this.gatewayIp, objGatewayMonitor.gatewayIp)&&
+  Objects.equals(this.gatewayMonitorFailThreshold, objGatewayMonitor.gatewayMonitorFailThreshold)&&
+  Objects.equals(this.gatewayMonitorInterval, objGatewayMonitor.gatewayMonitorInterval);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class GatewayMonitor {\n");
+      sb.append("    gatewayIp: ").append(toIndentedString(gatewayIp)).append("\n");
+        sb.append("    gatewayMonitorFailThreshold: ").append(toIndentedString(gatewayMonitorFailThreshold)).append("\n");
+        sb.append("    gatewayMonitorInterval: ").append(toIndentedString(gatewayMonitorInterval)).append("\n");
+        sb.append("    gatewayMonitorSuccessThreshold: ").append(toIndentedString(gatewayMonitorSuccessThreshold)).append("\n");
+        sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

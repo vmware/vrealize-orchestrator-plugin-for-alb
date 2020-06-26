@@ -1,46 +1,73 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.DnsServiceDomain;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpamDnsInternalProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpamDnsInternalProfile is a POJO class extends AviRestResource that used for creating
+ * IpamDnsInternalProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpamDnsInternalProfile")
-@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSINTERNALPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSINTERNALPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpamDnsInternalProfile extends AviRestResource  {
+public class IpamDnsInternalProfile extends AviRestResource {
   @JsonProperty("dns_service_domain")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<DnsServiceDomain> dnsServiceDomain = null;
 
   @JsonProperty("dns_virtualservice_ref")
+  @JsonInclude(Include.NON_NULL)
   private String dnsVirtualserviceRef = null;
 
   @JsonProperty("ttl")
+  @JsonInclude(Include.NON_NULL)
   private Integer ttl = 30;
 
   @JsonProperty("usable_network_refs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> usableNetworkRefs = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of service domains.
+   * @return dnsServiceDomain
+   */
+  @VsoMethod
+  public List<DnsServiceDomain> getDnsServiceDomain() {
+    return dnsServiceDomain;
+  }
+
+  /**
+   * This is the setter method. this will set the dnsServiceDomain
+   * List of service domains.
+   * @return dnsServiceDomain
+   */
+  @VsoMethod
+  public void setDnsServiceDomain(List<DnsServiceDomain>  dnsServiceDomain) {
+    this.dnsServiceDomain = dnsServiceDomain;
+  }
+
+  /**
+   * This is the setter method this will set the dnsServiceDomain
+   * List of service domains.
+   * @return dnsServiceDomain
+   */
+  @VsoMethod
   public IpamDnsInternalProfile addDnsServiceDomainItem(DnsServiceDomain dnsServiceDomainItem) {
     if (this.dnsServiceDomain == null) {
       this.dnsServiceDomain = new ArrayList<DnsServiceDomain>();
@@ -48,65 +75,89 @@ public class IpamDnsInternalProfile extends AviRestResource  {
     this.dnsServiceDomain.add(dnsServiceDomainItem);
     return this;
   }
-  
+
+
   /**
-   * List of service domains.
-   * @return dnsServiceDomain
-  **/
-  @ApiModelProperty(value = "List of service domains.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<DnsServiceDomain> getDnsServiceDomain() {
-    return dnsServiceDomain;
-  }
-    
-  @VsoMethod
-  public void setDnsServiceDomain(List<DnsServiceDomain> dnsServiceDomain) {
-    this.dnsServiceDomain = dnsServiceDomain;
-  }
-
-  
-  /**
-   * Avi VirtualService to be used for serving DNS records. It is a reference to an object of type VirtualService.
+   * This is the getter method this will return the attribute value.
+   * Avi virtualservice to be used for serving dns records.
+   * It is a reference to an object of type virtualservice.
    * @return dnsVirtualserviceRef
-  **/
-  @ApiModelProperty(value = "Avi VirtualService to be used for serving DNS records. It is a reference to an object of type VirtualService.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDnsVirtualserviceRef() {
     return dnsVirtualserviceRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Avi virtualservice to be used for serving dns records.
+   * It is a reference to an object of type virtualservice.
+   * @param dnsVirtualserviceRef set the dnsVirtualserviceRef.
+   */
   @VsoMethod
-  public void setDnsVirtualserviceRef(String dnsVirtualserviceRef) {
+  public void setDnsVirtualserviceRef(String  dnsVirtualserviceRef) {
     this.dnsVirtualserviceRef = dnsVirtualserviceRef;
   }
 
-  
   /**
-   * Default TTL for all records, overridden by TTL value for each service domain configured in DnsServiceDomain. Allowed values are 1-604800.
+   * This is the getter method this will return the attribute value.
+   * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
+   * Allowed values are 1-604800.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return ttl
-  **/
-  @ApiModelProperty(value = "Default TTL for all records, overridden by TTL value for each service domain configured in DnsServiceDomain. Allowed values are 1-604800.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTtl() {
     return ttl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
+   * Allowed values are 1-604800.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * @param ttl set the ttl.
+   */
   @VsoMethod
-  public void setTtl(Integer ttl) {
+  public void setTtl(Integer  ttl) {
     this.ttl = ttl;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * It is a reference to an object of type network.
+   * @return usableNetworkRefs
+   */
+  @VsoMethod
+  public List<String> getUsableNetworkRefs() {
+    return usableNetworkRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the usableNetworkRefs
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * It is a reference to an object of type network.
+   * @return usableNetworkRefs
+   */
+  @VsoMethod
+  public void setUsableNetworkRefs(List<String>  usableNetworkRefs) {
+    this.usableNetworkRefs = usableNetworkRefs;
+  }
+
+  /**
+   * This is the setter method this will set the usableNetworkRefs
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * It is a reference to an object of type network.
+   * @return usableNetworkRefs
+   */
+  @VsoMethod
   public IpamDnsInternalProfile addUsableNetworkRefsItem(String usableNetworkRefsItem) {
     if (this.usableNetworkRefs == null) {
       this.usableNetworkRefs = new ArrayList<String>();
@@ -114,72 +165,45 @@ public class IpamDnsInternalProfile extends AviRestResource  {
     this.usableNetworkRefs.add(usableNetworkRefsItem);
     return this;
   }
-  
-  /**
-   * Usable networks for Virtual IP. If VirtualService does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for IP allocation. It is a reference to an object of type Network.
-   * @return usableNetworkRefs
-  **/
-  @ApiModelProperty(value = "Usable networks for Virtual IP. If VirtualService does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for IP allocation. It is a reference to an object of type Network.")
 
 
- 
-  @VsoMethod  
-  public List<String> getUsableNetworkRefs() {
-    return usableNetworkRefs;
-  }
-    
-  @VsoMethod
-  public void setUsableNetworkRefs(List<String> usableNetworkRefs) {
-    this.usableNetworkRefs = usableNetworkRefs;
-  }
 
-  
-  public String getObjectID() {
-		return "IpamDnsInternalProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpamDnsInternalProfile ipamDnsInternalProfile = (IpamDnsInternalProfile) o;
-    return Objects.equals(this.dnsServiceDomain, ipamDnsInternalProfile.dnsServiceDomain) &&
-        Objects.equals(this.dnsVirtualserviceRef, ipamDnsInternalProfile.dnsVirtualserviceRef) &&
-        Objects.equals(this.ttl, ipamDnsInternalProfile.ttl) &&
-        Objects.equals(this.usableNetworkRefs, ipamDnsInternalProfile.usableNetworkRefs);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(dnsServiceDomain, dnsVirtualserviceRef, ttl, usableNetworkRefs);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpamDnsInternalProfile {\n");
-    
-    sb.append("    dnsServiceDomain: ").append(toIndentedString(dnsServiceDomain)).append("\n");
-    sb.append("    dnsVirtualserviceRef: ").append(toIndentedString(dnsVirtualserviceRef)).append("\n");
-    sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
-    sb.append("    usableNetworkRefs: ").append(toIndentedString(usableNetworkRefs)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpamDnsInternalProfile objIpamDnsInternalProfile = (IpamDnsInternalProfile) o;
+  return   Objects.equals(this.dnsServiceDomain, objIpamDnsInternalProfile.dnsServiceDomain)&&
+  Objects.equals(this.dnsVirtualserviceRef, objIpamDnsInternalProfile.dnsVirtualserviceRef)&&
+  Objects.equals(this.usableNetworkRefs, objIpamDnsInternalProfile.usableNetworkRefs)&&
+  Objects.equals(this.ttl, objIpamDnsInternalProfile.ttl);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpamDnsInternalProfile {\n");
+      sb.append("    dnsServiceDomain: ").append(toIndentedString(dnsServiceDomain)).append("\n");
+        sb.append("    dnsVirtualserviceRef: ").append(toIndentedString(dnsVirtualserviceRef)).append("\n");
+        sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
+        sb.append("    usableNetworkRefs: ").append(toIndentedString(usableNetworkRefs)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

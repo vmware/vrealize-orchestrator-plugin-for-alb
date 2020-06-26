@@ -1,211 +1,216 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CdpLldpInfo
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CdpLldpInfo is a POJO class extends AviRestResource that used for creating
+ * CdpLldpInfo.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CdpLldpInfo")
-@VsoFinder(name = Constants.FINDER_VRO_CDPLLDPINFO, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CDPLLDPINFO)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CdpLldpInfo extends AviRestResource  {
+public class CdpLldpInfo extends AviRestResource {
   @JsonProperty("chassis")
+  @JsonInclude(Include.NON_NULL)
   private String chassis = null;
 
   @JsonProperty("device")
+  @JsonInclude(Include.NON_NULL)
   private String device = null;
 
   @JsonProperty("mgmtaddr")
+  @JsonInclude(Include.NON_NULL)
   private String mgmtaddr = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private String port = null;
 
   @JsonProperty("switch_info_type")
+  @JsonInclude(Include.NON_NULL)
   private String switchInfoType = null;
 
   @JsonProperty("system_name")
+  @JsonInclude(Include.NON_NULL)
   private String systemName = null;
 
-  
+
+
   /**
-   * chassis of CdpLldpInfo.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property chassis of obj type cdplldpinfo field type str  type string.
    * @return chassis
-  **/
-  @ApiModelProperty(value = "chassis of CdpLldpInfo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getChassis() {
     return chassis;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property chassis of obj type cdplldpinfo field type str  type string.
+   * @param chassis set the chassis.
+   */
   @VsoMethod
-  public void setChassis(String chassis) {
+  public void setChassis(String  chassis) {
     this.chassis = chassis;
   }
 
-  
   /**
-   * device of CdpLldpInfo.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property device of obj type cdplldpinfo field type str  type string.
    * @return device
-  **/
-  @ApiModelProperty(value = "device of CdpLldpInfo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDevice() {
     return device;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property device of obj type cdplldpinfo field type str  type string.
+   * @param device set the device.
+   */
   @VsoMethod
-  public void setDevice(String device) {
+  public void setDevice(String  device) {
     this.device = device;
   }
 
-  
   /**
-   * mgmtaddr of CdpLldpInfo.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property mgmtaddr of obj type cdplldpinfo field type str  type string.
    * @return mgmtaddr
-  **/
-  @ApiModelProperty(value = "mgmtaddr of CdpLldpInfo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMgmtaddr() {
     return mgmtaddr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property mgmtaddr of obj type cdplldpinfo field type str  type string.
+   * @param mgmtaddr set the mgmtaddr.
+   */
   @VsoMethod
-  public void setMgmtaddr(String mgmtaddr) {
+  public void setMgmtaddr(String  mgmtaddr) {
     this.mgmtaddr = mgmtaddr;
   }
 
-  
   /**
-   * port of CdpLldpInfo.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property port of obj type cdplldpinfo field type str  type string.
    * @return port
-  **/
-  @ApiModelProperty(value = "port of CdpLldpInfo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property port of obj type cdplldpinfo field type str  type string.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(String port) {
+  public void setPort(String  port) {
     this.port = port;
   }
 
-  
   /**
-   *  Enum options - CDP, LLDP, NOT_APPLICABLE.
+   * This is the getter method this will return the attribute value.
+   * Enum options - CDP, LLDP, NOT_APPLICABLE.
    * @return switchInfoType
-  **/
-  @ApiModelProperty(value = " Enum options - CDP, LLDP, NOT_APPLICABLE.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSwitchInfoType() {
     return switchInfoType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - CDP, LLDP, NOT_APPLICABLE.
+   * @param switchInfoType set the switchInfoType.
+   */
   @VsoMethod
-  public void setSwitchInfoType(String switchInfoType) {
+  public void setSwitchInfoType(String  switchInfoType) {
     this.switchInfoType = switchInfoType;
   }
 
-  
   /**
-   * system_name of CdpLldpInfo.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property system_name of obj type cdplldpinfo field type str  type string.
    * @return systemName
-  **/
-  @ApiModelProperty(value = "system_name of CdpLldpInfo.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSystemName() {
     return systemName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property system_name of obj type cdplldpinfo field type str  type string.
+   * @param systemName set the systemName.
+   */
   @VsoMethod
-  public void setSystemName(String systemName) {
+  public void setSystemName(String  systemName) {
     this.systemName = systemName;
   }
 
-  
-  public String getObjectID() {
-		return "CdpLldpInfo";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CdpLldpInfo cdpLldpInfo = (CdpLldpInfo) o;
-    return Objects.equals(this.chassis, cdpLldpInfo.chassis) &&
-        Objects.equals(this.device, cdpLldpInfo.device) &&
-        Objects.equals(this.mgmtaddr, cdpLldpInfo.mgmtaddr) &&
-        Objects.equals(this.port, cdpLldpInfo.port) &&
-        Objects.equals(this.switchInfoType, cdpLldpInfo.switchInfoType) &&
-        Objects.equals(this.systemName, cdpLldpInfo.systemName);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(chassis, device, mgmtaddr, port, switchInfoType, systemName);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CdpLldpInfo {\n");
-    
-    sb.append("    chassis: ").append(toIndentedString(chassis)).append("\n");
-    sb.append("    device: ").append(toIndentedString(device)).append("\n");
-    sb.append("    mgmtaddr: ").append(toIndentedString(mgmtaddr)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("    switchInfoType: ").append(toIndentedString(switchInfoType)).append("\n");
-    sb.append("    systemName: ").append(toIndentedString(systemName)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CdpLldpInfo objCdpLldpInfo = (CdpLldpInfo) o;
+  return   Objects.equals(this.systemName, objCdpLldpInfo.systemName)&&
+  Objects.equals(this.switchInfoType, objCdpLldpInfo.switchInfoType)&&
+  Objects.equals(this.chassis, objCdpLldpInfo.chassis)&&
+  Objects.equals(this.device, objCdpLldpInfo.device)&&
+  Objects.equals(this.mgmtaddr, objCdpLldpInfo.mgmtaddr)&&
+  Objects.equals(this.port, objCdpLldpInfo.port);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CdpLldpInfo {\n");
+      sb.append("    chassis: ").append(toIndentedString(chassis)).append("\n");
+        sb.append("    device: ").append(toIndentedString(device)).append("\n");
+        sb.append("    mgmtaddr: ").append(toIndentedString(mgmtaddr)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    switchInfoType: ").append(toIndentedString(switchInfoType)).append("\n");
+        sb.append("    systemName: ").append(toIndentedString(systemName)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

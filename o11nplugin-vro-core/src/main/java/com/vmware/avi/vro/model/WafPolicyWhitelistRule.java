@@ -1,54 +1,92 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.MatchTarget;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * WafPolicyWhitelistRule
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The WafPolicyWhitelistRule is a POJO class extends AviRestResource that used for creating
+ * WafPolicyWhitelistRule.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "WafPolicyWhitelistRule")
-@VsoFinder(name = Constants.FINDER_VRO_WAFPOLICYWHITELISTRULE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_WAFPOLICYWHITELISTRULE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class WafPolicyWhitelistRule extends AviRestResource  {
+public class WafPolicyWhitelistRule extends AviRestResource {
   @JsonProperty("actions")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> actions = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enable = true;
 
   @JsonProperty("index")
+  @JsonInclude(Include.NON_NULL)
   private Integer index = null;
 
   @JsonProperty("match")
+  @JsonInclude(Include.NON_NULL)
   private MatchTarget match = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("sampling_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer samplingPercent = 100;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Actions to be performed upon successful matching.
+   * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
+   * Field introduced in 18.2.3.
+   * @return actions
+   */
+  @VsoMethod
+  public List<String> getActions() {
+    return actions;
+  }
+
+  /**
+   * This is the setter method. this will set the actions
+   * Actions to be performed upon successful matching.
+   * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
+   * Field introduced in 18.2.3.
+   * @return actions
+   */
+  @VsoMethod
+  public void setActions(List<String>  actions) {
+    this.actions = actions;
+  }
+
+  /**
+   * This is the setter method this will set the actions
+   * Actions to be performed upon successful matching.
+   * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
+   * Field introduced in 18.2.3.
+   * @return actions
+   */
+  @VsoMethod
   public WafPolicyWhitelistRule addActionsItem(String actionsItem) {
     if (this.actions == null) {
       this.actions = new ArrayList<String>();
@@ -56,196 +94,189 @@ public class WafPolicyWhitelistRule extends AviRestResource  {
     this.actions.add(actionsItem);
     return this;
   }
-  
+
+
   /**
-   * Actions to be performed upon successful matching. Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE. Field introduced in 18.2.3.
-   * @return actions
-  **/
-  @ApiModelProperty(value = "Actions to be performed upon successful matching. Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public List<String> getActions() {
-    return actions;
-  }
-    
-  @VsoMethod
-  public void setActions(List<String> actions) {
-    this.actions = actions;
-  }
-
-  
-  /**
-   * Description of this rule. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Description of this rule.
+   * Field introduced in 18.2.3.
    * @return description
-  **/
-  @ApiModelProperty(value = "Description of this rule. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Description of this rule.
+   * Field introduced in 18.2.3.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Enable or disable the rule. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable the rule.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
-  **/
-  @ApiModelProperty(value = "Enable or disable the rule. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnable() {
+   */
+  @VsoMethod
+  public Boolean getEnable() {
     return enable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable the rule.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enable set the enable.
+   */
   @VsoMethod
-  public void setEnable(Boolean enable) {
+  public void setEnable(Boolean  enable) {
     this.enable = enable;
   }
 
-  
   /**
-   * Rules are executed in order of this index field. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Rules are executed in order of this index field.
+   * Field introduced in 18.2.3.
    * @return index
-  **/
-  @ApiModelProperty(required = true, value = "Rules are executed in order of this index field. Field introduced in 18.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIndex() {
     return index;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rules are executed in order of this index field.
+   * Field introduced in 18.2.3.
+   * @param index set the index.
+   */
   @VsoMethod
-  public void setIndex(Integer index) {
+  public void setIndex(Integer  index) {
     this.index = index;
   }
 
-  
   /**
-   * Match criteria describing requests to which this rule should be applied. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Match criteria describing requests to which this rule should be applied.
+   * Field introduced in 18.2.3.
    * @return match
-  **/
-  @ApiModelProperty(required = true, value = "Match criteria describing requests to which this rule should be applied. Field introduced in 18.2.3.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public MatchTarget getMatch() {
     return match;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Match criteria describing requests to which this rule should be applied.
+   * Field introduced in 18.2.3.
+   * @param match set the match.
+   */
   @VsoMethod
   public void setMatch(MatchTarget match) {
     this.match = match;
   }
 
-  
   /**
-   * A name describing the rule in a short form. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * A name describing the rule in a short form.
+   * Field introduced in 18.2.3.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "A name describing the rule in a short form. Field introduced in 18.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A name describing the rule in a short form.
+   * Field introduced in 18.2.3.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Percentage of traffic that is sampled.
+   * Allowed values are 0-100.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return samplingPercent
-  **/
-  @ApiModelProperty(value = "Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSamplingPercent() {
     return samplingPercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Percentage of traffic that is sampled.
+   * Allowed values are 0-100.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param samplingPercent set the samplingPercent.
+   */
   @VsoMethod
-  public void setSamplingPercent(Integer samplingPercent) {
+  public void setSamplingPercent(Integer  samplingPercent) {
     this.samplingPercent = samplingPercent;
   }
 
-  
-  public String getObjectID() {
-		return "WafPolicyWhitelistRule";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    WafPolicyWhitelistRule wafPolicyWhitelistRule = (WafPolicyWhitelistRule) o;
-    return Objects.equals(this.actions, wafPolicyWhitelistRule.actions) &&
-        Objects.equals(this.description, wafPolicyWhitelistRule.description) &&
-        Objects.equals(this.enable, wafPolicyWhitelistRule.enable) &&
-        Objects.equals(this.index, wafPolicyWhitelistRule.index) &&
-        Objects.equals(this.match, wafPolicyWhitelistRule.match) &&
-        Objects.equals(this.name, wafPolicyWhitelistRule.name) &&
-        Objects.equals(this.samplingPercent, wafPolicyWhitelistRule.samplingPercent);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(actions, description, enable, index, match, name, samplingPercent);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class WafPolicyWhitelistRule {\n");
-    
-    sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    match: ").append(toIndentedString(match)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    samplingPercent: ").append(toIndentedString(samplingPercent)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  WafPolicyWhitelistRule objWafPolicyWhitelistRule = (WafPolicyWhitelistRule) o;
+  return   Objects.equals(this.index, objWafPolicyWhitelistRule.index)&&
+  Objects.equals(this.enable, objWafPolicyWhitelistRule.enable)&&
+  Objects.equals(this.name, objWafPolicyWhitelistRule.name)&&
+  Objects.equals(this.actions, objWafPolicyWhitelistRule.actions)&&
+  Objects.equals(this.samplingPercent, objWafPolicyWhitelistRule.samplingPercent)&&
+  Objects.equals(this.match, objWafPolicyWhitelistRule.match)&&
+  Objects.equals(this.description, objWafPolicyWhitelistRule.description);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class WafPolicyWhitelistRule {\n");
+      sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    match: ").append(toIndentedString(match)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    samplingPercent: ").append(toIndentedString(samplingPercent)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

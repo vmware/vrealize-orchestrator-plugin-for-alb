@@ -1,241 +1,258 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * GCPTwoArmMode
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The GCPTwoArmMode is a POJO class extends AviRestResource that used for creating
+ * GCPTwoArmMode.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "GCPTwoArmMode")
-@VsoFinder(name = Constants.FINDER_VRO_GCPTWOARMMODE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_GCPTWOARMMODE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class GCPTwoArmMode extends AviRestResource  {
+public class GCPTwoArmMode extends AviRestResource {
   @JsonProperty("backend_data_vpc_network_name")
+  @JsonInclude(Include.NON_NULL)
   private String backendDataVpcNetworkName = null;
 
   @JsonProperty("backend_data_vpc_subnet_name")
+  @JsonInclude(Include.NON_NULL)
   private String backendDataVpcSubnetName = null;
 
   @JsonProperty("frontend_data_vpc_network_name")
+  @JsonInclude(Include.NON_NULL)
   private String frontendDataVpcNetworkName = null;
 
   @JsonProperty("frontend_data_vpc_project_id")
+  @JsonInclude(Include.NON_NULL)
   private String frontendDataVpcProjectId = null;
 
   @JsonProperty("frontend_data_vpc_subnet_name")
+  @JsonInclude(Include.NON_NULL)
   private String frontendDataVpcSubnetName = null;
 
   @JsonProperty("management_vpc_network_name")
+  @JsonInclude(Include.NON_NULL)
   private String managementVpcNetworkName = null;
 
   @JsonProperty("management_vpc_subnet_name")
+  @JsonInclude(Include.NON_NULL)
   private String managementVpcSubnetName = null;
 
-  
+
+
   /**
-   * Service Engine Backend Data Network Name. Field introduced in 18.2.2.
+   * This is the getter method this will return the attribute value.
+   * Service engine backend data network name.
+   * Field introduced in 18.2.2.
    * @return backendDataVpcNetworkName
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Backend Data Network Name. Field introduced in 18.2.2.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getBackendDataVpcNetworkName() {
     return backendDataVpcNetworkName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine backend data network name.
+   * Field introduced in 18.2.2.
+   * @param backendDataVpcNetworkName set the backendDataVpcNetworkName.
+   */
   @VsoMethod
-  public void setBackendDataVpcNetworkName(String backendDataVpcNetworkName) {
+  public void setBackendDataVpcNetworkName(String  backendDataVpcNetworkName) {
     this.backendDataVpcNetworkName = backendDataVpcNetworkName;
   }
 
-  
   /**
-   * Service Engine Backend Data Network Subnet Name. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Service engine backend data network subnet name.
+   * Field introduced in 18.2.1.
    * @return backendDataVpcSubnetName
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Backend Data Network Subnet Name. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getBackendDataVpcSubnetName() {
     return backendDataVpcSubnetName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine backend data network subnet name.
+   * Field introduced in 18.2.1.
+   * @param backendDataVpcSubnetName set the backendDataVpcSubnetName.
+   */
   @VsoMethod
-  public void setBackendDataVpcSubnetName(String backendDataVpcSubnetName) {
+  public void setBackendDataVpcSubnetName(String  backendDataVpcSubnetName) {
     this.backendDataVpcSubnetName = backendDataVpcSubnetName;
   }
 
-  
   /**
-   * Service Engine Frontend Data Network Name. Field introduced in 18.2.2.
+   * This is the getter method this will return the attribute value.
+   * Service engine frontend data network name.
+   * Field introduced in 18.2.2.
    * @return frontendDataVpcNetworkName
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Frontend Data Network Name. Field introduced in 18.2.2.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFrontendDataVpcNetworkName() {
     return frontendDataVpcNetworkName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine frontend data network name.
+   * Field introduced in 18.2.2.
+   * @param frontendDataVpcNetworkName set the frontendDataVpcNetworkName.
+   */
   @VsoMethod
-  public void setFrontendDataVpcNetworkName(String frontendDataVpcNetworkName) {
+  public void setFrontendDataVpcNetworkName(String  frontendDataVpcNetworkName) {
     this.frontendDataVpcNetworkName = frontendDataVpcNetworkName;
   }
 
-  
   /**
-   * Project ID of the Service Engine Frontend Data Network. By default, Service Engine Project ID will be used. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Project id of the service engine frontend data network.
+   * By default, service engine project id will be used.
+   * Field introduced in 18.2.1.
    * @return frontendDataVpcProjectId
-  **/
-  @ApiModelProperty(value = "Project ID of the Service Engine Frontend Data Network. By default, Service Engine Project ID will be used. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFrontendDataVpcProjectId() {
     return frontendDataVpcProjectId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Project id of the service engine frontend data network.
+   * By default, service engine project id will be used.
+   * Field introduced in 18.2.1.
+   * @param frontendDataVpcProjectId set the frontendDataVpcProjectId.
+   */
   @VsoMethod
-  public void setFrontendDataVpcProjectId(String frontendDataVpcProjectId) {
+  public void setFrontendDataVpcProjectId(String  frontendDataVpcProjectId) {
     this.frontendDataVpcProjectId = frontendDataVpcProjectId;
   }
 
-  
   /**
-   * Service Engine Frontend Data Network Subnet Name. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Service engine frontend data network subnet name.
+   * Field introduced in 18.2.1.
    * @return frontendDataVpcSubnetName
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Frontend Data Network Subnet Name. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFrontendDataVpcSubnetName() {
     return frontendDataVpcSubnetName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine frontend data network subnet name.
+   * Field introduced in 18.2.1.
+   * @param frontendDataVpcSubnetName set the frontendDataVpcSubnetName.
+   */
   @VsoMethod
-  public void setFrontendDataVpcSubnetName(String frontendDataVpcSubnetName) {
+  public void setFrontendDataVpcSubnetName(String  frontendDataVpcSubnetName) {
     this.frontendDataVpcSubnetName = frontendDataVpcSubnetName;
   }
 
-  
   /**
-   * Service Engine Management Network Name. Field introduced in 18.2.2.
+   * This is the getter method this will return the attribute value.
+   * Service engine management network name.
+   * Field introduced in 18.2.2.
    * @return managementVpcNetworkName
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Management Network Name. Field introduced in 18.2.2.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getManagementVpcNetworkName() {
     return managementVpcNetworkName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine management network name.
+   * Field introduced in 18.2.2.
+   * @param managementVpcNetworkName set the managementVpcNetworkName.
+   */
   @VsoMethod
-  public void setManagementVpcNetworkName(String managementVpcNetworkName) {
+  public void setManagementVpcNetworkName(String  managementVpcNetworkName) {
     this.managementVpcNetworkName = managementVpcNetworkName;
   }
 
-  
   /**
-   * Service Engine Management Network Subnet Name. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Service engine management network subnet name.
+   * Field introduced in 18.2.1.
    * @return managementVpcSubnetName
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Management Network Subnet Name. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getManagementVpcSubnetName() {
     return managementVpcSubnetName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine management network subnet name.
+   * Field introduced in 18.2.1.
+   * @param managementVpcSubnetName set the managementVpcSubnetName.
+   */
   @VsoMethod
-  public void setManagementVpcSubnetName(String managementVpcSubnetName) {
+  public void setManagementVpcSubnetName(String  managementVpcSubnetName) {
     this.managementVpcSubnetName = managementVpcSubnetName;
   }
 
-  
-  public String getObjectID() {
-		return "GCPTwoArmMode";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GCPTwoArmMode gcPTwoArmMode = (GCPTwoArmMode) o;
-    return Objects.equals(this.backendDataVpcNetworkName, gcPTwoArmMode.backendDataVpcNetworkName) &&
-        Objects.equals(this.backendDataVpcSubnetName, gcPTwoArmMode.backendDataVpcSubnetName) &&
-        Objects.equals(this.frontendDataVpcNetworkName, gcPTwoArmMode.frontendDataVpcNetworkName) &&
-        Objects.equals(this.frontendDataVpcProjectId, gcPTwoArmMode.frontendDataVpcProjectId) &&
-        Objects.equals(this.frontendDataVpcSubnetName, gcPTwoArmMode.frontendDataVpcSubnetName) &&
-        Objects.equals(this.managementVpcNetworkName, gcPTwoArmMode.managementVpcNetworkName) &&
-        Objects.equals(this.managementVpcSubnetName, gcPTwoArmMode.managementVpcSubnetName);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(backendDataVpcNetworkName, backendDataVpcSubnetName, frontendDataVpcNetworkName, frontendDataVpcProjectId, frontendDataVpcSubnetName, managementVpcNetworkName, managementVpcSubnetName);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GCPTwoArmMode {\n");
-    
-    sb.append("    backendDataVpcNetworkName: ").append(toIndentedString(backendDataVpcNetworkName)).append("\n");
-    sb.append("    backendDataVpcSubnetName: ").append(toIndentedString(backendDataVpcSubnetName)).append("\n");
-    sb.append("    frontendDataVpcNetworkName: ").append(toIndentedString(frontendDataVpcNetworkName)).append("\n");
-    sb.append("    frontendDataVpcProjectId: ").append(toIndentedString(frontendDataVpcProjectId)).append("\n");
-    sb.append("    frontendDataVpcSubnetName: ").append(toIndentedString(frontendDataVpcSubnetName)).append("\n");
-    sb.append("    managementVpcNetworkName: ").append(toIndentedString(managementVpcNetworkName)).append("\n");
-    sb.append("    managementVpcSubnetName: ").append(toIndentedString(managementVpcSubnetName)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  GCPTwoArmMode objGCPTwoArmMode = (GCPTwoArmMode) o;
+  return   Objects.equals(this.frontendDataVpcProjectId, objGCPTwoArmMode.frontendDataVpcProjectId)&&
+  Objects.equals(this.backendDataVpcNetworkName, objGCPTwoArmMode.backendDataVpcNetworkName)&&
+  Objects.equals(this.frontendDataVpcNetworkName, objGCPTwoArmMode.frontendDataVpcNetworkName)&&
+  Objects.equals(this.managementVpcSubnetName, objGCPTwoArmMode.managementVpcSubnetName)&&
+  Objects.equals(this.managementVpcNetworkName, objGCPTwoArmMode.managementVpcNetworkName)&&
+  Objects.equals(this.backendDataVpcSubnetName, objGCPTwoArmMode.backendDataVpcSubnetName)&&
+  Objects.equals(this.frontendDataVpcSubnetName, objGCPTwoArmMode.frontendDataVpcSubnetName);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class GCPTwoArmMode {\n");
+      sb.append("    backendDataVpcNetworkName: ").append(toIndentedString(backendDataVpcNetworkName)).append("\n");
+        sb.append("    backendDataVpcSubnetName: ").append(toIndentedString(backendDataVpcSubnetName)).append("\n");
+        sb.append("    frontendDataVpcNetworkName: ").append(toIndentedString(frontendDataVpcNetworkName)).append("\n");
+        sb.append("    frontendDataVpcProjectId: ").append(toIndentedString(frontendDataVpcProjectId)).append("\n");
+        sb.append("    frontendDataVpcSubnetName: ").append(toIndentedString(frontendDataVpcSubnetName)).append("\n");
+        sb.append("    managementVpcNetworkName: ").append(toIndentedString(managementVpcNetworkName)).append("\n");
+        sb.append("    managementVpcSubnetName: ").append(toIndentedString(managementVpcSubnetName)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,365 +1,358 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AuthProfileHTTPClientParams;
 import com.vmware.avi.vro.model.LdapAuthSettings;
 import com.vmware.avi.vro.model.SamlSettings;
 import com.vmware.avi.vro.model.TacacsPlusAuthSettings;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AuthProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AuthProfile is a POJO class extends AviRestResource that used for creating
+ * AuthProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AuthProfile")
 @VsoFinder(name = Constants.FINDER_VRO_AUTHPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class AuthProfile extends AviRestResource {
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("http")
+  @JsonInclude(Include.NON_NULL)
   private AuthProfileHTTPClientParams http = null;
 
   @JsonProperty("ldap")
+  @JsonInclude(Include.NON_NULL)
   private LdapAuthSettings ldap = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("pa_agent_ref")
+  @JsonInclude(Include.NON_NULL)
   private String paAgentRef = null;
 
   @JsonProperty("saml")
+  @JsonInclude(Include.NON_NULL)
   private SamlSettings saml = null;
 
   @JsonProperty("tacacs_plus")
+  @JsonInclude(Include.NON_NULL)
   private TacacsPlusAuthSettings tacacsPlus = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * User defined description for the object.
    * @return description
-  **/
-  @ApiModelProperty(value = "User defined description for the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User defined description for the object.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * HTTP user authentication params.
+   * This is the getter method this will return the attribute value.
+   * Http user authentication params.
    * @return http
-  **/
-  @ApiModelProperty(value = "HTTP user authentication params.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AuthProfileHTTPClientParams getHttp() {
     return http;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http user authentication params.
+   * @param http set the http.
+   */
   @VsoMethod
   public void setHttp(AuthProfileHTTPClientParams http) {
     this.http = http;
   }
 
-  
   /**
-   * LDAP server and directory settings.
+   * This is the getter method this will return the attribute value.
+   * Ldap server and directory settings.
    * @return ldap
-  **/
-  @ApiModelProperty(value = "LDAP server and directory settings.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public LdapAuthSettings getLdap() {
     return ldap;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ldap server and directory settings.
+   * @param ldap set the ldap.
+   */
   @VsoMethod
   public void setLdap(LdapAuthSettings ldap) {
     this.ldap = ldap;
   }
 
-  
   /**
-   * Name of the Auth Profile.
+   * This is the getter method this will return the attribute value.
+   * Name of the auth profile.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the Auth Profile.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the auth profile.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * PingAccessAgent uuid. It is a reference to an object of type PingAccessAgent. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Pingaccessagent uuid.
+   * It is a reference to an object of type pingaccessagent.
+   * Field introduced in 18.2.3.
    * @return paAgentRef
-  **/
-  @ApiModelProperty(value = "PingAccessAgent uuid. It is a reference to an object of type PingAccessAgent. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPaAgentRef() {
     return paAgentRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Pingaccessagent uuid.
+   * It is a reference to an object of type pingaccessagent.
+   * Field introduced in 18.2.3.
+   * @param paAgentRef set the paAgentRef.
+   */
   @VsoMethod
-  public void setPaAgentRef(String paAgentRef) {
+  public void setPaAgentRef(String  paAgentRef) {
     this.paAgentRef = paAgentRef;
   }
 
-  
   /**
-   * SAML settings. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Saml settings.
+   * Field introduced in 17.2.3.
    * @return saml
-  **/
-  @ApiModelProperty(value = "SAML settings. Field introduced in 17.2.3.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SamlSettings getSaml() {
     return saml;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Saml settings.
+   * Field introduced in 17.2.3.
+   * @param saml set the saml.
+   */
   @VsoMethod
   public void setSaml(SamlSettings saml) {
     this.saml = saml;
   }
 
-  
   /**
-   * TACACS+ settings.
+   * This is the getter method this will return the attribute value.
+   * Tacacs+ settings.
    * @return tacacsPlus
-  **/
-  @ApiModelProperty(value = "TACACS+ settings.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public TacacsPlusAuthSettings getTacacsPlus() {
     return tacacsPlus;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tacacs+ settings.
+   * @param tacacsPlus set the tacacsPlus.
+   */
   @VsoMethod
   public void setTacacsPlus(TacacsPlusAuthSettings tacacsPlus) {
     this.tacacsPlus = tacacsPlus;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
-   * Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
+   * This is the getter method this will return the attribute value.
+   * Type of the auth profile.
+   * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Type of the auth profile.
+   * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the Auth Profile.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the auth profile.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the Auth Profile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the auth profile.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "AuthProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AuthProfile authProfile = (AuthProfile) o;
-    return Objects.equals(this.lastModified, authProfile.lastModified) &&
-        Objects.equals(this.description, authProfile.description) &&
-        Objects.equals(this.http, authProfile.http) &&
-        Objects.equals(this.ldap, authProfile.ldap) &&
-        Objects.equals(this.name, authProfile.name) &&
-        Objects.equals(this.paAgentRef, authProfile.paAgentRef) &&
-        Objects.equals(this.saml, authProfile.saml) &&
-        Objects.equals(this.tacacsPlus, authProfile.tacacsPlus) &&
-        Objects.equals(this.tenantRef, authProfile.tenantRef) &&
-        Objects.equals(this.type, authProfile.type) &&
-        Objects.equals(this.url, authProfile.url) &&
-        Objects.equals(this.uuid, authProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, description, http, ldap, name, paAgentRef, saml, tacacsPlus, tenantRef, type, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AuthProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    http: ").append(toIndentedString(http)).append("\n");
-    sb.append("    ldap: ").append(toIndentedString(ldap)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    paAgentRef: ").append(toIndentedString(paAgentRef)).append("\n");
-    sb.append("    saml: ").append(toIndentedString(saml)).append("\n");
-    sb.append("    tacacsPlus: ").append(toIndentedString(tacacsPlus)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AuthProfile objAuthProfile = (AuthProfile) o;
+  return   Objects.equals(this.http, objAuthProfile.http)&&
+  Objects.equals(this.uuid, objAuthProfile.uuid)&&
+  Objects.equals(this.saml, objAuthProfile.saml)&&
+  Objects.equals(this.description, objAuthProfile.description)&&
+  Objects.equals(this.paAgentRef, objAuthProfile.paAgentRef)&&
+  Objects.equals(this.tacacsPlus, objAuthProfile.tacacsPlus)&&
+  Objects.equals(this.ldap, objAuthProfile.ldap)&&
+  Objects.equals(this.type, objAuthProfile.type)&&
+  Objects.equals(this.tenantRef, objAuthProfile.tenantRef)&&
+  Objects.equals(this.name, objAuthProfile.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AuthProfile {\n");
+      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    http: ").append(toIndentedString(http)).append("\n");
+        sb.append("    ldap: ").append(toIndentedString(ldap)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    paAgentRef: ").append(toIndentedString(paAgentRef)).append("\n");
+        sb.append("    saml: ").append(toIndentedString(saml)).append("\n");
+        sb.append("    tacacsPlus: ").append(toIndentedString(tacacsPlus)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

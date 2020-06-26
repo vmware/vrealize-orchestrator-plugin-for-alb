@@ -1,83 +1,123 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.CustomParams;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import com.vmware.avi.vro.model.IpAddrPrefix;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpamDnsInfobloxProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpamDnsInfobloxProfile is a POJO class extends AviRestResource that used for creating
+ * IpamDnsInfobloxProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpamDnsInfobloxProfile")
-@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSINFOBLOXPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSINFOBLOXPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpamDnsInfobloxProfile extends AviRestResource  {
+public class IpamDnsInfobloxProfile extends AviRestResource {
   @JsonProperty("dns_view")
+  @JsonInclude(Include.NON_NULL)
   private String dnsView = "default";
 
   @JsonProperty("extensible_attributes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<CustomParams> extensibleAttributes = null;
 
   @JsonProperty("ip_address")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ipAddress = null;
 
   @JsonProperty("network_view")
+  @JsonInclude(Include.NON_NULL)
   private String networkView = "default";
 
   @JsonProperty("password")
+  @JsonInclude(Include.NON_NULL)
   private String password = null;
 
+  @JsonProperty("usable_alloc_subnets")
+  @JsonInclude(Include.NON_NULL)
+  private List<InfobloxSubnet> usableAllocSubnets = null;
+
   @JsonProperty("usable_domains")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> usableDomains = null;
 
   @JsonProperty("usable_subnets")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddrPrefix> usableSubnets = null;
 
   @JsonProperty("username")
+  @JsonInclude(Include.NON_NULL)
   private String username = null;
 
   @JsonProperty("wapi_version")
+  @JsonInclude(Include.NON_NULL)
   private String wapiVersion = "2.0";
 
-  
+
+
   /**
-   * DNS view.
+   * This is the getter method this will return the attribute value.
+   * Dns view.
+   * Default value when not specified in API or module is interpreted by Avi Controller as default.
    * @return dnsView
-  **/
-  @ApiModelProperty(value = "DNS view.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDnsView() {
     return dnsView;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Dns view.
+   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * @param dnsView set the dnsView.
+   */
   @VsoMethod
-  public void setDnsView(String dnsView) {
+  public void setDnsView(String  dnsView) {
     this.dnsView = dnsView;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Custom parameters that will passed to the infoblox provider as extensible attributes.
+   * Field introduced in 18.2.7, 20.1.1.
+   * @return extensibleAttributes
+   */
+  @VsoMethod
+  public List<CustomParams> getExtensibleAttributes() {
+    return extensibleAttributes;
+  }
+
+  /**
+   * This is the setter method. this will set the extensibleAttributes
+   * Custom parameters that will passed to the infoblox provider as extensible attributes.
+   * Field introduced in 18.2.7, 20.1.1.
+   * @return extensibleAttributes
+   */
+  @VsoMethod
+  public void setExtensibleAttributes(List<CustomParams>  extensibleAttributes) {
+    this.extensibleAttributes = extensibleAttributes;
+  }
+
+  /**
+   * This is the setter method this will set the extensibleAttributes
+   * Custom parameters that will passed to the infoblox provider as extensible attributes.
+   * Field introduced in 18.2.7, 20.1.1.
+   * @return extensibleAttributes
+   */
+  @VsoMethod
   public IpamDnsInfobloxProfile addExtensibleAttributesItem(CustomParams extensibleAttributesItem) {
     if (this.extensibleAttributes == null) {
       this.extensibleAttributes = new ArrayList<CustomParams>();
@@ -85,87 +125,134 @@ public class IpamDnsInfobloxProfile extends AviRestResource  {
     this.extensibleAttributes.add(extensibleAttributesItem);
     return this;
   }
-  
+
+
   /**
-   * Custom parameters that will passed to the Infoblox provider as extensible attributes. Field introduced in 18.2.7, 20.1.1.
-   * @return extensibleAttributes
-  **/
-  @ApiModelProperty(value = "Custom parameters that will passed to the Infoblox provider as extensible attributes. Field introduced in 18.2.7, 20.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<CustomParams> getExtensibleAttributes() {
-    return extensibleAttributes;
-  }
-    
-  @VsoMethod
-  public void setExtensibleAttributes(List<CustomParams> extensibleAttributes) {
-    this.extensibleAttributes = extensibleAttributes;
-  }
-
-  
-  /**
-   * Address of Infoblox appliance.
+   * This is the getter method this will return the attribute value.
+   * Address of infoblox appliance.
    * @return ipAddress
-  **/
-  @ApiModelProperty(required = true, value = "Address of Infoblox appliance.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIpAddress() {
     return ipAddress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Address of infoblox appliance.
+   * @param ipAddress set the ipAddress.
+   */
   @VsoMethod
   public void setIpAddress(IpAddr ipAddress) {
     this.ipAddress = ipAddress;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Network view.
+   * Default value when not specified in API or module is interpreted by Avi Controller as default.
    * @return networkView
-  **/
-  @ApiModelProperty(value = "Network view.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNetworkView() {
     return networkView;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Network view.
+   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * @param networkView set the networkView.
+   */
   @VsoMethod
-  public void setNetworkView(String networkView) {
+  public void setNetworkView(String  networkView) {
     this.networkView = networkView;
   }
 
-  
   /**
-   * Password for API access for Infoblox appliance.
+   * This is the getter method this will return the attribute value.
+   * Password for api access for infoblox appliance.
    * @return password
-  **/
-  @ApiModelProperty(required = true, value = "Password for API access for Infoblox appliance.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPassword() {
     return password;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Password for api access for infoblox appliance.
+   * @param password set the password.
+   */
   @VsoMethod
-  public void setPassword(String password) {
+  public void setPassword(String  password) {
     this.password = password;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Subnets to use for infoblox ip allocation.
+   * Field introduced in 18.2.8, 20.1.1.
+   * @return usableAllocSubnets
+   */
+  @VsoMethod
+  public List<InfobloxSubnet> getUsableAllocSubnets() {
+    return usableAllocSubnets;
+  }
+
+  /**
+   * This is the setter method. this will set the usableAllocSubnets
+   * Subnets to use for infoblox ip allocation.
+   * Field introduced in 18.2.8, 20.1.1.
+   * @return usableAllocSubnets
+   */
+  @VsoMethod
+  public void setUsableAllocSubnets(List<InfobloxSubnet>  usableAllocSubnets) {
+    this.usableAllocSubnets = usableAllocSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the usableAllocSubnets
+   * Subnets to use for infoblox ip allocation.
+   * Field introduced in 18.2.8, 20.1.1.
+   * @return usableAllocSubnets
+   */
+  @VsoMethod
+  public IpamDnsInfobloxProfile addUsableAllocSubnetsItem(InfobloxSubnet usableAllocSubnetsItem) {
+    if (this.usableAllocSubnets == null) {
+      this.usableAllocSubnets = new ArrayList<InfobloxSubnet>();
+    }
+    this.usableAllocSubnets.add(usableAllocSubnetsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Usable domains to pick from infoblox.
+   * @return usableDomains
+   */
+  @VsoMethod
+  public List<String> getUsableDomains() {
+    return usableDomains;
+  }
+
+  /**
+   * This is the setter method. this will set the usableDomains
+   * Usable domains to pick from infoblox.
+   * @return usableDomains
+   */
+  @VsoMethod
+  public void setUsableDomains(List<String>  usableDomains) {
+    this.usableDomains = usableDomains;
+  }
+
+  /**
+   * This is the setter method this will set the usableDomains
+   * Usable domains to pick from infoblox.
+   * @return usableDomains
+   */
+  @VsoMethod
   public IpamDnsInfobloxProfile addUsableDomainsItem(String usableDomainsItem) {
     if (this.usableDomains == null) {
       this.usableDomains = new ArrayList<String>();
@@ -173,26 +260,37 @@ public class IpamDnsInfobloxProfile extends AviRestResource  {
     this.usableDomains.add(usableDomainsItem);
     return this;
   }
-  
+
+
   /**
-   * Usable domains to pick from Infoblox.
-   * @return usableDomains
-  **/
-  @ApiModelProperty(value = "Usable domains to pick from Infoblox.")
-
-
- 
-  @VsoMethod  
-  public List<String> getUsableDomains() {
-    return usableDomains;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * This field is deprecated, use usable_alloc_subnets instead.
+   * Field deprecated in 18.2.8.
+   * @return usableSubnets
+   */
   @VsoMethod
-  public void setUsableDomains(List<String> usableDomains) {
-    this.usableDomains = usableDomains;
+  public List<IpAddrPrefix> getUsableSubnets() {
+    return usableSubnets;
   }
 
-  
+  /**
+   * This is the setter method. this will set the usableSubnets
+   * This field is deprecated, use usable_alloc_subnets instead.
+   * Field deprecated in 18.2.8.
+   * @return usableSubnets
+   */
+  @VsoMethod
+  public void setUsableSubnets(List<IpAddrPrefix>  usableSubnets) {
+    this.usableSubnets = usableSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the usableSubnets
+   * This field is deprecated, use usable_alloc_subnets instead.
+   * Field deprecated in 18.2.8.
+   * @return usableSubnets
+   */
+  @VsoMethod
   public IpamDnsInfobloxProfile addUsableSubnetsItem(IpAddrPrefix usableSubnetsItem) {
     if (this.usableSubnets == null) {
       this.usableSubnets = new ArrayList<IpAddrPrefix>();
@@ -200,122 +298,99 @@ public class IpamDnsInfobloxProfile extends AviRestResource  {
     this.usableSubnets.add(usableSubnetsItem);
     return this;
   }
-  
+
+
   /**
-   * Usable subnets to pick from Infoblox.
-   * @return usableSubnets
-  **/
-  @ApiModelProperty(value = "Usable subnets to pick from Infoblox.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddrPrefix> getUsableSubnets() {
-    return usableSubnets;
-  }
-    
-  @VsoMethod
-  public void setUsableSubnets(List<IpAddrPrefix> usableSubnets) {
-    this.usableSubnets = usableSubnets;
-  }
-
-  
-  /**
-   * Username for API access for Infoblox appliance.
+   * This is the getter method this will return the attribute value.
+   * Username for api access for infoblox appliance.
    * @return username
-  **/
-  @ApiModelProperty(required = true, value = "Username for API access for Infoblox appliance.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUsername() {
     return username;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Username for api access for infoblox appliance.
+   * @param username set the username.
+   */
   @VsoMethod
-  public void setUsername(String username) {
+  public void setUsername(String  username) {
     this.username = username;
   }
 
-  
   /**
-   * WAPI version.
+   * This is the getter method this will return the attribute value.
+   * Wapi version.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
    * @return wapiVersion
-  **/
-  @ApiModelProperty(value = "WAPI version.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getWapiVersion() {
     return wapiVersion;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Wapi version.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * @param wapiVersion set the wapiVersion.
+   */
   @VsoMethod
-  public void setWapiVersion(String wapiVersion) {
+  public void setWapiVersion(String  wapiVersion) {
     this.wapiVersion = wapiVersion;
   }
 
-  
-  public String getObjectID() {
-		return "IpamDnsInfobloxProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpamDnsInfobloxProfile ipamDnsInfobloxProfile = (IpamDnsInfobloxProfile) o;
-    return Objects.equals(this.dnsView, ipamDnsInfobloxProfile.dnsView) &&
-        Objects.equals(this.extensibleAttributes, ipamDnsInfobloxProfile.extensibleAttributes) &&
-        Objects.equals(this.ipAddress, ipamDnsInfobloxProfile.ipAddress) &&
-        Objects.equals(this.networkView, ipamDnsInfobloxProfile.networkView) &&
-        Objects.equals(this.password, ipamDnsInfobloxProfile.password) &&
-        Objects.equals(this.usableDomains, ipamDnsInfobloxProfile.usableDomains) &&
-        Objects.equals(this.usableSubnets, ipamDnsInfobloxProfile.usableSubnets) &&
-        Objects.equals(this.username, ipamDnsInfobloxProfile.username) &&
-        Objects.equals(this.wapiVersion, ipamDnsInfobloxProfile.wapiVersion);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(dnsView, extensibleAttributes, ipAddress, networkView, password, usableDomains, usableSubnets, username, wapiVersion);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpamDnsInfobloxProfile {\n");
-    
-    sb.append("    dnsView: ").append(toIndentedString(dnsView)).append("\n");
-    sb.append("    extensibleAttributes: ").append(toIndentedString(extensibleAttributes)).append("\n");
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    networkView: ").append(toIndentedString(networkView)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
-    sb.append("    usableSubnets: ").append(toIndentedString(usableSubnets)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
-    sb.append("    wapiVersion: ").append(toIndentedString(wapiVersion)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpamDnsInfobloxProfile objIpamDnsInfobloxProfile = (IpamDnsInfobloxProfile) o;
+  return   Objects.equals(this.username, objIpamDnsInfobloxProfile.username)&&
+  Objects.equals(this.usableAllocSubnets, objIpamDnsInfobloxProfile.usableAllocSubnets)&&
+  Objects.equals(this.networkView, objIpamDnsInfobloxProfile.networkView)&&
+  Objects.equals(this.usableDomains, objIpamDnsInfobloxProfile.usableDomains)&&
+  Objects.equals(this.wapiVersion, objIpamDnsInfobloxProfile.wapiVersion)&&
+  Objects.equals(this.usableSubnets, objIpamDnsInfobloxProfile.usableSubnets)&&
+  Objects.equals(this.dnsView, objIpamDnsInfobloxProfile.dnsView)&&
+  Objects.equals(this.extensibleAttributes, objIpamDnsInfobloxProfile.extensibleAttributes)&&
+  Objects.equals(this.password, objIpamDnsInfobloxProfile.password)&&
+  Objects.equals(this.ipAddress, objIpamDnsInfobloxProfile.ipAddress);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpamDnsInfobloxProfile {\n");
+      sb.append("    dnsView: ").append(toIndentedString(dnsView)).append("\n");
+        sb.append("    extensibleAttributes: ").append(toIndentedString(extensibleAttributes)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    networkView: ").append(toIndentedString(networkView)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    usableAllocSubnets: ").append(toIndentedString(usableAllocSubnets)).append("\n");
+        sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
+        sb.append("    usableSubnets: ").append(toIndentedString(usableSubnets)).append("\n");
+        sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    wapiVersion: ").append(toIndentedString(wapiVersion)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,8 +1,10 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpamDnsAwsProfile;
 import com.vmware.avi.vro.model.IpamDnsAzureProfile;
 import com.vmware.avi.vro.model.IpamDnsCustomProfile;
@@ -11,487 +13,494 @@ import com.vmware.avi.vro.model.IpamDnsInfobloxProfile;
 import com.vmware.avi.vro.model.IpamDnsInternalProfile;
 import com.vmware.avi.vro.model.IpamDnsOCIProfile;
 import com.vmware.avi.vro.model.IpamDnsOpenstackProfile;
-import com.vmware.avi.vro.model.IpamDnsTencentProfile;
 import com.vmware.avi.vro.model.ProxyConfiguration;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.IpamDnsTencentProfile;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpamDnsProviderProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpamDnsProviderProfile is a POJO class extends AviRestResource that used for creating
+ * IpamDnsProviderProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpamDnsProviderProfile")
 @VsoFinder(name = Constants.FINDER_VRO_IPAMDNSPROVIDERPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpamDnsProviderProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class IpamDnsProviderProfile extends AviRestResource {
   @JsonProperty("allocate_ip_in_vrf")
-  private Boolean allocateIpInVrf = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean allocateIpInVrf = false;
 
   @JsonProperty("aws_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsAwsProfile awsProfile = null;
 
   @JsonProperty("azure_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsAzureProfile azureProfile = null;
 
   @JsonProperty("custom_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsCustomProfile customProfile = null;
 
   @JsonProperty("gcp_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsGCPProfile gcpProfile = null;
 
   @JsonProperty("infoblox_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsInfobloxProfile infobloxProfile = null;
 
   @JsonProperty("internal_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsInternalProfile internalProfile = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("oci_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsOCIProfile ociProfile = null;
 
   @JsonProperty("openstack_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsOpenstackProfile openstackProfile = null;
 
   @JsonProperty("proxy_configuration")
+  @JsonInclude(Include.NON_NULL)
   private ProxyConfiguration proxyConfiguration = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("tencent_profile")
+  @JsonInclude(Include.NON_NULL)
   private IpamDnsTencentProfile tencentProfile = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * If this flag is set, only allocate IP from networks in the Virtual Service VRF. Applicable for Avi Vantage IPAM only. Field introduced in 17.2.4.
+   * This is the getter method this will return the attribute value.
+   * If this flag is set, only allocate ip from networks in the virtual service vrf.
+   * Applicable for avi vantage ipam only.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allocateIpInVrf
-  **/
-  @ApiModelProperty(value = "If this flag is set, only allocate IP from networks in the Virtual Service VRF. Applicable for Avi Vantage IPAM only. Field introduced in 17.2.4.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAllocateIpInVrf() {
+   */
+  @VsoMethod
+  public Boolean getAllocateIpInVrf() {
     return allocateIpInVrf;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If this flag is set, only allocate ip from networks in the virtual service vrf.
+   * Applicable for avi vantage ipam only.
+   * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param allocateIpInVrf set the allocateIpInVrf.
+   */
   @VsoMethod
-  public void setAllocateIpInVrf(Boolean allocateIpInVrf) {
+  public void setAllocateIpInVrf(Boolean  allocateIpInVrf) {
     this.allocateIpInVrf = allocateIpInVrf;
   }
 
-  
   /**
-   * Provider details if type is AWS.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is aws.
    * @return awsProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is AWS.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsAwsProfile getAwsProfile() {
     return awsProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is aws.
+   * @param awsProfile set the awsProfile.
+   */
   @VsoMethod
   public void setAwsProfile(IpamDnsAwsProfile awsProfile) {
     this.awsProfile = awsProfile;
   }
 
-  
   /**
-   * Provider details if type is Microsoft Azure. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is microsoft azure.
+   * Field introduced in 17.2.1.
    * @return azureProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is Microsoft Azure. Field introduced in 17.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsAzureProfile getAzureProfile() {
     return azureProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is microsoft azure.
+   * Field introduced in 17.2.1.
+   * @param azureProfile set the azureProfile.
+   */
   @VsoMethod
   public void setAzureProfile(IpamDnsAzureProfile azureProfile) {
     this.azureProfile = azureProfile;
   }
 
-  
   /**
-   * Provider details if type is Custom. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is custom.
+   * Field introduced in 17.1.1.
    * @return customProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is Custom. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsCustomProfile getCustomProfile() {
     return customProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is custom.
+   * Field introduced in 17.1.1.
+   * @param customProfile set the customProfile.
+   */
   @VsoMethod
   public void setCustomProfile(IpamDnsCustomProfile customProfile) {
     this.customProfile = customProfile;
   }
 
-  
   /**
-   * Provider details if type is Google Cloud.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is google cloud.
    * @return gcpProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is Google Cloud.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsGCPProfile getGcpProfile() {
     return gcpProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is google cloud.
+   * @param gcpProfile set the gcpProfile.
+   */
   @VsoMethod
   public void setGcpProfile(IpamDnsGCPProfile gcpProfile) {
     this.gcpProfile = gcpProfile;
   }
 
-  
   /**
-   * Provider details if type is Infoblox.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is infoblox.
    * @return infobloxProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is Infoblox.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsInfobloxProfile getInfobloxProfile() {
     return infobloxProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is infoblox.
+   * @param infobloxProfile set the infobloxProfile.
+   */
   @VsoMethod
   public void setInfobloxProfile(IpamDnsInfobloxProfile infobloxProfile) {
     this.infobloxProfile = infobloxProfile;
   }
 
-  
   /**
-   * Provider details if type is Avi.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is avi.
    * @return internalProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is Avi.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsInternalProfile getInternalProfile() {
     return internalProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is avi.
+   * @param internalProfile set the internalProfile.
+   */
   @VsoMethod
   public void setInternalProfile(IpamDnsInternalProfile internalProfile) {
     this.internalProfile = internalProfile;
   }
 
-  
   /**
-   * Name for the IPAM/DNS Provider profile.
+   * This is the getter method this will return the attribute value.
+   * Name for the ipam/dns provider profile.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name for the IPAM/DNS Provider profile.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name for the ipam/dns provider profile.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Provider details for Oracle Cloud. Field introduced in 18.2.1,18.1.3.
+   * This is the getter method this will return the attribute value.
+   * Provider details for oracle cloud.
+   * Field introduced in 18.2.1,18.1.3.
    * @return ociProfile
-  **/
-  @ApiModelProperty(value = "Provider details for Oracle Cloud. Field introduced in 18.2.1,18.1.3.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsOCIProfile getOciProfile() {
     return ociProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details for oracle cloud.
+   * Field introduced in 18.2.1,18.1.3.
+   * @param ociProfile set the ociProfile.
+   */
   @VsoMethod
   public void setOciProfile(IpamDnsOCIProfile ociProfile) {
     this.ociProfile = ociProfile;
   }
 
-  
   /**
-   * Provider details if type is OpenStack.
+   * This is the getter method this will return the attribute value.
+   * Provider details if type is openstack.
    * @return openstackProfile
-  **/
-  @ApiModelProperty(value = "Provider details if type is OpenStack.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsOpenstackProfile getOpenstackProfile() {
     return openstackProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details if type is openstack.
+   * @param openstackProfile set the openstackProfile.
+   */
   @VsoMethod
   public void setOpenstackProfile(IpamDnsOpenstackProfile openstackProfile) {
     this.openstackProfile = openstackProfile;
   }
 
-  
   /**
-   *  Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1.
    * @return proxyConfiguration
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public ProxyConfiguration getProxyConfiguration() {
     return proxyConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.1.
+   * @param proxyConfiguration set the proxyConfiguration.
+   */
   @VsoMethod
   public void setProxyConfiguration(ProxyConfiguration proxyConfiguration) {
     this.proxyConfiguration = proxyConfiguration;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
-   * Provider details for Tencent Cloud. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Provider details for tencent cloud.
+   * Field introduced in 18.2.3.
    * @return tencentProfile
-  **/
-  @ApiModelProperty(value = "Provider details for Tencent Cloud. Field introduced in 18.2.3.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpamDnsTencentProfile getTencentProfile() {
     return tencentProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider details for tencent cloud.
+   * Field introduced in 18.2.3.
+   * @param tencentProfile set the tencentProfile.
+   */
   @VsoMethod
   public void setTencentProfile(IpamDnsTencentProfile tencentProfile) {
     this.tencentProfile = tencentProfile;
   }
 
-  
   /**
-   * Provider Type for the IPAM/DNS Provider profile. Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM, IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS, IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
+   * This is the getter method this will return the attribute value.
+   * Provider type for the ipam/dns provider profile.
+   * Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
+   * IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS,
+   * IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = "Provider Type for the IPAM/DNS Provider profile. Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM, IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS, IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Provider type for the ipam/dns provider profile.
+   * Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
+   * IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS,
+   * IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the IPAM/DNS Provider profile.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the ipam/dns provider profile.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the IPAM/DNS Provider profile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the ipam/dns provider profile.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "IpamDnsProviderProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpamDnsProviderProfile ipamDnsProviderProfile = (IpamDnsProviderProfile) o;
-    return Objects.equals(this.lastModified, ipamDnsProviderProfile.lastModified) &&
-        Objects.equals(this.allocateIpInVrf, ipamDnsProviderProfile.allocateIpInVrf) &&
-        Objects.equals(this.awsProfile, ipamDnsProviderProfile.awsProfile) &&
-        Objects.equals(this.azureProfile, ipamDnsProviderProfile.azureProfile) &&
-        Objects.equals(this.customProfile, ipamDnsProviderProfile.customProfile) &&
-        Objects.equals(this.gcpProfile, ipamDnsProviderProfile.gcpProfile) &&
-        Objects.equals(this.infobloxProfile, ipamDnsProviderProfile.infobloxProfile) &&
-        Objects.equals(this.internalProfile, ipamDnsProviderProfile.internalProfile) &&
-        Objects.equals(this.name, ipamDnsProviderProfile.name) &&
-        Objects.equals(this.ociProfile, ipamDnsProviderProfile.ociProfile) &&
-        Objects.equals(this.openstackProfile, ipamDnsProviderProfile.openstackProfile) &&
-        Objects.equals(this.proxyConfiguration, ipamDnsProviderProfile.proxyConfiguration) &&
-        Objects.equals(this.tenantRef, ipamDnsProviderProfile.tenantRef) &&
-        Objects.equals(this.tencentProfile, ipamDnsProviderProfile.tencentProfile) &&
-        Objects.equals(this.type, ipamDnsProviderProfile.type) &&
-        Objects.equals(this.url, ipamDnsProviderProfile.url) &&
-        Objects.equals(this.uuid, ipamDnsProviderProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, allocateIpInVrf, awsProfile, azureProfile, customProfile, gcpProfile, infobloxProfile, internalProfile, name, ociProfile, openstackProfile, proxyConfiguration, tenantRef, tencentProfile, type, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpamDnsProviderProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    allocateIpInVrf: ").append(toIndentedString(allocateIpInVrf)).append("\n");
-    sb.append("    awsProfile: ").append(toIndentedString(awsProfile)).append("\n");
-    sb.append("    azureProfile: ").append(toIndentedString(azureProfile)).append("\n");
-    sb.append("    customProfile: ").append(toIndentedString(customProfile)).append("\n");
-    sb.append("    gcpProfile: ").append(toIndentedString(gcpProfile)).append("\n");
-    sb.append("    infobloxProfile: ").append(toIndentedString(infobloxProfile)).append("\n");
-    sb.append("    internalProfile: ").append(toIndentedString(internalProfile)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    ociProfile: ").append(toIndentedString(ociProfile)).append("\n");
-    sb.append("    openstackProfile: ").append(toIndentedString(openstackProfile)).append("\n");
-    sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    tencentProfile: ").append(toIndentedString(tencentProfile)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpamDnsProviderProfile objIpamDnsProviderProfile = (IpamDnsProviderProfile) o;
+  return   Objects.equals(this.azureProfile, objIpamDnsProviderProfile.azureProfile)&&
+  Objects.equals(this.openstackProfile, objIpamDnsProviderProfile.openstackProfile)&&
+  Objects.equals(this.uuid, objIpamDnsProviderProfile.uuid)&&
+  Objects.equals(this.gcpProfile, objIpamDnsProviderProfile.gcpProfile)&&
+  Objects.equals(this.infobloxProfile, objIpamDnsProviderProfile.infobloxProfile)&&
+  Objects.equals(this.internalProfile, objIpamDnsProviderProfile.internalProfile)&&
+  Objects.equals(this.ociProfile, objIpamDnsProviderProfile.ociProfile)&&
+  Objects.equals(this.customProfile, objIpamDnsProviderProfile.customProfile)&&
+  Objects.equals(this.proxyConfiguration, objIpamDnsProviderProfile.proxyConfiguration)&&
+  Objects.equals(this.awsProfile, objIpamDnsProviderProfile.awsProfile)&&
+  Objects.equals(this.allocateIpInVrf, objIpamDnsProviderProfile.allocateIpInVrf)&&
+  Objects.equals(this.tencentProfile, objIpamDnsProviderProfile.tencentProfile)&&
+  Objects.equals(this.type, objIpamDnsProviderProfile.type)&&
+  Objects.equals(this.tenantRef, objIpamDnsProviderProfile.tenantRef)&&
+  Objects.equals(this.name, objIpamDnsProviderProfile.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpamDnsProviderProfile {\n");
+      sb.append("    allocateIpInVrf: ").append(toIndentedString(allocateIpInVrf)).append("\n");
+        sb.append("    awsProfile: ").append(toIndentedString(awsProfile)).append("\n");
+        sb.append("    azureProfile: ").append(toIndentedString(azureProfile)).append("\n");
+        sb.append("    customProfile: ").append(toIndentedString(customProfile)).append("\n");
+        sb.append("    gcpProfile: ").append(toIndentedString(gcpProfile)).append("\n");
+        sb.append("    infobloxProfile: ").append(toIndentedString(infobloxProfile)).append("\n");
+        sb.append("    internalProfile: ").append(toIndentedString(internalProfile)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    ociProfile: ").append(toIndentedString(ociProfile)).append("\n");
+        sb.append("    openstackProfile: ").append(toIndentedString(openstackProfile)).append("\n");
+        sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    tencentProfile: ").append(toIndentedString(tencentProfile)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,370 +1,454 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.DockerRegistry;
 import com.vmware.avi.vro.model.IpAddrPrefix;
-import com.vmware.avi.vro.model.MesosAttribute;
 import com.vmware.avi.vro.model.NuageSDNController;
 import com.vmware.avi.vro.model.SSHSeDeployment;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * RancherConfiguration
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The RancherConfiguration is a POJO class extends AviRestResource that used for creating
+ * RancherConfiguration.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "RancherConfiguration")
-@VsoFinder(name = Constants.FINDER_VRO_RANCHERCONFIGURATION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_RANCHERCONFIGURATION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class RancherConfiguration extends AviRestResource  {
+public class RancherConfiguration extends AviRestResource {
   @JsonProperty("access_key")
+  @JsonInclude(Include.NON_NULL)
   private String accessKey = null;
 
   @JsonProperty("app_sync_frequency")
+  @JsonInclude(Include.NON_NULL)
   private Integer appSyncFrequency = 60;
 
   @JsonProperty("container_port_match_http_service")
+  @JsonInclude(Include.NON_NULL)
   private Boolean containerPortMatchHttpService = true;
 
   @JsonProperty("coredump_directory")
+  @JsonInclude(Include.NON_NULL)
   private String coredumpDirectory = "/var/lib/systemd/coredump";
 
   @JsonProperty("disable_auto_backend_service_sync")
-  private Boolean disableAutoBackendServiceSync = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableAutoBackendServiceSync = false;
 
   @JsonProperty("disable_auto_frontend_service_sync")
-  private Boolean disableAutoFrontendServiceSync = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableAutoFrontendServiceSync = false;
 
   @JsonProperty("disable_auto_se_creation")
-  private Boolean disableAutoSeCreation = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean disableAutoSeCreation = false;
 
   @JsonProperty("docker_registry_se")
+  @JsonInclude(Include.NON_NULL)
   private DockerRegistry dockerRegistrySe = null;
 
   @JsonProperty("east_west_placement_subnet")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrPrefix eastWestPlacementSubnet = null;
 
   @JsonProperty("enable_event_subscription")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enableEventSubscription = true;
 
   @JsonProperty("feproxy_container_port_as_service")
-  private Boolean feproxyContainerPortAsService = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean feproxyContainerPortAsService = false;
 
   @JsonProperty("feproxy_vips_enable_proxy_arp")
+  @JsonInclude(Include.NON_NULL)
   private Boolean feproxyVipsEnableProxyArp = true;
 
   @JsonProperty("fleet_endpoint")
+  @JsonInclude(Include.NON_NULL)
   private String fleetEndpoint = null;
 
   @JsonProperty("http_container_ports")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Integer> httpContainerPorts = null;
 
   @JsonProperty("nuage_controller")
+  @JsonInclude(Include.NON_NULL)
   private NuageSDNController nuageController = null;
 
   @JsonProperty("rancher_servers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> rancherServers = null;
 
   @JsonProperty("se_deployment_method")
+  @JsonInclude(Include.NON_NULL)
   private String seDeploymentMethod = "SE_CREATE_SSH";
 
   @JsonProperty("se_exclude_attributes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<MesosAttribute> seExcludeAttributes = null;
 
   @JsonProperty("se_include_attributes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<MesosAttribute> seIncludeAttributes = null;
 
   @JsonProperty("se_spawn_rate")
+  @JsonInclude(Include.NON_NULL)
   private Integer seSpawnRate = 25;
 
   @JsonProperty("se_volume")
+  @JsonInclude(Include.NON_NULL)
   private String seVolume = "/opt/avi";
 
   @JsonProperty("secret_key")
+  @JsonInclude(Include.NON_NULL)
   private String secretKey = null;
 
   @JsonProperty("services_accessible_all_interfaces")
-  private Boolean servicesAccessibleAllInterfaces = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean servicesAccessibleAllInterfaces = false;
 
   @JsonProperty("ssh_se_deployment")
+  @JsonInclude(Include.NON_NULL)
   private SSHSeDeployment sshSeDeployment = null;
 
   @JsonProperty("ssh_user_ref")
+  @JsonInclude(Include.NON_NULL)
   private String sshUserRef = null;
 
   @JsonProperty("use_container_ip_port")
-  private Boolean useContainerIpPort = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useContainerIpPort = false;
 
   @JsonProperty("use_controller_image")
-  private Boolean useControllerImage = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useControllerImage = false;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Access key.
    * @return accessKey
-  **/
-  @ApiModelProperty(value = "Access key.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAccessKey() {
     return accessKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Access key.
+   * @param accessKey set the accessKey.
+   */
   @VsoMethod
-  public void setAccessKey(String accessKey) {
+  public void setAccessKey(String  accessKey) {
     this.accessKey = accessKey;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Sync frequency in seconds with frameworks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return appSyncFrequency
-  **/
-  @ApiModelProperty(value = "Sync frequency in seconds with frameworks.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getAppSyncFrequency() {
     return appSyncFrequency;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Sync frequency in seconds with frameworks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param appSyncFrequency set the appSyncFrequency.
+   */
   @VsoMethod
-  public void setAppSyncFrequency(Integer appSyncFrequency) {
+  public void setAppSyncFrequency(Integer  appSyncFrequency) {
     this.appSyncFrequency = appSyncFrequency;
   }
 
-  
   /**
-   * Perform container port matching to create a HTTP Virtualservice instead of a TCP/UDP VirtualService.
+   * This is the getter method this will return the attribute value.
+   * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return containerPortMatchHttpService
-  **/
-  @ApiModelProperty(value = "Perform container port matching to create a HTTP Virtualservice instead of a TCP/UDP VirtualService.")
-
-
- 
-  @VsoMethod  
-  public Boolean isContainerPortMatchHttpService() {
+   */
+  @VsoMethod
+  public Boolean getContainerPortMatchHttpService() {
     return containerPortMatchHttpService;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param containerPortMatchHttpService set the containerPortMatchHttpService.
+   */
   @VsoMethod
-  public void setContainerPortMatchHttpService(Boolean containerPortMatchHttpService) {
+  public void setContainerPortMatchHttpService(Boolean  containerPortMatchHttpService) {
     this.containerPortMatchHttpService = containerPortMatchHttpService;
   }
 
-  
   /**
-   * Directory to mount to check for core dumps on Service Engines. This will be mapped read only to /var/crash on any new Service Engines. This is a disruptive change.
+   * This is the getter method this will return the attribute value.
+   * Directory to mount to check for core dumps on service engines.
+   * This will be mapped read only to /var/crash on any new service engines.
+   * This is a disruptive change.
+   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
    * @return coredumpDirectory
-  **/
-  @ApiModelProperty(value = "Directory to mount to check for core dumps on Service Engines. This will be mapped read only to /var/crash on any new Service Engines. This is a disruptive change.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCoredumpDirectory() {
     return coredumpDirectory;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Directory to mount to check for core dumps on service engines.
+   * This will be mapped read only to /var/crash on any new service engines.
+   * This is a disruptive change.
+   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * @param coredumpDirectory set the coredumpDirectory.
+   */
   @VsoMethod
-  public void setCoredumpDirectory(String coredumpDirectory) {
+  public void setCoredumpDirectory(String  coredumpDirectory) {
     this.coredumpDirectory = coredumpDirectory;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Disable auto service sync for back end services.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoBackendServiceSync
-  **/
-  @ApiModelProperty(value = "Disable auto service sync for back end services.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableAutoBackendServiceSync() {
+   */
+  @VsoMethod
+  public Boolean getDisableAutoBackendServiceSync() {
     return disableAutoBackendServiceSync;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Disable auto service sync for back end services.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableAutoBackendServiceSync set the disableAutoBackendServiceSync.
+   */
   @VsoMethod
-  public void setDisableAutoBackendServiceSync(Boolean disableAutoBackendServiceSync) {
+  public void setDisableAutoBackendServiceSync(Boolean  disableAutoBackendServiceSync) {
     this.disableAutoBackendServiceSync = disableAutoBackendServiceSync;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Disable auto service sync for front end services.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoFrontendServiceSync
-  **/
-  @ApiModelProperty(value = "Disable auto service sync for front end services.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableAutoFrontendServiceSync() {
+   */
+  @VsoMethod
+  public Boolean getDisableAutoFrontendServiceSync() {
     return disableAutoFrontendServiceSync;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Disable auto service sync for front end services.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableAutoFrontendServiceSync set the disableAutoFrontendServiceSync.
+   */
   @VsoMethod
-  public void setDisableAutoFrontendServiceSync(Boolean disableAutoFrontendServiceSync) {
+  public void setDisableAutoFrontendServiceSync(Boolean  disableAutoFrontendServiceSync) {
     this.disableAutoFrontendServiceSync = disableAutoFrontendServiceSync;
   }
 
-  
   /**
-   * Disable SE creation.
+   * This is the getter method this will return the attribute value.
+   * Disable se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableAutoSeCreation
-  **/
-  @ApiModelProperty(value = "Disable SE creation.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDisableAutoSeCreation() {
+   */
+  @VsoMethod
+  public Boolean getDisableAutoSeCreation() {
     return disableAutoSeCreation;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Disable se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param disableAutoSeCreation set the disableAutoSeCreation.
+   */
   @VsoMethod
-  public void setDisableAutoSeCreation(Boolean disableAutoSeCreation) {
+  public void setDisableAutoSeCreation(Boolean  disableAutoSeCreation) {
     this.disableAutoSeCreation = disableAutoSeCreation;
   }
 
-  
   /**
-   * Docker registry for ServiceEngine image.
+   * This is the getter method this will return the attribute value.
+   * Docker registry for serviceengine image.
    * @return dockerRegistrySe
-  **/
-  @ApiModelProperty(value = "Docker registry for ServiceEngine image.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DockerRegistry getDockerRegistrySe() {
     return dockerRegistrySe;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Docker registry for serviceengine image.
+   * @param dockerRegistrySe set the dockerRegistrySe.
+   */
   @VsoMethod
   public void setDockerRegistrySe(DockerRegistry dockerRegistrySe) {
     this.dockerRegistrySe = dockerRegistrySe;
   }
 
-  
   /**
-   * Match against this prefix when placing east-west VSs on SEs .
+   * This is the getter method this will return the attribute value.
+   * Match against this prefix when placing east-west vss on ses .
    * @return eastWestPlacementSubnet
-  **/
-  @ApiModelProperty(value = "Match against this prefix when placing east-west VSs on SEs .")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrPrefix getEastWestPlacementSubnet() {
     return eastWestPlacementSubnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Match against this prefix when placing east-west vss on ses .
+   * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
+   */
   @VsoMethod
   public void setEastWestPlacementSubnet(IpAddrPrefix eastWestPlacementSubnet) {
     this.eastWestPlacementSubnet = eastWestPlacementSubnet;
   }
 
-  
   /**
-   * Enable Docker event subscription.
+   * This is the getter method this will return the attribute value.
+   * Enable docker event subscription.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableEventSubscription
-  **/
-  @ApiModelProperty(value = "Enable Docker event subscription.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableEventSubscription() {
+   */
+  @VsoMethod
+  public Boolean getEnableEventSubscription() {
     return enableEventSubscription;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable docker event subscription.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableEventSubscription set the enableEventSubscription.
+   */
   @VsoMethod
-  public void setEnableEventSubscription(Boolean enableEventSubscription) {
+  public void setEnableEventSubscription(Boolean  enableEventSubscription) {
     this.enableEventSubscription = enableEventSubscription;
   }
 
-  
   /**
-   * For Front End proxies, use container port as service port.
+   * This is the getter method this will return the attribute value.
+   * For front end proxies, use container port as service port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return feproxyContainerPortAsService
-  **/
-  @ApiModelProperty(value = "For Front End proxies, use container port as service port.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFeproxyContainerPortAsService() {
+   */
+  @VsoMethod
+  public Boolean getFeproxyContainerPortAsService() {
     return feproxyContainerPortAsService;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * For front end proxies, use container port as service port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param feproxyContainerPortAsService set the feproxyContainerPortAsService.
+   */
   @VsoMethod
-  public void setFeproxyContainerPortAsService(Boolean feproxyContainerPortAsService) {
+  public void setFeproxyContainerPortAsService(Boolean  feproxyContainerPortAsService) {
     this.feproxyContainerPortAsService = feproxyContainerPortAsService;
   }
 
-  
   /**
-   * Enable proxy ARP from Host interface for Front End  proxies.
+   * This is the getter method this will return the attribute value.
+   * Enable proxy arp from host interface for front end  proxies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return feproxyVipsEnableProxyArp
-  **/
-  @ApiModelProperty(value = "Enable proxy ARP from Host interface for Front End  proxies.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFeproxyVipsEnableProxyArp() {
+   */
+  @VsoMethod
+  public Boolean getFeproxyVipsEnableProxyArp() {
     return feproxyVipsEnableProxyArp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable proxy arp from host interface for front end  proxies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param feproxyVipsEnableProxyArp set the feproxyVipsEnableProxyArp.
+   */
   @VsoMethod
-  public void setFeproxyVipsEnableProxyArp(Boolean feproxyVipsEnableProxyArp) {
+  public void setFeproxyVipsEnableProxyArp(Boolean  feproxyVipsEnableProxyArp) {
     this.feproxyVipsEnableProxyArp = feproxyVipsEnableProxyArp;
   }
 
-  
   /**
-   * Optional fleet remote endpoint if fleet is used for SE deployment.
+   * This is the getter method this will return the attribute value.
+   * Optional fleet remote endpoint if fleet is used for se deployment.
    * @return fleetEndpoint
-  **/
-  @ApiModelProperty(value = "Optional fleet remote endpoint if fleet is used for SE deployment.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFleetEndpoint() {
     return fleetEndpoint;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Optional fleet remote endpoint if fleet is used for se deployment.
+   * @param fleetEndpoint set the fleetEndpoint.
+   */
   @VsoMethod
-  public void setFleetEndpoint(String fleetEndpoint) {
+  public void setFleetEndpoint(String  fleetEndpoint) {
     this.fleetEndpoint = fleetEndpoint;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
+   * Defaults to 80.
+   * @return httpContainerPorts
+   */
+  @VsoMethod
+  public List<Integer> getHttpContainerPorts() {
+    return httpContainerPorts;
+  }
+
+  /**
+   * This is the setter method. this will set the httpContainerPorts
+   * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
+   * Defaults to 80.
+   * @return httpContainerPorts
+   */
+  @VsoMethod
+  public void setHttpContainerPorts(List<Integer>  httpContainerPorts) {
+    this.httpContainerPorts = httpContainerPorts;
+  }
+
+  /**
+   * This is the setter method this will set the httpContainerPorts
+   * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
+   * Defaults to 80.
+   * @return httpContainerPorts
+   */
+  @VsoMethod
   public RancherConfiguration addHttpContainerPortsItem(Integer httpContainerPortsItem) {
     if (this.httpContainerPorts == null) {
       this.httpContainerPorts = new ArrayList<Integer>();
@@ -372,46 +456,54 @@ public class RancherConfiguration extends AviRestResource  {
     this.httpContainerPorts.add(httpContainerPortsItem);
     return this;
   }
-  
+
+
   /**
-   * List of container ports that create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Defaults to 80.
-   * @return httpContainerPorts
-  **/
-  @ApiModelProperty(value = "List of container ports that create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Defaults to 80.")
-
-
- 
-  @VsoMethod  
-  public List<Integer> getHttpContainerPorts() {
-    return httpContainerPorts;
-  }
-    
-  @VsoMethod
-  public void setHttpContainerPorts(List<Integer> httpContainerPorts) {
-    this.httpContainerPorts = httpContainerPorts;
-  }
-
-  
-  /**
-   * Nuage Overlay SDN Controller information.
+   * This is the getter method this will return the attribute value.
+   * Nuage overlay sdn controller information.
    * @return nuageController
-  **/
-  @ApiModelProperty(value = "Nuage Overlay SDN Controller information.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public NuageSDNController getNuageController() {
     return nuageController;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Nuage overlay sdn controller information.
+   * @param nuageController set the nuageController.
+   */
   @VsoMethod
   public void setNuageController(NuageSDNController nuageController) {
     this.nuageController = nuageController;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of rancher servers; in case of a load balanced rancher multi cluster, use virtual ip of the cluster.
+   * @return rancherServers
+   */
+  @VsoMethod
+  public List<String> getRancherServers() {
+    return rancherServers;
+  }
+
+  /**
+   * This is the setter method. this will set the rancherServers
+   * List of rancher servers; in case of a load balanced rancher multi cluster, use virtual ip of the cluster.
+   * @return rancherServers
+   */
+  @VsoMethod
+  public void setRancherServers(List<String>  rancherServers) {
+    this.rancherServers = rancherServers;
+  }
+
+  /**
+   * This is the setter method this will set the rancherServers
+   * List of rancher servers; in case of a load balanced rancher multi cluster, use virtual ip of the cluster.
+   * @return rancherServers
+   */
+  @VsoMethod
   public RancherConfiguration addRancherServersItem(String rancherServersItem) {
     if (this.rancherServers == null) {
       this.rancherServers = new ArrayList<String>();
@@ -419,45 +511,58 @@ public class RancherConfiguration extends AviRestResource  {
     this.rancherServers.add(rancherServersItem);
     return this;
   }
-  
+
+
   /**
-   * List of Rancher servers; In case of a load balanced Rancher multi cluster, use Virtual IP of the cluster.
-   * @return rancherServers
-  **/
-  @ApiModelProperty(value = "List of Rancher servers; In case of a load balanced Rancher multi cluster, use Virtual IP of the cluster.")
-
-
- 
-  @VsoMethod  
-  public List<String> getRancherServers() {
-    return rancherServers;
-  }
-    
-  @VsoMethod
-  public void setRancherServers(List<String> rancherServers) {
-    this.rancherServers = rancherServers;
-  }
-
-  
-  /**
-   * Use Fleet/SSH for SE deployment. Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
+   * This is the getter method this will return the attribute value.
+   * Use fleet/ssh for se deployment.
+   * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
+   * Default value when not specified in API or module is interpreted by Avi Controller as SE_CREATE_SSH.
    * @return seDeploymentMethod
-  **/
-  @ApiModelProperty(value = "Use Fleet/SSH for SE deployment. Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeDeploymentMethod() {
     return seDeploymentMethod;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use fleet/ssh for se deployment.
+   * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
+   * Default value when not specified in API or module is interpreted by Avi Controller as SE_CREATE_SSH.
+   * @param seDeploymentMethod set the seDeploymentMethod.
+   */
   @VsoMethod
-  public void setSeDeploymentMethod(String seDeploymentMethod) {
+  public void setSeDeploymentMethod(String  seDeploymentMethod) {
     this.seDeploymentMethod = seDeploymentMethod;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Exclude hosts with attributes for se creation.
+   * @return seExcludeAttributes
+   */
+  @VsoMethod
+  public List<MesosAttribute> getSeExcludeAttributes() {
+    return seExcludeAttributes;
+  }
+
+  /**
+   * This is the setter method. this will set the seExcludeAttributes
+   * Exclude hosts with attributes for se creation.
+   * @return seExcludeAttributes
+   */
+  @VsoMethod
+  public void setSeExcludeAttributes(List<MesosAttribute>  seExcludeAttributes) {
+    this.seExcludeAttributes = seExcludeAttributes;
+  }
+
+  /**
+   * This is the setter method this will set the seExcludeAttributes
+   * Exclude hosts with attributes for se creation.
+   * @return seExcludeAttributes
+   */
+  @VsoMethod
   public RancherConfiguration addSeExcludeAttributesItem(MesosAttribute seExcludeAttributesItem) {
     if (this.seExcludeAttributes == null) {
       this.seExcludeAttributes = new ArrayList<MesosAttribute>();
@@ -465,27 +570,34 @@ public class RancherConfiguration extends AviRestResource  {
     this.seExcludeAttributes.add(seExcludeAttributesItem);
     return this;
   }
-  
+
+
   /**
-   * Exclude hosts with attributes for SE creation.
-   * @return seExcludeAttributes
-  **/
-  @ApiModelProperty(value = "Exclude hosts with attributes for SE creation.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<MesosAttribute> getSeExcludeAttributes() {
-    return seExcludeAttributes;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Create ses just on hosts with include attributes.
+   * @return seIncludeAttributes
+   */
   @VsoMethod
-  public void setSeExcludeAttributes(List<MesosAttribute> seExcludeAttributes) {
-    this.seExcludeAttributes = seExcludeAttributes;
+  public List<MesosAttribute> getSeIncludeAttributes() {
+    return seIncludeAttributes;
   }
 
-  
+  /**
+   * This is the setter method. this will set the seIncludeAttributes
+   * Create ses just on hosts with include attributes.
+   * @return seIncludeAttributes
+   */
+  @VsoMethod
+  public void setSeIncludeAttributes(List<MesosAttribute>  seIncludeAttributes) {
+    this.seIncludeAttributes = seIncludeAttributes;
+  }
+
+  /**
+   * This is the setter method this will set the seIncludeAttributes
+   * Create ses just on hosts with include attributes.
+   * @return seIncludeAttributes
+   */
+  @VsoMethod
   public RancherConfiguration addSeIncludeAttributesItem(MesosAttribute seIncludeAttributesItem) {
     if (this.seIncludeAttributes == null) {
       this.seIncludeAttributes = new ArrayList<MesosAttribute>();
@@ -493,272 +605,271 @@ public class RancherConfiguration extends AviRestResource  {
     this.seIncludeAttributes.add(seIncludeAttributesItem);
     return this;
   }
-  
+
+
   /**
-   * Create SEs just on hosts with include attributes.
-   * @return seIncludeAttributes
-  **/
-  @ApiModelProperty(value = "Create SEs just on hosts with include attributes.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<MesosAttribute> getSeIncludeAttributes() {
-    return seIncludeAttributes;
-  }
-    
-  @VsoMethod
-  public void setSeIncludeAttributes(List<MesosAttribute> seIncludeAttributes) {
-    this.seIncludeAttributes = seIncludeAttributes;
-  }
-
-  
-  /**
-   * New SE spawn rate per minute.
+   * This is the getter method this will return the attribute value.
+   * New se spawn rate per minute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @return seSpawnRate
-  **/
-  @ApiModelProperty(value = "New SE spawn rate per minute.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeSpawnRate() {
     return seSpawnRate;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * New se spawn rate per minute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 25.
+   * @param seSpawnRate set the seSpawnRate.
+   */
   @VsoMethod
-  public void setSeSpawnRate(Integer seSpawnRate) {
+  public void setSeSpawnRate(Integer  seSpawnRate) {
     this.seSpawnRate = seSpawnRate;
   }
 
-  
   /**
-   * Host volume to be used as a disk for Avi SE, This is a disruptive change.
+   * This is the getter method this will return the attribute value.
+   * Host volume to be used as a disk for avi se, this is a disruptive change.
+   * Default value when not specified in API or module is interpreted by Avi Controller as /opt/avi.
    * @return seVolume
-  **/
-  @ApiModelProperty(value = "Host volume to be used as a disk for Avi SE, This is a disruptive change.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeVolume() {
     return seVolume;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Host volume to be used as a disk for avi se, this is a disruptive change.
+   * Default value when not specified in API or module is interpreted by Avi Controller as /opt/avi.
+   * @param seVolume set the seVolume.
+   */
   @VsoMethod
-  public void setSeVolume(String seVolume) {
+  public void setSeVolume(String  seVolume) {
     this.seVolume = seVolume;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Secret key.
    * @return secretKey
-  **/
-  @ApiModelProperty(value = "Secret key.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSecretKey() {
     return secretKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Secret key.
+   * @param secretKey set the secretKey.
+   */
   @VsoMethod
-  public void setSecretKey(String secretKey) {
+  public void setSecretKey(String  secretKey) {
     this.secretKey = secretKey;
   }
 
-  
   /**
-   * Make service ports accessible on all Host interfaces in addition to East-West VIP and/or bridge IP. Usually enabled AWS clusters to export East-West services on Host interface.
+   * This is the getter method this will return the attribute value.
+   * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
+   * Usually enabled aws clusters to export east-west services on host interface.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return servicesAccessibleAllInterfaces
-  **/
-  @ApiModelProperty(value = "Make service ports accessible on all Host interfaces in addition to East-West VIP and/or bridge IP. Usually enabled AWS clusters to export East-West services on Host interface.")
-
-
- 
-  @VsoMethod  
-  public Boolean isServicesAccessibleAllInterfaces() {
+   */
+  @VsoMethod
+  public Boolean getServicesAccessibleAllInterfaces() {
     return servicesAccessibleAllInterfaces;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
+   * Usually enabled aws clusters to export east-west services on host interface.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param servicesAccessibleAllInterfaces set the servicesAccessibleAllInterfaces.
+   */
   @VsoMethod
-  public void setServicesAccessibleAllInterfaces(Boolean servicesAccessibleAllInterfaces) {
+  public void setServicesAccessibleAllInterfaces(Boolean  servicesAccessibleAllInterfaces) {
     this.servicesAccessibleAllInterfaces = servicesAccessibleAllInterfaces;
   }
 
-  
   /**
-   * Parameters for SSH SE deployment. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Parameters for ssh se deployment.
+   * Field deprecated in 17.1.1.
    * @return sshSeDeployment
-  **/
-  @ApiModelProperty(value = "Parameters for SSH SE deployment. Field deprecated in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SSHSeDeployment getSshSeDeployment() {
     return sshSeDeployment;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Parameters for ssh se deployment.
+   * Field deprecated in 17.1.1.
+   * @param sshSeDeployment set the sshSeDeployment.
+   */
   @VsoMethod
   public void setSshSeDeployment(SSHSeDeployment sshSeDeployment) {
     this.sshSeDeployment = sshSeDeployment;
   }
 
-  
   /**
-   * Cloud connector user uuid for SSH to hosts. It is a reference to an object of type CloudConnectorUser. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Cloud connector user uuid for ssh to hosts.
+   * It is a reference to an object of type cloudconnectoruser.
+   * Field introduced in 17.1.1.
    * @return sshUserRef
-  **/
-  @ApiModelProperty(value = "Cloud connector user uuid for SSH to hosts. It is a reference to an object of type CloudConnectorUser. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSshUserRef() {
     return sshUserRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloud connector user uuid for ssh to hosts.
+   * It is a reference to an object of type cloudconnectoruser.
+   * Field introduced in 17.1.1.
+   * @param sshUserRef set the sshUserRef.
+   */
   @VsoMethod
-  public void setSshUserRef(String sshUserRef) {
+  public void setSshUserRef(String  sshUserRef) {
     this.sshUserRef = sshUserRef;
   }
 
-  
   /**
-   * Use container IP address port for pool instead of host IP address hostport. This mode is applicable if the container IP is reachable (not a private NATed IP) from other hosts in a routed environment for containers.
+   * This is the getter method this will return the attribute value.
+   * Use container ip address port for pool instead of host ip address hostport.
+   * This mode is applicable if the container ip is reachable (not a private nated ip) from other hosts in a routed environment for containers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useContainerIpPort
-  **/
-  @ApiModelProperty(value = "Use container IP address port for pool instead of host IP address hostport. This mode is applicable if the container IP is reachable (not a private NATed IP) from other hosts in a routed environment for containers.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseContainerIpPort() {
+   */
+  @VsoMethod
+  public Boolean getUseContainerIpPort() {
     return useContainerIpPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use container ip address port for pool instead of host ip address hostport.
+   * This mode is applicable if the container ip is reachable (not a private nated ip) from other hosts in a routed environment for containers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useContainerIpPort set the useContainerIpPort.
+   */
   @VsoMethod
-  public void setUseContainerIpPort(Boolean useContainerIpPort) {
+  public void setUseContainerIpPort(Boolean  useContainerIpPort) {
     this.useContainerIpPort = useContainerIpPort;
   }
 
-  
   /**
-   * If true, use controller generated SE docker image via fileservice, else use docker repository image as defined by docker_registry_se.
+   * This is the getter method this will return the attribute value.
+   * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useControllerImage
-  **/
-  @ApiModelProperty(value = "If true, use controller generated SE docker image via fileservice, else use docker repository image as defined by docker_registry_se.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseControllerImage() {
+   */
+  @VsoMethod
+  public Boolean getUseControllerImage() {
     return useControllerImage;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useControllerImage set the useControllerImage.
+   */
   @VsoMethod
-  public void setUseControllerImage(Boolean useControllerImage) {
+  public void setUseControllerImage(Boolean  useControllerImage) {
     this.useControllerImage = useControllerImage;
   }
 
-  
-  public String getObjectID() {
-		return "RancherConfiguration";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    RancherConfiguration rancherConfiguration = (RancherConfiguration) o;
-    return Objects.equals(this.accessKey, rancherConfiguration.accessKey) &&
-        Objects.equals(this.appSyncFrequency, rancherConfiguration.appSyncFrequency) &&
-        Objects.equals(this.containerPortMatchHttpService, rancherConfiguration.containerPortMatchHttpService) &&
-        Objects.equals(this.coredumpDirectory, rancherConfiguration.coredumpDirectory) &&
-        Objects.equals(this.disableAutoBackendServiceSync, rancherConfiguration.disableAutoBackendServiceSync) &&
-        Objects.equals(this.disableAutoFrontendServiceSync, rancherConfiguration.disableAutoFrontendServiceSync) &&
-        Objects.equals(this.disableAutoSeCreation, rancherConfiguration.disableAutoSeCreation) &&
-        Objects.equals(this.dockerRegistrySe, rancherConfiguration.dockerRegistrySe) &&
-        Objects.equals(this.eastWestPlacementSubnet, rancherConfiguration.eastWestPlacementSubnet) &&
-        Objects.equals(this.enableEventSubscription, rancherConfiguration.enableEventSubscription) &&
-        Objects.equals(this.feproxyContainerPortAsService, rancherConfiguration.feproxyContainerPortAsService) &&
-        Objects.equals(this.feproxyVipsEnableProxyArp, rancherConfiguration.feproxyVipsEnableProxyArp) &&
-        Objects.equals(this.fleetEndpoint, rancherConfiguration.fleetEndpoint) &&
-        Objects.equals(this.httpContainerPorts, rancherConfiguration.httpContainerPorts) &&
-        Objects.equals(this.nuageController, rancherConfiguration.nuageController) &&
-        Objects.equals(this.rancherServers, rancherConfiguration.rancherServers) &&
-        Objects.equals(this.seDeploymentMethod, rancherConfiguration.seDeploymentMethod) &&
-        Objects.equals(this.seExcludeAttributes, rancherConfiguration.seExcludeAttributes) &&
-        Objects.equals(this.seIncludeAttributes, rancherConfiguration.seIncludeAttributes) &&
-        Objects.equals(this.seSpawnRate, rancherConfiguration.seSpawnRate) &&
-        Objects.equals(this.seVolume, rancherConfiguration.seVolume) &&
-        Objects.equals(this.secretKey, rancherConfiguration.secretKey) &&
-        Objects.equals(this.servicesAccessibleAllInterfaces, rancherConfiguration.servicesAccessibleAllInterfaces) &&
-        Objects.equals(this.sshSeDeployment, rancherConfiguration.sshSeDeployment) &&
-        Objects.equals(this.sshUserRef, rancherConfiguration.sshUserRef) &&
-        Objects.equals(this.useContainerIpPort, rancherConfiguration.useContainerIpPort) &&
-        Objects.equals(this.useControllerImage, rancherConfiguration.useControllerImage);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(accessKey, appSyncFrequency, containerPortMatchHttpService, coredumpDirectory, disableAutoBackendServiceSync, disableAutoFrontendServiceSync, disableAutoSeCreation, dockerRegistrySe, eastWestPlacementSubnet, enableEventSubscription, feproxyContainerPortAsService, feproxyVipsEnableProxyArp, fleetEndpoint, httpContainerPorts, nuageController, rancherServers, seDeploymentMethod, seExcludeAttributes, seIncludeAttributes, seSpawnRate, seVolume, secretKey, servicesAccessibleAllInterfaces, sshSeDeployment, sshUserRef, useContainerIpPort, useControllerImage);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class RancherConfiguration {\n");
-    
-    sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
-    sb.append("    appSyncFrequency: ").append(toIndentedString(appSyncFrequency)).append("\n");
-    sb.append("    containerPortMatchHttpService: ").append(toIndentedString(containerPortMatchHttpService)).append("\n");
-    sb.append("    coredumpDirectory: ").append(toIndentedString(coredumpDirectory)).append("\n");
-    sb.append("    disableAutoBackendServiceSync: ").append(toIndentedString(disableAutoBackendServiceSync)).append("\n");
-    sb.append("    disableAutoFrontendServiceSync: ").append(toIndentedString(disableAutoFrontendServiceSync)).append("\n");
-    sb.append("    disableAutoSeCreation: ").append(toIndentedString(disableAutoSeCreation)).append("\n");
-    sb.append("    dockerRegistrySe: ").append(toIndentedString(dockerRegistrySe)).append("\n");
-    sb.append("    eastWestPlacementSubnet: ").append(toIndentedString(eastWestPlacementSubnet)).append("\n");
-    sb.append("    enableEventSubscription: ").append(toIndentedString(enableEventSubscription)).append("\n");
-    sb.append("    feproxyContainerPortAsService: ").append(toIndentedString(feproxyContainerPortAsService)).append("\n");
-    sb.append("    feproxyVipsEnableProxyArp: ").append(toIndentedString(feproxyVipsEnableProxyArp)).append("\n");
-    sb.append("    fleetEndpoint: ").append(toIndentedString(fleetEndpoint)).append("\n");
-    sb.append("    httpContainerPorts: ").append(toIndentedString(httpContainerPorts)).append("\n");
-    sb.append("    nuageController: ").append(toIndentedString(nuageController)).append("\n");
-    sb.append("    rancherServers: ").append(toIndentedString(rancherServers)).append("\n");
-    sb.append("    seDeploymentMethod: ").append(toIndentedString(seDeploymentMethod)).append("\n");
-    sb.append("    seExcludeAttributes: ").append(toIndentedString(seExcludeAttributes)).append("\n");
-    sb.append("    seIncludeAttributes: ").append(toIndentedString(seIncludeAttributes)).append("\n");
-    sb.append("    seSpawnRate: ").append(toIndentedString(seSpawnRate)).append("\n");
-    sb.append("    seVolume: ").append(toIndentedString(seVolume)).append("\n");
-    sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
-    sb.append("    servicesAccessibleAllInterfaces: ").append(toIndentedString(servicesAccessibleAllInterfaces)).append("\n");
-    sb.append("    sshSeDeployment: ").append(toIndentedString(sshSeDeployment)).append("\n");
-    sb.append("    sshUserRef: ").append(toIndentedString(sshUserRef)).append("\n");
-    sb.append("    useContainerIpPort: ").append(toIndentedString(useContainerIpPort)).append("\n");
-    sb.append("    useControllerImage: ").append(toIndentedString(useControllerImage)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  RancherConfiguration objRancherConfiguration = (RancherConfiguration) o;
+  return   Objects.equals(this.eastWestPlacementSubnet, objRancherConfiguration.eastWestPlacementSubnet)&&
+  Objects.equals(this.enableEventSubscription, objRancherConfiguration.enableEventSubscription)&&
+  Objects.equals(this.nuageController, objRancherConfiguration.nuageController)&&
+  Objects.equals(this.feproxyVipsEnableProxyArp, objRancherConfiguration.feproxyVipsEnableProxyArp)&&
+  Objects.equals(this.disableAutoBackendServiceSync, objRancherConfiguration.disableAutoBackendServiceSync)&&
+  Objects.equals(this.containerPortMatchHttpService, objRancherConfiguration.containerPortMatchHttpService)&&
+  Objects.equals(this.fleetEndpoint, objRancherConfiguration.fleetEndpoint)&&
+  Objects.equals(this.sshUserRef, objRancherConfiguration.sshUserRef)&&
+  Objects.equals(this.seVolume, objRancherConfiguration.seVolume)&&
+  Objects.equals(this.httpContainerPorts, objRancherConfiguration.httpContainerPorts)&&
+  Objects.equals(this.seExcludeAttributes, objRancherConfiguration.seExcludeAttributes)&&
+  Objects.equals(this.rancherServers, objRancherConfiguration.rancherServers)&&
+  Objects.equals(this.seDeploymentMethod, objRancherConfiguration.seDeploymentMethod)&&
+  Objects.equals(this.dockerRegistrySe, objRancherConfiguration.dockerRegistrySe)&&
+  Objects.equals(this.sshSeDeployment, objRancherConfiguration.sshSeDeployment)&&
+  Objects.equals(this.feproxyContainerPortAsService, objRancherConfiguration.feproxyContainerPortAsService)&&
+  Objects.equals(this.useControllerImage, objRancherConfiguration.useControllerImage)&&
+  Objects.equals(this.coredumpDirectory, objRancherConfiguration.coredumpDirectory)&&
+  Objects.equals(this.disableAutoFrontendServiceSync, objRancherConfiguration.disableAutoFrontendServiceSync)&&
+  Objects.equals(this.seIncludeAttributes, objRancherConfiguration.seIncludeAttributes)&&
+  Objects.equals(this.appSyncFrequency, objRancherConfiguration.appSyncFrequency)&&
+  Objects.equals(this.accessKey, objRancherConfiguration.accessKey)&&
+  Objects.equals(this.servicesAccessibleAllInterfaces, objRancherConfiguration.servicesAccessibleAllInterfaces)&&
+  Objects.equals(this.seSpawnRate, objRancherConfiguration.seSpawnRate)&&
+  Objects.equals(this.secretKey, objRancherConfiguration.secretKey)&&
+  Objects.equals(this.useContainerIpPort, objRancherConfiguration.useContainerIpPort)&&
+  Objects.equals(this.disableAutoSeCreation, objRancherConfiguration.disableAutoSeCreation);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class RancherConfiguration {\n");
+      sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
+        sb.append("    appSyncFrequency: ").append(toIndentedString(appSyncFrequency)).append("\n");
+        sb.append("    containerPortMatchHttpService: ").append(toIndentedString(containerPortMatchHttpService)).append("\n");
+        sb.append("    coredumpDirectory: ").append(toIndentedString(coredumpDirectory)).append("\n");
+        sb.append("    disableAutoBackendServiceSync: ").append(toIndentedString(disableAutoBackendServiceSync)).append("\n");
+        sb.append("    disableAutoFrontendServiceSync: ").append(toIndentedString(disableAutoFrontendServiceSync)).append("\n");
+        sb.append("    disableAutoSeCreation: ").append(toIndentedString(disableAutoSeCreation)).append("\n");
+        sb.append("    dockerRegistrySe: ").append(toIndentedString(dockerRegistrySe)).append("\n");
+        sb.append("    eastWestPlacementSubnet: ").append(toIndentedString(eastWestPlacementSubnet)).append("\n");
+        sb.append("    enableEventSubscription: ").append(toIndentedString(enableEventSubscription)).append("\n");
+        sb.append("    feproxyContainerPortAsService: ").append(toIndentedString(feproxyContainerPortAsService)).append("\n");
+        sb.append("    feproxyVipsEnableProxyArp: ").append(toIndentedString(feproxyVipsEnableProxyArp)).append("\n");
+        sb.append("    fleetEndpoint: ").append(toIndentedString(fleetEndpoint)).append("\n");
+        sb.append("    httpContainerPorts: ").append(toIndentedString(httpContainerPorts)).append("\n");
+        sb.append("    nuageController: ").append(toIndentedString(nuageController)).append("\n");
+        sb.append("    rancherServers: ").append(toIndentedString(rancherServers)).append("\n");
+        sb.append("    seDeploymentMethod: ").append(toIndentedString(seDeploymentMethod)).append("\n");
+        sb.append("    seExcludeAttributes: ").append(toIndentedString(seExcludeAttributes)).append("\n");
+        sb.append("    seIncludeAttributes: ").append(toIndentedString(seIncludeAttributes)).append("\n");
+        sb.append("    seSpawnRate: ").append(toIndentedString(seSpawnRate)).append("\n");
+        sb.append("    seVolume: ").append(toIndentedString(seVolume)).append("\n");
+        sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
+        sb.append("    servicesAccessibleAllInterfaces: ").append(toIndentedString(servicesAccessibleAllInterfaces)).append("\n");
+        sb.append("    sshSeDeployment: ").append(toIndentedString(sshSeDeployment)).append("\n");
+        sb.append("    sshUserRef: ").append(toIndentedString(sshUserRef)).append("\n");
+        sb.append("    useContainerIpPort: ").append(toIndentedString(useContainerIpPort)).append("\n");
+        sb.append("    useControllerImage: ").append(toIndentedString(useControllerImage)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

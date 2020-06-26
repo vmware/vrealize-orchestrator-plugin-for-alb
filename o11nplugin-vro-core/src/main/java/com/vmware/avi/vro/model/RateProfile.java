@@ -1,289 +1,322 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.RateLimiter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.RateLimiterAction;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.RateLimiter;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * RateProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The RateProfile is a POJO class extends AviRestResource that used for creating
+ * RateProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "RateProfile")
-@VsoFinder(name = Constants.FINDER_VRO_RATEPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_RATEPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class RateProfile extends AviRestResource  {
+public class RateProfile extends AviRestResource {
   @JsonProperty("action")
+  @JsonInclude(Include.NON_NULL)
   private RateLimiterAction action = null;
 
   @JsonProperty("burst_sz")
+  @JsonInclude(Include.NON_NULL)
   private Integer burstSz = null;
 
   @JsonProperty("count")
+  @JsonInclude(Include.NON_NULL)
   private Integer count = null;
 
   @JsonProperty("explicit_tracking")
-  private Boolean explicitTracking = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean explicitTracking = false;
 
   @JsonProperty("fine_grain")
-  private Boolean fineGrain = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean fineGrain = false;
 
   @JsonProperty("http_cookie")
+  @JsonInclude(Include.NON_NULL)
   private String httpCookie = null;
 
   @JsonProperty("http_header")
+  @JsonInclude(Include.NON_NULL)
   private String httpHeader = null;
 
   @JsonProperty("period")
-  private Integer period = 1;
+  @JsonInclude(Include.NON_NULL)
+  private Integer period = null;
 
   @JsonProperty("rate_limiter")
+  @JsonInclude(Include.NON_NULL)
   private RateLimiter rateLimiter = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Action to perform upon rate limiting.
    * @return action
-  **/
-  @ApiModelProperty(required = true, value = "Action to perform upon rate limiting.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public RateLimiterAction getAction() {
     return action;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Action to perform upon rate limiting.
+   * @param action set the action.
+   */
   @VsoMethod
   public void setAction(RateLimiterAction action) {
     this.action = action;
   }
 
-  
   /**
-   * Maximum number of connections or requests or packets to be let through instantaneously. (deprecated). Allowed values are 10-2500. Special values are 0- 'automatic'.
+   * This is the getter method this will return the attribute value.
+   * Maximum number of connections or requests or packets to be let through instantaneously.
+   * Allowed values are 10-2500.
+   * Special values are 0- 'automatic'.
+   * Field deprecated in 18.2.9.
    * @return burstSz
-  **/
-  @ApiModelProperty(value = "Maximum number of connections or requests or packets to be let through instantaneously. (deprecated). Allowed values are 10-2500. Special values are 0- 'automatic'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getBurstSz() {
     return burstSz;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of connections or requests or packets to be let through instantaneously.
+   * Allowed values are 10-2500.
+   * Special values are 0- 'automatic'.
+   * Field deprecated in 18.2.9.
+   * @param burstSz set the burstSz.
+   */
   @VsoMethod
-  public void setBurstSz(Integer burstSz) {
+  public void setBurstSz(Integer  burstSz) {
     this.burstSz = burstSz;
   }
 
-  
   /**
-   * Maximum number of connections or requests or packets. (deprecated). Allowed values are 1-1000000000. Special values are 0- 'unlimited'.
+   * This is the getter method this will return the attribute value.
+   * Maximum number of connections or requests or packets.
+   * Allowed values are 1-1000000000.
+   * Special values are 0- 'unlimited'.
+   * Field deprecated in 18.2.9.
    * @return count
-  **/
-  @ApiModelProperty(value = "Maximum number of connections or requests or packets. (deprecated). Allowed values are 1-1000000000. Special values are 0- 'unlimited'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getCount() {
     return count;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of connections or requests or packets.
+   * Allowed values are 1-1000000000.
+   * Special values are 0- 'unlimited'.
+   * Field deprecated in 18.2.9.
+   * @param count set the count.
+   */
   @VsoMethod
-  public void setCount(Integer count) {
+  public void setCount(Integer  count) {
     this.count = count;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Explicitly tracks an attacker across rate periods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return explicitTracking
-  **/
-  @ApiModelProperty(value = "Explicitly tracks an attacker across rate periods.")
-
-
- 
-  @VsoMethod  
-  public Boolean isExplicitTracking() {
+   */
+  @VsoMethod
+  public Boolean getExplicitTracking() {
     return explicitTracking;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Explicitly tracks an attacker across rate periods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param explicitTracking set the explicitTracking.
+   */
   @VsoMethod
-  public void setExplicitTracking(Boolean explicitTracking) {
+  public void setExplicitTracking(Boolean  explicitTracking) {
     this.explicitTracking = explicitTracking;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Enable fine granularity.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return fineGrain
-  **/
-  @ApiModelProperty(value = "Enable fine granularity.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFineGrain() {
+   */
+  @VsoMethod
+  public Boolean getFineGrain() {
     return fineGrain;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable fine granularity.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param fineGrain set the fineGrain.
+   */
   @VsoMethod
-  public void setFineGrain(Boolean fineGrain) {
+  public void setFineGrain(Boolean  fineGrain) {
     this.fineGrain = fineGrain;
   }
 
-  
   /**
-   * HTTP cookie name. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Http cookie name.
+   * Field introduced in 17.1.1.
    * @return httpCookie
-  **/
-  @ApiModelProperty(value = "HTTP cookie name. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHttpCookie() {
     return httpCookie;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http cookie name.
+   * Field introduced in 17.1.1.
+   * @param httpCookie set the httpCookie.
+   */
   @VsoMethod
-  public void setHttpCookie(String httpCookie) {
+  public void setHttpCookie(String  httpCookie) {
     this.httpCookie = httpCookie;
   }
 
-  
   /**
-   * HTTP header name. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Http header name.
+   * Field introduced in 17.1.1.
    * @return httpHeader
-  **/
-  @ApiModelProperty(value = "HTTP header name. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHttpHeader() {
     return httpHeader;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http header name.
+   * Field introduced in 17.1.1.
+   * @param httpHeader set the httpHeader.
+   */
   @VsoMethod
-  public void setHttpHeader(String httpHeader) {
+  public void setHttpHeader(String  httpHeader) {
     this.httpHeader = httpHeader;
   }
 
-  
   /**
-   * Time value in seconds to enforce rate count. (deprecated). Allowed values are 1-300.
+   * This is the getter method this will return the attribute value.
+   * Time value in seconds to enforce rate count.
+   * Allowed values are 1-300.
+   * Field deprecated in 18.2.9.
    * @return period
-  **/
-  @ApiModelProperty(value = "Time value in seconds to enforce rate count. (deprecated). Allowed values are 1-300.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPeriod() {
     return period;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Time value in seconds to enforce rate count.
+   * Allowed values are 1-300.
+   * Field deprecated in 18.2.9.
+   * @param period set the period.
+   */
   @VsoMethod
-  public void setPeriod(Integer period) {
+  public void setPeriod(Integer  period) {
     this.period = period;
   }
 
-  
   /**
-   * The rate limiter configuration for this rate profile. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * The rate limiter configuration for this rate profile.
+   * Field introduced in 18.2.9.
    * @return rateLimiter
-  **/
-  @ApiModelProperty(required = true, value = "The rate limiter configuration for this rate profile. Field introduced in 20.1.1.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public RateLimiter getRateLimiter() {
     return rateLimiter;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The rate limiter configuration for this rate profile.
+   * Field introduced in 18.2.9.
+   * @param rateLimiter set the rateLimiter.
+   */
   @VsoMethod
   public void setRateLimiter(RateLimiter rateLimiter) {
     this.rateLimiter = rateLimiter;
   }
 
-  
-  public String getObjectID() {
-		return "RateProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    RateProfile rateProfile = (RateProfile) o;
-    return Objects.equals(this.action, rateProfile.action) &&
-        Objects.equals(this.burstSz, rateProfile.burstSz) &&
-        Objects.equals(this.count, rateProfile.count) &&
-        Objects.equals(this.explicitTracking, rateProfile.explicitTracking) &&
-        Objects.equals(this.fineGrain, rateProfile.fineGrain) &&
-        Objects.equals(this.httpCookie, rateProfile.httpCookie) &&
-        Objects.equals(this.httpHeader, rateProfile.httpHeader) &&
-        Objects.equals(this.period, rateProfile.period) &&
-        Objects.equals(this.rateLimiter, rateProfile.rateLimiter);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(action, burstSz, count, explicitTracking, fineGrain, httpCookie, httpHeader, period, rateLimiter);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class RateProfile {\n");
-    
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    burstSz: ").append(toIndentedString(burstSz)).append("\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    explicitTracking: ").append(toIndentedString(explicitTracking)).append("\n");
-    sb.append("    fineGrain: ").append(toIndentedString(fineGrain)).append("\n");
-    sb.append("    httpCookie: ").append(toIndentedString(httpCookie)).append("\n");
-    sb.append("    httpHeader: ").append(toIndentedString(httpHeader)).append("\n");
-    sb.append("    period: ").append(toIndentedString(period)).append("\n");
-    sb.append("    rateLimiter: ").append(toIndentedString(rateLimiter)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  RateProfile objRateProfile = (RateProfile) o;
+  return   Objects.equals(this.count, objRateProfile.count)&&
+  Objects.equals(this.httpHeader, objRateProfile.httpHeader)&&
+  Objects.equals(this.httpCookie, objRateProfile.httpCookie)&&
+  Objects.equals(this.explicitTracking, objRateProfile.explicitTracking)&&
+  Objects.equals(this.period, objRateProfile.period)&&
+  Objects.equals(this.action, objRateProfile.action)&&
+  Objects.equals(this.burstSz, objRateProfile.burstSz)&&
+  Objects.equals(this.rateLimiter, objRateProfile.rateLimiter)&&
+  Objects.equals(this.fineGrain, objRateProfile.fineGrain);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class RateProfile {\n");
+      sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    burstSz: ").append(toIndentedString(burstSz)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    explicitTracking: ").append(toIndentedString(explicitTracking)).append("\n");
+        sb.append("    fineGrain: ").append(toIndentedString(fineGrain)).append("\n");
+        sb.append("    httpCookie: ").append(toIndentedString(httpCookie)).append("\n");
+        sb.append("    httpHeader: ").append(toIndentedString(httpHeader)).append("\n");
+        sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    rateLimiter: ").append(toIndentedString(rateLimiter)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

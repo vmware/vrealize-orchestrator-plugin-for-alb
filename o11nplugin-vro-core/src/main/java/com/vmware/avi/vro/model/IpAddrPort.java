@@ -1,166 +1,171 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpAddrPort
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpAddrPort is a POJO class extends AviRestResource that used for creating
+ * IpAddrPort.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpAddrPort")
-@VsoFinder(name = Constants.FINDER_VRO_IPADDRPORT, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_IPADDRPORT)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpAddrPort extends AviRestResource  {
+public class IpAddrPort extends AviRestResource {
   @JsonProperty("hostname")
+  @JsonInclude(Include.NON_NULL)
   private String hostname = null;
 
   @JsonProperty("ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ip = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private Integer port = null;
 
-  
+
+
   /**
-   * Hostname of server. One of IP address or hostname should be set.
+   * This is the getter method this will return the attribute value.
+   * Hostname of server.
+   * One of ip address or hostname should be set.
    * @return hostname
-  **/
-  @ApiModelProperty(value = "Hostname of server. One of IP address or hostname should be set.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHostname() {
     return hostname;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Hostname of server.
+   * One of ip address or hostname should be set.
+   * @param hostname set the hostname.
+   */
   @VsoMethod
-  public void setHostname(String hostname) {
+  public void setHostname(String  hostname) {
     this.hostname = hostname;
   }
 
-  
   /**
-   * IP Address of host. One of IP address or hostname should be set.
+   * This is the getter method this will return the attribute value.
+   * Ip address of host.
+   * One of ip address or hostname should be set.
    * @return ip
-  **/
-  @ApiModelProperty(value = "IP Address of host. One of IP address or hostname should be set.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIp() {
     return ip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address of host.
+   * One of ip address or hostname should be set.
+   * @param ip set the ip.
+   */
   @VsoMethod
   public void setIp(IpAddr ip) {
     this.ip = ip;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(value = "Name of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Port number of server. Allowed values are 1-65535.
+   * This is the getter method this will return the attribute value.
+   * Port number of server.
+   * Allowed values are 1-65535.
    * @return port
-  **/
-  @ApiModelProperty(required = true, value = "Port number of server. Allowed values are 1-65535.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Port number of server.
+   * Allowed values are 1-65535.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(Integer port) {
+  public void setPort(Integer  port) {
     this.port = port;
   }
 
-  
-  public String getObjectID() {
-		return "IpAddrPort";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpAddrPort ipAddrPort = (IpAddrPort) o;
-    return Objects.equals(this.hostname, ipAddrPort.hostname) &&
-        Objects.equals(this.ip, ipAddrPort.ip) &&
-        Objects.equals(this.name, ipAddrPort.name) &&
-        Objects.equals(this.port, ipAddrPort.port);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(hostname, ip, name, port);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpAddrPort {\n");
-    
-    sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
-    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpAddrPort objIpAddrPort = (IpAddrPort) o;
+  return   Objects.equals(this.ip, objIpAddrPort.ip)&&
+  Objects.equals(this.hostname, objIpAddrPort.hostname)&&
+  Objects.equals(this.port, objIpAddrPort.port)&&
+  Objects.equals(this.name, objIpAddrPort.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpAddrPort {\n");
+      sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,117 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CloudMeta
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CloudMeta is a POJO class extends AviRestResource that used for creating
+ * CloudMeta.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CloudMeta")
-@VsoFinder(name = Constants.FINDER_VRO_CLOUDMETA, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CLOUDMETA)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CloudMeta extends AviRestResource  {
+public class CloudMeta extends AviRestResource {
   @JsonProperty("key")
+  @JsonInclude(Include.NON_NULL)
   private String key = null;
 
   @JsonProperty("value")
+  @JsonInclude(Include.NON_NULL)
   private String value = null;
 
-  
+
+
   /**
-   * key of CloudMeta.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property key of obj type cloudmeta field type str  type string.
    * @return key
-  **/
-  @ApiModelProperty(required = true, value = "key of CloudMeta.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getKey() {
     return key;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property key of obj type cloudmeta field type str  type string.
+   * @param key set the key.
+   */
   @VsoMethod
-  public void setKey(String key) {
+  public void setKey(String  key) {
     this.key = key;
   }
 
-  
   /**
-   * value of CloudMeta.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property value of obj type cloudmeta field type str  type string.
    * @return value
-  **/
-  @ApiModelProperty(required = true, value = "value of CloudMeta.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getValue() {
     return value;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property value of obj type cloudmeta field type str  type string.
+   * @param value set the value.
+   */
   @VsoMethod
-  public void setValue(String value) {
+  public void setValue(String  value) {
     this.value = value;
   }
 
-  
-  public String getObjectID() {
-		return "CloudMeta";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CloudMeta cloudMeta = (CloudMeta) o;
-    return Objects.equals(this.key, cloudMeta.key) &&
-        Objects.equals(this.value, cloudMeta.value);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(key, value);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CloudMeta {\n");
-    
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CloudMeta objCloudMeta = (CloudMeta) o;
+  return   Objects.equals(this.value, objCloudMeta.value)&&
+  Objects.equals(this.key, objCloudMeta.key);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CloudMeta {\n");
+      sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

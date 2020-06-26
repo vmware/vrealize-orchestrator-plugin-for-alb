@@ -1,217 +1,233 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HSMThalesNetHsm
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HSMThalesNetHsm is a POJO class extends AviRestResource that used for creating
+ * HSMThalesNetHsm.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HSMThalesNetHsm")
-@VsoFinder(name = Constants.FINDER_VRO_HSMTHALESNETHSM, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HSMTHALESNETHSM)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HSMThalesNetHsm extends AviRestResource  {
+public class HSMThalesNetHsm extends AviRestResource {
   @JsonProperty("esn")
+  @JsonInclude(Include.NON_NULL)
   private String esn = null;
 
   @JsonProperty("keyhash")
+  @JsonInclude(Include.NON_NULL)
   private String keyhash = null;
 
   @JsonProperty("module_id")
-  private Integer moduleId = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer moduleId = 0;
 
   @JsonProperty("priority")
+  @JsonInclude(Include.NON_NULL)
   private Integer priority = 100;
 
   @JsonProperty("remote_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr remoteIp = null;
 
   @JsonProperty("remote_port")
+  @JsonInclude(Include.NON_NULL)
   private Integer remotePort = 9004;
 
-  
+
+
   /**
-   * Electronic serial number of the netHSM device. Use Thales anonkneti utility to find the netHSM ESN.
+   * This is the getter method this will return the attribute value.
+   * Electronic serial number of the nethsm device.
+   * Use thales anonkneti utility to find the nethsm esn.
    * @return esn
-  **/
-  @ApiModelProperty(required = true, value = "Electronic serial number of the netHSM device. Use Thales anonkneti utility to find the netHSM ESN.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEsn() {
     return esn;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Electronic serial number of the nethsm device.
+   * Use thales anonkneti utility to find the nethsm esn.
+   * @param esn set the esn.
+   */
   @VsoMethod
-  public void setEsn(String esn) {
+  public void setEsn(String  esn) {
     this.esn = esn;
   }
 
-  
   /**
-   * Hash of the key that netHSM device uses to authenticate itself. Use Thales anonkneti utility to find the netHSM keyhash.
+   * This is the getter method this will return the attribute value.
+   * Hash of the key that nethsm device uses to authenticate itself.
+   * Use thales anonkneti utility to find the nethsm keyhash.
    * @return keyhash
-  **/
-  @ApiModelProperty(required = true, value = "Hash of the key that netHSM device uses to authenticate itself. Use Thales anonkneti utility to find the netHSM keyhash.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getKeyhash() {
     return keyhash;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Hash of the key that nethsm device uses to authenticate itself.
+   * Use thales anonkneti utility to find the nethsm keyhash.
+   * @param keyhash set the keyhash.
+   */
   @VsoMethod
-  public void setKeyhash(String keyhash) {
+  public void setKeyhash(String  keyhash) {
     this.keyhash = keyhash;
   }
 
-  
   /**
-   * Local module id of the netHSM device.
+   * This is the getter method this will return the attribute value.
+   * Local module id of the nethsm device.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return moduleId
-  **/
-  @ApiModelProperty(value = "Local module id of the netHSM device.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getModuleId() {
     return moduleId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Local module id of the nethsm device.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param moduleId set the moduleId.
+   */
   @VsoMethod
-  public void setModuleId(Integer moduleId) {
+  public void setModuleId(Integer  moduleId) {
     this.moduleId = moduleId;
   }
 
-  
   /**
-   * Priority class of the nethsm in an high availability setup. 1 is the highest priority and 100 is the lowest priority. Allowed values are 1-100.
+   * This is the getter method this will return the attribute value.
+   * Priority class of the nethsm in an high availability setup.
+   * 1 is the highest priority and 100 is the lowest priority.
+   * Allowed values are 1-100.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return priority
-  **/
-  @ApiModelProperty(required = true, value = "Priority class of the nethsm in an high availability setup. 1 is the highest priority and 100 is the lowest priority. Allowed values are 1-100.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPriority() {
     return priority;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Priority class of the nethsm in an high availability setup.
+   * 1 is the highest priority and 100 is the lowest priority.
+   * Allowed values are 1-100.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param priority set the priority.
+   */
   @VsoMethod
-  public void setPriority(Integer priority) {
+  public void setPriority(Integer  priority) {
     this.priority = priority;
   }
 
-  
   /**
-   * IP address of the netHSM device.
+   * This is the getter method this will return the attribute value.
+   * Ip address of the nethsm device.
    * @return remoteIp
-  **/
-  @ApiModelProperty(required = true, value = "IP address of the netHSM device.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getRemoteIp() {
     return remoteIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address of the nethsm device.
+   * @param remoteIp set the remoteIp.
+   */
   @VsoMethod
   public void setRemoteIp(IpAddr remoteIp) {
     this.remoteIp = remoteIp;
   }
 
-  
   /**
-   * Port at which the netHSM device accepts the connection. Allowed values are 1-65535.
+   * This is the getter method this will return the attribute value.
+   * Port at which the nethsm device accepts the connection.
+   * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 9004.
    * @return remotePort
-  **/
-  @ApiModelProperty(value = "Port at which the netHSM device accepts the connection. Allowed values are 1-65535.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getRemotePort() {
     return remotePort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Port at which the nethsm device accepts the connection.
+   * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 9004.
+   * @param remotePort set the remotePort.
+   */
   @VsoMethod
-  public void setRemotePort(Integer remotePort) {
+  public void setRemotePort(Integer  remotePort) {
     this.remotePort = remotePort;
   }
 
-  
-  public String getObjectID() {
-		return "HSMThalesNetHsm";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HSMThalesNetHsm hsMThalesNetHsm = (HSMThalesNetHsm) o;
-    return Objects.equals(this.esn, hsMThalesNetHsm.esn) &&
-        Objects.equals(this.keyhash, hsMThalesNetHsm.keyhash) &&
-        Objects.equals(this.moduleId, hsMThalesNetHsm.moduleId) &&
-        Objects.equals(this.priority, hsMThalesNetHsm.priority) &&
-        Objects.equals(this.remoteIp, hsMThalesNetHsm.remoteIp) &&
-        Objects.equals(this.remotePort, hsMThalesNetHsm.remotePort);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(esn, keyhash, moduleId, priority, remoteIp, remotePort);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HSMThalesNetHsm {\n");
-    
-    sb.append("    esn: ").append(toIndentedString(esn)).append("\n");
-    sb.append("    keyhash: ").append(toIndentedString(keyhash)).append("\n");
-    sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
-    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-    sb.append("    remoteIp: ").append(toIndentedString(remoteIp)).append("\n");
-    sb.append("    remotePort: ").append(toIndentedString(remotePort)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HSMThalesNetHsm objHSMThalesNetHsm = (HSMThalesNetHsm) o;
+  return   Objects.equals(this.remotePort, objHSMThalesNetHsm.remotePort)&&
+  Objects.equals(this.priority, objHSMThalesNetHsm.priority)&&
+  Objects.equals(this.keyhash, objHSMThalesNetHsm.keyhash)&&
+  Objects.equals(this.moduleId, objHSMThalesNetHsm.moduleId)&&
+  Objects.equals(this.esn, objHSMThalesNetHsm.esn)&&
+  Objects.equals(this.remoteIp, objHSMThalesNetHsm.remoteIp);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HSMThalesNetHsm {\n");
+      sb.append("    esn: ").append(toIndentedString(esn)).append("\n");
+        sb.append("    keyhash: ").append(toIndentedString(keyhash)).append("\n");
+        sb.append("    moduleId: ").append(toIndentedString(moduleId)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    remoteIp: ").append(toIndentedString(remoteIp)).append("\n");
+        sb.append("    remotePort: ").append(toIndentedString(remotePort)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

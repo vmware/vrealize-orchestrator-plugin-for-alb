@@ -1,313 +1,317 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.RoutingService;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * NetworkService
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The NetworkService is a POJO class extends AviRestResource that used for creating
+ * NetworkService.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "NetworkService")
 @VsoFinder(name = Constants.FINDER_VRO_NETWORKSERVICE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class NetworkService extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class NetworkService extends AviRestResource {
   @JsonProperty("cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudRef = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("routing_service")
+  @JsonInclude(Include.NON_NULL)
   private RoutingService routingService = null;
 
   @JsonProperty("se_group_ref")
+  @JsonInclude(Include.NON_NULL)
   private String seGroupRef = null;
 
   @JsonProperty("service_type")
+  @JsonInclude(Include.NON_NULL)
   private String serviceType = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vrf_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vrfRef = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type Cloud. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 18.2.5.
    * @return cloudRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Cloud. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudRef() {
     return cloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 18.2.5.
+   * @param cloudRef set the cloudRef.
+   */
   @VsoMethod
-  public void setCloudRef(String cloudRef) {
+  public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
   }
 
-  
   /**
-   * Name of the NetworkService. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Name of the networkservice.
+   * Field introduced in 18.2.5.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the NetworkService. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the networkservice.
+   * Field introduced in 18.2.5.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Routing Information of the NetworkService. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Routing information of the networkservice.
+   * Field introduced in 18.2.5.
    * @return routingService
-  **/
-  @ApiModelProperty(value = "Routing Information of the NetworkService. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public RoutingService getRoutingService() {
     return routingService;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Routing information of the networkservice.
+   * Field introduced in 18.2.5.
+   * @param routingService set the routingService.
+   */
   @VsoMethod
   public void setRoutingService(RoutingService routingService) {
     this.routingService = routingService;
   }
 
-  
   /**
-   * Service Engine Group to which the service is applied. It is a reference to an object of type ServiceEngineGroup. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Service engine group to which the service is applied.
+   * It is a reference to an object of type serviceenginegroup.
+   * Field introduced in 18.2.5.
    * @return seGroupRef
-  **/
-  @ApiModelProperty(required = true, value = "Service Engine Group to which the service is applied. It is a reference to an object of type ServiceEngineGroup. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeGroupRef() {
     return seGroupRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine group to which the service is applied.
+   * It is a reference to an object of type serviceenginegroup.
+   * Field introduced in 18.2.5.
+   * @param seGroupRef set the seGroupRef.
+   */
   @VsoMethod
-  public void setSeGroupRef(String seGroupRef) {
+  public void setSeGroupRef(String  seGroupRef) {
     this.seGroupRef = seGroupRef;
   }
 
-  
   /**
-   * Indicates the type of NetworkService. Enum options - ROUTING_SERVICE. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Indicates the type of networkservice.
+   * Enum options - ROUTING_SERVICE.
+   * Field introduced in 18.2.5.
    * @return serviceType
-  **/
-  @ApiModelProperty(required = true, value = "Indicates the type of NetworkService. Enum options - ROUTING_SERVICE. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServiceType() {
     return serviceType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates the type of networkservice.
+   * Enum options - ROUTING_SERVICE.
+   * Field introduced in 18.2.5.
+   * @param serviceType set the serviceType.
+   */
   @VsoMethod
-  public void setServiceType(String serviceType) {
+  public void setServiceType(String  serviceType) {
     this.serviceType = serviceType;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.5.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.5.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the NetworkService. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the networkservice.
+   * Field introduced in 18.2.5.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the NetworkService. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the networkservice.
+   * Field introduced in 18.2.5.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * VRF context to which the service is scoped. It is a reference to an object of type VrfContext. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Vrf context to which the service is scoped.
+   * It is a reference to an object of type vrfcontext.
+   * Field introduced in 18.2.5.
    * @return vrfRef
-  **/
-  @ApiModelProperty(required = true, value = "VRF context to which the service is scoped. It is a reference to an object of type VrfContext. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVrfRef() {
     return vrfRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Vrf context to which the service is scoped.
+   * It is a reference to an object of type vrfcontext.
+   * Field introduced in 18.2.5.
+   * @param vrfRef set the vrfRef.
+   */
   @VsoMethod
-  public void setVrfRef(String vrfRef) {
+  public void setVrfRef(String  vrfRef) {
     this.vrfRef = vrfRef;
   }
 
-  
+
   public String getObjectID() {
-		return "NetworkService";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    NetworkService networkService = (NetworkService) o;
-    return Objects.equals(this.lastModified, networkService.lastModified) &&
-        Objects.equals(this.cloudRef, networkService.cloudRef) &&
-        Objects.equals(this.name, networkService.name) &&
-        Objects.equals(this.routingService, networkService.routingService) &&
-        Objects.equals(this.seGroupRef, networkService.seGroupRef) &&
-        Objects.equals(this.serviceType, networkService.serviceType) &&
-        Objects.equals(this.tenantRef, networkService.tenantRef) &&
-        Objects.equals(this.url, networkService.url) &&
-        Objects.equals(this.uuid, networkService.uuid) &&
-        Objects.equals(this.vrfRef, networkService.vrfRef);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, cloudRef, name, routingService, seGroupRef, serviceType, tenantRef, url, uuid, vrfRef);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NetworkService {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    routingService: ").append(toIndentedString(routingService)).append("\n");
-    sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
-    sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vrfRef: ").append(toIndentedString(vrfRef)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  NetworkService objNetworkService = (NetworkService) o;
+  return   Objects.equals(this.uuid, objNetworkService.uuid)&&
+  Objects.equals(this.cloudRef, objNetworkService.cloudRef)&&
+  Objects.equals(this.serviceType, objNetworkService.serviceType)&&
+  Objects.equals(this.routingService, objNetworkService.routingService)&&
+  Objects.equals(this.seGroupRef, objNetworkService.seGroupRef)&&
+  Objects.equals(this.vrfRef, objNetworkService.vrfRef)&&
+  Objects.equals(this.tenantRef, objNetworkService.tenantRef)&&
+  Objects.equals(this.name, objNetworkService.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class NetworkService {\n");
+      sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    routingService: ").append(toIndentedString(routingService)).append("\n");
+        sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vrfRef: ").append(toIndentedString(vrfRef)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

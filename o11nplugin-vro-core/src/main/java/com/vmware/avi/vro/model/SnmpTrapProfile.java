@@ -1,109 +1,117 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.SnmpTrapServer;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SnmpTrapProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SnmpTrapProfile is a POJO class extends AviRestResource that used for creating
+ * SnmpTrapProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SnmpTrapProfile")
 @VsoFinder(name = Constants.FINDER_VRO_SNMPTRAPPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SnmpTrapProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class SnmpTrapProfile extends AviRestResource {
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("trap_servers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<SnmpTrapServer> trapServers = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * A user-friendly name of the SNMP trap configuration.
+   * This is the getter method this will return the attribute value.
+   * A user-friendly name of the snmp trap configuration.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "A user-friendly name of the SNMP trap configuration.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A user-friendly name of the snmp trap configuration.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * The ip address or hostname of the snmp trap destination server.
+   * @return trapServers
+   */
+  @VsoMethod
+  public List<SnmpTrapServer> getTrapServers() {
+    return trapServers;
+  }
+
+  /**
+   * This is the setter method. this will set the trapServers
+   * The ip address or hostname of the snmp trap destination server.
+   * @return trapServers
+   */
+  @VsoMethod
+  public void setTrapServers(List<SnmpTrapServer>  trapServers) {
+    this.trapServers = trapServers;
+  }
+
+  /**
+   * This is the setter method this will set the trapServers
+   * The ip address or hostname of the snmp trap destination server.
+   * @return trapServers
+   */
+  @VsoMethod
   public SnmpTrapProfile addTrapServersItem(SnmpTrapServer trapServersItem) {
     if (this.trapServers == null) {
       this.trapServers = new ArrayList<SnmpTrapServer>();
@@ -111,115 +119,87 @@ public class SnmpTrapProfile extends AviRestResource  {
     this.trapServers.add(trapServersItem);
     return this;
   }
-  
-  /**
-   * The IP address or hostname of the SNMP trap destination server.
-   * @return trapServers
-  **/
-  @ApiModelProperty(value = "The IP address or hostname of the SNMP trap destination server.")
 
-  @Valid
-
- 
-  @VsoMethod  
-  public List<SnmpTrapServer> getTrapServers() {
-    return trapServers;
-  }
-    
-  @VsoMethod
-  public void setTrapServers(List<SnmpTrapServer> trapServers) {
-    this.trapServers = trapServers;
-  }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the SNMP trap profile object.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the snmp trap profile object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the SNMP trap profile object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the snmp trap profile object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "SnmpTrapProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SnmpTrapProfile snmpTrapProfile = (SnmpTrapProfile) o;
-    return Objects.equals(this.lastModified, snmpTrapProfile.lastModified) &&
-        Objects.equals(this.name, snmpTrapProfile.name) &&
-        Objects.equals(this.tenantRef, snmpTrapProfile.tenantRef) &&
-        Objects.equals(this.trapServers, snmpTrapProfile.trapServers) &&
-        Objects.equals(this.url, snmpTrapProfile.url) &&
-        Objects.equals(this.uuid, snmpTrapProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, name, tenantRef, trapServers, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SnmpTrapProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    trapServers: ").append(toIndentedString(trapServers)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SnmpTrapProfile objSnmpTrapProfile = (SnmpTrapProfile) o;
+  return   Objects.equals(this.trapServers, objSnmpTrapProfile.trapServers)&&
+  Objects.equals(this.tenantRef, objSnmpTrapProfile.tenantRef)&&
+  Objects.equals(this.uuid, objSnmpTrapProfile.uuid)&&
+  Objects.equals(this.name, objSnmpTrapProfile.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SnmpTrapProfile {\n");
+      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    trapServers: ").append(toIndentedString(trapServers)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

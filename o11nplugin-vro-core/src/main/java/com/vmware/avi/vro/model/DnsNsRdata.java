@@ -1,143 +1,146 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DnsNsRdata
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DnsNsRdata is a POJO class extends AviRestResource that used for creating
+ * DnsNsRdata.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DnsNsRdata")
-@VsoFinder(name = Constants.FINDER_VRO_DNSNSRDATA, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DNSNSRDATA)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DnsNsRdata extends AviRestResource  {
+public class DnsNsRdata extends AviRestResource {
   @JsonProperty("ip6_address")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ip6Address = null;
 
   @JsonProperty("ip_address")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ipAddress = null;
 
   @JsonProperty("nsname")
+  @JsonInclude(Include.NON_NULL)
   private String nsname = null;
 
-  
+
+
   /**
-   * IPv6 address for Name Server. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address for name server.
+   * Field introduced in 18.1.1.
    * @return ip6Address
-  **/
-  @ApiModelProperty(value = "IPv6 address for Name Server. Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIp6Address() {
     return ip6Address;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address for name server.
+   * Field introduced in 18.1.1.
+   * @param ip6Address set the ip6Address.
+   */
   @VsoMethod
   public void setIp6Address(IpAddr ip6Address) {
     this.ip6Address = ip6Address;
   }
 
-  
   /**
-   * IP address for Name Server. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ip address for name server.
+   * Field introduced in 17.1.1.
    * @return ipAddress
-  **/
-  @ApiModelProperty(value = "IP address for Name Server. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIpAddress() {
     return ipAddress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address for name server.
+   * Field introduced in 17.1.1.
+   * @param ipAddress set the ipAddress.
+   */
   @VsoMethod
   public void setIpAddress(IpAddr ipAddress) {
     this.ipAddress = ipAddress;
   }
 
-  
   /**
-   * Name Server name. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Name server name.
+   * Field introduced in 17.1.1.
    * @return nsname
-  **/
-  @ApiModelProperty(required = true, value = "Name Server name. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNsname() {
     return nsname;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name server name.
+   * Field introduced in 17.1.1.
+   * @param nsname set the nsname.
+   */
   @VsoMethod
-  public void setNsname(String nsname) {
+  public void setNsname(String  nsname) {
     this.nsname = nsname;
   }
 
-  
-  public String getObjectID() {
-		return "DnsNsRdata";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DnsNsRdata dnsNsRdata = (DnsNsRdata) o;
-    return Objects.equals(this.ip6Address, dnsNsRdata.ip6Address) &&
-        Objects.equals(this.ipAddress, dnsNsRdata.ipAddress) &&
-        Objects.equals(this.nsname, dnsNsRdata.nsname);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ip6Address, ipAddress, nsname);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DnsNsRdata {\n");
-    
-    sb.append("    ip6Address: ").append(toIndentedString(ip6Address)).append("\n");
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    nsname: ").append(toIndentedString(nsname)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DnsNsRdata objDnsNsRdata = (DnsNsRdata) o;
+  return   Objects.equals(this.ip6Address, objDnsNsRdata.ip6Address)&&
+  Objects.equals(this.ipAddress, objDnsNsRdata.ipAddress)&&
+  Objects.equals(this.nsname, objDnsNsRdata.nsname);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DnsNsRdata {\n");
+      sb.append("    ip6Address: ").append(toIndentedString(ip6Address)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    nsname: ").append(toIndentedString(nsname)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

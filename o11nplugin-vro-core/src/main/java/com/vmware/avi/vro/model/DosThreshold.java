@@ -1,142 +1,144 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DosThreshold
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DosThreshold is a POJO class extends AviRestResource that used for creating
+ * DosThreshold.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DosThreshold")
-@VsoFinder(name = Constants.FINDER_VRO_DOSTHRESHOLD, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DOSTHRESHOLD)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DosThreshold extends AviRestResource  {
+public class DosThreshold extends AviRestResource {
   @JsonProperty("attack")
+  @JsonInclude(Include.NON_NULL)
   private String attack = null;
 
   @JsonProperty("max_value")
+  @JsonInclude(Include.NON_NULL)
   private Integer maxValue = null;
 
   @JsonProperty("min_value")
+  @JsonInclude(Include.NON_NULL)
   private Integer minValue = null;
 
-  
+
+
   /**
-   * Attack type. Enum options - LAND, SMURF, ICMP_PING_FLOOD, UNKOWN_PROTOCOL, TEARDROP, IP_FRAG_OVERRUN, IP_FRAG_TOOSMALL, IP_FRAG_FULL, IP_FRAG_INCOMPLETE, PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS, DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT, DOS_SSL_ERROR, DOS_APP_ERROR, DOS_REQ_IP_RL_DROP, DOS_REQ_URI_RL_DROP, DOS_REQ_URI_SCAN_BAD_RL_DROP, DOS_REQ_URI_SCAN_UNKNOWN_RL_DROP, DOS_REQ_IP_URI_RL_DROP, DOS_CONN_IP_RL_DROP, DOS_SLOW_URL, TCP_NON_SYN_FLOOD, DOS_REQ_CIP_SCAN_BAD_RL_DROP, DOS_REQ_CIP_SCAN_UNKNOWN_RL_DROP, DOS_REQ_IP_RL_DROP_BAD, DOS_REQ_URI_RL_DROP_BAD, DOS_REQ_IP_URI_RL_DROP_BAD, POLICY_DROPS, DOS_CONN_RL_DROP, DOS_REQ_RL_DROP, DOS_REQ_HDR_RL_DROP, DOS_REQ_CUSTOM_RL_DROP, DNS_ATTACK_REFLECTION.
+   * This is the getter method this will return the attribute value.
+   * Attack type.
+   * Enum options - LAND, SMURF, ICMP_PING_FLOOD, UNKOWN_PROTOCOL, TEARDROP, IP_FRAG_OVERRUN, IP_FRAG_TOOSMALL, IP_FRAG_FULL, IP_FRAG_INCOMPLETE,
+   * PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS,
+   * DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT...
    * @return attack
-  **/
-  @ApiModelProperty(required = true, value = "Attack type. Enum options - LAND, SMURF, ICMP_PING_FLOOD, UNKOWN_PROTOCOL, TEARDROP, IP_FRAG_OVERRUN, IP_FRAG_TOOSMALL, IP_FRAG_FULL, IP_FRAG_INCOMPLETE, PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS, DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT, DOS_SSL_ERROR, DOS_APP_ERROR, DOS_REQ_IP_RL_DROP, DOS_REQ_URI_RL_DROP, DOS_REQ_URI_SCAN_BAD_RL_DROP, DOS_REQ_URI_SCAN_UNKNOWN_RL_DROP, DOS_REQ_IP_URI_RL_DROP, DOS_CONN_IP_RL_DROP, DOS_SLOW_URL, TCP_NON_SYN_FLOOD, DOS_REQ_CIP_SCAN_BAD_RL_DROP, DOS_REQ_CIP_SCAN_UNKNOWN_RL_DROP, DOS_REQ_IP_RL_DROP_BAD, DOS_REQ_URI_RL_DROP_BAD, DOS_REQ_IP_URI_RL_DROP_BAD, POLICY_DROPS, DOS_CONN_RL_DROP, DOS_REQ_RL_DROP, DOS_REQ_HDR_RL_DROP, DOS_REQ_CUSTOM_RL_DROP, DNS_ATTACK_REFLECTION.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAttack() {
     return attack;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Attack type.
+   * Enum options - LAND, SMURF, ICMP_PING_FLOOD, UNKOWN_PROTOCOL, TEARDROP, IP_FRAG_OVERRUN, IP_FRAG_TOOSMALL, IP_FRAG_FULL, IP_FRAG_INCOMPLETE,
+   * PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS,
+   * DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT...
+   * @param attack set the attack.
+   */
   @VsoMethod
-  public void setAttack(String attack) {
+  public void setAttack(String  attack) {
     this.attack = attack;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of packets or connections or requests in a given interval of time to be deemed as attack.
    * @return maxValue
-  **/
-  @ApiModelProperty(required = true, value = "Maximum number of packets or connections or requests in a given interval of time to be deemed as attack.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxValue() {
     return maxValue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of packets or connections or requests in a given interval of time to be deemed as attack.
+   * @param maxValue set the maxValue.
+   */
   @VsoMethod
-  public void setMaxValue(Integer maxValue) {
+  public void setMaxValue(Integer  maxValue) {
     this.maxValue = maxValue;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Minimum number of packets or connections or requests in a given interval of time to be deemed as attack.
    * @return minValue
-  **/
-  @ApiModelProperty(required = true, value = "Minimum number of packets or connections or requests in a given interval of time to be deemed as attack.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMinValue() {
     return minValue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum number of packets or connections or requests in a given interval of time to be deemed as attack.
+   * @param minValue set the minValue.
+   */
   @VsoMethod
-  public void setMinValue(Integer minValue) {
+  public void setMinValue(Integer  minValue) {
     this.minValue = minValue;
   }
 
-  
-  public String getObjectID() {
-		return "DosThreshold";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DosThreshold dosThreshold = (DosThreshold) o;
-    return Objects.equals(this.attack, dosThreshold.attack) &&
-        Objects.equals(this.maxValue, dosThreshold.maxValue) &&
-        Objects.equals(this.minValue, dosThreshold.minValue);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(attack, maxValue, minValue);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DosThreshold {\n");
-    
-    sb.append("    attack: ").append(toIndentedString(attack)).append("\n");
-    sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
-    sb.append("    minValue: ").append(toIndentedString(minValue)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DosThreshold objDosThreshold = (DosThreshold) o;
+  return   Objects.equals(this.maxValue, objDosThreshold.maxValue)&&
+  Objects.equals(this.attack, objDosThreshold.attack)&&
+  Objects.equals(this.minValue, objDosThreshold.minValue);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DosThreshold {\n");
+      sb.append("    attack: ").append(toIndentedString(attack)).append("\n");
+        sb.append("    maxValue: ").append(toIndentedString(maxValue)).append("\n");
+        sb.append("    minValue: ").append(toIndentedString(minValue)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

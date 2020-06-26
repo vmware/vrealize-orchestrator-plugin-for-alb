@@ -1,211 +1,226 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * BurstResource
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The BurstResource is a POJO class extends AviRestResource that used for creating
+ * BurstResource.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "BurstResource")
-@VsoFinder(name = Constants.FINDER_VRO_BURSTRESOURCE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_BURSTRESOURCE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class BurstResource extends AviRestResource  {
+public class BurstResource extends AviRestResource {
   @JsonProperty("accounted_license_id")
+  @JsonInclude(Include.NON_NULL)
   private String accountedLicenseId = null;
 
   @JsonProperty("last_alert_time")
+  @JsonInclude(Include.NON_NULL)
   private String lastAlertTime = null;
 
   @JsonProperty("license_tier")
+  @JsonInclude(Include.NON_NULL)
   private String licenseTier = null;
 
   @JsonProperty("se_cookie")
+  @JsonInclude(Include.NON_NULL)
   private String seCookie = null;
 
   @JsonProperty("se_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String seUuid = null;
 
   @JsonProperty("start_time")
+  @JsonInclude(Include.NON_NULL)
   private String startTime = null;
 
-  
+
+
   /**
-   * License ID against which this burst has been accounted. Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * License id against which this burst has been accounted.
+   * Field introduced in 17.2.5.
    * @return accountedLicenseId
-  **/
-  @ApiModelProperty(value = "License ID against which this burst has been accounted. Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAccountedLicenseId() {
     return accountedLicenseId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * License id against which this burst has been accounted.
+   * Field introduced in 17.2.5.
+   * @param accountedLicenseId set the accountedLicenseId.
+   */
   @VsoMethod
-  public void setAccountedLicenseId(String accountedLicenseId) {
+  public void setAccountedLicenseId(String  accountedLicenseId) {
     this.accountedLicenseId = accountedLicenseId;
   }
 
-  
   /**
-   * Time UTC of the last alert created for this burst resource. Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Time utc of the last alert created for this burst resource.
+   * Field introduced in 17.2.5.
    * @return lastAlertTime
-  **/
-  @ApiModelProperty(value = "Time UTC of the last alert created for this burst resource. Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLastAlertTime() {
     return lastAlertTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Time utc of the last alert created for this burst resource.
+   * Field introduced in 17.2.5.
+   * @param lastAlertTime set the lastAlertTime.
+   */
   @VsoMethod
-  public void setLastAlertTime(String lastAlertTime) {
+  public void setLastAlertTime(String  lastAlertTime) {
     this.lastAlertTime = lastAlertTime;
   }
 
-  
   /**
-   *  Enum options - ENTERPRISE_16, ENTERPRISE_18. Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Field introduced in 17.2.5.
    * @return licenseTier
-  **/
-  @ApiModelProperty(value = " Enum options - ENTERPRISE_16, ENTERPRISE_18. Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLicenseTier() {
     return licenseTier;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Field introduced in 17.2.5.
+   * @param licenseTier set the licenseTier.
+   */
   @VsoMethod
-  public void setLicenseTier(String licenseTier) {
+  public void setLicenseTier(String  licenseTier) {
     this.licenseTier = licenseTier;
   }
 
-  
   /**
-   *  Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.5.
    * @return seCookie
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeCookie() {
     return seCookie;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.5.
+   * @param seCookie set the seCookie.
+   */
   @VsoMethod
-  public void setSeCookie(String seCookie) {
+  public void setSeCookie(String  seCookie) {
     this.seCookie = seCookie;
   }
 
-  
   /**
-   * Service Engine which triggered the burst license usage. Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Service engine which triggered the burst license usage.
+   * Field introduced in 17.2.5.
    * @return seUuid
-  **/
-  @ApiModelProperty(value = "Service Engine which triggered the burst license usage. Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeUuid() {
     return seUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engine which triggered the burst license usage.
+   * Field introduced in 17.2.5.
+   * @param seUuid set the seUuid.
+   */
   @VsoMethod
-  public void setSeUuid(String seUuid) {
+  public void setSeUuid(String  seUuid) {
     this.seUuid = seUuid;
   }
 
-  
   /**
-   * Time UTC when the burst license was put in use. Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Time utc when the burst license was put in use.
+   * Field introduced in 17.2.5.
    * @return startTime
-  **/
-  @ApiModelProperty(value = "Time UTC when the burst license was put in use. Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getStartTime() {
     return startTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Time utc when the burst license was put in use.
+   * Field introduced in 17.2.5.
+   * @param startTime set the startTime.
+   */
   @VsoMethod
-  public void setStartTime(String startTime) {
+  public void setStartTime(String  startTime) {
     this.startTime = startTime;
   }
 
-  
-  public String getObjectID() {
-		return "BurstResource";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    BurstResource burstResource = (BurstResource) o;
-    return Objects.equals(this.accountedLicenseId, burstResource.accountedLicenseId) &&
-        Objects.equals(this.lastAlertTime, burstResource.lastAlertTime) &&
-        Objects.equals(this.licenseTier, burstResource.licenseTier) &&
-        Objects.equals(this.seCookie, burstResource.seCookie) &&
-        Objects.equals(this.seUuid, burstResource.seUuid) &&
-        Objects.equals(this.startTime, burstResource.startTime);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(accountedLicenseId, lastAlertTime, licenseTier, seCookie, seUuid, startTime);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class BurstResource {\n");
-    
-    sb.append("    accountedLicenseId: ").append(toIndentedString(accountedLicenseId)).append("\n");
-    sb.append("    lastAlertTime: ").append(toIndentedString(lastAlertTime)).append("\n");
-    sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
-    sb.append("    seCookie: ").append(toIndentedString(seCookie)).append("\n");
-    sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  BurstResource objBurstResource = (BurstResource) o;
+  return   Objects.equals(this.licenseTier, objBurstResource.licenseTier)&&
+  Objects.equals(this.lastAlertTime, objBurstResource.lastAlertTime)&&
+  Objects.equals(this.seCookie, objBurstResource.seCookie)&&
+  Objects.equals(this.startTime, objBurstResource.startTime)&&
+  Objects.equals(this.seUuid, objBurstResource.seUuid)&&
+  Objects.equals(this.accountedLicenseId, objBurstResource.accountedLicenseId);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class BurstResource {\n");
+      sb.append("    accountedLicenseId: ").append(toIndentedString(accountedLicenseId)).append("\n");
+        sb.append("    lastAlertTime: ").append(toIndentedString(lastAlertTime)).append("\n");
+        sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
+        sb.append("    seCookie: ").append(toIndentedString(seCookie)).append("\n");
+        sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}
