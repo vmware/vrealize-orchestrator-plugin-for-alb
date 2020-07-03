@@ -1,4 +1,36 @@
 {
+
+"vsvipData":
+{
+  "name": "test_vsvip",
+	 "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V4",
+            "addr":"192.0.0.1"
+         }
+      }
+   ],
+},
+"vsvipData3":
+{
+  "name": "test_vsvip",
+	 "vip":[
+      {
+         "auto_allocate_ip":false,
+         "enabled":true,
+         "vip_id":0,
+         "ip_address":{
+            "type":"V4",
+            "addr":"192.0.0.2"
+         }
+      }
+   ],
+},
+
 "poolData":
 {
    "tenant_ref":"/api/tenant?name=admin",
@@ -106,17 +138,7 @@
 "vsData" : 
 {
    "tenant_ref":"/api/tenant?name=admin",
-   "vip":[
-      {
-         "auto_allocate_ip":false,
-         "enabled":true,
-         "vip_id":0,
-         "ip_address":{
-            "type":"V4",
-            "addr":"192.0.0.1"
-         }
-      }
-   ],
+    "vsvip_ref": "/api/vsvip?name=test_vsvip",
    "services":[
       {
          "port":80
@@ -128,17 +150,7 @@
 "vsDataWithPoolGroup" : 
 {
    "tenant_ref":"/api/tenant?name=admin",
-   "vip":[
-      {
-         "auto_allocate_ip":false,
-         "enabled":true,
-         "vip_id":0,
-         "ip_address":{
-            "type":"V4",
-            "addr":"192.0.0.1"
-         }
-      }
-   ],
+   "vsvip_ref": "/api/vsvip?name=test_vsvip",
    "services":[
       {
          "port":80
@@ -150,17 +162,7 @@
 "vsDataWithSameIp" : 
 {
    "tenant_ref":"/api/tenant?name=admin",
-   "vip":[
-      {
-         "auto_allocate_ip":false,
-         "enabled":true,
-         "vip_id":0,
-         "ip_address":{
-            "type":"V4",
-            "addr":"192.0.0.1"
-         }
-      }
-   ],
+   "vsvip_ref": "/api/vsvip?name=test_vsvip",
    "services":[
       {
          "port":80
@@ -172,17 +174,7 @@
 "vsDataWithInvalidConfig" : 
 {
    "tenant_ref":"/api/tenant?name=admin",
-   "vip":[
-      {
-         "auto_allocate_ip":false,
-         "enabled":true,
-         "vip_id":0,
-         "ip_address":{
-            "type":"V",
-            "addr":"192.0.0.1"
-         }
-      }
-   ],
+  	"vsvip_ref": "/api/vsvip?name=test_vsvip3",
    "services":[
       {
          "port":80
@@ -195,17 +187,7 @@
 "vsDataWithInvalidConfigPg" : 
 {
    "tenant_ref":"/api/tenant?name=admin",
-   "vip":[
-      {
-         "auto_allocate_ip":false,
-         "enabled":true,
-         "vip_id":0,
-         "ip_address":{
-            "type":"V",
-            "addr":"192.0.0.1"
-         }
-      }
-   ],
+   "vsvip_ref": "/api/vsvip?name=test_vsvip",
    "services":[
       {
          "port":80

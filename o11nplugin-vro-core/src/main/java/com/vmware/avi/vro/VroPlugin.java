@@ -2,8 +2,11 @@ package com.vmware.avi.vro;
 
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.vmware.avi.sdk.AviApi;
 import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -28,10 +31,10 @@ public class VroPlugin {
 	 * Method will create AVI API session.
 	 * 
 	 * @param controller controller IP.
-	 * @param username   username of the controller
-	 * @param password   password of the controller
-	 * @param tenant     tenant name
-	 * @param version    version
+	 * @param username   username of the controller.
+	 * @param password   password of the controller.
+	 * @param tenant     tenant name.
+	 * @param version    version.
 	 * @return instance of AviVroClient
 	 */
 	@VsoMethod
@@ -41,6 +44,52 @@ public class VroPlugin {
 		creds.setVersion(version);
 		service.setCred(creds);
 		return service;
+	}
+
+	/***
+	 * Method will create AVI API session.
+	 * 
+	 * @param controller controller IP.
+	 * @token token for authentication.
+	 * @param tenant  tenant name.
+	 * @param version version.
+	 * @return instance of AviVroClient
+	 */
+	@VsoMethod
+	public AviVroClient connect(String controller, String token, String tenant, String version) {
+		AviCredentials creds = new AviCredentials();
+		creds.setController(controller);
+		creds.setToken(token);
+		creds.setTenant(tenant);
+		creds.setVersion(version);
+		service.setCred(creds);
+		return service;
+	}
+
+	/***
+	 * Method will create AVI API session.
+	 * 
+	 * @param controller controller IP.
+	 * @param username   username of the controller
+	 * @param password   password of the controller
+	 * @param tenant     tenant name
+	 * @param version    version
+	 * @return instance of AviVroClient
+	 */
+	@VsoMethod
+	public void addVroClient(String controller, String username, String password, String tenant, String version,
+			String token) {
+		AviCredentials aviCredentials = new AviCredentials();
+		aviCredentials.setController(controller);
+		aviCredentials.setUsername(username);
+		aviCredentials.setPassword(password);
+		aviCredentials.setToken(token);
+		aviCredentials.setTenant(tenant);
+		aviCredentials.setVersion(version);
+		AviVroClient aviVroClient = new AviVroClient();
+		aviVroClient.setCred(aviCredentials);
+		VroPluginFactory.aviVroClientMap.put(controller, aviVroClient);
+
 	}
 
 	/****
@@ -53,8 +102,8 @@ public class VroPlugin {
 	 * @param version    version
 	 */
 	@VsoMethod
+	@Deprecated
 	public void addVroClient(String controller, String username, String password, String tenant, String version) {
-
 		AviCredentials aviCredentials = new AviCredentials(controller, username, password);
 		aviCredentials.setTenant(tenant);
 		aviCredentials.setVersion(version);

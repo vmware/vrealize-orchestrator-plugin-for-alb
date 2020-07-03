@@ -2,7 +2,7 @@
 <dunes-script-module
 	name="createVirtualServiceWithIPAMObj" result-type="Avi:AviVroClient"
 	api-version="6.0.0" id="dbdfb0c4-6e9f-45de-a594-1c92492b0560"
-	version="1.0.9" allowed-operations="vfe">
+	version="1.1.1" allowed-operations="vfe">
 	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
 	<param n="poolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
 	<param n="ServerCloud" t="string"><![CDATA[Server cloud name]]></param>
@@ -213,6 +213,9 @@ try {
 	}
 	if (useVipAsSnat){
 		virtualServiceObject.setUseVipAsSnat(useVipAsSnat);
+	}
+	if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
 	}
 	virtualServiceObject.setVsvipRef("/api/vsvip?name="+name);
 	virtualServiceObject.setCloudRef("/api/cloud?name="+ServerCloud);

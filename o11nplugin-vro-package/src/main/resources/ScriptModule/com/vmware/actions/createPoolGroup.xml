@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPoolGroup"
 	result-type="String" api-version="6.0.0"
-	id="9e09d709-67db-41bd-a791-ae34efbaba33" version="0.0.8"
+	id="9e09d709-67db-41bd-a791-ae34efbaba33" version="0.1.0"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="PoolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
@@ -83,7 +83,9 @@ try{
 
 	// Set tenant reference
 	properties.tenant_ref = "/api/tenant?name="+Tenant;
-	
+	if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+	}
 	// Set cloud reference
 	properties.cloud_ref = "/api/cloud?name="+serverCloud;
 	

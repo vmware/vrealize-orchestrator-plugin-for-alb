@@ -52,18 +52,15 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 	@Override
 	public Object find(InventoryRef ref) {
 		String object = ref.getType();
-		System.out.println("objectType : " + object + "\n ID : " + ref.getId());
-		System.out.println("Attached Controllers : " + aviVroClientMap.values());
 		switch (object) {
 		case "VirtualService":
 			VirtualService virtualService = null;
 			String uuid = getUUID(ref.getId());
 			for (AviVroClient aviVroClient : aviVroClientMap.values()) {
-				System.out.println("Controller : " + aviVroClient.getCred().getController());
 				try {
 					virtualService = (VirtualService) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid);
 					if (virtualService.getUuid() != null) {
-						System.out.println("Returning vs : " + virtualService);
+
 						return virtualService;
 					}
 				} catch (Exception e) {
@@ -78,7 +75,6 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 				try {
 					pool = (Pool) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid1);
 					if (pool.getUuid() != null) {
-						System.out.println("Returning Pool : " + pool);
 						return pool;
 					}
 				} catch (Exception e) {
@@ -88,13 +84,10 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			return new Pool();
 		case "AviVroClient":
 			String controllerIp = ref.getId();
-			System.out.println("controllerIp : " + controllerIp);
 			AviVroClient vroClient = VroPluginFactory.aviVroClientMap.get(controllerIp);
-			System.out.println("vroClient : " + vroClient);
 			return vroClient;
 		default:
 			String location = "com.vmware.avi.vro.model." + ref.getType();
-			System.out.println(location);
 			Class<?> cls;
 			Object obj = null;
 			try {
@@ -115,9 +108,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 	 * @return uuid
 	 */
 	public String getUUID(String objectID) {
-		System.out.println("objectID : " + objectID);
 		String uuid = objectID.substring(objectID.indexOf("(") + 1, objectID.length() - 1);
-		System.out.println("uuid : " + uuid);
 		return uuid;
 	}
 

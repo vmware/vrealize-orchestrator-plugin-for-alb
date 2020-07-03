@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.0.8"
+	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.1.0"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create pool]]></display-name>
@@ -82,7 +82,6 @@
 		<param name="http_response_code" type="Array/string"></param>
 		<param name="https_response_code" type="Array/string"></param>
 		<param name="port" type="number"></param>
-		<param name="ratio" type="number"></param>
 		<param name="PersistenceProfileRef" type="string"></param>
 	</input>
 	<attrib name="configErrorCode" type="string" read-only="false">
@@ -231,7 +230,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Pool name]]></description>
 			</bind>
 			<bind name="defaultServerPort" type="string"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Default server port]]></description>
 			</bind>
 			<bind name="loadBalancerAlgo" type="string"
@@ -376,7 +375,8 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 			<bind name="PersistenceProfileRef" type="string"
 				export-name="PersistenceProfileRef"></bind>
 			<bind name="port" type="number" export-name="port"></bind>
-			<bind name="ratio" type="number" export-name="ratio"></bind>
+			<bind name="ratio" type="number" explicitly-not-bound="true"
+				export-name="NULL"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -470,11 +470,15 @@ return (CreateHealthMonitor == true) ;]]></script>
 			</p-param>
 			<p-param name="http_response_code">
 				<desc><![CDATA[Respose code for HTTP type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTPS" || #monitorType=="HTTP"]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTP"]]></p-qual>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 			<p-param name="https_response_code">
 				<desc><![CDATA[https_response_code]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTPS"]]></p-qual>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
@@ -517,9 +521,6 @@ return (CreateHealthMonitor == true) ;]]></script>
 			</p-param>
 			<p-param name="port">
 				<desc><![CDATA[Port]]></desc>
-			</p-param>
-			<p-param name="ratio">
-				<desc><![CDATA[Ratio]]></desc>
 			</p-param>
 			<p-param name="PersistenceProfileRef">
 				<desc><![CDATA[PersistenceProfileRef]]></desc>

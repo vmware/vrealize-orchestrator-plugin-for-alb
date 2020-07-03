@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item2" object-name="workflow:name=generic"
-	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.7"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.8"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Edit Servers in Pool]]></display-name>
@@ -26,9 +26,6 @@
 		</param>
 		<param name="port" type="string">
 			<description><![CDATA[Port]]></description>
-		</param>
-		<param name="ratio" type="string">
-			<description><![CDATA[Ratio]]></description>
 		</param>
 	</input>
 	<attrib name="actionEerrorCode" type="string" read-only="false">
@@ -62,7 +59,8 @@ System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray
 			<bind name="cloud" type="string" export-name="cloud"></bind>
 			<bind name="tenant" type="string" export-name="tenant"></bind>
 			<bind name="port" type="string" export-name="port"></bind>
-			<bind name="ratio" type="string" export-name="ratio"></bind>
+			<bind name="ratio" type="string" explicitly-not-bound="true"
+				export-name="NULL"></bind>
 		</in-binding>
 		<out-binding></out-binding>
 		<position y="19.045454545454543" x="285.0"></position>
@@ -114,10 +112,6 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		<p-param name="port">
 			<desc><![CDATA[Port]]></desc>
 			<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "port" )]]></p-qual>
-		</p-param>
-		<p-param name="ratio">
-			<desc><![CDATA[Ratio]]></desc>
-			<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "ratio" )]]></p-qual>
 		</p-param>
 	</presentation>
 </workflow>

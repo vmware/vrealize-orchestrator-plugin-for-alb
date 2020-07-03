@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVRAPoolGroup"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="3d491515-9cdf-437c-ae83-88142172c704" version="0.0.1"
+	id="3d491515-9cdf-437c-ae83-88142172c704" version="0.0.3"
 	allowed-operations="vfe">
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
 	</param>
@@ -24,6 +24,9 @@
 		var Tenant=aviVroClient.cred.tenant;
 		System.log("Tenant : "+Tenant);
 		firstPoolObject = new AviPool() ;
+		if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+		}
 		firstPoolObject.setCloudRef("/api/cloud?name="+ServerCloud);
 		firstPoolObject.setTenantRef("/api/tenant?name="+Tenant);
 		var firstPoolServers = [];

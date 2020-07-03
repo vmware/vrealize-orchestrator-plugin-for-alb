@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item5" object-name="workflow:name=generic"
-	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.2"
+	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.3"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Vs]]></display-name>
@@ -115,7 +115,6 @@
 			<description><![CDATA[https response code]]></description>
 		</param>
 		<param name="port" type="number"></param>
-		<param name="ratio" type="number"></param>
 		<param name="PersistenceProfileRef" type="string"></param>
 	</input>
 	<output>
@@ -487,7 +486,8 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 			<bind name="PersistenceProfileRef" type="string"
 				export-name="PersistenceProfileRef"></bind>
 			<bind name="port" type="number" export-name="port"></bind>
-			<bind name="ratio" type="number" export-name="ratio"></bind>
+			<bind name="ratio" type="number" explicitly-not-bound="true"
+				export-name="NULL"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -955,9 +955,6 @@ return (CreateHealthMonitor == true) ;]]></script>
 			</p-param>
 			<p-param name="port">
 				<desc><![CDATA[port]]></desc>
-			</p-param>
-			<p-param name="ratio">
-				<desc><![CDATA[ratio]]></desc>
 			</p-param>
 			<p-param name="PersistenceProfileRef">
 				<desc><![CDATA[PersistenceProfileRef]]></desc>

@@ -41,9 +41,7 @@ public class AviVroClient {
 	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
 
 	public String getObjectID() {
-		// return "10.79.109.242";
 		return cred.getController();
-		// return cred.getController() + cred.getUsername() + cred.getPort();
 	}
 
 	@VsoConstructor
@@ -405,7 +403,6 @@ public class AviVroClient {
 				count++;
 			}
 		} catch (AviApiException e) {
-			// jsonResponse.add(new JSONObject().put("error", e.getMessage()));
 			this.rollback(count - 1, workflowDataQueue, e);
 		} finally {
 			clearQueue();
@@ -745,9 +742,6 @@ public class AviVroClient {
 						String loggerMsg = " Creating " + currentObjectData.getObjectType().toLowerCase() + " :: ";
 						logger.info(loggerMsg);
 						rollBackMsg = rollBackMsg + loggerMsg;
-						if (currentObjectData.getObjectType().toLowerCase().equals("virtualservice")) {
-							existingObjectData.remove("vsvip_ref");
-						}
 						JSONObject updatedObject = transformRef(existingObjectData);
 						response = session.post(currentObjectData.getObjectType().toLowerCase(), updatedObject,
 								userHeader);

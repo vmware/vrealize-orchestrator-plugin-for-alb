@@ -30,7 +30,7 @@ public final class VroModuleBuilder extends ModuleBuilder {
 				.image("images/c.png");
 
 		finder(Constants.FINDER_VRO_VIRTUALSERVICE, DATASOURCE).addRelation(Constants.FINDER_VRO_POOL)
-				.image("images/v_16*16.png");
+				.image("images/v.png");
 
 		// finder(Constants.FINDER_VRO_POOL, DATASOURCE).image("images/p.png");
 		finder(Constants.FINDER_VRO_POOL, DATASOURCE).addRelation(Constants.FINDER_VRO_HEALTHMONITOR)

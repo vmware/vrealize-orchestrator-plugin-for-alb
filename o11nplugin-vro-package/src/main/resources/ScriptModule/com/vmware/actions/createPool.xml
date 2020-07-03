@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPool"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="daeebf98-7141-41ed-8168-833a5f99ceb7" version="0.1.5"
+	id="daeebf98-7141-41ed-8168-833a5f99ceb7" version="0.1.7"
 	allowed-operations="vfe">
 	<param n="PoolServers"
 		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[Pool servers list ]]></param>
@@ -88,7 +88,9 @@ try{
 			properties.lb_algorithm_consistent_hash_hdr = lbCustomHeaderName;
 		}
 	}
-	
+	if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+	}
 	// Set cloud server
 	properties.cloud_ref = "/api/cloud?name="+ServerCloud;
 	
