@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="updatePoolObj"
 	result-type="void" api-version="6.0.0"
-	id="ff27a85c-80a6-4c41-ba81-885f49082204" version="0.0.2"
+	id="ff27a85c-80a6-4c41-ba81-885f49082204" version="0.0.3"
 	allowed-operations="vfe">
 	<param n="poolname" t="string"><![CDATA[Name of pool]]></param>
 	<param n="serverType" t="string"><![CDATA[Type of Server]]></param>
-	<param n="serverArray"
-		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[Server Array]]></param>
+	<param n="serverArray" t="Array/string"><![CDATA[Server Array]]></param>
 	<param n="cloud" t="string"><![CDATA[Cloud name]]></param>
 	<param n="tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Avi Controller]]></param>
-	<param n="poolObject" t="Avi:Pool"></param>
-	<param n="serverObject" t="Avi:Server"></param>
-	<param n="ipAddressObject" t="Avi:IpAddr"></param>
+	<param n="ratio" t="string"><![CDATA[Ratio]]></param>
+	<param n="port" t="string"><![CDATA[Port]]></param>
 	<script encoded="false"><![CDATA[try{
 	if(aviVroClient!=null){
 	
-		poolObject = Server.findForType('Avi:Pool', System.getObjectId(poolObject));
-		
-//		var param=new Object();
-//		param.name=poolname;
+		poolObject = new AviPool();
 		poolObject = aviVroClient.getObjectByName("pool",poolname);
-//		poolObject.setServers([]);
 		var updatedServers=[];
 		
 		for (index in serverArray){
-			var IP = serverArray[index].IP;
-			var ratio = serverArray[index].Ratio;
-			var port = serverArray[index].Port;
-			serverObject = Server.findForType('Avi:Server', System.getObjectId(serverObject));
-			ipAddressObject=Server.findForType('Avi:IpAddr', System.getObjectId(ipAddressObject));
+			var IP = serverArray[index];
+			serverObject = new AviServer();
+			ipAddressObject = new AviIpAddr();
 			ipAddressObject.setType(serverType);
 			ipAddressObject.setAddr(IP)
 			serverObject.setIp(ipAddressObject);

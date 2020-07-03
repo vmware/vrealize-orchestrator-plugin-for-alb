@@ -1,328 +1,373 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.VIMgrGuestNicRuntime;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VIMgrVMRuntime
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VIMgrVMRuntime is a POJO class extends AviRestResource that used for creating
+ * VIMgrVMRuntime.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VIMgrVMRuntime")
 @VsoFinder(name = Constants.FINDER_VRO_VIMGRVMRUNTIME, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VIMgrVMRuntime extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class VIMgrVMRuntime extends AviRestResource {
   @JsonProperty("availability_zone")
+  @JsonInclude(Include.NON_NULL)
   private String availabilityZone = null;
 
   @JsonProperty("cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudRef = null;
 
   @JsonProperty("connection_state")
+  @JsonInclude(Include.NON_NULL)
   private String connectionState = null;
 
   @JsonProperty("controller_cluster_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String controllerClusterUuid = null;
 
   @JsonProperty("controller_ip_addr")
+  @JsonInclude(Include.NON_NULL)
   private String controllerIpAddr = null;
 
   @JsonProperty("controller_vm")
+  @JsonInclude(Include.NON_NULL)
   private Boolean controllerVm = null;
 
   @JsonProperty("cpu_reservation")
-  private Long cpuReservation = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer cpuReservation = null;
 
   @JsonProperty("cpu_shares")
+  @JsonInclude(Include.NON_NULL)
   private Integer cpuShares = null;
 
   @JsonProperty("creation_in_progress")
+  @JsonInclude(Include.NON_NULL)
   private Boolean creationInProgress = null;
 
   @JsonProperty("guest_nic")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<VIMgrGuestNicRuntime> guestNic = null;
 
   @JsonProperty("host")
+  @JsonInclude(Include.NON_NULL)
   private String host = null;
 
   @JsonProperty("init_vnics")
+  @JsonInclude(Include.NON_NULL)
   private Integer initVnics = null;
 
   @JsonProperty("managed_object_id")
+  @JsonInclude(Include.NON_NULL)
   private String managedObjectId = null;
 
   @JsonProperty("mem_shares")
+  @JsonInclude(Include.NON_NULL)
   private Integer memShares = null;
 
   @JsonProperty("memory")
-  private Long memory = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer memory = null;
 
   @JsonProperty("memory_reservation")
-  private Long memoryReservation = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer memoryReservation = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("num_cpu")
+  @JsonInclude(Include.NON_NULL)
   private Integer numCpu = null;
 
   @JsonProperty("ovf_avisetype_field")
+  @JsonInclude(Include.NON_NULL)
   private String ovfAvisetypeField = null;
 
   @JsonProperty("powerstate")
+  @JsonInclude(Include.NON_NULL)
   private String powerstate = null;
 
   @JsonProperty("se_ver")
+  @JsonInclude(Include.NON_NULL)
   private Integer seVer = 1;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vcenter_datacenter_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String vcenterDatacenterUuid = null;
 
   @JsonProperty("vcenter_rm_cookie")
+  @JsonInclude(Include.NON_NULL)
   private String vcenterRmCookie = null;
 
   @JsonProperty("vcenter_se_type")
+  @JsonInclude(Include.NON_NULL)
   private String vcenterSeType = null;
 
   @JsonProperty("vcenter_template_vm")
+  @JsonInclude(Include.NON_NULL)
   private Boolean vcenterTemplateVm = null;
 
   @JsonProperty("vcenter_vAppName")
-  private String vcenterVAppName = null;
+  @JsonInclude(Include.NON_NULL)
+  private String vcenterVappname = null;
 
   @JsonProperty("vcenter_vAppVendor")
-  private String vcenterVAppVendor = null;
+  @JsonInclude(Include.NON_NULL)
+  private String vcenterVappvendor = null;
 
   @JsonProperty("vcenter_vm_type")
+  @JsonInclude(Include.NON_NULL)
   private String vcenterVmType = null;
 
   @JsonProperty("vcenter_vnic_discovered")
+  @JsonInclude(Include.NON_NULL)
   private Boolean vcenterVnicDiscovered = null;
 
   @JsonProperty("vm_lb_weight")
+  @JsonInclude(Include.NON_NULL)
   private Integer vmLbWeight = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * availability_zone of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property availability_zone of obj type vimgrvmruntime field type str  type string.
    * @return availabilityZone
-  **/
-  @ApiModelProperty(value = "availability_zone of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAvailabilityZone() {
     return availabilityZone;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property availability_zone of obj type vimgrvmruntime field type str  type string.
+   * @param availabilityZone set the availabilityZone.
+   */
   @VsoMethod
-  public void setAvailabilityZone(String availabilityZone) {
+  public void setAvailabilityZone(String  availabilityZone) {
     this.availabilityZone = availabilityZone;
   }
 
-  
   /**
-   *  It is a reference to an object of type Cloud.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type cloud.
    * @return cloudRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Cloud.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudRef() {
     return cloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type cloud.
+   * @param cloudRef set the cloudRef.
+   */
   @VsoMethod
-  public void setCloudRef(String cloudRef) {
+  public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
   }
 
-  
   /**
-   * connection_state of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property connection_state of obj type vimgrvmruntime field type str  type string.
    * @return connectionState
-  **/
-  @ApiModelProperty(value = "connection_state of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getConnectionState() {
     return connectionState;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property connection_state of obj type vimgrvmruntime field type str  type string.
+   * @param connectionState set the connectionState.
+   */
   @VsoMethod
-  public void setConnectionState(String connectionState) {
+  public void setConnectionState(String  connectionState) {
     this.connectionState = connectionState;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of controller_cluster.
    * @return controllerClusterUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of controller_cluster.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getControllerClusterUuid() {
     return controllerClusterUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of controller_cluster.
+   * @param controllerClusterUuid set the controllerClusterUuid.
+   */
   @VsoMethod
-  public void setControllerClusterUuid(String controllerClusterUuid) {
+  public void setControllerClusterUuid(String  controllerClusterUuid) {
     this.controllerClusterUuid = controllerClusterUuid;
   }
 
-  
   /**
-   * controller_ip_addr of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property controller_ip_addr of obj type vimgrvmruntime field type str  type string.
    * @return controllerIpAddr
-  **/
-  @ApiModelProperty(value = "controller_ip_addr of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getControllerIpAddr() {
     return controllerIpAddr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property controller_ip_addr of obj type vimgrvmruntime field type str  type string.
+   * @param controllerIpAddr set the controllerIpAddr.
+   */
   @VsoMethod
-  public void setControllerIpAddr(String controllerIpAddr) {
+  public void setControllerIpAddr(String  controllerIpAddr) {
     this.controllerIpAddr = controllerIpAddr;
   }
 
-  
   /**
-   * Placeholder for description of property controller_vm of obj type VIMgrVMRuntime field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property controller_vm of obj type vimgrvmruntime field type str  type boolean.
    * @return controllerVm
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property controller_vm of obj type VIMgrVMRuntime field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isControllerVm() {
+   */
+  @VsoMethod
+  public Boolean getControllerVm() {
     return controllerVm;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property controller_vm of obj type vimgrvmruntime field type str  type boolean.
+   * @param controllerVm set the controllerVm.
+   */
   @VsoMethod
-  public void setControllerVm(Boolean controllerVm) {
+  public void setControllerVm(Boolean  controllerVm) {
     this.controllerVm = controllerVm;
   }
 
-  
   /**
-   * Number of cpu_reservation.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property cpu_reservation of obj type vimgrvmruntime field type str  type integer.
    * @return cpuReservation
-  **/
-  @ApiModelProperty(value = "Number of cpu_reservation.")
-
-
- 
-  @VsoMethod  
-  public Long getCpuReservation() {
+   */
+  @VsoMethod
+  public Integer getCpuReservation() {
     return cpuReservation;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property cpu_reservation of obj type vimgrvmruntime field type str  type integer.
+   * @param cpuReservation set the cpuReservation.
+   */
   @VsoMethod
-  public void setCpuReservation(Long cpuReservation) {
+  public void setCpuReservation(Integer  cpuReservation) {
     this.cpuReservation = cpuReservation;
   }
 
-  
   /**
-   * Number of cpu_shares.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property cpu_shares of obj type vimgrvmruntime field type str  type integer.
    * @return cpuShares
-  **/
-  @ApiModelProperty(value = "Number of cpu_shares.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getCpuShares() {
     return cpuShares;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property cpu_shares of obj type vimgrvmruntime field type str  type integer.
+   * @param cpuShares set the cpuShares.
+   */
   @VsoMethod
-  public void setCpuShares(Integer cpuShares) {
+  public void setCpuShares(Integer  cpuShares) {
     this.cpuShares = cpuShares;
   }
 
-  
   /**
-   * Placeholder for description of property creation_in_progress of obj type VIMgrVMRuntime field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property creation_in_progress of obj type vimgrvmruntime field type str  type boolean.
    * @return creationInProgress
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property creation_in_progress of obj type VIMgrVMRuntime field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isCreationInProgress() {
+   */
+  @VsoMethod
+  public Boolean getCreationInProgress() {
     return creationInProgress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property creation_in_progress of obj type vimgrvmruntime field type str  type boolean.
+   * @param creationInProgress set the creationInProgress.
+   */
   @VsoMethod
-  public void setCreationInProgress(Boolean creationInProgress) {
+  public void setCreationInProgress(Boolean  creationInProgress) {
     this.creationInProgress = creationInProgress;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property guest_nic of obj type vimgrvmruntime field type str  type array.
+   * @return guestNic
+   */
+  @VsoMethod
+  public List<VIMgrGuestNicRuntime> getGuestNic() {
+    return guestNic;
+  }
+
+  /**
+   * This is the setter method. this will set the guestNic
+   * Placeholder for description of property guest_nic of obj type vimgrvmruntime field type str  type array.
+   * @return guestNic
+   */
+  @VsoMethod
+  public void setGuestNic(List<VIMgrGuestNicRuntime>  guestNic) {
+    this.guestNic = guestNic;
+  }
+
+  /**
+   * This is the setter method this will set the guestNic
+   * Placeholder for description of property guest_nic of obj type vimgrvmruntime field type str  type array.
+   * @return guestNic
+   */
+  @VsoMethod
   public VIMgrVMRuntime addGuestNicItem(VIMgrGuestNicRuntime guestNicItem) {
     if (this.guestNic == null) {
       this.guestNic = new ArrayList<VIMgrGuestNicRuntime>();
@@ -330,594 +375,589 @@ public class VIMgrVMRuntime extends AviRestResource  {
     this.guestNic.add(guestNicItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property guest_nic of obj type VIMgrVMRuntime field type str  type object
-   * @return guestNic
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property guest_nic of obj type VIMgrVMRuntime field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<VIMgrGuestNicRuntime> getGuestNic() {
-    return guestNic;
-  }
-    
-  @VsoMethod
-  public void setGuestNic(List<VIMgrGuestNicRuntime> guestNic) {
-    this.guestNic = guestNic;
-  }
-
-  
-  /**
-   * host of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property host of obj type vimgrvmruntime field type str  type string.
    * @return host
-  **/
-  @ApiModelProperty(value = "host of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHost() {
     return host;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property host of obj type vimgrvmruntime field type str  type string.
+   * @param host set the host.
+   */
   @VsoMethod
-  public void setHost(String host) {
+  public void setHost(String  host) {
     this.host = host;
   }
 
-  
   /**
-   * Number of init_vnics.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property init_vnics of obj type vimgrvmruntime field type str  type integer.
    * @return initVnics
-  **/
-  @ApiModelProperty(value = "Number of init_vnics.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getInitVnics() {
     return initVnics;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property init_vnics of obj type vimgrvmruntime field type str  type integer.
+   * @param initVnics set the initVnics.
+   */
   @VsoMethod
-  public void setInitVnics(Integer initVnics) {
+  public void setInitVnics(Integer  initVnics) {
     this.initVnics = initVnics;
   }
 
-  
   /**
-   * managed_object_id of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property managed_object_id of obj type vimgrvmruntime field type str  type string.
    * @return managedObjectId
-  **/
-  @ApiModelProperty(required = true, value = "managed_object_id of VIMgrVMRuntime.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getManagedObjectId() {
     return managedObjectId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property managed_object_id of obj type vimgrvmruntime field type str  type string.
+   * @param managedObjectId set the managedObjectId.
+   */
   @VsoMethod
-  public void setManagedObjectId(String managedObjectId) {
+  public void setManagedObjectId(String  managedObjectId) {
     this.managedObjectId = managedObjectId;
   }
 
-  
   /**
-   * Number of mem_shares.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property mem_shares of obj type vimgrvmruntime field type str  type integer.
    * @return memShares
-  **/
-  @ApiModelProperty(value = "Number of mem_shares.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMemShares() {
     return memShares;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property mem_shares of obj type vimgrvmruntime field type str  type integer.
+   * @param memShares set the memShares.
+   */
   @VsoMethod
-  public void setMemShares(Integer memShares) {
+  public void setMemShares(Integer  memShares) {
     this.memShares = memShares;
   }
 
-  
   /**
-   * Number of memory.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property memory of obj type vimgrvmruntime field type str  type integer.
    * @return memory
-  **/
-  @ApiModelProperty(value = "Number of memory.")
-
-
- 
-  @VsoMethod  
-  public Long getMemory() {
+   */
+  @VsoMethod
+  public Integer getMemory() {
     return memory;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property memory of obj type vimgrvmruntime field type str  type integer.
+   * @param memory set the memory.
+   */
   @VsoMethod
-  public void setMemory(Long memory) {
+  public void setMemory(Integer  memory) {
     this.memory = memory;
   }
 
-  
   /**
-   * Number of memory_reservation.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property memory_reservation of obj type vimgrvmruntime field type str  type integer.
    * @return memoryReservation
-  **/
-  @ApiModelProperty(value = "Number of memory_reservation.")
-
-
- 
-  @VsoMethod  
-  public Long getMemoryReservation() {
+   */
+  @VsoMethod
+  public Integer getMemoryReservation() {
     return memoryReservation;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property memory_reservation of obj type vimgrvmruntime field type str  type integer.
+   * @param memoryReservation set the memoryReservation.
+   */
   @VsoMethod
-  public void setMemoryReservation(Long memoryReservation) {
+  public void setMemoryReservation(Integer  memoryReservation) {
     this.memoryReservation = memoryReservation;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Number of num_cpu.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property num_cpu of obj type vimgrvmruntime field type str  type integer.
    * @return numCpu
-  **/
-  @ApiModelProperty(value = "Number of num_cpu.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNumCpu() {
     return numCpu;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property num_cpu of obj type vimgrvmruntime field type str  type integer.
+   * @param numCpu set the numCpu.
+   */
   @VsoMethod
-  public void setNumCpu(Integer numCpu) {
+  public void setNumCpu(Integer  numCpu) {
     this.numCpu = numCpu;
   }
 
-  
   /**
-   *  Field introduced in 17.1.1,17.1.3.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1,17.1.3.
    * @return ovfAvisetypeField
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.1.1,17.1.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getOvfAvisetypeField() {
     return ovfAvisetypeField;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.1,17.1.3.
+   * @param ovfAvisetypeField set the ovfAvisetypeField.
+   */
   @VsoMethod
-  public void setOvfAvisetypeField(String ovfAvisetypeField) {
+  public void setOvfAvisetypeField(String  ovfAvisetypeField) {
     this.ovfAvisetypeField = ovfAvisetypeField;
   }
 
-  
   /**
-   * powerstate of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property powerstate of obj type vimgrvmruntime field type str  type string.
    * @return powerstate
-  **/
-  @ApiModelProperty(value = "powerstate of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPowerstate() {
     return powerstate;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property powerstate of obj type vimgrvmruntime field type str  type string.
+   * @param powerstate set the powerstate.
+   */
   @VsoMethod
-  public void setPowerstate(String powerstate) {
+  public void setPowerstate(String  powerstate) {
     this.powerstate = powerstate;
   }
 
-  
   /**
-   * Number of se_ver.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property se_ver of obj type vimgrvmruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return seVer
-  **/
-  @ApiModelProperty(value = "Number of se_ver.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeVer() {
     return seVer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property se_ver of obj type vimgrvmruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @param seVer set the seVer.
+   */
   @VsoMethod
-  public void setSeVer(Integer seVer) {
+  public void setSeVer(Integer  seVer) {
     this.seVer = seVer;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
-   *  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP.
+   * This is the getter method this will return the attribute value.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+   * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of vcenter_datacenter.
    * @return vcenterDatacenterUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of vcenter_datacenter.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVcenterDatacenterUuid() {
     return vcenterDatacenterUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of vcenter_datacenter.
+   * @param vcenterDatacenterUuid set the vcenterDatacenterUuid.
+   */
   @VsoMethod
-  public void setVcenterDatacenterUuid(String vcenterDatacenterUuid) {
+  public void setVcenterDatacenterUuid(String  vcenterDatacenterUuid) {
     this.vcenterDatacenterUuid = vcenterDatacenterUuid;
   }
 
-  
   /**
-   * vcenter_rm_cookie of VIMgrVMRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_rm_cookie of obj type vimgrvmruntime field type str  type string.
    * @return vcenterRmCookie
-  **/
-  @ApiModelProperty(value = "vcenter_rm_cookie of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVcenterRmCookie() {
     return vcenterRmCookie;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_rm_cookie of obj type vimgrvmruntime field type str  type string.
+   * @param vcenterRmCookie set the vcenterRmCookie.
+   */
   @VsoMethod
-  public void setVcenterRmCookie(String vcenterRmCookie) {
+  public void setVcenterRmCookie(String  vcenterRmCookie) {
     this.vcenterRmCookie = vcenterRmCookie;
   }
 
-  
   /**
-   *  Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN.
+   * This is the getter method this will return the attribute value.
+   * Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN.
    * @return vcenterSeType
-  **/
-  @ApiModelProperty(value = " Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVcenterSeType() {
     return vcenterSeType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN.
+   * @param vcenterSeType set the vcenterSeType.
+   */
   @VsoMethod
-  public void setVcenterSeType(String vcenterSeType) {
+  public void setVcenterSeType(String  vcenterSeType) {
     this.vcenterSeType = vcenterSeType;
   }
 
-  
   /**
-   * Placeholder for description of property vcenter_template_vm of obj type VIMgrVMRuntime field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_template_vm of obj type vimgrvmruntime field type str  type boolean.
    * @return vcenterTemplateVm
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vcenter_template_vm of obj type VIMgrVMRuntime field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isVcenterTemplateVm() {
+   */
+  @VsoMethod
+  public Boolean getVcenterTemplateVm() {
     return vcenterTemplateVm;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_template_vm of obj type vimgrvmruntime field type str  type boolean.
+   * @param vcenterTemplateVm set the vcenterTemplateVm.
+   */
   @VsoMethod
-  public void setVcenterTemplateVm(Boolean vcenterTemplateVm) {
+  public void setVcenterTemplateVm(Boolean  vcenterTemplateVm) {
     this.vcenterTemplateVm = vcenterTemplateVm;
   }
 
-  
   /**
-   * vcenter_vAppName of VIMgrVMRuntime.
-   * @return vcenterVAppName
-  **/
-  @ApiModelProperty(value = "vcenter_vAppName of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
-  public String getVcenterVAppName() {
-    return vcenterVAppName;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_vappname of obj type vimgrvmruntime field type str  type string.
+   * @return vcenterVappname
+   */
   @VsoMethod
-  public void setVcenterVAppName(String vcenterVAppName) {
-    this.vcenterVAppName = vcenterVAppName;
+  public String getVcenterVappname() {
+    return vcenterVappname;
   }
 
-  
   /**
-   * vcenter_vAppVendor of VIMgrVMRuntime.
-   * @return vcenterVAppVendor
-  **/
-  @ApiModelProperty(value = "vcenter_vAppVendor of VIMgrVMRuntime.")
-
-
- 
-  @VsoMethod  
-  public String getVcenterVAppVendor() {
-    return vcenterVAppVendor;
-  }
-    
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_vappname of obj type vimgrvmruntime field type str  type string.
+   * @param vcenterVappname set the vcenterVappname.
+   */
   @VsoMethod
-  public void setVcenterVAppVendor(String vcenterVAppVendor) {
-    this.vcenterVAppVendor = vcenterVAppVendor;
+  public void setVcenterVappname(String  vcenterVappname) {
+    this.vcenterVappname = vcenterVappname;
   }
 
-  
   /**
-   *  Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_vappvendor of obj type vimgrvmruntime field type str  type string.
+   * @return vcenterVappvendor
+   */
+  @VsoMethod
+  public String getVcenterVappvendor() {
+    return vcenterVappvendor;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_vappvendor of obj type vimgrvmruntime field type str  type string.
+   * @param vcenterVappvendor set the vcenterVappvendor.
+   */
+  @VsoMethod
+  public void setVcenterVappvendor(String  vcenterVappvendor) {
+    this.vcenterVappvendor = vcenterVappvendor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR.
    * @return vcenterVmType
-  **/
-  @ApiModelProperty(value = " Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVcenterVmType() {
     return vcenterVmType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR.
+   * @param vcenterVmType set the vcenterVmType.
+   */
   @VsoMethod
-  public void setVcenterVmType(String vcenterVmType) {
+  public void setVcenterVmType(String  vcenterVmType) {
     this.vcenterVmType = vcenterVmType;
   }
 
-  
   /**
-   * Placeholder for description of property vcenter_vnic_discovered of obj type VIMgrVMRuntime field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_vnic_discovered of obj type vimgrvmruntime field type str  type boolean.
    * @return vcenterVnicDiscovered
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vcenter_vnic_discovered of obj type VIMgrVMRuntime field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isVcenterVnicDiscovered() {
+   */
+  @VsoMethod
+  public Boolean getVcenterVnicDiscovered() {
     return vcenterVnicDiscovered;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_vnic_discovered of obj type vimgrvmruntime field type str  type boolean.
+   * @param vcenterVnicDiscovered set the vcenterVnicDiscovered.
+   */
   @VsoMethod
-  public void setVcenterVnicDiscovered(Boolean vcenterVnicDiscovered) {
+  public void setVcenterVnicDiscovered(Boolean  vcenterVnicDiscovered) {
     this.vcenterVnicDiscovered = vcenterVnicDiscovered;
   }
 
-  
   /**
-   * Number of vm_lb_weight.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vm_lb_weight of obj type vimgrvmruntime field type str  type integer.
    * @return vmLbWeight
-  **/
-  @ApiModelProperty(value = "Number of vm_lb_weight.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getVmLbWeight() {
     return vmLbWeight;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vm_lb_weight of obj type vimgrvmruntime field type str  type integer.
+   * @param vmLbWeight set the vmLbWeight.
+   */
   @VsoMethod
-  public void setVmLbWeight(Integer vmLbWeight) {
+  public void setVmLbWeight(Integer  vmLbWeight) {
     this.vmLbWeight = vmLbWeight;
   }
 
-  
+
   public String getObjectID() {
-		return "VIMgrVMRuntime";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VIMgrVMRuntime viMgrVMRuntime = (VIMgrVMRuntime) o;
-    return Objects.equals(this.lastModified, viMgrVMRuntime.lastModified) &&
-        Objects.equals(this.availabilityZone, viMgrVMRuntime.availabilityZone) &&
-        Objects.equals(this.cloudRef, viMgrVMRuntime.cloudRef) &&
-        Objects.equals(this.connectionState, viMgrVMRuntime.connectionState) &&
-        Objects.equals(this.controllerClusterUuid, viMgrVMRuntime.controllerClusterUuid) &&
-        Objects.equals(this.controllerIpAddr, viMgrVMRuntime.controllerIpAddr) &&
-        Objects.equals(this.controllerVm, viMgrVMRuntime.controllerVm) &&
-        Objects.equals(this.cpuReservation, viMgrVMRuntime.cpuReservation) &&
-        Objects.equals(this.cpuShares, viMgrVMRuntime.cpuShares) &&
-        Objects.equals(this.creationInProgress, viMgrVMRuntime.creationInProgress) &&
-        Objects.equals(this.guestNic, viMgrVMRuntime.guestNic) &&
-        Objects.equals(this.host, viMgrVMRuntime.host) &&
-        Objects.equals(this.initVnics, viMgrVMRuntime.initVnics) &&
-        Objects.equals(this.managedObjectId, viMgrVMRuntime.managedObjectId) &&
-        Objects.equals(this.memShares, viMgrVMRuntime.memShares) &&
-        Objects.equals(this.memory, viMgrVMRuntime.memory) &&
-        Objects.equals(this.memoryReservation, viMgrVMRuntime.memoryReservation) &&
-        Objects.equals(this.name, viMgrVMRuntime.name) &&
-        Objects.equals(this.numCpu, viMgrVMRuntime.numCpu) &&
-        Objects.equals(this.ovfAvisetypeField, viMgrVMRuntime.ovfAvisetypeField) &&
-        Objects.equals(this.powerstate, viMgrVMRuntime.powerstate) &&
-        Objects.equals(this.seVer, viMgrVMRuntime.seVer) &&
-        Objects.equals(this.tenantRef, viMgrVMRuntime.tenantRef) &&
-        Objects.equals(this.type, viMgrVMRuntime.type) &&
-        Objects.equals(this.url, viMgrVMRuntime.url) &&
-        Objects.equals(this.uuid, viMgrVMRuntime.uuid) &&
-        Objects.equals(this.vcenterDatacenterUuid, viMgrVMRuntime.vcenterDatacenterUuid) &&
-        Objects.equals(this.vcenterRmCookie, viMgrVMRuntime.vcenterRmCookie) &&
-        Objects.equals(this.vcenterSeType, viMgrVMRuntime.vcenterSeType) &&
-        Objects.equals(this.vcenterTemplateVm, viMgrVMRuntime.vcenterTemplateVm) &&
-        Objects.equals(this.vcenterVAppName, viMgrVMRuntime.vcenterVAppName) &&
-        Objects.equals(this.vcenterVAppVendor, viMgrVMRuntime.vcenterVAppVendor) &&
-        Objects.equals(this.vcenterVmType, viMgrVMRuntime.vcenterVmType) &&
-        Objects.equals(this.vcenterVnicDiscovered, viMgrVMRuntime.vcenterVnicDiscovered) &&
-        Objects.equals(this.vmLbWeight, viMgrVMRuntime.vmLbWeight);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, availabilityZone, cloudRef, connectionState, controllerClusterUuid, controllerIpAddr, controllerVm, cpuReservation, cpuShares, creationInProgress, guestNic, host, initVnics, managedObjectId, memShares, memory, memoryReservation, name, numCpu, ovfAvisetypeField, powerstate, seVer, tenantRef, type, url, uuid, vcenterDatacenterUuid, vcenterRmCookie, vcenterSeType, vcenterTemplateVm, vcenterVAppName, vcenterVAppVendor, vcenterVmType, vcenterVnicDiscovered, vmLbWeight);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VIMgrVMRuntime {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-    sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-    sb.append("    connectionState: ").append(toIndentedString(connectionState)).append("\n");
-    sb.append("    controllerClusterUuid: ").append(toIndentedString(controllerClusterUuid)).append("\n");
-    sb.append("    controllerIpAddr: ").append(toIndentedString(controllerIpAddr)).append("\n");
-    sb.append("    controllerVm: ").append(toIndentedString(controllerVm)).append("\n");
-    sb.append("    cpuReservation: ").append(toIndentedString(cpuReservation)).append("\n");
-    sb.append("    cpuShares: ").append(toIndentedString(cpuShares)).append("\n");
-    sb.append("    creationInProgress: ").append(toIndentedString(creationInProgress)).append("\n");
-    sb.append("    guestNic: ").append(toIndentedString(guestNic)).append("\n");
-    sb.append("    host: ").append(toIndentedString(host)).append("\n");
-    sb.append("    initVnics: ").append(toIndentedString(initVnics)).append("\n");
-    sb.append("    managedObjectId: ").append(toIndentedString(managedObjectId)).append("\n");
-    sb.append("    memShares: ").append(toIndentedString(memShares)).append("\n");
-    sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
-    sb.append("    memoryReservation: ").append(toIndentedString(memoryReservation)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    numCpu: ").append(toIndentedString(numCpu)).append("\n");
-    sb.append("    ovfAvisetypeField: ").append(toIndentedString(ovfAvisetypeField)).append("\n");
-    sb.append("    powerstate: ").append(toIndentedString(powerstate)).append("\n");
-    sb.append("    seVer: ").append(toIndentedString(seVer)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vcenterDatacenterUuid: ").append(toIndentedString(vcenterDatacenterUuid)).append("\n");
-    sb.append("    vcenterRmCookie: ").append(toIndentedString(vcenterRmCookie)).append("\n");
-    sb.append("    vcenterSeType: ").append(toIndentedString(vcenterSeType)).append("\n");
-    sb.append("    vcenterTemplateVm: ").append(toIndentedString(vcenterTemplateVm)).append("\n");
-    sb.append("    vcenterVAppName: ").append(toIndentedString(vcenterVAppName)).append("\n");
-    sb.append("    vcenterVAppVendor: ").append(toIndentedString(vcenterVAppVendor)).append("\n");
-    sb.append("    vcenterVmType: ").append(toIndentedString(vcenterVmType)).append("\n");
-    sb.append("    vcenterVnicDiscovered: ").append(toIndentedString(vcenterVnicDiscovered)).append("\n");
-    sb.append("    vmLbWeight: ").append(toIndentedString(vmLbWeight)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VIMgrVMRuntime objVIMgrVMRuntime = (VIMgrVMRuntime) o;
+  return   Objects.equals(this.cpuReservation, objVIMgrVMRuntime.cpuReservation)&&
+  Objects.equals(this.powerstate, objVIMgrVMRuntime.powerstate)&&
+  Objects.equals(this.vcenterVappname, objVIMgrVMRuntime.vcenterVappname)&&
+  Objects.equals(this.availabilityZone, objVIMgrVMRuntime.availabilityZone)&&
+  Objects.equals(this.initVnics, objVIMgrVMRuntime.initVnics)&&
+  Objects.equals(this.managedObjectId, objVIMgrVMRuntime.managedObjectId)&&
+  Objects.equals(this.creationInProgress, objVIMgrVMRuntime.creationInProgress)&&
+  Objects.equals(this.vmLbWeight, objVIMgrVMRuntime.vmLbWeight)&&
+  Objects.equals(this.uuid, objVIMgrVMRuntime.uuid)&&
+  Objects.equals(this.vcenterVappvendor, objVIMgrVMRuntime.vcenterVappvendor)&&
+  Objects.equals(this.vcenterVnicDiscovered, objVIMgrVMRuntime.vcenterVnicDiscovered)&&
+  Objects.equals(this.memory, objVIMgrVMRuntime.memory)&&
+  Objects.equals(this.vcenterDatacenterUuid, objVIMgrVMRuntime.vcenterDatacenterUuid)&&
+  Objects.equals(this.controllerVm, objVIMgrVMRuntime.controllerVm)&&
+  Objects.equals(this.type, objVIMgrVMRuntime.type)&&
+  Objects.equals(this.connectionState, objVIMgrVMRuntime.connectionState)&&
+  Objects.equals(this.vcenterVmType, objVIMgrVMRuntime.vcenterVmType)&&
+  Objects.equals(this.host, objVIMgrVMRuntime.host)&&
+  Objects.equals(this.vcenterSeType, objVIMgrVMRuntime.vcenterSeType)&&
+  Objects.equals(this.seVer, objVIMgrVMRuntime.seVer)&&
+  Objects.equals(this.controllerClusterUuid, objVIMgrVMRuntime.controllerClusterUuid)&&
+  Objects.equals(this.guestNic, objVIMgrVMRuntime.guestNic)&&
+  Objects.equals(this.numCpu, objVIMgrVMRuntime.numCpu)&&
+  Objects.equals(this.cloudRef, objVIMgrVMRuntime.cloudRef)&&
+  Objects.equals(this.vcenterRmCookie, objVIMgrVMRuntime.vcenterRmCookie)&&
+  Objects.equals(this.name, objVIMgrVMRuntime.name)&&
+  Objects.equals(this.ovfAvisetypeField, objVIMgrVMRuntime.ovfAvisetypeField)&&
+  Objects.equals(this.vcenterTemplateVm, objVIMgrVMRuntime.vcenterTemplateVm)&&
+  Objects.equals(this.controllerIpAddr, objVIMgrVMRuntime.controllerIpAddr)&&
+  Objects.equals(this.memoryReservation, objVIMgrVMRuntime.memoryReservation)&&
+  Objects.equals(this.memShares, objVIMgrVMRuntime.memShares)&&
+  Objects.equals(this.tenantRef, objVIMgrVMRuntime.tenantRef)&&
+  Objects.equals(this.cpuShares, objVIMgrVMRuntime.cpuShares);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VIMgrVMRuntime {\n");
+      sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    connectionState: ").append(toIndentedString(connectionState)).append("\n");
+        sb.append("    controllerClusterUuid: ").append(toIndentedString(controllerClusterUuid)).append("\n");
+        sb.append("    controllerIpAddr: ").append(toIndentedString(controllerIpAddr)).append("\n");
+        sb.append("    controllerVm: ").append(toIndentedString(controllerVm)).append("\n");
+        sb.append("    cpuReservation: ").append(toIndentedString(cpuReservation)).append("\n");
+        sb.append("    cpuShares: ").append(toIndentedString(cpuShares)).append("\n");
+        sb.append("    creationInProgress: ").append(toIndentedString(creationInProgress)).append("\n");
+        sb.append("    guestNic: ").append(toIndentedString(guestNic)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    initVnics: ").append(toIndentedString(initVnics)).append("\n");
+        sb.append("    managedObjectId: ").append(toIndentedString(managedObjectId)).append("\n");
+        sb.append("    memShares: ").append(toIndentedString(memShares)).append("\n");
+        sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
+        sb.append("    memoryReservation: ").append(toIndentedString(memoryReservation)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    numCpu: ").append(toIndentedString(numCpu)).append("\n");
+        sb.append("    ovfAvisetypeField: ").append(toIndentedString(ovfAvisetypeField)).append("\n");
+        sb.append("    powerstate: ").append(toIndentedString(powerstate)).append("\n");
+        sb.append("    seVer: ").append(toIndentedString(seVer)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vcenterDatacenterUuid: ").append(toIndentedString(vcenterDatacenterUuid)).append("\n");
+        sb.append("    vcenterRmCookie: ").append(toIndentedString(vcenterRmCookie)).append("\n");
+        sb.append("    vcenterSeType: ").append(toIndentedString(vcenterSeType)).append("\n");
+        sb.append("    vcenterTemplateVm: ").append(toIndentedString(vcenterTemplateVm)).append("\n");
+        sb.append("    vcenterVappname: ").append(toIndentedString(vcenterVappname)).append("\n");
+        sb.append("    vcenterVappvendor: ").append(toIndentedString(vcenterVappvendor)).append("\n");
+        sb.append("    vcenterVmType: ").append(toIndentedString(vcenterVmType)).append("\n");
+        sb.append("    vcenterVnicDiscovered: ").append(toIndentedString(vcenterVnicDiscovered)).append("\n");
+        sb.append("    vmLbWeight: ").append(toIndentedString(vmLbWeight)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

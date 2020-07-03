@@ -1,139 +1,138 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HttpCookiePersistenceKey
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HttpCookiePersistenceKey is a POJO class extends AviRestResource that used for creating
+ * HttpCookiePersistenceKey.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HttpCookiePersistenceKey")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPCOOKIEPERSISTENCEKEY, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPCOOKIEPERSISTENCEKEY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HttpCookiePersistenceKey extends AviRestResource  {
+public class HttpCookiePersistenceKey extends AviRestResource {
   @JsonProperty("aes_key")
+  @JsonInclude(Include.NON_NULL)
   private String aesKey = null;
 
   @JsonProperty("hmac_key")
+  @JsonInclude(Include.NON_NULL)
   private String hmacKey = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
-  
+
+
   /**
-   * aes_key of HttpCookiePersistenceKey.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property aes_key of obj type httpcookiepersistencekey field type str  type string.
    * @return aesKey
-  **/
-  @ApiModelProperty(value = "aes_key of HttpCookiePersistenceKey.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAesKey() {
     return aesKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property aes_key of obj type httpcookiepersistencekey field type str  type string.
+   * @param aesKey set the aesKey.
+   */
   @VsoMethod
-  public void setAesKey(String aesKey) {
+  public void setAesKey(String  aesKey) {
     this.aesKey = aesKey;
   }
 
-  
   /**
-   * hmac_key of HttpCookiePersistenceKey.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property hmac_key of obj type httpcookiepersistencekey field type str  type string.
    * @return hmacKey
-  **/
-  @ApiModelProperty(value = "hmac_key of HttpCookiePersistenceKey.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHmacKey() {
     return hmacKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property hmac_key of obj type httpcookiepersistencekey field type str  type string.
+   * @param hmacKey set the hmacKey.
+   */
   @VsoMethod
-  public void setHmacKey(String hmacKey) {
+  public void setHmacKey(String  hmacKey) {
     this.hmacKey = hmacKey;
   }
 
-  
   /**
-   * name to use for cookie encryption.
+   * This is the getter method this will return the attribute value.
+   * Name to use for cookie encryption.
    * @return name
-  **/
-  @ApiModelProperty(value = "name to use for cookie encryption.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name to use for cookie encryption.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
-  public String getObjectID() {
-		return "HttpCookiePersistenceKey";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HttpCookiePersistenceKey httpCookiePersistenceKey = (HttpCookiePersistenceKey) o;
-    return Objects.equals(this.aesKey, httpCookiePersistenceKey.aesKey) &&
-        Objects.equals(this.hmacKey, httpCookiePersistenceKey.hmacKey) &&
-        Objects.equals(this.name, httpCookiePersistenceKey.name);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(aesKey, hmacKey, name);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HttpCookiePersistenceKey {\n");
-    
-    sb.append("    aesKey: ").append(toIndentedString(aesKey)).append("\n");
-    sb.append("    hmacKey: ").append(toIndentedString(hmacKey)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HttpCookiePersistenceKey objHttpCookiePersistenceKey = (HttpCookiePersistenceKey) o;
+  return   Objects.equals(this.hmacKey, objHttpCookiePersistenceKey.hmacKey)&&
+  Objects.equals(this.name, objHttpCookiePersistenceKey.name)&&
+  Objects.equals(this.aesKey, objHttpCookiePersistenceKey.aesKey);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HttpCookiePersistenceKey {\n");
+      sb.append("    aesKey: ").append(toIndentedString(aesKey)).append("\n");
+        sb.append("    hmacKey: ").append(toIndentedString(hmacKey)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

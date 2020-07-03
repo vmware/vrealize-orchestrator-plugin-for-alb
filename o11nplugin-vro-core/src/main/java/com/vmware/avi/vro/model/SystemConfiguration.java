@@ -1,11 +1,14 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AdminAuthConfiguration;
 import com.vmware.avi.vro.model.DNSConfiguration;
 import com.vmware.avi.vro.model.EmailConfiguration;
+import com.vmware.avi.vro.model.TenantConfiguration;
 import com.vmware.avi.vro.model.LinuxConfiguration;
 import com.vmware.avi.vro.model.MgmtIpAccessControl;
 import com.vmware.avi.vro.model.NTPConfiguration;
@@ -13,171 +16,208 @@ import com.vmware.avi.vro.model.PortalConfiguration;
 import com.vmware.avi.vro.model.ProxyConfiguration;
 import com.vmware.avi.vro.model.SecureChannelConfiguration;
 import com.vmware.avi.vro.model.SnmpConfiguration;
-import com.vmware.avi.vro.model.TenantConfiguration;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SystemConfiguration
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SystemConfiguration is a POJO class extends AviRestResource that used for creating
+ * SystemConfiguration.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SystemConfiguration")
 @VsoFinder(name = Constants.FINDER_VRO_SYSTEMCONFIGURATION, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SystemConfiguration extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class SystemConfiguration extends AviRestResource {
   @JsonProperty("admin_auth_configuration")
+  @JsonInclude(Include.NON_NULL)
   private AdminAuthConfiguration adminAuthConfiguration = null;
 
   @JsonProperty("default_license_tier")
-  private String defaultLicenseTier = "ENTERPRISE_18";
+  @JsonInclude(Include.NON_NULL)
+  private String defaultLicenseTier = "ENTERPRISE";
 
   @JsonProperty("dns_configuration")
+  @JsonInclude(Include.NON_NULL)
   private DNSConfiguration dnsConfiguration = null;
 
   @JsonProperty("dns_virtualservice_refs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> dnsVirtualserviceRefs = null;
 
   @JsonProperty("docker_mode")
-  private Boolean dockerMode = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean dockerMode = false;
 
   @JsonProperty("email_configuration")
+  @JsonInclude(Include.NON_NULL)
   private EmailConfiguration emailConfiguration = null;
 
+  @JsonProperty("fips_mode")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean fipsMode = false;
+
   @JsonProperty("global_tenant_config")
+  @JsonInclude(Include.NON_NULL)
   private TenantConfiguration globalTenantConfig = null;
 
   @JsonProperty("linux_configuration")
+  @JsonInclude(Include.NON_NULL)
   private LinuxConfiguration linuxConfiguration = null;
 
   @JsonProperty("mgmt_ip_access_control")
+  @JsonInclude(Include.NON_NULL)
   private MgmtIpAccessControl mgmtIpAccessControl = null;
 
   @JsonProperty("ntp_configuration")
+  @JsonInclude(Include.NON_NULL)
   private NTPConfiguration ntpConfiguration = null;
 
   @JsonProperty("portal_configuration")
+  @JsonInclude(Include.NON_NULL)
   private PortalConfiguration portalConfiguration = null;
 
   @JsonProperty("proxy_configuration")
+  @JsonInclude(Include.NON_NULL)
   private ProxyConfiguration proxyConfiguration = null;
 
   @JsonProperty("secure_channel_configuration")
+  @JsonInclude(Include.NON_NULL)
   private SecureChannelConfiguration secureChannelConfiguration = null;
 
   @JsonProperty("snmp_configuration")
+  @JsonInclude(Include.NON_NULL)
   private SnmpConfiguration snmpConfiguration = null;
 
   @JsonProperty("ssh_ciphers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> sshCiphers = null;
 
   @JsonProperty("ssh_hmacs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> sshHmacs = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("welcome_workflow_complete")
-  private Boolean welcomeWorkflowComplete = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean welcomeWorkflowComplete = false;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Placeholder for description of property admin_auth_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property admin_auth_configuration of obj type systemconfiguration field type str  type ref.
    * @return adminAuthConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property admin_auth_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AdminAuthConfiguration getAdminAuthConfiguration() {
     return adminAuthConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property admin_auth_configuration of obj type systemconfiguration field type str  type ref.
+   * @param adminAuthConfiguration set the adminAuthConfiguration.
+   */
   @VsoMethod
   public void setAdminAuthConfiguration(AdminAuthConfiguration adminAuthConfiguration) {
     this.adminAuthConfiguration = adminAuthConfiguration;
   }
 
-  
   /**
-   * Specifies the default license tier which would be used by new Clouds. Enum options - ENTERPRISE_16, ENTERPRISE_18. Field introduced in 17.2.5.
+   * This is the getter method this will return the attribute value.
+   * Specifies the default license tier which would be used by new clouds.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
    * @return defaultLicenseTier
-  **/
-  @ApiModelProperty(value = "Specifies the default license tier which would be used by new Clouds. Enum options - ENTERPRISE_16, ENTERPRISE_18. Field introduced in 17.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDefaultLicenseTier() {
     return defaultLicenseTier;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies the default license tier which would be used by new clouds.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
+   * @param defaultLicenseTier set the defaultLicenseTier.
+   */
   @VsoMethod
-  public void setDefaultLicenseTier(String defaultLicenseTier) {
+  public void setDefaultLicenseTier(String  defaultLicenseTier) {
     this.defaultLicenseTier = defaultLicenseTier;
   }
 
-  
   /**
-   * Placeholder for description of property dns_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property dns_configuration of obj type systemconfiguration field type str  type ref.
    * @return dnsConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property dns_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DNSConfiguration getDnsConfiguration() {
     return dnsConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property dns_configuration of obj type systemconfiguration field type str  type ref.
+   * @param dnsConfiguration set the dnsConfiguration.
+   */
   @VsoMethod
   public void setDnsConfiguration(DNSConfiguration dnsConfiguration) {
     this.dnsConfiguration = dnsConfiguration;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dns virtualservices hosting fqdn records for applications across avi vantage.
+   * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
+   * Switching back to avi vantage from dns virtualservices is not allowed.
+   * It is a reference to an object of type virtualservice.
+   * @return dnsVirtualserviceRefs
+   */
+  @VsoMethod
+  public List<String> getDnsVirtualserviceRefs() {
+    return dnsVirtualserviceRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the dnsVirtualserviceRefs
+   * Dns virtualservices hosting fqdn records for applications across avi vantage.
+   * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
+   * Switching back to avi vantage from dns virtualservices is not allowed.
+   * It is a reference to an object of type virtualservice.
+   * @return dnsVirtualserviceRefs
+   */
+  @VsoMethod
+  public void setDnsVirtualserviceRefs(List<String>  dnsVirtualserviceRefs) {
+    this.dnsVirtualserviceRefs = dnsVirtualserviceRefs;
+  }
+
+  /**
+   * This is the setter method this will set the dnsVirtualserviceRefs
+   * Dns virtualservices hosting fqdn records for applications across avi vantage.
+   * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
+   * Switching back to avi vantage from dns virtualservices is not allowed.
+   * It is a reference to an object of type virtualservice.
+   * @return dnsVirtualserviceRefs
+   */
+  @VsoMethod
   public SystemConfiguration addDnsVirtualserviceRefsItem(String dnsVirtualserviceRefsItem) {
     if (this.dnsVirtualserviceRefs == null) {
       this.dnsVirtualserviceRefs = new ArrayList<String>();
@@ -185,225 +225,265 @@ public class SystemConfiguration extends AviRestResource  {
     this.dnsVirtualserviceRefs.add(dnsVirtualserviceRefsItem);
     return this;
   }
-  
+
+
   /**
-   * DNS virtualservices hosting FQDN records for applications across Avi Vantage. If no virtualservices are provided, Avi Vantage will provide DNS services for configured applications. Switching back to Avi Vantage from DNS virtualservices is not allowed. It is a reference to an object of type VirtualService.
-   * @return dnsVirtualserviceRefs
-  **/
-  @ApiModelProperty(value = "DNS virtualservices hosting FQDN records for applications across Avi Vantage. If no virtualservices are provided, Avi Vantage will provide DNS services for configured applications. Switching back to Avi Vantage from DNS virtualservices is not allowed. It is a reference to an object of type VirtualService.")
-
-
- 
-  @VsoMethod  
-  public List<String> getDnsVirtualserviceRefs() {
-    return dnsVirtualserviceRefs;
-  }
-    
-  @VsoMethod
-  public void setDnsVirtualserviceRefs(List<String> dnsVirtualserviceRefs) {
-    this.dnsVirtualserviceRefs = dnsVirtualserviceRefs;
-  }
-
-  
-  /**
-   * Placeholder for description of property docker_mode of obj type SystemConfiguration field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property docker_mode of obj type systemconfiguration field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return dockerMode
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property docker_mode of obj type SystemConfiguration field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isDockerMode() {
+   */
+  @VsoMethod
+  public Boolean getDockerMode() {
     return dockerMode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property docker_mode of obj type systemconfiguration field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param dockerMode set the dockerMode.
+   */
   @VsoMethod
-  public void setDockerMode(Boolean dockerMode) {
+  public void setDockerMode(Boolean  dockerMode) {
     this.dockerMode = dockerMode;
   }
 
-  
   /**
-   * Placeholder for description of property email_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property email_configuration of obj type systemconfiguration field type str  type ref.
    * @return emailConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property email_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public EmailConfiguration getEmailConfiguration() {
     return emailConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property email_configuration of obj type systemconfiguration field type str  type ref.
+   * @param emailConfiguration set the emailConfiguration.
+   */
   @VsoMethod
   public void setEmailConfiguration(EmailConfiguration emailConfiguration) {
     this.emailConfiguration = emailConfiguration;
   }
 
-  
   /**
-   * Placeholder for description of property global_tenant_config of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Enable fips mode.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return fipsMode
+   */
+  @VsoMethod
+  public Boolean getFipsMode() {
+    return fipsMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable fips mode.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param fipsMode set the fipsMode.
+   */
+  @VsoMethod
+  public void setFipsMode(Boolean  fipsMode) {
+    this.fipsMode = fipsMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property global_tenant_config of obj type systemconfiguration field type str  type ref.
    * @return globalTenantConfig
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property global_tenant_config of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public TenantConfiguration getGlobalTenantConfig() {
     return globalTenantConfig;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property global_tenant_config of obj type systemconfiguration field type str  type ref.
+   * @param globalTenantConfig set the globalTenantConfig.
+   */
   @VsoMethod
   public void setGlobalTenantConfig(TenantConfiguration globalTenantConfig) {
     this.globalTenantConfig = globalTenantConfig;
   }
 
-  
   /**
-   * Placeholder for description of property linux_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property linux_configuration of obj type systemconfiguration field type str  type ref.
    * @return linuxConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property linux_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public LinuxConfiguration getLinuxConfiguration() {
     return linuxConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property linux_configuration of obj type systemconfiguration field type str  type ref.
+   * @param linuxConfiguration set the linuxConfiguration.
+   */
   @VsoMethod
   public void setLinuxConfiguration(LinuxConfiguration linuxConfiguration) {
     this.linuxConfiguration = linuxConfiguration;
   }
 
-  
   /**
-   * Configure Ip Access control for controller to restrict open access.
+   * This is the getter method this will return the attribute value.
+   * Configure ip access control for controller to restrict open access.
    * @return mgmtIpAccessControl
-  **/
-  @ApiModelProperty(value = "Configure Ip Access control for controller to restrict open access.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public MgmtIpAccessControl getMgmtIpAccessControl() {
     return mgmtIpAccessControl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip access control for controller to restrict open access.
+   * @param mgmtIpAccessControl set the mgmtIpAccessControl.
+   */
   @VsoMethod
   public void setMgmtIpAccessControl(MgmtIpAccessControl mgmtIpAccessControl) {
     this.mgmtIpAccessControl = mgmtIpAccessControl;
   }
 
-  
   /**
-   * Placeholder for description of property ntp_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ntp_configuration of obj type systemconfiguration field type str  type ref.
    * @return ntpConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property ntp_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public NTPConfiguration getNtpConfiguration() {
     return ntpConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ntp_configuration of obj type systemconfiguration field type str  type ref.
+   * @param ntpConfiguration set the ntpConfiguration.
+   */
   @VsoMethod
   public void setNtpConfiguration(NTPConfiguration ntpConfiguration) {
     this.ntpConfiguration = ntpConfiguration;
   }
 
-  
   /**
-   * Placeholder for description of property portal_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property portal_configuration of obj type systemconfiguration field type str  type ref.
    * @return portalConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property portal_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PortalConfiguration getPortalConfiguration() {
     return portalConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property portal_configuration of obj type systemconfiguration field type str  type ref.
+   * @param portalConfiguration set the portalConfiguration.
+   */
   @VsoMethod
   public void setPortalConfiguration(PortalConfiguration portalConfiguration) {
     this.portalConfiguration = portalConfiguration;
   }
 
-  
   /**
-   * Placeholder for description of property proxy_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property proxy_configuration of obj type systemconfiguration field type str  type ref.
    * @return proxyConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property proxy_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public ProxyConfiguration getProxyConfiguration() {
     return proxyConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property proxy_configuration of obj type systemconfiguration field type str  type ref.
+   * @param proxyConfiguration set the proxyConfiguration.
+   */
   @VsoMethod
   public void setProxyConfiguration(ProxyConfiguration proxyConfiguration) {
     this.proxyConfiguration = proxyConfiguration;
   }
 
-  
   /**
-   * Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Configure secure channel properties.
+   * Field introduced in 18.1.4, 18.2.1.
    * @return secureChannelConfiguration
-  **/
-  @ApiModelProperty(value = "Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SecureChannelConfiguration getSecureChannelConfiguration() {
     return secureChannelConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure secure channel properties.
+   * Field introduced in 18.1.4, 18.2.1.
+   * @param secureChannelConfiguration set the secureChannelConfiguration.
+   */
   @VsoMethod
   public void setSecureChannelConfiguration(SecureChannelConfiguration secureChannelConfiguration) {
     this.secureChannelConfiguration = secureChannelConfiguration;
   }
 
-  
   /**
-   * Placeholder for description of property snmp_configuration of obj type SystemConfiguration field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property snmp_configuration of obj type systemconfiguration field type str  type ref.
    * @return snmpConfiguration
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property snmp_configuration of obj type SystemConfiguration field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SnmpConfiguration getSnmpConfiguration() {
     return snmpConfiguration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property snmp_configuration of obj type systemconfiguration field type str  type ref.
+   * @param snmpConfiguration set the snmpConfiguration.
+   */
   @VsoMethod
   public void setSnmpConfiguration(SnmpConfiguration snmpConfiguration) {
     this.snmpConfiguration = snmpConfiguration;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allowed ciphers list for ssh to the management interface on the controller and service engines.
+   * If this is not specified, all the default ciphers are allowed.
+   * @return sshCiphers
+   */
+  @VsoMethod
+  public List<String> getSshCiphers() {
+    return sshCiphers;
+  }
+
+  /**
+   * This is the setter method. this will set the sshCiphers
+   * Allowed ciphers list for ssh to the management interface on the controller and service engines.
+   * If this is not specified, all the default ciphers are allowed.
+   * @return sshCiphers
+   */
+  @VsoMethod
+  public void setSshCiphers(List<String>  sshCiphers) {
+    this.sshCiphers = sshCiphers;
+  }
+
+  /**
+   * This is the setter method this will set the sshCiphers
+   * Allowed ciphers list for ssh to the management interface on the controller and service engines.
+   * If this is not specified, all the default ciphers are allowed.
+   * @return sshCiphers
+   */
+  @VsoMethod
   public SystemConfiguration addSshCiphersItem(String sshCiphersItem) {
     if (this.sshCiphers == null) {
       this.sshCiphers = new ArrayList<String>();
@@ -411,26 +491,37 @@ public class SystemConfiguration extends AviRestResource  {
     this.sshCiphers.add(sshCiphersItem);
     return this;
   }
-  
+
+
   /**
-   * Allowed Ciphers list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default ciphers are allowed.
-   * @return sshCiphers
-  **/
-  @ApiModelProperty(value = "Allowed Ciphers list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default ciphers are allowed.")
-
-
- 
-  @VsoMethod  
-  public List<String> getSshCiphers() {
-    return sshCiphers;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Allowed hmac list for ssh to the management interface on the controller and service engines.
+   * If this is not specified, all the default hmacs are allowed.
+   * @return sshHmacs
+   */
   @VsoMethod
-  public void setSshCiphers(List<String> sshCiphers) {
-    this.sshCiphers = sshCiphers;
+  public List<String> getSshHmacs() {
+    return sshHmacs;
   }
 
-  
+  /**
+   * This is the setter method. this will set the sshHmacs
+   * Allowed hmac list for ssh to the management interface on the controller and service engines.
+   * If this is not specified, all the default hmacs are allowed.
+   * @return sshHmacs
+   */
+  @VsoMethod
+  public void setSshHmacs(List<String>  sshHmacs) {
+    this.sshHmacs = sshHmacs;
+  }
+
+  /**
+   * This is the setter method this will set the sshHmacs
+   * Allowed hmac list for ssh to the management interface on the controller and service engines.
+   * If this is not specified, all the default hmacs are allowed.
+   * @return sshHmacs
+   */
+  @VsoMethod
   public SystemConfiguration addSshHmacsItem(String sshHmacsItem) {
     if (this.sshHmacs == null) {
       this.sshHmacs = new ArrayList<String>();
@@ -438,161 +529,141 @@ public class SystemConfiguration extends AviRestResource  {
     this.sshHmacs.add(sshHmacsItem);
     return this;
   }
-  
-  /**
-   * Allowed HMAC list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default HMACs are allowed.
-   * @return sshHmacs
-  **/
-  @ApiModelProperty(value = "Allowed HMAC list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default HMACs are allowed.")
 
-
- 
-  @VsoMethod  
-  public List<String> getSshHmacs() {
-    return sshHmacs;
-  }
-    
-  @VsoMethod
-  public void setSshHmacs(List<String> sshHmacs) {
-    this.sshHmacs = sshHmacs;
-  }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * This flag is set once the Initial Controller Setup workflow is complete. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * This flag is set once the initial controller setup workflow is complete.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return welcomeWorkflowComplete
-  **/
-  @ApiModelProperty(value = "This flag is set once the Initial Controller Setup workflow is complete. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isWelcomeWorkflowComplete() {
+   */
+  @VsoMethod
+  public Boolean getWelcomeWorkflowComplete() {
     return welcomeWorkflowComplete;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This flag is set once the initial controller setup workflow is complete.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param welcomeWorkflowComplete set the welcomeWorkflowComplete.
+   */
   @VsoMethod
-  public void setWelcomeWorkflowComplete(Boolean welcomeWorkflowComplete) {
+  public void setWelcomeWorkflowComplete(Boolean  welcomeWorkflowComplete) {
     this.welcomeWorkflowComplete = welcomeWorkflowComplete;
   }
 
-  
+
   public String getObjectID() {
-		return "SystemConfiguration";
+    return "SystemConfiguration" + "(" + uuid + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SystemConfiguration systemConfiguration = (SystemConfiguration) o;
-    return Objects.equals(this.lastModified, systemConfiguration.lastModified) &&
-        Objects.equals(this.adminAuthConfiguration, systemConfiguration.adminAuthConfiguration) &&
-        Objects.equals(this.defaultLicenseTier, systemConfiguration.defaultLicenseTier) &&
-        Objects.equals(this.dnsConfiguration, systemConfiguration.dnsConfiguration) &&
-        Objects.equals(this.dnsVirtualserviceRefs, systemConfiguration.dnsVirtualserviceRefs) &&
-        Objects.equals(this.dockerMode, systemConfiguration.dockerMode) &&
-        Objects.equals(this.emailConfiguration, systemConfiguration.emailConfiguration) &&
-        Objects.equals(this.globalTenantConfig, systemConfiguration.globalTenantConfig) &&
-        Objects.equals(this.linuxConfiguration, systemConfiguration.linuxConfiguration) &&
-        Objects.equals(this.mgmtIpAccessControl, systemConfiguration.mgmtIpAccessControl) &&
-        Objects.equals(this.ntpConfiguration, systemConfiguration.ntpConfiguration) &&
-        Objects.equals(this.portalConfiguration, systemConfiguration.portalConfiguration) &&
-        Objects.equals(this.proxyConfiguration, systemConfiguration.proxyConfiguration) &&
-        Objects.equals(this.secureChannelConfiguration, systemConfiguration.secureChannelConfiguration) &&
-        Objects.equals(this.snmpConfiguration, systemConfiguration.snmpConfiguration) &&
-        Objects.equals(this.sshCiphers, systemConfiguration.sshCiphers) &&
-        Objects.equals(this.sshHmacs, systemConfiguration.sshHmacs) &&
-        Objects.equals(this.url, systemConfiguration.url) &&
-        Objects.equals(this.uuid, systemConfiguration.uuid) &&
-        Objects.equals(this.welcomeWorkflowComplete, systemConfiguration.welcomeWorkflowComplete);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, adminAuthConfiguration, defaultLicenseTier, dnsConfiguration, dnsVirtualserviceRefs, dockerMode, emailConfiguration, globalTenantConfig, linuxConfiguration, mgmtIpAccessControl, ntpConfiguration, portalConfiguration, proxyConfiguration, secureChannelConfiguration, snmpConfiguration, sshCiphers, sshHmacs, url, uuid, welcomeWorkflowComplete);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SystemConfiguration {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
-    sb.append("    defaultLicenseTier: ").append(toIndentedString(defaultLicenseTier)).append("\n");
-    sb.append("    dnsConfiguration: ").append(toIndentedString(dnsConfiguration)).append("\n");
-    sb.append("    dnsVirtualserviceRefs: ").append(toIndentedString(dnsVirtualserviceRefs)).append("\n");
-    sb.append("    dockerMode: ").append(toIndentedString(dockerMode)).append("\n");
-    sb.append("    emailConfiguration: ").append(toIndentedString(emailConfiguration)).append("\n");
-    sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
-    sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
-    sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
-    sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
-    sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
-    sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
-    sb.append("    secureChannelConfiguration: ").append(toIndentedString(secureChannelConfiguration)).append("\n");
-    sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
-    sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
-    sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    welcomeWorkflowComplete: ").append(toIndentedString(welcomeWorkflowComplete)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SystemConfiguration objSystemConfiguration = (SystemConfiguration) o;
+  return   Objects.equals(this.emailConfiguration, objSystemConfiguration.emailConfiguration)&&
+  Objects.equals(this.globalTenantConfig, objSystemConfiguration.globalTenantConfig)&&
+  Objects.equals(this.welcomeWorkflowComplete, objSystemConfiguration.welcomeWorkflowComplete)&&
+  Objects.equals(this.secureChannelConfiguration, objSystemConfiguration.secureChannelConfiguration)&&
+  Objects.equals(this.uuid, objSystemConfiguration.uuid)&&
+  Objects.equals(this.dnsConfiguration, objSystemConfiguration.dnsConfiguration)&&
+  Objects.equals(this.sshHmacs, objSystemConfiguration.sshHmacs)&&
+  Objects.equals(this.dnsVirtualserviceRefs, objSystemConfiguration.dnsVirtualserviceRefs)&&
+  Objects.equals(this.dockerMode, objSystemConfiguration.dockerMode)&&
+  Objects.equals(this.proxyConfiguration, objSystemConfiguration.proxyConfiguration)&&
+  Objects.equals(this.snmpConfiguration, objSystemConfiguration.snmpConfiguration)&&
+  Objects.equals(this.linuxConfiguration, objSystemConfiguration.linuxConfiguration)&&
+  Objects.equals(this.portalConfiguration, objSystemConfiguration.portalConfiguration)&&
+  Objects.equals(this.fipsMode, objSystemConfiguration.fipsMode)&&
+  Objects.equals(this.ntpConfiguration, objSystemConfiguration.ntpConfiguration)&&
+  Objects.equals(this.adminAuthConfiguration, objSystemConfiguration.adminAuthConfiguration)&&
+  Objects.equals(this.mgmtIpAccessControl, objSystemConfiguration.mgmtIpAccessControl)&&
+  Objects.equals(this.sshCiphers, objSystemConfiguration.sshCiphers)&&
+  Objects.equals(this.defaultLicenseTier, objSystemConfiguration.defaultLicenseTier);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SystemConfiguration {\n");
+      sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
+        sb.append("    defaultLicenseTier: ").append(toIndentedString(defaultLicenseTier)).append("\n");
+        sb.append("    dnsConfiguration: ").append(toIndentedString(dnsConfiguration)).append("\n");
+        sb.append("    dnsVirtualserviceRefs: ").append(toIndentedString(dnsVirtualserviceRefs)).append("\n");
+        sb.append("    dockerMode: ").append(toIndentedString(dockerMode)).append("\n");
+        sb.append("    emailConfiguration: ").append(toIndentedString(emailConfiguration)).append("\n");
+        sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
+        sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
+        sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
+        sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
+        sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
+        sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
+        sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
+        sb.append("    secureChannelConfiguration: ").append(toIndentedString(secureChannelConfiguration)).append("\n");
+        sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
+        sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
+        sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    welcomeWorkflowComplete: ").append(toIndentedString(welcomeWorkflowComplete)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

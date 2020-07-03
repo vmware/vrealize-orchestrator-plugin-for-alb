@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createIPAMVsVIPObj"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="1983a2e1-a3d4-44af-b6fa-05d5354bf612" version="0.1.5"
+	allowed-operations="vfe">
+	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
+	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
+	<param n="IPAddress" t="string"><![CDATA[Vs vip IP address]]></param>
+	<param n="eastWestPlacement" t="boolean"><![CDATA[Add east west  placement]]></param>
+	<param n="aviAllocatedFIp" t="boolean"><![CDATA[Allocate FIP]]></param>
+	<param n="autoAllocateIp" t="boolean"><![CDATA[Auto allocate IP]]></param>
+	<param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
+	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
+	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
+	<param n="serverType" t="string"><![CDATA[Server type]]></param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="network_management_name" t="string"><![CDATA[network management name]]></param>
+	<param n="app_domain_name" t="string"><![CDATA[App domain name]]></param>
+	<param n="domain" t="string"><![CDATA[Domain]]></param>
+	<param n="cloud_name" t="string"><![CDATA[
+	]]></param>
+	<script encoded="false"><![CDATA[/************************************************************
+* This action initializes VS_VIP properties objects         *
+* and puts user input into the VS_VIP object with IPAM 		*
+*************************************************************/
+
+try{
+	var dns_info = new Array();
+	dnsinfoObject = new AviDnsInfo();
+	dnsinfoObject.setNumRecordsInResponse(1);
+	dnsinfoObject.setType("DNS_RECORD_A");
+	dnsinfoObject.setAlgorithm("DNS_RECORD_RESPONSE_CONSISTENT_HASH");
+	dnsinfoObject.setTtl(30);
+	dnsinfoObject.setFqdn(domain+app_domain_name);
+	dns_info.push(dnsinfoObject);
+	networkObject = new AviNetwork() ;
+	System.log("network_management_name : "+network_management_name);
+	networkObject= aviVroClient.getObjectByName("network",network_management_name);
+	var network_ref=networkObject.getUrl();
+	var discovered_networks= new Array();
+	discoveredNetworkObject = new AviDiscoveredNetwork();
+	var subnetArray = new Array();	
+	var configuredSubnet=networkObject.getConfiguredSubnets();
+	System.log("configuredSubnet -> "+ configuredSubnet)
+	subnetObject=configuredSubnet[0];
+	var network=subnetObject.getPrefix();
+	var ip=network.ipAddr.addr;
+	System.log("ip : "+ip);
+	subnetArray.push(network);
+	discoveredNetworkObject.setSubnet(subnetArray);
+	discoveredNetworkObject.setNetworkRef(network_ref);
+	discovered_networks.push(discoveredNetworkObject);
+	ipamNetworkSubnetObject = new AviIPNetworkSubnet();
+	ipamNetworkSubnetObject.setSubnet(network);
+	ipamNetworkSubnetObject.setNetworkRef(network_ref);
+	IPAddrObject = new AviIpAddr() ;
+	//var staticIp =subnetObject.getStaticIps();
+	//System.log("staticIp -> "+ staticIp)
+	//IPAddrObject=staticIp[0];
+	IPAddrObject=network.ipAddr;
+	System.log("IPAddrObject : "+IPAddrObject);
+	vsVipObject = new AviVsVip();
+	vsVipObject.setTenantRef( "/api/tenant?name="+Tenant);
+	vsVipObject.setCloudRef("/api/cloud?name="+cloud_name);
+	if (eastWestPlacement){
+		vsVipObject.setEastWestPlacement(eastWestPlacement);
+	}
+	vsVipObject.setName(name);
+	vsVipObject.setDnsInfo(dns_info);
+	var vipList =new Array();
+	vipObject = new AviVip();
+	vipObject.setVipId(1);
+	if (aviAllocatedFIp){
+		vipObject.setAviAllocatedFip(aviAllocatedFIp);
+	}
+	vipObject.setAutoAllocateIp(autoAllocateIp);
+	vipObject.setEnabled(enabled);
+	if (autoAllocateFloatingIp){
+		vipObject.setAutoAllocateFloatingIp(autoAllocateFloatingIp);
+	}
+	if (aviAllocatedVip){
+		vipObject.setAviAllocatedVip(aviAllocatedVip);
+	}
+	vipObject.setAutoAllocateIpType("V4_ONLY");
+	vipObject.setDiscoveredNetworks(discovered_networks);
+	vipObject.setIpamNetworkSubnet(ipamNetworkSubnetObject);
+	vipObject.setIpAddress(IPAddrObject);
+	vipList.push(vipObject);
+	vsVipObject.setVip(vipList);
+
+	System.log("IPAM Vs Vip data : "+vsVipObject);
+
+	aviVroClient.addObject(vsVipObject)
+	return aviVroClient
+
+} catch (e) {
+	throw "Error when create vsVip -> "+ e
+}
+]]></script>
+</dunes-script-module>

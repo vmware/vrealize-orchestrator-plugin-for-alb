@@ -1,68 +1,98 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.TimeStamp;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * OperationalStatus
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The OperationalStatus is a POJO class extends AviRestResource that used for creating
+ * OperationalStatus.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "OperationalStatus")
-@VsoFinder(name = Constants.FINDER_VRO_OPERATIONALSTATUS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_OPERATIONALSTATUS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class OperationalStatus extends AviRestResource  {
+public class OperationalStatus extends AviRestResource {
   @JsonProperty("last_changed_time")
+  @JsonInclude(Include.NON_NULL)
   private TimeStamp lastChangedTime = null;
 
   @JsonProperty("reason")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> reason = null;
 
   @JsonProperty("reason_code")
-  private Long reasonCode = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer reasonCode = null;
 
   @JsonProperty("reason_code_string")
+  @JsonInclude(Include.NON_NULL)
   private String reasonCodeString = null;
 
   @JsonProperty("state")
+  @JsonInclude(Include.NON_NULL)
   private String state = "OPER_UNAVAIL";
 
-  
+
+
   /**
-   * Placeholder for description of property last_changed_time of obj type OperationalStatus field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property last_changed_time of obj type operationalstatus field type str  type ref.
    * @return lastChangedTime
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property last_changed_time of obj type OperationalStatus field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public TimeStamp getLastChangedTime() {
     return lastChangedTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property last_changed_time of obj type operationalstatus field type str  type ref.
+   * @param lastChangedTime set the lastChangedTime.
+   */
   @VsoMethod
   public void setLastChangedTime(TimeStamp lastChangedTime) {
     this.lastChangedTime = lastChangedTime;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+   * @return reason
+   */
+  @VsoMethod
+  public List<String> getReason() {
+    return reason;
+  }
+
+  /**
+   * This is the setter method. this will set the reason
+   * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+   * @return reason
+   */
+  @VsoMethod
+  public void setReason(List<String>  reason) {
+    this.reason = reason;
+  }
+
+  /**
+   * This is the setter method this will set the reason
+   * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+   * @return reason
+   */
+  @VsoMethod
   public OperationalStatus addReasonItem(String reasonItem) {
     if (this.reason == null) {
       this.reason = new ArrayList<String>();
@@ -70,131 +100,113 @@ public class OperationalStatus extends AviRestResource  {
     this.reason.add(reasonItem);
     return this;
   }
-  
+
+
   /**
-   * reason of OperationalStatus.
-   * @return reason
-  **/
-  @ApiModelProperty(value = "reason of OperationalStatus.")
-
-
- 
-  @VsoMethod  
-  public List<String> getReason() {
-    return reason;
-  }
-    
-  @VsoMethod
-  public void setReason(List<String> reason) {
-    this.reason = reason;
-  }
-
-  
-  /**
-   * Number of reason_code.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property reason_code of obj type operationalstatus field type str  type integer.
    * @return reasonCode
-  **/
-  @ApiModelProperty(value = "Number of reason_code.")
-
-
- 
-  @VsoMethod  
-  public Long getReasonCode() {
+   */
+  @VsoMethod
+  public Integer getReasonCode() {
     return reasonCode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property reason_code of obj type operationalstatus field type str  type integer.
+   * @param reasonCode set the reasonCode.
+   */
   @VsoMethod
-  public void setReasonCode(Long reasonCode) {
+  public void setReasonCode(Integer  reasonCode) {
     this.reasonCode = reasonCode;
   }
 
-  
   /**
-   * reason_code_string of OperationalStatus.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property reason_code_string of obj type operationalstatus field type str  type string.
    * @return reasonCodeString
-  **/
-  @ApiModelProperty(value = "reason_code_string of OperationalStatus.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getReasonCodeString() {
     return reasonCodeString;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property reason_code_string of obj type operationalstatus field type str  type string.
+   * @param reasonCodeString set the reasonCodeString.
+   */
   @VsoMethod
-  public void setReasonCodeString(String reasonCodeString) {
+  public void setReasonCodeString(String  reasonCodeString) {
     this.reasonCodeString = reasonCodeString;
   }
 
-  
   /**
-   *  Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL.
+   * This is the getter method this will return the attribute value.
+   * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
+   * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
+   * OPER_FAILED, OPER_UNAVAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as OPER_UNAVAIL.
    * @return state
-  **/
-  @ApiModelProperty(value = " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getState() {
     return state;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
+   * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
+   * OPER_FAILED, OPER_UNAVAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as OPER_UNAVAIL.
+   * @param state set the state.
+   */
   @VsoMethod
-  public void setState(String state) {
+  public void setState(String  state) {
     this.state = state;
   }
 
-  
-  public String getObjectID() {
-		return "OperationalStatus";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    OperationalStatus operationalStatus = (OperationalStatus) o;
-    return Objects.equals(this.lastChangedTime, operationalStatus.lastChangedTime) &&
-        Objects.equals(this.reason, operationalStatus.reason) &&
-        Objects.equals(this.reasonCode, operationalStatus.reasonCode) &&
-        Objects.equals(this.reasonCodeString, operationalStatus.reasonCodeString) &&
-        Objects.equals(this.state, operationalStatus.state);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastChangedTime, reason, reasonCode, reasonCodeString, state);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OperationalStatus {\n");
-    
-    sb.append("    lastChangedTime: ").append(toIndentedString(lastChangedTime)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
-    sb.append("    reasonCodeString: ").append(toIndentedString(reasonCodeString)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  OperationalStatus objOperationalStatus = (OperationalStatus) o;
+  return   Objects.equals(this.reasonCodeString, objOperationalStatus.reasonCodeString)&&
+  Objects.equals(this.state, objOperationalStatus.state)&&
+  Objects.equals(this.reasonCode, objOperationalStatus.reasonCode)&&
+  Objects.equals(this.reason, objOperationalStatus.reason)&&
+  Objects.equals(this.lastChangedTime, objOperationalStatus.lastChangedTime);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class OperationalStatus {\n");
+      sb.append("    lastChangedTime: ").append(toIndentedString(lastChangedTime)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+        sb.append("    reasonCodeString: ").append(toIndentedString(reasonCodeString)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

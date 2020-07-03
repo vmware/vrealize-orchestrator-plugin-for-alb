@@ -1,95 +1,111 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.GslbGeoDbEntry;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * GslbGeoDbProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The GslbGeoDbProfile is a POJO class extends AviRestResource that used for creating
+ * GslbGeoDbProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "GslbGeoDbProfile")
 @VsoFinder(name = Constants.FINDER_VRO_GSLBGEODBPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class GslbGeoDbProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class GslbGeoDbProfile extends AviRestResource {
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("entries")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<GslbGeoDbEntry> entries = null;
 
   @JsonProperty("is_federated")
+  @JsonInclude(Include.NON_NULL)
   private Boolean isFederated = true;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   *  Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1.
    * @return description
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.1.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of geodb entries.
+   * An entry can either be a geodb file or an ip address group with geo properties.
+   * Field introduced in 17.1.1.
+   * @return entries
+   */
+  @VsoMethod
+  public List<GslbGeoDbEntry> getEntries() {
+    return entries;
+  }
+
+  /**
+   * This is the setter method. this will set the entries
+   * List of geodb entries.
+   * An entry can either be a geodb file or an ip address group with geo properties.
+   * Field introduced in 17.1.1.
+   * @return entries
+   */
+  @VsoMethod
+  public void setEntries(List<GslbGeoDbEntry>  entries) {
+    this.entries = entries;
+  }
+
+  /**
+   * This is the setter method this will set the entries
+   * List of geodb entries.
+   * An entry can either be a geodb file or an ip address group with geo properties.
+   * Field introduced in 17.1.1.
+   * @return entries
+   */
+  @VsoMethod
   public GslbGeoDbProfile addEntriesItem(GslbGeoDbEntry entriesItem) {
     if (this.entries == null) {
       this.entries = new ArrayList<GslbGeoDbEntry>();
@@ -97,177 +113,161 @@ public class GslbGeoDbProfile extends AviRestResource  {
     this.entries.add(entriesItem);
     return this;
   }
-  
+
+
   /**
-   * List of Geodb entries. An entry can either be a geodb file or an ip address group with geo properties. . Field introduced in 17.1.1.
-   * @return entries
-  **/
-  @ApiModelProperty(value = "List of Geodb entries. An entry can either be a geodb file or an ip address group with geo properties. . Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<GslbGeoDbEntry> getEntries() {
-    return entries;
-  }
-    
-  @VsoMethod
-  public void setEntries(List<GslbGeoDbEntry> entries) {
-    this.entries = entries;
-  }
-
-  
-  /**
-   * This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3.
+   * This is the getter method this will return the attribute value.
+   * This field indicates that this object is replicated across gslb federation.
+   * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return isFederated
-  **/
-  @ApiModelProperty(value = "This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isIsFederated() {
+   */
+  @VsoMethod
+  public Boolean getIsFederated() {
     return isFederated;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This field indicates that this object is replicated across gslb federation.
+   * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param isFederated set the isFederated.
+   */
   @VsoMethod
-  public void setIsFederated(Boolean isFederated) {
+  public void setIsFederated(Boolean  isFederated) {
     this.isFederated = isFederated;
   }
 
-  
   /**
-   * A user-friendly name for the geodb profile. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * A user-friendly name for the geodb profile.
+   * Field introduced in 17.1.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "A user-friendly name for the geodb profile. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A user-friendly name for the geodb profile.
+   * Field introduced in 17.1.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the geodb profile. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the geodb profile.
+   * Field introduced in 17.1.1.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the geodb profile. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the geodb profile.
+   * Field introduced in 17.1.1.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "GslbGeoDbProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GslbGeoDbProfile gslbGeoDbProfile = (GslbGeoDbProfile) o;
-    return Objects.equals(this.lastModified, gslbGeoDbProfile.lastModified) &&
-        Objects.equals(this.description, gslbGeoDbProfile.description) &&
-        Objects.equals(this.entries, gslbGeoDbProfile.entries) &&
-        Objects.equals(this.isFederated, gslbGeoDbProfile.isFederated) &&
-        Objects.equals(this.name, gslbGeoDbProfile.name) &&
-        Objects.equals(this.tenantRef, gslbGeoDbProfile.tenantRef) &&
-        Objects.equals(this.url, gslbGeoDbProfile.url) &&
-        Objects.equals(this.uuid, gslbGeoDbProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, description, entries, isFederated, name, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GslbGeoDbProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    entries: ").append(toIndentedString(entries)).append("\n");
-    sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  GslbGeoDbProfile objGslbGeoDbProfile = (GslbGeoDbProfile) o;
+  return   Objects.equals(this.description, objGslbGeoDbProfile.description)&&
+  Objects.equals(this.isFederated, objGslbGeoDbProfile.isFederated)&&
+  Objects.equals(this.name, objGslbGeoDbProfile.name)&&
+  Objects.equals(this.entries, objGslbGeoDbProfile.entries)&&
+  Objects.equals(this.tenantRef, objGslbGeoDbProfile.tenantRef)&&
+  Objects.equals(this.uuid, objGslbGeoDbProfile.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class GslbGeoDbProfile {\n");
+      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    entries: ").append(toIndentedString(entries)).append("\n");
+        sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

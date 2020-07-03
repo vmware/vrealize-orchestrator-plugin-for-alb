@@ -1,46 +1,69 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.IpAddr;
-import com.vmware.avi.vro.model.IpAddrPrefix;
-import com.vmware.avi.vro.model.IpAddrRange;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DebugIpAddr
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DebugIpAddr is a POJO class extends AviRestResource that used for creating
+ * DebugIpAddr.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DebugIpAddr")
-@VsoFinder(name = Constants.FINDER_VRO_DEBUGIPADDR, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DEBUGIPADDR)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DebugIpAddr extends AviRestResource  {
+public class DebugIpAddr extends AviRestResource {
   @JsonProperty("addrs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddr> addrs = null;
 
   @JsonProperty("prefixes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddrPrefix> prefixes = null;
 
   @JsonProperty("ranges")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddrRange> ranges = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * @return addrs
+   */
+  @VsoMethod
+  public List<IpAddr> getAddrs() {
+    return addrs;
+  }
+
+  /**
+   * This is the setter method. this will set the addrs
+   * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * @return addrs
+   */
+  @VsoMethod
+  public void setAddrs(List<IpAddr>  addrs) {
+    this.addrs = addrs;
+  }
+
+  /**
+   * This is the setter method this will set the addrs
+   * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * @return addrs
+   */
+  @VsoMethod
   public DebugIpAddr addAddrsItem(IpAddr addrsItem) {
     if (this.addrs == null) {
       this.addrs = new ArrayList<IpAddr>();
@@ -48,27 +71,34 @@ public class DebugIpAddr extends AviRestResource  {
     this.addrs.add(addrsItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property addrs of obj type DebugIpAddr field type str  type object
-   * @return addrs
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property addrs of obj type DebugIpAddr field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddr> getAddrs() {
-    return addrs;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * @return prefixes
+   */
   @VsoMethod
-  public void setAddrs(List<IpAddr> addrs) {
-    this.addrs = addrs;
+  public List<IpAddrPrefix> getPrefixes() {
+    return prefixes;
   }
 
-  
+  /**
+   * This is the setter method. this will set the prefixes
+   * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * @return prefixes
+   */
+  @VsoMethod
+  public void setPrefixes(List<IpAddrPrefix>  prefixes) {
+    this.prefixes = prefixes;
+  }
+
+  /**
+   * This is the setter method this will set the prefixes
+   * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * @return prefixes
+   */
+  @VsoMethod
   public DebugIpAddr addPrefixesItem(IpAddrPrefix prefixesItem) {
     if (this.prefixes == null) {
       this.prefixes = new ArrayList<IpAddrPrefix>();
@@ -76,27 +106,34 @@ public class DebugIpAddr extends AviRestResource  {
     this.prefixes.add(prefixesItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property prefixes of obj type DebugIpAddr field type str  type object
-   * @return prefixes
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property prefixes of obj type DebugIpAddr field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddrPrefix> getPrefixes() {
-    return prefixes;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * @return ranges
+   */
   @VsoMethod
-  public void setPrefixes(List<IpAddrPrefix> prefixes) {
-    this.prefixes = prefixes;
+  public List<IpAddrRange> getRanges() {
+    return ranges;
   }
 
-  
+  /**
+   * This is the setter method. this will set the ranges
+   * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * @return ranges
+   */
+  @VsoMethod
+  public void setRanges(List<IpAddrRange>  ranges) {
+    this.ranges = ranges;
+  }
+
+  /**
+   * This is the setter method this will set the ranges
+   * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * @return ranges
+   */
+  @VsoMethod
   public DebugIpAddr addRangesItem(IpAddrRange rangesItem) {
     if (this.ranges == null) {
       this.ranges = new ArrayList<IpAddrRange>();
@@ -104,71 +141,43 @@ public class DebugIpAddr extends AviRestResource  {
     this.ranges.add(rangesItem);
     return this;
   }
-  
-  /**
-   * Placeholder for description of property ranges of obj type DebugIpAddr field type str  type object
-   * @return ranges
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property ranges of obj type DebugIpAddr field type str  type object")
 
-  @Valid
 
- 
-  @VsoMethod  
-  public List<IpAddrRange> getRanges() {
-    return ranges;
-  }
-    
-  @VsoMethod
-  public void setRanges(List<IpAddrRange> ranges) {
-    this.ranges = ranges;
-  }
 
-  
-  public String getObjectID() {
-		return "DebugIpAddr";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DebugIpAddr debugIpAddr = (DebugIpAddr) o;
-    return Objects.equals(this.addrs, debugIpAddr.addrs) &&
-        Objects.equals(this.prefixes, debugIpAddr.prefixes) &&
-        Objects.equals(this.ranges, debugIpAddr.ranges);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(addrs, prefixes, ranges);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DebugIpAddr {\n");
-    
-    sb.append("    addrs: ").append(toIndentedString(addrs)).append("\n");
-    sb.append("    prefixes: ").append(toIndentedString(prefixes)).append("\n");
-    sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DebugIpAddr objDebugIpAddr = (DebugIpAddr) o;
+  return   Objects.equals(this.ranges, objDebugIpAddr.ranges)&&
+  Objects.equals(this.prefixes, objDebugIpAddr.prefixes)&&
+  Objects.equals(this.addrs, objDebugIpAddr.addrs);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DebugIpAddr {\n");
+      sb.append("    addrs: ").append(toIndentedString(addrs)).append("\n");
+        sb.append("    prefixes: ").append(toIndentedString(prefixes)).append("\n");
+        sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

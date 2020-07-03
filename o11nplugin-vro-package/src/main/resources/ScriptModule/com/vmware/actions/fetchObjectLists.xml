@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="fetchObjectLists"
 	result-type="Any" api-version="6.0.0"
-	id="c8fdba15-adb3-4335-9a34-ec8e3825606c" version="0.0.3"
+	id="c8fdba15-adb3-4335-9a34-ec8e3825606c" version="0.0.4"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
-	<param n="objectName" t="string"><![CDATA[Add object name]]></param>
-	<param n="objectType" t="string"><![CDATA[Add object type ]]></param>
-	<param n="field" t="string"><![CDATA[Add input parameter]]></param>
-	<script encoded="false"><![CDATA[try{
+  <param n="objectName" t="string"><![CDATA[Add object name]]></param>
+  <param n="objectType" t="string"><![CDATA[Add object type ]]></param>
+  <param n="field" t="string"><![CDATA[Add input parameter]]></param>
+  <script encoded="false"><![CDATA[try{
 	// Check the restHost is selected ot not.
 	if(controller == null){
 	  return null;
@@ -81,20 +81,33 @@
 				poolServers.push(poolDetails);
 				return poolServers;
 			}else if(field == "servers"){
-				System.log("ObjectData ::-> "+objectData)
 				var servers = object.servers;
-				System.log("servers ::-> "+servers)
-				var defaultPort = objectData[0].default_server_port;
+				var ServerList= new Array();
 				for each(index in servers){
-					var serverDetails = new Properties();
-					var Port = index.port == null ? defaultPort : index.port
-					serverDetails.put("IP",index.ip.addr);
-					serverDetails.put("Ratio",index.ratio);
-					serverDetails.put("Port",Port);
-					objectList.push(serverDetails);
+					ServerList.push(index.ip.addr)
 				}
-				return objectList;
+				System.log("ServerList : "+ServerList)
+				return ServerList;
 			}
+			else if(field == "ratio"){
+			var ratio;
+			var servers = object.servers;
+				for each(index in servers){
+					ratio=index.ratio;
+				}
+				System.log("ratio : "+ratio);
+				return ratio;
+			}else if(field == "port"){
+				var servers = object.servers;
+				var defaultPort = objectData[0].default_server_port;
+				var Port
+				for each(index in servers){
+					Port = index.port == null ? defaultPort : index.port
+				}
+				System.log("Port : "+Port)
+				return Port;
+			}
+			
 		}
 		else{
 			System.log("Object "+objectName+" not present on the controller") 

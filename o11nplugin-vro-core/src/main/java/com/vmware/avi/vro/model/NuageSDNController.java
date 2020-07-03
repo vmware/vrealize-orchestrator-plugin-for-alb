@@ -1,331 +1,348 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * NuageSDNController
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The NuageSDNController is a POJO class extends AviRestResource that used for creating
+ * NuageSDNController.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "NuageSDNController")
-@VsoFinder(name = Constants.FINDER_VRO_NUAGESDNCONTROLLER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_NUAGESDNCONTROLLER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class NuageSDNController extends AviRestResource  {
+public class NuageSDNController extends AviRestResource {
   @JsonProperty("nuage_organization")
+  @JsonInclude(Include.NON_NULL)
   private String nuageOrganization = null;
 
   @JsonProperty("nuage_password")
+  @JsonInclude(Include.NON_NULL)
   private String nuagePassword = null;
 
   @JsonProperty("nuage_port")
+  @JsonInclude(Include.NON_NULL)
   private Integer nuagePort = 8443;
 
   @JsonProperty("nuage_username")
+  @JsonInclude(Include.NON_NULL)
   private String nuageUsername = null;
 
   @JsonProperty("nuage_vsd_host")
+  @JsonInclude(Include.NON_NULL)
   private String nuageVsdHost = null;
 
   @JsonProperty("se_domain")
+  @JsonInclude(Include.NON_NULL)
   private String seDomain = null;
 
   @JsonProperty("se_enterprise")
+  @JsonInclude(Include.NON_NULL)
   private String seEnterprise = null;
 
   @JsonProperty("se_network")
+  @JsonInclude(Include.NON_NULL)
   private String seNetwork = null;
 
   @JsonProperty("se_policy_group")
+  @JsonInclude(Include.NON_NULL)
   private String sePolicyGroup = null;
 
   @JsonProperty("se_user")
+  @JsonInclude(Include.NON_NULL)
   private String seUser = null;
 
   @JsonProperty("se_zone")
+  @JsonInclude(Include.NON_NULL)
   private String seZone = null;
 
-  
+
+
   /**
-   * nuage_organization of NuageSDNController.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property nuage_organization of obj type nuagesdncontroller field type str  type string.
    * @return nuageOrganization
-  **/
-  @ApiModelProperty(value = "nuage_organization of NuageSDNController.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNuageOrganization() {
     return nuageOrganization;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property nuage_organization of obj type nuagesdncontroller field type str  type string.
+   * @param nuageOrganization set the nuageOrganization.
+   */
   @VsoMethod
-  public void setNuageOrganization(String nuageOrganization) {
+  public void setNuageOrganization(String  nuageOrganization) {
     this.nuageOrganization = nuageOrganization;
   }
 
-  
   /**
-   * nuage_password of NuageSDNController.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property nuage_password of obj type nuagesdncontroller field type str  type string.
    * @return nuagePassword
-  **/
-  @ApiModelProperty(value = "nuage_password of NuageSDNController.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNuagePassword() {
     return nuagePassword;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property nuage_password of obj type nuagesdncontroller field type str  type string.
+   * @param nuagePassword set the nuagePassword.
+   */
   @VsoMethod
-  public void setNuagePassword(String nuagePassword) {
+  public void setNuagePassword(String  nuagePassword) {
     this.nuagePassword = nuagePassword;
   }
 
-  
   /**
-   * Number of nuage_port.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property nuage_port of obj type nuagesdncontroller field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 8443.
    * @return nuagePort
-  **/
-  @ApiModelProperty(value = "Number of nuage_port.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNuagePort() {
     return nuagePort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property nuage_port of obj type nuagesdncontroller field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 8443.
+   * @param nuagePort set the nuagePort.
+   */
   @VsoMethod
-  public void setNuagePort(Integer nuagePort) {
+  public void setNuagePort(Integer  nuagePort) {
     this.nuagePort = nuagePort;
   }
 
-  
   /**
-   * nuage_username of NuageSDNController.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property nuage_username of obj type nuagesdncontroller field type str  type string.
    * @return nuageUsername
-  **/
-  @ApiModelProperty(value = "nuage_username of NuageSDNController.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNuageUsername() {
     return nuageUsername;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property nuage_username of obj type nuagesdncontroller field type str  type string.
+   * @param nuageUsername set the nuageUsername.
+   */
   @VsoMethod
-  public void setNuageUsername(String nuageUsername) {
+  public void setNuageUsername(String  nuageUsername) {
     this.nuageUsername = nuageUsername;
   }
 
-  
   /**
-   * Nuage VSD host name or IP address.
+   * This is the getter method this will return the attribute value.
+   * Nuage vsd host name or ip address.
    * @return nuageVsdHost
-  **/
-  @ApiModelProperty(value = "Nuage VSD host name or IP address.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNuageVsdHost() {
     return nuageVsdHost;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Nuage vsd host name or ip address.
+   * @param nuageVsdHost set the nuageVsdHost.
+   */
   @VsoMethod
-  public void setNuageVsdHost(String nuageVsdHost) {
+  public void setNuageVsdHost(String  nuageVsdHost) {
     this.nuageVsdHost = nuageVsdHost;
   }
 
-  
   /**
-   * Domain to be used for SE creation.
+   * This is the getter method this will return the attribute value.
+   * Domain to be used for se creation.
    * @return seDomain
-  **/
-  @ApiModelProperty(value = "Domain to be used for SE creation.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeDomain() {
     return seDomain;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Domain to be used for se creation.
+   * @param seDomain set the seDomain.
+   */
   @VsoMethod
-  public void setSeDomain(String seDomain) {
+  public void setSeDomain(String  seDomain) {
     this.seDomain = seDomain;
   }
 
-  
   /**
-   * Enterprise to be used for SE creation.
+   * This is the getter method this will return the attribute value.
+   * Enterprise to be used for se creation.
    * @return seEnterprise
-  **/
-  @ApiModelProperty(value = "Enterprise to be used for SE creation.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeEnterprise() {
     return seEnterprise;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enterprise to be used for se creation.
+   * @param seEnterprise set the seEnterprise.
+   */
   @VsoMethod
-  public void setSeEnterprise(String seEnterprise) {
+  public void setSeEnterprise(String  seEnterprise) {
     this.seEnterprise = seEnterprise;
   }
 
-  
   /**
-   * Network to be used for SE creation.
+   * This is the getter method this will return the attribute value.
+   * Network to be used for se creation.
    * @return seNetwork
-  **/
-  @ApiModelProperty(value = "Network to be used for SE creation.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeNetwork() {
     return seNetwork;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Network to be used for se creation.
+   * @param seNetwork set the seNetwork.
+   */
   @VsoMethod
-  public void setSeNetwork(String seNetwork) {
+  public void setSeNetwork(String  seNetwork) {
     this.seNetwork = seNetwork;
   }
 
-  
   /**
-   * Policy Group to be used for SE creation.
+   * This is the getter method this will return the attribute value.
+   * Policy group to be used for se creation.
    * @return sePolicyGroup
-  **/
-  @ApiModelProperty(value = "Policy Group to be used for SE creation.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSePolicyGroup() {
     return sePolicyGroup;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Policy group to be used for se creation.
+   * @param sePolicyGroup set the sePolicyGroup.
+   */
   @VsoMethod
-  public void setSePolicyGroup(String sePolicyGroup) {
+  public void setSePolicyGroup(String  sePolicyGroup) {
     this.sePolicyGroup = sePolicyGroup;
   }
 
-  
   /**
-   * User to be used for SE creation.
+   * This is the getter method this will return the attribute value.
+   * User to be used for se creation.
    * @return seUser
-  **/
-  @ApiModelProperty(value = "User to be used for SE creation.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeUser() {
     return seUser;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User to be used for se creation.
+   * @param seUser set the seUser.
+   */
   @VsoMethod
-  public void setSeUser(String seUser) {
+  public void setSeUser(String  seUser) {
     this.seUser = seUser;
   }
 
-  
   /**
-   * Zone to be used for SE creation.
+   * This is the getter method this will return the attribute value.
+   * Zone to be used for se creation.
    * @return seZone
-  **/
-  @ApiModelProperty(value = "Zone to be used for SE creation.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeZone() {
     return seZone;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Zone to be used for se creation.
+   * @param seZone set the seZone.
+   */
   @VsoMethod
-  public void setSeZone(String seZone) {
+  public void setSeZone(String  seZone) {
     this.seZone = seZone;
   }
 
-  
-  public String getObjectID() {
-		return "NuageSDNController";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    NuageSDNController nuageSDNController = (NuageSDNController) o;
-    return Objects.equals(this.nuageOrganization, nuageSDNController.nuageOrganization) &&
-        Objects.equals(this.nuagePassword, nuageSDNController.nuagePassword) &&
-        Objects.equals(this.nuagePort, nuageSDNController.nuagePort) &&
-        Objects.equals(this.nuageUsername, nuageSDNController.nuageUsername) &&
-        Objects.equals(this.nuageVsdHost, nuageSDNController.nuageVsdHost) &&
-        Objects.equals(this.seDomain, nuageSDNController.seDomain) &&
-        Objects.equals(this.seEnterprise, nuageSDNController.seEnterprise) &&
-        Objects.equals(this.seNetwork, nuageSDNController.seNetwork) &&
-        Objects.equals(this.sePolicyGroup, nuageSDNController.sePolicyGroup) &&
-        Objects.equals(this.seUser, nuageSDNController.seUser) &&
-        Objects.equals(this.seZone, nuageSDNController.seZone);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(nuageOrganization, nuagePassword, nuagePort, nuageUsername, nuageVsdHost, seDomain, seEnterprise, seNetwork, sePolicyGroup, seUser, seZone);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NuageSDNController {\n");
-    
-    sb.append("    nuageOrganization: ").append(toIndentedString(nuageOrganization)).append("\n");
-    sb.append("    nuagePassword: ").append(toIndentedString(nuagePassword)).append("\n");
-    sb.append("    nuagePort: ").append(toIndentedString(nuagePort)).append("\n");
-    sb.append("    nuageUsername: ").append(toIndentedString(nuageUsername)).append("\n");
-    sb.append("    nuageVsdHost: ").append(toIndentedString(nuageVsdHost)).append("\n");
-    sb.append("    seDomain: ").append(toIndentedString(seDomain)).append("\n");
-    sb.append("    seEnterprise: ").append(toIndentedString(seEnterprise)).append("\n");
-    sb.append("    seNetwork: ").append(toIndentedString(seNetwork)).append("\n");
-    sb.append("    sePolicyGroup: ").append(toIndentedString(sePolicyGroup)).append("\n");
-    sb.append("    seUser: ").append(toIndentedString(seUser)).append("\n");
-    sb.append("    seZone: ").append(toIndentedString(seZone)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  NuageSDNController objNuageSDNController = (NuageSDNController) o;
+  return   Objects.equals(this.nuageOrganization, objNuageSDNController.nuageOrganization)&&
+  Objects.equals(this.nuageVsdHost, objNuageSDNController.nuageVsdHost)&&
+  Objects.equals(this.seNetwork, objNuageSDNController.seNetwork)&&
+  Objects.equals(this.nuagePassword, objNuageSDNController.nuagePassword)&&
+  Objects.equals(this.nuagePort, objNuageSDNController.nuagePort)&&
+  Objects.equals(this.seUser, objNuageSDNController.seUser)&&
+  Objects.equals(this.seEnterprise, objNuageSDNController.seEnterprise)&&
+  Objects.equals(this.nuageUsername, objNuageSDNController.nuageUsername)&&
+  Objects.equals(this.seDomain, objNuageSDNController.seDomain)&&
+  Objects.equals(this.sePolicyGroup, objNuageSDNController.sePolicyGroup)&&
+  Objects.equals(this.seZone, objNuageSDNController.seZone);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class NuageSDNController {\n");
+      sb.append("    nuageOrganization: ").append(toIndentedString(nuageOrganization)).append("\n");
+        sb.append("    nuagePassword: ").append(toIndentedString(nuagePassword)).append("\n");
+        sb.append("    nuagePort: ").append(toIndentedString(nuagePort)).append("\n");
+        sb.append("    nuageUsername: ").append(toIndentedString(nuageUsername)).append("\n");
+        sb.append("    nuageVsdHost: ").append(toIndentedString(nuageVsdHost)).append("\n");
+        sb.append("    seDomain: ").append(toIndentedString(seDomain)).append("\n");
+        sb.append("    seEnterprise: ").append(toIndentedString(seEnterprise)).append("\n");
+        sb.append("    seNetwork: ").append(toIndentedString(seNetwork)).append("\n");
+        sb.append("    sePolicyGroup: ").append(toIndentedString(sePolicyGroup)).append("\n");
+        sb.append("    seUser: ").append(toIndentedString(seUser)).append("\n");
+        sb.append("    seZone: ").append(toIndentedString(seZone)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,312 +1,302 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AutoScaleMesosSettings;
 import com.vmware.avi.vro.model.AutoScaleOpenStackSettings;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AutoScaleLaunchConfig
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AutoScaleLaunchConfig is a POJO class extends AviRestResource that used for creating
+ * AutoScaleLaunchConfig.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AutoScaleLaunchConfig")
 @VsoFinder(name = Constants.FINDER_VRO_AUTOSCALELAUNCHCONFIG, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AutoScaleLaunchConfig extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class AutoScaleLaunchConfig extends AviRestResource {
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("image_id")
+  @JsonInclude(Include.NON_NULL)
   private String imageId = null;
 
   @JsonProperty("mesos")
+  @JsonInclude(Include.NON_NULL)
   private AutoScaleMesosSettings mesos = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("openstack")
+  @JsonInclude(Include.NON_NULL)
   private AutoScaleOpenStackSettings openstack = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("use_external_asg")
+  @JsonInclude(Include.NON_NULL)
   private Boolean useExternalAsg = true;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * User defined description for the object.
    * @return description
-  **/
-  @ApiModelProperty(value = "User defined description for the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User defined description for the object.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Unique ID of the Amazon Machine Image (AMI)  or OpenStack VM ID.
+   * This is the getter method this will return the attribute value.
+   * Unique id of the amazon machine image (ami)  or openstack vm id.
    * @return imageId
-  **/
-  @ApiModelProperty(value = "Unique ID of the Amazon Machine Image (AMI)  or OpenStack VM ID.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getImageId() {
     return imageId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique id of the amazon machine image (ami)  or openstack vm id.
+   * @param imageId set the imageId.
+   */
   @VsoMethod
-  public void setImageId(String imageId) {
+  public void setImageId(String  imageId) {
     this.imageId = imageId;
   }
 
-  
   /**
-   * Placeholder for description of property mesos of obj type AutoScaleLaunchConfig field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property mesos of obj type autoscalelaunchconfig field type str  type ref.
    * @return mesos
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property mesos of obj type AutoScaleLaunchConfig field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AutoScaleMesosSettings getMesos() {
     return mesos;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property mesos of obj type autoscalelaunchconfig field type str  type ref.
+   * @param mesos set the mesos.
+   */
   @VsoMethod
   public void setMesos(AutoScaleMesosSettings mesos) {
     this.mesos = mesos;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Placeholder for description of property openstack of obj type AutoScaleLaunchConfig field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property openstack of obj type autoscalelaunchconfig field type str  type ref.
    * @return openstack
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property openstack of obj type AutoScaleLaunchConfig field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AutoScaleOpenStackSettings getOpenstack() {
     return openstack;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property openstack of obj type autoscalelaunchconfig field type str  type ref.
+   * @param openstack set the openstack.
+   */
   @VsoMethod
   public void setOpenstack(AutoScaleOpenStackSettings openstack) {
     this.openstack = openstack;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * If set to True, ServerAutoscalePolicy will use the autoscaling group (external_autoscaling_groups) from Pool to perform scale up and scale down. Pool should have single autoscaling group configured. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * If set to true, serverautoscalepolicy will use the autoscaling group (external_autoscaling_groups) from pool to perform scale up and scale down.
+   * Pool should have single autoscaling group configured.
+   * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useExternalAsg
-  **/
-  @ApiModelProperty(value = "If set to True, ServerAutoscalePolicy will use the autoscaling group (external_autoscaling_groups) from Pool to perform scale up and scale down. Pool should have single autoscaling group configured. Field introduced in 17.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseExternalAsg() {
+   */
+  @VsoMethod
+  public Boolean getUseExternalAsg() {
     return useExternalAsg;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If set to true, serverautoscalepolicy will use the autoscaling group (external_autoscaling_groups) from pool to perform scale up and scale down.
+   * Pool should have single autoscaling group configured.
+   * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param useExternalAsg set the useExternalAsg.
+   */
   @VsoMethod
-  public void setUseExternalAsg(Boolean useExternalAsg) {
+  public void setUseExternalAsg(Boolean  useExternalAsg) {
     this.useExternalAsg = useExternalAsg;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "AutoScaleLaunchConfig";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AutoScaleLaunchConfig autoScaleLaunchConfig = (AutoScaleLaunchConfig) o;
-    return Objects.equals(this.lastModified, autoScaleLaunchConfig.lastModified) &&
-        Objects.equals(this.description, autoScaleLaunchConfig.description) &&
-        Objects.equals(this.imageId, autoScaleLaunchConfig.imageId) &&
-        Objects.equals(this.mesos, autoScaleLaunchConfig.mesos) &&
-        Objects.equals(this.name, autoScaleLaunchConfig.name) &&
-        Objects.equals(this.openstack, autoScaleLaunchConfig.openstack) &&
-        Objects.equals(this.tenantRef, autoScaleLaunchConfig.tenantRef) &&
-        Objects.equals(this.url, autoScaleLaunchConfig.url) &&
-        Objects.equals(this.useExternalAsg, autoScaleLaunchConfig.useExternalAsg) &&
-        Objects.equals(this.uuid, autoScaleLaunchConfig.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, description, imageId, mesos, name, openstack, tenantRef, url, useExternalAsg, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AutoScaleLaunchConfig {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
-    sb.append("    mesos: ").append(toIndentedString(mesos)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    openstack: ").append(toIndentedString(openstack)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    useExternalAsg: ").append(toIndentedString(useExternalAsg)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AutoScaleLaunchConfig objAutoScaleLaunchConfig = (AutoScaleLaunchConfig) o;
+  return   Objects.equals(this.uuid, objAutoScaleLaunchConfig.uuid)&&
+  Objects.equals(this.mesos, objAutoScaleLaunchConfig.mesos)&&
+  Objects.equals(this.description, objAutoScaleLaunchConfig.description)&&
+  Objects.equals(this.imageId, objAutoScaleLaunchConfig.imageId)&&
+  Objects.equals(this.useExternalAsg, objAutoScaleLaunchConfig.useExternalAsg)&&
+  Objects.equals(this.openstack, objAutoScaleLaunchConfig.openstack)&&
+  Objects.equals(this.tenantRef, objAutoScaleLaunchConfig.tenantRef)&&
+  Objects.equals(this.name, objAutoScaleLaunchConfig.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AutoScaleLaunchConfig {\n");
+      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    mesos: ").append(toIndentedString(mesos)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    openstack: ").append(toIndentedString(openstack)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    useExternalAsg: ").append(toIndentedString(useExternalAsg)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

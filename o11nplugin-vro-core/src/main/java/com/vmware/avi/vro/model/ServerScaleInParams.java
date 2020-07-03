@@ -1,61 +1,89 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.ServerId;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ServerScaleInParams
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ServerScaleInParams is a POJO class extends AviRestResource that used for creating
+ * ServerScaleInParams.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ServerScaleInParams")
-@VsoFinder(name = Constants.FINDER_VRO_SERVERSCALEINPARAMS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SERVERSCALEINPARAMS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ServerScaleInParams extends AviRestResource  {
+public class ServerScaleInParams extends AviRestResource {
   @JsonProperty("reason")
+  @JsonInclude(Include.NON_NULL)
   private String reason = null;
 
   @JsonProperty("servers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<ServerId> servers = null;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Reason for the manual scalein.
    * @return reason
-  **/
-  @ApiModelProperty(value = "Reason for the manual scalein.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getReason() {
     return reason;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Reason for the manual scalein.
+   * @param reason set the reason.
+   */
   @VsoMethod
-  public void setReason(String reason) {
+  public void setReason(String  reason) {
     this.reason = reason;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of server ids that should be scaled in.
+   * @return servers
+   */
+  @VsoMethod
+  public List<ServerId> getServers() {
+    return servers;
+  }
+
+  /**
+   * This is the setter method. this will set the servers
+   * List of server ids that should be scaled in.
+   * @return servers
+   */
+  @VsoMethod
+  public void setServers(List<ServerId>  servers) {
+    this.servers = servers;
+  }
+
+  /**
+   * This is the setter method this will set the servers
+   * List of server ids that should be scaled in.
+   * @return servers
+   */
+  @VsoMethod
   public ServerScaleInParams addServersItem(ServerId serversItem) {
     if (this.servers == null) {
       this.servers = new ArrayList<ServerId>();
@@ -63,90 +91,63 @@ public class ServerScaleInParams extends AviRestResource  {
     this.servers.add(serversItem);
     return this;
   }
-  
+
+
   /**
-   * List of server IDs that should be scaled in.
-   * @return servers
-  **/
-  @ApiModelProperty(value = "List of server IDs that should be scaled in.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<ServerId> getServers() {
-    return servers;
-  }
-    
-  @VsoMethod
-  public void setServers(List<ServerId> servers) {
-    this.servers = servers;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
-  public String getObjectID() {
-		return "ServerScaleInParams";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ServerScaleInParams serverScaleInParams = (ServerScaleInParams) o;
-    return Objects.equals(this.reason, serverScaleInParams.reason) &&
-        Objects.equals(this.servers, serverScaleInParams.servers) &&
-        Objects.equals(this.uuid, serverScaleInParams.uuid);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(reason, servers, uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ServerScaleInParams {\n");
-    
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ServerScaleInParams objServerScaleInParams = (ServerScaleInParams) o;
+  return   Objects.equals(this.reason, objServerScaleInParams.reason)&&
+  Objects.equals(this.uuid, objServerScaleInParams.uuid)&&
+  Objects.equals(this.servers, objServerScaleInParams.servers);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ServerScaleInParams {\n");
+      sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

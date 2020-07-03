@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="getDNSProvider"
+	result-type="string" api-version="6.0.0"
+	id="0cfa03eb-cf20-45a3-800b-a6de833fff77" version="0.0.0"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[Controller IP]]></param>
+	<param n="cloud" t="string"><![CDATA[Name of Cloud]]></param>
+	<script encoded="false"><![CDATA[try{
+	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+	var aviVroClientObj= null;
+	for each(aviVroClient in vroClientArray){
+		if(aviVroClient !=null){
+			vroController=aviVroClient.cred.controller;
+			if(vroController==controller){
+			System.log("Found client with the given IP")
+			aviVroClientObj= aviVroClient;
+			}
+		}	
+	}
+
+	if(aviVroClientObj== null){
+		System.log("Controller is null");
+		return null;
+	}
+	var param = new Object();
+	param.name=cloud;
+	var resultArray=aviVroClientObj.get("cloud",param);
+	resultArray=JSON.parse(resultArray);
+	var cloudObj=resultArray[0];
+	var dnsProvider=cloudObj.dns_provider_ref;
+  	var dnsProviderUUID = dnsProvider.substring(dnsProvider.indexOf("ipamdnsproviderprofile-"));
+	var dnsProviderObj=aviVroClientObj.getObjectDataByUUID("ipamdnsproviderprofile",dnsProviderUUID);
+	dnsProviderObj=JSON.parse(dnsProviderObj);
+	var domain_name=dnsProviderObj.internal_profile.dns_service_domain[0].domain_name;
+	return domain_name;
+}catch(e){
+System.log("Error occured while fetching DNS provider : "+e)
+}]]></script>
+</dunes-script-module>

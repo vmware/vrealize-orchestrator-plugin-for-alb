@@ -1,211 +1,228 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SeRateLimiters
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SeRateLimiters is a POJO class extends AviRestResource that used for creating
+ * SeRateLimiters.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SeRateLimiters")
-@VsoFinder(name = Constants.FINDER_VRO_SERATELIMITERS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SERATELIMITERS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SeRateLimiters extends AviRestResource  {
+public class SeRateLimiters extends AviRestResource {
   @JsonProperty("arp_rl")
+  @JsonInclude(Include.NON_NULL)
   private Integer arpRl = 100;
 
   @JsonProperty("default_rl")
+  @JsonInclude(Include.NON_NULL)
   private Integer defaultRl = 100;
 
   @JsonProperty("flow_probe_rl")
+  @JsonInclude(Include.NON_NULL)
   private Integer flowProbeRl = 250;
 
   @JsonProperty("icmp_rl")
+  @JsonInclude(Include.NON_NULL)
   private Integer icmpRl = 100;
 
   @JsonProperty("icmp_rsp_rl")
+  @JsonInclude(Include.NON_NULL)
   private Integer icmpRspRl = 500;
 
   @JsonProperty("rst_rl")
+  @JsonInclude(Include.NON_NULL)
   private Integer rstRl = 100;
 
-  
+
+
   /**
-   * Rate limiter for ARP packets in pps.
+   * This is the getter method this will return the attribute value.
+   * Rate limiter for arp packets in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return arpRl
-  **/
-  @ApiModelProperty(value = "Rate limiter for ARP packets in pps.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getArpRl() {
     return arpRl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limiter for arp packets in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param arpRl set the arpRl.
+   */
   @VsoMethod
-  public void setArpRl(Integer arpRl) {
+  public void setArpRl(Integer  arpRl) {
     this.arpRl = arpRl;
   }
 
-  
   /**
-   * Default Rate limiter in pps.
+   * This is the getter method this will return the attribute value.
+   * Default rate limiter in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return defaultRl
-  **/
-  @ApiModelProperty(value = "Default Rate limiter in pps.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDefaultRl() {
     return defaultRl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Default rate limiter in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param defaultRl set the defaultRl.
+   */
   @VsoMethod
-  public void setDefaultRl(Integer defaultRl) {
+  public void setDefaultRl(Integer  defaultRl) {
     this.defaultRl = defaultRl;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Rate limiter for number of flow probes in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 250.
    * @return flowProbeRl
-  **/
-  @ApiModelProperty(value = "Rate limiter for number of flow probes in pps.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFlowProbeRl() {
     return flowProbeRl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limiter for number of flow probes in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 250.
+   * @param flowProbeRl set the flowProbeRl.
+   */
   @VsoMethod
-  public void setFlowProbeRl(Integer flowProbeRl) {
+  public void setFlowProbeRl(Integer  flowProbeRl) {
     this.flowProbeRl = flowProbeRl;
   }
 
-  
   /**
-   * Rate limiter for ICMP requests in pps.
+   * This is the getter method this will return the attribute value.
+   * Rate limiter for icmp requests in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return icmpRl
-  **/
-  @ApiModelProperty(value = "Rate limiter for ICMP requests in pps.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIcmpRl() {
     return icmpRl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limiter for icmp requests in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param icmpRl set the icmpRl.
+   */
   @VsoMethod
-  public void setIcmpRl(Integer icmpRl) {
+  public void setIcmpRl(Integer  icmpRl) {
     this.icmpRl = icmpRl;
   }
 
-  
   /**
-   * Rate limiter for ICMP response in pps.
+   * This is the getter method this will return the attribute value.
+   * Rate limiter for icmp response in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return icmpRspRl
-  **/
-  @ApiModelProperty(value = "Rate limiter for ICMP response in pps.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIcmpRspRl() {
     return icmpRspRl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limiter for icmp response in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * @param icmpRspRl set the icmpRspRl.
+   */
   @VsoMethod
-  public void setIcmpRspRl(Integer icmpRspRl) {
+  public void setIcmpRspRl(Integer  icmpRspRl) {
     this.icmpRspRl = icmpRspRl;
   }
 
-  
   /**
-   * Rate limiter for number RST pkts sent in pps.
+   * This is the getter method this will return the attribute value.
+   * Rate limiter for number rst pkts sent in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return rstRl
-  **/
-  @ApiModelProperty(value = "Rate limiter for number RST pkts sent in pps.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getRstRl() {
     return rstRl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limiter for number rst pkts sent in pps.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param rstRl set the rstRl.
+   */
   @VsoMethod
-  public void setRstRl(Integer rstRl) {
+  public void setRstRl(Integer  rstRl) {
     this.rstRl = rstRl;
   }
 
-  
-  public String getObjectID() {
-		return "SeRateLimiters";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SeRateLimiters seRateLimiters = (SeRateLimiters) o;
-    return Objects.equals(this.arpRl, seRateLimiters.arpRl) &&
-        Objects.equals(this.defaultRl, seRateLimiters.defaultRl) &&
-        Objects.equals(this.flowProbeRl, seRateLimiters.flowProbeRl) &&
-        Objects.equals(this.icmpRl, seRateLimiters.icmpRl) &&
-        Objects.equals(this.icmpRspRl, seRateLimiters.icmpRspRl) &&
-        Objects.equals(this.rstRl, seRateLimiters.rstRl);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(arpRl, defaultRl, flowProbeRl, icmpRl, icmpRspRl, rstRl);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SeRateLimiters {\n");
-    
-    sb.append("    arpRl: ").append(toIndentedString(arpRl)).append("\n");
-    sb.append("    defaultRl: ").append(toIndentedString(defaultRl)).append("\n");
-    sb.append("    flowProbeRl: ").append(toIndentedString(flowProbeRl)).append("\n");
-    sb.append("    icmpRl: ").append(toIndentedString(icmpRl)).append("\n");
-    sb.append("    icmpRspRl: ").append(toIndentedString(icmpRspRl)).append("\n");
-    sb.append("    rstRl: ").append(toIndentedString(rstRl)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SeRateLimiters objSeRateLimiters = (SeRateLimiters) o;
+  return   Objects.equals(this.rstRl, objSeRateLimiters.rstRl)&&
+  Objects.equals(this.flowProbeRl, objSeRateLimiters.flowProbeRl)&&
+  Objects.equals(this.defaultRl, objSeRateLimiters.defaultRl)&&
+  Objects.equals(this.icmpRl, objSeRateLimiters.icmpRl)&&
+  Objects.equals(this.icmpRspRl, objSeRateLimiters.icmpRspRl)&&
+  Objects.equals(this.arpRl, objSeRateLimiters.arpRl);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SeRateLimiters {\n");
+      sb.append("    arpRl: ").append(toIndentedString(arpRl)).append("\n");
+        sb.append("    defaultRl: ").append(toIndentedString(defaultRl)).append("\n");
+        sb.append("    flowProbeRl: ").append(toIndentedString(flowProbeRl)).append("\n");
+        sb.append("    icmpRl: ").append(toIndentedString(icmpRl)).append("\n");
+        sb.append("    icmpRspRl: ").append(toIndentedString(icmpRspRl)).append("\n");
+        sb.append("    rstRl: ").append(toIndentedString(rstRl)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

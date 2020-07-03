@@ -1,119 +1,114 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.VipAutoscaleConfiguration;
 import com.vmware.avi.vro.model.VipAutoscalePolicy;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VipAutoscaleGroup
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VipAutoscaleGroup is a POJO class extends AviRestResource that used for creating
+ * VipAutoscaleGroup.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VipAutoscaleGroup")
-@VsoFinder(name = Constants.FINDER_VRO_VIPAUTOSCALEGROUP, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VIPAUTOSCALEGROUP)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VipAutoscaleGroup extends AviRestResource  {
+public class VipAutoscaleGroup extends AviRestResource {
   @JsonProperty("configuration")
-  private VipAutoscaleConfiguration _configuration = null;
+  @JsonInclude(Include.NON_NULL)
+  private VipAutoscaleConfiguration configuration = null;
 
   @JsonProperty("policy")
+  @JsonInclude(Include.NON_NULL)
   private VipAutoscalePolicy policy = null;
 
-  
+
+
   /**
-   *  Field introduced in 17.2.12, 18.1.2.
-   * @return _configuration
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.2.12, 18.1.2.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public VipAutoscaleConfiguration getConfiguration() {
-    return _configuration;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.12, 18.1.2.
+   * @return configuration
+   */
   @VsoMethod
-  public void setConfiguration(VipAutoscaleConfiguration _configuration) {
-    this._configuration = _configuration;
+  public VipAutoscaleConfiguration getConfiguration() {
+    return configuration;
   }
 
-  
   /**
-   *  Field introduced in 17.2.12, 18.1.2.
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.12, 18.1.2.
+   * @param configuration set the configuration.
+   */
+  @VsoMethod
+  public void setConfiguration(VipAutoscaleConfiguration configuration) {
+    this.configuration = configuration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.12, 18.1.2.
    * @return policy
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.2.12, 18.1.2.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public VipAutoscalePolicy getPolicy() {
     return policy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.12, 18.1.2.
+   * @param policy set the policy.
+   */
   @VsoMethod
   public void setPolicy(VipAutoscalePolicy policy) {
     this.policy = policy;
   }
 
-  
-  public String getObjectID() {
-		return "VipAutoscaleGroup";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VipAutoscaleGroup vipAutoscaleGroup = (VipAutoscaleGroup) o;
-    return Objects.equals(this._configuration, vipAutoscaleGroup._configuration) &&
-        Objects.equals(this.policy, vipAutoscaleGroup.policy);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(_configuration, policy);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VipAutoscaleGroup {\n");
-    
-    sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
-    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VipAutoscaleGroup objVipAutoscaleGroup = (VipAutoscaleGroup) o;
+  return   Objects.equals(this.policy, objVipAutoscaleGroup.policy)&&
+  Objects.equals(this.configuration, objVipAutoscaleGroup.configuration);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VipAutoscaleGroup {\n");
+      sb.append("    configuration: ").append(toIndentedString(configuration)).append("\n");
+        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

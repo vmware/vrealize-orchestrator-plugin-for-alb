@@ -1,133 +1,148 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * MicroServiceGroup
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The MicroServiceGroup is a POJO class extends AviRestResource that used for creating
+ * MicroServiceGroup.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "MicroServiceGroup")
 @VsoFinder(name = Constants.FINDER_VRO_MICROSERVICEGROUP, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MicroServiceGroup extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class MicroServiceGroup extends AviRestResource {
   @JsonProperty("created_by")
+  @JsonInclude(Include.NON_NULL)
   private String createdBy = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("service_refs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> serviceRefs = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Creator name.
    * @return createdBy
-  **/
-  @ApiModelProperty(value = "Creator name.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCreatedBy() {
     return createdBy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Creator name.
+   * @param createdBy set the createdBy.
+   */
   @VsoMethod
-  public void setCreatedBy(String createdBy) {
+  public void setCreatedBy(String  createdBy) {
     this.createdBy = createdBy;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * User defined description for the object.
    * @return description
-  **/
-  @ApiModelProperty(value = "User defined description for the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User defined description for the object.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Name of the MicroService group.
+   * This is the getter method this will return the attribute value.
+   * Name of the microservice group.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the MicroService group.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the microservice group.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configure microservice(es).
+   * It is a reference to an object of type microservice.
+   * @return serviceRefs
+   */
+  @VsoMethod
+  public List<String> getServiceRefs() {
+    return serviceRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the serviceRefs
+   * Configure microservice(es).
+   * It is a reference to an object of type microservice.
+   * @return serviceRefs
+   */
+  @VsoMethod
+  public void setServiceRefs(List<String>  serviceRefs) {
+    this.serviceRefs = serviceRefs;
+  }
+
+  /**
+   * This is the setter method this will set the serviceRefs
+   * Configure microservice(es).
+   * It is a reference to an object of type microservice.
+   * @return serviceRefs
+   */
+  @VsoMethod
   public MicroServiceGroup addServiceRefsItem(String serviceRefsItem) {
     if (this.serviceRefs == null) {
       this.serviceRefs = new ArrayList<String>();
@@ -135,137 +150,111 @@ public class MicroServiceGroup extends AviRestResource  {
     this.serviceRefs.add(serviceRefsItem);
     return this;
   }
-  
+
+
   /**
-   * Configure MicroService(es). It is a reference to an object of type MicroService.
-   * @return serviceRefs
-  **/
-  @ApiModelProperty(value = "Configure MicroService(es). It is a reference to an object of type MicroService.")
-
-
- 
-  @VsoMethod  
-  public List<String> getServiceRefs() {
-    return serviceRefs;
-  }
-    
-  @VsoMethod
-  public void setServiceRefs(List<String> serviceRefs) {
-    this.serviceRefs = serviceRefs;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the MicroService group.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the microservice group.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the MicroService group.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the microservice group.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "MicroServiceGroup";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MicroServiceGroup microServiceGroup = (MicroServiceGroup) o;
-    return Objects.equals(this.lastModified, microServiceGroup.lastModified) &&
-        Objects.equals(this.createdBy, microServiceGroup.createdBy) &&
-        Objects.equals(this.description, microServiceGroup.description) &&
-        Objects.equals(this.name, microServiceGroup.name) &&
-        Objects.equals(this.serviceRefs, microServiceGroup.serviceRefs) &&
-        Objects.equals(this.tenantRef, microServiceGroup.tenantRef) &&
-        Objects.equals(this.url, microServiceGroup.url) &&
-        Objects.equals(this.uuid, microServiceGroup.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, createdBy, description, name, serviceRefs, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MicroServiceGroup {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    serviceRefs: ").append(toIndentedString(serviceRefs)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  MicroServiceGroup objMicroServiceGroup = (MicroServiceGroup) o;
+  return   Objects.equals(this.description, objMicroServiceGroup.description)&&
+  Objects.equals(this.createdBy, objMicroServiceGroup.createdBy)&&
+  Objects.equals(this.name, objMicroServiceGroup.name)&&
+  Objects.equals(this.serviceRefs, objMicroServiceGroup.serviceRefs)&&
+  Objects.equals(this.tenantRef, objMicroServiceGroup.tenantRef)&&
+  Objects.equals(this.uuid, objMicroServiceGroup.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MicroServiceGroup {\n");
+      sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    serviceRefs: ").append(toIndentedString(serviceRefs)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

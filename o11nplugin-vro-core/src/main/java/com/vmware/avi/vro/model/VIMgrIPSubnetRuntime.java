@@ -1,84 +1,120 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.FloatingIpSubnet;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrPrefix;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VIMgrIPSubnetRuntime
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VIMgrIPSubnetRuntime is a POJO class extends AviRestResource that used for creating
+ * VIMgrIPSubnetRuntime.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VIMgrIPSubnetRuntime")
-@VsoFinder(name = Constants.FINDER_VRO_VIMGRIPSUBNETRUNTIME, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VIMGRIPSUBNETRUNTIME)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VIMgrIPSubnetRuntime extends AviRestResource  {
+public class VIMgrIPSubnetRuntime extends AviRestResource {
   @JsonProperty("fip_available")
-  private Boolean fipAvailable = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean fipAvailable = false;
 
   @JsonProperty("fip_subnet_uuids")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> fipSubnetUuids = null;
 
   @JsonProperty("floatingip_subnets")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<FloatingIpSubnet> floatingipSubnets = null;
 
   @JsonProperty("ip_subnet")
+  @JsonInclude(Include.NON_NULL)
   private String ipSubnet = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("prefix")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrPrefix prefix = null;
 
   @JsonProperty("primary")
-  private Boolean primary = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean primary = false;
 
   @JsonProperty("ref_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer refCount = null;
 
   @JsonProperty("se_ref_count")
-  private Integer seRefCount = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer seRefCount = 0;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * If true, capable of floating/elastic IP association.
+   * This is the getter method this will return the attribute value.
+   * If true, capable of floating/elastic ip association.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return fipAvailable
-  **/
-  @ApiModelProperty(value = "If true, capable of floating/elastic IP association.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFipAvailable() {
+   */
+  @VsoMethod
+  public Boolean getFipAvailable() {
     return fipAvailable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If true, capable of floating/elastic ip association.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param fipAvailable set the fipAvailable.
+   */
   @VsoMethod
-  public void setFipAvailable(Boolean fipAvailable) {
+  public void setFipAvailable(Boolean  fipAvailable) {
     this.fipAvailable = fipAvailable;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
+   * @return fipSubnetUuids
+   */
+  @VsoMethod
+  public List<String> getFipSubnetUuids() {
+    return fipSubnetUuids;
+  }
+
+  /**
+   * This is the setter method. this will set the fipSubnetUuids
+   * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
+   * @return fipSubnetUuids
+   */
+  @VsoMethod
+  public void setFipSubnetUuids(List<String>  fipSubnetUuids) {
+    this.fipSubnetUuids = fipSubnetUuids;
+  }
+
+  /**
+   * This is the setter method this will set the fipSubnetUuids
+   * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
+   * @return fipSubnetUuids
+   */
+  @VsoMethod
   public VIMgrIPSubnetRuntime addFipSubnetUuidsItem(String fipSubnetUuidsItem) {
     if (this.fipSubnetUuids == null) {
       this.fipSubnetUuids = new ArrayList<String>();
@@ -86,26 +122,37 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     this.fipSubnetUuids.add(fipSubnetUuidsItem);
     return this;
   }
-  
+
+
   /**
-   * If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list.
-   * @return fipSubnetUuids
-  **/
-  @ApiModelProperty(value = "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list.")
-
-
- 
-  @VsoMethod  
-  public List<String> getFipSubnetUuids() {
-    return fipSubnetUuids;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
+   * Field introduced in 17.2.1.
+   * @return floatingipSubnets
+   */
   @VsoMethod
-  public void setFipSubnetUuids(List<String> fipSubnetUuids) {
-    this.fipSubnetUuids = fipSubnetUuids;
+  public List<FloatingIpSubnet> getFloatingipSubnets() {
+    return floatingipSubnets;
   }
 
-  
+  /**
+   * This is the setter method. this will set the floatingipSubnets
+   * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
+   * Field introduced in 17.2.1.
+   * @return floatingipSubnets
+   */
+  @VsoMethod
+  public void setFloatingipSubnets(List<FloatingIpSubnet>  floatingipSubnets) {
+    this.floatingipSubnets = floatingipSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the floatingipSubnets
+   * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
+   * Field introduced in 17.2.1.
+   * @return floatingipSubnets
+   */
+  @VsoMethod
   public VIMgrIPSubnetRuntime addFloatingipSubnetsItem(FloatingIpSubnet floatingipSubnetsItem) {
     if (this.floatingipSubnets == null) {
       this.floatingipSubnets = new ArrayList<FloatingIpSubnet>();
@@ -113,220 +160,201 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     this.floatingipSubnets.add(floatingipSubnetsItem);
     return this;
   }
-  
+
+
   /**
-   * If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1.
-   * @return floatingipSubnets
-  **/
-  @ApiModelProperty(value = "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<FloatingIpSubnet> getFloatingipSubnets() {
-    return floatingipSubnets;
-  }
-    
-  @VsoMethod
-  public void setFloatingipSubnets(List<FloatingIpSubnet> floatingipSubnets) {
-    this.floatingipSubnets = floatingipSubnets;
-  }
-
-  
-  /**
-   * ip_subnet of VIMgrIPSubnetRuntime.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_subnet of obj type vimgripsubnetruntime field type str  type string.
    * @return ipSubnet
-  **/
-  @ApiModelProperty(value = "ip_subnet of VIMgrIPSubnetRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpSubnet() {
     return ipSubnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ip_subnet of obj type vimgripsubnetruntime field type str  type string.
+   * @param ipSubnet set the ipSubnet.
+   */
   @VsoMethod
-  public void setIpSubnet(String ipSubnet) {
+  public void setIpSubnet(String  ipSubnet) {
     this.ipSubnet = ipSubnet;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(value = "Name of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Placeholder for description of property prefix of obj type VIMgrIPSubnetRuntime field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property prefix of obj type vimgripsubnetruntime field type str  type ref.
    * @return prefix
-  **/
-  @ApiModelProperty(required = true, value = "Placeholder for description of property prefix of obj type VIMgrIPSubnetRuntime field type str  type object")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrPrefix getPrefix() {
     return prefix;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property prefix of obj type vimgripsubnetruntime field type str  type ref.
+   * @param prefix set the prefix.
+   */
   @VsoMethod
   public void setPrefix(IpAddrPrefix prefix) {
     this.prefix = prefix;
   }
 
-  
   /**
-   * True if prefix is primary IP on interface, else false.
+   * This is the getter method this will return the attribute value.
+   * True if prefix is primary ip on interface, else false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return primary
-  **/
-  @ApiModelProperty(value = "True if prefix is primary IP on interface, else false.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPrimary() {
+   */
+  @VsoMethod
+  public Boolean getPrimary() {
     return primary;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * True if prefix is primary ip on interface, else false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param primary set the primary.
+   */
   @VsoMethod
-  public void setPrimary(Boolean primary) {
+  public void setPrimary(Boolean  primary) {
     this.primary = primary;
   }
 
-  
   /**
-   * Number of ref_count.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ref_count of obj type vimgripsubnetruntime field type str  type integer.
    * @return refCount
-  **/
-  @ApiModelProperty(value = "Number of ref_count.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getRefCount() {
     return refCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ref_count of obj type vimgripsubnetruntime field type str  type integer.
+   * @param refCount set the refCount.
+   */
   @VsoMethod
-  public void setRefCount(Integer refCount) {
+  public void setRefCount(Integer  refCount) {
     this.refCount = refCount;
   }
 
-  
   /**
-   * Number of se_ref_count.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property se_ref_count of obj type vimgripsubnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seRefCount
-  **/
-  @ApiModelProperty(value = "Number of se_ref_count.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeRefCount() {
     return seRefCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property se_ref_count of obj type vimgripsubnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seRefCount set the seRefCount.
+   */
   @VsoMethod
-  public void setSeRefCount(Integer seRefCount) {
+  public void setSeRefCount(Integer  seRefCount) {
     this.seRefCount = seRefCount;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
-  public String getObjectID() {
-		return "VIMgrIPSubnetRuntime";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VIMgrIPSubnetRuntime viMgrIPSubnetRuntime = (VIMgrIPSubnetRuntime) o;
-    return Objects.equals(this.fipAvailable, viMgrIPSubnetRuntime.fipAvailable) &&
-        Objects.equals(this.fipSubnetUuids, viMgrIPSubnetRuntime.fipSubnetUuids) &&
-        Objects.equals(this.floatingipSubnets, viMgrIPSubnetRuntime.floatingipSubnets) &&
-        Objects.equals(this.ipSubnet, viMgrIPSubnetRuntime.ipSubnet) &&
-        Objects.equals(this.name, viMgrIPSubnetRuntime.name) &&
-        Objects.equals(this.prefix, viMgrIPSubnetRuntime.prefix) &&
-        Objects.equals(this.primary, viMgrIPSubnetRuntime.primary) &&
-        Objects.equals(this.refCount, viMgrIPSubnetRuntime.refCount) &&
-        Objects.equals(this.seRefCount, viMgrIPSubnetRuntime.seRefCount) &&
-        Objects.equals(this.uuid, viMgrIPSubnetRuntime.uuid);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(fipAvailable, fipSubnetUuids, floatingipSubnets, ipSubnet, name, prefix, primary, refCount, seRefCount, uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VIMgrIPSubnetRuntime {\n");
-    
-    sb.append("    fipAvailable: ").append(toIndentedString(fipAvailable)).append("\n");
-    sb.append("    fipSubnetUuids: ").append(toIndentedString(fipSubnetUuids)).append("\n");
-    sb.append("    floatingipSubnets: ").append(toIndentedString(floatingipSubnets)).append("\n");
-    sb.append("    ipSubnet: ").append(toIndentedString(ipSubnet)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
-    sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
-    sb.append("    refCount: ").append(toIndentedString(refCount)).append("\n");
-    sb.append("    seRefCount: ").append(toIndentedString(seRefCount)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VIMgrIPSubnetRuntime objVIMgrIPSubnetRuntime = (VIMgrIPSubnetRuntime) o;
+  return   Objects.equals(this.fipAvailable, objVIMgrIPSubnetRuntime.fipAvailable)&&
+  Objects.equals(this.uuid, objVIMgrIPSubnetRuntime.uuid)&&
+  Objects.equals(this.ipSubnet, objVIMgrIPSubnetRuntime.ipSubnet)&&
+  Objects.equals(this.floatingipSubnets, objVIMgrIPSubnetRuntime.floatingipSubnets)&&
+  Objects.equals(this.seRefCount, objVIMgrIPSubnetRuntime.seRefCount)&&
+  Objects.equals(this.refCount, objVIMgrIPSubnetRuntime.refCount)&&
+  Objects.equals(this.primary, objVIMgrIPSubnetRuntime.primary)&&
+  Objects.equals(this.prefix, objVIMgrIPSubnetRuntime.prefix)&&
+  Objects.equals(this.fipSubnetUuids, objVIMgrIPSubnetRuntime.fipSubnetUuids)&&
+  Objects.equals(this.name, objVIMgrIPSubnetRuntime.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VIMgrIPSubnetRuntime {\n");
+      sb.append("    fipAvailable: ").append(toIndentedString(fipAvailable)).append("\n");
+        sb.append("    fipSubnetUuids: ").append(toIndentedString(fipSubnetUuids)).append("\n");
+        sb.append("    floatingipSubnets: ").append(toIndentedString(floatingipSubnets)).append("\n");
+        sb.append("    ipSubnet: ").append(toIndentedString(ipSubnet)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+        sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
+        sb.append("    refCount: ").append(toIndentedString(refCount)).append("\n");
+        sb.append("    seRefCount: ").append(toIndentedString(seRefCount)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,44 +1,72 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.HTTPStatusRange;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HTTPReselectRespCode
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HTTPReselectRespCode is a POJO class extends AviRestResource that used for creating
+ * HTTPReselectRespCode.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HTTPReselectRespCode")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPRESELECTRESPCODE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPRESELECTRESPCODE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HTTPReselectRespCode extends AviRestResource  {
+public class HTTPReselectRespCode extends AviRestResource {
   @JsonProperty("codes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Integer> codes = null;
 
   @JsonProperty("ranges")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<HTTPStatusRange> ranges = null;
 
   @JsonProperty("resp_code_block")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> respCodeBlock = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Http response code to be matched.
+   * Allowed values are 400-599.
+   * @return codes
+   */
+  @VsoMethod
+  public List<Integer> getCodes() {
+    return codes;
+  }
+
+  /**
+   * This is the setter method. this will set the codes
+   * Http response code to be matched.
+   * Allowed values are 400-599.
+   * @return codes
+   */
+  @VsoMethod
+  public void setCodes(List<Integer>  codes) {
+    this.codes = codes;
+  }
+
+  /**
+   * This is the setter method this will set the codes
+   * Http response code to be matched.
+   * Allowed values are 400-599.
+   * @return codes
+   */
+  @VsoMethod
   public HTTPReselectRespCode addCodesItem(Integer codesItem) {
     if (this.codes == null) {
       this.codes = new ArrayList<Integer>();
@@ -46,26 +74,34 @@ public class HTTPReselectRespCode extends AviRestResource  {
     this.codes.add(codesItem);
     return this;
   }
-  
+
+
   /**
-   * HTTP response code to be matched. Allowed values are 400-599.
-   * @return codes
-  **/
-  @ApiModelProperty(value = "HTTP response code to be matched. Allowed values are 400-599.")
-
-
- 
-  @VsoMethod  
-  public List<Integer> getCodes() {
-    return codes;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Http response code ranges to match.
+   * @return ranges
+   */
   @VsoMethod
-  public void setCodes(List<Integer> codes) {
-    this.codes = codes;
+  public List<HTTPStatusRange> getRanges() {
+    return ranges;
   }
 
-  
+  /**
+   * This is the setter method. this will set the ranges
+   * Http response code ranges to match.
+   * @return ranges
+   */
+  @VsoMethod
+  public void setRanges(List<HTTPStatusRange>  ranges) {
+    this.ranges = ranges;
+  }
+
+  /**
+   * This is the setter method this will set the ranges
+   * Http response code ranges to match.
+   * @return ranges
+   */
+  @VsoMethod
   public HTTPReselectRespCode addRangesItem(HTTPStatusRange rangesItem) {
     if (this.ranges == null) {
       this.ranges = new ArrayList<HTTPStatusRange>();
@@ -73,27 +109,37 @@ public class HTTPReselectRespCode extends AviRestResource  {
     this.ranges.add(rangesItem);
     return this;
   }
-  
+
+
   /**
-   * HTTP response code ranges to match.
-   * @return ranges
-  **/
-  @ApiModelProperty(value = "HTTP response code ranges to match.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HTTPStatusRange> getRanges() {
-    return ranges;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Block of http response codes to match for server reselect.
+   * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+   * @return respCodeBlock
+   */
   @VsoMethod
-  public void setRanges(List<HTTPStatusRange> ranges) {
-    this.ranges = ranges;
+  public List<String> getRespCodeBlock() {
+    return respCodeBlock;
   }
 
-  
+  /**
+   * This is the setter method. this will set the respCodeBlock
+   * Block of http response codes to match for server reselect.
+   * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+   * @return respCodeBlock
+   */
+  @VsoMethod
+  public void setRespCodeBlock(List<String>  respCodeBlock) {
+    this.respCodeBlock = respCodeBlock;
+  }
+
+  /**
+   * This is the setter method this will set the respCodeBlock
+   * Block of http response codes to match for server reselect.
+   * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+   * @return respCodeBlock
+   */
+  @VsoMethod
   public HTTPReselectRespCode addRespCodeBlockItem(String respCodeBlockItem) {
     if (this.respCodeBlock == null) {
       this.respCodeBlock = new ArrayList<String>();
@@ -101,70 +147,43 @@ public class HTTPReselectRespCode extends AviRestResource  {
     this.respCodeBlock.add(respCodeBlockItem);
     return this;
   }
-  
-  /**
-   * Block of HTTP response codes to match for server reselect. Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
-   * @return respCodeBlock
-  **/
-  @ApiModelProperty(value = "Block of HTTP response codes to match for server reselect. Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.")
 
 
- 
-  @VsoMethod  
-  public List<String> getRespCodeBlock() {
-    return respCodeBlock;
-  }
-    
-  @VsoMethod
-  public void setRespCodeBlock(List<String> respCodeBlock) {
-    this.respCodeBlock = respCodeBlock;
-  }
 
-  
-  public String getObjectID() {
-		return "HTTPReselectRespCode";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HTTPReselectRespCode htTPReselectRespCode = (HTTPReselectRespCode) o;
-    return Objects.equals(this.codes, htTPReselectRespCode.codes) &&
-        Objects.equals(this.ranges, htTPReselectRespCode.ranges) &&
-        Objects.equals(this.respCodeBlock, htTPReselectRespCode.respCodeBlock);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(codes, ranges, respCodeBlock);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HTTPReselectRespCode {\n");
-    
-    sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
-    sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
-    sb.append("    respCodeBlock: ").append(toIndentedString(respCodeBlock)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HTTPReselectRespCode objHTTPReselectRespCode = (HTTPReselectRespCode) o;
+  return   Objects.equals(this.ranges, objHTTPReselectRespCode.ranges)&&
+  Objects.equals(this.codes, objHTTPReselectRespCode.codes)&&
+  Objects.equals(this.respCodeBlock, objHTTPReselectRespCode.respCodeBlock);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HTTPReselectRespCode {\n");
+      sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
+        sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");
+        sb.append("    respCodeBlock: ").append(toIndentedString(respCodeBlock)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,223 +1,238 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.DnsClientIpMatch;
 import com.vmware.avi.vro.model.DnsGeoLocationMatch;
+import com.vmware.avi.vro.model.DnsTransportProtocolMatch;
 import com.vmware.avi.vro.model.DnsQueryNameMatch;
 import com.vmware.avi.vro.model.DnsQueryTypeMatch;
-import com.vmware.avi.vro.model.DnsTransportProtocolMatch;
-import com.vmware.avi.vro.model.IpAddrMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DnsRuleMatchTarget
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DnsRuleMatchTarget is a POJO class extends AviRestResource that used for creating
+ * DnsRuleMatchTarget.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DnsRuleMatchTarget")
-@VsoFinder(name = Constants.FINDER_VRO_DNSRULEMATCHTARGET, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DNSRULEMATCHTARGET)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DnsRuleMatchTarget extends AviRestResource  {
+public class DnsRuleMatchTarget extends AviRestResource {
   @JsonProperty("client_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch clientIp = null;
 
   @JsonProperty("client_ip_address")
+  @JsonInclude(Include.NON_NULL)
   private DnsClientIpMatch clientIpAddress = null;
 
   @JsonProperty("geo_location")
+  @JsonInclude(Include.NON_NULL)
   private DnsGeoLocationMatch geoLocation = null;
 
   @JsonProperty("protocol")
+  @JsonInclude(Include.NON_NULL)
   private DnsTransportProtocolMatch protocol = null;
 
   @JsonProperty("query_name")
+  @JsonInclude(Include.NON_NULL)
   private DnsQueryNameMatch queryName = null;
 
   @JsonProperty("query_type")
+  @JsonInclude(Include.NON_NULL)
   private DnsQueryTypeMatch queryType = null;
 
-  
+
+
   /**
-   * IP addresses to match against client IP. From 17.1.6 release onwards, IP addresses needs to be configured in the client_ip_address field of this message. Field deprecated in 17.1.6,17.2.2. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ip addresses to match against client ip.
+   * From 17.1.6 release onwards, ip addresses needs to be configured in the client_ip_address field of this message.
+   * Field deprecated in 17.1.6,17.2.2.
+   * Field introduced in 17.1.1.
    * @return clientIp
-  **/
-  @ApiModelProperty(value = "IP addresses to match against client IP. From 17.1.6 release onwards, IP addresses needs to be configured in the client_ip_address field of this message. Field deprecated in 17.1.6,17.2.2. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getClientIp() {
     return clientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip addresses to match against client ip.
+   * From 17.1.6 release onwards, ip addresses needs to be configured in the client_ip_address field of this message.
+   * Field deprecated in 17.1.6,17.2.2.
+   * Field introduced in 17.1.1.
+   * @param clientIp set the clientIp.
+   */
   @VsoMethod
   public void setClientIp(IpAddrMatch clientIp) {
     this.clientIp = clientIp;
   }
 
-  
   /**
-   * IP addresses to match against client IP or the EDNS client subnet IP. Field introduced in 17.1.6,17.2.2.
+   * This is the getter method this will return the attribute value.
+   * Ip addresses to match against client ip or the edns client subnet ip.
+   * Field introduced in 17.1.6,17.2.2.
    * @return clientIpAddress
-  **/
-  @ApiModelProperty(value = "IP addresses to match against client IP or the EDNS client subnet IP. Field introduced in 17.1.6,17.2.2.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DnsClientIpMatch getClientIpAddress() {
     return clientIpAddress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip addresses to match against client ip or the edns client subnet ip.
+   * Field introduced in 17.1.6,17.2.2.
+   * @param clientIpAddress set the clientIpAddress.
+   */
   @VsoMethod
   public void setClientIpAddress(DnsClientIpMatch clientIpAddress) {
     this.clientIpAddress = clientIpAddress;
   }
 
-  
   /**
-   * Geographical location attribute to match against that of the client IP. Field introduced in 17.1.5.
+   * This is the getter method this will return the attribute value.
+   * Geographical location attribute to match against that of the client ip.
+   * Field introduced in 17.1.5.
    * @return geoLocation
-  **/
-  @ApiModelProperty(value = "Geographical location attribute to match against that of the client IP. Field introduced in 17.1.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DnsGeoLocationMatch getGeoLocation() {
     return geoLocation;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Geographical location attribute to match against that of the client ip.
+   * Field introduced in 17.1.5.
+   * @param geoLocation set the geoLocation.
+   */
   @VsoMethod
   public void setGeoLocation(DnsGeoLocationMatch geoLocation) {
     this.geoLocation = geoLocation;
   }
 
-  
   /**
-   * DNS transport protocol match. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Dns transport protocol match.
+   * Field introduced in 17.1.1.
    * @return protocol
-  **/
-  @ApiModelProperty(value = "DNS transport protocol match. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DnsTransportProtocolMatch getProtocol() {
     return protocol;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Dns transport protocol match.
+   * Field introduced in 17.1.1.
+   * @param protocol set the protocol.
+   */
   @VsoMethod
   public void setProtocol(DnsTransportProtocolMatch protocol) {
     this.protocol = protocol;
   }
 
-  
   /**
-   * Domain names to match against query name. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Domain names to match against query name.
+   * Field introduced in 17.1.1.
    * @return queryName
-  **/
-  @ApiModelProperty(value = "Domain names to match against query name. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DnsQueryNameMatch getQueryName() {
     return queryName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Domain names to match against query name.
+   * Field introduced in 17.1.1.
+   * @param queryName set the queryName.
+   */
   @VsoMethod
   public void setQueryName(DnsQueryNameMatch queryName) {
     this.queryName = queryName;
   }
 
-  
   /**
-   * DNS query types to match against request query type. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Dns query types to match against request query type.
+   * Field introduced in 17.1.1.
    * @return queryType
-  **/
-  @ApiModelProperty(value = "DNS query types to match against request query type. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DnsQueryTypeMatch getQueryType() {
     return queryType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Dns query types to match against request query type.
+   * Field introduced in 17.1.1.
+   * @param queryType set the queryType.
+   */
   @VsoMethod
   public void setQueryType(DnsQueryTypeMatch queryType) {
     this.queryType = queryType;
   }
 
-  
-  public String getObjectID() {
-		return "DnsRuleMatchTarget";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DnsRuleMatchTarget dnsRuleMatchTarget = (DnsRuleMatchTarget) o;
-    return Objects.equals(this.clientIp, dnsRuleMatchTarget.clientIp) &&
-        Objects.equals(this.clientIpAddress, dnsRuleMatchTarget.clientIpAddress) &&
-        Objects.equals(this.geoLocation, dnsRuleMatchTarget.geoLocation) &&
-        Objects.equals(this.protocol, dnsRuleMatchTarget.protocol) &&
-        Objects.equals(this.queryName, dnsRuleMatchTarget.queryName) &&
-        Objects.equals(this.queryType, dnsRuleMatchTarget.queryType);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(clientIp, clientIpAddress, geoLocation, protocol, queryName, queryType);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DnsRuleMatchTarget {\n");
-    
-    sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-    sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
-    sb.append("    geoLocation: ").append(toIndentedString(geoLocation)).append("\n");
-    sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
-    sb.append("    queryName: ").append(toIndentedString(queryName)).append("\n");
-    sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DnsRuleMatchTarget objDnsRuleMatchTarget = (DnsRuleMatchTarget) o;
+  return   Objects.equals(this.clientIp, objDnsRuleMatchTarget.clientIp)&&
+  Objects.equals(this.protocol, objDnsRuleMatchTarget.protocol)&&
+  Objects.equals(this.clientIpAddress, objDnsRuleMatchTarget.clientIpAddress)&&
+  Objects.equals(this.queryType, objDnsRuleMatchTarget.queryType)&&
+  Objects.equals(this.geoLocation, objDnsRuleMatchTarget.geoLocation)&&
+  Objects.equals(this.queryName, objDnsRuleMatchTarget.queryName);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DnsRuleMatchTarget {\n");
+      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
+        sb.append("    geoLocation: ").append(toIndentedString(geoLocation)).append("\n");
+        sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    queryName: ").append(toIndentedString(queryName)).append("\n");
+        sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

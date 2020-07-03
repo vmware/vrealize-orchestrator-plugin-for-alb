@@ -10,10 +10,23 @@
 	<parent>
 		<artifactId>vro</artifactId>
 		<groupId>com.vmware.avi</groupId>
-		<version>0.0.0</version>
+		<version>20.1.1</version>
 	</parent>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.vmware.avi.sdk</groupId>
+			<artifactId>avisdk</artifactId>
+			<version>20.1.1-beta-1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<dependency>
 			<groupId>com.vmware.o11n</groupId>
 			<artifactId>o11n-provided-deps</artifactId>
@@ -23,6 +36,10 @@
 				<exclusion>
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -35,6 +52,12 @@
 		<dependency>
 			<groupId>com.vmware.o11n</groupId>
 			<artifactId>o11n-spring-tools</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
@@ -46,11 +69,29 @@
 			<artifactId>json</artifactId>
 			<version>20180813</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
 		<dependency>
-			<groupId>com.vmware.avi.sdk</groupId>
-			<artifactId>avisdk</artifactId>
-			<version>18.2.8-beta-1</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>5.2.7.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+
+
+
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -83,11 +124,6 @@
 			<version>2.10.4</version>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-hibernate5</artifactId>
-			<version>2.10.4</version>
-		</dependency>
-		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-yaml</artifactId>
 			<version>2.10.4</version>
@@ -108,5 +144,13 @@
 			<artifactId>reflections</artifactId>
 			<version>0.9.10</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>5.2.6.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 </project>

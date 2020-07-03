@@ -1,237 +1,232 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ControllerSite
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ControllerSite is a POJO class extends AviRestResource that used for creating
+ * ControllerSite.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ControllerSite")
 @VsoFinder(name = Constants.FINDER_VRO_CONTROLLERSITE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ControllerSite extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class ControllerSite extends AviRestResource {
   @JsonProperty("address")
+  @JsonInclude(Include.NON_NULL)
   private String address = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private Integer port = 443;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * IP Address or a DNS resolvable, fully qualified domain name of the Site Controller Cluster. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
+   * Field introduced in 18.2.5.
    * @return address
-  **/
-  @ApiModelProperty(required = true, value = "IP Address or a DNS resolvable, fully qualified domain name of the Site Controller Cluster. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAddress() {
     return address;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
+   * Field introduced in 18.2.5.
+   * @param address set the address.
+   */
   @VsoMethod
-  public void setAddress(String address) {
+  public void setAddress(String  address) {
     this.address = address;
   }
 
-  
   /**
-   * Name for the Site Controller Cluster. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Name for the site controller cluster.
+   * Field introduced in 18.2.5.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name for the Site Controller Cluster. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name for the site controller cluster.
+   * Field introduced in 18.2.5.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * The Controller Site Cluster's REST API port number. Allowed values are 1-65535. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * The controller site cluster's rest api port number.
+   * Allowed values are 1-65535.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 443.
    * @return port
-  **/
-  @ApiModelProperty(value = "The Controller Site Cluster's REST API port number. Allowed values are 1-65535. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The controller site cluster's rest api port number.
+   * Allowed values are 1-65535.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 443.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(Integer port) {
+  public void setPort(Integer  port) {
     this.port = port;
   }
 
-  
   /**
-   * Reference for the Tenant. It is a reference to an object of type Tenant. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Reference for the tenant.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.5.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = "Reference for the Tenant. It is a reference to an object of type Tenant. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Reference for the tenant.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.5.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * Reference for the Site Controller Cluster. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Reference for the site controller cluster.
+   * Field introduced in 18.2.5.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Reference for the Site Controller Cluster. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Reference for the site controller cluster.
+   * Field introduced in 18.2.5.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "ControllerSite";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ControllerSite controllerSite = (ControllerSite) o;
-    return Objects.equals(this.lastModified, controllerSite.lastModified) &&
-        Objects.equals(this.address, controllerSite.address) &&
-        Objects.equals(this.name, controllerSite.name) &&
-        Objects.equals(this.port, controllerSite.port) &&
-        Objects.equals(this.tenantRef, controllerSite.tenantRef) &&
-        Objects.equals(this.url, controllerSite.url) &&
-        Objects.equals(this.uuid, controllerSite.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, address, name, port, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ControllerSite {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ControllerSite objControllerSite = (ControllerSite) o;
+  return   Objects.equals(this.uuid, objControllerSite.uuid)&&
+  Objects.equals(this.port, objControllerSite.port)&&
+  Objects.equals(this.address, objControllerSite.address)&&
+  Objects.equals(this.tenantRef, objControllerSite.tenantRef)&&
+  Objects.equals(this.name, objControllerSite.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ControllerSite {\n");
+      sb.append("    address: ").append(toIndentedString(address)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

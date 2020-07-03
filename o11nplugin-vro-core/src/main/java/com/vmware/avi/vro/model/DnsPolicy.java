@@ -1,134 +1,152 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.DnsRule;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DnsPolicy
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DnsPolicy is a POJO class extends AviRestResource that used for creating
+ * DnsPolicy.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DnsPolicy")
 @VsoFinder(name = Constants.FINDER_VRO_DNSPOLICY, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DnsPolicy extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class DnsPolicy extends AviRestResource {
   @JsonProperty("created_by")
+  @JsonInclude(Include.NON_NULL)
   private String createdBy = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("rule")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<DnsRule> rule = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Creator name. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Creator name.
+   * Field introduced in 17.1.1.
    * @return createdBy
-  **/
-  @ApiModelProperty(value = "Creator name. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCreatedBy() {
     return createdBy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Creator name.
+   * Field introduced in 17.1.1.
+   * @param createdBy set the createdBy.
+   */
   @VsoMethod
-  public void setCreatedBy(String createdBy) {
+  public void setCreatedBy(String  createdBy) {
     this.createdBy = createdBy;
   }
 
-  
   /**
-   *  Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1.
    * @return description
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.1.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Name of the DNS Policy. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Name of the dns policy.
+   * Field introduced in 17.1.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the DNS Policy. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the dns policy.
+   * Field introduced in 17.1.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dns rules.
+   * Field introduced in 17.1.1.
+   * @return rule
+   */
+  @VsoMethod
+  public List<DnsRule> getRule() {
+    return rule;
+  }
+
+  /**
+   * This is the setter method. this will set the rule
+   * Dns rules.
+   * Field introduced in 17.1.1.
+   * @return rule
+   */
+  @VsoMethod
+  public void setRule(List<DnsRule>  rule) {
+    this.rule = rule;
+  }
+
+  /**
+   * This is the setter method this will set the rule
+   * Dns rules.
+   * Field introduced in 17.1.1.
+   * @return rule
+   */
+  @VsoMethod
   public DnsPolicy addRuleItem(DnsRule ruleItem) {
     if (this.rule == null) {
       this.rule = new ArrayList<DnsRule>();
@@ -136,138 +154,115 @@ public class DnsPolicy extends AviRestResource  {
     this.rule.add(ruleItem);
     return this;
   }
-  
+
+
   /**
-   * DNS rules. Field introduced in 17.1.1.
-   * @return rule
-  **/
-  @ApiModelProperty(value = "DNS rules. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<DnsRule> getRule() {
-    return rule;
-  }
-    
-  @VsoMethod
-  public void setRule(List<DnsRule> rule) {
-    this.rule = rule;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type Tenant. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the DNS Policy. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the dns policy.
+   * Field introduced in 17.1.1.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the DNS Policy. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the dns policy.
+   * Field introduced in 17.1.1.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "DnsPolicy";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DnsPolicy dnsPolicy = (DnsPolicy) o;
-    return Objects.equals(this.lastModified, dnsPolicy.lastModified) &&
-        Objects.equals(this.createdBy, dnsPolicy.createdBy) &&
-        Objects.equals(this.description, dnsPolicy.description) &&
-        Objects.equals(this.name, dnsPolicy.name) &&
-        Objects.equals(this.rule, dnsPolicy.rule) &&
-        Objects.equals(this.tenantRef, dnsPolicy.tenantRef) &&
-        Objects.equals(this.url, dnsPolicy.url) &&
-        Objects.equals(this.uuid, dnsPolicy.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, createdBy, description, name, rule, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DnsPolicy {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DnsPolicy objDnsPolicy = (DnsPolicy) o;
+  return   Objects.equals(this.description, objDnsPolicy.description)&&
+  Objects.equals(this.createdBy, objDnsPolicy.createdBy)&&
+  Objects.equals(this.name, objDnsPolicy.name)&&
+  Objects.equals(this.rule, objDnsPolicy.rule)&&
+  Objects.equals(this.tenantRef, objDnsPolicy.tenantRef)&&
+  Objects.equals(this.uuid, objDnsPolicy.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DnsPolicy {\n");
+      sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module
+	name="createVirtualServiceWithIPAMObj" result-type="Avi:AviVroClient"
+	api-version="6.0.0" id="dbdfb0c4-6e9f-45de-a594-1c92492b0560"
+	version="1.1.1" allowed-operations="vfe">
+	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
+	<param n="poolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
+	<param n="ServerCloud" t="string"><![CDATA[Server cloud name]]></param>
+	<param n="Tenant" t="string"><![CDATA[Tenant name ]]></param>
+	<param n="ApplicationProfile" t="string"><![CDATA[Application profile name ]]></param>
+	<param n="servicePort" t="string"><![CDATA[Virtual service port]]></param>
+	<param n="SSLCertificate" t="string"><![CDATA[Existing SSL certificate name]]></param>
+	<param n="SSLCert" t="boolean"><![CDATA[Use SSL certificate or not]]></param>
+	<param n="CertName" t="string"><![CDATA[New SSL certificate name]]></param>
+	<param n="CreateSSL" t="boolean"><![CDATA[Check create SSL certificate or not]]></param>
+	<param n="serviceEngine" t="string"><![CDATA[Serviceengine group name]]></param>
+	<param n="poolOrPoolgroup" t="boolean"><![CDATA[Create pool or poolgroup]]></param>
+	<param n="poolName" t="string"><![CDATA[Newly created pool name]]></param>
+	<param n="vsVIP" t="boolean"><![CDATA[VS Vip name]]></param>
+	<param n="existingVIP" t="string"><![CDATA[Existing Vs Vip name]]></param>
+	<param n="allowInvalidClientCert" t="boolean"><![CDATA[Allow invalid client cert]]></param>
+	<param n="closeClientConfigUpdate" t="boolean"><![CDATA[Add close client connection on config update]]></param>
+	<param n="description" t="string"><![CDATA[Add description for VS]]></param>
+	<param n="enableAutogw" t="boolean"><![CDATA[Add enable autogw]]></param>
+	<param n="enableRhi" t="boolean"><![CDATA[Add enable rhi]]></param>
+	<param n="enableRhiSnat" t="boolean"><![CDATA[Add enable_rhi snat]]></param>
+	<param n="ignPoolNetReach" t="boolean"><![CDATA[Ignore network reachability constraints for the server pool]]></param>
+	<param n="removeListeningPortOnVsDown" t="boolean"><![CDATA[Remove listening port if VirtualService is down]]></param>
+	<param n="scaleoutEcmp" t="boolean"><![CDATA[Disable re-distribution of flows across service engines for a virtual service]]></param>
+	<param n="clientIpAddr" t="string"><![CDATA[Client IP Address]]></param>
+	<param n="includeURL" t="string"><![CDATA[Add include URL for client log]]></param>
+	<param n="excludeURL" t="string"><![CDATA[Add exclude URL for client log]]></param>
+	<param n="addClientLogFliter" t="boolean"><![CDATA[Checkbox for  add client log fliter]]></param>
+	<param n="enabledClientLog" t="boolean"><![CDATA[Checkbox for enable client log]]></param>
+	<param n="clientStringRef" t="string"><![CDATA[Add string referencce for client log]]></param>
+	<param n="clientDuration" t="number"><![CDATA[Add client log duration]]></param>
+	<param n="logAllClientHeaders" t="boolean"><![CDATA[Checkbox for enabled all log headers]]></param>
+	<param n="analyticsProfile" t="string"><![CDATA[Select analytics profile]]></param>
+	<param n="clientInsights" t="string"><![CDATA[Add client insights for analytics profile logs]]></param>
+	<param n="significantLogThrottle" t="number"><![CDATA[Significant log throttle]]></param>
+	<param n="udfLogThrottle" t="number"><![CDATA[User defined filters log throttle]]></param>
+	<param n="nonSignificantLogs" t="boolean"><![CDATA[Non-significant logs]]></param>
+	<param n="nslduration" t="string"><![CDATA[Non-significant log duration]]></param>
+	<param n="nslThrottle" t="string"><![CDATA[Non-significant log throttle]]></param>
+	<param n="metricsRealtimeUpdate" t="boolean"><![CDATA[Real Time Metrics]]></param>
+	<param n="metricsRealtimeUpdateDuration" t="number"><![CDATA[Add metrics realtime update duration]]></param>
+	<param n="maxCpsPerClient" t="number"><![CDATA[Maximum connections per second per client IP]]></param>
+	<param n="trafficEnabled" t="boolean"><![CDATA[Add traffic_enabled or not]]></param>
+	<param n="useBridgeIpAsVip" t="boolean"><![CDATA[Use Bridge IP as VIP]]></param>
+	<param n="useVipAsSnat" t="boolean"><![CDATA[Use the Virtual IP as the SNAT IP for health monitoring]]></param>
+	<param n="vsVipName" t="string"><![CDATA[Name of the vsvip]]></param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="network_security_policy_name" t="string"><![CDATA[Network Security policy name]]></param>
+	<param n="http_policy_set_name" t="string"><![CDATA[Http policy set name]]></param>
+	<script encoded="false"><![CDATA[/*************************************************************
+* This script initializes Virtual service properties objects *
+* and puts user input into the Virtual service object        *
+* and creates the Virtual service on AVI Controller.         *  
+**************************************************************/
+
+
+try {
+	//for VS with IPAM
+	
+	var	objectList = []
+	// Check Certificate and create it
+	var Certificate = SSLCertificate;
+	if (CreateSSL == true) {
+		Certificate = CertName;
+	}
+	var insightsSampling = {
+						      "client_ip": {
+						        "addrs": [{
+						            "type": "V4",
+						            "addr": clientIpAddr //Client IP Address
+						          }],
+						        "match_criteria": "IS_IN",
+						      }	      
+						    }
+	if (includeURL){ // Include URL
+		var include = {
+				        "match_criteria": "BEGINS_WITH", //BEGINS_WITH
+				        "match_str": [ includeURL ],
+	      			}
+	    insightsSampling.sample_uris = include
+	}
+	if (excludeURL){  // Exclude URL
+		var exclude =  {
+	        "match_criteria": "BEGINS_WITH", //BEGINS_WITH
+	        "match_str": [ excludeURL ],
+	      }
+	      insightsSampling.skip_uris = exclude
+	}
+	if (addClientLogFliter){
+		var logFilter = [{
+			  "index": 1,
+			  "client_ip": {
+			    "addrs": [
+			      {
+			        "type": "V4",
+			        "addr": clientIpAddr // Client IP Address
+			      }
+			    ],
+			    "match_criteria": "BEGINS_WITH" //BEGINS_WITH
+			  },
+			  "name": "Filter 1", // Filter Name
+			  "enabled": enabledClientLog,
+			  "uri": {
+					"string_group_refs": [
+						"/api/stringgroup?name"+ clientStringRef
+					],
+					"match_criteria": "CONTAINS" // Match
+					},
+			  "duration": clientDuration, // Duration
+			  "all_headers": logAllClientHeaders //Client log enabled
+			}]
+	}
+	
+	if (analyticsProfile != ""){
+		var analytics = {
+			"all_headers": logAllClientHeaders, // Log all headers
+			"client_insights": clientInsights, // Client Insights
+			"client_log_filters": logFilter,
+			"client_insights_sampling": insightsSampling, 
+			"significant_log_throttle": significantLogThrottle, // Significant log throttle
+    		"udf_log_throttle": udfLogThrottle //User defined filters log throttle
+		}	
+		if (nonSignificantLogs != false){ // Non-significant logs
+			analytics.full_client_logs = { 
+											"duration": nslduration, // Non-significant log duration
+											"throttle": nslThrottle, // Non-significant log throttle
+											"enabled": nonSignificantLogs 
+										}
+		}
+		if ( metricsRealtimeUpdate != false){ // Metric Update Frequency
+			analytics.metrics_realtime_update = { 
+											      "duration": metricsRealtimeUpdateDuration, 
+											      "enabled": metricsRealtimeUpdate
+		    									}
+		}
+	}
+	
+	// Check the VsVip and create new VsVip if not exists.
+	var name = existingVIP;
+	if (vsVIP == false){
+		name = vsVipName
+	} 
+	System.log("vsVipName : "+vsVipName);
+		System.log("name : "+name);
+	// Check the pool and poolgroup based on user inputs.
+	var poolgroup_ref = "/api/poolgroup?name="+poolgroupName
+	var pool_ref = null
+	if (poolOrPoolgroup != true){
+		poolgroup_ref = null
+		pool_ref = "/api/pool?name="+poolName
+	}
+	
+	// Set the service Engine  reference.
+	var serviceEngine_ref = null;
+	var analyticsProfile_ref = null;
+	if ( serviceEngine != null || serviceEngine!=""){
+		serviceEngine_ref = "/api/serviceenginegroup?name="+serviceEngine
+	}
+	if (analyticsProfile){
+		analyticsProfile_ref  = "/api/analyticsprofile?name="+analyticsProfile
+	}
+	
+	// Form a load balancer alogorithm type based on user input
+	var AppProfile = "System-HTTP";
+	var ssl = false;
+    var ssl_profile_ref = null;
+	var ssl_key_and_certificate_refs = null;
+	if (ApplicationProfile == "HTTPS" || SSLCert == true ) {
+		AppProfile= "System-Secure-HTTP";
+		ssl = true
+		ssl_profile_ref = "/api/sslprofile?name=System-Standard";
+		ssl_key_and_certificate_refs = "/api/sslkeyandcertificate/?name="+Certificate ;		
+	}
+	var httpPolicyArray=null;	
+	if(http_policy_set_name!=null||http_policy_set_name!=""){
+		httpPolicyArray=new Array();
+		var httpPolicyObj= new Object();
+		httpPolicyObj.index=12;
+		httpPolicyObj.http_policy_set_ref="/api/httppolicyset?name="+http_policy_set_name;
+		httpPolicyArray.push(httpPolicyObj);
+	}
+	//var vsvipName="vsvip-test_vs-vmware_cloud";
+	// Set the configuration for virtual service.
+	virtualServiceObject = new AviVirtualService();
+	if (allowInvalidClientCert){
+		virtualServiceObject.setAllowInvalidClientCert(allowInvalidClientCert);
+	}
+	if (closeClientConfigUpdate){
+		virtualServiceObject.setCloseClientConnOnConfigUpdate(closeClientConfigUpdate);
+	}
+	if (description){
+		virtualServiceObject.setDescription(description);
+	}
+	if (maxCpsPerClient){
+		virtualServiceObject.setMaxCpsPerClient(maxCpsPerClient);
+	}
+	if (removeListeningPortOnVsDown){
+		virtualServiceObject.setRemoveListeningPortOnVsDown(removeListeningPortOnVsDown);
+	}
+	if (scaleoutEcmp){
+		virtualServiceObject.setScaleoutEcmp(scaleoutEcmp);
+	}
+	if (trafficEnabled){
+		virtualServiceObject.setTrafficEnabled(trafficEnabled);
+	}
+	if (useBridgeIpAsVip){
+		virtualServiceObject.setUseBridgeIpAsVip(useBridgeIpAsVip);
+	}
+	if (useVipAsSnat){
+		virtualServiceObject.setUseVipAsSnat(useVipAsSnat);
+	}
+	if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+	}
+	virtualServiceObject.setVsvipRef("/api/vsvip?name="+name);
+	virtualServiceObject.setCloudRef("/api/cloud?name="+ServerCloud);
+	virtualServiceObject.setTenantRef("/api/tenant?name="+Tenant);
+	virtualServiceObject.setPoolGroupRef(poolgroup_ref);
+	virtualServiceObject.setPoolRef(pool_ref);
+	virtualServiceObject.setApplicationProfileRef("/api/applicationprofile?name="+AppProfile);
+	virtualServiceObject.setAnalyticsProfileRef(analyticsProfile_ref);
+	virtualServiceObject.setName(Name);
+	virtualServiceObject.setSslProfileRef(ssl_profile_ref);
+	virtualServiceObject.addSslKeyAndCertificateRefsItem(ssl_key_and_certificate_refs);
+	if (enableAutogw){
+		virtualServiceObject.setEnableAutogw(enableAutogw);
+	}
+	if (enableRhi){
+		virtualServiceObject.setEnableRhi(enableRhi);
+	}
+	if (enableRhiSnat){
+		virtualServiceObject.setEnableRhiSnat(enableRhiSnat);
+	}
+	if (ignPoolNetReach){
+		virtualServiceObject.setIgnPoolNetReach(ignPoolNetReach);
+	}
+	var serviceArray= new Array();
+	serviceObject = new AviService();
+	serviceObject.setEnableSsl(ssl);
+	serviceObject.setPortRangeEnd(serviceObject);
+	serviceObject.setPort(servicePort);
+	serviceArray.push(serviceObject);
+	virtualServiceObject.setServices(serviceArray);	
+
+	System.log("VS configuration : "+virtualServiceObject)
+
+	aviVroClient.addObject(virtualServiceObject)
+	return aviVroClient
+	
+} catch(e) {
+     throw "Error while create VS: "+ e
+}
+	]]></script>
+</dunes-script-module>

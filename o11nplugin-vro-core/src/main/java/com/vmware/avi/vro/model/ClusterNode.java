@@ -1,60 +1,101 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ClusterNode
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ClusterNode is a POJO class extends AviRestResource that used for creating
+ * ClusterNode.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ClusterNode")
-@VsoFinder(name = Constants.FINDER_VRO_CLUSTERNODE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CLUSTERNODE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ClusterNode extends AviRestResource  {
+public class ClusterNode extends AviRestResource {
   @JsonProperty("categories")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> categories = null;
 
   @JsonProperty("ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ip = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = "node";
 
   @JsonProperty("password")
+  @JsonInclude(Include.NON_NULL)
   private String password = null;
 
   @JsonProperty("public_ip_or_name")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr publicIpOrName = null;
 
   @JsonProperty("vm_hostname")
+  @JsonInclude(Include.NON_NULL)
   private String vmHostname = null;
 
   @JsonProperty("vm_mor")
+  @JsonInclude(Include.NON_NULL)
   private String vmMor = null;
 
   @JsonProperty("vm_name")
+  @JsonInclude(Include.NON_NULL)
   private String vmName = null;
 
   @JsonProperty("vm_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String vmUuid = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Optional service categories that a node can be assigned (e.g.
+   * System, infrastructure or analytics).
+   * Field introduced in 18.1.1.
+   * @return categories
+   */
+  @VsoMethod
+  public List<String> getCategories() {
+    return categories;
+  }
+
+  /**
+   * This is the setter method. this will set the categories
+   * Optional service categories that a node can be assigned (e.g.
+   * System, infrastructure or analytics).
+   * Field introduced in 18.1.1.
+   * @return categories
+   */
+  @VsoMethod
+  public void setCategories(List<String>  categories) {
+    this.categories = categories;
+  }
+
+  /**
+   * This is the setter method this will set the categories
+   * Optional service categories that a node can be assigned (e.g.
+   * System, infrastructure or analytics).
+   * Field introduced in 18.1.1.
+   * @return categories
+   */
+  @VsoMethod
   public ClusterNode addCategoriesItem(String categoriesItem) {
     if (this.categories == null) {
       this.categories = new ArrayList<String>();
@@ -62,237 +103,221 @@ public class ClusterNode extends AviRestResource  {
     this.categories.add(categoriesItem);
     return this;
   }
-  
+
+
   /**
-   * Optional service categories that a node can be assigned (e.g. SYSTEM, INFRASTRUCTURE or ANALYTICS). Field introduced in 18.1.1.
-   * @return categories
-  **/
-  @ApiModelProperty(value = "Optional service categories that a node can be assigned (e.g. SYSTEM, INFRASTRUCTURE or ANALYTICS). Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getCategories() {
-    return categories;
-  }
-    
-  @VsoMethod
-  public void setCategories(List<String> categories) {
-    this.categories = categories;
-  }
-
-  
-  /**
-   * IP address of controller VM.
+   * This is the getter method this will return the attribute value.
+   * Ip address of controller vm.
    * @return ip
-  **/
-  @ApiModelProperty(required = true, value = "IP address of controller VM.")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIp() {
     return ip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address of controller vm.
+   * @param ip set the ip.
+   */
   @VsoMethod
   public void setIp(IpAddr ip) {
     this.ip = ip;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as node.
    * @return name
-  **/
-  @ApiModelProperty(value = "Name of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as node.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * The password we will use when authenticating with this node (Not persisted). Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * The password we will use when authenticating with this node (not persisted).
+   * Field introduced in 18.2.3.
    * @return password
-  **/
-  @ApiModelProperty(value = "The password we will use when authenticating with this node (Not persisted). Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPassword() {
     return password;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The password we will use when authenticating with this node (not persisted).
+   * Field introduced in 18.2.3.
+   * @param password set the password.
+   */
   @VsoMethod
-  public void setPassword(String password) {
+  public void setPassword(String  password) {
     this.password = password;
   }
 
-  
   /**
-   * Public IP address or hostname of the controller VM. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Public ip address or hostname of the controller vm.
+   * Field introduced in 17.2.3.
    * @return publicIpOrName
-  **/
-  @ApiModelProperty(value = "Public IP address or hostname of the controller VM. Field introduced in 17.2.3.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getPublicIpOrName() {
     return publicIpOrName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Public ip address or hostname of the controller vm.
+   * Field introduced in 17.2.3.
+   * @param publicIpOrName set the publicIpOrName.
+   */
   @VsoMethod
   public void setPublicIpOrName(IpAddr publicIpOrName) {
     this.publicIpOrName = publicIpOrName;
   }
 
-  
   /**
-   * Hostname assigned to this controller VM.
+   * This is the getter method this will return the attribute value.
+   * Hostname assigned to this controller vm.
    * @return vmHostname
-  **/
-  @ApiModelProperty(value = "Hostname assigned to this controller VM.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVmHostname() {
     return vmHostname;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Hostname assigned to this controller vm.
+   * @param vmHostname set the vmHostname.
+   */
   @VsoMethod
-  public void setVmHostname(String vmHostname) {
+  public void setVmHostname(String  vmHostname) {
     this.vmHostname = vmHostname;
   }
 
-  
   /**
-   * Managed object reference of this controller VM.
+   * This is the getter method this will return the attribute value.
+   * Managed object reference of this controller vm.
    * @return vmMor
-  **/
-  @ApiModelProperty(value = "Managed object reference of this controller VM.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVmMor() {
     return vmMor;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Managed object reference of this controller vm.
+   * @param vmMor set the vmMor.
+   */
   @VsoMethod
-  public void setVmMor(String vmMor) {
+  public void setVmMor(String  vmMor) {
     this.vmMor = vmMor;
   }
 
-  
   /**
-   * Name of the controller VM.
+   * This is the getter method this will return the attribute value.
+   * Name of the controller vm.
    * @return vmName
-  **/
-  @ApiModelProperty(value = "Name of the controller VM.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVmName() {
     return vmName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the controller vm.
+   * @param vmName set the vmName.
+   */
   @VsoMethod
-  public void setVmName(String vmName) {
+  public void setVmName(String  vmName) {
     this.vmName = vmName;
   }
 
-  
   /**
-   * UUID on the controller VM.
+   * This is the getter method this will return the attribute value.
+   * Uuid on the controller vm.
    * @return vmUuid
-  **/
-  @ApiModelProperty(value = "UUID on the controller VM.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVmUuid() {
     return vmUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid on the controller vm.
+   * @param vmUuid set the vmUuid.
+   */
   @VsoMethod
-  public void setVmUuid(String vmUuid) {
+  public void setVmUuid(String  vmUuid) {
     this.vmUuid = vmUuid;
   }
 
-  
-  public String getObjectID() {
-		return "ClusterNode";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ClusterNode clusterNode = (ClusterNode) o;
-    return Objects.equals(this.categories, clusterNode.categories) &&
-        Objects.equals(this.ip, clusterNode.ip) &&
-        Objects.equals(this.name, clusterNode.name) &&
-        Objects.equals(this.password, clusterNode.password) &&
-        Objects.equals(this.publicIpOrName, clusterNode.publicIpOrName) &&
-        Objects.equals(this.vmHostname, clusterNode.vmHostname) &&
-        Objects.equals(this.vmMor, clusterNode.vmMor) &&
-        Objects.equals(this.vmName, clusterNode.vmName) &&
-        Objects.equals(this.vmUuid, clusterNode.vmUuid);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(categories, ip, name, password, publicIpOrName, vmHostname, vmMor, vmName, vmUuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ClusterNode {\n");
-    
-    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
-    sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    publicIpOrName: ").append(toIndentedString(publicIpOrName)).append("\n");
-    sb.append("    vmHostname: ").append(toIndentedString(vmHostname)).append("\n");
-    sb.append("    vmMor: ").append(toIndentedString(vmMor)).append("\n");
-    sb.append("    vmName: ").append(toIndentedString(vmName)).append("\n");
-    sb.append("    vmUuid: ").append(toIndentedString(vmUuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ClusterNode objClusterNode = (ClusterNode) o;
+  return   Objects.equals(this.vmName, objClusterNode.vmName)&&
+  Objects.equals(this.name, objClusterNode.name)&&
+  Objects.equals(this.ip, objClusterNode.ip)&&
+  Objects.equals(this.vmMor, objClusterNode.vmMor)&&
+  Objects.equals(this.vmUuid, objClusterNode.vmUuid)&&
+  Objects.equals(this.vmHostname, objClusterNode.vmHostname)&&
+  Objects.equals(this.password, objClusterNode.password)&&
+  Objects.equals(this.publicIpOrName, objClusterNode.publicIpOrName)&&
+  Objects.equals(this.categories, objClusterNode.categories);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ClusterNode {\n");
+      sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    publicIpOrName: ").append(toIndentedString(publicIpOrName)).append("\n");
+        sb.append("    vmHostname: ").append(toIndentedString(vmHostname)).append("\n");
+        sb.append("    vmMor: ").append(toIndentedString(vmMor)).append("\n");
+        sb.append("    vmName: ").append(toIndentedString(vmName)).append("\n");
+        sb.append("    vmUuid: ").append(toIndentedString(vmUuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

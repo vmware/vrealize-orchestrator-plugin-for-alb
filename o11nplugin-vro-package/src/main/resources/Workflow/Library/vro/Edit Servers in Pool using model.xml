@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item2" object-name="workflow:name=generic"
-	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.6"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.8"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Edit Servers in Pool]]></display-name>
@@ -15,8 +15,7 @@
 		<param name="controller" type="string">
 			<description><![CDATA[AVI Controller(AVI controller on which resources to be deployed).]]></description>
 		</param>
-		<param name="PoolServers"
-			type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer">
+		<param name="PoolServers" type="Array/string">
 			<description><![CDATA[Server details]]></description>
 		</param>
 		<param name="cloud" type="string">
@@ -24,6 +23,9 @@
 		</param>
 		<param name="tenant" type="string">
 			<description><![CDATA[Select Tenant]]></description>
+		</param>
+		<param name="port" type="string">
+			<description><![CDATA[Port]]></description>
 		</param>
 	</input>
 	<attrib name="actionEerrorCode" type="string" read-only="false">
@@ -46,17 +48,19 @@
 		script-module="com.vmware.avi/updatePoolObj">
 		<display-name><![CDATA[updatePoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,tenant,aviVroClient) ;]]></script>
+System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,tenant,aviVroClient,ratio,port) ;]]></script>
 		<in-binding>
 			<bind name="poolname" type="string" export-name="Name"></bind>
 			<bind name="serverType" type="string" export-name="serverType"></bind>
-			<bind name="serverArray"
-				type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"
+			<bind name="serverArray" type="Array/string"
 				export-name="PoolServers"></bind>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
 				export-name="actionResult1"></bind>
 			<bind name="cloud" type="string" export-name="cloud"></bind>
 			<bind name="tenant" type="string" export-name="tenant"></bind>
+			<bind name="port" type="string" export-name="port"></bind>
+			<bind name="ratio" type="string" explicitly-not-bound="true"
+				export-name="NULL"></bind>
 		</in-binding>
 		<out-binding></out-binding>
 		<position y="19.045454545454543" x="285.0"></position>
@@ -103,8 +107,11 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		</p-param>
 		<p-param name="PoolServers">
 			<desc><![CDATA[Select servers to add]]></desc>
-			<p-qual kind="ognl" name="dataBinding"
-				type="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "servers" )]]></p-qual>
+			<p-qual kind="ognl" name="dataBinding" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "servers" )]]></p-qual>
+		</p-param>
+		<p-param name="port">
+			<desc><![CDATA[Port]]></desc>
+			<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "port" )]]></p-qual>
 		</p-param>
 	</presentation>
 </workflow>

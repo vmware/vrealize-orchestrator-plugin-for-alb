@@ -1,107 +1,150 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AzureServicePrincipalCredentials;
 import com.vmware.avi.vro.model.AzureUserPassCredentials;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpamDnsAzureProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpamDnsAzureProfile is a POJO class extends AviRestResource that used for creating
+ * IpamDnsAzureProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpamDnsAzureProfile")
-@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSAZUREPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSAZUREPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpamDnsAzureProfile extends AviRestResource  {
+public class IpamDnsAzureProfile extends AviRestResource {
   @JsonProperty("azure_serviceprincipal")
+  @JsonInclude(Include.NON_NULL)
   private AzureServicePrincipalCredentials azureServiceprincipal = null;
 
   @JsonProperty("azure_userpass")
+  @JsonInclude(Include.NON_NULL)
   private AzureUserPassCredentials azureUserpass = null;
 
   @JsonProperty("egress_service_subnets")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> egressServiceSubnets = null;
 
   @JsonProperty("resource_group")
+  @JsonInclude(Include.NON_NULL)
   private String resourceGroup = null;
 
   @JsonProperty("subscription_id")
+  @JsonInclude(Include.NON_NULL)
   private String subscriptionId = null;
 
   @JsonProperty("usable_domains")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> usableDomains = null;
 
   @JsonProperty("usable_network_uuids")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> usableNetworkUuids = null;
 
   @JsonProperty("use_enhanced_ha")
-  private Boolean useEnhancedHa = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useEnhancedHa = false;
 
   @JsonProperty("use_standard_alb")
-  private Boolean useStandardAlb = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useStandardAlb = false;
 
   @JsonProperty("virtual_network_ids")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> virtualNetworkIds = null;
 
-  
+
+
   /**
-   * Service principal based credentials for azure. Only one of azure_userpass or azure_serviceprincipal is allowed. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Service principal based credentials for azure.
+   * Only one of azure_userpass or azure_serviceprincipal is allowed.
+   * Field introduced in 17.2.1.
    * @return azureServiceprincipal
-  **/
-  @ApiModelProperty(value = "Service principal based credentials for azure. Only one of azure_userpass or azure_serviceprincipal is allowed. Field introduced in 17.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AzureServicePrincipalCredentials getAzureServiceprincipal() {
     return azureServiceprincipal;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service principal based credentials for azure.
+   * Only one of azure_userpass or azure_serviceprincipal is allowed.
+   * Field introduced in 17.2.1.
+   * @param azureServiceprincipal set the azureServiceprincipal.
+   */
   @VsoMethod
   public void setAzureServiceprincipal(AzureServicePrincipalCredentials azureServiceprincipal) {
     this.azureServiceprincipal = azureServiceprincipal;
   }
 
-  
   /**
-   * User name password based credentials for azure. Only one of azure_userpass or azure_serviceprincipal is allowed. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * User name password based credentials for azure.
+   * Only one of azure_userpass or azure_serviceprincipal is allowed.
+   * Field introduced in 17.2.1.
    * @return azureUserpass
-  **/
-  @ApiModelProperty(value = "User name password based credentials for azure. Only one of azure_userpass or azure_serviceprincipal is allowed. Field introduced in 17.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AzureUserPassCredentials getAzureUserpass() {
     return azureUserpass;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User name password based credentials for azure.
+   * Only one of azure_userpass or azure_serviceprincipal is allowed.
+   * Field introduced in 17.2.1.
+   * @param azureUserpass set the azureUserpass.
+   */
   @VsoMethod
   public void setAzureUserpass(AzureUserPassCredentials azureUserpass) {
     this.azureUserpass = azureUserpass;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Used for allocating egress service source ips.
+   * Field introduced in 17.2.8.
+   * @return egressServiceSubnets
+   */
+  @VsoMethod
+  public List<String> getEgressServiceSubnets() {
+    return egressServiceSubnets;
+  }
+
+  /**
+   * This is the setter method. this will set the egressServiceSubnets
+   * Used for allocating egress service source ips.
+   * Field introduced in 17.2.8.
+   * @return egressServiceSubnets
+   */
+  @VsoMethod
+  public void setEgressServiceSubnets(List<String>  egressServiceSubnets) {
+    this.egressServiceSubnets = egressServiceSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the egressServiceSubnets
+   * Used for allocating egress service source ips.
+   * Field introduced in 17.2.8.
+   * @return egressServiceSubnets
+   */
+  @VsoMethod
   public IpamDnsAzureProfile addEgressServiceSubnetsItem(String egressServiceSubnetsItem) {
     if (this.egressServiceSubnets == null) {
       this.egressServiceSubnets = new ArrayList<String>();
@@ -109,64 +152,83 @@ public class IpamDnsAzureProfile extends AviRestResource  {
     this.egressServiceSubnets.add(egressServiceSubnetsItem);
     return this;
   }
-  
+
+
   /**
-   * Used for allocating egress service source IPs. Field introduced in 17.2.8.
-   * @return egressServiceSubnets
-  **/
-  @ApiModelProperty(value = "Used for allocating egress service source IPs. Field introduced in 17.2.8.")
-
-
- 
-  @VsoMethod  
-  public List<String> getEgressServiceSubnets() {
-    return egressServiceSubnets;
-  }
-    
-  @VsoMethod
-  public void setEgressServiceSubnets(List<String> egressServiceSubnets) {
-    this.egressServiceSubnets = egressServiceSubnets;
-  }
-
-  
-  /**
-   * Azure resource group dedicated for Avi Controller. Avi Controller will create all its resources in this resource group. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Azure resource group dedicated for avi controller.
+   * Avi controller will create all its resources in this resource group.
+   * Field introduced in 17.2.1.
    * @return resourceGroup
-  **/
-  @ApiModelProperty(value = "Azure resource group dedicated for Avi Controller. Avi Controller will create all its resources in this resource group. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getResourceGroup() {
     return resourceGroup;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Azure resource group dedicated for avi controller.
+   * Avi controller will create all its resources in this resource group.
+   * Field introduced in 17.2.1.
+   * @param resourceGroup set the resourceGroup.
+   */
   @VsoMethod
-  public void setResourceGroup(String resourceGroup) {
+  public void setResourceGroup(String  resourceGroup) {
     this.resourceGroup = resourceGroup;
   }
 
-  
   /**
-   * Subscription Id for the Azure subscription. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Subscription id for the azure subscription.
+   * Field introduced in 17.2.1.
    * @return subscriptionId
-  **/
-  @ApiModelProperty(value = "Subscription Id for the Azure subscription. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSubscriptionId() {
     return subscriptionId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Subscription id for the azure subscription.
+   * Field introduced in 17.2.1.
+   * @param subscriptionId set the subscriptionId.
+   */
   @VsoMethod
-  public void setSubscriptionId(String subscriptionId) {
+  public void setSubscriptionId(String  subscriptionId) {
     this.subscriptionId = subscriptionId;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Usable domains to pick from azure dns.
+   * Field introduced in 17.2.1.
+   * @return usableDomains
+   */
+  @VsoMethod
+  public List<String> getUsableDomains() {
+    return usableDomains;
+  }
+
+  /**
+   * This is the setter method. this will set the usableDomains
+   * Usable domains to pick from azure dns.
+   * Field introduced in 17.2.1.
+   * @return usableDomains
+   */
+  @VsoMethod
+  public void setUsableDomains(List<String>  usableDomains) {
+    this.usableDomains = usableDomains;
+  }
+
+  /**
+   * This is the setter method this will set the usableDomains
+   * Usable domains to pick from azure dns.
+   * Field introduced in 17.2.1.
+   * @return usableDomains
+   */
+  @VsoMethod
   public IpamDnsAzureProfile addUsableDomainsItem(String usableDomainsItem) {
     if (this.usableDomains == null) {
       this.usableDomains = new ArrayList<String>();
@@ -174,26 +236,43 @@ public class IpamDnsAzureProfile extends AviRestResource  {
     this.usableDomains.add(usableDomainsItem);
     return this;
   }
-  
+
+
   /**
-   * Usable domains to pick from Azure DNS. Field introduced in 17.2.1.
-   * @return usableDomains
-  **/
-  @ApiModelProperty(value = "Usable domains to pick from Azure DNS. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getUsableDomains() {
-    return usableDomains;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 17.2.1.
+   * @return usableNetworkUuids
+   */
   @VsoMethod
-  public void setUsableDomains(List<String> usableDomains) {
-    this.usableDomains = usableDomains;
+  public List<String> getUsableNetworkUuids() {
+    return usableNetworkUuids;
   }
 
-  
+  /**
+   * This is the setter method. this will set the usableNetworkUuids
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 17.2.1.
+   * @return usableNetworkUuids
+   */
+  @VsoMethod
+  public void setUsableNetworkUuids(List<String>  usableNetworkUuids) {
+    this.usableNetworkUuids = usableNetworkUuids;
+  }
+
+  /**
+   * This is the setter method this will set the usableNetworkUuids
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 17.2.1.
+   * @return usableNetworkUuids
+   */
+  @VsoMethod
   public IpamDnsAzureProfile addUsableNetworkUuidsItem(String usableNetworkUuidsItem) {
     if (this.usableNetworkUuids == null) {
       this.usableNetworkUuids = new ArrayList<String>();
@@ -201,64 +280,89 @@ public class IpamDnsAzureProfile extends AviRestResource  {
     this.usableNetworkUuids.add(usableNetworkUuidsItem);
     return this;
   }
-  
+
+
   /**
-   * Usable networks for Virtual IP. If VirtualService does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for IP allocation. Field introduced in 17.2.1.
-   * @return usableNetworkUuids
-  **/
-  @ApiModelProperty(value = "Usable networks for Virtual IP. If VirtualService does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for IP allocation. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getUsableNetworkUuids() {
-    return usableNetworkUuids;
-  }
-    
-  @VsoMethod
-  public void setUsableNetworkUuids(List<String> usableNetworkUuids) {
-    this.usableNetworkUuids = usableNetworkUuids;
-  }
-
-  
-  /**
-   * Use Azure's enhanced HA features. This needs a public IP to be associated with the VIP. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Use azure's enhanced ha features.
+   * This needs a public ip to be associated with the vip.
+   * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useEnhancedHa
-  **/
-  @ApiModelProperty(value = "Use Azure's enhanced HA features. This needs a public IP to be associated with the VIP. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseEnhancedHa() {
+   */
+  @VsoMethod
+  public Boolean getUseEnhancedHa() {
     return useEnhancedHa;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use azure's enhanced ha features.
+   * This needs a public ip to be associated with the vip.
+   * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useEnhancedHa set the useEnhancedHa.
+   */
   @VsoMethod
-  public void setUseEnhancedHa(Boolean useEnhancedHa) {
+  public void setUseEnhancedHa(Boolean  useEnhancedHa) {
     this.useEnhancedHa = useEnhancedHa;
   }
 
-  
   /**
-   * Use Standard SKU Azure Load Balancer. By default Basic SKU Load Balancer is used. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Use standard sku azure load balancer.
+   * By default basic sku load balancer is used.
+   * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useStandardAlb
-  **/
-  @ApiModelProperty(value = "Use Standard SKU Azure Load Balancer. By default Basic SKU Load Balancer is used. Field introduced in 17.2.7.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseStandardAlb() {
+   */
+  @VsoMethod
+  public Boolean getUseStandardAlb() {
     return useStandardAlb;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use standard sku azure load balancer.
+   * By default basic sku load balancer is used.
+   * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useStandardAlb set the useStandardAlb.
+   */
   @VsoMethod
-  public void setUseStandardAlb(Boolean useStandardAlb) {
+  public void setUseStandardAlb(Boolean  useStandardAlb) {
     this.useStandardAlb = useStandardAlb;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Virtual networks where virtual ips will belong.
+   * Field introduced in 17.2.1.
+   * @return virtualNetworkIds
+   */
+  @VsoMethod
+  public List<String> getVirtualNetworkIds() {
+    return virtualNetworkIds;
+  }
+
+  /**
+   * This is the setter method. this will set the virtualNetworkIds
+   * Virtual networks where virtual ips will belong.
+   * Field introduced in 17.2.1.
+   * @return virtualNetworkIds
+   */
+  @VsoMethod
+  public void setVirtualNetworkIds(List<String>  virtualNetworkIds) {
+    this.virtualNetworkIds = virtualNetworkIds;
+  }
+
+  /**
+   * This is the setter method this will set the virtualNetworkIds
+   * Virtual networks where virtual ips will belong.
+   * Field introduced in 17.2.1.
+   * @return virtualNetworkIds
+   */
+  @VsoMethod
   public IpamDnsAzureProfile addVirtualNetworkIdsItem(String virtualNetworkIdsItem) {
     if (this.virtualNetworkIds == null) {
       this.virtualNetworkIds = new ArrayList<String>();
@@ -266,84 +370,57 @@ public class IpamDnsAzureProfile extends AviRestResource  {
     this.virtualNetworkIds.add(virtualNetworkIdsItem);
     return this;
   }
-  
-  /**
-   * Virtual networks where Virtual IPs will belong. Field introduced in 17.2.1.
-   * @return virtualNetworkIds
-  **/
-  @ApiModelProperty(value = "Virtual networks where Virtual IPs will belong. Field introduced in 17.2.1.")
 
 
- 
-  @VsoMethod  
-  public List<String> getVirtualNetworkIds() {
-    return virtualNetworkIds;
-  }
-    
-  @VsoMethod
-  public void setVirtualNetworkIds(List<String> virtualNetworkIds) {
-    this.virtualNetworkIds = virtualNetworkIds;
-  }
 
-  
-  public String getObjectID() {
-		return "IpamDnsAzureProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpamDnsAzureProfile ipamDnsAzureProfile = (IpamDnsAzureProfile) o;
-    return Objects.equals(this.azureServiceprincipal, ipamDnsAzureProfile.azureServiceprincipal) &&
-        Objects.equals(this.azureUserpass, ipamDnsAzureProfile.azureUserpass) &&
-        Objects.equals(this.egressServiceSubnets, ipamDnsAzureProfile.egressServiceSubnets) &&
-        Objects.equals(this.resourceGroup, ipamDnsAzureProfile.resourceGroup) &&
-        Objects.equals(this.subscriptionId, ipamDnsAzureProfile.subscriptionId) &&
-        Objects.equals(this.usableDomains, ipamDnsAzureProfile.usableDomains) &&
-        Objects.equals(this.usableNetworkUuids, ipamDnsAzureProfile.usableNetworkUuids) &&
-        Objects.equals(this.useEnhancedHa, ipamDnsAzureProfile.useEnhancedHa) &&
-        Objects.equals(this.useStandardAlb, ipamDnsAzureProfile.useStandardAlb) &&
-        Objects.equals(this.virtualNetworkIds, ipamDnsAzureProfile.virtualNetworkIds);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(azureServiceprincipal, azureUserpass, egressServiceSubnets, resourceGroup, subscriptionId, usableDomains, usableNetworkUuids, useEnhancedHa, useStandardAlb, virtualNetworkIds);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpamDnsAzureProfile {\n");
-    
-    sb.append("    azureServiceprincipal: ").append(toIndentedString(azureServiceprincipal)).append("\n");
-    sb.append("    azureUserpass: ").append(toIndentedString(azureUserpass)).append("\n");
-    sb.append("    egressServiceSubnets: ").append(toIndentedString(egressServiceSubnets)).append("\n");
-    sb.append("    resourceGroup: ").append(toIndentedString(resourceGroup)).append("\n");
-    sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
-    sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
-    sb.append("    usableNetworkUuids: ").append(toIndentedString(usableNetworkUuids)).append("\n");
-    sb.append("    useEnhancedHa: ").append(toIndentedString(useEnhancedHa)).append("\n");
-    sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
-    sb.append("    virtualNetworkIds: ").append(toIndentedString(virtualNetworkIds)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpamDnsAzureProfile objIpamDnsAzureProfile = (IpamDnsAzureProfile) o;
+  return   Objects.equals(this.resourceGroup, objIpamDnsAzureProfile.resourceGroup)&&
+  Objects.equals(this.useEnhancedHa, objIpamDnsAzureProfile.useEnhancedHa)&&
+  Objects.equals(this.usableDomains, objIpamDnsAzureProfile.usableDomains)&&
+  Objects.equals(this.usableNetworkUuids, objIpamDnsAzureProfile.usableNetworkUuids)&&
+  Objects.equals(this.egressServiceSubnets, objIpamDnsAzureProfile.egressServiceSubnets)&&
+  Objects.equals(this.useStandardAlb, objIpamDnsAzureProfile.useStandardAlb)&&
+  Objects.equals(this.azureServiceprincipal, objIpamDnsAzureProfile.azureServiceprincipal)&&
+  Objects.equals(this.azureUserpass, objIpamDnsAzureProfile.azureUserpass)&&
+  Objects.equals(this.subscriptionId, objIpamDnsAzureProfile.subscriptionId)&&
+  Objects.equals(this.virtualNetworkIds, objIpamDnsAzureProfile.virtualNetworkIds);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpamDnsAzureProfile {\n");
+      sb.append("    azureServiceprincipal: ").append(toIndentedString(azureServiceprincipal)).append("\n");
+        sb.append("    azureUserpass: ").append(toIndentedString(azureUserpass)).append("\n");
+        sb.append("    egressServiceSubnets: ").append(toIndentedString(egressServiceSubnets)).append("\n");
+        sb.append("    resourceGroup: ").append(toIndentedString(resourceGroup)).append("\n");
+        sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
+        sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
+        sb.append("    usableNetworkUuids: ").append(toIndentedString(usableNetworkUuids)).append("\n");
+        sb.append("    useEnhancedHa: ").append(toIndentedString(useEnhancedHa)).append("\n");
+        sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
+        sb.append("    virtualNetworkIds: ").append(toIndentedString(virtualNetworkIds)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

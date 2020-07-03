@@ -1,118 +1,175 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.KeyValue;
-import com.vmware.avi.vro.model.Subnet;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * Network
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The Network is a POJO class extends AviRestResource that used for creating
+ * Network.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "Network")
 @VsoFinder(name = Constants.FINDER_VRO_NETWORK, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Network extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
+public class Network extends AviRestResource {
+  @JsonProperty("attrs")
+  @JsonInclude(Include.NON_NULL)
+  private List<KeyValue> attrs = null;
 
   @JsonProperty("cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudRef = null;
 
   @JsonProperty("configured_subnets")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Subnet> configuredSubnets = null;
 
   @JsonProperty("dhcp_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean dhcpEnabled = true;
 
   @JsonProperty("exclude_discovered_subnets")
-  private Boolean excludeDiscoveredSubnets = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean excludeDiscoveredSubnets = false;
 
   @JsonProperty("ip6_autocfg_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean ip6AutocfgEnabled = true;
 
   @JsonProperty("labels")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<KeyValue> labels = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("synced_from_se")
-  private Boolean syncedFromSe = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean syncedFromSe = false;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vcenter_dvs")
+  @JsonInclude(Include.NON_NULL)
   private Boolean vcenterDvs = true;
 
   @JsonProperty("vimgrnw_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vimgrnwRef = null;
 
   @JsonProperty("vrf_context_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vrfContextRef = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Key/value network attributes.
+   * Field introduced in 20.1.1.
+   * @return attrs
+   */
   @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
+  public List<KeyValue> getAttrs() {
+    return attrs;
   }
 
-  
   /**
-   *  It is a reference to an object of type Cloud.
+   * This is the setter method. this will set the attrs
+   * Key/value network attributes.
+   * Field introduced in 20.1.1.
+   * @return attrs
+   */
+  @VsoMethod
+  public void setAttrs(List<KeyValue>  attrs) {
+    this.attrs = attrs;
+  }
+
+  /**
+   * This is the setter method this will set the attrs
+   * Key/value network attributes.
+   * Field introduced in 20.1.1.
+   * @return attrs
+   */
+  @VsoMethod
+  public Network addAttrsItem(KeyValue attrsItem) {
+    if (this.attrs == null) {
+      this.attrs = new ArrayList<KeyValue>();
+    }
+    this.attrs.add(attrsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type cloud.
    * @return cloudRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Cloud.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudRef() {
     return cloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type cloud.
+   * @param cloudRef set the cloudRef.
+   */
   @VsoMethod
-  public void setCloudRef(String cloudRef) {
+  public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property configured_subnets of obj type network field type str  type array.
+   * @return configuredSubnets
+   */
+  @VsoMethod
+  public List<Subnet> getConfiguredSubnets() {
+    return configuredSubnets;
+  }
+
+  /**
+   * This is the setter method. this will set the configuredSubnets
+   * Placeholder for description of property configured_subnets of obj type network field type str  type array.
+   * @return configuredSubnets
+   */
+  @VsoMethod
+  public void setConfiguredSubnets(List<Subnet>  configuredSubnets) {
+    this.configuredSubnets = configuredSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the configuredSubnets
+   * Placeholder for description of property configured_subnets of obj type network field type str  type array.
+   * @return configuredSubnets
+   */
+  @VsoMethod
   public Network addConfiguredSubnetsItem(Subnet configuredSubnetsItem) {
     if (this.configuredSubnets == null) {
       this.configuredSubnets = new ArrayList<Subnet>();
@@ -120,84 +177,105 @@ public class Network extends AviRestResource  {
     this.configuredSubnets.add(configuredSubnetsItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property configured_subnets of obj type Network field type str  type object
-   * @return configuredSubnets
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property configured_subnets of obj type Network field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<Subnet> getConfiguredSubnets() {
-    return configuredSubnets;
-  }
-    
-  @VsoMethod
-  public void setConfiguredSubnets(List<Subnet> configuredSubnets) {
-    this.configuredSubnets = configuredSubnets;
-  }
-
-  
-  /**
-   * Select the IP address management scheme for this Network.
+   * This is the getter method this will return the attribute value.
+   * Select the ip address management scheme for this network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return dhcpEnabled
-  **/
-  @ApiModelProperty(value = "Select the IP address management scheme for this Network.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDhcpEnabled() {
+   */
+  @VsoMethod
+  public Boolean getDhcpEnabled() {
     return dhcpEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Select the ip address management scheme for this network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param dhcpEnabled set the dhcpEnabled.
+   */
   @VsoMethod
-  public void setDhcpEnabled(Boolean dhcpEnabled) {
+  public void setDhcpEnabled(Boolean  dhcpEnabled) {
     this.dhcpEnabled = dhcpEnabled;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * When selected, excludes all discovered subnets in this network from consideration for virtual service placement.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return excludeDiscoveredSubnets
-  **/
-  @ApiModelProperty(value = "When selected, excludes all discovered subnets in this network from consideration for virtual service placement.")
-
-
- 
-  @VsoMethod  
-  public Boolean isExcludeDiscoveredSubnets() {
+   */
+  @VsoMethod
+  public Boolean getExcludeDiscoveredSubnets() {
     return excludeDiscoveredSubnets;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * When selected, excludes all discovered subnets in this network from consideration for virtual service placement.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param excludeDiscoveredSubnets set the excludeDiscoveredSubnets.
+   */
   @VsoMethod
-  public void setExcludeDiscoveredSubnets(Boolean excludeDiscoveredSubnets) {
+  public void setExcludeDiscoveredSubnets(Boolean  excludeDiscoveredSubnets) {
     this.excludeDiscoveredSubnets = excludeDiscoveredSubnets;
   }
 
-  
   /**
-   * Enable IPv6 auto configuration. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Enable ipv6 auto configuration.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return ip6AutocfgEnabled
-  **/
-  @ApiModelProperty(value = "Enable IPv6 auto configuration. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isIp6AutocfgEnabled() {
+   */
+  @VsoMethod
+  public Boolean getIp6AutocfgEnabled() {
     return ip6AutocfgEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable ipv6 auto configuration.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param ip6AutocfgEnabled set the ip6AutocfgEnabled.
+   */
   @VsoMethod
-  public void setIp6AutocfgEnabled(Boolean ip6AutocfgEnabled) {
+  public void setIp6AutocfgEnabled(Boolean  ip6AutocfgEnabled) {
     this.ip6AutocfgEnabled = ip6AutocfgEnabled;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key/value labels which can be used for object access policy permission scoping.
+   * Field introduced in 18.2.7, 20.1.1.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key/value labels which can be used for object access policy permission scoping.
+   * Field introduced in 18.2.7, 20.1.1.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key/value labels which can be used for object access policy permission scoping.
+   * Field introduced in 18.2.7, 20.1.1.
+   * @return labels
+   */
+  @VsoMethod
   public Network addLabelsItem(KeyValue labelsItem) {
     if (this.labels == null) {
       this.labels = new ArrayList<KeyValue>();
@@ -205,248 +283,231 @@ public class Network extends AviRestResource  {
     this.labels.add(labelsItem);
     return this;
   }
-  
+
+
   /**
-   * Key/value labels which can be used for Object Access Policy permission scoping. Field introduced in 18.2.7, 20.1.1.
-   * @return labels
-  **/
-  @ApiModelProperty(value = "Key/value labels which can be used for Object Access Policy permission scoping. Field introduced in 18.2.7, 20.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<KeyValue> getLabels() {
-    return labels;
-  }
-    
-  @VsoMethod
-  public void setLabels(List<KeyValue> labels) {
-    this.labels = labels;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Placeholder for description of property synced_from_se of obj type Network field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property synced_from_se of obj type network field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return syncedFromSe
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property synced_from_se of obj type Network field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isSyncedFromSe() {
+   */
+  @VsoMethod
+  public Boolean getSyncedFromSe() {
     return syncedFromSe;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property synced_from_se of obj type network field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param syncedFromSe set the syncedFromSe.
+   */
   @VsoMethod
-  public void setSyncedFromSe(Boolean syncedFromSe) {
+  public void setSyncedFromSe(Boolean  syncedFromSe) {
     this.syncedFromSe = syncedFromSe;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * Placeholder for description of property vcenter_dvs of obj type Network field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_dvs of obj type network field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return vcenterDvs
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vcenter_dvs of obj type Network field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isVcenterDvs() {
+   */
+  @VsoMethod
+  public Boolean getVcenterDvs() {
     return vcenterDvs;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_dvs of obj type network field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param vcenterDvs set the vcenterDvs.
+   */
   @VsoMethod
-  public void setVcenterDvs(Boolean vcenterDvs) {
+  public void setVcenterDvs(Boolean  vcenterDvs) {
     this.vcenterDvs = vcenterDvs;
   }
 
-  
   /**
-   *  It is a reference to an object of type VIMgrNWRuntime.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type vimgrnwruntime.
    * @return vimgrnwRef
-  **/
-  @ApiModelProperty(readOnly = true, value = " It is a reference to an object of type VIMgrNWRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVimgrnwRef() {
     return vimgrnwRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type vimgrnwruntime.
+   * @param vimgrnwRef set the vimgrnwRef.
+   */
   @VsoMethod
-  public void setVimgrnwRef(String vimgrnwRef) {
+  public void setVimgrnwRef(String  vimgrnwRef) {
     this.vimgrnwRef = vimgrnwRef;
   }
 
-  
   /**
-   *  It is a reference to an object of type VrfContext.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type vrfcontext.
    * @return vrfContextRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type VrfContext.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVrfContextRef() {
     return vrfContextRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type vrfcontext.
+   * @param vrfContextRef set the vrfContextRef.
+   */
   @VsoMethod
-  public void setVrfContextRef(String vrfContextRef) {
+  public void setVrfContextRef(String  vrfContextRef) {
     this.vrfContextRef = vrfContextRef;
   }
 
-  
+
   public String getObjectID() {
-		return "Network";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Network network = (Network) o;
-    return Objects.equals(this.lastModified, network.lastModified) &&
-        Objects.equals(this.cloudRef, network.cloudRef) &&
-        Objects.equals(this.configuredSubnets, network.configuredSubnets) &&
-        Objects.equals(this.dhcpEnabled, network.dhcpEnabled) &&
-        Objects.equals(this.excludeDiscoveredSubnets, network.excludeDiscoveredSubnets) &&
-        Objects.equals(this.ip6AutocfgEnabled, network.ip6AutocfgEnabled) &&
-        Objects.equals(this.labels, network.labels) &&
-        Objects.equals(this.name, network.name) &&
-        Objects.equals(this.syncedFromSe, network.syncedFromSe) &&
-        Objects.equals(this.tenantRef, network.tenantRef) &&
-        Objects.equals(this.url, network.url) &&
-        Objects.equals(this.uuid, network.uuid) &&
-        Objects.equals(this.vcenterDvs, network.vcenterDvs) &&
-        Objects.equals(this.vimgrnwRef, network.vimgrnwRef) &&
-        Objects.equals(this.vrfContextRef, network.vrfContextRef);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, cloudRef, configuredSubnets, dhcpEnabled, excludeDiscoveredSubnets, ip6AutocfgEnabled, labels, name, syncedFromSe, tenantRef, url, uuid, vcenterDvs, vimgrnwRef, vrfContextRef);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Network {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-    sb.append("    configuredSubnets: ").append(toIndentedString(configuredSubnets)).append("\n");
-    sb.append("    dhcpEnabled: ").append(toIndentedString(dhcpEnabled)).append("\n");
-    sb.append("    excludeDiscoveredSubnets: ").append(toIndentedString(excludeDiscoveredSubnets)).append("\n");
-    sb.append("    ip6AutocfgEnabled: ").append(toIndentedString(ip6AutocfgEnabled)).append("\n");
-    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    syncedFromSe: ").append(toIndentedString(syncedFromSe)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vcenterDvs: ").append(toIndentedString(vcenterDvs)).append("\n");
-    sb.append("    vimgrnwRef: ").append(toIndentedString(vimgrnwRef)).append("\n");
-    sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  Network objNetwork = (Network) o;
+  return   Objects.equals(this.vrfContextRef, objNetwork.vrfContextRef)&&
+  Objects.equals(this.configuredSubnets, objNetwork.configuredSubnets)&&
+  Objects.equals(this.uuid, objNetwork.uuid)&&
+  Objects.equals(this.excludeDiscoveredSubnets, objNetwork.excludeDiscoveredSubnets)&&
+  Objects.equals(this.ip6AutocfgEnabled, objNetwork.ip6AutocfgEnabled)&&
+  Objects.equals(this.labels, objNetwork.labels)&&
+  Objects.equals(this.vimgrnwRef, objNetwork.vimgrnwRef)&&
+  Objects.equals(this.syncedFromSe, objNetwork.syncedFromSe)&&
+  Objects.equals(this.dhcpEnabled, objNetwork.dhcpEnabled)&&
+  Objects.equals(this.attrs, objNetwork.attrs)&&
+  Objects.equals(this.cloudRef, objNetwork.cloudRef)&&
+  Objects.equals(this.tenantRef, objNetwork.tenantRef)&&
+  Objects.equals(this.vcenterDvs, objNetwork.vcenterDvs)&&
+  Objects.equals(this.name, objNetwork.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class Network {\n");
+      sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
+        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    configuredSubnets: ").append(toIndentedString(configuredSubnets)).append("\n");
+        sb.append("    dhcpEnabled: ").append(toIndentedString(dhcpEnabled)).append("\n");
+        sb.append("    excludeDiscoveredSubnets: ").append(toIndentedString(excludeDiscoveredSubnets)).append("\n");
+        sb.append("    ip6AutocfgEnabled: ").append(toIndentedString(ip6AutocfgEnabled)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    syncedFromSe: ").append(toIndentedString(syncedFromSe)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vcenterDvs: ").append(toIndentedString(vcenterDvs)).append("\n");
+        sb.append("    vimgrnwRef: ").append(toIndentedString(vimgrnwRef)).append("\n");
+        sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

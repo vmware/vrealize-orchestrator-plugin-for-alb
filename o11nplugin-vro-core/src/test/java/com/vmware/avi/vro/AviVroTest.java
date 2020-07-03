@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONObject;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.vmware.avi.sdk.AviCredentials;
@@ -30,6 +31,11 @@ public class AviVroTest {
 
 	private static AviCredentials creds = null;
 
+	@Before
+	public void init() {
+		VroPluginFactory.initializeModelMap();
+	}
+
 	static AviCredentials getCreds() {
 		if (null == AviVroTest.creds) {
 			AviVroTest.creds = new AviCredentials(AviVroTest.CONTROLLER, AviVroTest.USERNAME, AviVroTest.PASSWORD);
@@ -45,6 +51,20 @@ public class AviVroTest {
 		String content = readFile("InputFile.json", StandardCharsets.UTF_8);
 		JSONObject obj = new JSONObject(content);
 		return obj;
+	}
+
+	public String getVsVipData() throws IOException {
+		JSONObject obj = getJsonObject();
+		JSONObject hmData = (JSONObject) obj.get("vsvipData");
+		String hmStr = hmData.toString();
+		return hmStr;
+	}
+
+	public String getVsVip3Data() throws IOException {
+		JSONObject obj = getJsonObject();
+		JSONObject hmData = (JSONObject) obj.get("vsvipData3");
+		String hmStr = hmData.toString();
+		return hmStr;
 	}
 
 	public String getHMData() throws IOException {
@@ -175,6 +195,10 @@ public class AviVroTest {
 		return "{\n" + "\"name\": \"test-vs-1\"\n" + "}";
 	}
 
+	public String deleteVSVIP() {
+		return "{\n" + "\"name\": \"test_vsvip\"\n" + "}";
+	}
+
 	public String deletePool() {
 		return "{\n" + "\"name\": \"test-pool-1\"\n" + "}";
 	}
@@ -222,6 +246,9 @@ public class AviVroTest {
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
@@ -268,6 +295,9 @@ public class AviVroTest {
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
 
@@ -312,6 +342,9 @@ public class AviVroTest {
 			// add pool
 			testingVRO.add("pool", testObject.getPoolDataVs3());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSDataWithInvalidConfig());
 
@@ -353,6 +386,9 @@ public class AviVroTest {
 			// add poolgroup
 			testingVRO.add("poolgroup", testObject.getPoolgroup());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add vs
 			testingVRO.add("virtualservice", testObject.getVSDataWithInvalidConfigPg());
 			try {
@@ -392,6 +428,9 @@ public class AviVroTest {
 
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
+
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
 
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
@@ -441,7 +480,8 @@ public class AviVroTest {
 
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
-
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
@@ -499,6 +539,9 @@ public class AviVroTest {
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
@@ -517,7 +560,7 @@ public class AviVroTest {
 				testingVRO.executeWorkflow();
 			} catch (Exception e) {
 				String message = e.getMessage();
-				assertTrue(message.contains("has overlapping IPs with other VIPs in the system"));
+				assertTrue(message.contains("shares the same VIP"));
 			}
 			// delete virtualservice and its refered objects
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -616,7 +659,7 @@ public class AviVroTest {
 			testingVRO.add("pool", testObject.getPoolDataUpdate());
 			ArrayList<AviRestResource> response1 = testingVRO.executeWorkflow();
 			Pool pool = (Pool) response1.get(0);
-			assertTrue("poolgroup not updated", pool.isEnabled() == false);
+			assertTrue("poolgroup not updated", pool.getEnabled() == false);
 
 			// delete all objects
 			testingVRO.delete("poolgroup", testObject.deletePoolgroup());
@@ -734,6 +777,9 @@ public class AviVroTest {
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
@@ -803,6 +849,9 @@ public class AviVroTest {
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
@@ -862,6 +911,9 @@ public class AviVroTest {
 			// add pool
 			testingVRO.add("pool", testObject.getPoolData());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVipData());
+
 			// add virtualservice
 			testingVRO.add("virtualservice", testObject.getVSData());
 
@@ -871,6 +923,8 @@ public class AviVroTest {
 			// add object for delete
 			testingVRO.delete("virtualservice", testObject.deleteVS());
 
+			// add vsvip
+			testingVRO.add("vsvip", testObject.getVsVip3Data());
 			// add vs for creation
 			testingVRO.add("virtualservice", testObject.getVSDataWithInvalidConfig());
 
@@ -886,6 +940,7 @@ public class AviVroTest {
 
 			// add vs, pool, hm to delete
 			testingVRO.delete("virtualservice", testObject.deleteVS());
+			testingVRO.delete("vsvip", testObject.deleteVSVIP());
 			testingVRO.delete("pool", testObject.deletePool());
 			testingVRO.delete("healthmonitor", testObject.deleteHM());
 			testingVRO.executeWorkflow();

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">createIPAMVsVIPObj</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">1983a2e1-a3d4-44af-b6fa-05d5354bf612</entry>
+</properties>

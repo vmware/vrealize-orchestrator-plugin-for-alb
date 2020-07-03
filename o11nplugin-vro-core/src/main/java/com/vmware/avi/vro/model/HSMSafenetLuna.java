@@ -1,92 +1,123 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.HSMSafenetClientInfo;
-import com.vmware.avi.vro.model.HSMSafenetLunaServer;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HSMSafenetLuna
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HSMSafenetLuna is a POJO class extends AviRestResource that used for creating
+ * HSMSafenetLuna.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HSMSafenetLuna")
-@VsoFinder(name = Constants.FINDER_VRO_HSMSAFENETLUNA, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HSMSAFENETLUNA)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HSMSafenetLuna extends AviRestResource  {
+public class HSMSafenetLuna extends AviRestResource {
   @JsonProperty("ha_group_num")
-  private Long haGroupNum = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer haGroupNum = null;
 
   @JsonProperty("is_ha")
-  private Boolean isHa = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean isHa = false;
 
   @JsonProperty("node_info")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<HSMSafenetClientInfo> nodeInfo = null;
 
   @JsonProperty("server")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<HSMSafenetLunaServer> server = null;
 
   @JsonProperty("server_pem")
+  @JsonInclude(Include.NON_NULL)
   private String serverPem = null;
 
   @JsonProperty("use_dedicated_network")
-  private Boolean useDedicatedNetwork = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useDedicatedNetwork = false;
 
-  
+
+
   /**
-   * Group Number of generated HA Group.
+   * This is the getter method this will return the attribute value.
+   * Group number of generated ha group.
    * @return haGroupNum
-  **/
-  @ApiModelProperty(value = "Group Number of generated HA Group.")
-
-
- 
-  @VsoMethod  
-  public Long getHaGroupNum() {
+   */
+  @VsoMethod
+  public Integer getHaGroupNum() {
     return haGroupNum;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Group number of generated ha group.
+   * @param haGroupNum set the haGroupNum.
+   */
   @VsoMethod
-  public void setHaGroupNum(Long haGroupNum) {
+  public void setHaGroupNum(Integer  haGroupNum) {
     this.haGroupNum = haGroupNum;
   }
 
-  
   /**
-   * Set to indicate HA across more than one servers.
+   * This is the getter method this will return the attribute value.
+   * Set to indicate ha across more than one servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return isHa
-  **/
-  @ApiModelProperty(required = true, value = "Set to indicate HA across more than one servers.")
-  @NotNull
-
-
- 
-  @VsoMethod  
-  public Boolean isIsHa() {
+   */
+  @VsoMethod
+  public Boolean getIsHa() {
     return isHa;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Set to indicate ha across more than one servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param isHa set the isHa.
+   */
   @VsoMethod
-  public void setIsHa(Boolean isHa) {
+  public void setIsHa(Boolean  isHa) {
     this.isHa = isHa;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Node specific information.
+   * @return nodeInfo
+   */
+  @VsoMethod
+  public List<HSMSafenetClientInfo> getNodeInfo() {
+    return nodeInfo;
+  }
+
+  /**
+   * This is the setter method. this will set the nodeInfo
+   * Node specific information.
+   * @return nodeInfo
+   */
+  @VsoMethod
+  public void setNodeInfo(List<HSMSafenetClientInfo>  nodeInfo) {
+    this.nodeInfo = nodeInfo;
+  }
+
+  /**
+   * This is the setter method this will set the nodeInfo
+   * Node specific information.
+   * @return nodeInfo
+   */
+  @VsoMethod
   public HSMSafenetLuna addNodeInfoItem(HSMSafenetClientInfo nodeInfoItem) {
     if (this.nodeInfo == null) {
       this.nodeInfo = new ArrayList<HSMSafenetClientInfo>();
@@ -94,27 +125,34 @@ public class HSMSafenetLuna extends AviRestResource  {
     this.nodeInfo.add(nodeInfoItem);
     return this;
   }
-  
+
+
   /**
-   * Node specific information.
-   * @return nodeInfo
-  **/
-  @ApiModelProperty(value = "Node specific information.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HSMSafenetClientInfo> getNodeInfo() {
-    return nodeInfo;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Safenet/gemalto hsm servers used for crypto operations.
+   * @return server
+   */
   @VsoMethod
-  public void setNodeInfo(List<HSMSafenetClientInfo> nodeInfo) {
-    this.nodeInfo = nodeInfo;
+  public List<HSMSafenetLunaServer> getServer() {
+    return server;
   }
 
-  
+  /**
+   * This is the setter method. this will set the server
+   * Safenet/gemalto hsm servers used for crypto operations.
+   * @return server
+   */
+  @VsoMethod
+  public void setServer(List<HSMSafenetLunaServer>  server) {
+    this.server = server;
+  }
+
+  /**
+   * This is the setter method this will set the server
+   * Safenet/gemalto hsm servers used for crypto operations.
+   * @return server
+   */
+  @VsoMethod
   public HSMSafenetLuna addServerItem(HSMSafenetLunaServer serverItem) {
     if (this.server == null) {
       this.server = new ArrayList<HSMSafenetLunaServer>();
@@ -122,115 +160,91 @@ public class HSMSafenetLuna extends AviRestResource  {
     this.server.add(serverItem);
     return this;
   }
-  
+
+
   /**
-   * SafeNet/Gemalto HSM Servers used for crypto operations.
-   * @return server
-  **/
-  @ApiModelProperty(value = "SafeNet/Gemalto HSM Servers used for crypto operations.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HSMSafenetLunaServer> getServer() {
-    return server;
-  }
-    
-  @VsoMethod
-  public void setServer(List<HSMSafenetLunaServer> server) {
-    this.server = server;
-  }
-
-  
-  /**
-   * Generated File - server.pem.
+   * This is the getter method this will return the attribute value.
+   * Generated file - server.pem.
    * @return serverPem
-  **/
-  @ApiModelProperty(value = "Generated File - server.pem.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServerPem() {
     return serverPem;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Generated file - server.pem.
+   * @param serverPem set the serverPem.
+   */
   @VsoMethod
-  public void setServerPem(String serverPem) {
+  public void setServerPem(String  serverPem) {
     this.serverPem = serverPem;
   }
 
-  
   /**
-   * If enabled, dedicated network is used to communicate with HSM,else, the management network is used.
+   * This is the getter method this will return the attribute value.
+   * If enabled, dedicated network is used to communicate with hsm,else, the management network is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useDedicatedNetwork
-  **/
-  @ApiModelProperty(value = "If enabled, dedicated network is used to communicate with HSM,else, the management network is used.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseDedicatedNetwork() {
+   */
+  @VsoMethod
+  public Boolean getUseDedicatedNetwork() {
     return useDedicatedNetwork;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled, dedicated network is used to communicate with hsm,else, the management network is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useDedicatedNetwork set the useDedicatedNetwork.
+   */
   @VsoMethod
-  public void setUseDedicatedNetwork(Boolean useDedicatedNetwork) {
+  public void setUseDedicatedNetwork(Boolean  useDedicatedNetwork) {
     this.useDedicatedNetwork = useDedicatedNetwork;
   }
 
-  
-  public String getObjectID() {
-		return "HSMSafenetLuna";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HSMSafenetLuna hsMSafenetLuna = (HSMSafenetLuna) o;
-    return Objects.equals(this.haGroupNum, hsMSafenetLuna.haGroupNum) &&
-        Objects.equals(this.isHa, hsMSafenetLuna.isHa) &&
-        Objects.equals(this.nodeInfo, hsMSafenetLuna.nodeInfo) &&
-        Objects.equals(this.server, hsMSafenetLuna.server) &&
-        Objects.equals(this.serverPem, hsMSafenetLuna.serverPem) &&
-        Objects.equals(this.useDedicatedNetwork, hsMSafenetLuna.useDedicatedNetwork);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(haGroupNum, isHa, nodeInfo, server, serverPem, useDedicatedNetwork);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HSMSafenetLuna {\n");
-    
-    sb.append("    haGroupNum: ").append(toIndentedString(haGroupNum)).append("\n");
-    sb.append("    isHa: ").append(toIndentedString(isHa)).append("\n");
-    sb.append("    nodeInfo: ").append(toIndentedString(nodeInfo)).append("\n");
-    sb.append("    server: ").append(toIndentedString(server)).append("\n");
-    sb.append("    serverPem: ").append(toIndentedString(serverPem)).append("\n");
-    sb.append("    useDedicatedNetwork: ").append(toIndentedString(useDedicatedNetwork)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HSMSafenetLuna objHSMSafenetLuna = (HSMSafenetLuna) o;
+  return   Objects.equals(this.useDedicatedNetwork, objHSMSafenetLuna.useDedicatedNetwork)&&
+  Objects.equals(this.haGroupNum, objHSMSafenetLuna.haGroupNum)&&
+  Objects.equals(this.server, objHSMSafenetLuna.server)&&
+  Objects.equals(this.nodeInfo, objHSMSafenetLuna.nodeInfo)&&
+  Objects.equals(this.isHa, objHSMSafenetLuna.isHa)&&
+  Objects.equals(this.serverPem, objHSMSafenetLuna.serverPem);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HSMSafenetLuna {\n");
+      sb.append("    haGroupNum: ").append(toIndentedString(haGroupNum)).append("\n");
+        sb.append("    isHa: ").append(toIndentedString(isHa)).append("\n");
+        sb.append("    nodeInfo: ").append(toIndentedString(nodeInfo)).append("\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("    serverPem: ").append(toIndentedString(serverPem)).append("\n");
+        sb.append("    useDedicatedNetwork: ").append(toIndentedString(useDedicatedNetwork)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

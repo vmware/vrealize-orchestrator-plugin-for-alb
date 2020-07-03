@@ -1,91 +1,92 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
+
 /**
- * GCPVIPRoutes
+ * The GCPVIPRoutes is a POJO class extends AviRestResource that used for creating
+ * GCPVIPRoutes.
+ *
+ * @version 1.0
+ * @since 
+ *
  */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
-
 @VsoObject(create = false, name = "GCPVIPRoutes")
-@VsoFinder(name = Constants.FINDER_VRO_GCPVIPROUTES, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_GCPVIPROUTES)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class GCPVIPRoutes extends AviRestResource  {
+public class GCPVIPRoutes extends AviRestResource {
   @JsonProperty("match_se_group_subnet")
-  private Boolean matchSeGroupSubnet = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean matchSeGroupSubnet = false;
 
-  
+
+
   /**
-   * Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Match se group subnets for vip placement.
+   * Default is to not match se group subnets.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return matchSeGroupSubnet
-  **/
-  @ApiModelProperty(value = "Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isMatchSeGroupSubnet() {
+   */
+  @VsoMethod
+  public Boolean getMatchSeGroupSubnet() {
     return matchSeGroupSubnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Match se group subnets for vip placement.
+   * Default is to not match se group subnets.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param matchSeGroupSubnet set the matchSeGroupSubnet.
+   */
   @VsoMethod
-  public void setMatchSeGroupSubnet(Boolean matchSeGroupSubnet) {
+  public void setMatchSeGroupSubnet(Boolean  matchSeGroupSubnet) {
     this.matchSeGroupSubnet = matchSeGroupSubnet;
   }
 
-  
-  public String getObjectID() {
-		return "GCPVIPRoutes";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GCPVIPRoutes gcPVIPRoutes = (GCPVIPRoutes) o;
-    return Objects.equals(this.matchSeGroupSubnet, gcPVIPRoutes.matchSeGroupSubnet);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(matchSeGroupSubnet);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GCPVIPRoutes {\n");
-    
-    sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  GCPVIPRoutes objGCPVIPRoutes = (GCPVIPRoutes) o;
+  return   Objects.equals(this.matchSeGroupSubnet, objGCPVIPRoutes.matchSeGroupSubnet);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class GCPVIPRoutes {\n");
+      sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,193 +1,197 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * MgmtIpAccessControl
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The MgmtIpAccessControl is a POJO class extends AviRestResource that used for creating
+ * MgmtIpAccessControl.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "MgmtIpAccessControl")
-@VsoFinder(name = Constants.FINDER_VRO_MGMTIPACCESSCONTROL, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_MGMTIPACCESSCONTROL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MgmtIpAccessControl extends AviRestResource  {
+public class MgmtIpAccessControl extends AviRestResource {
   @JsonProperty("api_access")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch apiAccess = null;
 
   @JsonProperty("shell_server_access")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch shellServerAccess = null;
 
   @JsonProperty("snmp_access")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch snmpAccess = null;
 
   @JsonProperty("ssh_access")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch sshAccess = null;
 
   @JsonProperty("sysint_access")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch sysintAccess = null;
 
-  
+
+
   /**
-   * Configure IP addresses to access controller using API.
+   * This is the getter method this will return the attribute value.
+   * Configure ip addresses to access controller using api.
    * @return apiAccess
-  **/
-  @ApiModelProperty(value = "Configure IP addresses to access controller using API.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getApiAccess() {
     return apiAccess;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip addresses to access controller using api.
+   * @param apiAccess set the apiAccess.
+   */
   @VsoMethod
   public void setApiAccess(IpAddrMatch apiAccess) {
     this.apiAccess = apiAccess;
   }
 
-  
   /**
-   * Configure IP addresses to access controller using CLI Shell.
+   * This is the getter method this will return the attribute value.
+   * Configure ip addresses to access controller using cli shell.
    * @return shellServerAccess
-  **/
-  @ApiModelProperty(value = "Configure IP addresses to access controller using CLI Shell.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getShellServerAccess() {
     return shellServerAccess;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip addresses to access controller using cli shell.
+   * @param shellServerAccess set the shellServerAccess.
+   */
   @VsoMethod
   public void setShellServerAccess(IpAddrMatch shellServerAccess) {
     this.shellServerAccess = shellServerAccess;
   }
 
-  
   /**
-   * Configure IP addresses to access controller using SNMP.
+   * This is the getter method this will return the attribute value.
+   * Configure ip addresses to access controller using snmp.
    * @return snmpAccess
-  **/
-  @ApiModelProperty(value = "Configure IP addresses to access controller using SNMP.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getSnmpAccess() {
     return snmpAccess;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip addresses to access controller using snmp.
+   * @param snmpAccess set the snmpAccess.
+   */
   @VsoMethod
   public void setSnmpAccess(IpAddrMatch snmpAccess) {
     this.snmpAccess = snmpAccess;
   }
 
-  
   /**
-   * Configure IP addresses to access controller using SSH.
+   * This is the getter method this will return the attribute value.
+   * Configure ip addresses to access controller using ssh.
    * @return sshAccess
-  **/
-  @ApiModelProperty(value = "Configure IP addresses to access controller using SSH.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getSshAccess() {
     return sshAccess;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip addresses to access controller using ssh.
+   * @param sshAccess set the sshAccess.
+   */
   @VsoMethod
   public void setSshAccess(IpAddrMatch sshAccess) {
     this.sshAccess = sshAccess;
   }
 
-  
   /**
-   * Configure IP addresses to access controller using sysint access. Field introduced in 18.1.3, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Configure ip addresses to access controller using sysint access.
+   * Field introduced in 18.1.3, 18.2.1.
    * @return sysintAccess
-  **/
-  @ApiModelProperty(value = "Configure IP addresses to access controller using sysint access. Field introduced in 18.1.3, 18.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getSysintAccess() {
     return sysintAccess;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip addresses to access controller using sysint access.
+   * Field introduced in 18.1.3, 18.2.1.
+   * @param sysintAccess set the sysintAccess.
+   */
   @VsoMethod
   public void setSysintAccess(IpAddrMatch sysintAccess) {
     this.sysintAccess = sysintAccess;
   }
 
-  
-  public String getObjectID() {
-		return "MgmtIpAccessControl";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MgmtIpAccessControl mgmtIpAccessControl = (MgmtIpAccessControl) o;
-    return Objects.equals(this.apiAccess, mgmtIpAccessControl.apiAccess) &&
-        Objects.equals(this.shellServerAccess, mgmtIpAccessControl.shellServerAccess) &&
-        Objects.equals(this.snmpAccess, mgmtIpAccessControl.snmpAccess) &&
-        Objects.equals(this.sshAccess, mgmtIpAccessControl.sshAccess) &&
-        Objects.equals(this.sysintAccess, mgmtIpAccessControl.sysintAccess);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(apiAccess, shellServerAccess, snmpAccess, sshAccess, sysintAccess);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MgmtIpAccessControl {\n");
-    
-    sb.append("    apiAccess: ").append(toIndentedString(apiAccess)).append("\n");
-    sb.append("    shellServerAccess: ").append(toIndentedString(shellServerAccess)).append("\n");
-    sb.append("    snmpAccess: ").append(toIndentedString(snmpAccess)).append("\n");
-    sb.append("    sshAccess: ").append(toIndentedString(sshAccess)).append("\n");
-    sb.append("    sysintAccess: ").append(toIndentedString(sysintAccess)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  MgmtIpAccessControl objMgmtIpAccessControl = (MgmtIpAccessControl) o;
+  return   Objects.equals(this.sysintAccess, objMgmtIpAccessControl.sysintAccess)&&
+  Objects.equals(this.snmpAccess, objMgmtIpAccessControl.snmpAccess)&&
+  Objects.equals(this.apiAccess, objMgmtIpAccessControl.apiAccess)&&
+  Objects.equals(this.sshAccess, objMgmtIpAccessControl.sshAccess)&&
+  Objects.equals(this.shellServerAccess, objMgmtIpAccessControl.shellServerAccess);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MgmtIpAccessControl {\n");
+      sb.append("    apiAccess: ").append(toIndentedString(apiAccess)).append("\n");
+        sb.append("    shellServerAccess: ").append(toIndentedString(shellServerAccess)).append("\n");
+        sb.append("    snmpAccess: ").append(toIndentedString(snmpAccess)).append("\n");
+        sb.append("    sshAccess: ").append(toIndentedString(sshAccess)).append("\n");
+        sb.append("    sysintAccess: ").append(toIndentedString(sysintAccess)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

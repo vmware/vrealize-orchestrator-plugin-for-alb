@@ -37,76 +37,9 @@
 			<description><![CDATA[Health monitor name]]></description>
 		</param>
 	</input>
-	<attrib name="healthMonitorObj" type="Avi:HealthMonitor"
-		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="healthMonitorUDPObj" type="Avi:HealthMonitorUdp"
-		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="healthMonitorDNSObj" type="Avi:HealthMonitorDNS"
-		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="healthMonitorExternalObj"
-		type="Avi:HealthMonitorExternal" read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="healthMonitorHTTPObj" type="Avi:HealthMonitorHttp"
-		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="healthMonitorTCPObj" type="Avi:HealthMonitorTcp"
-		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="sslMonitorObj"
-		type="Avi:HealthMonitorSSLAttributes" read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
 	<attrib name="aviVroClient" type="Avi:AviVroClient"
 		read-only="false">
 		<value encoded="n"><![CDATA[__NULL__]]></value>
-	</attrib>
-	<attrib name="is_federated" type="boolean" read-only="false">
-		<value encoded="n"><![CDATA[false]]></value>
-	</attrib>
-	<attrib name="tcp_request" type="string" read-only="false">
-		<value encoded="n"><![CDATA[""]]></value>
-		<description><![CDATA[Client request data for tcp monitor]]></description>
-	</attrib>
-	<attrib name="tcp_response" type="string" read-only="false">
-		<value encoded="n"><![CDATA[""]]></value>
-		<description><![CDATA[Server response data  for tcp monitor]]></description>
-	</attrib>
-	<attrib name="tcp_half_open" type="boolean" read-only="false">
-		<value encoded="n"><![CDATA[false]]></value>
-		<description><![CDATA[Half-Open (Close connection before completion) ]]></description>
-	</attrib>
-	<attrib name="send_interval" type="number" read-only="false">
-		<value encoded="n"><![CDATA[10.0]]></value>
-		<description><![CDATA[Add send interval]]></description>
-	</attrib>
-	<attrib name="time_out" type="number" read-only="false">
-		<value encoded="n"><![CDATA[1.0]]></value>
-		<description><![CDATA[timeout duration]]></description>
-	</attrib>
-	<attrib name="failed_check" type="number" read-only="false">
-		<value encoded="n"><![CDATA[2.0]]></value>
-		<description><![CDATA[Failed checks]]></description>
-	</attrib>
-	<attrib name="successful_check" type="number" read-only="false">
-		<value encoded="n"><![CDATA[2.0]]></value>
-		<description><![CDATA[Add successful checks]]></description>
-	</attrib>
-	<attrib name="monitor_port" type="number" read-only="false">
-		<value encoded="n"><![CDATA[90.0]]></value>
-		<description><![CDATA[Add monitor port]]></description>
-	</attrib>
-	<attrib name="maintenance_code" type="string" read-only="false">
-		<value encoded="n"><![CDATA[""]]></value>
-		<description><![CDATA[Maintenance server response data for tcp monitor]]></description>
 	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
 		<position y="45.40909090909091" x="664.5"></position>
@@ -131,40 +64,25 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorObj,healthMonitorUDPObj,healthMonitorType,healthMonitorDNSObj,healthMonitorExternalObj,healthMonitorHTTPObj,healthMonitorTCPObj,sslMonitorObj,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
 		<in-binding>
-			<bind name="healthMonitorObj" type="Avi:HealthMonitor"
-				export-name="healthMonitorObj"></bind>
-			<bind name="healthMonitorUDPObj" type="Avi:HealthMonitorUdp"
-				export-name="healthMonitorUDPObj"></bind>
 			<bind name="healthMonitorType" type="string"
 				export-name="hm_type"></bind>
-			<bind name="healthMonitorDNSObj" type="Avi:HealthMonitorDNS"
-				export-name="healthMonitorDNSObj"></bind>
-			<bind name="healthMonitorExternalObj"
-				type="Avi:HealthMonitorExternal"
-				export-name="healthMonitorExternalObj"></bind>
-			<bind name="healthMonitorHTTPObj" type="Avi:HealthMonitorHttp"
-				export-name="healthMonitorHTTPObj"></bind>
-			<bind name="healthMonitorTCPObj" type="Avi:HealthMonitorTcp"
-				export-name="healthMonitorTCPObj"></bind>
-			<bind name="sslMonitorObj" type="Avi:HealthMonitorSSLAttributes"
-				export-name="sslMonitorObj"></bind>
 			<bind name="hm_type" type="string" explicitly-not-bound="true"></bind>
 			<bind name="hm_name" type="string" export-name="hm_name"></bind>
 			<bind name="hm_description" type="string"
 				export-name="hm_description"></bind>
 			<bind name="is_federated" type="boolean"
-				export-name="is_federated"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="monitor_port" type="number"
-				export-name="monitor_port"></bind>
-			<bind name="time_out" type="number" export-name="time_out"></bind>
+				explicitly-not-bound="true"></bind>
+			<bind name="time_out" type="number" explicitly-not-bound="true"></bind>
 			<bind name="send_interval" type="number"
-				export-name="send_interval"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="successful_check" type="number"
-				export-name="successful_check"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="failed_check" type="number"
-				export-name="failed_check"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="command_code" type="string"
 				export-name="command_code"></bind>
 			<bind name="udp_request" type="string" export-name="udp_request"></bind>
@@ -172,13 +90,14 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				export-name="dns_query_name"></bind>
 			<bind name="http_response_code" type="Array/string"
 				export-name="http_response_code"></bind>
-			<bind name="tcp_request" type="string" export-name="tcp_request"></bind>
+			<bind name="tcp_request" type="string"
+				explicitly-not-bound="true"></bind>
 			<bind name="tcp_response" type="string"
-				export-name="tcp_response"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="tcp_half_open" type="boolean"
-				export-name="tcp_half_open"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="maintenance_code" type="string"
-				export-name="maintenance_code"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
 				export-name="aviVroClient"></bind>
 			<bind name="https_response_code" type="Array/string"

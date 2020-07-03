@@ -1,187 +1,226 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * StreamingSyslogConfig
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The StreamingSyslogConfig is a POJO class extends AviRestResource that used for creating
+ * StreamingSyslogConfig.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "StreamingSyslogConfig")
-@VsoFinder(name = Constants.FINDER_VRO_STREAMINGSYSLOGCONFIG, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_STREAMINGSYSLOGCONFIG)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class StreamingSyslogConfig extends AviRestResource  {
+public class StreamingSyslogConfig extends AviRestResource {
   @JsonProperty("facility")
+  @JsonInclude(Include.NON_NULL)
   private Integer facility = 16;
 
   @JsonProperty("filtered_log_severity")
+  @JsonInclude(Include.NON_NULL)
   private Integer filteredLogSeverity = 5;
 
   @JsonProperty("hostname")
-  private String hostname = "AviVantage";
+  @JsonInclude(Include.NON_NULL)
+  private String hostname = "avivantage";
 
   @JsonProperty("non_significant_log_severity")
+  @JsonInclude(Include.NON_NULL)
   private Integer nonSignificantLogSeverity = 6;
 
   @JsonProperty("significant_log_severity")
+  @JsonInclude(Include.NON_NULL)
   private Integer significantLogSeverity = 4;
 
-  
+
+
   /**
-   * Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Facility value, as defined in rfc5424, must be between 0 and 23 inclusive.
+   * Allowed values are 0-23.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 16.
    * @return facility
-  **/
-  @ApiModelProperty(value = "Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFacility() {
     return facility;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Facility value, as defined in rfc5424, must be between 0 and 23 inclusive.
+   * Allowed values are 0-23.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 16.
+   * @param facility set the facility.
+   */
   @VsoMethod
-  public void setFacility(Integer facility) {
+  public void setFacility(Integer  facility) {
     this.facility = facility;
   }
 
-  
   /**
-   * Severity code, as defined in RFC5424, for filtered logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Severity code, as defined in rfc5424, for filtered logs.
+   * This must be between 0 and 7 inclusive.
+   * Allowed values are 0-7.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return filteredLogSeverity
-  **/
-  @ApiModelProperty(value = "Severity code, as defined in RFC5424, for filtered logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFilteredLogSeverity() {
     return filteredLogSeverity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Severity code, as defined in rfc5424, for filtered logs.
+   * This must be between 0 and 7 inclusive.
+   * Allowed values are 0-7.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param filteredLogSeverity set the filteredLogSeverity.
+   */
   @VsoMethod
-  public void setFilteredLogSeverity(Integer filteredLogSeverity) {
+  public void setFilteredLogSeverity(Integer  filteredLogSeverity) {
     this.filteredLogSeverity = filteredLogSeverity;
   }
 
-  
   /**
-   * String to use as the hostname in the syslog messages. This string can contain only printable ASCII characters (hex 21 to hex 7E; no space allowed). Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * String to use as the hostname in the syslog messages.
+   * This string can contain only printable ascii characters (hex 21 to hex 7e; no space allowed).
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as avivantage.
    * @return hostname
-  **/
-  @ApiModelProperty(value = "String to use as the hostname in the syslog messages. This string can contain only printable ASCII characters (hex 21 to hex 7E; no space allowed). Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHostname() {
     return hostname;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * String to use as the hostname in the syslog messages.
+   * This string can contain only printable ascii characters (hex 21 to hex 7e; no space allowed).
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as avivantage.
+   * @param hostname set the hostname.
+   */
   @VsoMethod
-  public void setHostname(String hostname) {
+  public void setHostname(String  hostname) {
     this.hostname = hostname;
   }
 
-  
   /**
-   * Severity code, as defined in RFC5424, for non-significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Severity code, as defined in rfc5424, for non-significant logs.
+   * This must be between 0 and 7 inclusive.
+   * Allowed values are 0-7.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 6.
    * @return nonSignificantLogSeverity
-  **/
-  @ApiModelProperty(value = "Severity code, as defined in RFC5424, for non-significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNonSignificantLogSeverity() {
     return nonSignificantLogSeverity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Severity code, as defined in rfc5424, for non-significant logs.
+   * This must be between 0 and 7 inclusive.
+   * Allowed values are 0-7.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 6.
+   * @param nonSignificantLogSeverity set the nonSignificantLogSeverity.
+   */
   @VsoMethod
-  public void setNonSignificantLogSeverity(Integer nonSignificantLogSeverity) {
+  public void setNonSignificantLogSeverity(Integer  nonSignificantLogSeverity) {
     this.nonSignificantLogSeverity = nonSignificantLogSeverity;
   }
 
-  
   /**
-   * Severity code, as defined in RFC5424, for significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Severity code, as defined in rfc5424, for significant logs.
+   * This must be between 0 and 7 inclusive.
+   * Allowed values are 0-7.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return significantLogSeverity
-  **/
-  @ApiModelProperty(value = "Severity code, as defined in RFC5424, for significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSignificantLogSeverity() {
     return significantLogSeverity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Severity code, as defined in rfc5424, for significant logs.
+   * This must be between 0 and 7 inclusive.
+   * Allowed values are 0-7.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param significantLogSeverity set the significantLogSeverity.
+   */
   @VsoMethod
-  public void setSignificantLogSeverity(Integer significantLogSeverity) {
+  public void setSignificantLogSeverity(Integer  significantLogSeverity) {
     this.significantLogSeverity = significantLogSeverity;
   }
 
-  
-  public String getObjectID() {
-		return "StreamingSyslogConfig";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    StreamingSyslogConfig streamingSyslogConfig = (StreamingSyslogConfig) o;
-    return Objects.equals(this.facility, streamingSyslogConfig.facility) &&
-        Objects.equals(this.filteredLogSeverity, streamingSyslogConfig.filteredLogSeverity) &&
-        Objects.equals(this.hostname, streamingSyslogConfig.hostname) &&
-        Objects.equals(this.nonSignificantLogSeverity, streamingSyslogConfig.nonSignificantLogSeverity) &&
-        Objects.equals(this.significantLogSeverity, streamingSyslogConfig.significantLogSeverity);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(facility, filteredLogSeverity, hostname, nonSignificantLogSeverity, significantLogSeverity);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class StreamingSyslogConfig {\n");
-    
-    sb.append("    facility: ").append(toIndentedString(facility)).append("\n");
-    sb.append("    filteredLogSeverity: ").append(toIndentedString(filteredLogSeverity)).append("\n");
-    sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
-    sb.append("    nonSignificantLogSeverity: ").append(toIndentedString(nonSignificantLogSeverity)).append("\n");
-    sb.append("    significantLogSeverity: ").append(toIndentedString(significantLogSeverity)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  StreamingSyslogConfig objStreamingSyslogConfig = (StreamingSyslogConfig) o;
+  return   Objects.equals(this.significantLogSeverity, objStreamingSyslogConfig.significantLogSeverity)&&
+  Objects.equals(this.filteredLogSeverity, objStreamingSyslogConfig.filteredLogSeverity)&&
+  Objects.equals(this.hostname, objStreamingSyslogConfig.hostname)&&
+  Objects.equals(this.nonSignificantLogSeverity, objStreamingSyslogConfig.nonSignificantLogSeverity)&&
+  Objects.equals(this.facility, objStreamingSyslogConfig.facility);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class StreamingSyslogConfig {\n");
+      sb.append("    facility: ").append(toIndentedString(facility)).append("\n");
+        sb.append("    filteredLogSeverity: ").append(toIndentedString(filteredLogSeverity)).append("\n");
+        sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    nonSignificantLogSeverity: ").append(toIndentedString(nonSignificantLogSeverity)).append("\n");
+        sb.append("    significantLogSeverity: ").append(toIndentedString(significantLogSeverity)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

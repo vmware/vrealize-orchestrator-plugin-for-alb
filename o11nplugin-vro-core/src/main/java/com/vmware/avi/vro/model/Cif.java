@@ -1,104 +1,137 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * Cif
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The Cif is a POJO class extends AviRestResource that used for creating
+ * Cif.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "Cif")
-@VsoFinder(name = Constants.FINDER_VRO_CIF, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CIF)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Cif extends AviRestResource  {
+public class Cif extends AviRestResource {
   @JsonProperty("adapter")
+  @JsonInclude(Include.NON_NULL)
   private String adapter = null;
 
   @JsonProperty("cif")
+  @JsonInclude(Include.NON_NULL)
   private String cif = null;
 
   @JsonProperty("mac_address")
+  @JsonInclude(Include.NON_NULL)
   private String macAddress = null;
 
   @JsonProperty("resources")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> resources = null;
 
   @JsonProperty("se_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String seUuid = null;
 
-  
+
+
   /**
-   * adapter of Cif.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property adapter of obj type cif field type str  type string.
    * @return adapter
-  **/
-  @ApiModelProperty(value = "adapter of Cif.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAdapter() {
     return adapter;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property adapter of obj type cif field type str  type string.
+   * @param adapter set the adapter.
+   */
   @VsoMethod
-  public void setAdapter(String adapter) {
+  public void setAdapter(String  adapter) {
     this.adapter = adapter;
   }
 
-  
   /**
-   * cif of Cif.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property cif of obj type cif field type str  type string.
    * @return cif
-  **/
-  @ApiModelProperty(value = "cif of Cif.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCif() {
     return cif;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property cif of obj type cif field type str  type string.
+   * @param cif set the cif.
+   */
   @VsoMethod
-  public void setCif(String cif) {
+  public void setCif(String  cif) {
     this.cif = cif;
   }
 
-  
   /**
-   * mac_address of Cif.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property mac_address of obj type cif field type str  type string.
    * @return macAddress
-  **/
-  @ApiModelProperty(value = "mac_address of Cif.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMacAddress() {
     return macAddress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property mac_address of obj type cif field type str  type string.
+   * @param macAddress set the macAddress.
+   */
   @VsoMethod
-  public void setMacAddress(String macAddress) {
+  public void setMacAddress(String  macAddress) {
     this.macAddress = macAddress;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property resources of obj type cif field type str  type array.
+   * @return resources
+   */
+  @VsoMethod
+  public List<String> getResources() {
+    return resources;
+  }
+
+  /**
+   * This is the setter method. this will set the resources
+   * Placeholder for description of property resources of obj type cif field type str  type array.
+   * @return resources
+   */
+  @VsoMethod
+  public void setResources(List<String>  resources) {
+    this.resources = resources;
+  }
+
+  /**
+   * This is the setter method this will set the resources
+   * Placeholder for description of property resources of obj type cif field type str  type array.
+   * @return resources
+   */
+  @VsoMethod
   public Cif addResourcesItem(String resourcesItem) {
     if (this.resources == null) {
       this.resources = new ArrayList<String>();
@@ -106,93 +139,67 @@ public class Cif extends AviRestResource  {
     this.resources.add(resourcesItem);
     return this;
   }
-  
+
+
   /**
-   * resources of Cif.
-   * @return resources
-  **/
-  @ApiModelProperty(value = "resources of Cif.")
-
-
- 
-  @VsoMethod  
-  public List<String> getResources() {
-    return resources;
-  }
-    
-  @VsoMethod
-  public void setResources(List<String> resources) {
-    this.resources = resources;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
    * @return seUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of se.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeUuid() {
     return seUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of se.
+   * @param seUuid set the seUuid.
+   */
   @VsoMethod
-  public void setSeUuid(String seUuid) {
+  public void setSeUuid(String  seUuid) {
     this.seUuid = seUuid;
   }
 
-  
-  public String getObjectID() {
-		return "Cif";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Cif cif = (Cif) o;
-    return Objects.equals(this.adapter, cif.adapter) &&
-        Objects.equals(this.cif, cif.cif) &&
-        Objects.equals(this.macAddress, cif.macAddress) &&
-        Objects.equals(this.resources, cif.resources) &&
-        Objects.equals(this.seUuid, cif.seUuid);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(adapter, cif, macAddress, resources, seUuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Cif {\n");
-    
-    sb.append("    adapter: ").append(toIndentedString(adapter)).append("\n");
-    sb.append("    cif: ").append(toIndentedString(cif)).append("\n");
-    sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
-    sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
-    sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  Cif objCif = (Cif) o;
+  return   Objects.equals(this.adapter, objCif.adapter)&&
+  Objects.equals(this.macAddress, objCif.macAddress)&&
+  Objects.equals(this.cif, objCif.cif)&&
+  Objects.equals(this.resources, objCif.resources)&&
+  Objects.equals(this.seUuid, objCif.seUuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class Cif {\n");
+      sb.append("    adapter: ").append(toIndentedString(adapter)).append("\n");
+        sb.append("    cif: ").append(toIndentedString(cif)).append("\n");
+        sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

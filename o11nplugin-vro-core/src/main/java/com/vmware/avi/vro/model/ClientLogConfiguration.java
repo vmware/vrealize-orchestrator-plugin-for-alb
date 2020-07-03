@@ -1,163 +1,198 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ClientLogConfiguration
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ClientLogConfiguration is a POJO class extends AviRestResource that used for creating
+ * ClientLogConfiguration.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ClientLogConfiguration")
-@VsoFinder(name = Constants.FINDER_VRO_CLIENTLOGCONFIGURATION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CLIENTLOGCONFIGURATION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ClientLogConfiguration extends AviRestResource  {
+public class ClientLogConfiguration extends AviRestResource {
   @JsonProperty("enable_significant_log_collection")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enableSignificantLogCollection = true;
 
   @JsonProperty("filtered_log_processing")
+  @JsonInclude(Include.NON_NULL)
   private String filteredLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
 
   @JsonProperty("non_significant_log_processing")
+  @JsonInclude(Include.NON_NULL)
   private String nonSignificantLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
 
   @JsonProperty("significant_log_processing")
+  @JsonInclude(Include.NON_NULL)
   private String significantLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
 
-  
+
+
   /**
-   * Enable significant log collection. By default, this flag is enabled, which means that Avi SEs collect significant logs and forward them to Controller for further processing. For example, these logs correspond to error conditions such as when the response code for a request is 500. Users can disable this flag to turn off default significant log collection.
+   * This is the getter method this will return the attribute value.
+   * Enable significant log collection.
+   * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
+   * For example, these logs correspond to error conditions such as when the response code for a request is 500.
+   * Users can disable this flag to turn off default significant log collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableSignificantLogCollection
-  **/
-  @ApiModelProperty(value = "Enable significant log collection. By default, this flag is enabled, which means that Avi SEs collect significant logs and forward them to Controller for further processing. For example, these logs correspond to error conditions such as when the response code for a request is 500. Users can disable this flag to turn off default significant log collection.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableSignificantLogCollection() {
+   */
+  @VsoMethod
+  public Boolean getEnableSignificantLogCollection() {
     return enableSignificantLogCollection;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable significant log collection.
+   * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
+   * For example, these logs correspond to error conditions such as when the response code for a request is 500.
+   * Users can disable this flag to turn off default significant log collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableSignificantLogCollection set the enableSignificantLogCollection.
+   */
   @VsoMethod
-  public void setEnableSignificantLogCollection(Boolean enableSignificantLogCollection) {
+  public void setEnableSignificantLogCollection(Boolean  enableSignificantLogCollection) {
     this.enableSignificantLogCollection = enableSignificantLogCollection;
   }
 
-  
   /**
-   * (Note  Only sync_and_index_on_demand is implemented at this time) Filtered logs are logs that match any client log filters or rules with logging enabled. Such logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Filtered logs are logs that match any client log filters or rules with logging enabled.
+   * Such logs are processed by the logs analytics system according to this setting.
+   * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
+   * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
    * @return filteredLogProcessing
-  **/
-  @ApiModelProperty(value = "(Note  Only sync_and_index_on_demand is implemented at this time) Filtered logs are logs that match any client log filters or rules with logging enabled. Such logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFilteredLogProcessing() {
     return filteredLogProcessing;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Filtered logs are logs that match any client log filters or rules with logging enabled.
+   * Such logs are processed by the logs analytics system according to this setting.
+   * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
+   * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * @param filteredLogProcessing set the filteredLogProcessing.
+   */
   @VsoMethod
-  public void setFilteredLogProcessing(String filteredLogProcessing) {
+  public void setFilteredLogProcessing(String  filteredLogProcessing) {
     this.filteredLogProcessing = filteredLogProcessing;
   }
 
-  
   /**
-   * (Note  Only sync_and_index_on_demand is implemented at this time) Logs that are neither significant nor filtered, are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Logs that are neither significant nor filtered, are processed by the logs analytics system according to this setting.
+   * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
+   * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
    * @return nonSignificantLogProcessing
-  **/
-  @ApiModelProperty(value = "(Note  Only sync_and_index_on_demand is implemented at this time) Logs that are neither significant nor filtered, are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNonSignificantLogProcessing() {
     return nonSignificantLogProcessing;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Logs that are neither significant nor filtered, are processed by the logs analytics system according to this setting.
+   * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
+   * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * @param nonSignificantLogProcessing set the nonSignificantLogProcessing.
+   */
   @VsoMethod
-  public void setNonSignificantLogProcessing(String nonSignificantLogProcessing) {
+  public void setNonSignificantLogProcessing(String  nonSignificantLogProcessing) {
     this.nonSignificantLogProcessing = nonSignificantLogProcessing;
   }
 
-  
   /**
-   * Significant logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Significant logs are processed by the logs analytics system according to this setting.
+   * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
+   * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
    * @return significantLogProcessing
-  **/
-  @ApiModelProperty(value = "Significant logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSignificantLogProcessing() {
     return significantLogProcessing;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Significant logs are processed by the logs analytics system according to this setting.
+   * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
+   * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * @param significantLogProcessing set the significantLogProcessing.
+   */
   @VsoMethod
-  public void setSignificantLogProcessing(String significantLogProcessing) {
+  public void setSignificantLogProcessing(String  significantLogProcessing) {
     this.significantLogProcessing = significantLogProcessing;
   }
 
-  
-  public String getObjectID() {
-		return "ClientLogConfiguration";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ClientLogConfiguration clientLogConfiguration = (ClientLogConfiguration) o;
-    return Objects.equals(this.enableSignificantLogCollection, clientLogConfiguration.enableSignificantLogCollection) &&
-        Objects.equals(this.filteredLogProcessing, clientLogConfiguration.filteredLogProcessing) &&
-        Objects.equals(this.nonSignificantLogProcessing, clientLogConfiguration.nonSignificantLogProcessing) &&
-        Objects.equals(this.significantLogProcessing, clientLogConfiguration.significantLogProcessing);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(enableSignificantLogCollection, filteredLogProcessing, nonSignificantLogProcessing, significantLogProcessing);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ClientLogConfiguration {\n");
-    
-    sb.append("    enableSignificantLogCollection: ").append(toIndentedString(enableSignificantLogCollection)).append("\n");
-    sb.append("    filteredLogProcessing: ").append(toIndentedString(filteredLogProcessing)).append("\n");
-    sb.append("    nonSignificantLogProcessing: ").append(toIndentedString(nonSignificantLogProcessing)).append("\n");
-    sb.append("    significantLogProcessing: ").append(toIndentedString(significantLogProcessing)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ClientLogConfiguration objClientLogConfiguration = (ClientLogConfiguration) o;
+  return   Objects.equals(this.enableSignificantLogCollection, objClientLogConfiguration.enableSignificantLogCollection)&&
+  Objects.equals(this.nonSignificantLogProcessing, objClientLogConfiguration.nonSignificantLogProcessing)&&
+  Objects.equals(this.significantLogProcessing, objClientLogConfiguration.significantLogProcessing)&&
+  Objects.equals(this.filteredLogProcessing, objClientLogConfiguration.filteredLogProcessing);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ClientLogConfiguration {\n");
+      sb.append("    enableSignificantLogCollection: ").append(toIndentedString(enableSignificantLogCollection)).append("\n");
+        sb.append("    filteredLogProcessing: ").append(toIndentedString(filteredLogProcessing)).append("\n");
+        sb.append("    nonSignificantLogProcessing: ").append(toIndentedString(nonSignificantLogProcessing)).append("\n");
+        sb.append("    significantLogProcessing: ").append(toIndentedString(significantLogProcessing)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

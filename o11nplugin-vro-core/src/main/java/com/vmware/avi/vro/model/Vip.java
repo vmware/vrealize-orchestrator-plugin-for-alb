@@ -1,221 +1,307 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.DiscoveredNetwork;
-import com.vmware.avi.vro.model.IPNetworkSubnet;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IPNetworkSubnet;
 import com.vmware.avi.vro.model.IpAddrPrefix;
-import com.vmware.avi.vro.model.VipPlacementNetwork;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.IpAddrPrefix;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * Vip
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The Vip is a POJO class extends AviRestResource that used for creating
+ * Vip.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "Vip")
-@VsoFinder(name = Constants.FINDER_VRO_VIP, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VIP)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Vip extends AviRestResource  {
+public class Vip extends AviRestResource {
   @JsonProperty("auto_allocate_floating_ip")
-  private Boolean autoAllocateFloatingIp = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean autoAllocateFloatingIp = false;
 
   @JsonProperty("auto_allocate_ip")
-  private Boolean autoAllocateIp = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean autoAllocateIp = false;
 
   @JsonProperty("auto_allocate_ip_type")
+  @JsonInclude(Include.NON_NULL)
   private String autoAllocateIpType = "V4_ONLY";
 
   @JsonProperty("availability_zone")
+  @JsonInclude(Include.NON_NULL)
   private String availabilityZone = null;
 
   @JsonProperty("avi_allocated_fip")
-  private Boolean aviAllocatedFip = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean aviAllocatedFip = false;
 
   @JsonProperty("avi_allocated_vip")
-  private Boolean aviAllocatedVip = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean aviAllocatedVip = false;
 
   @JsonProperty("discovered_networks")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<DiscoveredNetwork> discoveredNetworks = null;
 
   @JsonProperty("enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enabled = true;
 
   @JsonProperty("floating_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr floatingIp = null;
 
   @JsonProperty("floating_ip6")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr floatingIp6 = null;
 
   @JsonProperty("floating_subnet6_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String floatingSubnet6Uuid = null;
 
   @JsonProperty("floating_subnet_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String floatingSubnetUuid = null;
 
   @JsonProperty("ip6_address")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ip6Address = null;
 
   @JsonProperty("ip_address")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr ipAddress = null;
 
   @JsonProperty("ipam_network_subnet")
+  @JsonInclude(Include.NON_NULL)
   private IPNetworkSubnet ipamNetworkSubnet = null;
 
   @JsonProperty("network_ref")
+  @JsonInclude(Include.NON_NULL)
   private String networkRef = null;
 
   @JsonProperty("placement_networks")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<VipPlacementNetwork> placementNetworks = null;
 
   @JsonProperty("port_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String portUuid = null;
 
+  @JsonProperty("prefix_length")
+  @JsonInclude(Include.NON_NULL)
+  private Integer prefixLength = 32;
+
   @JsonProperty("subnet")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrPrefix subnet = null;
 
   @JsonProperty("subnet6")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrPrefix subnet6 = null;
 
   @JsonProperty("subnet6_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String subnet6Uuid = null;
 
   @JsonProperty("subnet_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String subnetUuid = null;
 
   @JsonProperty("vip_id")
+  @JsonInclude(Include.NON_NULL)
   private String vipId = null;
 
-  
+
+
   /**
-   * Auto-allocate floating/elastic IP from the Cloud infrastructure. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Auto-allocate floating/elastic ip from the cloud infrastructure.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return autoAllocateFloatingIp
-  **/
-  @ApiModelProperty(value = "Auto-allocate floating/elastic IP from the Cloud infrastructure. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAutoAllocateFloatingIp() {
+   */
+  @VsoMethod
+  public Boolean getAutoAllocateFloatingIp() {
     return autoAllocateFloatingIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Auto-allocate floating/elastic ip from the cloud infrastructure.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param autoAllocateFloatingIp set the autoAllocateFloatingIp.
+   */
   @VsoMethod
-  public void setAutoAllocateFloatingIp(Boolean autoAllocateFloatingIp) {
+  public void setAutoAllocateFloatingIp(Boolean  autoAllocateFloatingIp) {
     this.autoAllocateFloatingIp = autoAllocateFloatingIp;
   }
 
-  
   /**
-   * Auto-allocate VIP from the provided subnet. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Auto-allocate vip from the provided subnet.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return autoAllocateIp
-  **/
-  @ApiModelProperty(value = "Auto-allocate VIP from the provided subnet. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAutoAllocateIp() {
+   */
+  @VsoMethod
+  public Boolean getAutoAllocateIp() {
     return autoAllocateIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Auto-allocate vip from the provided subnet.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param autoAllocateIp set the autoAllocateIp.
+   */
   @VsoMethod
-  public void setAutoAllocateIp(Boolean autoAllocateIp) {
+  public void setAutoAllocateIp(Boolean  autoAllocateIp) {
     this.autoAllocateIp = autoAllocateIp;
   }
 
-  
   /**
-   * Specifies whether to auto-allocate only a V4 address, only a V6 address, or one of each type. Enum options - V4_ONLY, V6_ONLY, V4_V6. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Specifies whether to auto-allocate only a v4 address, only a v6 address, or one of each type.
+   * Enum options - V4_ONLY, V6_ONLY, V4_V6.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as V4_ONLY.
    * @return autoAllocateIpType
-  **/
-  @ApiModelProperty(value = "Specifies whether to auto-allocate only a V4 address, only a V6 address, or one of each type. Enum options - V4_ONLY, V6_ONLY, V4_V6. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAutoAllocateIpType() {
     return autoAllocateIpType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies whether to auto-allocate only a v4 address, only a v6 address, or one of each type.
+   * Enum options - V4_ONLY, V6_ONLY, V4_V6.
+   * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as V4_ONLY.
+   * @param autoAllocateIpType set the autoAllocateIpType.
+   */
   @VsoMethod
-  public void setAutoAllocateIpType(String autoAllocateIpType) {
+  public void setAutoAllocateIpType(String  autoAllocateIpType) {
     this.autoAllocateIpType = autoAllocateIpType;
   }
 
-  
   /**
-   * Availability-zone to place the Virtual Service. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Availability-zone to place the virtual service.
+   * Field introduced in 17.1.1.
    * @return availabilityZone
-  **/
-  @ApiModelProperty(value = "Availability-zone to place the Virtual Service. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAvailabilityZone() {
     return availabilityZone;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Availability-zone to place the virtual service.
+   * Field introduced in 17.1.1.
+   * @param availabilityZone set the availabilityZone.
+   */
   @VsoMethod
-  public void setAvailabilityZone(String availabilityZone) {
+  public void setAvailabilityZone(String  availabilityZone) {
     this.availabilityZone = availabilityZone;
   }
 
-  
   /**
-   * (internal-use) FIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * (internal-use) fip allocated by avi in the cloud infrastructure.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aviAllocatedFip
-  **/
-  @ApiModelProperty(value = "(internal-use) FIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAviAllocatedFip() {
+   */
+  @VsoMethod
+  public Boolean getAviAllocatedFip() {
     return aviAllocatedFip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * (internal-use) fip allocated by avi in the cloud infrastructure.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param aviAllocatedFip set the aviAllocatedFip.
+   */
   @VsoMethod
-  public void setAviAllocatedFip(Boolean aviAllocatedFip) {
+  public void setAviAllocatedFip(Boolean  aviAllocatedFip) {
     this.aviAllocatedFip = aviAllocatedFip;
   }
 
-  
   /**
-   * (internal-use) VIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * (internal-use) vip allocated by avi in the cloud infrastructure.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aviAllocatedVip
-  **/
-  @ApiModelProperty(value = "(internal-use) VIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isAviAllocatedVip() {
+   */
+  @VsoMethod
+  public Boolean getAviAllocatedVip() {
     return aviAllocatedVip;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * (internal-use) vip allocated by avi in the cloud infrastructure.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param aviAllocatedVip set the aviAllocatedVip.
+   */
   @VsoMethod
-  public void setAviAllocatedVip(Boolean aviAllocatedVip) {
+  public void setAviAllocatedVip(Boolean  aviAllocatedVip) {
     this.aviAllocatedVip = aviAllocatedVip;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Discovered networks providing reachability for client facing vip ip.
+   * Field introduced in 17.1.1.
+   * @return discoveredNetworks
+   */
+  @VsoMethod
+  public List<DiscoveredNetwork> getDiscoveredNetworks() {
+    return discoveredNetworks;
+  }
+
+  /**
+   * This is the setter method. this will set the discoveredNetworks
+   * Discovered networks providing reachability for client facing vip ip.
+   * Field introduced in 17.1.1.
+   * @return discoveredNetworks
+   */
+  @VsoMethod
+  public void setDiscoveredNetworks(List<DiscoveredNetwork>  discoveredNetworks) {
+    this.discoveredNetworks = discoveredNetworks;
+  }
+
+  /**
+   * This is the setter method this will set the discoveredNetworks
+   * Discovered networks providing reachability for client facing vip ip.
+   * Field introduced in 17.1.1.
+   * @return discoveredNetworks
+   */
+  @VsoMethod
   public Vip addDiscoveredNetworksItem(DiscoveredNetwork discoveredNetworksItem) {
     if (this.discoveredNetworks == null) {
       this.discoveredNetworks = new ArrayList<DiscoveredNetwork>();
@@ -223,203 +309,239 @@ public class Vip extends AviRestResource  {
     this.discoveredNetworks.add(discoveredNetworksItem);
     return this;
   }
-  
+
+
   /**
-   * Discovered networks providing reachability for client facing Vip IP. Field introduced in 17.1.1.
-   * @return discoveredNetworks
-  **/
-  @ApiModelProperty(value = "Discovered networks providing reachability for client facing Vip IP. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<DiscoveredNetwork> getDiscoveredNetworks() {
-    return discoveredNetworks;
-  }
-    
-  @VsoMethod
-  public void setDiscoveredNetworks(List<DiscoveredNetwork> discoveredNetworks) {
-    this.discoveredNetworks = discoveredNetworks;
-  }
-
-  
-  /**
-   * Enable or disable the Vip. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable the vip.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
-  **/
-  @ApiModelProperty(value = "Enable or disable the Vip. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnabled() {
+   */
+  @VsoMethod
+  public Boolean getEnabled() {
     return enabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable the vip.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enabled set the enabled.
+   */
   @VsoMethod
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(Boolean  enabled) {
     this.enabled = enabled;
   }
 
-  
   /**
-   * Floating IPv4 to associate with this Vip. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Floating ipv4 to associate with this vip.
+   * Field introduced in 17.1.1.
    * @return floatingIp
-  **/
-  @ApiModelProperty(value = "Floating IPv4 to associate with this Vip. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getFloatingIp() {
     return floatingIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Floating ipv4 to associate with this vip.
+   * Field introduced in 17.1.1.
+   * @param floatingIp set the floatingIp.
+   */
   @VsoMethod
   public void setFloatingIp(IpAddr floatingIp) {
     this.floatingIp = floatingIp;
   }
 
-  
   /**
-   * Floating IPv6 address to associate with this Vip. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Floating ipv6 address to associate with this vip.
+   * Field introduced in 18.1.1.
    * @return floatingIp6
-  **/
-  @ApiModelProperty(value = "Floating IPv6 address to associate with this Vip. Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getFloatingIp6() {
     return floatingIp6;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Floating ipv6 address to associate with this vip.
+   * Field introduced in 18.1.1.
+   * @param floatingIp6 set the floatingIp6.
+   */
   @VsoMethod
   public void setFloatingIp6(IpAddr floatingIp6) {
     this.floatingIp6 = floatingIp6;
   }
 
-  
   /**
-   * If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IPv6 address allocation. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ipv6 address allocation.
+   * Field introduced in 18.1.1.
    * @return floatingSubnet6Uuid
-  **/
-  @ApiModelProperty(value = "If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IPv6 address allocation. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFloatingSubnet6Uuid() {
     return floatingSubnet6Uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ipv6 address allocation.
+   * Field introduced in 18.1.1.
+   * @param floatingSubnet6Uuid set the floatingSubnet6Uuid.
+   */
   @VsoMethod
-  public void setFloatingSubnet6Uuid(String floatingSubnet6Uuid) {
+  public void setFloatingSubnet6Uuid(String  floatingSubnet6Uuid) {
     this.floatingSubnet6Uuid = floatingSubnet6Uuid;
   }
 
-  
   /**
-   * If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IP address allocation. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation.
+   * Field introduced in 17.1.1.
    * @return floatingSubnetUuid
-  **/
-  @ApiModelProperty(value = "If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IP address allocation. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFloatingSubnetUuid() {
     return floatingSubnetUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation.
+   * Field introduced in 17.1.1.
+   * @param floatingSubnetUuid set the floatingSubnetUuid.
+   */
   @VsoMethod
-  public void setFloatingSubnetUuid(String floatingSubnetUuid) {
+  public void setFloatingSubnetUuid(String  floatingSubnetUuid) {
     this.floatingSubnetUuid = floatingSubnetUuid;
   }
 
-  
   /**
-   * IPv6 Address of the Vip. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address of the vip.
+   * Field introduced in 18.1.1.
    * @return ip6Address
-  **/
-  @ApiModelProperty(value = "IPv6 Address of the Vip. Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIp6Address() {
     return ip6Address;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address of the vip.
+   * Field introduced in 18.1.1.
+   * @param ip6Address set the ip6Address.
+   */
   @VsoMethod
   public void setIp6Address(IpAddr ip6Address) {
     this.ip6Address = ip6Address;
   }
 
-  
   /**
-   * IPv4 Address of the VIP. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ipv4 address of the vip.
+   * Field introduced in 17.1.1.
    * @return ipAddress
-  **/
-  @ApiModelProperty(value = "IPv4 Address of the VIP. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getIpAddress() {
     return ipAddress;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv4 address of the vip.
+   * Field introduced in 17.1.1.
+   * @param ipAddress set the ipAddress.
+   */
   @VsoMethod
   public void setIpAddress(IpAddr ipAddress) {
     this.ipAddress = ipAddress;
   }
 
-  
   /**
-   * Subnet and/or Network for allocating VirtualService IP by IPAM Provider module. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Subnet and/or network for allocating virtualservice ip by ipam provider module.
+   * Field introduced in 17.1.1.
    * @return ipamNetworkSubnet
-  **/
-  @ApiModelProperty(value = "Subnet and/or Network for allocating VirtualService IP by IPAM Provider module. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IPNetworkSubnet getIpamNetworkSubnet() {
     return ipamNetworkSubnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Subnet and/or network for allocating virtualservice ip by ipam provider module.
+   * Field introduced in 17.1.1.
+   * @param ipamNetworkSubnet set the ipamNetworkSubnet.
+   */
   @VsoMethod
   public void setIpamNetworkSubnet(IPNetworkSubnet ipamNetworkSubnet) {
     this.ipamNetworkSubnet = ipamNetworkSubnet;
   }
 
-  
   /**
-   * Manually override the network on which the Vip is placed. It is a reference to an object of type Network. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Manually override the network on which the vip is placed.
+   * It is a reference to an object of type network.
+   * Field introduced in 17.1.1.
    * @return networkRef
-  **/
-  @ApiModelProperty(value = "Manually override the network on which the Vip is placed. It is a reference to an object of type Network. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNetworkRef() {
     return networkRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Manually override the network on which the vip is placed.
+   * It is a reference to an object of type network.
+   * Field introduced in 17.1.1.
+   * @param networkRef set the networkRef.
+   */
   @VsoMethod
-  public void setNetworkRef(String networkRef) {
+  public void setNetworkRef(String  networkRef) {
     this.networkRef = networkRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placement networks/subnets to use for vip placement.
+   * Field introduced in 18.2.5.
+   * @return placementNetworks
+   */
+  @VsoMethod
+  public List<VipPlacementNetwork> getPlacementNetworks() {
+    return placementNetworks;
+  }
+
+  /**
+   * This is the setter method. this will set the placementNetworks
+   * Placement networks/subnets to use for vip placement.
+   * Field introduced in 18.2.5.
+   * @return placementNetworks
+   */
+  @VsoMethod
+  public void setPlacementNetworks(List<VipPlacementNetwork>  placementNetworks) {
+    this.placementNetworks = placementNetworks;
+  }
+
+  /**
+   * This is the setter method this will set the placementNetworks
+   * Placement networks/subnets to use for vip placement.
+   * Field introduced in 18.2.5.
+   * @return placementNetworks
+   */
+  @VsoMethod
   public Vip addPlacementNetworksItem(VipPlacementNetwork placementNetworksItem) {
     if (this.placementNetworks == null) {
       this.placementNetworks = new ArrayList<VipPlacementNetwork>();
@@ -427,228 +549,251 @@ public class Vip extends AviRestResource  {
     this.placementNetworks.add(placementNetworksItem);
     return this;
   }
-  
+
+
   /**
-   * Placement networks/subnets to use for vip placement. Field introduced in 18.2.5.
-   * @return placementNetworks
-  **/
-  @ApiModelProperty(value = "Placement networks/subnets to use for vip placement. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<VipPlacementNetwork> getPlacementNetworks() {
-    return placementNetworks;
-  }
-    
-  @VsoMethod
-  public void setPlacementNetworks(List<VipPlacementNetwork> placementNetworks) {
-    this.placementNetworks = placementNetworks;
-  }
-
-  
-  /**
-   * (internal-use) Network port assigned to the Vip IP address. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * (internal-use) network port assigned to the vip ip address.
+   * Field introduced in 17.1.1.
    * @return portUuid
-  **/
-  @ApiModelProperty(value = "(internal-use) Network port assigned to the Vip IP address. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPortUuid() {
     return portUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * (internal-use) network port assigned to the vip ip address.
+   * Field introduced in 17.1.1.
+   * @param portUuid set the portUuid.
+   */
   @VsoMethod
-  public void setPortUuid(String portUuid) {
+  public void setPortUuid(String  portUuid) {
     this.portUuid = portUuid;
   }
 
-  
   /**
-   * Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Mask applied for the vip, non-default mask supported only for wildcard vip.
+   * Allowed values are 0-32.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 32.
+   * @return prefixLength
+   */
+  @VsoMethod
+  public Integer getPrefixLength() {
+    return prefixLength;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mask applied for the vip, non-default mask supported only for wildcard vip.
+   * Allowed values are 0-32.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 32.
+   * @param prefixLength set the prefixLength.
+   */
+  @VsoMethod
+  public void setPrefixLength(Integer  prefixLength) {
+    this.prefixLength = prefixLength;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Subnet providing reachability for client facing vip ip.
+   * Field introduced in 17.1.1.
    * @return subnet
-  **/
-  @ApiModelProperty(value = "Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrPrefix getSubnet() {
     return subnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Subnet providing reachability for client facing vip ip.
+   * Field introduced in 17.1.1.
+   * @param subnet set the subnet.
+   */
   @VsoMethod
   public void setSubnet(IpAddrPrefix subnet) {
     this.subnet = subnet;
   }
 
-  
   /**
-   * Subnet providing reachability for client facing Vip IPv6. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Subnet providing reachability for client facing vip ipv6.
+   * Field introduced in 18.1.1.
    * @return subnet6
-  **/
-  @ApiModelProperty(value = "Subnet providing reachability for client facing Vip IPv6. Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrPrefix getSubnet6() {
     return subnet6;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Subnet providing reachability for client facing vip ipv6.
+   * Field introduced in 18.1.1.
+   * @param subnet6 set the subnet6.
+   */
   @VsoMethod
   public void setSubnet6(IpAddrPrefix subnet6) {
     this.subnet6 = subnet6;
   }
 
-  
   /**
-   * If auto_allocate_ip is True, then the subnet for the Vip IPv6 address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * If auto_allocate_ip is true, then the subnet for the vip ipv6 address allocation.
+   * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
+   * selected.
+   * Field introduced in 18.1.1.
    * @return subnet6Uuid
-  **/
-  @ApiModelProperty(value = "If auto_allocate_ip is True, then the subnet for the Vip IPv6 address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSubnet6Uuid() {
     return subnet6Uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If auto_allocate_ip is true, then the subnet for the vip ipv6 address allocation.
+   * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
+   * selected.
+   * Field introduced in 18.1.1.
+   * @param subnet6Uuid set the subnet6Uuid.
+   */
   @VsoMethod
-  public void setSubnet6Uuid(String subnet6Uuid) {
+  public void setSubnet6Uuid(String  subnet6Uuid) {
     this.subnet6Uuid = subnet6Uuid;
   }
 
-  
   /**
-   * If auto_allocate_ip is True, then the subnet for the Vip IP address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * If auto_allocate_ip is true, then the subnet for the vip ip address allocation.
+   * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
+   * selected.
+   * Field introduced in 17.1.1.
    * @return subnetUuid
-  **/
-  @ApiModelProperty(value = "If auto_allocate_ip is True, then the subnet for the Vip IP address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSubnetUuid() {
     return subnetUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If auto_allocate_ip is true, then the subnet for the vip ip address allocation.
+   * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
+   * selected.
+   * Field introduced in 17.1.1.
+   * @param subnetUuid set the subnetUuid.
+   */
   @VsoMethod
-  public void setSubnetUuid(String subnetUuid) {
+  public void setSubnetUuid(String  subnetUuid) {
     this.subnetUuid = subnetUuid;
   }
 
-  
   /**
-   * Unique ID associated with the vip. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Unique id associated with the vip.
+   * Field introduced in 17.1.1.
    * @return vipId
-  **/
-  @ApiModelProperty(required = true, value = "Unique ID associated with the vip. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVipId() {
     return vipId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique id associated with the vip.
+   * Field introduced in 17.1.1.
+   * @param vipId set the vipId.
+   */
   @VsoMethod
-  public void setVipId(String vipId) {
+  public void setVipId(String  vipId) {
     this.vipId = vipId;
   }
 
-  
-  public String getObjectID() {
-		return "Vip";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Vip vip = (Vip) o;
-    return Objects.equals(this.autoAllocateFloatingIp, vip.autoAllocateFloatingIp) &&
-        Objects.equals(this.autoAllocateIp, vip.autoAllocateIp) &&
-        Objects.equals(this.autoAllocateIpType, vip.autoAllocateIpType) &&
-        Objects.equals(this.availabilityZone, vip.availabilityZone) &&
-        Objects.equals(this.aviAllocatedFip, vip.aviAllocatedFip) &&
-        Objects.equals(this.aviAllocatedVip, vip.aviAllocatedVip) &&
-        Objects.equals(this.discoveredNetworks, vip.discoveredNetworks) &&
-        Objects.equals(this.enabled, vip.enabled) &&
-        Objects.equals(this.floatingIp, vip.floatingIp) &&
-        Objects.equals(this.floatingIp6, vip.floatingIp6) &&
-        Objects.equals(this.floatingSubnet6Uuid, vip.floatingSubnet6Uuid) &&
-        Objects.equals(this.floatingSubnetUuid, vip.floatingSubnetUuid) &&
-        Objects.equals(this.ip6Address, vip.ip6Address) &&
-        Objects.equals(this.ipAddress, vip.ipAddress) &&
-        Objects.equals(this.ipamNetworkSubnet, vip.ipamNetworkSubnet) &&
-        Objects.equals(this.networkRef, vip.networkRef) &&
-        Objects.equals(this.placementNetworks, vip.placementNetworks) &&
-        Objects.equals(this.portUuid, vip.portUuid) &&
-        Objects.equals(this.subnet, vip.subnet) &&
-        Objects.equals(this.subnet6, vip.subnet6) &&
-        Objects.equals(this.subnet6Uuid, vip.subnet6Uuid) &&
-        Objects.equals(this.subnetUuid, vip.subnetUuid) &&
-        Objects.equals(this.vipId, vip.vipId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(autoAllocateFloatingIp, autoAllocateIp, autoAllocateIpType, availabilityZone, aviAllocatedFip, aviAllocatedVip, discoveredNetworks, enabled, floatingIp, floatingIp6, floatingSubnet6Uuid, floatingSubnetUuid, ip6Address, ipAddress, ipamNetworkSubnet, networkRef, placementNetworks, portUuid, subnet, subnet6, subnet6Uuid, subnetUuid, vipId);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Vip {\n");
-    
-    sb.append("    autoAllocateFloatingIp: ").append(toIndentedString(autoAllocateFloatingIp)).append("\n");
-    sb.append("    autoAllocateIp: ").append(toIndentedString(autoAllocateIp)).append("\n");
-    sb.append("    autoAllocateIpType: ").append(toIndentedString(autoAllocateIpType)).append("\n");
-    sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-    sb.append("    aviAllocatedFip: ").append(toIndentedString(aviAllocatedFip)).append("\n");
-    sb.append("    aviAllocatedVip: ").append(toIndentedString(aviAllocatedVip)).append("\n");
-    sb.append("    discoveredNetworks: ").append(toIndentedString(discoveredNetworks)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    floatingIp: ").append(toIndentedString(floatingIp)).append("\n");
-    sb.append("    floatingIp6: ").append(toIndentedString(floatingIp6)).append("\n");
-    sb.append("    floatingSubnet6Uuid: ").append(toIndentedString(floatingSubnet6Uuid)).append("\n");
-    sb.append("    floatingSubnetUuid: ").append(toIndentedString(floatingSubnetUuid)).append("\n");
-    sb.append("    ip6Address: ").append(toIndentedString(ip6Address)).append("\n");
-    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-    sb.append("    ipamNetworkSubnet: ").append(toIndentedString(ipamNetworkSubnet)).append("\n");
-    sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
-    sb.append("    placementNetworks: ").append(toIndentedString(placementNetworks)).append("\n");
-    sb.append("    portUuid: ").append(toIndentedString(portUuid)).append("\n");
-    sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
-    sb.append("    subnet6: ").append(toIndentedString(subnet6)).append("\n");
-    sb.append("    subnet6Uuid: ").append(toIndentedString(subnet6Uuid)).append("\n");
-    sb.append("    subnetUuid: ").append(toIndentedString(subnetUuid)).append("\n");
-    sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  Vip objVip = (Vip) o;
+  return   Objects.equals(this.discoveredNetworks, objVip.discoveredNetworks)&&
+  Objects.equals(this.networkRef, objVip.networkRef)&&
+  Objects.equals(this.availabilityZone, objVip.availabilityZone)&&
+  Objects.equals(this.floatingSubnetUuid, objVip.floatingSubnetUuid)&&
+  Objects.equals(this.aviAllocatedVip, objVip.aviAllocatedVip)&&
+  Objects.equals(this.ip6Address, objVip.ip6Address)&&
+  Objects.equals(this.floatingSubnet6Uuid, objVip.floatingSubnet6Uuid)&&
+  Objects.equals(this.subnet, objVip.subnet)&&
+  Objects.equals(this.subnet6Uuid, objVip.subnet6Uuid)&&
+  Objects.equals(this.aviAllocatedFip, objVip.aviAllocatedFip)&&
+  Objects.equals(this.placementNetworks, objVip.placementNetworks)&&
+  Objects.equals(this.prefixLength, objVip.prefixLength)&&
+  Objects.equals(this.subnet6, objVip.subnet6)&&
+  Objects.equals(this.floatingIp, objVip.floatingIp)&&
+  Objects.equals(this.portUuid, objVip.portUuid)&&
+  Objects.equals(this.autoAllocateFloatingIp, objVip.autoAllocateFloatingIp)&&
+  Objects.equals(this.autoAllocateIpType, objVip.autoAllocateIpType)&&
+  Objects.equals(this.ipAddress, objVip.ipAddress)&&
+  Objects.equals(this.subnetUuid, objVip.subnetUuid)&&
+  Objects.equals(this.vipId, objVip.vipId)&&
+  Objects.equals(this.floatingIp6, objVip.floatingIp6)&&
+  Objects.equals(this.autoAllocateIp, objVip.autoAllocateIp)&&
+  Objects.equals(this.enabled, objVip.enabled)&&
+  Objects.equals(this.ipamNetworkSubnet, objVip.ipamNetworkSubnet);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class Vip {\n");
+      sb.append("    autoAllocateFloatingIp: ").append(toIndentedString(autoAllocateFloatingIp)).append("\n");
+        sb.append("    autoAllocateIp: ").append(toIndentedString(autoAllocateIp)).append("\n");
+        sb.append("    autoAllocateIpType: ").append(toIndentedString(autoAllocateIpType)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    aviAllocatedFip: ").append(toIndentedString(aviAllocatedFip)).append("\n");
+        sb.append("    aviAllocatedVip: ").append(toIndentedString(aviAllocatedVip)).append("\n");
+        sb.append("    discoveredNetworks: ").append(toIndentedString(discoveredNetworks)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    floatingIp: ").append(toIndentedString(floatingIp)).append("\n");
+        sb.append("    floatingIp6: ").append(toIndentedString(floatingIp6)).append("\n");
+        sb.append("    floatingSubnet6Uuid: ").append(toIndentedString(floatingSubnet6Uuid)).append("\n");
+        sb.append("    floatingSubnetUuid: ").append(toIndentedString(floatingSubnetUuid)).append("\n");
+        sb.append("    ip6Address: ").append(toIndentedString(ip6Address)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+        sb.append("    ipamNetworkSubnet: ").append(toIndentedString(ipamNetworkSubnet)).append("\n");
+        sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+        sb.append("    placementNetworks: ").append(toIndentedString(placementNetworks)).append("\n");
+        sb.append("    portUuid: ").append(toIndentedString(portUuid)).append("\n");
+        sb.append("    prefixLength: ").append(toIndentedString(prefixLength)).append("\n");
+        sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
+        sb.append("    subnet6: ").append(toIndentedString(subnet6)).append("\n");
+        sb.append("    subnet6Uuid: ").append(toIndentedString(subnet6Uuid)).append("\n");
+        sb.append("    subnetUuid: ").append(toIndentedString(subnetUuid)).append("\n");
+        sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

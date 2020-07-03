@@ -1,117 +1,114 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VSDataScripts
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VSDataScripts is a POJO class extends AviRestResource that used for creating
+ * VSDataScripts.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VSDataScripts")
-@VsoFinder(name = Constants.FINDER_VRO_VSDATASCRIPTS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VSDATASCRIPTS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VSDataScripts extends AviRestResource  {
+public class VSDataScripts extends AviRestResource {
   @JsonProperty("index")
+  @JsonInclude(Include.NON_NULL)
   private Integer index = null;
 
   @JsonProperty("vs_datascript_set_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vsDatascriptSetRef = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Index of the virtual service datascript collection.
    * @return index
-  **/
-  @ApiModelProperty(required = true, value = "Index of the virtual service datascript collection.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIndex() {
     return index;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Index of the virtual service datascript collection.
+   * @param index set the index.
+   */
   @VsoMethod
-  public void setIndex(Integer index) {
+  public void setIndex(Integer  index) {
     this.index = index;
   }
 
-  
   /**
-   * UUID of the virtual service datascript collection. It is a reference to an object of type VSDataScriptSet.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the virtual service datascript collection.
+   * It is a reference to an object of type vsdatascriptset.
    * @return vsDatascriptSetRef
-  **/
-  @ApiModelProperty(required = true, value = "UUID of the virtual service datascript collection. It is a reference to an object of type VSDataScriptSet.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVsDatascriptSetRef() {
     return vsDatascriptSetRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the virtual service datascript collection.
+   * It is a reference to an object of type vsdatascriptset.
+   * @param vsDatascriptSetRef set the vsDatascriptSetRef.
+   */
   @VsoMethod
-  public void setVsDatascriptSetRef(String vsDatascriptSetRef) {
+  public void setVsDatascriptSetRef(String  vsDatascriptSetRef) {
     this.vsDatascriptSetRef = vsDatascriptSetRef;
   }
 
-  
-  public String getObjectID() {
-		return "VSDataScripts";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VSDataScripts vsDataScripts = (VSDataScripts) o;
-    return Objects.equals(this.index, vsDataScripts.index) &&
-        Objects.equals(this.vsDatascriptSetRef, vsDataScripts.vsDatascriptSetRef);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(index, vsDatascriptSetRef);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VSDataScripts {\n");
-    
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    vsDatascriptSetRef: ").append(toIndentedString(vsDatascriptSetRef)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VSDataScripts objVSDataScripts = (VSDataScripts) o;
+  return   Objects.equals(this.vsDatascriptSetRef, objVSDataScripts.vsDatascriptSetRef)&&
+  Objects.equals(this.index, objVSDataScripts.index);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VSDataScripts {\n");
+      sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    vsDatascriptSetRef: ").append(toIndentedString(vsDatascriptSetRef)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

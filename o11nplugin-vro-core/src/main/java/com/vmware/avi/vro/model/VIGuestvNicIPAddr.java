@@ -1,117 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VIGuestvNicIPAddr
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VIGuestvNicIPAddr is a POJO class extends AviRestResource that used for creating
+ * VIGuestvNicIPAddr.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VIGuestvNicIPAddr")
-@VsoFinder(name = Constants.FINDER_VRO_VIGUESTVNICIPADDR, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VIGUESTVNICIPADDR)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VIGuestvNicIPAddr extends AviRestResource  {
+public class VIGuestvNicIPAddr extends AviRestResource {
   @JsonProperty("ip_addr")
+  @JsonInclude(Include.NON_NULL)
   private String ipAddr = null;
 
   @JsonProperty("mask")
+  @JsonInclude(Include.NON_NULL)
   private Integer mask = null;
 
-  
+
+
   /**
-   * ip_addr of VIGuestvNicIPAddr.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_addr of obj type viguestvnicipaddr field type str  type string.
    * @return ipAddr
-  **/
-  @ApiModelProperty(required = true, value = "ip_addr of VIGuestvNicIPAddr.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpAddr() {
     return ipAddr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ip_addr of obj type viguestvnicipaddr field type str  type string.
+   * @param ipAddr set the ipAddr.
+   */
   @VsoMethod
-  public void setIpAddr(String ipAddr) {
+  public void setIpAddr(String  ipAddr) {
     this.ipAddr = ipAddr;
   }
 
-  
   /**
-   * Number of mask.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property mask of obj type viguestvnicipaddr field type str  type integer.
    * @return mask
-  **/
-  @ApiModelProperty(required = true, value = "Number of mask.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMask() {
     return mask;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property mask of obj type viguestvnicipaddr field type str  type integer.
+   * @param mask set the mask.
+   */
   @VsoMethod
-  public void setMask(Integer mask) {
+  public void setMask(Integer  mask) {
     this.mask = mask;
   }
 
-  
-  public String getObjectID() {
-		return "VIGuestvNicIPAddr";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VIGuestvNicIPAddr viGuestvNicIPAddr = (VIGuestvNicIPAddr) o;
-    return Objects.equals(this.ipAddr, viGuestvNicIPAddr.ipAddr) &&
-        Objects.equals(this.mask, viGuestvNicIPAddr.mask);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ipAddr, mask);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VIGuestvNicIPAddr {\n");
-    
-    sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
-    sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VIGuestvNicIPAddr objVIGuestvNicIPAddr = (VIGuestvNicIPAddr) o;
+  return   Objects.equals(this.mask, objVIGuestvNicIPAddr.mask)&&
+  Objects.equals(this.ipAddr, objVIGuestvNicIPAddr.ipAddr);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VIGuestvNicIPAddr {\n");
+      sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
+        sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

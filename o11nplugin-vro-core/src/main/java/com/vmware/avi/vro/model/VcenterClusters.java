@@ -1,38 +1,65 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VcenterClusters
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VcenterClusters is a POJO class extends AviRestResource that used for creating
+ * VcenterClusters.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VcenterClusters")
-@VsoFinder(name = Constants.FINDER_VRO_VCENTERCLUSTERS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VCENTERCLUSTERS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VcenterClusters extends AviRestResource  {
+public class VcenterClusters extends AviRestResource {
   @JsonProperty("cluster_refs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> clusterRefs = null;
 
   @JsonProperty("include")
-  private Boolean include = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean include = false;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type vimgrclusterruntime.
+   * @return clusterRefs
+   */
+  @VsoMethod
+  public List<String> getClusterRefs() {
+    return clusterRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the clusterRefs
+   * It is a reference to an object of type vimgrclusterruntime.
+   * @return clusterRefs
+   */
+  @VsoMethod
+  public void setClusterRefs(List<String>  clusterRefs) {
+    this.clusterRefs = clusterRefs;
+  }
+
+  /**
+   * This is the setter method this will set the clusterRefs
+   * It is a reference to an object of type vimgrclusterruntime.
+   * @return clusterRefs
+   */
+  @VsoMethod
   public VcenterClusters addClusterRefsItem(String clusterRefsItem) {
     if (this.clusterRefs == null) {
       this.clusterRefs = new ArrayList<String>();
@@ -40,87 +67,63 @@ public class VcenterClusters extends AviRestResource  {
     this.clusterRefs.add(clusterRefsItem);
     return this;
   }
-  
+
+
   /**
-   *  It is a reference to an object of type VIMgrClusterRuntime.
-   * @return clusterRefs
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type VIMgrClusterRuntime.")
-
-
- 
-  @VsoMethod  
-  public List<String> getClusterRefs() {
-    return clusterRefs;
-  }
-    
-  @VsoMethod
-  public void setClusterRefs(List<String> clusterRefs) {
-    this.clusterRefs = clusterRefs;
-  }
-
-  
-  /**
-   * Placeholder for description of property include of obj type VcenterClusters field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property include of obj type vcenterclusters field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return include
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property include of obj type VcenterClusters field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isInclude() {
+   */
+  @VsoMethod
+  public Boolean getInclude() {
     return include;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property include of obj type vcenterclusters field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param include set the include.
+   */
   @VsoMethod
-  public void setInclude(Boolean include) {
+  public void setInclude(Boolean  include) {
     this.include = include;
   }
 
-  
-  public String getObjectID() {
-		return "VcenterClusters";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VcenterClusters vcenterClusters = (VcenterClusters) o;
-    return Objects.equals(this.clusterRefs, vcenterClusters.clusterRefs) &&
-        Objects.equals(this.include, vcenterClusters.include);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(clusterRefs, include);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VcenterClusters {\n");
-    
-    sb.append("    clusterRefs: ").append(toIndentedString(clusterRefs)).append("\n");
-    sb.append("    include: ").append(toIndentedString(include)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VcenterClusters objVcenterClusters = (VcenterClusters) o;
+  return   Objects.equals(this.clusterRefs, objVcenterClusters.clusterRefs)&&
+  Objects.equals(this.include, objVcenterClusters.include);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VcenterClusters {\n");
+      sb.append("    clusterRefs: ").append(toIndentedString(clusterRefs)).append("\n");
+        sb.append("    include: ").append(toIndentedString(include)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,213 +1,279 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.CaptureFileSize;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DebugVirtualServiceCapture
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DebugVirtualServiceCapture is a POJO class extends AviRestResource that used for creating
+ * DebugVirtualServiceCapture.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DebugVirtualServiceCapture")
-@VsoFinder(name = Constants.FINDER_VRO_DEBUGVIRTUALSERVICECAPTURE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DEBUGVIRTUALSERVICECAPTURE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DebugVirtualServiceCapture extends AviRestResource  {
+public class DebugVirtualServiceCapture extends AviRestResource {
   @JsonProperty("capture_file_size")
+  @JsonInclude(Include.NON_NULL)
   private CaptureFileSize captureFileSize = null;
 
   @JsonProperty("duration")
-  private Integer duration = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer duration = 0;
 
   @JsonProperty("enable_ssl_session_key_capture")
-  private Boolean enableSslSessionKeyCapture = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableSslSessionKeyCapture = false;
+
+  @JsonProperty("file_count")
+  @JsonInclude(Include.NON_NULL)
+  private Integer fileCount = 2;
 
   @JsonProperty("num_pkts")
+  @JsonInclude(Include.NON_NULL)
   private Integer numPkts = null;
 
   @JsonProperty("pcap_ng")
+  @JsonInclude(Include.NON_NULL)
   private Boolean pcapNg = true;
 
   @JsonProperty("pkt_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer pktSize = 128;
 
-  
+
+
   /**
-   * Maximum allowed size of PCAP Capture File per SE. Max(absolute_size, percentage_size) will be final value. Set both to 0 for avi default size. DOS, IPC and DROP pcaps not applicaple. Field introduced in 18.2.7.
+   * This is the getter method this will return the attribute value.
+   * Maximum allowed size of pcap capture file per se.
+   * Max(absolute_size, percentage_size) will be final value.
+   * Set both to 0 for avi default size.
+   * Dos, ipc and drop pcaps not applicaple.
+   * Field introduced in 18.2.8.
    * @return captureFileSize
-  **/
-  @ApiModelProperty(value = "Maximum allowed size of PCAP Capture File per SE. Max(absolute_size, percentage_size) will be final value. Set both to 0 for avi default size. DOS, IPC and DROP pcaps not applicaple. Field introduced in 18.2.7.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public CaptureFileSize getCaptureFileSize() {
     return captureFileSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum allowed size of pcap capture file per se.
+   * Max(absolute_size, percentage_size) will be final value.
+   * Set both to 0 for avi default size.
+   * Dos, ipc and drop pcaps not applicaple.
+   * Field introduced in 18.2.8.
+   * @param captureFileSize set the captureFileSize.
+   */
   @VsoMethod
   public void setCaptureFileSize(CaptureFileSize captureFileSize) {
     this.captureFileSize = captureFileSize;
   }
 
-  
   /**
-   * Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - 'infinite'.
+   * This is the getter method this will return the attribute value.
+   * Number of minutes to capture packets.
+   * Use 0 to capture until manually stopped.
+   * Special values are 0 - 'infinite'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return duration
-  **/
-  @ApiModelProperty(value = "Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - 'infinite'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDuration() {
     return duration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of minutes to capture packets.
+   * Use 0 to capture until manually stopped.
+   * Special values are 0 - 'infinite'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param duration set the duration.
+   */
   @VsoMethod
-  public void setDuration(Integer duration) {
+  public void setDuration(Integer  duration) {
     this.duration = duration;
   }
 
-  
   /**
-   * Enable SSL session key capture. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Enable ssl session key capture.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableSslSessionKeyCapture
-  **/
-  @ApiModelProperty(value = "Enable SSL session key capture. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableSslSessionKeyCapture() {
+   */
+  @VsoMethod
+  public Boolean getEnableSslSessionKeyCapture() {
     return enableSslSessionKeyCapture;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable ssl session key capture.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableSslSessionKeyCapture set the enableSslSessionKeyCapture.
+   */
   @VsoMethod
-  public void setEnableSslSessionKeyCapture(Boolean enableSslSessionKeyCapture) {
+  public void setEnableSslSessionKeyCapture(Boolean  enableSslSessionKeyCapture) {
     this.enableSslSessionKeyCapture = enableSslSessionKeyCapture;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
+   * Number of files to maintain for se pcap file rotation.file count set to 1 indicates no rotate.
+   * Allowed values are 1-10.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+   * @return fileCount
+   */
+  @VsoMethod
+  public Integer getFileCount() {
+    return fileCount;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of files to maintain for se pcap file rotation.file count set to 1 indicates no rotate.
+   * Allowed values are 1-10.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+   * @param fileCount set the fileCount.
+   */
+  @VsoMethod
+  public void setFileCount(Integer  fileCount) {
+    this.fileCount = fileCount;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Total number of packets to capture.
    * @return numPkts
-  **/
-  @ApiModelProperty(value = "Total number of packets to capture.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNumPkts() {
     return numPkts;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of packets to capture.
+   * @param numPkts set the numPkts.
+   */
   @VsoMethod
-  public void setNumPkts(Integer numPkts) {
+  public void setNumPkts(Integer  numPkts) {
     this.numPkts = numPkts;
   }
 
-  
   /**
-   * Enable PcapNg for packet capture. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Enable pcapng for packet capture.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return pcapNg
-  **/
-  @ApiModelProperty(value = "Enable PcapNg for packet capture. Field introduced in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPcapNg() {
+   */
+  @VsoMethod
+  public Boolean getPcapNg() {
     return pcapNg;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable pcapng for packet capture.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param pcapNg set the pcapNg.
+   */
   @VsoMethod
-  public void setPcapNg(Boolean pcapNg) {
+  public void setPcapNg(Boolean  pcapNg) {
     this.pcapNg = pcapNg;
   }
 
-  
   /**
-   * Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - 'full capture'.
+   * This is the getter method this will return the attribute value.
+   * Number of bytes of each packet to capture.
+   * Use 0 to capture the entire packet.
+   * Allowed values are 64-1514.
+   * Special values are 0 - 'full capture'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return pktSize
-  **/
-  @ApiModelProperty(value = "Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - 'full capture'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPktSize() {
     return pktSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of bytes of each packet to capture.
+   * Use 0 to capture the entire packet.
+   * Allowed values are 64-1514.
+   * Special values are 0 - 'full capture'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
+   * @param pktSize set the pktSize.
+   */
   @VsoMethod
-  public void setPktSize(Integer pktSize) {
+  public void setPktSize(Integer  pktSize) {
     this.pktSize = pktSize;
   }
 
-  
-  public String getObjectID() {
-		return "DebugVirtualServiceCapture";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DebugVirtualServiceCapture debugVirtualServiceCapture = (DebugVirtualServiceCapture) o;
-    return Objects.equals(this.captureFileSize, debugVirtualServiceCapture.captureFileSize) &&
-        Objects.equals(this.duration, debugVirtualServiceCapture.duration) &&
-        Objects.equals(this.enableSslSessionKeyCapture, debugVirtualServiceCapture.enableSslSessionKeyCapture) &&
-        Objects.equals(this.numPkts, debugVirtualServiceCapture.numPkts) &&
-        Objects.equals(this.pcapNg, debugVirtualServiceCapture.pcapNg) &&
-        Objects.equals(this.pktSize, debugVirtualServiceCapture.pktSize);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(captureFileSize, duration, enableSslSessionKeyCapture, numPkts, pcapNg, pktSize);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DebugVirtualServiceCapture {\n");
-    
-    sb.append("    captureFileSize: ").append(toIndentedString(captureFileSize)).append("\n");
-    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-    sb.append("    enableSslSessionKeyCapture: ").append(toIndentedString(enableSslSessionKeyCapture)).append("\n");
-    sb.append("    numPkts: ").append(toIndentedString(numPkts)).append("\n");
-    sb.append("    pcapNg: ").append(toIndentedString(pcapNg)).append("\n");
-    sb.append("    pktSize: ").append(toIndentedString(pktSize)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DebugVirtualServiceCapture objDebugVirtualServiceCapture = (DebugVirtualServiceCapture) o;
+  return   Objects.equals(this.pcapNg, objDebugVirtualServiceCapture.pcapNg)&&
+  Objects.equals(this.pktSize, objDebugVirtualServiceCapture.pktSize)&&
+  Objects.equals(this.enableSslSessionKeyCapture, objDebugVirtualServiceCapture.enableSslSessionKeyCapture)&&
+  Objects.equals(this.captureFileSize, objDebugVirtualServiceCapture.captureFileSize)&&
+  Objects.equals(this.fileCount, objDebugVirtualServiceCapture.fileCount)&&
+  Objects.equals(this.duration, objDebugVirtualServiceCapture.duration)&&
+  Objects.equals(this.numPkts, objDebugVirtualServiceCapture.numPkts);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DebugVirtualServiceCapture {\n");
+      sb.append("    captureFileSize: ").append(toIndentedString(captureFileSize)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    enableSslSessionKeyCapture: ").append(toIndentedString(enableSslSessionKeyCapture)).append("\n");
+        sb.append("    fileCount: ").append(toIndentedString(fileCount)).append("\n");
+        sb.append("    numPkts: ").append(toIndentedString(numPkts)).append("\n");
+        sb.append("    pcapNg: ").append(toIndentedString(pcapNg)).append("\n");
+        sb.append("    pktSize: ").append(toIndentedString(pktSize)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -1,909 +1,1077 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SeBootupCompressionProperties;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SeBootupProperties
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SeBootupProperties is a POJO class extends AviRestResource that used for creating
+ * SeBootupProperties.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SeBootupProperties")
-@VsoFinder(name = Constants.FINDER_VRO_SEBOOTUPPROPERTIES, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SEBOOTUPPROPERTIES)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SeBootupProperties extends AviRestResource  {
+public class SeBootupProperties extends AviRestResource {
   @JsonProperty("distribute_queues")
+  @JsonInclude(Include.NON_NULL)
   private Boolean distributeQueues = null;
 
   @JsonProperty("distribute_vnics")
+  @JsonInclude(Include.NON_NULL)
   private Boolean distributeVnics = null;
 
   @JsonProperty("docker_backend_portend")
+  @JsonInclude(Include.NON_NULL)
   private Integer dockerBackendPortend = 30720;
 
   @JsonProperty("docker_backend_portstart")
+  @JsonInclude(Include.NON_NULL)
   private Integer dockerBackendPortstart = 20480;
 
   @JsonProperty("fair_queueing_enabled")
-  private Boolean fairQueueingEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean fairQueueingEnabled = false;
 
   @JsonProperty("geo_db_granularity")
+  @JsonInclude(Include.NON_NULL)
   private Integer geoDbGranularity = 1;
 
   @JsonProperty("l7_conns_per_core")
+  @JsonInclude(Include.NON_NULL)
   private Integer l7ConnsPerCore = 16384;
 
   @JsonProperty("l7_resvd_listen_conns_per_core")
+  @JsonInclude(Include.NON_NULL)
   private Integer l7ResvdListenConnsPerCore = 256;
 
   @JsonProperty("log_agent_debug_enabled")
-  private Boolean logAgentDebugEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean logAgentDebugEnabled = false;
 
   @JsonProperty("log_agent_trace_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean logAgentTraceEnabled = true;
 
   @JsonProperty("se_dp_compression")
+  @JsonInclude(Include.NON_NULL)
   private SeBootupCompressionProperties seDpCompression = null;
 
   @JsonProperty("se_dpdk_pmd")
+  @JsonInclude(Include.NON_NULL)
   private Integer seDpdkPmd = null;
 
   @JsonProperty("se_emulated_cores")
-  private Integer seEmulatedCores = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer seEmulatedCores = 0;
 
   @JsonProperty("se_ip_encap_ipc")
-  private Integer seIpEncapIpc = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer seIpEncapIpc = 0;
 
   @JsonProperty("se_l3_encap_ipc")
-  private Integer seL3EncapIpc = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer seL3EncapIpc = 0;
 
   @JsonProperty("se_log_buffer_app_blocking_dequeue")
-  private Boolean seLogBufferAppBlockingDequeue = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean seLogBufferAppBlockingDequeue = false;
 
   @JsonProperty("se_log_buffer_applog_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer seLogBufferApplogSize = 4096;
 
   @JsonProperty("se_log_buffer_chunk_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer seLogBufferChunkCount = 1024;
 
   @JsonProperty("se_log_buffer_conn_blocking_dequeue")
-  private Boolean seLogBufferConnBlockingDequeue = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean seLogBufferConnBlockingDequeue = false;
 
   @JsonProperty("se_log_buffer_connlog_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer seLogBufferConnlogSize = 1024;
 
   @JsonProperty("se_log_buffer_events_blocking_dequeue")
+  @JsonInclude(Include.NON_NULL)
   private Boolean seLogBufferEventsBlockingDequeue = true;
 
   @JsonProperty("se_log_buffer_events_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer seLogBufferEventsSize = 512;
 
   @JsonProperty("se_lro")
+  @JsonInclude(Include.NON_NULL)
   private Integer seLro = null;
 
   @JsonProperty("se_pcap_pkt_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer sePcapPktCount = null;
 
   @JsonProperty("se_pcap_pkt_sz")
+  @JsonInclude(Include.NON_NULL)
   private Integer sePcapPktSz = null;
 
   @JsonProperty("se_rum_sampling_nav_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer seRumSamplingNavInterval = null;
 
   @JsonProperty("se_rum_sampling_nav_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer seRumSamplingNavPercent = null;
 
   @JsonProperty("se_rum_sampling_res_interval")
+  @JsonInclude(Include.NON_NULL)
   private Integer seRumSamplingResInterval = null;
 
   @JsonProperty("se_rum_sampling_res_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer seRumSamplingResPercent = null;
 
   @JsonProperty("se_tunnel_mode")
+  @JsonInclude(Include.NON_NULL)
   private Integer seTunnelMode = null;
 
   @JsonProperty("se_tx_batch_size")
+  @JsonInclude(Include.NON_NULL)
   private Integer seTxBatchSize = null;
 
   @JsonProperty("se_use_dpdk")
+  @JsonInclude(Include.NON_NULL)
   private Integer seUseDpdk = null;
 
   @JsonProperty("ssl_sess_cache_per_vs")
+  @JsonInclude(Include.NON_NULL)
   private Integer sslSessCachePerVs = 4096;
 
   @JsonProperty("ssl_sess_cache_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer sslSessCacheTimeout = 86400;
 
   @JsonProperty("tcp_syncache_hashsize")
+  @JsonInclude(Include.NON_NULL)
   private Integer tcpSyncacheHashsize = 8192;
 
-  
+
+
   /**
-   * Deprecated. Field deprecated in 17.2.8. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 17.2.8.
+   * Field introduced in 17.1.1.
    * @return distributeQueues
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 17.2.8. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDistributeQueues() {
+   */
+  @VsoMethod
+  public Boolean getDistributeQueues() {
     return distributeQueues;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 17.2.8.
+   * Field introduced in 17.1.1.
+   * @param distributeQueues set the distributeQueues.
+   */
   @VsoMethod
-  public void setDistributeQueues(Boolean distributeQueues) {
+  public void setDistributeQueues(Boolean  distributeQueues) {
     this.distributeQueues = distributeQueues;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
    * @return distributeVnics
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDistributeVnics() {
+   */
+  @VsoMethod
+  public Boolean getDistributeVnics() {
     return distributeVnics;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * @param distributeVnics set the distributeVnics.
+   */
   @VsoMethod
-  public void setDistributeVnics(Boolean distributeVnics) {
+  public void setDistributeVnics(Boolean  distributeVnics) {
     this.distributeVnics = distributeVnics;
   }
 
-  
   /**
-   * End of the Local TCP port range used by SE for backend connections in docker environment.
+   * This is the getter method this will return the attribute value.
+   * End of the local tcp port range used by se for backend connections in docker environment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30720.
    * @return dockerBackendPortend
-  **/
-  @ApiModelProperty(value = "End of the Local TCP port range used by SE for backend connections in docker environment.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDockerBackendPortend() {
     return dockerBackendPortend;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * End of the local tcp port range used by se for backend connections in docker environment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30720.
+   * @param dockerBackendPortend set the dockerBackendPortend.
+   */
   @VsoMethod
-  public void setDockerBackendPortend(Integer dockerBackendPortend) {
+  public void setDockerBackendPortend(Integer  dockerBackendPortend) {
     this.dockerBackendPortend = dockerBackendPortend;
   }
 
-  
   /**
-   * Start of the Local TCP port range used by SE for backend connections in docker environment.
+   * This is the getter method this will return the attribute value.
+   * Start of the local tcp port range used by se for backend connections in docker environment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20480.
    * @return dockerBackendPortstart
-  **/
-  @ApiModelProperty(value = "Start of the Local TCP port range used by SE for backend connections in docker environment.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDockerBackendPortstart() {
     return dockerBackendPortstart;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Start of the local tcp port range used by se for backend connections in docker environment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20480.
+   * @param dockerBackendPortstart set the dockerBackendPortstart.
+   */
   @VsoMethod
-  public void setDockerBackendPortstart(Integer dockerBackendPortstart) {
+  public void setDockerBackendPortstart(Integer  dockerBackendPortstart) {
     this.dockerBackendPortstart = dockerBackendPortstart;
   }
 
-  
   /**
-   * Enable or disable fair queueing for packet transmission among virtualservices on an SE.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable fair queueing for packet transmission among virtualservices on an se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return fairQueueingEnabled
-  **/
-  @ApiModelProperty(value = "Enable or disable fair queueing for packet transmission among virtualservices on an SE.")
-
-
- 
-  @VsoMethod  
-  public Boolean isFairQueueingEnabled() {
+   */
+  @VsoMethod
+  public Boolean getFairQueueingEnabled() {
     return fairQueueingEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable fair queueing for packet transmission among virtualservices on an se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param fairQueueingEnabled set the fairQueueingEnabled.
+   */
   @VsoMethod
-  public void setFairQueueingEnabled(Boolean fairQueueingEnabled) {
+  public void setFairQueueingEnabled(Boolean  fairQueueingEnabled) {
     this.fairQueueingEnabled = fairQueueingEnabled;
   }
 
-  
   /**
-   * Granularity or Resolution of co-ordinates used. When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.This value provides a 'zoom-out' value so that coarser co-ordinates are used. With higher resolution, logs can contain finer location information. But, lower resolution provides significant memory and cpu benefits on the service engine. Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing. Allowed values are 1-20. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Granularity or resolution of co-ordinates used.
+   * When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.this value provides a 'zoom-out' value so that
+   * coarser co-ordinates are used.
+   * With higher resolution, logs can contain finer location information.
+   * But, lower resolution provides significant memory and cpu benefits on the service engine.
+   * Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing.
+   * Allowed values are 1-20.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return geoDbGranularity
-  **/
-  @ApiModelProperty(value = "Granularity or Resolution of co-ordinates used. When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.This value provides a 'zoom-out' value so that coarser co-ordinates are used. With higher resolution, logs can contain finer location information. But, lower resolution provides significant memory and cpu benefits on the service engine. Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing. Allowed values are 1-20. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getGeoDbGranularity() {
     return geoDbGranularity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Granularity or resolution of co-ordinates used.
+   * When the value is 1 the co-ordinates provided in the geo-db are used as is (highest resolution.this value provides a 'zoom-out' value so that
+   * coarser co-ordinates are used.
+   * With higher resolution, logs can contain finer location information.
+   * But, lower resolution provides significant memory and cpu benefits on the service engine.
+   * Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing.
+   * Allowed values are 1-20.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @param geoDbGranularity set the geoDbGranularity.
+   */
   @VsoMethod
-  public void setGeoDbGranularity(Integer geoDbGranularity) {
+  public void setGeoDbGranularity(Integer  geoDbGranularity) {
     this.geoDbGranularity = geoDbGranularity;
   }
 
-  
   /**
-   * Number of L7 connections that can be cached per core.
+   * This is the getter method this will return the attribute value.
+   * Number of l7 connections that can be cached per core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @return l7ConnsPerCore
-  **/
-  @ApiModelProperty(value = "Number of L7 connections that can be cached per core.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getL7ConnsPerCore() {
     return l7ConnsPerCore;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of l7 connections that can be cached per core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
+   * @param l7ConnsPerCore set the l7ConnsPerCore.
+   */
   @VsoMethod
-  public void setL7ConnsPerCore(Integer l7ConnsPerCore) {
+  public void setL7ConnsPerCore(Integer  l7ConnsPerCore) {
     this.l7ConnsPerCore = l7ConnsPerCore;
   }
 
-  
   /**
-   * Number of reserved L7 listener connections per core.
+   * This is the getter method this will return the attribute value.
+   * Number of reserved l7 listener connections per core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 256.
    * @return l7ResvdListenConnsPerCore
-  **/
-  @ApiModelProperty(value = "Number of reserved L7 listener connections per core.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getL7ResvdListenConnsPerCore() {
     return l7ResvdListenConnsPerCore;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of reserved l7 listener connections per core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 256.
+   * @param l7ResvdListenConnsPerCore set the l7ResvdListenConnsPerCore.
+   */
   @VsoMethod
-  public void setL7ResvdListenConnsPerCore(Integer l7ResvdListenConnsPerCore) {
+  public void setL7ResvdListenConnsPerCore(Integer  l7ResvdListenConnsPerCore) {
     this.l7ResvdListenConnsPerCore = l7ResvdListenConnsPerCore;
   }
 
-  
   /**
-   * Enable debug logs by default on Service Engine. This includes all other debugging logs. Debug logs can also be explcitly enabled from the CLI shell.
+   * This is the getter method this will return the attribute value.
+   * Enable debug logs by default on service engine.
+   * This includes all other debugging logs.
+   * Debug logs can also be explcitly enabled from the cli shell.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return logAgentDebugEnabled
-  **/
-  @ApiModelProperty(value = "Enable debug logs by default on Service Engine. This includes all other debugging logs. Debug logs can also be explcitly enabled from the CLI shell.")
-
-
- 
-  @VsoMethod  
-  public Boolean isLogAgentDebugEnabled() {
+   */
+  @VsoMethod
+  public Boolean getLogAgentDebugEnabled() {
     return logAgentDebugEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable debug logs by default on service engine.
+   * This includes all other debugging logs.
+   * Debug logs can also be explcitly enabled from the cli shell.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param logAgentDebugEnabled set the logAgentDebugEnabled.
+   */
   @VsoMethod
-  public void setLogAgentDebugEnabled(Boolean logAgentDebugEnabled) {
+  public void setLogAgentDebugEnabled(Boolean  logAgentDebugEnabled) {
     this.logAgentDebugEnabled = logAgentDebugEnabled;
   }
 
-  
   /**
-   * Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine.
+   * This is the getter method this will return the attribute value.
+   * Enable trace logs by default on service engine.
+   * Configuration operations are logged along with other important logs by service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return logAgentTraceEnabled
-  **/
-  @ApiModelProperty(value = "Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine.")
-
-
- 
-  @VsoMethod  
-  public Boolean isLogAgentTraceEnabled() {
+   */
+  @VsoMethod
+  public Boolean getLogAgentTraceEnabled() {
     return logAgentTraceEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable trace logs by default on service engine.
+   * Configuration operations are logged along with other important logs by service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param logAgentTraceEnabled set the logAgentTraceEnabled.
+   */
   @VsoMethod
-  public void setLogAgentTraceEnabled(Boolean logAgentTraceEnabled) {
+  public void setLogAgentTraceEnabled(Boolean  logAgentTraceEnabled) {
     this.logAgentTraceEnabled = logAgentTraceEnabled;
   }
 
-  
   /**
-   * Placeholder for description of property se_dp_compression of obj type SeBootupProperties field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property se_dp_compression of obj type sebootupproperties field type str  type ref.
    * @return seDpCompression
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property se_dp_compression of obj type SeBootupProperties field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SeBootupCompressionProperties getSeDpCompression() {
     return seDpCompression;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property se_dp_compression of obj type sebootupproperties field type str  type ref.
+   * @param seDpCompression set the seDpCompression.
+   */
   @VsoMethod
   public void setSeDpCompression(SeBootupCompressionProperties seDpCompression) {
     this.seDpCompression = seDpCompression;
   }
 
-  
   /**
-   * This field has been moved to se_group properties 18.1.2 onwards. Field deprecated in 18.1.3.
+   * This is the getter method this will return the attribute value.
+   * This field has been moved to se_group properties 18.1.2 onwards.
+   * Field deprecated in 18.1.3.
    * @return seDpdkPmd
-  **/
-  @ApiModelProperty(value = "This field has been moved to se_group properties 18.1.2 onwards. Field deprecated in 18.1.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeDpdkPmd() {
     return seDpdkPmd;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This field has been moved to se_group properties 18.1.2 onwards.
+   * Field deprecated in 18.1.3.
+   * @param seDpdkPmd set the seDpdkPmd.
+   */
   @VsoMethod
-  public void setSeDpdkPmd(Integer seDpdkPmd) {
+  public void setSeDpdkPmd(Integer  seDpdkPmd) {
     this.seDpdkPmd = seDpdkPmd;
   }
 
-  
   /**
-   * Use this to emulate more/less cpus than is actually available. One datapath process is started for each core.
+   * This is the getter method this will return the attribute value.
+   * Use this to emulate more/less cpus than is actually available.
+   * One datapath process is started for each core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seEmulatedCores
-  **/
-  @ApiModelProperty(value = "Use this to emulate more/less cpus than is actually available. One datapath process is started for each core.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeEmulatedCores() {
     return seEmulatedCores;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use this to emulate more/less cpus than is actually available.
+   * One datapath process is started for each core.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seEmulatedCores set the seEmulatedCores.
+   */
   @VsoMethod
-  public void setSeEmulatedCores(Integer seEmulatedCores) {
+  public void setSeEmulatedCores(Integer  seEmulatedCores) {
     this.seEmulatedCores = seEmulatedCores;
   }
 
-  
   /**
-   * Determines if SE-SE IPC messages are encapsulated in an IP header       0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encap.
+   * This is the getter method this will return the attribute value.
+   * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
+   * ip encap unconditionally    ~[0,1]   don't use ip encap.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seIpEncapIpc
-  **/
-  @ApiModelProperty(value = "Determines if SE-SE IPC messages are encapsulated in an IP header       0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encap.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeIpEncapIpc() {
     return seIpEncapIpc;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
+   * ip encap unconditionally    ~[0,1]   don't use ip encap.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seIpEncapIpc set the seIpEncapIpc.
+   */
   @VsoMethod
-  public void setSeIpEncapIpc(Integer seIpEncapIpc) {
+  public void setSeIpEncapIpc(Integer  seIpEncapIpc) {
     this.seIpEncapIpc = seIpEncapIpc;
   }
 
-  
   /**
-   * Determines if SE-SE IPC messages use SE interface IP instead of VIP        0        Automatically determine based on hypervisor type    1        Use SE interface IP unconditionally    ~[0,1]   Don't use SE interface IP.
+   * This is the getter method this will return the attribute value.
+   * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
+   * use se interface ip unconditionally    ~[0,1]   don't use se interface ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seL3EncapIpc
-  **/
-  @ApiModelProperty(value = "Determines if SE-SE IPC messages use SE interface IP instead of VIP        0        Automatically determine based on hypervisor type    1        Use SE interface IP unconditionally    ~[0,1]   Don't use SE interface IP.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeL3EncapIpc() {
     return seL3EncapIpc;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
+   * use se interface ip unconditionally    ~[0,1]   don't use se interface ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seL3EncapIpc set the seL3EncapIpc.
+   */
   @VsoMethod
-  public void setSeL3EncapIpc(Integer seL3EncapIpc) {
+  public void setSeL3EncapIpc(Integer  seL3EncapIpc) {
     this.seL3EncapIpc = seL3EncapIpc;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seLogBufferAppBlockingDequeue
-  **/
-  @ApiModelProperty(value = "Internal flag that blocks dataplane until all application logs are flushed to log-agent process.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeLogBufferAppBlockingDequeue() {
+   */
+  @VsoMethod
+  public Boolean getSeLogBufferAppBlockingDequeue() {
     return seLogBufferAppBlockingDequeue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seLogBufferAppBlockingDequeue set the seLogBufferAppBlockingDequeue.
+   */
   @VsoMethod
-  public void setSeLogBufferAppBlockingDequeue(Boolean seLogBufferAppBlockingDequeue) {
+  public void setSeLogBufferAppBlockingDequeue(Boolean  seLogBufferAppBlockingDequeue) {
     this.seLogBufferAppBlockingDequeue = seLogBufferAppBlockingDequeue;
   }
 
-  
   /**
-   * Internal application log buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.
+   * This is the getter method this will return the attribute value.
+   * Internal application log buffer size to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return seLogBufferApplogSize
-  **/
-  @ApiModelProperty(value = "Internal application log buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeLogBufferApplogSize() {
     return seLogBufferApplogSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal application log buffer size to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
+   * @param seLogBufferApplogSize set the seLogBufferApplogSize.
+   */
   @VsoMethod
-  public void setSeLogBufferApplogSize(Integer seLogBufferApplogSize) {
+  public void setSeLogBufferApplogSize(Integer  seLogBufferApplogSize) {
     this.seLogBufferApplogSize = seLogBufferApplogSize;
   }
 
-  
   /**
-   * Number of internal buffer chunks to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.
+   * This is the getter method this will return the attribute value.
+   * Number of internal buffer chunks to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return seLogBufferChunkCount
-  **/
-  @ApiModelProperty(value = "Number of internal buffer chunks to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeLogBufferChunkCount() {
     return seLogBufferChunkCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of internal buffer chunks to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+   * @param seLogBufferChunkCount set the seLogBufferChunkCount.
+   */
   @VsoMethod
-  public void setSeLogBufferChunkCount(Integer seLogBufferChunkCount) {
+  public void setSeLogBufferChunkCount(Integer  seLogBufferChunkCount) {
     this.seLogBufferChunkCount = seLogBufferChunkCount;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return seLogBufferConnBlockingDequeue
-  **/
-  @ApiModelProperty(value = "Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeLogBufferConnBlockingDequeue() {
+   */
+  @VsoMethod
+  public Boolean getSeLogBufferConnBlockingDequeue() {
     return seLogBufferConnBlockingDequeue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seLogBufferConnBlockingDequeue set the seLogBufferConnBlockingDequeue.
+   */
   @VsoMethod
-  public void setSeLogBufferConnBlockingDequeue(Boolean seLogBufferConnBlockingDequeue) {
+  public void setSeLogBufferConnBlockingDequeue(Boolean  seLogBufferConnBlockingDequeue) {
     this.seLogBufferConnBlockingDequeue = seLogBufferConnBlockingDequeue;
   }
 
-  
   /**
-   * Internal connection log buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.
+   * This is the getter method this will return the attribute value.
+   * Internal connection log buffer size to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return seLogBufferConnlogSize
-  **/
-  @ApiModelProperty(value = "Internal connection log buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeLogBufferConnlogSize() {
     return seLogBufferConnlogSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal connection log buffer size to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+   * @param seLogBufferConnlogSize set the seLogBufferConnlogSize.
+   */
   @VsoMethod
-  public void setSeLogBufferConnlogSize(Integer seLogBufferConnlogSize) {
+  public void setSeLogBufferConnlogSize(Integer  seLogBufferConnlogSize) {
     this.seLogBufferConnlogSize = seLogBufferConnlogSize;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seLogBufferEventsBlockingDequeue
-  **/
-  @ApiModelProperty(value = "Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSeLogBufferEventsBlockingDequeue() {
+   */
+  @VsoMethod
+  public Boolean getSeLogBufferEventsBlockingDequeue() {
     return seLogBufferEventsBlockingDequeue;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param seLogBufferEventsBlockingDequeue set the seLogBufferEventsBlockingDequeue.
+   */
   @VsoMethod
-  public void setSeLogBufferEventsBlockingDequeue(Boolean seLogBufferEventsBlockingDequeue) {
+  public void setSeLogBufferEventsBlockingDequeue(Boolean  seLogBufferEventsBlockingDequeue) {
     this.seLogBufferEventsBlockingDequeue = seLogBufferEventsBlockingDequeue;
   }
 
-  
   /**
-   * Internal events buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.
+   * This is the getter method this will return the attribute value.
+   * Internal events buffer size to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @return seLogBufferEventsSize
-  **/
-  @ApiModelProperty(value = "Internal events buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeLogBufferEventsSize() {
     return seLogBufferEventsSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Internal events buffer size to use on service engine.
+   * Can be fine tuned for better performance of data plane in specific environments.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 512.
+   * @param seLogBufferEventsSize set the seLogBufferEventsSize.
+   */
   @VsoMethod
-  public void setSeLogBufferEventsSize(Integer seLogBufferEventsSize) {
+  public void setSeLogBufferEventsSize(Integer  seLogBufferEventsSize) {
     this.seLogBufferEventsSize = seLogBufferEventsSize;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
    * @return seLro
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeLro() {
     return seLro;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * @param seLro set the seLro.
+   */
   @VsoMethod
-  public void setSeLro(Integer seLro) {
+  public void setSeLro(Integer  seLro) {
     this.seLro = seLro;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
    * @return sePcapPktCount
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSePcapPktCount() {
     return sePcapPktCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * @param sePcapPktCount set the sePcapPktCount.
+   */
   @VsoMethod
-  public void setSePcapPktCount(Integer sePcapPktCount) {
+  public void setSePcapPktCount(Integer  sePcapPktCount) {
     this.sePcapPktCount = sePcapPktCount;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
    * @return sePcapPktSz
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSePcapPktSz() {
     return sePcapPktSz;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * @param sePcapPktSz set the sePcapPktSz.
+   */
   @VsoMethod
-  public void setSePcapPktSz(Integer sePcapPktSz) {
+  public void setSePcapPktSz(Integer  sePcapPktSz) {
     this.sePcapPktSz = sePcapPktSz;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
    * @return seRumSamplingNavInterval
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeRumSamplingNavInterval() {
     return seRumSamplingNavInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
+   * @param seRumSamplingNavInterval set the seRumSamplingNavInterval.
+   */
   @VsoMethod
-  public void setSeRumSamplingNavInterval(Integer seRumSamplingNavInterval) {
+  public void setSeRumSamplingNavInterval(Integer  seRumSamplingNavInterval) {
     this.seRumSamplingNavInterval = seRumSamplingNavInterval;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
    * @return seRumSamplingNavPercent
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeRumSamplingNavPercent() {
     return seRumSamplingNavPercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
+   * @param seRumSamplingNavPercent set the seRumSamplingNavPercent.
+   */
   @VsoMethod
-  public void setSeRumSamplingNavPercent(Integer seRumSamplingNavPercent) {
+  public void setSeRumSamplingNavPercent(Integer  seRumSamplingNavPercent) {
     this.seRumSamplingNavPercent = seRumSamplingNavPercent;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
    * @return seRumSamplingResInterval
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeRumSamplingResInterval() {
     return seRumSamplingResInterval;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
+   * @param seRumSamplingResInterval set the seRumSamplingResInterval.
+   */
   @VsoMethod
-  public void setSeRumSamplingResInterval(Integer seRumSamplingResInterval) {
+  public void setSeRumSamplingResInterval(Integer  seRumSamplingResInterval) {
     this.seRumSamplingResInterval = seRumSamplingResInterval;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
    * @return seRumSamplingResPercent
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeRumSamplingResPercent() {
     return seRumSamplingResPercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.6.
+   * @param seRumSamplingResPercent set the seRumSamplingResPercent.
+   */
   @VsoMethod
-  public void setSeRumSamplingResPercent(Integer seRumSamplingResPercent) {
+  public void setSeRumSamplingResPercent(Integer  seRumSamplingResPercent) {
     this.seRumSamplingResPercent = seRumSamplingResPercent;
   }
 
-  
   /**
-   * Determines if DSR from secondary SE is active or not      0        Automatically determine based on hypervisor type    1        Disable DSR unconditionally    ~[0,1]   Enable DSR unconditionally. Field deprecated in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Determines if dsr from secondary se is active or not      0        automatically determine based on hypervisor type    1        disable dsr
+   * unconditionally    ~[0,1]   enable dsr unconditionally.
+   * Field deprecated in 17.1.1.
    * @return seTunnelMode
-  **/
-  @ApiModelProperty(value = "Determines if DSR from secondary SE is active or not      0        Automatically determine based on hypervisor type    1        Disable DSR unconditionally    ~[0,1]   Enable DSR unconditionally. Field deprecated in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeTunnelMode() {
     return seTunnelMode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if dsr from secondary se is active or not      0        automatically determine based on hypervisor type    1        disable dsr
+   * unconditionally    ~[0,1]   enable dsr unconditionally.
+   * Field deprecated in 17.1.1.
+   * @param seTunnelMode set the seTunnelMode.
+   */
   @VsoMethod
-  public void setSeTunnelMode(Integer seTunnelMode) {
+  public void setSeTunnelMode(Integer  seTunnelMode) {
     this.seTunnelMode = seTunnelMode;
   }
 
-  
   /**
-   * Deprecated. Field deprecated in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
    * @return seTxBatchSize
-  **/
-  @ApiModelProperty(value = "Deprecated. Field deprecated in 18.2.5.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeTxBatchSize() {
     return seTxBatchSize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Deprecated.
+   * Field deprecated in 18.2.5.
+   * @param seTxBatchSize set the seTxBatchSize.
+   */
   @VsoMethod
-  public void setSeTxBatchSize(Integer seTxBatchSize) {
+  public void setSeTxBatchSize(Integer  seTxBatchSize) {
     this.seTxBatchSize = seTxBatchSize;
   }
 
-  
   /**
-   * This field has been moved to se_group properties 18.1.2 onwards. Field deprecated in 18.1.3.
+   * This is the getter method this will return the attribute value.
+   * This field has been moved to se_group properties 18.1.2 onwards.
+   * Field deprecated in 18.1.3.
    * @return seUseDpdk
-  **/
-  @ApiModelProperty(value = "This field has been moved to se_group properties 18.1.2 onwards. Field deprecated in 18.1.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSeUseDpdk() {
     return seUseDpdk;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This field has been moved to se_group properties 18.1.2 onwards.
+   * Field deprecated in 18.1.3.
+   * @param seUseDpdk set the seUseDpdk.
+   */
   @VsoMethod
-  public void setSeUseDpdk(Integer seUseDpdk) {
+  public void setSeUseDpdk(Integer  seUseDpdk) {
     this.seUseDpdk = seUseDpdk;
   }
 
-  
   /**
-   * Number of ssl_sess_cache_per_vs.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ssl_sess_cache_per_vs of obj type sebootupproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return sslSessCachePerVs
-  **/
-  @ApiModelProperty(value = "Number of ssl_sess_cache_per_vs.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSslSessCachePerVs() {
     return sslSessCachePerVs;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ssl_sess_cache_per_vs of obj type sebootupproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
+   * @param sslSessCachePerVs set the sslSessCachePerVs.
+   */
   @VsoMethod
-  public void setSslSessCachePerVs(Integer sslSessCachePerVs) {
+  public void setSslSessCachePerVs(Integer  sslSessCachePerVs) {
     this.sslSessCachePerVs = sslSessCachePerVs;
   }
 
-  
   /**
-   * Number of ssl_sess_cache_timeout.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ssl_sess_cache_timeout of obj type sebootupproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @return sslSessCacheTimeout
-  **/
-  @ApiModelProperty(value = "Number of ssl_sess_cache_timeout.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSslSessCacheTimeout() {
     return sslSessCacheTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ssl_sess_cache_timeout of obj type sebootupproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
+   * @param sslSessCacheTimeout set the sslSessCacheTimeout.
+   */
   @VsoMethod
-  public void setSslSessCacheTimeout(Integer sslSessCacheTimeout) {
+  public void setSslSessCacheTimeout(Integer  sslSessCacheTimeout) {
     this.sslSessCacheTimeout = sslSessCacheTimeout;
   }
 
-  
   /**
-   * Size of the TCP SYN cache hash table.
+   * This is the getter method this will return the attribute value.
+   * Size of the tcp syn cache hash table.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 8192.
    * @return tcpSyncacheHashsize
-  **/
-  @ApiModelProperty(value = "Size of the TCP SYN cache hash table.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTcpSyncacheHashsize() {
     return tcpSyncacheHashsize;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Size of the tcp syn cache hash table.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 8192.
+   * @param tcpSyncacheHashsize set the tcpSyncacheHashsize.
+   */
   @VsoMethod
-  public void setTcpSyncacheHashsize(Integer tcpSyncacheHashsize) {
+  public void setTcpSyncacheHashsize(Integer  tcpSyncacheHashsize) {
     this.tcpSyncacheHashsize = tcpSyncacheHashsize;
   }
 
-  
-  public String getObjectID() {
-		return "SeBootupProperties";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SeBootupProperties seBootupProperties = (SeBootupProperties) o;
-    return Objects.equals(this.distributeQueues, seBootupProperties.distributeQueues) &&
-        Objects.equals(this.distributeVnics, seBootupProperties.distributeVnics) &&
-        Objects.equals(this.dockerBackendPortend, seBootupProperties.dockerBackendPortend) &&
-        Objects.equals(this.dockerBackendPortstart, seBootupProperties.dockerBackendPortstart) &&
-        Objects.equals(this.fairQueueingEnabled, seBootupProperties.fairQueueingEnabled) &&
-        Objects.equals(this.geoDbGranularity, seBootupProperties.geoDbGranularity) &&
-        Objects.equals(this.l7ConnsPerCore, seBootupProperties.l7ConnsPerCore) &&
-        Objects.equals(this.l7ResvdListenConnsPerCore, seBootupProperties.l7ResvdListenConnsPerCore) &&
-        Objects.equals(this.logAgentDebugEnabled, seBootupProperties.logAgentDebugEnabled) &&
-        Objects.equals(this.logAgentTraceEnabled, seBootupProperties.logAgentTraceEnabled) &&
-        Objects.equals(this.seDpCompression, seBootupProperties.seDpCompression) &&
-        Objects.equals(this.seDpdkPmd, seBootupProperties.seDpdkPmd) &&
-        Objects.equals(this.seEmulatedCores, seBootupProperties.seEmulatedCores) &&
-        Objects.equals(this.seIpEncapIpc, seBootupProperties.seIpEncapIpc) &&
-        Objects.equals(this.seL3EncapIpc, seBootupProperties.seL3EncapIpc) &&
-        Objects.equals(this.seLogBufferAppBlockingDequeue, seBootupProperties.seLogBufferAppBlockingDequeue) &&
-        Objects.equals(this.seLogBufferApplogSize, seBootupProperties.seLogBufferApplogSize) &&
-        Objects.equals(this.seLogBufferChunkCount, seBootupProperties.seLogBufferChunkCount) &&
-        Objects.equals(this.seLogBufferConnBlockingDequeue, seBootupProperties.seLogBufferConnBlockingDequeue) &&
-        Objects.equals(this.seLogBufferConnlogSize, seBootupProperties.seLogBufferConnlogSize) &&
-        Objects.equals(this.seLogBufferEventsBlockingDequeue, seBootupProperties.seLogBufferEventsBlockingDequeue) &&
-        Objects.equals(this.seLogBufferEventsSize, seBootupProperties.seLogBufferEventsSize) &&
-        Objects.equals(this.seLro, seBootupProperties.seLro) &&
-        Objects.equals(this.sePcapPktCount, seBootupProperties.sePcapPktCount) &&
-        Objects.equals(this.sePcapPktSz, seBootupProperties.sePcapPktSz) &&
-        Objects.equals(this.seRumSamplingNavInterval, seBootupProperties.seRumSamplingNavInterval) &&
-        Objects.equals(this.seRumSamplingNavPercent, seBootupProperties.seRumSamplingNavPercent) &&
-        Objects.equals(this.seRumSamplingResInterval, seBootupProperties.seRumSamplingResInterval) &&
-        Objects.equals(this.seRumSamplingResPercent, seBootupProperties.seRumSamplingResPercent) &&
-        Objects.equals(this.seTunnelMode, seBootupProperties.seTunnelMode) &&
-        Objects.equals(this.seTxBatchSize, seBootupProperties.seTxBatchSize) &&
-        Objects.equals(this.seUseDpdk, seBootupProperties.seUseDpdk) &&
-        Objects.equals(this.sslSessCachePerVs, seBootupProperties.sslSessCachePerVs) &&
-        Objects.equals(this.sslSessCacheTimeout, seBootupProperties.sslSessCacheTimeout) &&
-        Objects.equals(this.tcpSyncacheHashsize, seBootupProperties.tcpSyncacheHashsize);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(distributeQueues, distributeVnics, dockerBackendPortend, dockerBackendPortstart, fairQueueingEnabled, geoDbGranularity, l7ConnsPerCore, l7ResvdListenConnsPerCore, logAgentDebugEnabled, logAgentTraceEnabled, seDpCompression, seDpdkPmd, seEmulatedCores, seIpEncapIpc, seL3EncapIpc, seLogBufferAppBlockingDequeue, seLogBufferApplogSize, seLogBufferChunkCount, seLogBufferConnBlockingDequeue, seLogBufferConnlogSize, seLogBufferEventsBlockingDequeue, seLogBufferEventsSize, seLro, sePcapPktCount, sePcapPktSz, seRumSamplingNavInterval, seRumSamplingNavPercent, seRumSamplingResInterval, seRumSamplingResPercent, seTunnelMode, seTxBatchSize, seUseDpdk, sslSessCachePerVs, sslSessCacheTimeout, tcpSyncacheHashsize);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SeBootupProperties {\n");
-    
-    sb.append("    distributeQueues: ").append(toIndentedString(distributeQueues)).append("\n");
-    sb.append("    distributeVnics: ").append(toIndentedString(distributeVnics)).append("\n");
-    sb.append("    dockerBackendPortend: ").append(toIndentedString(dockerBackendPortend)).append("\n");
-    sb.append("    dockerBackendPortstart: ").append(toIndentedString(dockerBackendPortstart)).append("\n");
-    sb.append("    fairQueueingEnabled: ").append(toIndentedString(fairQueueingEnabled)).append("\n");
-    sb.append("    geoDbGranularity: ").append(toIndentedString(geoDbGranularity)).append("\n");
-    sb.append("    l7ConnsPerCore: ").append(toIndentedString(l7ConnsPerCore)).append("\n");
-    sb.append("    l7ResvdListenConnsPerCore: ").append(toIndentedString(l7ResvdListenConnsPerCore)).append("\n");
-    sb.append("    logAgentDebugEnabled: ").append(toIndentedString(logAgentDebugEnabled)).append("\n");
-    sb.append("    logAgentTraceEnabled: ").append(toIndentedString(logAgentTraceEnabled)).append("\n");
-    sb.append("    seDpCompression: ").append(toIndentedString(seDpCompression)).append("\n");
-    sb.append("    seDpdkPmd: ").append(toIndentedString(seDpdkPmd)).append("\n");
-    sb.append("    seEmulatedCores: ").append(toIndentedString(seEmulatedCores)).append("\n");
-    sb.append("    seIpEncapIpc: ").append(toIndentedString(seIpEncapIpc)).append("\n");
-    sb.append("    seL3EncapIpc: ").append(toIndentedString(seL3EncapIpc)).append("\n");
-    sb.append("    seLogBufferAppBlockingDequeue: ").append(toIndentedString(seLogBufferAppBlockingDequeue)).append("\n");
-    sb.append("    seLogBufferApplogSize: ").append(toIndentedString(seLogBufferApplogSize)).append("\n");
-    sb.append("    seLogBufferChunkCount: ").append(toIndentedString(seLogBufferChunkCount)).append("\n");
-    sb.append("    seLogBufferConnBlockingDequeue: ").append(toIndentedString(seLogBufferConnBlockingDequeue)).append("\n");
-    sb.append("    seLogBufferConnlogSize: ").append(toIndentedString(seLogBufferConnlogSize)).append("\n");
-    sb.append("    seLogBufferEventsBlockingDequeue: ").append(toIndentedString(seLogBufferEventsBlockingDequeue)).append("\n");
-    sb.append("    seLogBufferEventsSize: ").append(toIndentedString(seLogBufferEventsSize)).append("\n");
-    sb.append("    seLro: ").append(toIndentedString(seLro)).append("\n");
-    sb.append("    sePcapPktCount: ").append(toIndentedString(sePcapPktCount)).append("\n");
-    sb.append("    sePcapPktSz: ").append(toIndentedString(sePcapPktSz)).append("\n");
-    sb.append("    seRumSamplingNavInterval: ").append(toIndentedString(seRumSamplingNavInterval)).append("\n");
-    sb.append("    seRumSamplingNavPercent: ").append(toIndentedString(seRumSamplingNavPercent)).append("\n");
-    sb.append("    seRumSamplingResInterval: ").append(toIndentedString(seRumSamplingResInterval)).append("\n");
-    sb.append("    seRumSamplingResPercent: ").append(toIndentedString(seRumSamplingResPercent)).append("\n");
-    sb.append("    seTunnelMode: ").append(toIndentedString(seTunnelMode)).append("\n");
-    sb.append("    seTxBatchSize: ").append(toIndentedString(seTxBatchSize)).append("\n");
-    sb.append("    seUseDpdk: ").append(toIndentedString(seUseDpdk)).append("\n");
-    sb.append("    sslSessCachePerVs: ").append(toIndentedString(sslSessCachePerVs)).append("\n");
-    sb.append("    sslSessCacheTimeout: ").append(toIndentedString(sslSessCacheTimeout)).append("\n");
-    sb.append("    tcpSyncacheHashsize: ").append(toIndentedString(tcpSyncacheHashsize)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SeBootupProperties objSeBootupProperties = (SeBootupProperties) o;
+  return   Objects.equals(this.distributeQueues, objSeBootupProperties.distributeQueues)&&
+  Objects.equals(this.seDpdkPmd, objSeBootupProperties.seDpdkPmd)&&
+  Objects.equals(this.sePcapPktCount, objSeBootupProperties.sePcapPktCount)&&
+  Objects.equals(this.dockerBackendPortstart, objSeBootupProperties.dockerBackendPortstart)&&
+  Objects.equals(this.seLogBufferChunkCount, objSeBootupProperties.seLogBufferChunkCount)&&
+  Objects.equals(this.seRumSamplingResInterval, objSeBootupProperties.seRumSamplingResInterval)&&
+  Objects.equals(this.seDpCompression, objSeBootupProperties.seDpCompression)&&
+  Objects.equals(this.seTunnelMode, objSeBootupProperties.seTunnelMode)&&
+  Objects.equals(this.seRumSamplingNavPercent, objSeBootupProperties.seRumSamplingNavPercent)&&
+  Objects.equals(this.seUseDpdk, objSeBootupProperties.seUseDpdk)&&
+  Objects.equals(this.seEmulatedCores, objSeBootupProperties.seEmulatedCores)&&
+  Objects.equals(this.distributeVnics, objSeBootupProperties.distributeVnics)&&
+  Objects.equals(this.seLogBufferConnBlockingDequeue, objSeBootupProperties.seLogBufferConnBlockingDequeue)&&
+  Objects.equals(this.seLro, objSeBootupProperties.seLro)&&
+  Objects.equals(this.l7ResvdListenConnsPerCore, objSeBootupProperties.l7ResvdListenConnsPerCore)&&
+  Objects.equals(this.seLogBufferConnlogSize, objSeBootupProperties.seLogBufferConnlogSize)&&
+  Objects.equals(this.dockerBackendPortend, objSeBootupProperties.dockerBackendPortend)&&
+  Objects.equals(this.seRumSamplingNavInterval, objSeBootupProperties.seRumSamplingNavInterval)&&
+  Objects.equals(this.seLogBufferEventsBlockingDequeue, objSeBootupProperties.seLogBufferEventsBlockingDequeue)&&
+  Objects.equals(this.tcpSyncacheHashsize, objSeBootupProperties.tcpSyncacheHashsize)&&
+  Objects.equals(this.seTxBatchSize, objSeBootupProperties.seTxBatchSize)&&
+  Objects.equals(this.sePcapPktSz, objSeBootupProperties.sePcapPktSz)&&
+  Objects.equals(this.geoDbGranularity, objSeBootupProperties.geoDbGranularity)&&
+  Objects.equals(this.seLogBufferAppBlockingDequeue, objSeBootupProperties.seLogBufferAppBlockingDequeue)&&
+  Objects.equals(this.fairQueueingEnabled, objSeBootupProperties.fairQueueingEnabled)&&
+  Objects.equals(this.logAgentDebugEnabled, objSeBootupProperties.logAgentDebugEnabled)&&
+  Objects.equals(this.seIpEncapIpc, objSeBootupProperties.seIpEncapIpc)&&
+  Objects.equals(this.seLogBufferApplogSize, objSeBootupProperties.seLogBufferApplogSize)&&
+  Objects.equals(this.seRumSamplingResPercent, objSeBootupProperties.seRumSamplingResPercent)&&
+  Objects.equals(this.seLogBufferEventsSize, objSeBootupProperties.seLogBufferEventsSize)&&
+  Objects.equals(this.sslSessCacheTimeout, objSeBootupProperties.sslSessCacheTimeout)&&
+  Objects.equals(this.seL3EncapIpc, objSeBootupProperties.seL3EncapIpc)&&
+  Objects.equals(this.sslSessCachePerVs, objSeBootupProperties.sslSessCachePerVs)&&
+  Objects.equals(this.logAgentTraceEnabled, objSeBootupProperties.logAgentTraceEnabled)&&
+  Objects.equals(this.l7ConnsPerCore, objSeBootupProperties.l7ConnsPerCore);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SeBootupProperties {\n");
+      sb.append("    distributeQueues: ").append(toIndentedString(distributeQueues)).append("\n");
+        sb.append("    distributeVnics: ").append(toIndentedString(distributeVnics)).append("\n");
+        sb.append("    dockerBackendPortend: ").append(toIndentedString(dockerBackendPortend)).append("\n");
+        sb.append("    dockerBackendPortstart: ").append(toIndentedString(dockerBackendPortstart)).append("\n");
+        sb.append("    fairQueueingEnabled: ").append(toIndentedString(fairQueueingEnabled)).append("\n");
+        sb.append("    geoDbGranularity: ").append(toIndentedString(geoDbGranularity)).append("\n");
+        sb.append("    l7ConnsPerCore: ").append(toIndentedString(l7ConnsPerCore)).append("\n");
+        sb.append("    l7ResvdListenConnsPerCore: ").append(toIndentedString(l7ResvdListenConnsPerCore)).append("\n");
+        sb.append("    logAgentDebugEnabled: ").append(toIndentedString(logAgentDebugEnabled)).append("\n");
+        sb.append("    logAgentTraceEnabled: ").append(toIndentedString(logAgentTraceEnabled)).append("\n");
+        sb.append("    seDpCompression: ").append(toIndentedString(seDpCompression)).append("\n");
+        sb.append("    seDpdkPmd: ").append(toIndentedString(seDpdkPmd)).append("\n");
+        sb.append("    seEmulatedCores: ").append(toIndentedString(seEmulatedCores)).append("\n");
+        sb.append("    seIpEncapIpc: ").append(toIndentedString(seIpEncapIpc)).append("\n");
+        sb.append("    seL3EncapIpc: ").append(toIndentedString(seL3EncapIpc)).append("\n");
+        sb.append("    seLogBufferAppBlockingDequeue: ").append(toIndentedString(seLogBufferAppBlockingDequeue)).append("\n");
+        sb.append("    seLogBufferApplogSize: ").append(toIndentedString(seLogBufferApplogSize)).append("\n");
+        sb.append("    seLogBufferChunkCount: ").append(toIndentedString(seLogBufferChunkCount)).append("\n");
+        sb.append("    seLogBufferConnBlockingDequeue: ").append(toIndentedString(seLogBufferConnBlockingDequeue)).append("\n");
+        sb.append("    seLogBufferConnlogSize: ").append(toIndentedString(seLogBufferConnlogSize)).append("\n");
+        sb.append("    seLogBufferEventsBlockingDequeue: ").append(toIndentedString(seLogBufferEventsBlockingDequeue)).append("\n");
+        sb.append("    seLogBufferEventsSize: ").append(toIndentedString(seLogBufferEventsSize)).append("\n");
+        sb.append("    seLro: ").append(toIndentedString(seLro)).append("\n");
+        sb.append("    sePcapPktCount: ").append(toIndentedString(sePcapPktCount)).append("\n");
+        sb.append("    sePcapPktSz: ").append(toIndentedString(sePcapPktSz)).append("\n");
+        sb.append("    seRumSamplingNavInterval: ").append(toIndentedString(seRumSamplingNavInterval)).append("\n");
+        sb.append("    seRumSamplingNavPercent: ").append(toIndentedString(seRumSamplingNavPercent)).append("\n");
+        sb.append("    seRumSamplingResInterval: ").append(toIndentedString(seRumSamplingResInterval)).append("\n");
+        sb.append("    seRumSamplingResPercent: ").append(toIndentedString(seRumSamplingResPercent)).append("\n");
+        sb.append("    seTunnelMode: ").append(toIndentedString(seTunnelMode)).append("\n");
+        sb.append("    seTxBatchSize: ").append(toIndentedString(seTxBatchSize)).append("\n");
+        sb.append("    seUseDpdk: ").append(toIndentedString(seUseDpdk)).append("\n");
+        sb.append("    sslSessCachePerVs: ").append(toIndentedString(sslSessCachePerVs)).append("\n");
+        sb.append("    sslSessCacheTimeout: ").append(toIndentedString(sslSessCacheTimeout)).append("\n");
+        sb.append("    tcpSyncacheHashsize: ").append(toIndentedString(tcpSyncacheHashsize)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

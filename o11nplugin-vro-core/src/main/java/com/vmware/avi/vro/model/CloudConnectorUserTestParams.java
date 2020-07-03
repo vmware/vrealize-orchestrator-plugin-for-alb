@@ -1,91 +1,86 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CloudConnectorUserTestParams
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CloudConnectorUserTestParams is a POJO class extends AviRestResource that used for creating
+ * CloudConnectorUserTestParams.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CloudConnectorUserTestParams")
-@VsoFinder(name = Constants.FINDER_VRO_CLOUDCONNECTORUSERTESTPARAMS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CLOUDCONNECTORUSERTESTPARAMS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CloudConnectorUserTestParams extends AviRestResource  {
+public class CloudConnectorUserTestParams extends AviRestResource {
   @JsonProperty("host")
+  @JsonInclude(Include.NON_NULL)
   private String host = null;
 
-  
+
+
   /**
-   * host of CloudConnectorUserTestParams.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property host of obj type cloudconnectorusertestparams field type str  type string.
    * @return host
-  **/
-  @ApiModelProperty(value = "host of CloudConnectorUserTestParams.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHost() {
     return host;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property host of obj type cloudconnectorusertestparams field type str  type string.
+   * @param host set the host.
+   */
   @VsoMethod
-  public void setHost(String host) {
+  public void setHost(String  host) {
     this.host = host;
   }
 
-  
-  public String getObjectID() {
-		return "CloudConnectorUserTestParams";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CloudConnectorUserTestParams cloudConnectorUserTestParams = (CloudConnectorUserTestParams) o;
-    return Objects.equals(this.host, cloudConnectorUserTestParams.host);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(host);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CloudConnectorUserTestParams {\n");
-    
-    sb.append("    host: ").append(toIndentedString(host)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CloudConnectorUserTestParams objCloudConnectorUserTestParams = (CloudConnectorUserTestParams) o;
+  return   Objects.equals(this.host, objCloudConnectorUserTestParams.host);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CloudConnectorUserTestParams {\n");
+      sb.append("    host: ").append(toIndentedString(host)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

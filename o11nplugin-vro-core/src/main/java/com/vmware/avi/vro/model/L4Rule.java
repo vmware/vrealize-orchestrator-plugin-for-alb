@@ -1,193 +1,204 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.L4RuleAction;
 import com.vmware.avi.vro.model.L4RuleMatchTarget;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * L4Rule
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The L4Rule is a POJO class extends AviRestResource that used for creating
+ * L4Rule.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "L4Rule")
-@VsoFinder(name = Constants.FINDER_VRO_L4RULE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_L4RULE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class L4Rule extends AviRestResource  {
+public class L4Rule extends AviRestResource {
   @JsonProperty("action")
+  @JsonInclude(Include.NON_NULL)
   private L4RuleAction action = null;
 
   @JsonProperty("enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enable = true;
 
   @JsonProperty("index")
+  @JsonInclude(Include.NON_NULL)
   private Integer index = null;
 
   @JsonProperty("match")
+  @JsonInclude(Include.NON_NULL)
   private L4RuleMatchTarget match = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
-  
+
+
   /**
-   * Action to be performed upon successful rule match. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Action to be performed upon successful rule match.
+   * Field introduced in 17.2.7.
    * @return action
-  **/
-  @ApiModelProperty(value = "Action to be performed upon successful rule match. Field introduced in 17.2.7.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public L4RuleAction getAction() {
     return action;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Action to be performed upon successful rule match.
+   * Field introduced in 17.2.7.
+   * @param action set the action.
+   */
   @VsoMethod
   public void setAction(L4RuleAction action) {
     this.action = action;
   }
 
-  
   /**
-   * Enable or disable the rule. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable the rule.
+   * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
-  **/
-  @ApiModelProperty(value = "Enable or disable the rule. Field introduced in 17.2.7.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnable() {
+   */
+  @VsoMethod
+  public Boolean getEnable() {
     return enable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable the rule.
+   * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enable set the enable.
+   */
   @VsoMethod
-  public void setEnable(Boolean enable) {
+  public void setEnable(Boolean  enable) {
     this.enable = enable;
   }
 
-  
   /**
-   * Index of the rule. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Index of the rule.
+   * Field introduced in 17.2.7.
    * @return index
-  **/
-  @ApiModelProperty(required = true, value = "Index of the rule. Field introduced in 17.2.7.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIndex() {
     return index;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Index of the rule.
+   * Field introduced in 17.2.7.
+   * @param index set the index.
+   */
   @VsoMethod
-  public void setIndex(Integer index) {
+  public void setIndex(Integer  index) {
     this.index = index;
   }
 
-  
   /**
-   * Match criteria of the rule. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Match criteria of the rule.
+   * Field introduced in 17.2.7.
    * @return match
-  **/
-  @ApiModelProperty(value = "Match criteria of the rule. Field introduced in 17.2.7.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public L4RuleMatchTarget getMatch() {
     return match;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Match criteria of the rule.
+   * Field introduced in 17.2.7.
+   * @param match set the match.
+   */
   @VsoMethod
   public void setMatch(L4RuleMatchTarget match) {
     this.match = match;
   }
 
-  
   /**
-   * Name of the rule. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Name of the rule.
+   * Field introduced in 17.2.7.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the rule. Field introduced in 17.2.7.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the rule.
+   * Field introduced in 17.2.7.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
-  public String getObjectID() {
-		return "L4Rule";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    L4Rule l4Rule = (L4Rule) o;
-    return Objects.equals(this.action, l4Rule.action) &&
-        Objects.equals(this.enable, l4Rule.enable) &&
-        Objects.equals(this.index, l4Rule.index) &&
-        Objects.equals(this.match, l4Rule.match) &&
-        Objects.equals(this.name, l4Rule.name);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(action, enable, index, match, name);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class L4Rule {\n");
-    
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    match: ").append(toIndentedString(match)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  L4Rule objL4Rule = (L4Rule) o;
+  return   Objects.equals(this.action, objL4Rule.action)&&
+  Objects.equals(this.index, objL4Rule.index)&&
+  Objects.equals(this.enable, objL4Rule.enable)&&
+  Objects.equals(this.name, objL4Rule.name)&&
+  Objects.equals(this.match, objL4Rule.match);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class L4Rule {\n");
+      sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    match: ").append(toIndentedString(match)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

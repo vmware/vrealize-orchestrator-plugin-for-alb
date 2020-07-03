@@ -1,187 +1,218 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * WafLearning
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The WafLearning is a POJO class extends AviRestResource that used for creating
+ * WafLearning.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "WafLearning")
-@VsoFinder(name = Constants.FINDER_VRO_WAFLEARNING, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_WAFLEARNING)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class WafLearning extends AviRestResource  {
+public class WafLearning extends AviRestResource {
   @JsonProperty("arg_summarization_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer argSummarizationThreshold = null;
 
   @JsonProperty("confidence")
+  @JsonInclude(Include.NON_NULL)
   private Integer confidence = null;
 
   @JsonProperty("enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enable = null;
 
   @JsonProperty("path_summarization_threshold")
+  @JsonInclude(Include.NON_NULL)
   private Integer pathSummarizationThreshold = null;
 
   @JsonProperty("sampling_percent")
+  @JsonInclude(Include.NON_NULL)
   private Integer samplingPercent = null;
 
-  
+
+
   /**
-   * Suffix Summarization threshold used to compress args. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Suffix summarization threshold used to compress args.
+   * Allowed values are 3-255.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
    * @return argSummarizationThreshold
-  **/
-  @ApiModelProperty(value = "Suffix Summarization threshold used to compress args. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getArgSummarizationThreshold() {
     return argSummarizationThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Suffix summarization threshold used to compress args.
+   * Allowed values are 3-255.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
+   * @param argSummarizationThreshold set the argSummarizationThreshold.
+   */
   @VsoMethod
-  public void setArgSummarizationThreshold(Integer argSummarizationThreshold) {
+  public void setArgSummarizationThreshold(Integer  argSummarizationThreshold) {
     this.argSummarizationThreshold = argSummarizationThreshold;
   }
 
-  
   /**
-   * Confidence level used to derive rules from the WAF learning. Allowed values are 60-100. Field deprecated in 18.2.3. Field introduced in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Confidence level used to derive rules from the waf learning.
+   * Allowed values are 60-100.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
    * @return confidence
-  **/
-  @ApiModelProperty(value = "Confidence level used to derive rules from the WAF learning. Allowed values are 60-100. Field deprecated in 18.2.3. Field introduced in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getConfidence() {
     return confidence;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Confidence level used to derive rules from the waf learning.
+   * Allowed values are 60-100.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
+   * @param confidence set the confidence.
+   */
   @VsoMethod
-  public void setConfidence(Integer confidence) {
+  public void setConfidence(Integer  confidence) {
     this.confidence = confidence;
   }
 
-  
   /**
-   * Enable Learning for WAF policy. Field deprecated in 18.2.3. Field introduced in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Enable learning for waf policy.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
    * @return enable
-  **/
-  @ApiModelProperty(value = "Enable Learning for WAF policy. Field deprecated in 18.2.3. Field introduced in 18.1.2.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnable() {
+   */
+  @VsoMethod
+  public Boolean getEnable() {
     return enable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable learning for waf policy.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
+   * @param enable set the enable.
+   */
   @VsoMethod
-  public void setEnable(Boolean enable) {
+  public void setEnable(Boolean  enable) {
     this.enable = enable;
   }
 
-  
   /**
-   * Suffix Summarization threshold used to compress paths. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Suffix summarization threshold used to compress paths.
+   * Allowed values are 3-255.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
    * @return pathSummarizationThreshold
-  **/
-  @ApiModelProperty(value = "Suffix Summarization threshold used to compress paths. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPathSummarizationThreshold() {
     return pathSummarizationThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Suffix summarization threshold used to compress paths.
+   * Allowed values are 3-255.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
+   * @param pathSummarizationThreshold set the pathSummarizationThreshold.
+   */
   @VsoMethod
-  public void setPathSummarizationThreshold(Integer pathSummarizationThreshold) {
+  public void setPathSummarizationThreshold(Integer  pathSummarizationThreshold) {
     this.pathSummarizationThreshold = pathSummarizationThreshold;
   }
 
-  
   /**
-   * Sampling percent of the requests subjected to WAF learning. Allowed values are 1-100. Field deprecated in 18.2.3. Field introduced in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Sampling percent of the requests subjected to waf learning.
+   * Allowed values are 1-100.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
    * @return samplingPercent
-  **/
-  @ApiModelProperty(value = "Sampling percent of the requests subjected to WAF learning. Allowed values are 1-100. Field deprecated in 18.2.3. Field introduced in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSamplingPercent() {
     return samplingPercent;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Sampling percent of the requests subjected to waf learning.
+   * Allowed values are 1-100.
+   * Field deprecated in 18.2.3.
+   * Field introduced in 18.1.2.
+   * @param samplingPercent set the samplingPercent.
+   */
   @VsoMethod
-  public void setSamplingPercent(Integer samplingPercent) {
+  public void setSamplingPercent(Integer  samplingPercent) {
     this.samplingPercent = samplingPercent;
   }
 
-  
-  public String getObjectID() {
-		return "WafLearning";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    WafLearning wafLearning = (WafLearning) o;
-    return Objects.equals(this.argSummarizationThreshold, wafLearning.argSummarizationThreshold) &&
-        Objects.equals(this.confidence, wafLearning.confidence) &&
-        Objects.equals(this.enable, wafLearning.enable) &&
-        Objects.equals(this.pathSummarizationThreshold, wafLearning.pathSummarizationThreshold) &&
-        Objects.equals(this.samplingPercent, wafLearning.samplingPercent);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(argSummarizationThreshold, confidence, enable, pathSummarizationThreshold, samplingPercent);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class WafLearning {\n");
-    
-    sb.append("    argSummarizationThreshold: ").append(toIndentedString(argSummarizationThreshold)).append("\n");
-    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
-    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-    sb.append("    pathSummarizationThreshold: ").append(toIndentedString(pathSummarizationThreshold)).append("\n");
-    sb.append("    samplingPercent: ").append(toIndentedString(samplingPercent)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  WafLearning objWafLearning = (WafLearning) o;
+  return   Objects.equals(this.confidence, objWafLearning.confidence)&&
+  Objects.equals(this.enable, objWafLearning.enable)&&
+  Objects.equals(this.samplingPercent, objWafLearning.samplingPercent)&&
+  Objects.equals(this.argSummarizationThreshold, objWafLearning.argSummarizationThreshold)&&
+  Objects.equals(this.pathSummarizationThreshold, objWafLearning.pathSummarizationThreshold);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class WafLearning {\n");
+      sb.append("    argSummarizationThreshold: ").append(toIndentedString(argSummarizationThreshold)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    pathSummarizationThreshold: ").append(toIndentedString(pathSummarizationThreshold)).append("\n");
+        sb.append("    samplingPercent: ").append(toIndentedString(samplingPercent)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

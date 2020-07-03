@@ -1,102 +1,118 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.WafRuleGroup;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * WafCRS
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The WafCRS is a POJO class extends AviRestResource that used for creating
+ * WafCRS.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "WafCRS")
 @VsoFinder(name = Constants.FINDER_VRO_WAFCRS, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class WafCRS extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class WafCRS extends AviRestResource {
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("groups")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<WafRuleGroup> groups = null;
 
   @JsonProperty("integrity")
+  @JsonInclude(Include.NON_NULL)
   private String integrity = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("release_date")
+  @JsonInclude(Include.NON_NULL)
   private String releaseDate = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("version")
+  @JsonInclude(Include.NON_NULL)
   private String version = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * A short description of this ruleset. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * A short description of this ruleset.
+   * Field introduced in 18.1.1.
    * @return description
-  **/
-  @ApiModelProperty(required = true, value = "A short description of this ruleset. Field introduced in 18.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A short description of this ruleset.
+   * Field introduced in 18.1.1.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Waf rules are sorted in groups based on their characterization.
+   * Field introduced in 18.1.1.
+   * @return groups
+   */
+  @VsoMethod
+  public List<WafRuleGroup> getGroups() {
+    return groups;
+  }
+
+  /**
+   * This is the setter method. this will set the groups
+   * Waf rules are sorted in groups based on their characterization.
+   * Field introduced in 18.1.1.
+   * @return groups
+   */
+  @VsoMethod
+  public void setGroups(List<WafRuleGroup>  groups) {
+    this.groups = groups;
+  }
+
+  /**
+   * This is the setter method this will set the groups
+   * Waf rules are sorted in groups based on their characterization.
+   * Field introduced in 18.1.1.
+   * @return groups
+   */
+  @VsoMethod
   public WafCRS addGroupsItem(WafRuleGroup groupsItem) {
     if (this.groups == null) {
       this.groups = new ArrayList<WafRuleGroup>();
@@ -104,222 +120,207 @@ public class WafCRS extends AviRestResource  {
     this.groups.add(groupsItem);
     return this;
   }
-  
+
+
   /**
-   * WAF Rules are sorted in groups based on their characterization. Field introduced in 18.1.1.
-   * @return groups
-  **/
-  @ApiModelProperty(value = "WAF Rules are sorted in groups based on their characterization. Field introduced in 18.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<WafRuleGroup> getGroups() {
-    return groups;
-  }
-    
-  @VsoMethod
-  public void setGroups(List<WafRuleGroup> groups) {
-    this.groups = groups;
-  }
-
-  
-  /**
-   * Integrity protection value. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Integrity protection value.
+   * Field introduced in 18.2.1.
    * @return integrity
-  **/
-  @ApiModelProperty(required = true, value = "Integrity protection value. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIntegrity() {
     return integrity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Integrity protection value.
+   * Field introduced in 18.2.1.
+   * @param integrity set the integrity.
+   */
   @VsoMethod
-  public void setIntegrity(String integrity) {
+  public void setIntegrity(String  integrity) {
     this.integrity = integrity;
   }
 
-  
   /**
-   * The name of this ruleset object. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * The name of this ruleset object.
+   * Field introduced in 18.2.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "The name of this ruleset object. Field introduced in 18.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The name of this ruleset object.
+   * Field introduced in 18.2.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * The release date of this version in RFC 3339 / ISO 8601 format. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * The release date of this version in rfc 3339 / iso 8601 format.
+   * Field introduced in 18.1.1.
    * @return releaseDate
-  **/
-  @ApiModelProperty(required = true, value = "The release date of this version in RFC 3339 / ISO 8601 format. Field introduced in 18.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getReleaseDate() {
     return releaseDate;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The release date of this version in rfc 3339 / iso 8601 format.
+   * Field introduced in 18.1.1.
+   * @param releaseDate set the releaseDate.
+   */
   @VsoMethod
-  public void setReleaseDate(String releaseDate) {
+  public void setReleaseDate(String  releaseDate) {
     this.releaseDate = releaseDate;
   }
 
-  
   /**
-   * Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Tenant that this object belongs to.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.1.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant that this object belongs to.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.1.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   *  Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 18.1.1.
    * @return uuid
-  **/
-  @ApiModelProperty(value = " Field introduced in 18.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 18.1.1.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * The version of this ruleset object. Field introduced in 18.1.1.
+   * This is the getter method this will return the attribute value.
+   * The version of this ruleset object.
+   * Field introduced in 18.1.1.
    * @return version
-  **/
-  @ApiModelProperty(required = true, value = "The version of this ruleset object. Field introduced in 18.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVersion() {
     return version;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The version of this ruleset object.
+   * Field introduced in 18.1.1.
+   * @param version set the version.
+   */
   @VsoMethod
-  public void setVersion(String version) {
+  public void setVersion(String  version) {
     this.version = version;
   }
 
-  
+
   public String getObjectID() {
-		return "WafCRS";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    WafCRS wafCRS = (WafCRS) o;
-    return Objects.equals(this.lastModified, wafCRS.lastModified) &&
-        Objects.equals(this.description, wafCRS.description) &&
-        Objects.equals(this.groups, wafCRS.groups) &&
-        Objects.equals(this.integrity, wafCRS.integrity) &&
-        Objects.equals(this.name, wafCRS.name) &&
-        Objects.equals(this.releaseDate, wafCRS.releaseDate) &&
-        Objects.equals(this.tenantRef, wafCRS.tenantRef) &&
-        Objects.equals(this.url, wafCRS.url) &&
-        Objects.equals(this.uuid, wafCRS.uuid) &&
-        Objects.equals(this.version, wafCRS.version);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, description, groups, integrity, name, releaseDate, tenantRef, url, uuid, version);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class WafCRS {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
-    sb.append("    integrity: ").append(toIndentedString(integrity)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  WafCRS objWafCRS = (WafCRS) o;
+  return   Objects.equals(this.uuid, objWafCRS.uuid)&&
+  Objects.equals(this.releaseDate, objWafCRS.releaseDate)&&
+  Objects.equals(this.name, objWafCRS.name)&&
+  Objects.equals(this.version, objWafCRS.version)&&
+  Objects.equals(this.groups, objWafCRS.groups)&&
+  Objects.equals(this.integrity, objWafCRS.integrity)&&
+  Objects.equals(this.tenantRef, objWafCRS.tenantRef)&&
+  Objects.equals(this.description, objWafCRS.description);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class WafCRS {\n");
+      sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+        sb.append("    integrity: ").append(toIndentedString(integrity)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

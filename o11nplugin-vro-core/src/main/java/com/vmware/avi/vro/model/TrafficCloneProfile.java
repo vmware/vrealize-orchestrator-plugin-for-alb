@@ -1,76 +1,85 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.CloneServer;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * TrafficCloneProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The TrafficCloneProfile is a POJO class extends AviRestResource that used for creating
+ * TrafficCloneProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "TrafficCloneProfile")
 @VsoFinder(name = Constants.FINDER_VRO_TRAFFICCLONEPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class TrafficCloneProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class TrafficCloneProfile extends AviRestResource {
   @JsonProperty("clone_servers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<CloneServer> cloneServers = null;
 
   @JsonProperty("cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudRef = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("preserve_client_ip")
-  private Boolean preserveClientIp = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean preserveClientIp = false;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1.
+   * @return cloneServers
+   */
   @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
+  public List<CloneServer> getCloneServers() {
+    return cloneServers;
   }
 
-  
+  /**
+   * This is the setter method. this will set the cloneServers
+   * Field introduced in 17.1.1.
+   * @return cloneServers
+   */
+  @VsoMethod
+  public void setCloneServers(List<CloneServer>  cloneServers) {
+    this.cloneServers = cloneServers;
+  }
+
+  /**
+   * This is the setter method this will set the cloneServers
+   * Field introduced in 17.1.1.
+   * @return cloneServers
+   */
+  @VsoMethod
   public TrafficCloneProfile addCloneServersItem(CloneServer cloneServersItem) {
     if (this.cloneServers == null) {
       this.cloneServers = new ArrayList<CloneServer>();
@@ -78,196 +87,183 @@ public class TrafficCloneProfile extends AviRestResource  {
     this.cloneServers.add(cloneServersItem);
     return this;
   }
-  
+
+
   /**
-   *  Field introduced in 17.1.1.
-   * @return cloneServers
-  **/
-  @ApiModelProperty(value = " Field introduced in 17.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<CloneServer> getCloneServers() {
-    return cloneServers;
-  }
-    
-  @VsoMethod
-  public void setCloneServers(List<CloneServer> cloneServers) {
-    this.cloneServers = cloneServers;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type Cloud. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 17.1.1.
    * @return cloudRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Cloud. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudRef() {
     return cloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 17.1.1.
+   * @param cloudRef set the cloudRef.
+   */
   @VsoMethod
-  public void setCloudRef(String cloudRef) {
+  public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
   }
 
-  
   /**
-   * Name for the Traffic Clone Profile. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Name for the traffic clone profile.
+   * Field introduced in 17.1.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name for the Traffic Clone Profile. Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name for the traffic clone profile.
+   * Field introduced in 17.1.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Specifies if client IP needs to be preserved to clone destination. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Specifies if client ip needs to be preserved to clone destination.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return preserveClientIp
-  **/
-  @ApiModelProperty(value = "Specifies if client IP needs to be preserved to clone destination. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPreserveClientIp() {
+   */
+  @VsoMethod
+  public Boolean getPreserveClientIp() {
     return preserveClientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies if client ip needs to be preserved to clone destination.
+   * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param preserveClientIp set the preserveClientIp.
+   */
   @VsoMethod
-  public void setPreserveClientIp(Boolean preserveClientIp) {
+  public void setPreserveClientIp(Boolean  preserveClientIp) {
     this.preserveClientIp = preserveClientIp;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 17.1.1.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the Traffic Clone Profile. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the traffic clone profile.
+   * Field introduced in 17.1.1.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the Traffic Clone Profile. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the traffic clone profile.
+   * Field introduced in 17.1.1.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "TrafficCloneProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    TrafficCloneProfile trafficCloneProfile = (TrafficCloneProfile) o;
-    return Objects.equals(this.lastModified, trafficCloneProfile.lastModified) &&
-        Objects.equals(this.cloneServers, trafficCloneProfile.cloneServers) &&
-        Objects.equals(this.cloudRef, trafficCloneProfile.cloudRef) &&
-        Objects.equals(this.name, trafficCloneProfile.name) &&
-        Objects.equals(this.preserveClientIp, trafficCloneProfile.preserveClientIp) &&
-        Objects.equals(this.tenantRef, trafficCloneProfile.tenantRef) &&
-        Objects.equals(this.url, trafficCloneProfile.url) &&
-        Objects.equals(this.uuid, trafficCloneProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, cloneServers, cloudRef, name, preserveClientIp, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class TrafficCloneProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    cloneServers: ").append(toIndentedString(cloneServers)).append("\n");
-    sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  TrafficCloneProfile objTrafficCloneProfile = (TrafficCloneProfile) o;
+  return   Objects.equals(this.uuid, objTrafficCloneProfile.uuid)&&
+  Objects.equals(this.name, objTrafficCloneProfile.name)&&
+  Objects.equals(this.preserveClientIp, objTrafficCloneProfile.preserveClientIp)&&
+  Objects.equals(this.tenantRef, objTrafficCloneProfile.tenantRef)&&
+  Objects.equals(this.cloudRef, objTrafficCloneProfile.cloudRef)&&
+  Objects.equals(this.cloneServers, objTrafficCloneProfile.cloneServers);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class TrafficCloneProfile {\n");
+      sb.append("    cloneServers: ").append(toIndentedString(cloneServers)).append("\n");
+        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

@@ -24,6 +24,7 @@ public final class VroPluginAdaptor extends AbstractSpringPluginAdaptor {
 				new String[] { DEFAULT_CONFIG }, false, defaultParent);
 		applicationContext.setClassLoader(getClass().getClassLoader());
 		applicationContext.refresh();
+		VroPluginFactory.initializeModelMap();
 		return applicationContext;
 	}
 }

@@ -16,6 +16,14 @@ public class AviObjectMetadata {
 	private String operation;
 	private String tenant;
 
+	/***
+	 * Constructor to instantiate class with mandatory parameter.
+	 * 
+	 * @param objectType type of the Object.
+	 * @param newObject  Object with actual input data.
+	 * @param operation  type of operation.
+	 * @param tenant     tenant name.
+	 */
 	public AviObjectMetadata(String objectType, JSONObject newObject, String operation, String tenant) {
 		super();
 		this.objectType = objectType;

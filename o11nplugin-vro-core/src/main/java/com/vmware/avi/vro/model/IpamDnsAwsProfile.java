@@ -1,94 +1,132 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.AwsZoneNetwork;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * IpamDnsAwsProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The IpamDnsAwsProfile is a POJO class extends AviRestResource that used for creating
+ * IpamDnsAwsProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "IpamDnsAwsProfile")
-@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSAWSPROFILE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_IPAMDNSAWSPROFILE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class IpamDnsAwsProfile extends AviRestResource  {
+public class IpamDnsAwsProfile extends AviRestResource {
   @JsonProperty("access_key_id")
+  @JsonInclude(Include.NON_NULL)
   private String accessKeyId = null;
 
   @JsonProperty("egress_service_subnets")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> egressServiceSubnets = null;
 
   @JsonProperty("iam_assume_role")
+  @JsonInclude(Include.NON_NULL)
   private String iamAssumeRole = null;
 
   @JsonProperty("publish_vip_to_public_zone")
-  private Boolean publishVipToPublicZone = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean publishVipToPublicZone = false;
 
   @JsonProperty("region")
+  @JsonInclude(Include.NON_NULL)
   private String region = null;
 
   @JsonProperty("secret_access_key")
+  @JsonInclude(Include.NON_NULL)
   private String secretAccessKey = null;
 
   @JsonProperty("ttl")
+  @JsonInclude(Include.NON_NULL)
   private Integer ttl = 60;
 
   @JsonProperty("usable_domains")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> usableDomains = null;
 
   @JsonProperty("usable_network_uuids")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> usableNetworkUuids = null;
 
   @JsonProperty("use_iam_roles")
-  private Boolean useIamRoles = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useIamRoles = false;
 
   @JsonProperty("vpc")
+  @JsonInclude(Include.NON_NULL)
   private String vpc = null;
 
   @JsonProperty("vpc_id")
+  @JsonInclude(Include.NON_NULL)
   private String vpcId = null;
 
   @JsonProperty("zones")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<AwsZoneNetwork> zones = null;
 
-  
+
+
   /**
-   * AWS access key ID.
+   * This is the getter method this will return the attribute value.
+   * Aws access key id.
    * @return accessKeyId
-  **/
-  @ApiModelProperty(value = "AWS access key ID.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAccessKeyId() {
     return accessKeyId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Aws access key id.
+   * @param accessKeyId set the accessKeyId.
+   */
   @VsoMethod
-  public void setAccessKeyId(String accessKeyId) {
+  public void setAccessKeyId(String  accessKeyId) {
     this.accessKeyId = accessKeyId;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
+   * Field introduced in 18.2.3.
+   * @return egressServiceSubnets
+   */
+  @VsoMethod
+  public List<String> getEgressServiceSubnets() {
+    return egressServiceSubnets;
+  }
+
+  /**
+   * This is the setter method. this will set the egressServiceSubnets
+   * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
+   * Field introduced in 18.2.3.
+   * @return egressServiceSubnets
+   */
+  @VsoMethod
+  public void setEgressServiceSubnets(List<String>  egressServiceSubnets) {
+    this.egressServiceSubnets = egressServiceSubnets;
+  }
+
+  /**
+   * This is the setter method this will set the egressServiceSubnets
+   * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
+   * Field introduced in 18.2.3.
+   * @return egressServiceSubnets
+   */
+  @VsoMethod
   public IpamDnsAwsProfile addEgressServiceSubnetsItem(String egressServiceSubnetsItem) {
     if (this.egressServiceSubnets == null) {
       this.egressServiceSubnets = new ArrayList<String>();
@@ -96,121 +134,151 @@ public class IpamDnsAwsProfile extends AviRestResource  {
     this.egressServiceSubnets.add(egressServiceSubnetsItem);
     return this;
   }
-  
+
+
   /**
-   * A list of subnets used for source IP allocation for egress services in Openshift/k8s on Aws. Field introduced in 18.2.3.
-   * @return egressServiceSubnets
-  **/
-  @ApiModelProperty(value = "A list of subnets used for source IP allocation for egress services in Openshift/k8s on Aws. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public List<String> getEgressServiceSubnets() {
-    return egressServiceSubnets;
-  }
-    
-  @VsoMethod
-  public void setEgressServiceSubnets(List<String> egressServiceSubnets) {
-    this.egressServiceSubnets = egressServiceSubnets;
-  }
-
-  
-  /**
-   * IAM assume role for cross-account access. Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Iam assume role for cross-account access.
+   * Field introduced in 17.1.1.
    * @return iamAssumeRole
-  **/
-  @ApiModelProperty(value = "IAM assume role for cross-account access. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIamAssumeRole() {
     return iamAssumeRole;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Iam assume role for cross-account access.
+   * Field introduced in 17.1.1.
+   * @param iamAssumeRole set the iamAssumeRole.
+   */
   @VsoMethod
-  public void setIamAssumeRole(String iamAssumeRole) {
+  public void setIamAssumeRole(String  iamAssumeRole) {
     this.iamAssumeRole = iamAssumeRole;
   }
 
-  
   /**
-   * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones. This flag is applicable only for AWS DNS profile. Field introduced in 17.2.10.
+   * This is the getter method this will return the attribute value.
+   * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones.
+   * This flag is applicable only for aws dns profile.
+   * Field introduced in 17.2.10.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return publishVipToPublicZone
-  **/
-  @ApiModelProperty(value = "If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones. This flag is applicable only for AWS DNS profile. Field introduced in 17.2.10.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPublishVipToPublicZone() {
+   */
+  @VsoMethod
+  public Boolean getPublishVipToPublicZone() {
     return publishVipToPublicZone;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If enabled and the virtual service is not floating ip capable, vip will be published to both private and public zones.
+   * This flag is applicable only for aws dns profile.
+   * Field introduced in 17.2.10.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param publishVipToPublicZone set the publishVipToPublicZone.
+   */
   @VsoMethod
-  public void setPublishVipToPublicZone(Boolean publishVipToPublicZone) {
+  public void setPublishVipToPublicZone(Boolean  publishVipToPublicZone) {
     this.publishVipToPublicZone = publishVipToPublicZone;
   }
 
-  
   /**
-   * AWS region.
+   * This is the getter method this will return the attribute value.
+   * Aws region.
    * @return region
-  **/
-  @ApiModelProperty(value = "AWS region.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getRegion() {
     return region;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Aws region.
+   * @param region set the region.
+   */
   @VsoMethod
-  public void setRegion(String region) {
+  public void setRegion(String  region) {
     this.region = region;
   }
 
-  
   /**
-   * AWS secret access key.
+   * This is the getter method this will return the attribute value.
+   * Aws secret access key.
    * @return secretAccessKey
-  **/
-  @ApiModelProperty(value = "AWS secret access key.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSecretAccessKey() {
     return secretAccessKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Aws secret access key.
+   * @param secretAccessKey set the secretAccessKey.
+   */
   @VsoMethod
-  public void setSecretAccessKey(String secretAccessKey) {
+  public void setSecretAccessKey(String  secretAccessKey) {
     this.secretAccessKey = secretAccessKey;
   }
 
-  
   /**
-   * Default TTL for all records. Allowed values are 1-172800. Field introduced in 17.1.3.
+   * This is the getter method this will return the attribute value.
+   * Default ttl for all records.
+   * Allowed values are 1-172800.
+   * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return ttl
-  **/
-  @ApiModelProperty(value = "Default TTL for all records. Allowed values are 1-172800. Field introduced in 17.1.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTtl() {
     return ttl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Default ttl for all records.
+   * Allowed values are 1-172800.
+   * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param ttl set the ttl.
+   */
   @VsoMethod
-  public void setTtl(Integer ttl) {
+  public void setTtl(Integer  ttl) {
     this.ttl = ttl;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Usable domains to pick from amazon route 53.
+   * Field introduced in 17.1.1.
+   * @return usableDomains
+   */
+  @VsoMethod
+  public List<String> getUsableDomains() {
+    return usableDomains;
+  }
+
+  /**
+   * This is the setter method. this will set the usableDomains
+   * Usable domains to pick from amazon route 53.
+   * Field introduced in 17.1.1.
+   * @return usableDomains
+   */
+  @VsoMethod
+  public void setUsableDomains(List<String>  usableDomains) {
+    this.usableDomains = usableDomains;
+  }
+
+  /**
+   * This is the setter method this will set the usableDomains
+   * Usable domains to pick from amazon route 53.
+   * Field introduced in 17.1.1.
+   * @return usableDomains
+   */
+  @VsoMethod
   public IpamDnsAwsProfile addUsableDomainsItem(String usableDomainsItem) {
     if (this.usableDomains == null) {
       this.usableDomains = new ArrayList<String>();
@@ -218,26 +286,43 @@ public class IpamDnsAwsProfile extends AviRestResource  {
     this.usableDomains.add(usableDomainsItem);
     return this;
   }
-  
+
+
   /**
-   * Usable domains to pick from Amazon Route 53. Field introduced in 17.1.1.
-   * @return usableDomains
-  **/
-  @ApiModelProperty(value = "Usable domains to pick from Amazon Route 53. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getUsableDomains() {
-    return usableDomains;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 17.1.1.
+   * @return usableNetworkUuids
+   */
   @VsoMethod
-  public void setUsableDomains(List<String> usableDomains) {
-    this.usableDomains = usableDomains;
+  public List<String> getUsableNetworkUuids() {
+    return usableNetworkUuids;
   }
 
-  
+  /**
+   * This is the setter method. this will set the usableNetworkUuids
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 17.1.1.
+   * @return usableNetworkUuids
+   */
+  @VsoMethod
+  public void setUsableNetworkUuids(List<String>  usableNetworkUuids) {
+    this.usableNetworkUuids = usableNetworkUuids;
+  }
+
+  /**
+   * This is the setter method this will set the usableNetworkUuids
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 17.1.1.
+   * @return usableNetworkUuids
+   */
+  @VsoMethod
   public IpamDnsAwsProfile addUsableNetworkUuidsItem(String usableNetworkUuidsItem) {
     if (this.usableNetworkUuids == null) {
       this.usableNetworkUuids = new ArrayList<String>();
@@ -245,84 +330,99 @@ public class IpamDnsAwsProfile extends AviRestResource  {
     this.usableNetworkUuids.add(usableNetworkUuidsItem);
     return this;
   }
-  
+
+
   /**
-   * Usable networks for Virtual IP. If VirtualService does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for IP allocation. Field introduced in 17.1.1.
-   * @return usableNetworkUuids
-  **/
-  @ApiModelProperty(value = "Usable networks for Virtual IP. If VirtualService does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for IP allocation. Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getUsableNetworkUuids() {
-    return usableNetworkUuids;
-  }
-    
-  @VsoMethod
-  public void setUsableNetworkUuids(List<String> usableNetworkUuids) {
-    this.usableNetworkUuids = usableNetworkUuids;
-  }
-
-  
-  /**
-   * Use IAM roles instead of access and secret key.
+   * This is the getter method this will return the attribute value.
+   * Use iam roles instead of access and secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useIamRoles
-  **/
-  @ApiModelProperty(value = "Use IAM roles instead of access and secret key.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseIamRoles() {
+   */
+  @VsoMethod
+  public Boolean getUseIamRoles() {
     return useIamRoles;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use iam roles instead of access and secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useIamRoles set the useIamRoles.
+   */
   @VsoMethod
-  public void setUseIamRoles(Boolean useIamRoles) {
+  public void setUseIamRoles(Boolean  useIamRoles) {
     this.useIamRoles = useIamRoles;
   }
 
-  
   /**
-   * VPC name.
+   * This is the getter method this will return the attribute value.
+   * Vpc name.
    * @return vpc
-  **/
-  @ApiModelProperty(value = "VPC name.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVpc() {
     return vpc;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Vpc name.
+   * @param vpc set the vpc.
+   */
   @VsoMethod
-  public void setVpc(String vpc) {
+  public void setVpc(String  vpc) {
     this.vpc = vpc;
   }
 
-  
   /**
-   * VPC ID.
+   * This is the getter method this will return the attribute value.
+   * Vpc id.
    * @return vpcId
-  **/
-  @ApiModelProperty(required = true, value = "VPC ID.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVpcId() {
     return vpcId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Vpc id.
+   * @param vpcId set the vpcId.
+   */
   @VsoMethod
-  public void setVpcId(String vpcId) {
+  public void setVpcId(String  vpcId) {
     this.vpcId = vpcId;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Network configuration for virtual ip per az.
+   * Field introduced in 17.1.3.
+   * @return zones
+   */
+  @VsoMethod
+  public List<AwsZoneNetwork> getZones() {
+    return zones;
+  }
+
+  /**
+   * This is the setter method. this will set the zones
+   * Network configuration for virtual ip per az.
+   * Field introduced in 17.1.3.
+   * @return zones
+   */
+  @VsoMethod
+  public void setZones(List<AwsZoneNetwork>  zones) {
+    this.zones = zones;
+  }
+
+  /**
+   * This is the setter method this will set the zones
+   * Network configuration for virtual ip per az.
+   * Field introduced in 17.1.3.
+   * @return zones
+   */
+  @VsoMethod
   public IpamDnsAwsProfile addZonesItem(AwsZoneNetwork zonesItem) {
     if (this.zones == null) {
       this.zones = new ArrayList<AwsZoneNetwork>();
@@ -330,91 +430,63 @@ public class IpamDnsAwsProfile extends AviRestResource  {
     this.zones.add(zonesItem);
     return this;
   }
-  
-  /**
-   * Network configuration for Virtual IP per AZ. Field introduced in 17.1.3.
-   * @return zones
-  **/
-  @ApiModelProperty(value = "Network configuration for Virtual IP per AZ. Field introduced in 17.1.3.")
 
-  @Valid
 
- 
-  @VsoMethod  
-  public List<AwsZoneNetwork> getZones() {
-    return zones;
-  }
-    
-  @VsoMethod
-  public void setZones(List<AwsZoneNetwork> zones) {
-    this.zones = zones;
-  }
 
-  
-  public String getObjectID() {
-		return "IpamDnsAwsProfile";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    IpamDnsAwsProfile ipamDnsAwsProfile = (IpamDnsAwsProfile) o;
-    return Objects.equals(this.accessKeyId, ipamDnsAwsProfile.accessKeyId) &&
-        Objects.equals(this.egressServiceSubnets, ipamDnsAwsProfile.egressServiceSubnets) &&
-        Objects.equals(this.iamAssumeRole, ipamDnsAwsProfile.iamAssumeRole) &&
-        Objects.equals(this.publishVipToPublicZone, ipamDnsAwsProfile.publishVipToPublicZone) &&
-        Objects.equals(this.region, ipamDnsAwsProfile.region) &&
-        Objects.equals(this.secretAccessKey, ipamDnsAwsProfile.secretAccessKey) &&
-        Objects.equals(this.ttl, ipamDnsAwsProfile.ttl) &&
-        Objects.equals(this.usableDomains, ipamDnsAwsProfile.usableDomains) &&
-        Objects.equals(this.usableNetworkUuids, ipamDnsAwsProfile.usableNetworkUuids) &&
-        Objects.equals(this.useIamRoles, ipamDnsAwsProfile.useIamRoles) &&
-        Objects.equals(this.vpc, ipamDnsAwsProfile.vpc) &&
-        Objects.equals(this.vpcId, ipamDnsAwsProfile.vpcId) &&
-        Objects.equals(this.zones, ipamDnsAwsProfile.zones);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(accessKeyId, egressServiceSubnets, iamAssumeRole, publishVipToPublicZone, region, secretAccessKey, ttl, usableDomains, usableNetworkUuids, useIamRoles, vpc, vpcId, zones);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class IpamDnsAwsProfile {\n");
-    
-    sb.append("    accessKeyId: ").append(toIndentedString(accessKeyId)).append("\n");
-    sb.append("    egressServiceSubnets: ").append(toIndentedString(egressServiceSubnets)).append("\n");
-    sb.append("    iamAssumeRole: ").append(toIndentedString(iamAssumeRole)).append("\n");
-    sb.append("    publishVipToPublicZone: ").append(toIndentedString(publishVipToPublicZone)).append("\n");
-    sb.append("    region: ").append(toIndentedString(region)).append("\n");
-    sb.append("    secretAccessKey: ").append(toIndentedString(secretAccessKey)).append("\n");
-    sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
-    sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
-    sb.append("    usableNetworkUuids: ").append(toIndentedString(usableNetworkUuids)).append("\n");
-    sb.append("    useIamRoles: ").append(toIndentedString(useIamRoles)).append("\n");
-    sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
-    sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-    sb.append("    zones: ").append(toIndentedString(zones)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  IpamDnsAwsProfile objIpamDnsAwsProfile = (IpamDnsAwsProfile) o;
+  return   Objects.equals(this.useIamRoles, objIpamDnsAwsProfile.useIamRoles)&&
+  Objects.equals(this.publishVipToPublicZone, objIpamDnsAwsProfile.publishVipToPublicZone)&&
+  Objects.equals(this.usableDomains, objIpamDnsAwsProfile.usableDomains)&&
+  Objects.equals(this.egressServiceSubnets, objIpamDnsAwsProfile.egressServiceSubnets)&&
+  Objects.equals(this.region, objIpamDnsAwsProfile.region)&&
+  Objects.equals(this.ttl, objIpamDnsAwsProfile.ttl)&&
+  Objects.equals(this.secretAccessKey, objIpamDnsAwsProfile.secretAccessKey)&&
+  Objects.equals(this.zones, objIpamDnsAwsProfile.zones)&&
+  Objects.equals(this.vpc, objIpamDnsAwsProfile.vpc)&&
+  Objects.equals(this.accessKeyId, objIpamDnsAwsProfile.accessKeyId)&&
+  Objects.equals(this.iamAssumeRole, objIpamDnsAwsProfile.iamAssumeRole)&&
+  Objects.equals(this.vpcId, objIpamDnsAwsProfile.vpcId)&&
+  Objects.equals(this.usableNetworkUuids, objIpamDnsAwsProfile.usableNetworkUuids);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class IpamDnsAwsProfile {\n");
+      sb.append("    accessKeyId: ").append(toIndentedString(accessKeyId)).append("\n");
+        sb.append("    egressServiceSubnets: ").append(toIndentedString(egressServiceSubnets)).append("\n");
+        sb.append("    iamAssumeRole: ").append(toIndentedString(iamAssumeRole)).append("\n");
+        sb.append("    publishVipToPublicZone: ").append(toIndentedString(publishVipToPublicZone)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    secretAccessKey: ").append(toIndentedString(secretAccessKey)).append("\n");
+        sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
+        sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
+        sb.append("    usableNetworkUuids: ").append(toIndentedString(usableNetworkUuids)).append("\n");
+        sb.append("    useIamRoles: ").append(toIndentedString(useIamRoles)).append("\n");
+        sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    zones: ").append(toIndentedString(zones)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

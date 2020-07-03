@@ -1,463 +1,505 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.DnsServiceApplicationProfile;
 import com.vmware.avi.vro.model.DosRateLimitProfile;
 import com.vmware.avi.vro.model.HTTPApplicationProfile;
 import com.vmware.avi.vro.model.SipServiceApplicationProfile;
 import com.vmware.avi.vro.model.TCPApplicationProfile;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ApplicationProfile
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ApplicationProfile is a POJO class extends AviRestResource that used for creating
+ * ApplicationProfile.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ApplicationProfile")
 @VsoFinder(name = Constants.FINDER_VRO_APPLICATIONPROFILE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ApplicationProfile extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class ApplicationProfile extends AviRestResource {
   @JsonProperty("cloud_config_cksum")
+  @JsonInclude(Include.NON_NULL)
   private String cloudConfigCksum = null;
 
   @JsonProperty("created_by")
+  @JsonInclude(Include.NON_NULL)
   private String createdBy = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("dns_service_profile")
+  @JsonInclude(Include.NON_NULL)
   private DnsServiceApplicationProfile dnsServiceProfile = null;
 
   @JsonProperty("dos_rl_profile")
+  @JsonInclude(Include.NON_NULL)
   private DosRateLimitProfile dosRlProfile = null;
 
   @JsonProperty("http_profile")
+  @JsonInclude(Include.NON_NULL)
   private HTTPApplicationProfile httpProfile = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("preserve_client_ip")
-  private Boolean preserveClientIp = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean preserveClientIp = false;
 
   @JsonProperty("preserve_client_port")
-  private Boolean preserveClientPort = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean preserveClientPort = false;
+
+  @JsonProperty("preserve_dest_ip_port")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean preserveDestIpPort = false;
 
   @JsonProperty("sip_service_profile")
+  @JsonInclude(Include.NON_NULL)
   private SipServiceApplicationProfile sipServiceProfile = null;
 
   @JsonProperty("tcp_app_profile")
+  @JsonInclude(Include.NON_NULL)
   private TCPApplicationProfile tcpAppProfile = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Checksum of application profiles.
+   * Internally set by cloud connector.
+   * Field introduced in 17.2.14, 18.1.5, 18.2.1.
    * @return cloudConfigCksum
-  **/
-  @ApiModelProperty(value = "Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudConfigCksum() {
     return cloudConfigCksum;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Checksum of application profiles.
+   * Internally set by cloud connector.
+   * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * @param cloudConfigCksum set the cloudConfigCksum.
+   */
   @VsoMethod
-  public void setCloudConfigCksum(String cloudConfigCksum) {
+  public void setCloudConfigCksum(String  cloudConfigCksum) {
     this.cloudConfigCksum = cloudConfigCksum;
   }
 
-  
   /**
-   * Name of the application profile creator. Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Name of the application profile creator.
+   * Field introduced in 17.2.14, 18.1.5, 18.2.1.
    * @return createdBy
-  **/
-  @ApiModelProperty(value = "Name of the application profile creator. Field introduced in 17.2.14, 18.1.5, 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCreatedBy() {
     return createdBy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the application profile creator.
+   * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * @param createdBy set the createdBy.
+   */
   @VsoMethod
-  public void setCreatedBy(String createdBy) {
+  public void setCreatedBy(String  createdBy) {
     this.createdBy = createdBy;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * User defined description for the object.
    * @return description
-  **/
-  @ApiModelProperty(value = "User defined description for the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User defined description for the object.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Specifies various DNS service related controls for virtual service.
+   * This is the getter method this will return the attribute value.
+   * Specifies various dns service related controls for virtual service.
    * @return dnsServiceProfile
-  **/
-  @ApiModelProperty(value = "Specifies various DNS service related controls for virtual service.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DnsServiceApplicationProfile getDnsServiceProfile() {
     return dnsServiceProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies various dns service related controls for virtual service.
+   * @param dnsServiceProfile set the dnsServiceProfile.
+   */
   @VsoMethod
   public void setDnsServiceProfile(DnsServiceApplicationProfile dnsServiceProfile) {
     this.dnsServiceProfile = dnsServiceProfile;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Specifies various security related controls for virtual service.
    * @return dosRlProfile
-  **/
-  @ApiModelProperty(value = "Specifies various security related controls for virtual service.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public DosRateLimitProfile getDosRlProfile() {
     return dosRlProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies various security related controls for virtual service.
+   * @param dosRlProfile set the dosRlProfile.
+   */
   @VsoMethod
   public void setDosRlProfile(DosRateLimitProfile dosRlProfile) {
     this.dosRlProfile = dosRlProfile;
   }
 
-  
   /**
-   * Specifies the HTTP application proxy profile parameters.
+   * This is the getter method this will return the attribute value.
+   * Specifies the http application proxy profile parameters.
    * @return httpProfile
-  **/
-  @ApiModelProperty(value = "Specifies the HTTP application proxy profile parameters.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HTTPApplicationProfile getHttpProfile() {
     return httpProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies the http application proxy profile parameters.
+   * @param httpProfile set the httpProfile.
+   */
   @VsoMethod
   public void setHttpProfile(HTTPApplicationProfile httpProfile) {
     this.httpProfile = httpProfile;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * The name of the application profile.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "The name of the application profile.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The name of the application profile.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Specifies if client IP needs to be preserved for backend connection. Not compatible with Connection Multiplexing.
+   * This is the getter method this will return the attribute value.
+   * Specifies if client ip needs to be preserved for backend connection.
+   * Not compatible with connection multiplexing.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return preserveClientIp
-  **/
-  @ApiModelProperty(value = "Specifies if client IP needs to be preserved for backend connection. Not compatible with Connection Multiplexing.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPreserveClientIp() {
+   */
+  @VsoMethod
+  public Boolean getPreserveClientIp() {
     return preserveClientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies if client ip needs to be preserved for backend connection.
+   * Not compatible with connection multiplexing.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param preserveClientIp set the preserveClientIp.
+   */
   @VsoMethod
-  public void setPreserveClientIp(Boolean preserveClientIp) {
+  public void setPreserveClientIp(Boolean  preserveClientIp) {
     this.preserveClientIp = preserveClientIp;
   }
 
-  
   /**
-   * Specifies if we need to preserve client port while preserving client IP for backend connections. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Specifies if we need to preserve client port while preserving client ip for backend connections.
+   * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return preserveClientPort
-  **/
-  @ApiModelProperty(value = "Specifies if we need to preserve client port while preserving client IP for backend connections. Field introduced in 17.2.7.")
-
-
- 
-  @VsoMethod  
-  public Boolean isPreserveClientPort() {
+   */
+  @VsoMethod
+  public Boolean getPreserveClientPort() {
     return preserveClientPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies if we need to preserve client port while preserving client ip for backend connections.
+   * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param preserveClientPort set the preserveClientPort.
+   */
   @VsoMethod
-  public void setPreserveClientPort(Boolean preserveClientPort) {
+  public void setPreserveClientPort(Boolean  preserveClientPort) {
     this.preserveClientPort = preserveClientPort;
   }
 
-  
   /**
-   * Specifies various SIP service related controls for virtual service. Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Specifies if destination ip and port needs to be preserved for backend connection.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return preserveDestIpPort
+   */
+  @VsoMethod
+  public Boolean getPreserveDestIpPort() {
+    return preserveDestIpPort;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies if destination ip and port needs to be preserved for backend connection.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param preserveDestIpPort set the preserveDestIpPort.
+   */
+  @VsoMethod
+  public void setPreserveDestIpPort(Boolean  preserveDestIpPort) {
+    this.preserveDestIpPort = preserveDestIpPort;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Specifies various sip service related controls for virtual service.
+   * Field introduced in 17.2.8, 18.1.3, 18.2.1.
    * @return sipServiceProfile
-  **/
-  @ApiModelProperty(value = "Specifies various SIP service related controls for virtual service. Field introduced in 17.2.8, 18.1.3, 18.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public SipServiceApplicationProfile getSipServiceProfile() {
     return sipServiceProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies various sip service related controls for virtual service.
+   * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * @param sipServiceProfile set the sipServiceProfile.
+   */
   @VsoMethod
   public void setSipServiceProfile(SipServiceApplicationProfile sipServiceProfile) {
     this.sipServiceProfile = sipServiceProfile;
   }
 
-  
   /**
-   * Specifies the TCP application proxy profile parameters.
+   * This is the getter method this will return the attribute value.
+   * Specifies the tcp application proxy profile parameters.
    * @return tcpAppProfile
-  **/
-  @ApiModelProperty(value = "Specifies the TCP application proxy profile parameters.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public TCPApplicationProfile getTcpAppProfile() {
     return tcpAppProfile;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies the tcp application proxy profile parameters.
+   * @param tcpAppProfile set the tcpAppProfile.
+   */
   @VsoMethod
   public void setTcpAppProfile(TCPApplicationProfile tcpAppProfile) {
     this.tcpAppProfile = tcpAppProfile;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
-   * Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+   * This is the getter method this will return the attribute value.
+   * Specifies which application layer proxy is enabled for the virtual service.
+   * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
+   * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
    * @return type
-  **/
-  @ApiModelProperty(required = true, value = "Specifies which application layer proxy is enabled for the virtual service. Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS, APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies which application layer proxy is enabled for the virtual service.
+   * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
+   * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID of the application profile.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the application profile.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the application profile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the application profile.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "ApplicationProfile";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ApplicationProfile applicationProfile = (ApplicationProfile) o;
-    return Objects.equals(this.lastModified, applicationProfile.lastModified) &&
-        Objects.equals(this.cloudConfigCksum, applicationProfile.cloudConfigCksum) &&
-        Objects.equals(this.createdBy, applicationProfile.createdBy) &&
-        Objects.equals(this.description, applicationProfile.description) &&
-        Objects.equals(this.dnsServiceProfile, applicationProfile.dnsServiceProfile) &&
-        Objects.equals(this.dosRlProfile, applicationProfile.dosRlProfile) &&
-        Objects.equals(this.httpProfile, applicationProfile.httpProfile) &&
-        Objects.equals(this.name, applicationProfile.name) &&
-        Objects.equals(this.preserveClientIp, applicationProfile.preserveClientIp) &&
-        Objects.equals(this.preserveClientPort, applicationProfile.preserveClientPort) &&
-        Objects.equals(this.sipServiceProfile, applicationProfile.sipServiceProfile) &&
-        Objects.equals(this.tcpAppProfile, applicationProfile.tcpAppProfile) &&
-        Objects.equals(this.tenantRef, applicationProfile.tenantRef) &&
-        Objects.equals(this.type, applicationProfile.type) &&
-        Objects.equals(this.url, applicationProfile.url) &&
-        Objects.equals(this.uuid, applicationProfile.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, cloudConfigCksum, createdBy, description, dnsServiceProfile, dosRlProfile, httpProfile, name, preserveClientIp, preserveClientPort, sipServiceProfile, tcpAppProfile, tenantRef, type, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ApplicationProfile {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    dnsServiceProfile: ").append(toIndentedString(dnsServiceProfile)).append("\n");
-    sb.append("    dosRlProfile: ").append(toIndentedString(dosRlProfile)).append("\n");
-    sb.append("    httpProfile: ").append(toIndentedString(httpProfile)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
-    sb.append("    preserveClientPort: ").append(toIndentedString(preserveClientPort)).append("\n");
-    sb.append("    sipServiceProfile: ").append(toIndentedString(sipServiceProfile)).append("\n");
-    sb.append("    tcpAppProfile: ").append(toIndentedString(tcpAppProfile)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ApplicationProfile objApplicationProfile = (ApplicationProfile) o;
+  return   Objects.equals(this.tcpAppProfile, objApplicationProfile.tcpAppProfile)&&
+  Objects.equals(this.uuid, objApplicationProfile.uuid)&&
+  Objects.equals(this.preserveClientIp, objApplicationProfile.preserveClientIp)&&
+  Objects.equals(this.description, objApplicationProfile.description)&&
+  Objects.equals(this.preserveDestIpPort, objApplicationProfile.preserveDestIpPort)&&
+  Objects.equals(this.sipServiceProfile, objApplicationProfile.sipServiceProfile)&&
+  Objects.equals(this.httpProfile, objApplicationProfile.httpProfile)&&
+  Objects.equals(this.preserveClientPort, objApplicationProfile.preserveClientPort)&&
+  Objects.equals(this.dnsServiceProfile, objApplicationProfile.dnsServiceProfile)&&
+  Objects.equals(this.cloudConfigCksum, objApplicationProfile.cloudConfigCksum)&&
+  Objects.equals(this.createdBy, objApplicationProfile.createdBy)&&
+  Objects.equals(this.dosRlProfile, objApplicationProfile.dosRlProfile)&&
+  Objects.equals(this.type, objApplicationProfile.type)&&
+  Objects.equals(this.tenantRef, objApplicationProfile.tenantRef)&&
+  Objects.equals(this.name, objApplicationProfile.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ApplicationProfile {\n");
+      sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    dnsServiceProfile: ").append(toIndentedString(dnsServiceProfile)).append("\n");
+        sb.append("    dosRlProfile: ").append(toIndentedString(dosRlProfile)).append("\n");
+        sb.append("    httpProfile: ").append(toIndentedString(httpProfile)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
+        sb.append("    preserveClientPort: ").append(toIndentedString(preserveClientPort)).append("\n");
+        sb.append("    preserveDestIpPort: ").append(toIndentedString(preserveDestIpPort)).append("\n");
+        sb.append("    sipServiceProfile: ").append(toIndentedString(sipServiceProfile)).append("\n");
+        sb.append("    tcpAppProfile: ").append(toIndentedString(tcpAppProfile)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

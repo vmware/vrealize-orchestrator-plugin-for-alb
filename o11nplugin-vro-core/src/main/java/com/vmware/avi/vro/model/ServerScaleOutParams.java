@@ -1,115 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ServerScaleOutParams
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ServerScaleOutParams is a POJO class extends AviRestResource that used for creating
+ * ServerScaleOutParams.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ServerScaleOutParams")
-@VsoFinder(name = Constants.FINDER_VRO_SERVERSCALEOUTPARAMS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SERVERSCALEOUTPARAMS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ServerScaleOutParams extends AviRestResource  {
+public class ServerScaleOutParams extends AviRestResource {
   @JsonProperty("reason")
+  @JsonInclude(Include.NON_NULL)
   private String reason = null;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Reason for the manual scaleout.
    * @return reason
-  **/
-  @ApiModelProperty(value = "Reason for the manual scaleout.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getReason() {
     return reason;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Reason for the manual scaleout.
+   * @param reason set the reason.
+   */
   @VsoMethod
-  public void setReason(String reason) {
+  public void setReason(String  reason) {
     this.reason = reason;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
-  public String getObjectID() {
-		return "ServerScaleOutParams";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ServerScaleOutParams serverScaleOutParams = (ServerScaleOutParams) o;
-    return Objects.equals(this.reason, serverScaleOutParams.reason) &&
-        Objects.equals(this.uuid, serverScaleOutParams.uuid);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(reason, uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ServerScaleOutParams {\n");
-    
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ServerScaleOutParams objServerScaleOutParams = (ServerScaleOutParams) o;
+  return   Objects.equals(this.reason, objServerScaleOutParams.reason)&&
+  Objects.equals(this.uuid, objServerScaleOutParams.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ServerScaleOutParams {\n");
+      sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

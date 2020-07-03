@@ -1,144 +1,185 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SeUpgradeEvents
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SeUpgradeEvents is a POJO class extends AviRestResource that used for creating
+ * SeUpgradeEvents.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SeUpgradeEvents")
-@VsoFinder(name = Constants.FINDER_VRO_SEUPGRADEEVENTS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SEUPGRADEEVENTS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SeUpgradeEvents extends AviRestResource  {
+public class SeUpgradeEvents extends AviRestResource {
   @JsonProperty("from_se_ref")
+  @JsonInclude(Include.NON_NULL)
   private String fromSeRef = null;
 
   @JsonProperty("num_se")
+  @JsonInclude(Include.NON_NULL)
   private Integer numSe = null;
 
   @JsonProperty("num_se_group")
+  @JsonInclude(Include.NON_NULL)
   private Integer numSeGroup = null;
 
   @JsonProperty("num_vs")
+  @JsonInclude(Include.NON_NULL)
   private Integer numVs = null;
 
   @JsonProperty("reason")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> reason = null;
 
   @JsonProperty("se_group_ha_mode")
+  @JsonInclude(Include.NON_NULL)
   private String seGroupHaMode = null;
 
   @JsonProperty("se_group_ref")
+  @JsonInclude(Include.NON_NULL)
   private String seGroupRef = null;
 
   @JsonProperty("se_ref")
+  @JsonInclude(Include.NON_NULL)
   private String seRef = null;
 
   @JsonProperty("task")
+  @JsonInclude(Include.NON_NULL)
   private String task = null;
 
   @JsonProperty("to_se_ref")
+  @JsonInclude(Include.NON_NULL)
   private String toSeRef = null;
 
   @JsonProperty("traffic_status")
+  @JsonInclude(Include.NON_NULL)
   private String trafficStatus = null;
 
   @JsonProperty("vs_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vsRef = null;
 
-  
+
+
   /**
-   *  It is a reference to an object of type ServiceEngine.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceengine.
    * @return fromSeRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFromSeRef() {
     return fromSeRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceengine.
+   * @param fromSeRef set the fromSeRef.
+   */
   @VsoMethod
-  public void setFromSeRef(String fromSeRef) {
+  public void setFromSeRef(String  fromSeRef) {
     this.fromSeRef = fromSeRef;
   }
 
-  
   /**
-   * Number of num_se.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property num_se of obj type seupgradeevents field type str  type integer.
    * @return numSe
-  **/
-  @ApiModelProperty(value = "Number of num_se.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNumSe() {
     return numSe;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property num_se of obj type seupgradeevents field type str  type integer.
+   * @param numSe set the numSe.
+   */
   @VsoMethod
-  public void setNumSe(Integer numSe) {
+  public void setNumSe(Integer  numSe) {
     this.numSe = numSe;
   }
 
-  
   /**
-   * Number of num_se_group.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property num_se_group of obj type seupgradeevents field type str  type integer.
    * @return numSeGroup
-  **/
-  @ApiModelProperty(value = "Number of num_se_group.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNumSeGroup() {
     return numSeGroup;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property num_se_group of obj type seupgradeevents field type str  type integer.
+   * @param numSeGroup set the numSeGroup.
+   */
   @VsoMethod
-  public void setNumSeGroup(Integer numSeGroup) {
+  public void setNumSeGroup(Integer  numSeGroup) {
     this.numSeGroup = numSeGroup;
   }
 
-  
   /**
-   * Number of num_vs.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property num_vs of obj type seupgradeevents field type str  type integer.
    * @return numVs
-  **/
-  @ApiModelProperty(value = "Number of num_vs.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNumVs() {
     return numVs;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property num_vs of obj type seupgradeevents field type str  type integer.
+   * @param numVs set the numVs.
+   */
   @VsoMethod
-  public void setNumVs(Integer numVs) {
+  public void setNumVs(Integer  numVs) {
     this.numVs = numVs;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property reason of obj type seupgradeevents field type str  type array.
+   * @return reason
+   */
+  @VsoMethod
+  public List<String> getReason() {
+    return reason;
+  }
+
+  /**
+   * This is the setter method. this will set the reason
+   * Placeholder for description of property reason of obj type seupgradeevents field type str  type array.
+   * @return reason
+   */
+  @VsoMethod
+  public void setReason(List<String>  reason) {
+    this.reason = reason;
+  }
+
+  /**
+   * This is the setter method this will set the reason
+   * Placeholder for description of property reason of obj type seupgradeevents field type str  type array.
+   * @return reason
+   */
+  @VsoMethod
   public SeUpgradeEvents addReasonItem(String reasonItem) {
     if (this.reason == null) {
       this.reason = new ArrayList<String>();
@@ -146,221 +187,207 @@ public class SeUpgradeEvents extends AviRestResource  {
     this.reason.add(reasonItem);
     return this;
   }
-  
+
+
   /**
-   * reason of SeUpgradeEvents.
-   * @return reason
-  **/
-  @ApiModelProperty(value = "reason of SeUpgradeEvents.")
-
-
- 
-  @VsoMethod  
-  public List<String> getReason() {
-    return reason;
-  }
-    
-  @VsoMethod
-  public void setReason(List<String> reason) {
-    this.reason = reason;
-  }
-
-  
-  /**
-   *  Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * This is the getter method this will return the attribute value.
+   * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
    * @return seGroupHaMode
-  **/
-  @ApiModelProperty(value = " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeGroupHaMode() {
     return seGroupHaMode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * @param seGroupHaMode set the seGroupHaMode.
+   */
   @VsoMethod
-  public void setSeGroupHaMode(String seGroupHaMode) {
+  public void setSeGroupHaMode(String  seGroupHaMode) {
     this.seGroupHaMode = seGroupHaMode;
   }
 
-  
   /**
-   *  It is a reference to an object of type ServiceEngineGroup.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceenginegroup.
    * @return seGroupRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngineGroup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeGroupRef() {
     return seGroupRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceenginegroup.
+   * @param seGroupRef set the seGroupRef.
+   */
   @VsoMethod
-  public void setSeGroupRef(String seGroupRef) {
+  public void setSeGroupRef(String  seGroupRef) {
     this.seGroupRef = seGroupRef;
   }
 
-  
   /**
-   *  It is a reference to an object of type ServiceEngine.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceengine.
    * @return seRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeRef() {
     return seRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceengine.
+   * @param seRef set the seRef.
+   */
   @VsoMethod
-  public void setSeRef(String seRef) {
+  public void setSeRef(String  seRef) {
     this.seRef = seRef;
   }
 
-  
   /**
-   *  Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL, SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS, SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS, SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START, SE_UPGRADE_PAUSED, SE_UPGRADE_FAILED, SE_UPGRADE_VERSION_CHECKS, SE_UPGRADE_CONNECTIVITY_CHECKS, SE_UPGRADE_VERIFY_VERSION, SE_UPGRADE_SKIP_RESUME_OPS, SE_UPGRADE_SEMGR_DONE, SEGROUP_UPGRADE_NOT_STARTED, SEGROUP_UPGRADE_ENQUEUED, SEGROUP_UPGRADE_ENQUEUE_FAILED, SEGROUP_UPGRADE_IN_PROGRESS, SEGROUP_UPGRADE_COMPLETE, SEGROUP_UPGRADE_ERROR, SEGROUP_UPGRADE_SUSPENDED, VS_DISRUPTED, VS_SCALEIN, VS_SCALEIN_ERROR, VS_SCALEIN_ERROR_RPC_FAILED, VS_SCALEOUT, VS_SCALEOUT_ERROR, VS_SCALEOUT_ERROR_RPC_FAILED, VS_SCALEOUT_ERROR_SE_NOT_READY, VS_MIGRATE, VS_MIGRATE_ERROR, VS_MIGRATE_BACK, VS_MIGRATE_BACK_ERROR, VS_MIGRATE_BACK_NOT_NEEDED, VS_MIGRATE_ERROR_NO_CANDIDATE_SE, VS_MIGRATE_ERROR_RPC_FAILED, VS_MIGRATE_BACK_ERROR_SE_NOT_READY, VS_MIGRATE_BACK_ERROR_RPC_FAILED, SEGROUP_PAUSE_PLACEMENT, SEGROUP_RESUME_PLACEMENT, SEGROUP_CLOUD_DISCOVERY, SEGROUP_IMAGE_GENERATION, SEGROUP_IMAGE_COPY_INSTALL_TO_SES, SEGROUP_SERIAL_SE_UPGRADE, SEGROUP_PARALLEL_SE_UPGRADE, SEGROUP_V2_TO_V1_ROLLBACK, SEGROUP_FAILED_SE_ERROR_RECOVERY, SEGROUP_SE_CONNECTIVITY_CHECKS, SEGROUP_UPGRADE_START, SEGROUP_WAIT_FOR_WARM_START_DONE.
+   * This is the getter method this will return the attribute value.
+   * Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL,
+   * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
+   * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
+   * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
    * @return task
-  **/
-  @ApiModelProperty(value = " Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL, SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS, SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS, SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START, SE_UPGRADE_PAUSED, SE_UPGRADE_FAILED, SE_UPGRADE_VERSION_CHECKS, SE_UPGRADE_CONNECTIVITY_CHECKS, SE_UPGRADE_VERIFY_VERSION, SE_UPGRADE_SKIP_RESUME_OPS, SE_UPGRADE_SEMGR_DONE, SEGROUP_UPGRADE_NOT_STARTED, SEGROUP_UPGRADE_ENQUEUED, SEGROUP_UPGRADE_ENQUEUE_FAILED, SEGROUP_UPGRADE_IN_PROGRESS, SEGROUP_UPGRADE_COMPLETE, SEGROUP_UPGRADE_ERROR, SEGROUP_UPGRADE_SUSPENDED, VS_DISRUPTED, VS_SCALEIN, VS_SCALEIN_ERROR, VS_SCALEIN_ERROR_RPC_FAILED, VS_SCALEOUT, VS_SCALEOUT_ERROR, VS_SCALEOUT_ERROR_RPC_FAILED, VS_SCALEOUT_ERROR_SE_NOT_READY, VS_MIGRATE, VS_MIGRATE_ERROR, VS_MIGRATE_BACK, VS_MIGRATE_BACK_ERROR, VS_MIGRATE_BACK_NOT_NEEDED, VS_MIGRATE_ERROR_NO_CANDIDATE_SE, VS_MIGRATE_ERROR_RPC_FAILED, VS_MIGRATE_BACK_ERROR_SE_NOT_READY, VS_MIGRATE_BACK_ERROR_RPC_FAILED, SEGROUP_PAUSE_PLACEMENT, SEGROUP_RESUME_PLACEMENT, SEGROUP_CLOUD_DISCOVERY, SEGROUP_IMAGE_GENERATION, SEGROUP_IMAGE_COPY_INSTALL_TO_SES, SEGROUP_SERIAL_SE_UPGRADE, SEGROUP_PARALLEL_SE_UPGRADE, SEGROUP_V2_TO_V1_ROLLBACK, SEGROUP_FAILED_SE_ERROR_RECOVERY, SEGROUP_SE_CONNECTIVITY_CHECKS, SEGROUP_UPGRADE_START, SEGROUP_WAIT_FOR_WARM_START_DONE.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTask() {
     return task;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL,
+   * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
+   * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
+   * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * @param task set the task.
+   */
   @VsoMethod
-  public void setTask(String task) {
+  public void setTask(String  task) {
     this.task = task;
   }
 
-  
   /**
-   *  It is a reference to an object of type ServiceEngine.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceengine.
    * @return toSeRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getToSeRef() {
     return toSeRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceengine.
+   * @param toSeRef set the toSeRef.
+   */
   @VsoMethod
-  public void setToSeRef(String toSeRef) {
+  public void setToSeRef(String  toSeRef) {
     this.toSeRef = toSeRef;
   }
 
-  
   /**
-   *  Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * This is the getter method this will return the attribute value.
+   * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
    * @return trafficStatus
-  **/
-  @ApiModelProperty(value = " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTrafficStatus() {
     return trafficStatus;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * @param trafficStatus set the trafficStatus.
+   */
   @VsoMethod
-  public void setTrafficStatus(String trafficStatus) {
+  public void setTrafficStatus(String  trafficStatus) {
     this.trafficStatus = trafficStatus;
   }
 
-  
   /**
-   *  It is a reference to an object of type VirtualService.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type virtualservice.
    * @return vsRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type VirtualService.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVsRef() {
     return vsRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type virtualservice.
+   * @param vsRef set the vsRef.
+   */
   @VsoMethod
-  public void setVsRef(String vsRef) {
+  public void setVsRef(String  vsRef) {
     this.vsRef = vsRef;
   }
 
-  
-  public String getObjectID() {
-		return "SeUpgradeEvents";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SeUpgradeEvents seUpgradeEvents = (SeUpgradeEvents) o;
-    return Objects.equals(this.fromSeRef, seUpgradeEvents.fromSeRef) &&
-        Objects.equals(this.numSe, seUpgradeEvents.numSe) &&
-        Objects.equals(this.numSeGroup, seUpgradeEvents.numSeGroup) &&
-        Objects.equals(this.numVs, seUpgradeEvents.numVs) &&
-        Objects.equals(this.reason, seUpgradeEvents.reason) &&
-        Objects.equals(this.seGroupHaMode, seUpgradeEvents.seGroupHaMode) &&
-        Objects.equals(this.seGroupRef, seUpgradeEvents.seGroupRef) &&
-        Objects.equals(this.seRef, seUpgradeEvents.seRef) &&
-        Objects.equals(this.task, seUpgradeEvents.task) &&
-        Objects.equals(this.toSeRef, seUpgradeEvents.toSeRef) &&
-        Objects.equals(this.trafficStatus, seUpgradeEvents.trafficStatus) &&
-        Objects.equals(this.vsRef, seUpgradeEvents.vsRef);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(fromSeRef, numSe, numSeGroup, numVs, reason, seGroupHaMode, seGroupRef, seRef, task, toSeRef, trafficStatus, vsRef);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SeUpgradeEvents {\n");
-    
-    sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
-    sb.append("    numSe: ").append(toIndentedString(numSe)).append("\n");
-    sb.append("    numSeGroup: ").append(toIndentedString(numSeGroup)).append("\n");
-    sb.append("    numVs: ").append(toIndentedString(numVs)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    seGroupHaMode: ").append(toIndentedString(seGroupHaMode)).append("\n");
-    sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
-    sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
-    sb.append("    task: ").append(toIndentedString(task)).append("\n");
-    sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");
-    sb.append("    trafficStatus: ").append(toIndentedString(trafficStatus)).append("\n");
-    sb.append("    vsRef: ").append(toIndentedString(vsRef)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SeUpgradeEvents objSeUpgradeEvents = (SeUpgradeEvents) o;
+  return   Objects.equals(this.task, objSeUpgradeEvents.task)&&
+  Objects.equals(this.numSeGroup, objSeUpgradeEvents.numSeGroup)&&
+  Objects.equals(this.trafficStatus, objSeUpgradeEvents.trafficStatus)&&
+  Objects.equals(this.reason, objSeUpgradeEvents.reason)&&
+  Objects.equals(this.toSeRef, objSeUpgradeEvents.toSeRef)&&
+  Objects.equals(this.seGroupHaMode, objSeUpgradeEvents.seGroupHaMode)&&
+  Objects.equals(this.vsRef, objSeUpgradeEvents.vsRef)&&
+  Objects.equals(this.seRef, objSeUpgradeEvents.seRef)&&
+  Objects.equals(this.numVs, objSeUpgradeEvents.numVs)&&
+  Objects.equals(this.numSe, objSeUpgradeEvents.numSe)&&
+  Objects.equals(this.seGroupRef, objSeUpgradeEvents.seGroupRef)&&
+  Objects.equals(this.fromSeRef, objSeUpgradeEvents.fromSeRef);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SeUpgradeEvents {\n");
+      sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
+        sb.append("    numSe: ").append(toIndentedString(numSe)).append("\n");
+        sb.append("    numSeGroup: ").append(toIndentedString(numSeGroup)).append("\n");
+        sb.append("    numVs: ").append(toIndentedString(numVs)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    seGroupHaMode: ").append(toIndentedString(seGroupHaMode)).append("\n");
+        sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
+        sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
+        sb.append("    task: ").append(toIndentedString(task)).append("\n");
+        sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");
+        sb.append("    trafficStatus: ").append(toIndentedString(trafficStatus)).append("\n");
+        sb.append("    vsRef: ").append(toIndentedString(vsRef)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

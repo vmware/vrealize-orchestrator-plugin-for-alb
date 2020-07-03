@@ -1,212 +1,236 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SamlServiceProviderNode
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SamlServiceProviderNode is a POJO class extends AviRestResource that used for creating
+ * SamlServiceProviderNode.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SamlServiceProviderNode")
-@VsoFinder(name = Constants.FINDER_VRO_SAMLSERVICEPROVIDERNODE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_SAMLSERVICEPROVIDERNODE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SamlServiceProviderNode extends AviRestResource  {
+public class SamlServiceProviderNode extends AviRestResource {
   @JsonProperty("entity_id")
+  @JsonInclude(Include.NON_NULL)
   private String entityId = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("signing_cert")
+  @JsonInclude(Include.NON_NULL)
   private String signingCert = null;
 
   @JsonProperty("signing_key")
+  @JsonInclude(Include.NON_NULL)
   private String signingKey = null;
 
   @JsonProperty("signing_ssl_key_and_certificate_ref")
+  @JsonInclude(Include.NON_NULL)
   private String signingSslKeyAndCertificateRef = null;
 
   @JsonProperty("single_signon_url")
+  @JsonInclude(Include.NON_NULL)
   private String singleSignonUrl = null;
 
-  
+
+
   /**
-   * Globally unique entityID for this node. Entity ID on the IDP should match this. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Globally unique entityid for this node.
+   * Entity id on the idp should match this.
+   * Field introduced in 17.2.3.
    * @return entityId
-  **/
-  @ApiModelProperty(value = "Globally unique entityID for this node. Entity ID on the IDP should match this. Field introduced in 17.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEntityId() {
     return entityId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Globally unique entityid for this node.
+   * Entity id on the idp should match this.
+   * Field introduced in 17.2.3.
+   * @param entityId set the entityId.
+   */
   @VsoMethod
-  public void setEntityId(String entityId) {
+  public void setEntityId(String  entityId) {
     this.entityId = entityId;
   }
 
-  
   /**
-   * Refers to the Cluster name identifier (Virtual IP or FQDN). Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Refers to the cluster name identifier (virtual ip or fqdn).
+   * Field introduced in 17.2.3.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Refers to the Cluster name identifier (Virtual IP or FQDN). Field introduced in 17.2.3.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Refers to the cluster name identifier (virtual ip or fqdn).
+   * Field introduced in 17.2.3.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Service Provider signing certificate for metadata. Field deprecated in 18.2.1. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Service provider signing certificate for metadata.
+   * Field deprecated in 18.2.1.
+   * Field introduced in 17.2.3.
    * @return signingCert
-  **/
-  @ApiModelProperty(value = "Service Provider signing certificate for metadata. Field deprecated in 18.2.1. Field introduced in 17.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSigningCert() {
     return signingCert;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service provider signing certificate for metadata.
+   * Field deprecated in 18.2.1.
+   * Field introduced in 17.2.3.
+   * @param signingCert set the signingCert.
+   */
   @VsoMethod
-  public void setSigningCert(String signingCert) {
+  public void setSigningCert(String  signingCert) {
     this.signingCert = signingCert;
   }
 
-  
   /**
-   * Service Provider signing key for metadata. Field deprecated in 18.2.1. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Service provider signing key for metadata.
+   * Field deprecated in 18.2.1.
+   * Field introduced in 17.2.3.
    * @return signingKey
-  **/
-  @ApiModelProperty(value = "Service Provider signing key for metadata. Field deprecated in 18.2.1. Field introduced in 17.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSigningKey() {
     return signingKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service provider signing key for metadata.
+   * Field deprecated in 18.2.1.
+   * Field introduced in 17.2.3.
+   * @param signingKey set the signingKey.
+   */
   @VsoMethod
-  public void setSigningKey(String signingKey) {
+  public void setSigningKey(String  signingKey) {
     this.signingKey = signingKey;
   }
 
-  
   /**
-   * Service Engines will use this SSL certificate to sign assertions going to the IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Service engines will use this ssl certificate to sign assertions going to the idp.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * Field introduced in 18.2.1.
    * @return signingSslKeyAndCertificateRef
-  **/
-  @ApiModelProperty(value = "Service Engines will use this SSL certificate to sign assertions going to the IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSigningSslKeyAndCertificateRef() {
     return signingSslKeyAndCertificateRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engines will use this ssl certificate to sign assertions going to the idp.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * Field introduced in 18.2.1.
+   * @param signingSslKeyAndCertificateRef set the signingSslKeyAndCertificateRef.
+   */
   @VsoMethod
-  public void setSigningSslKeyAndCertificateRef(String signingSslKeyAndCertificateRef) {
+  public void setSigningSslKeyAndCertificateRef(String  signingSslKeyAndCertificateRef) {
     this.signingSslKeyAndCertificateRef = signingSslKeyAndCertificateRef;
   }
 
-  
   /**
-   * Single Signon URL to be programmed on the IDP. Field introduced in 17.2.3.
+   * This is the getter method this will return the attribute value.
+   * Single signon url to be programmed on the idp.
+   * Field introduced in 17.2.3.
    * @return singleSignonUrl
-  **/
-  @ApiModelProperty(value = "Single Signon URL to be programmed on the IDP. Field introduced in 17.2.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSingleSignonUrl() {
     return singleSignonUrl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Single signon url to be programmed on the idp.
+   * Field introduced in 17.2.3.
+   * @param singleSignonUrl set the singleSignonUrl.
+   */
   @VsoMethod
-  public void setSingleSignonUrl(String singleSignonUrl) {
+  public void setSingleSignonUrl(String  singleSignonUrl) {
     this.singleSignonUrl = singleSignonUrl;
   }
 
-  
-  public String getObjectID() {
-		return "SamlServiceProviderNode";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SamlServiceProviderNode samlServiceProviderNode = (SamlServiceProviderNode) o;
-    return Objects.equals(this.entityId, samlServiceProviderNode.entityId) &&
-        Objects.equals(this.name, samlServiceProviderNode.name) &&
-        Objects.equals(this.signingCert, samlServiceProviderNode.signingCert) &&
-        Objects.equals(this.signingKey, samlServiceProviderNode.signingKey) &&
-        Objects.equals(this.signingSslKeyAndCertificateRef, samlServiceProviderNode.signingSslKeyAndCertificateRef) &&
-        Objects.equals(this.singleSignonUrl, samlServiceProviderNode.singleSignonUrl);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(entityId, name, signingCert, signingKey, signingSslKeyAndCertificateRef, singleSignonUrl);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SamlServiceProviderNode {\n");
-    
-    sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    signingCert: ").append(toIndentedString(signingCert)).append("\n");
-    sb.append("    signingKey: ").append(toIndentedString(signingKey)).append("\n");
-    sb.append("    signingSslKeyAndCertificateRef: ").append(toIndentedString(signingSslKeyAndCertificateRef)).append("\n");
-    sb.append("    singleSignonUrl: ").append(toIndentedString(singleSignonUrl)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SamlServiceProviderNode objSamlServiceProviderNode = (SamlServiceProviderNode) o;
+  return   Objects.equals(this.entityId, objSamlServiceProviderNode.entityId)&&
+  Objects.equals(this.name, objSamlServiceProviderNode.name)&&
+  Objects.equals(this.signingCert, objSamlServiceProviderNode.signingCert)&&
+  Objects.equals(this.signingSslKeyAndCertificateRef, objSamlServiceProviderNode.signingSslKeyAndCertificateRef)&&
+  Objects.equals(this.signingKey, objSamlServiceProviderNode.signingKey)&&
+  Objects.equals(this.singleSignonUrl, objSamlServiceProviderNode.singleSignonUrl);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SamlServiceProviderNode {\n");
+      sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    signingCert: ").append(toIndentedString(signingCert)).append("\n");
+        sb.append("    signingKey: ").append(toIndentedString(signingKey)).append("\n");
+        sb.append("    signingSslKeyAndCertificateRef: ").append(toIndentedString(signingSslKeyAndCertificateRef)).append("\n");
+        sb.append("    singleSignonUrl: ").append(toIndentedString(singleSignonUrl)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

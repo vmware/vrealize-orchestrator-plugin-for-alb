@@ -1,116 +1,112 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * NetworkFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The NetworkFilter is a POJO class extends AviRestResource that used for creating
+ * NetworkFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "NetworkFilter")
-@VsoFinder(name = Constants.FINDER_VRO_NETWORKFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_NETWORKFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class NetworkFilter extends AviRestResource  {
+public class NetworkFilter extends AviRestResource {
   @JsonProperty("network_ref")
+  @JsonInclude(Include.NON_NULL)
   private String networkRef = null;
 
   @JsonProperty("server_filter")
+  @JsonInclude(Include.NON_NULL)
   private String serverFilter = null;
 
-  
+
+
   /**
-   *  It is a reference to an object of type VIMgrNWRuntime.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type vimgrnwruntime.
    * @return networkRef
-  **/
-  @ApiModelProperty(required = true, value = " It is a reference to an object of type VIMgrNWRuntime.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNetworkRef() {
     return networkRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type vimgrnwruntime.
+   * @param networkRef set the networkRef.
+   */
   @VsoMethod
-  public void setNetworkRef(String networkRef) {
+  public void setNetworkRef(String  networkRef) {
     this.networkRef = networkRef;
   }
 
-  
   /**
-   * server_filter of NetworkFilter.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property server_filter of obj type networkfilter field type str  type string.
    * @return serverFilter
-  **/
-  @ApiModelProperty(value = "server_filter of NetworkFilter.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServerFilter() {
     return serverFilter;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property server_filter of obj type networkfilter field type str  type string.
+   * @param serverFilter set the serverFilter.
+   */
   @VsoMethod
-  public void setServerFilter(String serverFilter) {
+  public void setServerFilter(String  serverFilter) {
     this.serverFilter = serverFilter;
   }
 
-  
-  public String getObjectID() {
-		return "NetworkFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    NetworkFilter networkFilter = (NetworkFilter) o;
-    return Objects.equals(this.networkRef, networkFilter.networkRef) &&
-        Objects.equals(this.serverFilter, networkFilter.serverFilter);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(networkRef, serverFilter);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NetworkFilter {\n");
-    
-    sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
-    sb.append("    serverFilter: ").append(toIndentedString(serverFilter)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  NetworkFilter objNetworkFilter = (NetworkFilter) o;
+  return   Objects.equals(this.networkRef, objNetworkFilter.networkRef)&&
+  Objects.equals(this.serverFilter, objNetworkFilter.serverFilter);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class NetworkFilter {\n");
+      sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
+        sb.append("    serverFilter: ").append(toIndentedString(serverFilter)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

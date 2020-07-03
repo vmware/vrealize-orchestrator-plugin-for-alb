@@ -1,163 +1,172 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * FeProxyRoutePublishConfig
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The FeProxyRoutePublishConfig is a POJO class extends AviRestResource that used for creating
+ * FeProxyRoutePublishConfig.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "FeProxyRoutePublishConfig")
-@VsoFinder(name = Constants.FINDER_VRO_FEPROXYROUTEPUBLISHCONFIG, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_FEPROXYROUTEPUBLISHCONFIG)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class FeProxyRoutePublishConfig extends AviRestResource  {
+public class FeProxyRoutePublishConfig extends AviRestResource {
   @JsonProperty("mode")
+  @JsonInclude(Include.NON_NULL)
   private String mode = "FE_PROXY_ROUTE_PUBLISH_NONE";
 
   @JsonProperty("publisher_port")
+  @JsonInclude(Include.NON_NULL)
   private Integer publisherPort = 80;
 
   @JsonProperty("subnet")
+  @JsonInclude(Include.NON_NULL)
   private Integer subnet = 32;
 
   @JsonProperty("token")
+  @JsonInclude(Include.NON_NULL)
   private String token = null;
 
-  
+
+
   /**
-   * Publish ECMP route to upstream router for VIP. Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
+   * This is the getter method this will return the attribute value.
+   * Publish ecmp route to upstream router for vip.
+   * Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as FE_PROXY_ROUTE_PUBLISH_NONE.
    * @return mode
-  **/
-  @ApiModelProperty(value = "Publish ECMP route to upstream router for VIP. Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMode() {
     return mode;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Publish ecmp route to upstream router for vip.
+   * Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as FE_PROXY_ROUTE_PUBLISH_NONE.
+   * @param mode set the mode.
+   */
   @VsoMethod
-  public void setMode(String mode) {
+  public void setMode(String  mode) {
     this.mode = mode;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Listener port for publisher.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
    * @return publisherPort
-  **/
-  @ApiModelProperty(value = "Listener port for publisher.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPublisherPort() {
     return publisherPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Listener port for publisher.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+   * @param publisherPort set the publisherPort.
+   */
   @VsoMethod
-  public void setPublisherPort(Integer publisherPort) {
+  public void setPublisherPort(Integer  publisherPort) {
     this.publisherPort = publisherPort;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Subnet for publisher.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @return subnet
-  **/
-  @ApiModelProperty(value = "Subnet for publisher.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getSubnet() {
     return subnet;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Subnet for publisher.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 32.
+   * @param subnet set the subnet.
+   */
   @VsoMethod
-  public void setSubnet(Integer subnet) {
+  public void setSubnet(Integer  subnet) {
     this.subnet = subnet;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Token for tracking changes.
    * @return token
-  **/
-  @ApiModelProperty(value = "Token for tracking changes.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getToken() {
     return token;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Token for tracking changes.
+   * @param token set the token.
+   */
   @VsoMethod
-  public void setToken(String token) {
+  public void setToken(String  token) {
     this.token = token;
   }
 
-  
-  public String getObjectID() {
-		return "FeProxyRoutePublishConfig";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    FeProxyRoutePublishConfig feProxyRoutePublishConfig = (FeProxyRoutePublishConfig) o;
-    return Objects.equals(this.mode, feProxyRoutePublishConfig.mode) &&
-        Objects.equals(this.publisherPort, feProxyRoutePublishConfig.publisherPort) &&
-        Objects.equals(this.subnet, feProxyRoutePublishConfig.subnet) &&
-        Objects.equals(this.token, feProxyRoutePublishConfig.token);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(mode, publisherPort, subnet, token);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class FeProxyRoutePublishConfig {\n");
-    
-    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-    sb.append("    publisherPort: ").append(toIndentedString(publisherPort)).append("\n");
-    sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  FeProxyRoutePublishConfig objFeProxyRoutePublishConfig = (FeProxyRoutePublishConfig) o;
+  return   Objects.equals(this.subnet, objFeProxyRoutePublishConfig.subnet)&&
+  Objects.equals(this.token, objFeProxyRoutePublishConfig.token)&&
+  Objects.equals(this.publisherPort, objFeProxyRoutePublishConfig.publisherPort)&&
+  Objects.equals(this.mode, objFeProxyRoutePublishConfig.mode);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class FeProxyRoutePublishConfig {\n");
+      sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    publisherPort: ").append(toIndentedString(publisherPort)).append("\n");
+        sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

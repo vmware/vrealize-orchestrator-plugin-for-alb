@@ -1,58 +1,85 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DNSConfiguration
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DNSConfiguration is a POJO class extends AviRestResource that used for creating
+ * DNSConfiguration.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DNSConfiguration")
-@VsoFinder(name = Constants.FINDER_VRO_DNSCONFIGURATION, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DNSCONFIGURATION)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DNSConfiguration extends AviRestResource  {
+public class DNSConfiguration extends AviRestResource {
   @JsonProperty("search_domain")
+  @JsonInclude(Include.NON_NULL)
   private String searchDomain = null;
 
   @JsonProperty("server_list")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddr> serverList = null;
 
-  
+
+
   /**
-   * Search domain to use in DNS lookup.
+   * This is the getter method this will return the attribute value.
+   * Search domain to use in dns lookup.
    * @return searchDomain
-  **/
-  @ApiModelProperty(value = "Search domain to use in DNS lookup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSearchDomain() {
     return searchDomain;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Search domain to use in dns lookup.
+   * @param searchDomain set the searchDomain.
+   */
   @VsoMethod
-  public void setSearchDomain(String searchDomain) {
+  public void setSearchDomain(String  searchDomain) {
     this.searchDomain = searchDomain;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of dns server ip addresses.
+   * @return serverList
+   */
+  @VsoMethod
+  public List<IpAddr> getServerList() {
+    return serverList;
+  }
+
+  /**
+   * This is the setter method. this will set the serverList
+   * List of dns server ip addresses.
+   * @return serverList
+   */
+  @VsoMethod
+  public void setServerList(List<IpAddr>  serverList) {
+    this.serverList = serverList;
+  }
+
+  /**
+   * This is the setter method this will set the serverList
+   * List of dns server ip addresses.
+   * @return serverList
+   */
+  @VsoMethod
   public DNSConfiguration addServerListItem(IpAddr serverListItem) {
     if (this.serverList == null) {
       this.serverList = new ArrayList<IpAddr>();
@@ -60,69 +87,41 @@ public class DNSConfiguration extends AviRestResource  {
     this.serverList.add(serverListItem);
     return this;
   }
-  
-  /**
-   * List of DNS Server IP addresses.
-   * @return serverList
-  **/
-  @ApiModelProperty(value = "List of DNS Server IP addresses.")
 
-  @Valid
 
- 
-  @VsoMethod  
-  public List<IpAddr> getServerList() {
-    return serverList;
-  }
-    
-  @VsoMethod
-  public void setServerList(List<IpAddr> serverList) {
-    this.serverList = serverList;
-  }
 
-  
-  public String getObjectID() {
-		return "DNSConfiguration";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DNSConfiguration dnSConfiguration = (DNSConfiguration) o;
-    return Objects.equals(this.searchDomain, dnSConfiguration.searchDomain) &&
-        Objects.equals(this.serverList, dnSConfiguration.serverList);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(searchDomain, serverList);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DNSConfiguration {\n");
-    
-    sb.append("    searchDomain: ").append(toIndentedString(searchDomain)).append("\n");
-    sb.append("    serverList: ").append(toIndentedString(serverList)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DNSConfiguration objDNSConfiguration = (DNSConfiguration) o;
+  return   Objects.equals(this.searchDomain, objDNSConfiguration.searchDomain)&&
+  Objects.equals(this.serverList, objDNSConfiguration.serverList);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DNSConfiguration {\n");
+      sb.append("    searchDomain: ").append(toIndentedString(searchDomain)).append("\n");
+        sb.append("    serverList: ").append(toIndentedString(serverList)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

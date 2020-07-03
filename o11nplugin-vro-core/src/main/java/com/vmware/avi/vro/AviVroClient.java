@@ -39,12 +39,9 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 @Service
 public class AviVroClient {
 	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
-	static {
-		VroPluginFactory.initializeModelMap();
-	}
 
 	public String getObjectID() {
-		return cred.getController() + cred.getUsername() + cred.getPort();
+		return cred.getController();
 	}
 
 	@VsoConstructor
@@ -297,6 +294,51 @@ public class AviVroClient {
 		}
 	}
 
+	/****
+	 * This method will handle all HTTP methods. if its POST it will call the POST,
+	 * if its PUT it will call the PUT...and so on
+	 * 
+	 * @param path   Request path
+	 * @param method type of the method.
+	 * @param data   contains the actual data which is used for the operation.
+	 * @return
+	 */
+	@VsoMethod
+	public Boolean callAction(String path, String httpMethod, String data) {
+		AviApi session = getSession();
+		Boolean response = false;
+		if ((null != path) && (!path.isEmpty())) {
+			try {
+				JSONObject jsonObj = null;
+				switch (httpMethod) {
+				case "POST":
+					jsonObj = new JSONObject(data);
+					session.post(path, jsonObj);
+					response = true;
+					break;
+				case "PUT":
+					jsonObj = new JSONObject(data);
+					session.put(path, jsonObj);
+					response = true;
+					break;
+				case "DELETE":
+					session.delete(path, data);
+					response = true;
+					break;
+				default:
+					logger.debug("Please pass the correct http Method..");
+					break;
+				}
+			} catch (AviApiException e) {
+				response = false;
+				logger.error("Exception occured : " + e.getMessage(), e);
+			}
+		} else {
+			logger.debug("Please provide path");
+		}
+		return response;
+	}
+
 	/**
 	 * This method fetch data from the Queue and perform the actions based on its
 	 * operation.
@@ -308,7 +350,8 @@ public class AviVroClient {
 	public ArrayList<AviRestResource> executeWorkflow() throws Exception {
 		int count = 0;
 		logger.debug("Executing workflow");
-		ObjectMapper mapper = new ObjectMapper();
+		// ObjectMapper mapper = new ObjectMapper();
+		mapper.setSerializationInclusion(Include.NON_NULL);
 		ArrayList<AviRestResource> jsonResponse = new ArrayList<AviRestResource>();
 		logger.info("Inside executeWorkflow :" + workflowDataQueue);
 		try {
@@ -321,12 +364,15 @@ public class AviVroClient {
 				JSONObject resource = null;
 				String tenant = aviObjectMetadata.getTenant();
 				HashMap<String, String> userHeader = this.getTenantHeader(tenant);
-				String nameOfObject = aviObjectMetadata.getNewObject().get("name").toString();
+				//
 				if (aviObjectMetadata.getNewObject().has("uuid")) {
 					resource = getObjectDataByUUID(objectType, aviObjectMetadata.getNewObject().get("uuid").toString(),
 							userHeader);
-				} else {
+				} else if (aviObjectMetadata.getNewObject().has("name")) {
+					String nameOfObject = aviObjectMetadata.getNewObject().get("name").toString();
 					resource = getObjectDataByName(objectType, nameOfObject, userHeader);
+				} else {
+
 				}
 				if (operation.equals(OPERATION.ADD.toString())) {
 					if (null == resource) {
@@ -357,7 +403,6 @@ public class AviVroClient {
 				count++;
 			}
 		} catch (AviApiException e) {
-			// jsonResponse.add(new JSONObject().put("error", e.getMessage()));
 			this.rollback(count - 1, workflowDataQueue, e);
 		} finally {
 			clearQueue();
@@ -400,8 +445,8 @@ public class AviVroClient {
 					.forName("com.vmware.avi.vro.model." + className);
 			object = obj.newInstance();
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-			logger.debug("Exception : "+e.getMessage());
-		
+			logger.debug("Exception : " + e.getMessage());
+
 		}
 
 		return object;
@@ -578,10 +623,10 @@ public class AviVroClient {
 		JSONArray array = this.get(objectType, params, tenant);
 		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
 		AviRestResource object = this.getAviRestResourceObject(objectType);
-		ObjectMapper mapper = new ObjectMapper();
+		// ObjectMapper mapper = new ObjectMapper();
+		mapper.setSerializationInclusion(Include.NON_NULL);
 		for (int counter = 0; counter < array.length(); counter++) {
 			JSONObject result = array.getJSONObject(counter);
-			object = mapper.readValue(result.toString(), object.getClass());
 			object = mapper.readValue(result.toString(), object.getClass());
 			objectList.add(object);
 		}
@@ -697,9 +742,6 @@ public class AviVroClient {
 						String loggerMsg = " Creating " + currentObjectData.getObjectType().toLowerCase() + " :: ";
 						logger.info(loggerMsg);
 						rollBackMsg = rollBackMsg + loggerMsg;
-						if (currentObjectData.getObjectType().toLowerCase().equals("virtualservice")) {
-							existingObjectData.remove("vsvip_ref");
-						}
 						JSONObject updatedObject = transformRef(existingObjectData);
 						response = session.post(currentObjectData.getObjectType().toLowerCase(), updatedObject,
 								userHeader);

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createVRAPoolObj"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="0cfaebed-a678-43d2-9992-1bdde8e44ecc" version="1.0.2"
+	allowed-operations="vfe">
+	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
+	<param n="poolName" t="string"><![CDATA[Pool name]]></param>
+	<param n="ServerCloud" t="string"><![CDATA[Servercloud name]]></param>
+	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
+	<param n="HealthMonitorName" t="string"><![CDATA[New healthmonitor name]]></param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="instance_port" t="number"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[/**************************************************
+* This script initializes pool properties objects *
+* and creats pool object. 						  *
+**************************************************/
+
+try{
+	if(aviVroClient!=null){
+		poolObject = new AviPool();
+		var HMref ="/api/healthmonitor?name="+HealthMonitorName;
+		poolObject.addHealthMonitorRefsItem(HMref);
+		var algorithm="LB_ALGORITHM_LEAST_CONNECTIONS"
+		poolObject.setLbAlgorithm(algorithm);
+		var failActiontype="Close Connection";
+		// Set fail action type
+		if (failActiontype != "" || failActiontype == "Close Connection"){
+			var failActionObject = new AviFailAction() ;
+			failActionObject.setType("FAIL_ACTION_CLOSE_CONN");
+			//var fail_action = { "type": "FAIL_ACTION_CLOSE_CONN" }
+			poolObject.setFailAction(failActionObject);
+		}else if (failActiontype != "" || failActiontype == "HTTP Redirect"){
+			var status_code = "HTTP_REDIRECT_STATUS_CODE_"+ statusCode //Status Code
+			var urlParts = /^(?:\w+\:\/\/)?([^\/]+)(.*)$/.exec(failActionURL); //URL
+			var host = urlParts[1];
+			var path = urlParts[2];
+			var failActionHttpRedirectObject = new AviFailActionHTTPRedirect() ;
+			failActionHttpRedirectObject.setHost(host);
+			failActionHttpRedirectObject.setPath(path);
+			failActionHttpRedirectObject.setProtocol(statusProtocol);
+			failActionHttpRedirectObject.setStatusCode(status_code);
+			failActionHttpRedirectObject.setQuery("");
+			failActionObject = Server.findForType('Avi:FailAction', System.getObjectId(failActionObject));
+			failActionObject.setRedirect(failActionHttpRedirectObject);
+			failActionObject.setType("FAIL_ACTION_HTTP_REDIRECT");
+			poolObject.setFailAction(failActionObject);
+		}
+		
+		// Initialize server list for get server details from user inputs.
+		var servers = [];
+		
+		// Get the IP, Ratio, ServerType and Port from list of servers and push into JSON.
+		for (index in PoolServers){
+			var IP = PoolServers[index];
+			var serverObject = new AviServer() ;
+			var ipAddressObject = new AviIpAddr() ;
+			ipAddressObject.setType("V4");
+			ipAddressObject.setAddr(IP)
+			serverObject.setIp(ipAddressObject);
+			serverObject.setRatio(8.0);
+			serverObject.setPort(instance_port);
+			servers.push(serverObject);
+		}	
+		var defaultServerPort=80;
+		// Set servers object in properties
+		poolObject.setServers(servers);
+		if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+		}
+		poolObject.setCloudRef("/api/cloud?name="+ServerCloud);
+		poolObject.setTenantRef("/api/tenant?name="+Tenant);
+		poolObject.setDefaultServerPort(defaultServerPort);
+		poolObject.setName(poolName);
+			
+		aviVroClient.addObject(poolObject)
+		System.log("poolObject : "+poolObject);
+		return aviVroClient
+	}else{
+		System.log("Avi client is null.. please attach Avi client")
+	}
+	
+} catch (e) {
+	throw "Error while creating pool object : " + e
+}
+]]></script>
+</dunes-script-module>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Exported from [server]</comment>
+	<entry key="categoryPath">Library.Avi.VRA</entry>
+	<entry key="name">Scaleout virtual service</entry>
+	<entry key="type">Workflow</entry>
+	<entry key="id">78dc08cd-d832-4228-adfa-2fde76636f7c</entry>
+</properties>

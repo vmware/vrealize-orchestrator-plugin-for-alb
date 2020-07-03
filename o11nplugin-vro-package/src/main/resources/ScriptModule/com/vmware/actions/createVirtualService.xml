@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVirtualService"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="ef8cbb75-f0c1-463f-9e6d-c5e76240cba2" version="1.0.7"
+	id="ef8cbb75-f0c1-463f-9e6d-c5e76240cba2" version="1.0.9"
 	allowed-operations="vfe">
 	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
 	<param n="poolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
@@ -171,7 +171,9 @@ try {
 		ssl_profile_ref = "/api/sslprofile?name=System-Standard";
 		ssl_key_and_certificate_refs = [ "/api/sslkeyandcertificate/?name="+Certificate ];		
 	}	
-	
+	if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+	}
 	
 	// Set the configuration for virtual service.
 	configuration = {

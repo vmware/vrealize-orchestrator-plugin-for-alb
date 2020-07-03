@@ -1,194 +1,204 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AuthenticationAction;
 import com.vmware.avi.vro.model.AuthenticationMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AuthenticationRule
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AuthenticationRule is a POJO class extends AviRestResource that used for creating
+ * AuthenticationRule.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AuthenticationRule")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONRULE, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_AUTHENTICATIONRULE)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthenticationRule extends AviRestResource  {
+public class AuthenticationRule extends AviRestResource {
   @JsonProperty("action")
+  @JsonInclude(Include.NON_NULL)
   private AuthenticationAction action = null;
 
   @JsonProperty("enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enable = true;
 
   @JsonProperty("index")
+  @JsonInclude(Include.NON_NULL)
   private Integer index = null;
 
   @JsonProperty("match")
+  @JsonInclude(Include.NON_NULL)
   private AuthenticationMatch match = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
-  
+
+
   /**
-   * Enable or disable authentication for matched targets. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable authentication for matched targets.
+   * Field introduced in 18.2.5.
    * @return action
-  **/
-  @ApiModelProperty(value = "Enable or disable authentication for matched targets. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AuthenticationAction getAction() {
     return action;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable authentication for matched targets.
+   * Field introduced in 18.2.5.
+   * @param action set the action.
+   */
   @VsoMethod
   public void setAction(AuthenticationAction action) {
     this.action = action;
   }
 
-  
   /**
-   * Enable or disable the rule. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable the rule.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
-  **/
-  @ApiModelProperty(required = true, value = "Enable or disable the rule. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
-  public Boolean isEnable() {
+   */
+  @VsoMethod
+  public Boolean getEnable() {
     return enable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable the rule.
+   * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enable set the enable.
+   */
   @VsoMethod
-  public void setEnable(Boolean enable) {
+  public void setEnable(Boolean  enable) {
     this.enable = enable;
   }
 
-  
   /**
-   * Index of the rule. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Index of the rule.
+   * Field introduced in 18.2.5.
    * @return index
-  **/
-  @ApiModelProperty(required = true, value = "Index of the rule. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIndex() {
     return index;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Index of the rule.
+   * Field introduced in 18.2.5.
+   * @param index set the index.
+   */
   @VsoMethod
-  public void setIndex(Integer index) {
+  public void setIndex(Integer  index) {
     this.index = index;
   }
 
-  
   /**
-   * Add match criteria to the rule. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Add match criteria to the rule.
+   * Field introduced in 18.2.5.
    * @return match
-  **/
-  @ApiModelProperty(value = "Add match criteria to the rule. Field introduced in 18.2.5.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AuthenticationMatch getMatch() {
     return match;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Add match criteria to the rule.
+   * Field introduced in 18.2.5.
+   * @param match set the match.
+   */
   @VsoMethod
   public void setMatch(AuthenticationMatch match) {
     this.match = match;
   }
 
-  
   /**
-   * Name of the rule. Field introduced in 18.2.5.
+   * This is the getter method this will return the attribute value.
+   * Name of the rule.
+   * Field introduced in 18.2.5.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the rule. Field introduced in 18.2.5.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the rule.
+   * Field introduced in 18.2.5.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
-  public String getObjectID() {
-		return "AuthenticationRule";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AuthenticationRule authenticationRule = (AuthenticationRule) o;
-    return Objects.equals(this.action, authenticationRule.action) &&
-        Objects.equals(this.enable, authenticationRule.enable) &&
-        Objects.equals(this.index, authenticationRule.index) &&
-        Objects.equals(this.match, authenticationRule.match) &&
-        Objects.equals(this.name, authenticationRule.name);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(action, enable, index, match, name);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticationRule {\n");
-    
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    match: ").append(toIndentedString(match)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AuthenticationRule objAuthenticationRule = (AuthenticationRule) o;
+  return   Objects.equals(this.action, objAuthenticationRule.action)&&
+  Objects.equals(this.index, objAuthenticationRule.index)&&
+  Objects.equals(this.enable, objAuthenticationRule.enable)&&
+  Objects.equals(this.name, objAuthenticationRule.name)&&
+  Objects.equals(this.match, objAuthenticationRule.match);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AuthenticationRule {\n");
+      sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    match: ").append(toIndentedString(match)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

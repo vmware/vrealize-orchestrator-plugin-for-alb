@@ -1,63 +1,96 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.PortRange;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * L4RulePortMatch
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The L4RulePortMatch is a POJO class extends AviRestResource that used for creating
+ * L4RulePortMatch.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "L4RulePortMatch")
-@VsoFinder(name = Constants.FINDER_VRO_L4RULEPORTMATCH, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_L4RULEPORTMATCH)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class L4RulePortMatch extends AviRestResource  {
+public class L4RulePortMatch extends AviRestResource {
   @JsonProperty("match_criteria")
+  @JsonInclude(Include.NON_NULL)
   private String matchCriteria = null;
 
   @JsonProperty("port_ranges")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<PortRange> portRanges = null;
 
   @JsonProperty("ports")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Integer> ports = null;
 
-  
+
+
   /**
-   * Criterion to use for Virtual Service port matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7.
+   * This is the getter method this will return the attribute value.
+   * Criterion to use for virtual service port matching.
+   * Enum options - IS_IN, IS_NOT_IN.
+   * Field introduced in 17.2.7.
    * @return matchCriteria
-  **/
-  @ApiModelProperty(required = true, value = "Criterion to use for Virtual Service port matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMatchCriteria() {
     return matchCriteria;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Criterion to use for virtual service port matching.
+   * Enum options - IS_IN, IS_NOT_IN.
+   * Field introduced in 17.2.7.
+   * @param matchCriteria set the matchCriteria.
+   */
   @VsoMethod
-  public void setMatchCriteria(String matchCriteria) {
+  public void setMatchCriteria(String  matchCriteria) {
     this.matchCriteria = matchCriteria;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Range of tcp/udp port numbers of the virtual service.
+   * Field introduced in 17.2.7.
+   * @return portRanges
+   */
+  @VsoMethod
+  public List<PortRange> getPortRanges() {
+    return portRanges;
+  }
+
+  /**
+   * This is the setter method. this will set the portRanges
+   * Range of tcp/udp port numbers of the virtual service.
+   * Field introduced in 17.2.7.
+   * @return portRanges
+   */
+  @VsoMethod
+  public void setPortRanges(List<PortRange>  portRanges) {
+    this.portRanges = portRanges;
+  }
+
+  /**
+   * This is the setter method this will set the portRanges
+   * Range of tcp/udp port numbers of the virtual service.
+   * Field introduced in 17.2.7.
+   * @return portRanges
+   */
+  @VsoMethod
   public L4RulePortMatch addPortRangesItem(PortRange portRangesItem) {
     if (this.portRanges == null) {
       this.portRanges = new ArrayList<PortRange>();
@@ -65,27 +98,40 @@ public class L4RulePortMatch extends AviRestResource  {
     this.portRanges.add(portRangesItem);
     return this;
   }
-  
+
+
   /**
-   * Range of TCP/UDP port numbers of the Virtual Service. Field introduced in 17.2.7.
-   * @return portRanges
-  **/
-  @ApiModelProperty(value = "Range of TCP/UDP port numbers of the Virtual Service. Field introduced in 17.2.7.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<PortRange> getPortRanges() {
-    return portRanges;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Virtual service's listening port(s).
+   * Allowed values are 1-65535.
+   * Field introduced in 17.2.7.
+   * @return ports
+   */
   @VsoMethod
-  public void setPortRanges(List<PortRange> portRanges) {
-    this.portRanges = portRanges;
+  public List<Integer> getPorts() {
+    return ports;
   }
 
-  
+  /**
+   * This is the setter method. this will set the ports
+   * Virtual service's listening port(s).
+   * Allowed values are 1-65535.
+   * Field introduced in 17.2.7.
+   * @return ports
+   */
+  @VsoMethod
+  public void setPorts(List<Integer>  ports) {
+    this.ports = ports;
+  }
+
+  /**
+   * This is the setter method this will set the ports
+   * Virtual service's listening port(s).
+   * Allowed values are 1-65535.
+   * Field introduced in 17.2.7.
+   * @return ports
+   */
+  @VsoMethod
   public L4RulePortMatch addPortsItem(Integer portsItem) {
     if (this.ports == null) {
       this.ports = new ArrayList<Integer>();
@@ -93,70 +139,43 @@ public class L4RulePortMatch extends AviRestResource  {
     this.ports.add(portsItem);
     return this;
   }
-  
-  /**
-   * Virtual Service's listening port(s). Allowed values are 1-65535. Field introduced in 17.2.7.
-   * @return ports
-  **/
-  @ApiModelProperty(value = "Virtual Service's listening port(s). Allowed values are 1-65535. Field introduced in 17.2.7.")
 
 
- 
-  @VsoMethod  
-  public List<Integer> getPorts() {
-    return ports;
-  }
-    
-  @VsoMethod
-  public void setPorts(List<Integer> ports) {
-    this.ports = ports;
-  }
 
-  
-  public String getObjectID() {
-		return "L4RulePortMatch";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    L4RulePortMatch l4RulePortMatch = (L4RulePortMatch) o;
-    return Objects.equals(this.matchCriteria, l4RulePortMatch.matchCriteria) &&
-        Objects.equals(this.portRanges, l4RulePortMatch.portRanges) &&
-        Objects.equals(this.ports, l4RulePortMatch.ports);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(matchCriteria, portRanges, ports);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class L4RulePortMatch {\n");
-    
-    sb.append("    matchCriteria: ").append(toIndentedString(matchCriteria)).append("\n");
-    sb.append("    portRanges: ").append(toIndentedString(portRanges)).append("\n");
-    sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  L4RulePortMatch objL4RulePortMatch = (L4RulePortMatch) o;
+  return   Objects.equals(this.portRanges, objL4RulePortMatch.portRanges)&&
+  Objects.equals(this.ports, objL4RulePortMatch.ports)&&
+  Objects.equals(this.matchCriteria, objL4RulePortMatch.matchCriteria);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class L4RulePortMatch {\n");
+      sb.append("    matchCriteria: ").append(toIndentedString(matchCriteria)).append("\n");
+        sb.append("    portRanges: ").append(toIndentedString(portRanges)).append("\n");
+        sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

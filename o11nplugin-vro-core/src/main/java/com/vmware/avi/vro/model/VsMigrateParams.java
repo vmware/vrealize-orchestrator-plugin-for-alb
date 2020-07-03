@@ -1,236 +1,244 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VsMigrateParams
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VsMigrateParams is a POJO class extends AviRestResource that used for creating
+ * VsMigrateParams.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VsMigrateParams")
-@VsoFinder(name = Constants.FINDER_VRO_VSMIGRATEPARAMS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VSMIGRATEPARAMS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VsMigrateParams extends AviRestResource  {
+public class VsMigrateParams extends AviRestResource {
   @JsonProperty("from_se_ref")
+  @JsonInclude(Include.NON_NULL)
   private String fromSeRef = null;
 
   @JsonProperty("new_vcpus")
+  @JsonInclude(Include.NON_NULL)
   private Integer newVcpus = null;
 
   @JsonProperty("to_host_ref")
+  @JsonInclude(Include.NON_NULL)
   private String toHostRef = null;
 
   @JsonProperty("to_new_se")
-  private Boolean toNewSe = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean toNewSe = false;
 
   @JsonProperty("to_se_ref")
+  @JsonInclude(Include.NON_NULL)
   private String toSeRef = null;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vip_id")
+  @JsonInclude(Include.NON_NULL)
   private String vipId = null;
 
-  
+
+
   /**
-   *  It is a reference to an object of type ServiceEngine.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceengine.
    * @return fromSeRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getFromSeRef() {
     return fromSeRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceengine.
+   * @param fromSeRef set the fromSeRef.
+   */
   @VsoMethod
-  public void setFromSeRef(String fromSeRef) {
+  public void setFromSeRef(String  fromSeRef) {
     this.fromSeRef = fromSeRef;
   }
 
-  
   /**
-   * Number of new_vcpus.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property new_vcpus of obj type vsmigrateparams field type str  type integer.
    * @return newVcpus
-  **/
-  @ApiModelProperty(value = "Number of new_vcpus.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getNewVcpus() {
     return newVcpus;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property new_vcpus of obj type vsmigrateparams field type str  type integer.
+   * @param newVcpus set the newVcpus.
+   */
   @VsoMethod
-  public void setNewVcpus(Integer newVcpus) {
+  public void setNewVcpus(Integer  newVcpus) {
     this.newVcpus = newVcpus;
   }
 
-  
   /**
-   *  It is a reference to an object of type VIMgrHostRuntime.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type vimgrhostruntime.
    * @return toHostRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type VIMgrHostRuntime.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getToHostRef() {
     return toHostRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type vimgrhostruntime.
+   * @param toHostRef set the toHostRef.
+   */
   @VsoMethod
-  public void setToHostRef(String toHostRef) {
+  public void setToHostRef(String  toHostRef) {
     this.toHostRef = toHostRef;
   }
 
-  
   /**
-   * Placeholder for description of property to_new_se of obj type VsMigrateParams field type str  type boolean
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property to_new_se of obj type vsmigrateparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return toNewSe
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property to_new_se of obj type VsMigrateParams field type str  type boolean")
-
-
- 
-  @VsoMethod  
-  public Boolean isToNewSe() {
+   */
+  @VsoMethod
+  public Boolean getToNewSe() {
     return toNewSe;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property to_new_se of obj type vsmigrateparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param toNewSe set the toNewSe.
+   */
   @VsoMethod
-  public void setToNewSe(Boolean toNewSe) {
+  public void setToNewSe(Boolean  toNewSe) {
     this.toNewSe = toNewSe;
   }
 
-  
   /**
-   *  It is a reference to an object of type ServiceEngine.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type serviceengine.
    * @return toSeRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type ServiceEngine.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getToSeRef() {
     return toSeRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type serviceengine.
+   * @param toSeRef set the toSeRef.
+   */
   @VsoMethod
-  public void setToSeRef(String toSeRef) {
+  public void setToSeRef(String  toSeRef) {
     this.toSeRef = toSeRef;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   *  Field introduced in 17.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.1.1.
    * @return vipId
-  **/
-  @ApiModelProperty(required = true, value = " Field introduced in 17.1.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVipId() {
     return vipId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.1.1.
+   * @param vipId set the vipId.
+   */
   @VsoMethod
-  public void setVipId(String vipId) {
+  public void setVipId(String  vipId) {
     this.vipId = vipId;
   }
 
-  
-  public String getObjectID() {
-		return "VsMigrateParams";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VsMigrateParams vsMigrateParams = (VsMigrateParams) o;
-    return Objects.equals(this.fromSeRef, vsMigrateParams.fromSeRef) &&
-        Objects.equals(this.newVcpus, vsMigrateParams.newVcpus) &&
-        Objects.equals(this.toHostRef, vsMigrateParams.toHostRef) &&
-        Objects.equals(this.toNewSe, vsMigrateParams.toNewSe) &&
-        Objects.equals(this.toSeRef, vsMigrateParams.toSeRef) &&
-        Objects.equals(this.uuid, vsMigrateParams.uuid) &&
-        Objects.equals(this.vipId, vsMigrateParams.vipId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(fromSeRef, newVcpus, toHostRef, toNewSe, toSeRef, uuid, vipId);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VsMigrateParams {\n");
-    
-    sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
-    sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
-    sb.append("    toHostRef: ").append(toIndentedString(toHostRef)).append("\n");
-    sb.append("    toNewSe: ").append(toIndentedString(toNewSe)).append("\n");
-    sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VsMigrateParams objVsMigrateParams = (VsMigrateParams) o;
+  return   Objects.equals(this.newVcpus, objVsMigrateParams.newVcpus)&&
+  Objects.equals(this.uuid, objVsMigrateParams.uuid)&&
+  Objects.equals(this.toHostRef, objVsMigrateParams.toHostRef)&&
+  Objects.equals(this.toSeRef, objVsMigrateParams.toSeRef)&&
+  Objects.equals(this.vipId, objVsMigrateParams.vipId)&&
+  Objects.equals(this.toNewSe, objVsMigrateParams.toNewSe)&&
+  Objects.equals(this.fromSeRef, objVsMigrateParams.fromSeRef);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VsMigrateParams {\n");
+      sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
+        sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
+        sb.append("    toHostRef: ").append(toIndentedString(toHostRef)).append("\n");
+        sb.append("    toNewSe: ").append(toIndentedString(toNewSe)).append("\n");
+        sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

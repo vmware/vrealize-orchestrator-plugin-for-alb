@@ -1,142 +1,143 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AlertMetricThreshold;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AlertRuleMetric
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AlertRuleMetric is a POJO class extends AviRestResource that used for creating
+ * AlertRuleMetric.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AlertRuleMetric")
-@VsoFinder(name = Constants.FINDER_VRO_ALERTRULEMETRIC, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_ALERTRULEMETRIC)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AlertRuleMetric extends AviRestResource  {
+public class AlertRuleMetric extends AviRestResource {
   @JsonProperty("duration")
+  @JsonInclude(Include.NON_NULL)
   private Integer duration = null;
 
   @JsonProperty("metric_id")
+  @JsonInclude(Include.NON_NULL)
   private String metricId = null;
 
   @JsonProperty("metric_threshold")
+  @JsonInclude(Include.NON_NULL)
   private AlertMetricThreshold metricThreshold = null;
 
-  
+
+
   /**
-   * Evaluation window for the Metrics.
+   * This is the getter method this will return the attribute value.
+   * Evaluation window for the metrics.
    * @return duration
-  **/
-  @ApiModelProperty(value = "Evaluation window for the Metrics.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDuration() {
     return duration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Evaluation window for the metrics.
+   * @param duration set the duration.
+   */
   @VsoMethod
-  public void setDuration(Integer duration) {
+  public void setDuration(Integer  duration) {
     this.duration = duration;
   }
 
-  
   /**
-   * Metric Id for the Alert. Eg. l4_client.avg_complete_conns.
+   * This is the getter method this will return the attribute value.
+   * Metric id for the alert.
+   * Eg.
+   * L4_client.avg_complete_conns.
    * @return metricId
-  **/
-  @ApiModelProperty(value = "Metric Id for the Alert. Eg. l4_client.avg_complete_conns.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMetricId() {
     return metricId;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Metric id for the alert.
+   * Eg.
+   * L4_client.avg_complete_conns.
+   * @param metricId set the metricId.
+   */
   @VsoMethod
-  public void setMetricId(String metricId) {
+  public void setMetricId(String  metricId) {
     this.metricId = metricId;
   }
 
-  
   /**
-   * Placeholder for description of property metric_threshold of obj type AlertRuleMetric field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property metric_threshold of obj type alertrulemetric field type str  type ref.
    * @return metricThreshold
-  **/
-  @ApiModelProperty(required = true, value = "Placeholder for description of property metric_threshold of obj type AlertRuleMetric field type str  type object")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AlertMetricThreshold getMetricThreshold() {
     return metricThreshold;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property metric_threshold of obj type alertrulemetric field type str  type ref.
+   * @param metricThreshold set the metricThreshold.
+   */
   @VsoMethod
   public void setMetricThreshold(AlertMetricThreshold metricThreshold) {
     this.metricThreshold = metricThreshold;
   }
 
-  
-  public String getObjectID() {
-		return "AlertRuleMetric";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AlertRuleMetric alertRuleMetric = (AlertRuleMetric) o;
-    return Objects.equals(this.duration, alertRuleMetric.duration) &&
-        Objects.equals(this.metricId, alertRuleMetric.metricId) &&
-        Objects.equals(this.metricThreshold, alertRuleMetric.metricThreshold);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(duration, metricId, metricThreshold);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AlertRuleMetric {\n");
-    
-    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-    sb.append("    metricId: ").append(toIndentedString(metricId)).append("\n");
-    sb.append("    metricThreshold: ").append(toIndentedString(metricThreshold)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AlertRuleMetric objAlertRuleMetric = (AlertRuleMetric) o;
+  return   Objects.equals(this.duration, objAlertRuleMetric.duration)&&
+  Objects.equals(this.metricThreshold, objAlertRuleMetric.metricThreshold)&&
+  Objects.equals(this.metricId, objAlertRuleMetric.metricId);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AlertRuleMetric {\n");
+      sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    metricId: ").append(toIndentedString(metricId)).append("\n");
+        sb.append("    metricThreshold: ").append(toIndentedString(metricThreshold)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

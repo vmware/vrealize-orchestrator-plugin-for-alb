@@ -1,171 +1,168 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.IPReputationTypeMatch;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.IPReputationTypeMatch;
 import com.vmware.avi.vro.model.MicroServiceMatch;
 import com.vmware.avi.vro.model.PortMatch;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * NetworkSecurityMatchTarget
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The NetworkSecurityMatchTarget is a POJO class extends AviRestResource that used for creating
+ * NetworkSecurityMatchTarget.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "NetworkSecurityMatchTarget")
-@VsoFinder(name = Constants.FINDER_VRO_NETWORKSECURITYMATCHTARGET, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_NETWORKSECURITYMATCHTARGET)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class NetworkSecurityMatchTarget extends AviRestResource  {
+public class NetworkSecurityMatchTarget extends AviRestResource {
   @JsonProperty("client_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddrMatch clientIp = null;
 
   @JsonProperty("ip_reputation_type")
+  @JsonInclude(Include.NON_NULL)
   private IPReputationTypeMatch ipReputationType = null;
 
   @JsonProperty("microservice")
+  @JsonInclude(Include.NON_NULL)
   private MicroServiceMatch microservice = null;
 
   @JsonProperty("vs_port")
+  @JsonInclude(Include.NON_NULL)
   private PortMatch vsPort = null;
 
-  
+
+
   /**
-   * Placeholder for description of property client_ip of obj type NetworkSecurityMatchTarget field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property client_ip of obj type networksecuritymatchtarget field type str  type ref.
    * @return clientIp
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property client_ip of obj type NetworkSecurityMatchTarget field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddrMatch getClientIp() {
     return clientIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property client_ip of obj type networksecuritymatchtarget field type str  type ref.
+   * @param clientIp set the clientIp.
+   */
   @VsoMethod
   public void setClientIp(IpAddrMatch clientIp) {
     this.clientIp = clientIp;
   }
 
-  
   /**
-   *  Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.1.
    * @return ipReputationType
-  **/
-  @ApiModelProperty(value = " Field introduced in 20.1.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IPReputationTypeMatch getIpReputationType() {
     return ipReputationType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.1.
+   * @param ipReputationType set the ipReputationType.
+   */
   @VsoMethod
   public void setIpReputationType(IPReputationTypeMatch ipReputationType) {
     this.ipReputationType = ipReputationType;
   }
 
-  
   /**
-   * Placeholder for description of property microservice of obj type NetworkSecurityMatchTarget field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property microservice of obj type networksecuritymatchtarget field type str  type ref.
    * @return microservice
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property microservice of obj type NetworkSecurityMatchTarget field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public MicroServiceMatch getMicroservice() {
     return microservice;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property microservice of obj type networksecuritymatchtarget field type str  type ref.
+   * @param microservice set the microservice.
+   */
   @VsoMethod
   public void setMicroservice(MicroServiceMatch microservice) {
     this.microservice = microservice;
   }
 
-  
   /**
-   * Placeholder for description of property vs_port of obj type NetworkSecurityMatchTarget field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vs_port of obj type networksecuritymatchtarget field type str  type ref.
    * @return vsPort
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vs_port of obj type NetworkSecurityMatchTarget field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PortMatch getVsPort() {
     return vsPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vs_port of obj type networksecuritymatchtarget field type str  type ref.
+   * @param vsPort set the vsPort.
+   */
   @VsoMethod
   public void setVsPort(PortMatch vsPort) {
     this.vsPort = vsPort;
   }
 
-  
-  public String getObjectID() {
-		return "NetworkSecurityMatchTarget";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    NetworkSecurityMatchTarget networkSecurityMatchTarget = (NetworkSecurityMatchTarget) o;
-    return Objects.equals(this.clientIp, networkSecurityMatchTarget.clientIp) &&
-        Objects.equals(this.ipReputationType, networkSecurityMatchTarget.ipReputationType) &&
-        Objects.equals(this.microservice, networkSecurityMatchTarget.microservice) &&
-        Objects.equals(this.vsPort, networkSecurityMatchTarget.vsPort);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(clientIp, ipReputationType, microservice, vsPort);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NetworkSecurityMatchTarget {\n");
-    
-    sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
-    sb.append("    ipReputationType: ").append(toIndentedString(ipReputationType)).append("\n");
-    sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
-    sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  NetworkSecurityMatchTarget objNetworkSecurityMatchTarget = (NetworkSecurityMatchTarget) o;
+  return   Objects.equals(this.microservice, objNetworkSecurityMatchTarget.microservice)&&
+  Objects.equals(this.clientIp, objNetworkSecurityMatchTarget.clientIp)&&
+  Objects.equals(this.ipReputationType, objNetworkSecurityMatchTarget.ipReputationType)&&
+  Objects.equals(this.vsPort, objNetworkSecurityMatchTarget.vsPort);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class NetworkSecurityMatchTarget {\n");
+      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    ipReputationType: ").append(toIndentedString(ipReputationType)).append("\n");
+        sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
+        sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

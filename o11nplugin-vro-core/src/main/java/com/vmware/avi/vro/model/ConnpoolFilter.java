@@ -1,163 +1,166 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ConnpoolFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ConnpoolFilter is a POJO class extends AviRestResource that used for creating
+ * ConnpoolFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ConnpoolFilter")
-@VsoFinder(name = Constants.FINDER_VRO_CONNPOOLFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CONNPOOLFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ConnpoolFilter extends AviRestResource  {
+public class ConnpoolFilter extends AviRestResource {
   @JsonProperty("ip_addr")
+  @JsonInclude(Include.NON_NULL)
   private String ipAddr = null;
 
   @JsonProperty("ip_mask")
+  @JsonInclude(Include.NON_NULL)
   private String ipMask = null;
 
   @JsonProperty("port")
+  @JsonInclude(Include.NON_NULL)
   private Integer port = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
-  
+
+
   /**
-   * Backend or SE IP address.
+   * This is the getter method this will return the attribute value.
+   * Backend or se ip address.
    * @return ipAddr
-  **/
-  @ApiModelProperty(value = "Backend or SE IP address.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpAddr() {
     return ipAddr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Backend or se ip address.
+   * @param ipAddr set the ipAddr.
+   */
   @VsoMethod
-  public void setIpAddr(String ipAddr) {
+  public void setIpAddr(String  ipAddr) {
     this.ipAddr = ipAddr;
   }
 
-  
   /**
-   * Backend or SE IP address mask.
+   * This is the getter method this will return the attribute value.
+   * Backend or se ip address mask.
    * @return ipMask
-  **/
-  @ApiModelProperty(value = "Backend or SE IP address mask.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpMask() {
     return ipMask;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Backend or se ip address mask.
+   * @param ipMask set the ipMask.
+   */
   @VsoMethod
-  public void setIpMask(String ipMask) {
+  public void setIpMask(String  ipMask) {
     this.ipMask = ipMask;
   }
 
-  
   /**
-   * Backend or SE port.
+   * This is the getter method this will return the attribute value.
+   * Backend or se port.
    * @return port
-  **/
-  @ApiModelProperty(value = "Backend or SE port.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getPort() {
     return port;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Backend or se port.
+   * @param port set the port.
+   */
   @VsoMethod
-  public void setPort(Integer port) {
+  public void setPort(Integer  port) {
     this.port = port;
   }
 
-  
   /**
-   * cache type. Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
+   * This is the getter method this will return the attribute value.
+   * Cache type.
+   * Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
    * @return type
-  **/
-  @ApiModelProperty(value = "cache type. Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cache type.
+   * Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
 
-  
-  public String getObjectID() {
-		return "ConnpoolFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ConnpoolFilter connpoolFilter = (ConnpoolFilter) o;
-    return Objects.equals(this.ipAddr, connpoolFilter.ipAddr) &&
-        Objects.equals(this.ipMask, connpoolFilter.ipMask) &&
-        Objects.equals(this.port, connpoolFilter.port) &&
-        Objects.equals(this.type, connpoolFilter.type);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(ipAddr, ipMask, port, type);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ConnpoolFilter {\n");
-    
-    sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
-    sb.append("    ipMask: ").append(toIndentedString(ipMask)).append("\n");
-    sb.append("    port: ").append(toIndentedString(port)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ConnpoolFilter objConnpoolFilter = (ConnpoolFilter) o;
+  return   Objects.equals(this.ipAddr, objConnpoolFilter.ipAddr)&&
+  Objects.equals(this.type, objConnpoolFilter.type)&&
+  Objects.equals(this.port, objConnpoolFilter.port)&&
+  Objects.equals(this.ipMask, objConnpoolFilter.ipMask);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ConnpoolFilter {\n");
+      sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
+        sb.append("    ipMask: ").append(toIndentedString(ipMask)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

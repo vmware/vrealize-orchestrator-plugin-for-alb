@@ -1,171 +1,206 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.VIAdminCredentials;
-import com.vmware.avi.vro.model.VIVmVnicInfo;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * VISetvNicNwReq
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The VISetvNicNwReq is a POJO class extends AviRestResource that used for creating
+ * VISetvNicNwReq.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "VISetvNicNwReq")
-@VsoFinder(name = Constants.FINDER_VRO_VISETVNICNWREQ, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_VISETVNICNWREQ)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class VISetvNicNwReq extends AviRestResource  {
+public class VISetvNicNwReq extends AviRestResource {
   @JsonProperty("cloud_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String cloudUuid = null;
 
   @JsonProperty("dc_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String dcUuid = null;
 
   @JsonProperty("rm_cookie")
+  @JsonInclude(Include.NON_NULL)
   private String rmCookie = null;
 
   @JsonProperty("sevm_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String sevmUuid = null;
 
   @JsonProperty("vcenter_admin")
+  @JsonInclude(Include.NON_NULL)
   private VIAdminCredentials vcenterAdmin = null;
 
   @JsonProperty("vcenter_sevm_mor")
+  @JsonInclude(Include.NON_NULL)
   private String vcenterSevmMor = null;
 
   @JsonProperty("vcenter_vnic_info")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<VIVmVnicInfo> vcenterVnicInfo = null;
 
-  
+
+
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
    * @return cloudUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of cloud.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudUuid() {
     return cloudUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of cloud.
+   * @param cloudUuid set the cloudUuid.
+   */
   @VsoMethod
-  public void setCloudUuid(String cloudUuid) {
+  public void setCloudUuid(String  cloudUuid) {
     this.cloudUuid = cloudUuid;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of dc.
    * @return dcUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of dc.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDcUuid() {
     return dcUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of dc.
+   * @param dcUuid set the dcUuid.
+   */
   @VsoMethod
-  public void setDcUuid(String dcUuid) {
+  public void setDcUuid(String  dcUuid) {
     this.dcUuid = dcUuid;
   }
 
-  
   /**
-   * rm_cookie of VISetvNicNwReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property rm_cookie of obj type visetvnicnwreq field type str  type string.
    * @return rmCookie
-  **/
-  @ApiModelProperty(value = "rm_cookie of VISetvNicNwReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getRmCookie() {
     return rmCookie;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property rm_cookie of obj type visetvnicnwreq field type str  type string.
+   * @param rmCookie set the rmCookie.
+   */
   @VsoMethod
-  public void setRmCookie(String rmCookie) {
+  public void setRmCookie(String  rmCookie) {
     this.rmCookie = rmCookie;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of sevm.
    * @return sevmUuid
-  **/
-  @ApiModelProperty(required = true, value = "Unique object identifier of sevm.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSevmUuid() {
     return sevmUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of sevm.
+   * @param sevmUuid set the sevmUuid.
+   */
   @VsoMethod
-  public void setSevmUuid(String sevmUuid) {
+  public void setSevmUuid(String  sevmUuid) {
     this.sevmUuid = sevmUuid;
   }
 
-  
   /**
-   * Placeholder for description of property vcenter_admin of obj type VISetvNicNwReq field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_admin of obj type visetvnicnwreq field type str  type ref.
    * @return vcenterAdmin
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vcenter_admin of obj type VISetvNicNwReq field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public VIAdminCredentials getVcenterAdmin() {
     return vcenterAdmin;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_admin of obj type visetvnicnwreq field type str  type ref.
+   * @param vcenterAdmin set the vcenterAdmin.
+   */
   @VsoMethod
   public void setVcenterAdmin(VIAdminCredentials vcenterAdmin) {
     this.vcenterAdmin = vcenterAdmin;
   }
 
-  
   /**
-   * vcenter_sevm_mor of VISetvNicNwReq.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_sevm_mor of obj type visetvnicnwreq field type str  type string.
    * @return vcenterSevmMor
-  **/
-  @ApiModelProperty(value = "vcenter_sevm_mor of VISetvNicNwReq.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVcenterSevmMor() {
     return vcenterSevmMor;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property vcenter_sevm_mor of obj type visetvnicnwreq field type str  type string.
+   * @param vcenterSevmMor set the vcenterSevmMor.
+   */
   @VsoMethod
-  public void setVcenterSevmMor(String vcenterSevmMor) {
+  public void setVcenterSevmMor(String  vcenterSevmMor) {
     this.vcenterSevmMor = vcenterSevmMor;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+   * @return vcenterVnicInfo
+   */
+  @VsoMethod
+  public List<VIVmVnicInfo> getVcenterVnicInfo() {
+    return vcenterVnicInfo;
+  }
+
+  /**
+   * This is the setter method. this will set the vcenterVnicInfo
+   * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+   * @return vcenterVnicInfo
+   */
+  @VsoMethod
+  public void setVcenterVnicInfo(List<VIVmVnicInfo>  vcenterVnicInfo) {
+    this.vcenterVnicInfo = vcenterVnicInfo;
+  }
+
+  /**
+   * This is the setter method this will set the vcenterVnicInfo
+   * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+   * @return vcenterVnicInfo
+   */
+  @VsoMethod
   public VISetvNicNwReq addVcenterVnicInfoItem(VIVmVnicInfo vcenterVnicInfoItem) {
     if (this.vcenterVnicInfo == null) {
       this.vcenterVnicInfo = new ArrayList<VIVmVnicInfo>();
@@ -173,79 +208,51 @@ public class VISetvNicNwReq extends AviRestResource  {
     this.vcenterVnicInfo.add(vcenterVnicInfoItem);
     return this;
   }
-  
-  /**
-   * Placeholder for description of property vcenter_vnic_info of obj type VISetvNicNwReq field type str  type object
-   * @return vcenterVnicInfo
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property vcenter_vnic_info of obj type VISetvNicNwReq field type str  type object")
 
-  @Valid
 
- 
-  @VsoMethod  
-  public List<VIVmVnicInfo> getVcenterVnicInfo() {
-    return vcenterVnicInfo;
-  }
-    
-  @VsoMethod
-  public void setVcenterVnicInfo(List<VIVmVnicInfo> vcenterVnicInfo) {
-    this.vcenterVnicInfo = vcenterVnicInfo;
-  }
 
-  
-  public String getObjectID() {
-		return "VISetvNicNwReq";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VISetvNicNwReq viSetvNicNwReq = (VISetvNicNwReq) o;
-    return Objects.equals(this.cloudUuid, viSetvNicNwReq.cloudUuid) &&
-        Objects.equals(this.dcUuid, viSetvNicNwReq.dcUuid) &&
-        Objects.equals(this.rmCookie, viSetvNicNwReq.rmCookie) &&
-        Objects.equals(this.sevmUuid, viSetvNicNwReq.sevmUuid) &&
-        Objects.equals(this.vcenterAdmin, viSetvNicNwReq.vcenterAdmin) &&
-        Objects.equals(this.vcenterSevmMor, viSetvNicNwReq.vcenterSevmMor) &&
-        Objects.equals(this.vcenterVnicInfo, viSetvNicNwReq.vcenterVnicInfo);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cloudUuid, dcUuid, rmCookie, sevmUuid, vcenterAdmin, vcenterSevmMor, vcenterVnicInfo);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VISetvNicNwReq {\n");
-    
-    sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
-    sb.append("    dcUuid: ").append(toIndentedString(dcUuid)).append("\n");
-    sb.append("    rmCookie: ").append(toIndentedString(rmCookie)).append("\n");
-    sb.append("    sevmUuid: ").append(toIndentedString(sevmUuid)).append("\n");
-    sb.append("    vcenterAdmin: ").append(toIndentedString(vcenterAdmin)).append("\n");
-    sb.append("    vcenterSevmMor: ").append(toIndentedString(vcenterSevmMor)).append("\n");
-    sb.append("    vcenterVnicInfo: ").append(toIndentedString(vcenterVnicInfo)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  VISetvNicNwReq objVISetvNicNwReq = (VISetvNicNwReq) o;
+  return   Objects.equals(this.vcenterVnicInfo, objVISetvNicNwReq.vcenterVnicInfo)&&
+  Objects.equals(this.vcenterSevmMor, objVISetvNicNwReq.vcenterSevmMor)&&
+  Objects.equals(this.sevmUuid, objVISetvNicNwReq.sevmUuid)&&
+  Objects.equals(this.rmCookie, objVISetvNicNwReq.rmCookie)&&
+  Objects.equals(this.dcUuid, objVISetvNicNwReq.dcUuid)&&
+  Objects.equals(this.vcenterAdmin, objVISetvNicNwReq.vcenterAdmin)&&
+  Objects.equals(this.cloudUuid, objVISetvNicNwReq.cloudUuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class VISetvNicNwReq {\n");
+      sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
+        sb.append("    dcUuid: ").append(toIndentedString(dcUuid)).append("\n");
+        sb.append("    rmCookie: ").append(toIndentedString(rmCookie)).append("\n");
+        sb.append("    sevmUuid: ").append(toIndentedString(sevmUuid)).append("\n");
+        sb.append("    vcenterAdmin: ").append(toIndentedString(vcenterAdmin)).append("\n");
+        sb.append("    vcenterSevmMor: ").append(toIndentedString(vcenterSevmMor)).append("\n");
+        sb.append("    vcenterVnicInfo: ").append(toIndentedString(vcenterVnicInfo)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

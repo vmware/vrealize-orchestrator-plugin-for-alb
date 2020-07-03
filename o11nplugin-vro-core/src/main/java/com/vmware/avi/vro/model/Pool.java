@@ -1,428 +1,519 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AbPool;
+import com.vmware.avi.vro.model.PoolAnalyticsPolicy;
 import com.vmware.avi.vro.model.ConnPoolProperties;
 import com.vmware.avi.vro.model.FailAction;
-import com.vmware.avi.vro.model.HTTPServerReselect;
-import com.vmware.avi.vro.model.NetworkFilter;
-import com.vmware.avi.vro.model.PlacementNetwork;
-import com.vmware.avi.vro.model.PoolAnalyticsPolicy;
 import com.vmware.avi.vro.model.RateProfile;
-import com.vmware.avi.vro.model.Server;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.vmware.avi.vro.model.HTTPServerReselect;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * Pool
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The Pool is a POJO class extends AviRestResource that used for creating
+ * Pool.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "Pool")
 @VsoFinder(name = Constants.FINDER_VRO_POOL, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Pool extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class Pool extends AviRestResource {
   @JsonProperty("a_pool")
+  @JsonInclude(Include.NON_NULL)
   private String aPool = null;
 
   @JsonProperty("ab_pool")
+  @JsonInclude(Include.NON_NULL)
   private AbPool abPool = null;
 
   @JsonProperty("ab_priority")
+  @JsonInclude(Include.NON_NULL)
   private Integer abPriority = null;
 
   @JsonProperty("analytics_policy")
+  @JsonInclude(Include.NON_NULL)
   private PoolAnalyticsPolicy analyticsPolicy = null;
 
   @JsonProperty("analytics_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String analyticsProfileRef = null;
 
   @JsonProperty("apic_epg_name")
+  @JsonInclude(Include.NON_NULL)
   private String apicEpgName = null;
 
   @JsonProperty("application_persistence_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String applicationPersistenceProfileRef = null;
 
   @JsonProperty("autoscale_launch_config_ref")
+  @JsonInclude(Include.NON_NULL)
   private String autoscaleLaunchConfigRef = null;
 
   @JsonProperty("autoscale_networks")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> autoscaleNetworks = null;
 
   @JsonProperty("autoscale_policy_ref")
+  @JsonInclude(Include.NON_NULL)
   private String autoscalePolicyRef = null;
 
   @JsonProperty("capacity_estimation")
-  private Boolean capacityEstimation = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean capacityEstimation = false;
 
   @JsonProperty("capacity_estimation_ttfb_thresh")
-  private Integer capacityEstimationTtfbThresh = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer capacityEstimationTtfbThresh = 0;
 
   @JsonProperty("cloud_config_cksum")
+  @JsonInclude(Include.NON_NULL)
   private String cloudConfigCksum = null;
 
   @JsonProperty("cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String cloudRef = null;
 
   @JsonProperty("conn_pool_properties")
+  @JsonInclude(Include.NON_NULL)
   private ConnPoolProperties connPoolProperties = null;
 
   @JsonProperty("connection_ramp_duration")
+  @JsonInclude(Include.NON_NULL)
   private Integer connectionRampDuration = 10;
 
   @JsonProperty("created_by")
+  @JsonInclude(Include.NON_NULL)
   private String createdBy = null;
 
   @JsonProperty("default_server_port")
+  @JsonInclude(Include.NON_NULL)
   private Integer defaultServerPort = 80;
 
   @JsonProperty("delete_server_on_dns_refresh")
+  @JsonInclude(Include.NON_NULL)
   private Boolean deleteServerOnDnsRefresh = true;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("domain_name")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> domainName = null;
 
   @JsonProperty("east_west")
+  @JsonInclude(Include.NON_NULL)
   private Boolean eastWest = null;
 
   @JsonProperty("enable_http2")
-  private Boolean enableHttp2 = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableHttp2 = false;
 
   @JsonProperty("enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enabled = true;
 
   @JsonProperty("external_autoscale_groups")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> externalAutoscaleGroups = null;
 
   @JsonProperty("fail_action")
+  @JsonInclude(Include.NON_NULL)
   private FailAction failAction = null;
 
   @JsonProperty("fewest_tasks_feedback_delay")
+  @JsonInclude(Include.NON_NULL)
   private Integer fewestTasksFeedbackDelay = 10;
 
   @JsonProperty("graceful_disable_timeout")
+  @JsonInclude(Include.NON_NULL)
   private Integer gracefulDisableTimeout = 1;
 
   @JsonProperty("gslb_sp_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean gslbSpEnabled = null;
 
   @JsonProperty("health_monitor_refs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> healthMonitorRefs = null;
 
   @JsonProperty("host_check_enabled")
-  private Boolean hostCheckEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean hostCheckEnabled = false;
 
   @JsonProperty("ignore_server_port")
-  private Boolean ignoreServerPort = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean ignoreServerPort = false;
 
   @JsonProperty("inline_health_monitor")
+  @JsonInclude(Include.NON_NULL)
   private Boolean inlineHealthMonitor = true;
 
   @JsonProperty("ipaddrgroup_ref")
+  @JsonInclude(Include.NON_NULL)
   private String ipaddrgroupRef = null;
 
   @JsonProperty("lb_algorithm")
+  @JsonInclude(Include.NON_NULL)
   private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
 
   @JsonProperty("lb_algorithm_consistent_hash_hdr")
+  @JsonInclude(Include.NON_NULL)
   private String lbAlgorithmConsistentHashHdr = null;
 
   @JsonProperty("lb_algorithm_core_nonaffinity")
+  @JsonInclude(Include.NON_NULL)
   private Integer lbAlgorithmCoreNonaffinity = 2;
 
   @JsonProperty("lb_algorithm_hash")
+  @JsonInclude(Include.NON_NULL)
   private String lbAlgorithmHash = "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS";
 
   @JsonProperty("lookup_server_by_name")
-  private Boolean lookupServerByName = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean lookupServerByName = false;
 
   @JsonProperty("max_concurrent_connections_per_server")
-  private Integer maxConcurrentConnectionsPerServer = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxConcurrentConnectionsPerServer = 0;
 
   @JsonProperty("max_conn_rate_per_server")
+  @JsonInclude(Include.NON_NULL)
   private RateProfile maxConnRatePerServer = null;
 
   @JsonProperty("min_health_monitors_up")
+  @JsonInclude(Include.NON_NULL)
   private Integer minHealthMonitorsUp = null;
 
   @JsonProperty("min_servers_up")
+  @JsonInclude(Include.NON_NULL)
   private Integer minServersUp = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("networks")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<NetworkFilter> networks = null;
 
   @JsonProperty("nsx_securitygroup")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> nsxSecuritygroup = null;
 
   @JsonProperty("pki_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String pkiProfileRef = null;
 
   @JsonProperty("placement_networks")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<PlacementNetwork> placementNetworks = null;
 
   @JsonProperty("prst_hdr_name")
+  @JsonInclude(Include.NON_NULL)
   private String prstHdrName = null;
 
   @JsonProperty("request_queue_depth")
+  @JsonInclude(Include.NON_NULL)
   private Integer requestQueueDepth = 128;
 
   @JsonProperty("request_queue_enabled")
-  private Boolean requestQueueEnabled = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean requestQueueEnabled = false;
 
   @JsonProperty("rewrite_host_header_to_server_name")
-  private Boolean rewriteHostHeaderToServerName = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean rewriteHostHeaderToServerName = false;
 
   @JsonProperty("rewrite_host_header_to_sni")
-  private Boolean rewriteHostHeaderToSni = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean rewriteHostHeaderToSni = false;
+
+  @JsonProperty("routing_pool")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean routingPool = false;
 
   @JsonProperty("server_auto_scale")
+  @JsonInclude(Include.NON_NULL)
   private Boolean serverAutoScale = null;
 
   @JsonProperty("server_count")
+  @JsonInclude(Include.NON_NULL)
   private Integer serverCount = null;
 
   @JsonProperty("server_name")
+  @JsonInclude(Include.NON_NULL)
   private String serverName = null;
 
   @JsonProperty("server_reselect")
+  @JsonInclude(Include.NON_NULL)
   private HTTPServerReselect serverReselect = null;
 
   @JsonProperty("server_timeout")
-  private Integer serverTimeout = null;
+  @JsonInclude(Include.NON_NULL)
+  private Integer serverTimeout = 0;
 
   @JsonProperty("servers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<Server> servers = null;
 
   @JsonProperty("service_metadata")
+  @JsonInclude(Include.NON_NULL)
   private String serviceMetadata = null;
 
   @JsonProperty("sni_enabled")
+  @JsonInclude(Include.NON_NULL)
   private Boolean sniEnabled = true;
 
   @JsonProperty("ssl_key_and_certificate_ref")
+  @JsonInclude(Include.NON_NULL)
   private String sslKeyAndCertificateRef = null;
 
   @JsonProperty("ssl_profile_ref")
+  @JsonInclude(Include.NON_NULL)
   private String sslProfileRef = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("use_service_port")
-  private Boolean useServicePort = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean useServicePort = false;
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("vrf_ref")
+  @JsonInclude(Include.NON_NULL)
   private String vrfRef = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Name of container cloud application that constitutes A pool in a A-B pool configuration, if different from VS app. Field deprecated in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Name of container cloud application that constitutes a pool in a a-b pool configuration, if different from vs app.
+   * Field deprecated in 18.1.2.
    * @return aPool
-  **/
-  @ApiModelProperty(value = "Name of container cloud application that constitutes A pool in a A-B pool configuration, if different from VS app. Field deprecated in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAPool() {
     return aPool;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of container cloud application that constitutes a pool in a a-b pool configuration, if different from vs app.
+   * Field deprecated in 18.1.2.
+   * @param aPool set the aPool.
+   */
   @VsoMethod
-  public void setAPool(String aPool) {
+  public void setAPool(String  aPool) {
     this.aPool = aPool;
   }
 
-  
   /**
-   * A/B pool configuration. Field deprecated in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * A/b pool configuration.
+   * Field deprecated in 18.1.2.
    * @return abPool
-  **/
-  @ApiModelProperty(value = "A/B pool configuration. Field deprecated in 18.1.2.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public AbPool getAbPool() {
     return abPool;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A/b pool configuration.
+   * Field deprecated in 18.1.2.
+   * @param abPool set the abPool.
+   */
   @VsoMethod
   public void setAbPool(AbPool abPool) {
     this.abPool = abPool;
   }
 
-  
   /**
-   * Priority of this pool in a A-B pool pair. Internally used. Field deprecated in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Priority of this pool in a a-b pool pair.
+   * Internally used.
+   * Field deprecated in 18.1.2.
    * @return abPriority
-  **/
-  @ApiModelProperty(value = "Priority of this pool in a A-B pool pair. Internally used. Field deprecated in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getAbPriority() {
     return abPriority;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Priority of this pool in a a-b pool pair.
+   * Internally used.
+   * Field deprecated in 18.1.2.
+   * @param abPriority set the abPriority.
+   */
   @VsoMethod
-  public void setAbPriority(Integer abPriority) {
+  public void setAbPriority(Integer  abPriority) {
     this.abPriority = abPriority;
   }
 
-  
   /**
-   * Determines analytics settings for the pool. Field introduced in 18.1.5, 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Determines analytics settings for the pool.
+   * Field introduced in 18.1.5, 18.2.1.
    * @return analyticsPolicy
-  **/
-  @ApiModelProperty(value = "Determines analytics settings for the pool. Field introduced in 18.1.5, 18.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PoolAnalyticsPolicy getAnalyticsPolicy() {
     return analyticsPolicy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines analytics settings for the pool.
+   * Field introduced in 18.1.5, 18.2.1.
+   * @param analyticsPolicy set the analyticsPolicy.
+   */
   @VsoMethod
   public void setAnalyticsPolicy(PoolAnalyticsPolicy analyticsPolicy) {
     this.analyticsPolicy = analyticsPolicy;
   }
 
-  
   /**
-   * Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Field introduced in 18.1.4,18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Specifies settings related to analytics.
+   * It is a reference to an object of type analyticsprofile.
+   * Field introduced in 18.1.4,18.2.1.
    * @return analyticsProfileRef
-  **/
-  @ApiModelProperty(value = "Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Field introduced in 18.1.4,18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAnalyticsProfileRef() {
     return analyticsProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies settings related to analytics.
+   * It is a reference to an object of type analyticsprofile.
+   * Field introduced in 18.1.4,18.2.1.
+   * @param analyticsProfileRef set the analyticsProfileRef.
+   */
   @VsoMethod
-  public void setAnalyticsProfileRef(String analyticsProfileRef) {
+  public void setAnalyticsProfileRef(String  analyticsProfileRef) {
     this.analyticsProfileRef = analyticsProfileRef;
   }
 
-  
   /**
-   * Synchronize Cisco APIC EPG members with pool servers.
+   * This is the getter method this will return the attribute value.
+   * Synchronize cisco apic epg members with pool servers.
    * @return apicEpgName
-  **/
-  @ApiModelProperty(value = "Synchronize Cisco APIC EPG members with pool servers.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getApicEpgName() {
     return apicEpgName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Synchronize cisco apic epg members with pool servers.
+   * @param apicEpgName set the apicEpgName.
+   */
   @VsoMethod
-  public void setApicEpgName(String apicEpgName) {
+  public void setApicEpgName(String  apicEpgName) {
     this.apicEpgName = apicEpgName;
   }
 
-  
   /**
-   * Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a reference to an object of type ApplicationPersistenceProfile.
+   * This is the getter method this will return the attribute value.
+   * Persistence will ensure the same user sticks to the same server for a desired duration of time.
+   * It is a reference to an object of type applicationpersistenceprofile.
    * @return applicationPersistenceProfileRef
-  **/
-  @ApiModelProperty(value = "Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a reference to an object of type ApplicationPersistenceProfile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getApplicationPersistenceProfileRef() {
     return applicationPersistenceProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Persistence will ensure the same user sticks to the same server for a desired duration of time.
+   * It is a reference to an object of type applicationpersistenceprofile.
+   * @param applicationPersistenceProfileRef set the applicationPersistenceProfileRef.
+   */
   @VsoMethod
-  public void setApplicationPersistenceProfileRef(String applicationPersistenceProfileRef) {
+  public void setApplicationPersistenceProfileRef(String  applicationPersistenceProfileRef) {
     this.applicationPersistenceProfileRef = applicationPersistenceProfileRef;
   }
 
-  
   /**
-   * If configured then Avi will trigger orchestration of pool server creation and deletion. It is only supported for container clouds like Mesos, Opensift, Kubernates, Docker etc. It is a reference to an object of type AutoScaleLaunchConfig.
+   * This is the getter method this will return the attribute value.
+   * If configured then avi will trigger orchestration of pool server creation and deletion.
+   * It is only supported for container clouds like mesos, opensift, kubernates, docker etc.
+   * It is a reference to an object of type autoscalelaunchconfig.
    * @return autoscaleLaunchConfigRef
-  **/
-  @ApiModelProperty(value = "If configured then Avi will trigger orchestration of pool server creation and deletion. It is only supported for container clouds like Mesos, Opensift, Kubernates, Docker etc. It is a reference to an object of type AutoScaleLaunchConfig.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAutoscaleLaunchConfigRef() {
     return autoscaleLaunchConfigRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If configured then avi will trigger orchestration of pool server creation and deletion.
+   * It is only supported for container clouds like mesos, opensift, kubernates, docker etc.
+   * It is a reference to an object of type autoscalelaunchconfig.
+   * @param autoscaleLaunchConfigRef set the autoscaleLaunchConfigRef.
+   */
   @VsoMethod
-  public void setAutoscaleLaunchConfigRef(String autoscaleLaunchConfigRef) {
+  public void setAutoscaleLaunchConfigRef(String  autoscaleLaunchConfigRef) {
     this.autoscaleLaunchConfigRef = autoscaleLaunchConfigRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Network ids for the launch configuration.
+   * @return autoscaleNetworks
+   */
+  @VsoMethod
+  public List<String> getAutoscaleNetworks() {
+    return autoscaleNetworks;
+  }
+
+  /**
+   * This is the setter method. this will set the autoscaleNetworks
+   * Network ids for the launch configuration.
+   * @return autoscaleNetworks
+   */
+  @VsoMethod
+  public void setAutoscaleNetworks(List<String>  autoscaleNetworks) {
+    this.autoscaleNetworks = autoscaleNetworks;
+  }
+
+  /**
+   * This is the setter method this will set the autoscaleNetworks
+   * Network ids for the launch configuration.
+   * @return autoscaleNetworks
+   */
+  @VsoMethod
   public Pool addAutoscaleNetworksItem(String autoscaleNetworksItem) {
     if (this.autoscaleNetworks == null) {
       this.autoscaleNetworks = new ArrayList<String>();
@@ -430,236 +521,295 @@ public class Pool extends AviRestResource  {
     this.autoscaleNetworks.add(autoscaleNetworksItem);
     return this;
   }
-  
+
+
   /**
-   * Network Ids for the launch configuration.
-   * @return autoscaleNetworks
-  **/
-  @ApiModelProperty(value = "Network Ids for the launch configuration.")
-
-
- 
-  @VsoMethod  
-  public List<String> getAutoscaleNetworks() {
-    return autoscaleNetworks;
-  }
-    
-  @VsoMethod
-  public void setAutoscaleNetworks(List<String> autoscaleNetworks) {
-    this.autoscaleNetworks = autoscaleNetworks;
-  }
-
-  
-  /**
-   * Reference to Server Autoscale Policy. It is a reference to an object of type ServerAutoScalePolicy.
+   * This is the getter method this will return the attribute value.
+   * Reference to server autoscale policy.
+   * It is a reference to an object of type serverautoscalepolicy.
    * @return autoscalePolicyRef
-  **/
-  @ApiModelProperty(value = "Reference to Server Autoscale Policy. It is a reference to an object of type ServerAutoScalePolicy.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAutoscalePolicyRef() {
     return autoscalePolicyRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Reference to server autoscale policy.
+   * It is a reference to an object of type serverautoscalepolicy.
+   * @param autoscalePolicyRef set the autoscalePolicyRef.
+   */
   @VsoMethod
-  public void setAutoscalePolicyRef(String autoscalePolicyRef) {
+  public void setAutoscalePolicyRef(String  autoscalePolicyRef) {
     this.autoscalePolicyRef = autoscalePolicyRef;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Inline estimation of capacity of servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return capacityEstimation
-  **/
-  @ApiModelProperty(value = "Inline estimation of capacity of servers.")
-
-
- 
-  @VsoMethod  
-  public Boolean isCapacityEstimation() {
+   */
+  @VsoMethod
+  public Boolean getCapacityEstimation() {
     return capacityEstimation;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Inline estimation of capacity of servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param capacityEstimation set the capacityEstimation.
+   */
   @VsoMethod
-  public void setCapacityEstimation(Boolean capacityEstimation) {
+  public void setCapacityEstimation(Boolean  capacityEstimation) {
     this.capacityEstimation = capacityEstimation;
   }
 
-  
   /**
-   * The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - 'Automatic'.
+   * This is the getter method this will return the attribute value.
+   * The maximum time-to-first-byte of a server.
+   * Allowed values are 1-5000.
+   * Special values are 0 - 'automatic'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return capacityEstimationTtfbThresh
-  **/
-  @ApiModelProperty(value = "The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - 'Automatic'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getCapacityEstimationTtfbThresh() {
     return capacityEstimationTtfbThresh;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum time-to-first-byte of a server.
+   * Allowed values are 1-5000.
+   * Special values are 0 - 'automatic'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param capacityEstimationTtfbThresh set the capacityEstimationTtfbThresh.
+   */
   @VsoMethod
-  public void setCapacityEstimationTtfbThresh(Integer capacityEstimationTtfbThresh) {
+  public void setCapacityEstimationTtfbThresh(Integer  capacityEstimationTtfbThresh) {
     this.capacityEstimationTtfbThresh = capacityEstimationTtfbThresh;
   }
 
-  
   /**
-   * Checksum of cloud configuration for Pool. Internally set by cloud connector.
+   * This is the getter method this will return the attribute value.
+   * Checksum of cloud configuration for pool.
+   * Internally set by cloud connector.
    * @return cloudConfigCksum
-  **/
-  @ApiModelProperty(value = "Checksum of cloud configuration for Pool. Internally set by cloud connector.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudConfigCksum() {
     return cloudConfigCksum;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Checksum of cloud configuration for pool.
+   * Internally set by cloud connector.
+   * @param cloudConfigCksum set the cloudConfigCksum.
+   */
   @VsoMethod
-  public void setCloudConfigCksum(String cloudConfigCksum) {
+  public void setCloudConfigCksum(String  cloudConfigCksum) {
     this.cloudConfigCksum = cloudConfigCksum;
   }
 
-  
   /**
-   *  It is a reference to an object of type Cloud.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type cloud.
    * @return cloudRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Cloud.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudRef() {
     return cloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type cloud.
+   * @param cloudRef set the cloudRef.
+   */
   @VsoMethod
-  public void setCloudRef(String cloudRef) {
+  public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
   }
 
-  
   /**
-   * Connnection pool properties. Field introduced in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Connnection pool properties.
+   * Field introduced in 18.2.1.
    * @return connPoolProperties
-  **/
-  @ApiModelProperty(value = "Connnection pool properties. Field introduced in 18.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public ConnPoolProperties getConnPoolProperties() {
     return connPoolProperties;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Connnection pool properties.
+   * Field introduced in 18.2.1.
+   * @param connPoolProperties set the connPoolProperties.
+   */
   @VsoMethod
   public void setConnPoolProperties(ConnPoolProperties connPoolProperties) {
     this.connPoolProperties = connPoolProperties;
   }
 
-  
   /**
-   * Duration for which new connections will be gradually ramped up to a server recently brought online.  Useful for LB algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - 'Immediate'.
+   * This is the getter method this will return the attribute value.
+   * Duration for which new connections will be gradually ramped up to a server recently brought online.
+   * Useful for lb algorithms that are least connection based.
+   * Allowed values are 1-300.
+   * Special values are 0 - 'immediate'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return connectionRampDuration
-  **/
-  @ApiModelProperty(value = "Duration for which new connections will be gradually ramped up to a server recently brought online.  Useful for LB algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - 'Immediate'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getConnectionRampDuration() {
     return connectionRampDuration;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Duration for which new connections will be gradually ramped up to a server recently brought online.
+   * Useful for lb algorithms that are least connection based.
+   * Allowed values are 1-300.
+   * Special values are 0 - 'immediate'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param connectionRampDuration set the connectionRampDuration.
+   */
   @VsoMethod
-  public void setConnectionRampDuration(Integer connectionRampDuration) {
+  public void setConnectionRampDuration(Integer  connectionRampDuration) {
     this.connectionRampDuration = connectionRampDuration;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Creator name.
    * @return createdBy
-  **/
-  @ApiModelProperty(value = "Creator name.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCreatedBy() {
     return createdBy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Creator name.
+   * @param createdBy set the createdBy.
+   */
   @VsoMethod
-  public void setCreatedBy(String createdBy) {
+  public void setCreatedBy(String  createdBy) {
     this.createdBy = createdBy;
   }
 
-  
   /**
-   * Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute. The SSL checkbox enables Avi to server encryption. Allowed values are 1-65535.
+   * This is the getter method this will return the attribute value.
+   * Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute.
+   * The ssl checkbox enables avi to server encryption.
+   * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
    * @return defaultServerPort
-  **/
-  @ApiModelProperty(value = "Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute. The SSL checkbox enables Avi to server encryption. Allowed values are 1-65535.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getDefaultServerPort() {
     return defaultServerPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute.
+   * The ssl checkbox enables avi to server encryption.
+   * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 80.
+   * @param defaultServerPort set the defaultServerPort.
+   */
   @VsoMethod
-  public void setDefaultServerPort(Integer defaultServerPort) {
+  public void setDefaultServerPort(Integer  defaultServerPort) {
     this.defaultServerPort = defaultServerPort;
   }
 
-  
   /**
-   * Indicates whether existing IPs are disabled(false) or deleted(true) on dns hostname refreshDetail -- On a dns refresh, some IPs set on pool may no longer be returned by the resolver. These IPs are deleted from the pool when this knob is set to true. They are disabled, if the knob is set to false. Field introduced in 18.2.3.
+   * This is the getter method this will return the attribute value.
+   * Indicates whether existing ips are disabled(false) or deleted(true) on dns hostname refreshdetail -- on a dns refresh, some ips set on pool may
+   * no longer be returned by the resolver.
+   * These ips are deleted from the pool when this knob is set to true.
+   * They are disabled, if the knob is set to false.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return deleteServerOnDnsRefresh
-  **/
-  @ApiModelProperty(value = "Indicates whether existing IPs are disabled(false) or deleted(true) on dns hostname refreshDetail -- On a dns refresh, some IPs set on pool may no longer be returned by the resolver. These IPs are deleted from the pool when this knob is set to true. They are disabled, if the knob is set to false. Field introduced in 18.2.3.")
-
-
- 
-  @VsoMethod  
-  public Boolean isDeleteServerOnDnsRefresh() {
+   */
+  @VsoMethod
+  public Boolean getDeleteServerOnDnsRefresh() {
     return deleteServerOnDnsRefresh;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates whether existing ips are disabled(false) or deleted(true) on dns hostname refreshdetail -- on a dns refresh, some ips set on pool may
+   * no longer be returned by the resolver.
+   * These ips are deleted from the pool when this knob is set to true.
+   * They are disabled, if the knob is set to false.
+   * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param deleteServerOnDnsRefresh set the deleteServerOnDnsRefresh.
+   */
   @VsoMethod
-  public void setDeleteServerOnDnsRefresh(Boolean deleteServerOnDnsRefresh) {
+  public void setDeleteServerOnDnsRefresh(Boolean  deleteServerOnDnsRefresh) {
     this.deleteServerOnDnsRefresh = deleteServerOnDnsRefresh;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * A description of the pool.
    * @return description
-  **/
-  @ApiModelProperty(value = "A description of the pool.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A description of the pool.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
+   * It is performed only when common name check host_check_enabled is enabled.
+   * @return domainName
+   */
+  @VsoMethod
+  public List<String> getDomainName() {
+    return domainName;
+  }
+
+  /**
+   * This is the setter method. this will set the domainName
+   * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
+   * It is performed only when common name check host_check_enabled is enabled.
+   * @return domainName
+   */
+  @VsoMethod
+  public void setDomainName(List<String>  domainName) {
+    this.domainName = domainName;
+  }
+
+  /**
+   * This is the setter method this will set the domainName
+   * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
+   * It is performed only when common name check host_check_enabled is enabled.
+   * @return domainName
+   */
+  @VsoMethod
   public Pool addDomainNameItem(String domainNameItem) {
     if (this.domainName == null) {
       this.domainName = new ArrayList<String>();
@@ -667,83 +817,108 @@ public class Pool extends AviRestResource  {
     this.domainName.add(domainNameItem);
     return this;
   }
-  
+
+
   /**
-   * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates. It is performed only when common name check host_check_enabled is enabled.
-   * @return domainName
-  **/
-  @ApiModelProperty(value = "Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates. It is performed only when common name check host_check_enabled is enabled.")
-
-
- 
-  @VsoMethod  
-  public List<String> getDomainName() {
-    return domainName;
-  }
-    
-  @VsoMethod
-  public void setDomainName(List<String> domainName) {
-    this.domainName = domainName;
-  }
-
-  
-  /**
-   * Inherited config from VirtualService.
+   * This is the getter method this will return the attribute value.
+   * Inherited config from virtualservice.
    * @return eastWest
-  **/
-  @ApiModelProperty(value = "Inherited config from VirtualService.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEastWest() {
+   */
+  @VsoMethod
+  public Boolean getEastWest() {
     return eastWest;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Inherited config from virtualservice.
+   * @param eastWest set the eastWest.
+   */
   @VsoMethod
-  public void setEastWest(Boolean eastWest) {
+  public void setEastWest(Boolean  eastWest) {
     this.eastWest = eastWest;
   }
 
-  
   /**
-   * Enable HTTP/2 for traffic from VirtualService to all backend servers in this pool. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Enable http/2 for traffic from virtualservice to all backend servers in this pool.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableHttp2
-  **/
-  @ApiModelProperty(value = "Enable HTTP/2 for traffic from VirtualService to all backend servers in this pool. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableHttp2() {
+   */
+  @VsoMethod
+  public Boolean getEnableHttp2() {
     return enableHttp2;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable http/2 for traffic from virtualservice to all backend servers in this pool.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableHttp2 set the enableHttp2.
+   */
   @VsoMethod
-  public void setEnableHttp2(Boolean enableHttp2) {
+  public void setEnableHttp2(Boolean  enableHttp2) {
     this.enableHttp2 = enableHttp2;
   }
 
-  
   /**
-   * Enable or disable the pool.  Disabling will terminate all open connections and pause health monitors.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable the pool.
+   * Disabling will terminate all open connections and pause health monitors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enabled
-  **/
-  @ApiModelProperty(value = "Enable or disable the pool.  Disabling will terminate all open connections and pause health monitors.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnabled() {
+   */
+  @VsoMethod
+  public Boolean getEnabled() {
     return enabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable the pool.
+   * Disabling will terminate all open connections and pause health monitors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enabled set the enabled.
+   */
   @VsoMethod
-  public void setEnabled(Boolean enabled) {
+  public void setEnabled(Boolean  enabled) {
     this.enabled = enabled;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Names of external auto-scale groups for pool servers.
+   * Currently available only for aws and azure.
+   * Field introduced in 17.1.2.
+   * @return externalAutoscaleGroups
+   */
+  @VsoMethod
+  public List<String> getExternalAutoscaleGroups() {
+    return externalAutoscaleGroups;
+  }
+
+  /**
+   * This is the setter method. this will set the externalAutoscaleGroups
+   * Names of external auto-scale groups for pool servers.
+   * Currently available only for aws and azure.
+   * Field introduced in 17.1.2.
+   * @return externalAutoscaleGroups
+   */
+  @VsoMethod
+  public void setExternalAutoscaleGroups(List<String>  externalAutoscaleGroups) {
+    this.externalAutoscaleGroups = externalAutoscaleGroups;
+  }
+
+  /**
+   * This is the setter method this will set the externalAutoscaleGroups
+   * Names of external auto-scale groups for pool servers.
+   * Currently available only for aws and azure.
+   * Field introduced in 17.1.2.
+   * @return externalAutoscaleGroups
+   */
+  @VsoMethod
   public Pool addExternalAutoscaleGroupsItem(String externalAutoscaleGroupsItem) {
     if (this.externalAutoscaleGroups == null) {
       this.externalAutoscaleGroups = new ArrayList<String>();
@@ -751,103 +926,142 @@ public class Pool extends AviRestResource  {
     this.externalAutoscaleGroups.add(externalAutoscaleGroupsItem);
     return this;
   }
-  
+
+
   /**
-   * Names of external auto-scale groups for pool servers. Currently available only for AWS and Azure. Field introduced in 17.1.2.
-   * @return externalAutoscaleGroups
-  **/
-  @ApiModelProperty(value = "Names of external auto-scale groups for pool servers. Currently available only for AWS and Azure. Field introduced in 17.1.2.")
-
-
- 
-  @VsoMethod  
-  public List<String> getExternalAutoscaleGroups() {
-    return externalAutoscaleGroups;
-  }
-    
-  @VsoMethod
-  public void setExternalAutoscaleGroups(List<String> externalAutoscaleGroups) {
-    this.externalAutoscaleGroups = externalAutoscaleGroups;
-  }
-
-  
-  /**
-   * Enable an action - Close Connection, HTTP Redirect or Local HTTP Response - when a pool failure happens. By default, a connection will be closed, in case the pool experiences a failure.
+   * This is the getter method this will return the attribute value.
+   * Enable an action - close connection, http redirect or local http response - when a pool failure happens.
+   * By default, a connection will be closed, in case the pool experiences a failure.
    * @return failAction
-  **/
-  @ApiModelProperty(value = "Enable an action - Close Connection, HTTP Redirect or Local HTTP Response - when a pool failure happens. By default, a connection will be closed, in case the pool experiences a failure.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public FailAction getFailAction() {
     return failAction;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable an action - close connection, http redirect or local http response - when a pool failure happens.
+   * By default, a connection will be closed, in case the pool experiences a failure.
+   * @param failAction set the failAction.
+   */
   @VsoMethod
   public void setFailAction(FailAction failAction) {
     this.failAction = failAction;
   }
 
-  
   /**
-   * Periodicity of feedback for fewest tasks server selection algorithm. Allowed values are 1-300.
+   * This is the getter method this will return the attribute value.
+   * Periodicity of feedback for fewest tasks server selection algorithm.
+   * Allowed values are 1-300.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return fewestTasksFeedbackDelay
-  **/
-  @ApiModelProperty(value = "Periodicity of feedback for fewest tasks server selection algorithm. Allowed values are 1-300.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getFewestTasksFeedbackDelay() {
     return fewestTasksFeedbackDelay;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Periodicity of feedback for fewest tasks server selection algorithm.
+   * Allowed values are 1-300.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param fewestTasksFeedbackDelay set the fewestTasksFeedbackDelay.
+   */
   @VsoMethod
-  public void setFewestTasksFeedbackDelay(Integer fewestTasksFeedbackDelay) {
+  public void setFewestTasksFeedbackDelay(Integer  fewestTasksFeedbackDelay) {
     this.fewestTasksFeedbackDelay = fewestTasksFeedbackDelay;
   }
 
-  
   /**
-   * Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - 'Immediate', -1 - 'Infinite'.
+   * This is the getter method this will return the attribute value.
+   * Used to gracefully disable a server.
+   * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+   * Allowed values are 1-7200.
+   * Special values are 0 - 'immediate', -1 - 'infinite'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return gracefulDisableTimeout
-  **/
-  @ApiModelProperty(value = "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - 'Immediate', -1 - 'Infinite'.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getGracefulDisableTimeout() {
     return gracefulDisableTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Used to gracefully disable a server.
+   * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+   * Allowed values are 1-7200.
+   * Special values are 0 - 'immediate', -1 - 'infinite'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+   * @param gracefulDisableTimeout set the gracefulDisableTimeout.
+   */
   @VsoMethod
-  public void setGracefulDisableTimeout(Integer gracefulDisableTimeout) {
+  public void setGracefulDisableTimeout(Integer  gracefulDisableTimeout) {
     this.gracefulDisableTimeout = gracefulDisableTimeout;
   }
 
-  
   /**
-   * Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Indicates if the pool is a site-persistence pool.
+   * Field introduced in 17.2.1.
    * @return gslbSpEnabled
-  **/
-  @ApiModelProperty(readOnly = true, value = "Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isGslbSpEnabled() {
+   */
+  @VsoMethod
+  public Boolean getGslbSpEnabled() {
     return gslbSpEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Indicates if the pool is a site-persistence pool.
+   * Field introduced in 17.2.1.
+   * @param gslbSpEnabled set the gslbSpEnabled.
+   */
   @VsoMethod
-  public void setGslbSpEnabled(Boolean gslbSpEnabled) {
+  public void setGslbSpEnabled(Boolean  gslbSpEnabled) {
     this.gslbSpEnabled = gslbSpEnabled;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Verify server health by applying one or more health monitors.
+   * Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+   * The passive monitor listens only to client to server communication.
+   * It raises or lowers the ratio of traffic destined to a server based on successful responses.
+   * It is a reference to an object of type healthmonitor.
+   * @return healthMonitorRefs
+   */
+  @VsoMethod
+  public List<String> getHealthMonitorRefs() {
+    return healthMonitorRefs;
+  }
+
+  /**
+   * This is the setter method. this will set the healthMonitorRefs
+   * Verify server health by applying one or more health monitors.
+   * Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+   * The passive monitor listens only to client to server communication.
+   * It raises or lowers the ratio of traffic destined to a server based on successful responses.
+   * It is a reference to an object of type healthmonitor.
+   * @return healthMonitorRefs
+   */
+  @VsoMethod
+  public void setHealthMonitorRefs(List<String>  healthMonitorRefs) {
+    this.healthMonitorRefs = healthMonitorRefs;
+  }
+
+  /**
+   * This is the setter method this will set the healthMonitorRefs
+   * Verify server health by applying one or more health monitors.
+   * Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+   * The passive monitor listens only to client to server communication.
+   * It raises or lowers the ratio of traffic destined to a server based on successful responses.
+   * It is a reference to an object of type healthmonitor.
+   * @return healthMonitorRefs
+   */
+  @VsoMethod
   public Pool addHealthMonitorRefsItem(String healthMonitorRefsItem) {
     if (this.healthMonitorRefs == null) {
       this.healthMonitorRefs = new ArrayList<String>();
@@ -855,294 +1069,372 @@ public class Pool extends AviRestResource  {
     this.healthMonitorRefs.add(healthMonitorRefsItem);
     return this;
   }
-  
+
+
   /**
-   * Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. The Passive monitor listens only to client to server communication. It raises or lowers the ratio of traffic destined to a server based on successful responses. It is a reference to an object of type HealthMonitor.
-   * @return healthMonitorRefs
-  **/
-  @ApiModelProperty(value = "Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. The Passive monitor listens only to client to server communication. It raises or lowers the ratio of traffic destined to a server based on successful responses. It is a reference to an object of type HealthMonitor.")
-
-
- 
-  @VsoMethod  
-  public List<String> getHealthMonitorRefs() {
-    return healthMonitorRefs;
-  }
-    
-  @VsoMethod
-  public void setHealthMonitorRefs(List<String> healthMonitorRefs) {
-    this.healthMonitorRefs = healthMonitorRefs;
-  }
-
-  
-  /**
-   * Enable common name check for server certificate. If enabled and no explicit domain name is specified, Avi will use the incoming host header to do the match.
+   * This is the getter method this will return the attribute value.
+   * Enable common name check for server certificate.
+   * If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return hostCheckEnabled
-  **/
-  @ApiModelProperty(value = "Enable common name check for server certificate. If enabled and no explicit domain name is specified, Avi will use the incoming host header to do the match.")
-
-
- 
-  @VsoMethod  
-  public Boolean isHostCheckEnabled() {
+   */
+  @VsoMethod
+  public Boolean getHostCheckEnabled() {
     return hostCheckEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable common name check for server certificate.
+   * If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param hostCheckEnabled set the hostCheckEnabled.
+   */
   @VsoMethod
-  public void setHostCheckEnabled(Boolean hostCheckEnabled) {
+  public void setHostCheckEnabled(Boolean  hostCheckEnabled) {
     this.hostCheckEnabled = hostCheckEnabled;
   }
 
-  
   /**
-   * Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1.
+   * This is the getter method this will return the attribute value.
+   * Ignore the server port in building the load balancing state.applicable only for consistent hash load balancing algorithm or disable port
+   * translation (use_service_port) use cases.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return ignoreServerPort
-  **/
-  @ApiModelProperty(value = "Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isIgnoreServerPort() {
+   */
+  @VsoMethod
+  public Boolean getIgnoreServerPort() {
     return ignoreServerPort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Ignore the server port in building the load balancing state.applicable only for consistent hash load balancing algorithm or disable port
+   * translation (use_service_port) use cases.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param ignoreServerPort set the ignoreServerPort.
+   */
   @VsoMethod
-  public void setIgnoreServerPort(Boolean ignoreServerPort) {
+  public void setIgnoreServerPort(Boolean  ignoreServerPort) {
     this.ignoreServerPort = ignoreServerPort;
   }
 
-  
   /**
-   * The Passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.  This may alter the expected behavior of the LB method, such as Round Robin.
+   * This is the getter method this will return the attribute value.
+   * The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.
+   * This may alter the expected behavior of the lb method, such as round robin.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return inlineHealthMonitor
-  **/
-  @ApiModelProperty(value = "The Passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.  This may alter the expected behavior of the LB method, such as Round Robin.")
-
-
- 
-  @VsoMethod  
-  public Boolean isInlineHealthMonitor() {
+   */
+  @VsoMethod
+  public Boolean getInlineHealthMonitor() {
     return inlineHealthMonitor;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.
+   * This may alter the expected behavior of the lb method, such as round robin.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param inlineHealthMonitor set the inlineHealthMonitor.
+   */
   @VsoMethod
-  public void setInlineHealthMonitor(Boolean inlineHealthMonitor) {
+  public void setInlineHealthMonitor(Boolean  inlineHealthMonitor) {
     this.inlineHealthMonitor = inlineHealthMonitor;
   }
 
-  
   /**
-   * Use list of servers from Ip Address Group. It is a reference to an object of type IpAddrGroup.
+   * This is the getter method this will return the attribute value.
+   * Use list of servers from ip address group.
+   * It is a reference to an object of type ipaddrgroup.
    * @return ipaddrgroupRef
-  **/
-  @ApiModelProperty(value = "Use list of servers from Ip Address Group. It is a reference to an object of type IpAddrGroup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpaddrgroupRef() {
     return ipaddrgroupRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Use list of servers from ip address group.
+   * It is a reference to an object of type ipaddrgroup.
+   * @param ipaddrgroupRef set the ipaddrgroupRef.
+   */
   @VsoMethod
-  public void setIpaddrgroupRef(String ipaddrgroupRef) {
+  public void setIpaddrgroupRef(String  ipaddrgroupRef) {
     this.ipaddrgroupRef = ipaddrgroupRef;
   }
 
-  
   /**
-   * The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
+   * This is the getter method this will return the attribute value.
+   * The load balancing algorithm will pick a server within the pool's list of available servers.
+   * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
+   * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
+   * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS.
    * @return lbAlgorithm
-  **/
-  @ApiModelProperty(value = "The load balancing algorithm will pick a server within the pool's list of available servers. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLbAlgorithm() {
     return lbAlgorithm;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The load balancing algorithm will pick a server within the pool's list of available servers.
+   * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
+   * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
+   * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS.
+   * @param lbAlgorithm set the lbAlgorithm.
+   */
   @VsoMethod
-  public void setLbAlgorithm(String lbAlgorithm) {
+  public void setLbAlgorithm(String  lbAlgorithm) {
     this.lbAlgorithm = lbAlgorithm;
   }
 
-  
   /**
-   * HTTP header name to be used for the hash key.
+   * This is the getter method this will return the attribute value.
+   * Http header name to be used for the hash key.
    * @return lbAlgorithmConsistentHashHdr
-  **/
-  @ApiModelProperty(value = "HTTP header name to be used for the hash key.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLbAlgorithmConsistentHashHdr() {
     return lbAlgorithmConsistentHashHdr;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http header name to be used for the hash key.
+   * @param lbAlgorithmConsistentHashHdr set the lbAlgorithmConsistentHashHdr.
+   */
   @VsoMethod
-  public void setLbAlgorithmConsistentHashHdr(String lbAlgorithmConsistentHashHdr) {
+  public void setLbAlgorithmConsistentHashHdr(String  lbAlgorithmConsistentHashHdr) {
     this.lbAlgorithmConsistentHashHdr = lbAlgorithmConsistentHashHdr;
   }
 
-  
   /**
-   * Degree of non-affinity for core afffinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3.
+   * This is the getter method this will return the attribute value.
+   * Degree of non-affinity for core afffinity based server selection.
+   * Allowed values are 1-65535.
+   * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return lbAlgorithmCoreNonaffinity
-  **/
-  @ApiModelProperty(value = "Degree of non-affinity for core afffinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getLbAlgorithmCoreNonaffinity() {
     return lbAlgorithmCoreNonaffinity;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Degree of non-affinity for core afffinity based server selection.
+   * Allowed values are 1-65535.
+   * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+   * @param lbAlgorithmCoreNonaffinity set the lbAlgorithmCoreNonaffinity.
+   */
   @VsoMethod
-  public void setLbAlgorithmCoreNonaffinity(Integer lbAlgorithmCoreNonaffinity) {
+  public void setLbAlgorithmCoreNonaffinity(Integer  lbAlgorithmCoreNonaffinity) {
     this.lbAlgorithmCoreNonaffinity = lbAlgorithmCoreNonaffinity;
   }
 
-  
   /**
-   * Criteria used as a key for determining the hash between the client and  server. Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT, LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING, LB_ALGORITHM_CONSISTENT_HASH_CALLID.
+   * This is the getter method this will return the attribute value.
+   * Criteria used as a key for determining the hash between the client and  server.
+   * Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
+   * LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
+   * LB_ALGORITHM_CONSISTENT_HASH_CALLID.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS.
    * @return lbAlgorithmHash
-  **/
-  @ApiModelProperty(value = "Criteria used as a key for determining the hash between the client and  server. Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT, LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING, LB_ALGORITHM_CONSISTENT_HASH_CALLID.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLbAlgorithmHash() {
     return lbAlgorithmHash;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Criteria used as a key for determining the hash between the client and  server.
+   * Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
+   * LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
+   * LB_ALGORITHM_CONSISTENT_HASH_CALLID.
+   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS.
+   * @param lbAlgorithmHash set the lbAlgorithmHash.
+   */
   @VsoMethod
-  public void setLbAlgorithmHash(String lbAlgorithmHash) {
+  public void setLbAlgorithmHash(String  lbAlgorithmHash) {
     this.lbAlgorithmHash = lbAlgorithmHash;
   }
 
-  
   /**
-   * Allow server lookup by name. Field introduced in 17.1.11,17.2.4.
+   * This is the getter method this will return the attribute value.
+   * Allow server lookup by name.
+   * Field introduced in 17.1.11,17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return lookupServerByName
-  **/
-  @ApiModelProperty(value = "Allow server lookup by name. Field introduced in 17.1.11,17.2.4.")
-
-
- 
-  @VsoMethod  
-  public Boolean isLookupServerByName() {
+   */
+  @VsoMethod
+  public Boolean getLookupServerByName() {
     return lookupServerByName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Allow server lookup by name.
+   * Field introduced in 17.1.11,17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param lookupServerByName set the lookupServerByName.
+   */
   @VsoMethod
-  public void setLookupServerByName(Boolean lookupServerByName) {
+  public void setLookupServerByName(Boolean  lookupServerByName) {
     this.lookupServerByName = lookupServerByName;
   }
 
-  
   /**
-   * The maximum number of concurrent connections allowed to each server within the pool. NOTE  applied value will be no less than the number of service engines that the pool is placed on. If set to 0, no limit is applied.
+   * This is the getter method this will return the attribute value.
+   * The maximum number of concurrent connections allowed to each server within the pool.
+   * Note  applied value will be no less than the number of service engines that the pool is placed on.
+   * If set to 0, no limit is applied.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return maxConcurrentConnectionsPerServer
-  **/
-  @ApiModelProperty(value = "The maximum number of concurrent connections allowed to each server within the pool. NOTE  applied value will be no less than the number of service engines that the pool is placed on. If set to 0, no limit is applied.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMaxConcurrentConnectionsPerServer() {
     return maxConcurrentConnectionsPerServer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The maximum number of concurrent connections allowed to each server within the pool.
+   * Note  applied value will be no less than the number of service engines that the pool is placed on.
+   * If set to 0, no limit is applied.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param maxConcurrentConnectionsPerServer set the maxConcurrentConnectionsPerServer.
+   */
   @VsoMethod
-  public void setMaxConcurrentConnectionsPerServer(Integer maxConcurrentConnectionsPerServer) {
+  public void setMaxConcurrentConnectionsPerServer(Integer  maxConcurrentConnectionsPerServer) {
     this.maxConcurrentConnectionsPerServer = maxConcurrentConnectionsPerServer;
   }
 
-  
   /**
-   * Rate Limit connections to each server.
+   * This is the getter method this will return the attribute value.
+   * Rate limit connections to each server.
    * @return maxConnRatePerServer
-  **/
-  @ApiModelProperty(value = "Rate Limit connections to each server.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public RateProfile getMaxConnRatePerServer() {
     return maxConnRatePerServer;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rate limit connections to each server.
+   * @param maxConnRatePerServer set the maxConnRatePerServer.
+   */
   @VsoMethod
   public void setMaxConnRatePerServer(RateProfile maxConnRatePerServer) {
     this.maxConnRatePerServer = maxConnRatePerServer;
   }
 
-  
   /**
-   * Minimum number of health monitors in UP state to mark server UP. Field introduced in 18.2.1, 17.2.12.
+   * This is the getter method this will return the attribute value.
+   * Minimum number of health monitors in up state to mark server up.
+   * Field introduced in 18.2.1, 17.2.12.
    * @return minHealthMonitorsUp
-  **/
-  @ApiModelProperty(value = "Minimum number of health monitors in UP state to mark server UP. Field introduced in 18.2.1, 17.2.12.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMinHealthMonitorsUp() {
     return minHealthMonitorsUp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum number of health monitors in up state to mark server up.
+   * Field introduced in 18.2.1, 17.2.12.
+   * @param minHealthMonitorsUp set the minHealthMonitorsUp.
+   */
   @VsoMethod
-  public void setMinHealthMonitorsUp(Integer minHealthMonitorsUp) {
+  public void setMinHealthMonitorsUp(Integer  minHealthMonitorsUp) {
     this.minHealthMonitorsUp = minHealthMonitorsUp;
   }
 
-  
   /**
-   * Minimum number of servers in UP state for marking the pool UP. Field introduced in 18.2.1, 17.2.12.
+   * This is the getter method this will return the attribute value.
+   * Minimum number of servers in up state for marking the pool up.
+   * Field introduced in 18.2.1, 17.2.12.
    * @return minServersUp
-  **/
-  @ApiModelProperty(value = "Minimum number of servers in UP state for marking the pool UP. Field introduced in 18.2.1, 17.2.12.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getMinServersUp() {
     return minServersUp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum number of servers in up state for marking the pool up.
+   * Field introduced in 18.2.1, 17.2.12.
+   * @param minServersUp set the minServersUp.
+   */
   @VsoMethod
-  public void setMinServersUp(Integer minServersUp) {
+  public void setMinServersUp(Integer  minServersUp) {
     this.minServersUp = minServersUp;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * The name of the pool.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "The name of the pool.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The name of the pool.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * (internal-use) networks designated as containing servers for this pool.
+   * The servers may be further narrowed down by a filter.
+   * This field is used internally by avi, not editable by the user.
+   * @return networks
+   */
+  @VsoMethod
+  public List<NetworkFilter> getNetworks() {
+    return networks;
+  }
+
+  /**
+   * This is the setter method. this will set the networks
+   * (internal-use) networks designated as containing servers for this pool.
+   * The servers may be further narrowed down by a filter.
+   * This field is used internally by avi, not editable by the user.
+   * @return networks
+   */
+  @VsoMethod
+  public void setNetworks(List<NetworkFilter>  networks) {
+    this.networks = networks;
+  }
+
+  /**
+   * This is the setter method this will set the networks
+   * (internal-use) networks designated as containing servers for this pool.
+   * The servers may be further narrowed down by a filter.
+   * This field is used internally by avi, not editable by the user.
+   * @return networks
+   */
+  @VsoMethod
   public Pool addNetworksItem(NetworkFilter networksItem) {
     if (this.networks == null) {
       this.networks = new ArrayList<NetworkFilter>();
@@ -1150,27 +1442,37 @@ public class Pool extends AviRestResource  {
     this.networks.add(networksItem);
     return this;
   }
-  
+
+
   /**
-   * (internal-use) Networks designated as containing servers for this pool.  The servers may be further narrowed down by a filter. This field is used internally by Avi, not editable by the user.
-   * @return networks
-  **/
-  @ApiModelProperty(value = "(internal-use) Networks designated as containing servers for this pool.  The servers may be further narrowed down by a filter. This field is used internally by Avi, not editable by the user.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<NetworkFilter> getNetworks() {
-    return networks;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * A list of nsx service groups where the servers for the pool are created.
+   * Field introduced in 17.1.1.
+   * @return nsxSecuritygroup
+   */
   @VsoMethod
-  public void setNetworks(List<NetworkFilter> networks) {
-    this.networks = networks;
+  public List<String> getNsxSecuritygroup() {
+    return nsxSecuritygroup;
   }
 
-  
+  /**
+   * This is the setter method. this will set the nsxSecuritygroup
+   * A list of nsx service groups where the servers for the pool are created.
+   * Field introduced in 17.1.1.
+   * @return nsxSecuritygroup
+   */
+  @VsoMethod
+  public void setNsxSecuritygroup(List<String>  nsxSecuritygroup) {
+    this.nsxSecuritygroup = nsxSecuritygroup;
+  }
+
+  /**
+   * This is the setter method this will set the nsxSecuritygroup
+   * A list of nsx service groups where the servers for the pool are created.
+   * Field introduced in 17.1.1.
+   * @return nsxSecuritygroup
+   */
+  @VsoMethod
   public Pool addNsxSecuritygroupItem(String nsxSecuritygroupItem) {
     if (this.nsxSecuritygroup == null) {
       this.nsxSecuritygroup = new ArrayList<String>();
@@ -1178,45 +1480,62 @@ public class Pool extends AviRestResource  {
     this.nsxSecuritygroup.add(nsxSecuritygroupItem);
     return this;
   }
-  
+
+
   /**
-   * A list of NSX Service Groups where the Servers for the Pool are created . Field introduced in 17.1.1.
-   * @return nsxSecuritygroup
-  **/
-  @ApiModelProperty(value = "A list of NSX Service Groups where the Servers for the Pool are created . Field introduced in 17.1.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getNsxSecuritygroup() {
-    return nsxSecuritygroup;
-  }
-    
-  @VsoMethod
-  public void setNsxSecuritygroup(List<String> nsxSecuritygroup) {
-    this.nsxSecuritygroup = nsxSecuritygroup;
-  }
-
-  
-  /**
-   * Avi will validate the SSL certificate present by a server against the selected PKI Profile. It is a reference to an object of type PKIProfile.
+   * This is the getter method this will return the attribute value.
+   * Avi will validate the ssl certificate present by a server against the selected pki profile.
+   * It is a reference to an object of type pkiprofile.
    * @return pkiProfileRef
-  **/
-  @ApiModelProperty(value = "Avi will validate the SSL certificate present by a server against the selected PKI Profile. It is a reference to an object of type PKIProfile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPkiProfileRef() {
     return pkiProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Avi will validate the ssl certificate present by a server against the selected pki profile.
+   * It is a reference to an object of type pkiprofile.
+   * @param pkiProfileRef set the pkiProfileRef.
+   */
   @VsoMethod
-  public void setPkiProfileRef(String pkiProfileRef) {
+  public void setPkiProfileRef(String  pkiProfileRef) {
     this.pkiProfileRef = pkiProfileRef;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Manually select the networks and subnets used to provide reachability to the pool's servers.
+   * Specify the subnet using the following syntax  10-1-1-0/24.
+   * Use static routes in vrf configuration when pool servers are not directly connected butroutable from the service engine.
+   * @return placementNetworks
+   */
+  @VsoMethod
+  public List<PlacementNetwork> getPlacementNetworks() {
+    return placementNetworks;
+  }
+
+  /**
+   * This is the setter method. this will set the placementNetworks
+   * Manually select the networks and subnets used to provide reachability to the pool's servers.
+   * Specify the subnet using the following syntax  10-1-1-0/24.
+   * Use static routes in vrf configuration when pool servers are not directly connected butroutable from the service engine.
+   * @return placementNetworks
+   */
+  @VsoMethod
+  public void setPlacementNetworks(List<PlacementNetwork>  placementNetworks) {
+    this.placementNetworks = placementNetworks;
+  }
+
+  /**
+   * This is the setter method this will set the placementNetworks
+   * Manually select the networks and subnets used to provide reachability to the pool's servers.
+   * Specify the subnet using the following syntax  10-1-1-0/24.
+   * Use static routes in vrf configuration when pool servers are not directly connected butroutable from the service engine.
+   * @return placementNetworks
+   */
+  @VsoMethod
   public Pool addPlacementNetworksItem(PlacementNetwork placementNetworksItem) {
     if (this.placementNetworks == null) {
       this.placementNetworks = new ArrayList<PlacementNetwork>();
@@ -1224,218 +1543,291 @@ public class Pool extends AviRestResource  {
     this.placementNetworks.add(placementNetworksItem);
     return this;
   }
-  
+
+
   /**
-   * Manually select the networks and subnets used to provide reachability to the pool's servers.  Specify the Subnet using the following syntax  10-1-1-0/24. Use static routes in VRF configuration when pool servers are not directly connected butroutable from the service engine.
-   * @return placementNetworks
-  **/
-  @ApiModelProperty(value = "Manually select the networks and subnets used to provide reachability to the pool's servers.  Specify the Subnet using the following syntax  10-1-1-0/24. Use static routes in VRF configuration when pool servers are not directly connected butroutable from the service engine.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<PlacementNetwork> getPlacementNetworks() {
-    return placementNetworks;
-  }
-    
-  @VsoMethod
-  public void setPlacementNetworks(List<PlacementNetwork> placementNetworks) {
-    this.placementNetworks = placementNetworks;
-  }
-
-  
-  /**
-   * Header name for custom header persistence. Field deprecated in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Header name for custom header persistence.
+   * Field deprecated in 18.1.2.
    * @return prstHdrName
-  **/
-  @ApiModelProperty(value = "Header name for custom header persistence. Field deprecated in 18.1.2.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPrstHdrName() {
     return prstHdrName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Header name for custom header persistence.
+   * Field deprecated in 18.1.2.
+   * @param prstHdrName set the prstHdrName.
+   */
   @VsoMethod
-  public void setPrstHdrName(String prstHdrName) {
+  public void setPrstHdrName(String  prstHdrName) {
     this.prstHdrName = prstHdrName;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Minimum number of requests to be queued when pool is full.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return requestQueueDepth
-  **/
-  @ApiModelProperty(value = "Minimum number of requests to be queued when pool is full.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getRequestQueueDepth() {
     return requestQueueDepth;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum number of requests to be queued when pool is full.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 128.
+   * @param requestQueueDepth set the requestQueueDepth.
+   */
   @VsoMethod
-  public void setRequestQueueDepth(Integer requestQueueDepth) {
+  public void setRequestQueueDepth(Integer  requestQueueDepth) {
     this.requestQueueDepth = requestQueueDepth;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Enable request queue when pool is full.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return requestQueueEnabled
-  **/
-  @ApiModelProperty(value = "Enable request queue when pool is full.")
-
-
- 
-  @VsoMethod  
-  public Boolean isRequestQueueEnabled() {
+   */
+  @VsoMethod
+  public Boolean getRequestQueueEnabled() {
     return requestQueueEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable request queue when pool is full.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param requestQueueEnabled set the requestQueueEnabled.
+   */
   @VsoMethod
-  public void setRequestQueueEnabled(Boolean requestQueueEnabled) {
+  public void setRequestQueueEnabled(Boolean  requestQueueEnabled) {
     this.requestQueueEnabled = requestQueueEnabled;
   }
 
-  
   /**
-   * Rewrite incoming Host Header to server name of the server to which the request is proxied.  Enabling this feature rewrites Host Header for requests to all servers in the pool.
+   * This is the getter method this will return the attribute value.
+   * Rewrite incoming host header to server name of the server to which the request is proxied.
+   * Enabling this feature rewrites host header for requests to all servers in the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rewriteHostHeaderToServerName
-  **/
-  @ApiModelProperty(value = "Rewrite incoming Host Header to server name of the server to which the request is proxied.  Enabling this feature rewrites Host Header for requests to all servers in the pool.")
-
-
- 
-  @VsoMethod  
-  public Boolean isRewriteHostHeaderToServerName() {
+   */
+  @VsoMethod
+  public Boolean getRewriteHostHeaderToServerName() {
     return rewriteHostHeaderToServerName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Rewrite incoming host header to server name of the server to which the request is proxied.
+   * Enabling this feature rewrites host header for requests to all servers in the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param rewriteHostHeaderToServerName set the rewriteHostHeaderToServerName.
+   */
   @VsoMethod
-  public void setRewriteHostHeaderToServerName(Boolean rewriteHostHeaderToServerName) {
+  public void setRewriteHostHeaderToServerName(Boolean  rewriteHostHeaderToServerName) {
     this.rewriteHostHeaderToServerName = rewriteHostHeaderToServerName;
   }
 
-  
   /**
-   * If SNI server name is specified, rewrite incoming host header to the SNI server name.
+   * This is the getter method this will return the attribute value.
+   * If sni server name is specified, rewrite incoming host header to the sni server name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rewriteHostHeaderToSni
-  **/
-  @ApiModelProperty(value = "If SNI server name is specified, rewrite incoming host header to the SNI server name.")
-
-
- 
-  @VsoMethod  
-  public Boolean isRewriteHostHeaderToSni() {
+   */
+  @VsoMethod
+  public Boolean getRewriteHostHeaderToSni() {
     return rewriteHostHeaderToSni;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * If sni server name is specified, rewrite incoming host header to the sni server name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param rewriteHostHeaderToSni set the rewriteHostHeaderToSni.
+   */
   @VsoMethod
-  public void setRewriteHostHeaderToSni(Boolean rewriteHostHeaderToSni) {
+  public void setRewriteHostHeaderToSni(Boolean  rewriteHostHeaderToSni) {
     this.rewriteHostHeaderToSni = rewriteHostHeaderToSni;
   }
 
-  
   /**
-   * Server AutoScale. Not used anymore. Field deprecated in 18.1.2.
+   * This is the getter method this will return the attribute value.
+   * Enable to do routing when this pool is selected to send traffic.
+   * No servers present in routing pool.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return routingPool
+   */
+  @VsoMethod
+  public Boolean getRoutingPool() {
+    return routingPool;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable to do routing when this pool is selected to send traffic.
+   * No servers present in routing pool.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param routingPool set the routingPool.
+   */
+  @VsoMethod
+  public void setRoutingPool(Boolean  routingPool) {
+    this.routingPool = routingPool;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Server autoscale.
+   * Not used anymore.
+   * Field deprecated in 18.1.2.
    * @return serverAutoScale
-  **/
-  @ApiModelProperty(value = "Server AutoScale. Not used anymore. Field deprecated in 18.1.2.")
-
-
- 
-  @VsoMethod  
-  public Boolean isServerAutoScale() {
+   */
+  @VsoMethod
+  public Boolean getServerAutoScale() {
     return serverAutoScale;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Server autoscale.
+   * Not used anymore.
+   * Field deprecated in 18.1.2.
+   * @param serverAutoScale set the serverAutoScale.
+   */
   @VsoMethod
-  public void setServerAutoScale(Boolean serverAutoScale) {
+  public void setServerAutoScale(Boolean  serverAutoScale) {
     this.serverAutoScale = serverAutoScale;
   }
 
-  
   /**
-   *  Field deprecated in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Field deprecated in 18.2.1.
    * @return serverCount
-  **/
-  @ApiModelProperty(value = " Field deprecated in 18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getServerCount() {
     return serverCount;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field deprecated in 18.2.1.
+   * @param serverCount set the serverCount.
+   */
   @VsoMethod
-  public void setServerCount(Integer serverCount) {
+  public void setServerCount(Integer  serverCount) {
     this.serverCount = serverCount;
   }
 
-  
   /**
-   * Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections if SNI is enabled. If no value is specified, Avi will use the incoming host header instead.
+   * This is the getter method this will return the attribute value.
+   * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
+   * If no value is specified, avi will use the incoming host header instead.
    * @return serverName
-  **/
-  @ApiModelProperty(value = "Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections if SNI is enabled. If no value is specified, Avi will use the incoming host header instead.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServerName() {
     return serverName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
+   * If no value is specified, avi will use the incoming host header instead.
+   * @param serverName set the serverName.
+   */
   @VsoMethod
-  public void setServerName(String serverName) {
+  public void setServerName(String  serverName) {
     this.serverName = serverName;
   }
 
-  
   /**
-   * Server reselect configuration for HTTP requests.
+   * This is the getter method this will return the attribute value.
+   * Server reselect configuration for http requests.
    * @return serverReselect
-  **/
-  @ApiModelProperty(value = "Server reselect configuration for HTTP requests.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public HTTPServerReselect getServerReselect() {
     return serverReselect;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Server reselect configuration for http requests.
+   * @param serverReselect set the serverReselect.
+   */
   @VsoMethod
   public void setServerReselect(HTTPServerReselect serverReselect) {
     this.serverReselect = serverReselect;
   }
 
-  
   /**
-   * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
+   * between avi and the server.
+   * Value of 0 results in using default timeout of 60 minutes.
+   * Allowed values are 0-3600000.
+   * Field introduced in 18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return serverTimeout
-  **/
-  @ApiModelProperty(value = "Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getServerTimeout() {
     return serverTimeout;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
+   * between avi and the server.
+   * Value of 0 results in using default timeout of 60 minutes.
+   * Allowed values are 0-3600000.
+   * Field introduced in 18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param serverTimeout set the serverTimeout.
+   */
   @VsoMethod
-  public void setServerTimeout(Integer serverTimeout) {
+  public void setServerTimeout(Integer  serverTimeout) {
     this.serverTimeout = serverTimeout;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * The pool directs load balanced traffic to this list of destination servers.
+   * The servers can be configured by ip address, name, network or via ip address group.
+   * @return servers
+   */
+  @VsoMethod
+  public List<Server> getServers() {
+    return servers;
+  }
+
+  /**
+   * This is the setter method. this will set the servers
+   * The pool directs load balanced traffic to this list of destination servers.
+   * The servers can be configured by ip address, name, network or via ip address group.
+   * @return servers
+   */
+  @VsoMethod
+  public void setServers(List<Server>  servers) {
+    this.servers = servers;
+  }
+
+  /**
+   * This is the setter method this will set the servers
+   * The pool directs load balanced traffic to this list of destination servers.
+   * The servers can be configured by ip address, name, network or via ip address group.
+   * @return servers
+   */
+  @VsoMethod
   public Pool addServersItem(Server serversItem) {
     if (this.servers == null) {
       this.servers = new ArrayList<Server>();
@@ -1443,374 +1835,381 @@ public class Pool extends AviRestResource  {
     this.servers.add(serversItem);
     return this;
   }
-  
+
+
   /**
-   * The pool directs load balanced traffic to this list of destination servers. The servers can be configured by IP address, name, network or via IP Address Group.
-   * @return servers
-  **/
-  @ApiModelProperty(value = "The pool directs load balanced traffic to this list of destination servers. The servers can be configured by IP address, name, network or via IP Address Group.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<Server> getServers() {
-    return servers;
-  }
-    
-  @VsoMethod
-  public void setServers(List<Server> servers) {
-    this.servers = servers;
-  }
-
-  
-  /**
-   * Metadata pertaining to the service provided by this Pool. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Metadata pertaining to the service provided by this pool.
+   * In openshift/kubernetes environments, app metadata info is stored.
+   * Any user input to this field will be overwritten by avi vantage.
+   * Field introduced in 17.2.14,18.1.5,18.2.1.
    * @return serviceMetadata
-  **/
-  @ApiModelProperty(value = "Metadata pertaining to the service provided by this Pool. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getServiceMetadata() {
     return serviceMetadata;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Metadata pertaining to the service provided by this pool.
+   * In openshift/kubernetes environments, app metadata info is stored.
+   * Any user input to this field will be overwritten by avi vantage.
+   * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * @param serviceMetadata set the serviceMetadata.
+   */
   @VsoMethod
-  public void setServiceMetadata(String serviceMetadata) {
+  public void setServiceMetadata(String  serviceMetadata) {
     this.serviceMetadata = serviceMetadata;
   }
 
-  
   /**
-   * Enable TLS SNI for server connections. If disabled, Avi will not send the SNI extension as part of the handshake.
+   * This is the getter method this will return the attribute value.
+   * Enable tls sni for server connections.
+   * If disabled, avi will not send the sni extension as part of the handshake.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return sniEnabled
-  **/
-  @ApiModelProperty(value = "Enable TLS SNI for server connections. If disabled, Avi will not send the SNI extension as part of the handshake.")
-
-
- 
-  @VsoMethod  
-  public Boolean isSniEnabled() {
+   */
+  @VsoMethod
+  public Boolean getSniEnabled() {
     return sniEnabled;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable tls sni for server connections.
+   * If disabled, avi will not send the sni extension as part of the handshake.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param sniEnabled set the sniEnabled.
+   */
   @VsoMethod
-  public void setSniEnabled(Boolean sniEnabled) {
+  public void setSniEnabled(Boolean  sniEnabled) {
     this.sniEnabled = sniEnabled;
   }
 
-  
   /**
-   * Service Engines will present a client SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate.
+   * This is the getter method this will return the attribute value.
+   * Service engines will present a client ssl certificate to the server.
+   * It is a reference to an object of type sslkeyandcertificate.
    * @return sslKeyAndCertificateRef
-  **/
-  @ApiModelProperty(value = "Service Engines will present a client SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSslKeyAndCertificateRef() {
     return sslKeyAndCertificateRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Service engines will present a client ssl certificate to the server.
+   * It is a reference to an object of type sslkeyandcertificate.
+   * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
+   */
   @VsoMethod
-  public void setSslKeyAndCertificateRef(String sslKeyAndCertificateRef) {
+  public void setSslKeyAndCertificateRef(String  sslKeyAndCertificateRef) {
     this.sslKeyAndCertificateRef = sslKeyAndCertificateRef;
   }
 
-  
   /**
-   * When enabled, Avi re-encrypts traffic to the backend servers. The specific SSL profile defines which ciphers and SSL versions will be supported. It is a reference to an object of type SSLProfile.
+   * This is the getter method this will return the attribute value.
+   * When enabled, avi re-encrypts traffic to the backend servers.
+   * The specific ssl profile defines which ciphers and ssl versions will be supported.
+   * It is a reference to an object of type sslprofile.
    * @return sslProfileRef
-  **/
-  @ApiModelProperty(value = "When enabled, Avi re-encrypts traffic to the backend servers. The specific SSL profile defines which ciphers and SSL versions will be supported. It is a reference to an object of type SSLProfile.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSslProfileRef() {
     return sslProfileRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * When enabled, avi re-encrypts traffic to the backend servers.
+   * The specific ssl profile defines which ciphers and ssl versions will be supported.
+   * It is a reference to an object of type sslprofile.
+   * @param sslProfileRef set the sslProfileRef.
+   */
   @VsoMethod
-  public void setSslProfileRef(String sslProfileRef) {
+  public void setSslProfileRef(String  sslProfileRef) {
     this.sslProfileRef = sslProfileRef;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring.
+   * This is the getter method this will return the attribute value.
+   * Do not translate the client's destination port when sending the connection to the server.
+   * The pool or servers specified service port will still be used for health monitoring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useServicePort
-  **/
-  @ApiModelProperty(value = "Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring.")
-
-
- 
-  @VsoMethod  
-  public Boolean isUseServicePort() {
+   */
+  @VsoMethod
+  public Boolean getUseServicePort() {
     return useServicePort;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Do not translate the client's destination port when sending the connection to the server.
+   * The pool or servers specified service port will still be used for health monitoring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param useServicePort set the useServicePort.
+   */
   @VsoMethod
-  public void setUseServicePort(Boolean useServicePort) {
+  public void setUseServicePort(Boolean  useServicePort) {
     this.useServicePort = useServicePort;
   }
 
-  
   /**
-   * UUID of the pool.
+   * This is the getter method this will return the attribute value.
+   * Uuid of the pool.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID of the pool.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid of the pool.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Conext of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext.
+   * This is the getter method this will return the attribute value.
+   * Virtual routing context that the pool is bound to.
+   * This is used to provide the isolation of the set of networks the pool is attached to.
+   * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+   * It is a reference to an object of type vrfcontext.
    * @return vrfRef
-  **/
-  @ApiModelProperty(value = "Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Conext of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVrfRef() {
     return vrfRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Virtual routing context that the pool is bound to.
+   * This is used to provide the isolation of the set of networks the pool is attached to.
+   * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+   * It is a reference to an object of type vrfcontext.
+   * @param vrfRef set the vrfRef.
+   */
   @VsoMethod
-  public void setVrfRef(String vrfRef) {
+  public void setVrfRef(String  vrfRef) {
     this.vrfRef = vrfRef;
   }
 
-  
+
   public String getObjectID() {
-		return "Pool";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Pool pool = (Pool) o;
-    return Objects.equals(this.lastModified, pool.lastModified) &&
-        Objects.equals(this.aPool, pool.aPool) &&
-        Objects.equals(this.abPool, pool.abPool) &&
-        Objects.equals(this.abPriority, pool.abPriority) &&
-        Objects.equals(this.analyticsPolicy, pool.analyticsPolicy) &&
-        Objects.equals(this.analyticsProfileRef, pool.analyticsProfileRef) &&
-        Objects.equals(this.apicEpgName, pool.apicEpgName) &&
-        Objects.equals(this.applicationPersistenceProfileRef, pool.applicationPersistenceProfileRef) &&
-        Objects.equals(this.autoscaleLaunchConfigRef, pool.autoscaleLaunchConfigRef) &&
-        Objects.equals(this.autoscaleNetworks, pool.autoscaleNetworks) &&
-        Objects.equals(this.autoscalePolicyRef, pool.autoscalePolicyRef) &&
-        Objects.equals(this.capacityEstimation, pool.capacityEstimation) &&
-        Objects.equals(this.capacityEstimationTtfbThresh, pool.capacityEstimationTtfbThresh) &&
-        Objects.equals(this.cloudConfigCksum, pool.cloudConfigCksum) &&
-        Objects.equals(this.cloudRef, pool.cloudRef) &&
-        Objects.equals(this.connPoolProperties, pool.connPoolProperties) &&
-        Objects.equals(this.connectionRampDuration, pool.connectionRampDuration) &&
-        Objects.equals(this.createdBy, pool.createdBy) &&
-        Objects.equals(this.defaultServerPort, pool.defaultServerPort) &&
-        Objects.equals(this.deleteServerOnDnsRefresh, pool.deleteServerOnDnsRefresh) &&
-        Objects.equals(this.description, pool.description) &&
-        Objects.equals(this.domainName, pool.domainName) &&
-        Objects.equals(this.eastWest, pool.eastWest) &&
-        Objects.equals(this.enableHttp2, pool.enableHttp2) &&
-        Objects.equals(this.enabled, pool.enabled) &&
-        Objects.equals(this.externalAutoscaleGroups, pool.externalAutoscaleGroups) &&
-        Objects.equals(this.failAction, pool.failAction) &&
-        Objects.equals(this.fewestTasksFeedbackDelay, pool.fewestTasksFeedbackDelay) &&
-        Objects.equals(this.gracefulDisableTimeout, pool.gracefulDisableTimeout) &&
-        Objects.equals(this.gslbSpEnabled, pool.gslbSpEnabled) &&
-        Objects.equals(this.healthMonitorRefs, pool.healthMonitorRefs) &&
-        Objects.equals(this.hostCheckEnabled, pool.hostCheckEnabled) &&
-        Objects.equals(this.ignoreServerPort, pool.ignoreServerPort) &&
-        Objects.equals(this.inlineHealthMonitor, pool.inlineHealthMonitor) &&
-        Objects.equals(this.ipaddrgroupRef, pool.ipaddrgroupRef) &&
-        Objects.equals(this.lbAlgorithm, pool.lbAlgorithm) &&
-        Objects.equals(this.lbAlgorithmConsistentHashHdr, pool.lbAlgorithmConsistentHashHdr) &&
-        Objects.equals(this.lbAlgorithmCoreNonaffinity, pool.lbAlgorithmCoreNonaffinity) &&
-        Objects.equals(this.lbAlgorithmHash, pool.lbAlgorithmHash) &&
-        Objects.equals(this.lookupServerByName, pool.lookupServerByName) &&
-        Objects.equals(this.maxConcurrentConnectionsPerServer, pool.maxConcurrentConnectionsPerServer) &&
-        Objects.equals(this.maxConnRatePerServer, pool.maxConnRatePerServer) &&
-        Objects.equals(this.minHealthMonitorsUp, pool.minHealthMonitorsUp) &&
-        Objects.equals(this.minServersUp, pool.minServersUp) &&
-        Objects.equals(this.name, pool.name) &&
-        Objects.equals(this.networks, pool.networks) &&
-        Objects.equals(this.nsxSecuritygroup, pool.nsxSecuritygroup) &&
-        Objects.equals(this.pkiProfileRef, pool.pkiProfileRef) &&
-        Objects.equals(this.placementNetworks, pool.placementNetworks) &&
-        Objects.equals(this.prstHdrName, pool.prstHdrName) &&
-        Objects.equals(this.requestQueueDepth, pool.requestQueueDepth) &&
-        Objects.equals(this.requestQueueEnabled, pool.requestQueueEnabled) &&
-        Objects.equals(this.rewriteHostHeaderToServerName, pool.rewriteHostHeaderToServerName) &&
-        Objects.equals(this.rewriteHostHeaderToSni, pool.rewriteHostHeaderToSni) &&
-        Objects.equals(this.serverAutoScale, pool.serverAutoScale) &&
-        Objects.equals(this.serverCount, pool.serverCount) &&
-        Objects.equals(this.serverName, pool.serverName) &&
-        Objects.equals(this.serverReselect, pool.serverReselect) &&
-        Objects.equals(this.serverTimeout, pool.serverTimeout) &&
-        Objects.equals(this.servers, pool.servers) &&
-        Objects.equals(this.serviceMetadata, pool.serviceMetadata) &&
-        Objects.equals(this.sniEnabled, pool.sniEnabled) &&
-        Objects.equals(this.sslKeyAndCertificateRef, pool.sslKeyAndCertificateRef) &&
-        Objects.equals(this.sslProfileRef, pool.sslProfileRef) &&
-        Objects.equals(this.tenantRef, pool.tenantRef) &&
-        Objects.equals(this.url, pool.url) &&
-        Objects.equals(this.useServicePort, pool.useServicePort) &&
-        Objects.equals(this.uuid, pool.uuid) &&
-        Objects.equals(this.vrfRef, pool.vrfRef);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, aPool, abPool, abPriority, analyticsPolicy, analyticsProfileRef, apicEpgName, applicationPersistenceProfileRef, autoscaleLaunchConfigRef, autoscaleNetworks, autoscalePolicyRef, capacityEstimation, capacityEstimationTtfbThresh, cloudConfigCksum, cloudRef, connPoolProperties, connectionRampDuration, createdBy, defaultServerPort, deleteServerOnDnsRefresh, description, domainName, eastWest, enableHttp2, enabled, externalAutoscaleGroups, failAction, fewestTasksFeedbackDelay, gracefulDisableTimeout, gslbSpEnabled, healthMonitorRefs, hostCheckEnabled, ignoreServerPort, inlineHealthMonitor, ipaddrgroupRef, lbAlgorithm, lbAlgorithmConsistentHashHdr, lbAlgorithmCoreNonaffinity, lbAlgorithmHash, lookupServerByName, maxConcurrentConnectionsPerServer, maxConnRatePerServer, minHealthMonitorsUp, minServersUp, name, networks, nsxSecuritygroup, pkiProfileRef, placementNetworks, prstHdrName, requestQueueDepth, requestQueueEnabled, rewriteHostHeaderToServerName, rewriteHostHeaderToSni, serverAutoScale, serverCount, serverName, serverReselect, serverTimeout, servers, serviceMetadata, sniEnabled, sslKeyAndCertificateRef, sslProfileRef, tenantRef, url, useServicePort, uuid, vrfRef);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Pool {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    aPool: ").append(toIndentedString(aPool)).append("\n");
-    sb.append("    abPool: ").append(toIndentedString(abPool)).append("\n");
-    sb.append("    abPriority: ").append(toIndentedString(abPriority)).append("\n");
-    sb.append("    analyticsPolicy: ").append(toIndentedString(analyticsPolicy)).append("\n");
-    sb.append("    analyticsProfileRef: ").append(toIndentedString(analyticsProfileRef)).append("\n");
-    sb.append("    apicEpgName: ").append(toIndentedString(apicEpgName)).append("\n");
-    sb.append("    applicationPersistenceProfileRef: ").append(toIndentedString(applicationPersistenceProfileRef)).append("\n");
-    sb.append("    autoscaleLaunchConfigRef: ").append(toIndentedString(autoscaleLaunchConfigRef)).append("\n");
-    sb.append("    autoscaleNetworks: ").append(toIndentedString(autoscaleNetworks)).append("\n");
-    sb.append("    autoscalePolicyRef: ").append(toIndentedString(autoscalePolicyRef)).append("\n");
-    sb.append("    capacityEstimation: ").append(toIndentedString(capacityEstimation)).append("\n");
-    sb.append("    capacityEstimationTtfbThresh: ").append(toIndentedString(capacityEstimationTtfbThresh)).append("\n");
-    sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
-    sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-    sb.append("    connPoolProperties: ").append(toIndentedString(connPoolProperties)).append("\n");
-    sb.append("    connectionRampDuration: ").append(toIndentedString(connectionRampDuration)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    defaultServerPort: ").append(toIndentedString(defaultServerPort)).append("\n");
-    sb.append("    deleteServerOnDnsRefresh: ").append(toIndentedString(deleteServerOnDnsRefresh)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-    sb.append("    eastWest: ").append(toIndentedString(eastWest)).append("\n");
-    sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    externalAutoscaleGroups: ").append(toIndentedString(externalAutoscaleGroups)).append("\n");
-    sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
-    sb.append("    fewestTasksFeedbackDelay: ").append(toIndentedString(fewestTasksFeedbackDelay)).append("\n");
-    sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
-    sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
-    sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
-    sb.append("    hostCheckEnabled: ").append(toIndentedString(hostCheckEnabled)).append("\n");
-    sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
-    sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
-    sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
-    sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
-    sb.append("    lbAlgorithmConsistentHashHdr: ").append(toIndentedString(lbAlgorithmConsistentHashHdr)).append("\n");
-    sb.append("    lbAlgorithmCoreNonaffinity: ").append(toIndentedString(lbAlgorithmCoreNonaffinity)).append("\n");
-    sb.append("    lbAlgorithmHash: ").append(toIndentedString(lbAlgorithmHash)).append("\n");
-    sb.append("    lookupServerByName: ").append(toIndentedString(lookupServerByName)).append("\n");
-    sb.append("    maxConcurrentConnectionsPerServer: ").append(toIndentedString(maxConcurrentConnectionsPerServer)).append("\n");
-    sb.append("    maxConnRatePerServer: ").append(toIndentedString(maxConnRatePerServer)).append("\n");
-    sb.append("    minHealthMonitorsUp: ").append(toIndentedString(minHealthMonitorsUp)).append("\n");
-    sb.append("    minServersUp: ").append(toIndentedString(minServersUp)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
-    sb.append("    nsxSecuritygroup: ").append(toIndentedString(nsxSecuritygroup)).append("\n");
-    sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
-    sb.append("    placementNetworks: ").append(toIndentedString(placementNetworks)).append("\n");
-    sb.append("    prstHdrName: ").append(toIndentedString(prstHdrName)).append("\n");
-    sb.append("    requestQueueDepth: ").append(toIndentedString(requestQueueDepth)).append("\n");
-    sb.append("    requestQueueEnabled: ").append(toIndentedString(requestQueueEnabled)).append("\n");
-    sb.append("    rewriteHostHeaderToServerName: ").append(toIndentedString(rewriteHostHeaderToServerName)).append("\n");
-    sb.append("    rewriteHostHeaderToSni: ").append(toIndentedString(rewriteHostHeaderToSni)).append("\n");
-    sb.append("    serverAutoScale: ").append(toIndentedString(serverAutoScale)).append("\n");
-    sb.append("    serverCount: ").append(toIndentedString(serverCount)).append("\n");
-    sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
-    sb.append("    serverReselect: ").append(toIndentedString(serverReselect)).append("\n");
-    sb.append("    serverTimeout: ").append(toIndentedString(serverTimeout)).append("\n");
-    sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
-    sb.append("    serviceMetadata: ").append(toIndentedString(serviceMetadata)).append("\n");
-    sb.append("    sniEnabled: ").append(toIndentedString(sniEnabled)).append("\n");
-    sb.append("    sslKeyAndCertificateRef: ").append(toIndentedString(sslKeyAndCertificateRef)).append("\n");
-    sb.append("    sslProfileRef: ").append(toIndentedString(sslProfileRef)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    useServicePort: ").append(toIndentedString(useServicePort)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    vrfRef: ").append(toIndentedString(vrfRef)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  Pool objPool = (Pool) o;
+  return   Objects.equals(this.lbAlgorithm, objPool.lbAlgorithm)&&
+  Objects.equals(this.useServicePort, objPool.useServicePort)&&
+  Objects.equals(this.serverAutoScale, objPool.serverAutoScale)&&
+  Objects.equals(this.applicationPersistenceProfileRef, objPool.applicationPersistenceProfileRef)&&
+  Objects.equals(this.hostCheckEnabled, objPool.hostCheckEnabled)&&
+  Objects.equals(this.connPoolProperties, objPool.connPoolProperties)&&
+  Objects.equals(this.rewriteHostHeaderToSni, objPool.rewriteHostHeaderToSni)&&
+  Objects.equals(this.deleteServerOnDnsRefresh, objPool.deleteServerOnDnsRefresh)&&
+  Objects.equals(this.capacityEstimation, objPool.capacityEstimation)&&
+  Objects.equals(this.maxConnRatePerServer, objPool.maxConnRatePerServer)&&
+  Objects.equals(this.servers, objPool.servers)&&
+  Objects.equals(this.fewestTasksFeedbackDelay, objPool.fewestTasksFeedbackDelay)&&
+  Objects.equals(this.rewriteHostHeaderToServerName, objPool.rewriteHostHeaderToServerName)&&
+  Objects.equals(this.createdBy, objPool.createdBy)&&
+  Objects.equals(this.abPool, objPool.abPool)&&
+  Objects.equals(this.capacityEstimationTtfbThresh, objPool.capacityEstimationTtfbThresh)&&
+  Objects.equals(this.failAction, objPool.failAction)&&
+  Objects.equals(this.apicEpgName, objPool.apicEpgName)&&
+  Objects.equals(this.networks, objPool.networks)&&
+  Objects.equals(this.lbAlgorithmHash, objPool.lbAlgorithmHash)&&
+  Objects.equals(this.autoscaleLaunchConfigRef, objPool.autoscaleLaunchConfigRef)&&
+  Objects.equals(this.lookupServerByName, objPool.lookupServerByName)&&
+  Objects.equals(this.uuid, objPool.uuid)&&
+  Objects.equals(this.serverName, objPool.serverName)&&
+  Objects.equals(this.minServersUp, objPool.minServersUp)&&
+  Objects.equals(this.domainName, objPool.domainName)&&
+  Objects.equals(this.connectionRampDuration, objPool.connectionRampDuration)&&
+  Objects.equals(this.eastWest, objPool.eastWest)&&
+  Objects.equals(this.placementNetworks, objPool.placementNetworks)&&
+  Objects.equals(this.serverReselect, objPool.serverReselect)&&
+  Objects.equals(this.analyticsProfileRef, objPool.analyticsProfileRef)&&
+  Objects.equals(this.enableHttp2, objPool.enableHttp2)&&
+  Objects.equals(this.nsxSecuritygroup, objPool.nsxSecuritygroup)&&
+  Objects.equals(this.aPool, objPool.aPool)&&
+  Objects.equals(this.lbAlgorithmCoreNonaffinity, objPool.lbAlgorithmCoreNonaffinity)&&
+  Objects.equals(this.minHealthMonitorsUp, objPool.minHealthMonitorsUp)&&
+  Objects.equals(this.pkiProfileRef, objPool.pkiProfileRef)&&
+  Objects.equals(this.autoscalePolicyRef, objPool.autoscalePolicyRef)&&
+  Objects.equals(this.inlineHealthMonitor, objPool.inlineHealthMonitor)&&
+  Objects.equals(this.defaultServerPort, objPool.defaultServerPort)&&
+  Objects.equals(this.description, objPool.description)&&
+  Objects.equals(this.requestQueueDepth, objPool.requestQueueDepth)&&
+  Objects.equals(this.ipaddrgroupRef, objPool.ipaddrgroupRef)&&
+  Objects.equals(this.gracefulDisableTimeout, objPool.gracefulDisableTimeout)&&
+  Objects.equals(this.sslKeyAndCertificateRef, objPool.sslKeyAndCertificateRef)&&
+  Objects.equals(this.abPriority, objPool.abPriority)&&
+  Objects.equals(this.routingPool, objPool.routingPool)&&
+  Objects.equals(this.vrfRef, objPool.vrfRef)&&
+  Objects.equals(this.serverCount, objPool.serverCount)&&
+  Objects.equals(this.sniEnabled, objPool.sniEnabled)&&
+  Objects.equals(this.serverTimeout, objPool.serverTimeout)&&
+  Objects.equals(this.requestQueueEnabled, objPool.requestQueueEnabled)&&
+  Objects.equals(this.name, objPool.name)&&
+  Objects.equals(this.maxConcurrentConnectionsPerServer, objPool.maxConcurrentConnectionsPerServer)&&
+  Objects.equals(this.ignoreServerPort, objPool.ignoreServerPort)&&
+  Objects.equals(this.serviceMetadata, objPool.serviceMetadata)&&
+  Objects.equals(this.prstHdrName, objPool.prstHdrName)&&
+  Objects.equals(this.enabled, objPool.enabled)&&
+  Objects.equals(this.autoscaleNetworks, objPool.autoscaleNetworks)&&
+  Objects.equals(this.healthMonitorRefs, objPool.healthMonitorRefs)&&
+  Objects.equals(this.lbAlgorithmConsistentHashHdr, objPool.lbAlgorithmConsistentHashHdr)&&
+  Objects.equals(this.sslProfileRef, objPool.sslProfileRef)&&
+  Objects.equals(this.cloudConfigCksum, objPool.cloudConfigCksum)&&
+  Objects.equals(this.analyticsPolicy, objPool.analyticsPolicy)&&
+  Objects.equals(this.externalAutoscaleGroups, objPool.externalAutoscaleGroups)&&
+  Objects.equals(this.cloudRef, objPool.cloudRef)&&
+  Objects.equals(this.tenantRef, objPool.tenantRef)&&
+  Objects.equals(this.gslbSpEnabled, objPool.gslbSpEnabled);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class Pool {\n");
+      sb.append("    aPool: ").append(toIndentedString(aPool)).append("\n");
+        sb.append("    abPool: ").append(toIndentedString(abPool)).append("\n");
+        sb.append("    abPriority: ").append(toIndentedString(abPriority)).append("\n");
+        sb.append("    analyticsPolicy: ").append(toIndentedString(analyticsPolicy)).append("\n");
+        sb.append("    analyticsProfileRef: ").append(toIndentedString(analyticsProfileRef)).append("\n");
+        sb.append("    apicEpgName: ").append(toIndentedString(apicEpgName)).append("\n");
+        sb.append("    applicationPersistenceProfileRef: ").append(toIndentedString(applicationPersistenceProfileRef)).append("\n");
+        sb.append("    autoscaleLaunchConfigRef: ").append(toIndentedString(autoscaleLaunchConfigRef)).append("\n");
+        sb.append("    autoscaleNetworks: ").append(toIndentedString(autoscaleNetworks)).append("\n");
+        sb.append("    autoscalePolicyRef: ").append(toIndentedString(autoscalePolicyRef)).append("\n");
+        sb.append("    capacityEstimation: ").append(toIndentedString(capacityEstimation)).append("\n");
+        sb.append("    capacityEstimationTtfbThresh: ").append(toIndentedString(capacityEstimationTtfbThresh)).append("\n");
+        sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
+        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    connPoolProperties: ").append(toIndentedString(connPoolProperties)).append("\n");
+        sb.append("    connectionRampDuration: ").append(toIndentedString(connectionRampDuration)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    defaultServerPort: ").append(toIndentedString(defaultServerPort)).append("\n");
+        sb.append("    deleteServerOnDnsRefresh: ").append(toIndentedString(deleteServerOnDnsRefresh)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    eastWest: ").append(toIndentedString(eastWest)).append("\n");
+        sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    externalAutoscaleGroups: ").append(toIndentedString(externalAutoscaleGroups)).append("\n");
+        sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
+        sb.append("    fewestTasksFeedbackDelay: ").append(toIndentedString(fewestTasksFeedbackDelay)).append("\n");
+        sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
+        sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
+        sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
+        sb.append("    hostCheckEnabled: ").append(toIndentedString(hostCheckEnabled)).append("\n");
+        sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
+        sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
+        sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
+        sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
+        sb.append("    lbAlgorithmConsistentHashHdr: ").append(toIndentedString(lbAlgorithmConsistentHashHdr)).append("\n");
+        sb.append("    lbAlgorithmCoreNonaffinity: ").append(toIndentedString(lbAlgorithmCoreNonaffinity)).append("\n");
+        sb.append("    lbAlgorithmHash: ").append(toIndentedString(lbAlgorithmHash)).append("\n");
+        sb.append("    lookupServerByName: ").append(toIndentedString(lookupServerByName)).append("\n");
+        sb.append("    maxConcurrentConnectionsPerServer: ").append(toIndentedString(maxConcurrentConnectionsPerServer)).append("\n");
+        sb.append("    maxConnRatePerServer: ").append(toIndentedString(maxConnRatePerServer)).append("\n");
+        sb.append("    minHealthMonitorsUp: ").append(toIndentedString(minHealthMonitorsUp)).append("\n");
+        sb.append("    minServersUp: ").append(toIndentedString(minServersUp)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
+        sb.append("    nsxSecuritygroup: ").append(toIndentedString(nsxSecuritygroup)).append("\n");
+        sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
+        sb.append("    placementNetworks: ").append(toIndentedString(placementNetworks)).append("\n");
+        sb.append("    prstHdrName: ").append(toIndentedString(prstHdrName)).append("\n");
+        sb.append("    requestQueueDepth: ").append(toIndentedString(requestQueueDepth)).append("\n");
+        sb.append("    requestQueueEnabled: ").append(toIndentedString(requestQueueEnabled)).append("\n");
+        sb.append("    rewriteHostHeaderToServerName: ").append(toIndentedString(rewriteHostHeaderToServerName)).append("\n");
+        sb.append("    rewriteHostHeaderToSni: ").append(toIndentedString(rewriteHostHeaderToSni)).append("\n");
+        sb.append("    routingPool: ").append(toIndentedString(routingPool)).append("\n");
+        sb.append("    serverAutoScale: ").append(toIndentedString(serverAutoScale)).append("\n");
+        sb.append("    serverCount: ").append(toIndentedString(serverCount)).append("\n");
+        sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
+        sb.append("    serverReselect: ").append(toIndentedString(serverReselect)).append("\n");
+        sb.append("    serverTimeout: ").append(toIndentedString(serverTimeout)).append("\n");
+        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    serviceMetadata: ").append(toIndentedString(serviceMetadata)).append("\n");
+        sb.append("    sniEnabled: ").append(toIndentedString(sniEnabled)).append("\n");
+        sb.append("    sslKeyAndCertificateRef: ").append(toIndentedString(sslKeyAndCertificateRef)).append("\n");
+        sb.append("    sslProfileRef: ").append(toIndentedString(sslProfileRef)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    useServicePort: ").append(toIndentedString(useServicePort)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    vrfRef: ").append(toIndentedString(vrfRef)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

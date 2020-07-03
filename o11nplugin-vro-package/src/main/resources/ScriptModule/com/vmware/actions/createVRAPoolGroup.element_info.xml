@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Exported from [server]</comment>
+	<entry key="categoryPath">com.vmware.avi</entry>
+	<entry key="name">createVRAPoolGroup</entry>
+	<entry key="type">ScriptModule</entry>
+	<entry key="id">3d491515-9cdf-437c-ae83-88142172c704</entry>
+</properties>

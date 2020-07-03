@@ -1,101 +1,153 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AuthProfileHTTPClientParams
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AuthProfileHTTPClientParams is a POJO class extends AviRestResource that used for creating
+ * AuthProfileHTTPClientParams.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AuthProfileHTTPClientParams")
-@VsoFinder(name = Constants.FINDER_VRO_AUTHPROFILEHTTPCLIENTPARAMS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_AUTHPROFILEHTTPCLIENTPARAMS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AuthProfileHTTPClientParams extends AviRestResource  {
+public class AuthProfileHTTPClientParams extends AviRestResource {
   @JsonProperty("cache_expiration_time")
+  @JsonInclude(Include.NON_NULL)
   private Integer cacheExpirationTime = 5;
 
   @JsonProperty("group_member_is_full_dn")
-  private Boolean groupMemberIsFullDn = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean groupMemberIsFullDn = false;
 
   @JsonProperty("request_header")
+  @JsonInclude(Include.NON_NULL)
   private String requestHeader = null;
 
   @JsonProperty("require_user_groups")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> requireUserGroups = null;
 
-  
+
+
   /**
-   * The max allowed length of time a clients authentication is cached. Allowed values are 1-30.
+   * This is the getter method this will return the attribute value.
+   * The max allowed length of time a clients authentication is cached.
+   * Allowed values are 1-30.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return cacheExpirationTime
-  **/
-  @ApiModelProperty(value = "The max allowed length of time a clients authentication is cached. Allowed values are 1-30.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getCacheExpirationTime() {
     return cacheExpirationTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The max allowed length of time a clients authentication is cached.
+   * Allowed values are 1-30.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * @param cacheExpirationTime set the cacheExpirationTime.
+   */
   @VsoMethod
-  public void setCacheExpirationTime(Integer cacheExpirationTime) {
+  public void setCacheExpirationTime(Integer  cacheExpirationTime) {
     this.cacheExpirationTime = cacheExpirationTime;
   }
 
-  
   /**
-   * Group member entries contain full DNs instead of just user id attribute values. This should now be configured using the LdapDirectorySettings field instead. Field deprecated in 18.2.1.
+   * This is the getter method this will return the attribute value.
+   * Group member entries contain full dns instead of just user id attribute values.
+   * This should now be configured using the ldapdirectorysettings field instead.
+   * Field deprecated in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return groupMemberIsFullDn
-  **/
-  @ApiModelProperty(value = "Group member entries contain full DNs instead of just user id attribute values. This should now be configured using the LdapDirectorySettings field instead. Field deprecated in 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public Boolean isGroupMemberIsFullDn() {
+   */
+  @VsoMethod
+  public Boolean getGroupMemberIsFullDn() {
     return groupMemberIsFullDn;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Group member entries contain full dns instead of just user id attribute values.
+   * This should now be configured using the ldapdirectorysettings field instead.
+   * Field deprecated in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param groupMemberIsFullDn set the groupMemberIsFullDn.
+   */
   @VsoMethod
-  public void setGroupMemberIsFullDn(Boolean groupMemberIsFullDn) {
+  public void setGroupMemberIsFullDn(Boolean  groupMemberIsFullDn) {
     this.groupMemberIsFullDn = groupMemberIsFullDn;
   }
 
-  
   /**
-   * Insert an HTTP header.  This field is used to define the header name.  The value of the header is set to the client's HTTP Auth user ID.
+   * This is the getter method this will return the attribute value.
+   * Insert an http header.
+   * This field is used to define the header name.
+   * The value of the header is set to the client's http auth user id.
    * @return requestHeader
-  **/
-  @ApiModelProperty(value = "Insert an HTTP header.  This field is used to define the header name.  The value of the header is set to the client's HTTP Auth user ID.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getRequestHeader() {
     return requestHeader;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Insert an http header.
+   * This field is used to define the header name.
+   * The value of the header is set to the client's http auth user id.
+   * @param requestHeader set the requestHeader.
+   */
   @VsoMethod
-  public void setRequestHeader(String requestHeader) {
+  public void setRequestHeader(String  requestHeader) {
     this.requestHeader = requestHeader;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * A user should be a member of these groups.
+   * Each group is defined by the dn.
+   * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+   * @return requireUserGroups
+   */
+  @VsoMethod
+  public List<String> getRequireUserGroups() {
+    return requireUserGroups;
+  }
+
+  /**
+   * This is the setter method. this will set the requireUserGroups
+   * A user should be a member of these groups.
+   * Each group is defined by the dn.
+   * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+   * @return requireUserGroups
+   */
+  @VsoMethod
+  public void setRequireUserGroups(List<String>  requireUserGroups) {
+    this.requireUserGroups = requireUserGroups;
+  }
+
+  /**
+   * This is the setter method this will set the requireUserGroups
+   * A user should be a member of these groups.
+   * Each group is defined by the dn.
+   * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+   * @return requireUserGroups
+   */
+  @VsoMethod
   public AuthProfileHTTPClientParams addRequireUserGroupsItem(String requireUserGroupsItem) {
     if (this.requireUserGroups == null) {
       this.requireUserGroups = new ArrayList<String>();
@@ -103,72 +155,45 @@ public class AuthProfileHTTPClientParams extends AviRestResource  {
     this.requireUserGroups.add(requireUserGroupsItem);
     return this;
   }
-  
-  /**
-   * A user should be a member of these groups.  Each group is defined by the DN.  For example, CN=testgroup,OU=groups,dc=example,dc=avinetworks,DC=com.
-   * @return requireUserGroups
-  **/
-  @ApiModelProperty(value = "A user should be a member of these groups.  Each group is defined by the DN.  For example, CN=testgroup,OU=groups,dc=example,dc=avinetworks,DC=com.")
 
 
- 
-  @VsoMethod  
-  public List<String> getRequireUserGroups() {
-    return requireUserGroups;
-  }
-    
-  @VsoMethod
-  public void setRequireUserGroups(List<String> requireUserGroups) {
-    this.requireUserGroups = requireUserGroups;
-  }
 
-  
-  public String getObjectID() {
-		return "AuthProfileHTTPClientParams";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AuthProfileHTTPClientParams authProfileHTTPClientParams = (AuthProfileHTTPClientParams) o;
-    return Objects.equals(this.cacheExpirationTime, authProfileHTTPClientParams.cacheExpirationTime) &&
-        Objects.equals(this.groupMemberIsFullDn, authProfileHTTPClientParams.groupMemberIsFullDn) &&
-        Objects.equals(this.requestHeader, authProfileHTTPClientParams.requestHeader) &&
-        Objects.equals(this.requireUserGroups, authProfileHTTPClientParams.requireUserGroups);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cacheExpirationTime, groupMemberIsFullDn, requestHeader, requireUserGroups);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AuthProfileHTTPClientParams {\n");
-    
-    sb.append("    cacheExpirationTime: ").append(toIndentedString(cacheExpirationTime)).append("\n");
-    sb.append("    groupMemberIsFullDn: ").append(toIndentedString(groupMemberIsFullDn)).append("\n");
-    sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
-    sb.append("    requireUserGroups: ").append(toIndentedString(requireUserGroups)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AuthProfileHTTPClientParams objAuthProfileHTTPClientParams = (AuthProfileHTTPClientParams) o;
+  return   Objects.equals(this.groupMemberIsFullDn, objAuthProfileHTTPClientParams.groupMemberIsFullDn)&&
+  Objects.equals(this.cacheExpirationTime, objAuthProfileHTTPClientParams.cacheExpirationTime)&&
+  Objects.equals(this.requireUserGroups, objAuthProfileHTTPClientParams.requireUserGroups)&&
+  Objects.equals(this.requestHeader, objAuthProfileHTTPClientParams.requestHeader);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AuthProfileHTTPClientParams {\n");
+      sb.append("    cacheExpirationTime: ").append(toIndentedString(cacheExpirationTime)).append("\n");
+        sb.append("    groupMemberIsFullDn: ").append(toIndentedString(groupMemberIsFullDn)).append("\n");
+        sb.append("    requestHeader: ").append(toIndentedString(requestHeader)).append("\n");
+        sb.append("    requireUserGroups: ").append(toIndentedString(requireUserGroups)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

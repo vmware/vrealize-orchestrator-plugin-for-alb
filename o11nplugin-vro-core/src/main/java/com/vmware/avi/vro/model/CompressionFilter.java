@@ -1,107 +1,137 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.IpAddr;
-import com.vmware.avi.vro.model.IpAddrPrefix;
-import com.vmware.avi.vro.model.IpAddrRange;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * CompressionFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The CompressionFilter is a POJO class extends AviRestResource that used for creating
+ * CompressionFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "CompressionFilter")
-@VsoFinder(name = Constants.FINDER_VRO_COMPRESSIONFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_COMPRESSIONFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class CompressionFilter extends AviRestResource  {
+public class CompressionFilter extends AviRestResource {
   @JsonProperty("devices_ref")
+  @JsonInclude(Include.NON_NULL)
   private String devicesRef = null;
 
   @JsonProperty("index")
+  @JsonInclude(Include.NON_NULL)
   private Integer index = null;
 
   @JsonProperty("ip_addr_prefixes")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddrPrefix> ipAddrPrefixes = null;
 
   @JsonProperty("ip_addr_ranges")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddrRange> ipAddrRanges = null;
 
   @JsonProperty("ip_addrs")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<IpAddr> ipAddrs = null;
 
   @JsonProperty("ip_addrs_ref")
+  @JsonInclude(Include.NON_NULL)
   private String ipAddrsRef = null;
 
   @JsonProperty("level")
+  @JsonInclude(Include.NON_NULL)
   private String level = "NORMAL_COMPRESSION";
 
   @JsonProperty("match")
+  @JsonInclude(Include.NON_NULL)
   private String match = "IS_IN";
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("user_agent")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> userAgent = null;
 
-  
+
+
   /**
-   *  It is a reference to an object of type StringGroup.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type stringgroup.
    * @return devicesRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type StringGroup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDevicesRef() {
     return devicesRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type stringgroup.
+   * @param devicesRef set the devicesRef.
+   */
   @VsoMethod
-  public void setDevicesRef(String devicesRef) {
+  public void setDevicesRef(String  devicesRef) {
     this.devicesRef = devicesRef;
   }
 
-  
   /**
-   * Number of index.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property index of obj type compressionfilter field type str  type integer.
    * @return index
-  **/
-  @ApiModelProperty(required = true, value = "Number of index.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIndex() {
     return index;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property index of obj type compressionfilter field type str  type integer.
+   * @param index set the index.
+   */
   @VsoMethod
-  public void setIndex(Integer index) {
+  public void setIndex(Integer  index) {
     this.index = index;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_addr_prefixes of obj type compressionfilter field type str  type array.
+   * @return ipAddrPrefixes
+   */
+  @VsoMethod
+  public List<IpAddrPrefix> getIpAddrPrefixes() {
+    return ipAddrPrefixes;
+  }
+
+  /**
+   * This is the setter method. this will set the ipAddrPrefixes
+   * Placeholder for description of property ip_addr_prefixes of obj type compressionfilter field type str  type array.
+   * @return ipAddrPrefixes
+   */
+  @VsoMethod
+  public void setIpAddrPrefixes(List<IpAddrPrefix>  ipAddrPrefixes) {
+    this.ipAddrPrefixes = ipAddrPrefixes;
+  }
+
+  /**
+   * This is the setter method this will set the ipAddrPrefixes
+   * Placeholder for description of property ip_addr_prefixes of obj type compressionfilter field type str  type array.
+   * @return ipAddrPrefixes
+   */
+  @VsoMethod
   public CompressionFilter addIpAddrPrefixesItem(IpAddrPrefix ipAddrPrefixesItem) {
     if (this.ipAddrPrefixes == null) {
       this.ipAddrPrefixes = new ArrayList<IpAddrPrefix>();
@@ -109,27 +139,34 @@ public class CompressionFilter extends AviRestResource  {
     this.ipAddrPrefixes.add(ipAddrPrefixesItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property ip_addr_prefixes of obj type CompressionFilter field type str  type object
-   * @return ipAddrPrefixes
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property ip_addr_prefixes of obj type CompressionFilter field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddrPrefix> getIpAddrPrefixes() {
-    return ipAddrPrefixes;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_addr_ranges of obj type compressionfilter field type str  type array.
+   * @return ipAddrRanges
+   */
   @VsoMethod
-  public void setIpAddrPrefixes(List<IpAddrPrefix> ipAddrPrefixes) {
-    this.ipAddrPrefixes = ipAddrPrefixes;
+  public List<IpAddrRange> getIpAddrRanges() {
+    return ipAddrRanges;
   }
 
-  
+  /**
+   * This is the setter method. this will set the ipAddrRanges
+   * Placeholder for description of property ip_addr_ranges of obj type compressionfilter field type str  type array.
+   * @return ipAddrRanges
+   */
+  @VsoMethod
+  public void setIpAddrRanges(List<IpAddrRange>  ipAddrRanges) {
+    this.ipAddrRanges = ipAddrRanges;
+  }
+
+  /**
+   * This is the setter method this will set the ipAddrRanges
+   * Placeholder for description of property ip_addr_ranges of obj type compressionfilter field type str  type array.
+   * @return ipAddrRanges
+   */
+  @VsoMethod
   public CompressionFilter addIpAddrRangesItem(IpAddrRange ipAddrRangesItem) {
     if (this.ipAddrRanges == null) {
       this.ipAddrRanges = new ArrayList<IpAddrRange>();
@@ -137,27 +174,34 @@ public class CompressionFilter extends AviRestResource  {
     this.ipAddrRanges.add(ipAddrRangesItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property ip_addr_ranges of obj type CompressionFilter field type str  type object
-   * @return ipAddrRanges
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property ip_addr_ranges of obj type CompressionFilter field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddrRange> getIpAddrRanges() {
-    return ipAddrRanges;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_addrs of obj type compressionfilter field type str  type array.
+   * @return ipAddrs
+   */
   @VsoMethod
-  public void setIpAddrRanges(List<IpAddrRange> ipAddrRanges) {
-    this.ipAddrRanges = ipAddrRanges;
+  public List<IpAddr> getIpAddrs() {
+    return ipAddrs;
   }
 
-  
+  /**
+   * This is the setter method. this will set the ipAddrs
+   * Placeholder for description of property ip_addrs of obj type compressionfilter field type str  type array.
+   * @return ipAddrs
+   */
+  @VsoMethod
+  public void setIpAddrs(List<IpAddr>  ipAddrs) {
+    this.ipAddrs = ipAddrs;
+  }
+
+  /**
+   * This is the setter method this will set the ipAddrs
+   * Placeholder for description of property ip_addrs of obj type compressionfilter field type str  type array.
+   * @return ipAddrs
+   */
+  @VsoMethod
   public CompressionFilter addIpAddrsItem(IpAddr ipAddrsItem) {
     if (this.ipAddrs == null) {
       this.ipAddrs = new ArrayList<IpAddr>();
@@ -165,105 +209,120 @@ public class CompressionFilter extends AviRestResource  {
     this.ipAddrs.add(ipAddrsItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property ip_addrs of obj type CompressionFilter field type str  type object
-   * @return ipAddrs
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property ip_addrs of obj type CompressionFilter field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<IpAddr> getIpAddrs() {
-    return ipAddrs;
-  }
-    
-  @VsoMethod
-  public void setIpAddrs(List<IpAddr> ipAddrs) {
-    this.ipAddrs = ipAddrs;
-  }
-
-  
-  /**
-   *  It is a reference to an object of type IpAddrGroup.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type ipaddrgroup.
    * @return ipAddrsRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type IpAddrGroup.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getIpAddrsRef() {
     return ipAddrsRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type ipaddrgroup.
+   * @param ipAddrsRef set the ipAddrsRef.
+   */
   @VsoMethod
-  public void setIpAddrsRef(String ipAddrsRef) {
+  public void setIpAddrsRef(String  ipAddrsRef) {
     this.ipAddrsRef = ipAddrsRef;
   }
 
-  
   /**
-   *  Enum options - AGGRESSIVE_COMPRESSION, NORMAL_COMPRESSION, NO_COMPRESSION.
+   * This is the getter method this will return the attribute value.
+   * Enum options - AGGRESSIVE_COMPRESSION, NORMAL_COMPRESSION, NO_COMPRESSION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as NORMAL_COMPRESSION.
    * @return level
-  **/
-  @ApiModelProperty(required = true, value = " Enum options - AGGRESSIVE_COMPRESSION, NORMAL_COMPRESSION, NO_COMPRESSION.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getLevel() {
     return level;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enum options - AGGRESSIVE_COMPRESSION, NORMAL_COMPRESSION, NO_COMPRESSION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as NORMAL_COMPRESSION.
+   * @param level set the level.
+   */
   @VsoMethod
-  public void setLevel(String level) {
+  public void setLevel(String  level) {
     this.level = level;
   }
 
-  
   /**
-   * Whether to apply Filter when group criteria is matched or not. Enum options - IS_IN, IS_NOT_IN.
+   * This is the getter method this will return the attribute value.
+   * Whether to apply filter when group criteria is matched or not.
+   * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as IS_IN.
    * @return match
-  **/
-  @ApiModelProperty(value = "Whether to apply Filter when group criteria is matched or not. Enum options - IS_IN, IS_NOT_IN.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getMatch() {
     return match;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Whether to apply filter when group criteria is matched or not.
+   * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as IS_IN.
+   * @param match set the match.
+   */
   @VsoMethod
-  public void setMatch(String match) {
+  public void setMatch(String  match) {
     this.match = match;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property user_agent of obj type compressionfilter field type str  type array.
+   * @return userAgent
+   */
+  @VsoMethod
+  public List<String> getUserAgent() {
+    return userAgent;
+  }
+
+  /**
+   * This is the setter method. this will set the userAgent
+   * Placeholder for description of property user_agent of obj type compressionfilter field type str  type array.
+   * @return userAgent
+   */
+  @VsoMethod
+  public void setUserAgent(List<String>  userAgent) {
+    this.userAgent = userAgent;
+  }
+
+  /**
+   * This is the setter method this will set the userAgent
+   * Placeholder for description of property user_agent of obj type compressionfilter field type str  type array.
+   * @return userAgent
+   */
+  @VsoMethod
   public CompressionFilter addUserAgentItem(String userAgentItem) {
     if (this.userAgent == null) {
       this.userAgent = new ArrayList<String>();
@@ -271,84 +330,57 @@ public class CompressionFilter extends AviRestResource  {
     this.userAgent.add(userAgentItem);
     return this;
   }
-  
-  /**
-   * user_agent of CompressionFilter.
-   * @return userAgent
-  **/
-  @ApiModelProperty(value = "user_agent of CompressionFilter.")
 
 
- 
-  @VsoMethod  
-  public List<String> getUserAgent() {
-    return userAgent;
-  }
-    
-  @VsoMethod
-  public void setUserAgent(List<String> userAgent) {
-    this.userAgent = userAgent;
-  }
 
-  
-  public String getObjectID() {
-		return "CompressionFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CompressionFilter compressionFilter = (CompressionFilter) o;
-    return Objects.equals(this.devicesRef, compressionFilter.devicesRef) &&
-        Objects.equals(this.index, compressionFilter.index) &&
-        Objects.equals(this.ipAddrPrefixes, compressionFilter.ipAddrPrefixes) &&
-        Objects.equals(this.ipAddrRanges, compressionFilter.ipAddrRanges) &&
-        Objects.equals(this.ipAddrs, compressionFilter.ipAddrs) &&
-        Objects.equals(this.ipAddrsRef, compressionFilter.ipAddrsRef) &&
-        Objects.equals(this.level, compressionFilter.level) &&
-        Objects.equals(this.match, compressionFilter.match) &&
-        Objects.equals(this.name, compressionFilter.name) &&
-        Objects.equals(this.userAgent, compressionFilter.userAgent);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(devicesRef, index, ipAddrPrefixes, ipAddrRanges, ipAddrs, ipAddrsRef, level, match, name, userAgent);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CompressionFilter {\n");
-    
-    sb.append("    devicesRef: ").append(toIndentedString(devicesRef)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    ipAddrPrefixes: ").append(toIndentedString(ipAddrPrefixes)).append("\n");
-    sb.append("    ipAddrRanges: ").append(toIndentedString(ipAddrRanges)).append("\n");
-    sb.append("    ipAddrs: ").append(toIndentedString(ipAddrs)).append("\n");
-    sb.append("    ipAddrsRef: ").append(toIndentedString(ipAddrsRef)).append("\n");
-    sb.append("    level: ").append(toIndentedString(level)).append("\n");
-    sb.append("    match: ").append(toIndentedString(match)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  CompressionFilter objCompressionFilter = (CompressionFilter) o;
+  return   Objects.equals(this.index, objCompressionFilter.index)&&
+  Objects.equals(this.ipAddrRanges, objCompressionFilter.ipAddrRanges)&&
+  Objects.equals(this.name, objCompressionFilter.name)&&
+  Objects.equals(this.level, objCompressionFilter.level)&&
+  Objects.equals(this.ipAddrPrefixes, objCompressionFilter.ipAddrPrefixes)&&
+  Objects.equals(this.devicesRef, objCompressionFilter.devicesRef)&&
+  Objects.equals(this.ipAddrs, objCompressionFilter.ipAddrs)&&
+  Objects.equals(this.userAgent, objCompressionFilter.userAgent)&&
+  Objects.equals(this.ipAddrsRef, objCompressionFilter.ipAddrsRef)&&
+  Objects.equals(this.match, objCompressionFilter.match);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class CompressionFilter {\n");
+      sb.append("    devicesRef: ").append(toIndentedString(devicesRef)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    ipAddrPrefixes: ").append(toIndentedString(ipAddrPrefixes)).append("\n");
+        sb.append("    ipAddrRanges: ").append(toIndentedString(ipAddrRanges)).append("\n");
+        sb.append("    ipAddrs: ").append(toIndentedString(ipAddrs)).append("\n");
+        sb.append("    ipAddrsRef: ").append(toIndentedString(ipAddrsRef)).append("\n");
+        sb.append("    level: ").append(toIndentedString(level)).append("\n");
+        sb.append("    match: ").append(toIndentedString(match)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

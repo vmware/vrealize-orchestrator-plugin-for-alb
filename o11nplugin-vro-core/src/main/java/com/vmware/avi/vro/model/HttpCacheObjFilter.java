@@ -1,187 +1,192 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * HttpCacheObjFilter
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The HttpCacheObjFilter is a POJO class extends AviRestResource that used for creating
+ * HttpCacheObjFilter.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "HttpCacheObjFilter")
-@VsoFinder(name = Constants.FINDER_VRO_HTTPCACHEOBJFILTER, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_HTTPCACHEOBJFILTER)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class HttpCacheObjFilter extends AviRestResource  {
+public class HttpCacheObjFilter extends AviRestResource {
   @JsonProperty("key")
+  @JsonInclude(Include.NON_NULL)
   private String key = null;
 
   @JsonProperty("raw_key")
+  @JsonInclude(Include.NON_NULL)
   private String rawKey = null;
 
   @JsonProperty("resource_name")
+  @JsonInclude(Include.NON_NULL)
   private String resourceName = null;
 
   @JsonProperty("resource_type")
+  @JsonInclude(Include.NON_NULL)
   private String resourceType = null;
 
   @JsonProperty("type")
+  @JsonInclude(Include.NON_NULL)
   private String type = null;
 
-  
+
+
   /**
-   * HTTP cache object's exact key.
+   * This is the getter method this will return the attribute value.
+   * Http cache object's exact key.
    * @return key
-  **/
-  @ApiModelProperty(value = "HTTP cache object's exact key.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getKey() {
     return key;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http cache object's exact key.
+   * @param key set the key.
+   */
   @VsoMethod
-  public void setKey(String key) {
+  public void setKey(String  key) {
     this.key = key;
   }
 
-  
   /**
-   * HTTP cache object's exact raw key.
+   * This is the getter method this will return the attribute value.
+   * Http cache object's exact raw key.
    * @return rawKey
-  **/
-  @ApiModelProperty(value = "HTTP cache object's exact raw key.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getRawKey() {
     return rawKey;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http cache object's exact raw key.
+   * @param rawKey set the rawKey.
+   */
   @VsoMethod
-  public void setRawKey(String rawKey) {
+  public void setRawKey(String  rawKey) {
     this.rawKey = rawKey;
   }
 
-  
   /**
-   * HTTP cache object's resource name.
+   * This is the getter method this will return the attribute value.
+   * Http cache object's resource name.
    * @return resourceName
-  **/
-  @ApiModelProperty(value = "HTTP cache object's resource name.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getResourceName() {
     return resourceName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http cache object's resource name.
+   * @param resourceName set the resourceName.
+   */
   @VsoMethod
-  public void setResourceName(String resourceName) {
+  public void setResourceName(String  resourceName) {
     this.resourceName = resourceName;
   }
 
-  
   /**
-   * objects with resource type.
+   * This is the getter method this will return the attribute value.
+   * Objects with resource type.
    * @return resourceType
-  **/
-  @ApiModelProperty(value = "objects with resource type.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getResourceType() {
     return resourceType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Objects with resource type.
+   * @param resourceType set the resourceType.
+   */
   @VsoMethod
-  public void setResourceType(String resourceType) {
+  public void setResourceType(String  resourceType) {
     this.resourceType = resourceType;
   }
 
-  
   /**
-   * HTTP cache object type. Enum options - CO_ALL, CO_IN, CO_OUT.
+   * This is the getter method this will return the attribute value.
+   * Http cache object type.
+   * Enum options - CO_ALL, CO_IN, CO_OUT.
    * @return type
-  **/
-  @ApiModelProperty(value = "HTTP cache object type. Enum options - CO_ALL, CO_IN, CO_OUT.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getType() {
     return type;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Http cache object type.
+   * Enum options - CO_ALL, CO_IN, CO_OUT.
+   * @param type set the type.
+   */
   @VsoMethod
-  public void setType(String type) {
+  public void setType(String  type) {
     this.type = type;
   }
 
-  
-  public String getObjectID() {
-		return "HttpCacheObjFilter";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HttpCacheObjFilter httpCacheObjFilter = (HttpCacheObjFilter) o;
-    return Objects.equals(this.key, httpCacheObjFilter.key) &&
-        Objects.equals(this.rawKey, httpCacheObjFilter.rawKey) &&
-        Objects.equals(this.resourceName, httpCacheObjFilter.resourceName) &&
-        Objects.equals(this.resourceType, httpCacheObjFilter.resourceType) &&
-        Objects.equals(this.type, httpCacheObjFilter.type);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(key, rawKey, resourceName, resourceType, type);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HttpCacheObjFilter {\n");
-    
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    rawKey: ").append(toIndentedString(rawKey)).append("\n");
-    sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
-    sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  HttpCacheObjFilter objHttpCacheObjFilter = (HttpCacheObjFilter) o;
+  return   Objects.equals(this.rawKey, objHttpCacheObjFilter.rawKey)&&
+  Objects.equals(this.resourceName, objHttpCacheObjFilter.resourceName)&&
+  Objects.equals(this.type, objHttpCacheObjFilter.type)&&
+  Objects.equals(this.resourceType, objHttpCacheObjFilter.resourceType)&&
+  Objects.equals(this.key, objHttpCacheObjFilter.key);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class HttpCacheObjFilter {\n");
+      sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    rawKey: ").append(toIndentedString(rawKey)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

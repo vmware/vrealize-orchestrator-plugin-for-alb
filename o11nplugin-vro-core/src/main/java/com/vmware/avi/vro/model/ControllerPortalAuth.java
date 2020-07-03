@@ -1,139 +1,144 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * ControllerPortalAuth
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The ControllerPortalAuth is a POJO class extends AviRestResource that used for creating
+ * ControllerPortalAuth.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "ControllerPortalAuth")
-@VsoFinder(name = Constants.FINDER_VRO_CONTROLLERPORTALAUTH, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_CONTROLLERPORTALAUTH)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ControllerPortalAuth extends AviRestResource  {
+public class ControllerPortalAuth extends AviRestResource {
   @JsonProperty("access_token")
+  @JsonInclude(Include.NON_NULL)
   private String accessToken = null;
 
   @JsonProperty("instance_url")
+  @JsonInclude(Include.NON_NULL)
   private String instanceUrl = null;
 
   @JsonProperty("jwt_token")
+  @JsonInclude(Include.NON_NULL)
   private String jwtToken = null;
 
-  
+
+
   /**
-   * Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Access token to authenticate customer portal rest calls.
+   * Field introduced in 18.2.6.
    * @return accessToken
-  **/
-  @ApiModelProperty(value = "Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getAccessToken() {
     return accessToken;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Access token to authenticate customer portal rest calls.
+   * Field introduced in 18.2.6.
+   * @param accessToken set the accessToken.
+   */
   @VsoMethod
-  public void setAccessToken(String accessToken) {
+  public void setAccessToken(String  accessToken) {
     this.accessToken = accessToken;
   }
 
-  
   /**
-   * Salesforce instance URL. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Salesforce instance url.
+   * Field introduced in 18.2.6.
    * @return instanceUrl
-  **/
-  @ApiModelProperty(value = "Salesforce instance URL. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getInstanceUrl() {
     return instanceUrl;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Salesforce instance url.
+   * Field introduced in 18.2.6.
+   * @param instanceUrl set the instanceUrl.
+   */
   @VsoMethod
-  public void setInstanceUrl(String instanceUrl) {
+  public void setInstanceUrl(String  instanceUrl) {
     this.instanceUrl = instanceUrl;
   }
 
-  
   /**
-   * Signed JWT to refresh the access token. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Signed jwt to refresh the access token.
+   * Field introduced in 18.2.6.
    * @return jwtToken
-  **/
-  @ApiModelProperty(value = "Signed JWT to refresh the access token. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getJwtToken() {
     return jwtToken;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Signed jwt to refresh the access token.
+   * Field introduced in 18.2.6.
+   * @param jwtToken set the jwtToken.
+   */
   @VsoMethod
-  public void setJwtToken(String jwtToken) {
+  public void setJwtToken(String  jwtToken) {
     this.jwtToken = jwtToken;
   }
 
-  
-  public String getObjectID() {
-		return "ControllerPortalAuth";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ControllerPortalAuth controllerPortalAuth = (ControllerPortalAuth) o;
-    return Objects.equals(this.accessToken, controllerPortalAuth.accessToken) &&
-        Objects.equals(this.instanceUrl, controllerPortalAuth.instanceUrl) &&
-        Objects.equals(this.jwtToken, controllerPortalAuth.jwtToken);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(accessToken, instanceUrl, jwtToken);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ControllerPortalAuth {\n");
-    
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-    sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
-    sb.append("    jwtToken: ").append(toIndentedString(jwtToken)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  ControllerPortalAuth objControllerPortalAuth = (ControllerPortalAuth) o;
+  return   Objects.equals(this.accessToken, objControllerPortalAuth.accessToken)&&
+  Objects.equals(this.jwtToken, objControllerPortalAuth.jwtToken)&&
+  Objects.equals(this.instanceUrl, objControllerPortalAuth.instanceUrl);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class ControllerPortalAuth {\n");
+      sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+        sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
+        sb.append("    jwtToken: ").append(toIndentedString(jwtToken)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

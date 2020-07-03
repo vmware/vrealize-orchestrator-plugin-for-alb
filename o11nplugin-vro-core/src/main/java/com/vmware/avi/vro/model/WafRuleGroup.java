@@ -1,73 +1,114 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.WafExcludeListEntry;
-import com.vmware.avi.vro.model.WafRule;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * WafRuleGroup
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The WafRuleGroup is a POJO class extends AviRestResource that used for creating
+ * WafRuleGroup.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "WafRuleGroup")
-@VsoFinder(name = Constants.FINDER_VRO_WAFRULEGROUP, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_WAFRULEGROUP)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class WafRuleGroup extends AviRestResource  {
+public class WafRuleGroup extends AviRestResource {
   @JsonProperty("enable")
+  @JsonInclude(Include.NON_NULL)
   private Boolean enable = true;
 
   @JsonProperty("exclude_list")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<WafExcludeListEntry> excludeList = null;
 
   @JsonProperty("force_detection")
+  @JsonInclude(Include.NON_NULL)
   private Boolean forceDetection = null;
 
   @JsonProperty("index")
+  @JsonInclude(Include.NON_NULL)
   private Integer index = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("rules")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<WafRule> rules = null;
 
-  
+
+
   /**
-   * Enable or disable WAF Rule Group. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Enable or disable waf rule group.
+   * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
-  **/
-  @ApiModelProperty(required = true, value = "Enable or disable WAF Rule Group. Field introduced in 17.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
-  public Boolean isEnable() {
+   */
+  @VsoMethod
+  public Boolean getEnable() {
     return enable;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable or disable waf rule group.
+   * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enable set the enable.
+   */
   @VsoMethod
-  public void setEnable(Boolean enable) {
+  public void setEnable(Boolean  enable) {
     this.enable = enable;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Exclude list for the waf rule group.
+   * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
+   * If there are multiple excludelist entries, it will be 'logical or' of them.
+   * Field introduced in 17.2.1.
+   * @return excludeList
+   */
+  @VsoMethod
+  public List<WafExcludeListEntry> getExcludeList() {
+    return excludeList;
+  }
+
+  /**
+   * This is the setter method. this will set the excludeList
+   * Exclude list for the waf rule group.
+   * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
+   * If there are multiple excludelist entries, it will be 'logical or' of them.
+   * Field introduced in 17.2.1.
+   * @return excludeList
+   */
+  @VsoMethod
+  public void setExcludeList(List<WafExcludeListEntry>  excludeList) {
+    this.excludeList = excludeList;
+  }
+
+  /**
+   * This is the setter method this will set the excludeList
+   * Exclude list for the waf rule group.
+   * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
+   * If there are multiple excludelist entries, it will be 'logical or' of them.
+   * Field introduced in 17.2.1.
+   * @return excludeList
+   */
+  @VsoMethod
   public WafRuleGroup addExcludeListItem(WafExcludeListEntry excludeListItem) {
     if (this.excludeList == null) {
       this.excludeList = new ArrayList<WafExcludeListEntry>();
@@ -75,86 +116,103 @@ public class WafRuleGroup extends AviRestResource  {
     this.excludeList.add(excludeListItem);
     return this;
   }
-  
+
+
   /**
-   * Exclude list for the WAF rule group. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.1.
-   * @return excludeList
-  **/
-  @ApiModelProperty(value = "Exclude list for the WAF rule group. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.1.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<WafExcludeListEntry> getExcludeList() {
-    return excludeList;
-  }
-    
-  @VsoMethod
-  public void setExcludeList(List<WafExcludeListEntry> excludeList) {
-    this.excludeList = excludeList;
-  }
-
-  
-  /**
-   * When set to 'true', any rule in this group will not cause 'deny' or 'redirect' actions to run, even if WAF Policy is set to enforcement mode. The behavior would be as if this rule operated in detection mode regardless of WAF Policy setting. Field deprecated in 18.1.5. Field introduced in 18.1.4.
+   * This is the getter method this will return the attribute value.
+   * When set to 'true', any rule in this group will not cause 'deny' or 'redirect' actions to run, even if waf policy is set to enforcement mode.
+   * The behavior would be as if this rule operated in detection mode regardless of waf policy setting.
+   * Field deprecated in 18.1.5.
+   * Field introduced in 18.1.4.
    * @return forceDetection
-  **/
-  @ApiModelProperty(value = "When set to 'true', any rule in this group will not cause 'deny' or 'redirect' actions to run, even if WAF Policy is set to enforcement mode. The behavior would be as if this rule operated in detection mode regardless of WAF Policy setting. Field deprecated in 18.1.5. Field introduced in 18.1.4.")
-
-
- 
-  @VsoMethod  
-  public Boolean isForceDetection() {
+   */
+  @VsoMethod
+  public Boolean getForceDetection() {
     return forceDetection;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * When set to 'true', any rule in this group will not cause 'deny' or 'redirect' actions to run, even if waf policy is set to enforcement mode.
+   * The behavior would be as if this rule operated in detection mode regardless of waf policy setting.
+   * Field deprecated in 18.1.5.
+   * Field introduced in 18.1.4.
+   * @param forceDetection set the forceDetection.
+   */
   @VsoMethod
-  public void setForceDetection(Boolean forceDetection) {
+  public void setForceDetection(Boolean  forceDetection) {
     this.forceDetection = forceDetection;
   }
 
-  
   /**
-   *  Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.1.
    * @return index
-  **/
-  @ApiModelProperty(required = true, value = " Field introduced in 17.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getIndex() {
     return index;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.1.
+   * @param index set the index.
+   */
   @VsoMethod
-  public void setIndex(Integer index) {
+  public void setIndex(Integer  index) {
     this.index = index;
   }
 
-  
   /**
-   *  Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 17.2.1.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = " Field introduced in 17.2.1.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 17.2.1.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Rules as per modsec language.
+   * Field introduced in 17.2.1.
+   * @return rules
+   */
+  @VsoMethod
+  public List<WafRule> getRules() {
+    return rules;
+  }
+
+  /**
+   * This is the setter method. this will set the rules
+   * Rules as per modsec language.
+   * Field introduced in 17.2.1.
+   * @return rules
+   */
+  @VsoMethod
+  public void setRules(List<WafRule>  rules) {
+    this.rules = rules;
+  }
+
+  /**
+   * This is the setter method this will set the rules
+   * Rules as per modsec language.
+   * Field introduced in 17.2.1.
+   * @return rules
+   */
+  @VsoMethod
   public WafRuleGroup addRulesItem(WafRule rulesItem) {
     if (this.rules == null) {
       this.rules = new ArrayList<WafRule>();
@@ -162,77 +220,49 @@ public class WafRuleGroup extends AviRestResource  {
     this.rules.add(rulesItem);
     return this;
   }
-  
-  /**
-   * Rules as per Modsec language. Field introduced in 17.2.1.
-   * @return rules
-  **/
-  @ApiModelProperty(value = "Rules as per Modsec language. Field introduced in 17.2.1.")
 
-  @Valid
 
- 
-  @VsoMethod  
-  public List<WafRule> getRules() {
-    return rules;
-  }
-    
-  @VsoMethod
-  public void setRules(List<WafRule> rules) {
-    this.rules = rules;
-  }
 
-  
-  public String getObjectID() {
-		return "WafRuleGroup";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    WafRuleGroup wafRuleGroup = (WafRuleGroup) o;
-    return Objects.equals(this.enable, wafRuleGroup.enable) &&
-        Objects.equals(this.excludeList, wafRuleGroup.excludeList) &&
-        Objects.equals(this.forceDetection, wafRuleGroup.forceDetection) &&
-        Objects.equals(this.index, wafRuleGroup.index) &&
-        Objects.equals(this.name, wafRuleGroup.name) &&
-        Objects.equals(this.rules, wafRuleGroup.rules);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(enable, excludeList, forceDetection, index, name, rules);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class WafRuleGroup {\n");
-    
-    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
-    sb.append("    excludeList: ").append(toIndentedString(excludeList)).append("\n");
-    sb.append("    forceDetection: ").append(toIndentedString(forceDetection)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  WafRuleGroup objWafRuleGroup = (WafRuleGroup) o;
+  return   Objects.equals(this.index, objWafRuleGroup.index)&&
+  Objects.equals(this.enable, objWafRuleGroup.enable)&&
+  Objects.equals(this.name, objWafRuleGroup.name)&&
+  Objects.equals(this.excludeList, objWafRuleGroup.excludeList)&&
+  Objects.equals(this.rules, objWafRuleGroup.rules)&&
+  Objects.equals(this.forceDetection, objWafRuleGroup.forceDetection);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class WafRuleGroup {\n");
+      sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    excludeList: ").append(toIndentedString(excludeList)).append("\n");
+        sb.append("    forceDetection: ").append(toIndentedString(forceDetection)).append("\n");
+        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

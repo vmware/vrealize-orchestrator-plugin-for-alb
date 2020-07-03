@@ -1,46 +1,74 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.HostAttributes;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * LinuxServerHost
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The LinuxServerHost is a POJO class extends AviRestResource that used for creating
+ * LinuxServerHost.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "LinuxServerHost")
-@VsoFinder(name = Constants.FINDER_VRO_LINUXSERVERHOST, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_LINUXSERVERHOST)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class LinuxServerHost extends AviRestResource  {
+public class LinuxServerHost extends AviRestResource {
   @JsonProperty("host_attr")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<HostAttributes> hostAttr = null;
 
   @JsonProperty("host_ip")
+  @JsonInclude(Include.NON_NULL)
   private IpAddr hostIp = null;
 
   @JsonProperty("node_availability_zone")
+  @JsonInclude(Include.NON_NULL)
   private String nodeAvailabilityZone = null;
 
   @JsonProperty("se_group_ref")
+  @JsonInclude(Include.NON_NULL)
   private String seGroupRef = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * @return hostAttr
+   */
+  @VsoMethod
+  public List<HostAttributes> getHostAttr() {
+    return hostAttr;
+  }
+
+  /**
+   * This is the setter method. this will set the hostAttr
+   * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * @return hostAttr
+   */
+  @VsoMethod
+  public void setHostAttr(List<HostAttributes>  hostAttr) {
+    this.hostAttr = hostAttr;
+  }
+
+  /**
+   * This is the setter method this will set the hostAttr
+   * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * @return hostAttr
+   */
+  @VsoMethod
   public LinuxServerHost addHostAttrItem(HostAttributes hostAttrItem) {
     if (this.hostAttr == null) {
       this.hostAttr = new ArrayList<HostAttributes>();
@@ -48,132 +76,113 @@ public class LinuxServerHost extends AviRestResource  {
     this.hostAttr.add(hostAttrItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property host_attr of obj type LinuxServerHost field type str  type object
-   * @return hostAttr
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property host_attr of obj type LinuxServerHost field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<HostAttributes> getHostAttr() {
-    return hostAttr;
-  }
-    
-  @VsoMethod
-  public void setHostAttr(List<HostAttributes> hostAttr) {
-    this.hostAttr = hostAttr;
-  }
-
-  
-  /**
-   * Placeholder for description of property host_ip of obj type LinuxServerHost field type str  type object
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property host_ip of obj type linuxserverhost field type str  type ref.
    * @return hostIp
-  **/
-  @ApiModelProperty(required = true, value = "Placeholder for description of property host_ip of obj type LinuxServerHost field type str  type object")
-  @NotNull
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public IpAddr getHostIp() {
     return hostIp;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property host_ip of obj type linuxserverhost field type str  type ref.
+   * @param hostIp set the hostIp.
+   */
   @VsoMethod
   public void setHostIp(IpAddr hostIp) {
     this.hostIp = hostIp;
   }
 
-  
   /**
-   * Node's availability zone. ServiceEngines belonging to the availability zone will be rebooted during a manual DR failover.
+   * This is the getter method this will return the attribute value.
+   * Node's availability zone.
+   * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
    * @return nodeAvailabilityZone
-  **/
-  @ApiModelProperty(value = "Node's availability zone. ServiceEngines belonging to the availability zone will be rebooted during a manual DR failover.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNodeAvailabilityZone() {
     return nodeAvailabilityZone;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Node's availability zone.
+   * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * @param nodeAvailabilityZone set the nodeAvailabilityZone.
+   */
   @VsoMethod
-  public void setNodeAvailabilityZone(String nodeAvailabilityZone) {
+  public void setNodeAvailabilityZone(String  nodeAvailabilityZone) {
     this.nodeAvailabilityZone = nodeAvailabilityZone;
   }
 
-  
   /**
-   * The SE Group association for the SE. If None, then 'Default-Group' SEGroup is associated with the SE. It is a reference to an object of type ServiceEngineGroup. Field introduced in 17.2.1.
+   * This is the getter method this will return the attribute value.
+   * The se group association for the se.
+   * If none, then 'default-group' segroup is associated with the se.
+   * It is a reference to an object of type serviceenginegroup.
+   * Field introduced in 17.2.1.
    * @return seGroupRef
-  **/
-  @ApiModelProperty(value = "The SE Group association for the SE. If None, then 'Default-Group' SEGroup is associated with the SE. It is a reference to an object of type ServiceEngineGroup. Field introduced in 17.2.1.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getSeGroupRef() {
     return seGroupRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * The se group association for the se.
+   * If none, then 'default-group' segroup is associated with the se.
+   * It is a reference to an object of type serviceenginegroup.
+   * Field introduced in 17.2.1.
+   * @param seGroupRef set the seGroupRef.
+   */
   @VsoMethod
-  public void setSeGroupRef(String seGroupRef) {
+  public void setSeGroupRef(String  seGroupRef) {
     this.seGroupRef = seGroupRef;
   }
 
-  
-  public String getObjectID() {
-		return "LinuxServerHost";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    LinuxServerHost linuxServerHost = (LinuxServerHost) o;
-    return Objects.equals(this.hostAttr, linuxServerHost.hostAttr) &&
-        Objects.equals(this.hostIp, linuxServerHost.hostIp) &&
-        Objects.equals(this.nodeAvailabilityZone, linuxServerHost.nodeAvailabilityZone) &&
-        Objects.equals(this.seGroupRef, linuxServerHost.seGroupRef);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(hostAttr, hostIp, nodeAvailabilityZone, seGroupRef);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class LinuxServerHost {\n");
-    
-    sb.append("    hostAttr: ").append(toIndentedString(hostAttr)).append("\n");
-    sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
-    sb.append("    nodeAvailabilityZone: ").append(toIndentedString(nodeAvailabilityZone)).append("\n");
-    sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  LinuxServerHost objLinuxServerHost = (LinuxServerHost) o;
+  return   Objects.equals(this.hostAttr, objLinuxServerHost.hostAttr)&&
+  Objects.equals(this.seGroupRef, objLinuxServerHost.seGroupRef)&&
+  Objects.equals(this.hostIp, objLinuxServerHost.hostIp)&&
+  Objects.equals(this.nodeAvailabilityZone, objLinuxServerHost.nodeAvailabilityZone);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class LinuxServerHost {\n");
+      sb.append("    hostAttr: ").append(toIndentedString(hostAttr)).append("\n");
+        sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
+        sb.append("    nodeAvailabilityZone: ").append(toIndentedString(nodeAvailabilityZone)).append("\n");
+        sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

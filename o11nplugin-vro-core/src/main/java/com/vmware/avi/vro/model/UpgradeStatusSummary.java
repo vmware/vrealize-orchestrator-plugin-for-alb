@@ -1,501 +1,551 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.UpgradeOpsState;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * UpgradeStatusSummary
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The UpgradeStatusSummary is a POJO class extends AviRestResource that used for creating
+ * UpgradeStatusSummary.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "UpgradeStatusSummary")
 @VsoFinder(name = Constants.FINDER_VRO_UPGRADESTATUSSUMMARY, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class UpgradeStatusSummary extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class UpgradeStatusSummary extends AviRestResource {
   @JsonProperty("enable_patch_rollback")
-  private Boolean enablePatchRollback = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enablePatchRollback = false;
 
   @JsonProperty("enable_rollback")
-  private Boolean enableRollback = null;
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableRollback = false;
 
   @JsonProperty("end_time")
+  @JsonInclude(Include.NON_NULL)
   private String endTime = null;
 
   @JsonProperty("image_ref")
+  @JsonInclude(Include.NON_NULL)
   private String imageRef = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("node_type")
+  @JsonInclude(Include.NON_NULL)
   private String nodeType = null;
 
   @JsonProperty("obj_cloud_ref")
+  @JsonInclude(Include.NON_NULL)
   private String objCloudRef = null;
 
   @JsonProperty("patch_image_ref")
+  @JsonInclude(Include.NON_NULL)
   private String patchImageRef = null;
 
   @JsonProperty("start_time")
+  @JsonInclude(Include.NON_NULL)
   private String startTime = null;
 
   @JsonProperty("state")
+  @JsonInclude(Include.NON_NULL)
   private UpgradeOpsState state = null;
 
   @JsonProperty("tasks_completed")
+  @JsonInclude(Include.NON_NULL)
   private Integer tasksCompleted = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("total_tasks")
+  @JsonInclude(Include.NON_NULL)
   private Integer totalTasks = null;
 
   @JsonProperty("upgrade_ops")
+  @JsonInclude(Include.NON_NULL)
   private String upgradeOps = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
   @JsonProperty("version")
+  @JsonInclude(Include.NON_NULL)
   private String version = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Check if the patch rollback is possible on this node. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Check if the patch rollback is possible on this node.
+   * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enablePatchRollback
-  **/
-  @ApiModelProperty(value = "Check if the patch rollback is possible on this node. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnablePatchRollback() {
+   */
+  @VsoMethod
+  public Boolean getEnablePatchRollback() {
     return enablePatchRollback;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Check if the patch rollback is possible on this node.
+   * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enablePatchRollback set the enablePatchRollback.
+   */
   @VsoMethod
-  public void setEnablePatchRollback(Boolean enablePatchRollback) {
+  public void setEnablePatchRollback(Boolean  enablePatchRollback) {
     this.enablePatchRollback = enablePatchRollback;
   }
 
-  
   /**
-   * Check if the rollback is possible on this node. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Check if the rollback is possible on this node.
+   * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableRollback
-  **/
-  @ApiModelProperty(value = "Check if the rollback is possible on this node. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
-  public Boolean isEnableRollback() {
+   */
+  @VsoMethod
+  public Boolean getEnableRollback() {
     return enableRollback;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Check if the rollback is possible on this node.
+   * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableRollback set the enableRollback.
+   */
   @VsoMethod
-  public void setEnableRollback(Boolean enableRollback) {
+  public void setEnableRollback(Boolean  enableRollback) {
     this.enableRollback = enableRollback;
   }
 
-  
   /**
-   * End time of upgrade operations. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * End time of upgrade operations.
+   * Field introduced in 18.2.6.
    * @return endTime
-  **/
-  @ApiModelProperty(value = "End time of upgrade operations. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getEndTime() {
     return endTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * End time of upgrade operations.
+   * Field introduced in 18.2.6.
+   * @param endTime set the endTime.
+   */
   @VsoMethod
-  public void setEndTime(String endTime) {
+  public void setEndTime(String  endTime) {
     this.endTime = endTime;
   }
 
-  
   /**
-   * Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Image uuid for identifying the current base image.
+   * It is a reference to an object of type image.
+   * Field introduced in 18.2.6.
    * @return imageRef
-  **/
-  @ApiModelProperty(value = "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getImageRef() {
     return imageRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Image uuid for identifying the current base image.
+   * It is a reference to an object of type image.
+   * Field introduced in 18.2.6.
+   * @param imageRef set the imageRef.
+   */
   @VsoMethod
-  public void setImageRef(String imageRef) {
+  public void setImageRef(String  imageRef) {
     this.imageRef = imageRef;
   }
 
-  
   /**
-   * Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Name of the system such as cluster name, se group name and se name.
+   * Field introduced in 18.2.6.
    * @return name
-  **/
-  @ApiModelProperty(value = "Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the system such as cluster name, se group name and se name.
+   * Field introduced in 18.2.6.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Type of the system such as controller_cluster, se_group or se.
+   * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
+   * Field introduced in 18.2.6.
    * @return nodeType
-  **/
-  @ApiModelProperty(value = "Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNodeType() {
     return nodeType;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Type of the system such as controller_cluster, se_group or se.
+   * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
+   * Field introduced in 18.2.6.
+   * @param nodeType set the nodeType.
+   */
   @VsoMethod
-  public void setNodeType(String nodeType) {
+  public void setNodeType(String  nodeType) {
     this.nodeType = nodeType;
   }
 
-  
   /**
-   * Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Cloud that this object belongs to.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 18.2.6.
    * @return objCloudRef
-  **/
-  @ApiModelProperty(value = "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getObjCloudRef() {
     return objCloudRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloud that this object belongs to.
+   * It is a reference to an object of type cloud.
+   * Field introduced in 18.2.6.
+   * @param objCloudRef set the objCloudRef.
+   */
   @VsoMethod
-  public void setObjCloudRef(String objCloudRef) {
+  public void setObjCloudRef(String  objCloudRef) {
     this.objCloudRef = objCloudRef;
   }
 
-  
   /**
-   * Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Image uuid for identifying the current patch.
+   * It is a reference to an object of type image.
+   * Field introduced in 18.2.6.
    * @return patchImageRef
-  **/
-  @ApiModelProperty(value = "Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPatchImageRef() {
     return patchImageRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Image uuid for identifying the current patch.
+   * It is a reference to an object of type image.
+   * Field introduced in 18.2.6.
+   * @param patchImageRef set the patchImageRef.
+   */
   @VsoMethod
-  public void setPatchImageRef(String patchImageRef) {
+  public void setPatchImageRef(String  patchImageRef) {
     this.patchImageRef = patchImageRef;
   }
 
-  
   /**
-   * Start time of upgrade operations. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Start time of upgrade operations.
+   * Field introduced in 18.2.6.
    * @return startTime
-  **/
-  @ApiModelProperty(value = "Start time of upgrade operations. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getStartTime() {
     return startTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Start time of upgrade operations.
+   * Field introduced in 18.2.6.
+   * @param startTime set the startTime.
+   */
   @VsoMethod
-  public void setStartTime(String startTime) {
+  public void setStartTime(String  startTime) {
     this.startTime = startTime;
   }
 
-  
   /**
-   * Current status of the upgrade operations. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Current status of the upgrade operations.
+   * Field introduced in 18.2.6.
    * @return state
-  **/
-  @ApiModelProperty(value = "Current status of the upgrade operations. Field introduced in 18.2.6.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public UpgradeOpsState getState() {
     return state;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Current status of the upgrade operations.
+   * Field introduced in 18.2.6.
+   * @param state set the state.
+   */
   @VsoMethod
   public void setState(UpgradeOpsState state) {
     this.state = state;
   }
 
-  
   /**
-   * Upgrade tasks completed. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Upgrade tasks completed.
+   * Field introduced in 18.2.6.
    * @return tasksCompleted
-  **/
-  @ApiModelProperty(value = "Upgrade tasks completed. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTasksCompleted() {
     return tasksCompleted;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Upgrade tasks completed.
+   * Field introduced in 18.2.6.
+   * @param tasksCompleted set the tasksCompleted.
+   */
   @VsoMethod
-  public void setTasksCompleted(Integer tasksCompleted) {
+  public void setTasksCompleted(Integer  tasksCompleted) {
     this.tasksCompleted = tasksCompleted;
   }
 
-  
   /**
-   * Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Tenant that this object belongs to.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.6.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Tenant that this object belongs to.
+   * It is a reference to an object of type tenant.
+   * Field introduced in 18.2.6.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
-   * Total upgrade tasks. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Total upgrade tasks.
+   * Field introduced in 18.2.6.
    * @return totalTasks
-  **/
-  @ApiModelProperty(value = "Total upgrade tasks. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getTotalTasks() {
     return totalTasks;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Total upgrade tasks.
+   * Field introduced in 18.2.6.
+   * @param totalTasks set the totalTasks.
+   */
   @VsoMethod
-  public void setTotalTasks(Integer totalTasks) {
+  public void setTotalTasks(Integer  totalTasks) {
     this.totalTasks = totalTasks;
   }
 
-  
   /**
-   * Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Upgrade operations requested.
+   * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
+   * Field introduced in 18.2.6.
    * @return upgradeOps
-  **/
-  @ApiModelProperty(value = "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUpgradeOps() {
     return upgradeOps;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Upgrade operations requested.
+   * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
+   * Field introduced in 18.2.6.
+   * @param upgradeOps set the upgradeOps.
+   */
   @VsoMethod
-  public void setUpgradeOps(String upgradeOps) {
+  public void setUpgradeOps(String  upgradeOps) {
     this.upgradeOps = upgradeOps;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
-   * UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Uuid identifier for the system such as cluster, se group and se.
+   * Field introduced in 18.2.6.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Uuid identifier for the system such as cluster, se group and se.
+   * Field introduced in 18.2.6.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
   /**
-   * Current base image applied to this node. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Current base image applied to this node.
+   * Field introduced in 18.2.6.
    * @return version
-  **/
-  @ApiModelProperty(value = "Current base image applied to this node. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getVersion() {
     return version;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Current base image applied to this node.
+   * Field introduced in 18.2.6.
+   * @param version set the version.
+   */
   @VsoMethod
-  public void setVersion(String version) {
+  public void setVersion(String  version) {
     this.version = version;
   }
 
-  
+
   public String getObjectID() {
-		return "UpgradeStatusSummary";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    UpgradeStatusSummary upgradeStatusSummary = (UpgradeStatusSummary) o;
-    return Objects.equals(this.lastModified, upgradeStatusSummary.lastModified) &&
-        Objects.equals(this.enablePatchRollback, upgradeStatusSummary.enablePatchRollback) &&
-        Objects.equals(this.enableRollback, upgradeStatusSummary.enableRollback) &&
-        Objects.equals(this.endTime, upgradeStatusSummary.endTime) &&
-        Objects.equals(this.imageRef, upgradeStatusSummary.imageRef) &&
-        Objects.equals(this.name, upgradeStatusSummary.name) &&
-        Objects.equals(this.nodeType, upgradeStatusSummary.nodeType) &&
-        Objects.equals(this.objCloudRef, upgradeStatusSummary.objCloudRef) &&
-        Objects.equals(this.patchImageRef, upgradeStatusSummary.patchImageRef) &&
-        Objects.equals(this.startTime, upgradeStatusSummary.startTime) &&
-        Objects.equals(this.state, upgradeStatusSummary.state) &&
-        Objects.equals(this.tasksCompleted, upgradeStatusSummary.tasksCompleted) &&
-        Objects.equals(this.tenantRef, upgradeStatusSummary.tenantRef) &&
-        Objects.equals(this.totalTasks, upgradeStatusSummary.totalTasks) &&
-        Objects.equals(this.upgradeOps, upgradeStatusSummary.upgradeOps) &&
-        Objects.equals(this.url, upgradeStatusSummary.url) &&
-        Objects.equals(this.uuid, upgradeStatusSummary.uuid) &&
-        Objects.equals(this.version, upgradeStatusSummary.version);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, enablePatchRollback, enableRollback, endTime, imageRef, name, nodeType, objCloudRef, patchImageRef, startTime, state, tasksCompleted, tenantRef, totalTasks, upgradeOps, url, uuid, version);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class UpgradeStatusSummary {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    enablePatchRollback: ").append(toIndentedString(enablePatchRollback)).append("\n");
-    sb.append("    enableRollback: ").append(toIndentedString(enableRollback)).append("\n");
-    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-    sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
-    sb.append("    objCloudRef: ").append(toIndentedString(objCloudRef)).append("\n");
-    sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    totalTasks: ").append(toIndentedString(totalTasks)).append("\n");
-    sb.append("    upgradeOps: ").append(toIndentedString(upgradeOps)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  UpgradeStatusSummary objUpgradeStatusSummary = (UpgradeStatusSummary) o;
+  return   Objects.equals(this.enableRollback, objUpgradeStatusSummary.enableRollback)&&
+  Objects.equals(this.uuid, objUpgradeStatusSummary.uuid)&&
+  Objects.equals(this.objCloudRef, objUpgradeStatusSummary.objCloudRef)&&
+  Objects.equals(this.startTime, objUpgradeStatusSummary.startTime)&&
+  Objects.equals(this.state, objUpgradeStatusSummary.state)&&
+  Objects.equals(this.upgradeOps, objUpgradeStatusSummary.upgradeOps)&&
+  Objects.equals(this.enablePatchRollback, objUpgradeStatusSummary.enablePatchRollback)&&
+  Objects.equals(this.nodeType, objUpgradeStatusSummary.nodeType)&&
+  Objects.equals(this.version, objUpgradeStatusSummary.version)&&
+  Objects.equals(this.endTime, objUpgradeStatusSummary.endTime)&&
+  Objects.equals(this.patchImageRef, objUpgradeStatusSummary.patchImageRef)&&
+  Objects.equals(this.imageRef, objUpgradeStatusSummary.imageRef)&&
+  Objects.equals(this.tasksCompleted, objUpgradeStatusSummary.tasksCompleted)&&
+  Objects.equals(this.tenantRef, objUpgradeStatusSummary.tenantRef)&&
+  Objects.equals(this.totalTasks, objUpgradeStatusSummary.totalTasks)&&
+  Objects.equals(this.name, objUpgradeStatusSummary.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class UpgradeStatusSummary {\n");
+      sb.append("    enablePatchRollback: ").append(toIndentedString(enablePatchRollback)).append("\n");
+        sb.append("    enableRollback: ").append(toIndentedString(enableRollback)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
+        sb.append("    objCloudRef: ").append(toIndentedString(objCloudRef)).append("\n");
+        sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    totalTasks: ").append(toIndentedString(totalTasks)).append("\n");
+        sb.append("    upgradeOps: ").append(toIndentedString(upgradeOps)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

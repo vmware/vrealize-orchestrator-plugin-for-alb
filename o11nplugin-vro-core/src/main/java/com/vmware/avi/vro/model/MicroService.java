@@ -1,127 +1,145 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.MicroServiceContainer;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * MicroService
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The MicroService is a POJO class extends AviRestResource that used for creating
+ * MicroService.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "MicroService")
 @VsoFinder(name = Constants.FINDER_VRO_MICROSERVICE, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class MicroService extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class MicroService extends AviRestResource {
   @JsonProperty("application_name")
+  @JsonInclude(Include.NON_NULL)
   private String applicationName = null;
 
   @JsonProperty("cloud_config_cksum")
+  @JsonInclude(Include.NON_NULL)
   private String cloudConfigCksum = null;
 
   @JsonProperty("containers")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<MicroServiceContainer> containers = null;
 
   @JsonProperty("created_by")
+  @JsonInclude(Include.NON_NULL)
   private String createdBy = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("ip_list")
+  @JsonInclude(Include.NON_NULL)
   private Boolean ipList = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("orchestrator_name")
+  @JsonInclude(Include.NON_NULL)
   private String orchestratorName = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * application_name of MicroService.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property application_name of obj type microservice field type str  type string.
    * @return applicationName
-  **/
-  @ApiModelProperty(required = true, value = "application_name of MicroService.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getApplicationName() {
     return applicationName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property application_name of obj type microservice field type str  type string.
+   * @param applicationName set the applicationName.
+   */
   @VsoMethod
-  public void setApplicationName(String applicationName) {
+  public void setApplicationName(String  applicationName) {
     this.applicationName = applicationName;
   }
 
-  
   /**
-   * Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8.
+   * This is the getter method this will return the attribute value.
+   * Checksum of cloud configuration for microservice.
+   * Internally set by cloud connector.
+   * Field introduced in 17.2.8.
    * @return cloudConfigCksum
-  **/
-  @ApiModelProperty(value = "Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCloudConfigCksum() {
     return cloudConfigCksum;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Checksum of cloud configuration for microservice.
+   * Internally set by cloud connector.
+   * Field introduced in 17.2.8.
+   * @param cloudConfigCksum set the cloudConfigCksum.
+   */
   @VsoMethod
-  public void setCloudConfigCksum(String cloudConfigCksum) {
+  public void setCloudConfigCksum(String  cloudConfigCksum) {
     this.cloudConfigCksum = cloudConfigCksum;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * The list of containers for this microservice.
+   * @return containers
+   */
+  @VsoMethod
+  public List<MicroServiceContainer> getContainers() {
+    return containers;
+  }
+
+  /**
+   * This is the setter method. this will set the containers
+   * The list of containers for this microservice.
+   * @return containers
+   */
+  @VsoMethod
+  public void setContainers(List<MicroServiceContainer>  containers) {
+    this.containers = containers;
+  }
+
+  /**
+   * This is the setter method this will set the containers
+   * The list of containers for this microservice.
+   * @return containers
+   */
+  @VsoMethod
   public MicroService addContainersItem(MicroServiceContainer containersItem) {
     if (this.containers == null) {
       this.containers = new ArrayList<MicroServiceContainer>();
@@ -129,243 +147,219 @@ public class MicroService extends AviRestResource  {
     this.containers.add(containersItem);
     return this;
   }
-  
+
+
   /**
-   * The list of containers for this microservice.
-   * @return containers
-  **/
-  @ApiModelProperty(value = "The list of containers for this microservice.")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<MicroServiceContainer> getContainers() {
-    return containers;
-  }
-    
-  @VsoMethod
-  public void setContainers(List<MicroServiceContainer> containers) {
-    this.containers = containers;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Creator name.
    * @return createdBy
-  **/
-  @ApiModelProperty(value = "Creator name.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCreatedBy() {
     return createdBy;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Creator name.
+   * @param createdBy set the createdBy.
+   */
   @VsoMethod
-  public void setCreatedBy(String createdBy) {
+  public void setCreatedBy(String  createdBy) {
     this.createdBy = createdBy;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * User defined description for the object.
    * @return description
-  **/
-  @ApiModelProperty(value = "User defined description for the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User defined description for the object.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
-   * Flag to indicate if container IP list is provided by cloud connectorThis is applicable for overlay cases.
+   * This is the getter method this will return the attribute value.
+   * Flag to indicate if container ip list is provided by cloud connectorthis is applicable for overlay cases.
    * @return ipList
-  **/
-  @ApiModelProperty(value = "Flag to indicate if container IP list is provided by cloud connectorThis is applicable for overlay cases.")
-
-
- 
-  @VsoMethod  
-  public Boolean isIpList() {
+   */
+  @VsoMethod
+  public Boolean getIpList() {
     return ipList;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Flag to indicate if container ip list is provided by cloud connectorthis is applicable for overlay cases.
+   * @param ipList set the ipList.
+   */
   @VsoMethod
-  public void setIpList(Boolean ipList) {
+  public void setIpList(Boolean  ipList) {
     this.ipList = ipList;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * orchestrator_name of MicroService.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property orchestrator_name of obj type microservice field type str  type string.
    * @return orchestratorName
-  **/
-  @ApiModelProperty(required = true, value = "orchestrator_name of MicroService.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getOrchestratorName() {
     return orchestratorName;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property orchestrator_name of obj type microservice field type str  type string.
+   * @param orchestratorName set the orchestratorName.
+   */
   @VsoMethod
-  public void setOrchestratorName(String orchestratorName) {
+  public void setOrchestratorName(String  orchestratorName) {
     this.orchestratorName = orchestratorName;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "MicroService";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    MicroService microService = (MicroService) o;
-    return Objects.equals(this.lastModified, microService.lastModified) &&
-        Objects.equals(this.applicationName, microService.applicationName) &&
-        Objects.equals(this.cloudConfigCksum, microService.cloudConfigCksum) &&
-        Objects.equals(this.containers, microService.containers) &&
-        Objects.equals(this.createdBy, microService.createdBy) &&
-        Objects.equals(this.description, microService.description) &&
-        Objects.equals(this.ipList, microService.ipList) &&
-        Objects.equals(this.name, microService.name) &&
-        Objects.equals(this.orchestratorName, microService.orchestratorName) &&
-        Objects.equals(this.tenantRef, microService.tenantRef) &&
-        Objects.equals(this.url, microService.url) &&
-        Objects.equals(this.uuid, microService.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, applicationName, cloudConfigCksum, containers, createdBy, description, ipList, name, orchestratorName, tenantRef, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class MicroService {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
-    sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
-    sb.append("    containers: ").append(toIndentedString(containers)).append("\n");
-    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    orchestratorName: ").append(toIndentedString(orchestratorName)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  MicroService objMicroService = (MicroService) o;
+  return   Objects.equals(this.orchestratorName, objMicroService.orchestratorName)&&
+  Objects.equals(this.ipList, objMicroService.ipList)&&
+  Objects.equals(this.description, objMicroService.description)&&
+  Objects.equals(this.createdBy, objMicroService.createdBy)&&
+  Objects.equals(this.name, objMicroService.name)&&
+  Objects.equals(this.cloudConfigCksum, objMicroService.cloudConfigCksum)&&
+  Objects.equals(this.applicationName, objMicroService.applicationName)&&
+  Objects.equals(this.tenantRef, objMicroService.tenantRef)&&
+  Objects.equals(this.containers, objMicroService.containers)&&
+  Objects.equals(this.uuid, objMicroService.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MicroService {\n");
+      sb.append("    applicationName: ").append(toIndentedString(applicationName)).append("\n");
+        sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
+        sb.append("    containers: ").append(toIndentedString(containers)).append("\n");
+        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    orchestratorName: ").append(toIndentedString(orchestratorName)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

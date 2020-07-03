@@ -1,39 +1,68 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * DebugDnsOptions
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The DebugDnsOptions is a POJO class extends AviRestResource that used for creating
+ * DebugDnsOptions.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "DebugDnsOptions")
-@VsoFinder(name = Constants.FINDER_VRO_DEBUGDNSOPTIONS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_DEBUGDNSOPTIONS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class DebugDnsOptions extends AviRestResource  {
+public class DebugDnsOptions extends AviRestResource {
   @JsonProperty("domain_name")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> domainName = null;
 
   @JsonProperty("gslb_service_name")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> gslbServiceName = null;
 
-  
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field filters the fqdn for dns debug.
+   * Field introduced in 18.2.1.
+   * @return domainName
+   */
+  @VsoMethod
+  public List<String> getDomainName() {
+    return domainName;
+  }
+
+  /**
+   * This is the setter method. this will set the domainName
+   * This field filters the fqdn for dns debug.
+   * Field introduced in 18.2.1.
+   * @return domainName
+   */
+  @VsoMethod
+  public void setDomainName(List<String>  domainName) {
+    this.domainName = domainName;
+  }
+
+  /**
+   * This is the setter method this will set the domainName
+   * This field filters the fqdn for dns debug.
+   * Field introduced in 18.2.1.
+   * @return domainName
+   */
+  @VsoMethod
   public DebugDnsOptions addDomainNameItem(String domainNameItem) {
     if (this.domainName == null) {
       this.domainName = new ArrayList<String>();
@@ -41,26 +70,37 @@ public class DebugDnsOptions extends AviRestResource  {
     this.domainName.add(domainNameItem);
     return this;
   }
-  
+
+
   /**
-   * This field filters the FQDN for Dns debug. Field introduced in 18.2.1.
-   * @return domainName
-  **/
-  @ApiModelProperty(value = "This field filters the FQDN for Dns debug. Field introduced in 18.2.1.")
-
-
- 
-  @VsoMethod  
-  public List<String> getDomainName() {
-    return domainName;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * This field filters the gslb service for dns debug.
+   * Field introduced in 18.2.1.
+   * @return gslbServiceName
+   */
   @VsoMethod
-  public void setDomainName(List<String> domainName) {
-    this.domainName = domainName;
+  public List<String> getGslbServiceName() {
+    return gslbServiceName;
   }
 
-  
+  /**
+   * This is the setter method. this will set the gslbServiceName
+   * This field filters the gslb service for dns debug.
+   * Field introduced in 18.2.1.
+   * @return gslbServiceName
+   */
+  @VsoMethod
+  public void setGslbServiceName(List<String>  gslbServiceName) {
+    this.gslbServiceName = gslbServiceName;
+  }
+
+  /**
+   * This is the setter method this will set the gslbServiceName
+   * This field filters the gslb service for dns debug.
+   * Field introduced in 18.2.1.
+   * @return gslbServiceName
+   */
+  @VsoMethod
   public DebugDnsOptions addGslbServiceNameItem(String gslbServiceNameItem) {
     if (this.gslbServiceName == null) {
       this.gslbServiceName = new ArrayList<String>();
@@ -68,68 +108,41 @@ public class DebugDnsOptions extends AviRestResource  {
     this.gslbServiceName.add(gslbServiceNameItem);
     return this;
   }
-  
-  /**
-   * This field filters the Gslb service for Dns debug. Field introduced in 18.2.1.
-   * @return gslbServiceName
-  **/
-  @ApiModelProperty(value = "This field filters the Gslb service for Dns debug. Field introduced in 18.2.1.")
 
 
- 
-  @VsoMethod  
-  public List<String> getGslbServiceName() {
-    return gslbServiceName;
-  }
-    
-  @VsoMethod
-  public void setGslbServiceName(List<String> gslbServiceName) {
-    this.gslbServiceName = gslbServiceName;
-  }
 
-  
-  public String getObjectID() {
-		return "DebugDnsOptions";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DebugDnsOptions debugDnsOptions = (DebugDnsOptions) o;
-    return Objects.equals(this.domainName, debugDnsOptions.domainName) &&
-        Objects.equals(this.gslbServiceName, debugDnsOptions.gslbServiceName);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(domainName, gslbServiceName);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DebugDnsOptions {\n");
-    
-    sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-    sb.append("    gslbServiceName: ").append(toIndentedString(gslbServiceName)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  DebugDnsOptions objDebugDnsOptions = (DebugDnsOptions) o;
+  return   Objects.equals(this.domainName, objDebugDnsOptions.domainName)&&
+  Objects.equals(this.gslbServiceName, objDebugDnsOptions.gslbServiceName);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class DebugDnsOptions {\n");
+      sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    gslbServiceName: ").append(toIndentedString(gslbServiceName)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

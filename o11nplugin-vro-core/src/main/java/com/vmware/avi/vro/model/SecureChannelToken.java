@@ -1,92 +1,101 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.vmware.avi.vro.model.SecureChannelMetadata;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SecureChannelToken
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SecureChannelToken is a POJO class extends AviRestResource that used for creating
+ * SecureChannelToken.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SecureChannelToken")
 @VsoFinder(name = Constants.FINDER_VRO_SECURECHANNELTOKEN, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SecureChannelToken extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class SecureChannelToken extends AviRestResource {
   @JsonProperty("expiry_time")
-  private Double expiryTime = null;
+  @JsonInclude(Include.NON_NULL)
+  private Float expiryTime = null;
 
   @JsonProperty("metadata")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<SecureChannelMetadata> metadata = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("node_uuid")
+  @JsonInclude(Include.NON_NULL)
   private String nodeUuid = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Expiry time for secure channel.
    * @return expiryTime
-  **/
-  @ApiModelProperty(value = "Expiry time for secure channel.")
-
-
- 
-  @VsoMethod  
-  public Double getExpiryTime() {
+   */
+  @VsoMethod
+  public Float getExpiryTime() {
     return expiryTime;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Expiry time for secure channel.
+   * @param expiryTime set the expiryTime.
+   */
   @VsoMethod
-  public void setExpiryTime(Double expiryTime) {
+  public void setExpiryTime(Float  expiryTime) {
     this.expiryTime = expiryTime;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+   * @return metadata
+   */
+  @VsoMethod
+  public List<SecureChannelMetadata> getMetadata() {
+    return metadata;
+  }
+
+  /**
+   * This is the setter method. this will set the metadata
+   * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+   * @return metadata
+   */
+  @VsoMethod
+  public void setMetadata(List<SecureChannelMetadata>  metadata) {
+    this.metadata = metadata;
+  }
+
+  /**
+   * This is the setter method this will set the metadata
+   * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+   * @return metadata
+   */
+  @VsoMethod
   public SecureChannelToken addMetadataItem(SecureChannelMetadata metadataItem) {
     if (this.metadata == null) {
       this.metadata = new ArrayList<SecureChannelMetadata>();
@@ -94,156 +103,129 @@ public class SecureChannelToken extends AviRestResource  {
     this.metadata.add(metadataItem);
     return this;
   }
-  
+
+
   /**
-   * Placeholder for description of property metadata of obj type SecureChannelToken field type str  type object
-   * @return metadata
-  **/
-  @ApiModelProperty(value = "Placeholder for description of property metadata of obj type SecureChannelToken field type str  type object")
-
-  @Valid
-
- 
-  @VsoMethod  
-  public List<SecureChannelMetadata> getMetadata() {
-    return metadata;
-  }
-    
-  @VsoMethod
-  public void setMetadata(List<SecureChannelMetadata> metadata) {
-    this.metadata = metadata;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of node.
    * @return nodeUuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of node.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getNodeUuid() {
     return nodeUuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of node.
+   * @param nodeUuid set the nodeUuid.
+   */
   @VsoMethod
-  public void setNodeUuid(String nodeUuid) {
+  public void setNodeUuid(String  nodeUuid) {
     this.nodeUuid = nodeUuid;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "SecureChannelToken";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SecureChannelToken secureChannelToken = (SecureChannelToken) o;
-    return Objects.equals(this.lastModified, secureChannelToken.lastModified) &&
-        Objects.equals(this.expiryTime, secureChannelToken.expiryTime) &&
-        Objects.equals(this.metadata, secureChannelToken.metadata) &&
-        Objects.equals(this.name, secureChannelToken.name) &&
-        Objects.equals(this.nodeUuid, secureChannelToken.nodeUuid) &&
-        Objects.equals(this.url, secureChannelToken.url) &&
-        Objects.equals(this.uuid, secureChannelToken.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, expiryTime, metadata, name, nodeUuid, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SecureChannelToken {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    expiryTime: ").append(toIndentedString(expiryTime)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    nodeUuid: ").append(toIndentedString(nodeUuid)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SecureChannelToken objSecureChannelToken = (SecureChannelToken) o;
+  return   Objects.equals(this.nodeUuid, objSecureChannelToken.nodeUuid)&&
+  Objects.equals(this.expiryTime, objSecureChannelToken.expiryTime)&&
+  Objects.equals(this.uuid, objSecureChannelToken.uuid)&&
+  Objects.equals(this.name, objSecureChannelToken.name)&&
+  Objects.equals(this.metadata, objSecureChannelToken.metadata);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SecureChannelToken {\n");
+      sb.append("    expiryTime: ").append(toIndentedString(expiryTime)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    nodeUuid: ").append(toIndentedString(nodeUuid)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

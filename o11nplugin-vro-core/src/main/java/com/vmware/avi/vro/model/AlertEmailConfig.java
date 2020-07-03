@@ -1,261 +1,242 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * AlertEmailConfig
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The AlertEmailConfig is a POJO class extends AviRestResource that used for creating
+ * AlertEmailConfig.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "AlertEmailConfig")
 @VsoFinder(name = Constants.FINDER_VRO_ALERTEMAILCONFIG, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class AlertEmailConfig extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class AlertEmailConfig extends AviRestResource {
   @JsonProperty("cc_emails")
+  @JsonInclude(Include.NON_NULL)
   private String ccEmails = null;
 
   @JsonProperty("description")
+  @JsonInclude(Include.NON_NULL)
   private String description = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("tenant_ref")
+  @JsonInclude(Include.NON_NULL)
   private String tenantRef = null;
 
   @JsonProperty("to_emails")
+  @JsonInclude(Include.NON_NULL)
   private String toEmails = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Alerts are copied to the comma separated list of  email recipients.
    * @return ccEmails
-  **/
-  @ApiModelProperty(value = "Alerts are copied to the comma separated list of  email recipients.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getCcEmails() {
     return ccEmails;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Alerts are copied to the comma separated list of  email recipients.
+   * @param ccEmails set the ccEmails.
+   */
   @VsoMethod
-  public void setCcEmails(String ccEmails) {
+  public void setCcEmails(String  ccEmails) {
     this.ccEmails = ccEmails;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * User defined description for the object.
    * @return description
-  **/
-  @ApiModelProperty(value = "User defined description for the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getDescription() {
     return description;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * User defined description for the object.
+   * @param description set the description.
+   */
   @VsoMethod
-  public void setDescription(String description) {
+  public void setDescription(String  description) {
     this.description = description;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * A user-friendly name of the email notification service.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "A user-friendly name of the email notification service.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * A user-friendly name of the email notification service.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   *  It is a reference to an object of type Tenant.
+   * This is the getter method this will return the attribute value.
+   * It is a reference to an object of type tenant.
    * @return tenantRef
-  **/
-  @ApiModelProperty(value = " It is a reference to an object of type Tenant.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getTenantRef() {
     return tenantRef;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * It is a reference to an object of type tenant.
+   * @param tenantRef set the tenantRef.
+   */
   @VsoMethod
-  public void setTenantRef(String tenantRef) {
+  public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Alerts are sent to the comma separated list of  email recipients.
    * @return toEmails
-  **/
-  @ApiModelProperty(required = true, value = "Alerts are sent to the comma separated list of  email recipients.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getToEmails() {
     return toEmails;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Alerts are sent to the comma separated list of  email recipients.
+   * @param toEmails set the toEmails.
+   */
   @VsoMethod
-  public void setToEmails(String toEmails) {
+  public void setToEmails(String  toEmails) {
     this.toEmails = toEmails;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "AlertEmailConfig";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AlertEmailConfig alertEmailConfig = (AlertEmailConfig) o;
-    return Objects.equals(this.lastModified, alertEmailConfig.lastModified) &&
-        Objects.equals(this.ccEmails, alertEmailConfig.ccEmails) &&
-        Objects.equals(this.description, alertEmailConfig.description) &&
-        Objects.equals(this.name, alertEmailConfig.name) &&
-        Objects.equals(this.tenantRef, alertEmailConfig.tenantRef) &&
-        Objects.equals(this.toEmails, alertEmailConfig.toEmails) &&
-        Objects.equals(this.url, alertEmailConfig.url) &&
-        Objects.equals(this.uuid, alertEmailConfig.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, ccEmails, description, name, tenantRef, toEmails, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AlertEmailConfig {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    ccEmails: ").append(toIndentedString(ccEmails)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-    sb.append("    toEmails: ").append(toIndentedString(toEmails)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  AlertEmailConfig objAlertEmailConfig = (AlertEmailConfig) o;
+  return   Objects.equals(this.toEmails, objAlertEmailConfig.toEmails)&&
+  Objects.equals(this.description, objAlertEmailConfig.description)&&
+  Objects.equals(this.ccEmails, objAlertEmailConfig.ccEmails)&&
+  Objects.equals(this.name, objAlertEmailConfig.name)&&
+  Objects.equals(this.tenantRef, objAlertEmailConfig.tenantRef)&&
+  Objects.equals(this.uuid, objAlertEmailConfig.uuid);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class AlertEmailConfig {\n");
+      sb.append("    ccEmails: ").append(toIndentedString(ccEmails)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    toEmails: ").append(toIndentedString(toEmails)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

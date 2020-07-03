@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createVRAPoolGroup"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="3d491515-9cdf-437c-ae83-88142172c704" version="0.0.3"
+	allowed-operations="vfe">
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="ServerCloud" t="string"><![CDATA[]]>
+	</param>
+	<param n="firstServerList" t="Array/string"><![CDATA[]]>
+	</param>
+	<param n="secondServerList" t="Array/string"><![CDATA[]]>
+	</param>
+	<param n="pool_group_name" t="string"><![CDATA[]]>
+	</param>
+	<param n="servicePort" t="number"><![CDATA[]]>
+	</param>
+	<param n="HealthMonitorName" t="string"><![CDATA[HealthMonitorName]]></param>
+	<script encoded="false"><![CDATA[try{
+	if(aviVroClient!=null){
+		firstPoolName=pool_group_name+"_Pool1";
+		seconPoolName=pool_group_name+"_Pool2";
+		ratio=5;
+		var Tenant=aviVroClient.cred.tenant;
+		System.log("Tenant : "+Tenant);
+		firstPoolObject = new AviPool() ;
+		if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+		}
+		firstPoolObject.setCloudRef("/api/cloud?name="+ServerCloud);
+		firstPoolObject.setTenantRef("/api/tenant?name="+Tenant);
+		var firstPoolServers = [];
+		for (index in firstServerList){
+			var IP = firstServerList[index];
+			serverObject = new AviServer();
+			ipAddressObject = new AviIpAddr();
+			ipAddressObject.setType("V4");
+			ipAddressObject.setAddr(IP)
+			serverObject.setIp(ipAddressObject);
+			if (ratio != "" || ratio == null || ratio == 0){
+				serverObject.setRatio(1);
+			}else{
+				serverObject.setRatio(ratio);
+			}
+			serverObject.setPort(servicePort);
+			firstPoolServers.push(serverObject);
+		}	
+		firstPoolObject.setServers(firstPoolServers);
+		firstPoolObject.setName(firstPoolName);
+		var HMref ="/api/healthmonitor?name="+HealthMonitorName;
+		firstPoolObject.addHealthMonitorRefsItem(HMref);
+		System.log("firstPoolObject : "+firstPoolObject);
+		aviVroClient.addObject(firstPoolObject);		
+		secondPoolObject = new AviPool() ;
+		secondPoolObject.setCloudRef("/api/cloud?name="+ServerCloud);
+		secondPoolObject.setTenantRef("/api/tenant?name="+Tenant);
+		var secondPoolServers = [];
+		for (index in secondServerList){
+			var IP = secondServerList[index];
+			serverObject = new AviServer();
+			ipAddressObject = new AviIpAddr();
+			ipAddressObject.setType("V4");
+			ipAddressObject.setAddr(IP)
+			serverObject.setIp(ipAddressObject);
+			if (ratio != "" || ratio == null || ratio == 0){
+				serverObject.setRatio(1);
+			}else{
+				serverObject.setRatio(5);
+			}
+			serverObject.setPort(servicePort);
+			secondPoolServers.push(serverObject);
+		}	
+		secondPoolObject.setServers(secondPoolServers);
+		secondPoolObject.setName(seconPoolName);
+		secondPoolObject.addHealthMonitorRefsItem(HMref);
+		aviVroClient.addObject(secondPoolObject);
+		System.log("secondPoolObject : "+secondPoolObject);
+		firstPoolGroupMemberObject = new AviPoolGroupMember();
+		firstPoolGroupMemberObject.setPoolRef("/api/pool?name="+firstPoolName);
+		secondPoolGroupMemberObject = new AviPoolGroupMember();		
+		secondPoolGroupMemberObject.setPoolRef("/api/pool?name="+seconPoolName);
+		var poolGroupObject = new AviPoolGroup() ;
+		poolGroupObject.setCloudRef("/api/cloud?name="+ServerCloud);
+		poolGroupObject.setTenantRef("/api/tenant?name="+Tenant)
+		poolGroupObject.setName(pool_group_name);
+		poolGroupObject.addMembersItem(firstPoolGroupMemberObject);
+		poolGroupObject.addMembersItem(secondPoolGroupMemberObject);
+		aviVroClient.addObject(poolGroupObject);
+		System.log("Poolgroup Object : "+poolGroupObject);
+		System.log("Poolgroup created successfully");
+		return aviVroClient;
+	}else{
+		System.log("Avi client is null.. please attach Avi client");
+	}
+	
+} catch (e) {
+	throw "Error while creating pool group : " + e
+}]]></script>
+</dunes-script-module>

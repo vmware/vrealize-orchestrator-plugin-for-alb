@@ -1,95 +1,105 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * SecureChannelAvailableLocalIPs
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The SecureChannelAvailableLocalIPs is a POJO class extends AviRestResource that used for creating
+ * SecureChannelAvailableLocalIPs.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "SecureChannelAvailableLocalIPs")
 @VsoFinder(name = Constants.FINDER_VRO_SECURECHANNELAVAILABLELOCALIPS, idAccessor = "getObjectID()")
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SecureChannelAvailableLocalIPs extends AviRestResource  {
-  @JsonProperty("_last_modified")
-  private String lastModified = null;
-
+public class SecureChannelAvailableLocalIPs extends AviRestResource {
   @JsonProperty("end")
+  @JsonInclude(Include.NON_NULL)
   private Integer end = null;
 
   @JsonProperty("free_controller_ips")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> freeControllerIps = null;
 
   @JsonProperty("free_ips")
-  @Valid
+  @JsonInclude(Include.NON_NULL)
   private List<String> freeIps = null;
 
   @JsonProperty("name")
+  @JsonInclude(Include.NON_NULL)
   private String name = null;
 
   @JsonProperty("start")
+  @JsonInclude(Include.NON_NULL)
   private Integer start = null;
 
   @JsonProperty("url")
-  private String url = null;
+  @JsonInclude(Include.NON_NULL)
+  private String url = "url";
 
   @JsonProperty("uuid")
+  @JsonInclude(Include.NON_NULL)
   private String uuid = null;
 
-  
+
+
   /**
-   * UNIX time since epoch in microseconds. Units(MICROSECONDS).
-   * @return lastModified
-  **/
-  @ApiModelProperty(readOnly = true, value = "UNIX time since epoch in microseconds. Units(MICROSECONDS).")
-
-
- 
-  @VsoMethod  
-  public String getLastModified() {
-    return lastModified;
-  }
-    
-  @VsoMethod
-  public void setLastModified(String lastModified) {
-    this.lastModified = lastModified;
-  }
-
-  
-  /**
-   * Number of end.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property end of obj type securechannelavailablelocalips field type str  type integer.
    * @return end
-  **/
-  @ApiModelProperty(value = "Number of end.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getEnd() {
     return end;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property end of obj type securechannelavailablelocalips field type str  type integer.
+   * @param end set the end.
+   */
   @VsoMethod
-  public void setEnd(Integer end) {
+  public void setEnd(Integer  end) {
     this.end = end;
   }
 
-  
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
+   * @return freeControllerIps
+   */
+  @VsoMethod
+  public List<String> getFreeControllerIps() {
+    return freeControllerIps;
+  }
+
+  /**
+   * This is the setter method. this will set the freeControllerIps
+   * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
+   * @return freeControllerIps
+   */
+  @VsoMethod
+  public void setFreeControllerIps(List<String>  freeControllerIps) {
+    this.freeControllerIps = freeControllerIps;
+  }
+
+  /**
+   * This is the setter method this will set the freeControllerIps
+   * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
+   * @return freeControllerIps
+   */
+  @VsoMethod
   public SecureChannelAvailableLocalIPs addFreeControllerIpsItem(String freeControllerIpsItem) {
     if (this.freeControllerIps == null) {
       this.freeControllerIps = new ArrayList<String>();
@@ -97,26 +107,34 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource  {
     this.freeControllerIps.add(freeControllerIpsItem);
     return this;
   }
-  
+
+
   /**
-   * free_controller_ips of SecureChannelAvailableLocalIPs.
-   * @return freeControllerIps
-  **/
-  @ApiModelProperty(value = "free_controller_ips of SecureChannelAvailableLocalIPs.")
-
-
- 
-  @VsoMethod  
-  public List<String> getFreeControllerIps() {
-    return freeControllerIps;
-  }
-    
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property free_ips of obj type securechannelavailablelocalips field type str  type array.
+   * @return freeIps
+   */
   @VsoMethod
-  public void setFreeControllerIps(List<String> freeControllerIps) {
-    this.freeControllerIps = freeControllerIps;
+  public List<String> getFreeIps() {
+    return freeIps;
   }
 
-  
+  /**
+   * This is the setter method. this will set the freeIps
+   * Placeholder for description of property free_ips of obj type securechannelavailablelocalips field type str  type array.
+   * @return freeIps
+   */
+  @VsoMethod
+  public void setFreeIps(List<String>  freeIps) {
+    this.freeIps = freeIps;
+  }
+
+  /**
+   * This is the setter method this will set the freeIps
+   * Placeholder for description of property free_ips of obj type securechannelavailablelocalips field type str  type array.
+   * @return freeIps
+   */
+  @VsoMethod
   public SecureChannelAvailableLocalIPs addFreeIpsItem(String freeIpsItem) {
     if (this.freeIps == null) {
       this.freeIps = new ArrayList<String>();
@@ -124,157 +142,131 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource  {
     this.freeIps.add(freeIpsItem);
     return this;
   }
-  
+
+
   /**
-   * free_ips of SecureChannelAvailableLocalIPs.
-   * @return freeIps
-  **/
-  @ApiModelProperty(value = "free_ips of SecureChannelAvailableLocalIPs.")
-
-
- 
-  @VsoMethod  
-  public List<String> getFreeIps() {
-    return freeIps;
-  }
-    
-  @VsoMethod
-  public void setFreeIps(List<String> freeIps) {
-    this.freeIps = freeIps;
-  }
-
-  
-  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * @return name
-  **/
-  @ApiModelProperty(required = true, value = "Name of the object.")
-  @NotNull
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getName() {
     return name;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the object.
+   * @param name set the name.
+   */
   @VsoMethod
-  public void setName(String name) {
+  public void setName(String  name) {
     this.name = name;
   }
 
-  
   /**
-   * Number of start.
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property start of obj type securechannelavailablelocalips field type str  type integer.
    * @return start
-  **/
-  @ApiModelProperty(value = "Number of start.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public Integer getStart() {
     return start;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property start of obj type securechannelavailablelocalips field type str  type integer.
+   * @param start set the start.
+   */
   @VsoMethod
-  public void setStart(Integer start) {
+  public void setStart(Integer  start) {
     this.start = start;
   }
-
-  
-  /**
-   * url
+/**
+   * This is the getter method this will return the attribute value.
+   * Avi controller URL of the object.
    * @return url
-  **/
-  @ApiModelProperty(readOnly = true, value = "url")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUrl() {
     return url;
   }
-    
+
+  /**
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
+   */
   @VsoMethod
-  public void setUrl(String url) {
+  public void setUrl(String  url) {
     this.url = url;
   }
 
-  
   /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * @return uuid
-  **/
-  @ApiModelProperty(value = "Unique object identifier of the object.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getUuid() {
     return uuid;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of the object.
+   * @param uuid set the uuid.
+   */
   @VsoMethod
-  public void setUuid(String uuid) {
+  public void setUuid(String  uuid) {
     this.uuid = uuid;
   }
 
-  
+
   public String getObjectID() {
-		return "SecureChannelAvailableLocalIPs";
+    return name + "(" + uuid  + ")";
   }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SecureChannelAvailableLocalIPs secureChannelAvailableLocalIPs = (SecureChannelAvailableLocalIPs) o;
-    return Objects.equals(this.lastModified, secureChannelAvailableLocalIPs.lastModified) &&
-        Objects.equals(this.end, secureChannelAvailableLocalIPs.end) &&
-        Objects.equals(this.freeControllerIps, secureChannelAvailableLocalIPs.freeControllerIps) &&
-        Objects.equals(this.freeIps, secureChannelAvailableLocalIPs.freeIps) &&
-        Objects.equals(this.name, secureChannelAvailableLocalIPs.name) &&
-        Objects.equals(this.start, secureChannelAvailableLocalIPs.start) &&
-        Objects.equals(this.url, secureChannelAvailableLocalIPs.url) &&
-        Objects.equals(this.uuid, secureChannelAvailableLocalIPs.uuid);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lastModified, end, freeControllerIps, freeIps, name, start, url, uuid);
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SecureChannelAvailableLocalIPs {\n");
-    
-    sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-    sb.append("    end: ").append(toIndentedString(end)).append("\n");
-    sb.append("    freeControllerIps: ").append(toIndentedString(freeControllerIps)).append("\n");
-    sb.append("    freeIps: ").append(toIndentedString(freeIps)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    start: ").append(toIndentedString(start)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  SecureChannelAvailableLocalIPs objSecureChannelAvailableLocalIPs = (SecureChannelAvailableLocalIPs) o;
+  return   Objects.equals(this.end, objSecureChannelAvailableLocalIPs.end)&&
+  Objects.equals(this.uuid, objSecureChannelAvailableLocalIPs.uuid)&&
+  Objects.equals(this.start, objSecureChannelAvailableLocalIPs.start)&&
+  Objects.equals(this.freeIps, objSecureChannelAvailableLocalIPs.freeIps)&&
+  Objects.equals(this.freeControllerIps, objSecureChannelAvailableLocalIPs.freeControllerIps)&&
+  Objects.equals(this.name, objSecureChannelAvailableLocalIPs.name);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class SecureChannelAvailableLocalIPs {\n");
+      sb.append("    end: ").append(toIndentedString(end)).append("\n");
+        sb.append("    freeControllerIps: ").append(toIndentedString(freeControllerIps)).append("\n");
+        sb.append("    freeIps: ").append(toIndentedString(freeIps)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}

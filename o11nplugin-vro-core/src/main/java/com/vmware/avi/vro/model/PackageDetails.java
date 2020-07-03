@@ -1,167 +1,174 @@
 package com.vmware.avi.vro.model;
 
-import java.util.Objects;
+import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.BuildInfo;
 import com.vmware.avi.vro.model.PatchInfo;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
-/**
- * PackageDetails
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-05-07T17:09:16.137+05:30")
 
+/**
+ * The PackageDetails is a POJO class extends AviRestResource that used for creating
+ * PackageDetails.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
 @VsoObject(create = false, name = "PackageDetails")
-@VsoFinder(name = Constants.FINDER_VRO_PACKAGEDETAILS, idAccessor = "getObjectID()")
+@VsoFinder(name = Constants.FINDER_VRO_PACKAGEDETAILS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class PackageDetails extends AviRestResource  {
+public class PackageDetails extends AviRestResource {
   @JsonProperty("build")
+  @JsonInclude(Include.NON_NULL)
   private BuildInfo build = null;
 
   @JsonProperty("hash")
+  @JsonInclude(Include.NON_NULL)
   private String hash = null;
 
   @JsonProperty("patch")
+  @JsonInclude(Include.NON_NULL)
   private PatchInfo patch = null;
 
   @JsonProperty("path")
+  @JsonInclude(Include.NON_NULL)
   private String path = null;
 
-  
+
+
   /**
-   * This contains build related information. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * This contains build related information.
+   * Field introduced in 18.2.6.
    * @return build
-  **/
-  @ApiModelProperty(value = "This contains build related information. Field introduced in 18.2.6.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public BuildInfo getBuild() {
     return build;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * This contains build related information.
+   * Field introduced in 18.2.6.
+   * @param build set the build.
+   */
   @VsoMethod
   public void setBuild(BuildInfo build) {
     this.build = build;
   }
 
-  
   /**
-   * MD5 checksum over the entire package. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Md5 checksum over the entire package.
+   * Field introduced in 18.2.6.
    * @return hash
-  **/
-  @ApiModelProperty(value = "MD5 checksum over the entire package. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getHash() {
     return hash;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Md5 checksum over the entire package.
+   * Field introduced in 18.2.6.
+   * @param hash set the hash.
+   */
   @VsoMethod
-  public void setHash(String hash) {
+  public void setHash(String  hash) {
     this.hash = hash;
   }
 
-  
   /**
-   * Patch related necessary information. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Patch related necessary information.
+   * Field introduced in 18.2.6.
    * @return patch
-  **/
-  @ApiModelProperty(value = "Patch related necessary information. Field introduced in 18.2.6.")
-
-  @Valid
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public PatchInfo getPatch() {
     return patch;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Patch related necessary information.
+   * Field introduced in 18.2.6.
+   * @param patch set the patch.
+   */
   @VsoMethod
   public void setPatch(PatchInfo patch) {
     this.patch = patch;
   }
 
-  
   /**
-   * Path of the package in the repository. Field introduced in 18.2.6.
+   * This is the getter method this will return the attribute value.
+   * Path of the package in the repository.
+   * Field introduced in 18.2.6.
    * @return path
-  **/
-  @ApiModelProperty(value = "Path of the package in the repository. Field introduced in 18.2.6.")
-
-
- 
-  @VsoMethod  
+   */
+  @VsoMethod
   public String getPath() {
     return path;
   }
-    
+
+  /**
+   * This is the setter method to the attribute.
+   * Path of the package in the repository.
+   * Field introduced in 18.2.6.
+   * @param path set the path.
+   */
   @VsoMethod
-  public void setPath(String path) {
+  public void setPath(String  path) {
     this.path = path;
   }
 
-  
-  public String getObjectID() {
-		return "PackageDetails";
-  }
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PackageDetails packageDetails = (PackageDetails) o;
-    return Objects.equals(this.build, packageDetails.build) &&
-        Objects.equals(this.hash, packageDetails.hash) &&
-        Objects.equals(this.patch, packageDetails.patch) &&
-        Objects.equals(this.path, packageDetails.path);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(build, hash, patch, path);
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
   }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PackageDetails {\n");
-    
-    sb.append("    build: ").append(toIndentedString(build)).append("\n");
-    sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
-    sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
-    sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("}");
-    return sb.toString();
+  if (o == null || getClass() != o.getClass()) {
+    return false;
   }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
+  PackageDetails objPackageDetails = (PackageDetails) o;
+  return   Objects.equals(this.path, objPackageDetails.path)&&
+  Objects.equals(this.hash, objPackageDetails.hash)&&
+  Objects.equals(this.build, objPackageDetails.build)&&
+  Objects.equals(this.patch, objPackageDetails.patch);
 }
 
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class PackageDetails {\n");
+      sb.append("    build: ").append(toIndentedString(build)).append("\n");
+        sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
+        sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
+        sb.append("    path: ").append(toIndentedString(path)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}
