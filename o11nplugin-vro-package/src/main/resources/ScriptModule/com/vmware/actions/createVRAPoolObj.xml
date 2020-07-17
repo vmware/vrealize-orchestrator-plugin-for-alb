@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVRAPoolObj"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="0cfaebed-a678-43d2-9992-1bdde8e44ecc" version="1.0.2"
+	id="0cfaebed-a678-43d2-9992-1bdde8e44ecc" version="1.0.3"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="poolName" t="string"><![CDATA[Pool name]]></param>
@@ -9,8 +9,8 @@
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="HealthMonitorName" t="string"><![CDATA[New healthmonitor name]]></param>
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
-	<param n="instance_port" t="number"><![CDATA[]]>
-	</param>
+	<param n="instance_port" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
 * and creats pool object. 						  *

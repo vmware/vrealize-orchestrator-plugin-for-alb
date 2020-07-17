@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVRAPoolGroup"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="3d491515-9cdf-437c-ae83-88142172c704" version="0.0.3"
+	id="3d491515-9cdf-437c-ae83-88142172c704" version="0.0.5"
 	allowed-operations="vfe">
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
-	</param>
-	<param n="ServerCloud" t="string"><![CDATA[]]>
-	</param>
-	<param n="firstServerList" t="Array/string"><![CDATA[]]>
-	</param>
-	<param n="secondServerList" t="Array/string"><![CDATA[]]>
-	</param>
-	<param n="pool_group_name" t="string"><![CDATA[]]>
-	</param>
-	<param n="servicePort" t="number"><![CDATA[]]>
-	</param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[
+	]]></param>
+	<param n="ServerCloud" t="string"><![CDATA[
+	]]></param>
+	<param n="firstServerList" t="Array/string"><![CDATA[
+	]]></param>
+	<param n="secondServerList" t="Array/string"><![CDATA[
+	]]></param>
+	<param n="pool_group_name" t="string"><![CDATA[
+	]]></param>
+	<param n="instancePort" t="string"><![CDATA[
+	]]></param>
 	<param n="HealthMonitorName" t="string"><![CDATA[HealthMonitorName]]></param>
 	<script encoded="false"><![CDATA[try{
 	if(aviVroClient!=null){
@@ -42,7 +42,7 @@
 			}else{
 				serverObject.setRatio(ratio);
 			}
-			serverObject.setPort(servicePort);
+			serverObject.setPort(instancePort);
 			firstPoolServers.push(serverObject);
 		}	
 		firstPoolObject.setServers(firstPoolServers);
@@ -67,7 +67,7 @@
 			}else{
 				serverObject.setRatio(5);
 			}
-			serverObject.setPort(servicePort);
+			serverObject.setPort(instancePort);
 			secondPoolServers.push(serverObject);
 		}	
 		secondPoolObject.setServers(secondPoolServers);

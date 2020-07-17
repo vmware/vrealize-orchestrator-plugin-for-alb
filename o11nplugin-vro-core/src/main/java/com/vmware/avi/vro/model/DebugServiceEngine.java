@@ -49,6 +49,10 @@ public class DebugServiceEngine extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private DebugIpAddr debugIp = null;
 
+  @JsonProperty("enable_kdump")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableKdump = false;
+
   @JsonProperty("fault")
   @JsonInclude(Include.NON_NULL)
   private DebugSeFault fault = null;
@@ -208,6 +212,34 @@ public class DebugServiceEngine extends AviRestResource {
   @VsoMethod
   public void setDebugIp(DebugIpAddr debugIp) {
     this.debugIp = debugIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enables the use of kdump on se.
+   * Requires se reboot.
+   * Applicable only in case of vm based deployments.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableKdump
+   */
+  @VsoMethod
+  public Boolean getEnableKdump() {
+    return enableKdump;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables the use of kdump on se.
+   * Requires se reboot.
+   * Applicable only in case of vm based deployments.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableKdump set the enableKdump.
+   */
+  @VsoMethod
+  public void setEnableKdump(Boolean  enableKdump) {
+    this.enableKdump = enableKdump;
   }
 
   /**
@@ -428,6 +460,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objDebugServiceEngine.name)&&
   Objects.equals(this.selogagentDebug, objDebugServiceEngine.selogagentDebug)&&
   Objects.equals(this.flags, objDebugServiceEngine.flags)&&
+  Objects.equals(this.enableKdump, objDebugServiceEngine.enableKdump)&&
   Objects.equals(this.captureParams, objDebugServiceEngine.captureParams)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef)&&
   Objects.equals(this.cpuShares, objDebugServiceEngine.cpuShares);
@@ -442,6 +475,7 @@ public String toString() {
         sb.append("    captureParams: ").append(toIndentedString(captureParams)).append("\n");
         sb.append("    cpuShares: ").append(toIndentedString(cpuShares)).append("\n");
         sb.append("    debugIp: ").append(toIndentedString(debugIp)).append("\n");
+        sb.append("    enableKdump: ").append(toIndentedString(enableKdump)).append("\n");
         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
         sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -464,3 +498,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

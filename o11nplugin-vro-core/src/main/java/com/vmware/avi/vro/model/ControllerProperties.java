@@ -122,7 +122,7 @@ public class ControllerProperties extends AviRestResource {
 
   @JsonProperty("federated_datastore_cleanup_duration")
   @JsonInclude(Include.NON_NULL)
-  private Integer federatedDatastoreCleanupDuration = 24;
+  private Integer federatedDatastoreCleanupDuration = 120;
 
   @JsonProperty("file_object_cleanup_period")
   @JsonInclude(Include.NON_NULL)
@@ -880,7 +880,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Federated datastore will not cleanup diffs unless they are at least this duration in the past.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return federatedDatastoreCleanupDuration
    */
   @VsoMethod
@@ -892,7 +892,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Federated datastore will not cleanup diffs unless they are at least this duration in the past.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param federatedDatastoreCleanupDuration set the federatedDatastoreCleanupDuration.
    */
   @VsoMethod
@@ -2169,3 +2169,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

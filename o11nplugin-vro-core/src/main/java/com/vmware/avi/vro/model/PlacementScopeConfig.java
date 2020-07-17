@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.NsxtHosts;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PlacementScopeConfig extends AviRestResource {
+  @JsonProperty("nsxt_hosts")
+  @JsonInclude(Include.NON_NULL)
+  private NsxtHosts nsxtHosts = null;
+
   @JsonProperty("vcenter_folder")
   @JsonInclude(Include.NON_NULL)
   private String vcenterFolder = null;
@@ -33,6 +38,28 @@ public class PlacementScopeConfig extends AviRestResource {
   private String vcenterRef = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of transport nodes include or exclude.
+   * Field introduced in 20.1.1.
+   * @return nsxtHosts
+   */
+  @VsoMethod
+  public NsxtHosts getNsxtHosts() {
+    return nsxtHosts;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * List of transport nodes include or exclude.
+   * Field introduced in 20.1.1.
+   * @param nsxtHosts set the nsxtHosts.
+   */
+  @VsoMethod
+  public void setNsxtHosts(NsxtHosts nsxtHosts) {
+    this.nsxtHosts = nsxtHosts;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -92,6 +119,7 @@ public boolean equals(java.lang.Object o) {
   }
   PlacementScopeConfig objPlacementScopeConfig = (PlacementScopeConfig) o;
   return   Objects.equals(this.vcenterFolder, objPlacementScopeConfig.vcenterFolder)&&
+  Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts)&&
   Objects.equals(this.vcenterRef, objPlacementScopeConfig.vcenterRef);
 }
 
@@ -99,7 +127,8 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PlacementScopeConfig {\n");
-      sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
+      sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
+        sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
         sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
       sb.append("}");
   return sb.toString();
@@ -116,3 +145,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

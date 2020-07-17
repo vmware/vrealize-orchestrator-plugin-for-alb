@@ -35,6 +35,10 @@ public class Image extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private PackageDetails controllerInfo = null;
 
+  @JsonProperty("controller_patch_name")
+  @JsonInclude(Include.NON_NULL)
+  private String controllerPatchName = null;
+
   @JsonProperty("controller_patch_uuid")
   @JsonInclude(Include.NON_NULL)
   private String controllerPatchUuid = null;
@@ -50,6 +54,10 @@ public class Image extends AviRestResource {
   @JsonProperty("se_info")
   @JsonInclude(Include.NON_NULL)
   private PackageDetails seInfo = null;
+
+  @JsonProperty("se_patch_name")
+  @JsonInclude(Include.NON_NULL)
+  private String sePatchName = null;
 
   @JsonProperty("se_patch_uuid")
   @JsonInclude(Include.NON_NULL)
@@ -143,6 +151,28 @@ public class Image extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Mandatory controller patch name that is applied along with this base image.
+   * Field introduced in 18.2.10.
+   * @return controllerPatchName
+   */
+  @VsoMethod
+  public String getControllerPatchName() {
+    return controllerPatchName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mandatory controller patch name that is applied along with this base image.
+   * Field introduced in 18.2.10.
+   * @param controllerPatchName set the controllerPatchName.
+   */
+  @VsoMethod
+  public void setControllerPatchName(String  controllerPatchName) {
+    this.controllerPatchName = controllerPatchName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * It references the controller-patch associated with the uber image.
    * Field introduced in 18.2.8, 20.1.1.
    * @return controllerPatchUuid
@@ -227,6 +257,28 @@ public class Image extends AviRestResource {
   @VsoMethod
   public void setSeInfo(PackageDetails seInfo) {
     this.seInfo = seInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Mandatory serviceengine patch name that is applied along with this base image.
+   * Field introduced in 18.2.10.
+   * @return sePatchName
+   */
+  @VsoMethod
+  public String getSePatchName() {
+    return sePatchName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mandatory serviceengine patch name that is applied along with this base image.
+   * Field introduced in 18.2.10.
+   * @param sePatchName set the sePatchName.
+   */
+  @VsoMethod
+  public void setSePatchName(String  sePatchName) {
+    this.sePatchName = sePatchName;
   }
 
   /**
@@ -409,11 +461,13 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.status, objImage.status)&&
   Objects.equals(this.seInfo, objImage.seInfo)&&
   Objects.equals(this.uuid, objImage.uuid)&&
+  Objects.equals(this.controllerPatchName, objImage.controllerPatchName)&&
   Objects.equals(this.controllerPatchUuid, objImage.controllerPatchUuid)&&
   Objects.equals(this.migrations, objImage.migrations)&&
   Objects.equals(this.cloudInfoValues, objImage.cloudInfoValues)&&
   Objects.equals(this.uberBundle, objImage.uberBundle)&&
   Objects.equals(this.controllerInfo, objImage.controllerInfo)&&
+  Objects.equals(this.sePatchName, objImage.sePatchName)&&
   Objects.equals(this.sePatchUuid, objImage.sePatchUuid)&&
   Objects.equals(this.type, objImage.type)&&
   Objects.equals(this.tenantRef, objImage.tenantRef)&&
@@ -426,10 +480,12 @@ public String toString() {
   sb.append("class Image {\n");
       sb.append("    cloudInfoValues: ").append(toIndentedString(cloudInfoValues)).append("\n");
         sb.append("    controllerInfo: ").append(toIndentedString(controllerInfo)).append("\n");
+        sb.append("    controllerPatchName: ").append(toIndentedString(controllerPatchName)).append("\n");
         sb.append("    controllerPatchUuid: ").append(toIndentedString(controllerPatchUuid)).append("\n");
         sb.append("    migrations: ").append(toIndentedString(migrations)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    seInfo: ").append(toIndentedString(seInfo)).append("\n");
+        sb.append("    sePatchName: ").append(toIndentedString(sePatchName)).append("\n");
         sb.append("    sePatchUuid: ").append(toIndentedString(sePatchUuid)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
@@ -451,3 +507,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

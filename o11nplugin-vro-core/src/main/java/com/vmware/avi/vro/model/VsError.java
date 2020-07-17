@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.TimeStamp;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsError extends AviRestResource {
+  @JsonProperty("event_timestamp")
+  @JsonInclude(Include.NON_NULL)
+  private TimeStamp eventTimestamp = null;
+
   @JsonProperty("reason")
   @JsonInclude(Include.NON_NULL)
   private List<String> reason = null;
@@ -35,6 +40,10 @@ public class VsError extends AviRestResource {
   @JsonProperty("se_group_ref")
   @JsonInclude(Include.NON_NULL)
   private String seGroupRef = null;
+
+  @JsonProperty("se_ref")
+  @JsonInclude(Include.NON_NULL)
+  private String seRef = null;
 
   @JsonProperty("tenant_ref")
   @JsonInclude(Include.NON_NULL)
@@ -53,6 +62,28 @@ public class VsError extends AviRestResource {
   private String vsRef = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The time at which the error occurred.
+   * Field introduced in 18.2.10.
+   * @return eventTimestamp
+   */
+  @VsoMethod
+  public TimeStamp getEventTimestamp() {
+    return eventTimestamp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The time at which the error occurred.
+   * Field introduced in 18.2.10.
+   * @param eventTimestamp set the eventTimestamp.
+   */
+  @VsoMethod
+  public void setEventTimestamp(TimeStamp eventTimestamp) {
+    this.eventTimestamp = eventTimestamp;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -127,6 +158,30 @@ public class VsError extends AviRestResource {
   @VsoMethod
   public void setSeGroupRef(String  seGroupRef) {
     this.seGroupRef = seGroupRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The se on which the vs errored during scale-in/scale-out operations.
+   * It is a reference to an object of type serviceengine.
+   * Field introduced in 18.2.10.
+   * @return seRef
+   */
+  @VsoMethod
+  public String getSeRef() {
+    return seRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The se on which the vs errored during scale-in/scale-out operations.
+   * It is a reference to an object of type serviceengine.
+   * Field introduced in 18.2.10.
+   * @param seRef set the seRef.
+   */
+  @VsoMethod
+  public void setSeRef(String  seRef) {
+    this.seRef = seRef;
   }
 
   /**
@@ -223,8 +278,10 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.vipId, objVsError.vipId)&&
   Objects.equals(this.trafficStatus, objVsError.trafficStatus)&&
   Objects.equals(this.vsRef, objVsError.vsRef)&&
+  Objects.equals(this.eventTimestamp, objVsError.eventTimestamp)&&
   Objects.equals(this.seGroupHaMode, objVsError.seGroupHaMode)&&
   Objects.equals(this.reason, objVsError.reason)&&
+  Objects.equals(this.seRef, objVsError.seRef)&&
   Objects.equals(this.seGroupRef, objVsError.seGroupRef)&&
   Objects.equals(this.tenantRef, objVsError.tenantRef);
 }
@@ -233,9 +290,11 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VsError {\n");
-      sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+      sb.append("    eventTimestamp: ").append(toIndentedString(eventTimestamp)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    seGroupHaMode: ").append(toIndentedString(seGroupHaMode)).append("\n");
         sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
+        sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    trafficStatus: ").append(toIndentedString(trafficStatus)).append("\n");
         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
@@ -255,3 +314,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+
