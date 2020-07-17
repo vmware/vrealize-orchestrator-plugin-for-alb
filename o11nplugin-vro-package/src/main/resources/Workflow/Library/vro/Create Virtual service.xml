@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="73a23dce-5ad0-4d6b-b85e-27a81a9b6abd" version="1.1.8"
+	id="73a23dce-5ad0-4d6b-b85e-27a81a9b6abd" version="1.2.0"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Virtual service]]></display-name>
@@ -40,7 +40,7 @@
 		<param name="ServerCloud" type="string">
 			<description><![CDATA[Servercloud name]]></description>
 		</param>
-		<param name="instance_port" type="number"></param>
+		<param name="instance_port" type="string"></param>
 		<param name="IPAddress" type="string">
 			<description><![CDATA[Vs vip IP address]]></description>
 		</param>
@@ -94,8 +94,8 @@
 	</attrib>
 	<attrib name="virtualServiceData" type="string"
 		read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<attrib name="SSLCertificate" type="string" read-only="false">
 		<value encoded="n"><![CDATA[System-Default-Cert]]></value>
@@ -270,12 +270,12 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 				export-name="aviVroClient">
 				<description><![CDATA[Object of the plugin]]></description>
 			</bind>
-			<bind name="instance_port" type="number"
+			<bind name="instance_port" type="string"
 				export-name="instance_port"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 		</out-binding>
 		<position y="19.045454545454543" x="304.5"></position>
 	</workflow-item>
@@ -283,7 +283,7 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 		script-module="com.vmware.avi/createVsVIPObj">
 		<display-name><![CDATA[createVsVIPObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,aviVroClient) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,aviVroClient,tier1) ;]]></script>
 		<in-binding>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
@@ -310,6 +310,8 @@ actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPA
 				explicitly-not-bound="true" export-name="NULL"></bind>
 			<bind name="aviAllocatedVip" type="boolean"
 				explicitly-not-bound="true" export-name="NULL"></bind>
+			<bind name="tier1" type="string" explicitly-not-bound="true"
+				export-name="NULL"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"

@@ -72,7 +72,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property disruptive of obj type seupgradeparams field type str  type boolean.
+   * This field is used to disable scale-in/scale out operations during upgrade operations.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disruptive
    */
@@ -83,7 +83,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property disruptive of obj type seupgradeparams field type str  type boolean.
+   * This field is used to disable scale-in/scale out operations during upgrade operations.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disruptive set the disruptive.
    */
@@ -94,7 +94,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property force of obj type seupgradeparams field type str  type boolean.
+   * Field deprecated in 18.2.10.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return force
    */
@@ -105,7 +105,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property force of obj type seupgradeparams field type str  type boolean.
+   * Field deprecated in 18.2.10.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param force set the force.
    */
@@ -184,7 +184,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property rollback of obj type seupgradeparams field type str  type boolean.
+   * It is used in rollback operations.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rollback
    */
@@ -195,7 +195,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property rollback of obj type seupgradeparams field type str  type boolean.
+   * It is used in rollback operations.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param rollback set the rollback.
    */
@@ -292,7 +292,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property test of obj type seupgradeparams field type str  type boolean.
+   * Field deprecated in 18.2.10.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return test
    */
@@ -303,7 +303,7 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property test of obj type seupgradeparams field type str  type boolean.
+   * Field deprecated in 18.2.10.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param test set the test.
    */
@@ -386,3 +386,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

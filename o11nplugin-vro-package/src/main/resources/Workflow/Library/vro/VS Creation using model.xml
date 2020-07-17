@@ -3,8 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item5" object-name="workflow:name=generic"
-	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.3"
-	api-version="6.0.0" allowed-operations="vef" restartMode="1"
+	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.7"
+	api-version="6.0.0" allowed-operations="vfe" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Vs]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
@@ -114,8 +114,22 @@
 		<param name="https_response_code" type="Array/string">
 			<description><![CDATA[https response code]]></description>
 		</param>
-		<param name="port" type="number"></param>
+		<param name="port" type="string"></param>
 		<param name="PersistenceProfileRef" type="string"></param>
+		<param name="SSLAlgorithm" type="string">
+			<description><![CDATA[Select SSL algorithm]]></description>
+		</param>
+		<param name="CommonName" type="string">
+			<description><![CDATA[Common name]]></description>
+		</param>
+		<param name="RSAKeySize" type="string">
+			<description><![CDATA[Select RSA key size]]></description>
+		</param>
+		<param name="ECKeySize" type="string">
+			<description><![CDATA[Select EC key size]]></description>
+		</param>
+		<param name="tier1" type="string"></param>
+		<param name="addPersistenceProfileRef" type="boolean"></param>
 	</input>
 	<output>
 		<param name="actionResult" type="Avi:AviVroClient"></param>
@@ -172,7 +186,7 @@
 	</attrib>
 	<workflow-item name="item0"
 		throw-bind-name="actionEerrorCode" type="end" end-mode="0">
-		<position y="9.045454545454543" x="644.5"></position>
+		<position y="9.045454545454543" x="764.5"></position>
 	</workflow-item>
 	<workflow-item name="item6" out-name="item8"
 		throw-bind-name="configErrorCode" type="task">
@@ -180,6 +194,7 @@
 		<script encoded="false"><![CDATA[HealthMonitorName = Name+"_HealthMonitor"
 vsVipName = Name+"_vsvip"
 poolName = Name+"_pool"
+CertName = Name+"_SSLCertificate"
 Tenant=aviVroClient.cred.tenant;
 version=aviVroClient.cred.version;
 
@@ -193,6 +208,7 @@ version=aviVroClient.cred.version;
 			<bind name="Name" type="string" export-name="Name"></bind>
 			<bind name="poolName" type="string" export-name="poolName"></bind>
 			<bind name="version" type="string" export-name="version"></bind>
+			<bind name="CertName" type="string" export-name="CertName"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="HealthMonitorName" type="string"
@@ -201,6 +217,7 @@ version=aviVroClient.cred.version;
 			<bind name="vsVipName" type="string" export-name="vsVipName"></bind>
 			<bind name="Tenant" type="string" export-name="Tenant"></bind>
 			<bind name="version" type="string" export-name="version"></bind>
+			<bind name="CertName" type="string" export-name="CertName"></bind>
 		</out-binding>
 		<position y="73.59090909090908" x="104.5"></position>
 	</workflow-item>
@@ -214,7 +231,7 @@ System.log("Object Created:-> "+resp);
 				export-name="aviVroClient"></bind>
 		</in-binding>
 		<out-binding></out-binding>
-		<position y="19.045454545454543" x="464.5"></position>
+		<position y="19.045454545454543" x="584.5"></position>
 	</workflow-item>
 	<workflow-item name="item5" out-name="item6" type="task"
 		script-module="com.vmware.avi/getAviVroClient">
@@ -323,7 +340,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 		script-module="com.vmware.avi/createPoolObj">
 		<display-name><![CDATA[createPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port,addPersistenceProfileRef) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
 				export-name="PoolServers">
@@ -485,9 +502,10 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 			</bind>
 			<bind name="PersistenceProfileRef" type="string"
 				export-name="PersistenceProfileRef"></bind>
-			<bind name="port" type="number" export-name="port"></bind>
-			<bind name="ratio" type="number" explicitly-not-bound="true"
-				export-name="NULL"></bind>
+			<bind name="port" type="string" export-name="port"></bind>
+			<bind name="ratio" type="number" explicitly-not-bound="true"></bind>
+			<bind name="addPersistenceProfileRef" type="boolean"
+				export-name="addPersistenceProfileRef"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -495,11 +513,11 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 		</out-binding>
 		<position y="73.59090909090908" x="345.0"></position>
 	</workflow-item>
-	<workflow-item name="item3" out-name="item1" type="task"
+	<workflow-item name="item3" out-name="item9" type="task"
 		script-module="com.vmware.avi/createVsVIPObj">
 		<display-name><![CDATA[createVsVIPObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,aviVroClient) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,aviVroClient,tier1) ;]]></script>
 		<in-binding>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
@@ -537,6 +555,7 @@ actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPA
 				export-name="aviVroClient">
 				<description><![CDATA[Object of the plugin]]></description>
 			</bind>
+			<bind name="tier1" type="string" export-name="tier1"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -732,7 +751,7 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 			<bind name="actionResult" type="Avi:AviVroClient"
 				export-name="actionResult"></bind>
 		</out-binding>
-		<position y="73.59090909090908" x="464.5"></position>
+		<position y="73.59090909090908" x="584.5"></position>
 	</workflow-item>
 	<workflow-item name="item8" out-name="item4"
 		type="condition" alt-out-name="item7" comparator="0">
@@ -746,6 +765,64 @@ return (CreateHealthMonitor == true) ;]]></script>
 		<condition name="CreateHealthMonitor" type="boolean"
 			comparator="0" label="null">false</condition>
 		<position y="63.59090909090908" x="225.0"></position>
+	</workflow-item>
+	<workflow-item name="item9" out-name="item1"
+		type="condition" alt-out-name="item11" comparator="0">
+		<display-name><![CDATA[Decision]]></display-name>
+		<script encoded="false"><![CDATA[//Generated by the system, cannot be edited
+return (CreateSSL == false) ;]]></script>
+		<in-binding>
+			<bind name="CreateSSL" type="boolean" export-name="CreateSSL"></bind>
+		</in-binding>
+		<condition name="CreateSSL" type="boolean" comparator="1"
+			label="null">false</condition>
+		<position y="9.045454545454543" x="465.0"></position>
+	</workflow-item>
+	<workflow-item name="item11" out-name="item1" type="task"
+		script-module="com.vmware.avi/createSSLCertificateObj">
+		<display-name><![CDATA[createSSLCertificateObj]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").createSSLCertificateObj(aviVroClient,SSLAlgorithm,CommonName,RSAKeySize,ECKeySize,certificateBase,CertName,emailAddress,organizationUnit,organization,locality,state,country,distinguishedName) ;]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient">
+				<description><![CDATA[Vro Client]]></description>
+			</bind>
+			<bind name="SSLAlgorithm" type="string"
+				export-name="SSLAlgorithm">
+				<description><![CDATA[SSL algorithm type]]></description>
+			</bind>
+			<bind name="CommonName" type="string" export-name="CommonName">
+				<description><![CDATA[Common name for SSL certificate description]]></description>
+			</bind>
+			<bind name="RSAKeySize" type="string" export-name="RSAKeySize">
+				<description><![CDATA[RSA key size]]></description>
+			</bind>
+			<bind name="ECKeySize" type="string" export-name="ECKeySize">
+				<description><![CDATA[EC key size]]></description>
+			</bind>
+			<bind name="certificateBase" type="boolean"
+				explicitly-not-bound="true">
+				<description><![CDATA[States if the certificate is base64 encoded.]]></description>
+			</bind>
+			<bind name="CertName" type="string" export-name="CertName"></bind>
+			<bind name="state" type="string" explicitly-not-bound="true"></bind>
+			<bind name="organization" type="string"
+				explicitly-not-bound="true"></bind>
+			<bind name="country" type="string" explicitly-not-bound="true"></bind>
+			<bind name="emailAddress" type="string"
+				explicitly-not-bound="true"></bind>
+			<bind name="organizationUnit" type="string"
+				explicitly-not-bound="true"></bind>
+			<bind name="locality" type="string" explicitly-not-bound="true"></bind>
+			<bind name="distinguishedName" type="string"
+				explicitly-not-bound="true"></bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="actionResult"></bind>
+		</out-binding>
+		<position y="73.59090909090908" x="465.0"></position>
 	</workflow-item>
 	<presentation>
 		<p-step>
@@ -775,7 +852,7 @@ return (CreateHealthMonitor == true) ;]]></script>
 				<desc><![CDATA[Select application type]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string##;#string#HTTP#;#string#HTTPS#;#string#TCP#;#string#UDP#}#]]></p-qual>
+					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#;#string#TCP#;#string#UDP#}#]]></p-qual>
 			</p-param>
 			<p-param name="vsVIP">
 				<desc><![CDATA[Add existing VIP]]></desc>
@@ -825,11 +902,34 @@ return (CreateHealthMonitor == true) ;]]></script>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[false]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
+			<p-param name="tier1">
+				<desc><![CDATA[Tier1_lr]]></desc>
+			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[SSL Cert]]></title>
 			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#CreateSSL==true]]></p-qual>
 			<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#SSLCert==false || #CreateSSL==false]]></p-qual>
+			<p-param name="SSLAlgorithm">
+				<desc><![CDATA[Select SSL algorithm]]></desc>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#RSA#;#string#EC#}#]]></p-qual>
+			</p-param>
+			<p-param name="RSAKeySize">
+				<desc><![CDATA[Select RSA key size]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLAlgorithm=="RSA"]]></p-qual>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#1024 Bits#;#string#3072 Bits#;#string#4096 Bits#;#string#2048 Bits#}#]]></p-qual>
+			</p-param>
+			<p-param name="ECKeySize">
+				<desc><![CDATA[Select EC key size]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLAlgorithm=="EC"]]></p-qual>
+				<p-qual kind="static" name="genericEnumeration"
+					type="Array/string"><![CDATA[#{#string#SECP256R1#;#string#SECP521R1#;#string#SECP384R1#}#]]></p-qual>
+			</p-param>
+			<p-param name="CommonName">
+				<desc><![CDATA[Common name]]></desc>
+			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[PG details]]></title>
@@ -956,10 +1056,15 @@ return (CreateHealthMonitor == true) ;]]></script>
 			<p-param name="port">
 				<desc><![CDATA[port]]></desc>
 			</p-param>
+			<p-param name="addPersistenceProfileRef">
+				<desc><![CDATA[Add Persistence Profile Ref]]></desc>
+				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[__NULL__]]></p-qual>
+			</p-param>
 			<p-param name="PersistenceProfileRef">
 				<desc><![CDATA[PersistenceProfileRef]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "applicationpersistenceprofile" )]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#addPersistenceProfileRef==true]]></p-qual>
 			</p-param>
 			<p-param name="serverType">
 				<desc><![CDATA[Server type]]></desc>

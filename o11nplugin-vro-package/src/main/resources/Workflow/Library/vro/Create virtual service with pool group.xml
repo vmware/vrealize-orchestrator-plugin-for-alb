@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="8425a439-2c32-46a3-a462-6414dd1c02de" version="1.1.3"
+	id="8425a439-2c32-46a3-a462-6414dd1c02de" version="1.1.5"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create virtual service with pool group]]></display-name>
@@ -40,7 +40,7 @@
 		<param name="ServerCloud" type="string">
 			<description><![CDATA[Servercloud name]]></description>
 		</param>
-		<param name="instance_port" type="number"></param>
+		<param name="instance_port" type="string"></param>
 		<param name="IPAddress" type="string">
 			<description><![CDATA[Vs vip IP address]]></description>
 		</param>
@@ -94,12 +94,12 @@
 	</attrib>
 	<attrib name="virtualServiceData" type="string"
 		read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<attrib name="poolGroupName" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<attrib name="SSLCertificate" type="string" read-only="false">
 		<value encoded="n"><![CDATA[System-Default-Cert]]></value>
@@ -277,12 +277,12 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 				export-name="aviVroClient">
 				<description><![CDATA[Object of the plugin]]></description>
 			</bind>
-			<bind name="instance_port" type="number"
+			<bind name="instance_port" type="string"
 				export-name="instance_port"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 		</out-binding>
 		<position y="9.954545454545453" x="504.5"></position>
 	</workflow-item>
@@ -455,7 +455,7 @@ return (createPoolGroup == true) ;]]></script>
 		script-module="com.vmware.avi/createVRAPoolGroup">
 		<display-name><![CDATA[createVRAPoolGroup]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVRAPoolGroup(aviVroClient,ServerCloud,firstServerList,secondServerList,pool_group_name,servicePort,HealthMonitorName) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVRAPoolGroup(aviVroClient,ServerCloud,firstServerList,secondServerList,pool_group_name,instancePort,HealthMonitorName) ;]]></script>
 		<in-binding>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
 				export-name="aviVroClient"></bind>
@@ -466,10 +466,10 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolGroup(aviVroClien
 				export-name="secondServerList"></bind>
 			<bind name="pool_group_name" type="string"
 				export-name="poolGroupName"></bind>
-			<bind name="servicePort" type="number"
-				export-name="instance_port"></bind>
 			<bind name="HealthMonitorName" type="string"
 				export-name="HealthMonitorName"></bind>
+			<bind name="instancePort" type="string"
+				export-name="instance_port"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -521,16 +521,16 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolGroup(aviVroClien
 				<desc><![CDATA[createPoolGroup]]></desc>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[__NULL__]]></p-qual>
 			</p-param>
+			<p-param name="instance_port">
+				<desc><![CDATA[instance_port]]></desc>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Pool details]]></title>
 			<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#createPoolGroup==true]]></p-qual>
 			<p-param name="PoolServers">
 				<desc><![CDATA[Pool servers list ]]></desc>
-				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
-			</p-param>
-			<p-param name="instance_port">
-				<desc><![CDATA[instance_port]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 		</p-step>

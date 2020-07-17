@@ -28,10 +28,6 @@ public class ReplicationPolicy extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private String checkpointRef = null;
 
-  @JsonProperty("monitoring_window")
-  @JsonInclude(Include.NON_NULL)
-  private Integer monitoringWindow = 15;
-
   @JsonProperty("replication_mode")
   @JsonInclude(Include.NON_NULL)
   private String replicationMode = "REPLICATION_MODE_CONTINUOUS";
@@ -62,34 +58,6 @@ public class ReplicationPolicy extends AviRestResource {
   @VsoMethod
   public void setCheckpointRef(String  checkpointRef) {
     this.checkpointRef = checkpointRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Determines the window of time where fault is monitored.
-   * If no fault is detected, then checkpoint can safely moved to the last window.
-   * Allowed values are 10-360.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
-   * @return monitoringWindow
-   */
-  @VsoMethod
-  public Integer getMonitoringWindow() {
-    return monitoringWindow;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Determines the window of time where fault is monitored.
-   * If no fault is detected, then checkpoint can safely moved to the last window.
-   * Allowed values are 10-360.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
-   * @param monitoringWindow set the monitoringWindow.
-   */
-  @VsoMethod
-  public void setMonitoringWindow(Integer  monitoringWindow) {
-    this.monitoringWindow = monitoringWindow;
   }
 
   /**
@@ -129,8 +97,7 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ReplicationPolicy objReplicationPolicy = (ReplicationPolicy) o;
-  return   Objects.equals(this.monitoringWindow, objReplicationPolicy.monitoringWindow)&&
-  Objects.equals(this.replicationMode, objReplicationPolicy.replicationMode)&&
+  return   Objects.equals(this.replicationMode, objReplicationPolicy.replicationMode)&&
   Objects.equals(this.checkpointRef, objReplicationPolicy.checkpointRef);
 }
 
@@ -139,7 +106,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ReplicationPolicy {\n");
       sb.append("    checkpointRef: ").append(toIndentedString(checkpointRef)).append("\n");
-        sb.append("    monitoringWindow: ").append(toIndentedString(monitoringWindow)).append("\n");
         sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
       sb.append("}");
   return sb.toString();
@@ -156,3 +122,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

@@ -292,7 +292,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable lldp.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.10, 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return lldpEnable
    */
@@ -304,7 +304,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable lldp.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.10, 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param lldpEnable set the lldpEnable.
    */
@@ -512,3 +512,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

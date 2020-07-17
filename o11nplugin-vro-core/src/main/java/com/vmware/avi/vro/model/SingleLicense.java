@@ -32,6 +32,10 @@ public class SingleLicense extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private Integer cores = null;
 
+  @JsonProperty("cpu_cores")
+  @JsonInclude(Include.NON_NULL)
+  private float cpuCores = 0.0f;
+
   @JsonProperty("created_on")
   @JsonInclude(Include.NON_NULL)
   private String createdOn = null;
@@ -146,6 +150,30 @@ public class SingleLicense extends AviRestResource {
   @VsoMethod
   public void setCores(Integer  cores) {
     this.cores = cores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total number of cpu cores.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * @return cpuCores
+   */
+  @VsoMethod
+  public Float getCpuCores() {
+    return cpuCores;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of cpu cores.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * @param cpuCores set the cpuCores.
+   */
+  @VsoMethod
+  public void setCpuCores(Float  cpuCores) {
+    this.cpuCores = cpuCores;
   }
 
   /**
@@ -584,6 +612,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.licenseName, objSingleLicense.licenseName)&&
   Objects.equals(this.tierType, objSingleLicense.tierType)&&
   Objects.equals(this.maxSes, objSingleLicense.maxSes)&&
+  Objects.equals(this.cpuCores, objSingleLicense.cpuCores)&&
   Objects.equals(this.lastUpdate, objSingleLicense.lastUpdate)&&
   Objects.equals(this.burstCores, objSingleLicense.burstCores)&&
   Objects.equals(this.createdOn, objSingleLicense.createdOn)&&
@@ -605,6 +634,7 @@ public String toString() {
   sb.append("class SingleLicense {\n");
       sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
+        sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
         sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
         sb.append("    customerName: ").append(toIndentedString(customerName)).append("\n");
         sb.append("    enforcedParams: ").append(toIndentedString(enforcedParams)).append("\n");
@@ -638,3 +668,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

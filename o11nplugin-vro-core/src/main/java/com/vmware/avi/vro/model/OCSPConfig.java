@@ -42,7 +42,7 @@ public class OCSPConfig extends AviRestResource {
 
   @JsonProperty("url_action")
   @JsonInclude(Include.NON_NULL)
-  private String urlAction = null;
+  private String urlAction = "OCSP_RESPONDER_URL_FAILOVER";
 
 
 
@@ -163,6 +163,7 @@ public class OCSPConfig extends AviRestResource {
    * Describes the type of action to take with the responder urls.
    * Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as OCSP_RESPONDER_URL_FAILOVER.
    * @return urlAction
    */
   @VsoMethod
@@ -175,6 +176,7 @@ public class OCSPConfig extends AviRestResource {
    * Describes the type of action to take with the responder urls.
    * Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as OCSP_RESPONDER_URL_FAILOVER.
    * @param urlAction set the urlAction.
    */
   @VsoMethod
@@ -224,3 +226,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

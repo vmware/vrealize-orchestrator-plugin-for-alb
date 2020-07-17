@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="createSSLCertificateObj"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="0a9191e9-b8e7-4e6d-9ed5-ac43d116ae54" version="0.0.0"
+	allowed-operations="vfe">
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Vro Client]]></param>
+	<param n="SSLAlgorithm" t="string"><![CDATA[SSL algorithm type]]></param>
+	<param n="CommonName" t="string"><![CDATA[Common name for SSL certificate description]]></param>
+	<param n="RSAKeySize" t="string"><![CDATA[RSA key size]]></param>
+	<param n="ECKeySize" t="string"><![CDATA[EC key size]]></param>
+	<param n="certificateBase" t="boolean"><![CDATA[States if the certificate is base64 encoded.]]></param>
+	<param n="CertName" t="string"><![CDATA[SSL certificate name]]></param>
+	<param n="emailAddress" t="string"><![CDATA[Email]]></param>
+	<param n="organizationUnit" t="string"><![CDATA[Organization unit]]></param>
+	<param n="organization" t="string"><![CDATA[Organization]]></param>
+	<param n="locality" t="string"><![CDATA[Locality or City]]></param>
+	<param n="state" t="string"><![CDATA[State]]></param>
+	<param n="country" t="string"><![CDATA[Country]]></param>
+	<param n="distinguishedName" t="string"><![CDATA[Subject alternate name (SAN)]]></param>
+	<script encoded="false"><![CDATA[/***********************************************************
+*  This action creates a REST POST call to AVI API         *
+*  in order to create a SSL certificate on AVI controller  *
+***********************************************************/
+
+try {
+
+	// Check client is connect or not
+	if(aviVroClient== null){
+		System.log("aviVroClient is null...Please attach Controller & then try");
+		return null;
+	}
+
+	// Set the algorithm
+	var algorithm = SSLAlgorithm.toUpperCase();
+	algorithm = "SSL_KEY_ALGORITHM_"+algorithm.replace(" ", "_");
+	
+	keyParamsObj = new AviSSLKeyParams();
+	keyParamsObj.setAlgorithm(algorithm);
+
+	var key = RSAKeySize.toUpperCase();
+	var keySize = "SSL_KEY_"+key.replace(" ", "_");
+
+	rsaParamsObj = new AviSSLKeyRSAParams();
+	rsaParamsObj.setKeySize(keySize);
+	rsaParamsObj.setExponent(65537);
+	keyParamsObj.setRsaParams(rsaParamsObj);
+	if(SSLAlgorithm == "EC"){
+		ecParamsObj = new AviSSLKeyECParams();
+		key = ECKeySize.toUpperCase();
+		keySize = "SSL_KEY_EC_CURVE_"+key.replace(" ", "_");
+		ecParamsObj.setCurve(keySize);
+		keyParamsObj.setEcParams(ecParamsObj);
+	}
+
+	sslCertificateObj = new AviSSLKeyAndCertificate();
+	sslCertificateObj.setStatus("SSL_CERTIFICATE_FINISHED");
+
+	certificateObj = new AviSSLCertificate();
+	certificateObj.setDaysUntilExpire(365);
+	certificateObj.setExpiryStatus("SSL_CERTIFICATE_GOOD");
+	certificateObj.setSelfSigned(true);
+	
+	certificateDescription = new AviSSLCertificateDescription();
+	certificateDescription.setCommonName(CommonName);
+	if (emailAddress){
+		certificateDescription.setEmailAddress(emailAddress);
+	}
+	if (organizationUnit){
+		certificateDescription.setOrganizationUnit(organizationUnit);
+	}
+	if (organization){
+		certificateDescription.setOrganization(organization);
+	}
+	if (locality){
+		certificateDescription.setLocality(locality);
+	}
+	if (state){
+		certificateDescription.setState(state);
+	}
+	if (country){
+		certificateDescription.setCountry(country);
+	}
+	if (distinguishedName){
+		certificateDescription.setDistinguishedName(distinguishedName);
+	}
+	certificateObj.setSubject(certificateDescription);
+	
+	sslCertificateObj.setCertificate(certificateObj);
+	sslCertificateObj.setFormat("SSL_PEM");
+	if (certificateBase){
+		sslCertificateObj.setCertificateBase64(certificateBase);
+	}
+	sslCertificateObj.setKeyParams(keyParamsObj);
+	sslCertificateObj.setType("SSL_CERTIFICATE_TYPE_VIRTUALSERVICE");
+	sslCertificateObj.setName(CertName);
+
+	aviVroClient.addObject(sslCertificateObj);
+	System.log("SSLCertificate object : "+sslCertificateObj);	
+
+	return aviVroClient;
+	
+} catch (e) {
+      throw "Error in creating SSL Certificate ->"+ e
+}]]></script>
+</dunes-script-module>

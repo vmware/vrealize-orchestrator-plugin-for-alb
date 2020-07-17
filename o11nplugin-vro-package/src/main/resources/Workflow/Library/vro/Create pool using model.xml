@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.1.0"
+	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.1.2"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create pool]]></display-name>
@@ -81,8 +81,9 @@
 		<param name="selectExistingPools" type="boolean"></param>
 		<param name="http_response_code" type="Array/string"></param>
 		<param name="https_response_code" type="Array/string"></param>
-		<param name="port" type="number"></param>
+		<param name="port" type="string"></param>
 		<param name="PersistenceProfileRef" type="string"></param>
+		<param name="addPersistenceProfileRef" type="boolean"></param>
 	</input>
 	<attrib name="configErrorCode" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
@@ -212,7 +213,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 		script-module="com.vmware.avi/createPoolObj">
 		<display-name><![CDATA[createPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port,addPersistenceProfileRef) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
 				export-name="PoolServers">
@@ -230,7 +231,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Pool name]]></description>
 			</bind>
 			<bind name="defaultServerPort" type="string"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Default server port]]></description>
 			</bind>
 			<bind name="loadBalancerAlgo" type="string"
@@ -374,9 +375,10 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 			</bind>
 			<bind name="PersistenceProfileRef" type="string"
 				export-name="PersistenceProfileRef"></bind>
-			<bind name="port" type="number" export-name="port"></bind>
-			<bind name="ratio" type="number" explicitly-not-bound="true"
-				export-name="NULL"></bind>
+			<bind name="port" type="string" export-name="port"></bind>
+			<bind name="ratio" type="number" explicitly-not-bound="true"></bind>
+			<bind name="addPersistenceProfileRef" type="boolean"
+				export-name="addPersistenceProfileRef"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -522,10 +524,14 @@ return (CreateHealthMonitor == true) ;]]></script>
 			<p-param name="port">
 				<desc><![CDATA[Port]]></desc>
 			</p-param>
+			<p-param name="addPersistenceProfileRef">
+				<desc><![CDATA[Add Persistence Profile Ref]]></desc>
+			</p-param>
 			<p-param name="PersistenceProfileRef">
 				<desc><![CDATA[PersistenceProfileRef]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "applicationpersistenceprofile" )]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#addPersistenceProfileRef==true]]></p-qual>
 			</p-param>
 			<p-param name="serverType">
 				<desc><![CDATA[Server type]]></desc>

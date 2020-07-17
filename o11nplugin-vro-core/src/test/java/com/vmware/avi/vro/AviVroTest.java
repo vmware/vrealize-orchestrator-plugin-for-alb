@@ -444,8 +444,9 @@ public class AviVroTest {
 			// update healthmonitor and execute flow
 			testingVRO.add("healthmonitor", testObject.getUpdatedHMData());
 			ArrayList<AviRestResource> response1 = testingVRO.executeWorkflow();
-			HealthMonitor healthMonitor2 = (HealthMonitor) response1.get(0);
-
+			HealthMonitor healthMonitor2=(HealthMonitor)testingVRO.getObjectByName("healthmonitor", "test-hm-1");
+			//HealthMonitor healthMonitor2 = (HealthMonitor) response1.get(0);
+				
 			assertTrue("send_interval value not as expected", healthMonitor2.getSendInterval() == 30);
 
 			// delete virtualservice and its refered objects
@@ -560,7 +561,8 @@ public class AviVroTest {
 				testingVRO.executeWorkflow();
 			} catch (Exception e) {
 				String message = e.getMessage();
-				assertTrue(message.contains("shares the same VIP"));
+				assertTrue(message.contains("BAD REQUEST"));
+				//assertTrue(message.contains("shares the same VIP"));
 			}
 			// delete virtualservice and its refered objects
 			testingVRO.delete("virtualservice", testObject.deleteVS());
@@ -787,8 +789,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 			// delete virtualservice
-			testingVRO.delete("virtualservice", testObject.deleteVS());
 			testingVRO.delete("healthmonitor", testObject.deleteHM());
+			testingVRO.delete("virtualservice", testObject.deleteVS());
 			testingVRO.delete("pool", testObject.deletePool());
 
 			try {

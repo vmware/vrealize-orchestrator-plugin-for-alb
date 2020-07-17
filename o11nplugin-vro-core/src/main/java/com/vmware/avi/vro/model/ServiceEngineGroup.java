@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.CloudFlavor;
 import com.vmware.avi.vro.model.IpAddrPrefix;
 import com.vmware.avi.vro.model.MetricsRealTimeUpdate;
 import com.vmware.avi.vro.model.DosThresholdProfile;
@@ -324,6 +325,10 @@ public class ServiceEngineGroup extends AviRestResource {
   @JsonProperty("instance_flavor")
   @JsonInclude(Include.NON_NULL)
   private String instanceFlavor = null;
+
+  @JsonProperty("instance_flavor_info")
+  @JsonInclude(Include.NON_NULL)
+  private CloudFlavor instanceFlavorInfo = null;
 
   @JsonProperty("iptables")
   @JsonInclude(Include.NON_NULL)
@@ -2741,6 +2746,28 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setInstanceFlavor(String  instanceFlavor) {
     this.instanceFlavor = instanceFlavor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Additional information associated with instance_flavor.
+   * Field introduced in 20.1.1.
+   * @return instanceFlavorInfo
+   */
+  @VsoMethod
+  public CloudFlavor getInstanceFlavorInfo() {
+    return instanceFlavorInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Additional information associated with instance_flavor.
+   * Field introduced in 20.1.1.
+   * @param instanceFlavorInfo set the instanceFlavorInfo.
+   */
+  @VsoMethod
+  public void setInstanceFlavorInfo(CloudFlavor instanceFlavorInfo) {
+    this.instanceFlavorInfo = instanceFlavorInfo;
   }
 
   /**
@@ -6076,6 +6103,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.wafLearningMemory, objServiceEngineGroup.wafLearningMemory)&&
   Objects.equals(this.cloudRef, objServiceEngineGroup.cloudRef)&&
   Objects.equals(this.name, objServiceEngineGroup.name)&&
+  Objects.equals(this.instanceFlavorInfo, objServiceEngineGroup.instanceFlavorInfo)&&
   Objects.equals(this.appCacheThreshold, objServiceEngineGroup.appCacheThreshold)&&
   Objects.equals(this.maxSe, objServiceEngineGroup.maxSe)&&
   Objects.equals(this.licenseType, objServiceEngineGroup.licenseType)&&
@@ -6309,6 +6337,7 @@ public String toString() {
         sb.append("    ingressAccessData: ").append(toIndentedString(ingressAccessData)).append("\n");
         sb.append("    ingressAccessMgmt: ").append(toIndentedString(ingressAccessMgmt)).append("\n");
         sb.append("    instanceFlavor: ").append(toIndentedString(instanceFlavor)).append("\n");
+        sb.append("    instanceFlavorInfo: ").append(toIndentedString(instanceFlavorInfo)).append("\n");
         sb.append("    iptables: ").append(toIndentedString(iptables)).append("\n");
         sb.append("    leastLoadCoreSelection: ").append(toIndentedString(leastLoadCoreSelection)).append("\n");
         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
@@ -6452,3 +6481,4 @@ private String toIndentedString(java.lang.Object o) {
   return o.toString().replace("\n", "\n    ");
 }
 }
+

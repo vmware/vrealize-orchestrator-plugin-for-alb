@@ -622,10 +622,10 @@ public class AviVroClient {
 			throws Exception {
 		JSONArray array = this.get(objectType, params, tenant);
 		List<AviRestResource> objectList = new ArrayList<AviRestResource>();
-		AviRestResource object = this.getAviRestResourceObject(objectType);
 		// ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		for (int counter = 0; counter < array.length(); counter++) {
+			AviRestResource object = this.getAviRestResourceObject(objectType);
 			JSONObject result = array.getJSONObject(counter);
 			object = mapper.readValue(result.toString(), object.getClass());
 			objectList.add(object);

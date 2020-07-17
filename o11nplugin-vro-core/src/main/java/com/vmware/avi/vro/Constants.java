@@ -960,4 +960,6 @@ public class Constants {
 	public static final String FINDER_VRO_OPENSTACKSEVMCHANGE = "OpenStackSeVmChange";
 	public static final String FINDER_VRO_DNSSRVRDATA = "DnsSrvRdata";
 	public static final String FINDER_VRO_TENANTCONFIGURATION = "TenantConfiguration";
+	public static final String FINDER_VRO_NSXTHOSTS = "NsxtHosts";
+	public static final String FINDER_VRO_ICAPPROFILE = "IcapProfile";
 }
