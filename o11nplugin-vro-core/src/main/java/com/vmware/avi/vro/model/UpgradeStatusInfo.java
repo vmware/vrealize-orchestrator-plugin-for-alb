@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.UpgradeOpsParam;
+import com.vmware.avi.vro.model.UpgradeOpsParam;
 import com.vmware.avi.vro.model.SeGroupStatus;
 import com.vmware.avi.vro.model.UpgradeOpsState;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -27,6 +28,18 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeStatusInfo extends AviRestResource {
+  @JsonProperty("after_reboot_rollback_fnc")
+  @JsonInclude(Include.NON_NULL)
+  private String afterRebootRollbackFnc = null;
+
+  @JsonProperty("after_reboot_task_name")
+  @JsonInclude(Include.NON_NULL)
+  private String afterRebootTaskName = null;
+
+  @JsonProperty("clean")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean clean = null;
+
   @JsonProperty("duration")
   @JsonInclude(Include.NON_NULL)
   private Integer duration = null;
@@ -46,6 +59,10 @@ public class UpgradeStatusInfo extends AviRestResource {
   @JsonProperty("enqueue_time")
   @JsonInclude(Include.NON_NULL)
   private String enqueueTime = null;
+
+  @JsonProperty("image_path")
+  @JsonInclude(Include.NON_NULL)
+  private String imagePath = null;
 
   @JsonProperty("image_ref")
   @JsonInclude(Include.NON_NULL)
@@ -67,6 +84,10 @@ public class UpgradeStatusInfo extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private UpgradeOpsParam params = null;
 
+  @JsonProperty("patch_image_path")
+  @JsonInclude(Include.NON_NULL)
+  private String patchImagePath = null;
+
   @JsonProperty("patch_image_ref")
   @JsonInclude(Include.NON_NULL)
   private String patchImageRef = null;
@@ -75,9 +96,21 @@ public class UpgradeStatusInfo extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private List<PatchData> patchList = null;
 
+  @JsonProperty("patch_reboot")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean patchReboot = null;
+
   @JsonProperty("patch_version")
   @JsonInclude(Include.NON_NULL)
   private String patchVersion = null;
+
+  @JsonProperty("prev_image_path")
+  @JsonInclude(Include.NON_NULL)
+  private String prevImagePath = null;
+
+  @JsonProperty("prev_patch_image_path")
+  @JsonInclude(Include.NON_NULL)
+  private String prevPatchImagePath = null;
 
   @JsonProperty("previous_image_ref")
   @JsonInclude(Include.NON_NULL)
@@ -103,9 +136,21 @@ public class UpgradeStatusInfo extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private Integer progress = 0;
 
+  @JsonProperty("se_patch_image_path")
+  @JsonInclude(Include.NON_NULL)
+  private String sePatchImagePath = null;
+
+  @JsonProperty("se_patch_image_ref")
+  @JsonInclude(Include.NON_NULL)
+  private String sePatchImageRef = null;
+
   @JsonProperty("se_upgrade_events")
   @JsonInclude(Include.NON_NULL)
   private List<SeUpgradeEvents> seUpgradeEvents = null;
+
+  @JsonProperty("seg_params")
+  @JsonInclude(Include.NON_NULL)
+  private UpgradeOpsParam segParams = null;
 
   @JsonProperty("seg_status")
   @JsonInclude(Include.NON_NULL)
@@ -156,6 +201,72 @@ public class UpgradeStatusInfo extends AviRestResource {
   private String version = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Backward compatible abort function name.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return afterRebootRollbackFnc
+   */
+  @VsoMethod
+  public String getAfterRebootRollbackFnc() {
+    return afterRebootRollbackFnc;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Backward compatible abort function name.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param afterRebootRollbackFnc set the afterRebootRollbackFnc.
+   */
+  @VsoMethod
+  public void setAfterRebootRollbackFnc(String  afterRebootRollbackFnc) {
+    this.afterRebootRollbackFnc = afterRebootRollbackFnc;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Backward compatible task dict name.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return afterRebootTaskName
+   */
+  @VsoMethod
+  public String getAfterRebootTaskName() {
+    return afterRebootTaskName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Backward compatible task dict name.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param afterRebootTaskName set the afterRebootTaskName.
+   */
+  @VsoMethod
+  public void setAfterRebootTaskName(String  afterRebootTaskName) {
+    this.afterRebootTaskName = afterRebootTaskName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Flag for clean installation.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return clean
+   */
+  @VsoMethod
+  public Boolean getClean() {
+    return clean;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Flag for clean installation.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param clean set the clean.
+   */
+  @VsoMethod
+  public void setClean(Boolean  clean) {
+    this.clean = clean;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -269,6 +380,28 @@ public class UpgradeStatusInfo extends AviRestResource {
   @VsoMethod
   public void setEnqueueTime(String  enqueueTime) {
     this.enqueueTime = enqueueTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image path of current base image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return imagePath
+   */
+  @VsoMethod
+  public String getImagePath() {
+    return imagePath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image path of current base image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param imagePath set the imagePath.
+   */
+  @VsoMethod
+  public void setImagePath(String  imagePath) {
+    this.imagePath = imagePath;
   }
 
   /**
@@ -389,6 +522,28 @@ public class UpgradeStatusInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Image path of current patch image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return patchImagePath
+   */
+  @VsoMethod
+  public String getPatchImagePath() {
+    return patchImagePath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image path of current patch image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param patchImagePath set the patchImagePath.
+   */
+  @VsoMethod
+  public void setPatchImagePath(String  patchImagePath) {
+    this.patchImagePath = patchImagePath;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Image uuid for identifying the current patch.example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1
    * value.
    * It is a reference to an object of type image.
@@ -459,6 +614,28 @@ public class UpgradeStatusInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Flag for patch op with reboot.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return patchReboot
+   */
+  @VsoMethod
+  public Boolean getPatchReboot() {
+    return patchReboot;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Flag for patch op with reboot.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param patchReboot set the patchReboot.
+   */
+  @VsoMethod
+  public void setPatchReboot(Boolean  patchReboot) {
+    this.patchReboot = patchReboot;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Current patch version applied to this node.
    * Example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value.
    * Field introduced in 18.2.6.
@@ -479,6 +656,50 @@ public class UpgradeStatusInfo extends AviRestResource {
   @VsoMethod
   public void setPatchVersion(String  patchVersion) {
     this.patchVersion = patchVersion;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image path of previous base image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return prevImagePath
+   */
+  @VsoMethod
+  public String getPrevImagePath() {
+    return prevImagePath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image path of previous base image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param prevImagePath set the prevImagePath.
+   */
+  @VsoMethod
+  public void setPrevImagePath(String  prevImagePath) {
+    this.prevImagePath = prevImagePath;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image path of previous patch image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return prevPatchImagePath
+   */
+  @VsoMethod
+  public String getPrevPatchImagePath() {
+    return prevPatchImagePath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image path of previous patch image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param prevPatchImagePath set the prevPatchImagePath.
+   */
+  @VsoMethod
+  public void setPrevPatchImagePath(String  prevPatchImagePath) {
+    this.prevPatchImagePath = prevPatchImagePath;
   }
 
   /**
@@ -651,6 +872,52 @@ public class UpgradeStatusInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Image path of se patch image.(required in case of reimage and upgrade + patch).
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return sePatchImagePath
+   */
+  @VsoMethod
+  public String getSePatchImagePath() {
+    return sePatchImagePath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image path of se patch image.(required in case of reimage and upgrade + patch).
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param sePatchImagePath set the sePatchImagePath.
+   */
+  @VsoMethod
+  public void setSePatchImagePath(String  sePatchImagePath) {
+    this.sePatchImagePath = sePatchImagePath;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch.
+   * It is a reference to an object of type image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return sePatchImageRef
+   */
+  @VsoMethod
+  public String getSePatchImageRef() {
+    return sePatchImageRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch.
+   * It is a reference to an object of type image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param sePatchImageRef set the sePatchImageRef.
+   */
+  @VsoMethod
+  public void setSePatchImageRef(String  sePatchImageRef) {
+    this.sePatchImageRef = sePatchImageRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Serviceenginegroup upgrade errors.
    * Field introduced in 18.2.6.
    * @return seUpgradeEvents
@@ -686,6 +953,32 @@ public class UpgradeStatusInfo extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Se_patch may be different from the controller_patch.
+   * It has to be saved in the journal for subsequent consumption.
+   * The segroup params will be saved in the controller entry as seg_params.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return segParams
+   */
+  @VsoMethod
+  public UpgradeOpsParam getSegParams() {
+    return segParams;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Se_patch may be different from the controller_patch.
+   * It has to be saved in the journal for subsequent consumption.
+   * The segroup params will be saved in the controller entry as seg_params.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param segParams set the segParams.
+   */
+  @VsoMethod
+  public void setSegParams(UpgradeOpsParam segParams) {
+    this.segParams = segParams;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -982,63 +1275,85 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   UpgradeStatusInfo objUpgradeStatusInfo = (UpgradeStatusInfo) o;
-  return   Objects.equals(this.version, objUpgradeStatusInfo.version)&&
-  Objects.equals(this.enablePatchRollback, objUpgradeStatusInfo.enablePatchRollback)&&
-  Objects.equals(this.upgradeOps, objUpgradeStatusInfo.upgradeOps)&&
+  return   Objects.equals(this.uuid, objUpgradeStatusInfo.uuid)&&
+  Objects.equals(this.name, objUpgradeStatusInfo.name)&&
   Objects.equals(this.nodeType, objUpgradeStatusInfo.nodeType)&&
-  Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
-  Objects.equals(this.duration, objUpgradeStatusInfo.duration)&&
+  Objects.equals(this.upgradeOps, objUpgradeStatusInfo.upgradeOps)&&
+  Objects.equals(this.version, objUpgradeStatusInfo.version)&&
   Objects.equals(this.imageRef, objUpgradeStatusInfo.imageRef)&&
-  Objects.equals(this.upgradeEvents, objUpgradeStatusInfo.upgradeEvents)&&
-  Objects.equals(this.tasksCompleted, objUpgradeStatusInfo.tasksCompleted)&&
-  Objects.equals(this.uuid, objUpgradeStatusInfo.uuid)&&
+  Objects.equals(this.patchVersion, objUpgradeStatusInfo.patchVersion)&&
+  Objects.equals(this.patchImageRef, objUpgradeStatusInfo.patchImageRef)&&
   Objects.equals(this.previousVersion, objUpgradeStatusInfo.previousVersion)&&
-  Objects.equals(this.system, objUpgradeStatusInfo.system)&&
-  Objects.equals(this.enqueueTime, objUpgradeStatusInfo.enqueueTime)&&
+  Objects.equals(this.previousImageRef, objUpgradeStatusInfo.previousImageRef)&&
+  Objects.equals(this.previousPatchVersion, objUpgradeStatusInfo.previousPatchVersion)&&
   Objects.equals(this.previousPatchImageRef, objUpgradeStatusInfo.previousPatchImageRef)&&
   Objects.equals(this.state, objUpgradeStatusInfo.state)&&
-  Objects.equals(this.enableRollback, objUpgradeStatusInfo.enableRollback)&&
   Objects.equals(this.params, objUpgradeStatusInfo.params)&&
-  Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
-  Objects.equals(this.progress, objUpgradeStatusInfo.progress)&&
-  Objects.equals(this.previousPatchList, objUpgradeStatusInfo.previousPatchList)&&
-  Objects.equals(this.patchList, objUpgradeStatusInfo.patchList)&&
-  Objects.equals(this.previousImageRef, objUpgradeStatusInfo.previousImageRef)&&
-  Objects.equals(this.startTime, objUpgradeStatusInfo.startTime)&&
-  Objects.equals(this.totalTasks, objUpgradeStatusInfo.totalTasks)&&
-  Objects.equals(this.name, objUpgradeStatusInfo.name)&&
+  Objects.equals(this.upgradeEvents, objUpgradeStatusInfo.upgradeEvents)&&
   Objects.equals(this.segStatus, objUpgradeStatusInfo.segStatus)&&
-  Objects.equals(this.patchVersion, objUpgradeStatusInfo.patchVersion)&&
+  Objects.equals(this.startTime, objUpgradeStatusInfo.startTime)&&
   Objects.equals(this.endTime, objUpgradeStatusInfo.endTime)&&
-  Objects.equals(this.patchImageRef, objUpgradeStatusInfo.patchImageRef)&&
+  Objects.equals(this.duration, objUpgradeStatusInfo.duration)&&
+  Objects.equals(this.enqueueTime, objUpgradeStatusInfo.enqueueTime)&&
+  Objects.equals(this.enableRollback, objUpgradeStatusInfo.enableRollback)&&
+  Objects.equals(this.enablePatchRollback, objUpgradeStatusInfo.enablePatchRollback)&&
+  Objects.equals(this.totalTasks, objUpgradeStatusInfo.totalTasks)&&
+  Objects.equals(this.tasksCompleted, objUpgradeStatusInfo.tasksCompleted)&&
+  Objects.equals(this.system, objUpgradeStatusInfo.system)&&
+  Objects.equals(this.progress, objUpgradeStatusInfo.progress)&&
+  Objects.equals(this.patchList, objUpgradeStatusInfo.patchList)&&
+  Objects.equals(this.previousPatchList, objUpgradeStatusInfo.previousPatchList)&&
+  Objects.equals(this.clean, objUpgradeStatusInfo.clean)&&
+  Objects.equals(this.sePatchImageRef, objUpgradeStatusInfo.sePatchImageRef)&&
+  Objects.equals(this.imagePath, objUpgradeStatusInfo.imagePath)&&
+  Objects.equals(this.patchImagePath, objUpgradeStatusInfo.patchImagePath)&&
+  Objects.equals(this.sePatchImagePath, objUpgradeStatusInfo.sePatchImagePath)&&
+  Objects.equals(this.prevImagePath, objUpgradeStatusInfo.prevImagePath)&&
+  Objects.equals(this.prevPatchImagePath, objUpgradeStatusInfo.prevPatchImagePath)&&
+  Objects.equals(this.segParams, objUpgradeStatusInfo.segParams)&&
+  Objects.equals(this.patchReboot, objUpgradeStatusInfo.patchReboot)&&
+  Objects.equals(this.afterRebootTaskName, objUpgradeStatusInfo.afterRebootTaskName)&&
+  Objects.equals(this.afterRebootRollbackFnc, objUpgradeStatusInfo.afterRebootRollbackFnc)&&
   Objects.equals(this.tenantRef, objUpgradeStatusInfo.tenantRef)&&
-  Objects.equals(this.previousPatchVersion, objUpgradeStatusInfo.previousPatchVersion);
+  Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
+  Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class UpgradeStatusInfo {\n");
-      sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+      sb.append("    afterRebootRollbackFnc: ").append(toIndentedString(afterRebootRollbackFnc)).append("\n");
+        sb.append("    afterRebootTaskName: ").append(toIndentedString(afterRebootTaskName)).append("\n");
+        sb.append("    clean: ").append(toIndentedString(clean)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    enablePatchRollback: ").append(toIndentedString(enablePatchRollback)).append("\n");
         sb.append("    enableRollback: ").append(toIndentedString(enableRollback)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    enqueueTime: ").append(toIndentedString(enqueueTime)).append("\n");
+        sb.append("    imagePath: ").append(toIndentedString(imagePath)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    objCloudRef: ").append(toIndentedString(objCloudRef)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
+        sb.append("    patchImagePath: ").append(toIndentedString(patchImagePath)).append("\n");
         sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
         sb.append("    patchList: ").append(toIndentedString(patchList)).append("\n");
+        sb.append("    patchReboot: ").append(toIndentedString(patchReboot)).append("\n");
         sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
+        sb.append("    prevImagePath: ").append(toIndentedString(prevImagePath)).append("\n");
+        sb.append("    prevPatchImagePath: ").append(toIndentedString(prevPatchImagePath)).append("\n");
         sb.append("    previousImageRef: ").append(toIndentedString(previousImageRef)).append("\n");
         sb.append("    previousPatchImageRef: ").append(toIndentedString(previousPatchImageRef)).append("\n");
         sb.append("    previousPatchList: ").append(toIndentedString(previousPatchList)).append("\n");
         sb.append("    previousPatchVersion: ").append(toIndentedString(previousPatchVersion)).append("\n");
         sb.append("    previousVersion: ").append(toIndentedString(previousVersion)).append("\n");
         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    sePatchImagePath: ").append(toIndentedString(sePatchImagePath)).append("\n");
+        sb.append("    sePatchImageRef: ").append(toIndentedString(sePatchImageRef)).append("\n");
         sb.append("    seUpgradeEvents: ").append(toIndentedString(seUpgradeEvents)).append("\n");
+        sb.append("    segParams: ").append(toIndentedString(segParams)).append("\n");
         sb.append("    segStatus: ").append(toIndentedString(segStatus)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");

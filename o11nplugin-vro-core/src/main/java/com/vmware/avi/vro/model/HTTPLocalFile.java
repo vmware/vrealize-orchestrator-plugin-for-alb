@@ -85,8 +85,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   HTTPLocalFile objHTTPLocalFile = (HTTPLocalFile) o;
-  return   Objects.equals(this.fileContent, objHTTPLocalFile.fileContent)&&
-  Objects.equals(this.contentType, objHTTPLocalFile.contentType);
+  return   Objects.equals(this.contentType, objHTTPLocalFile.contentType)&&
+  Objects.equals(this.fileContent, objHTTPLocalFile.fileContent);
 }
 
 @Override

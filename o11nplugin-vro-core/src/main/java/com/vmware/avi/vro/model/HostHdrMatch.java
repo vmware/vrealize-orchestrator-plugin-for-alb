@@ -132,9 +132,9 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   HostHdrMatch objHostHdrMatch = (HostHdrMatch) o;
-  return   Objects.equals(this.matchCase, objHostHdrMatch.matchCase)&&
-  Objects.equals(this.value, objHostHdrMatch.value)&&
-  Objects.equals(this.matchCriteria, objHostHdrMatch.matchCriteria);
+  return   Objects.equals(this.matchCriteria, objHostHdrMatch.matchCriteria)&&
+  Objects.equals(this.matchCase, objHostHdrMatch.matchCase)&&
+  Objects.equals(this.value, objHostHdrMatch.value);
 }
 
 @Override

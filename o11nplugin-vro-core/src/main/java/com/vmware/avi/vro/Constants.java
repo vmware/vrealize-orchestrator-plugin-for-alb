@@ -1,7 +1,7 @@
 package com.vmware.avi.vro;
 
 public class Constants {
-
+	public static final String FINDER_VRO_X_AVI_TENANT = "X-Avi-Tenant";
 	public static final String FINDER_VRO_GSLBSITERUNTIME = "GslbSiteRuntime";
 	public static final String FINDER_VRO_AUTHMATCHGROUPMEMBERSHIP = "AuthMatchGroupMembership";
 	public static final String FINDER_VRO_GSLBHEALTHMONITORPROXY = "GslbHealthMonitorProxy";
@@ -962,4 +962,9 @@ public class Constants {
 	public static final String FINDER_VRO_TENANTCONFIGURATION = "TenantConfiguration";
 	public static final String FINDER_VRO_NSXTHOSTS = "NsxtHosts";
 	public static final String FINDER_VRO_ICAPPROFILE = "IcapProfile";
+	public static final String FINDER_VRO_IPREPUTATIONCONFIG = "IpReputationConfig";
+	public static final String FINDER_VRO_SEBGPPEERDOWNDETAILS = "SeBgpPeerDownDetails";
+	public static final String FINDER_VRO_NSXTIMAGEDETAILS = "NsxtImageDetails";
+	public static final String FINDER_VRO_IPTHREATDBEVENTDATA = "IPThreatDBEventData";
+
 }

@@ -89,8 +89,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ProtocolMatch objProtocolMatch = (ProtocolMatch) o;
-  return   Objects.equals(this.protocols, objProtocolMatch.protocols)&&
-  Objects.equals(this.matchCriteria, objProtocolMatch.matchCriteria);
+  return   Objects.equals(this.matchCriteria, objProtocolMatch.matchCriteria)&&
+  Objects.equals(this.protocols, objProtocolMatch.protocols);
 }
 
 @Override

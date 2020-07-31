@@ -86,8 +86,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   IpAddrPrefix objIpAddrPrefix = (IpAddrPrefix) o;
-  return   Objects.equals(this.mask, objIpAddrPrefix.mask)&&
-  Objects.equals(this.ipAddr, objIpAddrPrefix.ipAddr);
+  return   Objects.equals(this.ipAddr, objIpAddrPrefix.ipAddr)&&
+  Objects.equals(this.mask, objIpAddrPrefix.mask);
 }
 
 @Override

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class ConfigUserNotAuthrzByRule extends AviRestResource {
   @JsonProperty("policies")
   @JsonInclude(Include.NON_NULL)
-  private String policies = "no policies";
+  private String policies = "No Policies";
 
   @JsonProperty("roles")
   @JsonInclude(Include.NON_NULL)
-  private String roles = "no roles";
+  private String roles = "No Roles";
 
   @JsonProperty("tenants")
   @JsonInclude(Include.NON_NULL)
-  private String tenants = "no tenants";
+  private String tenants = "No Tenants";
 
   @JsonProperty("user")
   @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as no policies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as No Policies.
    * @return policies
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as no policies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as No Policies.
    * @param policies set the policies.
    */
   @VsoMethod
@@ -69,7 +69,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned roles.
-   * Default value when not specified in API or module is interpreted by Avi Controller as no roles.
+   * Default value when not specified in API or module is interpreted by Avi Controller as No Roles.
    * @return roles
    */
   @VsoMethod
@@ -80,7 +80,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned roles.
-   * Default value when not specified in API or module is interpreted by Avi Controller as no roles.
+   * Default value when not specified in API or module is interpreted by Avi Controller as No Roles.
    * @param roles set the roles.
    */
   @VsoMethod
@@ -91,7 +91,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned tenants.
-   * Default value when not specified in API or module is interpreted by Avi Controller as no tenants.
+   * Default value when not specified in API or module is interpreted by Avi Controller as No Tenants.
    * @return tenants
    */
   @VsoMethod
@@ -102,7 +102,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned tenants.
-   * Default value when not specified in API or module is interpreted by Avi Controller as no tenants.
+   * Default value when not specified in API or module is interpreted by Avi Controller as No Tenants.
    * @param tenants set the tenants.
    */
   @VsoMethod
@@ -141,10 +141,10 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ConfigUserNotAuthrzByRule objConfigUserNotAuthrzByRule = (ConfigUserNotAuthrzByRule) o;
-  return   Objects.equals(this.policies, objConfigUserNotAuthrzByRule.policies)&&
+  return   Objects.equals(this.user, objConfigUserNotAuthrzByRule.user)&&
+  Objects.equals(this.roles, objConfigUserNotAuthrzByRule.roles)&&
   Objects.equals(this.tenants, objConfigUserNotAuthrzByRule.tenants)&&
-  Objects.equals(this.user, objConfigUserNotAuthrzByRule.user)&&
-  Objects.equals(this.roles, objConfigUserNotAuthrzByRule.roles);
+  Objects.equals(this.policies, objConfigUserNotAuthrzByRule.policies);
 }
 
 @Override

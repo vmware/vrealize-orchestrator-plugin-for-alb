@@ -90,7 +90,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
 
   @JsonProperty("sw_version")
   @JsonInclude(Include.NON_NULL)
-  private String swVersion = "not-initialized";
+  private String swVersion = "Not-Initialized";
 
 
 
@@ -426,7 +426,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current software version of the site.
-   * Default value when not specified in API or module is interpreted by Avi Controller as not-initialized.
+   * Default value when not specified in API or module is interpreted by Avi Controller as Not-Initialized.
    * @return swVersion
    */
   @VsoMethod
@@ -437,7 +437,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current software version of the site.
-   * Default value when not specified in API or module is interpreted by Avi Controller as not-initialized.
+   * Default value when not specified in API or module is interpreted by Avi Controller as Not-Initialized.
    * @param swVersion set the swVersion.
    */
   @VsoMethod
@@ -456,21 +456,21 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   GslbSiteRuntimeInfo objGslbSiteRuntimeInfo = (GslbSiteRuntimeInfo) o;
-  return   Objects.equals(this.swVersion, objGslbSiteRuntimeInfo.swVersion)&&
-  Objects.equals(this.stateReason, objGslbSiteRuntimeInfo.stateReason)&&
+  return   Objects.equals(this.clusterUuid, objGslbSiteRuntimeInfo.clusterUuid)&&
   Objects.equals(this.name, objGslbSiteRuntimeInfo.name)&&
-  Objects.equals(this.clusterLeader, objGslbSiteRuntimeInfo.clusterLeader)&&
-  Objects.equals(this.dnsInfo, objGslbSiteRuntimeInfo.dnsInfo)&&
-  Objects.equals(this.enabled, objGslbSiteRuntimeInfo.enabled)&&
-  Objects.equals(this.state, objGslbSiteRuntimeInfo.state)&&
-  Objects.equals(this.numOfRetries, objGslbSiteRuntimeInfo.numOfRetries)&&
-  Objects.equals(this.operStatus, objGslbSiteRuntimeInfo.operStatus)&&
   Objects.equals(this.role, objGslbSiteRuntimeInfo.role)&&
+  Objects.equals(this.swVersion, objGslbSiteRuntimeInfo.swVersion)&&
+  Objects.equals(this.operStatus, objGslbSiteRuntimeInfo.operStatus)&&
+  Objects.equals(this.state, objGslbSiteRuntimeInfo.state)&&
+  Objects.equals(this.stateReason, objGslbSiteRuntimeInfo.stateReason)&&
   Objects.equals(this.lastChangedTime, objGslbSiteRuntimeInfo.lastChangedTime)&&
-  Objects.equals(this.clusterUuid, objGslbSiteRuntimeInfo.clusterUuid)&&
-  Objects.equals(this.rrtoken, objGslbSiteRuntimeInfo.rrtoken)&&
-  Objects.equals(this.eventCache, objGslbSiteRuntimeInfo.eventCache)&&
+  Objects.equals(this.enabled, objGslbSiteRuntimeInfo.enabled)&&
+  Objects.equals(this.numOfRetries, objGslbSiteRuntimeInfo.numOfRetries)&&
+  Objects.equals(this.clusterLeader, objGslbSiteRuntimeInfo.clusterLeader)&&
   Objects.equals(this.hsState, objGslbSiteRuntimeInfo.hsState)&&
+  Objects.equals(this.rrtoken, objGslbSiteRuntimeInfo.rrtoken)&&
+  Objects.equals(this.dnsInfo, objGslbSiteRuntimeInfo.dnsInfo)&&
+  Objects.equals(this.eventCache, objGslbSiteRuntimeInfo.eventCache)&&
   Objects.equals(this.siteType, objGslbSiteRuntimeInfo.siteType);
 }
 

@@ -85,8 +85,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   BMSetup objBMSetup = (BMSetup) o;
-  return   Objects.equals(this.errorString, objBMSetup.errorString)&&
-  Objects.equals(this.ccId, objBMSetup.ccId);
+  return   Objects.equals(this.ccId, objBMSetup.ccId)&&
+  Objects.equals(this.errorString, objBMSetup.errorString);
 }
 
 @Override

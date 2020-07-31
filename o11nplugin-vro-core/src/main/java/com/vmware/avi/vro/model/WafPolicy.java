@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.WafApplicationSignatures;
+import com.vmware.avi.vro.model.AppLearningConfidenceOverride;
 import com.vmware.avi.vro.model.WafLearning;
+import com.vmware.avi.vro.model.AppLearningParams;
 import com.vmware.avi.vro.model.WafPositiveSecurityModel;
 import com.vmware.avi.vro.model.WafPolicyWhitelist;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -36,6 +38,10 @@ public class WafPolicy extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private WafApplicationSignatures applicationSignatures = null;
 
+  @JsonProperty("confidence_override")
+  @JsonInclude(Include.NON_NULL)
+  private AppLearningConfidenceOverride confidenceOverride = null;
+
   @JsonProperty("created_by")
   @JsonInclude(Include.NON_NULL)
   private String createdBy = null;
@@ -52,6 +58,14 @@ public class WafPolicy extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private Boolean enableAppLearning = false;
 
+  @JsonProperty("enable_auto_rule_updates")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableAutoRuleUpdates = true;
+
+  @JsonProperty("enable_regex_learning")
+  @JsonInclude(Include.NON_NULL)
+  private Boolean enableRegexLearning = false;
+
   @JsonProperty("failure_mode")
   @JsonInclude(Include.NON_NULL)
   private String failureMode = "WAF_FAILURE_MODE_OPEN";
@@ -59,6 +73,14 @@ public class WafPolicy extends AviRestResource {
   @JsonProperty("learning")
   @JsonInclude(Include.NON_NULL)
   private WafLearning learning = null;
+
+  @JsonProperty("learning_params")
+  @JsonInclude(Include.NON_NULL)
+  private AppLearningParams learningParams = null;
+
+  @JsonProperty("min_confidence")
+  @JsonInclude(Include.NON_NULL)
+  private String minConfidence = "CONFIDENCE_VERY_HIGH";
 
   @JsonProperty("mode")
   @JsonInclude(Include.NON_NULL)
@@ -156,6 +178,28 @@ public class WafPolicy extends AviRestResource {
   @VsoMethod
   public void setApplicationSignatures(WafApplicationSignatures applicationSignatures) {
     this.applicationSignatures = applicationSignatures;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configure thresholds for confidence labels.
+   * Field introduced in 20.1.1.
+   * @return confidenceOverride
+   */
+  @VsoMethod
+  public AppLearningConfidenceOverride getConfidenceOverride() {
+    return confidenceOverride;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure thresholds for confidence labels.
+   * Field introduced in 20.1.1.
+   * @param confidenceOverride set the confidenceOverride.
+   */
+  @VsoMethod
+  public void setConfidenceOverride(AppLearningConfidenceOverride confidenceOverride) {
+    this.confidenceOverride = confidenceOverride;
   }
 
   /**
@@ -267,6 +311,58 @@ public class WafPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable application learning based rule updates on the waf profile.
+   * Rules will be programmed in dedicated waf learning group.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableAutoRuleUpdates
+   */
+  @VsoMethod
+  public Boolean getEnableAutoRuleUpdates() {
+    return enableAutoRuleUpdates;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable application learning based rule updates on the waf profile.
+   * Rules will be programmed in dedicated waf learning group.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableAutoRuleUpdates set the enableAutoRuleUpdates.
+   */
+  @VsoMethod
+  public void setEnableAutoRuleUpdates(Boolean  enableAutoRuleUpdates) {
+    this.enableAutoRuleUpdates = enableAutoRuleUpdates;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable dynamic regex generation for positive security model rules.
+   * This is an experimental feature and shouldn't be used in production.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableRegexLearning
+   */
+  @VsoMethod
+  public Boolean getEnableRegexLearning() {
+    return enableRegexLearning;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable dynamic regex generation for positive security model rules.
+   * This is an experimental feature and shouldn't be used in production.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableRegexLearning set the enableRegexLearning.
+   */
+  @VsoMethod
+  public void setEnableRegexLearning(Boolean  enableRegexLearning) {
+    this.enableRegexLearning = enableRegexLearning;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Waf policy failure mode.
    * This can be 'open' or 'closed'.
    * Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED.
@@ -315,6 +411,54 @@ public class WafPolicy extends AviRestResource {
   @VsoMethod
   public void setLearning(WafLearning learning) {
     this.learning = learning;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Parameters for tuning application learning.
+   * Field introduced in 20.1.1.
+   * @return learningParams
+   */
+  @VsoMethod
+  public AppLearningParams getLearningParams() {
+    return learningParams;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Parameters for tuning application learning.
+   * Field introduced in 20.1.1.
+   * @param learningParams set the learningParams.
+   */
+  @VsoMethod
+  public void setLearningParams(AppLearningParams learningParams) {
+    this.learningParams = learningParams;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Minimum confidence label required for auto rule updates.
+   * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as CONFIDENCE_VERY_HIGH.
+   * @return minConfidence
+   */
+  @VsoMethod
+  public String getMinConfidence() {
+    return minConfidence;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum confidence label required for auto rule updates.
+   * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as CONFIDENCE_VERY_HIGH.
+   * @param minConfidence set the minConfidence.
+   */
+  @VsoMethod
+  public void setMinConfidence(String  minConfidence) {
+    this.minConfidence = minConfidence;
   }
 
   /**
@@ -650,25 +794,30 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   WafPolicy objWafPolicy = (WafPolicy) o;
-  return   Objects.equals(this.allowModeDelegation, objWafPolicy.allowModeDelegation)&&
-  Objects.equals(this.postCrsGroups, objWafPolicy.postCrsGroups)&&
-  Objects.equals(this.description, objWafPolicy.description)&&
-  Objects.equals(this.preCrsGroups, objWafPolicy.preCrsGroups)&&
-  Objects.equals(this.wafCrsRef, objWafPolicy.wafCrsRef)&&
-  Objects.equals(this.crsGroups, objWafPolicy.crsGroups)&&
-  Objects.equals(this.applicationSignatures, objWafPolicy.applicationSignatures)&&
-  Objects.equals(this.createdBy, objWafPolicy.createdBy)&&
+  return   Objects.equals(this.uuid, objWafPolicy.uuid)&&
   Objects.equals(this.name, objWafPolicy.name)&&
-  Objects.equals(this.whitelist, objWafPolicy.whitelist)&&
-  Objects.equals(this.mode, objWafPolicy.mode)&&
-  Objects.equals(this.learning, objWafPolicy.learning)&&
-  Objects.equals(this.enableAppLearning, objWafPolicy.enableAppLearning)&&
-  Objects.equals(this.wafProfileRef, objWafPolicy.wafProfileRef)&&
-  Objects.equals(this.positiveSecurityModel, objWafPolicy.positiveSecurityModel)&&
-  Objects.equals(this.paranoiaLevel, objWafPolicy.paranoiaLevel)&&
+  Objects.equals(this.description, objWafPolicy.description)&&
   Objects.equals(this.tenantRef, objWafPolicy.tenantRef)&&
+  Objects.equals(this.mode, objWafPolicy.mode)&&
+  Objects.equals(this.wafProfileRef, objWafPolicy.wafProfileRef)&&
+  Objects.equals(this.preCrsGroups, objWafPolicy.preCrsGroups)&&
+  Objects.equals(this.crsGroups, objWafPolicy.crsGroups)&&
+  Objects.equals(this.postCrsGroups, objWafPolicy.postCrsGroups)&&
+  Objects.equals(this.paranoiaLevel, objWafPolicy.paranoiaLevel)&&
+  Objects.equals(this.createdBy, objWafPolicy.createdBy)&&
+  Objects.equals(this.wafCrsRef, objWafPolicy.wafCrsRef)&&
+  Objects.equals(this.learning, objWafPolicy.learning)&&
   Objects.equals(this.failureMode, objWafPolicy.failureMode)&&
-  Objects.equals(this.uuid, objWafPolicy.uuid);
+  Objects.equals(this.allowModeDelegation, objWafPolicy.allowModeDelegation)&&
+  Objects.equals(this.positiveSecurityModel, objWafPolicy.positiveSecurityModel)&&
+  Objects.equals(this.whitelist, objWafPolicy.whitelist)&&
+  Objects.equals(this.enableAppLearning, objWafPolicy.enableAppLearning)&&
+  Objects.equals(this.applicationSignatures, objWafPolicy.applicationSignatures)&&
+  Objects.equals(this.learningParams, objWafPolicy.learningParams)&&
+  Objects.equals(this.minConfidence, objWafPolicy.minConfidence)&&
+  Objects.equals(this.confidenceOverride, objWafPolicy.confidenceOverride)&&
+  Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
+  Objects.equals(this.enableRegexLearning, objWafPolicy.enableRegexLearning);
 }
 
 @Override
@@ -677,12 +826,17 @@ public String toString() {
   sb.append("class WafPolicy {\n");
       sb.append("    allowModeDelegation: ").append(toIndentedString(allowModeDelegation)).append("\n");
         sb.append("    applicationSignatures: ").append(toIndentedString(applicationSignatures)).append("\n");
+        sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    crsGroups: ").append(toIndentedString(crsGroups)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
+        sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
+        sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
         sb.append("    failureMode: ").append(toIndentedString(failureMode)).append("\n");
         sb.append("    learning: ").append(toIndentedString(learning)).append("\n");
+        sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");
+        sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    paranoiaLevel: ").append(toIndentedString(paranoiaLevel)).append("\n");

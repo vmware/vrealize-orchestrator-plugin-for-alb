@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="73a23dce-5ad0-4d6b-b85e-27a81a9b6abd" version="1.2.0"
+	id="73a23dce-5ad0-4d6b-b85e-27a81a9b6abd" version="1.2.1"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Virtual service]]></display-name>
@@ -457,7 +457,7 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 			<p-param name="ApplicationProfile">
 				<desc><![CDATA[Application profile name ]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#}#]]></p-qual>
+					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#;#string#UDP#;#string#TCP#}#]]></p-qual>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="servicePort">

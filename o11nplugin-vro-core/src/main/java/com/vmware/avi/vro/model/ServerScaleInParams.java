@@ -124,8 +124,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ServerScaleInParams objServerScaleInParams = (ServerScaleInParams) o;
-  return   Objects.equals(this.reason, objServerScaleInParams.reason)&&
-  Objects.equals(this.uuid, objServerScaleInParams.uuid)&&
+  return   Objects.equals(this.uuid, objServerScaleInParams.uuid)&&
+  Objects.equals(this.reason, objServerScaleInParams.reason)&&
   Objects.equals(this.servers, objServerScaleInParams.servers);
 }
 

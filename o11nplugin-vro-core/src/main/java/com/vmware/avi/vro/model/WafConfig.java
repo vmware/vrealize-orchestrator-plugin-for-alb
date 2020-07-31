@@ -68,11 +68,7 @@ public class WafConfig extends AviRestResource {
 
   @JsonProperty("enable_auto_rule_updates")
   @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoRuleUpdates = true;
-
-  @JsonProperty("enable_regex_learning")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRegexLearning = false;
+  private Boolean enableAutoRuleUpdates = null;
 
   @JsonProperty("ignore_incomplete_request_body_error")
   @JsonInclude(Include.NON_NULL)
@@ -88,7 +84,7 @@ public class WafConfig extends AviRestResource {
 
   @JsonProperty("min_confidence")
   @JsonInclude(Include.NON_NULL)
-  private String minConfidence = "CONFIDENCE_VERY_HIGH";
+  private String minConfidence = null;
 
   @JsonProperty("regex_match_limit")
   @JsonInclude(Include.NON_NULL)
@@ -394,7 +390,9 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated (moved to wafpolicy).
    * Configure thresholds for confidence labels.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
    * @return confidenceOverride
    */
@@ -405,7 +403,9 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated (moved to wafpolicy).
    * Configure thresholds for confidence labels.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
    * @param confidenceOverride set the confidenceOverride.
    */
@@ -444,10 +444,11 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated (moved to wafpolicy).
    * Enable application learning based rule updates on the waf profile.
    * Rules will be programmed in dedicated waf learning group.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableAutoRuleUpdates
    */
   @VsoMethod
@@ -457,39 +458,16 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated (moved to wafpolicy).
    * Enable application learning based rule updates on the waf profile.
    * Rules will be programmed in dedicated waf learning group.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableAutoRuleUpdates set the enableAutoRuleUpdates.
    */
   @VsoMethod
   public void setEnableAutoRuleUpdates(Boolean  enableAutoRuleUpdates) {
     this.enableAutoRuleUpdates = enableAutoRuleUpdates;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable dynamic regex generation for positive security model rules.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return enableRegexLearning
-   */
-  @VsoMethod
-  public Boolean getEnableRegexLearning() {
-    return enableRegexLearning;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable dynamic regex generation for positive security model rules.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param enableRegexLearning set the enableRegexLearning.
-   */
-  @VsoMethod
-  public void setEnableRegexLearning(Boolean  enableRegexLearning) {
-    this.enableRegexLearning = enableRegexLearning;
   }
 
   /**
@@ -518,7 +496,9 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated (moved to wafpolicy).
    * Parameters for tuning application learning.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
    * @return learningParams
    */
@@ -529,7 +509,9 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated (moved to wafpolicy).
    * Parameters for tuning application learning.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
    * @param learningParams set the learningParams.
    */
@@ -580,10 +562,10 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Minimum confidence label required for auto rule updates.
+   * Deprecated (moved to wafpolicy) minimum confidence label required for auto rule updates.
    * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONFIDENCE_VERY_HIGH.
    * @return minConfidence
    */
   @VsoMethod
@@ -593,10 +575,10 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Minimum confidence label required for auto rule updates.
+   * Deprecated (moved to wafpolicy) minimum confidence label required for auto rule updates.
    * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
+   * Field deprecated in 20.1.1.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONFIDENCE_VERY_HIGH.
    * @param minConfidence set the minConfidence.
    */
   @VsoMethod
@@ -958,34 +940,33 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   WafConfig objWafConfig = (WafConfig) o;
-  return   Objects.equals(this.learningParams, objWafConfig.learningParams)&&
-  Objects.equals(this.restrictedHeaders, objWafConfig.restrictedHeaders)&&
-  Objects.equals(this.responseBodyDefaultAction, objWafConfig.responseBodyDefaultAction)&&
-  Objects.equals(this.regexRecursionLimit, objWafConfig.regexRecursionLimit)&&
-  Objects.equals(this.bufferResponseBodyForInspection, objWafConfig.bufferResponseBodyForInspection)&&
-  Objects.equals(this.allowedHttpVersions, objWafConfig.allowedHttpVersions)&&
-  Objects.equals(this.enableAutoRuleUpdates, objWafConfig.enableAutoRuleUpdates)&&
-  Objects.equals(this.allowedRequestContentTypes, objWafConfig.allowedRequestContentTypes)&&
-  Objects.equals(this.clientFileUploadMaxBodySize, objWafConfig.clientFileUploadMaxBodySize)&&
-  Objects.equals(this.confidenceOverride, objWafConfig.confidenceOverride)&&
-  Objects.equals(this.clientNonfileUploadMaxBodySize, objWafConfig.clientNonfileUploadMaxBodySize)&&
-  Objects.equals(this.minConfidence, objWafConfig.minConfidence)&&
-  Objects.equals(this.regexMatchLimit, objWafConfig.regexMatchLimit)&&
-  Objects.equals(this.maxExecutionTime, objWafConfig.maxExecutionTime)&&
+  return   Objects.equals(this.requestHdrDefaultAction, objWafConfig.requestHdrDefaultAction)&&
+  Objects.equals(this.requestBodyDefaultAction, objWafConfig.requestBodyDefaultAction)&&
   Objects.equals(this.responseHdrDefaultAction, objWafConfig.responseHdrDefaultAction)&&
-  Objects.equals(this.requestHdrDefaultAction, objWafConfig.requestHdrDefaultAction)&&
-  Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection)&&
-  Objects.equals(this.clientRequestMaxBodySize, objWafConfig.clientRequestMaxBodySize)&&
-  Objects.equals(this.cookieFormatVersion, objWafConfig.cookieFormatVersion)&&
+  Objects.equals(this.responseBodyDefaultAction, objWafConfig.responseBodyDefaultAction)&&
+  Objects.equals(this.allowedHttpVersions, objWafConfig.allowedHttpVersions)&&
+  Objects.equals(this.allowedMethods, objWafConfig.allowedMethods)&&
+  Objects.equals(this.allowedRequestContentTypes, objWafConfig.allowedRequestContentTypes)&&
+  Objects.equals(this.restrictedExtensions, objWafConfig.restrictedExtensions)&&
+  Objects.equals(this.restrictedHeaders, objWafConfig.restrictedHeaders)&&
+  Objects.equals(this.staticExtensions, objWafConfig.staticExtensions)&&
+  Objects.equals(this.clientNonfileUploadMaxBodySize, objWafConfig.clientNonfileUploadMaxBodySize)&&
+  Objects.equals(this.clientFileUploadMaxBodySize, objWafConfig.clientFileUploadMaxBodySize)&&
   Objects.equals(this.serverResponseMaxBodySize, objWafConfig.serverResponseMaxBodySize)&&
   Objects.equals(this.argumentSeparator, objWafConfig.argumentSeparator)&&
+  Objects.equals(this.cookieFormatVersion, objWafConfig.cookieFormatVersion)&&
+  Objects.equals(this.bufferResponseBodyForInspection, objWafConfig.bufferResponseBodyForInspection)&&
+  Objects.equals(this.regexMatchLimit, objWafConfig.regexMatchLimit)&&
+  Objects.equals(this.maxExecutionTime, objWafConfig.maxExecutionTime)&&
+  Objects.equals(this.clientRequestMaxBodySize, objWafConfig.clientRequestMaxBodySize)&&
   Objects.equals(this.ignoreIncompleteRequestBodyError, objWafConfig.ignoreIncompleteRequestBodyError)&&
-  Objects.equals(this.allowedMethods, objWafConfig.allowedMethods)&&
-  Objects.equals(this.requestBodyDefaultAction, objWafConfig.requestBodyDefaultAction)&&
-  Objects.equals(this.enableRegexLearning, objWafConfig.enableRegexLearning)&&
   Objects.equals(this.statusCodeForRejectedRequests, objWafConfig.statusCodeForRejectedRequests)&&
-  Objects.equals(this.staticExtensions, objWafConfig.staticExtensions)&&
-  Objects.equals(this.restrictedExtensions, objWafConfig.restrictedExtensions);
+  Objects.equals(this.learningParams, objWafConfig.learningParams)&&
+  Objects.equals(this.enableAutoRuleUpdates, objWafConfig.enableAutoRuleUpdates)&&
+  Objects.equals(this.minConfidence, objWafConfig.minConfidence)&&
+  Objects.equals(this.confidenceOverride, objWafConfig.confidenceOverride)&&
+  Objects.equals(this.regexRecursionLimit, objWafConfig.regexRecursionLimit)&&
+  Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection);
 }
 
 @Override
@@ -1003,7 +984,6 @@ public String toString() {
         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
         sb.append("    cookieFormatVersion: ").append(toIndentedString(cookieFormatVersion)).append("\n");
         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
-        sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
         sb.append("    ignoreIncompleteRequestBodyError: ").append(toIndentedString(ignoreIncompleteRequestBodyError)).append("\n");
         sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");
         sb.append("    maxExecutionTime: ").append(toIndentedString(maxExecutionTime)).append("\n");

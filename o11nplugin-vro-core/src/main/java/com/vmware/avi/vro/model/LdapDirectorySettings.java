@@ -30,7 +30,7 @@ public class LdapDirectorySettings extends AviRestResource {
 
   @JsonProperty("group_filter")
   @JsonInclude(Include.NON_NULL)
-  private String groupFilter = "(objectclass=*)";
+  private String groupFilter = "(objectClass=*)";
 
   @JsonProperty("group_member_attribute")
   @JsonInclude(Include.NON_NULL)
@@ -99,7 +99,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Group filter is used to identify groups during search.
-   * Default value when not specified in API or module is interpreted by Avi Controller as (objectclass=*).
+   * Default value when not specified in API or module is interpreted by Avi Controller as (objectClass=*).
    * @return groupFilter
    */
   @VsoMethod
@@ -110,7 +110,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Group filter is used to identify groups during search.
-   * Default value when not specified in API or module is interpreted by Avi Controller as (objectclass=*).
+   * Default value when not specified in API or module is interpreted by Avi Controller as (objectClass=*).
    * @param groupFilter set the groupFilter.
    */
   @VsoMethod
@@ -362,18 +362,18 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   LdapDirectorySettings objLdapDirectorySettings = (LdapDirectorySettings) o;
-  return   Objects.equals(this.userSearchDn, objLdapDirectorySettings.userSearchDn)&&
-  Objects.equals(this.groupMemberIsFullDn, objLdapDirectorySettings.groupMemberIsFullDn)&&
+  return   Objects.equals(this.adminBindDn, objLdapDirectorySettings.adminBindDn)&&
+  Objects.equals(this.password, objLdapDirectorySettings.password)&&
+  Objects.equals(this.userSearchDn, objLdapDirectorySettings.userSearchDn)&&
   Objects.equals(this.userSearchScope, objLdapDirectorySettings.userSearchScope)&&
   Objects.equals(this.userIdAttribute, objLdapDirectorySettings.userIdAttribute)&&
-  Objects.equals(this.groupMemberAttribute, objLdapDirectorySettings.groupMemberAttribute)&&
-  Objects.equals(this.groupFilter, objLdapDirectorySettings.groupFilter)&&
-  Objects.equals(this.groupSearchDn, objLdapDirectorySettings.groupSearchDn)&&
-  Objects.equals(this.groupSearchScope, objLdapDirectorySettings.groupSearchScope)&&
   Objects.equals(this.userAttributes, objLdapDirectorySettings.userAttributes)&&
-  Objects.equals(this.ignoreReferrals, objLdapDirectorySettings.ignoreReferrals)&&
-  Objects.equals(this.password, objLdapDirectorySettings.password)&&
-  Objects.equals(this.adminBindDn, objLdapDirectorySettings.adminBindDn);
+  Objects.equals(this.groupSearchDn, objLdapDirectorySettings.groupSearchDn)&&
+  Objects.equals(this.groupMemberAttribute, objLdapDirectorySettings.groupMemberAttribute)&&
+  Objects.equals(this.groupSearchScope, objLdapDirectorySettings.groupSearchScope)&&
+  Objects.equals(this.groupMemberIsFullDn, objLdapDirectorySettings.groupMemberIsFullDn)&&
+  Objects.equals(this.groupFilter, objLdapDirectorySettings.groupFilter)&&
+  Objects.equals(this.ignoreReferrals, objLdapDirectorySettings.ignoreReferrals);
 }
 
 @Override

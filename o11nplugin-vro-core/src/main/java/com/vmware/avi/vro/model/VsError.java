@@ -66,7 +66,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The time at which the error occurred.
-   * Field introduced in 18.2.10.
+   * Field introduced in 18.2.10, 20.1.1.
    * @return eventTimestamp
    */
   @VsoMethod
@@ -77,7 +77,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The time at which the error occurred.
-   * Field introduced in 18.2.10.
+   * Field introduced in 18.2.10, 20.1.1.
    * @param eventTimestamp set the eventTimestamp.
    */
   @VsoMethod
@@ -164,7 +164,7 @@ public class VsError extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The se on which the vs errored during scale-in/scale-out operations.
    * It is a reference to an object of type serviceengine.
-   * Field introduced in 18.2.10.
+   * Field introduced in 18.2.10, 20.1.1.
    * @return seRef
    */
   @VsoMethod
@@ -176,7 +176,7 @@ public class VsError extends AviRestResource {
    * This is the setter method to the attribute.
    * The se on which the vs errored during scale-in/scale-out operations.
    * It is a reference to an object of type serviceengine.
-   * Field introduced in 18.2.10.
+   * Field introduced in 18.2.10, 20.1.1.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -275,15 +275,15 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   VsError objVsError = (VsError) o;
-  return   Objects.equals(this.vipId, objVsError.vipId)&&
-  Objects.equals(this.trafficStatus, objVsError.trafficStatus)&&
-  Objects.equals(this.vsRef, objVsError.vsRef)&&
-  Objects.equals(this.eventTimestamp, objVsError.eventTimestamp)&&
-  Objects.equals(this.seGroupHaMode, objVsError.seGroupHaMode)&&
-  Objects.equals(this.reason, objVsError.reason)&&
-  Objects.equals(this.seRef, objVsError.seRef)&&
+  return   Objects.equals(this.vsRef, objVsError.vsRef)&&
   Objects.equals(this.seGroupRef, objVsError.seGroupRef)&&
-  Objects.equals(this.tenantRef, objVsError.tenantRef);
+  Objects.equals(this.seGroupHaMode, objVsError.seGroupHaMode)&&
+  Objects.equals(this.tenantRef, objVsError.tenantRef)&&
+  Objects.equals(this.trafficStatus, objVsError.trafficStatus)&&
+  Objects.equals(this.reason, objVsError.reason)&&
+  Objects.equals(this.vipId, objVsError.vipId)&&
+  Objects.equals(this.seRef, objVsError.seRef)&&
+  Objects.equals(this.eventTimestamp, objVsError.eventTimestamp);
 }
 
 @Override

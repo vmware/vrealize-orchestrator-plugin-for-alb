@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item5" object-name="workflow:name=generic"
-	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.7"
+	id="f9ac9535-d5cb-401d-8832-983ec9acfdf9" version="1.1.8"
 	api-version="6.0.0" allowed-operations="vfe" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Vs]]></display-name>
@@ -86,9 +86,6 @@
 		</param>
 		<param name="serverType" type="string">
 			<description><![CDATA[Server Type]]></description>
-		</param>
-		<param name="resourceElement" type="ResourceElement">
-			<description><![CDATA[Add resource element ]]></description>
 		</param>
 		<param name="statusCode" type="string">
 			<description><![CDATA[Status code for failaction type of poolgroup]]></description>
@@ -837,10 +834,6 @@ actionResult = System.getModule("com.vmware.avi").createSSLCertificateObj(aviVro
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "cloud" )]]></p-qual>
 			</p-param>
-			<p-param name="resourceElement">
-				<desc><![CDATA[Select default values]]></desc>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
-			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[VS details]]></title>
@@ -867,11 +860,9 @@ actionResult = System.getModule("com.vmware.avi").createSSLCertificateObj(aviVro
 				<desc><![CDATA[Add VS IP]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#vsVIP == false]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "IPAddress" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
 			<p-param name="serviceEngine">
 				<desc><![CDATA[Select servicengine group]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "serviceEngine" , #ApplicationProfile , #resourceElement )]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="SSLCert">
@@ -883,13 +874,11 @@ actionResult = System.getModule("com.vmware.avi").createSSLCertificateObj(aviVro
 			<p-param name="CreateSSL">
 				<desc><![CDATA[Create SSL certificate]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="boolean"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "CreateSSL" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
 			<p-param name="SSLCertificate">
 				<desc><![CDATA[Select certificate]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#SSLCert==true]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#CreateSSL==true || #SSLCert==false]]></p-qual>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "SSLCertificate" , #ApplicationProfile , #resourceElement )]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#System-Default-Cert#;#string#System-Default-Cert-EC#}#]]></p-qual>
 			</p-param>

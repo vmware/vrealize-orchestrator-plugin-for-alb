@@ -148,9 +148,9 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   SeUpgradeVsDisruptedEventDetails objSeUpgradeVsDisruptedEventDetails = (SeUpgradeVsDisruptedEventDetails) o;
-  return   Objects.equals(this.ip, objSeUpgradeVsDisruptedEventDetails.ip)&&
-  Objects.equals(this.vsUuid, objSeUpgradeVsDisruptedEventDetails.vsUuid)&&
+  return   Objects.equals(this.vsUuid, objSeUpgradeVsDisruptedEventDetails.vsUuid)&&
   Objects.equals(this.notes, objSeUpgradeVsDisruptedEventDetails.notes)&&
+  Objects.equals(this.ip, objSeUpgradeVsDisruptedEventDetails.ip)&&
   Objects.equals(this.vipId, objSeUpgradeVsDisruptedEventDetails.vipId);
 }
 

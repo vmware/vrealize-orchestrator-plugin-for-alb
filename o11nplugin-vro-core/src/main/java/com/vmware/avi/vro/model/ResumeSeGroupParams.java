@@ -137,9 +137,9 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ResumeSeGroupParams objResumeSeGroupParams = (ResumeSeGroupParams) o;
-  return   Objects.equals(this.skipWarnings, objResumeSeGroupParams.skipWarnings)&&
+  return   Objects.equals(this.seGroupOptions, objResumeSeGroupParams.seGroupOptions)&&
   Objects.equals(this.seGroupRefs, objResumeSeGroupParams.seGroupRefs)&&
-  Objects.equals(this.seGroupOptions, objResumeSeGroupParams.seGroupOptions);
+  Objects.equals(this.skipWarnings, objResumeSeGroupParams.skipWarnings);
 }
 
 @Override
