@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createSSLCertificateObj"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="0a9191e9-b8e7-4e6d-9ed5-ac43d116ae54" version="0.0.0"
+	id="0a9191e9-b8e7-4e6d-9ed5-ac43d116ae54" version="0.0.1"
 	allowed-operations="vfe">
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Vro Client]]></param>
 	<param n="SSLAlgorithm" t="string"><![CDATA[SSL algorithm type]]></param>
@@ -93,6 +93,7 @@ try {
 	sslCertificateObj.setKeyParams(keyParamsObj);
 	sslCertificateObj.setType("SSL_CERTIFICATE_TYPE_VIRTUALSERVICE");
 	sslCertificateObj.setName(CertName);
+	sslCertificateObj.setOcspErrorStatus(null);
 
 	aviVroClient.addObject(sslCertificateObj);
 	System.log("SSLCertificate object : "+sslCertificateObj);	
