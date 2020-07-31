@@ -36,7 +36,7 @@ public class ParamSizeClass extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property hits of obj type paramsizeclass field type str  type integer.
+   * Field introduced in 20.1.1.
    * @return hits
    */
   @VsoMethod
@@ -46,7 +46,7 @@ public class ParamSizeClass extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property hits of obj type paramsizeclass field type str  type integer.
+   * Field introduced in 20.1.1.
    * @param hits set the hits.
    */
   @VsoMethod
@@ -57,6 +57,7 @@ public class ParamSizeClass extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED.
+   * Field introduced in 20.1.1.
    * @return len
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class ParamSizeClass extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED.
+   * Field introduced in 20.1.1.
    * @param len set the len.
    */
   @VsoMethod
@@ -85,8 +87,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ParamSizeClass objParamSizeClass = (ParamSizeClass) o;
-  return   Objects.equals(this.hits, objParamSizeClass.hits)&&
-  Objects.equals(this.len, objParamSizeClass.len);
+  return   Objects.equals(this.len, objParamSizeClass.len)&&
+  Objects.equals(this.hits, objParamSizeClass.hits);
 }
 
 @Override

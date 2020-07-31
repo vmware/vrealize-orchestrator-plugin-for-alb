@@ -36,7 +36,7 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property hits of obj type paramtypeclass field type str  type integer.
+   * Field introduced in 20.1.1.
    * @return hits
    */
   @VsoMethod
@@ -46,7 +46,7 @@ public class ParamTypeClass extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property hits of obj type paramtypeclass field type str  type integer.
+   * Field introduced in 20.1.1.
    * @param hits set the hits.
    */
   @VsoMethod
@@ -58,6 +58,7 @@ public class ParamTypeClass extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
+   * Field introduced in 20.1.1.
    * @return type
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class ParamTypeClass extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
+   * Field introduced in 20.1.1.
    * @param type set the type.
    */
   @VsoMethod
@@ -87,8 +89,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ParamTypeClass objParamTypeClass = (ParamTypeClass) o;
-  return   Objects.equals(this.hits, objParamTypeClass.hits)&&
-  Objects.equals(this.type, objParamTypeClass.type);
+  return   Objects.equals(this.type, objParamTypeClass.type)&&
+  Objects.equals(this.hits, objParamTypeClass.hits);
 }
 
 @Override

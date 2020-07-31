@@ -36,6 +36,10 @@ public class LicenseExpiryDetails extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private Integer cores = null;
 
+  @JsonProperty("cpu_cores")
+  @JsonInclude(Include.NON_NULL)
+  private Float cpuCores = null;
+
   @JsonProperty("expiry_at")
   @JsonInclude(Include.NON_NULL)
   private String expiryAt = null;
@@ -63,6 +67,10 @@ public class LicenseExpiryDetails extends AviRestResource {
   @JsonProperty("name")
   @JsonInclude(Include.NON_NULL)
   private String name = null;
+
+  @JsonProperty("service_cores")
+  @JsonInclude(Include.NON_NULL)
+  private Float serviceCores = null;
 
   @JsonProperty("sockets")
   @JsonInclude(Include.NON_NULL)
@@ -132,6 +140,26 @@ public class LicenseExpiryDetails extends AviRestResource {
   @VsoMethod
   public void setCores(Integer  cores) {
     this.cores = cores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property cpu_cores of obj type licenseexpirydetails field type str  type float.
+   * @return cpuCores
+   */
+  @VsoMethod
+  public Float getCpuCores() {
+    return cpuCores;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property cpu_cores of obj type licenseexpirydetails field type str  type float.
+   * @param cpuCores set the cpuCores.
+   */
+  @VsoMethod
+  public void setCpuCores(Float  cpuCores) {
+    this.cpuCores = cpuCores;
   }
 
   /**
@@ -291,6 +319,26 @@ public class LicenseExpiryDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Placeholder for description of property service_cores of obj type licenseexpirydetails field type str  type float.
+   * @return serviceCores
+   */
+  @VsoMethod
+  public Float getServiceCores() {
+    return serviceCores;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property service_cores of obj type licenseexpirydetails field type str  type float.
+   * @param serviceCores set the serviceCores.
+   */
+  @VsoMethod
+  public void setServiceCores(Float  serviceCores) {
+    this.serviceCores = serviceCores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property sockets of obj type licenseexpirydetails field type str  type integer.
    * @return sockets
    */
@@ -340,18 +388,20 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   LicenseExpiryDetails objLicenseExpiryDetails = (LicenseExpiryDetails) o;
-  return   Objects.equals(this.licenseTier, objLicenseExpiryDetails.licenseTier)&&
-  Objects.equals(this.name, objLicenseExpiryDetails.name)&&
-  Objects.equals(this.maxSes, objLicenseExpiryDetails.maxSes)&&
-  Objects.equals(this.maxApps, objLicenseExpiryDetails.maxApps)&&
-  Objects.equals(this.burstCores, objLicenseExpiryDetails.burstCores)&&
+  return   Objects.equals(this.name, objLicenseExpiryDetails.name)&&
+  Objects.equals(this.expiryAt, objLicenseExpiryDetails.expiryAt)&&
   Objects.equals(this.throughput, objLicenseExpiryDetails.throughput)&&
+  Objects.equals(this.cores, objLicenseExpiryDetails.cores)&&
+  Objects.equals(this.maxSes, objLicenseExpiryDetails.maxSes)&&
+  Objects.equals(this.backendServers, objLicenseExpiryDetails.backendServers)&&
+  Objects.equals(this.maxApps, objLicenseExpiryDetails.maxApps)&&
+  Objects.equals(this.licenseTier, objLicenseExpiryDetails.licenseTier)&&
   Objects.equals(this.licenseId, objLicenseExpiryDetails.licenseId)&&
   Objects.equals(this.licenseType, objLicenseExpiryDetails.licenseType)&&
-  Objects.equals(this.cores, objLicenseExpiryDetails.cores)&&
-  Objects.equals(this.expiryAt, objLicenseExpiryDetails.expiryAt)&&
   Objects.equals(this.sockets, objLicenseExpiryDetails.sockets)&&
-  Objects.equals(this.backendServers, objLicenseExpiryDetails.backendServers);
+  Objects.equals(this.burstCores, objLicenseExpiryDetails.burstCores)&&
+  Objects.equals(this.serviceCores, objLicenseExpiryDetails.serviceCores)&&
+  Objects.equals(this.cpuCores, objLicenseExpiryDetails.cpuCores);
 }
 
 @Override
@@ -361,6 +411,7 @@ public String toString() {
       sb.append("    backendServers: ").append(toIndentedString(backendServers)).append("\n");
         sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
+        sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
         sb.append("    expiryAt: ").append(toIndentedString(expiryAt)).append("\n");
         sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
@@ -368,6 +419,7 @@ public String toString() {
         sb.append("    maxApps: ").append(toIndentedString(maxApps)).append("\n");
         sb.append("    maxSes: ").append(toIndentedString(maxSes)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    serviceCores: ").append(toIndentedString(serviceCores)).append("\n");
         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
         sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
       sb.append("}");

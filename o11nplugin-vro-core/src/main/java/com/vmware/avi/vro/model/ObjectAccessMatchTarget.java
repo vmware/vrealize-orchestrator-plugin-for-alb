@@ -105,8 +105,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   ObjectAccessMatchTarget objObjectAccessMatchTarget = (ObjectAccessMatchTarget) o;
-  return   Objects.equals(this.labelValues, objObjectAccessMatchTarget.labelValues)&&
-  Objects.equals(this.labelKey, objObjectAccessMatchTarget.labelKey);
+  return   Objects.equals(this.labelKey, objObjectAccessMatchTarget.labelKey)&&
+  Objects.equals(this.labelValues, objObjectAccessMatchTarget.labelValues);
 }
 
 @Override

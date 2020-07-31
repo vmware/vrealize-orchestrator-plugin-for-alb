@@ -2,8 +2,8 @@
 <workflow xmlns="http://vmware.com/vco/workflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
-	root-name="item1" object-name="workflow:name=generic"
-	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.5"
+	root-name="item2" object-name="workflow:name=generic"
+	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.6"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Attach Avi Controller]]></display-name>
@@ -16,9 +16,20 @@
 		<param name="version" type="string"></param>
 		<param name="token" type="SecureString"></param>
 		<param name="tokenBasedAuth" type="boolean"></param>
+		<param name="ignoreWarnings" type="boolean">
+			<description><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></description>
+		</param>
 	</input>
+	<attrib name="errorCode" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="host" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
-		<position y="45.40909090909091" x="384.5"></position>
+		<position y="45.40909090909091" x="664.5"></position>
 	</workflow-item>
 	<workflow-item name="item1" out-name="item0" type="task"
 		script-module="com.vmware.avi/attachVroClient">
@@ -26,19 +37,60 @@
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
 System.getModule("com.vmware.avi").attachVroClient(controller,username,password,tenant,version,token,tokenBasedAuth) ;]]></script>
 		<in-binding>
-			<bind name="controller" type="string" export-name="controller"></bind>
-			<bind name="username" type="string" export-name="username"></bind>
+			<bind name="controller" type="string" export-name="host"></bind>
 			<bind name="password" type="SecureString" export-name="password"></bind>
 			<bind name="tenant" type="string" export-name="tenant"></bind>
-			<bind name="version" type="string" export-name="version"></bind>
 			<bind name="token" type="SecureString" export-name="token"></bind>
 			<bind name="tokenBasedAuth" type="boolean"
 				export-name="tokenBasedAuth"></bind>
+			<bind name="username" type="string" export-name="username"></bind>
+			<bind name="version" type="string" export-name="version"></bind>
 		</in-binding>
 		<out-binding></out-binding>
+		<position y="55.40909090909091" x="484.5"></position>
+	</workflow-item>
+	<workflow-item name="item2" out-name="item4"
+		catch-name="item3" throw-bind-name="errorCode" type="link"
+		linked-workflow-id="c5a874a2-e8e7-480d-bdde-d1a80b8a3011">
+		<display-name><![CDATA[Import a certificate from URL]]></display-name>
+		<in-binding>
+			<bind name="url" type="string" export-name="controller">
+				<description><![CDATA[URL or just host:port for non-HTTPS SSL services:]]></description>
+			</bind>
+			<bind name="ignoreWarnings" type="boolean"
+				export-name="ignoreWarnings">
+				<description><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></description>
+			</bind>
+		</in-binding>
+		<out-binding></out-binding>
+		<description><![CDATA[Imports an SSL certificate into the server trust store.]]></description>
 		<position y="55.40909090909091" x="204.5"></position>
 	</workflow-item>
+	<workflow-item name="item3" throw-bind-name="errorCode"
+		type="end" end-mode="1">
+		<position y="99.95454545454544" x="245.0"></position>
+	</workflow-item>
+	<workflow-item name="item4" out-name="item1" type="task">
+		<display-name><![CDATA[Get host from base url]]></display-name>
+		<script encoded="false"><![CDATA[host = controller.substring(8, controller.length);
+var end = host.indexOf("/");
+if (end != -1) {
+	host = host.substring(0, end);
+}]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller"></bind>
+			<bind name="host" type="string" export-name="host"></bind>
+		</in-binding>
+		<out-binding>
+			<bind name="host" type="string" export-name="host"></bind>
+		</out-binding>
+		<position y="55.40909090909091" x="344.5"></position>
+	</workflow-item>
 	<presentation>
+		<p-param name="ignoreWarnings">
+			<desc><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></desc>
+			<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[true]]></p-qual>
+		</p-param>
 		<p-param name="controller">
 			<desc><![CDATA[controller]]></desc>
 		</p-param>
@@ -61,7 +113,6 @@ System.getModule("com.vmware.avi").attachVroClient(controller,username,password,
 		</p-param>
 		<p-param name="tenant">
 			<desc><![CDATA[Tenant]]></desc>
-			<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			<p-qual kind="static" name="defaultValue" type="string"><![CDATA[admin]]></p-qual>
 		</p-param>
 		<p-param name="version">

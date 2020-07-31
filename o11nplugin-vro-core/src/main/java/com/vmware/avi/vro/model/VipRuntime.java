@@ -55,7 +55,7 @@ public class VipRuntime extends AviRestResource {
 
   @JsonProperty("fsm_state_name")
   @JsonInclude(Include.NON_NULL)
-  private String fsmStateName = "vipfsmmap::inactive";
+  private String fsmStateName = "VipFsmMap::Inactive";
 
   @JsonProperty("last_changed_time")
   @JsonInclude(Include.NON_NULL)
@@ -273,7 +273,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property fsm_state_name of obj type vipruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as vipfsmmap::inactive.
+   * Default value when not specified in API or module is interpreted by Avi Controller as VipFsmMap::Inactive.
    * @return fsmStateName
    */
   @VsoMethod
@@ -284,7 +284,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property fsm_state_name of obj type vipruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as vipfsmmap::inactive.
+   * Default value when not specified in API or module is interpreted by Avi Controller as VipFsmMap::Inactive.
    * @param fsmStateName set the fsmStateName.
    */
   @VsoMethod
@@ -806,35 +806,35 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   VipRuntime objVipRuntime = (VipRuntime) o;
-  return   Objects.equals(this.metricsMgrPort, objVipRuntime.metricsMgrPort)&&
-  Objects.equals(this.prevMetricsMgrPort, objVipRuntime.prevMetricsMgrPort)&&
-  Objects.equals(this.scaleoutInProgress, objVipRuntime.scaleoutInProgress)&&
-  Objects.equals(this.warmstartResyncDone, objVipRuntime.warmstartResyncDone)&&
-  Objects.equals(this.migrateScaleinPending, objVipRuntime.migrateScaleinPending)&&
-  Objects.equals(this.suppRuntimeStatus, objVipRuntime.suppRuntimeStatus)&&
+  return   Objects.equals(this.vipId, objVipRuntime.vipId)&&
+  Objects.equals(this.fsmStateName, objVipRuntime.fsmStateName)&&
+  Objects.equals(this.fsmStateId, objVipRuntime.fsmStateId)&&
+  Objects.equals(this.serversConfigured, objVipRuntime.serversConfigured)&&
   Objects.equals(this.lastChangedTime, objVipRuntime.lastChangedTime)&&
   Objects.equals(this.markedForDelete, objVipRuntime.markedForDelete)&&
-  Objects.equals(this.warmstartResyncSent, objVipRuntime.warmstartResyncSent)&&
-  Objects.equals(this.ev, objVipRuntime.ev)&&
-  Objects.equals(this.serversConfigured, objVipRuntime.serversConfigured)&&
-  Objects.equals(this.fsmStateId, objVipRuntime.fsmStateId)&&
-  Objects.equals(this.migrateRequest, objVipRuntime.migrateRequest)&&
-  Objects.equals(this.migrateInProgress, objVipRuntime.migrateInProgress)&&
-  Objects.equals(this.numAdditionalSe, objVipRuntime.numAdditionalSe)&&
-  Objects.equals(this.scaleinRequest, objVipRuntime.scaleinRequest)&&
-  Objects.equals(this.userScaleoutPending, objVipRuntime.userScaleoutPending)&&
-  Objects.equals(this.evStatus, objVipRuntime.evStatus)&&
-  Objects.equals(this.lastScaleStatus, objVipRuntime.lastScaleStatus)&&
-  Objects.equals(this.firstSeAssignedTime, objVipRuntime.firstSeAssignedTime)&&
-  Objects.equals(this.fsmStateName, objVipRuntime.fsmStateName)&&
-  Objects.equals(this.seList, objVipRuntime.seList)&&
-  Objects.equals(this.scaleinInProgress, objVipRuntime.scaleinInProgress)&&
-  Objects.equals(this.vipId, objVipRuntime.vipId)&&
-  Objects.equals(this.scaleStatus, objVipRuntime.scaleStatus)&&
-  Objects.equals(this.migrateScaleoutPending, objVipRuntime.migrateScaleoutPending)&&
-  Objects.equals(this.firstTimePlacement, objVipRuntime.firstTimePlacement)&&
   Objects.equals(this.progressPercent, objVipRuntime.progressPercent)&&
-  Objects.equals(this.requestedResource, objVipRuntime.requestedResource);
+  Objects.equals(this.scaleStatus, objVipRuntime.scaleStatus)&&
+  Objects.equals(this.metricsMgrPort, objVipRuntime.metricsMgrPort)&&
+  Objects.equals(this.prevMetricsMgrPort, objVipRuntime.prevMetricsMgrPort)&&
+  Objects.equals(this.scaleoutInProgress, objVipRuntime.scaleoutInProgress)&&
+  Objects.equals(this.userScaleoutPending, objVipRuntime.userScaleoutPending)&&
+  Objects.equals(this.scaleinInProgress, objVipRuntime.scaleinInProgress)&&
+  Objects.equals(this.scaleinRequest, objVipRuntime.scaleinRequest)&&
+  Objects.equals(this.migrateInProgress, objVipRuntime.migrateInProgress)&&
+  Objects.equals(this.migrateRequest, objVipRuntime.migrateRequest)&&
+  Objects.equals(this.migrateScaleoutPending, objVipRuntime.migrateScaleoutPending)&&
+  Objects.equals(this.migrateScaleinPending, objVipRuntime.migrateScaleinPending)&&
+  Objects.equals(this.firstTimePlacement, objVipRuntime.firstTimePlacement)&&
+  Objects.equals(this.seList, objVipRuntime.seList)&&
+  Objects.equals(this.requestedResource, objVipRuntime.requestedResource)&&
+  Objects.equals(this.suppRuntimeStatus, objVipRuntime.suppRuntimeStatus)&&
+  Objects.equals(this.firstSeAssignedTime, objVipRuntime.firstSeAssignedTime)&&
+  Objects.equals(this.numAdditionalSe, objVipRuntime.numAdditionalSe)&&
+  Objects.equals(this.evStatus, objVipRuntime.evStatus)&&
+  Objects.equals(this.ev, objVipRuntime.ev)&&
+  Objects.equals(this.lastScaleStatus, objVipRuntime.lastScaleStatus)&&
+  Objects.equals(this.warmstartResyncSent, objVipRuntime.warmstartResyncSent)&&
+  Objects.equals(this.warmstartResyncDone, objVipRuntime.warmstartResyncDone);
 }
 
 @Override

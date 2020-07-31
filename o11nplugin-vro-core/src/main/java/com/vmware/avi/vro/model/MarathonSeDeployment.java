@@ -30,7 +30,7 @@ public class MarathonSeDeployment extends AviRestResource {
 
   @JsonProperty("host_os")
   @JsonInclude(Include.NON_NULL)
-  private String hostOs = "coreos";
+  private String hostOs = "COREOS";
 
   @JsonProperty("resource_roles")
   @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
-   * Default value when not specified in API or module is interpreted by Avi Controller as coreos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as COREOS.
    * @return hostOs
    */
   @VsoMethod
@@ -82,7 +82,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
-   * Default value when not specified in API or module is interpreted by Avi Controller as coreos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as COREOS.
    * @param hostOs set the hostOs.
    */
   @VsoMethod
@@ -171,10 +171,10 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   MarathonSeDeployment objMarathonSeDeployment = (MarathonSeDeployment) o;
-  return   Objects.equals(this.resourceRoles, objMarathonSeDeployment.resourceRoles)&&
-  Objects.equals(this.hostOs, objMarathonSeDeployment.hostOs)&&
+  return   Objects.equals(this.hostOs, objMarathonSeDeployment.hostOs)&&
+  Objects.equals(this.dockerImage, objMarathonSeDeployment.dockerImage)&&
   Objects.equals(this.uris, objMarathonSeDeployment.uris)&&
-  Objects.equals(this.dockerImage, objMarathonSeDeployment.dockerImage);
+  Objects.equals(this.resourceRoles, objMarathonSeDeployment.resourceRoles);
 }
 
 @Override

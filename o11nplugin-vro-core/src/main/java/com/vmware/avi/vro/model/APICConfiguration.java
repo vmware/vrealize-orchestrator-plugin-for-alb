@@ -42,7 +42,7 @@ public class APICConfiguration extends AviRestResource {
 
   @JsonProperty("apic_product")
   @JsonInclude(Include.NON_NULL)
-  private String apicProduct = "asp";
+  private String apicProduct = "ASP";
 
   @JsonProperty("apic_username")
   @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,7 @@ public class APICConfiguration extends AviRestResource {
 
   @JsonProperty("apic_vendor")
   @JsonInclude(Include.NON_NULL)
-  private String apicVendor = "avi";
+  private String apicVendor = "Avi";
 
   @JsonProperty("avi_controller_password")
   @JsonInclude(Include.NON_NULL)
@@ -186,7 +186,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 17.2.10,18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as asp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as ASP.
    * @return apicProduct
    */
   @VsoMethod
@@ -197,7 +197,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 17.2.10,18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as asp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as ASP.
    * @param apicProduct set the apicProduct.
    */
   @VsoMethod
@@ -228,7 +228,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 17.2.10,18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as Avi.
    * @return apicVendor
    */
   @VsoMethod
@@ -239,7 +239,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 17.2.10,18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as Avi.
    * @param apicVendor set the apicVendor.
    */
   @VsoMethod
@@ -448,21 +448,21 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   APICConfiguration objAPICConfiguration = (APICConfiguration) o;
-  return   Objects.equals(this.seTunnelMode, objAPICConfiguration.seTunnelMode)&&
-  Objects.equals(this.apicVendor, objAPICConfiguration.apicVendor)&&
-  Objects.equals(this.version, objAPICConfiguration.version)&&
-  Objects.equals(this.apicPassword, objAPICConfiguration.apicPassword)&&
-  Objects.equals(this.deployment, objAPICConfiguration.deployment)&&
-  Objects.equals(this.apicAdminTenant, objAPICConfiguration.apicAdminTenant)&&
+  return   Objects.equals(this.apicName, objAPICConfiguration.apicName)&&
   Objects.equals(this.apicUsername, objAPICConfiguration.apicUsername)&&
-  Objects.equals(this.contextAware, objAPICConfiguration.contextAware)&&
-  Objects.equals(this.aviControllerPassword, objAPICConfiguration.aviControllerPassword)&&
-  Objects.equals(this.aviControllerUsername, objAPICConfiguration.aviControllerUsername)&&
+  Objects.equals(this.apicPassword, objAPICConfiguration.apicPassword)&&
+  Objects.equals(this.apicAdminTenant, objAPICConfiguration.apicAdminTenant)&&
+  Objects.equals(this.apicVendor, objAPICConfiguration.apicVendor)&&
   Objects.equals(this.apicProduct, objAPICConfiguration.apicProduct)&&
+  Objects.equals(this.deployment, objAPICConfiguration.deployment)&&
   Objects.equals(this.apicDomain, objAPICConfiguration.apicDomain)&&
-  Objects.equals(this.apicName, objAPICConfiguration.apicName)&&
+  Objects.equals(this.aviControllerUsername, objAPICConfiguration.aviControllerUsername)&&
+  Objects.equals(this.aviControllerPassword, objAPICConfiguration.aviControllerPassword)&&
+  Objects.equals(this.version, objAPICConfiguration.version)&&
+  Objects.equals(this.minor, objAPICConfiguration.minor)&&
+  Objects.equals(this.contextAware, objAPICConfiguration.contextAware)&&
   Objects.equals(this.managedMode, objAPICConfiguration.managedMode)&&
-  Objects.equals(this.minor, objAPICConfiguration.minor);
+  Objects.equals(this.seTunnelMode, objAPICConfiguration.seTunnelMode);
 }
 
 @Override

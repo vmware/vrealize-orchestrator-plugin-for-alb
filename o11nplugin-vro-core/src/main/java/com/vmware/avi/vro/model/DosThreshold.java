@@ -115,9 +115,9 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   DosThreshold objDosThreshold = (DosThreshold) o;
-  return   Objects.equals(this.maxValue, objDosThreshold.maxValue)&&
-  Objects.equals(this.attack, objDosThreshold.attack)&&
-  Objects.equals(this.minValue, objDosThreshold.minValue);
+  return   Objects.equals(this.attack, objDosThreshold.attack)&&
+  Objects.equals(this.minValue, objDosThreshold.minValue)&&
+  Objects.equals(this.maxValue, objDosThreshold.maxValue);
 }
 
 @Override

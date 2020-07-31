@@ -421,7 +421,7 @@ public class AviVroClient {
 		HashMap<String, String> userHeader = null;
 		if (tenant != null) {
 			userHeader = new HashMap<String, String>();
-			userHeader.put("X-Avi-Tenant", tenant);
+			userHeader.put(Constants.FINDER_VRO_X_AVI_TENANT, tenant);
 		}
 		return userHeader;
 	}

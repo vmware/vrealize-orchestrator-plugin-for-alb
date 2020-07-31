@@ -109,8 +109,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   APICNetworkRel objAPICNetworkRel = (APICNetworkRel) o;
-  return   Objects.equals(this.connector, objAPICNetworkRel.connector)&&
-  Objects.equals(this.relKey, objAPICNetworkRel.relKey)&&
+  return   Objects.equals(this.relKey, objAPICNetworkRel.relKey)&&
+  Objects.equals(this.connector, objAPICNetworkRel.connector)&&
   Objects.equals(this.targetNetwork, objAPICNetworkRel.targetNetwork);
 }
 

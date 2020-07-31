@@ -111,8 +111,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   MemberInterface objMemberInterface = (MemberInterface) o;
-  return   Objects.equals(this.active, objMemberInterface.active)&&
-  Objects.equals(this.ifName, objMemberInterface.ifName)&&
+  return   Objects.equals(this.ifName, objMemberInterface.ifName)&&
+  Objects.equals(this.active, objMemberInterface.active)&&
   Objects.equals(this.macAddress, objMemberInterface.macAddress);
 }
 

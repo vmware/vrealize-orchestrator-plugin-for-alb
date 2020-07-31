@@ -246,7 +246,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
   @JsonProperty("xff_alternate_name")
   @JsonInclude(Include.NON_NULL)
-  private String xffAlternateName = "x-forwarded-for";
+  private String xffAlternateName = "X-Forwarded-For";
 
   @JsonProperty("xff_enabled")
   @JsonInclude(Include.NON_NULL)
@@ -759,7 +759,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the http/2 specific application profile parameters.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.10, 20.1.1.
    * @return http2Profile
    */
   @VsoMethod
@@ -770,7 +770,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the http/2 specific application profile parameters.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.10, 20.1.1.
    * @param http2Profile set the http2Profile.
    */
   @VsoMethod
@@ -984,7 +984,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The max number of concurrent streams over a client side http/2 connection.
    * Allowed values are 1-256.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @return maxHttp2ConcurrentStreamsPerConnection
    */
@@ -997,7 +997,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The max number of concurrent streams over a client side http/2 connection.
    * Allowed values are 1-256.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @param maxHttp2ConcurrentStreamsPerConnection set the maxHttp2ConcurrentStreamsPerConnection.
    */
@@ -1012,7 +1012,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * '0' means unlimited.
    * Allowed values are 0-10000.
    * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @return maxHttp2ControlFramesPerConnection
    */
@@ -1027,7 +1027,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * '0' means unlimited.
    * Allowed values are 0-10000.
    * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @param maxHttp2ControlFramesPerConnection set the maxHttp2ControlFramesPerConnection.
    */
@@ -1042,7 +1042,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * '0' means unlimited.
    * Allowed values are 0-10000.
    * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @return maxHttp2EmptyDataFramesPerConnection
    */
@@ -1057,7 +1057,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * '0' means unlimited.
    * Allowed values are 0-10000.
    * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @param maxHttp2EmptyDataFramesPerConnection set the maxHttp2EmptyDataFramesPerConnection.
    */
@@ -1072,7 +1072,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * '0' means unlimited.
    * Allowed values are 0-10000.
    * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @return maxHttp2QueuedFramesToClientPerConnection
    */
@@ -1087,7 +1087,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * '0' means unlimited.
    * Allowed values are 0-10000.
    * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
-   * Field deprecated in 20.1.1.
+   * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
    * @param maxHttp2QueuedFramesToClientPerConnection set the maxHttp2QueuedFramesToClientPerConnection.
    */
@@ -1617,7 +1617,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provide a custom name for the x-forwarded-for header sent to the servers.
-   * Default value when not specified in API or module is interpreted by Avi Controller as x-forwarded-for.
+   * Default value when not specified in API or module is interpreted by Avi Controller as X-Forwarded-For.
    * @return xffAlternateName
    */
   @VsoMethod
@@ -1628,7 +1628,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provide a custom name for the x-forwarded-for header sent to the servers.
-   * Default value when not specified in API or module is interpreted by Avi Controller as x-forwarded-for.
+   * Default value when not specified in API or module is interpreted by Avi Controller as X-Forwarded-For.
    * @param xffAlternateName set the xffAlternateName.
    */
   @VsoMethod
@@ -1671,62 +1671,62 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   HTTPApplicationProfile objHTTPApplicationProfile = (HTTPApplicationProfile) o;
-  return   Objects.equals(this.maxKeepaliveRequests, objHTTPApplicationProfile.maxKeepaliveRequests)&&
-  Objects.equals(this.enableChunkMerge, objHTTPApplicationProfile.enableChunkMerge)&&
-  Objects.equals(this.maxRpsUri, objHTTPApplicationProfile.maxRpsUri)&&
-  Objects.equals(this.fwdCloseHdrForBoundConnections, objHTTPApplicationProfile.fwdCloseHdrForBoundConnections)&&
-  Objects.equals(this.keepaliveHeader, objHTTPApplicationProfile.keepaliveHeader)&&
-  Objects.equals(this.maxRpsCipUri, objHTTPApplicationProfile.maxRpsCipUri)&&
-  Objects.equals(this.xForwardedProtoEnabled, objHTTPApplicationProfile.xForwardedProtoEnabled)&&
-  Objects.equals(this.connectionMultiplexingEnabled, objHTTPApplicationProfile.connectionMultiplexingEnabled)&&
-  Objects.equals(this.websocketsEnabled, objHTTPApplicationProfile.websocketsEnabled)&&
-  Objects.equals(this.enableRequestBodyMetrics, objHTTPApplicationProfile.enableRequestBodyMetrics)&&
-  Objects.equals(this.maxHttp2EmptyDataFramesPerConnection, objHTTPApplicationProfile.maxHttp2EmptyDataFramesPerConnection)&&
-  Objects.equals(this.http2Enabled, objHTTPApplicationProfile.http2Enabled)&&
-  Objects.equals(this.enableRequestBodyBuffering, objHTTPApplicationProfile.enableRequestBodyBuffering)&&
-  Objects.equals(this.hstsEnabled, objHTTPApplicationProfile.hstsEnabled)&&
-  Objects.equals(this.compressionProfile, objHTTPApplicationProfile.compressionProfile)&&
+  return   Objects.equals(this.connectionMultiplexingEnabled, objHTTPApplicationProfile.connectionMultiplexingEnabled)&&
   Objects.equals(this.xffEnabled, objHTTPApplicationProfile.xffEnabled)&&
-  Objects.equals(this.resetConnHttpOnSslPort, objHTTPApplicationProfile.resetConnHttpOnSslPort)&&
-  Objects.equals(this.disableKeepalivePostsMsie6, objHTTPApplicationProfile.disableKeepalivePostsMsie6)&&
-  Objects.equals(this.keepaliveTimeout, objHTTPApplicationProfile.keepaliveTimeout)&&
-  Objects.equals(this.sslClientCertificateMode, objHTTPApplicationProfile.sslClientCertificateMode)&&
-  Objects.equals(this.httpToHttps, objHTTPApplicationProfile.httpToHttps)&&
-  Objects.equals(this.disableSniHostnameCheck, objHTTPApplicationProfile.disableSniHostnameCheck)&&
-  Objects.equals(this.spdyEnabled, objHTTPApplicationProfile.spdyEnabled)&&
-  Objects.equals(this.respondWith100Continue, objHTTPApplicationProfile.respondWith100Continue)&&
-  Objects.equals(this.clientBodyTimeout, objHTTPApplicationProfile.clientBodyTimeout)&&
-  Objects.equals(this.pkiProfileRef, objHTTPApplicationProfile.pkiProfileRef)&&
-  Objects.equals(this.httponlyEnabled, objHTTPApplicationProfile.httponlyEnabled)&&
+  Objects.equals(this.xffAlternateName, objHTTPApplicationProfile.xffAlternateName)&&
+  Objects.equals(this.sslEverywhereEnabled, objHTTPApplicationProfile.sslEverywhereEnabled)&&
+  Objects.equals(this.hstsEnabled, objHTTPApplicationProfile.hstsEnabled)&&
   Objects.equals(this.hstsMaxAge, objHTTPApplicationProfile.hstsMaxAge)&&
-  Objects.equals(this.sslClientCertificateAction, objHTTPApplicationProfile.sslClientCertificateAction)&&
+  Objects.equals(this.hstsSubdomainsEnabled, objHTTPApplicationProfile.hstsSubdomainsEnabled)&&
+  Objects.equals(this.secureCookieEnabled, objHTTPApplicationProfile.secureCookieEnabled)&&
+  Objects.equals(this.httponlyEnabled, objHTTPApplicationProfile.httponlyEnabled)&&
+  Objects.equals(this.httpToHttps, objHTTPApplicationProfile.httpToHttps)&&
   Objects.equals(this.serverSideRedirectToHttps, objHTTPApplicationProfile.serverSideRedirectToHttps)&&
+  Objects.equals(this.xForwardedProtoEnabled, objHTTPApplicationProfile.xForwardedProtoEnabled)&&
+  Objects.equals(this.compressionProfile, objHTTPApplicationProfile.compressionProfile)&&
+  Objects.equals(this.spdyEnabled, objHTTPApplicationProfile.spdyEnabled)&&
+  Objects.equals(this.spdyFwdProxyMode, objHTTPApplicationProfile.spdyFwdProxyMode)&&
+  Objects.equals(this.postAcceptTimeout, objHTTPApplicationProfile.postAcceptTimeout)&&
+  Objects.equals(this.clientHeaderTimeout, objHTTPApplicationProfile.clientHeaderTimeout)&&
+  Objects.equals(this.clientBodyTimeout, objHTTPApplicationProfile.clientBodyTimeout)&&
+  Objects.equals(this.keepaliveTimeout, objHTTPApplicationProfile.keepaliveTimeout)&&
   Objects.equals(this.clientMaxHeaderSize, objHTTPApplicationProfile.clientMaxHeaderSize)&&
   Objects.equals(this.clientMaxRequestSize, objHTTPApplicationProfile.clientMaxRequestSize)&&
-  Objects.equals(this.maxHttp2ControlFramesPerConnection, objHTTPApplicationProfile.maxHttp2ControlFramesPerConnection)&&
-  Objects.equals(this.maxHttp2ConcurrentStreamsPerConnection, objHTTPApplicationProfile.maxHttp2ConcurrentStreamsPerConnection)&&
+  Objects.equals(this.clientMaxBodySize, objHTTPApplicationProfile.clientMaxBodySize)&&
   Objects.equals(this.cacheConfig, objHTTPApplicationProfile.cacheConfig)&&
   Objects.equals(this.maxRpsUnknownUri, objHTTPApplicationProfile.maxRpsUnknownUri)&&
-  Objects.equals(this.sslEverywhereEnabled, objHTTPApplicationProfile.sslEverywhereEnabled)&&
-  Objects.equals(this.spdyFwdProxyMode, objHTTPApplicationProfile.spdyFwdProxyMode)&&
-  Objects.equals(this.httpUpstreamBufferSize, objHTTPApplicationProfile.httpUpstreamBufferSize)&&
-  Objects.equals(this.maxHttp2QueuedFramesToClientPerConnection, objHTTPApplicationProfile.maxHttp2QueuedFramesToClientPerConnection)&&
-  Objects.equals(this.maxBadRpsCip, objHTTPApplicationProfile.maxBadRpsCip)&&
-  Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile)&&
-  Objects.equals(this.allowDotsInHeaderName, objHTTPApplicationProfile.allowDotsInHeaderName)&&
-  Objects.equals(this.clientHeaderTimeout, objHTTPApplicationProfile.clientHeaderTimeout)&&
-  Objects.equals(this.postAcceptTimeout, objHTTPApplicationProfile.postAcceptTimeout)&&
-  Objects.equals(this.secureCookieEnabled, objHTTPApplicationProfile.secureCookieEnabled)&&
-  Objects.equals(this.maxResponseHeadersSize, objHTTPApplicationProfile.maxResponseHeadersSize)&&
-  Objects.equals(this.xffAlternateName, objHTTPApplicationProfile.xffAlternateName)&&
   Objects.equals(this.maxRpsCip, objHTTPApplicationProfile.maxRpsCip)&&
-  Objects.equals(this.clientMaxBodySize, objHTTPApplicationProfile.clientMaxBodySize)&&
-  Objects.equals(this.enableFireAndForget, objHTTPApplicationProfile.enableFireAndForget)&&
+  Objects.equals(this.maxRpsUri, objHTTPApplicationProfile.maxRpsUri)&&
+  Objects.equals(this.maxRpsCipUri, objHTTPApplicationProfile.maxRpsCipUri)&&
+  Objects.equals(this.sslClientCertificateAction, objHTTPApplicationProfile.sslClientCertificateAction)&&
+  Objects.equals(this.sslClientCertificateMode, objHTTPApplicationProfile.sslClientCertificateMode)&&
+  Objects.equals(this.pkiProfileRef, objHTTPApplicationProfile.pkiProfileRef)&&
+  Objects.equals(this.websocketsEnabled, objHTTPApplicationProfile.websocketsEnabled)&&
   Objects.equals(this.maxRpsUnknownCip, objHTTPApplicationProfile.maxRpsUnknownCip)&&
-  Objects.equals(this.hstsSubdomainsEnabled, objHTTPApplicationProfile.hstsSubdomainsEnabled)&&
-  Objects.equals(this.maxBadRpsCipUri, objHTTPApplicationProfile.maxBadRpsCipUri)&&
+  Objects.equals(this.maxBadRpsCip, objHTTPApplicationProfile.maxBadRpsCip)&&
   Objects.equals(this.maxBadRpsUri, objHTTPApplicationProfile.maxBadRpsUri)&&
-  Objects.equals(this.useAppKeepaliveTimeout, objHTTPApplicationProfile.useAppKeepaliveTimeout);
+  Objects.equals(this.maxBadRpsCipUri, objHTTPApplicationProfile.maxBadRpsCipUri)&&
+  Objects.equals(this.keepaliveHeader, objHTTPApplicationProfile.keepaliveHeader)&&
+  Objects.equals(this.useAppKeepaliveTimeout, objHTTPApplicationProfile.useAppKeepaliveTimeout)&&
+  Objects.equals(this.allowDotsInHeaderName, objHTTPApplicationProfile.allowDotsInHeaderName)&&
+  Objects.equals(this.disableKeepalivePostsMsie6, objHTTPApplicationProfile.disableKeepalivePostsMsie6)&&
+  Objects.equals(this.enableRequestBodyBuffering, objHTTPApplicationProfile.enableRequestBodyBuffering)&&
+  Objects.equals(this.enableFireAndForget, objHTTPApplicationProfile.enableFireAndForget)&&
+  Objects.equals(this.maxResponseHeadersSize, objHTTPApplicationProfile.maxResponseHeadersSize)&&
+  Objects.equals(this.http2Enabled, objHTTPApplicationProfile.http2Enabled)&&
+  Objects.equals(this.respondWith100Continue, objHTTPApplicationProfile.respondWith100Continue)&&
+  Objects.equals(this.enableRequestBodyMetrics, objHTTPApplicationProfile.enableRequestBodyMetrics)&&
+  Objects.equals(this.fwdCloseHdrForBoundConnections, objHTTPApplicationProfile.fwdCloseHdrForBoundConnections)&&
+  Objects.equals(this.maxKeepaliveRequests, objHTTPApplicationProfile.maxKeepaliveRequests)&&
+  Objects.equals(this.disableSniHostnameCheck, objHTTPApplicationProfile.disableSniHostnameCheck)&&
+  Objects.equals(this.maxHttp2ControlFramesPerConnection, objHTTPApplicationProfile.maxHttp2ControlFramesPerConnection)&&
+  Objects.equals(this.maxHttp2QueuedFramesToClientPerConnection, objHTTPApplicationProfile.maxHttp2QueuedFramesToClientPerConnection)&&
+  Objects.equals(this.maxHttp2EmptyDataFramesPerConnection, objHTTPApplicationProfile.maxHttp2EmptyDataFramesPerConnection)&&
+  Objects.equals(this.maxHttp2ConcurrentStreamsPerConnection, objHTTPApplicationProfile.maxHttp2ConcurrentStreamsPerConnection)&&
+  Objects.equals(this.resetConnHttpOnSslPort, objHTTPApplicationProfile.resetConnHttpOnSslPort)&&
+  Objects.equals(this.httpUpstreamBufferSize, objHTTPApplicationProfile.httpUpstreamBufferSize)&&
+  Objects.equals(this.enableChunkMerge, objHTTPApplicationProfile.enableChunkMerge)&&
+  Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile);
 }
 
 @Override

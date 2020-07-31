@@ -146,9 +146,9 @@ public boolean equals(java.lang.Object o) {
   }
   PoolGroupMember objPoolGroupMember = (PoolGroupMember) o;
   return   Objects.equals(this.poolRef, objPoolGroupMember.poolRef)&&
-  Objects.equals(this.deploymentState, objPoolGroupMember.deploymentState)&&
   Objects.equals(this.ratio, objPoolGroupMember.ratio)&&
-  Objects.equals(this.priorityLabel, objPoolGroupMember.priorityLabel);
+  Objects.equals(this.priorityLabel, objPoolGroupMember.priorityLabel)&&
+  Objects.equals(this.deploymentState, objPoolGroupMember.deploymentState);
 }
 
 @Override

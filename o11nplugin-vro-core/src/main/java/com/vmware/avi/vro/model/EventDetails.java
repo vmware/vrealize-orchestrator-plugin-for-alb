@@ -81,6 +81,7 @@ import com.vmware.avi.vro.model.GslbServiceStatus;
 import com.vmware.avi.vro.model.HostUnavailEventDetails;
 import com.vmware.avi.vro.model.HealthScoreDetails;
 import com.vmware.avi.vro.model.RmSeIpFailEventDetails;
+import com.vmware.avi.vro.model.IPThreatDBEventData;
 import com.vmware.avi.vro.model.LicenseDetails;
 import com.vmware.avi.vro.model.LicenseExpiryDetails;
 import com.vmware.avi.vro.model.LicenseTransactionDetails;
@@ -94,6 +95,7 @@ import com.vmware.avi.vro.model.MetricsDbQueueHealthyEventDetails;
 import com.vmware.avi.vro.model.VinfraMgmtNwChangeDetails;
 import com.vmware.avi.vro.model.RmModifyNetworksEventDetails;
 import com.vmware.avi.vro.model.NetworkSubnetInfo;
+import com.vmware.avi.vro.model.NsxtImageDetails;
 import com.vmware.avi.vro.model.NsxtSetup;
 import com.vmware.avi.vro.model.NetworkSubnetClash;
 import com.vmware.avi.vro.model.SummarizedInfo;
@@ -117,6 +119,7 @@ import com.vmware.avi.vro.model.RebalanceScaleinEventDetails;
 import com.vmware.avi.vro.model.RebalanceScaleoutEventDetails;
 import com.vmware.avi.vro.model.RmRebootSeEventDetails;
 import com.vmware.avi.vro.model.SchedulerActionDetails;
+import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
 import com.vmware.avi.vro.model.SeMgrEventDetails;
 import com.vmware.avi.vro.model.SeDupipEventDetails;
@@ -511,6 +514,10 @@ public class EventDetails extends AviRestResource {
   @JsonInclude(Include.NON_NULL)
   private RmSeIpFailEventDetails ipFailDetails = null;
 
+  @JsonProperty("ip_threat_db_event_data")
+  @JsonInclude(Include.NON_NULL)
+  private IPThreatDBEventData ipThreatDbEventData = null;
+
   @JsonProperty("license_details")
   @JsonInclude(Include.NON_NULL)
   private LicenseDetails licenseDetails = null;
@@ -562,6 +569,10 @@ public class EventDetails extends AviRestResource {
   @JsonProperty("network_subnet_details")
   @JsonInclude(Include.NON_NULL)
   private NetworkSubnetInfo networkSubnetDetails = null;
+
+  @JsonProperty("nsxt_img_details")
+  @JsonInclude(Include.NON_NULL)
+  private NsxtImageDetails nsxtImgDetails = null;
 
   @JsonProperty("nsxt_info")
   @JsonInclude(Include.NON_NULL)
@@ -654,6 +665,10 @@ public class EventDetails extends AviRestResource {
   @JsonProperty("scheduler_action_info")
   @JsonInclude(Include.NON_NULL)
   private SchedulerActionDetails schedulerActionInfo = null;
+
+  @JsonProperty("se_bgp_peer_down_details")
+  @JsonInclude(Include.NON_NULL)
+  private SeBgpPeerDownDetails seBgpPeerDownDetails = null;
 
   @JsonProperty("se_bgp_peer_state_change_details")
   @JsonInclude(Include.NON_NULL)
@@ -2465,6 +2480,26 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Placeholder for description of property ip_threat_db_event_data of obj type eventdetails field type str  type ref.
+   * @return ipThreatDbEventData
+   */
+  @VsoMethod
+  public IPThreatDBEventData getIpThreatDbEventData() {
+    return ipThreatDbEventData;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property ip_threat_db_event_data of obj type eventdetails field type str  type ref.
+   * @param ipThreatDbEventData set the ipThreatDbEventData.
+   */
+  @VsoMethod
+  public void setIpThreatDbEventData(IPThreatDBEventData ipThreatDbEventData) {
+    this.ipThreatDbEventData = ipThreatDbEventData;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_details of obj type eventdetails field type str  type ref.
    * @return licenseDetails
    */
@@ -2721,6 +2756,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setNetworkSubnetDetails(NetworkSubnetInfo networkSubnetDetails) {
     this.networkSubnetDetails = networkSubnetDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Nsxt image event.
+   * Field introduced in 20.1.1.
+   * @return nsxtImgDetails
+   */
+  @VsoMethod
+  public NsxtImageDetails getNsxtImgDetails() {
+    return nsxtImgDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsxt image event.
+   * Field introduced in 20.1.1.
+   * @param nsxtImgDetails set the nsxtImgDetails.
+   */
+  @VsoMethod
+  public void setNsxtImgDetails(NsxtImageDetails nsxtImgDetails) {
+    this.nsxtImgDetails = nsxtImgDetails;
   }
 
   /**
@@ -3183,6 +3240,26 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSchedulerActionInfo(SchedulerActionDetails schedulerActionInfo) {
     this.schedulerActionInfo = schedulerActionInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.1.
+   * @return seBgpPeerDownDetails
+   */
+  @VsoMethod
+  public SeBgpPeerDownDetails getSeBgpPeerDownDetails() {
+    return seBgpPeerDownDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.1.
+   * @param seBgpPeerDownDetails set the seBgpPeerDownDetails.
+   */
+  @VsoMethod
+  public void setSeBgpPeerDownDetails(SeBgpPeerDownDetails seBgpPeerDownDetails) {
+    this.seBgpPeerDownDetails = seBgpPeerDownDetails;
   }
 
   /**
@@ -4622,189 +4699,192 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   EventDetails objEventDetails = (EventDetails) o;
-  return   Objects.equals(this.vcenterDetails, objEventDetails.vcenterDetails)&&
-  Objects.equals(this.csInfraDetails, objEventDetails.csInfraDetails)&&
-  Objects.equals(this.albservicesFileUploadDetails, objEventDetails.albservicesFileUploadDetails)&&
-  Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
-  Objects.equals(this.seIp6DadFailedEventDetails, objEventDetails.seIp6DadFailedEventDetails)&&
-  Objects.equals(this.clusterServiceRestoredDetails, objEventDetails.clusterServiceRestoredDetails)&&
-  Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
-  Objects.equals(this.seupgradeDisruptedDetails, objEventDetails.seupgradeDisruptedDetails)&&
-  Objects.equals(this.configUserLogoutDetails, objEventDetails.configUserLogoutDetails)&&
-  Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails)&&
-  Objects.equals(this.vipAutoscale, objEventDetails.vipAutoscale)&&
-  Objects.equals(this.ociInfo, objEventDetails.ociInfo)&&
-  Objects.equals(this.vsInitialplacementDetails, objEventDetails.vsInitialplacementDetails)&&
-  Objects.equals(this.sslRenewDetails, objEventDetails.sslRenewDetails)&&
-  Objects.equals(this.vcaInfraDetails, objEventDetails.vcaInfraDetails)&&
-  Objects.equals(this.seHmGsDetails, objEventDetails.seHmGsDetails)&&
-  Objects.equals(this.serverAutoscaleoutInfo, objEventDetails.serverAutoscaleoutInfo)&&
-  Objects.equals(this.vsScaleoutDetails, objEventDetails.vsScaleoutDetails)&&
-  Objects.equals(this.seupgradeMigrateDetails, objEventDetails.seupgradeMigrateDetails)&&
-  Objects.equals(this.azureInfo, objEventDetails.azureInfo)&&
-  Objects.equals(this.seBgpPeerStateChangeDetails, objEventDetails.seBgpPeerStateChangeDetails)&&
+  return   Objects.equals(this.discSummary, objEventDetails.discSummary)&&
+  Objects.equals(this.vcenterDetails, objEventDetails.vcenterDetails)&&
+  Objects.equals(this.cntlrHostListDetails, objEventDetails.cntlrHostListDetails)&&
+  Objects.equals(this.poolServerDeleteDetails, objEventDetails.poolServerDeleteDetails)&&
   Objects.equals(this.vmDetails, objEventDetails.vmDetails)&&
+  Objects.equals(this.mgmtNwChangeDetails, objEventDetails.mgmtNwChangeDetails)&&
+  Objects.equals(this.vcenterObjDeleteDetails, objEventDetails.vcenterObjDeleteDetails)&&
   Objects.equals(this.vcenterDiscFailure, objEventDetails.vcenterDiscFailure)&&
-  Objects.equals(this.gsInfo, objEventDetails.gsInfo)&&
-  Objects.equals(this.nwSubnetClashDetails, objEventDetails.nwSubnetClashDetails)&&
-  Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
-  Objects.equals(this.configUserNotAuthrzRuleDetails, objEventDetails.configUserNotAuthrzRuleDetails)&&
-  Objects.equals(this.crsDeploymentFailure, objEventDetails.crsDeploymentFailure)&&
-  Objects.equals(this.discSummary, objEventDetails.discSummary)&&
-  Objects.equals(this.upgradeStatusInfo, objEventDetails.upgradeStatusInfo)&&
-  Objects.equals(this.configUserLoginDetails, objEventDetails.configUserLoginDetails)&&
-  Objects.equals(this.seupgradeEventDetails, objEventDetails.seupgradeEventDetails)&&
-  Objects.equals(this.ccVipUpdateDetails, objEventDetails.ccVipUpdateDetails)&&
+  Objects.equals(this.vcenterConnectivityStatus, objEventDetails.vcenterConnectivityStatus)&&
+  Objects.equals(this.vcenterNetworkLimit, objEventDetails.vcenterNetworkLimit)&&
   Objects.equals(this.seDetails, objEventDetails.seDetails)&&
-  Objects.equals(this.containerCloudBatchSetup, objEventDetails.containerCloudBatchSetup)&&
+  Objects.equals(this.spawnSeDetails, objEventDetails.spawnSeDetails)&&
+  Objects.equals(this.modifyNetworksDetails, objEventDetails.modifyNetworksDetails)&&
+  Objects.equals(this.bindVsSeDetails, objEventDetails.bindVsSeDetails)&&
+  Objects.equals(this.unbindVsSeDetails, objEventDetails.unbindVsSeDetails)&&
   Objects.equals(this.rebootSeDetails, objEventDetails.rebootSeDetails)&&
-  Objects.equals(this.albservicesStatusDetails, objEventDetails.albservicesStatusDetails)&&
-  Objects.equals(this.glbInfo, objEventDetails.glbInfo)&&
-  Objects.equals(this.osApiVerCheckFailure, objEventDetails.osApiVerCheckFailure)&&
+  Objects.equals(this.addNetworksDetails, objEventDetails.addNetworksDetails)&&
+  Objects.equals(this.bootupFailDetails, objEventDetails.bootupFailDetails)&&
+  Objects.equals(this.ipFailDetails, objEventDetails.ipFailDetails)&&
+  Objects.equals(this.deleteSeDetails, objEventDetails.deleteSeDetails)&&
+  Objects.equals(this.hostUnavailDetails, objEventDetails.hostUnavailDetails)&&
+  Objects.equals(this.switchoverDetails, objEventDetails.switchoverDetails)&&
+  Objects.equals(this.switchoverFailDetails, objEventDetails.switchoverFailDetails)&&
+  Objects.equals(this.vsFsmDetails, objEventDetails.vsFsmDetails)&&
+  Objects.equals(this.vsPoolNwFltrDetails, objEventDetails.vsPoolNwFltrDetails)&&
+  Objects.equals(this.vsScaleoutDetails, objEventDetails.vsScaleoutDetails)&&
+  Objects.equals(this.vsScaleinDetails, objEventDetails.vsScaleinDetails)&&
+  Objects.equals(this.vsMigrateDetails, objEventDetails.vsMigrateDetails)&&
+  Objects.equals(this.vsErrorDetails, objEventDetails.vsErrorDetails)&&
+  Objects.equals(this.vsAwaitingseDetails, objEventDetails.vsAwaitingseDetails)&&
+  Objects.equals(this.vsInitialplacementDetails, objEventDetails.vsInitialplacementDetails)&&
+  Objects.equals(this.upgradeStatusInfo, objEventDetails.upgradeStatusInfo)&&
+  Objects.equals(this.allSeupgradeEventDetails, objEventDetails.allSeupgradeEventDetails)&&
+  Objects.equals(this.seupgradeEventDetails, objEventDetails.seupgradeEventDetails)&&
+  Objects.equals(this.seupgradeScaleoutDetails, objEventDetails.seupgradeScaleoutDetails)&&
+  Objects.equals(this.seupgradeScaleinDetails, objEventDetails.seupgradeScaleinDetails)&&
+  Objects.equals(this.seupgradeMigrateDetails, objEventDetails.seupgradeMigrateDetails)&&
+  Objects.equals(this.seupgradeDisruptedDetails, objEventDetails.seupgradeDisruptedDetails)&&
+  Objects.equals(this.rebalanceScaleoutDetails, objEventDetails.rebalanceScaleoutDetails)&&
+  Objects.equals(this.rebalanceScaleinDetails, objEventDetails.rebalanceScaleinDetails)&&
+  Objects.equals(this.rebalanceMigrateDetails, objEventDetails.rebalanceMigrateDetails)&&
+  Objects.equals(this.semigrateEventDetails, objEventDetails.semigrateEventDetails)&&
+  Objects.equals(this.disableSeMigrateDetails, objEventDetails.disableSeMigrateDetails)&&
+  Objects.equals(this.vipAutoscale, objEventDetails.vipAutoscale)&&
+  Objects.equals(this.upgradeEntry, objEventDetails.upgradeEntry)&&
+  Objects.equals(this.seThreshEventDetails, objEventDetails.seThreshEventDetails)&&
+  Objects.equals(this.seHbEventDetails, objEventDetails.seHbEventDetails)&&
+  Objects.equals(this.seVersionCheckDetails, objEventDetails.seVersionCheckDetails)&&
+  Objects.equals(this.seIpfailureEventDetails, objEventDetails.seIpfailureEventDetails)&&
+  Objects.equals(this.seDupipEventDetails, objEventDetails.seDupipEventDetails)&&
   Objects.equals(this.seIpAddedEventDetails, objEventDetails.seIpAddedEventDetails)&&
   Objects.equals(this.seIpRemovedEventDetails, objEventDetails.seIpRemovedEventDetails)&&
-  Objects.equals(this.seMemoryLimitEventDetails, objEventDetails.seMemoryLimitEventDetails)&&
-  Objects.equals(this.dosAttackEventDetails, objEventDetails.dosAttackEventDetails)&&
-  Objects.equals(this.seHbRecoveredEventDetails, objEventDetails.seHbRecoveredEventDetails)&&
-  Objects.equals(this.poolDeploymentSuccessInfo, objEventDetails.poolDeploymentSuccessInfo)&&
-  Objects.equals(this.albservicesCaseDetails, objEventDetails.albservicesCaseDetails)&&
-  Objects.equals(this.containerCloudSetup, objEventDetails.containerCloudSetup)&&
-  Objects.equals(this.ipFailDetails, objEventDetails.ipFailDetails)&&
-  Objects.equals(this.configCreateDetails, objEventDetails.configCreateDetails)&&
-  Objects.equals(this.ccClusterVipDetails, objEventDetails.ccClusterVipDetails)&&
-  Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
-  Objects.equals(this.awsAsgNotifDetails, objEventDetails.awsAsgNotifDetails)&&
-  Objects.equals(this.configSeGrpFlvUpdateDetails, objEventDetails.configSeGrpFlvUpdateDetails)&&
-  Objects.equals(this.vcenterObjDeleteDetails, objEventDetails.vcenterObjDeleteDetails)&&
-  Objects.equals(this.clusterNodeShutdownDetails, objEventDetails.clusterNodeShutdownDetails)&&
-  Objects.equals(this.burstCheckoutDetails, objEventDetails.burstCheckoutDetails)&&
-  Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
-  Objects.equals(this.configUpdateDetails, objEventDetails.configUpdateDetails)&&
-  Objects.equals(this.licenseDetails, objEventDetails.licenseDetails)&&
-  Objects.equals(this.awsInfraDetails, objEventDetails.awsInfraDetails)&&
-  Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
-  Objects.equals(this.seGeoDbDetails, objEventDetails.seGeoDbDetails)&&
-  Objects.equals(this.poolDeploymentUpdateInfo, objEventDetails.poolDeploymentUpdateInfo)&&
-  Objects.equals(this.unbindVsSeDetails, objEventDetails.unbindVsSeDetails)&&
-  Objects.equals(this.ccVnicDetails, objEventDetails.ccVnicDetails)&&
-  Objects.equals(this.ccInfraDetails, objEventDetails.ccInfraDetails)&&
-  Objects.equals(this.seHmGsgroupDetails, objEventDetails.seHmGsgroupDetails)&&
-  Objects.equals(this.seupgradeScaleinDetails, objEventDetails.seupgradeScaleinDetails)&&
-  Objects.equals(this.vcenterNetworkLimit, objEventDetails.vcenterNetworkLimit)&&
-  Objects.equals(this.ccIpDetails, objEventDetails.ccIpDetails)&&
-  Objects.equals(this.rebalanceScaleoutDetails, objEventDetails.rebalanceScaleoutDetails)&&
-  Objects.equals(this.osIpDetails, objEventDetails.osIpDetails)&&
-  Objects.equals(this.osLbpluginOpDetails, objEventDetails.osLbpluginOpDetails)&&
-  Objects.equals(this.metricThresholdUpDetails, objEventDetails.metricThresholdUpDetails)&&
-  Objects.equals(this.osInfraDetails, objEventDetails.osInfraDetails)&&
-  Objects.equals(this.rebalanceScaleinDetails, objEventDetails.rebalanceScaleinDetails)&&
-  Objects.equals(this.schedulerActionInfo, objEventDetails.schedulerActionInfo)&&
-  Objects.equals(this.hsDetails, objEventDetails.hsDetails)&&
-  Objects.equals(this.seupgradeScaleoutDetails, objEventDetails.seupgradeScaleoutDetails)&&
-  Objects.equals(this.switchoverFailDetails, objEventDetails.switchoverFailDetails)&&
-  Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
-  Objects.equals(this.vsFsmDetails, objEventDetails.vsFsmDetails)&&
-  Objects.equals(this.osSeVmDetails, objEventDetails.osSeVmDetails)&&
-  Objects.equals(this.metricsDbQueueHealthyDetails, objEventDetails.metricsDbQueueHealthyDetails)&&
-  Objects.equals(this.rebalanceMigrateDetails, objEventDetails.rebalanceMigrateDetails)&&
-  Objects.equals(this.vsMigrateDetails, objEventDetails.vsMigrateDetails)&&
-  Objects.equals(this.seLicensedBandwdithExceededEventDetails, objEventDetails.seLicensedBandwdithExceededEventDetails)&&
-  Objects.equals(this.serverAutoscaleinInfo, objEventDetails.serverAutoscaleinInfo)&&
-  Objects.equals(this.configDeleteDetails, objEventDetails.configDeleteDetails)&&
-  Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
-  Objects.equals(this.configPasswordChangeRequestDetails, objEventDetails.configPasswordChangeRequestDetails)&&
-  Objects.equals(this.apicAgentBdVrfDetails, objEventDetails.apicAgentBdVrfDetails)&&
-  Objects.equals(this.seThreshEventDetails, objEventDetails.seThreshEventDetails)&&
-  Objects.equals(this.modifyNetworksDetails, objEventDetails.modifyNetworksDetails)&&
-  Objects.equals(this.seDupipEventDetails, objEventDetails.seDupipEventDetails)&&
-  Objects.equals(this.configUserAuthrzRuleDetails, objEventDetails.configUserAuthrzRuleDetails)&&
-  Objects.equals(this.licenseTransactionDetails, objEventDetails.licenseTransactionDetails)&&
-  Objects.equals(this.metricsDbQueueFullDetails, objEventDetails.metricsDbQueueFullDetails)&&
-  Objects.equals(this.networkSubnetDetails, objEventDetails.networkSubnetDetails)&&
-  Objects.equals(this.gcpCloudRouterInfo, objEventDetails.gcpCloudRouterInfo)&&
-  Objects.equals(this.ccSyncServicesDetails, objEventDetails.ccSyncServicesDetails)&&
-  Objects.equals(this.vsPoolNwFltrDetails, objEventDetails.vsPoolNwFltrDetails)&&
-  Objects.equals(this.ccScalesetNotifDetails, objEventDetails.ccScalesetNotifDetails)&&
-  Objects.equals(this.clusterServiceCriticalFailureDetails, objEventDetails.clusterServiceCriticalFailureDetails)&&
-  Objects.equals(this.clusterNodeStartedDetails, objEventDetails.clusterNodeStartedDetails)&&
-  Objects.equals(this.syncServicesInfo, objEventDetails.syncServicesInfo)&&
-  Objects.equals(this.semigrateEventDetails, objEventDetails.semigrateEventDetails)&&
-  Objects.equals(this.vsScaleinDetails, objEventDetails.vsScaleinDetails)&&
-  Objects.equals(this.clusterConfigFailedDetails, objEventDetails.clusterConfigFailedDetails)&&
-  Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
-  Objects.equals(this.deleteSeDetails, objEventDetails.deleteSeDetails)&&
-  Objects.equals(this.vcenterConnectivityStatus, objEventDetails.vcenterConnectivityStatus)&&
-  Objects.equals(this.gcpInfo, objEventDetails.gcpInfo)&&
-  Objects.equals(this.bootupFailDetails, objEventDetails.bootupFailDetails)&&
-  Objects.equals(this.switchoverDetails, objEventDetails.switchoverDetails)&&
-  Objects.equals(this.ccSeVmDetails, objEventDetails.ccSeVmDetails)&&
-  Objects.equals(this.vsErrorDetails, objEventDetails.vsErrorDetails)&&
-  Objects.equals(this.apicAgentVsNetworkError, objEventDetails.apicAgentVsNetworkError)&&
-  Objects.equals(this.cntlrHostListDetails, objEventDetails.cntlrHostListDetails)&&
-  Objects.equals(this.serverAutoscaleinCompleteInfo, objEventDetails.serverAutoscaleinCompleteInfo)&&
-  Objects.equals(this.allSeupgradeEventDetails, objEventDetails.allSeupgradeEventDetails)&&
   Objects.equals(this.seGatewayHeartbeatFailedDetails, objEventDetails.seGatewayHeartbeatFailedDetails)&&
-  Objects.equals(this.poolServerDeleteDetails, objEventDetails.poolServerDeleteDetails)&&
-  Objects.equals(this.avgUptimeChangeDetails, objEventDetails.avgUptimeChangeDetails)&&
-  Objects.equals(this.rateLimiterEventDetails, objEventDetails.rateLimiterEventDetails)&&
-  Objects.equals(this.memoryBalancerInfo, objEventDetails.memoryBalancerInfo)&&
-  Objects.equals(this.serverAutoscaleoutCompleteInfo, objEventDetails.serverAutoscaleoutCompleteInfo)&&
-  Objects.equals(this.hostUnavailDetails, objEventDetails.hostUnavailDetails)&&
-  Objects.equals(this.sePoolLbDetails, objEventDetails.sePoolLbDetails)&&
   Objects.equals(this.seGatewayHeartbeatSuccessDetails, objEventDetails.seGatewayHeartbeatSuccessDetails)&&
-  Objects.equals(this.serverAutoscaleFailedInfo, objEventDetails.serverAutoscaleFailedInfo)&&
-  Objects.equals(this.systemUpgradeDetails, objEventDetails.systemUpgradeDetails)&&
   Objects.equals(this.seVnicDownEventDetails, objEventDetails.seVnicDownEventDetails)&&
+  Objects.equals(this.seVnicTxQueueStallEventDetails, objEventDetails.seVnicTxQueueStallEventDetails)&&
+  Objects.equals(this.seBgpPeerStateChangeDetails, objEventDetails.seBgpPeerStateChangeDetails)&&
+  Objects.equals(this.seLicensedBandwdithExceededEventDetails, objEventDetails.seLicensedBandwdithExceededEventDetails)&&
   Objects.equals(this.seVnicUpEventDetails, objEventDetails.seVnicUpEventDetails)&&
-  Objects.equals(this.vsAwaitingseDetails, objEventDetails.vsAwaitingseDetails)&&
-  Objects.equals(this.mesosInfraDetails, objEventDetails.mesosInfraDetails)&&
-  Objects.equals(this.mgmtNwChangeDetails, objEventDetails.mgmtNwChangeDetails)&&
-  Objects.equals(this.crsDetails, objEventDetails.crsDetails)&&
-  Objects.equals(this.marathonServicePortConflictDetails, objEventDetails.marathonServicePortConflictDetails)&&
-  Objects.equals(this.clusterNodeDbFailedDetails, objEventDetails.clusterNodeDbFailedDetails)&&
-  Objects.equals(this.ccHealthDetails, objEventDetails.ccHealthDetails)&&
-  Objects.equals(this.poolDeploymentFailureInfo, objEventDetails.poolDeploymentFailureInfo)&&
-  Objects.equals(this.osLbauditDetails, objEventDetails.osLbauditDetails)&&
-  Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
-  Objects.equals(this.awsAsgDeletionDetails, objEventDetails.awsAsgDeletionDetails)&&
-  Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
-  Objects.equals(this.vipDnsInfo, objEventDetails.vipDnsInfo)&&
-  Objects.equals(this.upgradeEntry, objEventDetails.upgradeEntry)&&
-  Objects.equals(this.seHbEventDetails, objEventDetails.seHbEventDetails)&&
-  Objects.equals(this.osSyncServicesDetails, objEventDetails.osSyncServicesDetails)&&
-  Objects.equals(this.ccParkintfDetails, objEventDetails.ccParkintfDetails)&&
-  Objects.equals(this.clusterLeaderFailoverDetails, objEventDetails.clusterLeaderFailoverDetails)&&
-  Objects.equals(this.seReconcileDetails, objEventDetails.seReconcileDetails)&&
-  Objects.equals(this.licenseExpiryDetails, objEventDetails.licenseExpiryDetails)&&
-  Objects.equals(this.configActionDetails, objEventDetails.configActionDetails)&&
-  Objects.equals(this.tencentInfo, objEventDetails.tencentInfo)&&
-  Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
-  Objects.equals(this.seIpfailureEventDetails, objEventDetails.seIpfailureEventDetails)&&
-  Objects.equals(this.bmInfraDetails, objEventDetails.bmInfraDetails)&&
-  Objects.equals(this.metricsDbDiskDetails, objEventDetails.metricsDbDiskDetails)&&
-  Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
-  Objects.equals(this.seVersionCheckDetails, objEventDetails.seVersionCheckDetails)&&
-  Objects.equals(this.ccTenantDelDetails, objEventDetails.ccTenantDelDetails)&&
-  Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
-  Objects.equals(this.dnsSyncInfo, objEventDetails.dnsSyncInfo)&&
-  Objects.equals(this.clusterServiceFailedDetails, objEventDetails.clusterServiceFailedDetails)&&
-  Objects.equals(this.nwSummarizedDetails, objEventDetails.nwSummarizedDetails)&&
-  Objects.equals(this.ccDnsUpdateDetails, objEventDetails.ccDnsUpdateDetails)&&
-  Objects.equals(this.crsDeploymentSuccess, objEventDetails.crsDeploymentSuccess)&&
-  Objects.equals(this.crsUpdateDetails, objEventDetails.crsUpdateDetails)&&
-  Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
-  Objects.equals(this.spawnSeDetails, objEventDetails.spawnSeDetails)&&
-  Objects.equals(this.apicAgentGenericDetails, objEventDetails.apicAgentGenericDetails)&&
-  Objects.equals(this.anomalyDetails, objEventDetails.anomalyDetails)&&
-  Objects.equals(this.dockerUcpDetails, objEventDetails.dockerUcpDetails)&&
-  Objects.equals(this.osVnicDetails, objEventDetails.osVnicDetails)&&
-  Objects.equals(this.containerCloudSevice, objEventDetails.containerCloudSevice)&&
   Objects.equals(this.seVsFaultEventDetails, objEventDetails.seVsFaultEventDetails)&&
-  Objects.equals(this.disableSeMigrateDetails, objEventDetails.disableSeMigrateDetails)&&
-  Objects.equals(this.bindVsSeDetails, objEventDetails.bindVsSeDetails)&&
-  Objects.equals(this.addNetworksDetails, objEventDetails.addNetworksDetails)&&
+  Objects.equals(this.seIp6DadFailedEventDetails, objEventDetails.seIp6DadFailedEventDetails)&&
+  Objects.equals(this.seMemoryLimitEventDetails, objEventDetails.seMemoryLimitEventDetails)&&
+  Objects.equals(this.rateLimiterEventDetails, objEventDetails.rateLimiterEventDetails)&&
+  Objects.equals(this.seHbRecoveredEventDetails, objEventDetails.seHbRecoveredEventDetails)&&
+  Objects.equals(this.seBgpPeerDownDetails, objEventDetails.seBgpPeerDownDetails)&&
+  Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
+  Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
+  Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
+  Objects.equals(this.sePoolLbDetails, objEventDetails.sePoolLbDetails)&&
+  Objects.equals(this.seHmGsgroupDetails, objEventDetails.seHmGsgroupDetails)&&
+  Objects.equals(this.seHmGsDetails, objEventDetails.seHmGsDetails)&&
+  Objects.equals(this.seGeoDbDetails, objEventDetails.seGeoDbDetails)&&
+  Objects.equals(this.configCreateDetails, objEventDetails.configCreateDetails)&&
+  Objects.equals(this.configUpdateDetails, objEventDetails.configUpdateDetails)&&
+  Objects.equals(this.configDeleteDetails, objEventDetails.configDeleteDetails)&&
+  Objects.equals(this.configUserLoginDetails, objEventDetails.configUserLoginDetails)&&
+  Objects.equals(this.configUserLogoutDetails, objEventDetails.configUserLogoutDetails)&&
+  Objects.equals(this.configActionDetails, objEventDetails.configActionDetails)&&
+  Objects.equals(this.configPasswordChangeRequestDetails, objEventDetails.configPasswordChangeRequestDetails)&&
+  Objects.equals(this.configUserAuthrzRuleDetails, objEventDetails.configUserAuthrzRuleDetails)&&
+  Objects.equals(this.configUserNotAuthrzRuleDetails, objEventDetails.configUserNotAuthrzRuleDetails)&&
+  Objects.equals(this.configSeGrpFlvUpdateDetails, objEventDetails.configSeGrpFlvUpdateDetails)&&
+  Objects.equals(this.sslExpireDetails, objEventDetails.sslExpireDetails)&&
+  Objects.equals(this.sslExportDetails, objEventDetails.sslExportDetails)&&
+  Objects.equals(this.sslRenewDetails, objEventDetails.sslRenewDetails)&&
+  Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
+  Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
+  Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
+  Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
+  Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
+  Objects.equals(this.clusterServiceFailedDetails, objEventDetails.clusterServiceFailedDetails)&&
+  Objects.equals(this.clusterLeaderFailoverDetails, objEventDetails.clusterLeaderFailoverDetails)&&
+  Objects.equals(this.clusterServiceRestoredDetails, objEventDetails.clusterServiceRestoredDetails)&&
+  Objects.equals(this.clusterServiceCriticalFailureDetails, objEventDetails.clusterServiceCriticalFailureDetails)&&
+  Objects.equals(this.clusterNodeShutdownDetails, objEventDetails.clusterNodeShutdownDetails)&&
+  Objects.equals(this.clusterNodeStartedDetails, objEventDetails.clusterNodeStartedDetails)&&
+  Objects.equals(this.clusterConfigFailedDetails, objEventDetails.clusterConfigFailedDetails)&&
+  Objects.equals(this.clusterNodeDbFailedDetails, objEventDetails.clusterNodeDbFailedDetails)&&
+  Objects.equals(this.systemUpgradeDetails, objEventDetails.systemUpgradeDetails)&&
+  Objects.equals(this.memoryBalancerInfo, objEventDetails.memoryBalancerInfo)&&
+  Objects.equals(this.metricThresholdUpDetails, objEventDetails.metricThresholdUpDetails)&&
+  Objects.equals(this.licenseExpiryDetails, objEventDetails.licenseExpiryDetails)&&
+  Objects.equals(this.anomalyDetails, objEventDetails.anomalyDetails)&&
+  Objects.equals(this.licenseDetails, objEventDetails.licenseDetails)&&
+  Objects.equals(this.metricsDbDiskDetails, objEventDetails.metricsDbDiskDetails)&&
+  Objects.equals(this.burstCheckoutDetails, objEventDetails.burstCheckoutDetails)&&
+  Objects.equals(this.metricsDbQueueFullDetails, objEventDetails.metricsDbQueueFullDetails)&&
+  Objects.equals(this.metricsDbQueueHealthyDetails, objEventDetails.metricsDbQueueHealthyDetails)&&
+  Objects.equals(this.osInfraDetails, objEventDetails.osInfraDetails)&&
+  Objects.equals(this.osSeVmDetails, objEventDetails.osSeVmDetails)&&
+  Objects.equals(this.osVnicDetails, objEventDetails.osVnicDetails)&&
+  Objects.equals(this.osIpDetails, objEventDetails.osIpDetails)&&
+  Objects.equals(this.osLbauditDetails, objEventDetails.osLbauditDetails)&&
+  Objects.equals(this.osLbpluginOpDetails, objEventDetails.osLbpluginOpDetails)&&
+  Objects.equals(this.osSyncServicesDetails, objEventDetails.osSyncServicesDetails)&&
+  Objects.equals(this.osApiVerCheckFailure, objEventDetails.osApiVerCheckFailure)&&
+  Objects.equals(this.awsInfraDetails, objEventDetails.awsInfraDetails)&&
+  Objects.equals(this.ccSeVmDetails, objEventDetails.ccSeVmDetails)&&
+  Objects.equals(this.ccVnicDetails, objEventDetails.ccVnicDetails)&&
+  Objects.equals(this.ccIpDetails, objEventDetails.ccIpDetails)&&
+  Objects.equals(this.ccSyncServicesDetails, objEventDetails.ccSyncServicesDetails)&&
+  Objects.equals(this.ccVipUpdateDetails, objEventDetails.ccVipUpdateDetails)&&
+  Objects.equals(this.ccInfraDetails, objEventDetails.ccInfraDetails)&&
+  Objects.equals(this.ccTenantDelDetails, objEventDetails.ccTenantDelDetails)&&
+  Objects.equals(this.ccClusterVipDetails, objEventDetails.ccClusterVipDetails)&&
+  Objects.equals(this.ccDnsUpdateDetails, objEventDetails.ccDnsUpdateDetails)&&
+  Objects.equals(this.ccHealthDetails, objEventDetails.ccHealthDetails)&&
+  Objects.equals(this.ccParkintfDetails, objEventDetails.ccParkintfDetails)&&
+  Objects.equals(this.awsAsgNotifDetails, objEventDetails.awsAsgNotifDetails)&&
+  Objects.equals(this.awsAsgDeletionDetails, objEventDetails.awsAsgDeletionDetails)&&
+  Objects.equals(this.ccScalesetNotifDetails, objEventDetails.ccScalesetNotifDetails)&&
+  Objects.equals(this.csInfraDetails, objEventDetails.csInfraDetails)&&
+  Objects.equals(this.bmInfraDetails, objEventDetails.bmInfraDetails)&&
+  Objects.equals(this.vcaInfraDetails, objEventDetails.vcaInfraDetails)&&
+  Objects.equals(this.marathonServicePortConflictDetails, objEventDetails.marathonServicePortConflictDetails)&&
+  Objects.equals(this.mesosInfraDetails, objEventDetails.mesosInfraDetails)&&
+  Objects.equals(this.dockerUcpDetails, objEventDetails.dockerUcpDetails)&&
+  Objects.equals(this.containerCloudSetup, objEventDetails.containerCloudSetup)&&
+  Objects.equals(this.containerCloudSevice, objEventDetails.containerCloudSevice)&&
+  Objects.equals(this.containerCloudBatchSetup, objEventDetails.containerCloudBatchSetup)&&
+  Objects.equals(this.hsDetails, objEventDetails.hsDetails)&&
+  Objects.equals(this.nwSubnetClashDetails, objEventDetails.nwSubnetClashDetails)&&
+  Objects.equals(this.nwSummarizedDetails, objEventDetails.nwSummarizedDetails)&&
+  Objects.equals(this.networkSubnetDetails, objEventDetails.networkSubnetDetails)&&
+  Objects.equals(this.avgUptimeChangeDetails, objEventDetails.avgUptimeChangeDetails)&&
+  Objects.equals(this.apicAgentGenericDetails, objEventDetails.apicAgentGenericDetails)&&
+  Objects.equals(this.apicAgentBdVrfDetails, objEventDetails.apicAgentBdVrfDetails)&&
+  Objects.equals(this.apicAgentVsNetworkError, objEventDetails.apicAgentVsNetworkError)&&
+  Objects.equals(this.dosAttackEventDetails, objEventDetails.dosAttackEventDetails)&&
+  Objects.equals(this.serverAutoscaleoutInfo, objEventDetails.serverAutoscaleoutInfo)&&
+  Objects.equals(this.serverAutoscaleinInfo, objEventDetails.serverAutoscaleinInfo)&&
+  Objects.equals(this.serverAutoscaleoutCompleteInfo, objEventDetails.serverAutoscaleoutCompleteInfo)&&
+  Objects.equals(this.serverAutoscaleinCompleteInfo, objEventDetails.serverAutoscaleinCompleteInfo)&&
+  Objects.equals(this.serverAutoscaleFailedInfo, objEventDetails.serverAutoscaleFailedInfo)&&
+  Objects.equals(this.poolDeploymentSuccessInfo, objEventDetails.poolDeploymentSuccessInfo)&&
+  Objects.equals(this.poolDeploymentFailureInfo, objEventDetails.poolDeploymentFailureInfo)&&
+  Objects.equals(this.poolDeploymentUpdateInfo, objEventDetails.poolDeploymentUpdateInfo)&&
+  Objects.equals(this.glbInfo, objEventDetails.glbInfo)&&
+  Objects.equals(this.gsInfo, objEventDetails.gsInfo)&&
+  Objects.equals(this.schedulerActionInfo, objEventDetails.schedulerActionInfo)&&
+  Objects.equals(this.gcpInfo, objEventDetails.gcpInfo)&&
+  Objects.equals(this.gcpCloudRouterInfo, objEventDetails.gcpCloudRouterInfo)&&
+  Objects.equals(this.vipDnsInfo, objEventDetails.vipDnsInfo)&&
+  Objects.equals(this.dnsSyncInfo, objEventDetails.dnsSyncInfo)&&
+  Objects.equals(this.azureInfo, objEventDetails.azureInfo)&&
   Objects.equals(this.azureMpInfo, objEventDetails.azureMpInfo)&&
-  Objects.equals(this.seVnicTxQueueStallEventDetails, objEventDetails.seVnicTxQueueStallEventDetails);
+  Objects.equals(this.syncServicesInfo, objEventDetails.syncServicesInfo)&&
+  Objects.equals(this.ociInfo, objEventDetails.ociInfo)&&
+  Objects.equals(this.tencentInfo, objEventDetails.tencentInfo)&&
+  Objects.equals(this.albservicesStatusDetails, objEventDetails.albservicesStatusDetails)&&
+  Objects.equals(this.crsDetails, objEventDetails.crsDetails)&&
+  Objects.equals(this.crsDeploymentSuccess, objEventDetails.crsDeploymentSuccess)&&
+  Objects.equals(this.crsDeploymentFailure, objEventDetails.crsDeploymentFailure)&&
+  Objects.equals(this.albservicesCaseDetails, objEventDetails.albservicesCaseDetails)&&
+  Objects.equals(this.albservicesFileUploadDetails, objEventDetails.albservicesFileUploadDetails)&&
+  Objects.equals(this.crsUpdateDetails, objEventDetails.crsUpdateDetails)&&
+  Objects.equals(this.ipThreatDbEventData, objEventDetails.ipThreatDbEventData)&&
+  Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
+  Objects.equals(this.nsxtImgDetails, objEventDetails.nsxtImgDetails)&&
+  Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
+  Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
+  Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
+  Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
+  Objects.equals(this.licenseTransactionDetails, objEventDetails.licenseTransactionDetails)&&
+  Objects.equals(this.seReconcileDetails, objEventDetails.seReconcileDetails)&&
+  Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails);
 }
 
 @Override
@@ -4887,6 +4967,7 @@ public String toString() {
         sb.append("    hostUnavailDetails: ").append(toIndentedString(hostUnavailDetails)).append("\n");
         sb.append("    hsDetails: ").append(toIndentedString(hsDetails)).append("\n");
         sb.append("    ipFailDetails: ").append(toIndentedString(ipFailDetails)).append("\n");
+        sb.append("    ipThreatDbEventData: ").append(toIndentedString(ipThreatDbEventData)).append("\n");
         sb.append("    licenseDetails: ").append(toIndentedString(licenseDetails)).append("\n");
         sb.append("    licenseExpiryDetails: ").append(toIndentedString(licenseExpiryDetails)).append("\n");
         sb.append("    licenseTransactionDetails: ").append(toIndentedString(licenseTransactionDetails)).append("\n");
@@ -4900,6 +4981,7 @@ public String toString() {
         sb.append("    mgmtNwChangeDetails: ").append(toIndentedString(mgmtNwChangeDetails)).append("\n");
         sb.append("    modifyNetworksDetails: ").append(toIndentedString(modifyNetworksDetails)).append("\n");
         sb.append("    networkSubnetDetails: ").append(toIndentedString(networkSubnetDetails)).append("\n");
+        sb.append("    nsxtImgDetails: ").append(toIndentedString(nsxtImgDetails)).append("\n");
         sb.append("    nsxtInfo: ").append(toIndentedString(nsxtInfo)).append("\n");
         sb.append("    nwSubnetClashDetails: ").append(toIndentedString(nwSubnetClashDetails)).append("\n");
         sb.append("    nwSummarizedDetails: ").append(toIndentedString(nwSummarizedDetails)).append("\n");
@@ -4923,6 +5005,7 @@ public String toString() {
         sb.append("    rebalanceScaleoutDetails: ").append(toIndentedString(rebalanceScaleoutDetails)).append("\n");
         sb.append("    rebootSeDetails: ").append(toIndentedString(rebootSeDetails)).append("\n");
         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
+        sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
         sb.append("    seDupipEventDetails: ").append(toIndentedString(seDupipEventDetails)).append("\n");

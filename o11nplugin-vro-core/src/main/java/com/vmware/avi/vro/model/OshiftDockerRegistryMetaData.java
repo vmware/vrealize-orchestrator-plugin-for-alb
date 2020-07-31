@@ -125,8 +125,8 @@ public boolean equals(java.lang.Object o) {
   }
   OshiftDockerRegistryMetaData objOshiftDockerRegistryMetaData = (OshiftDockerRegistryMetaData) o;
   return   Objects.equals(this.registryService, objOshiftDockerRegistryMetaData.registryService)&&
-  Objects.equals(this.registryVip, objOshiftDockerRegistryMetaData.registryVip)&&
-  Objects.equals(this.registryNamespace, objOshiftDockerRegistryMetaData.registryNamespace);
+  Objects.equals(this.registryNamespace, objOshiftDockerRegistryMetaData.registryNamespace)&&
+  Objects.equals(this.registryVip, objOshiftDockerRegistryMetaData.registryVip);
 }
 
 @Override

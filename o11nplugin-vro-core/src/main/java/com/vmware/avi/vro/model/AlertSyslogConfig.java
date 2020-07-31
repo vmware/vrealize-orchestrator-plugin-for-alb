@@ -198,11 +198,11 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   AlertSyslogConfig objAlertSyslogConfig = (AlertSyslogConfig) o;
-  return   Objects.equals(this.syslogServers, objAlertSyslogConfig.syslogServers)&&
-  Objects.equals(this.description, objAlertSyslogConfig.description)&&
+  return   Objects.equals(this.uuid, objAlertSyslogConfig.uuid)&&
   Objects.equals(this.name, objAlertSyslogConfig.name)&&
-  Objects.equals(this.tenantRef, objAlertSyslogConfig.tenantRef)&&
-  Objects.equals(this.uuid, objAlertSyslogConfig.uuid);
+  Objects.equals(this.syslogServers, objAlertSyslogConfig.syslogServers)&&
+  Objects.equals(this.description, objAlertSyslogConfig.description)&&
+  Objects.equals(this.tenantRef, objAlertSyslogConfig.tenantRef);
 }
 
 @Override

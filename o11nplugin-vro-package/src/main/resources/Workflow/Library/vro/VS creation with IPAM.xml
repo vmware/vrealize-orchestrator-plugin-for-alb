@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="c2dac770-2cf9-42aa-9e94-f121a8926d3a" version="1.1.5"
+	id="c2dac770-2cf9-42aa-9e94-f121a8926d3a" version="1.1.6"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Virtual service with IPAM]]></display-name>
@@ -91,8 +91,8 @@
 	</attrib>
 	<attrib name="virtualServiceData" type="string"
 		read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<attrib name="serverType" type="string" read-only="false">
 		<value encoded="n"><![CDATA[V4]]></value>
@@ -465,7 +465,7 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 			<p-param name="ApplicationProfile">
 				<desc><![CDATA[Application profile name ]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#}#]]></p-qual>
+					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#;#string#TCP#;#string#UDP#}#]]></p-qual>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="servicePort">

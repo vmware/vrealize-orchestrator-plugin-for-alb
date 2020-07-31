@@ -26,7 +26,11 @@ import org.springframework.stereotype.Service;
 public class OCSPConfig extends AviRestResource {
   @JsonProperty("failed_ocsp_jobs_retry_interval")
   @JsonInclude(Include.NON_NULL)
-  private Integer failedOcspJobsRetryInterval = 15;
+  private Integer failedOcspJobsRetryInterval = 3600;
+
+  @JsonProperty("max_tries")
+  @JsonInclude(Include.NON_NULL)
+  private Integer maxTries = 10;
 
   @JsonProperty("ocsp_req_interval")
   @JsonInclude(Include.NON_NULL)
@@ -34,7 +38,7 @@ public class OCSPConfig extends AviRestResource {
 
   @JsonProperty("ocsp_resp_timeout")
   @JsonInclude(Include.NON_NULL)
-  private Integer ocspRespTimeout = null;
+  private Integer ocspRespTimeout = 30;
 
   @JsonProperty("responder_url_lists")
   @JsonInclude(Include.NON_NULL)
@@ -49,9 +53,9 @@ public class OCSPConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Describes the time interval after which the next ocsp job needs to be scheduled in case of the ocsp job failures.
-   * Allowed values are 15-max.
+   * Allowed values are 60-max.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
    * @return failedOcspJobsRetryInterval
    */
   @VsoMethod
@@ -62,9 +66,9 @@ public class OCSPConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Describes the time interval after which the next ocsp job needs to be scheduled in case of the ocsp job failures.
-   * Allowed values are 15-max.
+   * Allowed values are 60-max.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
    * @param failedOcspJobsRetryInterval set the failedOcspJobsRetryInterval.
    */
   @VsoMethod
@@ -74,8 +78,32 @@ public class OCSPConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Maximum number of times the failed ocsp job can be rescheduled with failed_ocsp_jobs_retry_interval.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @return maxTries
+   */
+  @VsoMethod
+  public Integer getMaxTries() {
+    return maxTries;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of times the failed ocsp job can be rescheduled with failed_ocsp_jobs_retry_interval.
+   * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+   * @param maxTries set the maxTries.
+   */
+  @VsoMethod
+  public void setMaxTries(Integer  maxTries) {
+    this.maxTries = maxTries;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Interval between the ocsp queries.
-   * Allowed values are 30-max.
+   * Allowed values are 60-max.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @return ocspReqInterval
@@ -88,7 +116,7 @@ public class OCSPConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Interval between the ocsp queries.
-   * Allowed values are 30-max.
+   * Allowed values are 60-max.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @param ocspReqInterval set the ocspReqInterval.
@@ -102,6 +130,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time in seconds that the system waits for a reply from the ocsp responder before dropping the connection.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return ocspRespTimeout
    */
   @VsoMethod
@@ -113,6 +142,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Time in seconds that the system waits for a reply from the ocsp responder before dropping the connection.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param ocspRespTimeout set the ocspRespTimeout.
    */
   @VsoMethod
@@ -195,11 +225,12 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   OCSPConfig objOCSPConfig = (OCSPConfig) o;
-  return   Objects.equals(this.urlAction, objOCSPConfig.urlAction)&&
-  Objects.equals(this.ocspReqInterval, objOCSPConfig.ocspReqInterval)&&
+  return   Objects.equals(this.ocspReqInterval, objOCSPConfig.ocspReqInterval)&&
   Objects.equals(this.ocspRespTimeout, objOCSPConfig.ocspRespTimeout)&&
+  Objects.equals(this.responderUrlLists, objOCSPConfig.responderUrlLists)&&
+  Objects.equals(this.urlAction, objOCSPConfig.urlAction)&&
   Objects.equals(this.failedOcspJobsRetryInterval, objOCSPConfig.failedOcspJobsRetryInterval)&&
-  Objects.equals(this.responderUrlLists, objOCSPConfig.responderUrlLists);
+  Objects.equals(this.maxTries, objOCSPConfig.maxTries);
 }
 
 @Override
@@ -207,6 +238,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class OCSPConfig {\n");
       sb.append("    failedOcspJobsRetryInterval: ").append(toIndentedString(failedOcspJobsRetryInterval)).append("\n");
+        sb.append("    maxTries: ").append(toIndentedString(maxTries)).append("\n");
         sb.append("    ocspReqInterval: ").append(toIndentedString(ocspReqInterval)).append("\n");
         sb.append("    ocspRespTimeout: ").append(toIndentedString(ocspRespTimeout)).append("\n");
         sb.append("    responderUrlLists: ").append(toIndentedString(responderUrlLists)).append("\n");

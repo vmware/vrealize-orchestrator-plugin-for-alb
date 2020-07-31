@@ -31,45 +31,6 @@ public class VroPlugin {
 	 * Method will create AVI API session.
 	 * 
 	 * @param controller controller IP.
-	 * @param username   username of the controller.
-	 * @param password   password of the controller.
-	 * @param tenant     tenant name.
-	 * @param version    version.
-	 * @return instance of AviVroClient
-	 */
-	@VsoMethod
-	public AviVroClient connect(String controller, String username, String password, String tenant, String version) {
-		AviCredentials creds = new AviCredentials(controller, username, password);
-		creds.setTenant(tenant);
-		creds.setVersion(version);
-		service.setCred(creds);
-		return service;
-	}
-
-	/***
-	 * Method will create AVI API session.
-	 * 
-	 * @param controller controller IP.
-	 * @token token for authentication.
-	 * @param tenant  tenant name.
-	 * @param version version.
-	 * @return instance of AviVroClient
-	 */
-	@VsoMethod
-	public AviVroClient connect(String controller, String token, String tenant, String version) {
-		AviCredentials creds = new AviCredentials();
-		creds.setController(controller);
-		creds.setToken(token);
-		creds.setTenant(tenant);
-		creds.setVersion(version);
-		service.setCred(creds);
-		return service;
-	}
-
-	/***
-	 * Method will create AVI API session.
-	 * 
-	 * @param controller controller IP.
 	 * @param username   username of the controller
 	 * @param password   password of the controller
 	 * @param tenant     tenant name

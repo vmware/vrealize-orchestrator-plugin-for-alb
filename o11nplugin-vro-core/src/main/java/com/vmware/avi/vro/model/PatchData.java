@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PatchData extends AviRestResource {
+  @JsonProperty("patch_image_path")
+  @JsonInclude(Include.NON_NULL)
+  private String patchImagePath = null;
+
   @JsonProperty("patch_image_ref")
   @JsonInclude(Include.NON_NULL)
   private String patchImageRef = null;
@@ -33,6 +37,28 @@ public class PatchData extends AviRestResource {
   private String patchVersion = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image path of current patch image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @return patchImagePath
+   */
+  @VsoMethod
+  public String getPatchImagePath() {
+    return patchImagePath;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image path of current patch image.
+   * Field introduced in 18.2.10, 20.1.1.
+   * @param patchImagePath set the patchImagePath.
+   */
+  @VsoMethod
+  public void setPatchImagePath(String  patchImagePath) {
+    this.patchImagePath = patchImagePath;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -92,14 +118,16 @@ public boolean equals(java.lang.Object o) {
   }
   PatchData objPatchData = (PatchData) o;
   return   Objects.equals(this.patchVersion, objPatchData.patchVersion)&&
-  Objects.equals(this.patchImageRef, objPatchData.patchImageRef);
+  Objects.equals(this.patchImageRef, objPatchData.patchImageRef)&&
+  Objects.equals(this.patchImagePath, objPatchData.patchImagePath);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PatchData {\n");
-      sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
+      sb.append("    patchImagePath: ").append(toIndentedString(patchImagePath)).append("\n");
+        sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
         sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
       sb.append("}");
   return sb.toString();
