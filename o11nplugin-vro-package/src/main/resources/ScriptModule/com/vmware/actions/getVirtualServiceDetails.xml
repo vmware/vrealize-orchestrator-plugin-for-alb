@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="getVirtualServiceDetails"
+	result-type="Avi:AviVroClient" api-version="6.0.0"
+	id="e3ca802a-b1d0-413b-9e0e-8a6ef7e98571" version="0.0.0"
+	allowed-operations="vfe">
+	<param n="vsObject" t="Avi:VirtualService"><![CDATA[]]>
+	</param>
+	<param n="object" t="string"><![CDATA[]]>
+	</param>
+	<param n="field" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[var url=vsObject.getUrl();
+var controller=url.substring(url.indexOf("//")+2, url.indexOf("/api"));
+var aviVroClient=null;
+vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+for each(vroClient in vroClientArray){
+		if(vroClient !=null){
+		vroController=vroClient.cred.controller;
+		if(vroController==controller){
+		aviVroClient=vroClient;
+		}
+	}	
+}
+try{	
+	if(aviVroClient!=null)
+	{
+		if(object=="virtualservice"){
+			if(field == "name"){
+				return vsObject.getName();
+			}else if(field == "application_profile"){
+				var myAviService = new AviService() ;
+				myAviService=vsObject.getServices()[0];
+				var servicePort=myAviService.getPort();
+				var apptype="HTTP";
+				if(servicePort==443){
+					apptype="HTTPS";
+				}
+				return apptype;
+			}else if(field == "service_port"){
+				var myAviService = new AviService() ;
+				myAviService=vsObject.getServices()[0];
+				return myAviService.getPort();
+			}else if(field == "controller"){
+				return (url.substring(url.indexOf("//")+2, url.indexOf("/api")));
+			}else{
+				
+			}
+		}else if(object=="vsvip"){
+			var vsVipref=vsObject.getVsvipRef();
+			if(vsVipref!=null){
+				var vsVipUUID = vsVipref.substring(vsVipref.indexOf('vsvip-'),vsVipref.indexOf('#'));
+				var myAviVsVip = new AviVsVip() ;
+				myAviVsVip=aviVroClient.getObjectByUUID('vsvip',vsVipUUID);
+				var vipList=myAviVsVip.getVip();
+				var iPaddressObject =vipList[0].getIpAddress();
+				var ipAddress=iPaddressObject.getAddr();
+				return ipAddress;
+			}
+		}else if(object=="pool"){
+			var poolref=vsObject.getPoolRef();	
+			if(poolref!=null){
+				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+				var poolObject = new AviPool() ;
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				if(field == "pool_servers"){
+					var servers = poolObject.servers;
+					var ServerList= new Array();
+					for each(index in servers){
+						ServerList.push(index.ip.addr)
+					}
+					return ServerList;
+				}else{
+					var servers = poolObject.servers;		
+					var port;
+					for each(index in servers){
+						port = index.port;
+					}
+					return port
+				}
+			}
+		}else{
+			var poolref=vsObject.getPoolRef();	
+			if(poolref!=null){
+				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+				var poolObject = new AviPool() ;
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var hmArray=poolObject.getHealthMonitorRefs();
+				var HealthMonitor_ref=hmArray[0];
+				var hmUuid =HealthMonitor_ref.substring(HealthMonitor_ref.indexOf("/healthmonitor-")+1, HealthMonitor_ref.indexOf("#"));
+				var hmObject = new AviHealthMonitor();
+				hmObject=aviVroClient.getObjectByUUID('healthmonitor',hmUuid);
+				if(field=="health_monitor_type"){
+					var healthMonitorType=hmObject.getType();
+					if(healthMonitorType=="HEALTH_MONITOR_PING"){
+						healthMonitorType="ping";
+					}else{
+						healthMonitorType="TCP";
+					}
+					return healthMonitorType;
+				}else if(field=="monitor_port"){
+					return monitor_port=hmObject.getMonitorPort();
+				}else if(field=="time_out"){
+					return hmObject.getReceiveTimeout();
+				}else if(field=="send_interval"){
+					return hmObject.getSendInterval();
+				}else if(field=="successful_check"){
+					return hmObject.getSuccessfulChecks();
+				}else{
+					return hmObject.getFailedChecks();
+				}
+				
+			}
+		
+		}
+	}
+}catch(e){
+	System.log("Error occured while getting object detail: "+e)
+}
+			
+			
+			
+
+			]]></script>
+</dunes-script-module>
