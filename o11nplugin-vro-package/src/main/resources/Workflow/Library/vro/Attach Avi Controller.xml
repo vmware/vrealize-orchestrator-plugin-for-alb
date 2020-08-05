@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item2" object-name="workflow:name=generic"
-	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.6"
+	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.7"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Attach Avi Controller]]></display-name>
@@ -72,10 +72,15 @@ System.getModule("com.vmware.avi").attachVroClient(controller,username,password,
 	</workflow-item>
 	<workflow-item name="item4" out-name="item1" type="task">
 		<display-name><![CDATA[Get host from base url]]></display-name>
-		<script encoded="false"><![CDATA[host = controller.substring(8, controller.length);
-var end = host.indexOf("/");
-if (end != -1) {
+		<script encoded="false"><![CDATA[var flag=(controller.indexOf('https') == 0);
+if(flag){
+	host = controller.substring(8, controller.length);
+	var end = host.indexOf("/");
+	if (end != -1) {
 	host = host.substring(0, end);
+	}
+}else{
+	host=controller;
 }]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller"></bind>
