@@ -923,6 +923,8 @@ public class AviVroTest {
 			testingVRO.executeWorkflow();
 
 			// add object for delete
+
+			testingVRO.delete("vsvip", testObject.getVsVipData());
 			testingVRO.delete("virtualservice", testObject.deleteVS());
 
 			// add vsvip
