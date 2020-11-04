@@ -25,73 +25,73 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeStatusSummary extends AviRestResource {
-  @JsonProperty("enable_patch_rollback")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enablePatchRollback = false;
+    @JsonProperty("enable_patch_rollback")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePatchRollback = false;
 
-  @JsonProperty("enable_rollback")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRollback = false;
+    @JsonProperty("enable_rollback")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRollback = false;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String imageRef = null;
+    @JsonProperty("image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String imageRef = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("node_type")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeType = null;
+    @JsonProperty("node_type")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeType = null;
 
-  @JsonProperty("obj_cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String objCloudRef = null;
+    @JsonProperty("obj_cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String objCloudRef = null;
 
-  @JsonProperty("patch_image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String patchImageRef = null;
+    @JsonProperty("patch_image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String patchImageRef = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private UpgradeOpsState state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private UpgradeOpsState state = null;
 
-  @JsonProperty("tasks_completed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tasksCompleted = null;
+    @JsonProperty("tasks_completed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tasksCompleted = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("total_tasks")
-  @JsonInclude(Include.NON_NULL)
-  private Integer totalTasks = null;
+    @JsonProperty("total_tasks")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalTasks = null;
 
-  @JsonProperty("upgrade_ops")
-  @JsonInclude(Include.NON_NULL)
-  private String upgradeOps = null;
+    @JsonProperty("upgrade_ops")
+    @JsonInclude(Include.NON_NULL)
+    private String upgradeOps = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -147,6 +147,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * End time of upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -158,6 +159,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * End time of upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -170,6 +172,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Image uuid for identifying the current base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
   @VsoMethod
@@ -182,6 +185,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Image uuid for identifying the current base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
   @VsoMethod
@@ -193,6 +197,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the system such as cluster name, se group name and se name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -204,6 +209,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the system such as cluster name, se group name and se name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -216,6 +222,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Type of the system such as controller_cluster, se_group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeType
    */
   @VsoMethod
@@ -228,6 +235,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Type of the system such as controller_cluster, se_group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeType set the nodeType.
    */
   @VsoMethod
@@ -240,6 +248,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objCloudRef
    */
   @VsoMethod
@@ -252,6 +261,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objCloudRef set the objCloudRef.
    */
   @VsoMethod
@@ -264,6 +274,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Image uuid for identifying the current patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchImageRef
    */
   @VsoMethod
@@ -276,6 +287,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Image uuid for identifying the current patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchImageRef set the patchImageRef.
    */
   @VsoMethod
@@ -287,6 +299,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Start time of upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -298,6 +311,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Start time of upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod
@@ -309,6 +323,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current status of the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -320,6 +335,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Current status of the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -331,6 +347,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade tasks completed.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasksCompleted
    */
   @VsoMethod
@@ -342,6 +359,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade tasks completed.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tasksCompleted set the tasksCompleted.
    */
   @VsoMethod
@@ -354,6 +372,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -366,6 +385,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -377,6 +397,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total upgrade tasks.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalTasks
    */
   @VsoMethod
@@ -388,6 +409,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Total upgrade tasks.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalTasks set the totalTasks.
    */
   @VsoMethod
@@ -400,6 +422,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Upgrade operations requested.
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeOps
    */
   @VsoMethod
@@ -412,6 +435,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * Upgrade operations requested.
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeOps set the upgradeOps.
    */
   @VsoMethod
@@ -442,6 +466,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the system such as cluster, se group and se.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -453,6 +478,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the system such as cluster, se group and se.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -464,6 +490,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current base image applied to this node.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -475,6 +502,7 @@ public class UpgradeStatusSummary extends AviRestResource {
    * This is the setter method to the attribute.
    * Current base image applied to this node.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

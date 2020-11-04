@@ -24,51 +24,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LogControllerMapping extends AviRestResource {
-  @JsonProperty("controller_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerIp = null;
+    @JsonProperty("controller_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerIp = null;
 
-  @JsonProperty("metrics_mgr_port")
-  @JsonInclude(Include.NON_NULL)
-  private String metricsMgrPort = "METRICS_MGR_PORT_0";
+    @JsonProperty("metrics_mgr_port")
+    @JsonInclude(Include.NON_NULL)
+    private String metricsMgrPort = "METRICS_MGR_PORT_0";
 
-  @JsonProperty("node_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeUuid = null;
+    @JsonProperty("node_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeUuid = null;
 
-  @JsonProperty("prev_controller_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String prevControllerIp = null;
+    @JsonProperty("prev_controller_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String prevControllerIp = null;
 
-  @JsonProperty("prev_metrics_mgr_port")
-  @JsonInclude(Include.NON_NULL)
-  private String prevMetricsMgrPort = "METRICS_MGR_PORT_0";
+    @JsonProperty("prev_metrics_mgr_port")
+    @JsonInclude(Include.NON_NULL)
+    private String prevMetricsMgrPort = "METRICS_MGR_PORT_0";
 
-  @JsonProperty("static_mapping")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean staticMapping = false;
+    @JsonProperty("static_mapping")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean staticMapping = false;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_ip of obj type logcontrollermapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerIp
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_ip of obj type logcontrollermapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerIp set the controllerIp.
    */
   @VsoMethod
@@ -89,7 +91,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as METRICS_MGR_PORT_0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
    * @return metricsMgrPort
    */
   @VsoMethod
@@ -100,7 +102,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as METRICS_MGR_PORT_0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
    * @param metricsMgrPort set the metricsMgrPort.
    */
   @VsoMethod
@@ -111,6 +113,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeUuid
    */
   @VsoMethod
@@ -121,6 +124,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeUuid set the nodeUuid.
    */
   @VsoMethod
@@ -131,6 +135,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property prev_controller_ip of obj type logcontrollermapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevControllerIp
    */
   @VsoMethod
@@ -141,6 +146,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property prev_controller_ip of obj type logcontrollermapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevControllerIp set the prevControllerIp.
    */
   @VsoMethod
@@ -151,7 +157,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as METRICS_MGR_PORT_0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
    * @return prevMetricsMgrPort
    */
   @VsoMethod
@@ -162,7 +168,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as METRICS_MGR_PORT_0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
    * @param prevMetricsMgrPort set the prevMetricsMgrPort.
    */
   @VsoMethod
@@ -195,6 +201,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -205,6 +212,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -234,6 +242,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -244,6 +253,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -254,6 +264,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -264,6 +275,7 @@ public class LogControllerMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

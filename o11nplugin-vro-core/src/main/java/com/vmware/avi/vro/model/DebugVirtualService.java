@@ -29,67 +29,68 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugVirtualService extends AviRestResource {
-  @JsonProperty("capture")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean capture = null;
+    @JsonProperty("capture")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean capture = null;
 
-  @JsonProperty("capture_filters")
-  @JsonInclude(Include.NON_NULL)
-  private CaptureFilters captureFilters = null;
+    @JsonProperty("capture_filters")
+    @JsonInclude(Include.NON_NULL)
+    private CaptureFilters captureFilters = null;
 
-  @JsonProperty("capture_params")
-  @JsonInclude(Include.NON_NULL)
-  private DebugVirtualServiceCapture captureParams = null;
+    @JsonProperty("capture_params")
+    @JsonInclude(Include.NON_NULL)
+    private DebugVirtualServiceCapture captureParams = null;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("debug_hm")
-  @JsonInclude(Include.NON_NULL)
-  private String debugHm = "DEBUG_VS_HM_NONE";
+    @JsonProperty("debug_hm")
+    @JsonInclude(Include.NON_NULL)
+    private String debugHm = "DEBUG_VS_HM_NONE";
 
-  @JsonProperty("debug_ip")
-  @JsonInclude(Include.NON_NULL)
-  private DebugIpAddr debugIp = null;
+    @JsonProperty("debug_ip")
+    @JsonInclude(Include.NON_NULL)
+    private DebugIpAddr debugIp = null;
 
-  @JsonProperty("dns_options")
-  @JsonInclude(Include.NON_NULL)
-  private DebugDnsOptions dnsOptions = null;
+    @JsonProperty("dns_options")
+    @JsonInclude(Include.NON_NULL)
+    private DebugDnsOptions dnsOptions = null;
 
-  @JsonProperty("flags")
-  @JsonInclude(Include.NON_NULL)
-  private List<DebugVsDataplane> flags = null;
+    @JsonProperty("flags")
+    @JsonInclude(Include.NON_NULL)
+    private List<DebugVsDataplane> flags = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("resync_flows")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resyncFlows = false;
+    @JsonProperty("resync_flows")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resyncFlows = false;
 
-  @JsonProperty("se_params")
-  @JsonInclude(Include.NON_NULL)
-  private DebugVirtualServiceSeParams seParams = null;
+    @JsonProperty("se_params")
+    @JsonInclude(Include.NON_NULL)
+    private DebugVirtualServiceSeParams seParams = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property capture of obj type debugvirtualservice field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return capture
    */
   @VsoMethod
@@ -100,6 +101,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property capture of obj type debugvirtualservice field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param capture set the capture.
    */
   @VsoMethod
@@ -112,6 +114,7 @@ public class DebugVirtualService extends AviRestResource {
    * Per packet capture filters for debug virtual service.
    * Applies to both frontend and backend packets.
    * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureFilters
    */
   @VsoMethod
@@ -124,6 +127,7 @@ public class DebugVirtualService extends AviRestResource {
    * Per packet capture filters for debug virtual service.
    * Applies to both frontend and backend packets.
    * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureFilters set the captureFilters.
    */
   @VsoMethod
@@ -134,6 +138,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property capture_params of obj type debugvirtualservice field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureParams
    */
   @VsoMethod
@@ -144,6 +149,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property capture_params of obj type debugvirtualservice field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureParams set the captureParams.
    */
   @VsoMethod
@@ -154,6 +160,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -164,6 +171,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -175,7 +183,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This option controls the capture of health monitor flows.
    * Enum options - DEBUG_VS_HM_NONE, DEBUG_VS_HM_ONLY, DEBUG_VS_HM_INCLUDE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DEBUG_VS_HM_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DEBUG_VS_HM_NONE".
    * @return debugHm
    */
   @VsoMethod
@@ -187,7 +195,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * This option controls the capture of health monitor flows.
    * Enum options - DEBUG_VS_HM_NONE, DEBUG_VS_HM_ONLY, DEBUG_VS_HM_INCLUDE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DEBUG_VS_HM_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DEBUG_VS_HM_NONE".
    * @param debugHm set the debugHm.
    */
   @VsoMethod
@@ -198,6 +206,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filters all packets of a complete transaction (client and server side), based on client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return debugIp
    */
   @VsoMethod
@@ -208,6 +217,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filters all packets of a complete transaction (client and server side), based on client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param debugIp set the debugIp.
    */
   @VsoMethod
@@ -219,6 +229,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns debug options.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsOptions
    */
   @VsoMethod
@@ -230,6 +241,7 @@ public class DebugVirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns debug options.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsOptions set the dnsOptions.
    */
   @VsoMethod
@@ -240,6 +252,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property flags of obj type debugvirtualservice field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
   @VsoMethod
@@ -250,6 +263,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method. this will set the flags
    * Placeholder for description of property flags of obj type debugvirtualservice field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
   @VsoMethod
@@ -260,6 +274,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method this will set the flags
    * Placeholder for description of property flags of obj type debugvirtualservice field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
   @VsoMethod
@@ -275,6 +290,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -285,6 +301,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -321,6 +338,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_params of obj type debugvirtualservice field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seParams
    */
   @VsoMethod
@@ -331,6 +349,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_params of obj type debugvirtualservice field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seParams set the seParams.
    */
   @VsoMethod
@@ -341,6 +360,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -351,6 +371,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -380,6 +401,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -390,6 +412,7 @@ public class DebugVirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

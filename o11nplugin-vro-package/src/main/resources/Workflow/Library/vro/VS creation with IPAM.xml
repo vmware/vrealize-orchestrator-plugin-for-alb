@@ -3,50 +3,57 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="c2dac770-2cf9-42aa-9e94-f121a8926d3a" version="1.1.6"
+	id="c2dac770-2cf9-42aa-9e94-f121a8926d3a" version="1.1.7"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Create Virtual service with IPAM]]></display-name>
+	<display-name><![CDATA[Create Virtual Service With IPAM]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
-		<param name="Name" type="string">
-			<description><![CDATA[Add virtualservice name]]></description>
-		</param>
-		<param name="monitor_port" type="number">
-			<description><![CDATA[Monitor port]]></description>
+		<param name="name" type="string">
+			<description><![CDATA[name]]></description>
 		</param>
 		<param name="time_out" type="number">
-			<description><![CDATA[Time out]]></description>
+			<description><![CDATA[time_out]]></description>
 		</param>
 		<param name="send_interval" type="number">
-			<description><![CDATA[Send interval]]></description>
+			<description><![CDATA[send_interval]]></description>
 		</param>
 		<param name="successful_check" type="number">
-			<description><![CDATA[Successful Check]]></description>
+			<description><![CDATA[successful_check]]></description>
 		</param>
 		<param name="failed_check" type="number">
-			<description><![CDATA[Failed check]]></description>
+			<description><![CDATA[failed_check]]></description>
 		</param>
-		<param name="healthMonitorType" type="string">
-			<description><![CDATA[Health monitor type]]></description>
+		<param name="health_monitor_type" type="string">
+			<description><![CDATA[health_monitor_type]]></description>
 		</param>
-		<param name="controller" type="string"></param>
-		<param name="PoolServers" type="Array/string">
-			<description><![CDATA[Pool servers list ]]></description>
+		<param name="controller" type="string">
+			<description><![CDATA[controller]]></description>
 		</param>
-		<param name="ServerCloud" type="string">
-			<description><![CDATA[Servercloud name]]></description>
+		<param name="pool_servers" type="Array/string">
+			<description><![CDATA[pool_servers]]></description>
 		</param>
-		<param name="instance_port" type="number"></param>
-		<param name="ApplicationProfile" type="string">
-			<description><![CDATA[Application profile name ]]></description>
+		<param name="server_cloud" type="string">
+			<description><![CDATA[server_cloud]]></description>
 		</param>
-		<param name="servicePort" type="string">
-			<description><![CDATA[Virtual service port]]></description>
+		<param name="instance_port" type="number">
+			<description><![CDATA[instance_port]]></description>
 		</param>
-		<param name="network_management_name" type="string"></param>
-		<param name="domain" type="string"></param>
-		<param name="app_domain_name" type="string"></param>
+		<param name="application_profile" type="string">
+			<description><![CDATA[application_profile]]></description>
+		</param>
+		<param name="service_port" type="string">
+			<description><![CDATA[service_port]]></description>
+		</param>
+		<param name="network_management_name" type="string">
+			<description><![CDATA[network_management_name]]></description>
+		</param>
+		<param name="domain" type="string">
+			<description><![CDATA[domain]]></description>
+		</param>
+		<param name="app_domain_name" type="string">
+			<description><![CDATA[app_domain_name]]></description>
+		</param>
 	</input>
 	<output>
 		<param name="virtualServiceObject" type="Avi:VirtualService">
@@ -122,7 +129,7 @@ System.log("HealthMonitorName : "+HealthMonitorName)
 
 ]]></script>
 		<in-binding>
-			<bind name="Name" type="string" export-name="Name"></bind>
+			<bind name="Name" type="string" export-name="name"></bind>
 			<bind name="controller" type="string" export-name="controller"></bind>
 			<bind name="vsVipName" type="string" explicitly-not-bound="true"></bind>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
@@ -173,7 +180,7 @@ System.log("Object Created:-> "+virtualServiceObject.getName());
 actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
-				export-name="healthMonitorType">
+				export-name="health_monitor_type">
 				<description><![CDATA[Health monitor type]]></description>
 			</bind>
 			<bind name="hm_name" type="string"
@@ -181,7 +188,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				<description><![CDATA[Health monitor name]]></description>
 			</bind>
 			<bind name="monitor_port" type="number"
-				export-name="monitor_port">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Monitor port]]></description>
 			</bind>
 			<bind name="time_out" type="number" export-name="time_out">
@@ -257,13 +264,14 @@ System.getModule("com.vmware.avi").getAviVroClient(controller) ;]]></script>
 actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,aviVroClient,instance_port) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
-				export-name="PoolServers">
+				export-name="pool_servers">
 				<description><![CDATA[Pool servers list ]]></description>
 			</bind>
 			<bind name="poolName" type="string" export-name="poolName">
 				<description><![CDATA[Pool name]]></description>
 			</bind>
-			<bind name="ServerCloud" type="string" export-name="ServerCloud">
+			<bind name="ServerCloud" type="string"
+				export-name="server_cloud">
 				<description><![CDATA[Servercloud name]]></description>
 			</bind>
 			<bind name="Tenant" type="string" export-name="Tenant">
@@ -318,7 +326,7 @@ actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name
 				explicitly-not-bound="true"></bind>
 			<bind name="network_management_name" type="string"
 				export-name="network_management_name"></bind>
-			<bind name="cloud_name" type="string" export-name="ServerCloud"></bind>
+			<bind name="cloud_name" type="string" export-name="server_cloud"></bind>
 			<bind name="domain" type="string" export-name="domain"></bind>
 			<bind name="serverType" type="string" export-name="serverType"></bind>
 			<bind name="app_domain_name" type="string"
@@ -336,20 +344,22 @@ actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
 actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,aviVroClient,network_security_policy_name,http_policy_set_name) ;]]></script>
 		<in-binding>
-			<bind name="Name" type="string" export-name="Name">
+			<bind name="Name" type="string" export-name="name">
 				<description><![CDATA[Virtual service name]]></description>
 			</bind>
-			<bind name="ServerCloud" type="string" export-name="ServerCloud">
+			<bind name="ServerCloud" type="string"
+				export-name="server_cloud">
 				<description><![CDATA[Server cloud name]]></description>
 			</bind>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name ]]></description>
 			</bind>
 			<bind name="ApplicationProfile" type="string"
-				export-name="ApplicationProfile">
+				export-name="application_profile">
 				<description><![CDATA[Application profile name ]]></description>
 			</bind>
-			<bind name="servicePort" type="string" export-name="servicePort">
+			<bind name="servicePort" type="string"
+				export-name="service_port">
 				<description><![CDATA[Virtual service port]]></description>
 			</bind>
 			<bind name="poolName" type="string" export-name="poolName">
@@ -455,42 +465,44 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
 			</p-param>
+			<p-param name="server_cloud">
+				<desc><![CDATA[server_cloud]]></desc>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+				<p-qual kind="ognl" name="genericEnumeration"
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "cloud" )]]></p-qual>
+			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[VS details]]></title>
-			<p-param name="Name">
-				<desc><![CDATA[Virtualservice name]]></desc>
+			<p-param name="name">
+				<desc><![CDATA[name]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="ApplicationProfile">
-				<desc><![CDATA[Application profile name ]]></desc>
+			<p-param name="application_profile">
+				<desc><![CDATA[application_profile]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#;#string#TCP#;#string#UDP#}#]]></p-qual>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="servicePort">
-				<desc><![CDATA[Virtual service port]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[#ApplicationProfile == "HTTP" ? "80" : "443"]]></p-qual>
+			<p-param name="service_port">
+				<desc><![CDATA[service_port]]></desc>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[#application_profile == "HTTP" ? "80" : "443"]]></p-qual>
 			</p-param>
 			<p-param name="network_management_name">
-				<desc><![CDATA[Network]]></desc>
+				<desc><![CDATA[network_management_name]]></desc>
 			</p-param>
 			<p-param name="domain">
 				<desc><![CDATA[domain]]></desc>
 			</p-param>
 			<p-param name="app_domain_name">
-				<desc><![CDATA[Application domain name]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getDNSProvider").call( #controller , #ServerCloud )]]></p-qual>
+				<desc><![CDATA[app_domain_name]]></desc>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getDNSProvider").call( #controller , #server_cloud )]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Pool details]]></title>
-			<p-param name="PoolServers">
-				<desc><![CDATA[Pool servers list ]]></desc>
-				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
-			</p-param>
-			<p-param name="ServerCloud">
-				<desc><![CDATA[Servercloud name]]></desc>
+			<p-param name="pool_servers">
+				<desc><![CDATA[pool_servers]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="instance_port">
@@ -501,27 +513,23 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 		<p-step>
 			<title><![CDATA[Healthmonitor details]]></title>
 			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#CreateHealthMonitor != false]]></p-qual>
-			<p-param name="healthMonitorType">
-				<desc><![CDATA[Health monitor type]]></desc>
+			<p-param name="health_monitor_type">
+				<desc><![CDATA[health_monitor_type]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#Ping#;#string#TCP#}#]]></p-qual>
-				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
-			</p-param>
-			<p-param name="monitor_port">
-				<desc><![CDATA[Monitor port]]></desc>
+					type="Array/string"><![CDATA[#{#string#Ping#}#]]></p-qual>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="time_out">
-				<desc><![CDATA[Time out]]></desc>
+				<desc><![CDATA[time_out]]></desc>
 			</p-param>
 			<p-param name="send_interval">
-				<desc><![CDATA[Send interval]]></desc>
+				<desc><![CDATA[send_interval]]></desc>
 			</p-param>
 			<p-param name="successful_check">
-				<desc><![CDATA[Successful Check]]></desc>
+				<desc><![CDATA[successful_check]]></desc>
 			</p-param>
 			<p-param name="failed_check">
-				<desc><![CDATA[Failed check]]></desc>
+				<desc><![CDATA[failed_check]]></desc>
 			</p-param>
 		</p-step>
 	</presentation>

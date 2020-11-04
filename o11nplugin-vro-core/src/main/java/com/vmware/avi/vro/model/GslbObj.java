@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbObj extends AviRestResource {
-  @JsonProperty("gslb_geo_db_profile_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String gslbGeoDbProfileUuid = null;
+    @JsonProperty("gslb_geo_db_profile_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String gslbGeoDbProfileUuid = null;
 
-  @JsonProperty("gslb_service_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String gslbServiceUuid = null;
+    @JsonProperty("gslb_service_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String gslbServiceUuid = null;
 
-  @JsonProperty("gslb_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String gslbUuid = null;
+    @JsonProperty("gslb_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String gslbUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuid
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class GslbObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbGeoDbProfileUuid set the gslbGeoDbProfileUuid.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class GslbObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuid
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class GslbObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbServiceUuid set the gslbServiceUuid.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class GslbObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuid
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class GslbObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbUuid set the gslbUuid.
    */
   @VsoMethod

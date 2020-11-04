@@ -29,31 +29,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MgmtIpAccessControl extends AviRestResource {
-  @JsonProperty("api_access")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch apiAccess = null;
+    @JsonProperty("api_access")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch apiAccess = null;
 
-  @JsonProperty("shell_server_access")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch shellServerAccess = null;
+    @JsonProperty("shell_server_access")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch shellServerAccess = null;
 
-  @JsonProperty("snmp_access")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch snmpAccess = null;
+    @JsonProperty("snmp_access")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch snmpAccess = null;
 
-  @JsonProperty("ssh_access")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch sshAccess = null;
+    @JsonProperty("ssh_access")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch sshAccess = null;
 
-  @JsonProperty("sysint_access")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch sysintAccess = null;
+    @JsonProperty("sysint_access")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch sysintAccess = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip addresses to access controller using api.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiAccess
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure ip addresses to access controller using api.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiAccess set the apiAccess.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip addresses to access controller using cli shell.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shellServerAccess
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure ip addresses to access controller using cli shell.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shellServerAccess set the shellServerAccess.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip addresses to access controller using snmp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snmpAccess
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure ip addresses to access controller using snmp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snmpAccess set the snmpAccess.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip addresses to access controller using ssh.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshAccess
    */
   @VsoMethod
@@ -124,6 +131,7 @@ public class MgmtIpAccessControl extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure ip addresses to access controller using ssh.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshAccess set the sshAccess.
    */
   @VsoMethod
@@ -135,6 +143,7 @@ public class MgmtIpAccessControl extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure ip addresses to access controller using sysint access.
    * Field introduced in 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysintAccess
    */
   @VsoMethod
@@ -146,6 +155,7 @@ public class MgmtIpAccessControl extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure ip addresses to access controller using sysint access.
    * Field introduced in 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sysintAccess set the sysintAccess.
    */
   @VsoMethod

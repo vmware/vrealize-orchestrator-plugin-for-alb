@@ -26,41 +26,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LdapAuthSettings extends AviRestResource {
-  @JsonProperty("base_dn")
-  @JsonInclude(Include.NON_NULL)
-  private String baseDn = null;
+    @JsonProperty("base_dn")
+    @JsonInclude(Include.NON_NULL)
+    private String baseDn = null;
 
-  @JsonProperty("bind_as_administrator")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean bindAsAdministrator = true;
+    @JsonProperty("bind_as_administrator")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean bindAsAdministrator = true;
 
-  @JsonProperty("email_attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String emailAttribute = "email";
+    @JsonProperty("email_attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String emailAttribute = "email";
 
-  @JsonProperty("full_name_attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String fullNameAttribute = "name";
+    @JsonProperty("full_name_attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String fullNameAttribute = "name";
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = 389;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = 389;
 
-  @JsonProperty("security_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String securityMode = null;
+    @JsonProperty("security_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String securityMode = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> server = null;
 
-  @JsonProperty("settings")
-  @JsonInclude(Include.NON_NULL)
-  private LdapDirectorySettings settings = null;
+    @JsonProperty("settings")
+    @JsonInclude(Include.NON_NULL)
+    private LdapDirectorySettings settings = null;
 
-  @JsonProperty("user_bind")
-  @JsonInclude(Include.NON_NULL)
-  private LdapUserBindSettings userBind = null;
+    @JsonProperty("user_bind")
+    @JsonInclude(Include.NON_NULL)
+    private LdapUserBindSettings userBind = null;
 
 
 
@@ -68,6 +68,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ldap base dn.
    * For example, avinetworks.com would be dc=avinetworks,dc=com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseDn
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * The ldap base dn.
    * For example, avinetworks.com would be dc=avinetworks,dc=com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param baseDn set the baseDn.
    */
   @VsoMethod
@@ -111,7 +113,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap attribute that refers to user email.
-   * Default value when not specified in API or module is interpreted by Avi Controller as email.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "email".
    * @return emailAttribute
    */
   @VsoMethod
@@ -122,7 +124,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap attribute that refers to user email.
-   * Default value when not specified in API or module is interpreted by Avi Controller as email.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "email".
    * @param emailAttribute set the emailAttribute.
    */
   @VsoMethod
@@ -133,7 +135,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap attribute that refers to user's full name.
-   * Default value when not specified in API or module is interpreted by Avi Controller as name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "name".
    * @return fullNameAttribute
    */
   @VsoMethod
@@ -144,7 +146,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap attribute that refers to user's full name.
-   * Default value when not specified in API or module is interpreted by Avi Controller as name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "name".
    * @param fullNameAttribute set the fullNameAttribute.
    */
   @VsoMethod
@@ -178,6 +180,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap connection security mode.
    * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return securityMode
    */
   @VsoMethod
@@ -189,6 +192,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap connection security mode.
    * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param securityMode set the securityMode.
    */
   @VsoMethod
@@ -200,6 +204,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap server ip address or hostname.
    * Use ip address if an auth profile is used to configure virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -211,6 +216,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method. this will set the server
    * Ldap server ip address or hostname.
    * Use ip address if an auth profile is used to configure virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -222,6 +228,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method this will set the server
    * Ldap server ip address or hostname.
    * Use ip address if an auth profile is used to configure virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -237,6 +244,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap full directory configuration with administrator credentials.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return settings
    */
   @VsoMethod
@@ -247,6 +255,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap full directory configuration with administrator credentials.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param settings set the settings.
    */
   @VsoMethod
@@ -257,6 +266,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap anonymous bind configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userBind
    */
   @VsoMethod
@@ -267,6 +277,7 @@ public class LdapAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap anonymous bind configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userBind set the userBind.
    */
   @VsoMethod

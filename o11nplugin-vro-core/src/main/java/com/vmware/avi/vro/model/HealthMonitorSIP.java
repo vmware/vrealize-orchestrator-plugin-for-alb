@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorSIP extends AviRestResource {
-  @JsonProperty("sip_monitor_transport")
-  @JsonInclude(Include.NON_NULL)
-  private String sipMonitorTransport = "SIP_UDP_PROTO";
+    @JsonProperty("sip_monitor_transport")
+    @JsonInclude(Include.NON_NULL)
+    private String sipMonitorTransport = "SIP_UDP_PROTO";
 
-  @JsonProperty("sip_request_code")
-  @JsonInclude(Include.NON_NULL)
-  private String sipRequestCode = "SIP_OPTIONS";
+    @JsonProperty("sip_request_code")
+    @JsonInclude(Include.NON_NULL)
+    private String sipRequestCode = "SIP_OPTIONS";
 
-  @JsonProperty("sip_response")
-  @JsonInclude(Include.NON_NULL)
-  private String sipResponse = "SIP/2.0";
+    @JsonProperty("sip_response")
+    @JsonInclude(Include.NON_NULL)
+    private String sipResponse = "SIP/2.0";
 
 
 
@@ -44,7 +44,7 @@ public class HealthMonitorSIP extends AviRestResource {
    * The default transport is udp.
    * Enum options - SIP_UDP_PROTO, SIP_TCP_PROTO.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SIP_UDP_PROTO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_UDP_PROTO".
    * @return sipMonitorTransport
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class HealthMonitorSIP extends AviRestResource {
    * The default transport is udp.
    * Enum options - SIP_UDP_PROTO, SIP_TCP_PROTO.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SIP_UDP_PROTO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_UDP_PROTO".
    * @param sipMonitorTransport set the sipMonitorTransport.
    */
   @VsoMethod
@@ -72,7 +72,7 @@ public class HealthMonitorSIP extends AviRestResource {
    * By default, sip options request will be sent.
    * Enum options - SIP_OPTIONS.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SIP_OPTIONS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_OPTIONS".
    * @return sipRequestCode
    */
   @VsoMethod
@@ -86,7 +86,7 @@ public class HealthMonitorSIP extends AviRestResource {
    * By default, sip options request will be sent.
    * Enum options - SIP_OPTIONS.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SIP_OPTIONS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SIP_OPTIONS".
    * @param sipRequestCode set the sipRequestCode.
    */
   @VsoMethod
@@ -99,7 +99,7 @@ public class HealthMonitorSIP extends AviRestResource {
    * Match for a keyword in the first 2kb of the server header and body response.
    * By default, it matches for sip/2.0.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SIP/2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SIP/2.0".
    * @return sipResponse
    */
   @VsoMethod
@@ -112,7 +112,7 @@ public class HealthMonitorSIP extends AviRestResource {
    * Match for a keyword in the first 2kb of the server header and body response.
    * By default, it matches for sip/2.0.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SIP/2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SIP/2.0".
    * @param sipResponse set the sipResponse.
    */
   @VsoMethod

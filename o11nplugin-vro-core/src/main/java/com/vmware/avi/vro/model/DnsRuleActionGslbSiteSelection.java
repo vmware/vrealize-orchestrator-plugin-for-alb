@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleActionGslbSiteSelection extends AviRestResource {
-  @JsonProperty("fallback_site_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> fallbackSiteNames = null;
+    @JsonProperty("fallback_site_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> fallbackSiteNames = null;
 
-  @JsonProperty("is_site_preferred")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isSitePreferred = true;
+    @JsonProperty("is_site_preferred")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isSitePreferred = true;
 
-  @JsonProperty("site_name")
-  @JsonInclude(Include.NON_NULL)
-  private String siteName = null;
+    @JsonProperty("site_name")
+    @JsonInclude(Include.NON_NULL)
+    private String siteName = null;
 
 
 
@@ -42,6 +42,7 @@ public class DnsRuleActionGslbSiteSelection extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb fallback sites to use in case the desired site is down.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackSiteNames
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class DnsRuleActionGslbSiteSelection extends AviRestResource {
    * This is the setter method. this will set the fallbackSiteNames
    * Gslb fallback sites to use in case the desired site is down.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackSiteNames
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class DnsRuleActionGslbSiteSelection extends AviRestResource {
    * This is the setter method this will set the fallbackSiteNames
    * Gslb fallback sites to use in case the desired site is down.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackSiteNames
    */
   @VsoMethod
@@ -108,6 +111,7 @@ public class DnsRuleActionGslbSiteSelection extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb site name.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteName
    */
   @VsoMethod
@@ -119,6 +123,7 @@ public class DnsRuleActionGslbSiteSelection extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb site name.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteName set the siteName.
    */
   @VsoMethod

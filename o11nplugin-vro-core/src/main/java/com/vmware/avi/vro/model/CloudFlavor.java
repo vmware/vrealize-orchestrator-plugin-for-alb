@@ -24,63 +24,64 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudFlavor extends AviRestResource {
-  @JsonProperty("cost")
-  @JsonInclude(Include.NON_NULL)
-  private String cost = null;
+    @JsonProperty("cost")
+    @JsonInclude(Include.NON_NULL)
+    private String cost = null;
 
-  @JsonProperty("disk_gb")
-  @JsonInclude(Include.NON_NULL)
-  private Integer diskGb = null;
+    @JsonProperty("disk_gb")
+    @JsonInclude(Include.NON_NULL)
+    private Integer diskGb = null;
 
-  @JsonProperty("enhanced_nw")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enhancedNw = null;
+    @JsonProperty("enhanced_nw")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enhancedNw = null;
 
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("is_recommended")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isRecommended = null;
+    @JsonProperty("is_recommended")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isRecommended = null;
 
-  @JsonProperty("max_ip6s_per_nic")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxIp6SPerNic = null;
+    @JsonProperty("max_ip6s_per_nic")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxIp6SPerNic = null;
 
-  @JsonProperty("max_ips_per_nic")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxIpsPerNic = null;
+    @JsonProperty("max_ips_per_nic")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxIpsPerNic = null;
 
-  @JsonProperty("max_nics")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxNics = null;
+    @JsonProperty("max_nics")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxNics = null;
 
-  @JsonProperty("meta")
-  @JsonInclude(Include.NON_NULL)
-  private List<CloudMeta> meta = null;
+    @JsonProperty("meta")
+    @JsonInclude(Include.NON_NULL)
+    private List<CloudMeta> meta = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("public")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean publics = true;
+    @JsonProperty("publics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean publics = true;
 
-  @JsonProperty("ram_mb")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ramMb = null;
+    @JsonProperty("ram_mb")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ramMb = null;
 
-  @JsonProperty("vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcpus = null;
+    @JsonProperty("vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcpus = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cost of obj type cloudflavor field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cost
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cost of obj type cloudflavor field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cost set the cost.
    */
   @VsoMethod
@@ -101,6 +103,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property disk_gb of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diskGb
    */
   @VsoMethod
@@ -111,6 +114,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property disk_gb of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param diskGb set the diskGb.
    */
   @VsoMethod
@@ -121,6 +125,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property enhanced_nw of obj type cloudflavor field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enhancedNw
    */
   @VsoMethod
@@ -131,6 +136,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property enhanced_nw of obj type cloudflavor field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enhancedNw set the enhancedNw.
    */
   @VsoMethod
@@ -141,6 +147,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property id of obj type cloudflavor field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -151,6 +158,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property id of obj type cloudflavor field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -163,6 +171,7 @@ public class CloudFlavor extends AviRestResource {
    * If a vm flavor is recommended for requested se_usage_type.set to true if the chosen vm flavor is recommended for requested se_usage_type.else set
    * to false.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isRecommended
    */
   @VsoMethod
@@ -175,6 +184,7 @@ public class CloudFlavor extends AviRestResource {
    * If a vm flavor is recommended for requested se_usage_type.set to true if the chosen vm flavor is recommended for requested se_usage_type.else set
    * to false.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isRecommended set the isRecommended.
    */
   @VsoMethod
@@ -186,6 +196,7 @@ public class CloudFlavor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of ipv6 addresses that can be configured per nic.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIp6SPerNic
    */
   @VsoMethod
@@ -197,6 +208,7 @@ public class CloudFlavor extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of ipv6 addresses that can be configured per nic.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIp6SPerNic set the maxIp6SPerNic.
    */
   @VsoMethod
@@ -207,6 +219,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_ips_per_nic of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIpsPerNic
    */
   @VsoMethod
@@ -217,6 +230,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_ips_per_nic of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIpsPerNic set the maxIpsPerNic.
    */
   @VsoMethod
@@ -227,6 +241,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_nics of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNics
    */
   @VsoMethod
@@ -237,6 +252,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_nics of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNics set the maxNics.
    */
   @VsoMethod
@@ -247,6 +263,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property meta of obj type cloudflavor field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return meta
    */
   @VsoMethod
@@ -257,6 +274,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method. this will set the meta
    * Placeholder for description of property meta of obj type cloudflavor field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return meta
    */
   @VsoMethod
@@ -267,6 +285,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method this will set the meta
    * Placeholder for description of property meta of obj type cloudflavor field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return meta
    */
   @VsoMethod
@@ -282,6 +301,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -292,6 +312,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -324,6 +345,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ram_mb of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ramMb
    */
   @VsoMethod
@@ -334,6 +356,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ram_mb of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ramMb set the ramMb.
    */
   @VsoMethod
@@ -344,6 +367,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcpus of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcpus
    */
   @VsoMethod
@@ -354,6 +378,7 @@ public class CloudFlavor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcpus of obj type cloudflavor field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcpus set the vcpus.
    */
   @VsoMethod

@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DNSVsSyncInfo extends AviRestResource {
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("total_records")
-  @JsonInclude(Include.NON_NULL)
-  private Integer totalRecords = null;
+    @JsonProperty("total_records")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalRecords = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error of obj type dnsvssyncinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class DNSVsSyncInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error of obj type dnsvssyncinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class DNSVsSyncInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property total_records of obj type dnsvssyncinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalRecords
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class DNSVsSyncInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property total_records of obj type dnsvssyncinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalRecords set the totalRecords.
    */
   @VsoMethod

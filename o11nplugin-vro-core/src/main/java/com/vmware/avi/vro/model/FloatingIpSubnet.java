@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FloatingIpSubnet extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("prefix")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix prefix = null;
+    @JsonProperty("prefix")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix prefix = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -43,6 +43,7 @@ public class FloatingIpSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floatingip subnet name if available, else uuid.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class FloatingIpSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Floatingip subnet name if available, else uuid.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class FloatingIpSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floatingip subnet prefix.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class FloatingIpSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Floatingip subnet prefix.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class FloatingIpSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floatingip subnet uuid.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class FloatingIpSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Floatingip subnet uuid.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -27,21 +27,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FailAction extends AviRestResource {
-  @JsonProperty("backup_pool")
-  @JsonInclude(Include.NON_NULL)
-  private FailActionBackupPool backupPool = null;
+    @JsonProperty("backup_pool")
+    @JsonInclude(Include.NON_NULL)
+    private FailActionBackupPool backupPool;
 
-  @JsonProperty("local_rsp")
-  @JsonInclude(Include.NON_NULL)
-  private FailActionHTTPLocalResponse localRsp = null;
+    @JsonProperty("local_rsp")
+    @JsonInclude(Include.NON_NULL)
+    private FailActionHTTPLocalResponse localRsp = null;
 
-  @JsonProperty("redirect")
-  @JsonInclude(Include.NON_NULL)
-  private FailActionHTTPRedirect redirect = null;
+    @JsonProperty("redirect")
+    @JsonInclude(Include.NON_NULL)
+    private FailActionHTTPRedirect redirect = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "FAIL_ACTION_CLOSE_CONN";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "FAIL_ACTION_CLOSE_CONN";
 
 
 
@@ -70,6 +70,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Local response to http requests when pool experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localRsp
    */
   @VsoMethod
@@ -80,6 +81,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Local response to http requests when pool experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localRsp set the localRsp.
    */
   @VsoMethod
@@ -90,6 +92,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url to redirect http requests to when pool experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirect
    */
   @VsoMethod
@@ -100,6 +103,7 @@ public class FailAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url to redirect http requests to when pool experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirect set the redirect.
    */
   @VsoMethod
@@ -112,7 +116,7 @@ public class FailAction extends AviRestResource {
    * Enables a response to client when pool experiences a failure.
    * By default tcp connection is closed.
    * Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as FAIL_ACTION_CLOSE_CONN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_ACTION_CLOSE_CONN".
    * @return type
    */
   @VsoMethod
@@ -125,7 +129,7 @@ public class FailAction extends AviRestResource {
    * Enables a response to client when pool experiences a failure.
    * By default tcp connection is closed.
    * Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as FAIL_ACTION_CLOSE_CONN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_ACTION_CLOSE_CONN".
    * @param type set the type.
    */
   @VsoMethod

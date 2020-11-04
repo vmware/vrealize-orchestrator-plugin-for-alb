@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class vCloudAirConfiguration extends AviRestResource {
-  @JsonProperty("privilege")
-  @JsonInclude(Include.NON_NULL)
-  private String privilege = "WRITE_ACCESS";
+    @JsonProperty("privilege")
+    @JsonInclude(Include.NON_NULL)
+    private String privilege = "WRITE_ACCESS";
 
-  @JsonProperty("vca_host")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaHost = null;
+    @JsonProperty("vca_host")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaHost = null;
 
-  @JsonProperty("vca_instance")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaInstance = null;
+    @JsonProperty("vca_instance")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaInstance = null;
 
-  @JsonProperty("vca_mgmt_network")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaMgmtNetwork = null;
+    @JsonProperty("vca_mgmt_network")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaMgmtNetwork = null;
 
-  @JsonProperty("vca_orgnization")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaOrgnization = null;
+    @JsonProperty("vca_orgnization")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaOrgnization = null;
 
-  @JsonProperty("vca_password")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaPassword = null;
+    @JsonProperty("vca_password")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaPassword = null;
 
-  @JsonProperty("vca_username")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaUsername = null;
+    @JsonProperty("vca_username")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaUsername = null;
 
-  @JsonProperty("vca_vdc")
-  @JsonInclude(Include.NON_NULL)
-  private String vcaVdc = null;
+    @JsonProperty("vca_vdc")
+    @JsonInclude(Include.NON_NULL)
+    private String vcaVdc = null;
 
 
 
@@ -62,7 +62,7 @@ public class vCloudAirConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vcloudair access mode.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
    * @return privilege
    */
   @VsoMethod
@@ -74,7 +74,7 @@ public class vCloudAirConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Vcloudair access mode.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
    * @param privilege set the privilege.
    */
   @VsoMethod
@@ -85,6 +85,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair host address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaHost
    */
   @VsoMethod
@@ -95,6 +96,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair host address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaHost set the vcaHost.
    */
   @VsoMethod
@@ -105,6 +107,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair instance id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaInstance
    */
   @VsoMethod
@@ -115,6 +118,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair instance id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaInstance set the vcaInstance.
    */
   @VsoMethod
@@ -125,6 +129,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair management network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaMgmtNetwork
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair management network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaMgmtNetwork set the vcaMgmtNetwork.
    */
   @VsoMethod
@@ -145,6 +151,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair orgnization id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaOrgnization
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair orgnization id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaOrgnization set the vcaOrgnization.
    */
   @VsoMethod
@@ -165,6 +173,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair password.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaPassword
    */
   @VsoMethod
@@ -175,6 +184,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair password.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaPassword set the vcaPassword.
    */
   @VsoMethod
@@ -185,6 +195,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair username.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaUsername
    */
   @VsoMethod
@@ -195,6 +206,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair username.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaUsername set the vcaUsername.
    */
   @VsoMethod
@@ -205,6 +217,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcloudair virtual data center name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaVdc
    */
   @VsoMethod
@@ -215,6 +228,7 @@ public class vCloudAirConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcloudair virtual data center name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaVdc set the vcaVdc.
    */
   @VsoMethod

@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DNSConfiguration extends AviRestResource {
-  @JsonProperty("search_domain")
-  @JsonInclude(Include.NON_NULL)
-  private String searchDomain = null;
+    @JsonProperty("search_domain")
+    @JsonInclude(Include.NON_NULL)
+    private String searchDomain = null;
 
-  @JsonProperty("server_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> serverList = null;
+    @JsonProperty("server_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> serverList = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Search domain to use in dns lookup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return searchDomain
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class DNSConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Search domain to use in dns lookup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param searchDomain set the searchDomain.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class DNSConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of dns server ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverList
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class DNSConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the serverList
    * List of dns server ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverList
    */
   @VsoMethod
@@ -77,6 +81,7 @@ public class DNSConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the serverList
    * List of dns server ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverList
    */
   @VsoMethod

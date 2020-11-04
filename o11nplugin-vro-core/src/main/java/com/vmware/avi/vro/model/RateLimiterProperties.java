@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RateLimiterProperties extends AviRestResource {
-  @JsonProperty("msf_num_stages")
-  @JsonInclude(Include.NON_NULL)
-  private Integer msfNumStages = 1;
+    @JsonProperty("msf_num_stages")
+    @JsonInclude(Include.NON_NULL)
+    private Integer msfNumStages = 1;
 
-  @JsonProperty("msf_stage_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer msfStageSize = 16384;
+    @JsonProperty("msf_stage_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer msfStageSize = 16384;
 
 
 

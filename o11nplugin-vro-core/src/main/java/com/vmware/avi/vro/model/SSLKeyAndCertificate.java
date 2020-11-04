@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SSLCertificate;
 import com.vmware.avi.vro.model.SSLKeyParams;
 import com.vmware.avi.vro.model.OCSPConfig;
-import com.vmware.avi.vro.model.OCSPResponseInfo;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -28,111 +27,104 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLKeyAndCertificate extends AviRestResource {
-  @JsonProperty("ca_certs")
-  @JsonInclude(Include.NON_NULL)
-  private List<CertificateAuthority> caCerts = null;
+    @JsonProperty("ca_certs")
+    @JsonInclude(Include.NON_NULL)
+    private List<CertificateAuthority> caCerts = null;
 
-  @JsonProperty("certificate")
-  @JsonInclude(Include.NON_NULL)
-  private SSLCertificate certificate = null;
+    @JsonProperty("certificate")
+    @JsonInclude(Include.NON_NULL)
+    private SSLCertificate certificate = null;
 
-  @JsonProperty("certificate_base64")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean certificateBase64 = false;
+    @JsonProperty("certificate_base64")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean certificateBase64 = false;
 
-  @JsonProperty("certificate_management_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String certificateManagementProfileRef = null;
+    @JsonProperty("certificate_management_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String certificateManagementProfileRef = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("dynamic_params")
-  @JsonInclude(Include.NON_NULL)
-  private List<CustomParams> dynamicParams = null;
+    @JsonProperty("dynamic_params")
+    @JsonInclude(Include.NON_NULL)
+    private List<CustomParams> dynamicParams = null;
 
-  @JsonProperty("enable_ocsp_stapling")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableOcspStapling = false;
+    @JsonProperty("enable_ocsp_stapling")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableOcspStapling = false;
 
-  @JsonProperty("enckey_base64")
-  @JsonInclude(Include.NON_NULL)
-  private String enckeyBase64 = null;
+    @JsonProperty("enckey_base64")
+    @JsonInclude(Include.NON_NULL)
+    private String enckeyBase64 = null;
 
-  @JsonProperty("enckey_name")
-  @JsonInclude(Include.NON_NULL)
-  private String enckeyName = null;
+    @JsonProperty("enckey_name")
+    @JsonInclude(Include.NON_NULL)
+    private String enckeyName = null;
 
-  @JsonProperty("format")
-  @JsonInclude(Include.NON_NULL)
-  private String format = "SSL_PEM";
+    @JsonProperty("format")
+    @JsonInclude(Include.NON_NULL)
+    private String format = "SSL_PEM";
 
-  @JsonProperty("hardwaresecuritymodulegroup_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String hardwaresecuritymodulegroupRef = null;
+    @JsonProperty("hardwaresecuritymodulegroup_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String hardwaresecuritymodulegroupRef = null;
 
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private String key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private String key = null;
 
-  @JsonProperty("key_base64")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean keyBase64 = false;
+    @JsonProperty("key_base64")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean keyBase64 = false;
 
-  @JsonProperty("key_params")
-  @JsonInclude(Include.NON_NULL)
-  private SSLKeyParams keyParams = null;
+    @JsonProperty("key_params")
+    @JsonInclude(Include.NON_NULL)
+    private SSLKeyParams keyParams = null;
 
-  @JsonProperty("key_passphrase")
-  @JsonInclude(Include.NON_NULL)
-  private String keyPassphrase = null;
+    @JsonProperty("key_passphrase")
+    @JsonInclude(Include.NON_NULL)
+    private String keyPassphrase = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("ocsp_config")
-  @JsonInclude(Include.NON_NULL)
-  private OCSPConfig ocspConfig = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("ocsp_error_status")
-  @JsonInclude(Include.NON_NULL)
-  private String ocspErrorStatus = "OCSP_ERR_CERTSTATUS_DISABLED";
+    @JsonProperty("ocsp_config")
+    @JsonInclude(Include.NON_NULL)
+    private OCSPConfig ocspConfig = null;
 
-  @JsonProperty("ocsp_responder_url_list_from_certs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> ocspResponderUrlListFromCerts = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = "SSL_CERTIFICATE_FINISHED";
 
-  @JsonProperty("ocsp_response_info")
-  @JsonInclude(Include.NON_NULL)
-  private OCSPResponseInfo ocspResponseInfo = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = "SSL_CERTIFICATE_FINISHED";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
-
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ca certificates in certificate chain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caCerts
    */
   @VsoMethod
@@ -143,6 +135,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method. this will set the caCerts
    * Ca certificates in certificate chain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caCerts
    */
   @VsoMethod
@@ -153,6 +146,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method this will set the caCerts
    * Ca certificates in certificate chain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caCerts
    */
   @VsoMethod
@@ -168,6 +162,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property certificate of obj type sslkeyandcertificate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return certificate
    */
   @VsoMethod
@@ -178,6 +173,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property certificate of obj type sslkeyandcertificate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param certificate set the certificate.
    */
   @VsoMethod
@@ -210,6 +206,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type certificatemanagementprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return certificateManagementProfileRef
    */
   @VsoMethod
@@ -220,6 +217,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type certificatemanagementprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param certificateManagementProfileRef set the certificateManagementProfileRef.
    */
   @VsoMethod
@@ -230,6 +228,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -240,6 +239,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -250,6 +250,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dynamic parameters needed for certificate management profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
   @VsoMethod
@@ -260,6 +261,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method. this will set the dynamicParams
    * Dynamic parameters needed for certificate management profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
   @VsoMethod
@@ -270,6 +272,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method this will set the dynamicParams
    * Dynamic parameters needed for certificate management profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
   @VsoMethod
@@ -310,6 +313,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Encrypted private key corresponding to the private key (e.g.
    * Those generated by an hsm such as thales nshield).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enckeyBase64
    */
   @VsoMethod
@@ -321,6 +325,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the setter method to the attribute.
    * Encrypted private key corresponding to the private key (e.g.
    * Those generated by an hsm such as thales nshield).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enckeyBase64 set the enckeyBase64.
    */
   @VsoMethod
@@ -332,6 +337,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the encrypted private key (e.g.
    * Those generated by an hsm such as thales nshield).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enckeyName
    */
   @VsoMethod
@@ -343,6 +349,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the encrypted private key (e.g.
    * Those generated by an hsm such as thales nshield).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enckeyName set the enckeyName.
    */
   @VsoMethod
@@ -354,7 +361,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Format of the key/certificate file.
    * Enum options - SSL_PEM, SSL_PKCS12.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_PEM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_PEM".
    * @return format
    */
   @VsoMethod
@@ -366,7 +373,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the setter method to the attribute.
    * Format of the key/certificate file.
    * Enum options - SSL_PEM, SSL_PKCS12.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_PEM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_PEM".
    * @param format set the format.
    */
   @VsoMethod
@@ -377,6 +384,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type hardwaresecuritymodulegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hardwaresecuritymodulegroupRef
    */
   @VsoMethod
@@ -387,6 +395,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type hardwaresecuritymodulegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hardwaresecuritymodulegroupRef set the hardwaresecuritymodulegroupRef.
    */
   @VsoMethod
@@ -397,6 +406,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Private key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -407,6 +417,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Private key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
   @VsoMethod
@@ -439,6 +450,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property key_params of obj type sslkeyandcertificate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyParams
    */
   @VsoMethod
@@ -449,6 +461,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property key_params of obj type sslkeyandcertificate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyParams set the keyParams.
    */
   @VsoMethod
@@ -459,6 +472,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Passphrase used to encrypt the private key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyPassphrase
    */
   @VsoMethod
@@ -469,6 +483,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Passphrase used to encrypt the private key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyPassphrase set the keyPassphrase.
    */
   @VsoMethod
@@ -478,7 +493,52 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public SSLKeyAndCertificate addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -489,6 +549,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -500,6 +561,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configuration related to ocsp.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspConfig
    */
   @VsoMethod
@@ -511,6 +573,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the setter method to the attribute.
    * Configuration related to ocsp.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspConfig set the ocspConfig.
    */
   @VsoMethod
@@ -520,102 +583,8 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Error reported during ocsp status query.
-   * Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR,
-   * OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT,
-   * OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST,
-   * OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
-   * OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OCSP_ERR_CERTSTATUS_DISABLED.
-   * @return ocspErrorStatus
-   */
-  @VsoMethod
-  public String getOcspErrorStatus() {
-    return ocspErrorStatus;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Error reported during ocsp status query.
-   * Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR,
-   * OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT,
-   * OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST,
-   * OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
-   * OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OCSP_ERR_CERTSTATUS_DISABLED.
-   * @param ocspErrorStatus set the ocspErrorStatus.
-   */
-  @VsoMethod
-  public void setOcspErrorStatus(String  ocspErrorStatus) {
-    this.ocspErrorStatus = ocspErrorStatus;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * This is an internal field to store the ocsp responder urls contained in the certificate.
-   * Field introduced in 20.1.1.
-   * @return ocspResponderUrlListFromCerts
-   */
-  @VsoMethod
-  public List<String> getOcspResponderUrlListFromCerts() {
-    return ocspResponderUrlListFromCerts;
-  }
-
-  /**
-   * This is the setter method. this will set the ocspResponderUrlListFromCerts
-   * This is an internal field to store the ocsp responder urls contained in the certificate.
-   * Field introduced in 20.1.1.
-   * @return ocspResponderUrlListFromCerts
-   */
-  @VsoMethod
-  public void setOcspResponderUrlListFromCerts(List<String>  ocspResponderUrlListFromCerts) {
-    this.ocspResponderUrlListFromCerts = ocspResponderUrlListFromCerts;
-  }
-
-  /**
-   * This is the setter method this will set the ocspResponderUrlListFromCerts
-   * This is an internal field to store the ocsp responder urls contained in the certificate.
-   * Field introduced in 20.1.1.
-   * @return ocspResponderUrlListFromCerts
-   */
-  @VsoMethod
-  public SSLKeyAndCertificate addOcspResponderUrlListFromCertsItem(String ocspResponderUrlListFromCertsItem) {
-    if (this.ocspResponderUrlListFromCerts == null) {
-      this.ocspResponderUrlListFromCerts = new ArrayList<String>();
-    }
-    this.ocspResponderUrlListFromCerts.add(ocspResponderUrlListFromCertsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Information related to ocsp response.
-   * Field introduced in 20.1.1.
-   * @return ocspResponseInfo
-   */
-  @VsoMethod
-  public OCSPResponseInfo getOcspResponseInfo() {
-    return ocspResponseInfo;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Information related to ocsp response.
-   * Field introduced in 20.1.1.
-   * @param ocspResponseInfo set the ocspResponseInfo.
-   */
-  @VsoMethod
-  public void setOcspResponseInfo(OCSPResponseInfo ocspResponseInfo) {
-    this.ocspResponseInfo = ocspResponseInfo;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CERTIFICATE_FINISHED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CERTIFICATE_FINISHED".
    * @return status
    */
   @VsoMethod
@@ -626,7 +595,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CERTIFICATE_FINISHED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CERTIFICATE_FINISHED".
    * @param status set the status.
    */
   @VsoMethod
@@ -637,6 +606,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -647,6 +617,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -657,6 +628,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -667,6 +639,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -696,6 +669,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -706,6 +680,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -747,10 +722,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.certificateBase64, objSSLKeyAndCertificate.certificateBase64)&&
   Objects.equals(this.keyBase64, objSSLKeyAndCertificate.keyBase64)&&
   Objects.equals(this.enableOcspStapling, objSSLKeyAndCertificate.enableOcspStapling)&&
-  Objects.equals(this.ocspResponderUrlListFromCerts, objSSLKeyAndCertificate.ocspResponderUrlListFromCerts)&&
   Objects.equals(this.ocspConfig, objSSLKeyAndCertificate.ocspConfig)&&
-  Objects.equals(this.ocspResponseInfo, objSSLKeyAndCertificate.ocspResponseInfo)&&
-  Objects.equals(this.ocspErrorStatus, objSSLKeyAndCertificate.ocspErrorStatus);
+  Objects.equals(this.labels, objSSLKeyAndCertificate.labels);
 }
 
 @Override
@@ -772,11 +745,9 @@ public String toString() {
         sb.append("    keyBase64: ").append(toIndentedString(keyBase64)).append("\n");
         sb.append("    keyParams: ").append(toIndentedString(keyParams)).append("\n");
         sb.append("    keyPassphrase: ").append(toIndentedString(keyPassphrase)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ocspConfig: ").append(toIndentedString(ocspConfig)).append("\n");
-        sb.append("    ocspErrorStatus: ").append(toIndentedString(ocspErrorStatus)).append("\n");
-        sb.append("    ocspResponderUrlListFromCerts: ").append(toIndentedString(ocspResponderUrlListFromCerts)).append("\n");
-        sb.append("    ocspResponseInfo: ").append(toIndentedString(ocspResponseInfo)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

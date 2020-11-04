@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MemoryUsageInfo extends AviRestResource {
-  @JsonProperty("mem_usage_on_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MemoryUsagePerNode> memUsageOnNodes = null;
+    @JsonProperty("mem_usage_on_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MemoryUsagePerNode> memUsageOnNodes = null;
 
 
 
@@ -34,6 +34,7 @@ public class MemoryUsageInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifies the memory usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memUsageOnNodes
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class MemoryUsageInfo extends AviRestResource {
    * This is the setter method. this will set the memUsageOnNodes
    * Identifies the memory usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memUsageOnNodes
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class MemoryUsageInfo extends AviRestResource {
    * This is the setter method this will set the memUsageOnNodes
    * Identifies the memory usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memUsageOnNodes
    */
   @VsoMethod

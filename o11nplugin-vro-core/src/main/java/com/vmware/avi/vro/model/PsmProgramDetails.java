@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PsmProgramDetails extends AviRestResource {
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error of obj type psmprogramdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class PsmProgramDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error of obj type psmprogramdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class PsmProgramDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class PsmProgramDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

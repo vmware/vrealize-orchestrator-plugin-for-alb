@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.WafPolicyAllowlist;
 import com.vmware.avi.vro.model.WafApplicationSignatures;
 import com.vmware.avi.vro.model.AppLearningConfidenceOverride;
 import com.vmware.avi.vro.model.WafLearning;
@@ -30,105 +31,109 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPolicy extends AviRestResource {
-  @JsonProperty("allow_mode_delegation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowModeDelegation = true;
+    @JsonProperty("allow_mode_delegation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowModeDelegation = true;
 
-  @JsonProperty("application_signatures")
-  @JsonInclude(Include.NON_NULL)
-  private WafApplicationSignatures applicationSignatures = null;
+    @JsonProperty("allowlist")
+    @JsonInclude(Include.NON_NULL)
+    private WafPolicyAllowlist allowlist = null;
 
-  @JsonProperty("confidence_override")
-  @JsonInclude(Include.NON_NULL)
-  private AppLearningConfidenceOverride confidenceOverride = null;
+    @JsonProperty("application_signatures")
+    @JsonInclude(Include.NON_NULL)
+    private WafApplicationSignatures applicationSignatures = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("confidence_override")
+    @JsonInclude(Include.NON_NULL)
+    private AppLearningConfidenceOverride confidenceOverride = null;
 
-  @JsonProperty("crs_groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRuleGroup> crsGroups = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("crs_groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleGroup> crsGroups = null;
 
-  @JsonProperty("enable_app_learning")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAppLearning = false;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("enable_auto_rule_updates")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoRuleUpdates = true;
+    @JsonProperty("enable_app_learning")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAppLearning = false;
 
-  @JsonProperty("enable_regex_learning")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRegexLearning = false;
+    @JsonProperty("enable_auto_rule_updates")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutoRuleUpdates = true;
 
-  @JsonProperty("failure_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String failureMode = "WAF_FAILURE_MODE_OPEN";
+    @JsonProperty("failure_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String failureMode = "WAF_FAILURE_MODE_OPEN";
 
-  @JsonProperty("learning")
-  @JsonInclude(Include.NON_NULL)
-  private WafLearning learning = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("learning_params")
-  @JsonInclude(Include.NON_NULL)
-  private AppLearningParams learningParams = null;
+    @JsonProperty("learning")
+    @JsonInclude(Include.NON_NULL)
+    private WafLearning learning;
 
-  @JsonProperty("min_confidence")
-  @JsonInclude(Include.NON_NULL)
-  private String minConfidence = "CONFIDENCE_VERY_HIGH";
+    @JsonProperty("learning_params")
+    @JsonInclude(Include.NON_NULL)
+    private AppLearningParams learningParams = null;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = "WAF_MODE_DETECTION_ONLY";
+    @JsonProperty("min_confidence")
+    @JsonInclude(Include.NON_NULL)
+    private String minConfidence = "CONFIDENCE_VERY_HIGH";
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = "WAF_MODE_DETECTION_ONLY";
 
-  @JsonProperty("paranoia_level")
-  @JsonInclude(Include.NON_NULL)
-  private String paranoiaLevel = "WAF_PARANOIA_LEVEL_LOW";
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("positive_security_model")
-  @JsonInclude(Include.NON_NULL)
-  private WafPositiveSecurityModel positiveSecurityModel = null;
+    @JsonProperty("paranoia_level")
+    @JsonInclude(Include.NON_NULL)
+    private String paranoiaLevel = "WAF_PARANOIA_LEVEL_LOW";
 
-  @JsonProperty("post_crs_groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRuleGroup> postCrsGroups = null;
+    @JsonProperty("positive_security_model")
+    @JsonInclude(Include.NON_NULL)
+    private WafPositiveSecurityModel positiveSecurityModel = null;
 
-  @JsonProperty("pre_crs_groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRuleGroup> preCrsGroups = null;
+    @JsonProperty("post_crs_groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleGroup> postCrsGroups = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("pre_crs_groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleGroup> preCrsGroups = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("waf_crs_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String wafCrsRef = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("waf_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String wafProfileRef = null;
+    @JsonProperty("waf_crs_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String wafCrsRef = null;
 
-  @JsonProperty("whitelist")
-  @JsonInclude(Include.NON_NULL)
-  private WafPolicyWhitelist whitelist = null;
+    @JsonProperty("waf_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String wafProfileRef = null;
+
+    @JsonProperty("whitelist")
+    @JsonInclude(Include.NON_NULL)
+    private WafPolicyWhitelist whitelist;
 
 
 
@@ -160,8 +165,35 @@ public class WafPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * A set of rules which describe conditions under which the request will bypass the waf.
+   * This will be processed in the request header phase before any other waf related code.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return allowlist
+   */
+  @VsoMethod
+  public WafPolicyAllowlist getAllowlist() {
+    return allowlist;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * A set of rules which describe conditions under which the request will bypass the waf.
+   * This will be processed in the request header phase before any other waf related code.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param allowlist set the allowlist.
+   */
+  @VsoMethod
+  public void setAllowlist(WafPolicyAllowlist allowlist) {
+    this.allowlist = allowlist;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Application specific signatures.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationSignatures
    */
   @VsoMethod
@@ -173,6 +205,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Application specific signatures.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationSignatures set the applicationSignatures.
    */
   @VsoMethod
@@ -184,6 +217,7 @@ public class WafPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure thresholds for confidence labels.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return confidenceOverride
    */
   @VsoMethod
@@ -195,6 +229,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure thresholds for confidence labels.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param confidenceOverride set the confidenceOverride.
    */
   @VsoMethod
@@ -206,6 +241,7 @@ public class WafPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Creator name.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -217,6 +253,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Creator name.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -229,6 +266,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are system created with crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsGroups
    */
   @VsoMethod
@@ -241,6 +279,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are system created with crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsGroups
    */
   @VsoMethod
@@ -253,6 +292,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are system created with crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsGroups
    */
   @VsoMethod
@@ -268,6 +308,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -278,6 +319,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -337,37 +379,11 @@ public class WafPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable dynamic regex generation for positive security model rules.
-   * This is an experimental feature and shouldn't be used in production.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return enableRegexLearning
-   */
-  @VsoMethod
-  public Boolean getEnableRegexLearning() {
-    return enableRegexLearning;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable dynamic regex generation for positive security model rules.
-   * This is an experimental feature and shouldn't be used in production.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param enableRegexLearning set the enableRegexLearning.
-   */
-  @VsoMethod
-  public void setEnableRegexLearning(Boolean  enableRegexLearning) {
-    this.enableRegexLearning = enableRegexLearning;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Waf policy failure mode.
    * This can be 'open' or 'closed'.
    * Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED.
    * Field introduced in 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_FAILURE_MODE_OPEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_FAILURE_MODE_OPEN".
    * @return failureMode
    */
   @VsoMethod
@@ -381,13 +397,57 @@ public class WafPolicy extends AviRestResource {
    * This can be 'open' or 'closed'.
    * Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED.
    * Field introduced in 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_FAILURE_MODE_OPEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_FAILURE_MODE_OPEN".
    * @param failureMode set the failureMode.
    */
   @VsoMethod
   public void setFailureMode(String  failureMode) {
     this.failureMode = failureMode;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public WafPolicy addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -417,6 +477,7 @@ public class WafPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Parameters for tuning application learning.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learningParams
    */
   @VsoMethod
@@ -428,6 +489,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Parameters for tuning application learning.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learningParams set the learningParams.
    */
   @VsoMethod
@@ -440,7 +502,7 @@ public class WafPolicy extends AviRestResource {
    * Minimum confidence label required for auto rule updates.
    * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONFIDENCE_VERY_HIGH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
    * @return minConfidence
    */
   @VsoMethod
@@ -453,7 +515,7 @@ public class WafPolicy extends AviRestResource {
    * Minimum confidence label required for auto rule updates.
    * Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONFIDENCE_VERY_HIGH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CONFIDENCE_VERY_HIGH".
    * @param minConfidence set the minConfidence.
    */
   @VsoMethod
@@ -468,7 +530,7 @@ public class WafPolicy extends AviRestResource {
    * It can be overwritten by rules if allow_mode_delegation is set.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_MODE_DETECTION_ONLY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_MODE_DETECTION_ONLY".
    * @return mode
    */
   @VsoMethod
@@ -483,7 +545,7 @@ public class WafPolicy extends AviRestResource {
    * It can be overwritten by rules if allow_mode_delegation is set.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_MODE_DETECTION_ONLY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_MODE_DETECTION_ONLY".
    * @param mode set the mode.
    */
   @VsoMethod
@@ -494,6 +556,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -504,6 +567,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -517,7 +581,7 @@ public class WafPolicy extends AviRestResource {
    * This is used to select rules based on the paranoia-level tag.
    * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_PARANOIA_LEVEL_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
    * @return paranoiaLevel
    */
   @VsoMethod
@@ -531,7 +595,7 @@ public class WafPolicy extends AviRestResource {
    * This is used to select rules based on the paranoia-level tag.
    * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_PARANOIA_LEVEL_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
    * @param paranoiaLevel set the paranoiaLevel.
    */
   @VsoMethod
@@ -545,6 +609,7 @@ public class WafPolicy extends AviRestResource {
    * This is used to describe how the request or parts of the request should look like.
    * It is executed in the request body phase of avi waf.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return positiveSecurityModel
    */
   @VsoMethod
@@ -558,6 +623,7 @@ public class WafPolicy extends AviRestResource {
    * This is used to describe how the request or parts of the request should look like.
    * It is executed in the request body phase of avi waf.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param positiveSecurityModel set the positiveSecurityModel.
    */
   @VsoMethod
@@ -570,6 +636,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are created by the user and will be enforced after the crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return postCrsGroups
    */
   @VsoMethod
@@ -582,6 +649,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are created by the user and will be enforced after the crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return postCrsGroups
    */
   @VsoMethod
@@ -594,6 +662,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are created by the user and will be enforced after the crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return postCrsGroups
    */
   @VsoMethod
@@ -611,6 +680,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are created by the user and will be  enforced before the crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return preCrsGroups
    */
   @VsoMethod
@@ -623,6 +693,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are created by the user and will be  enforced before the crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return preCrsGroups
    */
   @VsoMethod
@@ -635,6 +706,7 @@ public class WafPolicy extends AviRestResource {
    * Waf rules are categorized in to groups based on their characterization.
    * These groups are created by the user and will be  enforced before the crs groups.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return preCrsGroups
    */
   @VsoMethod
@@ -651,6 +723,7 @@ public class WafPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -662,6 +735,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -691,6 +765,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -701,6 +776,7 @@ public class WafPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -713,6 +789,7 @@ public class WafPolicy extends AviRestResource {
    * Waf core ruleset used for the crs part of this policy.
    * It is a reference to an object of type wafcrs.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafCrsRef
    */
   @VsoMethod
@@ -725,6 +802,7 @@ public class WafPolicy extends AviRestResource {
    * Waf core ruleset used for the crs part of this policy.
    * It is a reference to an object of type wafcrs.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafCrsRef set the wafCrsRef.
    */
   @VsoMethod
@@ -737,6 +815,7 @@ public class WafPolicy extends AviRestResource {
    * Waf profile for waf policy.
    * It is a reference to an object of type wafprofile.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafProfileRef
    */
   @VsoMethod
@@ -749,6 +828,7 @@ public class WafPolicy extends AviRestResource {
    * Waf profile for waf policy.
    * It is a reference to an object of type wafprofile.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafProfileRef set the wafProfileRef.
    */
   @VsoMethod
@@ -760,6 +840,7 @@ public class WafPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A set of rules which describe conditions under which the request will bypass the waf.
    * This will be executed in the request header phase before any other waf related code.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return whitelist
    */
@@ -772,6 +853,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * A set of rules which describe conditions under which the request will bypass the waf.
    * This will be executed in the request header phase before any other waf related code.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @param whitelist set the whitelist.
    */
@@ -817,7 +899,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.minConfidence, objWafPolicy.minConfidence)&&
   Objects.equals(this.confidenceOverride, objWafPolicy.confidenceOverride)&&
   Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
-  Objects.equals(this.enableRegexLearning, objWafPolicy.enableRegexLearning);
+  Objects.equals(this.labels, objWafPolicy.labels)&&
+  Objects.equals(this.allowlist, objWafPolicy.allowlist);
 }
 
 @Override
@@ -825,6 +908,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class WafPolicy {\n");
       sb.append("    allowModeDelegation: ").append(toIndentedString(allowModeDelegation)).append("\n");
+        sb.append("    allowlist: ").append(toIndentedString(allowlist)).append("\n");
         sb.append("    applicationSignatures: ").append(toIndentedString(applicationSignatures)).append("\n");
         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
@@ -832,8 +916,8 @@ public String toString() {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
-        sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
         sb.append("    failureMode: ").append(toIndentedString(failureMode)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    learning: ").append(toIndentedString(learning)).append("\n");
         sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");
         sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");

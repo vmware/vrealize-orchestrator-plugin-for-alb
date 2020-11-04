@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtSetup extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("transportzone_id")
-  @JsonInclude(Include.NON_NULL)
-  private String transportzoneId = null;
+    @JsonProperty("transportzone_id")
+    @JsonInclude(Include.NON_NULL)
+    private String transportzoneId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property transportzone_id of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transportzoneId
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class NsxtSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property transportzone_id of obj type nsxtsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param transportzoneId set the transportzoneId.
    */
   @VsoMethod

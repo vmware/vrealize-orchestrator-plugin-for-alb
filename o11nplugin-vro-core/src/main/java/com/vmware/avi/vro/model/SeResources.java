@@ -24,43 +24,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeResources extends AviRestResource {
-  @JsonProperty("cores_per_socket")
-  @JsonInclude(Include.NON_NULL)
-  private Integer coresPerSocket = null;
+    @JsonProperty("cores_per_socket")
+    @JsonInclude(Include.NON_NULL)
+    private Integer coresPerSocket = null;
 
-  @JsonProperty("disk")
-  @JsonInclude(Include.NON_NULL)
-  private Integer disk = null;
+    @JsonProperty("disk")
+    @JsonInclude(Include.NON_NULL)
+    private Integer disk = null;
 
-  @JsonProperty("hyper_threading")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hyperThreading = null;
+    @JsonProperty("hyper_threading")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hyperThreading = null;
 
-  @JsonProperty("hypervisor_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hypervisorMode = null;
+    @JsonProperty("hypervisor_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hypervisorMode = null;
 
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = null;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = null;
 
-  @JsonProperty("num_datapath_processes")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numDatapathProcesses = null;
+    @JsonProperty("num_datapath_processes")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numDatapathProcesses = null;
 
-  @JsonProperty("num_vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVcpus = null;
+    @JsonProperty("num_vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVcpus = null;
 
-  @JsonProperty("sockets")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sockets = null;
+    @JsonProperty("sockets")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sockets = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cores_per_socket of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return coresPerSocket
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cores_per_socket of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param coresPerSocket set the coresPerSocket.
    */
   @VsoMethod
@@ -81,6 +83,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property disk of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disk
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property disk of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disk set the disk.
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hyper_threading of obj type seresources field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hyperThreading
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property hyper_threading of obj type seresources field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hyperThreading set the hyperThreading.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class SeResources extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates that the se is running on a virtual machine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorMode
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class SeResources extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates that the se is running on a virtual machine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hypervisorMode set the hypervisorMode.
    */
   @VsoMethod
@@ -143,6 +151,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property memory of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
   @VsoMethod
@@ -153,6 +162,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property memory of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
   @VsoMethod
@@ -164,6 +174,7 @@ public class SeResources extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates the number of datapath processes spawned.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDatapathProcesses
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class SeResources extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates the number of datapath processes spawned.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDatapathProcesses set the numDatapathProcesses.
    */
   @VsoMethod
@@ -185,6 +197,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vcpus of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVcpus
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vcpus of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVcpus set the numVcpus.
    */
   @VsoMethod
@@ -205,6 +219,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property sockets of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
    */
   @VsoMethod
@@ -215,6 +230,7 @@ public class SeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property sockets of obj type seresources field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sockets set the sockets.
    */
   @VsoMethod

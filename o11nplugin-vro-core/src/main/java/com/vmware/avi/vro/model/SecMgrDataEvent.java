@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecMgrDataEvent extends AviRestResource {
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -38,6 +38,7 @@ public class SecMgrDataEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of the generated for an application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class SecMgrDataEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of the generated for an application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class SecMgrDataEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class SecMgrDataEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

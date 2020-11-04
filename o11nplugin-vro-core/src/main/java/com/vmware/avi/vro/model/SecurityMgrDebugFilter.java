@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecurityMgrDebugFilter extends AviRestResource {
-  @JsonProperty("enable_adaptive_config")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAdaptiveConfig = true;
+    @JsonProperty("enable_adaptive_config")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAdaptiveConfig = true;
 
-  @JsonProperty("entity_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String entityRef = null;
+    @JsonProperty("entity_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String entityRef = null;
 
 
 
@@ -63,6 +63,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityRef
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class SecurityMgrDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityRef set the entityRef.
    */
   @VsoMethod

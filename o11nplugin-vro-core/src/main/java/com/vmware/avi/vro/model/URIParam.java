@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class URIParam extends AviRestResource {
-  @JsonProperty("tokens")
-  @JsonInclude(Include.NON_NULL)
-  private List<URIParamToken> tokens = null;
+    @JsonProperty("tokens")
+    @JsonInclude(Include.NON_NULL)
+    private List<URIParamToken> tokens = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Token config either for the uri components or a constant string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokens
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class URIParam extends AviRestResource {
   /**
    * This is the setter method. this will set the tokens
    * Token config either for the uri components or a constant string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokens
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class URIParam extends AviRestResource {
   /**
    * This is the setter method this will set the tokens
    * Token config either for the uri components or a constant string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tokens
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class URIParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uri param type.
    * Enum options - URI_PARAM_TYPE_TOKENIZED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -84,6 +88,7 @@ public class URIParam extends AviRestResource {
    * This is the setter method to the attribute.
    * Uri param type.
    * Enum options - URI_PARAM_TYPE_TOKENIZED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

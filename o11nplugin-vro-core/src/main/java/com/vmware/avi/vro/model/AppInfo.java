@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AppInfo extends AviRestResource {
-  @JsonProperty("app_hdr_name")
-  @JsonInclude(Include.NON_NULL)
-  private String appHdrName = null;
+    @JsonProperty("app_hdr_name")
+    @JsonInclude(Include.NON_NULL)
+    private String appHdrName = null;
 
-  @JsonProperty("app_hdr_value")
-  @JsonInclude(Include.NON_NULL)
-  private String appHdrValue = null;
+    @JsonProperty("app_hdr_value")
+    @JsonInclude(Include.NON_NULL)
+    private String appHdrValue = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property app_hdr_name of obj type appinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHdrName
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class AppInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property app_hdr_name of obj type appinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appHdrName set the appHdrName.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class AppInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property app_hdr_value of obj type appinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHdrValue
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class AppInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property app_hdr_value of obj type appinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appHdrValue set the appHdrValue.
    */
   @VsoMethod

@@ -24,71 +24,72 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class APICLifsRuntime extends AviRestResource {
-  @JsonProperty("auto_allocated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoAllocated = null;
+    @JsonProperty("auto_allocated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoAllocated = null;
 
-  @JsonProperty("cifs")
-  @JsonInclude(Include.NON_NULL)
-  private List<Cif> cifs = null;
+    @JsonProperty("cifs")
+    @JsonInclude(Include.NON_NULL)
+    private List<Cif> cifs = null;
 
-  @JsonProperty("contract_graphs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> contractGraphs = null;
+    @JsonProperty("contract_graphs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> contractGraphs = null;
 
-  @JsonProperty("lif_label")
-  @JsonInclude(Include.NON_NULL)
-  private String lifLabel = null;
+    @JsonProperty("lif_label")
+    @JsonInclude(Include.NON_NULL)
+    private String lifLabel = null;
 
-  @JsonProperty("multi_vrf")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean multiVrf = null;
+    @JsonProperty("multi_vrf")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean multiVrf = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("network")
-  @JsonInclude(Include.NON_NULL)
-  private String network = null;
+    @JsonProperty("network")
+    @JsonInclude(Include.NON_NULL)
+    private String network = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUuid = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet = null;
 
-  @JsonProperty("tenant_name")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantName = null;
+    @JsonProperty("tenant_name")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantName = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("transaction_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> transactionUuid = null;
+    @JsonProperty("transaction_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> transactionUuid = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property auto_allocated of obj type apiclifsruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoAllocated
    */
   @VsoMethod
@@ -99,6 +100,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property auto_allocated of obj type apiclifsruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoAllocated set the autoAllocated.
    */
   @VsoMethod
@@ -109,6 +111,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cifs of obj type apiclifsruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cifs
    */
   @VsoMethod
@@ -119,6 +122,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the cifs
    * Placeholder for description of property cifs of obj type apiclifsruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cifs
    */
   @VsoMethod
@@ -129,6 +133,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the cifs
    * Placeholder for description of property cifs of obj type apiclifsruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cifs
    */
   @VsoMethod
@@ -145,6 +150,7 @@ public class APICLifsRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contract graph associated with the virtualservice.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contractGraphs
    */
   @VsoMethod
@@ -156,6 +162,7 @@ public class APICLifsRuntime extends AviRestResource {
    * This is the setter method. this will set the contractGraphs
    * Contract graph associated with the virtualservice.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contractGraphs
    */
   @VsoMethod
@@ -167,6 +174,7 @@ public class APICLifsRuntime extends AviRestResource {
    * This is the setter method this will set the contractGraphs
    * Contract graph associated with the virtualservice.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contractGraphs
    */
   @VsoMethod
@@ -182,6 +190,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property lif_label of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifLabel
    */
   @VsoMethod
@@ -192,6 +201,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property lif_label of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lifLabel set the lifLabel.
    */
   @VsoMethod
@@ -202,6 +212,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property multi_vrf of obj type apiclifsruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return multiVrf
    */
   @VsoMethod
@@ -212,6 +223,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property multi_vrf of obj type apiclifsruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param multiVrf set the multiVrf.
    */
   @VsoMethod
@@ -222,6 +234,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -232,6 +245,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -242,6 +256,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
   @VsoMethod
@@ -252,6 +267,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */
   @VsoMethod
@@ -262,6 +278,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -272,6 +289,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the seUuid
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -282,6 +300,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the seUuid
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -297,6 +316,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -307,6 +327,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property subnet of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -317,6 +338,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tenant_name of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -327,6 +349,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tenant_name of obj type apiclifsruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -337,6 +360,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -347,6 +371,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -357,6 +382,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of transaction.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transactionUuid
    */
   @VsoMethod
@@ -367,6 +393,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the transactionUuid
    * Unique object identifier of transaction.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transactionUuid
    */
   @VsoMethod
@@ -377,6 +404,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the transactionUuid
    * Unique object identifier of transaction.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transactionUuid
    */
   @VsoMethod
@@ -411,6 +439,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -421,6 +450,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -431,6 +461,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -441,6 +472,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the vsUuid
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -451,6 +483,7 @@ public class APICLifsRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the vsUuid
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod

@@ -24,24 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PGDeploymentRule extends AviRestResource {
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = "health.health_score_value";
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = "health.health_score_value";
 
-  @JsonProperty("operator")
-  @JsonInclude(Include.NON_NULL)
-  private String operator = "CO_GE";
+    @JsonProperty("operator")
+    @JsonInclude(Include.NON_NULL)
+    private String operator = "CO_GE";
 
-  @JsonProperty("threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Float threshold = null;
+    @JsonProperty("threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Float threshold = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_id of obj type pgdeploymentrule field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as health.health_score_value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "health.health_score_value".
    * @return metricId
    */
   @VsoMethod
@@ -52,7 +52,7 @@ public class PGDeploymentRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_id of obj type pgdeploymentrule field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as health.health_score_value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "health.health_score_value".
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -63,7 +63,7 @@ public class PGDeploymentRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CO_GE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CO_GE".
    * @return operator
    */
   @VsoMethod
@@ -74,7 +74,7 @@ public class PGDeploymentRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CO_GE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CO_GE".
    * @param operator set the operator.
    */
   @VsoMethod
@@ -86,6 +86,7 @@ public class PGDeploymentRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Metric threshold that is used as the pass fail.
    * If it is not provided then it will simply compare it with current pool vs new pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
   @VsoMethod
@@ -97,6 +98,7 @@ public class PGDeploymentRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Metric threshold that is used as the pass fail.
    * If it is not provided then it will simply compare it with current pool vs new pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
   @VsoMethod

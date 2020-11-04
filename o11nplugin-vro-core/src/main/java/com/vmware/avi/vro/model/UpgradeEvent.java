@@ -25,33 +25,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeEvent extends AviRestResource {
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = null;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = null;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("message")
-  @JsonInclude(Include.NON_NULL)
-  private String message = null;
+    @JsonProperty("message")
+    @JsonInclude(Include.NON_NULL)
+    private String message = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean status = false;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean status = false;
 
-  @JsonProperty("sub_tasks")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> subTasks = null;
+    @JsonProperty("sub_tasks")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> subTasks = null;
 
 
 
@@ -59,6 +59,8 @@ public class UpgradeEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time taken to complete upgrade event in seconds.
    * Field introduced in 18.2.6.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
   @VsoMethod
@@ -70,6 +72,8 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Time taken to complete upgrade event in seconds.
    * Field introduced in 18.2.6.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Task end time.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -92,6 +97,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Task end time.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -103,6 +109,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip of the node.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -114,6 +121,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip of the node.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -125,6 +133,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade event message if any.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
   @VsoMethod
@@ -136,6 +145,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade event message if any.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
   @VsoMethod
@@ -147,6 +157,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Task start time.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -158,6 +169,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method to the attribute.
    * Task start time.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod
@@ -193,6 +205,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sub tasks executed on each node.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subTasks
    */
   @VsoMethod
@@ -204,6 +217,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method. this will set the subTasks
    * Sub tasks executed on each node.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subTasks
    */
   @VsoMethod
@@ -215,6 +229,7 @@ public class UpgradeEvent extends AviRestResource {
    * This is the setter method this will set the subTasks
    * Sub tasks executed on each node.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subTasks
    */
   @VsoMethod

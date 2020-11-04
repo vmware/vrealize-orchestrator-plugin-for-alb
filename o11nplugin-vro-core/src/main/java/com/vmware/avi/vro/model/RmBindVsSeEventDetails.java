@@ -24,47 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmBindVsSeEventDetails extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("ip6")
-  @JsonInclude(Include.NON_NULL)
-  private String ip6 = null;
+    @JsonProperty("ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String ip6 = null;
 
-  @JsonProperty("primary")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean primary = null;
+    @JsonProperty("primary")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean primary = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("standby")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean standby = null;
+    @JsonProperty("standby")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean standby = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("vip_vnics")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vipVnics = null;
+    @JsonProperty("vip_vnics")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vipVnics = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vsName = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip6 of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip6 of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6 set the ip6.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property primary of obj type rmbindvsseeventdetails field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return primary
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property primary of obj type rmbindvsseeventdetails field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param primary set the primary.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property standby of obj type rmbindvsseeventdetails field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return standby
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property standby of obj type rmbindvsseeventdetails field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param standby set the standby.
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property type of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property type of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -185,6 +197,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_vnics of obj type rmbindvsseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipVnics
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vipVnics
    * Placeholder for description of property vip_vnics of obj type rmbindvsseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipVnics
    */
   @VsoMethod
@@ -205,6 +219,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vipVnics
    * Placeholder for description of property vip_vnics of obj type rmbindvsseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipVnics
    */
   @VsoMethod
@@ -220,6 +235,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -230,6 +246,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_name of obj type rmbindvsseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -240,6 +257,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -250,6 +268,7 @@ public class RmBindVsSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

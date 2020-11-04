@@ -24,61 +24,61 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsServiceApplicationProfile extends AviRestResource {
-  @JsonProperty("aaaa_empty_response")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aaaaEmptyResponse = true;
+    @JsonProperty("aaaa_empty_response")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aaaaEmptyResponse = true;
 
-  @JsonProperty("admin_email")
-  @JsonInclude(Include.NON_NULL)
-  private String adminEmail = "hostmaster";
+    @JsonProperty("admin_email")
+    @JsonInclude(Include.NON_NULL)
+    private String adminEmail = "hostmaster";
 
-  @JsonProperty("authoritative_domain_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> authoritativeDomainNames = null;
+    @JsonProperty("authoritative_domain_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> authoritativeDomainNames;
 
-  @JsonProperty("dns_over_tcp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dnsOverTcpEnabled = true;
+    @JsonProperty("dns_over_tcp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dnsOverTcpEnabled = true;
 
-  @JsonProperty("dns_zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsZone> dnsZones = null;
+    @JsonProperty("dns_zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsZone> dnsZones = null;
 
-  @JsonProperty("domain_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> domainNames = null;
+    @JsonProperty("domain_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> domainNames = null;
 
-  @JsonProperty("ecs_stripping_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ecsStrippingEnabled = true;
+    @JsonProperty("ecs_stripping_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ecsStrippingEnabled = true;
 
-  @JsonProperty("edns")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean edns = true;
+    @JsonProperty("edns")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean edns = true;
 
-  @JsonProperty("edns_client_subnet_prefix_len")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ednsClientSubnetPrefixLen = null;
+    @JsonProperty("edns_client_subnet_prefix_len")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ednsClientSubnetPrefixLen = null;
 
-  @JsonProperty("error_response")
-  @JsonInclude(Include.NON_NULL)
-  private String errorResponse = "DNS_ERROR_RESPONSE_NONE";
+    @JsonProperty("error_response")
+    @JsonInclude(Include.NON_NULL)
+    private String errorResponse = "DNS_ERROR_RESPONSE_NONE";
 
-  @JsonProperty("name_server")
-  @JsonInclude(Include.NON_NULL)
-  private String nameServer = null;
+    @JsonProperty("name_server")
+    @JsonInclude(Include.NON_NULL)
+    private String nameServer = null;
 
-  @JsonProperty("negative_caching_ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer negativeCachingTtl = 30;
+    @JsonProperty("negative_caching_ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer negativeCachingTtl = 30;
 
-  @JsonProperty("num_dns_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numDnsIp = 1;
+    @JsonProperty("num_dns_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numDnsIp = 1;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = 30;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = 30;
 
 
 
@@ -110,7 +110,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This field is used in soa records (rname) pertaining to all domain names specified as authoritative domain names.
    * If not configured, the default value 'hostmaster' is used in soa responses.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as hostmaster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "hostmaster".
    * @return adminEmail
    */
   @VsoMethod
@@ -124,7 +124,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This field is used in soa records (rname) pertaining to all domain names specified as authoritative domain names.
    * If not configured, the default value 'hostmaster' is used in soa responses.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as hostmaster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "hostmaster".
    * @param adminEmail set the adminEmail.
    */
   @VsoMethod
@@ -209,6 +209,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns zones hosted on this virtual service.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsZones
    */
   @VsoMethod
@@ -220,6 +221,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method. this will set the dnsZones
    * Dns zones hosted on this virtual service.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsZones
    */
   @VsoMethod
@@ -231,6 +233,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method this will set the dnsZones
    * Dns zones hosted on this virtual service.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsZones
    */
   @VsoMethod
@@ -247,6 +250,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subdomain names serviced by this virtual service.
    * These are configured as ends-with semantics.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
   @VsoMethod
@@ -258,6 +262,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method. this will set the domainNames
    * Subdomain names serviced by this virtual service.
    * These are configured as ends-with semantics.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
   @VsoMethod
@@ -269,6 +274,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method this will set the domainNames
    * Subdomain names serviced by this virtual service.
    * These are configured as ends-with semantics.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
   @VsoMethod
@@ -342,6 +348,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * minimum of the prefix length present in the incoming and the configured prefix length, before passing the request to upstream server.
    * Allowed values are 1-32.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ednsClientSubnetPrefixLen
    */
   @VsoMethod
@@ -358,6 +365,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * minimum of the prefix length present in the incoming and the configured prefix length, before passing the request to upstream server.
    * Allowed values are 1-32.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ednsClientSubnetPrefixLen set the ednsClientSubnetPrefixLen.
    */
   @VsoMethod
@@ -372,7 +380,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * When set to respond, an appropriate response is sent to client, e.g.
    * Nxdomain response for non-existent records, empty noerror response for unsupported queries, etc.
    * Enum options - DNS_ERROR_RESPONSE_ERROR, DNS_ERROR_RESPONSE_NONE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_ERROR_RESPONSE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_ERROR_RESPONSE_NONE".
    * @return errorResponse
    */
   @VsoMethod
@@ -387,7 +395,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * When set to respond, an appropriate response is sent to client, e.g.
    * Nxdomain response for non-existent records, empty noerror response for unsupported queries, etc.
    * Enum options - DNS_ERROR_RESPONSE_ERROR, DNS_ERROR_RESPONSE_NONE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_ERROR_RESPONSE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_ERROR_RESPONSE_NONE".
    * @param errorResponse set the errorResponse.
    */
   @VsoMethod
@@ -401,6 +409,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This field is used in soa records (mname) pertaining to all domain names specified as authoritative domain names.
    * If not configured, domain name is used as name server in soa response.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nameServer
    */
   @VsoMethod
@@ -414,6 +423,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This field is used in soa records (mname) pertaining to all domain names specified as authoritative domain names.
    * If not configured, domain name is used as name server in soa response.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nameServer set the nameServer.
    */
   @VsoMethod
@@ -427,6 +437,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * record's minimum ttl served by the dns virtual service.
    * Allowed values are 0-86400.
    * Field introduced in 17.2.4.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return negativeCachingTtl
    */
@@ -441,6 +452,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * record's minimum ttl served by the dns virtual service.
    * Allowed values are 0-86400.
    * Field introduced in 17.2.4.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param negativeCachingTtl set the negativeCachingTtl.
    */
@@ -481,6 +493,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the ttl value (in seconds) for records served by dns service.
    * Allowed values are 0-86400.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return ttl
    */
@@ -493,6 +506,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the ttl value (in seconds) for records served by dns service.
    * Allowed values are 0-86400.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param ttl set the ttl.
    */

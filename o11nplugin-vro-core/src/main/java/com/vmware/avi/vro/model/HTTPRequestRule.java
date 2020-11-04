@@ -28,51 +28,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPRequestRule extends AviRestResource {
-  @JsonProperty("all_headers")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allHeaders = null;
+    @JsonProperty("all_headers")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allHeaders = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("hdr_action")
-  @JsonInclude(Include.NON_NULL)
-  private List<HTTPHdrAction> hdrAction = null;
+    @JsonProperty("hdr_action")
+    @JsonInclude(Include.NON_NULL)
+    private List<HTTPHdrAction> hdrAction = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("log")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean log = null;
+    @JsonProperty("log")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean log = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private MatchTarget match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private MatchTarget match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("redirect_action")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPRedirectAction redirectAction = null;
+    @JsonProperty("redirect_action")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPRedirectAction redirectAction = null;
 
-  @JsonProperty("rewrite_url_action")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPRewriteURLAction rewriteUrlAction = null;
+    @JsonProperty("rewrite_url_action")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPRewriteURLAction rewriteUrlAction = null;
 
-  @JsonProperty("switching_action")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPSwitchingAction switchingAction = null;
+    @JsonProperty("switching_action")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPSwitchingAction switchingAction = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Log all http headers upon rule match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allHeaders
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log all http headers upon rule match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allHeaders set the allHeaders.
    */
   @VsoMethod
@@ -115,6 +117,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header rewrite action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrAction
    */
   @VsoMethod
@@ -125,6 +128,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method. this will set the hdrAction
    * Http header rewrite action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrAction
    */
   @VsoMethod
@@ -135,6 +139,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method this will set the hdrAction
    * Http header rewrite action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrAction
    */
   @VsoMethod
@@ -150,6 +155,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Index of the rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -160,6 +166,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Index of the rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -170,6 +177,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log http request upon rule match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return log
    */
   @VsoMethod
@@ -180,6 +188,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log http request upon rule match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param log set the log.
    */
   @VsoMethod
@@ -190,6 +199,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Add match criteria to the rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -200,6 +210,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Add match criteria to the rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -210,6 +221,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -220,6 +232,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -230,6 +243,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http redirect action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectAction
    */
   @VsoMethod
@@ -240,6 +254,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http redirect action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectAction set the redirectAction.
    */
   @VsoMethod
@@ -250,6 +265,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http request url rewrite action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewriteUrlAction
    */
   @VsoMethod
@@ -260,6 +276,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http request url rewrite action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewriteUrlAction set the rewriteUrlAction.
    */
   @VsoMethod
@@ -270,6 +287,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Content switching action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return switchingAction
    */
   @VsoMethod
@@ -280,6 +298,7 @@ public class HTTPRequestRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Content switching action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param switchingAction set the switchingAction.
    */
   @VsoMethod

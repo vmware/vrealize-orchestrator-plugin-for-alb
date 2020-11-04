@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleRLAction extends AviRestResource {
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "DNS_RL_ACTION_NONE";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "DNS_RL_ACTION_NONE";
 
 
 
@@ -35,7 +35,7 @@ public class DnsRuleRLAction extends AviRestResource {
    * Type of action to be enforced upon hitting the rate limit.
    * Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RL_ACTION_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RL_ACTION_NONE".
    * @return type
    */
   @VsoMethod
@@ -48,7 +48,7 @@ public class DnsRuleRLAction extends AviRestResource {
    * Type of action to be enforced upon hitting the rate limit.
    * Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RL_ACTION_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RL_ACTION_NONE".
    * @param type set the type.
    */
   @VsoMethod

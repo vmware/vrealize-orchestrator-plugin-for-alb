@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RollbackPatchControllerParams extends AviRestResource {
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
 
 

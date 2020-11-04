@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthMatchAttribute extends AviRestResource {
-  @JsonProperty("criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String criteria = null;
+    @JsonProperty("criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String criteria = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("values")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> values = null;
+    @JsonProperty("values")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> values = null;
 
 
 
@@ -42,6 +42,7 @@ public class AuthMatchAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule match criteria.
    * Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return criteria
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class AuthMatchAttribute extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule match criteria.
    * Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param criteria set the criteria.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class AuthMatchAttribute extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class AuthMatchAttribute extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class AuthMatchAttribute extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property values of obj type authmatchattribute field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
   @VsoMethod
@@ -93,6 +98,7 @@ public class AuthMatchAttribute extends AviRestResource {
   /**
    * This is the setter method. this will set the values
    * Placeholder for description of property values of obj type authmatchattribute field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
   @VsoMethod
@@ -103,6 +109,7 @@ public class AuthMatchAttribute extends AviRestResource {
   /**
    * This is the setter method this will set the values
    * Placeholder for description of property values of obj type authmatchattribute field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
   @VsoMethod

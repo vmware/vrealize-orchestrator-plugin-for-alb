@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BMSetup extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type bmsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class BMSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type bmsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class BMSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type bmsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class BMSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type bmsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod

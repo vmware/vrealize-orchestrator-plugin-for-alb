@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlAuthnRuleMatch extends AviRestResource {
-  @JsonProperty("saml_authn_matched_rule_action")
-  @JsonInclude(Include.NON_NULL)
-  private String samlAuthnMatchedRuleAction = null;
+    @JsonProperty("saml_authn_matched_rule_action")
+    @JsonInclude(Include.NON_NULL)
+    private String samlAuthnMatchedRuleAction = null;
 
-  @JsonProperty("saml_authn_matched_rule_name")
-  @JsonInclude(Include.NON_NULL)
-  private String samlAuthnMatchedRuleName = null;
+    @JsonProperty("saml_authn_matched_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String samlAuthnMatchedRuleName = null;
 
 
 
@@ -39,6 +39,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * Name of the executed saml authentication rule action.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthnMatchedRuleAction
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * Name of the executed saml authentication rule action.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthnMatchedRuleAction set the samlAuthnMatchedRuleAction.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the matched saml authentication rule.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthnMatchedRuleName
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class SamlAuthnRuleMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the matched saml authentication rule.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthnMatchedRuleName set the samlAuthnMatchedRuleName.
    */
   @VsoMethod

@@ -24,33 +24,34 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIFaultInjection extends AviRestResource {
-  @JsonProperty("api")
-  @JsonInclude(Include.NON_NULL)
-  private String api = null;
+    @JsonProperty("api")
+    @JsonInclude(Include.NON_NULL)
+    private String api = null;
 
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer count = null;
+    @JsonProperty("count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer count = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = "SEVM_CREATE_FAILURE";
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = "SEVM_CREATE_FAILURE";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - INITIAL_VALUE, CREATE_SE, MODIFY_VNIC, VM_MONITOR, RESOURCE_MONITOR, PERF_MONITOR, SET_MGMT_IP, MODIFY_MGMT_IP, SIM_VM_BULK_NOTIF,
-   * RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR, VERSION_NULL_ERR, DISC_PGNAME_ERR, DISC_DCDETAILS_ERR, DISC_DC_ERR,
-   * DISC_HOST_ERR, DISC_CLUSTER_ERR, DISC_PG_ERR...
+   * RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR, VERSION_NULL_ERR, INVALID_LOGIN, DISC_PGNAME_ERR, DISC_DCDETAILS_ERR,
+   * DISC_DC_ERR, DISC_HOST_ERR, DISC_CLUSTER_ERR...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return api
    */
   @VsoMethod
@@ -61,8 +62,9 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - INITIAL_VALUE, CREATE_SE, MODIFY_VNIC, VM_MONITOR, RESOURCE_MONITOR, PERF_MONITOR, SET_MGMT_IP, MODIFY_MGMT_IP, SIM_VM_BULK_NOTIF,
-   * RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR, VERSION_NULL_ERR, DISC_PGNAME_ERR, DISC_DCDETAILS_ERR, DISC_DC_ERR,
-   * DISC_HOST_ERR, DISC_CLUSTER_ERR, DISC_PG_ERR...
+   * RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR, VERSION_NULL_ERR, INVALID_LOGIN, DISC_PGNAME_ERR, DISC_DCDETAILS_ERR,
+   * DISC_DC_ERR, DISC_HOST_ERR, DISC_CLUSTER_ERR...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param api set the api.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property count of obj type vifaultinjection field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return count
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property count of obj type vifaultinjection field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param count set the count.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class VIFaultInjection extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -136,7 +144,7 @@ public class VIFaultInjection extends AviRestResource {
    * SEVM_CREATE_FAIL_NO_MEM, SEVM_CREATE_FAIL_NO_LEASE, SEVM_CREATE_FAIL_OVF_ERROR, SEVM_CREATE_NO_HOST_VM_NETWORK, SEVM_CREATE_FAIL_NO_PROGRESS,
    * SEVM_CREATE_FAIL_ABORTED, SEVM_CREATE_FAILURE, SEVM_CREATE_FAIL_POWER_ON, SEVM_VNIC_NO_VM, SEVM_VNIC_MAC_ADDR_ERROR, SEVM_VNIC_FAILURE,
    * SEVM_VNIC_NO_PG_PORTS, SEVM_DELETE_FAILURE, SEVM_CREATE_LIMIT_REACHED, SEVM_SET_MGMT_IP_FAILED...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SEVM_CREATE_FAILURE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SEVM_CREATE_FAILURE".
    * @return status
    */
   @VsoMethod
@@ -150,7 +158,7 @@ public class VIFaultInjection extends AviRestResource {
    * SEVM_CREATE_FAIL_NO_MEM, SEVM_CREATE_FAIL_NO_LEASE, SEVM_CREATE_FAIL_OVF_ERROR, SEVM_CREATE_NO_HOST_VM_NETWORK, SEVM_CREATE_FAIL_NO_PROGRESS,
    * SEVM_CREATE_FAIL_ABORTED, SEVM_CREATE_FAILURE, SEVM_CREATE_FAIL_POWER_ON, SEVM_VNIC_NO_VM, SEVM_VNIC_MAC_ADDR_ERROR, SEVM_VNIC_FAILURE,
    * SEVM_VNIC_NO_PG_PORTS, SEVM_DELETE_FAILURE, SEVM_CREATE_LIMIT_REACHED, SEVM_SET_MGMT_IP_FAILED...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SEVM_CREATE_FAILURE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SEVM_CREATE_FAILURE".
    * @param status set the status.
    */
   @VsoMethod

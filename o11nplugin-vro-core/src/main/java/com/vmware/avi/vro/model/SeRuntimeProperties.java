@@ -27,441 +27,441 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeRuntimeProperties extends AviRestResource {
-  @JsonProperty("admin_ssh_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean adminSshEnabled = true;
-
-  @JsonProperty("app_headers")
-  @JsonInclude(Include.NON_NULL)
-  private List<AppHdr> appHeaders = null;
-
-  @JsonProperty("baremetal_dispatcher_handles_flows")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean baremetalDispatcherHandlesFlows = false;
-
-  @JsonProperty("connections_lossy_log_rate_limiter_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connectionsLossyLogRateLimiterThreshold = 1000;
-
-  @JsonProperty("connections_udfnf_log_rate_limiter_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connectionsUdfnfLogRateLimiterThreshold = 1000;
-
-  @JsonProperty("disable_flow_probes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableFlowProbes = false;
-
-  @JsonProperty("disable_gro")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableGro = false;
-
-  @JsonProperty("disable_tso")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableTso = false;
-
-  @JsonProperty("dos_profile")
-  @JsonInclude(Include.NON_NULL)
-  private DosThresholdProfile dosProfile = null;
-
-  @JsonProperty("downstream_send_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer downstreamSendTimeout = 3600000;
-
-  @JsonProperty("dp_aggressive_hb_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpAggressiveHbFrequency = 100;
-
-  @JsonProperty("dp_aggressive_hb_timeout_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpAggressiveHbTimeoutCount = 10;
-
-  @JsonProperty("dp_hb_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpHbFrequency = 100;
-
-  @JsonProperty("dp_hb_timeout_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpHbTimeoutCount = 10;
-
-  @JsonProperty("dupip_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dupipFrequency = 0;
-
-  @JsonProperty("dupip_timeout_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dupipTimeoutCount = 5;
-
-  @JsonProperty("enable_hsm_log")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableHsmLog = false;
-
-  @JsonProperty("feproxy_vips_enable_proxy_arp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean feproxyVipsEnableProxyArp = true;
-
-  @JsonProperty("flow_table_batch_push_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer flowTableBatchPushFrequency = 5;
-
-  @JsonProperty("flow_table_max_entries_deprecated")
-  @JsonInclude(Include.NON_NULL)
-  private Integer flowTableMaxEntriesDeprecated = 100000000;
-
-  @JsonProperty("flow_table_new_syn_max_entries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer flowTableNewSynMaxEntries = 40000;
-
-  @JsonProperty("global_mtu")
-  @JsonInclude(Include.NON_NULL)
-  private Integer globalMtu = 0;
-
-  @JsonProperty("http_rum_console_log")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean httpRumConsoleLog = false;
-
-  @JsonProperty("http_rum_min_content_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer httpRumMinContentLength = 64;
-
-  @JsonProperty("lb_batch_push_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer lbBatchPushFrequency = 5;
-
-  @JsonProperty("lb_fail_max_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer lbFailMaxTime = 5;
-
-  @JsonProperty("lbaction_num_requests_to_dispatch")
-  @JsonInclude(Include.NON_NULL)
-  private Integer lbactionNumRequestsToDispatch = 4;
-
-  @JsonProperty("lbaction_rq_per_request_max_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer lbactionRqPerRequestMaxRetries = 22;
-
-  @JsonProperty("log_agent_compress_logs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean logAgentCompressLogs = true;
-
-  @JsonProperty("log_agent_conn_send_buffer_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentConnSendBufferSize = 16384;
-
-  @JsonProperty("log_agent_export_msg_buffer_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentExportMsgBufferSize = 524288;
-
-  @JsonProperty("log_agent_export_wait_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentExportWaitTime = 100;
-
-  @JsonProperty("log_agent_file_sz_appl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentFileSzAppl = 4;
-
-  @JsonProperty("log_agent_file_sz_conn")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentFileSzConn = 4;
-
-  @JsonProperty("log_agent_file_sz_debug")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentFileSzDebug = 4;
-
-  @JsonProperty("log_agent_file_sz_event")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentFileSzEvent = 4;
-
-  @JsonProperty("log_agent_log_storage_min_sz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentLogStorageMinSz = 1024;
-
-  @JsonProperty("log_agent_max_active_adf_files_per_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentMaxActiveAdfFilesPerVs = 100;
-
-  @JsonProperty("log_agent_max_concurrent_rsync")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentMaxConcurrentRsync = 1024;
-
-  @JsonProperty("log_agent_max_logmessage_proto_sz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentMaxLogmessageProtoSz = 65536;
-
-  @JsonProperty("log_agent_max_storage_excess_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentMaxStorageExcessPercent = 110;
-
-  @JsonProperty("log_agent_max_storage_ignore_percent")
-  @JsonInclude(Include.NON_NULL)
-  private float logAgentMaxStorageIgnorePercent = 20.0f;
-
-  @JsonProperty("log_agent_min_storage_per_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentMinStoragePerVs = 10;
-
-  @JsonProperty("log_agent_pause_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentPauseInterval = 0;
-
-  @JsonProperty("log_agent_sleep_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentSleepInterval = 10;
-
-  @JsonProperty("log_agent_unknown_vs_timer")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logAgentUnknownVsTimer = 1800;
-
-  @JsonProperty("log_message_max_file_list_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logMessageMaxFileListSize = 64;
-
-  @JsonProperty("max_throughput")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxThroughput = 10000;
-
-  @JsonProperty("mcache_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean mcacheEnabled = null;
-
-  @JsonProperty("mcache_fetch_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean mcacheFetchEnabled = null;
-
-  @JsonProperty("mcache_max_cache_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mcacheMaxCacheSize = null;
-
-  @JsonProperty("mcache_store_in_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean mcacheStoreInEnabled = null;
-
-  @JsonProperty("mcache_store_in_max_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mcacheStoreInMaxSize = null;
-
-  @JsonProperty("mcache_store_in_min_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mcacheStoreInMinSize = null;
-
-  @JsonProperty("mcache_store_out_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean mcacheStoreOutEnabled = null;
-
-  @JsonProperty("mcache_store_se_max_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mcacheStoreSeMaxSize = null;
-
-  @JsonProperty("ngx_free_connection_stack")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ngxFreeConnectionStack = false;
-
-  @JsonProperty("persistence_entries_low_watermark")
-  @JsonInclude(Include.NON_NULL)
-  private Integer persistenceEntriesLowWatermark = 20000;
-
-  @JsonProperty("persistence_mem_max")
-  @JsonInclude(Include.NON_NULL)
-  private Integer persistenceMemMax = 0;
-
-  @JsonProperty("scaleout_udp_per_pkt")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleoutUdpPerPkt = true;
-
-  @JsonProperty("se_auth_ldap_bind_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seAuthLdapBindTimeout = 5000;
-
-  @JsonProperty("se_auth_ldap_cache_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seAuthLdapCacheSize = 100000;
-
-  @JsonProperty("se_auth_ldap_connect_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seAuthLdapConnectTimeout = 10000;
-
-  @JsonProperty("se_auth_ldap_conns_per_server")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seAuthLdapConnsPerServer = 1;
-
-  @JsonProperty("se_auth_ldap_reconnect_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seAuthLdapReconnectTimeout = 10000;
-
-  @JsonProperty("se_auth_ldap_request_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seAuthLdapRequestTimeout = 10000;
-
-  @JsonProperty("se_auth_ldap_servers_failover_only")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seAuthLdapServersFailoverOnly = false;
-
-  @JsonProperty("se_dp_compression")
-  @JsonInclude(Include.NON_NULL)
-  private SeRuntimeCompressionProperties seDpCompression = null;
-
-  @JsonProperty("se_dp_hm_drops")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpHmDrops = 0;
-
-  @JsonProperty("se_dp_if_state_poll_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpIfStatePollInterval = 10;
-
-  @JsonProperty("se_dp_log_nf_enqueue_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpLogNfEnqueuePercent = 70;
-
-  @JsonProperty("se_dp_log_udf_enqueue_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpLogUdfEnqueuePercent = 90;
-
-  @JsonProperty("se_dp_vnic_queue_stall_event_sleep")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpVnicQueueStallEventSleep = null;
-
-  @JsonProperty("se_dp_vnic_queue_stall_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpVnicQueueStallThreshold = null;
-
-  @JsonProperty("se_dp_vnic_queue_stall_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpVnicQueueStallTimeout = null;
-
-  @JsonProperty("se_dp_vnic_restart_on_queue_stall_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpVnicRestartOnQueueStallCount = null;
-
-  @JsonProperty("se_dp_vnic_stall_se_restart_window")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpVnicStallSeRestartWindow = null;
-
-  @JsonProperty("se_dump_core_on_assert")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seDumpCoreOnAssert = false;
-
-  @JsonProperty("se_handle_interface_routes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seHandleInterfaceRoutes = false;
-
-  @JsonProperty("se_hb_persist_fudge_bits")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seHbPersistFudgeBits = 3;
-
-  @JsonProperty("se_mac_error_threshold_to_disable_promiscious")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seMacErrorThresholdToDisablePromiscious = 1000;
-
-  @JsonProperty("se_malloc_thresh")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seMallocThresh = 0;
-
-  @JsonProperty("se_memory_poison")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seMemoryPoison = true;
-
-  @JsonProperty("se_metrics_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seMetricsInterval = 60000;
-
-  @JsonProperty("se_metrics_rt_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seMetricsRtEnabled = true;
-
-  @JsonProperty("se_metrics_rt_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seMetricsRtInterval = 1000;
-
-  @JsonProperty("se_packet_buffer_max")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sePacketBufferMax = 0;
-
-  @JsonProperty("se_random_tcp_drops")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seRandomTcpDrops = false;
-
-  @JsonProperty("se_rate_limiters")
-  @JsonInclude(Include.NON_NULL)
-  private SeRateLimiters seRateLimiters = null;
-
-  @JsonProperty("service_ip_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> serviceIpSubnets = null;
-
-  @JsonProperty("service_port_ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<PortRange> servicePortRanges = null;
-
-  @JsonProperty("services_accessible_all_interfaces")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean servicesAccessibleAllInterfaces = false;
-
-  @JsonProperty("spdy_fwd_proxy_parse_enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean spdyFwdProxyParseEnable = true;
-
-  @JsonProperty("tcp_syn_cache_max")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpSynCacheMax = 32768;
-
-  @JsonProperty("tcp_syncache_max_retransmit_default")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpSyncacheMaxRetransmitDefault = 4;
-
-  @JsonProperty("upstream_connect_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnectTimeout = 3600000;
-
-  @JsonProperty("upstream_connpool_cache_thresh")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolCacheThresh = -1;
-
-  @JsonProperty("upstream_connpool_conn_idle_thresh_tmo")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnIdleThreshTmo = -1;
-
-  @JsonProperty("upstream_connpool_conn_idle_tmo")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnIdleTmo = null;
-
-  @JsonProperty("upstream_connpool_conn_life_tmo")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnLifeTmo = null;
-
-  @JsonProperty("upstream_connpool_conn_max_reuse")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnMaxReuse = null;
-
-  @JsonProperty("upstream_connpool_core_max_cache")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolCoreMaxCache = -1;
-
-  @JsonProperty("upstream_connpool_enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean upstreamConnpoolEnable = true;
-
-  @JsonProperty("upstream_connpool_server_max_cache")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolServerMaxCache = null;
-
-  @JsonProperty("upstream_connpool_strategy")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolStrategy = -1;
-
-  @JsonProperty("upstream_keepalive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean upstreamKeepalive = false;
-
-  @JsonProperty("upstream_read_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamReadTimeout = 3600000;
-
-  @JsonProperty("upstream_send_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamSendTimeout = 3600000;
-
-  @JsonProperty("user_defined_metric_age")
-  @JsonInclude(Include.NON_NULL)
-  private Integer userDefinedMetricAge = 60;
+    @JsonProperty("admin_ssh_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean adminSshEnabled = true;
+
+    @JsonProperty("app_headers")
+    @JsonInclude(Include.NON_NULL)
+    private List<AppHdr> appHeaders = null;
+
+    @JsonProperty("baremetal_dispatcher_handles_flows")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean baremetalDispatcherHandlesFlows = false;
+
+    @JsonProperty("connections_lossy_log_rate_limiter_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connectionsLossyLogRateLimiterThreshold = 1000;
+
+    @JsonProperty("connections_udfnf_log_rate_limiter_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connectionsUdfnfLogRateLimiterThreshold = 1000;
+
+    @JsonProperty("disable_flow_probes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableFlowProbes = false;
+
+    @JsonProperty("disable_gro")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableGro;
+
+    @JsonProperty("disable_tso")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableTso;
+
+    @JsonProperty("dos_profile")
+    @JsonInclude(Include.NON_NULL)
+    private DosThresholdProfile dosProfile = null;
+
+    @JsonProperty("downstream_send_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer downstreamSendTimeout = 3600000;
+
+    @JsonProperty("dp_aggressive_hb_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpAggressiveHbFrequency = 100;
+
+    @JsonProperty("dp_aggressive_hb_timeout_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpAggressiveHbTimeoutCount = 10;
+
+    @JsonProperty("dp_hb_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpHbFrequency = 100;
+
+    @JsonProperty("dp_hb_timeout_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpHbTimeoutCount = 10;
+
+    @JsonProperty("dupip_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dupipFrequency = 0;
+
+    @JsonProperty("dupip_timeout_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dupipTimeoutCount = 5;
+
+    @JsonProperty("enable_hsm_log")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHsmLog = false;
+
+    @JsonProperty("feproxy_vips_enable_proxy_arp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean feproxyVipsEnableProxyArp = true;
+
+    @JsonProperty("flow_table_batch_push_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer flowTableBatchPushFrequency = 5;
+
+    @JsonProperty("flow_table_max_entries_deprecated")
+    @JsonInclude(Include.NON_NULL)
+    private Integer flowTableMaxEntriesDeprecated;
+
+    @JsonProperty("flow_table_new_syn_max_entries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer flowTableNewSynMaxEntries;
+
+    @JsonProperty("global_mtu")
+    @JsonInclude(Include.NON_NULL)
+    private Integer globalMtu = 0;
+
+    @JsonProperty("http_rum_console_log")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean httpRumConsoleLog = false;
+
+    @JsonProperty("http_rum_min_content_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer httpRumMinContentLength = 64;
+
+    @JsonProperty("lb_batch_push_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer lbBatchPushFrequency;
+
+    @JsonProperty("lb_fail_max_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer lbFailMaxTime;
+
+    @JsonProperty("lbaction_num_requests_to_dispatch")
+    @JsonInclude(Include.NON_NULL)
+    private Integer lbactionNumRequestsToDispatch = 4;
+
+    @JsonProperty("lbaction_rq_per_request_max_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer lbactionRqPerRequestMaxRetries = 22;
+
+    @JsonProperty("log_agent_compress_logs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean logAgentCompressLogs = true;
+
+    @JsonProperty("log_agent_conn_send_buffer_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentConnSendBufferSize = 16384;
+
+    @JsonProperty("log_agent_export_msg_buffer_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentExportMsgBufferSize = 524288;
+
+    @JsonProperty("log_agent_export_wait_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentExportWaitTime = 100;
+
+    @JsonProperty("log_agent_file_sz_appl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentFileSzAppl = 4;
+
+    @JsonProperty("log_agent_file_sz_conn")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentFileSzConn = 4;
+
+    @JsonProperty("log_agent_file_sz_debug")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentFileSzDebug = 4;
+
+    @JsonProperty("log_agent_file_sz_event")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentFileSzEvent = 4;
+
+    @JsonProperty("log_agent_log_storage_min_sz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentLogStorageMinSz = 1024;
+
+    @JsonProperty("log_agent_max_active_adf_files_per_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentMaxActiveAdfFilesPerVs = 100;
+
+    @JsonProperty("log_agent_max_concurrent_rsync")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentMaxConcurrentRsync = 1024;
+
+    @JsonProperty("log_agent_max_logmessage_proto_sz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentMaxLogmessageProtoSz = 65536;
+
+    @JsonProperty("log_agent_max_storage_excess_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentMaxStorageExcessPercent = 110;
+
+    @JsonProperty("log_agent_max_storage_ignore_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Float logAgentMaxStorageIgnorePercent = 20.0f;
+
+    @JsonProperty("log_agent_min_storage_per_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentMinStoragePerVs = 10;
+
+    @JsonProperty("log_agent_pause_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentPauseInterval = 0;
+
+    @JsonProperty("log_agent_sleep_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentSleepInterval = 10;
+
+    @JsonProperty("log_agent_unknown_vs_timer")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logAgentUnknownVsTimer = 1800;
+
+    @JsonProperty("log_message_max_file_list_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logMessageMaxFileListSize = 64;
+
+    @JsonProperty("max_throughput")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxThroughput;
+
+    @JsonProperty("mcache_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean mcacheEnabled = null;
+
+    @JsonProperty("mcache_fetch_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean mcacheFetchEnabled = null;
+
+    @JsonProperty("mcache_max_cache_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mcacheMaxCacheSize;
+
+    @JsonProperty("mcache_store_in_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean mcacheStoreInEnabled = null;
+
+    @JsonProperty("mcache_store_in_max_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mcacheStoreInMaxSize = null;
+
+    @JsonProperty("mcache_store_in_min_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mcacheStoreInMinSize = null;
+
+    @JsonProperty("mcache_store_out_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean mcacheStoreOutEnabled = null;
+
+    @JsonProperty("mcache_store_se_max_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mcacheStoreSeMaxSize;
+
+    @JsonProperty("ngx_free_connection_stack")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ngxFreeConnectionStack = false;
+
+    @JsonProperty("persistence_entries_low_watermark")
+    @JsonInclude(Include.NON_NULL)
+    private Integer persistenceEntriesLowWatermark;
+
+    @JsonProperty("persistence_mem_max")
+    @JsonInclude(Include.NON_NULL)
+    private Integer persistenceMemMax = 0;
+
+    @JsonProperty("scaleout_udp_per_pkt")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleoutUdpPerPkt = true;
+
+    @JsonProperty("se_auth_ldap_bind_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seAuthLdapBindTimeout = 5000;
+
+    @JsonProperty("se_auth_ldap_cache_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seAuthLdapCacheSize = 100000;
+
+    @JsonProperty("se_auth_ldap_connect_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seAuthLdapConnectTimeout = 10000;
+
+    @JsonProperty("se_auth_ldap_conns_per_server")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seAuthLdapConnsPerServer = 1;
+
+    @JsonProperty("se_auth_ldap_reconnect_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seAuthLdapReconnectTimeout = 10000;
+
+    @JsonProperty("se_auth_ldap_request_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seAuthLdapRequestTimeout = 10000;
+
+    @JsonProperty("se_auth_ldap_servers_failover_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seAuthLdapServersFailoverOnly = false;
+
+    @JsonProperty("se_dp_compression")
+    @JsonInclude(Include.NON_NULL)
+    private SeRuntimeCompressionProperties seDpCompression = null;
+
+    @JsonProperty("se_dp_hm_drops")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpHmDrops = 0;
+
+    @JsonProperty("se_dp_if_state_poll_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpIfStatePollInterval = 10;
+
+    @JsonProperty("se_dp_log_nf_enqueue_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpLogNfEnqueuePercent = 70;
+
+    @JsonProperty("se_dp_log_udf_enqueue_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpLogUdfEnqueuePercent = 90;
+
+    @JsonProperty("se_dp_vnic_queue_stall_event_sleep")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpVnicQueueStallEventSleep;
+
+    @JsonProperty("se_dp_vnic_queue_stall_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpVnicQueueStallThreshold;
+
+    @JsonProperty("se_dp_vnic_queue_stall_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpVnicQueueStallTimeout;
+
+    @JsonProperty("se_dp_vnic_restart_on_queue_stall_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpVnicRestartOnQueueStallCount;
+
+    @JsonProperty("se_dp_vnic_stall_se_restart_window")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpVnicStallSeRestartWindow;
+
+    @JsonProperty("se_dump_core_on_assert")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seDumpCoreOnAssert = false;
+
+    @JsonProperty("se_handle_interface_routes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seHandleInterfaceRoutes = false;
+
+    @JsonProperty("se_hb_persist_fudge_bits")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seHbPersistFudgeBits = 3;
+
+    @JsonProperty("se_mac_error_threshold_to_disable_promiscious")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seMacErrorThresholdToDisablePromiscious = 1000;
+
+    @JsonProperty("se_malloc_thresh")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seMallocThresh;
+
+    @JsonProperty("se_memory_poison")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seMemoryPoison = true;
+
+    @JsonProperty("se_metrics_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seMetricsInterval = 60000;
+
+    @JsonProperty("se_metrics_rt_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seMetricsRtEnabled = true;
+
+    @JsonProperty("se_metrics_rt_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seMetricsRtInterval = 1000;
+
+    @JsonProperty("se_packet_buffer_max")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sePacketBufferMax = 0;
+
+    @JsonProperty("se_random_tcp_drops")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seRandomTcpDrops = false;
+
+    @JsonProperty("se_rate_limiters")
+    @JsonInclude(Include.NON_NULL)
+    private SeRateLimiters seRateLimiters = null;
+
+    @JsonProperty("service_ip_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> serviceIpSubnets = null;
+
+    @JsonProperty("service_port_ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<PortRange> servicePortRanges = null;
+
+    @JsonProperty("services_accessible_all_interfaces")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean servicesAccessibleAllInterfaces = false;
+
+    @JsonProperty("spdy_fwd_proxy_parse_enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean spdyFwdProxyParseEnable = true;
+
+    @JsonProperty("tcp_syn_cache_max")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpSynCacheMax;
+
+    @JsonProperty("tcp_syncache_max_retransmit_default")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpSyncacheMaxRetransmitDefault = 4;
+
+    @JsonProperty("upstream_connect_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnectTimeout = 3600000;
+
+    @JsonProperty("upstream_connpool_cache_thresh")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolCacheThresh = -1;
+
+    @JsonProperty("upstream_connpool_conn_idle_thresh_tmo")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnIdleThreshTmo = -1;
+
+    @JsonProperty("upstream_connpool_conn_idle_tmo")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnIdleTmo;
+
+    @JsonProperty("upstream_connpool_conn_life_tmo")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnLifeTmo;
+
+    @JsonProperty("upstream_connpool_conn_max_reuse")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnMaxReuse;
+
+    @JsonProperty("upstream_connpool_core_max_cache")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolCoreMaxCache = -1;
+
+    @JsonProperty("upstream_connpool_enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean upstreamConnpoolEnable = true;
+
+    @JsonProperty("upstream_connpool_server_max_cache")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolServerMaxCache;
+
+    @JsonProperty("upstream_connpool_strategy")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolStrategy = -1;
+
+    @JsonProperty("upstream_keepalive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean upstreamKeepalive = false;
+
+    @JsonProperty("upstream_read_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamReadTimeout = 3600000;
+
+    @JsonProperty("upstream_send_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamSendTimeout = 3600000;
+
+    @JsonProperty("user_defined_metric_age")
+    @JsonInclude(Include.NON_NULL)
+    private Integer userDefinedMetricAge = 60;
 
 
 
@@ -492,6 +492,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHeaders
    */
   @VsoMethod
@@ -502,6 +503,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the appHeaders
    * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHeaders
    */
   @VsoMethod
@@ -512,6 +514,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method this will set the appHeaders
    * Placeholder for description of property app_headers of obj type seruntimeproperties field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appHeaders
    */
   @VsoMethod
@@ -593,6 +596,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable flow probes for scaled out vs'es.
+   * (this field has been moved to se_group properties 20.1.3 onwards.).
    * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableFlowProbes
@@ -605,6 +609,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable flow probes for scaled out vs'es.
+   * (this field has been moved to se_group properties 20.1.3 onwards.).
    * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableFlowProbes set the disableFlowProbes.
@@ -619,7 +624,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableGro
    */
   @VsoMethod
@@ -632,7 +636,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableGro set the disableGro.
    */
   @VsoMethod
@@ -645,7 +648,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.4.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableTso
    */
   @VsoMethod
@@ -658,7 +660,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * Deprecated.
    * Field deprecated in 17.2.5.
    * Field introduced in 17.2.4.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableTso set the disableTso.
    */
   @VsoMethod
@@ -669,6 +670,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dos_profile of obj type seruntimeproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dosProfile
    */
   @VsoMethod
@@ -679,6 +681,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dos_profile of obj type seruntimeproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dosProfile set the dosProfile.
    */
   @VsoMethod
@@ -689,6 +692,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout for downstream to become writable.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return downstreamSendTimeout
    */
@@ -700,6 +704,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout for downstream to become writable.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param downstreamSendTimeout set the downstreamSendTimeout.
    */
@@ -711,6 +716,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpAggressiveHbFrequency
    */
@@ -722,6 +729,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param dpAggressiveHbFrequency set the dpAggressiveHbFrequency.
    */
@@ -733,6 +742,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpAggressiveHbTimeoutCount
    */
@@ -744,6 +754,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param dpAggressiveHbTimeoutCount set the dpAggressiveHbTimeoutCount.
    */
@@ -755,6 +766,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpHbFrequency
    */
@@ -766,6 +779,8 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Frequency of se - se hb messages when aggressive failure mode detection is not enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param dpHbFrequency set the dpHbFrequency.
    */
@@ -777,6 +792,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpHbTimeoutCount
    */
@@ -788,6 +804,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Consecutive hb failures after which failure is reported to controller, when aggressive failure mode detection is not enabled.
+   * (this field has been moved to se_group properties 20.1.3 onwards).
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param dpHbTimeoutCount set the dpHbTimeoutCount.
    */
@@ -799,6 +816,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Frequency of arp requests sent by se for each vip to detect duplicate ip when it loses conectivity to controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return dupipFrequency
    */
@@ -810,6 +828,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Frequency of arp requests sent by se for each vip to detect duplicate ip when it loses conectivity to controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param dupipFrequency set the dupipFrequency.
    */
@@ -916,7 +935,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100000000.
    * @return flowTableMaxEntriesDeprecated
    */
   @VsoMethod
@@ -928,7 +946,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100000000.
    * @param flowTableMaxEntriesDeprecated set the flowTableMaxEntriesDeprecated.
    */
   @VsoMethod
@@ -940,7 +957,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 40000.
    * @return flowTableNewSynMaxEntries
    */
   @VsoMethod
@@ -952,7 +968,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 40000.
    * @param flowTableNewSynMaxEntries set the flowTableNewSynMaxEntries.
    */
   @VsoMethod
@@ -1037,7 +1052,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * I.e, a value of 1 means the batch is pushed every time the loop runs.
    * Field deprecated in 18.1.3.
    * Field introduced in 17.2.8.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return lbBatchPushFrequency
    */
   @VsoMethod
@@ -1052,7 +1066,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * I.e, a value of 1 means the batch is pushed every time the loop runs.
    * Field deprecated in 18.1.3.
    * Field introduced in 17.2.8.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param lbBatchPushFrequency set the lbBatchPushFrequency.
    */
   @VsoMethod
@@ -1064,7 +1077,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * Unit is sec.
    * @return lbFailMaxTime
    */
   @VsoMethod
@@ -1076,7 +1089,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+   * Unit is sec.
    * @param lbFailMaxTime set the lbFailMaxTime.
    */
   @VsoMethod
@@ -1153,6 +1166,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log-agent test property used to simulate slow tcp connections.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @return logAgentConnSendBufferSize
    */
@@ -1164,6 +1178,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log-agent test property used to simulate slow tcp connections.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
    * @param logAgentConnSendBufferSize set the logAgentConnSendBufferSize.
    */
@@ -1175,6 +1190,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum size of data sent by log-agent to controller over the tcp connection.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
    * @return logAgentExportMsgBufferSize
    */
@@ -1186,6 +1202,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum size of data sent by log-agent to controller over the tcp connection.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
    * @param logAgentExportMsgBufferSize set the logAgentExportMsgBufferSize.
    */
@@ -1197,6 +1214,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time log-agent waits before sending data to the controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return logAgentExportWaitTime
    */
@@ -1208,6 +1226,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time log-agent waits before sending data to the controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param logAgentExportWaitTime set the logAgentExportWaitTime.
    */
@@ -1307,6 +1326,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum storage allocated for logs irrespective of memory and cores.
+   * Unit is mb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return logAgentLogStorageMinSz
    */
@@ -1318,6 +1338,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum storage allocated for logs irrespective of memory and cores.
+   * Unit is mb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param logAgentLogStorageMinSz set the logAgentLogStorageMinSz.
    */
@@ -1417,7 +1438,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum storage on the disk not allocated for logs on the service engine.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
    * @return logAgentMaxStorageIgnorePercent
    */
   @VsoMethod
@@ -1428,7 +1449,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum storage on the disk not allocated for logs on the service engine.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
    * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
    */
   @VsoMethod
@@ -1461,6 +1482,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time interval log-agent pauses between logs obtained from the dataplane.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return logAgentPauseInterval
    */
@@ -1472,6 +1494,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time interval log-agent pauses between logs obtained from the dataplane.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param logAgentPauseInterval set the logAgentPauseInterval.
    */
@@ -1483,6 +1506,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return logAgentSleepInterval
    */
@@ -1494,6 +1518,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param logAgentSleepInterval set the logAgentSleepInterval.
    */
@@ -1505,6 +1530,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout to purge unknown virtual service logs from the service engine.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @return logAgentUnknownVsTimer
    */
@@ -1516,6 +1542,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout to purge unknown virtual service logs from the service engine.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @param logAgentUnknownVsTimer set the logAgentUnknownVsTimer.
    */
@@ -1550,7 +1577,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * Unit is mbps.
    * @return maxThroughput
    */
   @VsoMethod
@@ -1562,7 +1589,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+   * Unit is mbps.
    * @param maxThroughput set the maxThroughput.
    */
   @VsoMethod
@@ -1573,6 +1600,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache - controls fetch/store/store_out.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mcacheEnabled
    */
   @VsoMethod
@@ -1583,6 +1611,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache - controls fetch/store/store_out.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mcacheEnabled set the mcacheEnabled.
    */
   @VsoMethod
@@ -1593,6 +1622,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache_fetch.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mcacheFetchEnabled
    */
   @VsoMethod
@@ -1603,6 +1633,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache_fetch.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mcacheFetchEnabled set the mcacheFetchEnabled.
    */
   @VsoMethod
@@ -1635,6 +1666,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache_store.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mcacheStoreInEnabled
    */
   @VsoMethod
@@ -1645,6 +1677,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache_store.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mcacheStoreInEnabled set the mcacheStoreInEnabled.
    */
   @VsoMethod
@@ -1655,6 +1688,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Max object size.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mcacheStoreInMaxSize
    */
   @VsoMethod
@@ -1665,6 +1699,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Max object size.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mcacheStoreInMaxSize set the mcacheStoreInMaxSize.
    */
   @VsoMethod
@@ -1675,6 +1710,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Min object size.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mcacheStoreInMinSize
    */
   @VsoMethod
@@ -1685,6 +1721,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Min object size.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mcacheStoreInMinSize set the mcacheStoreInMinSize.
    */
   @VsoMethod
@@ -1695,6 +1732,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache_store_out.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mcacheStoreOutEnabled
    */
   @VsoMethod
@@ -1705,6 +1743,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache_store_out.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mcacheStoreOutEnabled set the mcacheStoreOutEnabled.
    */
   @VsoMethod
@@ -1760,7 +1799,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
    * @return persistenceEntriesLowWatermark
    */
   @VsoMethod
@@ -1772,7 +1810,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
    * @param persistenceEntriesLowWatermark set the persistenceEntriesLowWatermark.
    */
   @VsoMethod
@@ -1831,6 +1868,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default bind timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return seAuthLdapBindTimeout
    */
@@ -1842,6 +1880,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap basicauth default bind timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param seAuthLdapBindTimeout set the seAuthLdapBindTimeout.
    */
@@ -1853,6 +1892,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Size of ldap basicauth credentials cache used on the dataplane.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
    * @return seAuthLdapCacheSize
    */
@@ -1864,6 +1904,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Size of ldap basicauth credentials cache used on the dataplane.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
    * @param seAuthLdapCacheSize set the seAuthLdapCacheSize.
    */
@@ -1875,6 +1916,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default connection timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapConnectTimeout
    */
@@ -1886,6 +1928,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap basicauth default connection timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param seAuthLdapConnectTimeout set the seAuthLdapConnectTimeout.
    */
@@ -1919,6 +1962,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default reconnect timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapReconnectTimeout
    */
@@ -1930,6 +1974,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap basicauth default reconnect timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param seAuthLdapReconnectTimeout set the seAuthLdapReconnectTimeout.
    */
@@ -1941,6 +1986,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap basicauth default login or group search request timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return seAuthLdapRequestTimeout
    */
@@ -1952,6 +1998,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap basicauth default login or group search request timeout enforced on connections to ldap server.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param seAuthLdapRequestTimeout set the seAuthLdapRequestTimeout.
    */
@@ -1985,6 +2032,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_dp_compression of obj type seruntimeproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDpCompression
    */
   @VsoMethod
@@ -1995,6 +2043,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_dp_compression of obj type seruntimeproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDpCompression set the seDpCompression.
    */
   @VsoMethod
@@ -2004,6 +2053,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated - this field has been moved to se_group properties 20.1.3 onwards.
    * Internal only.
    * Used to simulate se - se hb failure.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -2016,6 +2066,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated - this field has been moved to se_group properties 20.1.3 onwards.
    * Internal only.
    * Used to simulate se - se hb failure.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -2308,7 +2359,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seMallocThresh
    */
   @VsoMethod
@@ -2320,7 +2370,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Field deprecated in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seMallocThresh set the seMallocThresh.
    */
   @VsoMethod
@@ -2356,6 +2405,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * Frequency (ms) of metrics updates from se to controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return seMetricsInterval
    */
@@ -2368,6 +2418,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * Frequency (ms) of metrics updates from se to controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param seMetricsInterval set the seMetricsInterval.
    */
@@ -2404,6 +2455,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * Frequency (ms) of realtime metrics updates from se to controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return seMetricsRtInterval
    */
@@ -2416,6 +2468,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * Frequency (ms) of realtime metrics updates from se to controller.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param seMetricsRtInterval set the seMetricsRtInterval.
    */
@@ -2475,6 +2528,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se rate limiters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRateLimiters
    */
   @VsoMethod
@@ -2485,6 +2539,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se rate limiters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRateLimiters set the seRateLimiters.
    */
   @VsoMethod
@@ -2495,6 +2550,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
   @VsoMethod
@@ -2505,6 +2561,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the serviceIpSubnets
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
   @VsoMethod
@@ -2515,6 +2572,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method this will set the serviceIpSubnets
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
   @VsoMethod
@@ -2531,6 +2589,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port ranges on which there may be virtual services (for configuring iptables).
    * Applicable in container ecosystems like mesos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePortRanges
    */
   @VsoMethod
@@ -2542,6 +2601,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method. this will set the servicePortRanges
    * Port ranges on which there may be virtual services (for configuring iptables).
    * Applicable in container ecosystems like mesos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePortRanges
    */
   @VsoMethod
@@ -2553,6 +2613,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method this will set the servicePortRanges
    * Port ranges on which there may be virtual services (for configuring iptables).
    * Applicable in container ecosystems like mesos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePortRanges
    */
   @VsoMethod
@@ -2615,7 +2676,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * After this limit is reached, syn cookies are used.
    * This is per core of the serviceengine.
    * Field deprecated in 17.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
    * @return tcpSynCacheMax
    */
   @VsoMethod
@@ -2629,7 +2689,6 @@ public class SeRuntimeProperties extends AviRestResource {
    * After this limit is reached, syn cookies are used.
    * This is per core of the serviceengine.
    * Field deprecated in 17.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
    * @param tcpSynCacheMax set the tcpSynCacheMax.
    */
   @VsoMethod
@@ -2662,6 +2721,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout for backend connection.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamConnectTimeout
    */
@@ -2673,6 +2733,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout for backend connection.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamConnectTimeout set the upstreamConnectTimeout.
    */
@@ -2904,6 +2965,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout for data to be received from backend.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamReadTimeout
    */
@@ -2915,6 +2977,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout for data to be received from backend.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamReadTimeout set the upstreamReadTimeout.
    */
@@ -2926,6 +2989,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout for upstream to become writable.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamSendTimeout
    */
@@ -2937,6 +3001,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout for upstream to become writable.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamSendTimeout set the upstreamSendTimeout.
    */
@@ -2949,6 +3014,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Defines in seconds how long before an unused user-defined-metric is garbage collected.
    * Field introduced in 17.1.5.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return userDefinedMetricAge
    */
@@ -2961,6 +3027,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Defines in seconds how long before an unused user-defined-metric is garbage collected.
    * Field introduced in 17.1.5.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param userDefinedMetricAge set the userDefinedMetricAge.
    */

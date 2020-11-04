@@ -25,21 +25,22 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseTierUsage extends AviRestResource {
-  @JsonProperty("tier")
-  @JsonInclude(Include.NON_NULL)
-  private String tier = null;
+    @JsonProperty("tier")
+    @JsonInclude(Include.NON_NULL)
+    private String tier = null;
 
-  @JsonProperty("usage")
-  @JsonInclude(Include.NON_NULL)
-  private LicenseUsage usage = null;
+    @JsonProperty("usage")
+    @JsonInclude(Include.NON_NULL)
+    private LicenseUsage usage = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the license tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier
    */
   @VsoMethod
@@ -50,8 +51,9 @@ public class LicenseTierUsage extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the license tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier set the tier.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class LicenseTierUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Usage stats of license tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usage
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class LicenseTierUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Usage stats of license tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param usage set the usage.
    */
   @VsoMethod

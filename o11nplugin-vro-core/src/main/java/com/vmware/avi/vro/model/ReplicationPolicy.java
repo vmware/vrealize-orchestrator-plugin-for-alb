@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ReplicationPolicy extends AviRestResource {
-  @JsonProperty("checkpoint_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String checkpointRef = null;
+    @JsonProperty("checkpoint_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String checkpointRef = null;
 
-  @JsonProperty("replication_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String replicationMode = "REPLICATION_MODE_CONTINUOUS";
+    @JsonProperty("replication_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String replicationMode = "REPLICATION_MODE_CONTINUOUS";
 
 
 
@@ -40,6 +40,7 @@ public class ReplicationPolicy extends AviRestResource {
    * Follower attempt to replicate configuration till this checkpoint.
    * It is a reference to an object of type federationcheckpoint.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checkpointRef
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class ReplicationPolicy extends AviRestResource {
    * Follower attempt to replicate configuration till this checkpoint.
    * It is a reference to an object of type federationcheckpoint.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checkpointRef set the checkpointRef.
    */
   @VsoMethod
@@ -65,7 +67,7 @@ public class ReplicationPolicy extends AviRestResource {
    * Replication mode.
    * Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as REPLICATION_MODE_CONTINUOUS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REPLICATION_MODE_CONTINUOUS".
    * @return replicationMode
    */
   @VsoMethod
@@ -78,7 +80,7 @@ public class ReplicationPolicy extends AviRestResource {
    * Replication mode.
    * Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as REPLICATION_MODE_CONTINUOUS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "REPLICATION_MODE_CONTINUOUS".
    * @param replicationMode set the replicationMode.
    */
   @VsoMethod

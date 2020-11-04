@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPVersionMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("versions")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> versions = null;
+    @JsonProperty("versions")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> versions = null;
 
 
 
@@ -38,6 +38,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for http version matching the version used in the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for http version matching the version used in the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http protocol version.
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versions
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * This is the setter method. this will set the versions
    * Http protocol version.
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versions
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class HTTPVersionMatch extends AviRestResource {
    * This is the setter method this will set the versions
    * Http protocol version.
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versions
    */
   @VsoMethod

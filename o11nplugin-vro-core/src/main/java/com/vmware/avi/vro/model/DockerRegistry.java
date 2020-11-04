@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DockerRegistry extends AviRestResource {
-  @JsonProperty("oshift_registry")
-  @JsonInclude(Include.NON_NULL)
-  private OshiftDockerRegistryMetaData oshiftRegistry = null;
+    @JsonProperty("oshift_registry")
+    @JsonInclude(Include.NON_NULL)
+    private OshiftDockerRegistryMetaData oshiftRegistry = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("private")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean privates = false;
+    @JsonProperty("privates")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean privates = false;
 
-  @JsonProperty("registry")
-  @JsonInclude(Include.NON_NULL)
-  private String registry = "avinetworks/se";
+    @JsonProperty("registry")
+    @JsonInclude(Include.NON_NULL)
+    private String registry = "avinetworks/se";
 
-  @JsonProperty("se_repository_push")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seRepositoryPush = null;
+    @JsonProperty("se_repository_push")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seRepositoryPush;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Openshift integrated registry config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oshiftRegistry
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class DockerRegistry extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Openshift integrated registry config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oshiftRegistry set the oshiftRegistry.
    */
   @VsoMethod
@@ -75,6 +77,7 @@ public class DockerRegistry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Password for docker registry.
    * Authorized 'regular user' password if registry is openshift integrated registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -86,6 +89,7 @@ public class DockerRegistry extends AviRestResource {
    * This is the setter method to the attribute.
    * Password for docker registry.
    * Authorized 'regular user' password if registry is openshift integrated registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -122,7 +126,7 @@ public class DockerRegistry extends AviRestResource {
    * Avi serviceengine repository name.
    * For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry
    * port/namespace/repo.
-   * Default value when not specified in API or module is interpreted by Avi Controller as avinetworks/se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks/se".
    * @return registry
    */
   @VsoMethod
@@ -135,7 +139,7 @@ public class DockerRegistry extends AviRestResource {
    * Avi serviceengine repository name.
    * For private registry, it's registry port/repository, for public registry, it's registry/repository, for openshift registry, it's registry
    * port/namespace/repo.
-   * Default value when not specified in API or module is interpreted by Avi Controller as avinetworks/se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks/se".
    * @param registry set the registry.
    */
   @VsoMethod
@@ -169,6 +173,7 @@ public class DockerRegistry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Username for docker registry.
    * Authorized 'regular user' if registry is openshift integrated registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -180,6 +185,7 @@ public class DockerRegistry extends AviRestResource {
    * This is the setter method to the attribute.
    * Username for docker registry.
    * Authorized 'regular user' if registry is openshift integrated registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

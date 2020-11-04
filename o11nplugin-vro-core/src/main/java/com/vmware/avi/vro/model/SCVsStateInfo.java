@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SCVsStateInfo extends AviRestResource {
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("vs_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vsId = null;
+    @JsonProperty("vs_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vsId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -75,6 +77,7 @@ public class SCVsStateInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -86,6 +89,7 @@ public class SCVsStateInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -115,6 +119,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -135,6 +141,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -155,6 +163,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsId
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class SCVsStateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsId set the vsId.
    */
   @VsoMethod

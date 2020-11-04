@@ -24,119 +24,120 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIMgrHostRuntime extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("cluster_name")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterName = null;
+    @JsonProperty("cluster_name")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterName = null;
 
-  @JsonProperty("cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterUuid = null;
+    @JsonProperty("cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterUuid = null;
 
-  @JsonProperty("cntlr_accessible")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cntlrAccessible = true;
+    @JsonProperty("cntlr_accessible")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cntlrAccessible = true;
 
-  @JsonProperty("connection_state")
-  @JsonInclude(Include.NON_NULL)
-  private String connectionState = "connected";
+    @JsonProperty("connection_state")
+    @JsonInclude(Include.NON_NULL)
+    private String connectionState = "connected";
 
-  @JsonProperty("cpu_hz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cpuHz = null;
+    @JsonProperty("cpu_hz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cpuHz = null;
 
-  @JsonProperty("maintenance_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean maintenanceMode = null;
+    @JsonProperty("maintenance_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean maintenanceMode = null;
 
-  @JsonProperty("managed_object_id")
-  @JsonInclude(Include.NON_NULL)
-  private String managedObjectId = null;
+    @JsonProperty("managed_object_id")
+    @JsonInclude(Include.NON_NULL)
+    private String managedObjectId = null;
 
-  @JsonProperty("mem")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mem = null;
+    @JsonProperty("mem")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mem = null;
 
-  @JsonProperty("mgmt_portgroup")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtPortgroup = null;
+    @JsonProperty("mgmt_portgroup")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtPortgroup = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("network_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> networkUuids = null;
+    @JsonProperty("network_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> networkUuids = null;
 
-  @JsonProperty("num_cpu_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numCpuCores = null;
+    @JsonProperty("num_cpu_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numCpuCores = null;
 
-  @JsonProperty("num_cpu_packages")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numCpuPackages = null;
+    @JsonProperty("num_cpu_packages")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numCpuPackages = null;
 
-  @JsonProperty("num_cpu_threads")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numCpuThreads = null;
+    @JsonProperty("num_cpu_threads")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numCpuThreads = null;
 
-  @JsonProperty("pnics")
-  @JsonInclude(Include.NON_NULL)
-  private List<CdpLldpInfo> pnics = null;
+    @JsonProperty("pnics")
+    @JsonInclude(Include.NON_NULL)
+    private List<CdpLldpInfo> pnics = null;
 
-  @JsonProperty("powerstate")
-  @JsonInclude(Include.NON_NULL)
-  private String powerstate = null;
+    @JsonProperty("powerstate")
+    @JsonInclude(Include.NON_NULL)
+    private String powerstate = null;
 
-  @JsonProperty("quarantine_start_ts")
-  @JsonInclude(Include.NON_NULL)
-  private String quarantineStartTs = null;
+    @JsonProperty("quarantine_start_ts")
+    @JsonInclude(Include.NON_NULL)
+    private String quarantineStartTs = null;
 
-  @JsonProperty("quarantined")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean quarantined = null;
+    @JsonProperty("quarantined")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean quarantined = null;
 
-  @JsonProperty("quarantined_periods")
-  @JsonInclude(Include.NON_NULL)
-  private Integer quarantinedPeriods = 1;
+    @JsonProperty("quarantined_periods")
+    @JsonInclude(Include.NON_NULL)
+    private Integer quarantinedPeriods = 1;
 
-  @JsonProperty("se_fail_cnt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seFailCnt = null;
+    @JsonProperty("se_fail_cnt")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seFailCnt = null;
 
-  @JsonProperty("se_success_cnt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seSuccessCnt = null;
+    @JsonProperty("se_success_cnt")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seSuccessCnt = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vm_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vmRefs = null;
+    @JsonProperty("vm_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vmRefs = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -147,6 +148,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -157,6 +159,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_name of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterName
    */
   @VsoMethod
@@ -167,6 +170,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_name of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterName set the clusterName.
    */
   @VsoMethod
@@ -177,6 +181,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
   @VsoMethod
@@ -187,6 +192,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
   @VsoMethod
@@ -219,7 +225,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property connection_state of obj type vimgrhostruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as connected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "connected".
    * @return connectionState
    */
   @VsoMethod
@@ -230,7 +236,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property connection_state of obj type vimgrhostruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as connected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "connected".
    * @param connectionState set the connectionState.
    */
   @VsoMethod
@@ -241,6 +247,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cpu_hz of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpuHz
    */
   @VsoMethod
@@ -251,6 +258,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cpu_hz of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpuHz set the cpuHz.
    */
   @VsoMethod
@@ -261,6 +269,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property maintenance_mode of obj type vimgrhostruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceMode
    */
   @VsoMethod
@@ -271,6 +280,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property maintenance_mode of obj type vimgrhostruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maintenanceMode set the maintenanceMode.
    */
   @VsoMethod
@@ -281,6 +291,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property managed_object_id of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedObjectId
    */
   @VsoMethod
@@ -291,6 +302,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property managed_object_id of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managedObjectId set the managedObjectId.
    */
   @VsoMethod
@@ -301,6 +313,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mem of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mem
    */
   @VsoMethod
@@ -311,6 +324,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mem of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mem set the mem.
    */
   @VsoMethod
@@ -321,6 +335,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_portgroup of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtPortgroup
    */
   @VsoMethod
@@ -331,6 +346,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmt_portgroup of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtPortgroup set the mgmtPortgroup.
    */
   @VsoMethod
@@ -341,6 +357,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -351,6 +368,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -361,6 +379,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifiers of networks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuids
    */
   @VsoMethod
@@ -371,6 +390,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the networkUuids
    * Unique object identifiers of networks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuids
    */
   @VsoMethod
@@ -381,6 +401,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the networkUuids
    * Unique object identifiers of networks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuids
    */
   @VsoMethod
@@ -396,6 +417,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_cpu_cores of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCpuCores
    */
   @VsoMethod
@@ -406,6 +428,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_cpu_cores of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCpuCores set the numCpuCores.
    */
   @VsoMethod
@@ -416,6 +439,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_cpu_packages of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCpuPackages
    */
   @VsoMethod
@@ -426,6 +450,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_cpu_packages of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCpuPackages set the numCpuPackages.
    */
   @VsoMethod
@@ -436,6 +461,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_cpu_threads of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCpuThreads
    */
   @VsoMethod
@@ -446,6 +472,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_cpu_threads of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCpuThreads set the numCpuThreads.
    */
   @VsoMethod
@@ -456,6 +483,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pnics of obj type vimgrhostruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pnics
    */
   @VsoMethod
@@ -466,6 +494,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the pnics
    * Placeholder for description of property pnics of obj type vimgrhostruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pnics
    */
   @VsoMethod
@@ -476,6 +505,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the pnics
    * Placeholder for description of property pnics of obj type vimgrhostruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pnics
    */
   @VsoMethod
@@ -491,6 +521,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property powerstate of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return powerstate
    */
   @VsoMethod
@@ -501,6 +532,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property powerstate of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param powerstate set the powerstate.
    */
   @VsoMethod
@@ -511,6 +543,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property quarantine_start_ts of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return quarantineStartTs
    */
   @VsoMethod
@@ -521,6 +554,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property quarantine_start_ts of obj type vimgrhostruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param quarantineStartTs set the quarantineStartTs.
    */
   @VsoMethod
@@ -531,6 +565,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property quarantined of obj type vimgrhostruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return quarantined
    */
   @VsoMethod
@@ -541,6 +576,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property quarantined of obj type vimgrhostruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param quarantined set the quarantined.
    */
   @VsoMethod
@@ -573,6 +609,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_fail_cnt of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seFailCnt
    */
   @VsoMethod
@@ -583,6 +620,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_fail_cnt of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seFailCnt set the seFailCnt.
    */
   @VsoMethod
@@ -593,6 +631,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_success_cnt of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seSuccessCnt
    */
   @VsoMethod
@@ -603,6 +642,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_success_cnt of obj type vimgrhostruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seSuccessCnt set the seSuccessCnt.
    */
   @VsoMethod
@@ -613,6 +653,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -623,6 +664,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -634,6 +676,7 @@ public class VIMgrHostRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -645,6 +688,7 @@ public class VIMgrHostRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -674,6 +718,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -684,6 +729,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -694,6 +740,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrvmruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRefs
    */
   @VsoMethod
@@ -704,6 +751,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the vmRefs
    * It is a reference to an object of type vimgrvmruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRefs
    */
   @VsoMethod
@@ -714,6 +762,7 @@ public class VIMgrHostRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the vmRefs
    * It is a reference to an object of type vimgrvmruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRefs
    */
   @VsoMethod

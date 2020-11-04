@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeVsFaultEventDetails extends AviRestResource {
-  @JsonProperty("fault_object")
-  @JsonInclude(Include.NON_NULL)
-  private String faultObject = null;
+    @JsonProperty("fault_object")
+    @JsonInclude(Include.NON_NULL)
+    private String faultObject = null;
 
-  @JsonProperty("fault_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String faultReason = null;
+    @JsonProperty("fault_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String faultReason = null;
 
-  @JsonProperty("service_engine")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceEngine = null;
+    @JsonProperty("service_engine")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceEngine = null;
 
-  @JsonProperty("virtual_service")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualService = null;
+    @JsonProperty("virtual_service")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualService = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object responsible for the fault.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faultObject
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object responsible for the fault.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param faultObject set the faultObject.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for the fault.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faultReason
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for the fault.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param faultReason set the faultReason.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se uuid.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceEngine
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Se uuid.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceEngine set the serviceEngine.
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vs name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class SeVsFaultEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vs name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */
   @VsoMethod

@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeTask extends AviRestResource {
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private String duration = null;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private String duration = null;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
-  @JsonProperty("task")
-  @JsonInclude(Include.NON_NULL)
-  private String task = null;
+    @JsonProperty("task")
+    @JsonInclude(Include.NON_NULL)
+    private String task = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property duration of obj type upgradetask field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class UpgradeTask extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property duration of obj type upgradetask field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class UpgradeTask extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end_time of obj type upgradetask field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class UpgradeTask extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end_time of obj type upgradetask field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class UpgradeTask extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start_time of obj type upgradetask field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class UpgradeTask extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start_time of obj type upgradetask field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class UpgradeTask extends AviRestResource {
    * EXTRACT_PATCH_IMAGE, EXECUTE_PRE_INSTALL_COMMANDS, INSTALL_PATCH_IMAGE, PREPARE_FOR_REBOOT_CONTROLLER_NODES, REBOOT_CONTROLLER_NODES,
    * WAIT_FOR_ALL_CONTROLLER_NODES_ONLINE, PRE_UPGRADE_HOOKS, MIGRATE_CONFIG, START_PRIMARY_CONTROLLER, START_ALL_CONTROLLERS, POST_UPGRADE_HOOKS,
    * EXECUTE_POST_INSTALL_COMMANDS, SET_CONTROLLER_UPGRADE_COMPLETED, STATE_NOT_USED_IN_V2...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return task
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class UpgradeTask extends AviRestResource {
    * EXTRACT_PATCH_IMAGE, EXECUTE_PRE_INSTALL_COMMANDS, INSTALL_PATCH_IMAGE, PREPARE_FOR_REBOOT_CONTROLLER_NODES, REBOOT_CONTROLLER_NODES,
    * WAIT_FOR_ALL_CONTROLLER_NODES_ONLINE, PRE_UPGRADE_HOOKS, MIGRATE_CONFIG, START_PRIMARY_CONTROLLER, START_ALL_CONTROLLERS, POST_UPGRADE_HOOKS,
    * EXECUTE_POST_INSTALL_COMMANDS, SET_CONTROLLER_UPGRADE_COMPLETED, STATE_NOT_USED_IN_V2...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param task set the task.
    */
   @VsoMethod

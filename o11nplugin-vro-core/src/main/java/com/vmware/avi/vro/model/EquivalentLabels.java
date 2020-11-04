@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EquivalentLabels extends AviRestResource {
-  @JsonProperty("labels")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> labels = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> labels = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Equivalent labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class EquivalentLabels extends AviRestResource {
   /**
    * This is the setter method. this will set the labels
    * Equivalent labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -53,6 +55,7 @@ public class EquivalentLabels extends AviRestResource {
   /**
    * This is the setter method this will set the labels
    * Equivalent labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod

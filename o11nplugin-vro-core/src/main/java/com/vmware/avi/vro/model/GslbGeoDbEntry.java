@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbGeoDbEntry extends AviRestResource {
-  @JsonProperty("file")
-  @JsonInclude(Include.NON_NULL)
-  private GslbGeoDbFile file = null;
+    @JsonProperty("file")
+    @JsonInclude(Include.NON_NULL)
+    private GslbGeoDbFile file = null;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private Integer priority = 10;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer priority = 10;
 
 
 
@@ -39,6 +39,7 @@ public class GslbGeoDbEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the geodb file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return file
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class GslbGeoDbEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the geodb file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param file set the file.
    */
   @VsoMethod

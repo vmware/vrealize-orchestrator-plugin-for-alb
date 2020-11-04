@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsTencentProfile extends AviRestResource {
-  @JsonProperty("cloud_credentials_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudCredentialsRef = null;
+    @JsonProperty("cloud_credentials_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudCredentialsRef = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("usable_subnet_ids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableSubnetIds = null;
+    @JsonProperty("usable_subnet_ids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableSubnetIds = null;
 
-  @JsonProperty("vpc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcId = null;
+    @JsonProperty("vpc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcId = null;
 
-  @JsonProperty("zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<TencentZoneNetwork> zones = null;
+    @JsonProperty("zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<TencentZoneNetwork> zones = null;
 
 
 
@@ -51,6 +51,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * Credentials to access tencent cloud.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudCredentialsRef
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * Credentials to access tencent cloud.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudCredentialsRef set the cloudCredentialsRef.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vpc region.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Vpc region.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnetIds
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnetIds
    */
   @VsoMethod
@@ -124,6 +130,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnetIds
    */
   @VsoMethod
@@ -140,6 +147,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vpc id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
   @VsoMethod
@@ -151,6 +159,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Vpc id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */
   @VsoMethod
@@ -162,6 +171,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network configuration for virtual ip per az.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -173,6 +183,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the setter method. this will set the zones
    * Network configuration for virtual ip per az.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class IpamDnsTencentProfile extends AviRestResource {
    * This is the setter method this will set the zones
    * Network configuration for virtual ip per az.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod

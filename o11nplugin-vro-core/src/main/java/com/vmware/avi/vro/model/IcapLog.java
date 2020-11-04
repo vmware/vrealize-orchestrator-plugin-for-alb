@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IcapLog extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("request_logs")
-  @JsonInclude(Include.NON_NULL)
-  private List<IcapRequestLog> requestLogs = null;
+    @JsonProperty("request_logs")
+    @JsonInclude(Include.NON_NULL)
+    private List<IcapRequestLog> requestLogs = null;
 
 
 
@@ -39,6 +39,7 @@ public class IcapLog extends AviRestResource {
    * Denotes whether the content was processed by icap server and an action was taken.
    * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class IcapLog extends AviRestResource {
    * Denotes whether the content was processed by icap server and an action was taken.
    * Enum options - ICAP_DISABLED, ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class IcapLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the http request's content sent to the icap server.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class IcapLog extends AviRestResource {
    * This is the setter method. this will set the requestLogs
    * Logs for the http request's content sent to the icap server.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
   @VsoMethod
@@ -84,6 +88,7 @@ public class IcapLog extends AviRestResource {
    * This is the setter method this will set the requestLogs
    * Logs for the http request's content sent to the icap server.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
   @VsoMethod

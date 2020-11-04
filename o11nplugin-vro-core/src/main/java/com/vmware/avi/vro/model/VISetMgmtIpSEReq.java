@@ -26,43 +26,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VISetMgmtIpSEReq extends AviRestResource {
-  @JsonProperty("admin")
-  @JsonInclude(Include.NON_NULL)
-  private VIAdminCredentials admin = null;
+    @JsonProperty("admin")
+    @JsonInclude(Include.NON_NULL)
+    private VIAdminCredentials admin = null;
 
-  @JsonProperty("all_vnic_connected")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allVnicConnected = false;
+    @JsonProperty("all_vnic_connected")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allVnicConnected = false;
 
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("dc_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String dcUuid = null;
+    @JsonProperty("dc_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String dcUuid = null;
 
-  @JsonProperty("ip_params")
-  @JsonInclude(Include.NON_NULL)
-  private VISeVmIpConfParams ipParams = null;
+    @JsonProperty("ip_params")
+    @JsonInclude(Include.NON_NULL)
+    private VISeVmIpConfParams ipParams = null;
 
-  @JsonProperty("power_on")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean powerOn = true;
+    @JsonProperty("power_on")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean powerOn = true;
 
-  @JsonProperty("rm_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String rmCookie = null;
+    @JsonProperty("rm_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String rmCookie = null;
 
-  @JsonProperty("sevm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String sevmUuid = null;
+    @JsonProperty("sevm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String sevmUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property admin of obj type visetmgmtipsereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return admin
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property admin of obj type visetmgmtipsereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param admin set the admin.
    */
   @VsoMethod
@@ -105,6 +107,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -115,6 +118,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -125,6 +129,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of dc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dcUuid
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of dc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dcUuid set the dcUuid.
    */
   @VsoMethod
@@ -145,6 +151,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_params of obj type visetmgmtipsereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipParams
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip_params of obj type visetmgmtipsereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipParams set the ipParams.
    */
   @VsoMethod
@@ -187,6 +195,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rm_cookie of obj type visetmgmtipsereq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rmCookie
    */
   @VsoMethod
@@ -197,6 +206,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rm_cookie of obj type visetmgmtipsereq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rmCookie set the rmCookie.
    */
   @VsoMethod
@@ -207,6 +217,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of sevm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sevmUuid
    */
   @VsoMethod
@@ -217,6 +228,7 @@ public class VISetMgmtIpSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of sevm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sevmUuid set the sevmUuid.
    */
   @VsoMethod

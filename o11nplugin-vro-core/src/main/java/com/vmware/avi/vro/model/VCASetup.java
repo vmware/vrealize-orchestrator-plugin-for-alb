@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VCASetup extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("instance")
-  @JsonInclude(Include.NON_NULL)
-  private String instance = null;
+    @JsonProperty("instance")
+    @JsonInclude(Include.NON_NULL)
+    private String instance = null;
 
-  @JsonProperty("privilege")
-  @JsonInclude(Include.NON_NULL)
-  private String privilege = null;
+    @JsonProperty("privilege")
+    @JsonInclude(Include.NON_NULL)
+    private String privilege = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property instance of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instance
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property instance of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instance set the instance.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privilege
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privilege set the privilege.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property username of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class VCASetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property username of obj type vcasetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

@@ -26,29 +26,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NatRule extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private NatPolicyAction action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private NatPolicyAction action = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = null;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private NatMatchTarget match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private NatMatchTarget match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -56,6 +56,7 @@ public class NatRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat rule action information.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class NatRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat rule action information.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class NatRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Creator name.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class NatRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Creator name.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -100,6 +104,7 @@ public class NatRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat rule enable flag.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enable
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class NatRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat rule enable flag.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enable set the enable.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class NatRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat rule index.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class NatRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat rule index.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -144,6 +152,7 @@ public class NatRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat rule match criteria.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class NatRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat rule match criteria.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -166,6 +176,7 @@ public class NatRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat rule name.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -177,6 +188,7 @@ public class NatRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat rule name.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

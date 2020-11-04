@@ -25,23 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbPoolRuntime extends AviRestResource {
-  @JsonProperty("members")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPoolMemberRuntimeInfo> members = null;
+    @JsonProperty("members")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPoolMemberRuntimeInfo> members = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property members of obj type gslbpoolruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -52,6 +53,7 @@ public class GslbPoolRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the members
    * Placeholder for description of property members of obj type gslbpoolruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class GslbPoolRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the members
    * Placeholder for description of property members of obj type gslbpoolruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class GslbPoolRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class GslbPoolRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class GslbPoolRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb pool's consolidated operational status.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class GslbPoolRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb pool's consolidated operational status.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod

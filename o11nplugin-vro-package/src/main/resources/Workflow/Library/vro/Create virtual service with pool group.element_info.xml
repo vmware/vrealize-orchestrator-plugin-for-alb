@@ -3,7 +3,7 @@
 <properties>
 	<comment>Exported from [server]</comment>
 	<entry key="categoryPath">Library.Avi.VRA</entry>
-	<entry key="name">Create virtual service with pool group</entry>
+	<entry key="name">Create Virtual Service With Pool Group</entry>
 	<entry key="type">Workflow</entry>
 	<entry key="id">8425a439-2c32-46a3-a462-6414dd1c02de</entry>
 </properties>

@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRateProfile extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleRLAction action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleRLAction action;
 
-  @JsonProperty("burst_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer burstSize = null;
+    @JsonProperty("burst_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer burstSize;
 
-  @JsonProperty("count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer count = null;
+    @JsonProperty("count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer count;
 
-  @JsonProperty("fine_grain")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fineGrain = null;
+    @JsonProperty("fine_grain")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fineGrain;
 
-  @JsonProperty("period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer period = null;
+    @JsonProperty("period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer period;
 
 
 
@@ -155,6 +155,7 @@ public class DnsRateProfile extends AviRestResource {
    * Allowed values are 1-300.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Unit is sec.
    * @return period
    */
   @VsoMethod
@@ -168,6 +169,7 @@ public class DnsRateProfile extends AviRestResource {
    * Allowed values are 1-300.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.5.
+   * Unit is sec.
    * @param period set the period.
    */
   @VsoMethod

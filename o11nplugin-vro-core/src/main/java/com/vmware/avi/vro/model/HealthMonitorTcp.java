@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorTcp extends AviRestResource {
-  @JsonProperty("maintenance_response")
-  @JsonInclude(Include.NON_NULL)
-  private String maintenanceResponse = null;
+    @JsonProperty("maintenance_response")
+    @JsonInclude(Include.NON_NULL)
+    private String maintenanceResponse = null;
 
-  @JsonProperty("tcp_half_open")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tcpHalfOpen = false;
+    @JsonProperty("tcp_half_open")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tcpHalfOpen = false;
 
-  @JsonProperty("tcp_request")
-  @JsonInclude(Include.NON_NULL)
-  private String tcpRequest = null;
+    @JsonProperty("tcp_request")
+    @JsonInclude(Include.NON_NULL)
+    private String tcpRequest = null;
 
-  @JsonProperty("tcp_response")
-  @JsonInclude(Include.NON_NULL)
-  private String tcpResponse = null;
+    @JsonProperty("tcp_response")
+    @JsonInclude(Include.NON_NULL)
+    private String tcpResponse = null;
 
 
 
@@ -46,6 +46,7 @@ public class HealthMonitorTcp extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
    * A successful match results in the server being marked down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceResponse
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class HealthMonitorTcp extends AviRestResource {
    * This is the setter method to the attribute.
    * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
    * A successful match results in the server being marked down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maintenanceResponse set the maintenanceResponse.
    */
   @VsoMethod
@@ -95,6 +97,7 @@ public class HealthMonitorTcp extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request data to send after completing the tcp handshake.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpRequest
    */
   @VsoMethod
@@ -105,6 +108,7 @@ public class HealthMonitorTcp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request data to send after completing the tcp handshake.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpRequest set the tcpRequest.
    */
   @VsoMethod
@@ -116,6 +120,7 @@ public class HealthMonitorTcp extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match for the desired keyword in the first 2kb of the server's tcp response.
    * If this field is left blank, no server response is required.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpResponse
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class HealthMonitorTcp extends AviRestResource {
    * This is the setter method to the attribute.
    * Match for the desired keyword in the first 2kb of the server's tcp response.
    * If this field is left blank, no server response is required.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpResponse set the tcpResponse.
    */
   @VsoMethod

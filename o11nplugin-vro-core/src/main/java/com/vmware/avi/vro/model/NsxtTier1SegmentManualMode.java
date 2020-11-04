@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtTier1SegmentManualMode extends AviRestResource {
-  @JsonProperty("tier1_lrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<Tier1LogicalRouterInfo> tier1Lrs = null;
+    @JsonProperty("tier1_lrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<Tier1LogicalRouterInfo> tier1Lrs = null;
 
 
 
@@ -34,6 +34,7 @@ public class NsxtTier1SegmentManualMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tier1 logical router placement information.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lrs
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class NsxtTier1SegmentManualMode extends AviRestResource {
    * This is the setter method. this will set the tier1Lrs
    * Tier1 logical router placement information.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lrs
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class NsxtTier1SegmentManualMode extends AviRestResource {
    * This is the setter method this will set the tier1Lrs
    * Tier1 logical router placement information.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lrs
    */
   @VsoMethod

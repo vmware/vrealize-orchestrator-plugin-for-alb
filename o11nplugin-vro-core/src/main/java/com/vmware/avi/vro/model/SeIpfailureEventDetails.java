@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeIpfailureEventDetails extends AviRestResource {
-  @JsonProperty("mac")
-  @JsonInclude(Include.NON_NULL)
-  private String mac = null;
+    @JsonProperty("mac")
+    @JsonInclude(Include.NON_NULL)
+    private String mac = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
-  @JsonProperty("vnic_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vnicName = null;
+    @JsonProperty("vnic_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vnicName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mac
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mac set the mac.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -107,6 +113,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicName
    */
   @VsoMethod
@@ -117,6 +124,7 @@ public class SeIpfailureEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicName set the vnicName.
    */
   @VsoMethod

@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CumulativeLicense extends AviRestResource {
-  @JsonProperty("burst_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer burstCores = null;
+    @JsonProperty("burst_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer burstCores = null;
 
-  @JsonProperty("cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cores = null;
+    @JsonProperty("cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cores = null;
 
-  @JsonProperty("max_ses")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSes = null;
+    @JsonProperty("max_ses")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSes = null;
 
-  @JsonProperty("se_bandwidth_limits")
-  @JsonInclude(Include.NON_NULL)
-  private List<SEBandwidthLimit> seBandwidthLimits = null;
+    @JsonProperty("se_bandwidth_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<SEBandwidthLimit> seBandwidthLimits = null;
 
-  @JsonProperty("service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float serviceCores = null;
+    @JsonProperty("service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float serviceCores = null;
 
-  @JsonProperty("sockets")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sockets = null;
+    @JsonProperty("sockets")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sockets = null;
 
-  @JsonProperty("tier_type")
-  @JsonInclude(Include.NON_NULL)
-  private String tierType = null;
+    @JsonProperty("tier_type")
+    @JsonInclude(Include.NON_NULL)
+    private String tierType = null;
 
 
 
@@ -58,6 +58,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service engine cores for burst core based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return burstCores
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service engine cores for burst core based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param burstCores set the burstCores.
    */
   @VsoMethod
@@ -80,6 +82,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service engine cores for core based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cores
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service engine cores for core based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cores set the cores.
    */
   @VsoMethod
@@ -102,6 +106,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service engines for host based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSes
    */
   @VsoMethod
@@ -113,6 +118,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service engines for host based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSes set the maxSes.
    */
   @VsoMethod
@@ -124,6 +130,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthLimits
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method. this will set the seBandwidthLimits
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthLimits
    */
   @VsoMethod
@@ -146,6 +154,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method this will set the seBandwidthLimits
    * Service engine bandwidth limits for bandwidth based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthLimits
    */
   @VsoMethod
@@ -162,6 +171,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service engine cores.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceCores
    */
   @VsoMethod
@@ -173,6 +183,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service engine cores.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceCores set the serviceCores.
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of service engine sockets for socket based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
    */
   @VsoMethod
@@ -195,6 +207,7 @@ public class CumulativeLicense extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of service engine sockets for socket based licenses.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sockets set the sockets.
    */
   @VsoMethod
@@ -205,8 +218,9 @@ public class CumulativeLicense extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the licensed tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tierType
    */
   @VsoMethod
@@ -217,8 +231,9 @@ public class CumulativeLicense extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the licensed tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tierType set the tierType.
    */
   @VsoMethod

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SEFaultInjectSeParam extends AviRestResource {
-  @JsonProperty("core")
-  @JsonInclude(Include.NON_NULL)
-  private Integer core = 1000;
+    @JsonProperty("core")
+    @JsonInclude(Include.NON_NULL)
+    private Integer core = 1000;
 
-  @JsonProperty("random_core")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean randomCore = false;
+    @JsonProperty("random_core")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean randomCore = false;
 
-  @JsonProperty("se_agent_fault")
-  @JsonInclude(Include.NON_NULL)
-  private String seAgentFault = "SE_AGENT_FAULT_DISABLED";
+    @JsonProperty("se_agent_fault")
+    @JsonInclude(Include.NON_NULL)
+    private String seAgentFault = "SE_AGENT_FAULT_DISABLED";
 
-  @JsonProperty("se_dp_fault")
-  @JsonInclude(Include.NON_NULL)
-  private String seDpFault = "SE_DP_FAULT_DISABLED";
+    @JsonProperty("se_dp_fault")
+    @JsonInclude(Include.NON_NULL)
+    private String seDpFault = "SE_DP_FAULT_DISABLED";
 
 
 
@@ -96,7 +96,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT,
    * SE_AGENT_RANDOM_PROCESS_FAULT.
    * Field introduced in 18.1.5,18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_AGENT_FAULT_DISABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_AGENT_FAULT_DISABLED".
    * @return seAgentFault
    */
   @VsoMethod
@@ -110,7 +110,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT,
    * SE_AGENT_RANDOM_PROCESS_FAULT.
    * Field introduced in 18.1.5,18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_AGENT_FAULT_DISABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_AGENT_FAULT_DISABLED".
    * @param seAgentFault set the seAgentFault.
    */
   @VsoMethod
@@ -123,7 +123,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Set se-dp fault type.
    * Enum options - SE_DP_FAULT_DISABLED.
    * Field introduced in 18.1.5,18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_DP_FAULT_DISABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_DP_FAULT_DISABLED".
    * @return seDpFault
    */
   @VsoMethod
@@ -136,7 +136,7 @@ public class SEFaultInjectSeParam extends AviRestResource {
    * Set se-dp fault type.
    * Enum options - SE_DP_FAULT_DISABLED.
    * Field introduced in 18.1.5,18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_DP_FAULT_DISABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_DP_FAULT_DISABLED".
    * @param seDpFault set the seDpFault.
    */
   @VsoMethod

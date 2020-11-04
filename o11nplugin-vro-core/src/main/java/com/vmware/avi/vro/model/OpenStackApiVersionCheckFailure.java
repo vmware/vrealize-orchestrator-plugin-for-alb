@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackApiVersionCheckFailure extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("cc_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ccName = null;
+    @JsonProperty("cc_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ccName = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
 
 
@@ -42,6 +42,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccName
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccName set the ccName.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Failure reason containing expected api version and actual version.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class OpenStackApiVersionCheckFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Failure reason containing expected api version and actual version.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod

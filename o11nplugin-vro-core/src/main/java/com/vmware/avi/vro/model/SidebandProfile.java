@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SidebandProfile extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> ip = null;
 
-  @JsonProperty("sideband_max_request_body_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sidebandMaxRequestBodySize = 1024;
+    @JsonProperty("sideband_max_request_body_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sidebandMaxRequestBodySize = 1024;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the sideband server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SidebandProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the ip
    * Ip address of the sideband server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class SidebandProfile extends AviRestResource {
   /**
    * This is the setter method this will set the ip
    * Ip address of the sideband server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class SidebandProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum size of the request body that will be sent on the sideband.
    * Allowed values are 0-16384.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return sidebandMaxRequestBodySize
    */
@@ -85,6 +89,7 @@ public class SidebandProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum size of the request body that will be sent on the sideband.
    * Allowed values are 0-16384.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param sidebandMaxRequestBodySize set the sidebandMaxRequestBodySize.
    */

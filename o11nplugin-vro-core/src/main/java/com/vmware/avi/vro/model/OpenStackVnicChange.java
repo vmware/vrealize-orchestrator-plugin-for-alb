@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackVnicChange extends AviRestResource {
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("mac_addrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> macAddrs = null;
+    @JsonProperty("mac_addrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> macAddrs = null;
 
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> networks = null;
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> networks = null;
 
-  @JsonProperty("se_vm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seVmUuid = null;
+    @JsonProperty("se_vm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seVmUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type openstackvnicchange field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type openstackvnicchange field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac_addrs of obj type openstackvnicchange field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddrs
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the setter method. this will set the macAddrs
    * Placeholder for description of property mac_addrs of obj type openstackvnicchange field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddrs
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the setter method this will set the macAddrs
    * Placeholder for description of property mac_addrs of obj type openstackvnicchange field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddrs
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property networks of obj type openstackvnicchange field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Placeholder for description of property networks of obj type openstackvnicchange field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Placeholder for description of property networks of obj type openstackvnicchange field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -135,6 +143,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVmUuid
    */
   @VsoMethod
@@ -145,6 +154,7 @@ public class OpenStackVnicChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVmUuid set the seVmUuid.
    */
   @VsoMethod

@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesCaseAttachment extends AviRestResource {
-  @JsonProperty("attachment_name")
-  @JsonInclude(Include.NON_NULL)
-  private String attachmentName = null;
+    @JsonProperty("attachment_name")
+    @JsonInclude(Include.NON_NULL)
+    private String attachmentName = null;
 
-  @JsonProperty("attachment_size")
-  @JsonInclude(Include.NON_NULL)
-  private String attachmentSize = null;
+    @JsonProperty("attachment_size")
+    @JsonInclude(Include.NON_NULL)
+    private String attachmentSize = null;
 
-  @JsonProperty("attachment_url")
-  @JsonInclude(Include.NON_NULL)
-  private String attachmentUrl = null;
+    @JsonProperty("attachment_url")
+    @JsonInclude(Include.NON_NULL)
+    private String attachmentUrl = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachmentName
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachmentName set the attachmentName.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachmentSize
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachmentSize set the attachmentSize.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attachmentUrl
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class ALBServicesCaseAttachment extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attachmentUrl set the attachmentUrl.
    */
   @VsoMethod

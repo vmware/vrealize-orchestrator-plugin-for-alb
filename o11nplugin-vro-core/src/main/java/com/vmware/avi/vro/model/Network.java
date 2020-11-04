@@ -24,65 +24,65 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Network extends AviRestResource {
-  @JsonProperty("attrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<KeyValue> attrs = null;
+    @JsonProperty("attrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> attrs = null;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("configured_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<Subnet> configuredSubnets = null;
+    @JsonProperty("configured_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<Subnet> configuredSubnets = null;
 
-  @JsonProperty("dhcp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dhcpEnabled = true;
+    @JsonProperty("dhcp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dhcpEnabled = true;
 
-  @JsonProperty("exclude_discovered_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeDiscoveredSubnets = false;
+    @JsonProperty("exclude_discovered_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeDiscoveredSubnets = false;
 
-  @JsonProperty("ip6_autocfg_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ip6AutocfgEnabled = true;
+    @JsonProperty("ip6_autocfg_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ip6AutocfgEnabled = true;
 
-  @JsonProperty("labels")
-  @JsonInclude(Include.NON_NULL)
-  private List<KeyValue> labels = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("synced_from_se")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean syncedFromSe = false;
+    @JsonProperty("synced_from_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean syncedFromSe = false;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vcenter_dvs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean vcenterDvs = true;
+    @JsonProperty("vcenter_dvs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vcenterDvs = true;
 
-  @JsonProperty("vimgrnw_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vimgrnwRef = null;
+    @JsonProperty("vimgrnw_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vimgrnwRef = null;
 
-  @JsonProperty("vrf_context_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfContextRef = null;
+    @JsonProperty("vrf_context_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfContextRef = null;
 
 
 
@@ -90,6 +90,7 @@ public class Network extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key/value network attributes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrs
    */
   @VsoMethod
@@ -101,6 +102,7 @@ public class Network extends AviRestResource {
    * This is the setter method. this will set the attrs
    * Key/value network attributes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrs
    */
   @VsoMethod
@@ -112,6 +114,7 @@ public class Network extends AviRestResource {
    * This is the setter method this will set the attrs
    * Key/value network attributes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrs
    */
   @VsoMethod
@@ -127,6 +130,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -137,6 +141,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -147,6 +152,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property configured_subnets of obj type network field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configuredSubnets
    */
   @VsoMethod
@@ -157,6 +163,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method. this will set the configuredSubnets
    * Placeholder for description of property configured_subnets of obj type network field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configuredSubnets
    */
   @VsoMethod
@@ -167,6 +174,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method this will set the configuredSubnets
    * Placeholder for description of property configured_subnets of obj type network field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configuredSubnets
    */
   @VsoMethod
@@ -251,6 +259,7 @@ public class Network extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key/value labels which can be used for object access policy permission scoping.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -262,6 +271,7 @@ public class Network extends AviRestResource {
    * This is the setter method. this will set the labels
    * Key/value labels which can be used for object access policy permission scoping.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -273,6 +283,7 @@ public class Network extends AviRestResource {
    * This is the setter method this will set the labels
    * Key/value labels which can be used for object access policy permission scoping.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -288,6 +299,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -298,6 +310,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -330,6 +343,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -340,6 +354,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -369,6 +384,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -379,6 +395,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -411,6 +428,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vimgrnwRef
    */
   @VsoMethod
@@ -421,6 +439,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vimgrnwRef set the vimgrnwRef.
    */
   @VsoMethod
@@ -431,6 +450,7 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfContextRef
    */
   @VsoMethod
@@ -441,6 +461,7 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfContextRef set the vrfContextRef.
    */
   @VsoMethod

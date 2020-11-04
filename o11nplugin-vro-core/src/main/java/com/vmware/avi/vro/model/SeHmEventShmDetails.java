@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHmEventShmDetails extends AviRestResource {
-  @JsonProperty("average_response_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer averageResponseTime = null;
+    @JsonProperty("average_response_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer averageResponseTime = null;
 
-  @JsonProperty("health_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private String healthMonitor = null;
+    @JsonProperty("health_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private String healthMonitor = null;
 
-  @JsonProperty("resp_string")
-  @JsonInclude(Include.NON_NULL)
-  private String respString = null;
+    @JsonProperty("resp_string")
+    @JsonInclude(Include.NON_NULL)
+    private String respString = null;
 
-  @JsonProperty("response_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseCode = null;
+    @JsonProperty("response_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseCode = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Average health monitor response time from server in milli-seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return averageResponseTime
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeHmEventShmDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average health monitor response time from server in milli-seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param averageResponseTime set the averageResponseTime.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Health monitor name.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitor
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Health monitor name.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param healthMonitor set the healthMonitor.
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class SeHmEventShmDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property resp_string of obj type sehmeventshmdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respString
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class SeHmEventShmDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property resp_string of obj type sehmeventshmdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param respString set the respString.
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Response code from server.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseCode
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class SeHmEventShmDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Response code from server.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseCode set the responseCode.
    */
   @VsoMethod

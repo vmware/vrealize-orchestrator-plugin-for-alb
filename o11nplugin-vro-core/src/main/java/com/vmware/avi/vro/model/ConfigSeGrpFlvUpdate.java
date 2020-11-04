@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigSeGrpFlvUpdate extends AviRestResource {
-  @JsonProperty("new_flv")
-  @JsonInclude(Include.NON_NULL)
-  private String newFlv = null;
+    @JsonProperty("new_flv")
+    @JsonInclude(Include.NON_NULL)
+    private String newFlv = null;
 
-  @JsonProperty("old_flv")
-  @JsonInclude(Include.NON_NULL)
-  private String oldFlv = null;
+    @JsonProperty("old_flv")
+    @JsonInclude(Include.NON_NULL)
+    private String oldFlv = null;
 
-  @JsonProperty("se_group_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupName = null;
+    @JsonProperty("se_group_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupName = null;
 
-  @JsonProperty("se_group_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupUuid = null;
+    @JsonProperty("se_group_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupUuid = null;
 
-  @JsonProperty("tenant_name")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantName = null;
+    @JsonProperty("tenant_name")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantName = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * New flavor name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newFlv
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * New flavor name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newFlv set the newFlv.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Old flavor name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldFlv
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Old flavor name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldFlv set the oldFlv.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se group name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupName
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se group name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupName set the seGroupName.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se group uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupUuid
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se group uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupUuid set the seGroupUuid.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tenant name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tenant name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tenant uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class ConfigSeGrpFlvUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tenant uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod

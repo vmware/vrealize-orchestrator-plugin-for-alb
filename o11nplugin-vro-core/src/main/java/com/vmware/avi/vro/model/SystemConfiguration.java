@@ -35,91 +35,92 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SystemConfiguration extends AviRestResource {
-  @JsonProperty("admin_auth_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private AdminAuthConfiguration adminAuthConfiguration = null;
+    @JsonProperty("admin_auth_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private AdminAuthConfiguration adminAuthConfiguration = null;
 
-  @JsonProperty("default_license_tier")
-  @JsonInclude(Include.NON_NULL)
-  private String defaultLicenseTier = "ENTERPRISE";
+    @JsonProperty("default_license_tier")
+    @JsonInclude(Include.NON_NULL)
+    private String defaultLicenseTier = "ENTERPRISE";
 
-  @JsonProperty("dns_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private DNSConfiguration dnsConfiguration = null;
+    @JsonProperty("dns_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private DNSConfiguration dnsConfiguration = null;
 
-  @JsonProperty("dns_virtualservice_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> dnsVirtualserviceRefs = null;
+    @JsonProperty("dns_virtualservice_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> dnsVirtualserviceRefs = null;
 
-  @JsonProperty("docker_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dockerMode = false;
+    @JsonProperty("docker_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dockerMode = false;
 
-  @JsonProperty("email_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private EmailConfiguration emailConfiguration = null;
+    @JsonProperty("email_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private EmailConfiguration emailConfiguration = null;
 
-  @JsonProperty("fips_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fipsMode = false;
+    @JsonProperty("fips_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fipsMode = false;
 
-  @JsonProperty("global_tenant_config")
-  @JsonInclude(Include.NON_NULL)
-  private TenantConfiguration globalTenantConfig = null;
+    @JsonProperty("global_tenant_config")
+    @JsonInclude(Include.NON_NULL)
+    private TenantConfiguration globalTenantConfig = null;
 
-  @JsonProperty("linux_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private LinuxConfiguration linuxConfiguration = null;
+    @JsonProperty("linux_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private LinuxConfiguration linuxConfiguration = null;
 
-  @JsonProperty("mgmt_ip_access_control")
-  @JsonInclude(Include.NON_NULL)
-  private MgmtIpAccessControl mgmtIpAccessControl = null;
+    @JsonProperty("mgmt_ip_access_control")
+    @JsonInclude(Include.NON_NULL)
+    private MgmtIpAccessControl mgmtIpAccessControl = null;
 
-  @JsonProperty("ntp_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private NTPConfiguration ntpConfiguration = null;
+    @JsonProperty("ntp_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private NTPConfiguration ntpConfiguration = null;
 
-  @JsonProperty("portal_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private PortalConfiguration portalConfiguration = null;
+    @JsonProperty("portal_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private PortalConfiguration portalConfiguration = null;
 
-  @JsonProperty("proxy_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private ProxyConfiguration proxyConfiguration = null;
+    @JsonProperty("proxy_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private ProxyConfiguration proxyConfiguration = null;
 
-  @JsonProperty("secure_channel_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private SecureChannelConfiguration secureChannelConfiguration = null;
+    @JsonProperty("secure_channel_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private SecureChannelConfiguration secureChannelConfiguration = null;
 
-  @JsonProperty("snmp_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private SnmpConfiguration snmpConfiguration = null;
+    @JsonProperty("snmp_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private SnmpConfiguration snmpConfiguration = null;
 
-  @JsonProperty("ssh_ciphers")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sshCiphers = null;
+    @JsonProperty("ssh_ciphers")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sshCiphers = null;
 
-  @JsonProperty("ssh_hmacs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sshHmacs = null;
+    @JsonProperty("ssh_hmacs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sshHmacs = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("welcome_workflow_complete")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean welcomeWorkflowComplete = false;
+    @JsonProperty("welcome_workflow_complete")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean welcomeWorkflowComplete = false;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property admin_auth_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminAuthConfiguration
    */
   @VsoMethod
@@ -130,6 +131,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property admin_auth_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminAuthConfiguration set the adminAuthConfiguration.
    */
   @VsoMethod
@@ -140,9 +142,9 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the default license tier which would be used by new clouds.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
    * @return defaultLicenseTier
    */
   @VsoMethod
@@ -153,9 +155,9 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the default license tier which would be used by new clouds.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
    * @param defaultLicenseTier set the defaultLicenseTier.
    */
   @VsoMethod
@@ -166,6 +168,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dns_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsConfiguration
    */
   @VsoMethod
@@ -176,6 +179,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dns_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsConfiguration set the dnsConfiguration.
    */
   @VsoMethod
@@ -189,6 +193,7 @@ public class SystemConfiguration extends AviRestResource {
    * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
    * Switching back to avi vantage from dns virtualservices is not allowed.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
   @VsoMethod
@@ -202,6 +207,7 @@ public class SystemConfiguration extends AviRestResource {
    * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
    * Switching back to avi vantage from dns virtualservices is not allowed.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
   @VsoMethod
@@ -215,6 +221,7 @@ public class SystemConfiguration extends AviRestResource {
    * If no virtualservices are provided, avi vantage will provide dns services for configured applications.
    * Switching back to avi vantage from dns virtualservices is not allowed.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRefs
    */
   @VsoMethod
@@ -252,6 +259,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property email_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return emailConfiguration
    */
   @VsoMethod
@@ -262,6 +270,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property email_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param emailConfiguration set the emailConfiguration.
    */
   @VsoMethod
@@ -296,6 +305,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property global_tenant_config of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return globalTenantConfig
    */
   @VsoMethod
@@ -306,6 +316,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property global_tenant_config of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param globalTenantConfig set the globalTenantConfig.
    */
   @VsoMethod
@@ -316,6 +327,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property linux_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return linuxConfiguration
    */
   @VsoMethod
@@ -326,6 +338,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property linux_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param linuxConfiguration set the linuxConfiguration.
    */
   @VsoMethod
@@ -336,6 +349,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip access control for controller to restrict open access.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtIpAccessControl
    */
   @VsoMethod
@@ -346,6 +360,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure ip access control for controller to restrict open access.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtIpAccessControl set the mgmtIpAccessControl.
    */
   @VsoMethod
@@ -356,6 +371,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ntp_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpConfiguration
    */
   @VsoMethod
@@ -366,6 +382,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ntp_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ntpConfiguration set the ntpConfiguration.
    */
   @VsoMethod
@@ -376,6 +393,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property portal_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portalConfiguration
    */
   @VsoMethod
@@ -386,6 +404,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property portal_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portalConfiguration set the portalConfiguration.
    */
   @VsoMethod
@@ -396,6 +415,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property proxy_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proxyConfiguration
    */
   @VsoMethod
@@ -406,6 +426,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property proxy_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proxyConfiguration set the proxyConfiguration.
    */
   @VsoMethod
@@ -417,6 +438,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure secure channel properties.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secureChannelConfiguration
    */
   @VsoMethod
@@ -428,6 +450,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure secure channel properties.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secureChannelConfiguration set the secureChannelConfiguration.
    */
   @VsoMethod
@@ -438,6 +461,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property snmp_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snmpConfiguration
    */
   @VsoMethod
@@ -448,6 +472,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property snmp_configuration of obj type systemconfiguration field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snmpConfiguration set the snmpConfiguration.
    */
   @VsoMethod
@@ -459,6 +484,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed ciphers list for ssh to the management interface on the controller and service engines.
    * If this is not specified, all the default ciphers are allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshCiphers
    */
   @VsoMethod
@@ -470,6 +496,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method. this will set the sshCiphers
    * Allowed ciphers list for ssh to the management interface on the controller and service engines.
    * If this is not specified, all the default ciphers are allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshCiphers
    */
   @VsoMethod
@@ -481,6 +508,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method this will set the sshCiphers
    * Allowed ciphers list for ssh to the management interface on the controller and service engines.
    * If this is not specified, all the default ciphers are allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshCiphers
    */
   @VsoMethod
@@ -497,6 +525,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed hmac list for ssh to the management interface on the controller and service engines.
    * If this is not specified, all the default hmacs are allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshHmacs
    */
   @VsoMethod
@@ -508,6 +537,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method. this will set the sshHmacs
    * Allowed hmac list for ssh to the management interface on the controller and service engines.
    * If this is not specified, all the default hmacs are allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshHmacs
    */
   @VsoMethod
@@ -519,6 +549,7 @@ public class SystemConfiguration extends AviRestResource {
    * This is the setter method this will set the sshHmacs
    * Allowed hmac list for ssh to the management interface on the controller and service engines.
    * If this is not specified, all the default hmacs are allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshHmacs
    */
   @VsoMethod
@@ -553,6 +584,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -563,6 +595,7 @@ public class SystemConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AvgUptimeChangeDetails extends AviRestResource {
-  @JsonProperty("current_value")
-  @JsonInclude(Include.NON_NULL)
-  private Float currentValue = null;
+    @JsonProperty("current_value")
+    @JsonInclude(Include.NON_NULL)
+    private Float currentValue = null;
 
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = null;
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = null;
 
-  @JsonProperty("metric_name")
-  @JsonInclude(Include.NON_NULL)
-  private String metricName = null;
+    @JsonProperty("metric_name")
+    @JsonInclude(Include.NON_NULL)
+    private String metricName = null;
 
-  @JsonProperty("resource_str")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceStr = null;
+    @JsonProperty("resource_str")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceStr = null;
 
-  @JsonProperty("threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Float threshold = null;
+    @JsonProperty("threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Float threshold = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property current_value of obj type avguptimechangedetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currentValue
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property current_value of obj type avguptimechangedetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currentValue set the currentValue.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_id of obj type avguptimechangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_id of obj type avguptimechangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_name of obj type avguptimechangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricName
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_name of obj type avguptimechangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricName set the metricName.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property resource_str of obj type avguptimechangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceStr
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property resource_str of obj type avguptimechangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceStr set the resourceStr.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property threshold of obj type avguptimechangedetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class AvgUptimeChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property threshold of obj type avguptimechangedetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
   @VsoMethod

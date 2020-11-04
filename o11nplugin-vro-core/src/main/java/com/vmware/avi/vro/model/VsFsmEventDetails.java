@@ -25,23 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsFsmEventDetails extends AviRestResource {
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("vs_rt")
-  @JsonInclude(Include.NON_NULL)
-  private VirtualServiceRuntime vsRt = null;
+    @JsonProperty("vs_rt")
+    @JsonInclude(Include.NON_NULL)
+    private VirtualServiceRuntime vsRt = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_id of obj type vsfsmeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -52,6 +53,7 @@ public class VsFsmEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_id of obj type vsfsmeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class VsFsmEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_rt of obj type vsfsmeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRt
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class VsFsmEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_rt of obj type vsfsmeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRt set the vsRt.
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class VsFsmEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -92,6 +97,7 @@ public class VsFsmEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

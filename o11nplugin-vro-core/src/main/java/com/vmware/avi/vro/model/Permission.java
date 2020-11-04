@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Permission extends AviRestResource {
-  @JsonProperty("resource")
-  @JsonInclude(Include.NON_NULL)
-  private String resource = null;
+    @JsonProperty("resource")
+    @JsonInclude(Include.NON_NULL)
+    private String resource = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -40,6 +40,7 @@ public class Permission extends AviRestResource {
    * PERMISSION_NETWORKPROFILE, PERMISSION_APPLICATIONPROFILE, PERMISSION_HTTPPOLICYSET, PERMISSION_IPADDRGROUP, PERMISSION_STRINGGROUP,
    * PERMISSION_SSLPROFILE, PERMISSION_SSLKEYANDCERTIFICATE, PERMISSION_NETWORKSECURITYPOLICY, PERMISSION_APPLICATIONPERSISTENCEPROFILE,
    * PERMISSION_ANALYTICSPROFILE, PERMISSION_VSDATASCRIPTSET, PERMISSION_TENANT, PERMISSION_PKIPROFILE, PERMISSION_AUTHPROFILE, PERMISSION_CLOUD...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resource
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class Permission extends AviRestResource {
    * PERMISSION_NETWORKPROFILE, PERMISSION_APPLICATIONPROFILE, PERMISSION_HTTPPOLICYSET, PERMISSION_IPADDRGROUP, PERMISSION_STRINGGROUP,
    * PERMISSION_SSLPROFILE, PERMISSION_SSLKEYANDCERTIFICATE, PERMISSION_NETWORKSECURITYPOLICY, PERMISSION_APPLICATIONPERSISTENCEPROFILE,
    * PERMISSION_ANALYTICSPROFILE, PERMISSION_VSDATASCRIPTSET, PERMISSION_TENANT, PERMISSION_PKIPROFILE, PERMISSION_AUTHPROFILE, PERMISSION_CLOUD...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resource set the resource.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class Permission extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class Permission extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

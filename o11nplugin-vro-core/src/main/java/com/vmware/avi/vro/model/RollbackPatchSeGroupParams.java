@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RollbackPatchSeGroupParams extends AviRestResource {
-  @JsonProperty("se_group_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupOptions seGroupOptions = null;
+    @JsonProperty("se_group_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupOptions seGroupOptions = null;
 
-  @JsonProperty("se_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seGroupRefs = null;
+    @JsonProperty("se_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seGroupRefs = null;
 
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
 
 
@@ -43,6 +43,7 @@ public class RollbackPatchSeGroupParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field identifies se group options that need to be applied during the rollback operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class RollbackPatchSeGroupParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This field identifies se group options that need to be applied during the rollback operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class RollbackPatchSeGroupParams extends AviRestResource {
    * Se group uuids for applying rollback patch operations.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -78,6 +81,7 @@ public class RollbackPatchSeGroupParams extends AviRestResource {
    * Se group uuids for applying rollback patch operations.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class RollbackPatchSeGroupParams extends AviRestResource {
    * Se group uuids for applying rollback patch operations.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod

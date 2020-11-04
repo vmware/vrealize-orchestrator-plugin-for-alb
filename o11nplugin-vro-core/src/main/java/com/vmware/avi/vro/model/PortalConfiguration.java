@@ -24,61 +24,65 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PortalConfiguration extends AviRestResource {
-  @JsonProperty("allow_basic_authentication")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowBasicAuthentication = false;
+    @JsonProperty("allow_basic_authentication")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowBasicAuthentication = false;
 
-  @JsonProperty("api_force_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apiForceTimeout = 24;
+    @JsonProperty("api_force_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apiForceTimeout = 24;
 
-  @JsonProperty("disable_remote_cli_shell")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableRemoteCliShell = false;
+    @JsonProperty("disable_remote_cli_shell")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableRemoteCliShell = false;
 
-  @JsonProperty("disable_swagger")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableSwagger = false;
+    @JsonProperty("disable_swagger")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableSwagger = false;
 
-  @JsonProperty("enable_clickjacking_protection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableClickjackingProtection = true;
+    @JsonProperty("enable_clickjacking_protection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableClickjackingProtection = true;
 
-  @JsonProperty("enable_http")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableHttp = true;
+    @JsonProperty("enable_http")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHttp = true;
 
-  @JsonProperty("enable_https")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableHttps = true;
+    @JsonProperty("enable_https")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHttps = true;
 
-  @JsonProperty("http_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer httpPort = null;
+    @JsonProperty("http_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer httpPort = null;
 
-  @JsonProperty("https_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer httpsPort = null;
+    @JsonProperty("https_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer httpsPort = null;
 
-  @JsonProperty("password_strength_check")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean passwordStrengthCheck = false;
+    @JsonProperty("minimum_password_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minimumPasswordLength = 8;
 
-  @JsonProperty("redirect_to_https")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean redirectToHttps = true;
+    @JsonProperty("password_strength_check")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean passwordStrengthCheck = false;
 
-  @JsonProperty("sslkeyandcertificate_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sslkeyandcertificateRefs = null;
+    @JsonProperty("redirect_to_https")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean redirectToHttps = true;
 
-  @JsonProperty("sslprofile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslprofileRef = null;
+    @JsonProperty("sslkeyandcertificate_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sslkeyandcertificateRefs = null;
 
-  @JsonProperty("use_uuid_from_input")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useUuidFromInput = false;
+    @JsonProperty("sslprofile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslprofileRef = null;
+
+    @JsonProperty("use_uuid_from_input")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useUuidFromInput = false;
 
 
 
@@ -109,6 +113,7 @@ public class PortalConfiguration extends AviRestResource {
    * Force api session timeout after the specified time (in hours).
    * Allowed values are 1-24.
    * Field introduced in 18.2.3.
+   * Unit is hours.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @return apiForceTimeout
    */
@@ -122,6 +127,7 @@ public class PortalConfiguration extends AviRestResource {
    * Force api session timeout after the specified time (in hours).
    * Allowed values are 1-24.
    * Field introduced in 18.2.3.
+   * Unit is hours.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @param apiForceTimeout set the apiForceTimeout.
    */
@@ -245,6 +251,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPort
    */
   @VsoMethod
@@ -255,6 +262,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpPort set the httpPort.
    */
   @VsoMethod
@@ -265,6 +273,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Https port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpsPort
    */
   @VsoMethod
@@ -275,11 +284,38 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Https port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpsPort set the httpsPort.
    */
   @VsoMethod
   public void setHttpsPort(Integer  httpsPort) {
     this.httpsPort = httpsPort;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Minimum password length for user accounts.
+   * Allowed values are 6-32.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+   * @return minimumPasswordLength
+   */
+  @VsoMethod
+  public Integer getMinimumPasswordLength() {
+    return minimumPasswordLength;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Minimum password length for user accounts.
+   * Allowed values are 6-32.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 8.
+   * @param minimumPasswordLength set the minimumPasswordLength.
+   */
+  @VsoMethod
+  public void setMinimumPasswordLength(Integer  minimumPasswordLength) {
+    this.minimumPasswordLength = minimumPasswordLength;
   }
 
   /**
@@ -332,6 +368,7 @@ public class PortalConfiguration extends AviRestResource {
    * Maximum 2 allowed.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
   @VsoMethod
@@ -345,6 +382,7 @@ public class PortalConfiguration extends AviRestResource {
    * Maximum 2 allowed.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
   @VsoMethod
@@ -358,6 +396,7 @@ public class PortalConfiguration extends AviRestResource {
    * Maximum 2 allowed.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
   @VsoMethod
@@ -373,6 +412,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type sslprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslprofileRef
    */
   @VsoMethod
@@ -383,6 +423,7 @@ public class PortalConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type sslprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslprofileRef set the sslprofileRef.
    */
   @VsoMethod
@@ -436,7 +477,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.passwordStrengthCheck, objPortalConfiguration.passwordStrengthCheck)&&
   Objects.equals(this.disableRemoteCliShell, objPortalConfiguration.disableRemoteCliShell)&&
   Objects.equals(this.disableSwagger, objPortalConfiguration.disableSwagger)&&
-  Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout);
+  Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout)&&
+  Objects.equals(this.minimumPasswordLength, objPortalConfiguration.minimumPasswordLength);
 }
 
 @Override
@@ -452,6 +494,7 @@ public String toString() {
         sb.append("    enableHttps: ").append(toIndentedString(enableHttps)).append("\n");
         sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
         sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
+        sb.append("    minimumPasswordLength: ").append(toIndentedString(minimumPasswordLength)).append("\n");
         sb.append("    passwordStrengthCheck: ").append(toIndentedString(passwordStrengthCheck)).append("\n");
         sb.append("    redirectToHttps: ").append(toIndentedString(redirectToHttps)).append("\n");
         sb.append("    sslkeyandcertificateRefs: ").append(toIndentedString(sslkeyandcertificateRefs)).append("\n");

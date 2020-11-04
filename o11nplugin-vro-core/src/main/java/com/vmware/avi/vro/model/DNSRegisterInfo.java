@@ -26,43 +26,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DNSRegisterInfo extends AviRestResource {
-  @JsonProperty("dns_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsInfo> dnsInfo = null;
+    @JsonProperty("dns_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsInfo> dnsInfo = null;
 
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("fip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr fip = null;
+    @JsonProperty("fip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr fip = null;
 
-  @JsonProperty("total_records")
-  @JsonInclude(Include.NON_NULL)
-  private Integer totalRecords = null;
+    @JsonProperty("total_records")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalRecords = null;
 
-  @JsonProperty("vip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vip = null;
+    @JsonProperty("vip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vip = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("vs_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsNames = null;
+    @JsonProperty("vs_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsNames = null;
 
-  @JsonProperty("vs_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsUuids = null;
+    @JsonProperty("vs_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsUuids = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dns_info of obj type dnsregisterinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the dnsInfo
    * Placeholder for description of property dns_info of obj type dnsregisterinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -83,6 +85,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method this will set the dnsInfo
    * Placeholder for description of property dns_info of obj type dnsregisterinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -98,6 +101,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error of obj type dnsregisterinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -108,6 +112,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error of obj type dnsregisterinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -118,6 +123,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property fip of obj type dnsregisterinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fip
    */
   @VsoMethod
@@ -128,6 +134,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property fip of obj type dnsregisterinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fip set the fip.
    */
   @VsoMethod
@@ -138,6 +145,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property total_records of obj type dnsregisterinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalRecords
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property total_records of obj type dnsregisterinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalRecords set the totalRecords.
    */
   @VsoMethod
@@ -158,6 +167,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip of obj type dnsregisterinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -168,6 +178,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip of obj type dnsregisterinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip set the vip.
    */
   @VsoMethod
@@ -178,6 +189,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_id of obj type dnsregisterinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -188,6 +200,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_id of obj type dnsregisterinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -198,6 +211,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_names of obj type dnsregisterinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsNames
    */
   @VsoMethod
@@ -208,6 +222,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the vsNames
    * Placeholder for description of property vs_names of obj type dnsregisterinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsNames
    */
   @VsoMethod
@@ -218,6 +233,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method this will set the vsNames
    * Placeholder for description of property vs_names of obj type dnsregisterinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsNames
    */
   @VsoMethod
@@ -233,6 +249,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifiers of vss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuids
    */
   @VsoMethod
@@ -243,6 +260,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the vsUuids
    * Unique object identifiers of vss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuids
    */
   @VsoMethod
@@ -253,6 +271,7 @@ public class DNSRegisterInfo extends AviRestResource {
   /**
    * This is the setter method this will set the vsUuids
    * Unique object identifiers of vss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuids
    */
   @VsoMethod

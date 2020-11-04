@@ -27,57 +27,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbPoolMember extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterUuid = null;
+    @JsonProperty("cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterUuid = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private String fqdn = null;
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private String fqdn = null;
 
-  @JsonProperty("hm_proxies")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbHealthMonitorProxy> hmProxies = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private GslbGeoLocation location = null;
 
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private GslbGeoLocation location = null;
+    @JsonProperty("public_ip")
+    @JsonInclude(Include.NON_NULL)
+    private GslbIpAddr publicIp = null;
 
-  @JsonProperty("public_ip")
-  @JsonInclude(Include.NON_NULL)
-  private GslbIpAddr publicIp = null;
+    @JsonProperty("ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ratio = 1;
 
-  @JsonProperty("ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ratio = 1;
+    @JsonProperty("resolve_fqdn_to_v6")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resolveFqdnToV6 = false;
 
-  @JsonProperty("resolve_fqdn_to_v6")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resolveFqdnToV6 = false;
-
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
@@ -85,6 +81,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The cloud uuid of the site.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -96,6 +93,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * The cloud uuid of the site.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -106,6 +104,7 @@ public class GslbPoolMember extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The cluster uuid of the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
   @VsoMethod
@@ -116,6 +115,7 @@ public class GslbPoolMember extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The cluster uuid of the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
   @VsoMethod
@@ -127,6 +127,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User provided information that records member details such as application owner name, contact, etc.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -138,6 +139,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * User provided information that records member details such as application owner name, contact, etc.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -173,6 +175,7 @@ public class GslbPoolMember extends AviRestResource {
    * The fqdn is resolved to an ip address by the controller.
    * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
    * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -186,6 +189,7 @@ public class GslbPoolMember extends AviRestResource {
    * The fqdn is resolved to an ip address by the controller.
    * Dns service shall health monitor the resolved ip address while it will return the fqdn(cname) in the dns response.if the user has configured an
    * ip address (in addition to the fqdn), then the ip address will get overwritten whenever periodic fqdn refresh is done by the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
   @VsoMethod
@@ -195,50 +199,10 @@ public class GslbPoolMember extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Internal generated system-field.
-   * Field deprecated in 18.2.2.
-   * Field introduced in 17.1.1.
-   * @return hmProxies
-   */
-  @VsoMethod
-  public List<GslbHealthMonitorProxy> getHmProxies() {
-    return hmProxies;
-  }
-
-  /**
-   * This is the setter method. this will set the hmProxies
-   * Internal generated system-field.
-   * Field deprecated in 18.2.2.
-   * Field introduced in 17.1.1.
-   * @return hmProxies
-   */
-  @VsoMethod
-  public void setHmProxies(List<GslbHealthMonitorProxy>  hmProxies) {
-    this.hmProxies = hmProxies;
-  }
-
-  /**
-   * This is the setter method this will set the hmProxies
-   * Internal generated system-field.
-   * Field deprecated in 18.2.2.
-   * Field introduced in 17.1.1.
-   * @return hmProxies
-   */
-  @VsoMethod
-  public GslbPoolMember addHmProxiesItem(GslbHealthMonitorProxy hmProxiesItem) {
-    if (this.hmProxies == null) {
-      this.hmProxies = new ArrayList<GslbHealthMonitorProxy>();
-    }
-    this.hmProxies.add(hmProxiesItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Hostname to be used as host header for http health monitors and as tls server name for https health monitors.(by default, the fqdn of the gslb
    * pool member or gslb service is used.) note  this field is not used as http host header when exact_http_request is set in the health monitor.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -251,6 +215,7 @@ public class GslbPoolMember extends AviRestResource {
    * Hostname to be used as host header for http health monitors and as tls server name for https health monitors.(by default, the fqdn of the gslb
    * pool member or gslb service is used.) note  this field is not used as http host header when exact_http_request is set in the health monitor.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -267,6 +232,7 @@ public class GslbPoolMember extends AviRestResource {
    * User may configure the ip address without the cluster uuid or the virtual service uuid.
    * In this option, some advanced site related features cannot be enabled.
    * If the user has configured a fqdn for the pool member, then it takes precedence and will overwrite the configured ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -283,6 +249,7 @@ public class GslbPoolMember extends AviRestResource {
    * User may configure the ip address without the cluster uuid or the virtual service uuid.
    * In this option, some advanced site related features cannot be enabled.
    * If the user has configured a fqdn for the pool member, then it takes precedence and will overwrite the configured ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -294,6 +261,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geographic location of the pool member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -305,6 +273,7 @@ public class GslbPoolMember extends AviRestResource {
    * This is the setter method to the attribute.
    * Geographic location of the pool member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -321,6 +290,7 @@ public class GslbPoolMember extends AviRestResource {
    * Client dns requests coming in from within the intranet should have the private ip served in the a record, and requests from outside this should
    * be served the public ip address.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicIp
    */
   @VsoMethod
@@ -337,6 +307,7 @@ public class GslbPoolMember extends AviRestResource {
    * Client dns requests coming in from within the intranet should have the private ip served in the a record, and requests from outside this should
    * be served the public ip address.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicIp set the publicIp.
    */
   @VsoMethod
@@ -401,6 +372,7 @@ public class GslbPoolMember extends AviRestResource {
    * Select local virtual service in the specified controller cluster belonging to this gslb service.
    * The virtual service may have multiple ip addresses and fqdns.
    * User will have to choose ip address or fqdn and configure it in the respective field.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -413,6 +385,7 @@ public class GslbPoolMember extends AviRestResource {
    * Select local virtual service in the specified controller cluster belonging to this gslb service.
    * The virtual service may have multiple ip addresses and fqdns.
    * User will have to choose ip address or fqdn and configure it in the respective field.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod
@@ -438,7 +411,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ratio, objGslbPoolMember.ratio)&&
   Objects.equals(this.enabled, objGslbPoolMember.enabled)&&
   Objects.equals(this.location, objGslbPoolMember.location)&&
-  Objects.equals(this.hmProxies, objGslbPoolMember.hmProxies)&&
   Objects.equals(this.cloudUuid, objGslbPoolMember.cloudUuid)&&
   Objects.equals(this.publicIp, objGslbPoolMember.publicIp)&&
   Objects.equals(this.hostname, objGslbPoolMember.hostname)&&
@@ -455,7 +427,6 @@ public String toString() {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    fqdn: ").append(toIndentedString(fqdn)).append("\n");
-        sb.append("    hmProxies: ").append(toIndentedString(hmProxies)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");

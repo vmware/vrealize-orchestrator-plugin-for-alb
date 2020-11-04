@@ -25,15 +25,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SystemUpgradeDetails extends AviRestResource {
-  @JsonProperty("upgrade_status")
-  @JsonInclude(Include.NON_NULL)
-  private SystemUpgradeState upgradeStatus = null;
+    @JsonProperty("upgrade_status")
+    @JsonInclude(Include.NON_NULL)
+    private SystemUpgradeState upgradeStatus = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Upgrade status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeStatus
    */
   @VsoMethod
@@ -44,6 +45,7 @@ public class SystemUpgradeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Upgrade status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeStatus set the upgradeStatus.
    */
   @VsoMethod

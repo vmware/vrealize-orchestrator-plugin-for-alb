@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsEvStatus extends AviRestResource {
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("request")
-  @JsonInclude(Include.NON_NULL)
-  private String request = null;
+    @JsonProperty("request")
+    @JsonInclude(Include.NON_NULL)
+    private String request = null;
 
-  @JsonProperty("result")
-  @JsonInclude(Include.NON_NULL)
-  private String result = null;
+    @JsonProperty("result")
+    @JsonInclude(Include.NON_NULL)
+    private String result = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type vsevstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VsEvStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type vsevstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VsEvStatus extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type vsevstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class VsEvStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property request of obj type vsevstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return request
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class VsEvStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property request of obj type vsevstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param request set the request.
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class VsEvStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property result of obj type vsevstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return result
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class VsEvStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property result of obj type vsevstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param result set the result.
    */
   @VsoMethod

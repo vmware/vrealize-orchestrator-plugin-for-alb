@@ -25,43 +25,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AWSASGNotifDetails extends AviRestResource {
-  @JsonProperty("asg_name")
-  @JsonInclude(Include.NON_NULL)
-  private String asgName = null;
+    @JsonProperty("asg_name")
+    @JsonInclude(Include.NON_NULL)
+    private String asgName = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("event_type")
-  @JsonInclude(Include.NON_NULL)
-  private String eventType = null;
+    @JsonProperty("event_type")
+    @JsonInclude(Include.NON_NULL)
+    private String eventType = null;
 
-  @JsonProperty("instance_id")
-  @JsonInclude(Include.NON_NULL)
-  private String instanceId = null;
+    @JsonProperty("instance_id")
+    @JsonInclude(Include.NON_NULL)
+    private String instanceId = null;
 
-  @JsonProperty("instance_ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr instanceIpAddr = null;
+    @JsonProperty("instance_ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr instanceIpAddr = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
-  @JsonProperty("vpc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcId = null;
+    @JsonProperty("vpc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property asg_name of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgName
    */
   @VsoMethod
@@ -72,6 +73,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property asg_name of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param asgName set the asgName.
    */
   @VsoMethod
@@ -82,6 +84,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -92,6 +95,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -102,6 +106,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -112,6 +117,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property event_type of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventType
    */
   @VsoMethod
@@ -132,6 +139,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property event_type of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventType set the eventType.
    */
   @VsoMethod
@@ -142,6 +150,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property instance_id of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instanceId
    */
   @VsoMethod
@@ -152,6 +161,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property instance_id of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instanceId set the instanceId.
    */
   @VsoMethod
@@ -162,6 +172,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property instance_ip_addr of obj type awsasgnotifdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instanceIpAddr
    */
   @VsoMethod
@@ -172,6 +183,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property instance_ip_addr of obj type awsasgnotifdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instanceIpAddr set the instanceIpAddr.
    */
   @VsoMethod
@@ -184,6 +196,7 @@ public class AWSASGNotifDetails extends AviRestResource {
    * Uuid of the pool.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -196,6 +209,7 @@ public class AWSASGNotifDetails extends AviRestResource {
    * Uuid of the pool.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod
@@ -206,6 +220,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vpc_id of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
   @VsoMethod
@@ -216,6 +231,7 @@ public class AWSASGNotifDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vpc_id of obj type awsasgnotifdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */
   @VsoMethod

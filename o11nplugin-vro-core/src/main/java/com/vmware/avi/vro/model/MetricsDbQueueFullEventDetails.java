@@ -25,39 +25,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDbQueueFullEventDetails extends AviRestResource {
-  @JsonProperty("high")
-  @JsonInclude(Include.NON_NULL)
-  private Integer high = null;
+    @JsonProperty("high")
+    @JsonInclude(Include.NON_NULL)
+    private Integer high = null;
 
-  @JsonProperty("instanceport")
-  @JsonInclude(Include.NON_NULL)
-  private Integer instanceport = null;
+    @JsonProperty("instanceport")
+    @JsonInclude(Include.NON_NULL)
+    private Integer instanceport = null;
 
-  @JsonProperty("low")
-  @JsonInclude(Include.NON_NULL)
-  private Integer low = null;
+    @JsonProperty("low")
+    @JsonInclude(Include.NON_NULL)
+    private Integer low = null;
 
-  @JsonProperty("nodeid")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeid = null;
+    @JsonProperty("nodeid")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeid = null;
 
-  @JsonProperty("period")
-  @JsonInclude(Include.NON_NULL)
-  private String period = null;
+    @JsonProperty("period")
+    @JsonInclude(Include.NON_NULL)
+    private String period = null;
 
-  @JsonProperty("runtime")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsDbRuntime runtime = null;
+    @JsonProperty("runtime")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDbRuntime runtime = null;
 
-  @JsonProperty("watermark")
-  @JsonInclude(Include.NON_NULL)
-  private Integer watermark = null;
+    @JsonProperty("watermark")
+    @JsonInclude(Include.NON_NULL)
+    private Integer watermark = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property high of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return high
    */
   @VsoMethod
@@ -68,6 +69,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property high of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param high set the high.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property instanceport of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instanceport
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property instanceport of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instanceport set the instanceport.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property low of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return low
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property low of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param low set the low.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nodeid of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeid
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nodeid of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeid set the nodeid.
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property period of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return period
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property period of obj type metricsdbqueuefulleventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param period set the period.
    */
   @VsoMethod
@@ -158,6 +168,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property runtime of obj type metricsdbqueuefulleventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return runtime
    */
   @VsoMethod
@@ -168,6 +179,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property runtime of obj type metricsdbqueuefulleventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param runtime set the runtime.
    */
   @VsoMethod
@@ -178,6 +190,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property watermark of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return watermark
    */
   @VsoMethod
@@ -188,6 +201,7 @@ public class MetricsDbQueueFullEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property watermark of obj type metricsdbqueuefulleventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param watermark set the watermark.
    */
   @VsoMethod

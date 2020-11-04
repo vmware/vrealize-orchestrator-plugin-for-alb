@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertScriptConfig extends AviRestResource {
-  @JsonProperty("action_script")
-  @JsonInclude(Include.NON_NULL)
-  private String actionScript = null;
+    @JsonProperty("action_script")
+    @JsonInclude(Include.NON_NULL)
+    private String actionScript = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -50,6 +50,7 @@ public class AlertScriptConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User defined alert action script.
    * Please refer to kb.avinetworks.com for more information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionScript
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class AlertScriptConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * User defined alert action script.
    * Please refer to kb.avinetworks.com for more information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionScript set the actionScript.
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class AlertScriptConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A user-friendly name of the script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class AlertScriptConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A user-friendly name of the script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class AlertScriptConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class AlertScriptConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -130,6 +136,7 @@ public class AlertScriptConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -140,6 +147,7 @@ public class AlertScriptConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

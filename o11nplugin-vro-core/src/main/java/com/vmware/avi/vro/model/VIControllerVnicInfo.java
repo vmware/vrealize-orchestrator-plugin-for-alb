@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIControllerVnicInfo extends AviRestResource {
-  @JsonProperty("portgroup")
-  @JsonInclude(Include.NON_NULL)
-  private String portgroup = null;
+    @JsonProperty("portgroup")
+    @JsonInclude(Include.NON_NULL)
+    private String portgroup = null;
 
-  @JsonProperty("vnic_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<VIGuestvNicIPAddr> vnicIp = null;
+    @JsonProperty("vnic_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<VIGuestvNicIPAddr> vnicIp = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property portgroup of obj type vicontrollervnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portgroup
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VIControllerVnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property portgroup of obj type vicontrollervnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portgroup set the portgroup.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class VIControllerVnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vnic_ip of obj type vicontrollervnicinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicIp
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class VIControllerVnicInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the vnicIp
    * Placeholder for description of property vnic_ip of obj type vicontrollervnicinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicIp
    */
   @VsoMethod
@@ -77,6 +81,7 @@ public class VIControllerVnicInfo extends AviRestResource {
   /**
    * This is the setter method this will set the vnicIp
    * Placeholder for description of property vnic_ip of obj type vicontrollervnicinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicIp
    */
   @VsoMethod

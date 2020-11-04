@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackIpChange extends AviRestResource {
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("mac_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddr = null;
+    @JsonProperty("mac_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddr = null;
 
-  @JsonProperty("port_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String portUuid = null;
+    @JsonProperty("port_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String portUuid = null;
 
-  @JsonProperty("se_vm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seVmUuid = null;
+    @JsonProperty("se_vm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seVmUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type openstackipchange field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type openstackipchange field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type openstackipchange field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type openstackipchange field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac_addr of obj type openstackipchange field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddr
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mac_addr of obj type openstackipchange field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddr set the macAddr.
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portUuid
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portUuid set the portUuid.
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVmUuid
    */
   @VsoMethod
@@ -140,6 +149,7 @@ public class OpenStackIpChange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVmUuid set the seVmUuid.
    */
   @VsoMethod

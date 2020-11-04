@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PodToleration extends AviRestResource {
-  @JsonProperty("effect")
-  @JsonInclude(Include.NON_NULL)
-  private String effect = null;
+    @JsonProperty("effect")
+    @JsonInclude(Include.NON_NULL)
+    private String effect = null;
 
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private String key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private String key = null;
 
-  @JsonProperty("operator")
-  @JsonInclude(Include.NON_NULL)
-  private String operator = "EQUAL";
+    @JsonProperty("operator")
+    @JsonInclude(Include.NON_NULL)
+    private String operator = "EQUAL";
 
-  @JsonProperty("toleration_seconds")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tolerationSeconds = null;
+    @JsonProperty("toleration_seconds")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tolerationSeconds = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private String value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private String value = null;
 
 
 
@@ -51,6 +51,7 @@ public class PodToleration extends AviRestResource {
    * Effect to match.
    * Enum options - NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return effect
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class PodToleration extends AviRestResource {
    * Effect to match.
    * Enum options - NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param effect set the effect.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class PodToleration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class PodToleration extends AviRestResource {
    * This is the setter method to the attribute.
    * Key to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
   @VsoMethod
@@ -97,7 +101,7 @@ public class PodToleration extends AviRestResource {
    * Operator to match.
    * Enum options - EQUAL, EXISTS.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as EQUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "EQUAL".
    * @return operator
    */
   @VsoMethod
@@ -110,7 +114,7 @@ public class PodToleration extends AviRestResource {
    * Operator to match.
    * Enum options - EQUAL, EXISTS.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as EQUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "EQUAL".
    * @param operator set the operator.
    */
   @VsoMethod
@@ -122,6 +126,8 @@ public class PodToleration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pods that tolerate the taint with a specified toleration_seconds remain bound for the specified amount of time.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Unit is seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tolerationSeconds
    */
   @VsoMethod
@@ -133,6 +139,8 @@ public class PodToleration extends AviRestResource {
    * This is the setter method to the attribute.
    * Pods that tolerate the taint with a specified toleration_seconds remain bound for the specified amount of time.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Unit is seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tolerationSeconds set the tolerationSeconds.
    */
   @VsoMethod
@@ -144,6 +152,7 @@ public class PodToleration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Value to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class PodToleration extends AviRestResource {
    * This is the setter method to the attribute.
    * Value to match.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

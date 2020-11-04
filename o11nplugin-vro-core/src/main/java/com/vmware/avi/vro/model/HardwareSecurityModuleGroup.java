@@ -25,31 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HardwareSecurityModuleGroup extends AviRestResource {
-  @JsonProperty("hsm")
-  @JsonInclude(Include.NON_NULL)
-  private HardwareSecurityModule hsm = null;
+    @JsonProperty("hsm")
+    @JsonInclude(Include.NON_NULL)
+    private HardwareSecurityModule hsm = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Hardware security module configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsm
    */
   @VsoMethod
@@ -60,6 +65,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hardware security module configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hsm set the hsm.
    */
   @VsoMethod
@@ -69,7 +75,52 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public HardwareSecurityModuleGroup addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the hsm group configuration object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -80,6 +131,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the hsm group configuration object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -90,6 +142,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -100,6 +153,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -129,6 +183,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the hsm group configuration object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -139,6 +194,7 @@ public class HardwareSecurityModuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the hsm group configuration object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -163,6 +219,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objHardwareSecurityModuleGroup.uuid)&&
   Objects.equals(this.name, objHardwareSecurityModuleGroup.name)&&
   Objects.equals(this.hsm, objHardwareSecurityModuleGroup.hsm)&&
+  Objects.equals(this.labels, objHardwareSecurityModuleGroup.labels)&&
   Objects.equals(this.tenantRef, objHardwareSecurityModuleGroup.tenantRef);
 }
 
@@ -171,6 +228,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class HardwareSecurityModuleGroup {\n");
       sb.append("    hsm: ").append(toIndentedString(hsm)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

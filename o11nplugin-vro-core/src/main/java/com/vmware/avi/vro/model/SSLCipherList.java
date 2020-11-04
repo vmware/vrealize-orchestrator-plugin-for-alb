@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLCipherList extends AviRestResource {
-  @JsonProperty("identified_ciphers")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> identifiedCiphers = null;
+    @JsonProperty("identified_ciphers")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> identifiedCiphers = null;
 
-  @JsonProperty("unidentified_ciphers")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> unidentifiedCiphers = null;
+    @JsonProperty("unidentified_ciphers")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> unidentifiedCiphers = null;
 
 
 
@@ -45,6 +45,7 @@ public class SSLCipherList extends AviRestResource {
    * AVI_TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA, AVI_TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, AVI_TLS_DHE_DSS_WITH_DES_CBC_SHA,
    * AVI_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA...
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifiedCiphers
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class SSLCipherList extends AviRestResource {
    * AVI_TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA, AVI_TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, AVI_TLS_DHE_DSS_WITH_DES_CBC_SHA,
    * AVI_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA...
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifiedCiphers
    */
   @VsoMethod
@@ -81,6 +83,7 @@ public class SSLCipherList extends AviRestResource {
    * AVI_TLS_DH_RSA_WITH_3DES_EDE_CBC_SHA, AVI_TLS_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA, AVI_TLS_DHE_DSS_WITH_DES_CBC_SHA,
    * AVI_TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA...
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifiedCiphers
    */
   @VsoMethod
@@ -98,6 +101,7 @@ public class SSLCipherList extends AviRestResource {
    * List of ciphers from the client's ssl cipher list, that could not be identified.
    * The ciphers are represented by their rfc 2 byte hex value.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unidentifiedCiphers
    */
   @VsoMethod
@@ -110,6 +114,7 @@ public class SSLCipherList extends AviRestResource {
    * List of ciphers from the client's ssl cipher list, that could not be identified.
    * The ciphers are represented by their rfc 2 byte hex value.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unidentifiedCiphers
    */
   @VsoMethod
@@ -122,6 +127,7 @@ public class SSLCipherList extends AviRestResource {
    * List of ciphers from the client's ssl cipher list, that could not be identified.
    * The ciphers are represented by their rfc 2 byte hex value.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unidentifiedCiphers
    */
   @VsoMethod

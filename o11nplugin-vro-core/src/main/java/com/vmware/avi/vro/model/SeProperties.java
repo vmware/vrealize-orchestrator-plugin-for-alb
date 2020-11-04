@@ -27,31 +27,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeProperties extends AviRestResource {
-  @JsonProperty("se_agent_properties")
-  @JsonInclude(Include.NON_NULL)
-  private SeAgentProperties seAgentProperties = null;
+    @JsonProperty("se_agent_properties")
+    @JsonInclude(Include.NON_NULL)
+    private SeAgentProperties seAgentProperties = null;
 
-  @JsonProperty("se_bootup_properties")
-  @JsonInclude(Include.NON_NULL)
-  private SeBootupProperties seBootupProperties = null;
+    @JsonProperty("se_bootup_properties")
+    @JsonInclude(Include.NON_NULL)
+    private SeBootupProperties seBootupProperties = null;
 
-  @JsonProperty("se_runtime_properties")
-  @JsonInclude(Include.NON_NULL)
-  private SeRuntimeProperties seRuntimeProperties = null;
+    @JsonProperty("se_runtime_properties")
+    @JsonInclude(Include.NON_NULL)
+    private SeRuntimeProperties seRuntimeProperties = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = "default";
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = "default";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_agent_properties of obj type seproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAgentProperties
    */
   @VsoMethod
@@ -62,6 +63,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_agent_properties of obj type seproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seAgentProperties set the seAgentProperties.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_bootup_properties of obj type seproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBootupProperties
    */
   @VsoMethod
@@ -82,6 +85,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_bootup_properties of obj type seproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seBootupProperties set the seBootupProperties.
    */
   @VsoMethod
@@ -92,6 +96,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_runtime_properties of obj type seproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRuntimeProperties
    */
   @VsoMethod
@@ -102,6 +107,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_runtime_properties of obj type seproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRuntimeProperties set the seRuntimeProperties.
    */
   @VsoMethod
@@ -131,7 +137,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return uuid
    */
   @VsoMethod
@@ -142,7 +148,7 @@ public class SeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeMigrateEventDetails extends AviRestResource {
-  @JsonProperty("num_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVs = null;
+    @JsonProperty("num_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVs = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vsName = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vs of obj type semigrateeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVs
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vs of obj type semigrateeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVs set the numVs.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type semigrateeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the reason
    * Placeholder for description of property reason of obj type semigrateeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the reason
    * Placeholder for description of property reason of obj type semigrateeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type semigrateeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type semigrateeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type semigrateeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -158,6 +168,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_name of obj type semigrateeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -168,6 +179,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -178,6 +190,7 @@ public class SeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeGatewayHeartbeatFailedDetails extends AviRestResource {
-  @JsonProperty("gateway_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String gatewayIp = null;
+    @JsonProperty("gateway_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String gatewayIp = null;
 
-  @JsonProperty("vrf_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfName = null;
+    @JsonProperty("vrf_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfName = null;
 
-  @JsonProperty("vrf_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfUuid = null;
+    @JsonProperty("vrf_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of gateway monitored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayIp
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class SeGatewayHeartbeatFailedDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of gateway monitored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gatewayIp set the gatewayIp.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class SeGatewayHeartbeatFailedDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of virtual routing context in which this gateway is present.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfName
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class SeGatewayHeartbeatFailedDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of virtual routing context in which this gateway is present.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfName set the vrfName.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class SeGatewayHeartbeatFailedDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the virtual routing context in which this gateway is present.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfUuid
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class SeGatewayHeartbeatFailedDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the virtual routing context in which this gateway is present.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfUuid set the vrfUuid.
    */
   @VsoMethod

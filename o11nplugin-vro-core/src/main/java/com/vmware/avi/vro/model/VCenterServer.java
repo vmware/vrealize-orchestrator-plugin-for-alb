@@ -25,37 +25,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VCenterServer extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("content_lib")
-  @JsonInclude(Include.NON_NULL)
-  private ContentLibConfig contentLib = null;
+    @JsonProperty("content_lib")
+    @JsonInclude(Include.NON_NULL)
+    private ContentLibConfig contentLib = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vcenter_credentials_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterCredentialsRef = null;
+    @JsonProperty("vcenter_credentials_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterCredentialsRef = null;
 
-  @JsonProperty("vcenter_url")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterUrl = null;
+    @JsonProperty("vcenter_url")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterUrl = null;
 
 
 
@@ -64,6 +64,7 @@ public class VCenterServer extends AviRestResource {
    * Vcenter belongs to cloud.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -76,6 +77,7 @@ public class VCenterServer extends AviRestResource {
    * Vcenter belongs to cloud.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -87,6 +89,7 @@ public class VCenterServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vcenter template to create service engine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentLib
    */
   @VsoMethod
@@ -98,6 +101,7 @@ public class VCenterServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Vcenter template to create service engine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contentLib set the contentLib.
    */
   @VsoMethod
@@ -109,6 +113,7 @@ public class VCenterServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availabilty zone where vcenter list belongs to.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -120,6 +125,7 @@ public class VCenterServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Availabilty zone where vcenter list belongs to.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -132,6 +138,7 @@ public class VCenterServer extends AviRestResource {
    * Vcenter belongs to tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -144,6 +151,7 @@ public class VCenterServer extends AviRestResource {
    * Vcenter belongs to tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -174,6 +182,7 @@ public class VCenterServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vcenter config uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -185,6 +194,7 @@ public class VCenterServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Vcenter config uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -197,6 +207,7 @@ public class VCenterServer extends AviRestResource {
    * Credentials to access vcenter.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterCredentialsRef
    */
   @VsoMethod
@@ -209,6 +220,7 @@ public class VCenterServer extends AviRestResource {
    * Credentials to access vcenter.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterCredentialsRef set the vcenterCredentialsRef.
    */
   @VsoMethod
@@ -220,6 +232,7 @@ public class VCenterServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vcenter hostname or ip address.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterUrl
    */
   @VsoMethod
@@ -231,6 +244,7 @@ public class VCenterServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Vcenter hostname or ip address.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterUrl set the vcenterUrl.
    */
   @VsoMethod

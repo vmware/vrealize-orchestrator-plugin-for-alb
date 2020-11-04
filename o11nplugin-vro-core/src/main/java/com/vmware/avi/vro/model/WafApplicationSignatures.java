@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafApplicationSignatures extends AviRestResource {
-  @JsonProperty("provider_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String providerRef = null;
+    @JsonProperty("provider_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String providerRef = null;
 
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRule> rules = null;
 
-  @JsonProperty("ruleset_version")
-  @JsonInclude(Include.NON_NULL)
-  private String rulesetVersion = null;
+    @JsonProperty("ruleset_version")
+    @JsonInclude(Include.NON_NULL)
+    private String rulesetVersion = null;
 
-  @JsonProperty("selected_applications")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> selectedApplications = null;
+    @JsonProperty("selected_applications")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> selectedApplications = null;
 
 
 
@@ -47,6 +47,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * The external provide for the rules.
    * It is a reference to an object of type wafapplicationsignatureprovider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerRef
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * The external provide for the rules.
    * It is a reference to an object of type wafapplicationsignatureprovider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param providerRef set the providerRef.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * You can change attributes like enabled, waf mode and exclusions, but not the rules itself.
    * To change the rules, you can change the tags or the rule provider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * You can change attributes like enabled, waf mode and exclusions, but not the rules itself.
    * To change the rules, you can change the tags or the rule provider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * You can change attributes like enabled, waf mode and exclusions, but not the rules itself.
    * To change the rules, you can change the tags or the rule provider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -114,6 +119,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The version in use of the provided ruleset.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rulesetVersion
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the setter method to the attribute.
    * The version in use of the provided ruleset.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rulesetVersion set the rulesetVersion.
    */
   @VsoMethod
@@ -136,6 +143,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of applications for which we use the rules from the wafapplicationsignatureprovider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return selectedApplications
    */
   @VsoMethod
@@ -147,6 +155,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the setter method. this will set the selectedApplications
    * List of applications for which we use the rules from the wafapplicationsignatureprovider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return selectedApplications
    */
   @VsoMethod
@@ -158,6 +167,7 @@ public class WafApplicationSignatures extends AviRestResource {
    * This is the setter method this will set the selectedApplications
    * List of applications for which we use the rules from the wafapplicationsignatureprovider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return selectedApplications
    */
   @VsoMethod

@@ -27,21 +27,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbDnsSeInfo extends AviRestResource {
-  @JsonProperty("fd_download")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDownloadStatus fdDownload = null;
+    @JsonProperty("fd_download")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDownloadStatus fdDownload;
 
-  @JsonProperty("fd_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo fdInfo = null;
+    @JsonProperty("fd_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo fdInfo;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid;
 
 
 

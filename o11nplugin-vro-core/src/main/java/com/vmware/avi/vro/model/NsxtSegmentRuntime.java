@@ -24,81 +24,81 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtSegmentRuntime extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("dhcp6_ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> dhcp6Ranges = null;
+    @JsonProperty("dhcp6_ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> dhcp6Ranges = null;
 
-  @JsonProperty("dhcp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dhcpEnabled = true;
+    @JsonProperty("dhcp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dhcpEnabled = true;
 
-  @JsonProperty("dhcp_ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> dhcpRanges = null;
+    @JsonProperty("dhcp_ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> dhcpRanges = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("nw_name")
-  @JsonInclude(Include.NON_NULL)
-  private String nwName = null;
+    @JsonProperty("nw_name")
+    @JsonInclude(Include.NON_NULL)
+    private String nwName = null;
 
-  @JsonProperty("nw_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String nwRef = null;
+    @JsonProperty("nw_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String nwRef = null;
 
-  @JsonProperty("opaque_network_id")
-  @JsonInclude(Include.NON_NULL)
-  private String opaqueNetworkId = null;
+    @JsonProperty("opaque_network_id")
+    @JsonInclude(Include.NON_NULL)
+    private String opaqueNetworkId = null;
 
-  @JsonProperty("segment_gw")
-  @JsonInclude(Include.NON_NULL)
-  private String segmentGw = null;
+    @JsonProperty("segment_gw")
+    @JsonInclude(Include.NON_NULL)
+    private String segmentGw = null;
 
-  @JsonProperty("segment_gw6")
-  @JsonInclude(Include.NON_NULL)
-  private String segmentGw6 = null;
+    @JsonProperty("segment_gw6")
+    @JsonInclude(Include.NON_NULL)
+    private String segmentGw6 = null;
 
-  @JsonProperty("segment_id")
-  @JsonInclude(Include.NON_NULL)
-  private String segmentId = null;
+    @JsonProperty("segment_id")
+    @JsonInclude(Include.NON_NULL)
+    private String segmentId = null;
 
-  @JsonProperty("segname")
-  @JsonInclude(Include.NON_NULL)
-  private String segname = null;
+    @JsonProperty("segname")
+    @JsonInclude(Include.NON_NULL)
+    private String segname = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet = null;
 
-  @JsonProperty("subnet6")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet6 = null;
+    @JsonProperty("subnet6")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet6 = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("tier1_id")
-  @JsonInclude(Include.NON_NULL)
-  private String tier1Id = null;
+    @JsonProperty("tier1_id")
+    @JsonInclude(Include.NON_NULL)
+    private String tier1Id = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vrf_context_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfContextRef = null;
+    @JsonProperty("vrf_context_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfContextRef = null;
 
 
 
@@ -107,6 +107,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Nsxt segment belongs to cloud.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -119,6 +120,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Nsxt segment belongs to cloud.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -130,6 +132,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * V6 dhcp ranges configured in nsxt.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcp6Ranges
    */
   @VsoMethod
@@ -141,6 +144,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method. this will set the dhcp6Ranges
    * V6 dhcp ranges configured in nsxt.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcp6Ranges
    */
   @VsoMethod
@@ -152,6 +156,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method this will set the dhcp6Ranges
    * V6 dhcp ranges configured in nsxt.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcp6Ranges
    */
   @VsoMethod
@@ -192,6 +197,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dhcp ranges configured in nsxt.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcpRanges
    */
   @VsoMethod
@@ -203,6 +209,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method. this will set the dhcpRanges
    * Dhcp ranges configured in nsxt.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcpRanges
    */
   @VsoMethod
@@ -214,6 +221,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method this will set the dhcpRanges
    * Dhcp ranges configured in nsxt.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcpRanges
    */
   @VsoMethod
@@ -230,6 +238,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Segment object name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -241,6 +250,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Segment object name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -252,6 +262,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwName
    */
   @VsoMethod
@@ -263,6 +274,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Network name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nwName set the nwName.
    */
   @VsoMethod
@@ -275,6 +287,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Corresponding network object in avi.
    * It is a reference to an object of type network.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwRef
    */
   @VsoMethod
@@ -287,6 +300,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Corresponding network object in avi.
    * It is a reference to an object of type network.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nwRef set the nwRef.
    */
   @VsoMethod
@@ -298,6 +312,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Opaque network id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opaqueNetworkId
    */
   @VsoMethod
@@ -309,6 +324,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Opaque network id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opaqueNetworkId set the opaqueNetworkId.
    */
   @VsoMethod
@@ -320,6 +336,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Segment gateway.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segmentGw
    */
   @VsoMethod
@@ -331,6 +348,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Segment gateway.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segmentGw set the segmentGw.
    */
   @VsoMethod
@@ -342,6 +360,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * V6 segment gateway.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segmentGw6
    */
   @VsoMethod
@@ -353,6 +372,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * V6 segment gateway.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segmentGw6 set the segmentGw6.
    */
   @VsoMethod
@@ -364,6 +384,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Segment id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segmentId
    */
   @VsoMethod
@@ -375,6 +396,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Segment id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segmentId set the segmentId.
    */
   @VsoMethod
@@ -386,6 +408,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Segment name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segname
    */
   @VsoMethod
@@ -397,6 +420,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Segment name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segname set the segname.
    */
   @VsoMethod
@@ -408,6 +432,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Segment cidr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -419,6 +444,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Segment cidr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -430,6 +456,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * V6 segment cidr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -441,6 +468,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * V6 segment cidr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */
   @VsoMethod
@@ -453,6 +481,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Nsxt segment belongs to tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -465,6 +494,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Nsxt segment belongs to tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -476,6 +506,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tier1 router id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Id
    */
   @VsoMethod
@@ -487,6 +518,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Tier1 router id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1Id set the tier1Id.
    */
   @VsoMethod
@@ -517,6 +549,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -528,6 +561,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -540,6 +574,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Corresponding vrf context object in avi.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfContextRef
    */
   @VsoMethod
@@ -552,6 +587,7 @@ public class NsxtSegmentRuntime extends AviRestResource {
    * Corresponding vrf context object in avi.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfContextRef set the vrfContextRef.
    */
   @VsoMethod

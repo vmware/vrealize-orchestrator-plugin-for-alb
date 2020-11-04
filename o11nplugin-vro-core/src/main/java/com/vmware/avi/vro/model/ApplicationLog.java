@@ -31,457 +31,457 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ApplicationLog extends AviRestResource {
-  @JsonProperty("adf")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean adf = false;
-
-  @JsonProperty("all_request_headers")
-  @JsonInclude(Include.NON_NULL)
-  private String allRequestHeaders = null;
-
-  @JsonProperty("all_response_headers")
-  @JsonInclude(Include.NON_NULL)
-  private String allResponseHeaders = null;
-
-  @JsonProperty("app_response_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer appResponseTime = null;
-
-  @JsonProperty("body_updated")
-  @JsonInclude(Include.NON_NULL)
-  private String bodyUpdated = "NOT_UPDATED";
-
-  @JsonProperty("cache_disabled_by_ds")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cacheDisabledByDs = false;
-
-  @JsonProperty("cache_hit")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cacheHit = false;
-
-  @JsonProperty("cacheable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cacheable = false;
-
-  @JsonProperty("cipher_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private String cipherBytes = null;
-
-  @JsonProperty("client_browser")
-  @JsonInclude(Include.NON_NULL)
-  private String clientBrowser = null;
-
-  @JsonProperty("client_cipher_list")
-  @JsonInclude(Include.NON_NULL)
-  private SSLCipherList clientCipherList = null;
-
-  @JsonProperty("client_dest_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientDestPort = null;
-
-  @JsonProperty("client_device")
-  @JsonInclude(Include.NON_NULL)
-  private String clientDevice = null;
-
-  @JsonProperty("client_insights")
-  @JsonInclude(Include.NON_NULL)
-  private String clientInsights = null;
-
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientIp = null;
-
-  @JsonProperty("client_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private String clientIp6 = null;
-
-  @JsonProperty("client_location")
-  @JsonInclude(Include.NON_NULL)
-  private String clientLocation = null;
-
-  @JsonProperty("client_log_filter_name")
-  @JsonInclude(Include.NON_NULL)
-  private String clientLogFilterName = null;
-
-  @JsonProperty("client_os")
-  @JsonInclude(Include.NON_NULL)
-  private String clientOs = null;
-
-  @JsonProperty("client_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientRtt = null;
-
-  @JsonProperty("client_src_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientSrcPort = null;
-
-  @JsonProperty("compression")
-  @JsonInclude(Include.NON_NULL)
-  private String compression = null;
-
-  @JsonProperty("compression_percentage")
-  @JsonInclude(Include.NON_NULL)
-  private Integer compressionPercentage = null;
-
-  @JsonProperty("connection_error_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConnErrorInfo connectionErrorInfo = null;
-
-  @JsonProperty("data_transfer_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dataTransferTime = null;
-
-  @JsonProperty("datascript_error_trace")
-  @JsonInclude(Include.NON_NULL)
-  private DataScriptErrorTrace datascriptErrorTrace = null;
-
-  @JsonProperty("datascript_log")
-  @JsonInclude(Include.NON_NULL)
-  private String datascriptLog = null;
-
-  @JsonProperty("etag")
-  @JsonInclude(Include.NON_NULL)
-  private String etag = null;
-
-  @JsonProperty("grpc_method_name")
-  @JsonInclude(Include.NON_NULL)
-  private String grpcMethodName = null;
-
-  @JsonProperty("grpc_service_name")
-  @JsonInclude(Include.NON_NULL)
-  private String grpcServiceName = null;
-
-  @JsonProperty("grpc_status")
-  @JsonInclude(Include.NON_NULL)
-  private Integer grpcStatus = null;
-
-  @JsonProperty("grpc_status_reason_phrase")
-  @JsonInclude(Include.NON_NULL)
-  private String grpcStatusReasonPhrase = null;
-
-  @JsonProperty("headers_received_from_server")
-  @JsonInclude(Include.NON_NULL)
-  private String headersReceivedFromServer = null;
-
-  @JsonProperty("headers_sent_to_server")
-  @JsonInclude(Include.NON_NULL)
-  private String headersSentToServer = null;
-
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
-
-  @JsonProperty("http2_stream_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer http2StreamId = null;
-
-  @JsonProperty("http_request_policy_rule_name")
-  @JsonInclude(Include.NON_NULL)
-  private String httpRequestPolicyRuleName = null;
-
-  @JsonProperty("http_response_policy_rule_name")
-  @JsonInclude(Include.NON_NULL)
-  private String httpResponsePolicyRuleName = null;
-
-  @JsonProperty("http_security_policy_rule_name")
-  @JsonInclude(Include.NON_NULL)
-  private String httpSecurityPolicyRuleName = null;
-
-  @JsonProperty("http_version")
-  @JsonInclude(Include.NON_NULL)
-  private String httpVersion = null;
-
-  @JsonProperty("icap_log")
-  @JsonInclude(Include.NON_NULL)
-  private IcapLog icapLog = null;
-
-  @JsonProperty("log_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer logId = null;
-
-  @JsonProperty("method")
-  @JsonInclude(Include.NON_NULL)
-  private String method = null;
-
-  @JsonProperty("microservice")
-  @JsonInclude(Include.NON_NULL)
-  private String microservice = null;
-
-  @JsonProperty("microservice_name")
-  @JsonInclude(Include.NON_NULL)
-  private String microserviceName = null;
-
-  @JsonProperty("network_security_policy_rule_name")
-  @JsonInclude(Include.NON_NULL)
-  private String networkSecurityPolicyRuleName = null;
-
-  @JsonProperty("ocsp_status_resp_sent")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ocspStatusRespSent = false;
-
-  @JsonProperty("paa_log")
-  @JsonInclude(Include.NON_NULL)
-  private PaaLog paaLog = null;
-
-  @JsonProperty("persistence_used")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean persistenceUsed = false;
-
-  @JsonProperty("persistent_session_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer persistentSessionId = null;
-
-  @JsonProperty("pool")
-  @JsonInclude(Include.NON_NULL)
-  private String pool = null;
-
-  @JsonProperty("pool_name")
-  @JsonInclude(Include.NON_NULL)
-  private String poolName = null;
-
-  @JsonProperty("redirected_uri")
-  @JsonInclude(Include.NON_NULL)
-  private String redirectedUri = null;
-
-  @JsonProperty("referer")
-  @JsonInclude(Include.NON_NULL)
-  private String referer = null;
-
-  @JsonProperty("report_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer reportTimestamp = null;
-
-  @JsonProperty("request_content_type")
-  @JsonInclude(Include.NON_NULL)
-  private String requestContentType = null;
-
-  @JsonProperty("request_headers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer requestHeaders = null;
-
-  @JsonProperty("request_id")
-  @JsonInclude(Include.NON_NULL)
-  private String requestId = null;
-
-  @JsonProperty("request_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer requestLength = null;
-
-  @JsonProperty("request_served_locally_remote_site_down")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean requestServedLocallyRemoteSiteDown = false;
-
-  @JsonProperty("request_state")
-  @JsonInclude(Include.NON_NULL)
-  private String requestState = null;
-
-  @JsonProperty("response_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseCode = null;
-
-  @JsonProperty("response_content_type")
-  @JsonInclude(Include.NON_NULL)
-  private String responseContentType = null;
-
-  @JsonProperty("response_headers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseHeaders = null;
-
-  @JsonProperty("response_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseLength = null;
-
-  @JsonProperty("response_time_first_byte")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseTimeFirstByte = null;
-
-  @JsonProperty("response_time_last_byte")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseTimeLastByte = null;
-
-  @JsonProperty("rewritten_uri_path")
-  @JsonInclude(Include.NON_NULL)
-  private String rewrittenUriPath = null;
-
-  @JsonProperty("rewritten_uri_query")
-  @JsonInclude(Include.NON_NULL)
-  private String rewrittenUriQuery = null;
-
-  @JsonProperty("saml_auth_request_generated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean samlAuthRequestGenerated = false;
-
-  @JsonProperty("saml_auth_response_received")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean samlAuthResponseReceived = false;
-
-  @JsonProperty("saml_auth_session_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer samlAuthSessionId = null;
-
-  @JsonProperty("saml_authentication_used")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean samlAuthenticationUsed = false;
-
-  @JsonProperty("saml_log")
-  @JsonInclude(Include.NON_NULL)
-  private SamlLog samlLog = null;
-
-  @JsonProperty("saml_session_cookie_valid")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean samlSessionCookieValid = false;
-
-  @JsonProperty("server_conn_src_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverConnSrcIp = null;
-
-  @JsonProperty("server_conn_src_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private String serverConnSrcIp6 = null;
-
-  @JsonProperty("server_connection_reused")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean serverConnectionReused = false;
-
-  @JsonProperty("server_dest_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverDestPort = null;
-
-  @JsonProperty("server_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverIp = null;
-
-  @JsonProperty("server_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private String serverIp6 = null;
-
-  @JsonProperty("server_name")
-  @JsonInclude(Include.NON_NULL)
-  private String serverName = null;
-
-  @JsonProperty("server_response_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverResponseCode = null;
-
-  @JsonProperty("server_response_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverResponseLength = null;
-
-  @JsonProperty("server_response_time_first_byte")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverResponseTimeFirstByte = null;
-
-  @JsonProperty("server_response_time_last_byte")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverResponseTimeLastByte = null;
-
-  @JsonProperty("server_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverRtt = null;
-
-  @JsonProperty("server_side_redirect_uri")
-  @JsonInclude(Include.NON_NULL)
-  private String serverSideRedirectUri = null;
-
-  @JsonProperty("server_src_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverSrcPort = null;
-
-  @JsonProperty("server_ssl_session_id")
-  @JsonInclude(Include.NON_NULL)
-  private String serverSslSessionId = null;
-
-  @JsonProperty("server_ssl_session_reused")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean serverSslSessionReused = false;
-
-  @JsonProperty("servers_tried")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serversTried = 0;
-
-  @JsonProperty("service_engine")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceEngine = null;
-
-  @JsonProperty("significance")
-  @JsonInclude(Include.NON_NULL)
-  private String significance = null;
-
-  @JsonProperty("significant")
-  @JsonInclude(Include.NON_NULL)
-  private Integer significant = null;
-
-  @JsonProperty("significant_log")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> significantLog = null;
-
-  @JsonProperty("sni_hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String sniHostname = null;
-
-  @JsonProperty("spdy_version")
-  @JsonInclude(Include.NON_NULL)
-  private String spdyVersion = null;
-
-  @JsonProperty("ssl_cipher")
-  @JsonInclude(Include.NON_NULL)
-  private String sslCipher = null;
-
-  @JsonProperty("ssl_session_id")
-  @JsonInclude(Include.NON_NULL)
-  private String sslSessionId = null;
-
-  @JsonProperty("ssl_version")
-  @JsonInclude(Include.NON_NULL)
-  private String sslVersion = null;
-
-  @JsonProperty("total_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer totalTime = null;
-
-  @JsonProperty("udf")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean udf = false;
-
-  @JsonProperty("uri_path")
-  @JsonInclude(Include.NON_NULL)
-  private String uriPath = null;
-
-  @JsonProperty("uri_query")
-  @JsonInclude(Include.NON_NULL)
-  private String uriQuery = null;
-
-  @JsonProperty("user_agent")
-  @JsonInclude(Include.NON_NULL)
-  private String userAgent = null;
-
-  @JsonProperty("user_id")
-  @JsonInclude(Include.NON_NULL)
-  private String userId = null;
-
-  @JsonProperty("vcpu_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcpuId = null;
-
-  @JsonProperty("virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualservice = null;
-
-  @JsonProperty("vs_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsIp = null;
-
-  @JsonProperty("vs_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private String vsIp6 = null;
-
-  @JsonProperty("waf_log")
-  @JsonInclude(Include.NON_NULL)
-  private WafLog wafLog = null;
-
-  @JsonProperty("xff")
-  @JsonInclude(Include.NON_NULL)
-  private String xff = null;
+    @JsonProperty("adf")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean adf = false;
+
+    @JsonProperty("all_request_headers")
+    @JsonInclude(Include.NON_NULL)
+    private String allRequestHeaders = null;
+
+    @JsonProperty("all_response_headers")
+    @JsonInclude(Include.NON_NULL)
+    private String allResponseHeaders = null;
+
+    @JsonProperty("app_response_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer appResponseTime = null;
+
+    @JsonProperty("body_updated")
+    @JsonInclude(Include.NON_NULL)
+    private String bodyUpdated = "NOT_UPDATED";
+
+    @JsonProperty("cache_disabled_by_ds")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cacheDisabledByDs = false;
+
+    @JsonProperty("cache_hit")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cacheHit = false;
+
+    @JsonProperty("cacheable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cacheable = false;
+
+    @JsonProperty("client_browser")
+    @JsonInclude(Include.NON_NULL)
+    private String clientBrowser = null;
+
+    @JsonProperty("client_cipher_list")
+    @JsonInclude(Include.NON_NULL)
+    private SSLCipherList clientCipherList = null;
+
+    @JsonProperty("client_dest_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientDestPort = null;
+
+    @JsonProperty("client_device")
+    @JsonInclude(Include.NON_NULL)
+    private String clientDevice = null;
+
+    @JsonProperty("client_insights")
+    @JsonInclude(Include.NON_NULL)
+    private String clientInsights = null;
+
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientIp = null;
+
+    @JsonProperty("client_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String clientIp6 = null;
+
+    @JsonProperty("client_location")
+    @JsonInclude(Include.NON_NULL)
+    private String clientLocation = null;
+
+    @JsonProperty("client_log_filter_name")
+    @JsonInclude(Include.NON_NULL)
+    private String clientLogFilterName = null;
+
+    @JsonProperty("client_os")
+    @JsonInclude(Include.NON_NULL)
+    private String clientOs = null;
+
+    @JsonProperty("client_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientRtt = null;
+
+    @JsonProperty("client_src_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientSrcPort = null;
+
+    @JsonProperty("compression")
+    @JsonInclude(Include.NON_NULL)
+    private String compression = null;
+
+    @JsonProperty("compression_percentage")
+    @JsonInclude(Include.NON_NULL)
+    private Integer compressionPercentage = null;
+
+    @JsonProperty("connection_error_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConnErrorInfo connectionErrorInfo = null;
+
+    @JsonProperty("critical_error_encountered")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean criticalErrorEncountered = false;
+
+    @JsonProperty("data_transfer_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dataTransferTime = null;
+
+    @JsonProperty("datascript_error_trace")
+    @JsonInclude(Include.NON_NULL)
+    private DataScriptErrorTrace datascriptErrorTrace = null;
+
+    @JsonProperty("datascript_log")
+    @JsonInclude(Include.NON_NULL)
+    private String datascriptLog = null;
+
+    @JsonProperty("etag")
+    @JsonInclude(Include.NON_NULL)
+    private String etag = null;
+
+    @JsonProperty("grpc_method_name")
+    @JsonInclude(Include.NON_NULL)
+    private String grpcMethodName = null;
+
+    @JsonProperty("grpc_service_name")
+    @JsonInclude(Include.NON_NULL)
+    private String grpcServiceName = null;
+
+    @JsonProperty("grpc_status")
+    @JsonInclude(Include.NON_NULL)
+    private Integer grpcStatus = null;
+
+    @JsonProperty("grpc_status_reason_phrase")
+    @JsonInclude(Include.NON_NULL)
+    private String grpcStatusReasonPhrase = null;
+
+    @JsonProperty("headers_received_from_server")
+    @JsonInclude(Include.NON_NULL)
+    private String headersReceivedFromServer = null;
+
+    @JsonProperty("headers_sent_to_server")
+    @JsonInclude(Include.NON_NULL)
+    private String headersSentToServer = null;
+
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
+
+    @JsonProperty("http2_stream_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer http2StreamId = null;
+
+    @JsonProperty("http_request_policy_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String httpRequestPolicyRuleName = null;
+
+    @JsonProperty("http_response_policy_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String httpResponsePolicyRuleName = null;
+
+    @JsonProperty("http_security_policy_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String httpSecurityPolicyRuleName = null;
+
+    @JsonProperty("http_version")
+    @JsonInclude(Include.NON_NULL)
+    private String httpVersion = null;
+
+    @JsonProperty("icap_log")
+    @JsonInclude(Include.NON_NULL)
+    private IcapLog icapLog = null;
+
+    @JsonProperty("log_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer logId = null;
+
+    @JsonProperty("method")
+    @JsonInclude(Include.NON_NULL)
+    private String method = null;
+
+    @JsonProperty("microservice")
+    @JsonInclude(Include.NON_NULL)
+    private String microservice = null;
+
+    @JsonProperty("microservice_name")
+    @JsonInclude(Include.NON_NULL)
+    private String microserviceName = null;
+
+    @JsonProperty("network_security_policy_rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String networkSecurityPolicyRuleName = null;
+
+    @JsonProperty("ocsp_status_resp_sent")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ocspStatusRespSent = false;
+
+    @JsonProperty("paa_log")
+    @JsonInclude(Include.NON_NULL)
+    private PaaLog paaLog = null;
+
+    @JsonProperty("persistence_used")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean persistenceUsed = false;
+
+    @JsonProperty("persistent_session_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer persistentSessionId = null;
+
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private String pool = null;
+
+    @JsonProperty("pool_name")
+    @JsonInclude(Include.NON_NULL)
+    private String poolName = null;
+
+    @JsonProperty("redirected_uri")
+    @JsonInclude(Include.NON_NULL)
+    private String redirectedUri = null;
+
+    @JsonProperty("referer")
+    @JsonInclude(Include.NON_NULL)
+    private String referer = null;
+
+    @JsonProperty("report_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer reportTimestamp = null;
+
+    @JsonProperty("request_content_type")
+    @JsonInclude(Include.NON_NULL)
+    private String requestContentType = null;
+
+    @JsonProperty("request_headers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer requestHeaders = null;
+
+    @JsonProperty("request_id")
+    @JsonInclude(Include.NON_NULL)
+    private String requestId = null;
+
+    @JsonProperty("request_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer requestLength = null;
+
+    @JsonProperty("request_served_locally_remote_site_down")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean requestServedLocallyRemoteSiteDown = false;
+
+    @JsonProperty("request_state")
+    @JsonInclude(Include.NON_NULL)
+    private String requestState = null;
+
+    @JsonProperty("response_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseCode = null;
+
+    @JsonProperty("response_content_type")
+    @JsonInclude(Include.NON_NULL)
+    private String responseContentType = null;
+
+    @JsonProperty("response_headers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseHeaders = null;
+
+    @JsonProperty("response_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseLength = null;
+
+    @JsonProperty("response_time_first_byte")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseTimeFirstByte = null;
+
+    @JsonProperty("response_time_last_byte")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseTimeLastByte = null;
+
+    @JsonProperty("rewritten_uri_path")
+    @JsonInclude(Include.NON_NULL)
+    private String rewrittenUriPath = null;
+
+    @JsonProperty("rewritten_uri_query")
+    @JsonInclude(Include.NON_NULL)
+    private String rewrittenUriQuery = null;
+
+    @JsonProperty("saml_auth_request_generated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean samlAuthRequestGenerated = false;
+
+    @JsonProperty("saml_auth_response_received")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean samlAuthResponseReceived = false;
+
+    @JsonProperty("saml_auth_session_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer samlAuthSessionId = null;
+
+    @JsonProperty("saml_authentication_used")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean samlAuthenticationUsed = false;
+
+    @JsonProperty("saml_log")
+    @JsonInclude(Include.NON_NULL)
+    private SamlLog samlLog = null;
+
+    @JsonProperty("saml_session_cookie_valid")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean samlSessionCookieValid = false;
+
+    @JsonProperty("server_conn_src_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverConnSrcIp = null;
+
+    @JsonProperty("server_conn_src_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String serverConnSrcIp6 = null;
+
+    @JsonProperty("server_connection_reused")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean serverConnectionReused = false;
+
+    @JsonProperty("server_dest_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverDestPort = null;
+
+    @JsonProperty("server_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverIp = null;
+
+    @JsonProperty("server_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String serverIp6 = null;
+
+    @JsonProperty("server_name")
+    @JsonInclude(Include.NON_NULL)
+    private String serverName = null;
+
+    @JsonProperty("server_response_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverResponseCode = null;
+
+    @JsonProperty("server_response_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverResponseLength = null;
+
+    @JsonProperty("server_response_time_first_byte")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverResponseTimeFirstByte = null;
+
+    @JsonProperty("server_response_time_last_byte")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverResponseTimeLastByte = null;
+
+    @JsonProperty("server_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverRtt = null;
+
+    @JsonProperty("server_side_redirect_uri")
+    @JsonInclude(Include.NON_NULL)
+    private String serverSideRedirectUri = null;
+
+    @JsonProperty("server_src_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverSrcPort = null;
+
+    @JsonProperty("server_ssl_session_id")
+    @JsonInclude(Include.NON_NULL)
+    private String serverSslSessionId = null;
+
+    @JsonProperty("server_ssl_session_reused")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean serverSslSessionReused = false;
+
+    @JsonProperty("servers_tried")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serversTried = 0;
+
+    @JsonProperty("service_engine")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceEngine = null;
+
+    @JsonProperty("significance")
+    @JsonInclude(Include.NON_NULL)
+    private String significance = null;
+
+    @JsonProperty("significant")
+    @JsonInclude(Include.NON_NULL)
+    private Integer significant = null;
+
+    @JsonProperty("significant_log")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> significantLog = null;
+
+    @JsonProperty("sni_hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String sniHostname = null;
+
+    @JsonProperty("spdy_version")
+    @JsonInclude(Include.NON_NULL)
+    private String spdyVersion = null;
+
+    @JsonProperty("ssl_cipher")
+    @JsonInclude(Include.NON_NULL)
+    private String sslCipher = null;
+
+    @JsonProperty("ssl_session_id")
+    @JsonInclude(Include.NON_NULL)
+    private String sslSessionId = null;
+
+    @JsonProperty("ssl_version")
+    @JsonInclude(Include.NON_NULL)
+    private String sslVersion = null;
+
+    @JsonProperty("total_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalTime = null;
+
+    @JsonProperty("udf")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean udf = false;
+
+    @JsonProperty("uri_path")
+    @JsonInclude(Include.NON_NULL)
+    private String uriPath = null;
+
+    @JsonProperty("uri_query")
+    @JsonInclude(Include.NON_NULL)
+    private String uriQuery = null;
+
+    @JsonProperty("user_agent")
+    @JsonInclude(Include.NON_NULL)
+    private String userAgent = null;
+
+    @JsonProperty("user_id")
+    @JsonInclude(Include.NON_NULL)
+    private String userId = null;
+
+    @JsonProperty("vcpu_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcpuId = null;
+
+    @JsonProperty("virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualservice = null;
+
+    @JsonProperty("vs_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsIp = null;
+
+    @JsonProperty("vs_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String vsIp6 = null;
+
+    @JsonProperty("waf_log")
+    @JsonInclude(Include.NON_NULL)
+    private WafLog wafLog = null;
+
+    @JsonProperty("xff")
+    @JsonInclude(Include.NON_NULL)
+    private String xff = null;
 
 
 
@@ -510,6 +510,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property all_request_headers of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allRequestHeaders
    */
   @VsoMethod
@@ -520,6 +521,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property all_request_headers of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allRequestHeaders set the allRequestHeaders.
    */
   @VsoMethod
@@ -530,6 +532,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property all_response_headers of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allResponseHeaders
    */
   @VsoMethod
@@ -540,6 +543,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property all_response_headers of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allResponseHeaders set the allResponseHeaders.
    */
   @VsoMethod
@@ -549,7 +553,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property app_response_time of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appResponseTime
    */
   @VsoMethod
@@ -559,7 +564,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property app_response_time of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appResponseTime set the appResponseTime.
    */
   @VsoMethod
@@ -571,7 +577,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as NOT_UPDATED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_UPDATED".
    * @return bodyUpdated
    */
   @VsoMethod
@@ -583,7 +589,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as NOT_UPDATED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_UPDATED".
    * @param bodyUpdated set the bodyUpdated.
    */
   @VsoMethod
@@ -661,29 +667,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Byte stream of client cipher list sent on ssl_r_no_shared_cipher error.
-   * Field introduced in 18.1.4, 18.2.1.
-   * @return cipherBytes
-   */
-  @VsoMethod
-  public String getCipherBytes() {
-    return cipherBytes;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Byte stream of client cipher list sent on ssl_r_no_shared_cipher error.
-   * Field introduced in 18.1.4, 18.2.1.
-   * @param cipherBytes set the cipherBytes.
-   */
-  @VsoMethod
-  public void setCipherBytes(String  cipherBytes) {
-    this.cipherBytes = cipherBytes;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_browser of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientBrowser
    */
   @VsoMethod
@@ -694,6 +679,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_browser of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientBrowser set the clientBrowser.
    */
   @VsoMethod
@@ -706,6 +692,7 @@ public class ApplicationLog extends AviRestResource {
    * List of ciphers sent by client in tls/ssl client hello.
    * Only sent when tls handshake fails due to no shared cipher.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientCipherList
    */
   @VsoMethod
@@ -718,6 +705,7 @@ public class ApplicationLog extends AviRestResource {
    * List of ciphers sent by client in tls/ssl client hello.
    * Only sent when tls handshake fails due to no shared cipher.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientCipherList set the clientCipherList.
    */
   @VsoMethod
@@ -728,6 +716,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_dest_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientDestPort
    */
   @VsoMethod
@@ -738,6 +727,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_dest_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientDestPort set the clientDestPort.
    */
   @VsoMethod
@@ -748,6 +738,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_device of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientDevice
    */
   @VsoMethod
@@ -758,6 +749,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_device of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientDevice set the clientDevice.
    */
   @VsoMethod
@@ -770,6 +762,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - INSIGHTS_DISABLED, NO_INSIGHTS_NOT_SAMPLED_COUNT, NO_INSIGHTS_NOT_SAMPLED_TYPE, NO_INSIGHTS_NOT_SAMPLED_SKIP_URI,
    * NO_INSIGHTS_NOT_SAMPLED_URI_NOT_IN_LIST, NO_INSIGHTS_NOT_SAMPLED_CLIENT_IP_NOT_IN_RANGE, NO_INSIGHTS_NOT_SAMPLED_OTHER, ACTIVE_INSIGHTS_FAILED,
    * ACTIVE_INSIGHTS_ENABLED, PASSIVE_INSIGHTS_ENABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientInsights
    */
   @VsoMethod
@@ -782,6 +775,7 @@ public class ApplicationLog extends AviRestResource {
    * Enum options - INSIGHTS_DISABLED, NO_INSIGHTS_NOT_SAMPLED_COUNT, NO_INSIGHTS_NOT_SAMPLED_TYPE, NO_INSIGHTS_NOT_SAMPLED_SKIP_URI,
    * NO_INSIGHTS_NOT_SAMPLED_URI_NOT_IN_LIST, NO_INSIGHTS_NOT_SAMPLED_CLIENT_IP_NOT_IN_RANGE, NO_INSIGHTS_NOT_SAMPLED_OTHER, ACTIVE_INSIGHTS_FAILED,
    * ACTIVE_INSIGHTS_ENABLED, PASSIVE_INSIGHTS_ENABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientInsights set the clientInsights.
    */
   @VsoMethod
@@ -792,6 +786,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_ip of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -802,6 +797,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_ip of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -813,6 +809,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the client.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp6
    */
   @VsoMethod
@@ -824,6 +821,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the client.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp6 set the clientIp6.
    */
   @VsoMethod
@@ -834,6 +832,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_location of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLocation
    */
   @VsoMethod
@@ -844,6 +843,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_location of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLocation set the clientLocation.
    */
   @VsoMethod
@@ -855,6 +855,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the client log filter applied.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogFilterName
    */
   @VsoMethod
@@ -866,6 +867,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the client log filter applied.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLogFilterName set the clientLogFilterName.
    */
   @VsoMethod
@@ -876,6 +878,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_os of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientOs
    */
   @VsoMethod
@@ -886,6 +889,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_os of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientOs set the clientOs.
    */
   @VsoMethod
@@ -895,7 +899,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property client_rtt of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientRtt
    */
   @VsoMethod
@@ -905,7 +910,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property client_rtt of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientRtt set the clientRtt.
    */
   @VsoMethod
@@ -916,6 +922,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_src_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientSrcPort
    */
   @VsoMethod
@@ -926,6 +933,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_src_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientSrcPort set the clientSrcPort.
    */
   @VsoMethod
@@ -937,6 +945,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - NO_COMPRESSION_DISABLED, NO_COMPRESSION_GZIP_CONTENT, NO_COMPRESSION_CONTENT_TYPE, NO_COMPRESSION_CUSTOM_FILTER,
    * NO_COMPRESSION_AUTO_FILTER, NO_COMPRESSION_MIN_LENGTH, NO_COMPRESSION_CAN_BE_COMPRESSED, COMPRESSED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compression
    */
   @VsoMethod
@@ -948,6 +957,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - NO_COMPRESSION_DISABLED, NO_COMPRESSION_GZIP_CONTENT, NO_COMPRESSION_CONTENT_TYPE, NO_COMPRESSION_CUSTOM_FILTER,
    * NO_COMPRESSION_AUTO_FILTER, NO_COMPRESSION_MIN_LENGTH, NO_COMPRESSION_CAN_BE_COMPRESSED, COMPRESSED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compression set the compression.
    */
   @VsoMethod
@@ -958,6 +968,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property compression_percentage of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compressionPercentage
    */
   @VsoMethod
@@ -968,6 +979,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property compression_percentage of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compressionPercentage set the compressionPercentage.
    */
   @VsoMethod
@@ -978,6 +990,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property connection_error_info of obj type applicationlog field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connectionErrorInfo
    */
   @VsoMethod
@@ -988,6 +1001,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property connection_error_info of obj type applicationlog field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connectionErrorInfo set the connectionErrorInfo.
    */
   @VsoMethod
@@ -997,7 +1011,32 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property data_transfer_time of obj type applicationlog field type str  type integer.
+   * Critical error encountered during request processing.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return criticalErrorEncountered
+   */
+  @VsoMethod
+  public Boolean getCriticalErrorEncountered() {
+    return criticalErrorEncountered;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Critical error encountered during request processing.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param criticalErrorEncountered set the criticalErrorEncountered.
+   */
+  @VsoMethod
+  public void setCriticalErrorEncountered(Boolean  criticalErrorEncountered) {
+    this.criticalErrorEncountered = criticalErrorEncountered;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataTransferTime
    */
   @VsoMethod
@@ -1007,7 +1046,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property data_transfer_time of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataTransferTime set the dataTransferTime.
    */
   @VsoMethod
@@ -1018,6 +1058,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datascript_error_trace of obj type applicationlog field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascriptErrorTrace
    */
   @VsoMethod
@@ -1028,6 +1069,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datascript_error_trace of obj type applicationlog field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datascriptErrorTrace set the datascriptErrorTrace.
    */
   @VsoMethod
@@ -1038,6 +1080,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Log created by the invocations of the datascript api avi.vs.log().
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascriptLog
    */
   @VsoMethod
@@ -1048,6 +1091,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Log created by the invocations of the datascript api avi.vs.log().
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datascriptLog set the datascriptLog.
    */
   @VsoMethod
@@ -1058,6 +1102,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property etag of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return etag
    */
   @VsoMethod
@@ -1068,6 +1113,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property etag of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param etag set the etag.
    */
   @VsoMethod
@@ -1079,6 +1125,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The method called by the grpc request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcMethodName
    */
   @VsoMethod
@@ -1090,6 +1137,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The method called by the grpc request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcMethodName set the grpcMethodName.
    */
   @VsoMethod
@@ -1101,6 +1149,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The service called by the grpc request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcServiceName
    */
   @VsoMethod
@@ -1112,6 +1161,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The service called by the grpc request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcServiceName set the grpcServiceName.
    */
   @VsoMethod
@@ -1124,6 +1174,7 @@ public class ApplicationLog extends AviRestResource {
    * Grpc response status sent in the grpc trailer.
    * Special values are -1- 'no grpc status recevied even though client sent content-type as application/grpc.'.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcStatus
    */
   @VsoMethod
@@ -1136,6 +1187,7 @@ public class ApplicationLog extends AviRestResource {
    * Grpc response status sent in the grpc trailer.
    * Special values are -1- 'no grpc status recevied even though client sent content-type as application/grpc.'.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcStatus set the grpcStatus.
    */
   @VsoMethod
@@ -1148,10 +1200,11 @@ public class ApplicationLog extends AviRestResource {
    * The reason phrase corresponding to the grpc status code.
    * Enum options - GRPC_STATUS_CODE_OK, GRPC_STATUS_CODE_CANCELLED, GRPC_STATUS_CODE_UNKNOWN, GRPC_STATUS_CODE_INVALID_ARGUMENT,
    * GRPC_STATUS_CODE_DEADLINE_EXCEEDED, GRPC_STATUS_CODE_NOT_FOUND, GRPC_STATUS_CODE_ALREADY_EXISTS, GRPC_STATUS_CODE_PERMISSION_DENIED,
-   * GRPC_STATUS_CODE_UNAUTHENTICATED, GRPC_STATUS_CODE_RESOURCE_EXHAUSTED, GRPC_STATUS_CODE_FAILED_PRECONDITION, GRPC_STATUS_CODE_ABORTED,
-   * GRPC_STATUS_CODE_OUT_OF_RANGE, GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE,
-   * GRPC_STATUS_CODE_DATA_LOSS.
+   * GRPC_STATUS_CODE_RESOURCE_EXHAUSTED, GRPC_STATUS_CODE_FAILED_PRECONDITION, GRPC_STATUS_CODE_STOPPED, GRPC_STATUS_CODE_OUT_OF_RANGE,
+   * GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE, GRPC_STATUS_CODE_DATA_LOSS,
+   * GRPC_STATUS_CODE_UNAUTHENTICATED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return grpcStatusReasonPhrase
    */
   @VsoMethod
@@ -1164,10 +1217,11 @@ public class ApplicationLog extends AviRestResource {
    * The reason phrase corresponding to the grpc status code.
    * Enum options - GRPC_STATUS_CODE_OK, GRPC_STATUS_CODE_CANCELLED, GRPC_STATUS_CODE_UNKNOWN, GRPC_STATUS_CODE_INVALID_ARGUMENT,
    * GRPC_STATUS_CODE_DEADLINE_EXCEEDED, GRPC_STATUS_CODE_NOT_FOUND, GRPC_STATUS_CODE_ALREADY_EXISTS, GRPC_STATUS_CODE_PERMISSION_DENIED,
-   * GRPC_STATUS_CODE_UNAUTHENTICATED, GRPC_STATUS_CODE_RESOURCE_EXHAUSTED, GRPC_STATUS_CODE_FAILED_PRECONDITION, GRPC_STATUS_CODE_ABORTED,
-   * GRPC_STATUS_CODE_OUT_OF_RANGE, GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE,
-   * GRPC_STATUS_CODE_DATA_LOSS.
+   * GRPC_STATUS_CODE_RESOURCE_EXHAUSTED, GRPC_STATUS_CODE_FAILED_PRECONDITION, GRPC_STATUS_CODE_STOPPED, GRPC_STATUS_CODE_OUT_OF_RANGE,
+   * GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE, GRPC_STATUS_CODE_DATA_LOSS,
+   * GRPC_STATUS_CODE_UNAUTHENTICATED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param grpcStatusReasonPhrase set the grpcStatusReasonPhrase.
    */
   @VsoMethod
@@ -1178,6 +1232,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Response headers received from backend server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersReceivedFromServer
    */
   @VsoMethod
@@ -1188,6 +1243,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Response headers received from backend server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersReceivedFromServer set the headersReceivedFromServer.
    */
   @VsoMethod
@@ -1198,6 +1254,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request headers sent to backend server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersSentToServer
    */
   @VsoMethod
@@ -1208,6 +1265,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request headers sent to backend server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersSentToServer set the headersSentToServer.
    */
   @VsoMethod
@@ -1218,6 +1276,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -1228,6 +1287,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -1239,6 +1299,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Stream identifier corresponding to an http2 request.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http2StreamId
    */
   @VsoMethod
@@ -1250,6 +1311,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Stream identifier corresponding to an http2 request.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http2StreamId set the http2StreamId.
    */
   @VsoMethod
@@ -1260,6 +1322,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property http_request_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpRequestPolicyRuleName
    */
   @VsoMethod
@@ -1270,6 +1333,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property http_request_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpRequestPolicyRuleName set the httpRequestPolicyRuleName.
    */
   @VsoMethod
@@ -1280,6 +1344,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property http_response_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponsePolicyRuleName
    */
   @VsoMethod
@@ -1290,6 +1355,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property http_response_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpResponsePolicyRuleName set the httpResponsePolicyRuleName.
    */
   @VsoMethod
@@ -1300,6 +1366,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property http_security_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpSecurityPolicyRuleName
    */
   @VsoMethod
@@ -1310,6 +1377,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property http_security_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpSecurityPolicyRuleName set the httpSecurityPolicyRuleName.
    */
   @VsoMethod
@@ -1320,6 +1388,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property http_version of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpVersion
    */
   @VsoMethod
@@ -1330,6 +1399,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property http_version of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpVersion set the httpVersion.
    */
   @VsoMethod
@@ -1341,6 +1411,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log for the icap processing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapLog
    */
   @VsoMethod
@@ -1352,6 +1423,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Log for the icap processing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param icapLog set the icapLog.
    */
   @VsoMethod
@@ -1362,6 +1434,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property log_id of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logId
    */
   @VsoMethod
@@ -1372,6 +1445,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property log_id of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param logId set the logId.
    */
   @VsoMethod
@@ -1382,6 +1456,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property method of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
   @VsoMethod
@@ -1392,6 +1467,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property method of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
   @VsoMethod
@@ -1402,6 +1478,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property microservice of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microservice
    */
   @VsoMethod
@@ -1412,6 +1489,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property microservice of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microservice set the microservice.
    */
   @VsoMethod
@@ -1422,6 +1500,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property microservice_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microserviceName
    */
   @VsoMethod
@@ -1432,6 +1511,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property microservice_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microserviceName set the microserviceName.
    */
   @VsoMethod
@@ -1442,6 +1522,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_security_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkSecurityPolicyRuleName
    */
   @VsoMethod
@@ -1452,6 +1533,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network_security_policy_rule_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkSecurityPolicyRuleName set the networkSecurityPolicyRuleName.
    */
   @VsoMethod
@@ -1487,6 +1569,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the pingaccess authentication process.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paaLog
    */
   @VsoMethod
@@ -1498,6 +1581,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for the pingaccess authentication process.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paaLog set the paaLog.
    */
   @VsoMethod
@@ -1530,6 +1614,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property persistent_session_id of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistentSessionId
    */
   @VsoMethod
@@ -1540,6 +1625,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property persistent_session_id of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistentSessionId set the persistentSessionId.
    */
   @VsoMethod
@@ -1550,6 +1636,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
   @VsoMethod
@@ -1560,6 +1647,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
   @VsoMethod
@@ -1570,6 +1658,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
   @VsoMethod
@@ -1580,6 +1669,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
   @VsoMethod
@@ -1590,6 +1680,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property redirected_uri of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirectedUri
    */
   @VsoMethod
@@ -1600,6 +1691,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property redirected_uri of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirectedUri set the redirectedUri.
    */
   @VsoMethod
@@ -1610,6 +1702,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property referer of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return referer
    */
   @VsoMethod
@@ -1620,6 +1713,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property referer of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param referer set the referer.
    */
   @VsoMethod
@@ -1630,6 +1724,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property report_timestamp of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportTimestamp
    */
   @VsoMethod
@@ -1640,6 +1735,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property report_timestamp of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportTimestamp set the reportTimestamp.
    */
   @VsoMethod
@@ -1650,6 +1746,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property request_content_type of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestContentType
    */
   @VsoMethod
@@ -1660,6 +1757,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property request_content_type of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestContentType set the requestContentType.
    */
   @VsoMethod
@@ -1670,6 +1768,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property request_headers of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestHeaders
    */
   @VsoMethod
@@ -1680,6 +1779,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property request_headers of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestHeaders set the requestHeaders.
    */
   @VsoMethod
@@ -1691,6 +1791,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Unique http request id.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestId
    */
   @VsoMethod
@@ -1702,6 +1803,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Unique http request id.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestId set the requestId.
    */
   @VsoMethod
@@ -1711,7 +1813,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property request_length of obj type applicationlog field type str  type integer.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLength
    */
   @VsoMethod
@@ -1721,7 +1824,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property request_length of obj type applicationlog field type str  type integer.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestLength set the requestLength.
    */
   @VsoMethod
@@ -1763,6 +1867,7 @@ public class ApplicationLog extends AviRestResource {
    * AVI_HTTP_REQUEST_STATE_READ_CLIENT_PIPELINE_REQ_LINE, AVI_HTTP_REQUEST_STATE_SSL_HANDSHAKE_TO_UPSTREAM,
    * AVI_HTTP_REQUEST_STATE_WAITING_IN_CONNPOOL_CACHE, AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_HEADER_TO_CLIENT,
    * AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_BODY_TO_CLIENT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestState
    */
   @VsoMethod
@@ -1780,6 +1885,7 @@ public class ApplicationLog extends AviRestResource {
    * AVI_HTTP_REQUEST_STATE_READ_CLIENT_PIPELINE_REQ_LINE, AVI_HTTP_REQUEST_STATE_SSL_HANDSHAKE_TO_UPSTREAM,
    * AVI_HTTP_REQUEST_STATE_WAITING_IN_CONNPOOL_CACHE, AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_HEADER_TO_CLIENT,
    * AVI_HTTP_REQUEST_STATE_SEND_RESPONSE_BODY_TO_CLIENT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestState set the requestState.
    */
   @VsoMethod
@@ -1790,6 +1896,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property response_code of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseCode
    */
   @VsoMethod
@@ -1800,6 +1907,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property response_code of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseCode set the responseCode.
    */
   @VsoMethod
@@ -1810,6 +1918,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property response_content_type of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseContentType
    */
   @VsoMethod
@@ -1820,6 +1929,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property response_content_type of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseContentType set the responseContentType.
    */
   @VsoMethod
@@ -1830,6 +1940,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property response_headers of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseHeaders
    */
   @VsoMethod
@@ -1840,6 +1951,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property response_headers of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseHeaders set the responseHeaders.
    */
   @VsoMethod
@@ -1849,7 +1961,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property response_length of obj type applicationlog field type str  type integer.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseLength
    */
   @VsoMethod
@@ -1859,7 +1972,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property response_length of obj type applicationlog field type str  type integer.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseLength set the responseLength.
    */
   @VsoMethod
@@ -1869,7 +1983,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property response_time_first_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseTimeFirstByte
    */
   @VsoMethod
@@ -1879,7 +1994,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property response_time_first_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseTimeFirstByte set the responseTimeFirstByte.
    */
   @VsoMethod
@@ -1889,7 +2005,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property response_time_last_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseTimeLastByte
    */
   @VsoMethod
@@ -1899,7 +2016,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property response_time_last_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseTimeLastByte set the responseTimeLastByte.
    */
   @VsoMethod
@@ -1910,6 +2028,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rewritten_uri_path of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewrittenUriPath
    */
   @VsoMethod
@@ -1920,6 +2039,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rewritten_uri_path of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewrittenUriPath set the rewrittenUriPath.
    */
   @VsoMethod
@@ -1930,6 +2050,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rewritten_uri_query of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewrittenUriQuery
    */
   @VsoMethod
@@ -1940,6 +2061,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rewritten_uri_query of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewrittenUriQuery set the rewrittenUriQuery.
    */
   @VsoMethod
@@ -1999,6 +2121,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication session id.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthSessionId
    */
   @VsoMethod
@@ -2010,6 +2133,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication session id.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthSessionId set the samlAuthSessionId.
    */
   @VsoMethod
@@ -2045,6 +2169,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for the saml authentication/authorization process.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlLog
    */
   @VsoMethod
@@ -2056,6 +2181,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Logs for the saml authentication/authorization process.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlLog set the samlLog.
    */
   @VsoMethod
@@ -2090,6 +2216,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_conn_src_ip of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverConnSrcIp
    */
   @VsoMethod
@@ -2100,6 +2227,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_conn_src_ip of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverConnSrcIp set the serverConnSrcIp.
    */
   @VsoMethod
@@ -2111,6 +2239,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address used to connect to server.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverConnSrcIp6
    */
   @VsoMethod
@@ -2122,6 +2251,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address used to connect to server.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverConnSrcIp6 set the serverConnSrcIp6.
    */
   @VsoMethod
@@ -2154,6 +2284,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_dest_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverDestPort
    */
   @VsoMethod
@@ -2164,6 +2295,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_dest_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverDestPort set the serverDestPort.
    */
   @VsoMethod
@@ -2174,6 +2306,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_ip of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -2184,6 +2317,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_ip of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
   @VsoMethod
@@ -2195,6 +2329,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the server.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp6
    */
   @VsoMethod
@@ -2206,6 +2341,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the server.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp6 set the serverIp6.
    */
   @VsoMethod
@@ -2216,6 +2352,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
   @VsoMethod
@@ -2226,6 +2363,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_name of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
   @VsoMethod
@@ -2236,6 +2374,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_response_code of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseCode
    */
   @VsoMethod
@@ -2246,6 +2385,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_response_code of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseCode set the serverResponseCode.
    */
   @VsoMethod
@@ -2255,7 +2395,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_response_length of obj type applicationlog field type str  type integer.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseLength
    */
   @VsoMethod
@@ -2265,7 +2406,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_response_length of obj type applicationlog field type str  type integer.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseLength set the serverResponseLength.
    */
   @VsoMethod
@@ -2275,7 +2417,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_response_time_first_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseTimeFirstByte
    */
   @VsoMethod
@@ -2285,7 +2428,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_response_time_first_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseTimeFirstByte set the serverResponseTimeFirstByte.
    */
   @VsoMethod
@@ -2295,7 +2439,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_response_time_last_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverResponseTimeLastByte
    */
   @VsoMethod
@@ -2305,7 +2450,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_response_time_last_byte of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverResponseTimeLastByte set the serverResponseTimeLastByte.
    */
   @VsoMethod
@@ -2315,7 +2461,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property server_rtt of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverRtt
    */
   @VsoMethod
@@ -2325,7 +2472,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property server_rtt of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverRtt set the serverRtt.
    */
   @VsoMethod
@@ -2336,6 +2484,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_side_redirect_uri of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverSideRedirectUri
    */
   @VsoMethod
@@ -2346,6 +2495,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_side_redirect_uri of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverSideRedirectUri set the serverSideRedirectUri.
    */
   @VsoMethod
@@ -2356,6 +2506,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_src_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverSrcPort
    */
   @VsoMethod
@@ -2366,6 +2517,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_src_port of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverSrcPort set the serverSrcPort.
    */
   @VsoMethod
@@ -2376,6 +2528,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ssl session id for the backend connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverSslSessionId
    */
   @VsoMethod
@@ -2386,6 +2539,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ssl session id for the backend connection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverSslSessionId set the serverSslSessionId.
    */
   @VsoMethod
@@ -2442,6 +2596,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property service_engine of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceEngine
    */
   @VsoMethod
@@ -2452,6 +2607,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property service_engine of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceEngine set the serviceEngine.
    */
   @VsoMethod
@@ -2462,6 +2618,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property significance of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significance
    */
   @VsoMethod
@@ -2472,6 +2629,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property significance of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param significance set the significance.
    */
   @VsoMethod
@@ -2482,6 +2640,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property significant of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significant
    */
   @VsoMethod
@@ -2492,6 +2651,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property significant of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param significant set the significant.
    */
   @VsoMethod
@@ -2507,6 +2667,7 @@ public class ApplicationLog extends AviRestResource {
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
    */
   @VsoMethod
@@ -2522,6 +2683,7 @@ public class ApplicationLog extends AviRestResource {
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
    */
   @VsoMethod
@@ -2537,6 +2699,7 @@ public class ApplicationLog extends AviRestResource {
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significantLog
    */
   @VsoMethod
@@ -2552,6 +2715,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sniHostname
    */
   @VsoMethod
@@ -2562,6 +2726,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sniHostname set the sniHostname.
    */
   @VsoMethod
@@ -2572,6 +2737,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property spdy_version of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spdyVersion
    */
   @VsoMethod
@@ -2582,6 +2748,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property spdy_version of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spdyVersion set the spdyVersion.
    */
   @VsoMethod
@@ -2592,6 +2759,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_cipher of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslCipher
    */
   @VsoMethod
@@ -2602,6 +2770,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_cipher of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslCipher set the sslCipher.
    */
   @VsoMethod
@@ -2612,6 +2781,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_session_id of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslSessionId
    */
   @VsoMethod
@@ -2622,6 +2792,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_session_id of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslSessionId set the sslSessionId.
    */
   @VsoMethod
@@ -2632,6 +2803,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_version of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslVersion
    */
   @VsoMethod
@@ -2642,6 +2814,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_version of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslVersion set the sslVersion.
    */
   @VsoMethod
@@ -2651,7 +2824,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property total_time of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalTime
    */
   @VsoMethod
@@ -2661,7 +2835,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property total_time of obj type applicationlog field type str  type integer.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalTime set the totalTime.
    */
   @VsoMethod
@@ -2694,6 +2869,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property uri_path of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriPath
    */
   @VsoMethod
@@ -2704,6 +2880,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property uri_path of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriPath set the uriPath.
    */
   @VsoMethod
@@ -2714,6 +2891,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property uri_query of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriQuery
    */
   @VsoMethod
@@ -2724,6 +2902,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property uri_query of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriQuery set the uriQuery.
    */
   @VsoMethod
@@ -2734,6 +2913,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property user_agent of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAgent
    */
   @VsoMethod
@@ -2744,6 +2924,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property user_agent of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userAgent set the userAgent.
    */
   @VsoMethod
@@ -2754,6 +2935,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property user_id of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userId
    */
   @VsoMethod
@@ -2764,6 +2946,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property user_id of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userId set the userId.
    */
   @VsoMethod
@@ -2774,6 +2957,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcpu_id of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcpuId
    */
   @VsoMethod
@@ -2784,6 +2968,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcpu_id of obj type applicationlog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcpuId set the vcpuId.
    */
   @VsoMethod
@@ -2794,6 +2979,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property virtualservice of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualservice
    */
   @VsoMethod
@@ -2804,6 +2990,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property virtualservice of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualservice set the virtualservice.
    */
   @VsoMethod
@@ -2814,6 +3001,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsIp
    */
   @VsoMethod
@@ -2824,6 +3012,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsIp set the vsIp.
    */
   @VsoMethod
@@ -2835,6 +3024,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual ipv6 address of the vs.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsIp6
    */
   @VsoMethod
@@ -2846,6 +3036,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual ipv6 address of the vs.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsIp6 set the vsIp6.
    */
   @VsoMethod
@@ -2857,6 +3048,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Presence of waf_log indicates that atleast 1 waf rule was hit for the transaction.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafLog
    */
   @VsoMethod
@@ -2868,6 +3060,7 @@ public class ApplicationLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Presence of waf_log indicates that atleast 1 waf rule was hit for the transaction.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafLog set the wafLog.
    */
   @VsoMethod
@@ -2878,6 +3071,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property xff of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return xff
    */
   @VsoMethod
@@ -2888,6 +3082,7 @@ public class ApplicationLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property xff of obj type applicationlog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param xff set the xff.
    */
   @VsoMethod
@@ -3001,7 +3196,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.requestId, objApplicationLog.requestId)&&
   Objects.equals(this.requestServedLocallyRemoteSiteDown, objApplicationLog.requestServedLocallyRemoteSiteDown)&&
   Objects.equals(this.http2StreamId, objApplicationLog.http2StreamId)&&
-  Objects.equals(this.cipherBytes, objApplicationLog.cipherBytes)&&
   Objects.equals(this.clientCipherList, objApplicationLog.clientCipherList)&&
   Objects.equals(this.clientLogFilterName, objApplicationLog.clientLogFilterName)&&
   Objects.equals(this.samlAuthenticationUsed, objApplicationLog.samlAuthenticationUsed)&&
@@ -3014,6 +3208,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cacheDisabledByDs, objApplicationLog.cacheDisabledByDs)&&
   Objects.equals(this.grpcStatus, objApplicationLog.grpcStatus)&&
   Objects.equals(this.ocspStatusRespSent, objApplicationLog.ocspStatusRespSent)&&
+  Objects.equals(this.criticalErrorEncountered, objApplicationLog.criticalErrorEncountered)&&
   Objects.equals(this.grpcServiceName, objApplicationLog.grpcServiceName)&&
   Objects.equals(this.grpcMethodName, objApplicationLog.grpcMethodName)&&
   Objects.equals(this.grpcStatusReasonPhrase, objApplicationLog.grpcStatusReasonPhrase)&&
@@ -3033,7 +3228,6 @@ public String toString() {
         sb.append("    cacheDisabledByDs: ").append(toIndentedString(cacheDisabledByDs)).append("\n");
         sb.append("    cacheHit: ").append(toIndentedString(cacheHit)).append("\n");
         sb.append("    cacheable: ").append(toIndentedString(cacheable)).append("\n");
-        sb.append("    cipherBytes: ").append(toIndentedString(cipherBytes)).append("\n");
         sb.append("    clientBrowser: ").append(toIndentedString(clientBrowser)).append("\n");
         sb.append("    clientCipherList: ").append(toIndentedString(clientCipherList)).append("\n");
         sb.append("    clientDestPort: ").append(toIndentedString(clientDestPort)).append("\n");
@@ -3049,6 +3243,7 @@ public String toString() {
         sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
         sb.append("    compressionPercentage: ").append(toIndentedString(compressionPercentage)).append("\n");
         sb.append("    connectionErrorInfo: ").append(toIndentedString(connectionErrorInfo)).append("\n");
+        sb.append("    criticalErrorEncountered: ").append(toIndentedString(criticalErrorEncountered)).append("\n");
         sb.append("    dataTransferTime: ").append(toIndentedString(dataTransferTime)).append("\n");
         sb.append("    datascriptErrorTrace: ").append(toIndentedString(datascriptErrorTrace)).append("\n");
         sb.append("    datascriptLog: ").append(toIndentedString(datascriptLog)).append("\n");

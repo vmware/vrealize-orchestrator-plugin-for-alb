@@ -26,25 +26,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeVipInterfaceList extends AviRestResource {
-  @JsonProperty("is_portchannel")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isPortchannel = false;
+    @JsonProperty("is_portchannel")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isPortchannel = false;
 
-  @JsonProperty("vip_intf_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vipIntfIp = null;
+    @JsonProperty("vip_intf_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vipIntfIp = null;
 
-  @JsonProperty("vip_intf_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vipIntfIp6 = null;
+    @JsonProperty("vip_intf_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vipIntfIp6 = null;
 
-  @JsonProperty("vip_intf_mac")
-  @JsonInclude(Include.NON_NULL)
-  private String vipIntfMac = null;
+    @JsonProperty("vip_intf_mac")
+    @JsonInclude(Include.NON_NULL)
+    private String vipIntfMac = null;
 
-  @JsonProperty("vlan_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vlanId = 0;
+    @JsonProperty("vlan_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vlanId = 0;
 
 
 
@@ -73,6 +73,7 @@ public class SeVipInterfaceList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_intf_ip of obj type sevipinterfacelist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfIp
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class SeVipInterfaceList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_intf_ip of obj type sevipinterfacelist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfIp set the vipIntfIp.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class SeVipInterfaceList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_intf_ip6 of obj type sevipinterfacelist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfIp6
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class SeVipInterfaceList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_intf_ip6 of obj type sevipinterfacelist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfIp6 set the vipIntfIp6.
    */
   @VsoMethod
@@ -113,6 +117,7 @@ public class SeVipInterfaceList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_intf_mac of obj type sevipinterfacelist field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfMac
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class SeVipInterfaceList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_intf_mac of obj type sevipinterfacelist field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfMac set the vipIntfMac.
    */
   @VsoMethod

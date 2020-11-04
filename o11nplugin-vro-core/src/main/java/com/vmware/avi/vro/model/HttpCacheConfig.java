@@ -25,73 +25,73 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HttpCacheConfig extends AviRestResource {
-  @JsonProperty("age_header")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ageHeader = true;
+    @JsonProperty("age_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ageHeader = true;
 
-  @JsonProperty("aggressive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aggressive = false;
+    @JsonProperty("aggressive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aggressive = false;
 
-  @JsonProperty("date_header")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dateHeader = true;
+    @JsonProperty("date_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dateHeader = true;
 
-  @JsonProperty("default_expire")
-  @JsonInclude(Include.NON_NULL)
-  private Integer defaultExpire = 600;
+    @JsonProperty("default_expire")
+    @JsonInclude(Include.NON_NULL)
+    private Integer defaultExpire = 600;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = false;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = false;
 
-  @JsonProperty("heuristic_expire")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean heuristicExpire = false;
+    @JsonProperty("heuristic_expire")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean heuristicExpire = false;
 
-  @JsonProperty("ignore_request_cache_control")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignoreRequestCacheControl = false;
+    @JsonProperty("ignore_request_cache_control")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreRequestCacheControl = false;
 
-  @JsonProperty("max_cache_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxCacheSize = 0;
+    @JsonProperty("max_cache_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxCacheSize = 0;
 
-  @JsonProperty("max_object_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxObjectSize = 4194304;
+    @JsonProperty("max_object_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxObjectSize = 4194304;
 
-  @JsonProperty("mime_types_black_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> mimeTypesBlackGroupRefs = null;
+    @JsonProperty("mime_types_black_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> mimeTypesBlackGroupRefs = null;
 
-  @JsonProperty("mime_types_black_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> mimeTypesBlackList = null;
+    @JsonProperty("mime_types_black_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> mimeTypesBlackList = null;
 
-  @JsonProperty("mime_types_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> mimeTypesGroupRefs = null;
+    @JsonProperty("mime_types_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> mimeTypesGroupRefs = null;
 
-  @JsonProperty("mime_types_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> mimeTypesList = null;
+    @JsonProperty("mime_types_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> mimeTypesList = null;
 
-  @JsonProperty("min_object_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minObjectSize = 100;
+    @JsonProperty("min_object_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minObjectSize = 100;
 
-  @JsonProperty("query_cacheable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean queryCacheable = false;
+    @JsonProperty("query_cacheable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean queryCacheable = false;
 
-  @JsonProperty("uri_non_cacheable")
-  @JsonInclude(Include.NON_NULL)
-  private PathMatch uriNonCacheable = null;
+    @JsonProperty("uri_non_cacheable")
+    @JsonInclude(Include.NON_NULL)
+    private PathMatch uriNonCacheable = null;
 
-  @JsonProperty("xcache_header")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean xcacheHeader = true;
+    @JsonProperty("xcache_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean xcacheHeader = true;
 
 
 
@@ -311,6 +311,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Blacklist string group of non-cacheable mime types.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlackGroupRefs
    */
   @VsoMethod
@@ -322,6 +323,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method. this will set the mimeTypesBlackGroupRefs
    * Blacklist string group of non-cacheable mime types.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlackGroupRefs
    */
   @VsoMethod
@@ -333,6 +335,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method this will set the mimeTypesBlackGroupRefs
    * Blacklist string group of non-cacheable mime types.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlackGroupRefs
    */
   @VsoMethod
@@ -348,6 +351,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Blacklist of non-cacheable mime types.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlackList
    */
   @VsoMethod
@@ -358,6 +362,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method. this will set the mimeTypesBlackList
    * Blacklist of non-cacheable mime types.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlackList
    */
   @VsoMethod
@@ -368,6 +373,7 @@ public class HttpCacheConfig extends AviRestResource {
   /**
    * This is the setter method this will set the mimeTypesBlackList
    * Blacklist of non-cacheable mime types.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesBlackList
    */
   @VsoMethod
@@ -385,6 +391,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Whitelist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesGroupRefs
    */
   @VsoMethod
@@ -397,6 +404,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Whitelist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesGroupRefs
    */
   @VsoMethod
@@ -409,6 +417,7 @@ public class HttpCacheConfig extends AviRestResource {
    * Whitelist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesGroupRefs
    */
   @VsoMethod
@@ -425,6 +434,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Whitelist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
    */
   @VsoMethod
@@ -436,6 +446,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method. this will set the mimeTypesList
    * Whitelist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
    */
   @VsoMethod
@@ -447,6 +458,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method this will set the mimeTypesList
    * Whitelist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
    */
   @VsoMethod
@@ -511,6 +523,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Non-cacheable uri configuration with match criteria.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriNonCacheable
    */
   @VsoMethod
@@ -522,6 +535,7 @@ public class HttpCacheConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Non-cacheable uri configuration with match criteria.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriNonCacheable set the uriNonCacheable.
    */
   @VsoMethod

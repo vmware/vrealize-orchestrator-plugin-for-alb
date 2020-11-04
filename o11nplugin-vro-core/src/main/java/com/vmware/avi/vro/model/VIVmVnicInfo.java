@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIVmVnicInfo extends AviRestResource {
-  @JsonProperty("mac_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddr = null;
+    @JsonProperty("mac_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddr = null;
 
-  @JsonProperty("vcenter_portgroup")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterPortgroup = null;
+    @JsonProperty("vcenter_portgroup")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterPortgroup = null;
 
-  @JsonProperty("vcenter_vnic_nw")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterVnicNw = null;
+    @JsonProperty("vcenter_vnic_nw")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterVnicNw = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac_addr of obj type vivmvnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddr
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VIVmVnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mac_addr of obj type vivmvnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddr set the macAddr.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VIVmVnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_portgroup of obj type vivmvnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterPortgroup
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class VIVmVnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_portgroup of obj type vivmvnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterPortgroup set the vcenterPortgroup.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class VIVmVnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - VNIC_VSWITCH, VNIC_DVS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicNw
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class VIVmVnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - VNIC_VSWITCH, VNIC_DVS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterVnicNw set the vcenterVnicNw.
    */
   @VsoMethod

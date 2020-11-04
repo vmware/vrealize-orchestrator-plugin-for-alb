@@ -24,45 +24,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerSizingLimits extends AviRestResource {
-  @JsonProperty("controller_sizing_cloud_limits")
-  @JsonInclude(Include.NON_NULL)
-  private List<ControllerSizingCloudLimits> controllerSizingCloudLimits = null;
+    @JsonProperty("controller_sizing_cloud_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<ControllerSizingCloudLimits> controllerSizingCloudLimits = null;
 
-  @JsonProperty("flavor")
-  @JsonInclude(Include.NON_NULL)
-  private String flavor = null;
+    @JsonProperty("flavor")
+    @JsonInclude(Include.NON_NULL)
+    private String flavor = null;
 
-  @JsonProperty("num_clouds")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numClouds = null;
+    @JsonProperty("num_clouds")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numClouds = null;
 
-  @JsonProperty("num_east_west_virtualservices")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numEastWestVirtualservices = null;
+    @JsonProperty("num_east_west_virtualservices")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numEastWestVirtualservices = null;
 
-  @JsonProperty("num_servers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numServers = null;
+    @JsonProperty("num_servers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numServers = null;
 
-  @JsonProperty("num_serviceengines")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numServiceengines = null;
+    @JsonProperty("num_serviceengines")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numServiceengines = null;
 
-  @JsonProperty("num_tenants")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numTenants = null;
+    @JsonProperty("num_tenants")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numTenants = null;
 
-  @JsonProperty("num_virtualservices")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVirtualservices = null;
+    @JsonProperty("num_virtualservices")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVirtualservices = null;
 
-  @JsonProperty("num_virtualservices_rt_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVirtualservicesRtMetrics = null;
+    @JsonProperty("num_virtualservices_rt_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVirtualservicesRtMetrics = null;
 
-  @JsonProperty("num_vrfs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVrfs = null;
+    @JsonProperty("num_vrfs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVrfs = null;
 
 
 
@@ -70,6 +70,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller system limits specific to cloud type for this controller sizing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizingCloudLimits
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method. this will set the controllerSizingCloudLimits
    * Controller system limits specific to cloud type for this controller sizing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizingCloudLimits
    */
   @VsoMethod
@@ -92,6 +94,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method this will set the controllerSizingCloudLimits
    * Controller system limits specific to cloud type for this controller sizing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizingCloudLimits
    */
   @VsoMethod
@@ -109,6 +112,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * Controller flavor (s/m/l) for this sizing limit.
    * Enum options - CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavor
    */
   @VsoMethod
@@ -121,6 +125,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * Controller flavor (s/m/l) for this sizing limit.
    * Enum options - CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flavor set the flavor.
    */
   @VsoMethod
@@ -132,6 +137,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of clouds.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numClouds
    */
   @VsoMethod
@@ -143,6 +149,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of clouds.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numClouds set the numClouds.
    */
   @VsoMethod
@@ -154,6 +161,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of east-west virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numEastWestVirtualservices
    */
   @VsoMethod
@@ -165,6 +173,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of east-west virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numEastWestVirtualservices set the numEastWestVirtualservices.
    */
   @VsoMethod
@@ -176,6 +185,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of servers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServers
    */
   @VsoMethod
@@ -187,6 +197,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of servers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServers set the numServers.
    */
   @VsoMethod
@@ -198,6 +209,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of serviceengines.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServiceengines
    */
   @VsoMethod
@@ -209,6 +221,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of serviceengines.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServiceengines set the numServiceengines.
    */
   @VsoMethod
@@ -220,6 +233,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of tenants.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numTenants
    */
   @VsoMethod
@@ -231,6 +245,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of tenants.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numTenants set the numTenants.
    */
   @VsoMethod
@@ -242,6 +257,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVirtualservices
    */
   @VsoMethod
@@ -253,6 +269,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVirtualservices set the numVirtualservices.
    */
   @VsoMethod
@@ -264,6 +281,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices with realtime metrics enabled.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVirtualservicesRtMetrics
    */
   @VsoMethod
@@ -275,6 +293,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices with realtime metrics enabled.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVirtualservicesRtMetrics set the numVirtualservicesRtMetrics.
    */
   @VsoMethod
@@ -286,6 +305,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of vrfcontexts.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVrfs
    */
   @VsoMethod
@@ -297,6 +317,7 @@ public class ControllerSizingLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of vrfcontexts.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVrfs set the numVrfs.
    */
   @VsoMethod

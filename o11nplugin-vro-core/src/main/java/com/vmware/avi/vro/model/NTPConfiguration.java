@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NTPConfiguration extends AviRestResource {
-  @JsonProperty("ntp_authentication_keys")
-  @JsonInclude(Include.NON_NULL)
-  private List<NTPAuthenticationKey> ntpAuthenticationKeys = null;
+    @JsonProperty("ntp_authentication_keys")
+    @JsonInclude(Include.NON_NULL)
+    private List<NTPAuthenticationKey> ntpAuthenticationKeys = null;
 
-  @JsonProperty("ntp_server_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> ntpServerList = null;
+    @JsonProperty("ntp_server_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> ntpServerList = null;
 
-  @JsonProperty("ntp_servers")
-  @JsonInclude(Include.NON_NULL)
-  private List<NTPServer> ntpServers = null;
+    @JsonProperty("ntp_servers")
+    @JsonInclude(Include.NON_NULL)
+    private List<NTPServer> ntpServers = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ntp authentication keys.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpAuthenticationKeys
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the ntpAuthenticationKeys
    * Ntp authentication keys.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpAuthenticationKeys
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the ntpAuthenticationKeys
    * Ntp authentication keys.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpAuthenticationKeys
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of ntp server hostnames or ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServerList
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the ntpServerList
    * List of ntp server hostnames or ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServerList
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the ntpServerList
    * List of ntp server hostnames or ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServerList
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of ntp servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the ntpServers
    * List of ntp servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */
   @VsoMethod
@@ -131,6 +139,7 @@ public class NTPConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the ntpServers
    * List of ntp servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ntpServers
    */
   @VsoMethod

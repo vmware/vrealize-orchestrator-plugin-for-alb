@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeVersionCheckFailedEvent extends AviRestResource {
-  @JsonProperty("controller_version")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerVersion = null;
+    @JsonProperty("controller_version")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerVersion = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("se_version")
-  @JsonInclude(Include.NON_NULL)
-  private String seVersion = null;
+    @JsonProperty("se_version")
+    @JsonInclude(Include.NON_NULL)
+    private String seVersion = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Software version on the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerVersion
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class SeVersionCheckFailedEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Software version on the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerVersion set the controllerVersion.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class SeVersionCheckFailedEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class SeVersionCheckFailedEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class SeVersionCheckFailedEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Software version on the se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVersion
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class SeVersionCheckFailedEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Software version on the se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVersion set the seVersion.
    */
   @VsoMethod

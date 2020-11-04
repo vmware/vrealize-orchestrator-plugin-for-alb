@@ -27,49 +27,57 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPPolicySet extends AviRestResource {
-  @JsonProperty("cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudConfigCksum = null;
+    @JsonProperty("cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudConfigCksum = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("http_request_policy")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPRequestPolicy httpRequestPolicy = null;
+    @JsonProperty("http_request_policy")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPRequestPolicy httpRequestPolicy = null;
 
-  @JsonProperty("http_response_policy")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPResponsePolicy httpResponsePolicy = null;
+    @JsonProperty("http_response_policy")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPResponsePolicy httpResponsePolicy = null;
 
-  @JsonProperty("http_security_policy")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPSecurityPolicy httpSecurityPolicy = null;
+    @JsonProperty("http_security_policy")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPSecurityPolicy httpSecurityPolicy = null;
 
-  @JsonProperty("is_internal_policy")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isInternalPolicy = false;
+    @JsonProperty("ip_reputation_db_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String ipReputationDbRef = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("is_internal_policy")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isInternalPolicy = false;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -77,6 +85,7 @@ public class HTTPPolicySet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Checksum of cloud configuration for pool.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
   @VsoMethod
@@ -88,6 +97,7 @@ public class HTTPPolicySet extends AviRestResource {
    * This is the setter method to the attribute.
    * Checksum of cloud configuration for pool.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
   @VsoMethod
@@ -98,6 +108,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -108,6 +119,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -118,6 +130,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -128,6 +141,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -138,6 +152,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http request policy for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpRequestPolicy
    */
   @VsoMethod
@@ -148,6 +163,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http request policy for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpRequestPolicy set the httpRequestPolicy.
    */
   @VsoMethod
@@ -158,6 +174,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http response policy for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponsePolicy
    */
   @VsoMethod
@@ -168,6 +185,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http response policy for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpResponsePolicy set the httpResponsePolicy.
    */
   @VsoMethod
@@ -178,6 +196,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http security policy for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpSecurityPolicy
    */
   @VsoMethod
@@ -188,11 +207,38 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http security policy for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpSecurityPolicy set the httpSecurityPolicy.
    */
   @VsoMethod
   public void setHttpSecurityPolicy(HTTPSecurityPolicy httpSecurityPolicy) {
     this.httpSecurityPolicy = httpSecurityPolicy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ip reputation database.
+   * It is a reference to an object of type ipreputationdb.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipReputationDbRef
+   */
+  @VsoMethod
+  public String getIpReputationDbRef() {
+    return ipReputationDbRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip reputation database.
+   * It is a reference to an object of type ipreputationdb.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ipReputationDbRef set the ipReputationDbRef.
+   */
+  @VsoMethod
+  public void setIpReputationDbRef(String  ipReputationDbRef) {
+    this.ipReputationDbRef = ipReputationDbRef;
   }
 
   /**
@@ -219,7 +265,52 @@ public class HTTPPolicySet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public HTTPPolicySet addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the http policy set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -230,6 +321,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the http policy set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -240,6 +332,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -250,6 +343,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -279,6 +373,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the http policy set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -289,6 +384,7 @@ public class HTTPPolicySet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the http policy set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -317,6 +413,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.httpResponsePolicy, objHTTPPolicySet.httpResponsePolicy)&&
   Objects.equals(this.createdBy, objHTTPPolicySet.createdBy)&&
   Objects.equals(this.cloudConfigCksum, objHTTPPolicySet.cloudConfigCksum)&&
+  Objects.equals(this.labels, objHTTPPolicySet.labels)&&
+  Objects.equals(this.ipReputationDbRef, objHTTPPolicySet.ipReputationDbRef)&&
   Objects.equals(this.isInternalPolicy, objHTTPPolicySet.isInternalPolicy)&&
   Objects.equals(this.description, objHTTPPolicySet.description)&&
   Objects.equals(this.tenantRef, objHTTPPolicySet.tenantRef);
@@ -332,7 +430,9 @@ public String toString() {
         sb.append("    httpRequestPolicy: ").append(toIndentedString(httpRequestPolicy)).append("\n");
         sb.append("    httpResponsePolicy: ").append(toIndentedString(httpResponsePolicy)).append("\n");
         sb.append("    httpSecurityPolicy: ").append(toIndentedString(httpSecurityPolicy)).append("\n");
+        sb.append("    ipReputationDbRef: ").append(toIndentedString(ipReputationDbRef)).append("\n");
         sb.append("    isInternalPolicy: ").append(toIndentedString(isInternalPolicy)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

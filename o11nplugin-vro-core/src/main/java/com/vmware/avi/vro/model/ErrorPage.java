@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ErrorPage extends AviRestResource {
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("error_page_body_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String errorPageBodyRef = null;
+    @JsonProperty("error_page_body_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String errorPageBodyRef = null;
 
-  @JsonProperty("error_redirect")
-  @JsonInclude(Include.NON_NULL)
-  private String errorRedirect = null;
+    @JsonProperty("error_redirect")
+    @JsonInclude(Include.NON_NULL)
+    private String errorRedirect = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPStatusMatch match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPStatusMatch match = null;
 
 
 
@@ -76,6 +76,7 @@ public class ErrorPage extends AviRestResource {
    * Custom error page body used to sent to the client.
    * It is a reference to an object of type errorpagebody.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorPageBodyRef
    */
   @VsoMethod
@@ -88,6 +89,7 @@ public class ErrorPage extends AviRestResource {
    * Custom error page body used to sent to the client.
    * It is a reference to an object of type errorpagebody.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorPageBodyRef set the errorPageBodyRef.
    */
   @VsoMethod
@@ -99,6 +101,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Redirect sent to client when match.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorRedirect
    */
   @VsoMethod
@@ -110,6 +113,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Redirect sent to client when match.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorRedirect set the errorRedirect.
    */
   @VsoMethod
@@ -121,6 +125,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the error page.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -132,6 +137,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the error page.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -143,6 +149,7 @@ public class ErrorPage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add match criteria for http status codes to the error page.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -154,6 +161,7 @@ public class ErrorPage extends AviRestResource {
    * This is the setter method to the attribute.
    * Add match criteria for http status codes to the error page.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod

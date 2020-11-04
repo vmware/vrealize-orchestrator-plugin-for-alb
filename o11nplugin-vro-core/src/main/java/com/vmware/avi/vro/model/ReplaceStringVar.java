@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ReplaceStringVar extends AviRestResource {
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("val")
-  @JsonInclude(Include.NON_NULL)
-  private String val = null;
+    @JsonProperty("val")
+    @JsonInclude(Include.NON_NULL)
+    private String val = null;
 
 
 
@@ -38,6 +38,7 @@ public class ReplaceStringVar extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of replacement string - can be a variable exposed from datascript, value of an http header or a custom user-input literal string.
    * Enum options - DATASCRIPT_VAR, HTTP_HEADER_VAR, LITERAL_STRING.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class ReplaceStringVar extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of replacement string - can be a variable exposed from datascript, value of an http header or a custom user-input literal string.
    * Enum options - DATASCRIPT_VAR, HTTP_HEADER_VAR, LITERAL_STRING.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class ReplaceStringVar extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Value of the replacement string - name of variable exposed from datascript, name of the http header or a custom user-input literal string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return val
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class ReplaceStringVar extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Value of the replacement string - name of variable exposed from datascript, name of the http header or a custom user-input literal string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param val set the val.
    */
   @VsoMethod

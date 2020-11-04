@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsZone extends AviRestResource {
-  @JsonProperty("admin_email")
-  @JsonInclude(Include.NON_NULL)
-  private String adminEmail = null;
+    @JsonProperty("admin_email")
+    @JsonInclude(Include.NON_NULL)
+    private String adminEmail = null;
 
-  @JsonProperty("domain_name")
-  @JsonInclude(Include.NON_NULL)
-  private String domainName = null;
+    @JsonProperty("domain_name")
+    @JsonInclude(Include.NON_NULL)
+    private String domainName = null;
 
-  @JsonProperty("name_server")
-  @JsonInclude(Include.NON_NULL)
-  private String nameServer = null;
+    @JsonProperty("name_server")
+    @JsonInclude(Include.NON_NULL)
+    private String nameServer = null;
 
 
 
@@ -44,6 +44,7 @@ public class DnsZone extends AviRestResource {
    * This field is used in soa records as rname (rfc 1035).
    * If not configured, it is inherited from the dns service profile.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminEmail
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class DnsZone extends AviRestResource {
    * This field is used in soa records as rname (rfc 1035).
    * If not configured, it is inherited from the dns service profile.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminEmail set the adminEmail.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class DnsZone extends AviRestResource {
    * Queries for fqdns that are sub domains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
    * For domains which are present, soa parameters are sent in answer section of response if query type is soa.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class DnsZone extends AviRestResource {
    * Queries for fqdns that are sub domains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
    * For domains which are present, soa parameters are sent in answer section of response if query type is soa.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param domainName set the domainName.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class DnsZone extends AviRestResource {
    * If not configured, it is inherited from the dns service profile.
    * If even that is not configured, the domain name is used instead.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nameServer
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class DnsZone extends AviRestResource {
    * If not configured, it is inherited from the dns service profile.
    * If even that is not configured, the domain name is used instead.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nameServer set the nameServer.
    */
   @VsoMethod

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PathMatch extends AviRestResource {
-  @JsonProperty("match_case")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCase = "INSENSITIVE";
+    @JsonProperty("match_case")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCase = "INSENSITIVE";
 
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = "CONTAINS";
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = "CONTAINS";
 
-  @JsonProperty("match_str")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> matchStr = null;
+    @JsonProperty("match_str")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> matchStr = null;
 
-  @JsonProperty("string_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> stringGroupRefs = null;
+    @JsonProperty("string_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> stringGroupRefs = null;
 
 
 
@@ -46,7 +46,7 @@ public class PathMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Case sensitivity to use for the matching.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class PathMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Case sensitivity to use for the matching.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
   @VsoMethod
@@ -71,7 +71,7 @@ public class PathMatch extends AviRestResource {
    * Criterion to use for matching the path in the http request uri.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONTAINS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CONTAINS".
    * @return matchCriteria
    */
   @VsoMethod
@@ -84,7 +84,7 @@ public class PathMatch extends AviRestResource {
    * Criterion to use for matching the path in the http request uri.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONTAINS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CONTAINS".
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -95,6 +95,7 @@ public class PathMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String values.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -105,6 +106,7 @@ public class PathMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the matchStr
    * String values.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -115,6 +117,7 @@ public class PathMatch extends AviRestResource {
   /**
    * This is the setter method this will set the matchStr
    * String values.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -131,6 +134,7 @@ public class PathMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -142,6 +146,7 @@ public class PathMatch extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -153,6 +158,7 @@ public class PathMatch extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod

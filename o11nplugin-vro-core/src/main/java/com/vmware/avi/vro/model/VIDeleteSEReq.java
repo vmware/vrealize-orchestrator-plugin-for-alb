@@ -25,27 +25,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIDeleteSEReq extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("segroup_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String segroupUuid = null;
+    @JsonProperty("segroup_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String segroupUuid = null;
 
-  @JsonProperty("sevm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String sevmUuid = null;
+    @JsonProperty("sevm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String sevmUuid = null;
 
-  @JsonProperty("vcenter_admin")
-  @JsonInclude(Include.NON_NULL)
-  private VIAdminCredentials vcenterAdmin = null;
+    @JsonProperty("vcenter_admin")
+    @JsonInclude(Include.NON_NULL)
+    private VIAdminCredentials vcenterAdmin = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -56,6 +57,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of segroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segroupUuid
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of segroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segroupUuid set the segroupUuid.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of sevm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sevmUuid
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of sevm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sevmUuid set the sevmUuid.
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_admin of obj type videletesereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterAdmin
    */
   @VsoMethod
@@ -116,6 +123,7 @@ public class VIDeleteSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_admin of obj type videletesereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterAdmin set the vcenterAdmin.
    */
   @VsoMethod

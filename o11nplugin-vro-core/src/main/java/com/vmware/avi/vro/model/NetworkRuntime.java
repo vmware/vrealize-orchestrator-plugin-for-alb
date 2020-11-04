@@ -24,35 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkRuntime extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUuid = null;
+    @JsonProperty("obj_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> objUuids = null;
 
-  @JsonProperty("subnet_runtime")
-  @JsonInclude(Include.NON_NULL)
-  private List<SubnetRuntime> subnetRuntime = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUuid = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("subnet_runtime")
+    @JsonInclude(Include.NON_NULL)
+    private List<SubnetRuntime> subnetRuntime = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -63,6 +68,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -72,7 +78,49 @@ public class NetworkRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Objects using static ips in this network.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return objUuids
+   */
+  @VsoMethod
+  public List<String> getObjUuids() {
+    return objUuids;
+  }
+
+  /**
+   * This is the setter method. this will set the objUuids
+   * Objects using static ips in this network.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return objUuids
+   */
+  @VsoMethod
+  public void setObjUuids(List<String>  objUuids) {
+    this.objUuids = objUuids;
+  }
+
+  /**
+   * This is the setter method this will set the objUuids
+   * Objects using static ips in this network.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return objUuids
+   */
+  @VsoMethod
+  public NetworkRuntime addObjUuidsItem(String objUuidsItem) {
+    if (this.objUuids == null) {
+      this.objUuids = new ArrayList<String>();
+    }
+    this.objUuids.add(objUuidsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -83,6 +131,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the seUuid
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -93,6 +142,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the seUuid
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -108,6 +158,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet_runtime of obj type networkruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetRuntime
    */
   @VsoMethod
@@ -118,6 +169,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the subnetRuntime
    * Placeholder for description of property subnet_runtime of obj type networkruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetRuntime
    */
   @VsoMethod
@@ -128,6 +180,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the subnetRuntime
    * Placeholder for description of property subnet_runtime of obj type networkruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetRuntime
    */
   @VsoMethod
@@ -143,6 +196,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -153,6 +207,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -182,6 +237,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -192,6 +248,7 @@ public class NetworkRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -217,6 +274,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objNetworkRuntime.name)&&
   Objects.equals(this.subnetRuntime, objNetworkRuntime.subnetRuntime)&&
   Objects.equals(this.seUuid, objNetworkRuntime.seUuid)&&
+  Objects.equals(this.objUuids, objNetworkRuntime.objUuids)&&
   Objects.equals(this.tenantRef, objNetworkRuntime.tenantRef);
 }
 
@@ -225,6 +283,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class NetworkRuntime {\n");
       sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    objUuids: ").append(toIndentedString(objUuids)).append("\n");
         sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
         sb.append("    subnetRuntime: ").append(toIndentedString(subnetRuntime)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

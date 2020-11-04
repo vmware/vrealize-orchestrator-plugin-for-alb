@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerPortalAuth extends AviRestResource {
-  @JsonProperty("access_token")
-  @JsonInclude(Include.NON_NULL)
-  private String accessToken = null;
+    @JsonProperty("access_token")
+    @JsonInclude(Include.NON_NULL)
+    private String accessToken = null;
 
-  @JsonProperty("instance_url")
-  @JsonInclude(Include.NON_NULL)
-  private String instanceUrl = null;
+    @JsonProperty("instance_url")
+    @JsonInclude(Include.NON_NULL)
+    private String instanceUrl = null;
 
-  @JsonProperty("jwt_token")
-  @JsonInclude(Include.NON_NULL)
-  private String jwtToken = null;
+    @JsonProperty("jwt_token")
+    @JsonInclude(Include.NON_NULL)
+    private String jwtToken = null;
 
 
 
@@ -42,6 +42,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Access token to authenticate customer portal rest calls.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessToken
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Access token to authenticate customer portal rest calls.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessToken set the accessToken.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Salesforce instance url.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return instanceUrl
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Salesforce instance url.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param instanceUrl set the instanceUrl.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Signed jwt to refresh the access token.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return jwtToken
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class ControllerPortalAuth extends AviRestResource {
    * This is the setter method to the attribute.
    * Signed jwt to refresh the access token.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param jwtToken set the jwtToken.
    */
   @VsoMethod

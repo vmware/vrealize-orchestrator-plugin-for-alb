@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeVnicUpEventDetails extends AviRestResource {
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("linux_name")
-  @JsonInclude(Include.NON_NULL)
-  private String linuxName = null;
+    @JsonProperty("linux_name")
+    @JsonInclude(Include.NON_NULL)
+    private String linuxName = null;
 
-  @JsonProperty("mac")
-  @JsonInclude(Include.NON_NULL)
-  private String mac = null;
+    @JsonProperty("mac")
+    @JsonInclude(Include.NON_NULL)
+    private String mac = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic linux name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return linuxName
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic linux name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param linuxName set the linuxName.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mac
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mac set the mac.
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -117,6 +124,7 @@ public class SeVnicUpEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod

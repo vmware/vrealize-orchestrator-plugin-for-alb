@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthProfileHTTPClientParams extends AviRestResource {
-  @JsonProperty("cache_expiration_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cacheExpirationTime = 5;
+    @JsonProperty("cache_expiration_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cacheExpirationTime = 5;
 
-  @JsonProperty("group_member_is_full_dn")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean groupMemberIsFullDn = false;
+    @JsonProperty("group_member_is_full_dn")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean groupMemberIsFullDn;
 
-  @JsonProperty("request_header")
-  @JsonInclude(Include.NON_NULL)
-  private String requestHeader = null;
+    @JsonProperty("request_header")
+    @JsonInclude(Include.NON_NULL)
+    private String requestHeader = null;
 
-  @JsonProperty("require_user_groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> requireUserGroups = null;
+    @JsonProperty("require_user_groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> requireUserGroups = null;
 
 
 
@@ -46,6 +46,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The max allowed length of time a clients authentication is cached.
    * Allowed values are 1-30.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return cacheExpirationTime
    */
@@ -58,6 +59,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * This is the setter method to the attribute.
    * The max allowed length of time a clients authentication is cached.
    * Allowed values are 1-30.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param cacheExpirationTime set the cacheExpirationTime.
    */
@@ -71,7 +73,6 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * Group member entries contain full dns instead of just user id attribute values.
    * This should now be configured using the ldapdirectorysettings field instead.
    * Field deprecated in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return groupMemberIsFullDn
    */
   @VsoMethod
@@ -84,7 +85,6 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * Group member entries contain full dns instead of just user id attribute values.
    * This should now be configured using the ldapdirectorysettings field instead.
    * Field deprecated in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param groupMemberIsFullDn set the groupMemberIsFullDn.
    */
   @VsoMethod
@@ -97,6 +97,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * Insert an http header.
    * This field is used to define the header name.
    * The value of the header is set to the client's http auth user id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestHeader
    */
   @VsoMethod
@@ -109,6 +110,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * Insert an http header.
    * This field is used to define the header name.
    * The value of the header is set to the client's http auth user id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestHeader set the requestHeader.
    */
   @VsoMethod
@@ -121,6 +123,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * A user should be a member of these groups.
    * Each group is defined by the dn.
    * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requireUserGroups
    */
   @VsoMethod
@@ -133,6 +136,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * A user should be a member of these groups.
    * Each group is defined by the dn.
    * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requireUserGroups
    */
   @VsoMethod
@@ -145,6 +149,7 @@ public class AuthProfileHTTPClientParams extends AviRestResource {
    * A user should be a member of these groups.
    * Each group is defined by the dn.
    * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requireUserGroups
    */
   @VsoMethod

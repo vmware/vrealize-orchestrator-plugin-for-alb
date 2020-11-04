@@ -32,143 +32,144 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VirtualServiceRuntime extends AviRestResource {
-  @JsonProperty("apic_extension")
-  @JsonInclude(Include.NON_NULL)
-  private VsApicExtension apicExtension = null;
+    @JsonProperty("apic_extension")
+    @JsonInclude(Include.NON_NULL)
+    private VsApicExtension apicExtension = null;
 
-  @JsonProperty("controller_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerIp = null;
+    @JsonProperty("controller_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerIp = null;
 
-  @JsonProperty("datapath_debug")
-  @JsonInclude(Include.NON_NULL)
-  private DebugVirtualService datapathDebug = null;
+    @JsonProperty("datapath_debug")
+    @JsonInclude(Include.NON_NULL)
+    private DebugVirtualService datapathDebug = null;
 
-  @JsonProperty("east_west")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean eastWest = false;
+    @JsonProperty("east_west")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean eastWest = false;
 
-  @JsonProperty("gslb_dns_geo_update")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDnsGeoUpdate gslbDnsGeoUpdate = null;
+    @JsonProperty("gslb_dns_geo_update")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDnsGeoUpdate gslbDnsGeoUpdate;
 
-  @JsonProperty("gslb_dns_update")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDnsUpdate gslbDnsUpdate = null;
+    @JsonProperty("gslb_dns_update")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDnsUpdate gslbDnsUpdate = null;
 
-  @JsonProperty("ipam_dns_records")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsRecord> ipamDnsRecords = null;
+    @JsonProperty("ipam_dns_records")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsRecord> ipamDnsRecords = null;
 
-  @JsonProperty("is_dns_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isDnsVs = false;
+    @JsonProperty("is_dns_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isDnsVs = false;
 
-  @JsonProperty("key_rotation_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer keyRotationCount = null;
+    @JsonProperty("key_rotation_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer keyRotationCount = null;
 
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("last_key_rotation_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastKeyRotationTime = null;
+    @JsonProperty("last_key_rotation_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastKeyRotationTime = null;
 
-  @JsonProperty("lif")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> lif = null;
+    @JsonProperty("lif")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> lif = null;
 
-  @JsonProperty("manual_placement")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean manualPlacement = false;
+    @JsonProperty("manual_placement")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean manualPlacement = false;
 
-  @JsonProperty("marked_for_delete")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean markedForDelete = false;
+    @JsonProperty("marked_for_delete")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean markedForDelete = false;
 
-  @JsonProperty("metrics_mgr_port")
-  @JsonInclude(Include.NON_NULL)
-  private String metricsMgrPort = null;
+    @JsonProperty("metrics_mgr_port")
+    @JsonInclude(Include.NON_NULL)
+    private String metricsMgrPort = null;
 
-  @JsonProperty("num_additional_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numAdditionalSe = 0;
+    @JsonProperty("num_additional_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numAdditionalSe = 0;
 
-  @JsonProperty("one_plus_one_ha")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean onePlusOneHa = false;
+    @JsonProperty("one_plus_one_ha")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean onePlusOneHa = false;
 
-  @JsonProperty("prev_controller_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String prevControllerIp = null;
+    @JsonProperty("prev_controller_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String prevControllerIp = null;
 
-  @JsonProperty("prev_metrics_mgr_port")
-  @JsonInclude(Include.NON_NULL)
-  private String prevMetricsMgrPort = null;
+    @JsonProperty("prev_metrics_mgr_port")
+    @JsonInclude(Include.NON_NULL)
+    private String prevMetricsMgrPort = null;
 
-  @JsonProperty("redis_db")
-  @JsonInclude(Include.NON_NULL)
-  private Integer redisDb = null;
+    @JsonProperty("redis_db")
+    @JsonInclude(Include.NON_NULL)
+    private Integer redisDb = null;
 
-  @JsonProperty("redis_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String redisIp = null;
+    @JsonProperty("redis_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String redisIp;
 
-  @JsonProperty("redis_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer redisPort = null;
+    @JsonProperty("redis_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer redisPort = null;
 
-  @JsonProperty("rules_configured")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rulesConfigured = true;
+    @JsonProperty("rules_configured")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rulesConfigured;
 
-  @JsonProperty("sec_mgr_info")
-  @JsonInclude(Include.NON_NULL)
-  private SecurityMgrRuntime secMgrInfo = null;
+    @JsonProperty("sec_mgr_info")
+    @JsonInclude(Include.NON_NULL)
+    private SecurityMgrRuntime secMgrInfo = null;
 
-  @JsonProperty("self_se_election")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean selfSeElection = false;
+    @JsonProperty("self_se_election")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean selfSeElection = false;
 
-  @JsonProperty("servers_configured")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean serversConfigured = true;
+    @JsonProperty("servers_configured")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean serversConfigured;
 
-  @JsonProperty("tls_ticket_key")
-  @JsonInclude(Include.NON_NULL)
-  private List<TLSTicket> tlsTicketKey = null;
+    @JsonProperty("tls_ticket_key")
+    @JsonInclude(Include.NON_NULL)
+    private List<TLSTicket> tlsTicketKey = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "VS_TYPE_NORMAL";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "VS_TYPE_NORMAL";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer version = 0;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer version = 0;
 
-  @JsonProperty("vh_child_vs_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vhChildVsRef = null;
+    @JsonProperty("vh_child_vs_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vhChildVsRef = null;
 
-  @JsonProperty("vip_runtime")
-  @JsonInclude(Include.NON_NULL)
-  private List<VipRuntime> vipRuntime = null;
+    @JsonProperty("vip_runtime")
+    @JsonInclude(Include.NON_NULL)
+    private List<VipRuntime> vipRuntime = null;
 
-  @JsonProperty("vs_update_pending")
-  @JsonInclude(Include.NON_NULL)
-  private VirtualService vsUpdatePending = null;
+    @JsonProperty("vs_update_pending")
+    @JsonInclude(Include.NON_NULL)
+    private VirtualService vsUpdatePending = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property apic_extension of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicExtension
    */
   @VsoMethod
@@ -179,6 +180,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property apic_extension of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicExtension set the apicExtension.
    */
   @VsoMethod
@@ -189,6 +191,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_ip of obj type virtualserviceruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerIp
    */
   @VsoMethod
@@ -199,6 +202,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_ip of obj type virtualserviceruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerIp set the controllerIp.
    */
   @VsoMethod
@@ -209,6 +213,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datapath_debug of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathDebug
    */
   @VsoMethod
@@ -219,6 +224,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datapath_debug of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datapathDebug set the datapathDebug.
    */
   @VsoMethod
@@ -275,6 +281,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gslb_dns_update of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbDnsUpdate
    */
   @VsoMethod
@@ -285,6 +292,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gslb_dns_update of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbDnsUpdate set the gslbDnsUpdate.
    */
   @VsoMethod
@@ -295,6 +303,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ipam_dns_records of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipamDnsRecords
    */
   @VsoMethod
@@ -305,6 +314,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the ipamDnsRecords
    * Placeholder for description of property ipam_dns_records of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipamDnsRecords
    */
   @VsoMethod
@@ -315,6 +325,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the ipamDnsRecords
    * Placeholder for description of property ipam_dns_records of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipamDnsRecords
    */
   @VsoMethod
@@ -353,6 +364,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of times keys have been rotated.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyRotationCount
    */
   @VsoMethod
@@ -364,6 +376,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of times keys have been rotated.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyRotationCount set the keyRotationCount.
    */
   @VsoMethod
@@ -374,6 +387,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_changed_time of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -384,6 +398,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_changed_time of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -395,6 +410,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timestamp of the last key rotation.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastKeyRotationTime
    */
   @VsoMethod
@@ -406,6 +422,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Timestamp of the last key rotation.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastKeyRotationTime set the lastKeyRotationTime.
    */
   @VsoMethod
@@ -416,6 +433,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property lif of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lif
    */
   @VsoMethod
@@ -426,6 +444,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the lif
    * Placeholder for description of property lif of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lif
    */
   @VsoMethod
@@ -436,6 +455,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the lif
    * Placeholder for description of property lif of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lif
    */
   @VsoMethod
@@ -495,6 +515,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsMgrPort
    */
   @VsoMethod
@@ -505,6 +526,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsMgrPort set the metricsMgrPort.
    */
   @VsoMethod
@@ -559,6 +581,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property prev_controller_ip of obj type virtualserviceruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevControllerIp
    */
   @VsoMethod
@@ -569,6 +592,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property prev_controller_ip of obj type virtualserviceruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevControllerIp set the prevControllerIp.
    */
   @VsoMethod
@@ -579,6 +603,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevMetricsMgrPort
    */
   @VsoMethod
@@ -589,6 +614,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevMetricsMgrPort set the prevMetricsMgrPort.
    */
   @VsoMethod
@@ -599,6 +625,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property redis_db of obj type virtualserviceruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redisDb
    */
   @VsoMethod
@@ -609,6 +636,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property redis_db of obj type virtualserviceruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redisDb set the redisDb.
    */
   @VsoMethod
@@ -639,6 +667,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property redis_port of obj type virtualserviceruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redisPort
    */
   @VsoMethod
@@ -649,6 +678,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property redis_port of obj type virtualserviceruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redisPort set the redisPort.
    */
   @VsoMethod
@@ -659,7 +689,6 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return rulesConfigured
    */
   @VsoMethod
@@ -670,7 +699,6 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param rulesConfigured set the rulesConfigured.
    */
   @VsoMethod
@@ -682,6 +710,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Runtime info from security_manager.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secMgrInfo
    */
   @VsoMethod
@@ -693,6 +722,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Runtime info from security_manager.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secMgrInfo set the secMgrInfo.
    */
   @VsoMethod
@@ -727,7 +757,6 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return serversConfigured
    */
   @VsoMethod
@@ -738,7 +767,6 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param serversConfigured set the serversConfigured.
    */
   @VsoMethod
@@ -749,6 +777,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tls_ticket_key of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tlsTicketKey
    */
   @VsoMethod
@@ -759,6 +788,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the tlsTicketKey
    * Placeholder for description of property tls_ticket_key of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tlsTicketKey
    */
   @VsoMethod
@@ -769,6 +799,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the tlsTicketKey
    * Placeholder for description of property tls_ticket_key of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tlsTicketKey
    */
   @VsoMethod
@@ -784,7 +815,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_NORMAL".
    * @return type
    */
   @VsoMethod
@@ -795,7 +826,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_NORMAL".
    * @param type set the type.
    */
   @VsoMethod
@@ -806,6 +837,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -816,6 +848,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -848,6 +881,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhChildVsRef
    */
   @VsoMethod
@@ -858,6 +892,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the vhChildVsRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhChildVsRef
    */
   @VsoMethod
@@ -868,6 +903,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the vhChildVsRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhChildVsRef
    */
   @VsoMethod
@@ -883,6 +919,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_runtime of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipRuntime
    */
   @VsoMethod
@@ -893,6 +930,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the vipRuntime
    * Placeholder for description of property vip_runtime of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipRuntime
    */
   @VsoMethod
@@ -903,6 +941,7 @@ public class VirtualServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the vipRuntime
    * Placeholder for description of property vip_runtime of obj type virtualserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipRuntime
    */
   @VsoMethod
@@ -919,6 +958,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vs update request received before warmstart finished.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUpdatePending
    */
   @VsoMethod
@@ -930,6 +970,7 @@ public class VirtualServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Vs update request received before warmstart finished.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUpdatePending set the vsUpdatePending.
    */
   @VsoMethod

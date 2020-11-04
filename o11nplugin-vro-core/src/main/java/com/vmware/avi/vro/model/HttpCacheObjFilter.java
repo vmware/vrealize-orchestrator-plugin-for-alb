@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HttpCacheObjFilter extends AviRestResource {
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private String key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private String key = null;
 
-  @JsonProperty("raw_key")
-  @JsonInclude(Include.NON_NULL)
-  private String rawKey = null;
+    @JsonProperty("raw_key")
+    @JsonInclude(Include.NON_NULL)
+    private String rawKey = null;
 
-  @JsonProperty("resource_name")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceName = null;
+    @JsonProperty("resource_name")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceName = null;
 
-  @JsonProperty("resource_type")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceType = null;
+    @JsonProperty("resource_type")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceType = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Http cache object's exact key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cache object's exact key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cache object's exact raw key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rawKey
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cache object's exact raw key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rawKey set the rawKey.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cache object's resource name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceName
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cache object's resource name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceName set the resourceName.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Objects with resource type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceType
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class HttpCacheObjFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Objects with resource type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceType set the resourceType.
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class HttpCacheObjFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cache object type.
    * Enum options - CO_ALL, CO_IN, CO_OUT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -141,6 +150,7 @@ public class HttpCacheObjFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cache object type.
    * Enum options - CO_ALL, CO_IN, CO_OUT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

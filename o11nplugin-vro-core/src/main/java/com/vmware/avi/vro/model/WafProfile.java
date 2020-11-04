@@ -25,33 +25,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafProfile extends AviRestResource {
-  @JsonProperty("config")
-  @JsonInclude(Include.NON_NULL)
-  private WafConfig config = null;
+    @JsonProperty("config")
+    @JsonInclude(Include.NON_NULL)
+    private WafConfig config = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("files")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafDataFile> files = null;
+    @JsonProperty("files")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafDataFile> files = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -59,6 +63,7 @@ public class WafProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Config params for waf.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return config
    */
   @VsoMethod
@@ -70,6 +75,7 @@ public class WafProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Config params for waf.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param config set the config.
    */
   @VsoMethod
@@ -80,6 +86,7 @@ public class WafProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -90,6 +97,7 @@ public class WafProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -101,6 +109,7 @@ public class WafProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of data files used for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return files
    */
   @VsoMethod
@@ -112,6 +121,7 @@ public class WafProfile extends AviRestResource {
    * This is the setter method. this will set the files
    * List of data files used for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return files
    */
   @VsoMethod
@@ -123,6 +133,7 @@ public class WafProfile extends AviRestResource {
    * This is the setter method this will set the files
    * List of data files used for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return files
    */
   @VsoMethod
@@ -137,7 +148,52 @@ public class WafProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public WafProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -148,6 +204,7 @@ public class WafProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -159,6 +216,7 @@ public class WafProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -170,6 +228,7 @@ public class WafProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -199,6 +258,7 @@ public class WafProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -209,6 +269,7 @@ public class WafProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -235,7 +296,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.description, objWafProfile.description)&&
   Objects.equals(this.tenantRef, objWafProfile.tenantRef)&&
   Objects.equals(this.config, objWafProfile.config)&&
-  Objects.equals(this.files, objWafProfile.files);
+  Objects.equals(this.files, objWafProfile.files)&&
+  Objects.equals(this.labels, objWafProfile.labels);
 }
 
 @Override
@@ -245,6 +307,7 @@ public String toString() {
       sb.append("    config: ").append(toIndentedString(config)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

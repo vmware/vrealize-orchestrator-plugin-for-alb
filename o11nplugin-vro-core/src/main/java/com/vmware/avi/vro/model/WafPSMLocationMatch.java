@@ -27,17 +27,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPSMLocationMatch extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private HostHdrMatch host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private HostHdrMatch host = null;
 
-  @JsonProperty("methods")
-  @JsonInclude(Include.NON_NULL)
-  private MethodMatch methods = null;
+    @JsonProperty("methods")
+    @JsonInclude(Include.NON_NULL)
+    private MethodMatch methods = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private PathMatch path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private PathMatch path = null;
 
 
 
@@ -46,6 +46,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified host header.
    * If this is not set, the host header will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -58,6 +59,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified host header.
    * If this is not set, the host header will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that have the specified methods.
    * If this is not set, the method will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
   @VsoMethod
@@ -82,6 +85,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that have the specified methods.
    * If this is not set, the method will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param methods set the methods.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified uri.
    * If this is not set, the path will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class WafPSMLocationMatch extends AviRestResource {
    * Apply the rules only to requests that match the specified uri.
    * If this is not set, the path will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod

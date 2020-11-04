@@ -24,25 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsEdnsOption extends AviRestResource {
-  @JsonProperty("addr_family")
-  @JsonInclude(Include.NON_NULL)
-  private Integer addrFamily = null;
+    @JsonProperty("addr_family")
+    @JsonInclude(Include.NON_NULL)
+    private Integer addrFamily = null;
 
-  @JsonProperty("code")
-  @JsonInclude(Include.NON_NULL)
-  private String code = null;
+    @JsonProperty("code")
+    @JsonInclude(Include.NON_NULL)
+    private String code = null;
 
-  @JsonProperty("scope_prefix_len")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scopePrefixLen = null;
+    @JsonProperty("scope_prefix_len")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scopePrefixLen = null;
 
-  @JsonProperty("source_prefix_len")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sourcePrefixLen = null;
+    @JsonProperty("source_prefix_len")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sourcePrefixLen = null;
 
-  @JsonProperty("subnet_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer subnetIp = null;
+    @JsonProperty("subnet_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer subnetIp = null;
+
+    @JsonProperty("subnet_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetIp6 = null;
 
 
 
@@ -50,6 +54,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Address family.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrFamily
    */
   @VsoMethod
@@ -61,6 +66,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Address family.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addrFamily set the addrFamily.
    */
   @VsoMethod
@@ -75,6 +81,7 @@ public class DnsEdnsOption extends AviRestResource {
    * EDNS_OPTION_CODE_CLIENT_SUBNET, EDNS_OPTION_CODE_EXPIRE, EDNS_OPTION_CODE_COOKIE, EDNS_OPTION_CODE_TCP_KEEPALIVE, EDNS_OPTION_CODE_PADDING,
    * EDNS_OPTION_CODE_CHAIN.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return code
    */
   @VsoMethod
@@ -89,6 +96,7 @@ public class DnsEdnsOption extends AviRestResource {
    * EDNS_OPTION_CODE_CLIENT_SUBNET, EDNS_OPTION_CODE_EXPIRE, EDNS_OPTION_CODE_COOKIE, EDNS_OPTION_CODE_TCP_KEEPALIVE, EDNS_OPTION_CODE_PADDING,
    * EDNS_OPTION_CODE_CHAIN.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param code set the code.
    */
   @VsoMethod
@@ -100,6 +108,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scope prefix length of address.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scopePrefixLen
    */
   @VsoMethod
@@ -111,6 +120,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Scope prefix length of address.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scopePrefixLen set the scopePrefixLen.
    */
   @VsoMethod
@@ -122,6 +132,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source prefix length of address.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourcePrefixLen
    */
   @VsoMethod
@@ -133,6 +144,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Source prefix length of address.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourcePrefixLen set the sourcePrefixLen.
    */
   @VsoMethod
@@ -144,6 +156,7 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv4 address of the client subnet.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetIp
    */
   @VsoMethod
@@ -155,11 +168,36 @@ public class DnsEdnsOption extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv4 address of the client subnet.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetIp set the subnetIp.
    */
   @VsoMethod
   public void setSubnetIp(Integer  subnetIp) {
     this.subnetIp = subnetIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address of the client subnet.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return subnetIp6
+   */
+  @VsoMethod
+  public String getSubnetIp6() {
+    return subnetIp6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address of the client subnet.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param subnetIp6 set the subnetIp6.
+   */
+  @VsoMethod
+  public void setSubnetIp6(String  subnetIp6) {
+    this.subnetIp6 = subnetIp6;
   }
 
 
@@ -177,7 +215,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.addrFamily, objDnsEdnsOption.addrFamily)&&
   Objects.equals(this.sourcePrefixLen, objDnsEdnsOption.sourcePrefixLen)&&
   Objects.equals(this.scopePrefixLen, objDnsEdnsOption.scopePrefixLen)&&
-  Objects.equals(this.subnetIp, objDnsEdnsOption.subnetIp);
+  Objects.equals(this.subnetIp, objDnsEdnsOption.subnetIp)&&
+  Objects.equals(this.subnetIp6, objDnsEdnsOption.subnetIp6);
 }
 
 @Override
@@ -189,6 +228,7 @@ public String toString() {
         sb.append("    scopePrefixLen: ").append(toIndentedString(scopePrefixLen)).append("\n");
         sb.append("    sourcePrefixLen: ").append(toIndentedString(sourcePrefixLen)).append("\n");
         sb.append("    subnetIp: ").append(toIndentedString(subnetIp)).append("\n");
+        sb.append("    subnetIp6: ").append(toIndentedString(subnetIp6)).append("\n");
       sb.append("}");
   return sb.toString();
 }

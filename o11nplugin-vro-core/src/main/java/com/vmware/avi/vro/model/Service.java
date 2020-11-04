@@ -23,29 +23,29 @@ import com.vmware.avi.vro.Constants;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @org.springframework.stereotype.Service
 public class Service extends AviRestResource {
-  @JsonProperty("enable_http2")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableHttp2 = false;
+    @JsonProperty("enable_http2")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHttp2 = false;
 
-  @JsonProperty("enable_ssl")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableSsl = false;
+    @JsonProperty("enable_ssl")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSsl = false;
 
-  @JsonProperty("override_application_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String overrideApplicationProfileRef = null;
+    @JsonProperty("override_application_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String overrideApplicationProfileRef = null;
 
-  @JsonProperty("override_network_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String overrideNetworkProfileRef = null;
+    @JsonProperty("override_network_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String overrideNetworkProfileRef = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("port_range_end")
-  @JsonInclude(Include.NON_NULL)
-  private Integer portRangeEnd = 0;
+    @JsonProperty("port_range_end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer portRangeEnd = 0;
 
 
 
@@ -100,6 +100,7 @@ public class Service extends AviRestResource {
    * Enable application layer specific features for the this specific service.
    * It is a reference to an object of type applicationprofile.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return overrideApplicationProfileRef
    */
   @VsoMethod
@@ -112,6 +113,7 @@ public class Service extends AviRestResource {
    * Enable application layer specific features for the this specific service.
    * It is a reference to an object of type applicationprofile.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param overrideApplicationProfileRef set the overrideApplicationProfileRef.
    */
   @VsoMethod
@@ -123,6 +125,7 @@ public class Service extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Override the network profile for this specific service port.
    * It is a reference to an object of type networkprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return overrideNetworkProfileRef
    */
   @VsoMethod
@@ -134,6 +137,7 @@ public class Service extends AviRestResource {
    * This is the setter method to the attribute.
    * Override the network profile for this specific service port.
    * It is a reference to an object of type networkprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param overrideNetworkProfileRef set the overrideNetworkProfileRef.
    */
   @VsoMethod
@@ -145,6 +149,7 @@ public class Service extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The virtual service's port number.
    * Allowed values are 0-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -156,6 +161,7 @@ public class Service extends AviRestResource {
    * This is the setter method to the attribute.
    * The virtual service's port number.
    * Allowed values are 0-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod

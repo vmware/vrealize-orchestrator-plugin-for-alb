@@ -3,30 +3,44 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item2" object-name="workflow:name=generic"
-	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.7"
+	id="d541c0da-5105-4c9b-b73b-bae90340e31f" version="0.0.8"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Attach Avi Controller]]></display-name>
 	<position y="50.0" x="100.0"></position>
 	<input>
-		<param name="controller" type="string"></param>
-		<param name="username" type="string"></param>
-		<param name="password" type="SecureString"></param>
-		<param name="tenant" type="string"></param>
-		<param name="version" type="string"></param>
-		<param name="token" type="SecureString"></param>
-		<param name="tokenBasedAuth" type="boolean"></param>
-		<param name="ignoreWarnings" type="boolean">
+		<param name="controller" type="string">
+			<description><![CDATA[controller]]></description>
+		</param>
+		<param name="username" type="string">
+			<description><![CDATA[username]]></description>
+		</param>
+		<param name="password" type="SecureString">
+			<description><![CDATA[password]]></description>
+		</param>
+		<param name="tenant" type="string">
+			<description><![CDATA[tenant]]></description>
+		</param>
+		<param name="version" type="string">
+			<description><![CDATA[version]]></description>
+		</param>
+		<param name="token" type="SecureString">
+			<description><![CDATA[token]]></description>
+		</param>
+		<param name="token_based_auth" type="boolean">
+			<description><![CDATA[token_based_auth]]></description>
+		</param>
+		<param name="ignore_warnings" type="boolean">
 			<description><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></description>
 		</param>
 	</input>
 	<attrib name="errorCode" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<attrib name="host" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
 		<position y="45.40909090909091" x="664.5"></position>
@@ -42,7 +56,7 @@ System.getModule("com.vmware.avi").attachVroClient(controller,username,password,
 			<bind name="tenant" type="string" export-name="tenant"></bind>
 			<bind name="token" type="SecureString" export-name="token"></bind>
 			<bind name="tokenBasedAuth" type="boolean"
-				export-name="tokenBasedAuth"></bind>
+				export-name="token_based_auth"></bind>
 			<bind name="username" type="string" export-name="username"></bind>
 			<bind name="version" type="string" export-name="version"></bind>
 		</in-binding>
@@ -58,7 +72,7 @@ System.getModule("com.vmware.avi").attachVroClient(controller,username,password,
 				<description><![CDATA[URL or just host:port for non-HTTPS SSL services:]]></description>
 			</bind>
 			<bind name="ignoreWarnings" type="boolean"
-				export-name="ignoreWarnings">
+				export-name="ignore_warnings">
 				<description><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></description>
 			</bind>
 		</in-binding>
@@ -92,32 +106,34 @@ if(flag){
 		<position y="55.40909090909091" x="344.5"></position>
 	</workflow-item>
 	<presentation>
-		<p-param name="ignoreWarnings">
+		<p-param name="ignore_warnings">
 			<desc><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></desc>
 			<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[true]]></p-qual>
 		</p-param>
 		<p-param name="controller">
 			<desc><![CDATA[controller]]></desc>
+			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 		</p-param>
 		<p-param name="username">
 			<desc><![CDATA[username]]></desc>
+			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 		</p-param>
-		<p-param name="tokenBasedAuth">
-			<desc><![CDATA[Token for authentication]]></desc>
+		<p-param name="token_based_auth">
+			<desc><![CDATA[token_based_auth]]></desc>
 			<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[__NULL__]]></p-qual>
 		</p-param>
 		<p-param name="password">
 			<desc><![CDATA[password]]></desc>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#tokenBasedAuth==false]]></p-qual>
+			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#token_based_auth==false]]></p-qual>
 			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 		</p-param>
 		<p-param name="token">
-			<desc><![CDATA[Token]]></desc>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#tokenBasedAuth==true]]></p-qual>
+			<desc><![CDATA[token]]></desc>
+			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#token_based_auth==true]]></p-qual>
 			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 		</p-param>
 		<p-param name="tenant">
-			<desc><![CDATA[Tenant]]></desc>
+			<desc><![CDATA[tenant]]></desc>
 			<p-qual kind="static" name="defaultValue" type="string"><![CDATA[admin]]></p-qual>
 		</p-param>
 		<p-param name="version">

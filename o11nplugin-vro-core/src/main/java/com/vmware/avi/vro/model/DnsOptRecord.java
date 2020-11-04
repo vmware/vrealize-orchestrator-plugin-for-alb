@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsOptRecord extends AviRestResource {
-  @JsonProperty("dnssec_ok")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dnssecOk = null;
+    @JsonProperty("dnssec_ok")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dnssecOk = null;
 
-  @JsonProperty("options")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsEdnsOption> options = null;
+    @JsonProperty("options")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsEdnsOption> options = null;
 
-  @JsonProperty("udp_payload_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer udpPayloadSize = null;
+    @JsonProperty("udp_payload_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer udpPayloadSize = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer version = null;
 
 
 
@@ -46,6 +46,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag indicating client is dnssec aware.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnssecOk
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag indicating client is dnssec aware.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnssecOk set the dnssecOk.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Edns options.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return options
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the setter method. this will set the options
    * Edns options.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return options
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the setter method this will set the options
    * Edns options.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return options
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Client requestor's udp payload size.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpPayloadSize
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Client requestor's udp payload size.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpPayloadSize set the udpPayloadSize.
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Edns version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class DnsOptRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Edns version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

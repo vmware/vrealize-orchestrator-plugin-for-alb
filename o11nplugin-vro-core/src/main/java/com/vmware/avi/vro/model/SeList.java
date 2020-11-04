@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -26,129 +28,137 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeList extends AviRestResource {
-  @JsonProperty("admin_down_requested")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean adminDownRequested = false;
+    @JsonProperty("admin_down_requested")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean adminDownRequested = false;
 
-  @JsonProperty("at_curr_ver")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean atCurrVer = null;
+    @JsonProperty("at_curr_ver")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean atCurrVer;
 
-  @JsonProperty("attach_ip_status")
-  @JsonInclude(Include.NON_NULL)
-  private String attachIpStatus = "Programming Network reachability to the Virtual Service IP in the Cloud";
+    @JsonProperty("attach_ip_status")
+    @JsonInclude(Include.NON_NULL)
+    private String attachIpStatus = "Programming Network reachability to the Virtual Service IP in the Cloud";
 
-  @JsonProperty("attach_ip_success")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean attachIpSuccess = false;
+    @JsonProperty("attach_ip_success")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean attachIpSuccess = false;
 
-  @JsonProperty("delete_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean deleteInProgress = false;
+    @JsonProperty("delete_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean deleteInProgress = false;
 
-  @JsonProperty("download_selist_only")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean downloadSelistOnly = null;
+    @JsonProperty("download_selist_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean downloadSelistOnly;
 
-  @JsonProperty("floating_intf_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> floatingIntfIp = null;
+    @JsonProperty("floating_intf_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> floatingIntfIp = null;
 
-  @JsonProperty("geo_download")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean geoDownload = null;
+    @JsonProperty("geo_download")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean geoDownload;
 
-  @JsonProperty("geodb_download")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean geodbDownload = null;
+    @JsonProperty("geodb_download")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean geodbDownload;
 
-  @JsonProperty("gslb_download")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean gslbDownload = null;
+    @JsonProperty("gslb_download")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean gslbDownload;
 
-  @JsonProperty("incarnation")
-  @JsonInclude(Include.NON_NULL)
-  private String incarnation = null;
+    @JsonProperty("incarnation")
+    @JsonInclude(Include.NON_NULL)
+    private String incarnation = null;
 
-  @JsonProperty("is_connected")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isConnected = null;
+    @JsonProperty("is_connected")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isConnected;
 
-  @JsonProperty("is_portchannel")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isPortchannel = false;
+    @JsonProperty("is_portchannel")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isPortchannel = false;
 
-  @JsonProperty("is_primary")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isPrimary = true;
+    @JsonProperty("is_primary")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isPrimary = true;
 
-  @JsonProperty("is_standby")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isStandby = false;
+    @JsonProperty("is_standby")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isStandby = false;
 
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = 2001;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = 2001;
 
-  @JsonProperty("pending_download")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean pendingDownload = null;
+    @JsonProperty("mgmt_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr mgmtIp = null;
 
-  @JsonProperty("scalein_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleinInProgress = null;
+    @JsonProperty("mgmt_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr mgmtIp6 = null;
 
-  @JsonProperty("scaleout_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleoutInProgress = false;
+    @JsonProperty("pending_download")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean pendingDownload;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("scalein_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleinInProgress;
 
-  @JsonProperty("sec_idx")
-  @JsonInclude(Include.NON_NULL)
-  private Integer secIdx = 1;
+    @JsonProperty("scaleout_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleoutInProgress = false;
 
-  @JsonProperty("snat_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr snatIp = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
-  @JsonProperty("vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcpus = 2;
+    @JsonProperty("sec_idx")
+    @JsonInclude(Include.NON_NULL)
+    private Integer secIdx = 1;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("snat_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr snatIp = null;
 
-  @JsonProperty("vip6_subnet_mask")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vip6SubnetMask = 128;
+    @JsonProperty("vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcpus = 2;
 
-  @JsonProperty("vip_intf_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vipIntfIp = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version;
 
-  @JsonProperty("vip_intf_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeVipInterfaceList> vipIntfList = null;
+    @JsonProperty("vip6_subnet_mask")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vip6SubnetMask = 128;
 
-  @JsonProperty("vip_intf_mac")
-  @JsonInclude(Include.NON_NULL)
-  private String vipIntfMac = null;
+    @JsonProperty("vip_intf_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vipIntfIp = null;
 
-  @JsonProperty("vip_subnet_mask")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vipSubnetMask = 32;
+    @JsonProperty("vip_intf_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeVipInterfaceList> vipIntfList = null;
 
-  @JsonProperty("vlan_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vlanId = 0;
+    @JsonProperty("vip_intf_mac")
+    @JsonInclude(Include.NON_NULL)
+    private String vipIntfMac = null;
 
-  @JsonProperty("vnic")
-  @JsonInclude(Include.NON_NULL)
-  private List<VsSeVnic> vnic = null;
+    @JsonProperty("vip_subnet_mask")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vipSubnetMask = 32;
+
+    @JsonProperty("vlan_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vlanId = 0;
+
+    @JsonProperty("vnic")
+    @JsonInclude(Include.NON_NULL)
+    private List<VsSeVnic> vnic = null;
 
 
 
@@ -202,8 +212,8 @@ public class SeList extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field indicates the status of programming network reachability to the virtual service ip in the cloud.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Programming Network reachability to the Virtual Service IP
-   * in the Cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Programming Network reachability to the Virtual Service IP
+   * in the Cloud".
    * @return attachIpStatus
    */
   @VsoMethod
@@ -215,8 +225,8 @@ public class SeList extends AviRestResource {
    * This is the setter method to the attribute.
    * This field indicates the status of programming network reachability to the virtual service ip in the cloud.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Programming Network reachability to the Virtual Service IP
-   * in the Cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Programming Network reachability to the Virtual Service IP
+   * in the Cloud".
    * @param attachIpStatus set the attachIpStatus.
    */
   @VsoMethod
@@ -295,6 +305,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property floating_intf_ip of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -305,6 +316,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method. this will set the floatingIntfIp
    * Placeholder for description of property floating_intf_ip of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -315,6 +327,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method this will set the floatingIntfIp
    * Placeholder for description of property floating_intf_ip of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -410,6 +423,7 @@ public class SeList extends AviRestResource {
    * Updated whenever this entry is created.
    * When the sees this has changed, it means that the se should disrupt, since there was a delete then create, not an update.
    * Field introduced in 18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incarnation
    */
   @VsoMethod
@@ -422,6 +436,7 @@ public class SeList extends AviRestResource {
    * Updated whenever this entry is created.
    * When the sees this has changed, it means that the se should disrupt, since there was a delete then create, not an update.
    * Field introduced in 18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param incarnation set the incarnation.
    */
   @VsoMethod
@@ -543,6 +558,54 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Management ipv4 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mgmtIp
+   */
+  @VsoMethod
+  public IpAddr getMgmtIp() {
+    return mgmtIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Management ipv4 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mgmtIp set the mgmtIp.
+   */
+  @VsoMethod
+  public void setMgmtIp(IpAddr mgmtIp) {
+    this.mgmtIp = mgmtIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Management ipv6 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mgmtIp6
+   */
+  @VsoMethod
+  public IpAddr getMgmtIp6() {
+    return mgmtIp6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Management ipv6 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mgmtIp6 set the mgmtIp6.
+   */
+  @VsoMethod
+  public void setMgmtIp6(IpAddr mgmtIp6) {
+    this.mgmtIp6 = mgmtIp6;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This field is not needed with the current implementation of update rpcs to ses.
    * Field deprecated in 18.1.5, 18.2.1.
    * @return pendingDownload
@@ -612,6 +675,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -622,6 +686,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -654,6 +719,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property snat_ip of obj type selist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
    */
   @VsoMethod
@@ -664,6 +730,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property snat_ip of obj type selist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snatIp set the snatIp.
    */
   @VsoMethod
@@ -742,6 +809,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_intf_ip of obj type selist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfIp
    */
   @VsoMethod
@@ -752,6 +820,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_intf_ip of obj type selist field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfIp set the vipIntfIp.
    */
   @VsoMethod
@@ -762,6 +831,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_intf_list of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfList
    */
   @VsoMethod
@@ -772,6 +842,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method. this will set the vipIntfList
    * Placeholder for description of property vip_intf_list of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfList
    */
   @VsoMethod
@@ -782,6 +853,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method this will set the vipIntfList
    * Placeholder for description of property vip_intf_list of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfList
    */
   @VsoMethod
@@ -797,6 +869,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_intf_mac of obj type selist field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipIntfMac
    */
   @VsoMethod
@@ -807,6 +880,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_intf_mac of obj type selist field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipIntfMac set the vipIntfMac.
    */
   @VsoMethod
@@ -861,6 +935,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vnic of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
   @VsoMethod
@@ -871,6 +946,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method. this will set the vnic
    * Placeholder for description of property vnic of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
   @VsoMethod
@@ -881,6 +957,7 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method this will set the vnic
    * Placeholder for description of property vnic of obj type selist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
   @VsoMethod
@@ -934,7 +1011,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.attachIpStatus, objSeList.attachIpStatus)&&
   Objects.equals(this.vip6SubnetMask, objSeList.vip6SubnetMask)&&
   Objects.equals(this.incarnation, objSeList.incarnation)&&
-  Objects.equals(this.scaleoutInProgress, objSeList.scaleoutInProgress);
+  Objects.equals(this.scaleoutInProgress, objSeList.scaleoutInProgress)&&
+  Objects.equals(this.mgmtIp, objSeList.mgmtIp)&&
+  Objects.equals(this.mgmtIp6, objSeList.mgmtIp6);
 }
 
 @Override
@@ -957,6 +1036,8 @@ public String toString() {
         sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
         sb.append("    isStandby: ").append(toIndentedString(isStandby)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
+        sb.append("    mgmtIp: ").append(toIndentedString(mgmtIp)).append("\n");
+        sb.append("    mgmtIp6: ").append(toIndentedString(mgmtIp6)).append("\n");
         sb.append("    pendingDownload: ").append(toIndentedString(pendingDownload)).append("\n");
         sb.append("    scaleinInProgress: ").append(toIndentedString(scaleinInProgress)).append("\n");
         sb.append("    scaleoutInProgress: ").append(toIndentedString(scaleoutInProgress)).append("\n");

@@ -25,39 +25,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHmEventPoolDetails extends AviRestResource {
-  @JsonProperty("ha_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String haReason = null;
+    @JsonProperty("ha_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String haReason = null;
 
-  @JsonProperty("percent_servers_up")
-  @JsonInclude(Include.NON_NULL)
-  private String percentServersUp = null;
+    @JsonProperty("percent_servers_up")
+    @JsonInclude(Include.NON_NULL)
+    private String percentServersUp = null;
 
-  @JsonProperty("pool")
-  @JsonInclude(Include.NON_NULL)
-  private String pool = null;
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private String pool = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private SeHmEventServerDetails server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private SeHmEventServerDetails server = null;
 
-  @JsonProperty("src_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String srcUuid = null;
+    @JsonProperty("src_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String srcUuid = null;
 
-  @JsonProperty("virtual_service")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualService = null;
+    @JsonProperty("virtual_service")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualService = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haReason
    */
   @VsoMethod
@@ -68,6 +69,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haReason set the haReason.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percentage of servers up.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return percentServersUp
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percentage of servers up.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param percentServersUp set the percentServersUp.
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool name.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool name.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -130,6 +137,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server details.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server details.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod
@@ -160,6 +170,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
   @VsoMethod
@@ -170,6 +181,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */
   @VsoMethod
@@ -181,6 +193,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
   @VsoMethod
@@ -192,6 +205,7 @@ public class SeHmEventPoolDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */
   @VsoMethod

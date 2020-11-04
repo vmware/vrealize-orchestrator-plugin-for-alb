@@ -24,29 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ErrorPageBody extends AviRestResource {
-  @JsonProperty("error_page_body")
-  @JsonInclude(Include.NON_NULL)
-  private String errorPageBody = null;
+    @JsonProperty("error_page_body")
+    @JsonInclude(Include.NON_NULL)
+    private String errorPageBody = null;
 
-  @JsonProperty("format")
-  @JsonInclude(Include.NON_NULL)
-  private String format = "ERROR_PAGE_FORMAT_HTML";
+    @JsonProperty("format")
+    @JsonInclude(Include.NON_NULL)
+    private String format = "ERROR_PAGE_FORMAT_HTML";
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -54,6 +58,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error page body sent to client when match.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorPageBody
    */
   @VsoMethod
@@ -65,6 +70,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the setter method to the attribute.
    * Error page body sent to client when match.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorPageBody set the errorPageBody.
    */
   @VsoMethod
@@ -77,7 +83,7 @@ public class ErrorPageBody extends AviRestResource {
    * Format of an error page body html or json.
    * Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ERROR_PAGE_FORMAT_HTML.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ERROR_PAGE_FORMAT_HTML".
    * @return format
    */
   @VsoMethod
@@ -90,7 +96,7 @@ public class ErrorPageBody extends AviRestResource {
    * Format of an error page body html or json.
    * Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ERROR_PAGE_FORMAT_HTML.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ERROR_PAGE_FORMAT_HTML".
    * @param format set the format.
    */
   @VsoMethod
@@ -100,7 +106,52 @@ public class ErrorPageBody extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public ErrorPageBody addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -111,6 +162,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -122,6 +174,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -133,6 +186,7 @@ public class ErrorPageBody extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -162,6 +216,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -172,6 +227,7 @@ public class ErrorPageBody extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -197,7 +253,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objErrorPageBody.name)&&
   Objects.equals(this.tenantRef, objErrorPageBody.tenantRef)&&
   Objects.equals(this.errorPageBody, objErrorPageBody.errorPageBody)&&
-  Objects.equals(this.format, objErrorPageBody.format);
+  Objects.equals(this.format, objErrorPageBody.format)&&
+  Objects.equals(this.labels, objErrorPageBody.labels);
 }
 
 @Override
@@ -206,6 +263,7 @@ public String toString() {
   sb.append("class ErrorPageBody {\n");
       sb.append("    errorPageBody: ").append(toIndentedString(errorPageBody)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

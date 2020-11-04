@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecureChannelToken extends AviRestResource {
-  @JsonProperty("expiry_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float expiryTime = null;
+    @JsonProperty("expiry_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float expiryTime = null;
 
-  @JsonProperty("metadata")
-  @JsonInclude(Include.NON_NULL)
-  private List<SecureChannelMetadata> metadata = null;
+    @JsonProperty("metadata")
+    @JsonInclude(Include.NON_NULL)
+    private List<SecureChannelMetadata> metadata = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("node_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeUuid = null;
+    @JsonProperty("node_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeUuid = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Expiry time for secure channel.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expiryTime
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Expiry time for secure channel.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expiryTime set the expiryTime.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method. this will set the metadata
    * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method this will set the metadata
    * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeUuid
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeUuid set the nodeUuid.
    */
   @VsoMethod
@@ -167,6 +176,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -177,6 +187,7 @@ public class SecureChannelToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

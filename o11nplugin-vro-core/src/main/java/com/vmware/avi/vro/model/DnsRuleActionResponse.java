@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleActionResponse extends AviRestResource {
-  @JsonProperty("authoritative")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean authoritative = true;
+    @JsonProperty("authoritative")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean authoritative = true;
 
-  @JsonProperty("rcode")
-  @JsonInclude(Include.NON_NULL)
-  private String rcode = "DNS_RCODE_NOERROR";
+    @JsonProperty("rcode")
+    @JsonInclude(Include.NON_NULL)
+    private String rcode = "DNS_RCODE_NOERROR";
 
-  @JsonProperty("resource_record_sets")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsRuleDnsRrSet> resourceRecordSets = null;
+    @JsonProperty("resource_record_sets")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsRuleDnsRrSet> resourceRecordSets = null;
 
-  @JsonProperty("truncation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean truncation = false;
+    @JsonProperty("truncation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean truncation = false;
 
 
 
@@ -72,7 +72,7 @@ public class DnsRuleActionResponse extends AviRestResource {
    * Enum options - DNS_RCODE_NOERROR, DNS_RCODE_FORMERR, DNS_RCODE_SERVFAIL, DNS_RCODE_NXDOMAIN, DNS_RCODE_NOTIMP, DNS_RCODE_REFUSED,
    * DNS_RCODE_YXDOMAIN, DNS_RCODE_YXRRSET, DNS_RCODE_NXRRSET, DNS_RCODE_NOTAUTH, DNS_RCODE_NOTZONE.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RCODE_NOERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RCODE_NOERROR".
    * @return rcode
    */
   @VsoMethod
@@ -86,7 +86,7 @@ public class DnsRuleActionResponse extends AviRestResource {
    * Enum options - DNS_RCODE_NOERROR, DNS_RCODE_FORMERR, DNS_RCODE_SERVFAIL, DNS_RCODE_NXDOMAIN, DNS_RCODE_NOTIMP, DNS_RCODE_REFUSED,
    * DNS_RCODE_YXDOMAIN, DNS_RCODE_YXRRSET, DNS_RCODE_NXRRSET, DNS_RCODE_NOTAUTH, DNS_RCODE_NOTZONE.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RCODE_NOERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RCODE_NOERROR".
    * @param rcode set the rcode.
    */
   @VsoMethod
@@ -98,6 +98,7 @@ public class DnsRuleActionResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resource record sets - (resource record set share the dns domain name, type, and class).
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRecordSets
    */
   @VsoMethod
@@ -109,6 +110,7 @@ public class DnsRuleActionResponse extends AviRestResource {
    * This is the setter method. this will set the resourceRecordSets
    * Dns resource record sets - (resource record set share the dns domain name, type, and class).
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRecordSets
    */
   @VsoMethod
@@ -120,6 +122,7 @@ public class DnsRuleActionResponse extends AviRestResource {
    * This is the setter method this will set the resourceRecordSets
    * Dns resource record sets - (resource record set share the dns domain name, type, and class).
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRecordSets
    */
   @VsoMethod

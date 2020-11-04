@@ -25,39 +25,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHmEventServerDetails extends AviRestResource {
-  @JsonProperty("app_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<AppInfo> appInfo = null;
+    @JsonProperty("app_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<AppInfo> appInfo = null;
 
-  @JsonProperty("failure_code")
-  @JsonInclude(Include.NON_NULL)
-  private String failureCode = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("failure_code")
+    @JsonInclude(Include.NON_NULL)
+    private String failureCode = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("shm")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeHmEventShmDetails> shm = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("ssl_error_code")
-  @JsonInclude(Include.NON_NULL)
-  private String sslErrorCode = null;
+    @JsonProperty("shm")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeHmEventShmDetails> shm = null;
+
+    @JsonProperty("ssl_error_code")
+    @JsonInclude(Include.NON_NULL)
+    private String sslErrorCode = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property app_info of obj type sehmeventserverdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appInfo
    */
   @VsoMethod
@@ -68,6 +73,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the appInfo
    * Placeholder for description of property app_info of obj type sehmeventserverdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appInfo
    */
   @VsoMethod
@@ -78,6 +84,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the setter method this will set the appInfo
    * Placeholder for description of property app_info of obj type sehmeventserverdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appInfo
    */
   @VsoMethod
@@ -92,10 +99,33 @@ public class SeHmEventServerDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Server description.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return description
+   */
+  @VsoMethod
+  public String getDescription() {
+    return description;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Server description.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param description set the description.
+   */
+  @VsoMethod
+  public void setDescription(String  description) {
+    this.description = description;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Healthmonitor failure code.
    * Enum options - ARP_UNRESOLVED, CONNECTION_REFUSED, CONNECTION_TIMEOUT, RESPONSE_CODE_MISMATCH, PAYLOAD_CONTENT_MISMATCH, SERVER_UNREACHABLE,
    * CONNECTION_RESET, CONNECTION_ERROR, HOST_ERROR, ADDRESS_ERROR, NO_PORT, PAYLOAD_TIMEOUT, NO_RESPONSE, NO_RESOURCES, SSL_ERROR, SSL_CERT_ERROR,
    * PORT_UNREACHABLE, SCRIPT_ERROR, OTHER_ERROR, SERVER_DISABLED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failureCode
    */
   @VsoMethod
@@ -109,6 +139,7 @@ public class SeHmEventServerDetails extends AviRestResource {
    * Enum options - ARP_UNRESOLVED, CONNECTION_REFUSED, CONNECTION_TIMEOUT, RESPONSE_CODE_MISMATCH, PAYLOAD_CONTENT_MISMATCH, SERVER_UNREACHABLE,
    * CONNECTION_RESET, CONNECTION_ERROR, HOST_ERROR, ADDRESS_ERROR, NO_PORT, PAYLOAD_TIMEOUT, NO_RESPONSE, NO_RESOURCES, SSL_ERROR, SSL_CERT_ERROR,
    * PORT_UNREACHABLE, SCRIPT_ERROR, OTHER_ERROR, SERVER_DISABLED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failureCode set the failureCode.
    */
   @VsoMethod
@@ -119,6 +150,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Host name or vm name or dns name for the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -129,6 +161,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host name or vm name or dns name for the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -139,6 +172,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -149,6 +183,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -160,6 +195,7 @@ public class SeHmEventServerDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port override form the pool port.
    * If server port is not specified, the pool port is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -171,6 +207,7 @@ public class SeHmEventServerDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Port override form the pool port.
    * If server port is not specified, the pool port is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -181,6 +218,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property shm of obj type sehmeventserverdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shm
    */
   @VsoMethod
@@ -191,6 +229,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the shm
    * Placeholder for description of property shm of obj type sehmeventserverdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shm
    */
   @VsoMethod
@@ -201,6 +240,7 @@ public class SeHmEventServerDetails extends AviRestResource {
   /**
    * This is the setter method this will set the shm
    * Placeholder for description of property shm of obj type sehmeventserverdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shm
    */
   @VsoMethod
@@ -220,6 +260,7 @@ public class SeHmEventServerDetails extends AviRestResource {
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslErrorCode
    */
   @VsoMethod
@@ -234,6 +275,7 @@ public class SeHmEventServerDetails extends AviRestResource {
    * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
    * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
    * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslErrorCode set the sslErrorCode.
    */
   @VsoMethod
@@ -258,7 +300,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.failureCode, objSeHmEventServerDetails.failureCode)&&
   Objects.equals(this.appInfo, objSeHmEventServerDetails.appInfo)&&
   Objects.equals(this.shm, objSeHmEventServerDetails.shm)&&
-  Objects.equals(this.sslErrorCode, objSeHmEventServerDetails.sslErrorCode);
+  Objects.equals(this.sslErrorCode, objSeHmEventServerDetails.sslErrorCode)&&
+  Objects.equals(this.description, objSeHmEventServerDetails.description);
 }
 
 @Override
@@ -266,6 +309,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SeHmEventServerDetails {\n");
       sb.append("    appInfo: ").append(toIndentedString(appInfo)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    failureCode: ").append(toIndentedString(failureCode)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");

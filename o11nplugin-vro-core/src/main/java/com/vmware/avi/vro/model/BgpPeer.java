@@ -28,77 +28,77 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BgpPeer extends AviRestResource {
-  @JsonProperty("advertise_snat_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean advertiseSnatIp = true;
+    @JsonProperty("advertise_snat_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean advertiseSnatIp = true;
 
-  @JsonProperty("advertise_vip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean advertiseVip = true;
+    @JsonProperty("advertise_vip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean advertiseVip = true;
 
-  @JsonProperty("advertisement_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer advertisementInterval = 5;
+    @JsonProperty("advertisement_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer advertisementInterval = 5;
 
-  @JsonProperty("bfd")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean bfd = true;
+    @JsonProperty("bfd")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean bfd = true;
 
-  @JsonProperty("connect_timer")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connectTimer = 10;
+    @JsonProperty("connect_timer")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connectTimer = 10;
 
-  @JsonProperty("ebgp_multihop")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ebgpMultihop = 0;
+    @JsonProperty("ebgp_multihop")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ebgpMultihop = 0;
 
-  @JsonProperty("hold_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer holdTime = null;
+    @JsonProperty("hold_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer holdTime = null;
 
-  @JsonProperty("keepalive_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer keepaliveInterval = null;
+    @JsonProperty("keepalive_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer keepaliveInterval = null;
 
-  @JsonProperty("label")
-  @JsonInclude(Include.NON_NULL)
-  private String label = null;
+    @JsonProperty("label")
+    @JsonInclude(Include.NON_NULL)
+    private String label = null;
 
-  @JsonProperty("local_as")
-  @JsonInclude(Include.NON_NULL)
-  private Integer localAs = null;
+    @JsonProperty("local_as")
+    @JsonInclude(Include.NON_NULL)
+    private Integer localAs = null;
 
-  @JsonProperty("md5_secret")
-  @JsonInclude(Include.NON_NULL)
-  private String md5Secret = null;
+    @JsonProperty("md5_secret")
+    @JsonInclude(Include.NON_NULL)
+    private String md5Secret = null;
 
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("peer_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr peerIp = null;
+    @JsonProperty("peer_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr peerIp = null;
 
-  @JsonProperty("peer_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr peerIp6 = null;
+    @JsonProperty("peer_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr peerIp6 = null;
 
-  @JsonProperty("remote_as")
-  @JsonInclude(Include.NON_NULL)
-  private Integer remoteAs = null;
+    @JsonProperty("remote_as")
+    @JsonInclude(Include.NON_NULL)
+    private Integer remoteAs = null;
 
-  @JsonProperty("shutdown")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean shutdown = false;
+    @JsonProperty("shutdown")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean shutdown = false;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
-  @JsonProperty("subnet6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet6 = null;
+    @JsonProperty("subnet6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet6 = null;
 
 
 
@@ -248,6 +248,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hold time for this peer.
    * Allowed values are 3-7200.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return holdTime
    */
   @VsoMethod
@@ -259,6 +260,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Hold time for this peer.
    * Allowed values are 3-7200.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param holdTime set the holdTime.
    */
   @VsoMethod
@@ -270,6 +272,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Keepalive interval for this peer.
    * Allowed values are 0-3600.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keepaliveInterval
    */
   @VsoMethod
@@ -281,6 +284,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Keepalive interval for this peer.
    * Allowed values are 0-3600.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keepaliveInterval set the keepaliveInterval.
    */
   @VsoMethod
@@ -292,6 +296,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Label used to enable learning and/or advertisement of routes to this peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return label
    */
   @VsoMethod
@@ -303,6 +308,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Label used to enable learning and/or advertisement of routes to this peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param label set the label.
    */
   @VsoMethod
@@ -316,6 +322,7 @@ public class BgpPeer extends AviRestResource {
    * If specified, this will override the local as configured at the vrf level.
    * Allowed values are 1-4294967295.
    * Field introduced in 17.1.6,17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localAs
    */
   @VsoMethod
@@ -329,6 +336,7 @@ public class BgpPeer extends AviRestResource {
    * If specified, this will override the local as configured at the vrf level.
    * Allowed values are 1-4294967295.
    * Field introduced in 17.1.6,17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localAs set the localAs.
    */
   @VsoMethod
@@ -339,6 +347,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Peer autonomous system md5 digest secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return md5Secret
    */
   @VsoMethod
@@ -349,6 +358,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Peer autonomous system md5 digest secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param md5Secret set the md5Secret.
    */
   @VsoMethod
@@ -360,6 +370,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network providing reachability for peer.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -371,6 +382,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Network providing reachability for peer.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -381,6 +393,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the bgp peer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peerIp
    */
   @VsoMethod
@@ -391,6 +404,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the bgp peer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param peerIp set the peerIp.
    */
   @VsoMethod
@@ -402,6 +416,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the bgp peer.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peerIp6
    */
   @VsoMethod
@@ -413,6 +428,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the bgp peer.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param peerIp6 set the peerIp6.
    */
   @VsoMethod
@@ -424,6 +440,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Peer autonomous system id.
    * Allowed values are 1-4294967295.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteAs
    */
   @VsoMethod
@@ -435,6 +452,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Peer autonomous system id.
    * Allowed values are 1-4294967295.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteAs set the remoteAs.
    */
   @VsoMethod
@@ -469,6 +487,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Subnet providing reachability for peer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -479,6 +498,7 @@ public class BgpPeer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Subnet providing reachability for peer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -490,6 +510,7 @@ public class BgpPeer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 subnet providing reachability for peer.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -501,6 +522,7 @@ public class BgpPeer extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 subnet providing reachability for peer.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */
   @VsoMethod

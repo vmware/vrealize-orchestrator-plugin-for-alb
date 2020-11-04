@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BuildInfo extends AviRestResource {
-  @JsonProperty("build_no")
-  @JsonInclude(Include.NON_NULL)
-  private Integer buildNo = null;
+    @JsonProperty("build_no")
+    @JsonInclude(Include.NON_NULL)
+    private Integer buildNo = null;
 
-  @JsonProperty("date")
-  @JsonInclude(Include.NON_NULL)
-  private String date = null;
+    @JsonProperty("date")
+    @JsonInclude(Include.NON_NULL)
+    private String date = null;
 
-  @JsonProperty("min_version")
-  @JsonInclude(Include.NON_NULL)
-  private String minVersion = null;
+    @JsonProperty("min_version")
+    @JsonInclude(Include.NON_NULL)
+    private String minVersion = null;
 
-  @JsonProperty("patch_version")
-  @JsonInclude(Include.NON_NULL)
-  private String patchVersion = null;
+    @JsonProperty("patch_version")
+    @JsonInclude(Include.NON_NULL)
+    private String patchVersion = null;
 
-  @JsonProperty("product")
-  @JsonInclude(Include.NON_NULL)
-  private String product = null;
+    @JsonProperty("product")
+    @JsonInclude(Include.NON_NULL)
+    private String product = null;
 
-  @JsonProperty("product_name")
-  @JsonInclude(Include.NON_NULL)
-  private String productName = null;
+    @JsonProperty("product_name")
+    @JsonInclude(Include.NON_NULL)
+    private String productName = null;
 
-  @JsonProperty("tag")
-  @JsonInclude(Include.NON_NULL)
-  private String tag = null;
+    @JsonProperty("tag")
+    @JsonInclude(Include.NON_NULL)
+    private String tag = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -62,6 +62,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Build number for easy identification.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return buildNo
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Build number for easy identification.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param buildNo set the buildNo.
    */
   @VsoMethod
@@ -84,6 +86,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Date when the package created.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return date
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Date when the package created.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param date set the date.
    */
   @VsoMethod
@@ -106,6 +110,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Min version of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minVersion
    */
   @VsoMethod
@@ -117,6 +122,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Min version of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minVersion set the minVersion.
    */
   @VsoMethod
@@ -128,6 +134,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch version of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchVersion
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch version of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchVersion set the patchVersion.
    */
   @VsoMethod
@@ -150,6 +158,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Product type.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return product
    */
   @VsoMethod
@@ -161,6 +170,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Product type.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param product set the product.
    */
   @VsoMethod
@@ -172,6 +182,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Product name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return productName
    */
   @VsoMethod
@@ -183,6 +194,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Product name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param productName set the productName.
    */
   @VsoMethod
@@ -194,6 +206,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tag related to the package.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tag
    */
   @VsoMethod
@@ -205,6 +218,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Tag related to the package.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tag set the tag.
    */
   @VsoMethod
@@ -216,6 +230,7 @@ public class BuildInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Major version of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -227,6 +242,7 @@ public class BuildInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Major version of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

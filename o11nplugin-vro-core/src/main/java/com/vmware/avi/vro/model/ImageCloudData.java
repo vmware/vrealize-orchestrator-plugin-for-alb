@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ImageCloudData extends AviRestResource {
-  @JsonProperty("cloud_data_values")
-  @JsonInclude(Include.NON_NULL)
-  private List<ImageCloudSpecificData> cloudDataValues = null;
+    @JsonProperty("cloud_data_values")
+    @JsonInclude(Include.NON_NULL)
+    private List<ImageCloudSpecificData> cloudDataValues = null;
 
-  @JsonProperty("cloud_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudName = null;
+    @JsonProperty("cloud_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudName = null;
 
 
 
@@ -38,6 +38,7 @@ public class ImageCloudData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud data specific to a particular cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudDataValues
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class ImageCloudData extends AviRestResource {
    * This is the setter method. this will set the cloudDataValues
    * Cloud data specific to a particular cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudDataValues
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class ImageCloudData extends AviRestResource {
    * This is the setter method this will set the cloudDataValues
    * Cloud data specific to a particular cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudDataValues
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class ImageCloudData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contains the name of the cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudName
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class ImageCloudData extends AviRestResource {
    * This is the setter method to the attribute.
    * Contains the name of the cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudName set the cloudName.
    */
   @VsoMethod

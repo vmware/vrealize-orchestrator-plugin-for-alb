@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLKeyRSAParams extends AviRestResource {
-  @JsonProperty("exponent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer exponent = 65537;
+    @JsonProperty("exponent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer exponent = 65537;
 
-  @JsonProperty("key_size")
-  @JsonInclude(Include.NON_NULL)
-  private String keySize = "SSL_KEY_2048_BITS";
+    @JsonProperty("key_size")
+    @JsonInclude(Include.NON_NULL)
+    private String keySize = "SSL_KEY_2048_BITS";
 
 
 
@@ -59,7 +59,7 @@ public class SSLKeyRSAParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_KEY_2048_BITS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_2048_BITS".
    * @return keySize
    */
   @VsoMethod
@@ -70,7 +70,7 @@ public class SSLKeyRSAParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_KEY_2048_BITS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_2048_BITS".
    * @param keySize set the keySize.
    */
   @VsoMethod

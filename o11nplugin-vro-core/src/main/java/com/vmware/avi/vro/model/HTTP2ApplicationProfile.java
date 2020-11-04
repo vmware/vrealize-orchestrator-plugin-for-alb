@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTP2ApplicationProfile extends AviRestResource {
-  @JsonProperty("http2_initial_window_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer http2InitialWindowSize = 64;
+    @JsonProperty("http2_initial_window_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer http2InitialWindowSize = 64;
 
-  @JsonProperty("max_http2_concurrent_streams_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2ConcurrentStreamsPerConnection = 128;
+    @JsonProperty("max_http2_concurrent_streams_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2ConcurrentStreamsPerConnection = 128;
 
-  @JsonProperty("max_http2_control_frames_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2ControlFramesPerConnection = 1000;
+    @JsonProperty("max_http2_control_frames_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2ControlFramesPerConnection = 1000;
 
-  @JsonProperty("max_http2_empty_data_frames_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2EmptyDataFramesPerConnection = 1000;
+    @JsonProperty("max_http2_empty_data_frames_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2EmptyDataFramesPerConnection = 1000;
 
-  @JsonProperty("max_http2_header_field_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2HeaderFieldSize = 4096;
+    @JsonProperty("max_http2_header_field_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2HeaderFieldSize = 4096;
 
-  @JsonProperty("max_http2_queued_frames_to_client_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2QueuedFramesToClientPerConnection = 1000;
+    @JsonProperty("max_http2_queued_frames_to_client_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2QueuedFramesToClientPerConnection = 1000;
 
-  @JsonProperty("max_http2_requests_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2RequestsPerConnection = 1000;
+    @JsonProperty("max_http2_requests_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2RequestsPerConnection = 1000;
 
 
 
@@ -59,6 +59,7 @@ public class HTTP2ApplicationProfile extends AviRestResource {
    * The initial flow control window size in kb for http/2 streams.
    * Allowed values are 64-32768.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return http2InitialWindowSize
    */
@@ -72,6 +73,7 @@ public class HTTP2ApplicationProfile extends AviRestResource {
    * The initial flow control window size in kb for http/2 streams.
    * Allowed values are 64-32768.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param http2InitialWindowSize set the http2InitialWindowSize.
    */
@@ -172,6 +174,7 @@ public class HTTP2ApplicationProfile extends AviRestResource {
    * The limit applies equally to both name and value.
    * Allowed values are 1-8192.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return maxHttp2HeaderFieldSize
    */
@@ -186,6 +189,7 @@ public class HTTP2ApplicationProfile extends AviRestResource {
    * The limit applies equally to both name and value.
    * Allowed values are 1-8192.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param maxHttp2HeaderFieldSize set the maxHttp2HeaderFieldSize.
    */

@@ -25,33 +25,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeParams extends AviRestResource {
-  @JsonProperty("controller_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerPatchRef = null;
+    @JsonProperty("controller_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerPatchRef = null;
 
-  @JsonProperty("image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String imageRef = null;
+    @JsonProperty("image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String imageRef = null;
 
-  @JsonProperty("se_group_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupOptions seGroupOptions = null;
+    @JsonProperty("se_group_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupOptions seGroupOptions = null;
 
-  @JsonProperty("se_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seGroupRefs = null;
+    @JsonProperty("se_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seGroupRefs = null;
 
-  @JsonProperty("se_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sePatchRef = null;
+    @JsonProperty("se_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sePatchRef = null;
 
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
-  @JsonProperty("system")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean system = false;
+    @JsonProperty("system")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean system = false;
 
 
 
@@ -60,6 +60,7 @@ public class UpgradeParams extends AviRestResource {
    * Image uuid for identifying controller patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
   @VsoMethod
@@ -72,6 +73,7 @@ public class UpgradeParams extends AviRestResource {
    * Image uuid for identifying controller patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
   @VsoMethod
@@ -84,6 +86,7 @@ public class UpgradeParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
   @VsoMethod
@@ -96,6 +99,7 @@ public class UpgradeParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
   @VsoMethod
@@ -107,6 +111,7 @@ public class UpgradeParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field identifies se group options that need to be applied during the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
   @VsoMethod
@@ -118,6 +123,7 @@ public class UpgradeParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This field identifies se group options that need to be applied during the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
   @VsoMethod
@@ -131,6 +137,7 @@ public class UpgradeParams extends AviRestResource {
    * This field is ignored if the 'system' is enabled.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -144,6 +151,7 @@ public class UpgradeParams extends AviRestResource {
    * This field is ignored if the 'system' is enabled.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -157,6 +165,7 @@ public class UpgradeParams extends AviRestResource {
    * This field is ignored if the 'system' is enabled.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -174,6 +183,7 @@ public class UpgradeParams extends AviRestResource {
    * Image uuid for identifying service engine patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchRef
    */
   @VsoMethod
@@ -186,6 +196,7 @@ public class UpgradeParams extends AviRestResource {
    * Image uuid for identifying service engine patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchRef set the sePatchRef.
    */
   @VsoMethod

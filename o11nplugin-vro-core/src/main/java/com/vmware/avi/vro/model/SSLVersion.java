@@ -24,16 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLVersion extends AviRestResource {
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "SSL_VERSION_TLS1_1";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "SSL_VERSION_TLS1_1";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - SSL_VERSION_SSLV3, SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_VERSION_TLS1_1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_VERSION_TLS1_1".
    * @return type
    */
   @VsoMethod
@@ -44,7 +44,7 @@ public class SSLVersion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SSL_VERSION_SSLV3, SSL_VERSION_TLS1, SSL_VERSION_TLS1_1, SSL_VERSION_TLS1_2, SSL_VERSION_TLS1_3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_VERSION_TLS1_1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_VERSION_TLS1_1".
    * @param type set the type.
    */
   @VsoMethod

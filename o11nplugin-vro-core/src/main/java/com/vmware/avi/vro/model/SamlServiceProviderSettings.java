@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlServiceProviderSettings extends AviRestResource {
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private String fqdn = null;
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private String fqdn = null;
 
-  @JsonProperty("org_display_name")
-  @JsonInclude(Include.NON_NULL)
-  private String orgDisplayName = null;
+    @JsonProperty("org_display_name")
+    @JsonInclude(Include.NON_NULL)
+    private String orgDisplayName = null;
 
-  @JsonProperty("org_name")
-  @JsonInclude(Include.NON_NULL)
-  private String orgName = null;
+    @JsonProperty("org_name")
+    @JsonInclude(Include.NON_NULL)
+    private String orgName = null;
 
-  @JsonProperty("org_url")
-  @JsonInclude(Include.NON_NULL)
-  private String orgUrl = null;
+    @JsonProperty("org_url")
+    @JsonInclude(Include.NON_NULL)
+    private String orgUrl = null;
 
-  @JsonProperty("saml_entity_type")
-  @JsonInclude(Include.NON_NULL)
-  private String samlEntityType = null;
+    @JsonProperty("saml_entity_type")
+    @JsonInclude(Include.NON_NULL)
+    private String samlEntityType = null;
 
-  @JsonProperty("sp_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private List<SamlServiceProviderNode> spNodes = null;
+    @JsonProperty("sp_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private List<SamlServiceProviderNode> spNodes = null;
 
-  @JsonProperty("tech_contact_email")
-  @JsonInclude(Include.NON_NULL)
-  private String techContactEmail = null;
+    @JsonProperty("tech_contact_email")
+    @JsonInclude(Include.NON_NULL)
+    private String techContactEmail = null;
 
-  @JsonProperty("tech_contact_name")
-  @JsonInclude(Include.NON_NULL)
-  private String techContactName = null;
+    @JsonProperty("tech_contact_name")
+    @JsonInclude(Include.NON_NULL)
+    private String techContactName = null;
 
 
 
@@ -62,6 +62,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fqdn if entity type is dns_fqdn.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Fqdn if entity type is dns_fqdn.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
   @VsoMethod
@@ -84,6 +86,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service provider organization display name.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return orgDisplayName
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Service provider organization display name.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param orgDisplayName set the orgDisplayName.
    */
   @VsoMethod
@@ -106,6 +110,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service provider organization name.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return orgName
    */
   @VsoMethod
@@ -117,6 +122,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Service provider organization name.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param orgName set the orgName.
    */
   @VsoMethod
@@ -128,6 +134,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service provider organization url.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return orgUrl
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Service provider organization url.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param orgUrl set the orgUrl.
    */
   @VsoMethod
@@ -151,6 +159,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * Type of saml endpoint.
    * Enum options - AUTH_SAML_CLUSTER_VIP, AUTH_SAML_DNS_FQDN, AUTH_SAML_APP_VS.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlEntityType
    */
   @VsoMethod
@@ -163,6 +172,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * Type of saml endpoint.
    * Enum options - AUTH_SAML_CLUSTER_VIP, AUTH_SAML_DNS_FQDN, AUTH_SAML_APP_VS.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlEntityType set the samlEntityType.
    */
   @VsoMethod
@@ -174,6 +184,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service provider node information.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spNodes
    */
   @VsoMethod
@@ -185,6 +196,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method. this will set the spNodes
    * Service provider node information.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spNodes
    */
   @VsoMethod
@@ -196,6 +208,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method this will set the spNodes
    * Service provider node information.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spNodes
    */
   @VsoMethod
@@ -212,6 +225,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service provider technical contact email.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return techContactEmail
    */
   @VsoMethod
@@ -223,6 +237,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Service provider technical contact email.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param techContactEmail set the techContactEmail.
    */
   @VsoMethod
@@ -234,6 +249,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service provider technical contact name.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return techContactName
    */
   @VsoMethod
@@ -245,6 +261,7 @@ public class SamlServiceProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Service provider technical contact name.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param techContactName set the techContactName.
    */
   @VsoMethod

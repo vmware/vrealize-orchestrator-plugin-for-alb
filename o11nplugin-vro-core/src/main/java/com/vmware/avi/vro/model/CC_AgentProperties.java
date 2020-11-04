@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CC_AgentProperties extends AviRestResource {
-  @JsonProperty("async_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer asyncRetries = 5;
+    @JsonProperty("async_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer asyncRetries = 5;
 
-  @JsonProperty("async_retries_delay")
-  @JsonInclude(Include.NON_NULL)
-  private Integer asyncRetriesDelay = 10;
+    @JsonProperty("async_retries_delay")
+    @JsonInclude(Include.NON_NULL)
+    private Integer asyncRetriesDelay = 10;
 
-  @JsonProperty("poll_duration_target")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pollDurationTarget = 10;
+    @JsonProperty("poll_duration_target")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pollDurationTarget = 10;
 
-  @JsonProperty("poll_fast_target")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pollFastTarget = 60;
+    @JsonProperty("poll_fast_target")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pollFastTarget = 60;
 
-  @JsonProperty("poll_slow_target")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pollSlowTarget = 240;
+    @JsonProperty("poll_slow_target")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pollSlowTarget = 240;
 
-  @JsonProperty("vnic_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicRetries = 60;
+    @JsonProperty("vnic_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicRetries = 60;
 
-  @JsonProperty("vnic_retries_delay")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicRetriesDelay = 5;
+    @JsonProperty("vnic_retries_delay")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicRetriesDelay = 5;
 
 
 
@@ -79,6 +79,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Delay between each async job status poll check.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return asyncRetriesDelay
    */
@@ -90,6 +91,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Delay between each async job status poll check.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param asyncRetriesDelay set the asyncRetriesDelay.
    */
@@ -102,6 +104,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Discovery poll target duration; a scale factor of 1+ is computed with the actual discovery (actual/target) and used to tweak slow and fast poll
    * intervals.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return pollDurationTarget
    */
@@ -114,6 +117,7 @@ public class CC_AgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Discovery poll target duration; a scale factor of 1+ is computed with the actual discovery (actual/target) and used to tweak slow and fast poll
    * intervals.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param pollDurationTarget set the pollDurationTarget.
    */
@@ -125,6 +129,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fast poll interval.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return pollFastTarget
    */
@@ -136,6 +141,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fast poll interval.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param pollFastTarget set the pollFastTarget.
    */
@@ -147,6 +153,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Slow poll interval.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 240.
    * @return pollSlowTarget
    */
@@ -158,6 +165,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Slow poll interval.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 240.
    * @param pollSlowTarget set the pollSlowTarget.
    */
@@ -191,6 +199,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Delay between each vnic status poll check.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return vnicRetriesDelay
    */
@@ -202,6 +211,7 @@ public class CC_AgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Delay between each vnic status poll check.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param vnicRetriesDelay set the vnicRetriesDelay.
    */

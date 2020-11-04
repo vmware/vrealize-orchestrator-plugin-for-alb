@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsRealTimeUpdate extends AviRestResource {
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = 30;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = 30;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = false;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = false;
 
 
 
@@ -39,6 +39,7 @@ public class MetricsRealTimeUpdate extends AviRestResource {
    * Real time metrics collection duration in minutes.
    * 0 for infinite.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return duration
    */
@@ -52,6 +53,7 @@ public class MetricsRealTimeUpdate extends AviRestResource {
    * Real time metrics collection duration in minutes.
    * 0 for infinite.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param duration set the duration.
    */
@@ -63,7 +65,7 @@ public class MetricsRealTimeUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables real time metrics collection.
-   * When disabled, 6 hour view is the most granular the system will track.
+   * When deactivated, 6 hour view is the most granular the system will track.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -75,7 +77,7 @@ public class MetricsRealTimeUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables real time metrics collection.
-   * When disabled, 6 hour view is the most granular the system will track.
+   * When deactivated, 6 hour view is the most granular the system will track.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */

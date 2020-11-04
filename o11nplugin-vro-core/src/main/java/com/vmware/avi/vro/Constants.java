@@ -966,5 +966,27 @@ public class Constants {
 	public static final String FINDER_VRO_SEBGPPEERDOWNDETAILS = "SeBgpPeerDownDetails";
 	public static final String FINDER_VRO_NSXTIMAGEDETAILS = "NsxtImageDetails";
 	public static final String FINDER_VRO_IPTHREATDBEVENTDATA = "IPThreatDBEventData";
+	
+	public static final String FINDER_VRO_ACSUBJECTINFO = "ACSubjectInfo";
+	public static final String FINDER_VRO_SEGROUPANALYTICSPOLICY = "SeGroupAnalyticsPolicy";
+	public static final String FINDER_VRO_METRICSEVENTTHRESHOLD = "MetricsEventThreshold";
+	public static final String FINDER_VRO_WEBAPPLICATIONSIGNATURESERVICESTATUS = "WebApplicationSignatureServiceStatus";
+	public static final String FINDER_VRO_STATICIPRANGERUNTIME = "StaticIpRangeRuntime";
+	public static final String FINDER_VRO_STATICIPALLOCINFO = "StaticIpAllocInfo";
+	public static final String FINDER_VRO_TENANTLABEL = "TenantLabel";
+	public static final String FINDER_VRO_AUDITCOMPLIANCEEVENTINFO = "AuditComplianceEventInfo";
+	public static final String FINDER_VRO_ACUSERIDENTITY = "ACUserIdentity";
+	public static final String FINDER_VRO_STATICIPRANGE = "StaticIpRangeRuntime";
+	public static final String FINDER_VRO_WAFPOLICYALLOWLIST = "WafPolicyAllowlist";
+	public static final String FINDER_VRO_WAFPOLICYALLOWLISTRULE = "WafPolicyAllowlistRule";
+	public static final String FINDER_VRO_SELECTOR = "Selector";
+	public static final String FINDER_VRO_KEYVALUETUPLE = "KeyValueTuple";
+	public static final String FINDER_VRO_ROLEFILTER = "RoleFilter";
+	public static final String FINDER_VRO_ROLEFILTERMATCHLABEL = "RoleFilterMatchLabel";
+	public static final String FINDER_VRO_IPAMUSABLENETWORK = "IpamUsableNetwork";
+	public static final String FINDER_VRO_GCPENCRYPTIONKEYS = "GCPEncryptionKeys";
+	public static final String FINDER_VRO_WAFALLOWLISTLOG = "WafAllowlistLog";
+	public static final String FINDER_VRO_NSXTDATASTORES = "NsxtDatastores";
+	public static final String FINDER_VRO_GCPSEGROUPCONFIG = "GCPSeGroupConfig";
 
 }

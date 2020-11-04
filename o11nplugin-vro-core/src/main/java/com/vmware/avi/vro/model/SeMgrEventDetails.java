@@ -25,71 +25,88 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeMgrEventDetails extends AviRestResource {
-  @JsonProperty("cloud_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudName = null;
+    @JsonProperty("cloud_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudName = null;
 
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("enable_state")
-  @JsonInclude(Include.NON_NULL)
-  private String enableState = null;
+    @JsonProperty("enable_state")
+    @JsonInclude(Include.NON_NULL)
+    private String enableState = null;
 
-  @JsonProperty("gcp_info")
-  @JsonInclude(Include.NON_NULL)
-  private GcpInfo gcpInfo = null;
+    @JsonProperty("gcp_info")
+    @JsonInclude(Include.NON_NULL)
+    private GcpInfo gcpInfo = null;
 
-  @JsonProperty("host_name")
-  @JsonInclude(Include.NON_NULL)
-  private String hostName = null;
+    @JsonProperty("host_name")
+    @JsonInclude(Include.NON_NULL)
+    private String hostName = null;
 
-  @JsonProperty("host_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String hostUuid = null;
+    @JsonProperty("host_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String hostUuid = null;
 
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = null;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = null;
 
-  @JsonProperty("migrate_state")
-  @JsonInclude(Include.NON_NULL)
-  private String migrateState = null;
+    @JsonProperty("migrate_state")
+    @JsonInclude(Include.NON_NULL)
+    private String migrateState = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("new_mgmt_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String newMgmtIp = null;
 
-  @JsonProperty("se_grp_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpName = null;
+    @JsonProperty("new_mgmt_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String newMgmtIp6 = null;
 
-  @JsonProperty("se_grp_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpUuid = null;
+    @JsonProperty("old_mgmt_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String oldMgmtIp = null;
 
-  @JsonProperty("vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcpus = null;
+    @JsonProperty("old_mgmt_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String oldMgmtIp6 = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsName = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsUuid = null;
+    @JsonProperty("se_grp_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpName = null;
+
+    @JsonProperty("se_grp_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpUuid = null;
+
+    @JsonProperty("vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcpus = null;
+
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsName = null;
+
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud_name of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudName
    */
   @VsoMethod
@@ -100,6 +117,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud_name of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudName set the cloudName.
    */
   @VsoMethod
@@ -110,6 +128,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -120,6 +139,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -130,6 +150,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property enable_state of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enableState
    */
   @VsoMethod
@@ -140,6 +161,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property enable_state of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enableState set the enableState.
    */
   @VsoMethod
@@ -150,6 +172,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gcp_info of obj type semgreventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpInfo
    */
   @VsoMethod
@@ -160,6 +183,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gcp_info of obj type semgreventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpInfo set the gcpInfo.
    */
   @VsoMethod
@@ -170,6 +194,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_name of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -180,6 +205,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host_name of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostName set the hostName.
    */
   @VsoMethod
@@ -190,6 +216,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostUuid
    */
   @VsoMethod
@@ -200,6 +227,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostUuid set the hostUuid.
    */
   @VsoMethod
@@ -210,6 +238,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property memory of obj type semgreventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
   @VsoMethod
@@ -220,6 +249,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property memory of obj type semgreventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
   @VsoMethod
@@ -230,6 +260,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property migrate_state of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return migrateState
    */
   @VsoMethod
@@ -240,6 +271,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property migrate_state of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param migrateState set the migrateState.
    */
   @VsoMethod
@@ -250,6 +282,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -260,6 +293,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -269,7 +303,96 @@ public class SeMgrEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return newMgmtIp
+   */
+  @VsoMethod
+  public String getNewMgmtIp() {
+    return newMgmtIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param newMgmtIp set the newMgmtIp.
+   */
+  @VsoMethod
+  public void setNewMgmtIp(String  newMgmtIp) {
+    this.newMgmtIp = newMgmtIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return newMgmtIp6
+   */
+  @VsoMethod
+  public String getNewMgmtIp6() {
+    return newMgmtIp6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param newMgmtIp6 set the newMgmtIp6.
+   */
+  @VsoMethod
+  public void setNewMgmtIp6(String  newMgmtIp6) {
+    this.newMgmtIp6 = newMgmtIp6;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return oldMgmtIp
+   */
+  @VsoMethod
+  public String getOldMgmtIp() {
+    return oldMgmtIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param oldMgmtIp set the oldMgmtIp.
+   */
+  @VsoMethod
+  public void setOldMgmtIp(String  oldMgmtIp) {
+    this.oldMgmtIp = oldMgmtIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return oldMgmtIp6
+   */
+  @VsoMethod
+  public String getOldMgmtIp6() {
+    return oldMgmtIp6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param oldMgmtIp6 set the oldMgmtIp6.
+   */
+  @VsoMethod
+  public void setOldMgmtIp6(String  oldMgmtIp6) {
+    this.oldMgmtIp6 = oldMgmtIp6;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -280,6 +403,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -290,6 +414,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_grp_name of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpName
    */
   @VsoMethod
@@ -300,6 +425,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_grp_name of obj type semgreventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpName set the seGrpName.
    */
   @VsoMethod
@@ -310,6 +436,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpUuid
    */
   @VsoMethod
@@ -320,6 +447,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpUuid set the seGrpUuid.
    */
   @VsoMethod
@@ -330,6 +458,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcpus of obj type semgreventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcpus
    */
   @VsoMethod
@@ -340,6 +469,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcpus of obj type semgreventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcpus set the vcpus.
    */
   @VsoMethod
@@ -350,6 +480,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type semgreventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -360,6 +491,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vsName
    * Placeholder for description of property vs_name of obj type semgreventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -370,6 +502,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vsName
    * Placeholder for description of property vs_name of obj type semgreventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -385,6 +518,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -395,6 +529,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vsUuid
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -405,6 +540,7 @@ public class SeMgrEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vsUuid
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -442,7 +578,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cloudName, objSeMgrEventDetails.cloudName)&&
   Objects.equals(this.enableState, objSeMgrEventDetails.enableState)&&
   Objects.equals(this.migrateState, objSeMgrEventDetails.migrateState)&&
-  Objects.equals(this.gcpInfo, objSeMgrEventDetails.gcpInfo);
+  Objects.equals(this.gcpInfo, objSeMgrEventDetails.gcpInfo)&&
+  Objects.equals(this.oldMgmtIp, objSeMgrEventDetails.oldMgmtIp)&&
+  Objects.equals(this.newMgmtIp, objSeMgrEventDetails.newMgmtIp)&&
+  Objects.equals(this.oldMgmtIp6, objSeMgrEventDetails.oldMgmtIp6)&&
+  Objects.equals(this.newMgmtIp6, objSeMgrEventDetails.newMgmtIp6);
 }
 
 @Override
@@ -458,6 +598,10 @@ public String toString() {
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    migrateState: ").append(toIndentedString(migrateState)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    newMgmtIp: ").append(toIndentedString(newMgmtIp)).append("\n");
+        sb.append("    newMgmtIp6: ").append(toIndentedString(newMgmtIp6)).append("\n");
+        sb.append("    oldMgmtIp: ").append(toIndentedString(oldMgmtIp)).append("\n");
+        sb.append("    oldMgmtIp6: ").append(toIndentedString(oldMgmtIp6)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    seGrpName: ").append(toIndentedString(seGrpName)).append("\n");
         sb.append("    seGrpUuid: ").append(toIndentedString(seGrpUuid)).append("\n");

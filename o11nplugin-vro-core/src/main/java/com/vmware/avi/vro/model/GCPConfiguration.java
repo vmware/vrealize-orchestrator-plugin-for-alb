@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.GCPEncryptionKeys;
 import com.vmware.avi.vro.model.GCPNetworkConfig;
 import com.vmware.avi.vro.model.GCPVIPAllocation;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -26,49 +27,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPConfiguration extends AviRestResource {
-  @JsonProperty("cloud_credentials_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudCredentialsRef = null;
+    @JsonProperty("cloud_credentials_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudCredentialsRef = null;
 
-  @JsonProperty("encryption_key_id")
-  @JsonInclude(Include.NON_NULL)
-  private String encryptionKeyId = null;
+    @JsonProperty("encryption_key_id")
+    @JsonInclude(Include.NON_NULL)
+    private String encryptionKeyId;
 
-  @JsonProperty("firewall_target_tags")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> firewallTargetTags = null;
+    @JsonProperty("encryption_keys")
+    @JsonInclude(Include.NON_NULL)
+    private GCPEncryptionKeys encryptionKeys = null;
 
-  @JsonProperty("gcs_bucket_name")
-  @JsonInclude(Include.NON_NULL)
-  private String gcsBucketName = null;
+    @JsonProperty("firewall_target_tags")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> firewallTargetTags = null;
 
-  @JsonProperty("gcs_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String gcsProjectId = null;
+    @JsonProperty("gcs_bucket_name")
+    @JsonInclude(Include.NON_NULL)
+    private String gcsBucketName = null;
 
-  @JsonProperty("match_se_group_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean matchSeGroupSubnet = false;
+    @JsonProperty("gcs_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String gcsProjectId = null;
 
-  @JsonProperty("network_config")
-  @JsonInclude(Include.NON_NULL)
-  private GCPNetworkConfig networkConfig = null;
+    @JsonProperty("match_se_group_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean matchSeGroupSubnet;
 
-  @JsonProperty("region_name")
-  @JsonInclude(Include.NON_NULL)
-  private String regionName = null;
+    @JsonProperty("network_config")
+    @JsonInclude(Include.NON_NULL)
+    private GCPNetworkConfig networkConfig = null;
 
-  @JsonProperty("se_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String seProjectId = null;
+    @JsonProperty("region_name")
+    @JsonInclude(Include.NON_NULL)
+    private String regionName = null;
 
-  @JsonProperty("vip_allocation_strategy")
-  @JsonInclude(Include.NON_NULL)
-  private GCPVIPAllocation vipAllocationStrategy = null;
+    @JsonProperty("se_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String seProjectId = null;
 
-  @JsonProperty("zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> zones = null;
+    @JsonProperty("vip_allocation_strategy")
+    @JsonInclude(Include.NON_NULL)
+    private GCPVIPAllocation vipAllocationStrategy = null;
+
+    @JsonProperty("zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> zones = null;
 
 
 
@@ -77,6 +82,7 @@ public class GCPConfiguration extends AviRestResource {
    * Credentials to access google cloud platform apis.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudCredentialsRef
    */
   @VsoMethod
@@ -89,6 +95,7 @@ public class GCPConfiguration extends AviRestResource {
    * Credentials to access google cloud platform apis.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudCredentialsRef set the cloudCredentialsRef.
    */
   @VsoMethod
@@ -98,8 +105,9 @@ public class GCPConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Key resource id of customer-managed encryption key (cmek) used to encrypt service engine disks and images.
-   * Field introduced in 20.1.1.
+   * Deprecated, please use encryption_keys field.
+   * Field deprecated in 18.2.10, 20.1.2.
+   * Field introduced in 18.2.7, 20.1.1.
    * @return encryptionKeyId
    */
   @VsoMethod
@@ -109,8 +117,9 @@ public class GCPConfiguration extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Key resource id of customer-managed encryption key (cmek) used to encrypt service engine disks and images.
-   * Field introduced in 20.1.1.
+   * Deprecated, please use encryption_keys field.
+   * Field deprecated in 18.2.10, 20.1.2.
+   * Field introduced in 18.2.7, 20.1.1.
    * @param encryptionKeyId set the encryptionKeyId.
    */
   @VsoMethod
@@ -120,8 +129,33 @@ public class GCPConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Encryption keys for google cloud services.
+   * Field introduced in 18.2.10, 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return encryptionKeys
+   */
+  @VsoMethod
+  public GCPEncryptionKeys getEncryptionKeys() {
+    return encryptionKeys;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Encryption keys for google cloud services.
+   * Field introduced in 18.2.10, 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param encryptionKeys set the encryptionKeys.
+   */
+  @VsoMethod
+  public void setEncryptionKeys(GCPEncryptionKeys encryptionKeys) {
+    this.encryptionKeys = encryptionKeys;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return firewallTargetTags
    */
   @VsoMethod
@@ -133,6 +167,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method. this will set the firewallTargetTags
    * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return firewallTargetTags
    */
   @VsoMethod
@@ -144,6 +179,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method this will set the firewallTargetTags
    * Firewall rule network target tags which will be applied on service engines to allow ingress and egress traffic for service engines.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return firewallTargetTags
    */
   @VsoMethod
@@ -162,6 +198,7 @@ public class GCPConfiguration extends AviRestResource {
    * This image will be deleted once the image is created in google compute images.
    * By default, a bucket will be created if this field is not specified.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcsBucketName
    */
   @VsoMethod
@@ -175,6 +212,7 @@ public class GCPConfiguration extends AviRestResource {
    * This image will be deleted once the image is created in google compute images.
    * By default, a bucket will be created if this field is not specified.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcsBucketName set the gcsBucketName.
    */
   @VsoMethod
@@ -188,6 +226,7 @@ public class GCPConfiguration extends AviRestResource {
    * This image will be deleted once the image is created in google compute images.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcsProjectId
    */
   @VsoMethod
@@ -201,6 +240,7 @@ public class GCPConfiguration extends AviRestResource {
    * This image will be deleted once the image is created in google compute images.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcsProjectId set the gcsProjectId.
    */
   @VsoMethod
@@ -214,7 +254,6 @@ public class GCPConfiguration extends AviRestResource {
    * Vip_allocation_strategy.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return matchSeGroupSubnet
    */
   @VsoMethod
@@ -228,7 +267,6 @@ public class GCPConfiguration extends AviRestResource {
    * Vip_allocation_strategy.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param matchSeGroupSubnet set the matchSeGroupSubnet.
    */
   @VsoMethod
@@ -240,6 +278,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform vpc network configuration for the service engines.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkConfig
    */
   @VsoMethod
@@ -251,6 +290,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform vpc network configuration for the service engines.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkConfig set the networkConfig.
    */
   @VsoMethod
@@ -262,6 +302,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform region name where service engines will be spawned.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return regionName
    */
   @VsoMethod
@@ -273,6 +314,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform region name where service engines will be spawned.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param regionName set the regionName.
    */
   @VsoMethod
@@ -284,6 +326,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform project id where service engines will be spawned.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seProjectId
    */
   @VsoMethod
@@ -295,6 +338,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform project id where service engines will be spawned.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seProjectId set the seProjectId.
    */
   @VsoMethod
@@ -305,7 +349,8 @@ public class GCPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip allocation strategy defines how the vips will be created in google cloud.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipAllocationStrategy
    */
   @VsoMethod
@@ -316,7 +361,8 @@ public class GCPConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip allocation strategy defines how the vips will be created in google cloud.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipAllocationStrategy set the vipAllocationStrategy.
    */
   @VsoMethod
@@ -328,6 +374,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform zones where service engines will be distributed for ha.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -339,6 +386,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method. this will set the zones
    * Google cloud platform zones where service engines will be distributed for ha.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -350,6 +398,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method this will set the zones
    * Google cloud platform zones where service engines will be distributed for ha.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -383,7 +432,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gcsProjectId, objGCPConfiguration.gcsProjectId)&&
   Objects.equals(this.gcsBucketName, objGCPConfiguration.gcsBucketName)&&
   Objects.equals(this.encryptionKeyId, objGCPConfiguration.encryptionKeyId)&&
-  Objects.equals(this.vipAllocationStrategy, objGCPConfiguration.vipAllocationStrategy);
+  Objects.equals(this.vipAllocationStrategy, objGCPConfiguration.vipAllocationStrategy)&&
+  Objects.equals(this.encryptionKeys, objGCPConfiguration.encryptionKeys);
 }
 
 @Override
@@ -392,6 +442,7 @@ public String toString() {
   sb.append("class GCPConfiguration {\n");
       sb.append("    cloudCredentialsRef: ").append(toIndentedString(cloudCredentialsRef)).append("\n");
         sb.append("    encryptionKeyId: ").append(toIndentedString(encryptionKeyId)).append("\n");
+        sb.append("    encryptionKeys: ").append(toIndentedString(encryptionKeys)).append("\n");
         sb.append("    firewallTargetTags: ").append(toIndentedString(firewallTargetTags)).append("\n");
         sb.append("    gcsBucketName: ").append(toIndentedString(gcsBucketName)).append("\n");
         sb.append("    gcsProjectId: ").append(toIndentedString(gcsProjectId)).append("\n");

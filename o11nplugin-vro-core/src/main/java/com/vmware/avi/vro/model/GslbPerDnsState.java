@@ -27,37 +27,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbPerDnsState extends AviRestResource {
-  @JsonProperty("geo_download")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDownloadStatus geoDownload = null;
+    @JsonProperty("geo_download")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDownloadStatus geoDownload = null;
 
-  @JsonProperty("gslb_download")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDownloadStatus gslbDownload = null;
+    @JsonProperty("gslb_download")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDownloadStatus gslbDownload = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("placement_rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbSubDomainPlacementRuntime> placementRules = null;
+    @JsonProperty("placement_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbSubDomainPlacementRuntime> placementRules = null;
 
-  @JsonProperty("se_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seList = null;
+    @JsonProperty("se_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seList = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("valid_dns_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean validDnsVs = false;
+    @JsonProperty("valid_dns_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean validDnsVs = false;
 
 
 
@@ -65,6 +65,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the geodbprofile download status to the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoDownload
    */
   @VsoMethod
@@ -76,6 +77,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the geodbprofile download status to the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoDownload set the geoDownload.
    */
   @VsoMethod
@@ -87,6 +89,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the gslb, gslbservice, healthmonitor download status to the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbDownload
    */
   @VsoMethod
@@ -98,6 +101,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the gslb, gslbservice, healthmonitor download status to the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbDownload set the gslbDownload.
    */
   @VsoMethod
@@ -108,6 +112,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configured dns-vs-name at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -118,6 +123,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configured dns-vs-name at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -128,6 +134,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oper_status of obj type gslbperdnsstate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -138,6 +145,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oper_status of obj type gslbperdnsstate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -149,6 +157,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the subdomain placement rules for this dns-vs.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementRules
    */
   @VsoMethod
@@ -160,6 +169,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method. this will set the placementRules
    * This field describes the subdomain placement rules for this dns-vs.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementRules
    */
   @VsoMethod
@@ -171,6 +181,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method this will set the placementRules
    * This field describes the subdomain placement rules for this dns-vs.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementRules
    */
   @VsoMethod
@@ -187,6 +198,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The service engines associated with the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
   @VsoMethod
@@ -198,6 +210,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method. this will set the seList
    * The service engines associated with the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
   @VsoMethod
@@ -209,6 +222,7 @@ public class GslbPerDnsState extends AviRestResource {
    * This is the setter method this will set the seList
    * The service engines associated with the dns-vs.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
   @VsoMethod
@@ -224,6 +238,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configured dns-vs-uuid at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -234,6 +249,7 @@ public class GslbPerDnsState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configured dns-vs-uuid at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

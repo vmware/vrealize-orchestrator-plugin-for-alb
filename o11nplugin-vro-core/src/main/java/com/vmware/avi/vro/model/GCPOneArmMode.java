@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPOneArmMode extends AviRestResource {
-  @JsonProperty("data_vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String dataVpcNetworkName = null;
+    @JsonProperty("data_vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String dataVpcNetworkName = null;
 
-  @JsonProperty("data_vpc_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String dataVpcProjectId = null;
+    @JsonProperty("data_vpc_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String dataVpcProjectId = null;
 
-  @JsonProperty("data_vpc_subnet_name")
-  @JsonInclude(Include.NON_NULL)
-  private String dataVpcSubnetName = null;
+    @JsonProperty("data_vpc_subnet_name")
+    @JsonInclude(Include.NON_NULL)
+    private String dataVpcSubnetName = null;
 
-  @JsonProperty("management_vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String managementVpcNetworkName = null;
+    @JsonProperty("management_vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String managementVpcNetworkName = null;
 
-  @JsonProperty("management_vpc_subnet_name")
-  @JsonInclude(Include.NON_NULL)
-  private String managementVpcSubnetName = null;
+    @JsonProperty("management_vpc_subnet_name")
+    @JsonInclude(Include.NON_NULL)
+    private String managementVpcSubnetName = null;
 
 
 
@@ -50,6 +50,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine data network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVpcNetworkName
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine data network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataVpcNetworkName set the dataVpcNetworkName.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class GCPOneArmMode extends AviRestResource {
    * Project id of the service engine data network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVpcProjectId
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class GCPOneArmMode extends AviRestResource {
    * Project id of the service engine data network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataVpcProjectId set the dataVpcProjectId.
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine data network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVpcSubnetName
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine data network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dataVpcSubnetName set the dataVpcSubnetName.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine management network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcNetworkName
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine management network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcNetworkName set the managementVpcNetworkName.
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine management network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcSubnetName
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class GCPOneArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine management network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcSubnetName set the managementVpcSubnetName.
    */
   @VsoMethod

@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricThresoldUpDetails extends AviRestResource {
-  @JsonProperty("current_value")
-  @JsonInclude(Include.NON_NULL)
-  private Float currentValue = null;
+    @JsonProperty("current_value")
+    @JsonInclude(Include.NON_NULL)
+    private Float currentValue = null;
 
-  @JsonProperty("entity_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String entityUuid = null;
+    @JsonProperty("entity_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String entityUuid = null;
 
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = null;
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = null;
 
-  @JsonProperty("metric_name")
-  @JsonInclude(Include.NON_NULL)
-  private String metricName = null;
+    @JsonProperty("metric_name")
+    @JsonInclude(Include.NON_NULL)
+    private String metricName = null;
 
-  @JsonProperty("pool_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String poolUuid = null;
+    @JsonProperty("pool_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String poolUuid = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private String server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private String server = null;
 
-  @JsonProperty("threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Float threshold = null;
+    @JsonProperty("threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Float threshold = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property current_value of obj type metricthresoldupdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currentValue
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property current_value of obj type metricthresoldupdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currentValue set the currentValue.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Id of the object whose metric has hit the threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityUuid
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Id of the object whose metric has hit the threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityUuid set the entityUuid.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_id of obj type metricthresoldupdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_id of obj type metricthresoldupdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_name of obj type metricthresoldupdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricName
    */
   @VsoMethod
@@ -127,6 +134,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_name of obj type metricthresoldupdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricName set the metricName.
    */
   @VsoMethod
@@ -137,6 +145,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Identity of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
   @VsoMethod
@@ -147,6 +156,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Identity of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
   @VsoMethod
@@ -157,6 +167,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server ip port on which event was generated.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -167,6 +178,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server ip port on which event was generated.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod
@@ -177,6 +189,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property threshold of obj type metricthresoldupdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
   @VsoMethod
@@ -187,6 +200,7 @@ public class MetricThresoldUpDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property threshold of obj type metricthresoldupdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
   @VsoMethod

@@ -36,63 +36,64 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugFilterUnion extends AviRestResource {
-  @JsonProperty("alert_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private AlertMgrDebugFilter alertDebugFilter = null;
+    @JsonProperty("alert_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private AlertMgrDebugFilter alertDebugFilter = null;
 
-  @JsonProperty("autoscale_mgr_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private AutoScaleMgrDebugFilter autoscaleMgrDebugFilter = null;
+    @JsonProperty("autoscale_mgr_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private AutoScaleMgrDebugFilter autoscaleMgrDebugFilter = null;
 
-  @JsonProperty("cloud_connector_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private CloudConnectorDebugFilter cloudConnectorDebugFilter = null;
+    @JsonProperty("cloud_connector_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private CloudConnectorDebugFilter cloudConnectorDebugFilter = null;
 
-  @JsonProperty("hs_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private HSMgrDebugFilter hsDebugFilter = null;
+    @JsonProperty("hs_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private HSMgrDebugFilter hsDebugFilter = null;
 
-  @JsonProperty("mesos_metrics_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private MesosMetricsDebugFilter mesosMetricsDebugFilter = null;
+    @JsonProperty("mesos_metrics_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private MesosMetricsDebugFilter mesosMetricsDebugFilter = null;
 
-  @JsonProperty("metrics_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsMgrDebugFilter metricsDebugFilter = null;
+    @JsonProperty("metrics_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsMgrDebugFilter metricsDebugFilter = null;
 
-  @JsonProperty("metricsapi_srv_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsApiSrvDebugFilter metricsapiSrvDebugFilter = null;
+    @JsonProperty("metricsapi_srv_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsApiSrvDebugFilter metricsapiSrvDebugFilter = null;
 
-  @JsonProperty("se_mgr_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private SeMgrDebugFilter seMgrDebugFilter = null;
+    @JsonProperty("se_mgr_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private SeMgrDebugFilter seMgrDebugFilter = null;
 
-  @JsonProperty("se_rpc_proxy_filter")
-  @JsonInclude(Include.NON_NULL)
-  private SeRpcProxyDebugFilter seRpcProxyFilter = null;
+    @JsonProperty("se_rpc_proxy_filter")
+    @JsonInclude(Include.NON_NULL)
+    private SeRpcProxyDebugFilter seRpcProxyFilter = null;
 
-  @JsonProperty("securitymgr_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private SecurityMgrDebugFilter securitymgrDebugFilter = null;
+    @JsonProperty("securitymgr_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private SecurityMgrDebugFilter securitymgrDebugFilter = null;
 
-  @JsonProperty("state_cache_mgr_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private StateCacheMgrDebugFilter stateCacheMgrDebugFilter = null;
+    @JsonProperty("state_cache_mgr_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private StateCacheMgrDebugFilter stateCacheMgrDebugFilter = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("vs_debug_filter")
-  @JsonInclude(Include.NON_NULL)
-  private VsDebugFilter vsDebugFilter = null;
+    @JsonProperty("vs_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private VsDebugFilter vsDebugFilter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property alert_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alertDebugFilter
    */
   @VsoMethod
@@ -103,6 +104,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property alert_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param alertDebugFilter set the alertDebugFilter.
    */
   @VsoMethod
@@ -113,6 +115,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property autoscale_mgr_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleMgrDebugFilter
    */
   @VsoMethod
@@ -123,6 +126,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property autoscale_mgr_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscaleMgrDebugFilter set the autoscaleMgrDebugFilter.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud_connector_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConnectorDebugFilter
    */
   @VsoMethod
@@ -143,6 +148,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud_connector_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConnectorDebugFilter set the cloudConnectorDebugFilter.
    */
   @VsoMethod
@@ -153,6 +159,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hs_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsDebugFilter
    */
   @VsoMethod
@@ -163,6 +170,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property hs_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hsDebugFilter set the hsDebugFilter.
    */
   @VsoMethod
@@ -173,6 +181,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mesos_metrics_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosMetricsDebugFilter
    */
   @VsoMethod
@@ -183,6 +192,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mesos_metrics_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosMetricsDebugFilter set the mesosMetricsDebugFilter.
    */
   @VsoMethod
@@ -193,6 +203,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDebugFilter
    */
   @VsoMethod
@@ -203,6 +214,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsDebugFilter set the metricsDebugFilter.
    */
   @VsoMethod
@@ -214,6 +226,7 @@ public class DebugFilterUnion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add metricsapi server filter.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsapiSrvDebugFilter
    */
   @VsoMethod
@@ -225,6 +238,7 @@ public class DebugFilterUnion extends AviRestResource {
    * This is the setter method to the attribute.
    * Add metricsapi server filter.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsapiSrvDebugFilter set the metricsapiSrvDebugFilter.
    */
   @VsoMethod
@@ -235,6 +249,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_mgr_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seMgrDebugFilter
    */
   @VsoMethod
@@ -245,6 +260,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_mgr_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seMgrDebugFilter set the seMgrDebugFilter.
    */
   @VsoMethod
@@ -256,6 +272,7 @@ public class DebugFilterUnion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add se rpc proxy filter.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRpcProxyFilter
    */
   @VsoMethod
@@ -267,6 +284,7 @@ public class DebugFilterUnion extends AviRestResource {
    * This is the setter method to the attribute.
    * Add se rpc proxy filter.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRpcProxyFilter set the seRpcProxyFilter.
    */
   @VsoMethod
@@ -278,6 +296,7 @@ public class DebugFilterUnion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add metricsapi server filter.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return securitymgrDebugFilter
    */
   @VsoMethod
@@ -289,6 +308,7 @@ public class DebugFilterUnion extends AviRestResource {
    * This is the setter method to the attribute.
    * Add metricsapi server filter.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param securitymgrDebugFilter set the securitymgrDebugFilter.
    */
   @VsoMethod
@@ -299,6 +319,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property state_cache_mgr_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stateCacheMgrDebugFilter
    */
   @VsoMethod
@@ -309,6 +330,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property state_cache_mgr_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stateCacheMgrDebugFilter set the stateCacheMgrDebugFilter.
    */
   @VsoMethod
@@ -321,6 +343,7 @@ public class DebugFilterUnion extends AviRestResource {
    * Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG,
    * RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG,
    * AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -333,6 +356,7 @@ public class DebugFilterUnion extends AviRestResource {
    * Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG,
    * RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG,
    * AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -343,6 +367,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsDebugFilter
    */
   @VsoMethod
@@ -353,6 +378,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_debug_filter of obj type debugfilterunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsDebugFilter set the vsDebugFilter.
    */
   @VsoMethod

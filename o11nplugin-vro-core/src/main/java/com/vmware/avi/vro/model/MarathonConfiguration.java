@@ -26,41 +26,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MarathonConfiguration extends AviRestResource {
-  @JsonProperty("framework_tag")
-  @JsonInclude(Include.NON_NULL)
-  private String frameworkTag = null;
+    @JsonProperty("framework_tag")
+    @JsonInclude(Include.NON_NULL)
+    private String frameworkTag = null;
 
-  @JsonProperty("marathon_password")
-  @JsonInclude(Include.NON_NULL)
-  private String marathonPassword = null;
+    @JsonProperty("marathon_password")
+    @JsonInclude(Include.NON_NULL)
+    private String marathonPassword = null;
 
-  @JsonProperty("marathon_url")
-  @JsonInclude(Include.NON_NULL)
-  private String marathonUrl = "http://leader.mesos:8080";
+    @JsonProperty("marathon_url")
+    @JsonInclude(Include.NON_NULL)
+    private String marathonUrl = "http://leader.mesos:8080";
 
-  @JsonProperty("marathon_username")
-  @JsonInclude(Include.NON_NULL)
-  private String marathonUsername = null;
+    @JsonProperty("marathon_username")
+    @JsonInclude(Include.NON_NULL)
+    private String marathonUsername = null;
 
-  @JsonProperty("private_port_range")
-  @JsonInclude(Include.NON_NULL)
-  private PortRange privatePortRange = null;
+    @JsonProperty("private_port_range")
+    @JsonInclude(Include.NON_NULL)
+    private PortRange privatePortRange = null;
 
-  @JsonProperty("public_port_range")
-  @JsonInclude(Include.NON_NULL)
-  private PortRange publicPortRange = null;
+    @JsonProperty("public_port_range")
+    @JsonInclude(Include.NON_NULL)
+    private PortRange publicPortRange = null;
 
-  @JsonProperty("tenant")
-  @JsonInclude(Include.NON_NULL)
-  private String tenant = "admin";
+    @JsonProperty("tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String tenant = "admin";
 
-  @JsonProperty("use_token_auth")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useTokenAuth = false;
+    @JsonProperty("use_token_auth")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useTokenAuth = false;
 
-  @JsonProperty("vs_name_tag_framework")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean vsNameTagFramework = false;
+    @JsonProperty("vs_name_tag_framework")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vsNameTagFramework = false;
 
 
 
@@ -69,6 +69,7 @@ public class MarathonConfiguration extends AviRestResource {
    * Framework tag to be used in virtualservice name.
    * Default is framework name from mesos.
    * If this tag is altered atruntime, virtualservices will be deleted and re-created.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frameworkTag
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class MarathonConfiguration extends AviRestResource {
    * Framework tag to be used in virtualservice name.
    * Default is framework name from mesos.
    * If this tag is altered atruntime, virtualservices will be deleted and re-created.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frameworkTag set the frameworkTag.
    */
   @VsoMethod
@@ -91,6 +93,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password for marathon authentication.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonPassword
    */
   @VsoMethod
@@ -101,6 +104,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password for marathon authentication.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonPassword set the marathonPassword.
    */
   @VsoMethod
@@ -111,7 +115,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Marathon api url of the form http //host port.
-   * Default value when not specified in API or module is interpreted by Avi Controller as http://leader.mesos:8080.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:8080".
    * @return marathonUrl
    */
   @VsoMethod
@@ -122,7 +126,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Marathon api url of the form http //host port.
-   * Default value when not specified in API or module is interpreted by Avi Controller as http://leader.mesos:8080.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:8080".
    * @param marathonUrl set the marathonUrl.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Username for marathon authentication.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonUsername
    */
   @VsoMethod
@@ -143,6 +148,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Username for marathon authentication.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonUsername set the marathonUsername.
    */
   @VsoMethod
@@ -153,6 +159,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Private port range allocated to this marathon framework instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privatePortRange
    */
   @VsoMethod
@@ -163,6 +170,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Private port range allocated to this marathon framework instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privatePortRange set the privatePortRange.
    */
   @VsoMethod
@@ -173,6 +181,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Public port range allocated to this marathon framework instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicPortRange
    */
   @VsoMethod
@@ -183,6 +192,7 @@ public class MarathonConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Public port range allocated to this marathon framework instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicPortRange set the publicPortRange.
    */
   @VsoMethod
@@ -195,7 +205,7 @@ public class MarathonConfiguration extends AviRestResource {
    * Tenant to pin this marathon instance to.
    * If set, a tenant object will be created in avi bearing this name and all applications created in this marathon will be associated with this
    * tenant regardless of, if any, tenant configuration in marathon label for this application.
-   * Default value when not specified in API or module is interpreted by Avi Controller as admin.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
    * @return tenant
    */
   @VsoMethod
@@ -208,7 +218,7 @@ public class MarathonConfiguration extends AviRestResource {
    * Tenant to pin this marathon instance to.
    * If set, a tenant object will be created in avi bearing this name and all applications created in this marathon will be associated with this
    * tenant regardless of, if any, tenant configuration in marathon label for this application.
-   * Default value when not specified in API or module is interpreted by Avi Controller as admin.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
    * @param tenant set the tenant.
    */
   @VsoMethod

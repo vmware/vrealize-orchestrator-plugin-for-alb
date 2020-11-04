@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AutoScaleOpenStackSettings extends AviRestResource {
-  @JsonProperty("heat_scale_down_url")
-  @JsonInclude(Include.NON_NULL)
-  private String heatScaleDownUrl = null;
+    @JsonProperty("heat_scale_down_url")
+    @JsonInclude(Include.NON_NULL)
+    private String heatScaleDownUrl = null;
 
-  @JsonProperty("heat_scale_up_url")
-  @JsonInclude(Include.NON_NULL)
-  private String heatScaleUpUrl = null;
+    @JsonProperty("heat_scale_up_url")
+    @JsonInclude(Include.NON_NULL)
+    private String heatScaleUpUrl = null;
 
 
 
@@ -40,6 +40,7 @@ public class AutoScaleOpenStackSettings extends AviRestResource {
    * Cloud connector will automatically update the membership.
    * This is an alpha feature.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return heatScaleDownUrl
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class AutoScaleOpenStackSettings extends AviRestResource {
    * Cloud connector will automatically update the membership.
    * This is an alpha feature.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param heatScaleDownUrl set the heatScaleDownUrl.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class AutoScaleOpenStackSettings extends AviRestResource {
    * Cloud connector will automatically update the membership.
    * This is an alpha feature.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return heatScaleUpUrl
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class AutoScaleOpenStackSettings extends AviRestResource {
    * Cloud connector will automatically update the membership.
    * This is an alpha feature.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param heatScaleUpUrl set the heatScaleUpUrl.
    */
   @VsoMethod

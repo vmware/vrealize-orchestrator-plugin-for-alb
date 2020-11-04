@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CaptureFileSize extends AviRestResource {
-  @JsonProperty("absolute_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer absoluteSize = 0;
+    @JsonProperty("absolute_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer absoluteSize = 0;
 
-  @JsonProperty("percentage_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer percentageSize = 0;
+    @JsonProperty("percentage_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer percentageSize = 0;
 
 
 
@@ -41,6 +41,7 @@ public class CaptureFileSize extends AviRestResource {
    * Allowed values are 100-512000.
    * Special values are 0 - 'avi_default'.
    * Field introduced in 18.2.8.
+   * Unit is mb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return absoluteSize
    */
@@ -56,6 +57,7 @@ public class CaptureFileSize extends AviRestResource {
    * Allowed values are 100-512000.
    * Special values are 0 - 'avi_default'.
    * Field introduced in 18.2.8.
+   * Unit is mb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param absoluteSize set the absoluteSize.
    */

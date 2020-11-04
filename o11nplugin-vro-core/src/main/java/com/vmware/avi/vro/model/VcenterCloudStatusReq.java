@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VcenterCloudStatusReq extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class VcenterCloudStatusReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod

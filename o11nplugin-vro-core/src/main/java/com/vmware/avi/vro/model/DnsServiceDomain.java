@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsServiceDomain extends AviRestResource {
-  @JsonProperty("domain_name")
-  @JsonInclude(Include.NON_NULL)
-  private String domainName = null;
+    @JsonProperty("domain_name")
+    @JsonInclude(Include.NON_NULL)
+    private String domainName = null;
 
-  @JsonProperty("num_dns_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numDnsIp = 1;
+    @JsonProperty("num_dns_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numDnsIp = 1;
 
-  @JsonProperty("pass_through")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean passThrough = true;
+    @JsonProperty("pass_through")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean passThrough = true;
 
-  @JsonProperty("record_ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer recordTtl = null;
+    @JsonProperty("record_ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer recordTtl = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Service domain string used for fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class DnsServiceDomain extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service domain string used for fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param domainName set the domainName.
    */
   @VsoMethod
@@ -114,6 +116,8 @@ public class DnsServiceDomain extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ttl value for dns records.
    * Allowed values are 1-604800.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recordTtl
    */
   @VsoMethod
@@ -125,6 +129,8 @@ public class DnsServiceDomain extends AviRestResource {
    * This is the setter method to the attribute.
    * Ttl value for dns records.
    * Allowed values are 1-604800.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recordTtl set the recordTtl.
    */
   @VsoMethod

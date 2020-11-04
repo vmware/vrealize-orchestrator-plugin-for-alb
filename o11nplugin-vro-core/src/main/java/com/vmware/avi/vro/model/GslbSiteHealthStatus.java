@@ -25,51 +25,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSiteHealthStatus extends AviRestResource {
-  @JsonProperty("controller_gsinfo")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPoolMemberRuntimeInfo> controllerGsinfo = null;
+    @JsonProperty("controller_gsinfo")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPoolMemberRuntimeInfo> controllerGsinfo = null;
 
-  @JsonProperty("datapath_gsinfo")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPoolMemberRuntimeInfo> datapathGsinfo = null;
+    @JsonProperty("datapath_gsinfo")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPoolMemberRuntimeInfo> datapathGsinfo = null;
 
-  @JsonProperty("dns_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDnsInfo dnsInfo = null;
+    @JsonProperty("dns_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDnsInfo dnsInfo = null;
 
-  @JsonProperty("gap_table")
-  @JsonInclude(Include.NON_NULL)
-  private List<CfgState> gapTable = null;
+    @JsonProperty("gap_table")
+    @JsonInclude(Include.NON_NULL)
+    private List<CfgState> gapTable = null;
 
-  @JsonProperty("geo_table")
-  @JsonInclude(Include.NON_NULL)
-  private List<CfgState> geoTable = null;
+    @JsonProperty("geo_table")
+    @JsonInclude(Include.NON_NULL)
+    private List<CfgState> geoTable = null;
 
-  @JsonProperty("ghm_table")
-  @JsonInclude(Include.NON_NULL)
-  private List<CfgState> ghmTable = null;
+    @JsonProperty("ghm_table")
+    @JsonInclude(Include.NON_NULL)
+    private List<CfgState> ghmTable = null;
 
-  @JsonProperty("glb_table")
-  @JsonInclude(Include.NON_NULL)
-  private List<CfgState> glbTable = null;
+    @JsonProperty("glb_table")
+    @JsonInclude(Include.NON_NULL)
+    private List<CfgState> glbTable = null;
 
-  @JsonProperty("gs_table")
-  @JsonInclude(Include.NON_NULL)
-  private List<CfgState> gsTable = null;
+    @JsonProperty("gs_table")
+    @JsonInclude(Include.NON_NULL)
+    private List<CfgState> gsTable = null;
 
-  @JsonProperty("sw_version")
-  @JsonInclude(Include.NON_NULL)
-  private String swVersion = null;
+    @JsonProperty("sw_version")
+    @JsonInclude(Include.NON_NULL)
+    private String swVersion = null;
 
-  @JsonProperty("timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Float timestamp = null;
+    @JsonProperty("timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Float timestamp = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Controller retrieved gslb service operational info based of virtual service state.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerGsinfo
    */
   @VsoMethod
@@ -80,6 +81,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the controllerGsinfo
    * Controller retrieved gslb service operational info based of virtual service state.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerGsinfo
    */
   @VsoMethod
@@ -90,6 +92,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method this will set the controllerGsinfo
    * Controller retrieved gslb service operational info based of virtual service state.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerGsinfo
    */
   @VsoMethod
@@ -106,6 +109,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller retrieved gslb service operational info based of dns datapath resolution.
    * This information is generated only on those sites that have dns-vs participating in gslb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathGsinfo
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the setter method. this will set the datapathGsinfo
    * Controller retrieved gslb service operational info based of dns datapath resolution.
    * This information is generated only on those sites that have dns-vs participating in gslb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathGsinfo
    */
   @VsoMethod
@@ -128,6 +133,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the setter method this will set the datapathGsinfo
    * Controller retrieved gslb service operational info based of dns datapath resolution.
    * This information is generated only on those sites that have dns-vs participating in gslb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathGsinfo
    */
   @VsoMethod
@@ -143,6 +149,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dns info at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -153,6 +160,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dns info at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsInfo set the dnsInfo.
    */
   @VsoMethod
@@ -164,6 +172,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb application persistence profile state at member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gapTable
    */
   @VsoMethod
@@ -175,6 +184,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the setter method. this will set the gapTable
    * Gslb application persistence profile state at member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gapTable
    */
   @VsoMethod
@@ -186,6 +196,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the setter method this will set the gapTable
    * Gslb application persistence profile state at member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gapTable
    */
   @VsoMethod
@@ -202,6 +213,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb geo db profile state at member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoTable
    */
   @VsoMethod
@@ -213,6 +225,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the setter method. this will set the geoTable
    * Gslb geo db profile state at member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoTable
    */
   @VsoMethod
@@ -224,6 +237,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
    * This is the setter method this will set the geoTable
    * Gslb geo db profile state at member.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoTable
    */
   @VsoMethod
@@ -239,6 +253,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb health monitor state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ghmTable
    */
   @VsoMethod
@@ -249,6 +264,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the ghmTable
    * Gslb health monitor state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ghmTable
    */
   @VsoMethod
@@ -259,6 +275,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method this will set the ghmTable
    * Gslb health monitor state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ghmTable
    */
   @VsoMethod
@@ -274,6 +291,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbTable
    */
   @VsoMethod
@@ -284,6 +302,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the glbTable
    * Gslb state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbTable
    */
   @VsoMethod
@@ -294,6 +313,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method this will set the glbTable
    * Gslb state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbTable
    */
   @VsoMethod
@@ -309,6 +329,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb service state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsTable
    */
   @VsoMethod
@@ -319,6 +340,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the gsTable
    * Gslb service state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsTable
    */
   @VsoMethod
@@ -329,6 +351,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method this will set the gsTable
    * Gslb service state at member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsTable
    */
   @VsoMethod
@@ -344,6 +367,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current software version of the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return swVersion
    */
   @VsoMethod
@@ -354,6 +378,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current software version of the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param swVersion set the swVersion.
    */
   @VsoMethod
@@ -364,6 +389,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of health-status generation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timestamp
    */
   @VsoMethod
@@ -374,6 +400,7 @@ public class GslbSiteHealthStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of health-status generation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timestamp set the timestamp.
    */
   @VsoMethod

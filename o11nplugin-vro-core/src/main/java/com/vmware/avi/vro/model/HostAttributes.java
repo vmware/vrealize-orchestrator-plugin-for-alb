@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HostAttributes extends AviRestResource {
-  @JsonProperty("attr_key")
-  @JsonInclude(Include.NON_NULL)
-  private String attrKey = null;
+    @JsonProperty("attr_key")
+    @JsonInclude(Include.NON_NULL)
+    private String attrKey = null;
 
-  @JsonProperty("attr_val")
-  @JsonInclude(Include.NON_NULL)
-  private String attrVal = null;
+    @JsonProperty("attr_val")
+    @JsonInclude(Include.NON_NULL)
+    private String attrVal = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property attr_key of obj type hostattributes field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrKey
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class HostAttributes extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property attr_key of obj type hostattributes field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attrKey set the attrKey.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class HostAttributes extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property attr_val of obj type hostattributes field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrVal
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class HostAttributes extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property attr_val of obj type hostattributes field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attrVal set the attrVal.
    */
   @VsoMethod

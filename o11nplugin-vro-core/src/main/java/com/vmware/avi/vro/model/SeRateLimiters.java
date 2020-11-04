@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeRateLimiters extends AviRestResource {
-  @JsonProperty("arp_rl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer arpRl = 100;
+    @JsonProperty("arp_rl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer arpRl = 100;
 
-  @JsonProperty("default_rl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer defaultRl = 100;
+    @JsonProperty("default_rl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer defaultRl = 100;
 
-  @JsonProperty("flow_probe_rl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer flowProbeRl = 250;
+    @JsonProperty("flow_probe_rl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer flowProbeRl = 250;
 
-  @JsonProperty("icmp_rl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer icmpRl = 100;
+    @JsonProperty("icmp_rl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer icmpRl = 100;
 
-  @JsonProperty("icmp_rsp_rl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer icmpRspRl = 500;
+    @JsonProperty("icmp_rsp_rl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer icmpRspRl = 500;
 
-  @JsonProperty("rst_rl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rstRl = 100;
+    @JsonProperty("rst_rl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rstRl = 100;
 
 
 

@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackClusterSetup extends AviRestResource {
-  @JsonProperty("admin_tenant")
-  @JsonInclude(Include.NON_NULL)
-  private String adminTenant = null;
+    @JsonProperty("admin_tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String adminTenant = null;
 
-  @JsonProperty("auth_url")
-  @JsonInclude(Include.NON_NULL)
-  private String authUrl = null;
+    @JsonProperty("auth_url")
+    @JsonInclude(Include.NON_NULL)
+    private String authUrl = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("keystone_host")
-  @JsonInclude(Include.NON_NULL)
-  private String keystoneHost = null;
+    @JsonProperty("keystone_host")
+    @JsonInclude(Include.NON_NULL)
+    private String keystoneHost = null;
 
-  @JsonProperty("privilege")
-  @JsonInclude(Include.NON_NULL)
-  private String privilege = null;
+    @JsonProperty("privilege")
+    @JsonInclude(Include.NON_NULL)
+    private String privilege = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property admin_tenant of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminTenant
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property admin_tenant of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminTenant set the adminTenant.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property auth_url of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authUrl
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property auth_url of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authUrl set the authUrl.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property keystone_host of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keystoneHost
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property keystone_host of obj type openstackclustersetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keystoneHost set the keystoneHost.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privilege
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class OpenStackClusterSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privilege set the privilege.
    */
   @VsoMethod

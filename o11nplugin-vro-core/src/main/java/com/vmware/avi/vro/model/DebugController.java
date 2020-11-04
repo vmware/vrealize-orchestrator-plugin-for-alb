@@ -25,43 +25,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugController extends AviRestResource {
-  @JsonProperty("filters")
-  @JsonInclude(Include.NON_NULL)
-  private DebugFilterUnion filters = null;
+    @JsonProperty("filters")
+    @JsonInclude(Include.NON_NULL)
+    private DebugFilterUnion filters = null;
 
-  @JsonProperty("log_level")
-  @JsonInclude(Include.NON_NULL)
-  private String logLevel = null;
+    @JsonProperty("log_level")
+    @JsonInclude(Include.NON_NULL)
+    private String logLevel = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("sub_module")
-  @JsonInclude(Include.NON_NULL)
-  private String subModule = null;
+    @JsonProperty("sub_module")
+    @JsonInclude(Include.NON_NULL)
+    private String subModule = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("trace_level")
-  @JsonInclude(Include.NON_NULL)
-  private String traceLevel = null;
+    @JsonProperty("trace_level")
+    @JsonInclude(Include.NON_NULL)
+    private String traceLevel = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property filters of obj type debugcontroller field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filters
    */
   @VsoMethod
@@ -72,6 +73,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property filters of obj type debugcontroller field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param filters set the filters.
    */
   @VsoMethod
@@ -82,6 +84,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logLevel
    */
   @VsoMethod
@@ -92,6 +95,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param logLevel set the logLevel.
    */
   @VsoMethod
@@ -102,6 +106,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -112,6 +117,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -124,6 +130,7 @@ public class DebugController extends AviRestResource {
    * Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG,
    * RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG,
    * AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subModule
    */
   @VsoMethod
@@ -136,6 +143,7 @@ public class DebugController extends AviRestResource {
    * Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG,
    * RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG,
    * AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subModule set the subModule.
    */
   @VsoMethod
@@ -146,6 +154,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -156,6 +165,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -166,6 +176,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return traceLevel
    */
   @VsoMethod
@@ -176,6 +187,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param traceLevel set the traceLevel.
    */
   @VsoMethod
@@ -205,6 +217,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -215,6 +228,7 @@ public class DebugController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

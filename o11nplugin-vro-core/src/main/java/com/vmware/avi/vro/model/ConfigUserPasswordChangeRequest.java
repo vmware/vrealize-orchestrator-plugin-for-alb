@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigUserPasswordChangeRequest extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String clientIp = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
-  @JsonProperty("user_email")
-  @JsonInclude(Include.NON_NULL)
-  private String userEmail = null;
+    @JsonProperty("user_email")
+    @JsonInclude(Include.NON_NULL)
+    private String userEmail = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password link is sent or rejected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password link is sent or rejected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Matched username of email address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Matched username of email address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Email address of user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userEmail
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class ConfigUserPasswordChangeRequest extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Email address of user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userEmail set the userEmail.
    */
   @VsoMethod

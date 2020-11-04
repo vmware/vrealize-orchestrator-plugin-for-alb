@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VersionInfo extends AviRestResource {
-  @JsonProperty("ds_name")
-  @JsonInclude(Include.NON_NULL)
-  private String dsName = null;
+    @JsonProperty("ds_name")
+    @JsonInclude(Include.NON_NULL)
+    private String dsName = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("ops")
-  @JsonInclude(Include.NON_NULL)
-  private String ops = null;
+    @JsonProperty("ops")
+    @JsonInclude(Include.NON_NULL)
+    private String ops = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -46,6 +46,7 @@ public class VersionInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifies the datastore table.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsName
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class VersionInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Identifies the datastore table.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dsName set the dsName.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class VersionInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class VersionInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class VersionInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ops
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class VersionInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ops set the ops.
    */
   @VsoMethod
@@ -107,6 +113,7 @@ public class VersionInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -117,6 +124,7 @@ public class VersionInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

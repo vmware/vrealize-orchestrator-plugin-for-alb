@@ -26,19 +26,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClusterLeaderFailoverEvent extends AviRestResource {
-  @JsonProperty("leader_node")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNode leaderNode = null;
+    @JsonProperty("leader_node")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNode leaderNode = null;
 
-  @JsonProperty("previous_leader_node")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNode previousLeaderNode = null;
+    @JsonProperty("previous_leader_node")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNode previousLeaderNode = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Details of the new controller cluster leader node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderNode
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class ClusterLeaderFailoverEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Details of the new controller cluster leader node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param leaderNode set the leaderNode.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class ClusterLeaderFailoverEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Details of the previous controller cluster leader.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previousLeaderNode
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class ClusterLeaderFailoverEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Details of the previous controller cluster leader.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param previousLeaderNode set the previousLeaderNode.
    */
   @VsoMethod

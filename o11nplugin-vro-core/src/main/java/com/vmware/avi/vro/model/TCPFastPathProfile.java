@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TCPFastPathProfile extends AviRestResource {
-  @JsonProperty("dsr_profile")
-  @JsonInclude(Include.NON_NULL)
-  private DsrProfile dsrProfile = null;
+    @JsonProperty("dsr_profile")
+    @JsonInclude(Include.NON_NULL)
+    private DsrProfile dsrProfile = null;
 
-  @JsonProperty("enable_syn_protection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableSynProtection = false;
+    @JsonProperty("enable_syn_protection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSynProtection = false;
 
-  @JsonProperty("session_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sessionIdleTimeout = 300;
+    @JsonProperty("session_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sessionIdleTimeout = 300;
 
 
 
@@ -43,6 +43,7 @@ public class TCPFastPathProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dsr profile information.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsrProfile
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class TCPFastPathProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Dsr profile information.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dsrProfile set the dsrProfile.
    */
   @VsoMethod
@@ -90,6 +92,7 @@ public class TCPFastPathProfile extends AviRestResource {
    * The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted.
    * Allowed values are 5-14400.
    * Special values are 0 - 'infinite'.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return sessionIdleTimeout
    */
@@ -103,6 +106,7 @@ public class TCPFastPathProfile extends AviRestResource {
    * The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted.
    * Allowed values are 5-14400.
    * Special values are 0 - 'infinite'.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param sessionIdleTimeout set the sessionIdleTimeout.
    */

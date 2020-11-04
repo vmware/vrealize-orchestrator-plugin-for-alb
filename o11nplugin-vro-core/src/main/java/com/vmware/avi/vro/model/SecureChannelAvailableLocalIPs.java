@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecureChannelAvailableLocalIPs extends AviRestResource {
-  @JsonProperty("end")
-  @JsonInclude(Include.NON_NULL)
-  private Integer end = null;
+    @JsonProperty("end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer end = null;
 
-  @JsonProperty("free_controller_ips")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> freeControllerIps = null;
+    @JsonProperty("free_controller_ips")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> freeControllerIps = null;
 
-  @JsonProperty("free_ips")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> freeIps = null;
+    @JsonProperty("free_ips")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> freeIps = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("start")
-  @JsonInclude(Include.NON_NULL)
-  private Integer start = null;
+    @JsonProperty("start")
+    @JsonInclude(Include.NON_NULL)
+    private Integer start = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end of obj type securechannelavailablelocalips field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return end
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end of obj type securechannelavailablelocalips field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param end set the end.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeControllerIps
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method. this will set the freeControllerIps
    * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeControllerIps
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method this will set the freeControllerIps
    * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeControllerIps
    */
   @VsoMethod
@@ -112,6 +117,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property free_ips of obj type securechannelavailablelocalips field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeIps
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method. this will set the freeIps
    * Placeholder for description of property free_ips of obj type securechannelavailablelocalips field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeIps
    */
   @VsoMethod
@@ -132,6 +139,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method this will set the freeIps
    * Placeholder for description of property free_ips of obj type securechannelavailablelocalips field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeIps
    */
   @VsoMethod
@@ -147,6 +155,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -157,6 +166,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -167,6 +177,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start of obj type securechannelavailablelocalips field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return start
    */
   @VsoMethod
@@ -177,6 +188,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start of obj type securechannelavailablelocalips field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param start set the start.
    */
   @VsoMethod
@@ -206,6 +218,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -216,6 +229,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

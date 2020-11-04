@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkFilter extends AviRestResource {
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("server_filter")
-  @JsonInclude(Include.NON_NULL)
-  private String serverFilter = null;
+    @JsonProperty("server_filter")
+    @JsonInclude(Include.NON_NULL)
+    private String serverFilter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class NetworkFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class NetworkFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_filter of obj type networkfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverFilter
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class NetworkFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_filter of obj type networkfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverFilter set the serverFilter.
    */
   @VsoMethod

@@ -24,95 +24,96 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VISeVmOvaParams extends AviRestResource {
-  @JsonProperty("controller_cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerClusterUuid = null;
+    @JsonProperty("controller_cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerClusterUuid = null;
 
-  @JsonProperty("controller_ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerIpAddr = null;
+    @JsonProperty("controller_ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerIpAddr = null;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = null;
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = null;
 
-  @JsonProperty("rm_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String rmCookie = null;
+    @JsonProperty("rm_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String rmCookie = null;
 
-  @JsonProperty("se_auth_token")
-  @JsonInclude(Include.NON_NULL)
-  private String seAuthToken = null;
+    @JsonProperty("se_auth_token")
+    @JsonInclude(Include.NON_NULL)
+    private String seAuthToken = null;
 
-  @JsonProperty("sevm_name")
-  @JsonInclude(Include.NON_NULL)
-  private String sevmName = null;
+    @JsonProperty("sevm_name")
+    @JsonInclude(Include.NON_NULL)
+    private String sevmName = null;
 
-  @JsonProperty("single_socket_affinity")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean singleSocketAffinity = null;
+    @JsonProperty("single_socket_affinity")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean singleSocketAffinity = null;
 
-  @JsonProperty("vcenter_cpu_reserv")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean vcenterCpuReserv = false;
+    @JsonProperty("vcenter_cpu_reserv")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vcenterCpuReserv = false;
 
-  @JsonProperty("vcenter_ds_include")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean vcenterDsInclude = null;
+    @JsonProperty("vcenter_ds_include")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vcenterDsInclude = null;
 
-  @JsonProperty("vcenter_ds_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<VcenterDatastore> vcenterDsInfo = null;
+    @JsonProperty("vcenter_ds_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<VcenterDatastore> vcenterDsInfo = null;
 
-  @JsonProperty("vcenter_ds_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterDsMode = null;
+    @JsonProperty("vcenter_ds_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterDsMode = null;
 
-  @JsonProperty("vcenter_host")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterHost = null;
+    @JsonProperty("vcenter_host")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterHost = null;
 
-  @JsonProperty("vcenter_internal")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterInternal = "UNIFIED ADMIN";
+    @JsonProperty("vcenter_internal")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterInternal = "UNIFIED ADMIN";
 
-  @JsonProperty("vcenter_mem_reserv")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean vcenterMemReserv = false;
+    @JsonProperty("vcenter_mem_reserv")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vcenterMemReserv = false;
 
-  @JsonProperty("vcenter_num_mem")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcenterNumMem = 2048;
+    @JsonProperty("vcenter_num_mem")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcenterNumMem = 2048;
 
-  @JsonProperty("vcenter_num_se_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcenterNumSeCores = 2;
+    @JsonProperty("vcenter_num_se_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcenterNumSeCores = 2;
 
-  @JsonProperty("vcenter_opaque_nwid")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterOpaqueNwid = null;
+    @JsonProperty("vcenter_opaque_nwid")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterOpaqueNwid = null;
 
-  @JsonProperty("vcenter_ovf_path")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterOvfPath = null;
+    @JsonProperty("vcenter_ovf_path")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterOvfPath = null;
 
-  @JsonProperty("vcenter_se_disk_size_KB")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcenterSeDiskSizeKb = 10485760;
+    @JsonProperty("vcenter_se_disk_size_KB")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcenterSeDiskSizeKb = 10485760;
 
-  @JsonProperty("vcenter_se_mgmt_nw")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterSeMgmtNw = null;
+    @JsonProperty("vcenter_se_mgmt_nw")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterSeMgmtNw = null;
 
-  @JsonProperty("vcenter_vm_folder")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterVmFolder = null;
+    @JsonProperty("vcenter_vm_folder")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterVmFolder = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of controller_cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerClusterUuid
    */
   @VsoMethod
@@ -123,6 +124,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of controller_cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerClusterUuid set the controllerClusterUuid.
    */
   @VsoMethod
@@ -133,6 +135,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_ip_addr of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerIpAddr
    */
   @VsoMethod
@@ -143,6 +146,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_ip_addr of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerIpAddr set the controllerIpAddr.
    */
   @VsoMethod
@@ -153,6 +157,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - APIC_MODE, NON_APIC_MODE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
   @VsoMethod
@@ -163,6 +168,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - APIC_MODE, NON_APIC_MODE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
   @VsoMethod
@@ -173,6 +179,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rm_cookie of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rmCookie
    */
   @VsoMethod
@@ -183,6 +190,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rm_cookie of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rmCookie set the rmCookie.
    */
   @VsoMethod
@@ -193,6 +201,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_auth_token of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAuthToken
    */
   @VsoMethod
@@ -203,6 +212,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_auth_token of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seAuthToken set the seAuthToken.
    */
   @VsoMethod
@@ -213,6 +223,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property sevm_name of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sevmName
    */
   @VsoMethod
@@ -223,6 +234,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property sevm_name of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sevmName set the sevmName.
    */
   @VsoMethod
@@ -233,6 +245,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property single_socket_affinity of obj type visevmovaparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return singleSocketAffinity
    */
   @VsoMethod
@@ -243,6 +256,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property single_socket_affinity of obj type visevmovaparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param singleSocketAffinity set the singleSocketAffinity.
    */
   @VsoMethod
@@ -275,6 +289,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_ds_include of obj type visevmovaparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDsInclude
    */
   @VsoMethod
@@ -285,6 +300,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_ds_include of obj type visevmovaparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterDsInclude set the vcenterDsInclude.
    */
   @VsoMethod
@@ -295,6 +311,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_ds_info of obj type visevmovaparams field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDsInfo
    */
   @VsoMethod
@@ -305,6 +322,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method. this will set the vcenterDsInfo
    * Placeholder for description of property vcenter_ds_info of obj type visevmovaparams field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDsInfo
    */
   @VsoMethod
@@ -315,6 +333,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method this will set the vcenterDsInfo
    * Placeholder for description of property vcenter_ds_info of obj type visevmovaparams field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDsInfo
    */
   @VsoMethod
@@ -330,6 +349,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - VCENTER_DATASTORE_ANY, VCENTER_DATASTORE_LOCAL, VCENTER_DATASTORE_SHARED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDsMode
    */
   @VsoMethod
@@ -340,6 +360,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - VCENTER_DATASTORE_ANY, VCENTER_DATASTORE_LOCAL, VCENTER_DATASTORE_SHARED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterDsMode set the vcenterDsMode.
    */
   @VsoMethod
@@ -350,6 +371,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_host of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterHost
    */
   @VsoMethod
@@ -360,6 +382,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_host of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterHost set the vcenterHost.
    */
   @VsoMethod
@@ -370,7 +393,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_internal of obj type visevmovaparams field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as UNIFIED ADMIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "UNIFIED ADMIN".
    * @return vcenterInternal
    */
   @VsoMethod
@@ -381,7 +404,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_internal of obj type visevmovaparams field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as UNIFIED ADMIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "UNIFIED ADMIN".
    * @param vcenterInternal set the vcenterInternal.
    */
   @VsoMethod
@@ -458,6 +481,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_opaque_nwid of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterOpaqueNwid
    */
   @VsoMethod
@@ -468,6 +492,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_opaque_nwid of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterOpaqueNwid set the vcenterOpaqueNwid.
    */
   @VsoMethod
@@ -478,6 +503,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_ovf_path of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterOvfPath
    */
   @VsoMethod
@@ -488,6 +514,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_ovf_path of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterOvfPath set the vcenterOvfPath.
    */
   @VsoMethod
@@ -520,6 +547,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_se_mgmt_nw of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterSeMgmtNw
    */
   @VsoMethod
@@ -530,6 +558,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_se_mgmt_nw of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterSeMgmtNw set the vcenterSeMgmtNw.
    */
   @VsoMethod
@@ -540,6 +569,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_vm_folder of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVmFolder
    */
   @VsoMethod
@@ -550,6 +580,7 @@ public class VISeVmOvaParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_vm_folder of obj type visevmovaparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterVmFolder set the vcenterVmFolder.
    */
   @VsoMethod

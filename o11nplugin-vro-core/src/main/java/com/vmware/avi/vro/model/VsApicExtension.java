@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsApicExtension extends AviRestResource {
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("txn_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String txnUuid = null;
+    @JsonProperty("txn_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String txnUuid = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vnic")
-  @JsonInclude(Include.NON_NULL)
-  private List<VsSeVnic> vnic = null;
+    @JsonProperty("vnic")
+    @JsonInclude(Include.NON_NULL)
+    private List<VsSeVnic> vnic = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of txn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txnUuid
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of txn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param txnUuid set the txnUuid.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vnic of obj type vsapicextension field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method. this will set the vnic
    * Placeholder for description of property vnic of obj type vsapicextension field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
   @VsoMethod
@@ -125,6 +133,7 @@ public class VsApicExtension extends AviRestResource {
   /**
    * This is the setter method this will set the vnic
    * Placeholder for description of property vnic of obj type vsapicextension field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnic
    */
   @VsoMethod

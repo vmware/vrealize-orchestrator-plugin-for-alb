@@ -26,25 +26,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IPNetworkSubnet extends AviRestResource {
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
-  @JsonProperty("subnet6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet6 = null;
+    @JsonProperty("subnet6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet6 = null;
 
-  @JsonProperty("subnet6_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet6Uuid = null;
+    @JsonProperty("subnet6_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet6Uuid = null;
 
-  @JsonProperty("subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetUuid = null;
+    @JsonProperty("subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetUuid = null;
 
 
 
@@ -53,6 +53,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Network for virtualservice ip allocation with vantage as the ipam provider.
    * Network should be created before this is configured.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Network for virtualservice ip allocation with vantage as the ipam provider.
    * Network should be created before this is configured.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet for virtualservice ip allocation with vantage or infoblox as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet for virtualservice ip allocation with vantage or infoblox as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet for virtualservice ipv6 allocation with vantage or infoblox as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet for virtualservice ipv6 allocation with vantage or infoblox as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */
   @VsoMethod
@@ -123,6 +129,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet uuid or name or prefix for virtualservice ipv6 allocation with aws or openstack as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6Uuid
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet uuid or name or prefix for virtualservice ipv6 allocation with aws or openstack as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6Uuid set the subnet6Uuid.
    */
   @VsoMethod
@@ -146,6 +154,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet uuid or name or prefix for virtualservice ip allocation with aws or openstack as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetUuid
    */
   @VsoMethod
@@ -157,6 +166,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet uuid or name or prefix for virtualservice ip allocation with aws or openstack as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetUuid set the subnetUuid.
    */
   @VsoMethod

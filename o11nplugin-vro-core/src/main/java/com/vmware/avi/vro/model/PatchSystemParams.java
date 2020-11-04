@@ -25,21 +25,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PatchSystemParams extends AviRestResource {
-  @JsonProperty("controller_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerPatchRef = null;
+    @JsonProperty("controller_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerPatchRef = null;
 
-  @JsonProperty("se_group_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupOptions seGroupOptions = null;
+    @JsonProperty("se_group_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupOptions seGroupOptions = null;
 
-  @JsonProperty("se_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sePatchRef = null;
+    @JsonProperty("se_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sePatchRef = null;
 
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
 
 
@@ -48,6 +48,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se group options for the patch operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
   @VsoMethod
@@ -82,6 +85,7 @@ public class PatchSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Se group options for the patch operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchRef
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class PatchSystemParams extends AviRestResource {
    * Image uuid for identifying se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchRef set the sePatchRef.
    */
   @VsoMethod

@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CustomIpamDnsProfile extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("script_params")
-  @JsonInclude(Include.NON_NULL)
-  private List<CustomParams> scriptParams = null;
+    @JsonProperty("script_params")
+    @JsonInclude(Include.NON_NULL)
+    private List<CustomParams> scriptParams = null;
 
-  @JsonProperty("script_uri")
-  @JsonInclude(Include.NON_NULL)
-  private String scriptUri = null;
+    @JsonProperty("script_uri")
+    @JsonInclude(Include.NON_NULL)
+    private String scriptUri = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -54,6 +54,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the custom ipam dns profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the custom ipam dns profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Parameters that are always passed to the ipam/dns script.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the setter method. this will set the scriptParams
    * Parameters that are always passed to the ipam/dns script.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the setter method this will set the scriptParams
    * Parameters that are always passed to the ipam/dns script.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
   @VsoMethod
@@ -114,6 +119,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Script uri of form controller //ipamdnsscripts/<file-name>.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptUri
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Script uri of form controller //ipamdnsscripts/<file-name>.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scriptUri set the scriptUri.
    */
   @VsoMethod
@@ -136,6 +143,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -147,6 +155,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -176,6 +185,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -186,6 +196,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CustomTag extends AviRestResource {
-  @JsonProperty("tag_key")
-  @JsonInclude(Include.NON_NULL)
-  private String tagKey = null;
+    @JsonProperty("tag_key")
+    @JsonInclude(Include.NON_NULL)
+    private String tagKey = null;
 
-  @JsonProperty("tag_val")
-  @JsonInclude(Include.NON_NULL)
-  private String tagVal = null;
+    @JsonProperty("tag_val")
+    @JsonInclude(Include.NON_NULL)
+    private String tagVal = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tag_key of obj type customtag field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tagKey
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class CustomTag extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tag_key of obj type customtag field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tagKey set the tagKey.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class CustomTag extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tag_val of obj type customtag field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tagVal
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class CustomTag extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tag_val of obj type customtag field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tagVal set the tagVal.
    */
   @VsoMethod

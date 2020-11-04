@@ -27,23 +27,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClientInsightsSampling extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp = null;
 
-  @JsonProperty("sample_uris")
-  @JsonInclude(Include.NON_NULL)
-  private StringMatch sampleUris = null;
+    @JsonProperty("sample_uris")
+    @JsonInclude(Include.NON_NULL)
+    private StringMatch sampleUris = null;
 
-  @JsonProperty("skip_uris")
-  @JsonInclude(Include.NON_NULL)
-  private StringMatch skipUris = null;
+    @JsonProperty("skip_uris")
+    @JsonInclude(Include.NON_NULL)
+    private StringMatch skipUris = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Client ip addresses to check when inserting rum script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client ip addresses to check when inserting rum script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url patterns to check when inserting rum script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sampleUris
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url patterns to check when inserting rum script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sampleUris set the sampleUris.
    */
   @VsoMethod
@@ -84,6 +88,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url patterns to avoid when inserting rum script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skipUris
    */
   @VsoMethod
@@ -94,6 +99,7 @@ public class ClientInsightsSampling extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url patterns to avoid when inserting rum script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param skipUris set the skipUris.
    */
   @VsoMethod

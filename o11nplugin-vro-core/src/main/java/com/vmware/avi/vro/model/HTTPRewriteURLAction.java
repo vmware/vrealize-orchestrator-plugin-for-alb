@@ -27,23 +27,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPRewriteURLAction extends AviRestResource {
-  @JsonProperty("host_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private URIParam hostHdr = null;
+    @JsonProperty("host_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private URIParam hostHdr = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private URIParam path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private URIParam path = null;
 
-  @JsonProperty("query")
-  @JsonInclude(Include.NON_NULL)
-  private URIParamQuery query = null;
+    @JsonProperty("query")
+    @JsonInclude(Include.NON_NULL)
+    private URIParamQuery query = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Host config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -84,6 +88,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Query config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return query
    */
   @VsoMethod
@@ -94,6 +99,7 @@ public class HTTPRewriteURLAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Query config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param query set the query.
    */
   @VsoMethod

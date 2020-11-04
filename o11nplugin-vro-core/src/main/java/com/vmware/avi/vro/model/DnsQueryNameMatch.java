@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsQueryNameMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("query_domain_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> queryDomainNames = null;
+    @JsonProperty("query_domain_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> queryDomainNames = null;
 
-  @JsonProperty("string_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> stringGroupRefs = null;
+    @JsonProperty("string_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> stringGroupRefs = null;
 
 
 
@@ -44,6 +44,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Domain name to match against that specified in the question section of the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryDomainNames
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * This is the setter method. this will set the queryDomainNames
    * Domain name to match against that specified in the question section of the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryDomainNames
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * This is the setter method this will set the queryDomainNames
    * Domain name to match against that specified in the question section of the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryDomainNames
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Uuid of the string group(s) for matching against dns query domain name in the question section.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -119,6 +125,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Uuid of the string group(s) for matching against dns query domain name in the question section.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class DnsQueryNameMatch extends AviRestResource {
    * Uuid of the string group(s) for matching against dns query domain name in the question section.
    * It is a reference to an object of type stringgroup.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod

@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDimensionData extends AviRestResource {
-  @JsonProperty("dimension")
-  @JsonInclude(Include.NON_NULL)
-  private String dimension = null;
+    @JsonProperty("dimension")
+    @JsonInclude(Include.NON_NULL)
+    private String dimension = null;
 
-  @JsonProperty("dimension_id")
-  @JsonInclude(Include.NON_NULL)
-  private String dimensionId = null;
+    @JsonProperty("dimension_id")
+    @JsonInclude(Include.NON_NULL)
+    private String dimensionId = null;
 
 
 
@@ -40,6 +40,7 @@ public class MetricsDimensionData extends AviRestResource {
    * Enum options - METRICS_DIMENSION_METRIC_TIMESTAMP, METRICS_DIMENSION_COUNTRY, METRICS_DIMENSION_OS, METRICS_DIMENSION_URL,
    * METRICS_DIMENSION_DEVTYPE, METRICS_DIMENSION_LANG, METRICS_DIMENSION_BROWSER, METRICS_DIMENSION_IPGROUP, METRICS_DIMENSION_ATTACK,
    * METRICS_DIMENSION_ASN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dimension
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class MetricsDimensionData extends AviRestResource {
    * Enum options - METRICS_DIMENSION_METRIC_TIMESTAMP, METRICS_DIMENSION_COUNTRY, METRICS_DIMENSION_OS, METRICS_DIMENSION_URL,
    * METRICS_DIMENSION_DEVTYPE, METRICS_DIMENSION_LANG, METRICS_DIMENSION_BROWSER, METRICS_DIMENSION_IPGROUP, METRICS_DIMENSION_ATTACK,
    * METRICS_DIMENSION_ASN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dimension set the dimension.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class MetricsDimensionData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dimension id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dimensionId
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class MetricsDimensionData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dimension id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dimensionId set the dimensionId.
    */
   @VsoMethod

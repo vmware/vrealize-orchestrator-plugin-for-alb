@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolServer extends AviRestResource {
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
 
 
@@ -43,6 +43,7 @@ public class PoolServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class PoolServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class PoolServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the server in the poool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class PoolServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the server in the poool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class PoolServer extends AviRestResource {
    * Port of the pool server listening for http/https.
    * Default value is the default port in the pool.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class PoolServer extends AviRestResource {
    * Port of the pool server listening for http/https.
    * Default value is the default port in the pool.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod

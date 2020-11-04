@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeReconcileDetails extends AviRestResource {
-  @JsonProperty("new_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float newServiceCores = null;
+    @JsonProperty("new_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float newServiceCores = null;
 
-  @JsonProperty("old_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float oldServiceCores = null;
+    @JsonProperty("old_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float oldServiceCores = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
-  @JsonProperty("tier")
-  @JsonInclude(Include.NON_NULL)
-  private String tier = null;
+    @JsonProperty("tier")
+    @JsonInclude(Include.NON_NULL)
+    private String tier = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_service_cores of obj type sereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newServiceCores
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_service_cores of obj type sereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newServiceCores set the newServiceCores.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property old_service_cores of obj type sereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldServiceCores
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property old_service_cores of obj type sereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldServiceCores set the oldServiceCores.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tier of obj type sereconciledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class SeReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tier of obj type sereconciledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier set the tier.
    */
   @VsoMethod

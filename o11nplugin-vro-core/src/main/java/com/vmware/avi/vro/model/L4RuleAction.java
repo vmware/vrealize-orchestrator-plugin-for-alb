@@ -25,9 +25,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4RuleAction extends AviRestResource {
-  @JsonProperty("select_pool")
-  @JsonInclude(Include.NON_NULL)
-  private L4RuleActionSelectPool selectPool = null;
+    @JsonProperty("select_pool")
+    @JsonInclude(Include.NON_NULL)
+    private L4RuleActionSelectPool selectPool = null;
 
 
 
@@ -35,6 +35,7 @@ public class L4RuleAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates pool or pool-group selection on rule match.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return selectPool
    */
   @VsoMethod
@@ -46,6 +47,7 @@ public class L4RuleAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates pool or pool-group selection on rule match.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param selectPool set the selectPool.
    */
   @VsoMethod

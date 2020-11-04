@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SnmpV3Configuration extends AviRestResource {
-  @JsonProperty("engine_id")
-  @JsonInclude(Include.NON_NULL)
-  private String engineId = null;
+    @JsonProperty("engine_id")
+    @JsonInclude(Include.NON_NULL)
+    private String engineId = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private SnmpV3UserParams user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private SnmpV3UserParams user = null;
 
 
 
@@ -39,6 +39,7 @@ public class SnmpV3Configuration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Engine id of the avi controller snmp.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return engineId
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class SnmpV3Configuration extends AviRestResource {
    * This is the setter method to the attribute.
    * Engine id of the avi controller snmp.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param engineId set the engineId.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class SnmpV3Configuration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Snmp ver 3 user definition.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class SnmpV3Configuration extends AviRestResource {
    * This is the setter method to the attribute.
    * Snmp ver 3 user definition.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod

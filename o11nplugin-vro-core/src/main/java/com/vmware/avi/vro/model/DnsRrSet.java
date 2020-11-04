@@ -25,33 +25,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRrSet extends AviRestResource {
-  @JsonProperty("cname")
-  @JsonInclude(Include.NON_NULL)
-  private DnsCnameRdata cname = null;
+    @JsonProperty("cname")
+    @JsonInclude(Include.NON_NULL)
+    private DnsCnameRdata cname = null;
 
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private String fqdn = null;
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private String fqdn = null;
 
-  @JsonProperty("ip6_addresses")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsAAAARdata> ip6Addresses = null;
+    @JsonProperty("ip6_addresses")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsAAAARdata> ip6Addresses = null;
 
-  @JsonProperty("ip_addresses")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsARdata> ipAddresses = null;
+    @JsonProperty("ip_addresses")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsARdata> ipAddresses = null;
 
-  @JsonProperty("nses")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsNsRdata> nses = null;
+    @JsonProperty("nses")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsNsRdata> nses = null;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = null;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -59,6 +59,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Canonical name in cname record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cname
    */
   @VsoMethod
@@ -70,6 +71,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method to the attribute.
    * Canonical name in cname record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cname set the cname.
    */
   @VsoMethod
@@ -81,6 +83,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -92,6 +95,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method to the attribute.
    * Fully qualified domain name.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
   @VsoMethod
@@ -103,6 +107,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address in aaaa record.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Addresses
    */
   @VsoMethod
@@ -114,6 +119,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method. this will set the ip6Addresses
    * Ipv6 address in aaaa record.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Addresses
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method this will set the ip6Addresses
    * Ipv6 address in aaaa record.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Addresses
    */
   @VsoMethod
@@ -141,6 +148,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address in a record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
   @VsoMethod
@@ -152,6 +160,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method. this will set the ipAddresses
    * Ip address in a record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
   @VsoMethod
@@ -163,6 +172,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method this will set the ipAddresses
    * Ip address in a record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
   @VsoMethod
@@ -179,6 +189,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name server information in ns record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nses
    */
   @VsoMethod
@@ -190,6 +201,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method. this will set the nses
    * Name server information in ns record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nses
    */
   @VsoMethod
@@ -201,6 +213,7 @@ public class DnsRrSet extends AviRestResource {
    * This is the setter method this will set the nses
    * Name server information in ns record.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nses
    */
   @VsoMethod
@@ -218,6 +231,7 @@ public class DnsRrSet extends AviRestResource {
    * Time to live for this dns record.
    * Allowed values are 0-2147483647.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ttl
    */
   @VsoMethod
@@ -230,6 +244,7 @@ public class DnsRrSet extends AviRestResource {
    * Time to live for this dns record.
    * Allowed values are 0-2147483647.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ttl set the ttl.
    */
   @VsoMethod
@@ -244,6 +259,7 @@ public class DnsRrSet extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -258,6 +274,7 @@ public class DnsRrSet extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

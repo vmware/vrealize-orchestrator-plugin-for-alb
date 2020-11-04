@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VcenterHosts extends AviRestResource {
-  @JsonProperty("host_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> hostRefs = null;
+    @JsonProperty("host_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> hostRefs = null;
 
-  @JsonProperty("include")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean include = false;
+    @JsonProperty("include")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean include = false;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRefs
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VcenterHosts extends AviRestResource {
   /**
    * This is the setter method. this will set the hostRefs
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRefs
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class VcenterHosts extends AviRestResource {
   /**
    * This is the setter method this will set the hostRefs
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRefs
    */
   @VsoMethod

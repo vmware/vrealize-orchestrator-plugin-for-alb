@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecurityManagerData extends AviRestResource {
-  @JsonProperty("app_learning_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<DbAppLearningInfo> appLearningInfo = null;
+    @JsonProperty("app_learning_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<DbAppLearningInfo> appLearningInfo = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -50,6 +50,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about various applications.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appLearningInfo
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the setter method. this will set the appLearningInfo
    * Information about various applications.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appLearningInfo
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the setter method this will set the appLearningInfo
    * Information about various applications.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appLearningInfo
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualservice name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtualservice name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -151,6 +158,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualservice uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -162,6 +170,7 @@ public class SecurityManagerData extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtualservice uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DNSConfig extends AviRestResource {
-  @JsonProperty("domain_name")
-  @JsonInclude(Include.NON_NULL)
-  private String domainName = null;
+    @JsonProperty("domain_name")
+    @JsonInclude(Include.NON_NULL)
+    private String domainName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Gslb subdomain used for gslb service fqdn match and placement.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class DNSConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslb subdomain used for gslb service fqdn match and placement.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param domainName set the domainName.
    */
   @VsoMethod

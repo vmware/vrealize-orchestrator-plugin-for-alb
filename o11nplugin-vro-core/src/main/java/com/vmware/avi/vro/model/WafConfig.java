@@ -26,113 +26,121 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafConfig extends AviRestResource {
-  @JsonProperty("allowed_http_versions")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> allowedHttpVersions = null;
+    @JsonProperty("allowed_http_versions")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> allowedHttpVersions = null;
 
-  @JsonProperty("allowed_methods")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> allowedMethods = null;
+    @JsonProperty("allowed_methods")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> allowedMethods = null;
 
-  @JsonProperty("allowed_request_content_types")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> allowedRequestContentTypes = null;
+    @JsonProperty("allowed_request_content_types")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> allowedRequestContentTypes = null;
 
-  @JsonProperty("argument_separator")
-  @JsonInclude(Include.NON_NULL)
-  private String argumentSeparator = "&";
+    @JsonProperty("argument_separator")
+    @JsonInclude(Include.NON_NULL)
+    private String argumentSeparator = "&";
 
-  @JsonProperty("buffer_response_body_for_inspection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean bufferResponseBodyForInspection = null;
+    @JsonProperty("buffer_response_body_for_inspection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean bufferResponseBodyForInspection;
 
-  @JsonProperty("client_file_upload_max_body_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientFileUploadMaxBodySize = null;
+    @JsonProperty("client_file_upload_max_body_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientFileUploadMaxBodySize;
 
-  @JsonProperty("client_nonfile_upload_max_body_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientNonfileUploadMaxBodySize = null;
+    @JsonProperty("client_nonfile_upload_max_body_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientNonfileUploadMaxBodySize;
 
-  @JsonProperty("client_request_max_body_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientRequestMaxBodySize = 32;
+    @JsonProperty("client_request_max_body_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientRequestMaxBodySize = 32;
 
-  @JsonProperty("confidence_override")
-  @JsonInclude(Include.NON_NULL)
-  private AppLearningConfidenceOverride confidenceOverride = null;
+    @JsonProperty("confidence_override")
+    @JsonInclude(Include.NON_NULL)
+    private AppLearningConfidenceOverride confidenceOverride;
 
-  @JsonProperty("cookie_format_version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cookieFormatVersion = 0;
+    @JsonProperty("cookie_format_version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cookieFormatVersion = 0;
 
-  @JsonProperty("enable_auto_rule_updates")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoRuleUpdates = null;
+    @JsonProperty("enable_auto_rule_updates")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutoRuleUpdates;
 
-  @JsonProperty("ignore_incomplete_request_body_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignoreIncompleteRequestBodyError = true;
+    @JsonProperty("ignore_incomplete_request_body_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreIncompleteRequestBodyError = true;
 
-  @JsonProperty("learning_params")
-  @JsonInclude(Include.NON_NULL)
-  private AppLearningParams learningParams = null;
+    @JsonProperty("learning_params")
+    @JsonInclude(Include.NON_NULL)
+    private AppLearningParams learningParams;
 
-  @JsonProperty("max_execution_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxExecutionTime = 50;
+    @JsonProperty("max_execution_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxExecutionTime = 50;
 
-  @JsonProperty("min_confidence")
-  @JsonInclude(Include.NON_NULL)
-  private String minConfidence = null;
+    @JsonProperty("min_confidence")
+    @JsonInclude(Include.NON_NULL)
+    private String minConfidence;
 
-  @JsonProperty("regex_match_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer regexMatchLimit = 30000;
+    @JsonProperty("regex_match_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer regexMatchLimit = 30000;
 
-  @JsonProperty("regex_recursion_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer regexRecursionLimit = 10000;
+    @JsonProperty("regex_recursion_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer regexRecursionLimit = 10000;
 
-  @JsonProperty("request_body_default_action")
-  @JsonInclude(Include.NON_NULL)
-  private String requestBodyDefaultAction = "phase:2,deny,status:403,log,auditlog";
+    @JsonProperty("request_body_default_action")
+    @JsonInclude(Include.NON_NULL)
+    private String requestBodyDefaultAction = "phase:2,deny,status:403,log,auditlog";
 
-  @JsonProperty("request_hdr_default_action")
-  @JsonInclude(Include.NON_NULL)
-  private String requestHdrDefaultAction = "phase:1,deny,status:403,log,auditlog";
+    @JsonProperty("request_hdr_default_action")
+    @JsonInclude(Include.NON_NULL)
+    private String requestHdrDefaultAction = "phase:1,deny,status:403,log,auditlog";
 
-  @JsonProperty("response_body_default_action")
-  @JsonInclude(Include.NON_NULL)
-  private String responseBodyDefaultAction = "phase:4,deny,status:403,log,auditlog";
+    @JsonProperty("response_body_default_action")
+    @JsonInclude(Include.NON_NULL)
+    private String responseBodyDefaultAction = "phase:4,deny,status:403,log,auditlog";
 
-  @JsonProperty("response_hdr_default_action")
-  @JsonInclude(Include.NON_NULL)
-  private String responseHdrDefaultAction = "phase:3,deny,status:403,log,auditlog";
+    @JsonProperty("response_hdr_default_action")
+    @JsonInclude(Include.NON_NULL)
+    private String responseHdrDefaultAction = "phase:3,deny,status:403,log,auditlog";
 
-  @JsonProperty("restricted_extensions")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> restrictedExtensions = null;
+    @JsonProperty("restricted_extensions")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> restrictedExtensions = null;
 
-  @JsonProperty("restricted_headers")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> restrictedHeaders = null;
+    @JsonProperty("restricted_headers")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> restrictedHeaders = null;
 
-  @JsonProperty("server_response_max_body_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverResponseMaxBodySize = 128;
+    @JsonProperty("send_status_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sendStatusHeader = false;
 
-  @JsonProperty("static_extensions")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> staticExtensions = null;
+    @JsonProperty("server_response_max_body_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverResponseMaxBodySize = 128;
 
-  @JsonProperty("status_code_for_rejected_requests")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCodeForRejectedRequests = "HTTP_RESPONSE_CODE_403";
+    @JsonProperty("static_extensions")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> staticExtensions = null;
 
-  @JsonProperty("xml_xxe_protection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean xmlXxeProtection = true;
+    @JsonProperty("status_code_for_rejected_requests")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCodeForRejectedRequests = "HTTP_RESPONSE_CODE_403";
+
+    @JsonProperty("status_header_name")
+    @JsonInclude(Include.NON_NULL)
+    private String statusHeaderName = "X-WAF-Result";
+
+    @JsonProperty("xml_xxe_protection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean xmlXxeProtection = true;
 
 
 
@@ -141,6 +149,7 @@ public class WafConfig extends AviRestResource {
    * Waf allowed http versions.
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedHttpVersions
    */
   @VsoMethod
@@ -153,6 +162,7 @@ public class WafConfig extends AviRestResource {
    * Waf allowed http versions.
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedHttpVersions
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class WafConfig extends AviRestResource {
    * Waf allowed http versions.
    * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedHttpVersions
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedMethods
    */
   @VsoMethod
@@ -198,6 +210,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedMethods
    */
   @VsoMethod
@@ -212,6 +225,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedMethods
    */
   @VsoMethod
@@ -228,6 +242,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf allowed content types.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypes
    */
   @VsoMethod
@@ -239,6 +254,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the allowedRequestContentTypes
    * Waf allowed content types.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypes
    */
   @VsoMethod
@@ -250,6 +266,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the allowedRequestContentTypes
    * Waf allowed content types.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypes
    */
   @VsoMethod
@@ -266,7 +283,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Argument seperator.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as &.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "&".
    * @return argumentSeparator
    */
   @VsoMethod
@@ -278,7 +295,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Argument seperator.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as &.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "&".
    * @param argumentSeparator set the argumentSeparator.
    */
   @VsoMethod
@@ -316,6 +333,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field deprecated in 18.1.5.
    * Field introduced in 17.2.1.
+   * Unit is kb.
    * @return clientFileUploadMaxBodySize
    */
   @VsoMethod
@@ -329,6 +347,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field deprecated in 18.1.5.
    * Field introduced in 17.2.1.
+   * Unit is kb.
    * @param clientFileUploadMaxBodySize set the clientFileUploadMaxBodySize.
    */
   @VsoMethod
@@ -342,6 +361,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field deprecated in 18.1.5.
    * Field introduced in 17.2.1.
+   * Unit is kb.
    * @return clientNonfileUploadMaxBodySize
    */
   @VsoMethod
@@ -355,6 +375,7 @@ public class WafConfig extends AviRestResource {
    * Allowed values are 1-32768.
    * Field deprecated in 18.1.5.
    * Field introduced in 17.2.1.
+   * Unit is kb.
    * @param clientNonfileUploadMaxBodySize set the clientNonfileUploadMaxBodySize.
    */
   @VsoMethod
@@ -367,6 +388,7 @@ public class WafConfig extends AviRestResource {
    * Maximum size for the client request body scanned by waf.
    * Allowed values are 1-32768.
    * Field introduced in 18.1.5, 18.2.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @return clientRequestMaxBodySize
    */
@@ -380,6 +402,7 @@ public class WafConfig extends AviRestResource {
    * Maximum size for the client request body scanned by waf.
    * Allowed values are 1-32768.
    * Field introduced in 18.1.5, 18.2.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @param clientRequestMaxBodySize set the clientRequestMaxBodySize.
    */
@@ -532,6 +555,7 @@ public class WafConfig extends AviRestResource {
    * exceeded.
    * Allowed values are 0-5000.
    * Field introduced in 17.2.12, 18.1.2.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return maxExecutionTime
    */
@@ -552,6 +576,7 @@ public class WafConfig extends AviRestResource {
    * exceeded.
    * Allowed values are 0-5000.
    * Field introduced in 17.2.12, 18.1.2.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param maxExecutionTime set the maxExecutionTime.
    */
@@ -638,7 +663,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for request body phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:2,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:2,deny,status:403,log,auditlog".
    * @return requestBodyDefaultAction
    */
   @VsoMethod
@@ -650,7 +675,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for request body phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:2,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:2,deny,status:403,log,auditlog".
    * @param requestBodyDefaultAction set the requestBodyDefaultAction.
    */
   @VsoMethod
@@ -662,7 +687,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for request header phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:1,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:1,deny,status:403,log,auditlog".
    * @return requestHdrDefaultAction
    */
   @VsoMethod
@@ -674,7 +699,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for request header phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:1,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:1,deny,status:403,log,auditlog".
    * @param requestHdrDefaultAction set the requestHdrDefaultAction.
    */
   @VsoMethod
@@ -686,7 +711,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for response body phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:4,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:4,deny,status:403,log,auditlog".
    * @return responseBodyDefaultAction
    */
   @VsoMethod
@@ -698,7 +723,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for response body phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:4,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:4,deny,status:403,log,auditlog".
    * @param responseBodyDefaultAction set the responseBodyDefaultAction.
    */
   @VsoMethod
@@ -710,7 +735,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf default action for response header phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:3,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:3,deny,status:403,log,auditlog".
    * @return responseHdrDefaultAction
    */
   @VsoMethod
@@ -722,7 +747,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf default action for response header phase.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as phase:3,deny,status:403,log,auditlog.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "phase:3,deny,status:403,log,auditlog".
    * @param responseHdrDefaultAction set the responseHdrDefaultAction.
    */
   @VsoMethod
@@ -734,6 +759,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
   @VsoMethod
@@ -745,6 +771,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the restrictedExtensions
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
   @VsoMethod
@@ -756,6 +783,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the restrictedExtensions
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
   @VsoMethod
@@ -772,6 +800,7 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
   @VsoMethod
@@ -783,6 +812,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the restrictedHeaders
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
   @VsoMethod
@@ -794,6 +824,7 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the restrictedHeaders
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
   @VsoMethod
@@ -808,9 +839,34 @@ public class WafConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Whether or not to send waf status in a request header to pool servers.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return sendStatusHeader
+   */
+  @VsoMethod
+  public Boolean getSendStatusHeader() {
+    return sendStatusHeader;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Whether or not to send waf status in a request header to pool servers.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param sendStatusHeader set the sendStatusHeader.
+   */
+  @VsoMethod
+  public void setSendStatusHeader(Boolean  sendStatusHeader) {
+    this.sendStatusHeader = sendStatusHeader;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum size for response body scanned by waf.
    * Allowed values are 1-32768.
    * Field introduced in 17.2.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return serverResponseMaxBodySize
    */
@@ -824,6 +880,7 @@ public class WafConfig extends AviRestResource {
    * Maximum size for response body scanned by waf.
    * Allowed values are 1-32768.
    * Field introduced in 17.2.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param serverResponseMaxBodySize set the serverResponseMaxBodySize.
    */
@@ -835,8 +892,9 @@ public class WafConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Waf static file extensions.
-   * Get and head requests with no query args and one of these extensions are whitelisted and not checked by the ruleset.
+   * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
   @VsoMethod
@@ -847,8 +905,9 @@ public class WafConfig extends AviRestResource {
   /**
    * This is the setter method. this will set the staticExtensions
    * Waf static file extensions.
-   * Get and head requests with no query args and one of these extensions are whitelisted and not checked by the ruleset.
+   * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
   @VsoMethod
@@ -859,8 +918,9 @@ public class WafConfig extends AviRestResource {
   /**
    * This is the setter method this will set the staticExtensions
    * Waf static file extensions.
-   * Get and head requests with no query args and one of these extensions are whitelisted and not checked by the ruleset.
+   * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
   @VsoMethod
@@ -881,7 +941,7 @@ public class WafConfig extends AviRestResource {
    * HTTP_RESPONSE_CODE_301, HTTP_RESPONSE_CODE_302, HTTP_RESPONSE_CODE_303, HTTP_RESPONSE_CODE_304, HTTP_RESPONSE_CODE_305, HTTP_RESPONSE_CODE_307,
    * HTTP_RESPONSE_CODE_400, HTTP_RESPONSE_CODE_401, HTTP_RESPONSE_CODE_402...
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_RESPONSE_CODE_403.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_RESPONSE_CODE_403".
    * @return statusCodeForRejectedRequests
    */
   @VsoMethod
@@ -897,12 +957,36 @@ public class WafConfig extends AviRestResource {
    * HTTP_RESPONSE_CODE_301, HTTP_RESPONSE_CODE_302, HTTP_RESPONSE_CODE_303, HTTP_RESPONSE_CODE_304, HTTP_RESPONSE_CODE_305, HTTP_RESPONSE_CODE_307,
    * HTTP_RESPONSE_CODE_400, HTTP_RESPONSE_CODE_401, HTTP_RESPONSE_CODE_402...
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_RESPONSE_CODE_403.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_RESPONSE_CODE_403".
    * @param statusCodeForRejectedRequests set the statusCodeForRejectedRequests.
    */
   @VsoMethod
   public void setStatusCodeForRejectedRequests(String  statusCodeForRejectedRequests) {
     this.statusCodeForRejectedRequests = statusCodeForRejectedRequests;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The name of the request header indicating waf evaluation status to pool servers.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "X-WAF-Result".
+   * @return statusHeaderName
+   */
+  @VsoMethod
+  public String getStatusHeaderName() {
+    return statusHeaderName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The name of the request header indicating waf evaluation status to pool servers.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "X-WAF-Result".
+   * @param statusHeaderName set the statusHeaderName.
+   */
+  @VsoMethod
+  public void setStatusHeaderName(String  statusHeaderName) {
+    this.statusHeaderName = statusHeaderName;
   }
 
   /**
@@ -966,7 +1050,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.minConfidence, objWafConfig.minConfidence)&&
   Objects.equals(this.confidenceOverride, objWafConfig.confidenceOverride)&&
   Objects.equals(this.regexRecursionLimit, objWafConfig.regexRecursionLimit)&&
-  Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection);
+  Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection)&&
+  Objects.equals(this.statusHeaderName, objWafConfig.statusHeaderName)&&
+  Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader);
 }
 
 @Override
@@ -996,9 +1082,11 @@ public String toString() {
         sb.append("    responseHdrDefaultAction: ").append(toIndentedString(responseHdrDefaultAction)).append("\n");
         sb.append("    restrictedExtensions: ").append(toIndentedString(restrictedExtensions)).append("\n");
         sb.append("    restrictedHeaders: ").append(toIndentedString(restrictedHeaders)).append("\n");
+        sb.append("    sendStatusHeader: ").append(toIndentedString(sendStatusHeader)).append("\n");
         sb.append("    serverResponseMaxBodySize: ").append(toIndentedString(serverResponseMaxBodySize)).append("\n");
         sb.append("    staticExtensions: ").append(toIndentedString(staticExtensions)).append("\n");
         sb.append("    statusCodeForRejectedRequests: ").append(toIndentedString(statusCodeForRejectedRequests)).append("\n");
+        sb.append("    statusHeaderName: ").append(toIndentedString(statusHeaderName)).append("\n");
         sb.append("    xmlXxeProtection: ").append(toIndentedString(xmlXxeProtection)).append("\n");
       sb.append("}");
   return sb.toString();

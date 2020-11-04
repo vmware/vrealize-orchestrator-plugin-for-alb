@@ -24,32 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIAdminCredentials extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = "root";
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = "root";
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = "vmware";
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = "vmware";
 
-  @JsonProperty("privilege")
-  @JsonInclude(Include.NON_NULL)
-  private String privilege = null;
+    @JsonProperty("privilege")
+    @JsonInclude(Include.NON_NULL)
+    private String privilege = null;
 
-  @JsonProperty("vcenter_url")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterUrl = null;
+    @JsonProperty("vcenter_url")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterUrl = null;
 
-  @JsonProperty("vi_mgr_token")
-  @JsonInclude(Include.NON_NULL)
-  private String viMgrToken = null;
+    @JsonProperty("vi_mgr_token")
+    @JsonInclude(Include.NON_NULL)
+    private String viMgrToken = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as root.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "root".
    * @return name
    */
   @VsoMethod
@@ -60,7 +60,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as root.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "root".
    * @param name set the name.
    */
   @VsoMethod
@@ -71,7 +71,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property password of obj type viadmincredentials field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as vmware.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
    * @return password
    */
   @VsoMethod
@@ -82,7 +82,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property password of obj type viadmincredentials field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as vmware.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
    * @param password set the password.
    */
   @VsoMethod
@@ -93,6 +93,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privilege
    */
   @VsoMethod
@@ -103,6 +104,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privilege set the privilege.
    */
   @VsoMethod
@@ -113,6 +115,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_url of obj type viadmincredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterUrl
    */
   @VsoMethod
@@ -123,6 +126,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_url of obj type viadmincredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterUrl set the vcenterUrl.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vi_mgr_token of obj type viadmincredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return viMgrToken
    */
   @VsoMethod
@@ -143,6 +148,7 @@ public class VIAdminCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vi_mgr_token of obj type viadmincredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param viMgrToken set the viMgrToken.
    */
   @VsoMethod

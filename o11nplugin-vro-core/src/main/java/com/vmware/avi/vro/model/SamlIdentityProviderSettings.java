@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlIdentityProviderSettings extends AviRestResource {
-  @JsonProperty("metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String metadata = null;
+    @JsonProperty("metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String metadata = null;
 
 
 
@@ -34,6 +34,7 @@ public class SamlIdentityProviderSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml idp metadata.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class SamlIdentityProviderSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml idp metadata.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
    */
   @VsoMethod

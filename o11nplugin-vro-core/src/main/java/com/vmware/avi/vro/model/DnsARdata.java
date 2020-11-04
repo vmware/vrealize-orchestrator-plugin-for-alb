@@ -25,15 +25,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsARdata extends AviRestResource {
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddress = null;
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddress = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address for fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -44,6 +45,7 @@ public class DnsARdata extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address for fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddress set the ipAddress.
    */
   @VsoMethod

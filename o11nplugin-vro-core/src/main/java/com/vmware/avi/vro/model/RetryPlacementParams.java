@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RetryPlacementParams extends AviRestResource {
-  @JsonProperty("all_east_west")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allEastWest = false;
+    @JsonProperty("all_east_west")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allEastWest = false;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
 
 
@@ -65,6 +65,7 @@ public class RetryPlacementParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class RetryPlacementParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -86,6 +88,7 @@ public class RetryPlacementParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates the vip_id that needs placement retrial.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -97,6 +100,7 @@ public class RetryPlacementParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates the vip_id that needs placement retrial.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod

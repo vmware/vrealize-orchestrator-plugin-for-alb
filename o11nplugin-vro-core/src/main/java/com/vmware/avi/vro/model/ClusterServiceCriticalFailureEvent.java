@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClusterServiceCriticalFailureEvent extends AviRestResource {
-  @JsonProperty("node_name")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeName = null;
+    @JsonProperty("node_name")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeName = null;
 
-  @JsonProperty("service_name")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceName = null;
+    @JsonProperty("service_name")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of controller node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeName
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class ClusterServiceCriticalFailureEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of controller node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeName set the nodeName.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class ClusterServiceCriticalFailureEvent extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the controller service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceName
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class ClusterServiceCriticalFailureEvent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the controller service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceName set the serviceName.
    */
   @VsoMethod

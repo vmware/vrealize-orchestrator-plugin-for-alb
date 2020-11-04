@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SipServiceApplicationProfile extends AviRestResource {
-  @JsonProperty("transaction_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer transactionTimeout = 32;
+    @JsonProperty("transaction_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer transactionTimeout = 32;
 
 
 
@@ -35,6 +35,7 @@ public class SipServiceApplicationProfile extends AviRestResource {
    * Sip transaction timeout in seconds.
    * Allowed values are 2-512.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @return transactionTimeout
    */
@@ -48,6 +49,7 @@ public class SipServiceApplicationProfile extends AviRestResource {
    * Sip transaction timeout in seconds.
    * Allowed values are 2-512.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32.
    * @param transactionTimeout set the transactionTimeout.
    */

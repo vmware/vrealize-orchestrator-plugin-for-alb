@@ -26,31 +26,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPRewriteLocHdrAction extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private URIParam host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private URIParam host = null;
 
-  @JsonProperty("keep_query")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean keepQuery = true;
+    @JsonProperty("keep_query")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean keepQuery = true;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private URIParam path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private URIParam path = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String protocol = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String protocol = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Host config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -114,6 +118,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port to use in the redirected uri.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Port to use in the redirected uri.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -136,6 +142,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http protocol type.
    * Enum options - HTTP, HTTPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -147,6 +154,7 @@ public class HTTPRewriteLocHdrAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Http protocol type.
    * Enum options - HTTP, HTTPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod

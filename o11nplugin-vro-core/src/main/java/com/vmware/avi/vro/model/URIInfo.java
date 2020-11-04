@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class URIInfo extends AviRestResource {
-  @JsonProperty("param_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<ParamInfo> paramInfo = null;
+    @JsonProperty("param_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<ParamInfo> paramInfo = null;
 
-  @JsonProperty("uri_hits")
-  @JsonInclude(Include.NON_NULL)
-  private Integer uriHits = null;
+    @JsonProperty("uri_hits")
+    @JsonInclude(Include.NON_NULL)
+    private Integer uriHits = null;
 
-  @JsonProperty("uri_key")
-  @JsonInclude(Include.NON_NULL)
-  private String uriKey = null;
+    @JsonProperty("uri_key")
+    @JsonInclude(Include.NON_NULL)
+    private String uriKey = null;
 
 
 
@@ -42,6 +42,7 @@ public class URIInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about various params under a uri.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method. this will set the paramInfo
    * Information about various params under a uri.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method this will set the paramInfo
    * Information about various params under a uri.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramInfo
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class URIInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of uri hits.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriHits
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of uri hits.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriHits set the uriHits.
    */
   @VsoMethod
@@ -102,6 +107,7 @@ public class URIInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uri name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriKey
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class URIInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Uri name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriKey set the uriKey.
    */
   @VsoMethod

@@ -24,193 +24,193 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackConfiguration extends AviRestResource {
-  @JsonProperty("admin_tenant")
-  @JsonInclude(Include.NON_NULL)
-  private String adminTenant = null;
+    @JsonProperty("admin_tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String adminTenant = null;
 
-  @JsonProperty("admin_tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String adminTenantUuid = null;
+    @JsonProperty("admin_tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String adminTenantUuid = null;
 
-  @JsonProperty("allowed_address_pairs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowedAddressPairs = true;
+    @JsonProperty("allowed_address_pairs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowedAddressPairs = true;
 
-  @JsonProperty("anti_affinity")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean antiAffinity = true;
+    @JsonProperty("anti_affinity")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean antiAffinity = true;
 
-  @JsonProperty("auth_url")
-  @JsonInclude(Include.NON_NULL)
-  private String authUrl = null;
+    @JsonProperty("auth_url")
+    @JsonInclude(Include.NON_NULL)
+    private String authUrl = null;
 
-  @JsonProperty("config_drive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean configDrive = true;
+    @JsonProperty("config_drive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean configDrive = true;
 
-  @JsonProperty("contrail_disable_policy")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean contrailDisablePolicy = false;
+    @JsonProperty("contrail_disable_policy")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean contrailDisablePolicy = false;
 
-  @JsonProperty("contrail_endpoint")
-  @JsonInclude(Include.NON_NULL)
-  private String contrailEndpoint = null;
+    @JsonProperty("contrail_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String contrailEndpoint = null;
 
-  @JsonProperty("contrail_plugin")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean contrailPlugin = false;
+    @JsonProperty("contrail_plugin")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean contrailPlugin = false;
 
-  @JsonProperty("custom_se_image_properties")
-  @JsonInclude(Include.NON_NULL)
-  private List<Property> customSeImageProperties = null;
+    @JsonProperty("custom_se_image_properties")
+    @JsonInclude(Include.NON_NULL)
+    private List<Property> customSeImageProperties = null;
 
-  @JsonProperty("external_networks")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean externalNetworks = false;
+    @JsonProperty("external_networks")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean externalNetworks = false;
 
-  @JsonProperty("free_floatingips")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean freeFloatingips = false;
+    @JsonProperty("free_floatingips")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean freeFloatingips = false;
 
-  @JsonProperty("hypervisor")
-  @JsonInclude(Include.NON_NULL)
-  private String hypervisor = "KVM";
+    @JsonProperty("hypervisor")
+    @JsonInclude(Include.NON_NULL)
+    private String hypervisor = "KVM";
 
-  @JsonProperty("hypervisor_properties")
-  @JsonInclude(Include.NON_NULL)
-  private List<OpenStackHypervisorProperties> hypervisorProperties = null;
+    @JsonProperty("hypervisor_properties")
+    @JsonInclude(Include.NON_NULL)
+    private List<OpenStackHypervisorProperties> hypervisorProperties = null;
 
-  @JsonProperty("img_format")
-  @JsonInclude(Include.NON_NULL)
-  private String imgFormat = "OS_IMG_FMT_AUTO";
+    @JsonProperty("img_format")
+    @JsonInclude(Include.NON_NULL)
+    private String imgFormat = "OS_IMG_FMT_AUTO";
 
-  @JsonProperty("import_keystone_tenants")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean importKeystoneTenants = true;
+    @JsonProperty("import_keystone_tenants")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean importKeystoneTenants = true;
 
-  @JsonProperty("insecure")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean insecure = true;
+    @JsonProperty("insecure")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean insecure = true;
 
-  @JsonProperty("intf_sec_ips")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean intfSecIps = false;
+    @JsonProperty("intf_sec_ips")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean intfSecIps;
 
-  @JsonProperty("keystone_host")
-  @JsonInclude(Include.NON_NULL)
-  private String keystoneHost = null;
+    @JsonProperty("keystone_host")
+    @JsonInclude(Include.NON_NULL)
+    private String keystoneHost = null;
 
-  @JsonProperty("map_admin_to_cloudadmin")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean mapAdminToCloudadmin = false;
+    @JsonProperty("map_admin_to_cloudadmin")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean mapAdminToCloudadmin = false;
 
-  @JsonProperty("mgmt_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetworkName = null;
+    @JsonProperty("mgmt_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetworkName = null;
 
-  @JsonProperty("mgmt_network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetworkUuid = null;
+    @JsonProperty("mgmt_network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetworkUuid = null;
 
-  @JsonProperty("name_owner")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean nameOwner = true;
+    @JsonProperty("name_owner")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean nameOwner = true;
 
-  @JsonProperty("neutron_rbac")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean neutronRbac = true;
+    @JsonProperty("neutron_rbac")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean neutronRbac = true;
 
-  @JsonProperty("nuage_organization")
-  @JsonInclude(Include.NON_NULL)
-  private String nuageOrganization = null;
+    @JsonProperty("nuage_organization")
+    @JsonInclude(Include.NON_NULL)
+    private String nuageOrganization;
 
-  @JsonProperty("nuage_password")
-  @JsonInclude(Include.NON_NULL)
-  private String nuagePassword = null;
+    @JsonProperty("nuage_password")
+    @JsonInclude(Include.NON_NULL)
+    private String nuagePassword;
 
-  @JsonProperty("nuage_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nuagePort = null;
+    @JsonProperty("nuage_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nuagePort;
 
-  @JsonProperty("nuage_username")
-  @JsonInclude(Include.NON_NULL)
-  private String nuageUsername = null;
+    @JsonProperty("nuage_username")
+    @JsonInclude(Include.NON_NULL)
+    private String nuageUsername;
 
-  @JsonProperty("nuage_virtualip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean nuageVirtualip = null;
+    @JsonProperty("nuage_virtualip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean nuageVirtualip;
 
-  @JsonProperty("nuage_vsd_host")
-  @JsonInclude(Include.NON_NULL)
-  private String nuageVsdHost = null;
+    @JsonProperty("nuage_vsd_host")
+    @JsonInclude(Include.NON_NULL)
+    private String nuageVsdHost;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("port_security")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean portSecurity = null;
+    @JsonProperty("port_security")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean portSecurity;
 
-  @JsonProperty("privilege")
-  @JsonInclude(Include.NON_NULL)
-  private String privilege = null;
+    @JsonProperty("privilege")
+    @JsonInclude(Include.NON_NULL)
+    private String privilege = null;
 
-  @JsonProperty("prov_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> provName = null;
+    @JsonProperty("prov_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> provName = null;
 
-  @JsonProperty("provider_vip_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<OpenStackVipNetwork> providerVipNetworks = null;
+    @JsonProperty("provider_vip_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<OpenStackVipNetwork> providerVipNetworks = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("role_mapping")
-  @JsonInclude(Include.NON_NULL)
-  private List<OpenStackRoleMapping> roleMapping = null;
+    @JsonProperty("role_mapping")
+    @JsonInclude(Include.NON_NULL)
+    private List<OpenStackRoleMapping> roleMapping = null;
 
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef;
 
-  @JsonProperty("security_groups")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean securityGroups = true;
+    @JsonProperty("security_groups")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean securityGroups = true;
 
-  @JsonProperty("tenant_se")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tenantSe = true;
+    @JsonProperty("tenant_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tenantSe = true;
 
-  @JsonProperty("usable_network_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableNetworkUuids = null;
+    @JsonProperty("usable_network_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableNetworkUuids;
 
-  @JsonProperty("use_admin_url")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useAdminUrl = true;
+    @JsonProperty("use_admin_url")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useAdminUrl = true;
 
-  @JsonProperty("use_internal_endpoints")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useInternalEndpoints = false;
+    @JsonProperty("use_internal_endpoints")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useInternalEndpoints = false;
 
-  @JsonProperty("use_keystone_auth")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useKeystoneAuth = true;
+    @JsonProperty("use_keystone_auth")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useKeystoneAuth = true;
 
-  @JsonProperty("use_nuagevip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useNuagevip = null;
+    @JsonProperty("use_nuagevip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useNuagevip;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
-  @JsonProperty("wildcard_access")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean wildcardAccess = null;
+    @JsonProperty("wildcard_access")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean wildcardAccess;
 
 
 
@@ -219,6 +219,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Openstack admin tenant (or project) information.
    * For keystone v3, provide the project information in project@domain format.
    * Domain need not be specified if the project belongs to the 'default' domain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminTenant
    */
   @VsoMethod
@@ -231,6 +232,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Openstack admin tenant (or project) information.
    * For keystone v3, provide the project information in project@domain format.
    * Domain need not be specified if the project belongs to the 'default' domain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminTenant set the adminTenant.
    */
   @VsoMethod
@@ -241,6 +243,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Admin-tenant's uuid in openstack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminTenantUuid
    */
   @VsoMethod
@@ -251,6 +254,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Admin-tenant's uuid in openstack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminTenantUuid set the adminTenantUuid.
    */
   @VsoMethod
@@ -306,6 +310,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Auth url for connecting to keystone.
    * If this is specified, any value provided for keystone_host is ignored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authUrl
    */
   @VsoMethod
@@ -317,6 +322,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Auth url for connecting to keystone.
    * If this is specified, any value provided for keystone_host is ignored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authUrl set the authUrl.
    */
   @VsoMethod
@@ -376,6 +382,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contrail vnc endpoint url (example http //10.10.10.100 8082).
    * By default, 'http //' scheme and 8082 port will be used if not provided in the url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contrailEndpoint
    */
   @VsoMethod
@@ -387,6 +394,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Contrail vnc endpoint url (example http //10.10.10.100 8082).
    * By default, 'http //' scheme and 8082 port will be used if not provided in the url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contrailEndpoint set the contrailEndpoint.
    */
   @VsoMethod
@@ -424,6 +432,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Only hw_vif_multiqueue_enabled property is supported.
    * Other properties will be ignored.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customSeImageProperties
    */
   @VsoMethod
@@ -437,6 +446,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Only hw_vif_multiqueue_enabled property is supported.
    * Other properties will be ignored.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customSeImageProperties
    */
   @VsoMethod
@@ -450,6 +460,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * Only hw_vif_multiqueue_enabled property is supported.
    * Other properties will be ignored.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customSeImageProperties
    */
   @VsoMethod
@@ -510,7 +521,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default hypervisor type, only kvm is supported.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Default value when not specified in API or module is interpreted by Avi Controller as KVM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @return hypervisor
    */
   @VsoMethod
@@ -522,7 +533,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Default hypervisor type, only kvm is supported.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Default value when not specified in API or module is interpreted by Avi Controller as KVM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @param hypervisor set the hypervisor.
    */
   @VsoMethod
@@ -534,6 +545,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom properties per hypervisor type.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorProperties
    */
   @VsoMethod
@@ -545,6 +557,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method. this will set the hypervisorProperties
    * Custom properties per hypervisor type.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorProperties
    */
   @VsoMethod
@@ -556,6 +569,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method this will set the hypervisorProperties
    * Custom properties per hypervisor type.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisorProperties
    */
   @VsoMethod
@@ -572,7 +586,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If os_img_fmt_raw, use raw images else use qcow2 for kvm.
    * Enum options - OS_IMG_FMT_AUTO, OS_IMG_FMT_QCOW2, OS_IMG_FMT_VMDK, OS_IMG_FMT_RAW, OS_IMG_FMT_FLAT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OS_IMG_FMT_AUTO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OS_IMG_FMT_AUTO".
    * @return imgFormat
    */
   @VsoMethod
@@ -584,7 +598,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * If os_img_fmt_raw, use raw images else use qcow2 for kvm.
    * Enum options - OS_IMG_FMT_AUTO, OS_IMG_FMT_QCOW2, OS_IMG_FMT_VMDK, OS_IMG_FMT_RAW, OS_IMG_FMT_FLAT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OS_IMG_FMT_AUTO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OS_IMG_FMT_AUTO".
    * @param imgFormat set the imgFormat.
    */
   @VsoMethod
@@ -640,7 +654,6 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If true, interface-secondary-ips method will be used for vip association.
    * Field deprecated in 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return intfSecIps
    */
   @VsoMethod
@@ -652,7 +665,6 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * If true, interface-secondary-ips method will be used for vip association.
    * Field deprecated in 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param intfSecIps set the intfSecIps.
    */
   @VsoMethod
@@ -664,6 +676,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Keystone's hostname or ip address.
    * (deprecated) use auth_url instead.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keystoneHost
    */
   @VsoMethod
@@ -675,6 +688,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Keystone's hostname or ip address.
    * (deprecated) use auth_url instead.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keystoneHost set the keystoneHost.
    */
   @VsoMethod
@@ -709,6 +723,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi management network name or cidr.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkName
    */
   @VsoMethod
@@ -719,6 +734,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi management network name or cidr.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkName set the mgmtNetworkName.
    */
   @VsoMethod
@@ -729,6 +745,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Management network uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkUuid
    */
   @VsoMethod
@@ -739,6 +756,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Management network uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkUuid set the mgmtNetworkUuid.
    */
   @VsoMethod
@@ -921,6 +939,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating to keystone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -931,6 +950,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating to keystone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -966,6 +986,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Access privilege.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privilege
    */
   @VsoMethod
@@ -977,6 +998,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Access privilege.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privilege set the privilege.
    */
   @VsoMethod
@@ -987,6 +1009,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Lbaas provider name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return provName
    */
   @VsoMethod
@@ -997,6 +1020,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the provName
    * Lbaas provider name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return provName
    */
   @VsoMethod
@@ -1007,6 +1031,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the provName
    * Lbaas provider name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return provName
    */
   @VsoMethod
@@ -1024,6 +1049,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * A tenant can normally use its own networks and any networks shared with it.
    * In addition, this setting provides extra networks that are usable by tenants.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerVipNetworks
    */
   @VsoMethod
@@ -1036,6 +1062,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * A tenant can normally use its own networks and any networks shared with it.
    * In addition, this setting provides extra networks that are usable by tenants.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerVipNetworks
    */
   @VsoMethod
@@ -1048,6 +1075,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * A tenant can normally use its own networks and any networks shared with it.
    * In addition, this setting provides extra networks that are usable by tenants.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return providerVipNetworks
    */
   @VsoMethod
@@ -1063,6 +1091,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Region name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -1073,6 +1102,7 @@ public class OpenStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Region name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -1086,6 +1116,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * For an openstack role, this mapping is consulted only if there is no local avi role with the same name as the openstack role.
    * This is an ordered list and only the first matching entry is used.
    * You can use '*' to match all openstack role names.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleMapping
    */
   @VsoMethod
@@ -1099,6 +1130,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * For an openstack role, this mapping is consulted only if there is no local avi role with the same name as the openstack role.
    * This is an ordered list and only the first matching entry is used.
    * You can use '*' to match all openstack role names.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleMapping
    */
   @VsoMethod
@@ -1112,6 +1144,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * For an openstack role, this mapping is consulted only if there is no local avi role with the same name as the openstack role.
    * This is an ordered list and only the first matching entry is used.
    * You can use '*' to match all openstack role names.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleMapping
    */
   @VsoMethod
@@ -1327,6 +1360,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating to keystone.
    * For keystone v3, provide the user information in user@domain format, unless that user belongs to the default domain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -1338,6 +1372,7 @@ public class OpenStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating to keystone.
    * For keystone v3, provide the user information in user@domain format, unless that user belongs to the default domain.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

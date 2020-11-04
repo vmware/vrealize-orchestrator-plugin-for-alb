@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugIpAddr extends AviRestResource {
-  @JsonProperty("addrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> addrs = null;
+    @JsonProperty("addrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> addrs = null;
 
-  @JsonProperty("prefixes")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> prefixes = null;
+    @JsonProperty("prefixes")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> prefixes = null;
 
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrRange> ranges = null;
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrRange> ranges = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the setter method. this will set the addrs
    * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the setter method this will set the addrs
    * Placeholder for description of property addrs of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the setter method. this will set the prefixes
    * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the setter method this will set the prefixes
    * Placeholder for description of property prefixes of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -131,6 +139,7 @@ public class DebugIpAddr extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * Placeholder for description of property ranges of obj type debugipaddr field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod

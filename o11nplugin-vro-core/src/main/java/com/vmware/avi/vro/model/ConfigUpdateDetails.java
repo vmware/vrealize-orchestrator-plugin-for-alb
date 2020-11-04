@@ -24,47 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigUpdateDetails extends AviRestResource {
-  @JsonProperty("error_message")
-  @JsonInclude(Include.NON_NULL)
-  private String errorMessage = null;
+    @JsonProperty("error_message")
+    @JsonInclude(Include.NON_NULL)
+    private String errorMessage = null;
 
-  @JsonProperty("new_resource_data")
-  @JsonInclude(Include.NON_NULL)
-  private String newResourceData = null;
+    @JsonProperty("new_resource_data")
+    @JsonInclude(Include.NON_NULL)
+    private String newResourceData = null;
 
-  @JsonProperty("old_resource_data")
-  @JsonInclude(Include.NON_NULL)
-  private String oldResourceData = null;
+    @JsonProperty("old_resource_data")
+    @JsonInclude(Include.NON_NULL)
+    private String oldResourceData = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private String path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path = null;
 
-  @JsonProperty("request_data")
-  @JsonInclude(Include.NON_NULL)
-  private String requestData = null;
+    @JsonProperty("request_data")
+    @JsonInclude(Include.NON_NULL)
+    private String requestData = null;
 
-  @JsonProperty("resource_name")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceName = null;
+    @JsonProperty("resource_name")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceName = null;
 
-  @JsonProperty("resource_type")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceType = null;
+    @JsonProperty("resource_type")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceType = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Error message if request failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Error message if request failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * New updated data of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newResourceData
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * New updated data of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newResourceData set the newResourceData.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Old & overwritten data of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldResourceData
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Old & overwritten data of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldResourceData set the oldResourceData.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Api path.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Api path.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request data if request failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestData
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request data if request failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestData set the requestData.
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the created resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceName
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the created resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceName set the resourceName.
    */
   @VsoMethod
@@ -185,6 +197,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Config type of the updated resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceType
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Config type of the updated resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceType set the resourceType.
    */
   @VsoMethod
@@ -205,6 +219,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -215,6 +230,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -225,6 +241,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -235,6 +252,7 @@ public class ConfigUpdateDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod

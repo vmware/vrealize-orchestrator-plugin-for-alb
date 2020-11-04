@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigUserNotAuthrzByRule extends AviRestResource {
-  @JsonProperty("policies")
-  @JsonInclude(Include.NON_NULL)
-  private String policies = "No Policies";
+    @JsonProperty("policies")
+    @JsonInclude(Include.NON_NULL)
+    private String policies = "No Policies";
 
-  @JsonProperty("roles")
-  @JsonInclude(Include.NON_NULL)
-  private String roles = "No Roles";
+    @JsonProperty("roles")
+    @JsonInclude(Include.NON_NULL)
+    private String roles = "No Roles";
 
-  @JsonProperty("tenants")
-  @JsonInclude(Include.NON_NULL)
-  private String tenants = "No Tenants";
+    @JsonProperty("tenants")
+    @JsonInclude(Include.NON_NULL)
+    private String tenants = "No Tenants";
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
 
 
@@ -46,7 +46,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as No Policies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "No Policies".
    * @return policies
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as No Policies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "No Policies".
    * @param policies set the policies.
    */
   @VsoMethod
@@ -69,7 +69,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned roles.
-   * Default value when not specified in API or module is interpreted by Avi Controller as No Roles.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "No Roles".
    * @return roles
    */
   @VsoMethod
@@ -80,7 +80,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned roles.
-   * Default value when not specified in API or module is interpreted by Avi Controller as No Roles.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "No Roles".
    * @param roles set the roles.
    */
   @VsoMethod
@@ -91,7 +91,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned tenants.
-   * Default value when not specified in API or module is interpreted by Avi Controller as No Tenants.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "No Tenants".
    * @return tenants
    */
   @VsoMethod
@@ -102,7 +102,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned tenants.
-   * Default value when not specified in API or module is interpreted by Avi Controller as No Tenants.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "No Tenants".
    * @param tenants set the tenants.
    */
   @VsoMethod
@@ -113,6 +113,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -123,6 +124,7 @@ public class ConfigUserNotAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod

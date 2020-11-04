@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
-  @JsonProperty("nsxt_segment_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix nsxtSegmentSubnet = null;
+    @JsonProperty("nsxt_segment_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix nsxtSegmentSubnet = null;
 
-  @JsonProperty("num_se_per_segment")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSePerSegment = 16;
+    @JsonProperty("num_se_per_segment")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSePerSegment = 16;
 
-  @JsonProperty("tier1_lr_ids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> tier1LrIds = null;
+    @JsonProperty("tier1_lr_ids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> tier1LrIds = null;
 
 
 
@@ -43,6 +43,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uber ip subnet for the logical segments created automatically by avi controller.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtSegmentSubnet
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Uber ip subnet for the logical segments created automatically by avi controller.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtSegmentSubnet set the nsxtSegmentSubnet.
    */
   @VsoMethod
@@ -89,6 +91,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tier1 logical router ids.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrIds
    */
   @VsoMethod
@@ -100,6 +103,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the setter method. this will set the tier1LrIds
    * Tier1 logical router ids.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrIds
    */
   @VsoMethod
@@ -111,6 +115,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the setter method this will set the tier1LrIds
    * Tier1 logical router ids.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrIds
    */
   @VsoMethod

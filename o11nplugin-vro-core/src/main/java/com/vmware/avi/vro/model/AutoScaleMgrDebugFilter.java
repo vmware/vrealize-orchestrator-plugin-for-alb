@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AutoScaleMgrDebugFilter extends AviRestResource {
-  @JsonProperty("enable_aws_autoscale_integration")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAwsAutoscaleIntegration = false;
+    @JsonProperty("enable_aws_autoscale_integration")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAwsAutoscaleIntegration = false;
 
-  @JsonProperty("intelligent_autoscale_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer intelligentAutoscalePeriod = null;
+    @JsonProperty("intelligent_autoscale_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer intelligentAutoscalePeriod = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
 
 
@@ -67,6 +67,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Period of running intelligent autoscale check.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return intelligentAutoscalePeriod
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Period of running intelligent autoscale check.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param intelligentAutoscalePeriod set the intelligentAutoscalePeriod.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class AutoScaleMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod

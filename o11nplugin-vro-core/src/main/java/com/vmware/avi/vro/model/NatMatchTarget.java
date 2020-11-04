@@ -27,17 +27,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NatMatchTarget extends AviRestResource {
-  @JsonProperty("destination_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch destinationIp = null;
+    @JsonProperty("destination_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch destinationIp = null;
 
-  @JsonProperty("services")
-  @JsonInclude(Include.NON_NULL)
-  private ServiceMatch services = null;
+    @JsonProperty("services")
+    @JsonInclude(Include.NON_NULL)
+    private ServiceMatch services = null;
 
-  @JsonProperty("source_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch sourceIp = null;
+    @JsonProperty("source_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch sourceIp = null;
 
 
 
@@ -45,6 +45,7 @@ public class NatMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination ip of the packet.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return destinationIp
    */
   @VsoMethod
@@ -56,6 +57,7 @@ public class NatMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination ip of the packet.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param destinationIp set the destinationIp.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class NatMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Services like port-matching and protocol.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -78,6 +81,7 @@ public class NatMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Services like port-matching and protocol.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param services set the services.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class NatMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source ip of the packet.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourceIp
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class NatMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Source ip of the packet.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourceIp set the sourceIp.
    */
   @VsoMethod

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.Selector;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -24,53 +25,61 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsVip extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("dns_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsInfo> dnsInfo = null;
+    @JsonProperty("dns_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsInfo> dnsInfo = null;
 
-  @JsonProperty("east_west_placement")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean eastWestPlacement = false;
+    @JsonProperty("east_west_placement")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean eastWestPlacement = false;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("ipam_selector")
+    @JsonInclude(Include.NON_NULL)
+    private Selector ipamSelector = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tier1_lr")
-  @JsonInclude(Include.NON_NULL)
-  private String tier1Lr = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("use_standard_alb")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useStandardAlb = null;
+    @JsonProperty("tier1_lr")
+    @JsonInclude(Include.NON_NULL)
+    private String tier1Lr = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("vip")
-  @JsonInclude(Include.NON_NULL)
-  private List<Vip> vip = null;
+    @JsonProperty("use_standard_alb")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useStandardAlb = null;
 
-  @JsonProperty("vrf_context_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfContextRef = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vsvip_cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String vsvipCloudConfigCksum = null;
+    @JsonProperty("vip")
+    @JsonInclude(Include.NON_NULL)
+    private List<Vip> vip = null;
+
+    @JsonProperty("vrf_context_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfContextRef = null;
+
+    @JsonProperty("vsvip_cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String vsvipCloudConfigCksum = null;
 
 
 
@@ -78,6 +87,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -89,6 +99,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -100,6 +111,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -111,6 +123,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method. this will set the dnsInfo
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -122,6 +135,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method this will set the dnsInfo
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -160,8 +174,79 @@ public class VsVip extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Determines the set of ipam networks to use for this vsvip.
+   * Selector type must be selector_ipam and only one label is supported.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipamSelector
+   */
+  @VsoMethod
+  public Selector getIpamSelector() {
+    return ipamSelector;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines the set of ipam networks to use for this vsvip.
+   * Selector type must be selector_ipam and only one label is supported.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ipamSelector set the ipamSelector.
+   */
+  @VsoMethod
+  public void setIpamSelector(Selector ipamSelector) {
+    this.ipamSelector = ipamSelector;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public VsVip addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name for the vsvip object.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -173,6 +258,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the vsvip object.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -184,6 +270,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -195,6 +282,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -206,6 +294,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lr
    */
   @VsoMethod
@@ -217,6 +306,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1Lr set the tier1Lr.
    */
   @VsoMethod
@@ -249,6 +339,7 @@ public class VsVip extends AviRestResource {
    * set.
    * This is only used when fip is used for vs on azure cloud.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return useStandardAlb
    */
   @VsoMethod
@@ -262,6 +353,7 @@ public class VsVip extends AviRestResource {
    * set.
    * This is only used when fip is used for vs on azure cloud.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param useStandardAlb set the useStandardAlb.
    */
   @VsoMethod
@@ -273,6 +365,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the vsvip object.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -284,6 +377,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the vsvip object.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -295,6 +389,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of virtual service ips and other shareable entities.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -306,6 +401,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method. this will set the vip
    * List of virtual service ips and other shareable entities.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -317,6 +413,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method this will set the vip
    * List of virtual service ips and other shareable entities.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -335,6 +432,7 @@ public class VsVip extends AviRestResource {
    * This is used to provide the isolation of the set of networks the application is attached to.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfContextRef
    */
   @VsoMethod
@@ -348,6 +446,7 @@ public class VsVip extends AviRestResource {
    * This is used to provide the isolation of the set of networks the application is attached to.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfContextRef set the vrfContextRef.
    */
   @VsoMethod
@@ -360,6 +459,7 @@ public class VsVip extends AviRestResource {
    * Checksum of cloud configuration for vsvip.
    * Internally set by cloud connector.
    * Field introduced in 17.2.9, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsvipCloudConfigCksum
    */
   @VsoMethod
@@ -372,6 +472,7 @@ public class VsVip extends AviRestResource {
    * Checksum of cloud configuration for vsvip.
    * Internally set by cloud connector.
    * Field introduced in 17.2.9, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsvipCloudConfigCksum set the vsvipCloudConfigCksum.
    */
   @VsoMethod
@@ -401,6 +502,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.eastWestPlacement, objVsVip.eastWestPlacement)&&
   Objects.equals(this.useStandardAlb, objVsVip.useStandardAlb)&&
   Objects.equals(this.tier1Lr, objVsVip.tier1Lr)&&
+  Objects.equals(this.labels, objVsVip.labels)&&
+  Objects.equals(this.ipamSelector, objVsVip.ipamSelector)&&
   Objects.equals(this.tenantRef, objVsVip.tenantRef)&&
   Objects.equals(this.cloudRef, objVsVip.cloudRef)&&
   Objects.equals(this.vsvipCloudConfigCksum, objVsVip.vsvipCloudConfigCksum);
@@ -413,6 +516,8 @@ public String toString() {
       sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
         sb.append("    eastWestPlacement: ").append(toIndentedString(eastWestPlacement)).append("\n");
+        sb.append("    ipamSelector: ").append(toIndentedString(ipamSelector)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    tier1Lr: ").append(toIndentedString(tier1Lr)).append("\n");

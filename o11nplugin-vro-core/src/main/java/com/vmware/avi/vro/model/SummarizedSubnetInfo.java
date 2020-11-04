@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SummarizedSubnetInfo extends AviRestResource {
-  @JsonProperty("cidr_prefix")
-  @JsonInclude(Include.NON_NULL)
-  private String cidrPrefix = null;
+    @JsonProperty("cidr_prefix")
+    @JsonInclude(Include.NON_NULL)
+    private String cidrPrefix = null;
 
-  @JsonProperty("network")
-  @JsonInclude(Include.NON_NULL)
-  private String network = null;
+    @JsonProperty("network")
+    @JsonInclude(Include.NON_NULL)
+    private String network = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cidr_prefix of obj type summarizedsubnetinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cidrPrefix
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cidr_prefix of obj type summarizedsubnetinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cidrPrefix set the cidrPrefix.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network of obj type summarizedsubnetinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class SummarizedSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network of obj type summarizedsubnetinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */
   @VsoMethod

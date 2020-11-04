@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="deleteObjectObj"
 	result-type="void" api-version="6.0.0"
-	id="5f94610e-e90f-49a6-afb5-4f7901ceea28" version="0.0.2"
+	id="5f94610e-e90f-49a6-afb5-4f7901ceea28" version="0.0.3"
 	allowed-operations="vfe">
 	<param n="deleteVS" t="boolean"><![CDATA[Delete VS indicator]]></param>
 	<param n="vsname" t="string"><![CDATA[VS name which needs to delete]]></param>
@@ -13,6 +13,8 @@
 	<param n="hmnameArray" t="Array/string"><![CDATA[Health Monitor names which needs to delete]]></param>
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Avi controller]]></param>
 	<param n="vipname" t="string"><![CDATA[Vsvip name]]></param>
+	<param n="deleteVsVip" t="boolean"><![CDATA[]]>
+	</param>
 	<script encoded="false"><![CDATA[/*************************************************************
 * This script deletes Virtual service dependent objects.     *
 *                                                            *
@@ -27,8 +29,11 @@ try{
 			aviVroClient.deleteObjectByName("virtualservice",vsname);
 			var msg = vsname+" Deleted successfully.";
 			msgArray.push(msg);
+//			aviVroClient.deleteObjectByName("vsvip",vipname);
+//			var msg = vipname+" Deleted successfully.";
+//			msgArray.push(msg);
 		}
-		if(deleteVS){
+		if(deleteVsVip){
 			aviVroClient.deleteObjectByName("vsvip",vipname);
 			var msg = vipname+" Deleted successfully.";
 			msgArray.push(msg);

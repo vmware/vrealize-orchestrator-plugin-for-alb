@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
-  @JsonProperty("num_pkts_dropped")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numPktsDropped = null;
+    @JsonProperty("num_pkts_dropped")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numPktsDropped = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Number of packets dropped since the last event.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPktsDropped
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of packets dropped since the last event.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPktsDropped set the numPktsDropped.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class SeLicensedBandwdithExceededEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod

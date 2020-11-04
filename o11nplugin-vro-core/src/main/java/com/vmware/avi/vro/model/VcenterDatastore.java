@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VcenterDatastore extends AviRestResource {
-  @JsonProperty("datastore_name")
-  @JsonInclude(Include.NON_NULL)
-  private String datastoreName = null;
+    @JsonProperty("datastore_name")
+    @JsonInclude(Include.NON_NULL)
+    private String datastoreName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datastore_name of obj type vcenterdatastore field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datastoreName
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class VcenterDatastore extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datastore_name of obj type vcenterdatastore field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datastoreName set the datastoreName.
    */
   @VsoMethod

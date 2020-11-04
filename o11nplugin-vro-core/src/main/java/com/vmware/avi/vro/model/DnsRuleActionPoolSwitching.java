@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleActionPoolSwitching extends AviRestResource {
-  @JsonProperty("pool_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolGroupRef = null;
+    @JsonProperty("pool_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolGroupRef = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
 
 
@@ -39,6 +39,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool group to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 18.1.3, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool group to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 18.1.3, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type pool.
    * Field introduced in 18.1.3, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class DnsRuleActionPoolSwitching extends AviRestResource {
    * Reference of the pool to serve the passthrough dns query which cannot be served locally.
    * It is a reference to an object of type pool.
    * Field introduced in 18.1.3, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod

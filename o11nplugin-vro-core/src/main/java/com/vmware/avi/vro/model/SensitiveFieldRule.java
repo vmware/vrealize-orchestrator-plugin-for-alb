@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SensitiveFieldRule extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = "LOG_FIELD_REMOVE";
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = "LOG_FIELD_REMOVE";
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = false;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = false;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private StringMatch match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private StringMatch match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -52,7 +52,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * Action for the matched log field, for instance the matched field can be removed or masked off.
    * Enum options - LOG_FIELD_REMOVE, LOG_FIELD_MASKOFF.
    * Field introduced in 17.2.10, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOG_FIELD_REMOVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_FIELD_REMOVE".
    * @return action
    */
   @VsoMethod
@@ -65,7 +65,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * Action for the matched log field, for instance the matched field can be removed or masked off.
    * Enum options - LOG_FIELD_REMOVE, LOG_FIELD_MASKOFF.
    * Field introduced in 17.2.10, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOG_FIELD_REMOVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_FIELD_REMOVE".
    * @param action set the action.
    */
   @VsoMethod
@@ -101,6 +101,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the rule.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -112,6 +113,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the rule.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -123,6 +125,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for matching in the log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -134,6 +137,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for matching in the log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -145,6 +149,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -156,6 +161,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

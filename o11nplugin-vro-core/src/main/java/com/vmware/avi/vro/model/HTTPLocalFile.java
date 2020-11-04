@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPLocalFile extends AviRestResource {
-  @JsonProperty("content_type")
-  @JsonInclude(Include.NON_NULL)
-  private String contentType = null;
+    @JsonProperty("content_type")
+    @JsonInclude(Include.NON_NULL)
+    private String contentType = null;
 
-  @JsonProperty("file_content")
-  @JsonInclude(Include.NON_NULL)
-  private String fileContent = null;
+    @JsonProperty("file_content")
+    @JsonInclude(Include.NON_NULL)
+    private String fileContent = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Mime-type of the content in the file.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentType
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class HTTPLocalFile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mime-type of the content in the file.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contentType set the contentType.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class HTTPLocalFile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * File content to used in the local http response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fileContent
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class HTTPLocalFile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * File content to used in the local http response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fileContent set the fileContent.
    */
   @VsoMethod

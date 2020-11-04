@@ -28,59 +28,64 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ApplicationPersistenceProfile extends AviRestResource {
-  @JsonProperty("app_cookie_persistence_profile")
-  @JsonInclude(Include.NON_NULL)
-  private AppCookiePersistenceProfile appCookiePersistenceProfile = null;
+    @JsonProperty("app_cookie_persistence_profile")
+    @JsonInclude(Include.NON_NULL)
+    private AppCookiePersistenceProfile appCookiePersistenceProfile = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("hdr_persistence_profile")
-  @JsonInclude(Include.NON_NULL)
-  private HdrPersistenceProfile hdrPersistenceProfile = null;
+    @JsonProperty("hdr_persistence_profile")
+    @JsonInclude(Include.NON_NULL)
+    private HdrPersistenceProfile hdrPersistenceProfile = null;
 
-  @JsonProperty("http_cookie_persistence_profile")
-  @JsonInclude(Include.NON_NULL)
-  private HttpCookiePersistenceProfile httpCookiePersistenceProfile = null;
+    @JsonProperty("http_cookie_persistence_profile")
+    @JsonInclude(Include.NON_NULL)
+    private HttpCookiePersistenceProfile httpCookiePersistenceProfile = null;
 
-  @JsonProperty("ip_persistence_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IPPersistenceProfile ipPersistenceProfile = null;
+    @JsonProperty("ip_persistence_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IPPersistenceProfile ipPersistenceProfile = null;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = false;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = false;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("persistence_type")
-  @JsonInclude(Include.NON_NULL)
-  private String persistenceType = "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS";
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("server_hm_down_recovery")
-  @JsonInclude(Include.NON_NULL)
-  private String serverHmDownRecovery = "HM_DOWN_PICK_NEW_SERVER";
+    @JsonProperty("persistence_type")
+    @JsonInclude(Include.NON_NULL)
+    private String persistenceType = "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS";
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("server_hm_down_recovery")
+    @JsonInclude(Include.NON_NULL)
+    private String serverHmDownRecovery = "HM_DOWN_PICK_NEW_SERVER";
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the application cookie persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appCookiePersistenceProfile
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the application cookie persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appCookiePersistenceProfile set the appCookiePersistenceProfile.
    */
   @VsoMethod
@@ -101,6 +107,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -111,6 +118,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -121,6 +129,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the custom http header persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrPersistenceProfile
    */
   @VsoMethod
@@ -131,6 +140,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the custom http header persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdrPersistenceProfile set the hdrPersistenceProfile.
    */
   @VsoMethod
@@ -141,6 +151,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the http cookie persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpCookiePersistenceProfile
    */
   @VsoMethod
@@ -151,6 +162,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the http cookie persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpCookiePersistenceProfile set the httpCookiePersistenceProfile.
    */
   @VsoMethod
@@ -161,6 +173,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the client ip persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipPersistenceProfile
    */
   @VsoMethod
@@ -171,6 +184,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the client ip persistence profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipPersistenceProfile set the ipPersistenceProfile.
    */
   @VsoMethod
@@ -208,7 +222,52 @@ public class ApplicationPersistenceProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public ApplicationPersistenceProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * A user-friendly name for the persistence profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -219,6 +278,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A user-friendly name for the persistence profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -231,7 +291,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * Method used to persist clients to the same server for a duration of time or a session.
    * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
    * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as PERSISTENCE_TYPE_CLIENT_IP_ADDRESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS".
    * @return persistenceType
    */
   @VsoMethod
@@ -244,7 +304,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * Method used to persist clients to the same server for a duration of time or a session.
    * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
    * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as PERSISTENCE_TYPE_CLIENT_IP_ADDRESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS".
    * @param persistenceType set the persistenceType.
    */
   @VsoMethod
@@ -256,7 +316,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies behavior when a persistent server has been marked down by a health monitor.
    * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HM_DOWN_PICK_NEW_SERVER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HM_DOWN_PICK_NEW_SERVER".
    * @return serverHmDownRecovery
    */
   @VsoMethod
@@ -268,7 +328,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies behavior when a persistent server has been marked down by a health monitor.
    * Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HM_DOWN_PICK_NEW_SERVER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HM_DOWN_PICK_NEW_SERVER".
    * @param serverHmDownRecovery set the serverHmDownRecovery.
    */
   @VsoMethod
@@ -279,6 +339,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -289,6 +350,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -318,6 +380,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the persistence profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -328,6 +391,7 @@ public class ApplicationPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the persistence profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -357,6 +421,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hdrPersistenceProfile, objApplicationPersistenceProfile.hdrPersistenceProfile)&&
   Objects.equals(this.appCookiePersistenceProfile, objApplicationPersistenceProfile.appCookiePersistenceProfile)&&
   Objects.equals(this.httpCookiePersistenceProfile, objApplicationPersistenceProfile.httpCookiePersistenceProfile)&&
+  Objects.equals(this.labels, objApplicationPersistenceProfile.labels)&&
   Objects.equals(this.isFederated, objApplicationPersistenceProfile.isFederated)&&
   Objects.equals(this.description, objApplicationPersistenceProfile.description)&&
   Objects.equals(this.tenantRef, objApplicationPersistenceProfile.tenantRef);
@@ -372,6 +437,7 @@ public String toString() {
         sb.append("    httpCookiePersistenceProfile: ").append(toIndentedString(httpCookiePersistenceProfile)).append("\n");
         sb.append("    ipPersistenceProfile: ").append(toIndentedString(ipPersistenceProfile)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    persistenceType: ").append(toIndentedString(persistenceType)).append("\n");
         sb.append("    serverHmDownRecovery: ").append(toIndentedString(serverHmDownRecovery)).append("\n");

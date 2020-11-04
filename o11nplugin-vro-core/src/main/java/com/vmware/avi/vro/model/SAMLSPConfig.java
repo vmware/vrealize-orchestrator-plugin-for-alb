@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SAMLSPConfig extends AviRestResource {
-  @JsonProperty("cookie_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cookieName = null;
+    @JsonProperty("cookie_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cookieName = null;
 
-  @JsonProperty("cookie_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cookieTimeout = 60;
+    @JsonProperty("cookie_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cookieTimeout = 60;
 
-  @JsonProperty("entity_id")
-  @JsonInclude(Include.NON_NULL)
-  private String entityId = null;
+    @JsonProperty("entity_id")
+    @JsonInclude(Include.NON_NULL)
+    private String entityId = null;
 
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private List<HttpCookiePersistenceKey> key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private List<HttpCookiePersistenceKey> key = null;
 
-  @JsonProperty("signing_ssl_key_and_certificate_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String signingSslKeyAndCertificateRef = null;
+    @JsonProperty("signing_ssl_key_and_certificate_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String signingSslKeyAndCertificateRef = null;
 
-  @JsonProperty("single_signon_url")
-  @JsonInclude(Include.NON_NULL)
-  private String singleSignonUrl = null;
+    @JsonProperty("single_signon_url")
+    @JsonInclude(Include.NON_NULL)
+    private String singleSignonUrl = null;
 
-  @JsonProperty("sp_metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String spMetadata = null;
+    @JsonProperty("sp_metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String spMetadata = null;
 
-  @JsonProperty("use_idp_session_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useIdpSessionTimeout = null;
+    @JsonProperty("use_idp_session_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useIdpSessionTimeout = null;
 
 
 
@@ -62,6 +62,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cookie name for authenticated session.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookieName
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cookie name for authenticated session.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookieName set the cookieName.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Cookie timeout in minutes.
    * Allowed values are 1-1440.
    * Field introduced in 18.2.3.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cookieTimeout
    */
@@ -98,6 +101,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Cookie timeout in minutes.
    * Allowed values are 1-1440.
    * Field introduced in 18.2.3.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param cookieTimeout set the cookieTimeout.
    */
@@ -111,6 +115,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Globally unique saml entityid for this node.
    * The saml application entity id on the idp should match this.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityId
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Globally unique saml entityid for this node.
    * The saml application entity id on the idp should match this.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityId set the entityId.
    */
   @VsoMethod
@@ -134,6 +140,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key to generate the cookie.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method. this will set the key
    * Key to generate the cookie.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -156,6 +164,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method this will set the key
    * Key to generate the cookie.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -173,6 +182,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Sp will use this ssl certificate to sign requests going to the idp and decrypt the assertions coming from idp.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return signingSslKeyAndCertificateRef
    */
   @VsoMethod
@@ -185,6 +195,7 @@ public class SAMLSPConfig extends AviRestResource {
    * Sp will use this ssl certificate to sign requests going to the idp and decrypt the assertions coming from idp.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param signingSslKeyAndCertificateRef set the signingSslKeyAndCertificateRef.
    */
   @VsoMethod
@@ -196,6 +207,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml single signon url to be programmed on the idp.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return singleSignonUrl
    */
   @VsoMethod
@@ -207,6 +219,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml single signon url to be programmed on the idp.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param singleSignonUrl set the singleSignonUrl.
    */
   @VsoMethod
@@ -218,6 +231,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml sp metadata for this application.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spMetadata
    */
   @VsoMethod
@@ -229,6 +243,7 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml sp metadata for this application.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spMetadata set the spMetadata.
    */
   @VsoMethod
@@ -241,6 +256,7 @@ public class SAMLSPConfig extends AviRestResource {
    * By enabling this field idp can control how long the sp session can exist through the sessionnotonorafter field in the authnstatement of saml
    * response.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return useIdpSessionTimeout
    */
   @VsoMethod
@@ -253,6 +269,7 @@ public class SAMLSPConfig extends AviRestResource {
    * By enabling this field idp can control how long the sp session can exist through the sessionnotonorafter field in the authnstatement of saml
    * response.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param useIdpSessionTimeout set the useIdpSessionTimeout.
    */
   @VsoMethod

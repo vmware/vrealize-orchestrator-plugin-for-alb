@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbReplicationStats extends AviRestResource {
-  @JsonProperty("acknowledged_version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer acknowledgedVersion = null;
+    @JsonProperty("acknowledged_version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer acknowledgedVersion = null;
 
-  @JsonProperty("pending_object_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pendingObjectCount = null;
+    @JsonProperty("pending_object_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pendingObjectCount = null;
 
-  @JsonProperty("received_version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer receivedVersion = null;
+    @JsonProperty("received_version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer receivedVersion = null;
 
 
 
@@ -42,6 +42,7 @@ public class GslbReplicationStats extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last config version acknowledged.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return acknowledgedVersion
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class GslbReplicationStats extends AviRestResource {
    * This is the setter method to the attribute.
    * Last config version acknowledged.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param acknowledgedVersion set the acknowledgedVersion.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class GslbReplicationStats extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of pending objects.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pendingObjectCount
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class GslbReplicationStats extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of pending objects.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pendingObjectCount set the pendingObjectCount.
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class GslbReplicationStats extends AviRestResource {
    * Last config version received.
    * On leader, this represents the version received from federated datastore.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return receivedVersion
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class GslbReplicationStats extends AviRestResource {
    * Last config version received.
    * On leader, this represents the version received from federated datastore.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param receivedVersion set the receivedVersion.
    */
   @VsoMethod

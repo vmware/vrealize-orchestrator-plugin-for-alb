@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthAttributeMatch extends AviRestResource {
-  @JsonProperty("attribute_name")
-  @JsonInclude(Include.NON_NULL)
-  private String attributeName = null;
+    @JsonProperty("attribute_name")
+    @JsonInclude(Include.NON_NULL)
+    private String attributeName = null;
 
-  @JsonProperty("attribute_value_list")
-  @JsonInclude(Include.NON_NULL)
-  private StringMatch attributeValueList = null;
+    @JsonProperty("attribute_value_list")
+    @JsonInclude(Include.NON_NULL)
+    private StringMatch attributeValueList = null;
 
 
 
@@ -39,6 +39,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute name whose values will be looked up in the access lists.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeName
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute name whose values will be looked up in the access lists.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeName set the attributeName.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute values used to determine access when authentication applies.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeValueList
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute values used to determine access when authentication applies.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeValueList set the attributeValueList.
    */
   @VsoMethod

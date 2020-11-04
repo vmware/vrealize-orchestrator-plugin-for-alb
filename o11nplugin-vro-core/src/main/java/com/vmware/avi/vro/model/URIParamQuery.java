@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class URIParamQuery extends AviRestResource {
-  @JsonProperty("add_string")
-  @JsonInclude(Include.NON_NULL)
-  private String addString = null;
+    @JsonProperty("add_string")
+    @JsonInclude(Include.NON_NULL)
+    private String addString = null;
 
-  @JsonProperty("keep_query")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean keepQuery = true;
+    @JsonProperty("keep_query")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean keepQuery = true;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Concatenate a string to the query of the incoming request uri and then use it in the request uri going to the backend server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addString
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class URIParamQuery extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Concatenate a string to the query of the incoming request uri and then use it in the request uri going to the backend server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addString set the addString.
    */
   @VsoMethod

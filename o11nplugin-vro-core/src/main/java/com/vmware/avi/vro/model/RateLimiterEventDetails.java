@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RateLimiterEventDetails extends AviRestResource {
-  @JsonProperty("error_message")
-  @JsonInclude(Include.NON_NULL)
-  private String errorMessage = null;
+    @JsonProperty("error_message")
+    @JsonInclude(Include.NON_NULL)
+    private String errorMessage = null;
 
-  @JsonProperty("rl_resource_name")
-  @JsonInclude(Include.NON_NULL)
-  private String rlResourceName = null;
+    @JsonProperty("rl_resource_name")
+    @JsonInclude(Include.NON_NULL)
+    private String rlResourceName = null;
 
-  @JsonProperty("rl_resource_type")
-  @JsonInclude(Include.NON_NULL)
-  private String rlResourceType = null;
+    @JsonProperty("rl_resource_type")
+    @JsonInclude(Include.NON_NULL)
+    private String rlResourceType = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
 
 
@@ -46,6 +46,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiter error message.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiter error message.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rate limiter.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlResourceName
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rate limiter.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlResourceName set the rlResourceName.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiter type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlResourceType
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiter type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlResourceType set the rlResourceType.
    */
   @VsoMethod
@@ -112,6 +118,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class RateLimiterEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Status.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod

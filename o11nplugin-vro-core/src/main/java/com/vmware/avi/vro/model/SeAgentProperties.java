@@ -25,141 +25,141 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeAgentProperties extends AviRestResource {
-  @JsonProperty("controller_echo_miss_aggressive_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerEchoMissAggressiveLimit = 2;
+    @JsonProperty("controller_echo_miss_aggressive_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerEchoMissAggressiveLimit = 2;
 
-  @JsonProperty("controller_echo_miss_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerEchoMissLimit = 4;
+    @JsonProperty("controller_echo_miss_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerEchoMissLimit = 4;
 
-  @JsonProperty("controller_echo_rpc_aggressive_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerEchoRpcAggressiveTimeout = 2000;
+    @JsonProperty("controller_echo_rpc_aggressive_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerEchoRpcAggressiveTimeout = 2000;
 
-  @JsonProperty("controller_echo_rpc_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerEchoRpcTimeout = 2000;
+    @JsonProperty("controller_echo_rpc_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerEchoRpcTimeout = 2000;
 
-  @JsonProperty("controller_heartbeat_miss_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerHeartbeatMissLimit = 6;
+    @JsonProperty("controller_heartbeat_miss_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerHeartbeatMissLimit = 6;
 
-  @JsonProperty("controller_heartbeat_timeout_sec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerHeartbeatTimeoutSec = 12;
+    @JsonProperty("controller_heartbeat_timeout_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerHeartbeatTimeoutSec = 12;
 
-  @JsonProperty("controller_registration_timeout_sec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerRegistrationTimeoutSec = 30;
+    @JsonProperty("controller_registration_timeout_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerRegistrationTimeoutSec = 30;
 
-  @JsonProperty("controller_rpc_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerRpcTimeout = 10;
+    @JsonProperty("controller_rpc_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerRpcTimeout = 10;
 
-  @JsonProperty("cpustats_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cpustatsInterval = 5;
+    @JsonProperty("cpustats_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cpustatsInterval = 5;
 
-  @JsonProperty("ctrl_reg_pending_max_wait_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ctrlRegPendingMaxWaitTime = 150;
+    @JsonProperty("ctrl_reg_pending_max_wait_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ctrlRegPendingMaxWaitTime = 150;
 
-  @JsonProperty("debug_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean debugMode = false;
+    @JsonProperty("debug_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean debugMode = false;
 
-  @JsonProperty("dp_aggressive_deq_interval_msec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpAggressiveDeqIntervalMsec = 1;
+    @JsonProperty("dp_aggressive_deq_interval_msec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpAggressiveDeqIntervalMsec = 1;
 
-  @JsonProperty("dp_aggressive_enq_interval_msec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpAggressiveEnqIntervalMsec = 1;
+    @JsonProperty("dp_aggressive_enq_interval_msec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpAggressiveEnqIntervalMsec = 1;
 
-  @JsonProperty("dp_batch_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpBatchSize = 100;
+    @JsonProperty("dp_batch_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpBatchSize = 100;
 
-  @JsonProperty("dp_deq_interval_msec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpDeqIntervalMsec = 20;
+    @JsonProperty("dp_deq_interval_msec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpDeqIntervalMsec = 20;
 
-  @JsonProperty("dp_enq_interval_msec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpEnqIntervalMsec = 20;
+    @JsonProperty("dp_enq_interval_msec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpEnqIntervalMsec = 20;
 
-  @JsonProperty("dp_max_wait_rsp_time_sec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpMaxWaitRspTimeSec = 60;
+    @JsonProperty("dp_max_wait_rsp_time_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpMaxWaitRspTimeSec = 60;
 
-  @JsonProperty("dp_reg_pending_max_wait_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dpRegPendingMaxWaitTime = 75;
+    @JsonProperty("dp_reg_pending_max_wait_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dpRegPendingMaxWaitTime = 75;
 
-  @JsonProperty("headless_timeout_sec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer headlessTimeoutSec = 0;
+    @JsonProperty("headless_timeout_sec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer headlessTimeoutSec = 0;
 
-  @JsonProperty("ignore_docker_mac_change")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignoreDockerMacChange = true;
+    @JsonProperty("ignore_docker_mac_change")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreDockerMacChange = true;
 
-  @JsonProperty("ns_helper_deq_interval_msec")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nsHelperDeqIntervalMsec = 20;
+    @JsonProperty("ns_helper_deq_interval_msec")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nsHelperDeqIntervalMsec = 20;
 
-  @JsonProperty("sdb_flush_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sdbFlushInterval = 100;
+    @JsonProperty("sdb_flush_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sdbFlushInterval = 100;
 
-  @JsonProperty("sdb_pipeline_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sdbPipelineSize = 100;
+    @JsonProperty("sdb_pipeline_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sdbPipelineSize = 100;
 
-  @JsonProperty("sdb_scan_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sdbScanCount = 1000;
+    @JsonProperty("sdb_scan_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sdbScanCount = 1000;
 
-  @JsonProperty("se_grp_change_disruptive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seGrpChangeDisruptive = true;
+    @JsonProperty("se_grp_change_disruptive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seGrpChangeDisruptive = true;
 
-  @JsonProperty("seagent_statecache_properties")
-  @JsonInclude(Include.NON_NULL)
-  private SeAgentStateCacheProperties seagentStatecacheProperties = null;
+    @JsonProperty("seagent_statecache_properties")
+    @JsonInclude(Include.NON_NULL)
+    private SeAgentStateCacheProperties seagentStatecacheProperties = null;
 
-  @JsonProperty("send_se_ready_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sendSeReadyTimeout = 300;
+    @JsonProperty("send_se_ready_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sendSeReadyTimeout = 300;
 
-  @JsonProperty("states_flush_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer statesFlushInterval = 100;
+    @JsonProperty("states_flush_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer statesFlushInterval = 100;
 
-  @JsonProperty("vnic_dhcp_ip_check_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicDhcpIpCheckInterval = 6;
+    @JsonProperty("vnic_dhcp_ip_check_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicDhcpIpCheckInterval = 6;
 
-  @JsonProperty("vnic_dhcp_ip_max_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicDhcpIpMaxRetries = 10;
+    @JsonProperty("vnic_dhcp_ip_max_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicDhcpIpMaxRetries = 10;
 
-  @JsonProperty("vnic_ip_delete_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicIpDeleteInterval = 5;
+    @JsonProperty("vnic_ip_delete_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicIpDeleteInterval = 5;
 
-  @JsonProperty("vnic_probe_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicProbeInterval = 5;
+    @JsonProperty("vnic_probe_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicProbeInterval = 5;
 
-  @JsonProperty("vnic_rpc_retry_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicRpcRetryInterval = 5;
+    @JsonProperty("vnic_rpc_retry_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicRpcRetryInterval = 5;
 
-  @JsonProperty("vnicdb_cmd_history_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicdbCmdHistorySize = 256;
+    @JsonProperty("vnicdb_cmd_history_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicdbCmdHistorySize = 256;
 
 
 
@@ -214,6 +214,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Aggressive timeout used for se health check.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return controllerEchoRpcAggressiveTimeout
    */
@@ -225,6 +226,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aggressive timeout used for se health check.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param controllerEchoRpcAggressiveTimeout set the controllerEchoRpcAggressiveTimeout.
    */
@@ -236,6 +238,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout used for se health check.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return controllerEchoRpcTimeout
    */
@@ -247,6 +250,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout used for se health check.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param controllerEchoRpcTimeout set the controllerEchoRpcTimeout.
    */
@@ -280,6 +284,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allowed values are 1-60.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @return controllerHeartbeatTimeoutSec
    */
@@ -291,6 +296,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allowed values are 1-60.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @param controllerHeartbeatTimeoutSec set the controllerHeartbeatTimeoutSec.
    */
@@ -301,7 +307,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property controller_registration_timeout_sec of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return controllerRegistrationTimeoutSec
    */
@@ -312,7 +318,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property controller_registration_timeout_sec of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param controllerRegistrationTimeoutSec set the controllerRegistrationTimeoutSec.
    */
@@ -323,7 +329,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property controller_rpc_timeout of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return controllerRpcTimeout
    */
@@ -334,7 +340,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property controller_rpc_timeout of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param controllerRpcTimeout set the controllerRpcTimeout.
    */
@@ -345,7 +351,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cpustats_interval of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return cpustatsInterval
    */
@@ -356,7 +362,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cpustats_interval of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param cpustatsInterval set the cpustatsInterval.
    */
@@ -369,6 +375,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Max time to wait for ctrl registration before assert.
    * Allowed values are 1-1000.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 150.
    * @return ctrlRegPendingMaxWaitTime
    */
@@ -381,6 +388,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Max time to wait for ctrl registration before assert.
    * Allowed values are 1-1000.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 150.
    * @param ctrlRegPendingMaxWaitTime set the ctrlRegPendingMaxWaitTime.
    */
@@ -414,6 +422,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return dpAggressiveDeqIntervalMsec
    */
@@ -425,6 +434,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param dpAggressiveDeqIntervalMsec set the dpAggressiveDeqIntervalMsec.
    */
@@ -436,6 +446,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return dpAggressiveEnqIntervalMsec
    */
@@ -447,6 +458,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param dpAggressiveEnqIntervalMsec set the dpAggressiveEnqIntervalMsec.
    */
@@ -480,6 +492,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return dpDeqIntervalMsec
    */
@@ -491,6 +504,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param dpDeqIntervalMsec set the dpDeqIntervalMsec.
    */
@@ -502,6 +516,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return dpEnqIntervalMsec
    */
@@ -513,6 +528,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allowed values are 1-1000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param dpEnqIntervalMsec set the dpEnqIntervalMsec.
    */
@@ -523,7 +539,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dp_max_wait_rsp_time_sec of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return dpMaxWaitRspTimeSec
    */
@@ -534,7 +550,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dp_max_wait_rsp_time_sec of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param dpMaxWaitRspTimeSec set the dpMaxWaitRspTimeSec.
    */
@@ -546,6 +562,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Max time to wait for dp registration before assert.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 75.
    * @return dpRegPendingMaxWaitTime
    */
@@ -557,6 +574,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Max time to wait for dp registration before assert.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 75.
    * @param dpRegPendingMaxWaitTime set the dpRegPendingMaxWaitTime.
    */
@@ -567,7 +585,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property headless_timeout_sec of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return headlessTimeoutSec
    */
@@ -578,7 +596,7 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property headless_timeout_sec of obj type seagentproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param headlessTimeoutSec set the headlessTimeoutSec.
    */
@@ -614,6 +632,7 @@ public class SeAgentProperties extends AviRestResource {
    * Dequeue interval for receive queue from ns helper.
    * Allowed values are 1-1000.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return nsHelperDeqIntervalMsec
    */
@@ -627,6 +646,7 @@ public class SeAgentProperties extends AviRestResource {
    * Dequeue interval for receive queue from ns helper.
    * Allowed values are 1-1000.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param nsHelperDeqIntervalMsec set the nsHelperDeqIntervalMsec.
    */
@@ -639,6 +659,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sdb pipeline flush interval.
    * Allowed values are 1-10000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return sdbFlushInterval
    */
@@ -651,6 +672,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Sdb pipeline flush interval.
    * Allowed values are 1-10000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param sdbFlushInterval set the sdbFlushInterval.
    */
@@ -735,6 +757,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Seagent properties for state cache functionality.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seagentStatecacheProperties
    */
   @VsoMethod
@@ -746,6 +769,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Seagent properties for state cache functionality.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seagentStatecacheProperties set the seagentStatecacheProperties.
    */
   @VsoMethod
@@ -758,6 +782,7 @@ public class SeAgentProperties extends AviRestResource {
    * Timeout for sending se_ready without ns helper registration completion.
    * Allowed values are 10-600.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return sendSeReadyTimeout
    */
@@ -771,6 +796,7 @@ public class SeAgentProperties extends AviRestResource {
    * Timeout for sending se_ready without ns helper registration completion.
    * Allowed values are 10-600.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param sendSeReadyTimeout set the sendSeReadyTimeout.
    */
@@ -784,6 +810,7 @@ public class SeAgentProperties extends AviRestResource {
    * Interval for update of operational states to controller.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.1, 17.2.14, 18.1.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return statesFlushInterval
    */
@@ -797,6 +824,7 @@ public class SeAgentProperties extends AviRestResource {
    * Interval for update of operational states to controller.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.1, 17.2.14, 18.1.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param statesFlushInterval set the statesFlushInterval.
    */
@@ -809,6 +837,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dhcp ip check interval.
    * Allowed values are 1-1000.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 6.
    * @return vnicDhcpIpCheckInterval
    */
@@ -821,6 +850,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Dhcp ip check interval.
    * Allowed values are 1-1000.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 6.
    * @param vnicDhcpIpCheckInterval set the vnicDhcpIpCheckInterval.
    */
@@ -854,6 +884,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Wait interval before deleting ip.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return vnicIpDeleteInterval
    */
@@ -865,6 +896,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Wait interval before deleting ip.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param vnicIpDeleteInterval set the vnicIpDeleteInterval.
    */
@@ -876,6 +908,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Probe vnic interval.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return vnicProbeInterval
    */
@@ -887,6 +920,7 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Probe vnic interval.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param vnicProbeInterval set the vnicProbeInterval.
    */
@@ -899,6 +933,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time interval for retrying the failed vnic rpc requests.
    * Field introduced in 18.2.6.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return vnicRpcRetryInterval
    */
@@ -911,6 +946,7 @@ public class SeAgentProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Time interval for retrying the failed vnic rpc requests.
    * Field introduced in 18.2.6.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param vnicRpcRetryInterval set the vnicRpcRetryInterval.
    */

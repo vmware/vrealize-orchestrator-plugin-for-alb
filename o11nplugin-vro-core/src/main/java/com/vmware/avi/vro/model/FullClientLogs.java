@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FullClientLogs extends AviRestResource {
-  @JsonProperty("all_headers")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allHeaders = null;
+    @JsonProperty("all_headers")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allHeaders;
 
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = 30;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = 30;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = false;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = false;
 
-  @JsonProperty("throttle")
-  @JsonInclude(Include.NON_NULL)
-  private Integer throttle = 10;
+    @JsonProperty("throttle")
+    @JsonInclude(Include.NON_NULL)
+    private Integer throttle = 10;
 
 
 
@@ -71,6 +71,7 @@ public class FullClientLogs extends AviRestResource {
    * How long should the system capture all logs, measured in minutes.
    * Set to 0 for infinite.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return duration
    */
@@ -84,6 +85,7 @@ public class FullClientLogs extends AviRestResource {
    * How long should the system capture all logs, measured in minutes.
    * Set to 0 for infinite.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param duration set the duration.
    */
@@ -95,7 +97,7 @@ public class FullClientLogs extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Capture all client logs including connections and requests.
-   * When disabled, only errors will be logged.
+   * When deactivated, only errors will be logged.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -107,7 +109,7 @@ public class FullClientLogs extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Capture all client logs including connections and requests.
-   * When disabled, only errors will be logged.
+   * When deactivated, only errors will be logged.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
@@ -120,8 +122,9 @@ public class FullClientLogs extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This setting limits the number of non-significant logs generated per second for this vs on each se.
    * Default is 10 logs per second.
-   * Set it to zero (0) to disable throttling.
+   * Set it to zero (0) to deactivate throttling.
    * Field introduced in 17.1.3.
+   * Unit is per_second.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return throttle
    */
@@ -134,8 +137,9 @@ public class FullClientLogs extends AviRestResource {
    * This is the setter method to the attribute.
    * This setting limits the number of non-significant logs generated per second for this vs on each se.
    * Default is 10 logs per second.
-   * Set it to zero (0) to disable throttling.
+   * Set it to zero (0) to deactivate throttling.
    * Field introduced in 17.1.3.
+   * Unit is per_second.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param throttle set the throttle.
    */

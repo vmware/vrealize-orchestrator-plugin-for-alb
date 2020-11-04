@@ -26,29 +26,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRule extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleAction action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleAction action = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("log")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean log = null;
+    @JsonProperty("log")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean log = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleMatchTarget match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleMatchTarget match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -56,6 +56,7 @@ public class DnsRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to be performed upon successful matching.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class DnsRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to be performed upon successful matching.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -102,6 +104,7 @@ public class DnsRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the rule.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -113,6 +116,7 @@ public class DnsRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the rule.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -124,6 +128,7 @@ public class DnsRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Log dns query upon rule match.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return log
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class DnsRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Log dns query upon rule match.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param log set the log.
    */
   @VsoMethod
@@ -146,6 +152,7 @@ public class DnsRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add match criteria to the rule.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -157,6 +164,7 @@ public class DnsRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Add match criteria to the rule.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -168,6 +176,7 @@ public class DnsRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -179,6 +188,7 @@ public class DnsRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

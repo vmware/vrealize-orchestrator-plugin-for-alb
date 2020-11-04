@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SubJob extends AviRestResource {
-  @JsonProperty("expires_at")
-  @JsonInclude(Include.NON_NULL)
-  private String expiresAt = null;
+    @JsonProperty("expires_at")
+    @JsonInclude(Include.NON_NULL)
+    private String expiresAt = null;
 
-  @JsonProperty("metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String metadata = null;
+    @JsonProperty("metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String metadata = null;
 
-  @JsonProperty("num_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numRetries = null;
+    @JsonProperty("num_tries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numTries = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expiresAt
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SubJob extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expiresAt set the expiresAt.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SubJob extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SubJob extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
    */
   @VsoMethod
@@ -84,24 +88,26 @@ public class SubJob extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of times the sub job is rescheduled.
+   * Number of times the sub job got scheduled.
    * Field introduced in 20.1.1.
-   * @return numRetries
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numTries
    */
   @VsoMethod
-  public Integer getNumRetries() {
-    return numRetries;
+  public Integer getNumTries() {
+    return numTries;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Number of times the sub job is rescheduled.
+   * Number of times the sub job got scheduled.
    * Field introduced in 20.1.1.
-   * @param numRetries set the numRetries.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numTries set the numTries.
    */
   @VsoMethod
-  public void setNumRetries(Integer  numRetries) {
-    this.numRetries = numRetries;
+  public void setNumTries(Integer  numTries) {
+    this.numTries = numTries;
   }
 
   /**
@@ -111,6 +117,7 @@ public class SubJob extends AviRestResource {
    * JOB_TYPE_VS_ROTATE_KEYS, JOB_TYPE_POOL_DNS, JOB_TYPE_GSLB_SERVICE, JOB_TYPE_APP_PERSISTENCE, JOB_TYPE_PROCESS_LOCKED_USER_ACCOUNTS,
    * JOB_TYPE_SESSION, JOB_TYPE_AUTHTOKEN, JOB_TYPE_CLUSTER, JOB_TYPE_SE_SECURE_CHANNEL_CLEANUP...
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class SubJob extends AviRestResource {
    * JOB_TYPE_VS_ROTATE_KEYS, JOB_TYPE_POOL_DNS, JOB_TYPE_GSLB_SERVICE, JOB_TYPE_APP_PERSISTENCE, JOB_TYPE_PROCESS_LOCKED_USER_ACCOUNTS,
    * JOB_TYPE_SESSION, JOB_TYPE_AUTHTOKEN, JOB_TYPE_CLUSTER, JOB_TYPE_SE_SECURE_CHANNEL_CLEANUP...
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -146,7 +154,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.type, objSubJob.type)&&
   Objects.equals(this.expiresAt, objSubJob.expiresAt)&&
   Objects.equals(this.metadata, objSubJob.metadata)&&
-  Objects.equals(this.numRetries, objSubJob.numRetries);
+  Objects.equals(this.numTries, objSubJob.numTries);
 }
 
 @Override
@@ -155,7 +163,7 @@ public String toString() {
   sb.append("class SubJob {\n");
       sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-        sb.append("    numRetries: ").append(toIndentedString(numRetries)).append("\n");
+        sb.append("    numTries: ").append(toIndentedString(numTries)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");
   return sb.toString();

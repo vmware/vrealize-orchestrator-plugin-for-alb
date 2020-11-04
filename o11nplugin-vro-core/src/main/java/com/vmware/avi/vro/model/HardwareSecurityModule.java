@@ -27,25 +27,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HardwareSecurityModule extends AviRestResource {
-  @JsonProperty("cloudhsm")
-  @JsonInclude(Include.NON_NULL)
-  private HSMAwsCloudHsm cloudhsm = null;
+    @JsonProperty("cloudhsm")
+    @JsonInclude(Include.NON_NULL)
+    private HSMAwsCloudHsm cloudhsm = null;
 
-  @JsonProperty("nethsm")
-  @JsonInclude(Include.NON_NULL)
-  private List<HSMThalesNetHsm> nethsm = null;
+    @JsonProperty("nethsm")
+    @JsonInclude(Include.NON_NULL)
+    private List<HSMThalesNetHsm> nethsm = null;
 
-  @JsonProperty("rfs")
-  @JsonInclude(Include.NON_NULL)
-  private HSMThalesRFS rfs = null;
+    @JsonProperty("rfs")
+    @JsonInclude(Include.NON_NULL)
+    private HSMThalesRFS rfs = null;
 
-  @JsonProperty("sluna")
-  @JsonInclude(Include.NON_NULL)
-  private HSMSafenetLuna sluna = null;
+    @JsonProperty("sluna")
+    @JsonInclude(Include.NON_NULL)
+    private HSMSafenetLuna sluna = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -53,6 +53,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws cloudhsm specific configuration.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudhsm
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws cloudhsm specific configuration.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudhsm set the cloudhsm.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Thales nethsm specific configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nethsm
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method. this will set the nethsm
    * Thales nethsm specific configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nethsm
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method this will set the nethsm
    * Thales nethsm specific configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nethsm
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Thales remote file server (rfs), used for the nethsms, configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rfs
    */
   @VsoMethod
@@ -119,6 +125,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Thales remote file server (rfs), used for the nethsms, configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rfs set the rfs.
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Safenet/gemalto luna/gem specific configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sluna
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class HardwareSecurityModule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Safenet/gemalto luna/gem specific configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sluna set the sluna.
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hsm type to use.
    * Enum options - HSM_TYPE_THALES_NETHSM, HSM_TYPE_SAFENET_LUNA, HSM_TYPE_AWS_CLOUDHSM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -161,6 +171,7 @@ public class HardwareSecurityModule extends AviRestResource {
    * This is the setter method to the attribute.
    * Hsm type to use.
    * Enum options - HSM_TYPE_THALES_NETHSM, HSM_TYPE_SAFENET_LUNA, HSM_TYPE_AWS_CLOUDHSM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

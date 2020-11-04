@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DataScriptErrorTrace extends AviRestResource {
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("event")
-  @JsonInclude(Include.NON_NULL)
-  private String event = null;
+    @JsonProperty("event")
+    @JsonInclude(Include.NON_NULL)
+    private String event = null;
 
-  @JsonProperty("stack_trace")
-  @JsonInclude(Include.NON_NULL)
-  private String stackTrace = null;
+    @JsonProperty("stack_trace")
+    @JsonInclude(Include.NON_NULL)
+    private String stackTrace = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error of obj type datascripterrortrace field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DataScriptErrorTrace extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error of obj type datascripterrortrace field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class DataScriptErrorTrace extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property event of obj type datascripterrortrace field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return event
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class DataScriptErrorTrace extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property event of obj type datascripterrortrace field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param event set the event.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class DataScriptErrorTrace extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property stack_trace of obj type datascripterrortrace field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stackTrace
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class DataScriptErrorTrace extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property stack_trace of obj type datascripterrortrace field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stackTrace set the stackTrace.
    */
   @VsoMethod

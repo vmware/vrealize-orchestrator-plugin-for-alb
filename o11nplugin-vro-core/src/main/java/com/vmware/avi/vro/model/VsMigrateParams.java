@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsMigrateParams extends AviRestResource {
-  @JsonProperty("from_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String fromSeRef = null;
+    @JsonProperty("from_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String fromSeRef = null;
 
-  @JsonProperty("new_vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer newVcpus = null;
+    @JsonProperty("new_vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer newVcpus = null;
 
-  @JsonProperty("to_host_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String toHostRef = null;
+    @JsonProperty("to_host_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String toHostRef = null;
 
-  @JsonProperty("to_new_se")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean toNewSe = false;
+    @JsonProperty("to_new_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean toNewSe = false;
 
-  @JsonProperty("to_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String toSeRef = null;
+    @JsonProperty("to_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String toSeRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromSeRef
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromSeRef set the fromSeRef.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_vcpus of obj type vsmigrateparams field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newVcpus
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_vcpus of obj type vsmigrateparams field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newVcpus set the newVcpus.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toHostRef
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toHostRef set the toHostRef.
    */
   @VsoMethod
@@ -139,6 +145,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toSeRef
    */
   @VsoMethod
@@ -149,6 +156,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toSeRef set the toSeRef.
    */
   @VsoMethod
@@ -159,6 +167,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -169,6 +178,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -179,6 +189,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -189,6 +200,7 @@ public class VsMigrateParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod

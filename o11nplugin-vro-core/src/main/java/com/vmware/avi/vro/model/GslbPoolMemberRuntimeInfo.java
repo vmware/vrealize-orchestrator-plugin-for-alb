@@ -29,85 +29,85 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbPoolMemberRuntimeInfo extends AviRestResource {
-  @JsonProperty("app_type")
-  @JsonInclude(Include.NON_NULL)
-  private String appType = null;
+    @JsonProperty("app_type")
+    @JsonInclude(Include.NON_NULL)
+    private String appType = null;
 
-  @JsonProperty("cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterUuid = null;
+    @JsonProperty("cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterUuid = null;
 
-  @JsonProperty("controller_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus controllerStatus = null;
+    @JsonProperty("controller_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus controllerStatus = null;
 
-  @JsonProperty("datapath_status")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPoolMemberDatapathStatus> datapathStatus = null;
+    @JsonProperty("datapath_status")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPoolMemberDatapathStatus> datapathStatus = null;
 
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private String fqdn = null;
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private String fqdn = null;
 
-  @JsonProperty("gs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String gsName = null;
+    @JsonProperty("gs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String gsName = null;
 
-  @JsonProperty("gs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String gsUuid = null;
+    @JsonProperty("gs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String gsUuid = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("ip_value_to_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipValueToSe = null;
+    @JsonProperty("ip_value_to_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipValueToSe = null;
 
-  @JsonProperty("ipv6_value_to_se")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> ipv6ValueToSe = null;
+    @JsonProperty("ipv6_value_to_se")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> ipv6ValueToSe = null;
 
-  @JsonProperty("oper_ips")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> operIps = null;
+    @JsonProperty("oper_ips")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> operIps = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("services")
-  @JsonInclude(Include.NON_NULL)
-  private List<com.vmware.avi.vro.model.Service> services = null;
+    @JsonProperty("services")
+    @JsonInclude(Include.NON_NULL)
+    private List<com.vmware.avi.vro.model.Service> services = null;
 
-  @JsonProperty("site_name")
-  @JsonInclude(Include.NON_NULL)
-  private String siteName = null;
+    @JsonProperty("site_name")
+    @JsonInclude(Include.NON_NULL)
+    private String siteName = null;
 
-  @JsonProperty("sp_pools")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbServiceSitePersistencePool> spPools = null;
+    @JsonProperty("sp_pools")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbServiceSitePersistencePool> spPools = null;
 
-  @JsonProperty("vip_type")
-  @JsonInclude(Include.NON_NULL)
-  private String vipType = null;
+    @JsonProperty("vip_type")
+    @JsonInclude(Include.NON_NULL)
+    private String vipType = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vsName = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
-  @JsonProperty("vserver_l4_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private VserverL4MetricsObj vserverL4Metrics = null;
+    @JsonProperty("vserver_l4_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private VserverL4MetricsObj vserverL4Metrics = null;
 
-  @JsonProperty("vserver_l7_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private VserverL7MetricsObj vserverL7Metrics = null;
+    @JsonProperty("vserver_l7_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private VserverL7MetricsObj vserverL7Metrics = null;
 
 
 
@@ -117,6 +117,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
    * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appType
    */
   @VsoMethod
@@ -130,6 +131,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
    * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appType set the appType.
    */
   @VsoMethod
@@ -140,6 +142,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The site controller cluster uuid to which this member belongs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
   @VsoMethod
@@ -150,6 +153,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The site controller cluster uuid to which this member belongs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
   @VsoMethod
@@ -160,6 +164,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Controller retrieved member status at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerStatus
    */
   @VsoMethod
@@ -170,6 +175,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Controller retrieved member status at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerStatus set the controllerStatus.
    */
   @VsoMethod
@@ -180,6 +186,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dns computed member status from different sites.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathStatus
    */
   @VsoMethod
@@ -190,6 +197,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the datapathStatus
    * Dns computed member status from different sites.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathStatus
    */
   @VsoMethod
@@ -200,6 +208,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method this will set the datapathStatus
    * Dns computed member status from different sites.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datapathStatus
    */
   @VsoMethod
@@ -215,6 +224,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fqdn address of the member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -225,6 +235,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fqdn address of the member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
   @VsoMethod
@@ -235,6 +246,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gs_name of obj type gslbpoolmemberruntimeinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsName
    */
   @VsoMethod
@@ -245,6 +257,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gs_name of obj type gslbpoolmemberruntimeinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsName set the gsName.
    */
   @VsoMethod
@@ -255,6 +268,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The gslb service to which this member belongs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsUuid
    */
   @VsoMethod
@@ -265,6 +279,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The gslb service to which this member belongs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsUuid set the gsUuid.
    */
   @VsoMethod
@@ -275,6 +290,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb pool member's configured vip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -285,6 +301,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslb pool member's configured vip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -295,6 +312,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This is an internal field that conveys the ip address from the controller to service engine in binary format.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipValueToSe
    */
   @VsoMethod
@@ -305,6 +323,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This is an internal field that conveys the ip address from the controller to service engine in binary format.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipValueToSe set the ipValueToSe.
    */
   @VsoMethod
@@ -316,6 +335,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This is an internal field that conveys the ipv6 address from the controller to service engine in binary format.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipv6ValueToSe
    */
   @VsoMethod
@@ -327,6 +347,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the setter method. this will set the ipv6ValueToSe
    * This is an internal field that conveys the ipv6 address from the controller to service engine in binary format.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipv6ValueToSe
    */
   @VsoMethod
@@ -338,6 +359,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the setter method this will set the ipv6ValueToSe
    * This is an internal field that conveys the ipv6 address from the controller to service engine in binary format.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipv6ValueToSe
    */
   @VsoMethod
@@ -353,6 +375,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Operational vips of the member  that can map to multiple vs ip addresses such as private, public and floating addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operIps
    */
   @VsoMethod
@@ -363,6 +386,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the operIps
    * Operational vips of the member  that can map to multiple vs ip addresses such as private, public and floating addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operIps
    */
   @VsoMethod
@@ -373,6 +397,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method this will set the operIps
    * Operational vips of the member  that can map to multiple vs ip addresses such as private, public and floating addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operIps
    */
   @VsoMethod
@@ -388,6 +413,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb pool member's consolidated operational status .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -398,6 +424,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslb pool member's consolidated operational status .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -408,6 +435,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Services configured on the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -418,6 +446,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the services
    * Services configured on the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -428,6 +457,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method this will set the services
    * Services configured on the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -443,6 +473,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The site 's name is required for event-generation etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteName
    */
   @VsoMethod
@@ -453,6 +484,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The site 's name is required for event-generation etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteName set the siteName.
    */
   @VsoMethod
@@ -464,6 +496,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site persistence pools associated with the vs.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPools
    */
   @VsoMethod
@@ -475,6 +508,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the setter method. this will set the spPools
    * Site persistence pools associated with the vs.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPools
    */
   @VsoMethod
@@ -486,6 +520,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the setter method this will set the spPools
    * Site persistence pools associated with the vs.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPools
    */
   @VsoMethod
@@ -502,6 +537,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Describes the vip type  avi or third-party.
    * Enum options - NON_AVI_VIP, AVI_VIP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipType
    */
   @VsoMethod
@@ -513,6 +549,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Describes the vip type  avi or third-party.
    * Enum options - NON_AVI_VIP, AVI_VIP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipType set the vipType.
    */
   @VsoMethod
@@ -523,6 +560,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vs name belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -533,6 +571,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vs name belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -543,6 +582,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vs uuid belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -553,6 +593,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vs uuid belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod
@@ -563,6 +604,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Front end l4 metrics of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vserverL4Metrics
    */
   @VsoMethod
@@ -573,6 +615,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Front end l4 metrics of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vserverL4Metrics set the vserverL4Metrics.
    */
   @VsoMethod
@@ -583,6 +626,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Front end l7 metrics of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vserverL7Metrics
    */
   @VsoMethod
@@ -593,6 +637,7 @@ public class GslbPoolMemberRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Front end l7 metrics of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vserverL7Metrics set the vserverL7Metrics.
    */
   @VsoMethod

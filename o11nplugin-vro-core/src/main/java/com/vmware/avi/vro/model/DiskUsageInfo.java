@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DiskUsageInfo extends AviRestResource {
-  @JsonProperty("disk_usage_on_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private List<DiskUsagePerNode> diskUsageOnNodes = null;
+    @JsonProperty("disk_usage_on_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private List<DiskUsagePerNode> diskUsageOnNodes = null;
 
 
 
@@ -34,6 +34,7 @@ public class DiskUsageInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifies the disk usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diskUsageOnNodes
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class DiskUsageInfo extends AviRestResource {
    * This is the setter method. this will set the diskUsageOnNodes
    * Identifies the disk usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diskUsageOnNodes
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class DiskUsageInfo extends AviRestResource {
    * This is the setter method this will set the diskUsageOnNodes
    * Identifies the disk usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diskUsageOnNodes
    */
   @VsoMethod

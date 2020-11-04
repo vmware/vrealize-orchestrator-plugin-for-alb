@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DiscoveredNetwork extends AviRestResource {
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> subnet = null;
 
-  @JsonProperty("subnet6")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> subnet6 = null;
+    @JsonProperty("subnet6")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> subnet6 = null;
 
 
 
@@ -42,6 +42,7 @@ public class DiscoveredNetwork extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Discovered network for this ip.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class DiscoveredNetwork extends AviRestResource {
    * This is the setter method to the attribute.
    * Discovered network for this ip.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class DiscoveredNetwork extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Discovered subnet for this ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class DiscoveredNetwork extends AviRestResource {
   /**
    * This is the setter method. this will set the subnet
    * Discovered subnet for this ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class DiscoveredNetwork extends AviRestResource {
   /**
    * This is the setter method this will set the subnet
    * Discovered subnet for this ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class DiscoveredNetwork extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Discovered ipv6 subnet for this ip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class DiscoveredNetwork extends AviRestResource {
    * This is the setter method. this will set the subnet6
    * Discovered ipv6 subnet for this ip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class DiscoveredNetwork extends AviRestResource {
    * This is the setter method this will set the subnet6
    * Discovered ipv6 subnet for this ip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod

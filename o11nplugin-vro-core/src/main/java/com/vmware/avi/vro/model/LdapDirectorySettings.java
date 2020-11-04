@@ -24,53 +24,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LdapDirectorySettings extends AviRestResource {
-  @JsonProperty("admin_bind_dn")
-  @JsonInclude(Include.NON_NULL)
-  private String adminBindDn = null;
+    @JsonProperty("admin_bind_dn")
+    @JsonInclude(Include.NON_NULL)
+    private String adminBindDn = null;
 
-  @JsonProperty("group_filter")
-  @JsonInclude(Include.NON_NULL)
-  private String groupFilter = "(objectClass=*)";
+    @JsonProperty("group_filter")
+    @JsonInclude(Include.NON_NULL)
+    private String groupFilter = "(objectClass=*)";
 
-  @JsonProperty("group_member_attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String groupMemberAttribute = "member";
+    @JsonProperty("group_member_attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String groupMemberAttribute = "member";
 
-  @JsonProperty("group_member_is_full_dn")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean groupMemberIsFullDn = true;
+    @JsonProperty("group_member_is_full_dn")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean groupMemberIsFullDn = true;
 
-  @JsonProperty("group_search_dn")
-  @JsonInclude(Include.NON_NULL)
-  private String groupSearchDn = null;
+    @JsonProperty("group_search_dn")
+    @JsonInclude(Include.NON_NULL)
+    private String groupSearchDn = null;
 
-  @JsonProperty("group_search_scope")
-  @JsonInclude(Include.NON_NULL)
-  private String groupSearchScope = "AUTH_LDAP_SCOPE_SUBTREE";
+    @JsonProperty("group_search_scope")
+    @JsonInclude(Include.NON_NULL)
+    private String groupSearchScope = "AUTH_LDAP_SCOPE_SUBTREE";
 
-  @JsonProperty("ignore_referrals")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignoreReferrals = false;
+    @JsonProperty("ignore_referrals")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreReferrals = false;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("user_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> userAttributes = null;
+    @JsonProperty("user_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> userAttributes = null;
 
-  @JsonProperty("user_id_attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String userIdAttribute = null;
+    @JsonProperty("user_id_attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String userIdAttribute = null;
 
-  @JsonProperty("user_search_dn")
-  @JsonInclude(Include.NON_NULL)
-  private String userSearchDn = null;
+    @JsonProperty("user_search_dn")
+    @JsonInclude(Include.NON_NULL)
+    private String userSearchDn = null;
 
-  @JsonProperty("user_search_scope")
-  @JsonInclude(Include.NON_NULL)
-  private String userSearchScope = "AUTH_LDAP_SCOPE_ONE";
+    @JsonProperty("user_search_scope")
+    @JsonInclude(Include.NON_NULL)
+    private String userSearchScope = "AUTH_LDAP_SCOPE_ONE";
 
 
 
@@ -78,6 +78,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap admin user dn.
    * Administrator credentials are required to search for users under user search dn or groups under group search dn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adminBindDn
    */
   @VsoMethod
@@ -89,6 +90,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap admin user dn.
    * Administrator credentials are required to search for users under user search dn or groups under group search dn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adminBindDn set the adminBindDn.
    */
   @VsoMethod
@@ -99,7 +101,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Group filter is used to identify groups during search.
-   * Default value when not specified in API or module is interpreted by Avi Controller as (objectClass=*).
+   * Default value when not specified in API or module is interpreted by Avi Controller as "(objectClass=*)".
    * @return groupFilter
    */
   @VsoMethod
@@ -110,7 +112,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Group filter is used to identify groups during search.
-   * Default value when not specified in API or module is interpreted by Avi Controller as (objectClass=*).
+   * Default value when not specified in API or module is interpreted by Avi Controller as "(objectClass=*)".
    * @param groupFilter set the groupFilter.
    */
   @VsoMethod
@@ -121,7 +123,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap group attribute that identifies each of the group members.
-   * Default value when not specified in API or module is interpreted by Avi Controller as member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "member".
    * @return groupMemberAttribute
    */
   @VsoMethod
@@ -132,7 +134,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap group attribute that identifies each of the group members.
-   * Default value when not specified in API or module is interpreted by Avi Controller as member.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "member".
    * @param groupMemberAttribute set the groupMemberAttribute.
    */
   @VsoMethod
@@ -166,6 +168,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap group search dn is the root of search for a given group in the ldap directory.
    * Only matching groups present in this ldap directory sub-tree will be checked for user membership.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupSearchDn
    */
   @VsoMethod
@@ -177,6 +180,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap group search dn is the root of search for a given group in the ldap directory.
    * Only matching groups present in this ldap directory sub-tree will be checked for user membership.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param groupSearchDn set the groupSearchDn.
    */
   @VsoMethod
@@ -188,7 +192,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap group search scope defines how deep to search for the group starting from the group search dn.
    * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTH_LDAP_SCOPE_SUBTREE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_SUBTREE".
    * @return groupSearchScope
    */
   @VsoMethod
@@ -200,7 +204,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap group search scope defines how deep to search for the group starting from the group search dn.
    * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTH_LDAP_SCOPE_SUBTREE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_SUBTREE".
    * @param groupSearchScope set the groupSearchScope.
    */
   @VsoMethod
@@ -233,6 +237,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap admin user password.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -243,6 +248,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap admin user password.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -253,6 +259,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user attributes to fetch on a successful user bind.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
   @VsoMethod
@@ -263,6 +270,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method. this will set the userAttributes
    * Ldap user attributes to fetch on a successful user bind.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
   @VsoMethod
@@ -273,6 +281,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method this will set the userAttributes
    * Ldap user attributes to fetch on a successful user bind.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
   @VsoMethod
@@ -288,6 +297,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userIdAttribute
    */
   @VsoMethod
@@ -298,6 +308,7 @@ public class LdapDirectorySettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userIdAttribute set the userIdAttribute.
    */
   @VsoMethod
@@ -309,6 +320,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap user search dn is the root of search for a given user in the ldap directory.
    * Only user records present in this ldap directory sub-tree will be validated.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userSearchDn
    */
   @VsoMethod
@@ -320,6 +332,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap user search dn is the root of search for a given user in the ldap directory.
    * Only user records present in this ldap directory sub-tree will be validated.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userSearchDn set the userSearchDn.
    */
   @VsoMethod
@@ -331,7 +344,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap user search scope defines how deep to search for the user starting from user search dn.
    * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTH_LDAP_SCOPE_ONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_ONE".
    * @return userSearchScope
    */
   @VsoMethod
@@ -343,7 +356,7 @@ public class LdapDirectorySettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Ldap user search scope defines how deep to search for the user starting from user search dn.
    * Enum options - AUTH_LDAP_SCOPE_BASE, AUTH_LDAP_SCOPE_ONE, AUTH_LDAP_SCOPE_SUBTREE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTH_LDAP_SCOPE_ONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SCOPE_ONE".
    * @param userSearchScope set the userSearchScope.
    */
   @VsoMethod

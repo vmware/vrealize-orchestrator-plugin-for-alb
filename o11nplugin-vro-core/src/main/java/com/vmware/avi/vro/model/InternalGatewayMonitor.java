@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class InternalGatewayMonitor extends AviRestResource {
-  @JsonProperty("disable_gateway_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableGatewayMonitor = false;
+    @JsonProperty("disable_gateway_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableGatewayMonitor = false;
 
-  @JsonProperty("gateway_monitor_failure_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gatewayMonitorFailureThreshold = 10;
+    @JsonProperty("gateway_monitor_failure_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gatewayMonitorFailureThreshold = 10;
 
-  @JsonProperty("gateway_monitor_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gatewayMonitorInterval = 1000;
+    @JsonProperty("gateway_monitor_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gatewayMonitorInterval = 1000;
 
-  @JsonProperty("gateway_monitor_success_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gatewayMonitorSuccessThreshold = 15;
+    @JsonProperty("gateway_monitor_success_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gatewayMonitorSuccessThreshold = 15;
 
 
 
@@ -100,6 +100,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * If a value is not specified, requests are sent every second.
    * Allowed values are 100-60000.
    * Field introduced in 17.1.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return gatewayMonitorInterval
    */
@@ -114,6 +115,7 @@ public class InternalGatewayMonitor extends AviRestResource {
    * If a value is not specified, requests are sent every second.
    * Allowed values are 100-60000.
    * Field introduced in 17.1.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param gatewayMonitorInterval set the gatewayMonitorInterval.
    */

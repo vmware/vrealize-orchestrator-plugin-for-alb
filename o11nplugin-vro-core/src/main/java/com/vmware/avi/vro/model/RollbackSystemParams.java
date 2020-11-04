@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RollbackSystemParams extends AviRestResource {
-  @JsonProperty("se_group_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupOptions seGroupOptions = null;
+    @JsonProperty("se_group_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupOptions seGroupOptions = null;
 
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
 
 
@@ -39,6 +39,7 @@ public class RollbackSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field identifies se group options that need to be applied during the rollback operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class RollbackSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * This field identifies se group options that need to be applied during the rollback operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
   @VsoMethod

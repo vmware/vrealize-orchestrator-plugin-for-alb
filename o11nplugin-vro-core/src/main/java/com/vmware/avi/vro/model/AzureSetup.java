@@ -24,51 +24,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureSetup extends AviRestResource {
-  @JsonProperty("alb_id")
-  @JsonInclude(Include.NON_NULL)
-  private String albId = null;
+    @JsonProperty("alb_id")
+    @JsonInclude(Include.NON_NULL)
+    private String albId = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("nic_id")
-  @JsonInclude(Include.NON_NULL)
-  private String nicId = null;
+    @JsonProperty("nic_id")
+    @JsonInclude(Include.NON_NULL)
+    private String nicId = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("resource_group")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceGroup = null;
+    @JsonProperty("resource_group")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceGroup = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("subscription_id")
-  @JsonInclude(Include.NON_NULL)
-  private String subscriptionId = null;
+    @JsonProperty("subscription_id")
+    @JsonInclude(Include.NON_NULL)
+    private String subscriptionId = null;
 
-  @JsonProperty("vips")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> vips = null;
+    @JsonProperty("vips")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> vips = null;
 
-  @JsonProperty("vnet_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vnetId = null;
+    @JsonProperty("vnet_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vnetId = null;
 
-  @JsonProperty("vs_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsUuids = null;
+    @JsonProperty("vs_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsUuids = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property alb_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return albId
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property alb_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param albId set the albId.
    */
   @VsoMethod
@@ -89,6 +91,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -109,6 +113,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nic_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nicId
    */
   @VsoMethod
@@ -119,6 +124,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nic_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nicId set the nicId.
    */
   @VsoMethod
@@ -129,6 +135,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -149,6 +157,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property resource_group of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceGroup
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property resource_group of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceGroup set the resourceGroup.
    */
   @VsoMethod
@@ -169,6 +179,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -179,6 +190,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -189,6 +201,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subscription_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subscriptionId
    */
   @VsoMethod
@@ -199,6 +212,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property subscription_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subscriptionId set the subscriptionId.
    */
   @VsoMethod
@@ -209,6 +223,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vips of obj type azuresetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vips
    */
   @VsoMethod
@@ -219,6 +234,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the vips
    * Placeholder for description of property vips of obj type azuresetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vips
    */
   @VsoMethod
@@ -229,6 +245,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method this will set the vips
    * Placeholder for description of property vips of obj type azuresetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vips
    */
   @VsoMethod
@@ -244,6 +261,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vnet_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnetId
    */
   @VsoMethod
@@ -254,6 +272,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vnet_id of obj type azuresetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnetId set the vnetId.
    */
   @VsoMethod
@@ -264,6 +283,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifiers of vss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuids
    */
   @VsoMethod
@@ -274,6 +294,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the vsUuids
    * Unique object identifiers of vss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuids
    */
   @VsoMethod
@@ -284,6 +305,7 @@ public class AzureSetup extends AviRestResource {
   /**
    * This is the setter method this will set the vsUuids
    * Unique object identifiers of vss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuids
    */
   @VsoMethod

@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseInfo extends AviRestResource {
-  @JsonProperty("last_updated")
-  @JsonInclude(Include.NON_NULL)
-  private Integer lastUpdated = null;
+    @JsonProperty("last_updated")
+    @JsonInclude(Include.NON_NULL)
+    private Integer lastUpdated = null;
 
-  @JsonProperty("service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float serviceCores = null;
+    @JsonProperty("service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float serviceCores = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
-  @JsonProperty("tier")
-  @JsonInclude(Include.NON_NULL)
-  private String tier = null;
+    @JsonProperty("tier")
+    @JsonInclude(Include.NON_NULL)
+    private String tier = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -50,6 +50,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last updated time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastUpdated
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Last updated time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastUpdated set the lastUpdated.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Quantity of service cores.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceCores
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Quantity of service cores.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceCores set the serviceCores.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the license tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the license tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -115,8 +121,9 @@ public class LicenseInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the license tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier
    */
   @VsoMethod
@@ -127,8 +134,9 @@ public class LicenseInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the license tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier set the tier.
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifier(license_id, se_uuid, cookie).
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class LicenseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Identifier(license_id, se_uuid, cookie).
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

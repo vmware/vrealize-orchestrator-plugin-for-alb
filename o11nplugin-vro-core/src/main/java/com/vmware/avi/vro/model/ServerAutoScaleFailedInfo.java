@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServerAutoScaleFailedInfo extends AviRestResource {
-  @JsonProperty("num_scalein_servers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numScaleinServers = null;
+    @JsonProperty("num_scalein_servers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numScaleinServers = null;
 
-  @JsonProperty("num_servers_up")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numServersUp = null;
+    @JsonProperty("num_servers_up")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numServersUp = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("reason_code")
-  @JsonInclude(Include.NON_NULL)
-  private String reasonCode = "SYSERR_SUCCESS";
+    @JsonProperty("reason_code")
+    @JsonInclude(Include.NON_NULL)
+    private String reasonCode = "SYSERR_SUCCESS";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_scalein_servers of obj type serverautoscalefailedinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numScaleinServers
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_scalein_servers of obj type serverautoscalefailedinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numScaleinServers set the numScaleinServers.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_servers_up of obj type serverautoscalefailedinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServersUp
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_servers_up of obj type serverautoscalefailedinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServersUp set the numServersUp.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type serverautoscalefailedinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type serverautoscalefailedinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -133,7 +141,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSERR_SUCCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @return reasonCode
    */
   @VsoMethod
@@ -146,7 +154,7 @@ public class ServerAutoScaleFailedInfo extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSERR_SUCCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @param reasonCode set the reasonCode.
    */
   @VsoMethod

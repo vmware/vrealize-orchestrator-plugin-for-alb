@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeThreshEventDetails extends AviRestResource {
-  @JsonProperty("curr_value")
-  @JsonInclude(Include.NON_NULL)
-  private Integer currValue = null;
+    @JsonProperty("curr_value")
+    @JsonInclude(Include.NON_NULL)
+    private Integer currValue = null;
 
-  @JsonProperty("thresh")
-  @JsonInclude(Include.NON_NULL)
-  private Integer thresh = null;
+    @JsonProperty("thresh")
+    @JsonInclude(Include.NON_NULL)
+    private Integer thresh = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property curr_value of obj type sethresheventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currValue
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SeThreshEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property curr_value of obj type sethresheventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currValue set the currValue.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class SeThreshEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property thresh of obj type sethresheventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thresh
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class SeThreshEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property thresh of obj type sethresheventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param thresh set the thresh.
    */
   @VsoMethod

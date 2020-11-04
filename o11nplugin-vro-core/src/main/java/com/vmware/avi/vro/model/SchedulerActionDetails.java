@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SchedulerActionDetails extends AviRestResource {
-  @JsonProperty("backup_uri")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> backupUri = null;
+    @JsonProperty("backup_uri")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> backupUri = null;
 
-  @JsonProperty("control_script_output")
-  @JsonInclude(Include.NON_NULL)
-  private String controlScriptOutput = null;
+    @JsonProperty("control_script_output")
+    @JsonInclude(Include.NON_NULL)
+    private String controlScriptOutput = null;
 
-  @JsonProperty("execution_datestamp")
-  @JsonInclude(Include.NON_NULL)
-  private String executionDatestamp = null;
+    @JsonProperty("execution_datestamp")
+    @JsonInclude(Include.NON_NULL)
+    private String executionDatestamp = null;
 
-  @JsonProperty("scheduler_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String schedulerUuid = null;
+    @JsonProperty("scheduler_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String schedulerUuid = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property backup_uri of obj type scheduleractiondetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupUri
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the backupUri
    * Placeholder for description of property backup_uri of obj type scheduleractiondetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupUri
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the setter method this will set the backupUri
    * Placeholder for description of property backup_uri of obj type scheduleractiondetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupUri
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property control_script_output of obj type scheduleractiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controlScriptOutput
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property control_script_output of obj type scheduleractiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controlScriptOutput set the controlScriptOutput.
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property execution_datestamp of obj type scheduleractiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return executionDatestamp
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property execution_datestamp of obj type scheduleractiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param executionDatestamp set the executionDatestamp.
    */
   @VsoMethod
@@ -124,6 +131,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of scheduler.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schedulerUuid
    */
   @VsoMethod
@@ -134,6 +142,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of scheduler.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param schedulerUuid set the schedulerUuid.
    */
   @VsoMethod
@@ -144,6 +153,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status of obj type scheduleractiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -154,6 +164,7 @@ public class SchedulerActionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status of obj type scheduleractiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod

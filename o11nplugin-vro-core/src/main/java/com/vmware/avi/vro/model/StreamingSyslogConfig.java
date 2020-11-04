@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class StreamingSyslogConfig extends AviRestResource {
-  @JsonProperty("facility")
-  @JsonInclude(Include.NON_NULL)
-  private Integer facility = 16;
+    @JsonProperty("facility")
+    @JsonInclude(Include.NON_NULL)
+    private Integer facility = 16;
 
-  @JsonProperty("filtered_log_severity")
-  @JsonInclude(Include.NON_NULL)
-  private Integer filteredLogSeverity = 5;
+    @JsonProperty("filtered_log_severity")
+    @JsonInclude(Include.NON_NULL)
+    private Integer filteredLogSeverity = 5;
 
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = "AviVantage";
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = "AviVantage";
 
-  @JsonProperty("non_significant_log_severity")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nonSignificantLogSeverity = 6;
+    @JsonProperty("non_significant_log_severity")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nonSignificantLogSeverity = 6;
 
-  @JsonProperty("significant_log_severity")
-  @JsonInclude(Include.NON_NULL)
-  private Integer significantLogSeverity = 4;
+    @JsonProperty("significant_log_severity")
+    @JsonInclude(Include.NON_NULL)
+    private Integer significantLogSeverity = 4;
 
 
 
@@ -105,7 +105,7 @@ public class StreamingSyslogConfig extends AviRestResource {
    * String to use as the hostname in the syslog messages.
    * This string can contain only printable ascii characters (hex 21 to hex 7e; no space allowed).
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AviVantage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AviVantage".
    * @return hostname
    */
   @VsoMethod
@@ -118,7 +118,7 @@ public class StreamingSyslogConfig extends AviRestResource {
    * String to use as the hostname in the syslog messages.
    * This string can contain only printable ascii characters (hex 21 to hex 7e; no space allowed).
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AviVantage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AviVantage".
    * @param hostname set the hostname.
    */
   @VsoMethod

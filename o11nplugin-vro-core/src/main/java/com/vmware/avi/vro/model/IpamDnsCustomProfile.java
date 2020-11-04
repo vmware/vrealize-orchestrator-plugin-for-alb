@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsCustomProfile extends AviRestResource {
-  @JsonProperty("custom_ipam_dns_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String customIpamDnsProfileRef = null;
+    @JsonProperty("custom_ipam_dns_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String customIpamDnsProfileRef = null;
 
-  @JsonProperty("dynamic_params")
-  @JsonInclude(Include.NON_NULL)
-  private List<CustomParams> dynamicParams = null;
+    @JsonProperty("dynamic_params")
+    @JsonInclude(Include.NON_NULL)
+    private List<CustomParams> dynamicParams = null;
 
-  @JsonProperty("usable_domains")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableDomains = null;
+    @JsonProperty("usable_domains")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableDomains = null;
 
-  @JsonProperty("usable_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> usableSubnets = null;
+    @JsonProperty("usable_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> usableSubnets = null;
 
 
 
@@ -46,6 +46,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type customipamdnsprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customIpamDnsProfileRef
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type customipamdnsprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customIpamDnsProfileRef set the customIpamDnsProfileRef.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom parameters that will passed to the ipam/dns provider including but not limited to provider credentials and api version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method. this will set the dynamicParams
    * Custom parameters that will passed to the ipam/dns provider including but not limited to provider credentials and api version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method this will set the dynamicParams
    * Custom parameters that will passed to the ipam/dns provider including but not limited to provider credentials and api version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dynamicParams
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Usable domains.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method. this will set the usableDomains
    * Usable domains.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method this will set the usableDomains
    * Usable domains.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -144,6 +152,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Usable subnets.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnets
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method. this will set the usableSubnets
    * Usable subnets.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnets
    */
   @VsoMethod
@@ -166,6 +176,7 @@ public class IpamDnsCustomProfile extends AviRestResource {
    * This is the setter method this will set the usableSubnets
    * Usable subnets.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnets
    */
   @VsoMethod

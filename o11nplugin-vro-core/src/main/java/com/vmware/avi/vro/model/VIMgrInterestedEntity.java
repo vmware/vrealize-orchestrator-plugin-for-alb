@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIMgrInterestedEntity extends AviRestResource {
-  @JsonProperty("interested_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String interestedUuid = null;
+    @JsonProperty("interested_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String interestedUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of interested.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return interestedUuid
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class VIMgrInterestedEntity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of interested.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param interestedUuid set the interestedUuid.
    */
   @VsoMethod

@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerUpgradeState extends AviRestResource {
-  @JsonProperty("controller_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerProgress = null;
+    @JsonProperty("controller_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerProgress = null;
 
-  @JsonProperty("in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean inProgress = null;
+    @JsonProperty("in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean inProgress = null;
 
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("rollback")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rollback = null;
+    @JsonProperty("rollback")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rollback = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("tasks_completed")
-  @JsonInclude(Include.NON_NULL)
-  private List<UpgradeTask> tasksCompleted = null;
+    @JsonProperty("tasks_completed")
+    @JsonInclude(Include.NON_NULL)
+    private List<UpgradeTask> tasksCompleted = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_progress of obj type controllerupgradestate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerProgress
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_progress of obj type controllerupgradestate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerProgress set the controllerProgress.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property in_progress of obj type controllerupgradestate field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inProgress
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property in_progress of obj type controllerupgradestate field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inProgress set the inProgress.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type controllerupgradestate field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type controllerupgradestate field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type controllerupgradestate field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rollback of obj type controllerupgradestate field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rollback
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rollback of obj type controllerupgradestate field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rollback set the rollback.
    */
   @VsoMethod
@@ -149,6 +158,7 @@ public class ControllerUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - UPGRADE_STARTED, UPGRADE_WAITING, UPGRADE_IN_PROGRESS, UPGRADE_CONTROLLER_COMPLETED, UPGRADE_COMPLETED, UPGRADE_ABORT_IN_PROGRESS,
    * UPGRADE_ABORTED, UPGRADE_DUMMY_1, UPGRADE_DUMMY_2, UPGRADE_DUMMY_3, UPGRADE_DUMMY_4, UPGRADE_DUMMY_5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -160,6 +170,7 @@ public class ControllerUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - UPGRADE_STARTED, UPGRADE_WAITING, UPGRADE_IN_PROGRESS, UPGRADE_CONTROLLER_COMPLETED, UPGRADE_COMPLETED, UPGRADE_ABORT_IN_PROGRESS,
    * UPGRADE_ABORTED, UPGRADE_DUMMY_1, UPGRADE_DUMMY_2, UPGRADE_DUMMY_3, UPGRADE_DUMMY_4, UPGRADE_DUMMY_5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -170,6 +181,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tasks_completed of obj type controllerupgradestate field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasksCompleted
    */
   @VsoMethod
@@ -180,6 +192,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method. this will set the tasksCompleted
    * Placeholder for description of property tasks_completed of obj type controllerupgradestate field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasksCompleted
    */
   @VsoMethod
@@ -190,6 +203,7 @@ public class ControllerUpgradeState extends AviRestResource {
   /**
    * This is the setter method this will set the tasksCompleted
    * Placeholder for description of property tasks_completed of obj type controllerupgradestate field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tasksCompleted
    */
   @VsoMethod

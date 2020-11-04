@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OCICredentials extends AviRestResource {
-  @JsonProperty("fingerprint")
-  @JsonInclude(Include.NON_NULL)
-  private String fingerprint = null;
+    @JsonProperty("fingerprint")
+    @JsonInclude(Include.NON_NULL)
+    private String fingerprint = null;
 
-  @JsonProperty("key_content")
-  @JsonInclude(Include.NON_NULL)
-  private String keyContent = null;
+    @JsonProperty("key_content")
+    @JsonInclude(Include.NON_NULL)
+    private String keyContent = null;
 
-  @JsonProperty("pass_phrase")
-  @JsonInclude(Include.NON_NULL)
-  private String passPhrase = null;
+    @JsonProperty("pass_phrase")
+    @JsonInclude(Include.NON_NULL)
+    private String passPhrase = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
 
 
@@ -46,6 +46,7 @@ public class OCICredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Api key with respect to the public key.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fingerprint
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class OCICredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Api key with respect to the public key.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fingerprint set the fingerprint.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class OCICredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Private key file (pem file) content.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyContent
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class OCICredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Private key file (pem file) content.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyContent set the keyContent.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class OCICredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pass phrase for the key.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return passPhrase
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class OCICredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Pass phrase for the key.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param passPhrase set the passPhrase.
    */
   @VsoMethod
@@ -112,6 +118,7 @@ public class OCICredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oracle cloud id for the user.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class OCICredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Oracle cloud id for the user.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod

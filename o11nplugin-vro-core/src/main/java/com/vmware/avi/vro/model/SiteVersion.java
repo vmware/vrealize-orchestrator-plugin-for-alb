@@ -24,57 +24,57 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SiteVersion extends AviRestResource {
-  @JsonProperty("datetime")
-  @JsonInclude(Include.NON_NULL)
-  private String datetime = null;
+    @JsonProperty("datetime")
+    @JsonInclude(Include.NON_NULL)
+    private String datetime = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("prev_target_version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer prevTargetVersion = null;
+    @JsonProperty("prev_target_version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer prevTargetVersion = null;
 
-  @JsonProperty("replication_state")
-  @JsonInclude(Include.NON_NULL)
-  private String replicationState = null;
+    @JsonProperty("replication_state")
+    @JsonInclude(Include.NON_NULL)
+    private String replicationState = null;
 
-  @JsonProperty("site_id")
-  @JsonInclude(Include.NON_NULL)
-  private String siteId = null;
+    @JsonProperty("site_id")
+    @JsonInclude(Include.NON_NULL)
+    private String siteId = null;
 
-  @JsonProperty("target_timeline")
-  @JsonInclude(Include.NON_NULL)
-  private String targetTimeline = null;
+    @JsonProperty("target_timeline")
+    @JsonInclude(Include.NON_NULL)
+    private String targetTimeline = null;
 
-  @JsonProperty("target_version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer targetVersion = null;
+    @JsonProperty("target_version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer targetVersion = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("timeline")
-  @JsonInclude(Include.NON_NULL)
-  private String timeline = null;
+    @JsonProperty("timeline")
+    @JsonInclude(Include.NON_NULL)
+    private String timeline = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer version = null;
 
-  @JsonProperty("version_type")
-  @JsonInclude(Include.NON_NULL)
-  private String versionType = null;
+    @JsonProperty("version_type")
+    @JsonInclude(Include.NON_NULL)
+    private String versionType = null;
 
 
 
@@ -82,6 +82,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field represents the creation time of the federateddiff.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datetime
    */
   @VsoMethod
@@ -93,6 +94,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * This field represents the creation time of the federateddiff.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datetime set the datetime.
    */
   @VsoMethod
@@ -104,6 +106,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -115,6 +118,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -126,6 +130,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Previous targer version for a site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevTargetVersion
    */
   @VsoMethod
@@ -137,6 +142,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Previous targer version for a site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevTargetVersion set the prevTargetVersion.
    */
   @VsoMethod
@@ -150,6 +156,7 @@ public class SiteVersion extends AviRestResource {
    * Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED,
    * REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return replicationState
    */
   @VsoMethod
@@ -163,6 +170,7 @@ public class SiteVersion extends AviRestResource {
    * Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED,
    * REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param replicationState set the replicationState.
    */
   @VsoMethod
@@ -174,6 +182,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cluster uuid of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteId
    */
   @VsoMethod
@@ -185,6 +194,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Cluster uuid of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteId set the siteId.
    */
   @VsoMethod
@@ -196,6 +206,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Target timeline of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetTimeline
    */
   @VsoMethod
@@ -207,6 +218,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Target timeline of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param targetTimeline set the targetTimeline.
    */
   @VsoMethod
@@ -218,6 +230,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Target version of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetVersion
    */
   @VsoMethod
@@ -229,6 +242,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Target version of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param targetVersion set the targetVersion.
    */
   @VsoMethod
@@ -241,6 +255,7 @@ public class SiteVersion extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -253,6 +268,7 @@ public class SiteVersion extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -264,6 +280,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeline of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeline
    */
   @VsoMethod
@@ -275,6 +292,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeline of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeline set the timeline.
    */
   @VsoMethod
@@ -305,6 +323,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the siteversion object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -316,6 +335,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the siteversion object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -327,6 +347,7 @@ public class SiteVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -338,6 +359,7 @@ public class SiteVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of the site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod
@@ -350,6 +372,7 @@ public class SiteVersion extends AviRestResource {
    * Type of message for which version is maintained.
    * Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return versionType
    */
   @VsoMethod
@@ -362,6 +385,7 @@ public class SiteVersion extends AviRestResource {
    * Type of message for which version is maintained.
    * Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param versionType set the versionType.
    */
   @VsoMethod

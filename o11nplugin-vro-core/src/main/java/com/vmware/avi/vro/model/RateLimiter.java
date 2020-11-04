@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RateLimiter extends AviRestResource {
-  @JsonProperty("burst_sz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer burstSz = 0;
+    @JsonProperty("burst_sz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer burstSz = 0;
 
-  @JsonProperty("count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer count = 1000000000;
+    @JsonProperty("count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer count = 1000000000;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer period = 1;
+    @JsonProperty("period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer period = 1;
 
 
 
@@ -101,6 +101,7 @@ public class RateLimiter extends AviRestResource {
    * Identifier for rate limit.
    * Constructed according to context.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -113,6 +114,7 @@ public class RateLimiter extends AviRestResource {
    * Identifier for rate limit.
    * Constructed according to context.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -125,6 +127,7 @@ public class RateLimiter extends AviRestResource {
    * Time value in seconds to enforce rate count.
    * Allowed values are 1-1000000000.
    * Field introduced in 18.2.9.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return period
    */
@@ -138,6 +141,7 @@ public class RateLimiter extends AviRestResource {
    * Time value in seconds to enforce rate count.
    * Allowed values are 1-1000000000.
    * Field introduced in 18.2.9.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param period set the period.
    */

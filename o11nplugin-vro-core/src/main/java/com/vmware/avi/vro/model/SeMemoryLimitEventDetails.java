@@ -24,45 +24,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeMemoryLimitEventDetails extends AviRestResource {
-  @JsonProperty("config_memory_status")
-  @JsonInclude(Include.NON_NULL)
-  private String configMemoryStatus = null;
+    @JsonProperty("config_memory_status")
+    @JsonInclude(Include.NON_NULL)
+    private String configMemoryStatus = null;
 
-  @JsonProperty("heap_config_hard_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer heapConfigHardLimit = null;
+    @JsonProperty("heap_config_hard_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer heapConfigHardLimit = null;
 
-  @JsonProperty("heap_config_soft_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer heapConfigSoftLimit = null;
+    @JsonProperty("heap_config_soft_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer heapConfigSoftLimit = null;
 
-  @JsonProperty("heap_config_usage")
-  @JsonInclude(Include.NON_NULL)
-  private Integer heapConfigUsage = null;
+    @JsonProperty("heap_config_usage")
+    @JsonInclude(Include.NON_NULL)
+    private Integer heapConfigUsage = null;
 
-  @JsonProperty("heap_conn_usage")
-  @JsonInclude(Include.NON_NULL)
-  private Integer heapConnUsage = null;
+    @JsonProperty("heap_conn_usage")
+    @JsonInclude(Include.NON_NULL)
+    private Integer heapConnUsage = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
-  @JsonProperty("shm_config_hard_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer shmConfigHardLimit = null;
+    @JsonProperty("shm_config_hard_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer shmConfigHardLimit = null;
 
-  @JsonProperty("shm_config_soft_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer shmConfigSoftLimit = null;
+    @JsonProperty("shm_config_soft_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer shmConfigSoftLimit = null;
 
-  @JsonProperty("shm_config_usage")
-  @JsonInclude(Include.NON_NULL)
-  private Integer shmConfigUsage = null;
+    @JsonProperty("shm_config_usage")
+    @JsonInclude(Include.NON_NULL)
+    private Integer shmConfigUsage = null;
 
-  @JsonProperty("shm_conn_usage")
-  @JsonInclude(Include.NON_NULL)
-  private Integer shmConnUsage = null;
+    @JsonProperty("shm_conn_usage")
+    @JsonInclude(Include.NON_NULL)
+    private Integer shmConnUsage = null;
 
 
 
@@ -70,6 +70,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current status of config memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configMemoryStatus
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Current status of config memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configMemoryStatus set the configMemoryStatus.
    */
   @VsoMethod
@@ -92,6 +94,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Heap config memory hard limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return heapConfigHardLimit
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Heap config memory hard limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param heapConfigHardLimit set the heapConfigHardLimit.
    */
   @VsoMethod
@@ -114,6 +118,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Heap config memory soft limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return heapConfigSoftLimit
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Heap config memory soft limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param heapConfigSoftLimit set the heapConfigSoftLimit.
    */
   @VsoMethod
@@ -136,6 +142,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Config memory usage in heap memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return heapConfigUsage
    */
   @VsoMethod
@@ -147,6 +154,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Config memory usage in heap memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param heapConfigUsage set the heapConfigUsage.
    */
   @VsoMethod
@@ -158,6 +166,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connection memory usage in heap memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return heapConnUsage
    */
   @VsoMethod
@@ -169,6 +178,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Connection memory usage in heap memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param heapConnUsage set the heapConnUsage.
    */
   @VsoMethod
@@ -181,6 +191,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -193,6 +204,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -204,6 +216,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current shm config memory hard limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shmConfigHardLimit
    */
   @VsoMethod
@@ -215,6 +228,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Current shm config memory hard limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shmConfigHardLimit set the shmConfigHardLimit.
    */
   @VsoMethod
@@ -226,6 +240,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current shm config memory soft limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shmConfigSoftLimit
    */
   @VsoMethod
@@ -237,6 +252,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Current shm config memory soft limit.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shmConfigSoftLimit set the shmConfigSoftLimit.
    */
   @VsoMethod
@@ -248,6 +264,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Config memory usage in shared memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shmConfigUsage
    */
   @VsoMethod
@@ -259,6 +276,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Config memory usage in shared memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shmConfigUsage set the shmConfigUsage.
    */
   @VsoMethod
@@ -270,6 +288,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connection memory usage in shared memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shmConnUsage
    */
   @VsoMethod
@@ -281,6 +300,7 @@ public class SeMemoryLimitEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Connection memory usage in shared memory.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shmConnUsage set the shmConnUsage.
    */
   @VsoMethod

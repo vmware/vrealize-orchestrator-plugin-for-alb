@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbHealthMonitorProxy extends AviRestResource {
-  @JsonProperty("proxy_type")
-  @JsonInclude(Include.NON_NULL)
-  private String proxyType = "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS";
+    @JsonProperty("proxy_type")
+    @JsonInclude(Include.NON_NULL)
+    private String proxyType = "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS";
 
-  @JsonProperty("site_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String siteUuid = null;
+    @JsonProperty("site_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String siteUuid = null;
 
 
 
@@ -40,7 +40,7 @@ public class GslbHealthMonitorProxy extends AviRestResource {
    * The designated site for health monitor proxy can monitor public or private or all the members of a given site.
    * Enum options - GSLB_HEALTH_MONITOR_PROXY_ALL_MEMBERS, GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS".
    * @return proxyType
    */
   @VsoMethod
@@ -54,7 +54,7 @@ public class GslbHealthMonitorProxy extends AviRestResource {
    * The designated site for health monitor proxy can monitor public or private or all the members of a given site.
    * Enum options - GSLB_HEALTH_MONITOR_PROXY_ALL_MEMBERS, GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS".
    * @param proxyType set the proxyType.
    */
   @VsoMethod
@@ -68,6 +68,7 @@ public class GslbHealthMonitorProxy extends AviRestResource {
    * I.e.
    * It will be a health monitor proxy and monitor members of the current site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteUuid
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class GslbHealthMonitorProxy extends AviRestResource {
    * I.e.
    * It will be a health monitor proxy and monitor members of the current site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteUuid set the siteUuid.
    */
   @VsoMethod

@@ -24,47 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseTransactionDetails extends AviRestResource {
-  @JsonProperty("cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String cookie = null;
+    @JsonProperty("cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String cookie = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("licensed_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float licensedServiceCores = null;
+    @JsonProperty("licensed_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float licensedServiceCores = null;
 
-  @JsonProperty("operation")
-  @JsonInclude(Include.NON_NULL)
-  private String operation = null;
+    @JsonProperty("operation")
+    @JsonInclude(Include.NON_NULL)
+    private String operation = null;
 
-  @JsonProperty("overdraft")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean overdraft = null;
+    @JsonProperty("overdraft")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean overdraft = null;
 
-  @JsonProperty("service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float serviceCores = null;
+    @JsonProperty("service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float serviceCores = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
-  @JsonProperty("tier")
-  @JsonInclude(Include.NON_NULL)
-  private String tier = null;
+    @JsonProperty("tier")
+    @JsonInclude(Include.NON_NULL)
+    private String tier = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cookie of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookie
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cookie of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookie set the cookie.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property id of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property id of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property licensed_service_cores of obj type licensetransactiondetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licensedServiceCores
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property licensed_service_cores of obj type licensetransactiondetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licensedServiceCores set the licensedServiceCores.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property operation of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operation
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property operation of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operation set the operation.
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property overdraft of obj type licensetransactiondetails field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return overdraft
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property overdraft of obj type licensetransactiondetails field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param overdraft set the overdraft.
    */
   @VsoMethod
@@ -185,6 +197,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property service_cores of obj type licensetransactiondetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceCores
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property service_cores of obj type licensetransactiondetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceCores set the serviceCores.
    */
   @VsoMethod
@@ -205,6 +219,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -215,6 +230,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -225,6 +241,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tier of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier
    */
   @VsoMethod
@@ -235,6 +252,7 @@ public class LicenseTransactionDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tier of obj type licensetransactiondetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier set the tier.
    */
   @VsoMethod

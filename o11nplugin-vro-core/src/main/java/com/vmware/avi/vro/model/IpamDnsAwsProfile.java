@@ -24,63 +24,64 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsAwsProfile extends AviRestResource {
-  @JsonProperty("access_key_id")
-  @JsonInclude(Include.NON_NULL)
-  private String accessKeyId = null;
+    @JsonProperty("access_key_id")
+    @JsonInclude(Include.NON_NULL)
+    private String accessKeyId = null;
 
-  @JsonProperty("egress_service_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> egressServiceSubnets = null;
+    @JsonProperty("egress_service_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> egressServiceSubnets = null;
 
-  @JsonProperty("iam_assume_role")
-  @JsonInclude(Include.NON_NULL)
-  private String iamAssumeRole = null;
+    @JsonProperty("iam_assume_role")
+    @JsonInclude(Include.NON_NULL)
+    private String iamAssumeRole = null;
 
-  @JsonProperty("publish_vip_to_public_zone")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean publishVipToPublicZone = false;
+    @JsonProperty("publish_vip_to_public_zone")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean publishVipToPublicZone = false;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("secret_access_key")
-  @JsonInclude(Include.NON_NULL)
-  private String secretAccessKey = null;
+    @JsonProperty("secret_access_key")
+    @JsonInclude(Include.NON_NULL)
+    private String secretAccessKey = null;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = 60;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = 60;
 
-  @JsonProperty("usable_domains")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableDomains = null;
+    @JsonProperty("usable_domains")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableDomains = null;
 
-  @JsonProperty("usable_network_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableNetworkUuids = null;
+    @JsonProperty("usable_network_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableNetworkUuids = null;
 
-  @JsonProperty("use_iam_roles")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useIamRoles = false;
+    @JsonProperty("use_iam_roles")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useIamRoles = false;
 
-  @JsonProperty("vpc")
-  @JsonInclude(Include.NON_NULL)
-  private String vpc = null;
+    @JsonProperty("vpc")
+    @JsonInclude(Include.NON_NULL)
+    private String vpc = null;
 
-  @JsonProperty("vpc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcId = null;
+    @JsonProperty("vpc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcId = null;
 
-  @JsonProperty("zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<AwsZoneNetwork> zones = null;
+    @JsonProperty("zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<AwsZoneNetwork> zones = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Aws access key id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessKeyId
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws access key id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessKeyId set the accessKeyId.
    */
   @VsoMethod
@@ -102,6 +104,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
   @VsoMethod
@@ -113,6 +116,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method. this will set the egressServiceSubnets
    * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
   @VsoMethod
@@ -124,6 +128,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method this will set the egressServiceSubnets
    * A list of subnets used for source ip allocation for egress services in openshift/k8s on aws.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
   @VsoMethod
@@ -140,6 +145,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Iam assume role for cross-account access.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return iamAssumeRole
    */
   @VsoMethod
@@ -151,6 +157,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Iam assume role for cross-account access.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param iamAssumeRole set the iamAssumeRole.
    */
   @VsoMethod
@@ -187,6 +194,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Aws region.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -197,6 +205,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws region.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -207,6 +216,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Aws secret access key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretAccessKey
    */
   @VsoMethod
@@ -217,6 +227,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws secret access key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretAccessKey set the secretAccessKey.
    */
   @VsoMethod
@@ -229,6 +240,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * Default ttl for all records.
    * Allowed values are 1-172800.
    * Field introduced in 17.1.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return ttl
    */
@@ -242,6 +254,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * Default ttl for all records.
    * Allowed values are 1-172800.
    * Field introduced in 17.1.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param ttl set the ttl.
    */
@@ -254,6 +267,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Usable domains to pick from amazon route 53.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -265,6 +279,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method. this will set the usableDomains
    * Usable domains to pick from amazon route 53.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -276,6 +291,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method this will set the usableDomains
    * Usable domains to pick from amazon route 53.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -294,6 +310,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
   @VsoMethod
@@ -307,6 +324,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
   @VsoMethod
@@ -320,6 +338,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
   @VsoMethod
@@ -357,6 +376,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vpc name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpc
    */
   @VsoMethod
@@ -367,6 +387,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vpc name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpc set the vpc.
    */
   @VsoMethod
@@ -377,6 +398,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vpc id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
   @VsoMethod
@@ -387,6 +409,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vpc id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */
   @VsoMethod
@@ -398,6 +421,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network configuration for virtual ip per az.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -409,6 +433,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method. this will set the zones
    * Network configuration for virtual ip per az.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -420,6 +445,7 @@ public class IpamDnsAwsProfile extends AviRestResource {
    * This is the setter method this will set the zones
    * Network configuration for virtual ip per az.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod

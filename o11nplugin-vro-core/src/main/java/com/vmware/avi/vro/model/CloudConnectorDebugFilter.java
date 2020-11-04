@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudConnectorDebugFilter extends AviRestResource {
-  @JsonProperty("app_id")
-  @JsonInclude(Include.NON_NULL)
-  private String appId = null;
+    @JsonProperty("app_id")
+    @JsonInclude(Include.NON_NULL)
+    private String appId = null;
 
-  @JsonProperty("disable_se_reboot")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableSeReboot = null;
+    @JsonProperty("disable_se_reboot")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableSeReboot = null;
 
-  @JsonProperty("se_id")
-  @JsonInclude(Include.NON_NULL)
-  private String seId = null;
+    @JsonProperty("se_id")
+    @JsonInclude(Include.NON_NULL)
+    private String seId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for an app.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appId
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for an app.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appId set the appId.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable se reboot via cloud connector on hb miss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disableSeReboot
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable se reboot via cloud connector on hb miss.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disableSeReboot set the disableSeReboot.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for a se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seId
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class CloudConnectorDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for a se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seId set the seId.
    */
   @VsoMethod

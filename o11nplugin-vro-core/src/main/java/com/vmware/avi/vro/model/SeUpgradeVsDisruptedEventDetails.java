@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type seupgradevsdisruptedeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type seupgradevsdisruptedeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type seupgradevsdisruptedeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type seupgradevsdisruptedeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type seupgradevsdisruptedeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_id of obj type seupgradevsdisruptedeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_id of obj type seupgradevsdisruptedeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class SeUpgradeVsDisruptedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

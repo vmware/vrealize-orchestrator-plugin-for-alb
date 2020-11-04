@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsTxtRdata extends AviRestResource {
-  @JsonProperty("text_str")
-  @JsonInclude(Include.NON_NULL)
-  private String textStr = null;
+    @JsonProperty("text_str")
+    @JsonInclude(Include.NON_NULL)
+    private String textStr = null;
 
 
 
@@ -34,6 +34,7 @@ public class DnsTxtRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Text data associated with the fqdn.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return textStr
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class DnsTxtRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Text data associated with the fqdn.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param textStr set the textStr.
    */
   @VsoMethod

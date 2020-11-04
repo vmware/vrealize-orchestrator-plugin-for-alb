@@ -25,23 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSiteCfgSyncInfo extends AviRestResource {
-  @JsonProperty("errored_objects")
-  @JsonInclude(Include.NON_NULL)
-  private List<VersionInfo> erroredObjects = null;
+    @JsonProperty("errored_objects")
+    @JsonInclude(Include.NON_NULL)
+    private List<VersionInfo> erroredObjects = null;
 
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("sync_state")
-  @JsonInclude(Include.NON_NULL)
-  private String syncState = null;
+    @JsonProperty("sync_state")
+    @JsonInclude(Include.NON_NULL)
+    private String syncState = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Objects that could not be synced to the site .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return erroredObjects
    */
   @VsoMethod
@@ -52,6 +53,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the erroredObjects
    * Objects that could not be synced to the site .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return erroredObjects
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
   /**
    * This is the setter method this will set the erroredObjects
    * Objects that could not be synced to the site .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return erroredObjects
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_changed_time of obj type gslbsitecfgsyncinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_changed_time of obj type gslbsitecfgsyncinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * Configuration sync-state of the site.
    * Enum options - GSLB_SITE_CFG_IN_SYNC, GSLB_SITE_CFG_OUT_OF_SYNC, GSLB_SITE_CFG_SYNC_DISABLED, GSLB_SITE_CFG_SYNC_IN_PROGRESS,
    * GSLB_SITE_CFG_SYNC_NOT_APPLICABLE, GSLB_SITE_CFG_SYNCED_TILL_CHECKPOINT, GSLB_SITE_CFG_SYNC_SUSPENDED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syncState
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class GslbSiteCfgSyncInfo extends AviRestResource {
    * Configuration sync-state of the site.
    * Enum options - GSLB_SITE_CFG_IN_SYNC, GSLB_SITE_CFG_OUT_OF_SYNC, GSLB_SITE_CFG_SYNC_DISABLED, GSLB_SITE_CFG_SYNC_IN_PROGRESS,
    * GSLB_SITE_CFG_SYNC_NOT_APPLICABLE, GSLB_SITE_CFG_SYNCED_TILL_CHECKPOINT, GSLB_SITE_CFG_SYNC_SUSPENDED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syncState set the syncState.
    */
   @VsoMethod

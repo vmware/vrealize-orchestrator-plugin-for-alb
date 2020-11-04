@@ -31,149 +31,149 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MesosConfiguration extends AviRestResource {
-  @JsonProperty("all_vses_are_feproxy")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allVsesAreFeproxy = false;
+    @JsonProperty("all_vses_are_feproxy")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allVsesAreFeproxy = false;
 
-  @JsonProperty("app_sync_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer appSyncFrequency = 60;
+    @JsonProperty("app_sync_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer appSyncFrequency = 60;
 
-  @JsonProperty("container_port_match_http_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean containerPortMatchHttpService = true;
+    @JsonProperty("container_port_match_http_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean containerPortMatchHttpService = true;
 
-  @JsonProperty("coredump_directory")
-  @JsonInclude(Include.NON_NULL)
-  private String coredumpDirectory = "/var/lib/systemd/coredump";
+    @JsonProperty("coredump_directory")
+    @JsonInclude(Include.NON_NULL)
+    private String coredumpDirectory = "/var/lib/systemd/coredump";
 
-  @JsonProperty("disable_auto_backend_service_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoBackendServiceSync = false;
+    @JsonProperty("disable_auto_backend_service_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoBackendServiceSync = false;
 
-  @JsonProperty("disable_auto_frontend_service_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoFrontendServiceSync = false;
+    @JsonProperty("disable_auto_frontend_service_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoFrontendServiceSync = false;
 
-  @JsonProperty("disable_auto_gs_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoGsSync = false;
+    @JsonProperty("disable_auto_gs_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoGsSync = false;
 
-  @JsonProperty("disable_auto_se_creation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoSeCreation = false;
+    @JsonProperty("disable_auto_se_creation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoSeCreation = false;
 
-  @JsonProperty("docker_registry_se")
-  @JsonInclude(Include.NON_NULL)
-  private DockerRegistry dockerRegistrySe = null;
+    @JsonProperty("docker_registry_se")
+    @JsonInclude(Include.NON_NULL)
+    private DockerRegistry dockerRegistrySe = null;
 
-  @JsonProperty("east_west_placement_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix eastWestPlacementSubnet = null;
+    @JsonProperty("east_west_placement_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix eastWestPlacementSubnet = null;
 
-  @JsonProperty("enable_event_subscription")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableEventSubscription = true;
+    @JsonProperty("enable_event_subscription")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableEventSubscription = true;
 
-  @JsonProperty("feproxy_bridge_name")
-  @JsonInclude(Include.NON_NULL)
-  private String feproxyBridgeName = "cbr1";
+    @JsonProperty("feproxy_bridge_name")
+    @JsonInclude(Include.NON_NULL)
+    private String feproxyBridgeName = "cbr1";
 
-  @JsonProperty("feproxy_container_port_as_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean feproxyContainerPortAsService = true;
+    @JsonProperty("feproxy_container_port_as_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean feproxyContainerPortAsService = true;
 
-  @JsonProperty("feproxy_route_publish")
-  @JsonInclude(Include.NON_NULL)
-  private FeProxyRoutePublishConfig feproxyRoutePublish = null;
+    @JsonProperty("feproxy_route_publish")
+    @JsonInclude(Include.NON_NULL)
+    private FeProxyRoutePublishConfig feproxyRoutePublish = null;
 
-  @JsonProperty("feproxy_vips_enable_proxy_arp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean feproxyVipsEnableProxyArp = true;
+    @JsonProperty("feproxy_vips_enable_proxy_arp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean feproxyVipsEnableProxyArp = true;
 
-  @JsonProperty("fleet_endpoint")
-  @JsonInclude(Include.NON_NULL)
-  private String fleetEndpoint = null;
+    @JsonProperty("fleet_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String fleetEndpoint = null;
 
-  @JsonProperty("http_container_ports")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> httpContainerPorts = null;
+    @JsonProperty("http_container_ports")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> httpContainerPorts = null;
 
-  @JsonProperty("marathon_configurations")
-  @JsonInclude(Include.NON_NULL)
-  private List<MarathonConfiguration> marathonConfigurations = null;
+    @JsonProperty("marathon_configurations")
+    @JsonInclude(Include.NON_NULL)
+    private List<MarathonConfiguration> marathonConfigurations = null;
 
-  @JsonProperty("marathon_se_deployment")
-  @JsonInclude(Include.NON_NULL)
-  private MarathonSeDeployment marathonSeDeployment = null;
+    @JsonProperty("marathon_se_deployment")
+    @JsonInclude(Include.NON_NULL)
+    private MarathonSeDeployment marathonSeDeployment = null;
 
-  @JsonProperty("mesos_url")
-  @JsonInclude(Include.NON_NULL)
-  private String mesosUrl = "http://leader.mesos:5050";
+    @JsonProperty("mesos_url")
+    @JsonInclude(Include.NON_NULL)
+    private String mesosUrl = "http://leader.mesos:5050";
 
-  @JsonProperty("node_availability_zone_label")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeAvailabilityZoneLabel = null;
+    @JsonProperty("node_availability_zone_label")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeAvailabilityZoneLabel = null;
 
-  @JsonProperty("nuage_controller")
-  @JsonInclude(Include.NON_NULL)
-  private NuageSDNController nuageController = null;
+    @JsonProperty("nuage_controller")
+    @JsonInclude(Include.NON_NULL)
+    private NuageSDNController nuageController = null;
 
-  @JsonProperty("se_deployment_method")
-  @JsonInclude(Include.NON_NULL)
-  private String seDeploymentMethod = "MESOS_SE_CREATE_FLEET";
+    @JsonProperty("se_deployment_method")
+    @JsonInclude(Include.NON_NULL)
+    private String seDeploymentMethod = "MESOS_SE_CREATE_FLEET";
 
-  @JsonProperty("se_exclude_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> seExcludeAttributes = null;
+    @JsonProperty("se_exclude_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> seExcludeAttributes = null;
 
-  @JsonProperty("se_include_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> seIncludeAttributes = null;
+    @JsonProperty("se_include_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> seIncludeAttributes = null;
 
-  @JsonProperty("se_resources")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosSeResources> seResources = null;
+    @JsonProperty("se_resources")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosSeResources> seResources = null;
 
-  @JsonProperty("se_spawn_rate")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seSpawnRate = 25;
+    @JsonProperty("se_spawn_rate")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seSpawnRate = 25;
 
-  @JsonProperty("se_volume")
-  @JsonInclude(Include.NON_NULL)
-  private String seVolume = "/opt/avi/se";
+    @JsonProperty("se_volume")
+    @JsonInclude(Include.NON_NULL)
+    private String seVolume = "/opt/avi/se";
 
-  @JsonProperty("services_accessible_all_interfaces")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean servicesAccessibleAllInterfaces = false;
+    @JsonProperty("services_accessible_all_interfaces")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean servicesAccessibleAllInterfaces = false;
 
-  @JsonProperty("ssh_se_deployment")
-  @JsonInclude(Include.NON_NULL)
-  private SSHSeDeployment sshSeDeployment = null;
+    @JsonProperty("ssh_se_deployment")
+    @JsonInclude(Include.NON_NULL)
+    private SSHSeDeployment sshSeDeployment;
 
-  @JsonProperty("ssh_user_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sshUserRef = null;
+    @JsonProperty("ssh_user_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sshUserRef = null;
 
-  @JsonProperty("use_bridge_ip_as_vip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useBridgeIpAsVip = false;
+    @JsonProperty("use_bridge_ip_as_vip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useBridgeIpAsVip = false;
 
-  @JsonProperty("use_container_ip_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useContainerIpPort = false;
+    @JsonProperty("use_container_ip_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useContainerIpPort = false;
 
-  @JsonProperty("use_controller_image")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useControllerImage = false;
+    @JsonProperty("use_controller_image")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useControllerImage = false;
 
-  @JsonProperty("use_vips_for_east_west_services")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useVipsForEastWestServices = true;
+    @JsonProperty("use_vips_for_east_west_services")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useVipsForEastWestServices = true;
 
-  @JsonProperty("vip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vip = null;
+    @JsonProperty("vip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vip = null;
 
 
 
@@ -252,7 +252,7 @@ public class MesosConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @return coredumpDirectory
    */
   @VsoMethod
@@ -265,7 +265,7 @@ public class MesosConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @param coredumpDirectory set the coredumpDirectory.
    */
   @VsoMethod
@@ -366,6 +366,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Docker registry for serviceengine image.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerRegistrySe
    */
   @VsoMethod
@@ -376,6 +377,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Docker registry for serviceengine image.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerRegistrySe set the dockerRegistrySe.
    */
   @VsoMethod
@@ -386,6 +388,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match against this prefix when placing east-west vss on ses (mesos mode only).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWestPlacementSubnet
    */
   @VsoMethod
@@ -396,6 +399,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match against this prefix when placing east-west vss on ses (mesos mode only).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
    */
   @VsoMethod
@@ -429,7 +433,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of second linux bridge on host providing connectivity for front end proxies.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as cbr1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "cbr1".
    * @return feproxyBridgeName
    */
   @VsoMethod
@@ -441,7 +445,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of second linux bridge on host providing connectivity for front end proxies.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as cbr1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "cbr1".
    * @param feproxyBridgeName set the feproxyBridgeName.
    */
   @VsoMethod
@@ -474,6 +478,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Publish ecmp route to upstream router for vip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return feproxyRoutePublish
    */
   @VsoMethod
@@ -484,6 +489,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Publish ecmp route to upstream router for vip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param feproxyRoutePublish set the feproxyRoutePublish.
    */
   @VsoMethod
@@ -516,6 +522,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Optional fleet remote endpoint if fleet is used for se deployment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fleetEndpoint
    */
   @VsoMethod
@@ -526,6 +533,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Optional fleet remote endpoint if fleet is used for se deployment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fleetEndpoint set the fleetEndpoint.
    */
   @VsoMethod
@@ -537,6 +545,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -548,6 +557,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method. this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -559,6 +569,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -574,6 +585,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of marathon frameworks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonConfigurations
    */
   @VsoMethod
@@ -584,6 +596,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the marathonConfigurations
    * List of marathon frameworks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonConfigurations
    */
   @VsoMethod
@@ -594,6 +607,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the marathonConfigurations
    * List of marathon frameworks.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonConfigurations
    */
   @VsoMethod
@@ -609,6 +623,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Options for marathon se deployment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonSeDeployment
    */
   @VsoMethod
@@ -619,6 +634,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Options for marathon se deployment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonSeDeployment set the marathonSeDeployment.
    */
   @VsoMethod
@@ -629,7 +645,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mesos url of the form http //host port.
-   * Default value when not specified in API or module is interpreted by Avi Controller as http://leader.mesos:5050.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:5050".
    * @return mesosUrl
    */
   @VsoMethod
@@ -640,7 +656,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mesos url of the form http //host port.
-   * Default value when not specified in API or module is interpreted by Avi Controller as http://leader.mesos:5050.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:5050".
    * @param mesosUrl set the mesosUrl.
    */
   @VsoMethod
@@ -652,6 +668,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mesos node label to be used as mesos node's availability zone in a dual availability zone deployment.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeAvailabilityZoneLabel
    */
   @VsoMethod
@@ -663,6 +680,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Mesos node label to be used as mesos node's availability zone in a dual availability zone deployment.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeAvailabilityZoneLabel set the nodeAvailabilityZoneLabel.
    */
   @VsoMethod
@@ -673,6 +691,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nuage overlay sdn controller information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuageController
    */
   @VsoMethod
@@ -683,6 +702,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Nuage overlay sdn controller information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuageController set the nuageController.
    */
   @VsoMethod
@@ -694,7 +714,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use fleet/ssh for deploying service engines.
    * Enum options - MESOS_SE_CREATE_FLEET, MESOS_SE_CREATE_SSH, MESOS_SE_CREATE_MARATHON.
-   * Default value when not specified in API or module is interpreted by Avi Controller as MESOS_SE_CREATE_FLEET.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "MESOS_SE_CREATE_FLEET".
    * @return seDeploymentMethod
    */
   @VsoMethod
@@ -706,7 +726,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Use fleet/ssh for deploying service engines.
    * Enum options - MESOS_SE_CREATE_FLEET, MESOS_SE_CREATE_SSH, MESOS_SE_CREATE_MARATHON.
-   * Default value when not specified in API or module is interpreted by Avi Controller as MESOS_SE_CREATE_FLEET.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "MESOS_SE_CREATE_FLEET".
    * @param seDeploymentMethod set the seDeploymentMethod.
    */
   @VsoMethod
@@ -717,6 +737,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -727,6 +748,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -737,6 +759,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -752,6 +775,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -762,6 +786,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -772,6 +797,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -787,6 +813,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Obsolete - ignored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seResources
    */
   @VsoMethod
@@ -797,6 +824,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seResources
    * Obsolete - ignored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seResources
    */
   @VsoMethod
@@ -807,6 +835,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seResources
    * Obsolete - ignored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seResources
    */
   @VsoMethod
@@ -844,7 +873,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /opt/avi/se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi/se".
    * @return seVolume
    */
   @VsoMethod
@@ -855,7 +884,7 @@ public class MesosConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /opt/avi/se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi/se".
    * @param seVolume set the seVolume.
    */
   @VsoMethod
@@ -914,6 +943,7 @@ public class MesosConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
   @VsoMethod
@@ -926,6 +956,7 @@ public class MesosConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */
   @VsoMethod
@@ -1029,6 +1060,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip to be used by all east-west apps on all hosts.
    * Preferrably use an address from outside the subnet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -1040,6 +1072,7 @@ public class MesosConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip to be used by all east-west apps on all hosts.
    * Preferrably use an address from outside the subnet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip set the vip.
    */
   @VsoMethod

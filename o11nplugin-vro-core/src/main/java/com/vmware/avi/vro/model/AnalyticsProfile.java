@@ -27,341 +27,361 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AnalyticsProfile extends AviRestResource {
-  @JsonProperty("apdex_response_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apdexResponseThreshold = 500;
-
-  @JsonProperty("apdex_response_tolerated_factor")
-  @JsonInclude(Include.NON_NULL)
-  private float apdexResponseToleratedFactor = 4.0f;
-
-  @JsonProperty("apdex_rtt_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apdexRttThreshold = 250;
-
-  @JsonProperty("apdex_rtt_tolerated_factor")
-  @JsonInclude(Include.NON_NULL)
-  private float apdexRttToleratedFactor = 4.0f;
-
-  @JsonProperty("apdex_rum_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apdexRumThreshold = 5000;
-
-  @JsonProperty("apdex_rum_tolerated_factor")
-  @JsonInclude(Include.NON_NULL)
-  private float apdexRumToleratedFactor = 4.0f;
-
-  @JsonProperty("apdex_server_response_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apdexServerResponseThreshold = 400;
-
-  @JsonProperty("apdex_server_response_tolerated_factor")
-  @JsonInclude(Include.NON_NULL)
-  private float apdexServerResponseToleratedFactor = 4.0f;
-
-  @JsonProperty("apdex_server_rtt_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apdexServerRttThreshold = 125;
-
-  @JsonProperty("apdex_server_rtt_tolerated_factor")
-  @JsonInclude(Include.NON_NULL)
-  private float apdexServerRttToleratedFactor = 4.0f;
-
-  @JsonProperty("client_log_config")
-  @JsonInclude(Include.NON_NULL)
-  private ClientLogConfiguration clientLogConfig = null;
-
-  @JsonProperty("client_log_streaming_config")
-  @JsonInclude(Include.NON_NULL)
-  private ClientLogStreamingConfig clientLogStreamingConfig = null;
-
-  @JsonProperty("conn_lossy_ooo_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connLossyOooThreshold = 50;
-
-  @JsonProperty("conn_lossy_timeo_rexmt_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connLossyTimeoRexmtThreshold = 20;
-
-  @JsonProperty("conn_lossy_total_rexmt_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connLossyTotalRexmtThreshold = 50;
-
-  @JsonProperty("conn_lossy_zero_win_size_event_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connLossyZeroWinSizeEventThreshold = 2;
-
-  @JsonProperty("conn_server_lossy_ooo_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connServerLossyOooThreshold = 50;
-
-  @JsonProperty("conn_server_lossy_timeo_rexmt_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connServerLossyTimeoRexmtThreshold = 20;
-
-  @JsonProperty("conn_server_lossy_total_rexmt_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connServerLossyTotalRexmtThreshold = 50;
-
-  @JsonProperty("conn_server_lossy_zero_win_size_event_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connServerLossyZeroWinSizeEventThreshold = 2;
-
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
-
-  @JsonProperty("disable_ondemand_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableOndemandMetrics = false;
-
-  @JsonProperty("disable_se_analytics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableSeAnalytics = false;
-
-  @JsonProperty("disable_server_analytics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableServerAnalytics = false;
-
-  @JsonProperty("disable_vs_analytics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableVsAnalytics = false;
-
-  @JsonProperty("enable_adaptive_config")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAdaptiveConfig = true;
-
-  @JsonProperty("enable_advanced_analytics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAdvancedAnalytics = true;
-
-  @JsonProperty("exclude_client_close_before_request_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeClientCloseBeforeRequestAsError = false;
-
-  @JsonProperty("exclude_dns_policy_drop_as_significant")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeDnsPolicyDropAsSignificant = false;
-
-  @JsonProperty("exclude_gs_down_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeGsDownAsError = false;
-
-  @JsonProperty("exclude_http_error_codes")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> excludeHttpErrorCodes = null;
-
-  @JsonProperty("exclude_invalid_dns_domain_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeInvalidDnsDomainAsError = false;
-
-  @JsonProperty("exclude_invalid_dns_query_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeInvalidDnsQueryAsError = false;
-
-  @JsonProperty("exclude_issuer_revoked_ocsp_responses_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeIssuerRevokedOcspResponsesAsError = true;
-
-  @JsonProperty("exclude_no_dns_record_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeNoDnsRecordAsError = false;
-
-  @JsonProperty("exclude_no_valid_gs_member_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeNoValidGsMemberAsError = false;
-
-  @JsonProperty("exclude_persistence_change_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludePersistenceChangeAsError = false;
-
-  @JsonProperty("exclude_revoked_ocsp_responses_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeRevokedOcspResponsesAsError = true;
-
-  @JsonProperty("exclude_server_dns_error_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeServerDnsErrorAsError = false;
-
-  @JsonProperty("exclude_server_tcp_reset_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeServerTcpResetAsError = false;
-
-  @JsonProperty("exclude_sip_error_codes")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> excludeSipErrorCodes = null;
-
-  @JsonProperty("exclude_stale_ocsp_responses_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeStaleOcspResponsesAsError = true;
-
-  @JsonProperty("exclude_syn_retransmit_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeSynRetransmitAsError = false;
-
-  @JsonProperty("exclude_tcp_reset_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeTcpResetAsError = false;
-
-  @JsonProperty("exclude_unavailable_ocsp_responses_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeUnavailableOcspResponsesAsError = true;
-
-  @JsonProperty("exclude_unsupported_dns_query_as_error")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeUnsupportedDnsQueryAsError = false;
-
-  @JsonProperty("healthscore_max_server_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer healthscoreMaxServerLimit = 20;
-
-  @JsonProperty("hs_event_throttle_window")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hsEventThrottleWindow = 1209600;
-
-  @JsonProperty("hs_max_anomaly_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hsMaxAnomalyPenalty = 10;
-
-  @JsonProperty("hs_max_resources_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hsMaxResourcesPenalty = 25;
-
-  @JsonProperty("hs_max_security_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hsMaxSecurityPenalty = 100;
-
-  @JsonProperty("hs_min_dos_rate")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hsMinDosRate = 1000;
-
-  @JsonProperty("hs_performance_boost")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hsPerformanceBoost = 0;
-
-  @JsonProperty("hs_pscore_traffic_threshold_l4_client")
-  @JsonInclude(Include.NON_NULL)
-  private float hsPscoreTrafficThresholdL4Client = 10.0f;
-
-  @JsonProperty("hs_pscore_traffic_threshold_l4_server")
-  @JsonInclude(Include.NON_NULL)
-  private float hsPscoreTrafficThresholdL4Server = 10.0f;
-
-  @JsonProperty("hs_security_certscore_expired")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCertscoreExpired = 0.0f;
-
-  @JsonProperty("hs_security_certscore_gt30d")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCertscoreGt30D = 5.0f;
-
-  @JsonProperty("hs_security_certscore_le07d")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCertscoreLe07D = 2.0f;
-
-  @JsonProperty("hs_security_certscore_le30d")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCertscoreLe30D = 4.0f;
-
-  @JsonProperty("hs_security_chain_invalidity_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityChainInvalidityPenalty = 1.0f;
-
-  @JsonProperty("hs_security_cipherscore_eq000b")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCipherscoreEq000B = 0.0f;
-
-  @JsonProperty("hs_security_cipherscore_ge128b")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCipherscoreGe128B = 5.0f;
-
-  @JsonProperty("hs_security_cipherscore_lt128b")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityCipherscoreLt128B = 3.5f;
-
-  @JsonProperty("hs_security_encalgo_score_none")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityEncalgoScoreNone = 0.0f;
-
-  @JsonProperty("hs_security_encalgo_score_rc4")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityEncalgoScoreRc4 = 2.5f;
-
-  @JsonProperty("hs_security_hsts_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityHstsPenalty = 1.0f;
-
-  @JsonProperty("hs_security_nonpfs_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityNonpfsPenalty = 1.0f;
-
-  @JsonProperty("hs_security_ocsp_revoked_score")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityOcspRevokedScore = 0.0f;
-
-  @JsonProperty("hs_security_selfsignedcert_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecuritySelfsignedcertPenalty = 1.0f;
-
-  @JsonProperty("hs_security_ssl30_score")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecuritySsl30Score = 3.5f;
-
-  @JsonProperty("hs_security_tls10_score")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityTls10Score = 5.0f;
-
-  @JsonProperty("hs_security_tls11_score")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityTls11Score = 5.0f;
-
-  @JsonProperty("hs_security_tls12_score")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityTls12Score = 5.0f;
-
-  @JsonProperty("hs_security_tls13_score")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityTls13Score = 5.0f;
-
-  @JsonProperty("hs_security_weak_signature_algo_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private float hsSecurityWeakSignatureAlgoPenalty = 1.0f;
-
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
-
-  @JsonProperty("ondemand_metrics_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ondemandMetricsIdleTimeout = 1800;
-
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<HTTPStatusRange> ranges = null;
-
-  @JsonProperty("resp_code_block")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> respCodeBlock = null;
-
-  @JsonProperty("sensitive_log_profile")
-  @JsonInclude(Include.NON_NULL)
-  private SensitiveLogProfile sensitiveLogProfile = null;
-
-  @JsonProperty("sip_log_depth")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sipLogDepth = 20;
-
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
-
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("apdex_response_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apdexResponseThreshold = 500;
+
+    @JsonProperty("apdex_response_tolerated_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexResponseToleratedFactor = 4.0f;
+
+    @JsonProperty("apdex_rtt_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apdexRttThreshold = 250;
+
+    @JsonProperty("apdex_rtt_tolerated_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexRttToleratedFactor = 4.0f;
+
+    @JsonProperty("apdex_rum_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apdexRumThreshold = 5000;
+
+    @JsonProperty("apdex_rum_tolerated_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexRumToleratedFactor = 4.0f;
+
+    @JsonProperty("apdex_server_response_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apdexServerResponseThreshold = 400;
+
+    @JsonProperty("apdex_server_response_tolerated_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexServerResponseToleratedFactor = 4.0f;
+
+    @JsonProperty("apdex_server_rtt_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apdexServerRttThreshold = 125;
+
+    @JsonProperty("apdex_server_rtt_tolerated_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexServerRttToleratedFactor = 4.0f;
+
+    @JsonProperty("client_log_config")
+    @JsonInclude(Include.NON_NULL)
+    private ClientLogConfiguration clientLogConfig = null;
+
+    @JsonProperty("client_log_streaming_config")
+    @JsonInclude(Include.NON_NULL)
+    private ClientLogStreamingConfig clientLogStreamingConfig = null;
+
+    @JsonProperty("conn_lossy_ooo_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connLossyOooThreshold = 50;
+
+    @JsonProperty("conn_lossy_timeo_rexmt_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connLossyTimeoRexmtThreshold = 20;
+
+    @JsonProperty("conn_lossy_total_rexmt_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connLossyTotalRexmtThreshold = 50;
+
+    @JsonProperty("conn_lossy_zero_win_size_event_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connLossyZeroWinSizeEventThreshold = 2;
+
+    @JsonProperty("conn_server_lossy_ooo_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connServerLossyOooThreshold = 50;
+
+    @JsonProperty("conn_server_lossy_timeo_rexmt_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connServerLossyTimeoRexmtThreshold = 20;
+
+    @JsonProperty("conn_server_lossy_total_rexmt_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connServerLossyTotalRexmtThreshold = 50;
+
+    @JsonProperty("conn_server_lossy_zero_win_size_event_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connServerLossyZeroWinSizeEventThreshold = 2;
+
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
+
+    @JsonProperty("disable_ondemand_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableOndemandMetrics;
+
+    @JsonProperty("disable_se_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableSeAnalytics;
+
+    @JsonProperty("disable_server_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableServerAnalytics;
+
+    @JsonProperty("disable_vs_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableVsAnalytics;
+
+    @JsonProperty("enable_adaptive_config")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAdaptiveConfig = true;
+
+    @JsonProperty("enable_advanced_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAdvancedAnalytics = true;
+
+    @JsonProperty("enable_ondemand_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableOndemandMetrics = true;
+
+    @JsonProperty("enable_se_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSeAnalytics = true;
+
+    @JsonProperty("enable_server_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableServerAnalytics = true;
+
+    @JsonProperty("enable_vs_analytics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableVsAnalytics = true;
+
+    @JsonProperty("exclude_client_close_before_request_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeClientCloseBeforeRequestAsError = false;
+
+    @JsonProperty("exclude_dns_policy_drop_as_significant")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeDnsPolicyDropAsSignificant = false;
+
+    @JsonProperty("exclude_gs_down_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeGsDownAsError = false;
+
+    @JsonProperty("exclude_http_error_codes")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> excludeHttpErrorCodes = null;
+
+    @JsonProperty("exclude_invalid_dns_domain_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeInvalidDnsDomainAsError = false;
+
+    @JsonProperty("exclude_invalid_dns_query_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeInvalidDnsQueryAsError = false;
+
+    @JsonProperty("exclude_issuer_revoked_ocsp_responses_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeIssuerRevokedOcspResponsesAsError = true;
+
+    @JsonProperty("exclude_no_dns_record_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeNoDnsRecordAsError = false;
+
+    @JsonProperty("exclude_no_valid_gs_member_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeNoValidGsMemberAsError = false;
+
+    @JsonProperty("exclude_persistence_change_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludePersistenceChangeAsError = false;
+
+    @JsonProperty("exclude_revoked_ocsp_responses_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeRevokedOcspResponsesAsError = true;
+
+    @JsonProperty("exclude_server_dns_error_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeServerDnsErrorAsError = false;
+
+    @JsonProperty("exclude_server_tcp_reset_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeServerTcpResetAsError = false;
+
+    @JsonProperty("exclude_sip_error_codes")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> excludeSipErrorCodes = null;
+
+    @JsonProperty("exclude_stale_ocsp_responses_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeStaleOcspResponsesAsError = true;
+
+    @JsonProperty("exclude_syn_retransmit_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeSynRetransmitAsError = false;
+
+    @JsonProperty("exclude_tcp_reset_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeTcpResetAsError = false;
+
+    @JsonProperty("exclude_unavailable_ocsp_responses_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeUnavailableOcspResponsesAsError = true;
+
+    @JsonProperty("exclude_unsupported_dns_query_as_error")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeUnsupportedDnsQueryAsError = false;
+
+    @JsonProperty("healthscore_max_server_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer healthscoreMaxServerLimit = 20;
+
+    @JsonProperty("hs_event_throttle_window")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hsEventThrottleWindow = 1209600;
+
+    @JsonProperty("hs_max_anomaly_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hsMaxAnomalyPenalty = 10;
+
+    @JsonProperty("hs_max_resources_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hsMaxResourcesPenalty = 25;
+
+    @JsonProperty("hs_max_security_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hsMaxSecurityPenalty = 100;
+
+    @JsonProperty("hs_min_dos_rate")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hsMinDosRate = 1000;
+
+    @JsonProperty("hs_performance_boost")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hsPerformanceBoost = 0;
+
+    @JsonProperty("hs_pscore_traffic_threshold_l4_client")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsPscoreTrafficThresholdL4Client = 10.0f;
+
+    @JsonProperty("hs_pscore_traffic_threshold_l4_server")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsPscoreTrafficThresholdL4Server = 10.0f;
+
+    @JsonProperty("hs_security_certscore_expired")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCertscoreExpired = 0.0f;
+
+    @JsonProperty("hs_security_certscore_gt30d")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCertscoreGt30D = 5.0f;
+
+    @JsonProperty("hs_security_certscore_le07d")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCertscoreLe07D = 2.0f;
+
+    @JsonProperty("hs_security_certscore_le30d")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCertscoreLe30D = 4.0f;
+
+    @JsonProperty("hs_security_chain_invalidity_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityChainInvalidityPenalty = 1.0f;
+
+    @JsonProperty("hs_security_cipherscore_eq000b")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCipherscoreEq000B = 0.0f;
+
+    @JsonProperty("hs_security_cipherscore_ge128b")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCipherscoreGe128B = 5.0f;
+
+    @JsonProperty("hs_security_cipherscore_lt128b")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityCipherscoreLt128B = 3.5f;
+
+    @JsonProperty("hs_security_encalgo_score_none")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityEncalgoScoreNone = 0.0f;
+
+    @JsonProperty("hs_security_encalgo_score_rc4")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityEncalgoScoreRc4 = 2.5f;
+
+    @JsonProperty("hs_security_hsts_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityHstsPenalty = 1.0f;
+
+    @JsonProperty("hs_security_nonpfs_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityNonpfsPenalty = 1.0f;
+
+    @JsonProperty("hs_security_ocsp_revoked_score")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityOcspRevokedScore = 0.0f;
+
+    @JsonProperty("hs_security_selfsignedcert_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecuritySelfsignedcertPenalty = 1.0f;
+
+    @JsonProperty("hs_security_ssl30_score")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecuritySsl30Score = 3.5f;
+
+    @JsonProperty("hs_security_tls10_score")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityTls10Score = 5.0f;
+
+    @JsonProperty("hs_security_tls11_score")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityTls11Score = 5.0f;
+
+    @JsonProperty("hs_security_tls12_score")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityTls12Score = 5.0f;
+
+    @JsonProperty("hs_security_tls13_score")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityTls13Score;
+
+    @JsonProperty("hs_security_weak_signature_algo_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Float hsSecurityWeakSignatureAlgoPenalty = 1.0f;
+
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
+
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
+
+    @JsonProperty("ondemand_metrics_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ondemandMetricsIdleTimeout = 1800;
+
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<HTTPStatusRange> ranges = null;
+
+    @JsonProperty("resp_code_block")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> respCodeBlock = null;
+
+    @JsonProperty("sensitive_log_profile")
+    @JsonInclude(Include.NON_NULL)
+    private SensitiveLogProfile sensitiveLogProfile = null;
+
+    @JsonProperty("sip_log_depth")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sipLogDepth = 20;
+
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -371,6 +391,7 @@ public class AnalyticsProfile extends AviRestResource {
    * It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold.
    * Greater than this number and the client's request is considered frustrated.
    * Allowed values are 1-30000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return apdexResponseThreshold
    */
@@ -385,6 +406,7 @@ public class AnalyticsProfile extends AviRestResource {
    * It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold.
    * Greater than this number and the client's request is considered frustrated.
    * Allowed values are 1-30000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @param apdexResponseThreshold set the apdexResponseThreshold.
    */
@@ -398,7 +420,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Client tolerated response latency factor.
    * Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexResponseToleratedFactor
    */
   @VsoMethod
@@ -411,7 +433,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Client tolerated response latency factor.
    * Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexResponseToleratedFactor set the apdexResponseToleratedFactor.
    */
   @VsoMethod
@@ -423,6 +445,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 250.
    * @return apdexRttThreshold
    */
@@ -435,6 +458,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 250.
    * @param apdexRttThreshold set the apdexRttThreshold.
    */
@@ -448,7 +472,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexRttToleratedFactor
    */
   @VsoMethod
@@ -461,7 +485,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexRttToleratedFactor set the apdexRttToleratedFactor.
    */
   @VsoMethod
@@ -476,6 +500,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Greater than this number and the client's request is considered frustrated.
    * A pageload includes the time for dns lookup, download of all http objects, and page render time.
    * Allowed values are 1-30000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return apdexRumThreshold
    */
@@ -491,6 +516,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Greater than this number and the client's request is considered frustrated.
    * A pageload includes the time for dns lookup, download of all http objects, and page render time.
    * Allowed values are 1-30000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param apdexRumThreshold set the apdexRumThreshold.
    */
@@ -503,7 +529,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexRumToleratedFactor
    */
   @VsoMethod
@@ -515,7 +541,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexRumToleratedFactor set the apdexRumToleratedFactor.
    */
   @VsoMethod
@@ -529,6 +555,7 @@ public class AnalyticsProfile extends AviRestResource {
    * The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency.
    * Greater than this number and the server response is considered frustrated.
    * Allowed values are 1-30000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 400.
    * @return apdexServerResponseThreshold
    */
@@ -543,6 +570,7 @@ public class AnalyticsProfile extends AviRestResource {
    * The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency.
    * Greater than this number and the server response is considered frustrated.
    * Allowed values are 1-30000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 400.
    * @param apdexServerResponseThreshold set the apdexServerResponseThreshold.
    */
@@ -556,7 +584,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Server tolerated response latency factor.
    * Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexServerResponseToleratedFactor
    */
   @VsoMethod
@@ -569,7 +597,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Server tolerated response latency factor.
    * Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexServerResponseToleratedFactor set the apdexServerResponseToleratedFactor.
    */
   @VsoMethod
@@ -581,6 +609,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 125.
    * @return apdexServerRttThreshold
    */
@@ -593,6 +622,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Satisfactory client to avi round trip time(rtt).
    * Allowed values are 1-2000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 125.
    * @param apdexServerRttThreshold set the apdexServerRttThreshold.
    */
@@ -606,7 +636,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return apdexServerRttToleratedFactor
    */
   @VsoMethod
@@ -619,7 +649,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Tolerated client to avi round trip time(rtt) factor.
    * It is a multiple of apdex_rtt_tolerated_factor.
    * Allowed values are 1-1000.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param apdexServerRttToleratedFactor set the apdexServerRttToleratedFactor.
    */
   @VsoMethod
@@ -630,6 +660,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure which logs are sent to the avi controller from ses and how they are processed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogConfig
    */
   @VsoMethod
@@ -640,6 +671,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure which logs are sent to the avi controller from ses and how they are processed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLogConfig set the clientLogConfig.
    */
   @VsoMethod
@@ -651,6 +683,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure to stream logs to an external server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLogStreamingConfig
    */
   @VsoMethod
@@ -662,6 +695,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure to stream logs to an external server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLogStreamingConfig set the clientLogStreamingConfig.
    */
   @VsoMethod
@@ -673,6 +707,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connLossyOooThreshold
    */
@@ -685,6 +720,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connLossyOooThreshold set the connLossyOooThreshold.
    */
@@ -697,6 +733,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return connLossyTimeoRexmtThreshold
    */
@@ -709,6 +746,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param connLossyTimeoRexmtThreshold set the connLossyTimeoRexmtThreshold.
    */
@@ -721,6 +759,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connLossyTotalRexmtThreshold
    */
@@ -733,6 +772,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connLossyTotalRexmtThreshold set the connLossyTotalRexmtThreshold.
    */
@@ -745,6 +785,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return connLossyZeroWinSizeEventThreshold
    */
@@ -757,6 +798,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param connLossyZeroWinSizeEventThreshold set the connLossyZeroWinSizeEventThreshold.
    */
@@ -769,6 +811,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connServerLossyOooThreshold
    */
@@ -781,6 +824,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connServerLossyOooThreshold set the connServerLossyOooThreshold.
    */
@@ -793,6 +837,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return connServerLossyTimeoRexmtThreshold
    */
@@ -805,6 +850,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param connServerLossyTimeoRexmtThreshold set the connServerLossyTimeoRexmtThreshold.
    */
@@ -817,6 +863,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @return connServerLossyTotalRexmtThreshold
    */
@@ -829,6 +876,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
    * Allowed values are 1-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 50.
    * @param connServerLossyTotalRexmtThreshold set the connServerLossyTotalRexmtThreshold.
    */
@@ -841,6 +889,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return connServerLossyZeroWinSizeEventThreshold
    */
@@ -853,6 +902,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
    * Allowed values are 0-100.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param connServerLossyZeroWinSizeEventThreshold set the connServerLossyZeroWinSizeEventThreshold.
    */
@@ -864,6 +914,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -874,6 +925,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -885,8 +937,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
    * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableOndemandMetrics
    */
   @VsoMethod
@@ -898,8 +950,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
    * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableOndemandMetrics set the disableOndemandMetrics.
    */
   @VsoMethod
@@ -910,7 +962,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Disable node (service engine) level analytics forvs metrics.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Field deprecated in 20.1.3.
    * @return disableSeAnalytics
    */
   @VsoMethod
@@ -921,7 +973,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Disable node (service engine) level analytics forvs metrics.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Field deprecated in 20.1.3.
    * @param disableSeAnalytics set the disableSeAnalytics.
    */
   @VsoMethod
@@ -934,7 +986,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Disable analytics on backend servers.
    * This may be desired in container environment when there are large number of ephemeral servers.
    * Additionally, no healthscore of servers is computed when server analytics is disabled.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Field deprecated in 20.1.3.
    * @return disableServerAnalytics
    */
   @VsoMethod
@@ -947,7 +999,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Disable analytics on backend servers.
    * This may be desired in container environment when there are large number of ephemeral servers.
    * Additionally, no healthscore of servers is computed when server analytics is disabled.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Field deprecated in 20.1.3.
    * @param disableServerAnalytics set the disableServerAnalytics.
    */
   @VsoMethod
@@ -959,8 +1011,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disable virtualservice (frontend) analytics.
    * This flag disables metrics and healthscore for virtualservice.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return disableVsAnalytics
    */
   @VsoMethod
@@ -972,8 +1024,8 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Disable virtualservice (frontend) analytics.
    * This flag disables metrics and healthscore for virtualservice.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param disableVsAnalytics set the disableVsAnalytics.
    */
   @VsoMethod
@@ -1008,7 +1060,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables advanced analytics features like anomaly detection.
-   * If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be disabled.
+   * If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
    * However, setting it to false reduces cpu and memory requirements for analytics subsystem.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -1022,7 +1074,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables advanced analytics features like anomaly detection.
-   * If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be disabled.
+   * If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
    * However, setting it to false reduces cpu and memory requirements for analytics subsystem.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -1031,6 +1083,110 @@ public class AnalyticsProfile extends AviRestResource {
   @VsoMethod
   public void setEnableAdvancedAnalytics(Boolean  enableAdvancedAnalytics) {
     this.enableAdvancedAnalytics = enableAdvancedAnalytics;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
+   * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableOndemandMetrics
+   */
+  @VsoMethod
+  public Boolean getEnableOndemandMetrics() {
+    return enableOndemandMetrics;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
+   * In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableOndemandMetrics set the enableOndemandMetrics.
+   */
+  @VsoMethod
+  public void setEnableOndemandMetrics(Boolean  enableOndemandMetrics) {
+    this.enableOndemandMetrics = enableOndemandMetrics;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable node (service engine) level analytics forvs metrics.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableSeAnalytics
+   */
+  @VsoMethod
+  public Boolean getEnableSeAnalytics() {
+    return enableSeAnalytics;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable node (service engine) level analytics forvs metrics.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableSeAnalytics set the enableSeAnalytics.
+   */
+  @VsoMethod
+  public void setEnableSeAnalytics(Boolean  enableSeAnalytics) {
+    this.enableSeAnalytics = enableSeAnalytics;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enables analytics on backend servers.
+   * This may be desired in container environment when there are large number of ephemeral servers.
+   * Additionally, no healthscore of servers is computed when server analytics is enabled.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableServerAnalytics
+   */
+  @VsoMethod
+  public Boolean getEnableServerAnalytics() {
+    return enableServerAnalytics;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enables analytics on backend servers.
+   * This may be desired in container environment when there are large number of ephemeral servers.
+   * Additionally, no healthscore of servers is computed when server analytics is enabled.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableServerAnalytics set the enableServerAnalytics.
+   */
+  @VsoMethod
+  public void setEnableServerAnalytics(Boolean  enableServerAnalytics) {
+    this.enableServerAnalytics = enableServerAnalytics;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable virtualservice (frontend) analytics.
+   * This flag enables metrics and healthscore for virtualservice.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enableVsAnalytics
+   */
+  @VsoMethod
+  public Boolean getEnableVsAnalytics() {
+    return enableVsAnalytics;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable virtualservice (frontend) analytics.
+   * This flag enables metrics and healthscore for virtualservice.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enableVsAnalytics set the enableVsAnalytics.
+   */
+  @VsoMethod
+  public void setEnableVsAnalytics(Boolean  enableVsAnalytics) {
+    this.enableVsAnalytics = enableVsAnalytics;
   }
 
   /**
@@ -1105,6 +1261,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of http status codes to be excluded from being classified as an error.
    * Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeHttpErrorCodes
    */
   @VsoMethod
@@ -1116,6 +1273,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the excludeHttpErrorCodes
    * List of http status codes to be excluded from being classified as an error.
    * Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeHttpErrorCodes
    */
   @VsoMethod
@@ -1127,6 +1285,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the excludeHttpErrorCodes
    * List of http status codes to be excluded from being classified as an error.
    * Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeHttpErrorCodes
    */
   @VsoMethod
@@ -1347,6 +1506,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of sip status codes to be excluded from being classified as an error.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeSipErrorCodes
    */
   @VsoMethod
@@ -1358,6 +1518,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the excludeSipErrorCodes
    * List of sip status codes to be excluded from being classified as an error.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeSipErrorCodes
    */
   @VsoMethod
@@ -1369,6 +1530,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the excludeSipErrorCodes
    * List of sip status codes to be excluded from being classified as an error.
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeSipErrorCodes
    */
   @VsoMethod
@@ -1499,7 +1661,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
    * Allowed values are 0-5000.
-   * Special values are 0- 'server health score is disabled'.
+   * Special values are 0- 'server health score is deactivated'.
    * Field introduced in 17.2.13, 18.1.4.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return healthscoreMaxServerLimit
@@ -1513,7 +1675,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
    * Allowed values are 0-5000.
-   * Special values are 0- 'server health score is disabled'.
+   * Special values are 0- 'server health score is deactivated'.
    * Field introduced in 17.2.13, 18.1.4.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param healthscoreMaxServerLimit set the healthscoreMaxServerLimit.
@@ -1668,7 +1830,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @return hsPscoreTrafficThresholdL4Client
    */
   @VsoMethod
@@ -1679,7 +1841,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @param hsPscoreTrafficThresholdL4Client set the hsPscoreTrafficThresholdL4Client.
    */
   @VsoMethod
@@ -1690,7 +1852,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @return hsPscoreTrafficThresholdL4Server
    */
   @VsoMethod
@@ -1701,7 +1863,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10.0f.
    * @param hsPscoreTrafficThresholdL4Server set the hsPscoreTrafficThresholdL4Server.
    */
   @VsoMethod
@@ -1713,7 +1875,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate has expired.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityCertscoreExpired
    */
   @VsoMethod
@@ -1725,7 +1887,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate has expired.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityCertscoreExpired set the hsSecurityCertscoreExpired.
    */
   @VsoMethod
@@ -1737,7 +1899,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate expires in more than 30 days.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityCertscoreGt30D
    */
   @VsoMethod
@@ -1749,7 +1911,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate expires in more than 30 days.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityCertscoreGt30D set the hsSecurityCertscoreGt30D.
    */
   @VsoMethod
@@ -1761,7 +1923,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate expires in less than or equal to 7 days.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
    * @return hsSecurityCertscoreLe07D
    */
   @VsoMethod
@@ -1773,7 +1935,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate expires in less than or equal to 7 days.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
    * @param hsSecurityCertscoreLe07D set the hsSecurityCertscoreLe07D.
    */
   @VsoMethod
@@ -1785,7 +1947,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the certificate expires in less than or equal to 30 days.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @return hsSecurityCertscoreLe30D
    */
   @VsoMethod
@@ -1797,7 +1959,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the certificate expires in less than or equal to 30 days.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.0f.
    * @param hsSecurityCertscoreLe30D set the hsSecurityCertscoreLe30D.
    */
   @VsoMethod
@@ -1809,7 +1971,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for allowing certificates with invalid chain.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityChainInvalidityPenalty
    */
   @VsoMethod
@@ -1821,7 +1983,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for allowing certificates with invalid chain.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityChainInvalidityPenalty set the hsSecurityChainInvalidityPenalty.
    */
   @VsoMethod
@@ -1833,7 +1995,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the minimum cipher strength is 0 bits.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityCipherscoreEq000B
    */
   @VsoMethod
@@ -1845,7 +2007,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the minimum cipher strength is 0 bits.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityCipherscoreEq000B set the hsSecurityCipherscoreEq000B.
    */
   @VsoMethod
@@ -1857,7 +2019,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the minimum cipher strength is greater than equal to 128 bits.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityCipherscoreGe128B
    */
   @VsoMethod
@@ -1869,7 +2031,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the minimum cipher strength is greater than equal to 128 bits.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityCipherscoreGe128B set the hsSecurityCipherscoreGe128B.
    */
   @VsoMethod
@@ -1881,7 +2043,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when the minimum cipher strength is less than 128 bits.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @return hsSecurityCipherscoreLt128B
    */
   @VsoMethod
@@ -1893,7 +2055,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when the minimum cipher strength is less than 128 bits.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @param hsSecurityCipherscoreLt128B set the hsSecurityCipherscoreLt128B.
    */
   @VsoMethod
@@ -1905,7 +2067,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when no algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityEncalgoScoreNone
    */
   @VsoMethod
@@ -1917,7 +2079,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when no algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityEncalgoScoreNone set the hsSecurityEncalgoScoreNone.
    */
   @VsoMethod
@@ -1929,7 +2091,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when rc4 algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.5f.
    * @return hsSecurityEncalgoScoreRc4
    */
   @VsoMethod
@@ -1941,7 +2103,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when rc4 algorithm is used for encryption.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.5f.
    * @param hsSecurityEncalgoScoreRc4 set the hsSecurityEncalgoScoreRc4.
    */
   @VsoMethod
@@ -1953,7 +2115,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for not enabling hsts.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityHstsPenalty
    */
   @VsoMethod
@@ -1965,7 +2127,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for not enabling hsts.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityHstsPenalty set the hsSecurityHstsPenalty.
    */
   @VsoMethod
@@ -1977,7 +2139,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for allowing non-pfs handshakes.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityNonpfsPenalty
    */
   @VsoMethod
@@ -1989,7 +2151,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for allowing non-pfs handshakes.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityNonpfsPenalty set the hsSecurityNonpfsPenalty.
    */
   @VsoMethod
@@ -2002,7 +2164,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when ocsp certificate status is set to revoked or issuer revoked.
    * Allowed values are 0.0-5.0.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return hsSecurityOcspRevokedScore
    */
   @VsoMethod
@@ -2015,7 +2177,7 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when ocsp certificate status is set to revoked or issuer revoked.
    * Allowed values are 0.0-5.0.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param hsSecurityOcspRevokedScore set the hsSecurityOcspRevokedScore.
    */
   @VsoMethod
@@ -2027,7 +2189,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecuritySelfsignedcertPenalty
    */
   @VsoMethod
@@ -2039,7 +2201,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecuritySelfsignedcertPenalty set the hsSecuritySelfsignedcertPenalty.
    */
   @VsoMethod
@@ -2051,7 +2213,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting ssl3.0 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @return hsSecuritySsl30Score
    */
   @VsoMethod
@@ -2063,7 +2225,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting ssl3.0 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 3.5f.
    * @param hsSecuritySsl30Score set the hsSecuritySsl30Score.
    */
   @VsoMethod
@@ -2075,7 +2237,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting tls1.0 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityTls10Score
    */
   @VsoMethod
@@ -2087,7 +2249,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting tls1.0 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityTls10Score set the hsSecurityTls10Score.
    */
   @VsoMethod
@@ -2099,7 +2261,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting tls1.1 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityTls11Score
    */
   @VsoMethod
@@ -2111,7 +2273,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting tls1.1 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityTls11Score set the hsSecurityTls11Score.
    */
   @VsoMethod
@@ -2123,7 +2285,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Score assigned when supporting tls1.2 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @return hsSecurityTls12Score
    */
   @VsoMethod
@@ -2135,7 +2297,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Score assigned when supporting tls1.2 encryption protocol.
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
    * @param hsSecurityTls12Score set the hsSecurityTls12Score.
    */
   @VsoMethod
@@ -2148,7 +2310,6 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when supporting tls1.3 encryption protocol.
    * Allowed values are 0-5.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
    * @return hsSecurityTls13Score
    */
   @VsoMethod
@@ -2161,7 +2322,6 @@ public class AnalyticsProfile extends AviRestResource {
    * Score assigned when supporting tls1.3 encryption protocol.
    * Allowed values are 0-5.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
    * @param hsSecurityTls13Score set the hsSecurityTls13Score.
    */
   @VsoMethod
@@ -2173,7 +2333,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Penalty for allowing weak signature algorithm(s).
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @return hsSecurityWeakSignatureAlgoPenalty
    */
   @VsoMethod
@@ -2185,7 +2345,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Penalty for allowing weak signature algorithm(s).
    * Allowed values are 0-5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 1.0f.
    * @param hsSecurityWeakSignatureAlgoPenalty set the hsSecurityWeakSignatureAlgoPenalty.
    */
   @VsoMethod
@@ -2195,7 +2355,52 @@ public class AnalyticsProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public AnalyticsProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -2206,6 +2411,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -2216,8 +2422,9 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended.
-   * It is applicable only when disable_ondemand_metrics is set to false.
+   * It is applicable only when enable_ondemand_metrics is set to false.
    * Field introduced in 18.1.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @return ondemandMetricsIdleTimeout
    */
@@ -2229,8 +2436,9 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended.
-   * It is applicable only when disable_ondemand_metrics is set to false.
+   * It is applicable only when enable_ondemand_metrics is set to false.
    * Field introduced in 18.1.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @param ondemandMetricsIdleTimeout set the ondemandMetricsIdleTimeout.
    */
@@ -2242,6 +2450,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of http status code ranges to be excluded from being classified as an error.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -2252,6 +2461,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * List of http status code ranges to be excluded from being classified as an error.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -2262,6 +2472,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * List of http status code ranges to be excluded from being classified as an error.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -2278,6 +2489,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Block of http response codes to be excluded from being classified as an error.
    * Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
   @VsoMethod
@@ -2289,6 +2501,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method. this will set the respCodeBlock
    * Block of http response codes to be excluded from being classified as an error.
    * Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
   @VsoMethod
@@ -2300,6 +2513,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method this will set the respCodeBlock
    * Block of http response codes to be excluded from being classified as an error.
    * Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
   @VsoMethod
@@ -2316,6 +2530,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules applied to the http application log for filtering sensitive information.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sensitiveLogProfile
    */
   @VsoMethod
@@ -2327,6 +2542,7 @@ public class AnalyticsProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rules applied to the http application log for filtering sensitive information.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sensitiveLogProfile set the sensitiveLogProfile.
    */
   @VsoMethod
@@ -2365,6 +2581,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -2375,6 +2592,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -2404,6 +2622,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -2414,6 +2633,7 @@ public class AnalyticsProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -2517,7 +2737,12 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.excludeIssuerRevokedOcspResponsesAsError, objAnalyticsProfile.excludeIssuerRevokedOcspResponsesAsError)&&
   Objects.equals(this.excludeUnavailableOcspResponsesAsError, objAnalyticsProfile.excludeUnavailableOcspResponsesAsError)&&
   Objects.equals(this.hsSecurityOcspRevokedScore, objAnalyticsProfile.hsSecurityOcspRevokedScore)&&
-  Objects.equals(this.enableAdaptiveConfig, objAnalyticsProfile.enableAdaptiveConfig);
+  Objects.equals(this.enableAdaptiveConfig, objAnalyticsProfile.enableAdaptiveConfig)&&
+  Objects.equals(this.labels, objAnalyticsProfile.labels)&&
+  Objects.equals(this.enableVsAnalytics, objAnalyticsProfile.enableVsAnalytics)&&
+  Objects.equals(this.enableServerAnalytics, objAnalyticsProfile.enableServerAnalytics)&&
+  Objects.equals(this.enableSeAnalytics, objAnalyticsProfile.enableSeAnalytics)&&
+  Objects.equals(this.enableOndemandMetrics, objAnalyticsProfile.enableOndemandMetrics);
 }
 
 @Override
@@ -2551,6 +2776,10 @@ public String toString() {
         sb.append("    disableVsAnalytics: ").append(toIndentedString(disableVsAnalytics)).append("\n");
         sb.append("    enableAdaptiveConfig: ").append(toIndentedString(enableAdaptiveConfig)).append("\n");
         sb.append("    enableAdvancedAnalytics: ").append(toIndentedString(enableAdvancedAnalytics)).append("\n");
+        sb.append("    enableOndemandMetrics: ").append(toIndentedString(enableOndemandMetrics)).append("\n");
+        sb.append("    enableSeAnalytics: ").append(toIndentedString(enableSeAnalytics)).append("\n");
+        sb.append("    enableServerAnalytics: ").append(toIndentedString(enableServerAnalytics)).append("\n");
+        sb.append("    enableVsAnalytics: ").append(toIndentedString(enableVsAnalytics)).append("\n");
         sb.append("    excludeClientCloseBeforeRequestAsError: ").append(toIndentedString(excludeClientCloseBeforeRequestAsError)).append("\n");
         sb.append("    excludeDnsPolicyDropAsSignificant: ").append(toIndentedString(excludeDnsPolicyDropAsSignificant)).append("\n");
         sb.append("    excludeGsDownAsError: ").append(toIndentedString(excludeGsDownAsError)).append("\n");
@@ -2599,6 +2828,7 @@ public String toString() {
         sb.append("    hsSecurityTls12Score: ").append(toIndentedString(hsSecurityTls12Score)).append("\n");
         sb.append("    hsSecurityTls13Score: ").append(toIndentedString(hsSecurityTls13Score)).append("\n");
         sb.append("    hsSecurityWeakSignatureAlgoPenalty: ").append(toIndentedString(hsSecurityWeakSignatureAlgoPenalty)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ondemandMetricsIdleTimeout: ").append(toIndentedString(ondemandMetricsIdleTimeout)).append("\n");
         sb.append("    ranges: ").append(toIndentedString(ranges)).append("\n");

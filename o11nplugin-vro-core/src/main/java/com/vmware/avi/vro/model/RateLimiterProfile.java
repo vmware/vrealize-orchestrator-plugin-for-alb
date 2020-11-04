@@ -34,55 +34,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RateLimiterProfile extends AviRestResource {
-  @JsonProperty("client_ip_connections_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile clientIpConnectionsRateLimit = null;
+    @JsonProperty("client_ip_connections_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile clientIpConnectionsRateLimit = null;
 
-  @JsonProperty("client_ip_failed_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile clientIpFailedRequestsRateLimit = null;
+    @JsonProperty("client_ip_failed_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile clientIpFailedRequestsRateLimit = null;
 
-  @JsonProperty("client_ip_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile clientIpRequestsRateLimit = null;
+    @JsonProperty("client_ip_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile clientIpRequestsRateLimit = null;
 
-  @JsonProperty("client_ip_scanners_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile clientIpScannersRequestsRateLimit = null;
+    @JsonProperty("client_ip_scanners_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile clientIpScannersRequestsRateLimit = null;
 
-  @JsonProperty("client_ip_to_uri_failed_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile clientIpToUriFailedRequestsRateLimit = null;
+    @JsonProperty("client_ip_to_uri_failed_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile clientIpToUriFailedRequestsRateLimit = null;
 
-  @JsonProperty("client_ip_to_uri_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile clientIpToUriRequestsRateLimit = null;
+    @JsonProperty("client_ip_to_uri_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile clientIpToUriRequestsRateLimit = null;
 
-  @JsonProperty("custom_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile customRequestsRateLimit = null;
+    @JsonProperty("custom_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile customRequestsRateLimit = null;
 
-  @JsonProperty("http_header_rate_limits")
-  @JsonInclude(Include.NON_NULL)
-  private List<RateProfile> httpHeaderRateLimits = null;
+    @JsonProperty("http_header_rate_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<RateProfile> httpHeaderRateLimits = null;
 
-  @JsonProperty("uri_failed_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile uriFailedRequestsRateLimit = null;
+    @JsonProperty("uri_failed_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile uriFailedRequestsRateLimit = null;
 
-  @JsonProperty("uri_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile uriRequestsRateLimit = null;
+    @JsonProperty("uri_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile uriRequestsRateLimit = null;
 
-  @JsonProperty("uri_scanners_requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile uriScannersRequestsRateLimit = null;
+    @JsonProperty("uri_scanners_requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile uriScannersRequestsRateLimit = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all connections made from any single client ip address to the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpConnectionsRateLimit
    */
   @VsoMethod
@@ -93,6 +94,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all connections made from any single client ip address to the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpConnectionsRateLimit set the clientIpConnectionsRateLimit.
    */
   @VsoMethod
@@ -108,6 +110,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpFailedRequestsRateLimit
    */
   @VsoMethod
@@ -123,6 +126,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpFailedRequestsRateLimit set the clientIpFailedRequestsRateLimit.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from any single client ip address to all urls of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpRequestsRateLimit
    */
   @VsoMethod
@@ -143,6 +148,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all http requests from any single client ip address to all urls of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpRequestsRateLimit set the clientIpRequestsRateLimit.
    */
   @VsoMethod
@@ -161,6 +167,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown clients group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown client ips group membership changes dynamically with
    * the changes in traffic patterns through the adc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpScannersRequestsRateLimit
    */
   @VsoMethod
@@ -179,6 +186,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown clients group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown client ips group membership changes dynamically with
    * the changes in traffic patterns through the adc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpScannersRequestsRateLimit set the clientIpScannersRequestsRateLimit.
    */
   @VsoMethod
@@ -194,6 +202,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpToUriFailedRequestsRateLimit
    */
   @VsoMethod
@@ -209,6 +218,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpToUriFailedRequestsRateLimit set the clientIpToUriFailedRequestsRateLimit.
    */
   @VsoMethod
@@ -219,6 +229,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from any single client ip address to any single url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpToUriRequestsRateLimit
    */
   @VsoMethod
@@ -229,6 +240,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all http requests from any single client ip address to any single url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpToUriRequestsRateLimit set the clientIpToUriRequestsRateLimit.
    */
   @VsoMethod
@@ -240,6 +252,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests that map to any custom string.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customRequestsRateLimit
    */
   @VsoMethod
@@ -251,6 +264,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limit all http requests that map to any custom string.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customRequestsRateLimit set the customRequestsRateLimit.
    */
   @VsoMethod
@@ -262,6 +276,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from all client ip addresses that contain any single http header value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaderRateLimits
    */
   @VsoMethod
@@ -273,6 +288,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the setter method. this will set the httpHeaderRateLimits
    * Rate limit all http requests from all client ip addresses that contain any single http header value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaderRateLimits
    */
   @VsoMethod
@@ -284,6 +300,7 @@ public class RateLimiterProfile extends AviRestResource {
    * This is the setter method this will set the httpHeaderRateLimits
    * Rate limit all http requests from all client ip addresses that contain any single http header value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeaderRateLimits
    */
   @VsoMethod
@@ -303,6 +320,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriFailedRequestsRateLimit
    */
   @VsoMethod
@@ -317,6 +335,7 @@ public class RateLimiterProfile extends AviRestResource {
    * Count and time period are specified through the rateprofile.
    * Requests are deemed failed based on client or server side error status codes, consistent with how avi logs and metrics subsystems mark failed
    * requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriFailedRequestsRateLimit set the uriFailedRequestsRateLimit.
    */
   @VsoMethod
@@ -327,6 +346,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit all http requests from all client ip addresses to any single url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriRequestsRateLimit
    */
   @VsoMethod
@@ -337,6 +357,7 @@ public class RateLimiterProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit all http requests from all client ip addresses to any single url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriRequestsRateLimit set the uriRequestsRateLimit.
    */
   @VsoMethod
@@ -354,6 +375,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown uris group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown uris group membership changes dynamically with the
    * changes in traffic patterns through the adc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriScannersRequestsRateLimit
    */
   @VsoMethod
@@ -371,6 +393,7 @@ public class RateLimiterProfile extends AviRestResource {
    * unknown uris group.
    * The avi scan detection system automatically tunes itself so that the good, bad, and unknown uris group membership changes dynamically with the
    * changes in traffic patterns through the adc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriScannersRequestsRateLimit set the uriScannersRequestsRateLimit.
    */
   @VsoMethod

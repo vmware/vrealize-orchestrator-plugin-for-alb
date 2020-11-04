@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AttackMitigationAction extends AviRestResource {
-  @JsonProperty("deny")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean deny = true;
+    @JsonProperty("deny")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean deny = true;
 
 
 

@@ -25,43 +25,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class vCenterConfiguration extends AviRestResource {
-  @JsonProperty("datacenter")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenter = null;
+    @JsonProperty("datacenter")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenter = null;
 
-  @JsonProperty("management_ip_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix managementIpSubnet = null;
+    @JsonProperty("management_ip_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix managementIpSubnet = null;
 
-  @JsonProperty("management_network")
-  @JsonInclude(Include.NON_NULL)
-  private String managementNetwork = null;
+    @JsonProperty("management_network")
+    @JsonInclude(Include.NON_NULL)
+    private String managementNetwork = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("privilege")
-  @JsonInclude(Include.NON_NULL)
-  private String privilege = "WRITE_ACCESS";
+    @JsonProperty("privilege")
+    @JsonInclude(Include.NON_NULL)
+    private String privilege = "WRITE_ACCESS";
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
-  @JsonProperty("vcenter_template_se_location")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterTemplateSeLocation = null;
+    @JsonProperty("vcenter_template_se_location")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterTemplateSeLocation = null;
 
-  @JsonProperty("vcenter_url")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterUrl = null;
+    @JsonProperty("vcenter_url")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterUrl = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Datacenter for virtual infrastructure discovery.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenter
    */
   @VsoMethod
@@ -72,6 +73,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Datacenter for virtual infrastructure discovery.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenter set the datacenter.
    */
   @VsoMethod
@@ -82,6 +84,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Management subnet to use for avi service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementIpSubnet
    */
   @VsoMethod
@@ -92,6 +95,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Management subnet to use for avi service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementIpSubnet set the managementIpSubnet.
    */
   @VsoMethod
@@ -103,6 +107,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Management network to use for avi service engines.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementNetwork
    */
   @VsoMethod
@@ -114,6 +119,7 @@ public class vCenterConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Management network to use for avi service engines.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementNetwork set the managementNetwork.
    */
   @VsoMethod
@@ -124,6 +130,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating with vcenter.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -134,6 +141,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating with vcenter.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -146,7 +154,7 @@ public class vCenterConfiguration extends AviRestResource {
    * Set the access mode to vcenter as either read, which allows avi to discover networks and servers, or write, which also allows avi to create
    * service engines and configure their network properties.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
    * @return privilege
    */
   @VsoMethod
@@ -159,7 +167,7 @@ public class vCenterConfiguration extends AviRestResource {
    * Set the access mode to vcenter as either read, which allows avi to discover networks and servers, or write, which also allows avi to create
    * service engines and configure their network properties.
    * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WRITE_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
    * @param privilege set the privilege.
    */
   @VsoMethod
@@ -170,6 +178,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating with vcenter.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -180,6 +189,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating with vcenter.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod
@@ -190,6 +200,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi service engine template in vcenter to be used for creating service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterTemplateSeLocation
    */
   @VsoMethod
@@ -200,6 +211,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi service engine template in vcenter to be used for creating service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterTemplateSeLocation set the vcenterTemplateSeLocation.
    */
   @VsoMethod
@@ -210,6 +222,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcenter hostname or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterUrl
    */
   @VsoMethod
@@ -220,6 +233,7 @@ public class vCenterConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcenter hostname or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterUrl set the vcenterUrl.
    */
   @VsoMethod

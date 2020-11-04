@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerSizingCloudLimits extends AviRestResource {
-  @JsonProperty("num_clouds")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numClouds = null;
+    @JsonProperty("num_clouds")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numClouds = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -38,6 +38,7 @@ public class ControllerSizingCloudLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of clouds of a given type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numClouds
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class ControllerSizingCloudLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of clouds of a given type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numClouds set the numClouds.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class ControllerSizingCloudLimits extends AviRestResource {
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ControllerSizingCloudLimits extends AviRestResource {
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FailActionHTTPRedirect extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private String path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String protocol = "HTTPS";
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String protocol = "HTTPS";
 
-  @JsonProperty("query")
-  @JsonInclude(Include.NON_NULL)
-  private String query = null;
+    @JsonProperty("query")
+    @JsonInclude(Include.NON_NULL)
+    private String query = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCode = "HTTP_REDIRECT_STATUS_CODE_302";
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCode = "HTTP_REDIRECT_STATUS_CODE_302";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host of obj type failactionhttpredirect field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host of obj type failactionhttpredirect field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property path of obj type failactionhttpredirect field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property path of obj type failactionhttpredirect field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -89,7 +93,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HTTP, HTTPS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
    * @return protocol
    */
   @VsoMethod
@@ -100,7 +104,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HTTP, HTTPS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -111,6 +115,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property query of obj type failactionhttpredirect field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return query
    */
   @VsoMethod
@@ -121,6 +126,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property query of obj type failactionhttpredirect field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param query set the query.
    */
   @VsoMethod
@@ -131,7 +137,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_REDIRECT_STATUS_CODE_302.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
    * @return statusCode
    */
   @VsoMethod
@@ -142,7 +148,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_REDIRECT_STATUS_CODE_302.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
    * @param statusCode set the statusCode.
    */
   @VsoMethod

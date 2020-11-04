@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.CookieMatch;
 import com.vmware.avi.vro.model.HostHdrMatch;
+import com.vmware.avi.vro.model.IPReputationTypeMatch;
 import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.avi.vro.model.ProtocolMatch;
@@ -33,51 +34,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MatchTarget extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp = null;
 
-  @JsonProperty("cookie")
-  @JsonInclude(Include.NON_NULL)
-  private CookieMatch cookie = null;
+    @JsonProperty("cookie")
+    @JsonInclude(Include.NON_NULL)
+    private CookieMatch cookie = null;
 
-  @JsonProperty("hdrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<HdrMatch> hdrs = null;
+    @JsonProperty("hdrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<HdrMatch> hdrs = null;
 
-  @JsonProperty("host_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private HostHdrMatch hostHdr = null;
+    @JsonProperty("host_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private HostHdrMatch hostHdr = null;
 
-  @JsonProperty("method")
-  @JsonInclude(Include.NON_NULL)
-  private MethodMatch method = null;
+    @JsonProperty("ip_reputation_type")
+    @JsonInclude(Include.NON_NULL)
+    private IPReputationTypeMatch ipReputationType = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private PathMatch path = null;
+    @JsonProperty("method")
+    @JsonInclude(Include.NON_NULL)
+    private MethodMatch method = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private ProtocolMatch protocol = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private PathMatch path = null;
 
-  @JsonProperty("query")
-  @JsonInclude(Include.NON_NULL)
-  private QueryMatch query = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private ProtocolMatch protocol = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPVersionMatch version = null;
+    @JsonProperty("query")
+    @JsonInclude(Include.NON_NULL)
+    private QueryMatch query = null;
 
-  @JsonProperty("vs_port")
-  @JsonInclude(Include.NON_NULL)
-  private PortMatch vsPort = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPVersionMatch version = null;
+
+    @JsonProperty("vs_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortMatch vsPort = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Configure client ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -88,6 +94,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure client ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -98,6 +105,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure http cookie(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookie
    */
   @VsoMethod
@@ -108,6 +116,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure http cookie(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookie set the cookie.
    */
   @VsoMethod
@@ -118,6 +127,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure http header(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
   @VsoMethod
@@ -128,6 +138,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method. this will set the hdrs
    * Configure http header(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
   @VsoMethod
@@ -138,6 +149,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method this will set the hdrs
    * Configure http header(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
   @VsoMethod
@@ -153,6 +165,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the host header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
   @VsoMethod
@@ -163,6 +176,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure the host header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
   @VsoMethod
@@ -172,7 +186,32 @@ public class MatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure ip reputation.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipReputationType
+   */
+  @VsoMethod
+  public IPReputationTypeMatch getIpReputationType() {
+    return ipReputationType;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure ip reputation.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ipReputationType set the ipReputationType.
+   */
+  @VsoMethod
+  public void setIpReputationType(IPReputationTypeMatch ipReputationType) {
+    this.ipReputationType = ipReputationType;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Configure http methods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
   @VsoMethod
@@ -183,6 +222,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure http methods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
   @VsoMethod
@@ -193,6 +233,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure request paths.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -203,6 +244,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure request paths.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -213,6 +255,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure the type of http protocol.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -223,6 +266,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure the type of http protocol.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -233,6 +277,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure request query.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return query
    */
   @VsoMethod
@@ -243,6 +288,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure request query.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param query set the query.
    */
   @VsoMethod
@@ -253,6 +299,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure versions of the http protocol.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -263,6 +310,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure versions of the http protocol.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod
@@ -273,6 +321,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure virtual service ports.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsPort
    */
   @VsoMethod
@@ -283,6 +332,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configure virtual service ports.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsPort set the vsPort.
    */
   @VsoMethod
@@ -310,7 +360,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.query, objMatchTarget.query)&&
   Objects.equals(this.hdrs, objMatchTarget.hdrs)&&
   Objects.equals(this.cookie, objMatchTarget.cookie)&&
-  Objects.equals(this.hostHdr, objMatchTarget.hostHdr);
+  Objects.equals(this.hostHdr, objMatchTarget.hostHdr)&&
+  Objects.equals(this.ipReputationType, objMatchTarget.ipReputationType);
 }
 
 @Override
@@ -321,6 +372,7 @@ public String toString() {
         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
         sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+        sb.append("    ipReputationType: ").append(toIndentedString(ipReputationType)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");

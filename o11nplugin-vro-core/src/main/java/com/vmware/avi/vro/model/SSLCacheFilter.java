@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLCacheFilter extends AviRestResource {
-  @JsonProperty("ssl_session_id")
-  @JsonInclude(Include.NON_NULL)
-  private String sslSessionId = null;
+    @JsonProperty("ssl_session_id")
+    @JsonInclude(Include.NON_NULL)
+    private String sslSessionId = null;
 
 
 
@@ -34,6 +34,7 @@ public class SSLCacheFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hexadecimal representation of the ssl session id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslSessionId
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class SSLCacheFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Hexadecimal representation of the ssl session id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslSessionId set the sslSessionId.
    */
   @VsoMethod

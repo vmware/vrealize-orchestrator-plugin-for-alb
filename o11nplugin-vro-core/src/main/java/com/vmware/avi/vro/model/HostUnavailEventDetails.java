@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HostUnavailEventDetails extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("reasons")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reasons = null;
+    @JsonProperty("reasons")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reasons = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vsName = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class HostUnavailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class HostUnavailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reasons of obj type hostunavaileventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasons
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class HostUnavailEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the reasons
    * Placeholder for description of property reasons of obj type hostunavaileventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasons
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class HostUnavailEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the reasons
    * Placeholder for description of property reasons of obj type hostunavaileventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasons
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class HostUnavailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type hostunavaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class HostUnavailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_name of obj type hostunavaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod

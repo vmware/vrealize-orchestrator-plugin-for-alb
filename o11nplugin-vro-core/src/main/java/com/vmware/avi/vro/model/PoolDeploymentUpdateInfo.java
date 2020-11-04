@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolDeploymentUpdateInfo extends AviRestResource {
-  @JsonProperty("deployment_state")
-  @JsonInclude(Include.NON_NULL)
-  private String deploymentState = null;
+    @JsonProperty("deployment_state")
+    @JsonInclude(Include.NON_NULL)
+    private String deploymentState = null;
 
-  @JsonProperty("evaluation_duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer evaluationDuration = null;
+    @JsonProperty("evaluation_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer evaluationDuration = null;
 
-  @JsonProperty("ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ratio = null;
+    @JsonProperty("ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ratio = null;
 
-  @JsonProperty("results")
-  @JsonInclude(Include.NON_NULL)
-  private List<PGDeploymentRuleResult> results = null;
+    @JsonProperty("results")
+    @JsonInclude(Include.NON_NULL)
+    private List<PGDeploymentRuleResult> results = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("webhook_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String webhookReason = null;
+    @JsonProperty("webhook_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String webhookReason = null;
 
-  @JsonProperty("webhook_result")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean webhookResult = null;
+    @JsonProperty("webhook_result")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean webhookResult = null;
 
 
 
@@ -58,6 +58,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool deployment state used with the pg deployment policy.
    * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deploymentState
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool deployment state used with the pg deployment policy.
    * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deploymentState set the deploymentState.
    */
   @VsoMethod
@@ -79,6 +81,8 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Evaluation period for deployment update.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return evaluationDuration
    */
   @VsoMethod
@@ -89,6 +93,8 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Evaluation period for deployment update.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param evaluationDuration set the evaluationDuration.
    */
   @VsoMethod
@@ -99,6 +105,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Operational traffic ratio for the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ratio
    */
   @VsoMethod
@@ -109,6 +116,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Operational traffic ratio for the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ratio set the ratio.
    */
   @VsoMethod
@@ -119,6 +127,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of results for each deployment rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return results
    */
   @VsoMethod
@@ -129,6 +138,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the results
    * List of results for each deployment rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return results
    */
   @VsoMethod
@@ -139,6 +149,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method this will set the results
    * List of results for each deployment rule.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return results
    */
   @VsoMethod
@@ -154,6 +165,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Member pool's id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -164,6 +176,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Member pool's id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -174,6 +187,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason returned in webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return webhookReason
    */
   @VsoMethod
@@ -184,6 +198,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason returned in webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param webhookReason set the webhookReason.
    */
   @VsoMethod
@@ -194,6 +209,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Result of webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return webhookResult
    */
   @VsoMethod
@@ -204,6 +220,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Result of webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param webhookResult set the webhookResult.
    */
   @VsoMethod

@@ -24,45 +24,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UserActivity extends AviRestResource {
-  @JsonProperty("concurrent_sessions")
-  @JsonInclude(Include.NON_NULL)
-  private Integer concurrentSessions = 0;
+    @JsonProperty("concurrent_sessions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer concurrentSessions = 0;
 
-  @JsonProperty("failed_login_attempts")
-  @JsonInclude(Include.NON_NULL)
-  private Integer failedLoginAttempts = 0;
+    @JsonProperty("failed_login_attempts")
+    @JsonInclude(Include.NON_NULL)
+    private Integer failedLoginAttempts = 0;
 
-  @JsonProperty("last_login_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String lastLoginIp = null;
+    @JsonProperty("last_login_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String lastLoginIp = null;
 
-  @JsonProperty("last_login_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private String lastLoginTimestamp = null;
+    @JsonProperty("last_login_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private String lastLoginTimestamp = null;
 
-  @JsonProperty("last_password_update")
-  @JsonInclude(Include.NON_NULL)
-  private String lastPasswordUpdate = null;
+    @JsonProperty("last_password_update")
+    @JsonInclude(Include.NON_NULL)
+    private String lastPasswordUpdate = null;
 
-  @JsonProperty("logged_in")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean loggedIn = null;
+    @JsonProperty("logged_in")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean loggedIn = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("previous_password")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> previousPassword = null;
+    @JsonProperty("previous_password")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> previousPassword = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -113,6 +113,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip of the machine the user was last logged in from.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastLoginIp
    */
   @VsoMethod
@@ -123,6 +124,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip of the machine the user was last logged in from.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastLoginIp set the lastLoginIp.
    */
   @VsoMethod
@@ -133,6 +135,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of last login.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastLoginTimestamp
    */
   @VsoMethod
@@ -143,6 +146,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of last login.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastLoginTimestamp set the lastLoginTimestamp.
    */
   @VsoMethod
@@ -153,6 +157,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of last password update.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastPasswordUpdate
    */
   @VsoMethod
@@ -163,6 +168,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of last password update.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastPasswordUpdate set the lastPasswordUpdate.
    */
   @VsoMethod
@@ -173,6 +179,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Indicates whether the user is logged in or not.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return loggedIn
    */
   @VsoMethod
@@ -183,6 +190,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Indicates whether the user is logged in or not.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param loggedIn set the loggedIn.
    */
   @VsoMethod
@@ -193,6 +201,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the user this object refers to.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -203,6 +212,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the user this object refers to.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -213,6 +223,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Stores the previous n passwords  where n is controllerproperties.max_password_history_count.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previousPassword
    */
   @VsoMethod
@@ -223,6 +234,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method. this will set the previousPassword
    * Stores the previous n passwords  where n is controllerproperties.max_password_history_count.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previousPassword
    */
   @VsoMethod
@@ -233,6 +245,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method this will set the previousPassword
    * Stores the previous n passwords  where n is controllerproperties.max_password_history_count.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previousPassword
    */
   @VsoMethod
@@ -267,6 +280,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -277,6 +291,7 @@ public class UserActivity extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

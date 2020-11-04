@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4RuleActionSelectPool extends AviRestResource {
-  @JsonProperty("action_type")
-  @JsonInclude(Include.NON_NULL)
-  private String actionType = null;
+    @JsonProperty("action_type")
+    @JsonInclude(Include.NON_NULL)
+    private String actionType = null;
 
-  @JsonProperty("pool_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolGroupRef = null;
+    @JsonProperty("pool_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolGroupRef = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
 
 
@@ -43,6 +43,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Indicates action to take on rule match.
    * Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionType
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Indicates action to take on rule match.
    * Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionType set the actionType.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool of servers to serve the request.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class L4RuleActionSelectPool extends AviRestResource {
    * Id of the pool of servers to serve the request.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod

@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbGeoDbFile extends AviRestResource {
-  @JsonProperty("checksum")
-  @JsonInclude(Include.NON_NULL)
-  private String checksum = null;
+    @JsonProperty("checksum")
+    @JsonInclude(Include.NON_NULL)
+    private String checksum = null;
 
-  @JsonProperty("file_id")
-  @JsonInclude(Include.NON_NULL)
-  private String fileId = null;
+    @JsonProperty("file_id")
+    @JsonInclude(Include.NON_NULL)
+    private String fileId = null;
 
-  @JsonProperty("filename")
-  @JsonInclude(Include.NON_NULL)
-  private String filename = null;
+    @JsonProperty("filename")
+    @JsonInclude(Include.NON_NULL)
+    private String filename = null;
 
-  @JsonProperty("format")
-  @JsonInclude(Include.NON_NULL)
-  private String format = "GSLB_GEODB_FILE_FORMAT_AVI";
+    @JsonProperty("format")
+    @JsonInclude(Include.NON_NULL)
+    private String format = "GSLB_GEODB_FILE_FORMAT_AVI";
 
-  @JsonProperty("timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer timestamp = null;
+    @JsonProperty("timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer timestamp = null;
 
 
 
@@ -50,6 +50,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * File checksum is internally computed.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checksum
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the setter method to the attribute.
    * File checksum is internally computed.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checksum set the checksum.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * System internal identifier for the file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fileId
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the setter method to the attribute.
    * System internal identifier for the file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fileId set the fileId.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geodb filename in the avi supported formats.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filename
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the setter method to the attribute.
    * Geodb filename in the avi supported formats.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param filename set the filename.
    */
   @VsoMethod
@@ -118,7 +124,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
    * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_GEODB_FILE_FORMAT_AVI.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_GEODB_FILE_FORMAT_AVI".
    * @return format
    */
   @VsoMethod
@@ -132,7 +138,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6,
    * GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_GEODB_FILE_FORMAT_AVI.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_GEODB_FILE_FORMAT_AVI".
    * @param format set the format.
    */
   @VsoMethod
@@ -144,6 +150,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal timestamp associated with the file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timestamp
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class GslbGeoDbFile extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal timestamp associated with the file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timestamp set the timestamp.
    */
   @VsoMethod

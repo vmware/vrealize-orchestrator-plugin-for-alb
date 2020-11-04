@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPHdrValue extends AviRestResource {
-  @JsonProperty("val")
-  @JsonInclude(Include.NON_NULL)
-  private String val = null;
+    @JsonProperty("val")
+    @JsonInclude(Include.NON_NULL)
+    private String val = null;
 
-  @JsonProperty("var")
-  @JsonInclude(Include.NON_NULL)
-  private String var = null;
+    @JsonProperty("var")
+    @JsonInclude(Include.NON_NULL)
+    private String var = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Http header value or variable representing an http header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return val
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class HTTPHdrValue extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header value or variable representing an http header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param val set the val.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class HTTPHdrValue extends AviRestResource {
    * HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT,
    * HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME,
    * HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return var
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class HTTPHdrValue extends AviRestResource {
    * HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT,
    * HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME,
    * HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param var set the var.
    */
   @VsoMethod

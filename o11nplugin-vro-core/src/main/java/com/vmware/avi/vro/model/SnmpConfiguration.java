@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SnmpConfiguration extends AviRestResource {
-  @JsonProperty("community")
-  @JsonInclude(Include.NON_NULL)
-  private String community = null;
+    @JsonProperty("community")
+    @JsonInclude(Include.NON_NULL)
+    private String community = null;
 
-  @JsonProperty("large_trap_payload")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean largeTrapPayload = false;
+    @JsonProperty("large_trap_payload")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean largeTrapPayload = false;
 
-  @JsonProperty("snmp_v3_config")
-  @JsonInclude(Include.NON_NULL)
-  private SnmpV3Configuration snmpV3Config = null;
+    @JsonProperty("snmp_v3_config")
+    @JsonInclude(Include.NON_NULL)
+    private SnmpV3Configuration snmpV3Config = null;
 
-  @JsonProperty("sys_contact")
-  @JsonInclude(Include.NON_NULL)
-  private String sysContact = "support@avinetworks.com";
+    @JsonProperty("sys_contact")
+    @JsonInclude(Include.NON_NULL)
+    private String sysContact = "support@avinetworks.com";
 
-  @JsonProperty("sys_location")
-  @JsonInclude(Include.NON_NULL)
-  private String sysLocation = null;
+    @JsonProperty("sys_location")
+    @JsonInclude(Include.NON_NULL)
+    private String sysLocation = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = "SNMP_VER2";
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = "SNMP_VER2";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Community string for snmp v2c.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Community string for snmp v2c.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param community set the community.
    */
   @VsoMethod
@@ -99,6 +101,7 @@ public class SnmpConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Snmp version 3 configuration.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snmpV3Config
    */
   @VsoMethod
@@ -110,6 +113,7 @@ public class SnmpConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Snmp version 3 configuration.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snmpV3Config set the snmpV3Config.
    */
   @VsoMethod
@@ -120,7 +124,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sets the syscontact in system mib.
-   * Default value when not specified in API or module is interpreted by Avi Controller as support@avinetworks.com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "support@avinetworks.com".
    * @return sysContact
    */
   @VsoMethod
@@ -131,7 +135,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sets the syscontact in system mib.
-   * Default value when not specified in API or module is interpreted by Avi Controller as support@avinetworks.com.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "support@avinetworks.com".
    * @param sysContact set the sysContact.
    */
   @VsoMethod
@@ -142,6 +146,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sets the syslocation in system mib.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysLocation
    */
   @VsoMethod
@@ -152,6 +157,7 @@ public class SnmpConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sets the syslocation in system mib.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sysLocation set the sysLocation.
    */
   @VsoMethod
@@ -165,7 +171,7 @@ public class SnmpConfiguration extends AviRestResource {
    * V2 or v3.
    * Enum options - SNMP_VER2, SNMP_VER3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SNMP_VER2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
    * @return version
    */
   @VsoMethod
@@ -179,7 +185,7 @@ public class SnmpConfiguration extends AviRestResource {
    * V2 or v3.
    * Enum options - SNMP_VER2, SNMP_VER3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SNMP_VER2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
    * @param version set the version.
    */
   @VsoMethod

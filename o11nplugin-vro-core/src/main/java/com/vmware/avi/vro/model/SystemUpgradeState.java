@@ -26,63 +26,64 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SystemUpgradeState extends AviRestResource {
-  @JsonProperty("controller_state")
-  @JsonInclude(Include.NON_NULL)
-  private ControllerUpgradeState controllerState = null;
+    @JsonProperty("controller_state")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerUpgradeState controllerState = null;
 
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = null;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = null;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("from_version")
-  @JsonInclude(Include.NON_NULL)
-  private String fromVersion = null;
+    @JsonProperty("from_version")
+    @JsonInclude(Include.NON_NULL)
+    private String fromVersion = null;
 
-  @JsonProperty("in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean inProgress = null;
+    @JsonProperty("in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean inProgress = null;
 
-  @JsonProperty("is_patch")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isPatch = null;
+    @JsonProperty("is_patch")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isPatch = null;
 
-  @JsonProperty("patch_type")
-  @JsonInclude(Include.NON_NULL)
-  private String patchType = null;
+    @JsonProperty("patch_type")
+    @JsonInclude(Include.NON_NULL)
+    private String patchType = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("result")
-  @JsonInclude(Include.NON_NULL)
-  private String result = null;
+    @JsonProperty("result")
+    @JsonInclude(Include.NON_NULL)
+    private String result = null;
 
-  @JsonProperty("rollback")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rollback = null;
+    @JsonProperty("rollback")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rollback = null;
 
-  @JsonProperty("se_state")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeStatusSummary seState = null;
+    @JsonProperty("se_state")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeStatusSummary seState = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
-  @JsonProperty("to_version")
-  @JsonInclude(Include.NON_NULL)
-  private String toVersion = null;
+    @JsonProperty("to_version")
+    @JsonInclude(Include.NON_NULL)
+    private String toVersion = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Upgrade state from controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerState
    */
   @VsoMethod
@@ -93,6 +94,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Upgrade state from controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerState set the controllerState.
    */
   @VsoMethod
@@ -104,6 +106,8 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade duration.
    * Field introduced in 17.1.1.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
   @VsoMethod
@@ -115,6 +119,8 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade duration.
    * Field introduced in 17.1.1.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
   @VsoMethod
@@ -126,6 +132,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade end time.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade end time.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromVersion
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Current version.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromVersion set the fromVersion.
    */
   @VsoMethod
@@ -169,6 +179,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Set if upgrade is in progress.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inProgress
    */
   @VsoMethod
@@ -179,6 +190,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Set if upgrade is in progress.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inProgress set the inProgress.
    */
   @VsoMethod
@@ -190,6 +202,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Is set true, if patch upgrade requested by the user.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isPatch
    */
   @VsoMethod
@@ -201,6 +214,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Is set true, if patch upgrade requested by the user.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isPatch set the isPatch.
    */
   @VsoMethod
@@ -212,6 +226,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of patch upgrade.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchType
    */
   @VsoMethod
@@ -223,6 +238,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of patch upgrade.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchType set the patchType.
    */
   @VsoMethod
@@ -234,6 +250,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for upgrade failure.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -245,6 +262,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for upgrade failure.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -256,6 +274,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade result.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return result
    */
   @VsoMethod
@@ -267,6 +286,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade result.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param result set the result.
    */
   @VsoMethod
@@ -277,6 +297,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Set if rollback is requested by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rollback
    */
   @VsoMethod
@@ -287,6 +308,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Set if rollback is requested by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rollback set the rollback.
    */
   @VsoMethod
@@ -297,6 +319,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Upgrade state of service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seState
    */
   @VsoMethod
@@ -307,6 +330,7 @@ public class SystemUpgradeState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Upgrade state of service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seState set the seState.
    */
   @VsoMethod
@@ -318,6 +342,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Upgrade start time.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -329,6 +354,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Upgrade start time.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod
@@ -340,6 +366,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version to upgrade to.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toVersion
    */
   @VsoMethod
@@ -351,6 +378,7 @@ public class SystemUpgradeState extends AviRestResource {
    * This is the setter method to the attribute.
    * Version to upgrade to.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toVersion set the toVersion.
    */
   @VsoMethod

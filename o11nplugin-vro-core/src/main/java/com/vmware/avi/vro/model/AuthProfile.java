@@ -28,55 +28,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthProfile extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("http")
-  @JsonInclude(Include.NON_NULL)
-  private AuthProfileHTTPClientParams http = null;
+    @JsonProperty("http")
+    @JsonInclude(Include.NON_NULL)
+    private AuthProfileHTTPClientParams http = null;
 
-  @JsonProperty("ldap")
-  @JsonInclude(Include.NON_NULL)
-  private LdapAuthSettings ldap = null;
+    @JsonProperty("ldap")
+    @JsonInclude(Include.NON_NULL)
+    private LdapAuthSettings ldap = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("pa_agent_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String paAgentRef = null;
+    @JsonProperty("pa_agent_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String paAgentRef = null;
 
-  @JsonProperty("saml")
-  @JsonInclude(Include.NON_NULL)
-  private SamlSettings saml = null;
+    @JsonProperty("saml")
+    @JsonInclude(Include.NON_NULL)
+    private SamlSettings saml = null;
 
-  @JsonProperty("tacacs_plus")
-  @JsonInclude(Include.NON_NULL)
-  private TacacsPlusAuthSettings tacacsPlus = null;
+    @JsonProperty("tacacs_plus")
+    @JsonInclude(Include.NON_NULL)
+    private TacacsPlusAuthSettings tacacsPlus = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -87,6 +88,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http user authentication params.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http
    */
   @VsoMethod
@@ -107,6 +110,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http user authentication params.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http set the http.
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap server and directory settings.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ldap
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap server and directory settings.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ldap set the ldap.
    */
   @VsoMethod
@@ -137,6 +143,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the auth profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -147,6 +154,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the auth profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -159,6 +167,7 @@ public class AuthProfile extends AviRestResource {
    * Pingaccessagent uuid.
    * It is a reference to an object of type pingaccessagent.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paAgentRef
    */
   @VsoMethod
@@ -171,6 +180,7 @@ public class AuthProfile extends AviRestResource {
    * Pingaccessagent uuid.
    * It is a reference to an object of type pingaccessagent.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paAgentRef set the paAgentRef.
    */
   @VsoMethod
@@ -182,6 +192,7 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml settings.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return saml
    */
   @VsoMethod
@@ -193,6 +204,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml settings.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param saml set the saml.
    */
   @VsoMethod
@@ -203,6 +215,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tacacs+ settings.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tacacsPlus
    */
   @VsoMethod
@@ -213,6 +226,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tacacs+ settings.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tacacsPlus set the tacacsPlus.
    */
   @VsoMethod
@@ -223,6 +237,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -233,6 +248,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -244,6 +260,7 @@ public class AuthProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of the auth profile.
    * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -255,6 +272,7 @@ public class AuthProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of the auth profile.
    * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -284,6 +302,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the auth profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -294,6 +313,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the auth profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

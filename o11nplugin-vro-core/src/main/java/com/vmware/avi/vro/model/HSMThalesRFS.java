@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HSMThalesRFS extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = 9004;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = 9004;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the rfs server from where to sync the thales encrypted private key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class HSMThalesRFS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the rfs server from where to sync the thales encrypted private key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod

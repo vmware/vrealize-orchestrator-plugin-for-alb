@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeDupipEventDetails extends AviRestResource {
-  @JsonProperty("local_mac")
-  @JsonInclude(Include.NON_NULL)
-  private String localMac = null;
+    @JsonProperty("local_mac")
+    @JsonInclude(Include.NON_NULL)
+    private String localMac = null;
 
-  @JsonProperty("remote_mac")
-  @JsonInclude(Include.NON_NULL)
-  private String remoteMac = null;
+    @JsonProperty("remote_mac")
+    @JsonInclude(Include.NON_NULL)
+    private String remoteMac = null;
 
-  @JsonProperty("vnic_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String vnicIp = null;
+    @JsonProperty("vnic_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String vnicIp = null;
 
-  @JsonProperty("vnic_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vnicName = null;
+    @JsonProperty("vnic_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vnicName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localMac
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localMac set the localMac.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteMac
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteMac set the remoteMac.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicIp
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicIp set the vnicIp.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicName
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class SeDupipEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicName set the vnicName.
    */
   @VsoMethod

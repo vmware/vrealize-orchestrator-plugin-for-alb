@@ -40,171 +40,172 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Cloud extends AviRestResource {
-  @JsonProperty("apic_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private APICConfiguration apicConfiguration = null;
+    @JsonProperty("apic_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private APICConfiguration apicConfiguration = null;
 
-  @JsonProperty("apic_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean apicMode = false;
+    @JsonProperty("apic_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean apicMode = false;
 
-  @JsonProperty("autoscale_polling_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer autoscalePollingInterval = 60;
+    @JsonProperty("autoscale_polling_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer autoscalePollingInterval = 60;
 
-  @JsonProperty("aws_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private AwsConfiguration awsConfiguration = null;
+    @JsonProperty("aws_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private AwsConfiguration awsConfiguration = null;
 
-  @JsonProperty("azure_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private AzureConfiguration azureConfiguration = null;
+    @JsonProperty("azure_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private AzureConfiguration azureConfiguration = null;
 
-  @JsonProperty("cloudstack_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private CloudStackConfiguration cloudstackConfiguration = null;
+    @JsonProperty("cloudstack_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private CloudStackConfiguration cloudstackConfiguration = null;
 
-  @JsonProperty("custom_tags")
-  @JsonInclude(Include.NON_NULL)
-  private List<CustomTag> customTags = null;
+    @JsonProperty("custom_tags")
+    @JsonInclude(Include.NON_NULL)
+    private List<CustomTag> customTags = null;
 
-  @JsonProperty("dhcp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dhcpEnabled = false;
+    @JsonProperty("dhcp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dhcpEnabled = false;
 
-  @JsonProperty("dns_provider_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String dnsProviderRef = null;
+    @JsonProperty("dns_provider_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String dnsProviderRef = null;
 
-  @JsonProperty("dns_resolution_on_se")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dnsResolutionOnSe = false;
+    @JsonProperty("dns_resolution_on_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dnsResolutionOnSe = false;
 
-  @JsonProperty("docker_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private DockerConfiguration dockerConfiguration = null;
+    @JsonProperty("docker_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private DockerConfiguration dockerConfiguration = null;
 
-  @JsonProperty("east_west_dns_provider_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String eastWestDnsProviderRef = null;
+    @JsonProperty("east_west_dns_provider_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String eastWestDnsProviderRef = null;
 
-  @JsonProperty("east_west_ipam_provider_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String eastWestIpamProviderRef = null;
+    @JsonProperty("east_west_ipam_provider_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String eastWestIpamProviderRef = null;
 
-  @JsonProperty("enable_vip_on_all_interfaces")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableVipOnAllInterfaces = false;
+    @JsonProperty("enable_vip_on_all_interfaces")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableVipOnAllInterfaces = false;
 
-  @JsonProperty("enable_vip_static_routes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableVipStaticRoutes = false;
+    @JsonProperty("enable_vip_static_routes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableVipStaticRoutes = false;
 
-  @JsonProperty("gcp_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private GCPConfiguration gcpConfiguration = null;
+    @JsonProperty("gcp_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private GCPConfiguration gcpConfiguration = null;
 
-  @JsonProperty("ip6_autocfg_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ip6AutocfgEnabled = false;
+    @JsonProperty("ip6_autocfg_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ip6AutocfgEnabled = false;
 
-  @JsonProperty("ipam_provider_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String ipamProviderRef = null;
+    @JsonProperty("ipam_provider_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String ipamProviderRef = null;
 
-  @JsonProperty("license_tier")
-  @JsonInclude(Include.NON_NULL)
-  private String licenseTier = null;
+    @JsonProperty("license_tier")
+    @JsonInclude(Include.NON_NULL)
+    private String licenseTier = null;
 
-  @JsonProperty("license_type")
-  @JsonInclude(Include.NON_NULL)
-  private String licenseType = null;
+    @JsonProperty("license_type")
+    @JsonInclude(Include.NON_NULL)
+    private String licenseType = null;
 
-  @JsonProperty("linuxserver_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private LinuxServerConfiguration linuxserverConfiguration = null;
+    @JsonProperty("linuxserver_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private LinuxServerConfiguration linuxserverConfiguration = null;
 
-  @JsonProperty("mesos_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private MesosConfiguration mesosConfiguration = null;
+    @JsonProperty("mesos_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private MesosConfiguration mesosConfiguration;
 
-  @JsonProperty("mtu")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mtu = 1500;
+    @JsonProperty("mtu")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mtu = 1500;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("nsx_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private NsxConfiguration nsxConfiguration = null;
+    @JsonProperty("nsx_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private NsxConfiguration nsxConfiguration = null;
 
-  @JsonProperty("nsxt_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtConfiguration nsxtConfiguration = null;
+    @JsonProperty("nsxt_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtConfiguration nsxtConfiguration = null;
 
-  @JsonProperty("obj_name_prefix")
-  @JsonInclude(Include.NON_NULL)
-  private String objNamePrefix = null;
+    @JsonProperty("obj_name_prefix")
+    @JsonInclude(Include.NON_NULL)
+    private String objNamePrefix = null;
 
-  @JsonProperty("openstack_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackConfiguration openstackConfiguration = null;
+    @JsonProperty("openstack_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackConfiguration openstackConfiguration = null;
 
-  @JsonProperty("oshiftk8s_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private OShiftK8SConfiguration oshiftk8sConfiguration = null;
+    @JsonProperty("oshiftk8s_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private OShiftK8SConfiguration oshiftk8sConfiguration;
 
-  @JsonProperty("prefer_static_routes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean preferStaticRoutes = false;
+    @JsonProperty("prefer_static_routes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean preferStaticRoutes = false;
 
-  @JsonProperty("proxy_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private ProxyConfiguration proxyConfiguration = null;
+    @JsonProperty("proxy_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private ProxyConfiguration proxyConfiguration = null;
 
-  @JsonProperty("rancher_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private RancherConfiguration rancherConfiguration = null;
+    @JsonProperty("rancher_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private RancherConfiguration rancherConfiguration = null;
 
-  @JsonProperty("se_group_template_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupTemplateRef = null;
+    @JsonProperty("se_group_template_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupTemplateRef = null;
 
-  @JsonProperty("state_based_dns_registration")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean stateBasedDnsRegistration = true;
+    @JsonProperty("state_based_dns_registration")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean stateBasedDnsRegistration = true;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vca_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private vCloudAirConfiguration vcaConfiguration = null;
+    @JsonProperty("vca_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private vCloudAirConfiguration vcaConfiguration = null;
 
-  @JsonProperty("vcenter_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private vCenterConfiguration vcenterConfiguration = null;
+    @JsonProperty("vcenter_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private vCenterConfiguration vcenterConfiguration = null;
 
-  @JsonProperty("vtype")
-  @JsonInclude(Include.NON_NULL)
-  private String vtype = "CLOUD_NONE";
+    @JsonProperty("vtype")
+    @JsonInclude(Include.NON_NULL)
+    private String vtype = "CLOUD_NONE";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicConfiguration
    */
   @VsoMethod
@@ -215,6 +216,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicConfiguration set the apicConfiguration.
    */
   @VsoMethod
@@ -249,6 +251,7 @@ public class Cloud extends AviRestResource {
    * Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
    * Allowed values are 60-3600.
    * Field introduced in 18.2.2.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return autoscalePollingInterval
    */
@@ -262,6 +265,7 @@ public class Cloud extends AviRestResource {
    * Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
    * Allowed values are 60-3600.
    * Field introduced in 18.2.2.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param autoscalePollingInterval set the autoscalePollingInterval.
    */
@@ -273,6 +277,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property aws_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsConfiguration
    */
   @VsoMethod
@@ -283,6 +288,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property aws_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsConfiguration set the awsConfiguration.
    */
   @VsoMethod
@@ -293,6 +299,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureConfiguration
    */
   @VsoMethod
@@ -303,6 +310,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureConfiguration set the azureConfiguration.
    */
   @VsoMethod
@@ -313,6 +321,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloudstack_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudstackConfiguration
    */
   @VsoMethod
@@ -323,6 +332,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloudstack_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudstackConfiguration set the cloudstackConfiguration.
    */
   @VsoMethod
@@ -334,6 +344,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom tags for all avi created resources in the cloud infrastructure.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customTags
    */
   @VsoMethod
@@ -345,6 +356,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method. this will set the customTags
    * Custom tags for all avi created resources in the cloud infrastructure.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customTags
    */
   @VsoMethod
@@ -356,6 +368,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method this will set the customTags
    * Custom tags for all avi created resources in the cloud infrastructure.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customTags
    */
   @VsoMethod
@@ -394,6 +407,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns profile for the cloud.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsProviderRef
    */
   @VsoMethod
@@ -405,6 +419,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns profile for the cloud.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsProviderRef set the dnsProviderRef.
    */
   @VsoMethod
@@ -443,6 +458,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property docker_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerConfiguration
    */
   @VsoMethod
@@ -453,6 +469,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property docker_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerConfiguration set the dockerConfiguration.
    */
   @VsoMethod
@@ -464,6 +481,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns profile for east-west services.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWestDnsProviderRef
    */
   @VsoMethod
@@ -475,6 +493,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns profile for east-west services.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWestDnsProviderRef set the eastWestDnsProviderRef.
    */
   @VsoMethod
@@ -489,6 +508,7 @@ public class Cloud extends AviRestResource {
    * For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata.
    * Hence, it should not be used in this profile.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWestIpamProviderRef
    */
   @VsoMethod
@@ -503,6 +523,7 @@ public class Cloud extends AviRestResource {
    * For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata.
    * Hence, it should not be used in this profile.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWestIpamProviderRef set the eastWestIpamProviderRef.
    */
   @VsoMethod
@@ -560,6 +581,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform configuration.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpConfiguration
    */
   @VsoMethod
@@ -571,6 +593,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform configuration.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpConfiguration set the gcpConfiguration.
    */
   @VsoMethod
@@ -606,6 +629,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipam profile for the cloud.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipamProviderRef
    */
   @VsoMethod
@@ -617,6 +641,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipam profile for the cloud.
    * It is a reference to an object of type ipamdnsproviderprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipamProviderRef set the ipamProviderRef.
    */
   @VsoMethod
@@ -628,8 +653,9 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the default license tier which would be used by new se groups.
    * This field by default inherits the value from system configuration.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
   @VsoMethod
@@ -641,8 +667,9 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the default license tier which would be used by new se groups.
    * This field by default inherits the value from system configuration.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseTier set the licenseTier.
    */
   @VsoMethod
@@ -655,6 +682,7 @@ public class Cloud extends AviRestResource {
    * If no license type is specified then default license enforcement for the cloud type is chosen.
    * The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets.
    * Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseType
    */
   @VsoMethod
@@ -667,6 +695,7 @@ public class Cloud extends AviRestResource {
    * If no license type is specified then default license enforcement for the cloud type is chosen.
    * The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets.
    * Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseType set the licenseType.
    */
   @VsoMethod
@@ -677,6 +706,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property linuxserver_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return linuxserverConfiguration
    */
   @VsoMethod
@@ -687,6 +717,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property linuxserver_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param linuxserverConfiguration set the linuxserverConfiguration.
    */
   @VsoMethod
@@ -717,6 +748,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mtu setting for the cloud.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
    * @return mtu
    */
@@ -728,6 +760,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mtu setting for the cloud.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
    * @param mtu set the mtu.
    */
@@ -739,6 +772,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -749,6 +783,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -760,6 +795,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configuration parameters for nsx manager.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxConfiguration
    */
   @VsoMethod
@@ -771,6 +807,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Configuration parameters for nsx manager.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxConfiguration set the nsxConfiguration.
    */
   @VsoMethod
@@ -782,6 +819,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsx-t cloud platform configuration.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtConfiguration
    */
   @VsoMethod
@@ -793,6 +831,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsx-t cloud platform configuration.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtConfiguration set the nsxtConfiguration.
    */
   @VsoMethod
@@ -804,6 +843,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default prefix for all automatically created objects in this cloud.
    * This prefix can be overridden by the se-group template.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objNamePrefix
    */
   @VsoMethod
@@ -815,6 +855,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Default prefix for all automatically created objects in this cloud.
    * This prefix can be overridden by the se-group template.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objNamePrefix set the objNamePrefix.
    */
   @VsoMethod
@@ -825,6 +866,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property openstack_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return openstackConfiguration
    */
   @VsoMethod
@@ -835,6 +877,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property openstack_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param openstackConfiguration set the openstackConfiguration.
    */
   @VsoMethod
@@ -887,6 +930,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property proxy_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proxyConfiguration
    */
   @VsoMethod
@@ -897,6 +941,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property proxy_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proxyConfiguration set the proxyConfiguration.
    */
   @VsoMethod
@@ -907,6 +952,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rancher_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rancherConfiguration
    */
   @VsoMethod
@@ -917,6 +963,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rancher_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rancherConfiguration set the rancherConfiguration.
    */
   @VsoMethod
@@ -929,6 +976,7 @@ public class Cloud extends AviRestResource {
    * The service engine group to use as template.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupTemplateRef
    */
   @VsoMethod
@@ -941,6 +989,7 @@ public class Cloud extends AviRestResource {
    * The service engine group to use as template.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupTemplateRef set the seGroupTemplateRef.
    */
   @VsoMethod
@@ -975,6 +1024,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -985,6 +1035,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -1014,6 +1065,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -1024,6 +1076,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -1034,6 +1087,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vca_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaConfiguration
    */
   @VsoMethod
@@ -1044,6 +1098,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vca_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaConfiguration set the vcaConfiguration.
    */
   @VsoMethod
@@ -1054,6 +1109,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterConfiguration
    */
   @VsoMethod
@@ -1064,6 +1120,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterConfiguration set the vcenterConfiguration.
    */
   @VsoMethod
@@ -1076,7 +1133,7 @@ public class Cloud extends AviRestResource {
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @return vtype
    */
   @VsoMethod
@@ -1089,7 +1146,7 @@ public class Cloud extends AviRestResource {
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @param vtype set the vtype.
    */
   @VsoMethod

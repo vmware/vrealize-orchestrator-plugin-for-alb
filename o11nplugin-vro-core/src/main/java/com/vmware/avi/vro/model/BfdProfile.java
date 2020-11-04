@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BfdProfile extends AviRestResource {
-  @JsonProperty("minrx")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minrx = 1000;
+    @JsonProperty("minrx")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minrx = 1000;
 
-  @JsonProperty("mintx")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mintx = 1000;
+    @JsonProperty("mintx")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mintx = 1000;
 
-  @JsonProperty("multi")
-  @JsonInclude(Include.NON_NULL)
-  private Integer multi = 3;
+    @JsonProperty("multi")
+    @JsonInclude(Include.NON_NULL)
+    private Integer multi = 3;
 
 
 
@@ -43,6 +43,7 @@ public class BfdProfile extends AviRestResource {
    * Default required minimum receive interval (in ms) used in bfd.
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return minrx
    */
@@ -56,6 +57,7 @@ public class BfdProfile extends AviRestResource {
    * Default required minimum receive interval (in ms) used in bfd.
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param minrx set the minrx.
    */
@@ -69,6 +71,7 @@ public class BfdProfile extends AviRestResource {
    * Default desired minimum transmit interval (in ms) used in bfd.
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return mintx
    */
@@ -82,6 +85,7 @@ public class BfdProfile extends AviRestResource {
    * Default desired minimum transmit interval (in ms) used in bfd.
    * Allowed values are 500-4000000.
    * Field introduced in 20.1.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param mintx set the mintx.
    */

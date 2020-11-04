@@ -26,33 +26,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlLog extends AviRestResource {
-  @JsonProperty("is_saml_authentication_used")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isSamlAuthenticationUsed = null;
+    @JsonProperty("is_saml_authentication_used")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isSamlAuthenticationUsed = null;
 
-  @JsonProperty("saml_attribute_lists")
-  @JsonInclude(Include.NON_NULL)
-  private List<SamlAttribute> samlAttributeLists = null;
+    @JsonProperty("saml_attribute_lists")
+    @JsonInclude(Include.NON_NULL)
+    private List<SamlAttribute> samlAttributeLists = null;
 
-  @JsonProperty("saml_auth_status")
-  @JsonInclude(Include.NON_NULL)
-  private String samlAuthStatus = null;
+    @JsonProperty("saml_auth_status")
+    @JsonInclude(Include.NON_NULL)
+    private String samlAuthStatus = null;
 
-  @JsonProperty("saml_authn_rule_match")
-  @JsonInclude(Include.NON_NULL)
-  private SamlAuthnRuleMatch samlAuthnRuleMatch = null;
+    @JsonProperty("saml_authn_rule_match")
+    @JsonInclude(Include.NON_NULL)
+    private SamlAuthnRuleMatch samlAuthnRuleMatch = null;
 
-  @JsonProperty("saml_authz_rule_match")
-  @JsonInclude(Include.NON_NULL)
-  private SamlAuthzRuleMatch samlAuthzRuleMatch = null;
+    @JsonProperty("saml_authz_rule_match")
+    @JsonInclude(Include.NON_NULL)
+    private SamlAuthzRuleMatch samlAuthzRuleMatch = null;
 
-  @JsonProperty("saml_session_cookie_expired")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean samlSessionCookieExpired = null;
+    @JsonProperty("saml_session_cookie_expired")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean samlSessionCookieExpired = null;
 
-  @JsonProperty("userid")
-  @JsonInclude(Include.NON_NULL)
-  private String userid = null;
+    @JsonProperty("userid")
+    @JsonInclude(Include.NON_NULL)
+    private String userid = null;
 
 
 
@@ -60,6 +60,7 @@ public class SamlLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Set to true if saml authentication is used.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isSamlAuthenticationUsed
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Set to true if saml authentication is used.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isSamlAuthenticationUsed set the isSamlAuthenticationUsed.
    */
   @VsoMethod
@@ -82,6 +84,7 @@ public class SamlLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml attribute list.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAttributeLists
    */
   @VsoMethod
@@ -93,6 +96,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method. this will set the samlAttributeLists
    * Saml attribute list.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAttributeLists
    */
   @VsoMethod
@@ -104,6 +108,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method this will set the samlAttributeLists
    * Saml attribute list.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAttributeLists
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class SamlLog extends AviRestResource {
    * SAML_AUTH_STATUS_AUTH_REQUEST_GENERATED, SAML_AUTH_STATUS_AUTH_RESPONSE_RECEIVED, SAML_AUTH_STATUS_AUTHENTICATED_REQUEST,
    * SAML_AUTH_STATUS_AUTHORIZATION_FAILED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthStatus
    */
   @VsoMethod
@@ -137,6 +143,7 @@ public class SamlLog extends AviRestResource {
    * SAML_AUTH_STATUS_AUTH_REQUEST_GENERATED, SAML_AUTH_STATUS_AUTH_RESPONSE_RECEIVED, SAML_AUTH_STATUS_AUTHENTICATED_REQUEST,
    * SAML_AUTH_STATUS_AUTHORIZATION_FAILED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthStatus set the samlAuthStatus.
    */
   @VsoMethod
@@ -148,6 +155,7 @@ public class SamlLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authentication rule match.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthnRuleMatch
    */
   @VsoMethod
@@ -159,6 +167,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authentication rule match.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthnRuleMatch set the samlAuthnRuleMatch.
    */
   @VsoMethod
@@ -170,6 +179,7 @@ public class SamlLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml authorization rule match.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlAuthzRuleMatch
    */
   @VsoMethod
@@ -181,6 +191,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml authorization rule match.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlAuthzRuleMatch set the samlAuthzRuleMatch.
    */
   @VsoMethod
@@ -192,6 +203,7 @@ public class SamlLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Is set when saml session cookie is expired.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlSessionCookieExpired
    */
   @VsoMethod
@@ -203,6 +215,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Is set when saml session cookie is expired.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlSessionCookieExpired set the samlSessionCookieExpired.
    */
   @VsoMethod
@@ -214,6 +227,7 @@ public class SamlLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml userid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userid
    */
   @VsoMethod
@@ -225,6 +239,7 @@ public class SamlLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml userid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userid set the userid.
    */
   @VsoMethod

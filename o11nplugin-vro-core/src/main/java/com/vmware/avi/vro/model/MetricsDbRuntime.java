@@ -24,43 +24,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDbRuntime extends AviRestResource {
-  @JsonProperty("db_num_client_queries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbNumClientQueries = null;
+    @JsonProperty("db_num_client_queries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbNumClientQueries = null;
 
-  @JsonProperty("db_num_client_resp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbNumClientResp = null;
+    @JsonProperty("db_num_client_resp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbNumClientResp = null;
 
-  @JsonProperty("db_num_db_queries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbNumDbQueries = null;
+    @JsonProperty("db_num_db_queries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbNumDbQueries = null;
 
-  @JsonProperty("db_num_db_resp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbNumDbResp = null;
+    @JsonProperty("db_num_db_resp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbNumDbResp = null;
 
-  @JsonProperty("db_num_oom")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbNumOom = null;
+    @JsonProperty("db_num_oom")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbNumOom = null;
 
-  @JsonProperty("db_queue_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbQueueSize = null;
+    @JsonProperty("db_queue_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbQueueSize = null;
 
-  @JsonProperty("db_rum_queries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbRumQueries = null;
+    @JsonProperty("db_rum_queries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbRumQueries = null;
 
-  @JsonProperty("db_rum_rows")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dbRumRows = null;
+    @JsonProperty("db_rum_rows")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dbRumRows = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_num_client_queries of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumClientQueries
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_num_client_queries of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumClientQueries set the dbNumClientQueries.
    */
   @VsoMethod
@@ -81,6 +83,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_num_client_resp of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumClientResp
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_num_client_resp of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumClientResp set the dbNumClientResp.
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_num_db_queries of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumDbQueries
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_num_db_queries of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumDbQueries set the dbNumDbQueries.
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_num_db_resp of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumDbResp
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_num_db_resp of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumDbResp set the dbNumDbResp.
    */
   @VsoMethod
@@ -141,6 +149,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_num_oom of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbNumOom
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_num_oom of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbNumOom set the dbNumOom.
    */
   @VsoMethod
@@ -161,6 +171,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_queue_size of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbQueueSize
    */
   @VsoMethod
@@ -171,6 +182,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_queue_size of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbQueueSize set the dbQueueSize.
    */
   @VsoMethod
@@ -181,6 +193,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_rum_queries of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbRumQueries
    */
   @VsoMethod
@@ -191,6 +204,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_rum_queries of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbRumQueries set the dbRumQueries.
    */
   @VsoMethod
@@ -201,6 +215,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property db_rum_rows of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dbRumRows
    */
   @VsoMethod
@@ -211,6 +226,7 @@ public class MetricsDbRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property db_rum_rows of obj type metricsdbruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dbRumRows set the dbRumRows.
    */
   @VsoMethod

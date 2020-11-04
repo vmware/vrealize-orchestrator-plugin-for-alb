@@ -27,29 +27,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPSecurityAction extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("file")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPLocalFile file = null;
+    @JsonProperty("file")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPLocalFile file = null;
 
-  @JsonProperty("https_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer httpsPort = null;
+    @JsonProperty("https_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer httpsPort = null;
 
-  @JsonProperty("rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile rateLimit = null;
+    @JsonProperty("rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile rateLimit;
 
-  @JsonProperty("rate_profile")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPSecurityActionRateProfile rateProfile = null;
+    @JsonProperty("rate_profile")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPSecurityActionRateProfile rateProfile = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCode = null;
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCode = null;
 
 
 
@@ -58,6 +58,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * Type of the security action to perform.
    * Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW,
    * HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -70,6 +71,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * Type of the security action to perform.
    * Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW,
    * HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -80,6 +82,7 @@ public class HTTPSecurityAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * File to be used for generating http local response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return file
    */
   @VsoMethod
@@ -90,6 +93,7 @@ public class HTTPSecurityAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * File to be used for generating http local response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param file set the file.
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Secure ssl/tls port to redirect the http request to.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpsPort
    */
   @VsoMethod
@@ -112,6 +117,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Secure ssl/tls port to redirect the http request to.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpsPort set the httpsPort.
    */
   @VsoMethod
@@ -147,6 +153,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiting configuration for this action.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateProfile
    */
   @VsoMethod
@@ -158,6 +165,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiting configuration for this action.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateProfile set the rateProfile.
    */
   @VsoMethod
@@ -170,6 +178,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * Http status code to use for local response.
    * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
    * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
   @VsoMethod
@@ -182,6 +191,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * Http status code to use for local response.
    * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
    * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
   @VsoMethod

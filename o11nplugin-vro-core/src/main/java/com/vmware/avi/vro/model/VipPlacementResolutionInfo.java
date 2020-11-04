@@ -25,23 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipPlacementResolutionInfo extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<DiscoveredNetwork> networks = null;
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<DiscoveredNetwork> networks = null;
 
-  @JsonProperty("pool_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String poolUuid = null;
+    @JsonProperty("pool_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String poolUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type vipplacementresolutioninfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -52,6 +53,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type vipplacementresolutioninfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property networks of obj type vipplacementresolutioninfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Placeholder for description of property networks of obj type vipplacementresolutioninfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Placeholder for description of property networks of obj type vipplacementresolutioninfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
   @VsoMethod
@@ -107,6 +113,7 @@ public class VipPlacementResolutionInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
   @VsoMethod

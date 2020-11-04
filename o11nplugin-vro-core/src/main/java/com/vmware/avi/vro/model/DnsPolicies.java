@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsPolicies extends AviRestResource {
-  @JsonProperty("dns_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String dnsPolicyRef = null;
+    @JsonProperty("dns_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String dnsPolicyRef = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
 
 
@@ -39,6 +39,7 @@ public class DnsPolicies extends AviRestResource {
    * Uuid of the dns policy.
    * It is a reference to an object of type dnspolicy.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsPolicyRef
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DnsPolicies extends AviRestResource {
    * Uuid of the dns policy.
    * It is a reference to an object of type dnspolicy.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsPolicyRef set the dnsPolicyRef.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class DnsPolicies extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the dns policy.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class DnsPolicies extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the dns policy.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod

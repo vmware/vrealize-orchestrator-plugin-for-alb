@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmRebootSeEventDetails extends AviRestResource {
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type rmrebootseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class RmRebootSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type rmrebootseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class RmRebootSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type rmrebootseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class RmRebootSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type rmrebootseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod

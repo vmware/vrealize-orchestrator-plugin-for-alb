@@ -24,53 +24,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ActionGroupConfig extends AviRestResource {
-  @JsonProperty("action_script_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String actionScriptConfigRef = null;
+    @JsonProperty("action_script_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String actionScriptConfigRef = null;
 
-  @JsonProperty("autoscale_trigger_notification")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoscaleTriggerNotification = false;
+    @JsonProperty("autoscale_trigger_notification")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoscaleTriggerNotification = false;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("email_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String emailConfigRef = null;
+    @JsonProperty("email_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String emailConfigRef = null;
 
-  @JsonProperty("external_only")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean externalOnly = false;
+    @JsonProperty("external_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean externalOnly = false;
 
-  @JsonProperty("level")
-  @JsonInclude(Include.NON_NULL)
-  private String level = "ALERT_LOW";
+    @JsonProperty("level")
+    @JsonInclude(Include.NON_NULL)
+    private String level = "ALERT_LOW";
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("snmp_trap_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String snmpTrapProfileRef = null;
+    @JsonProperty("snmp_trap_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String snmpTrapProfileRef = null;
 
-  @JsonProperty("syslog_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String syslogConfigRef = null;
+    @JsonProperty("syslog_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String syslogConfigRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -78,6 +78,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reference of the action script configuration to be used.
    * It is a reference to an object of type alertscriptconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionScriptConfigRef
    */
   @VsoMethod
@@ -89,6 +90,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Reference of the action script configuration to be used.
    * It is a reference to an object of type alertscriptconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionScriptConfigRef set the actionScriptConfigRef.
    */
   @VsoMethod
@@ -121,6 +123,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -131,6 +134,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -142,6 +146,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select the email notification configuration to use when sending alerts via email.
    * It is a reference to an object of type alertemailconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return emailConfigRef
    */
   @VsoMethod
@@ -153,6 +158,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Select the email notification configuration to use when sending alerts via email.
    * It is a reference to an object of type alertemailconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param emailConfigRef set the emailConfigRef.
    */
   @VsoMethod
@@ -186,7 +192,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When an alert is generated, mark its priority via the alert level.
    * Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ALERT_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_LOW".
    * @return level
    */
   @VsoMethod
@@ -198,7 +204,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * When an alert is generated, mark its priority via the alert level.
    * Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ALERT_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_LOW".
    * @param level set the level.
    */
   @VsoMethod
@@ -209,6 +215,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -219,6 +226,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -230,6 +238,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select the snmp trap notification to use when sending alerts via snmp trap.
    * It is a reference to an object of type snmptrapprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snmpTrapProfileRef
    */
   @VsoMethod
@@ -241,6 +250,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Select the snmp trap notification to use when sending alerts via snmp trap.
    * It is a reference to an object of type snmptrapprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snmpTrapProfileRef set the snmpTrapProfileRef.
    */
   @VsoMethod
@@ -252,6 +262,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select the syslog notification configuration to use when sending alerts via syslog.
    * It is a reference to an object of type alertsyslogconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogConfigRef
    */
   @VsoMethod
@@ -263,6 +274,7 @@ public class ActionGroupConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Select the syslog notification configuration to use when sending alerts via syslog.
    * It is a reference to an object of type alertsyslogconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syslogConfigRef set the syslogConfigRef.
    */
   @VsoMethod
@@ -273,6 +285,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -283,6 +296,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -312,6 +326,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -322,6 +337,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

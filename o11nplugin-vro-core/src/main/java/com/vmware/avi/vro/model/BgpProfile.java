@@ -24,53 +24,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BgpProfile extends AviRestResource {
-  @JsonProperty("community")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> community = null;
+    @JsonProperty("community")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> community = null;
 
-  @JsonProperty("hold_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer holdTime = 180;
+    @JsonProperty("hold_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer holdTime = 180;
 
-  @JsonProperty("ibgp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ibgp = true;
+    @JsonProperty("ibgp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ibgp = true;
 
-  @JsonProperty("ip_communities")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpCommunity> ipCommunities = null;
+    @JsonProperty("ip_communities")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpCommunity> ipCommunities = null;
 
-  @JsonProperty("keepalive_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer keepaliveInterval = 60;
+    @JsonProperty("keepalive_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer keepaliveInterval = 60;
 
-  @JsonProperty("local_as")
-  @JsonInclude(Include.NON_NULL)
-  private Integer localAs = null;
+    @JsonProperty("local_as")
+    @JsonInclude(Include.NON_NULL)
+    private Integer localAs = null;
 
-  @JsonProperty("local_preference")
-  @JsonInclude(Include.NON_NULL)
-  private Integer localPreference = null;
+    @JsonProperty("local_preference")
+    @JsonInclude(Include.NON_NULL)
+    private Integer localPreference = null;
 
-  @JsonProperty("num_as_path_prepend")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numAsPathPrepend = null;
+    @JsonProperty("num_as_path_prepend")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numAsPathPrepend = null;
 
-  @JsonProperty("peers")
-  @JsonInclude(Include.NON_NULL)
-  private List<BgpPeer> peers = null;
+    @JsonProperty("peers")
+    @JsonInclude(Include.NON_NULL)
+    private List<BgpPeer> peers = null;
 
-  @JsonProperty("routing_options")
-  @JsonInclude(Include.NON_NULL)
-  private List<BgpRoutingOptions> routingOptions = null;
+    @JsonProperty("routing_options")
+    @JsonInclude(Include.NON_NULL)
+    private List<BgpRoutingOptions> routingOptions = null;
 
-  @JsonProperty("send_community")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sendCommunity = true;
+    @JsonProperty("send_community")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sendCommunity = true;
 
-  @JsonProperty("shutdown")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean shutdown = false;
+    @JsonProperty("shutdown")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean shutdown = false;
 
 
 
@@ -78,6 +78,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -89,6 +90,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method. this will set the community
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -100,6 +102,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method this will set the community
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -162,6 +165,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Communities per ip address range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipCommunities
    */
   @VsoMethod
@@ -173,6 +177,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method. this will set the ipCommunities
    * Communities per ip address range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipCommunities
    */
   @VsoMethod
@@ -184,6 +189,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method this will set the ipCommunities
    * Communities per ip address range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipCommunities
    */
   @VsoMethod
@@ -224,6 +230,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Local autonomous system id.
    * Allowed values are 1-4294967295.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localAs
    */
   @VsoMethod
@@ -235,6 +242,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Local autonomous system id.
    * Allowed values are 1-4294967295.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localAs set the localAs.
    */
   @VsoMethod
@@ -247,6 +255,7 @@ public class BgpProfile extends AviRestResource {
    * Local_pref to be used for routes advertised.
    * Applicable only over ibgp.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localPreference
    */
   @VsoMethod
@@ -259,6 +268,7 @@ public class BgpProfile extends AviRestResource {
    * Local_pref to be used for routes advertised.
    * Applicable only over ibgp.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localPreference set the localPreference.
    */
   @VsoMethod
@@ -271,6 +281,7 @@ public class BgpProfile extends AviRestResource {
    * Number of times the local as should be prepended additionally.
    * Allowed values are 1-10.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numAsPathPrepend
    */
   @VsoMethod
@@ -283,6 +294,7 @@ public class BgpProfile extends AviRestResource {
    * Number of times the local as should be prepended additionally.
    * Allowed values are 1-10.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numAsPathPrepend set the numAsPathPrepend.
    */
   @VsoMethod
@@ -293,6 +305,7 @@ public class BgpProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Bgp peers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peers
    */
   @VsoMethod
@@ -303,6 +316,7 @@ public class BgpProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the peers
    * Bgp peers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peers
    */
   @VsoMethod
@@ -313,6 +327,7 @@ public class BgpProfile extends AviRestResource {
   /**
    * This is the setter method this will set the peers
    * Bgp peers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peers
    */
   @VsoMethod
@@ -329,6 +344,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learning and advertising options for bgp peers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingOptions
    */
   @VsoMethod
@@ -340,6 +356,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method. this will set the routingOptions
    * Learning and advertising options for bgp peers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingOptions
    */
   @VsoMethod
@@ -351,6 +368,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method this will set the routingOptions
    * Learning and advertising options for bgp peers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingOptions
    */
   @VsoMethod

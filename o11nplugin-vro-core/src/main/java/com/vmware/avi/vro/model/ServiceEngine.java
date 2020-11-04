@@ -26,83 +26,84 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServiceEngine extends AviRestResource {
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("container_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean containerMode = false;
+    @JsonProperty("container_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean containerMode = false;
 
-  @JsonProperty("container_type")
-  @JsonInclude(Include.NON_NULL)
-  private String containerType = "CONTAINER_TYPE_HOST";
+    @JsonProperty("container_type")
+    @JsonInclude(Include.NON_NULL)
+    private String containerType = "CONTAINER_TYPE_HOST";
 
-  @JsonProperty("controller_created")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean controllerCreated = false;
+    @JsonProperty("controller_created")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean controllerCreated = false;
 
-  @JsonProperty("controller_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerIp = null;
+    @JsonProperty("controller_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerIp = null;
 
-  @JsonProperty("data_vnics")
-  @JsonInclude(Include.NON_NULL)
-  private List<vNIC> dataVnics = null;
+    @JsonProperty("data_vnics")
+    @JsonInclude(Include.NON_NULL)
+    private List<vNIC> dataVnics = null;
 
-  @JsonProperty("enable_state")
-  @JsonInclude(Include.NON_NULL)
-  private String enableState = "SE_STATE_ENABLED";
+    @JsonProperty("enable_state")
+    @JsonInclude(Include.NON_NULL)
+    private String enableState = "SE_STATE_ENABLED";
 
-  @JsonProperty("flavor")
-  @JsonInclude(Include.NON_NULL)
-  private String flavor = null;
+    @JsonProperty("flavor")
+    @JsonInclude(Include.NON_NULL)
+    private String flavor = null;
 
-  @JsonProperty("host_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String hostRef = null;
+    @JsonProperty("host_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String hostRef = null;
 
-  @JsonProperty("hypervisor")
-  @JsonInclude(Include.NON_NULL)
-  private String hypervisor = null;
+    @JsonProperty("hypervisor")
+    @JsonInclude(Include.NON_NULL)
+    private String hypervisor = null;
 
-  @JsonProperty("mgmt_vnic")
-  @JsonInclude(Include.NON_NULL)
-  private vNIC mgmtVnic = null;
+    @JsonProperty("mgmt_vnic")
+    @JsonInclude(Include.NON_NULL)
+    private vNIC mgmtVnic = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = "VM name unknown";
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = "VM name unknown";
 
-  @JsonProperty("resources")
-  @JsonInclude(Include.NON_NULL)
-  private SeResources resources = null;
+    @JsonProperty("resources")
+    @JsonInclude(Include.NON_NULL)
+    private SeResources resources = null;
 
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property availability_zone of obj type serviceengine field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -113,6 +114,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property availability_zone of obj type serviceengine field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -123,6 +125,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -133,6 +136,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -165,7 +169,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONTAINER_TYPE_HOST.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CONTAINER_TYPE_HOST".
    * @return containerType
    */
   @VsoMethod
@@ -176,7 +180,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CONTAINER_TYPE_HOST.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CONTAINER_TYPE_HOST".
    * @param containerType set the containerType.
    */
   @VsoMethod
@@ -209,6 +213,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_ip of obj type serviceengine field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerIp
    */
   @VsoMethod
@@ -219,6 +224,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_ip of obj type serviceengine field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerIp set the controllerIp.
    */
   @VsoMethod
@@ -229,6 +235,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property data_vnics of obj type serviceengine field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVnics
    */
   @VsoMethod
@@ -239,6 +246,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method. this will set the dataVnics
    * Placeholder for description of property data_vnics of obj type serviceengine field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVnics
    */
   @VsoMethod
@@ -249,6 +257,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method this will set the dataVnics
    * Placeholder for description of property data_vnics of obj type serviceengine field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dataVnics
    */
   @VsoMethod
@@ -265,7 +274,7 @@ public class ServiceEngine extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Inorder to disable se set this field appropriately.
    * Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_STATE_ENABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_STATE_ENABLED".
    * @return enableState
    */
   @VsoMethod
@@ -277,7 +286,7 @@ public class ServiceEngine extends AviRestResource {
    * This is the setter method to the attribute.
    * Inorder to disable se set this field appropriately.
    * Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_STATE_ENABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_STATE_ENABLED".
    * @param enableState set the enableState.
    */
   @VsoMethod
@@ -288,6 +297,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property flavor of obj type serviceengine field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavor
    */
   @VsoMethod
@@ -298,6 +308,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property flavor of obj type serviceengine field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flavor set the flavor.
    */
   @VsoMethod
@@ -308,6 +319,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRef
    */
   @VsoMethod
@@ -318,6 +330,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostRef set the hostRef.
    */
   @VsoMethod
@@ -328,6 +341,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypervisor
    */
   @VsoMethod
@@ -338,6 +352,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hypervisor set the hypervisor.
    */
   @VsoMethod
@@ -348,6 +363,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_vnic of obj type serviceengine field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtVnic
    */
   @VsoMethod
@@ -358,6 +374,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmt_vnic of obj type serviceengine field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtVnic set the mgmtVnic.
    */
   @VsoMethod
@@ -368,7 +385,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VM name unknown.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VM name unknown".
    * @return name
    */
   @VsoMethod
@@ -379,7 +396,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VM name unknown.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VM name unknown".
    * @param name set the name.
    */
   @VsoMethod
@@ -390,6 +407,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property resources of obj type serviceengine field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resources
    */
   @VsoMethod
@@ -400,6 +418,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property resources of obj type serviceengine field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resources set the resources.
    */
   @VsoMethod
@@ -410,6 +429,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
   @VsoMethod
@@ -420,6 +440,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
   @VsoMethod
@@ -430,6 +451,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -440,6 +462,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -469,6 +492,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -479,6 +503,7 @@ public class ServiceEngine extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

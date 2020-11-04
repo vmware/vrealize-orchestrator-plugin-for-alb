@@ -24,69 +24,69 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerLimits extends AviRestResource {
-  @JsonProperty("certificates_per_virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private Integer certificatesPerVirtualservice = null;
+    @JsonProperty("certificates_per_virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private Integer certificatesPerVirtualservice = null;
 
-  @JsonProperty("controller_cloud_limits")
-  @JsonInclude(Include.NON_NULL)
-  private List<ControllerCloudLimits> controllerCloudLimits = null;
+    @JsonProperty("controller_cloud_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<ControllerCloudLimits> controllerCloudLimits = null;
 
-  @JsonProperty("controller_sizing_limits")
-  @JsonInclude(Include.NON_NULL)
-  private List<ControllerSizingLimits> controllerSizingLimits = null;
+    @JsonProperty("controller_sizing_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<ControllerSizingLimits> controllerSizingLimits = null;
 
-  @JsonProperty("default_routes_per_vrfcontext")
-  @JsonInclude(Include.NON_NULL)
-  private Integer defaultRoutesPerVrfcontext = null;
+    @JsonProperty("default_routes_per_vrfcontext")
+    @JsonInclude(Include.NON_NULL)
+    private Integer defaultRoutesPerVrfcontext = null;
 
-  @JsonProperty("ips_per_ipgroup")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipsPerIpgroup = null;
+    @JsonProperty("ips_per_ipgroup")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipsPerIpgroup = null;
 
-  @JsonProperty("poolgroups_per_virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private Integer poolgroupsPerVirtualservice = null;
+    @JsonProperty("poolgroups_per_virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private Integer poolgroupsPerVirtualservice = null;
 
-  @JsonProperty("pools_per_poolgroup")
-  @JsonInclude(Include.NON_NULL)
-  private Integer poolsPerPoolgroup = null;
+    @JsonProperty("pools_per_poolgroup")
+    @JsonInclude(Include.NON_NULL)
+    private Integer poolsPerPoolgroup = null;
 
-  @JsonProperty("pools_per_virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private Integer poolsPerVirtualservice = null;
+    @JsonProperty("pools_per_virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private Integer poolsPerVirtualservice = null;
 
-  @JsonProperty("routes_per_vrfcontext")
-  @JsonInclude(Include.NON_NULL)
-  private Integer routesPerVrfcontext = null;
+    @JsonProperty("routes_per_vrfcontext")
+    @JsonInclude(Include.NON_NULL)
+    private Integer routesPerVrfcontext = null;
 
-  @JsonProperty("rules_per_httppolicy")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rulesPerHttppolicy = null;
+    @JsonProperty("rules_per_httppolicy")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rulesPerHttppolicy = null;
 
-  @JsonProperty("rules_per_networksecuritypolicy")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rulesPerNetworksecuritypolicy = null;
+    @JsonProperty("rules_per_networksecuritypolicy")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rulesPerNetworksecuritypolicy = null;
 
-  @JsonProperty("servers_per_pool")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serversPerPool = null;
+    @JsonProperty("servers_per_pool")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serversPerPool = null;
 
-  @JsonProperty("sni_children_per_parent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sniChildrenPerParent = null;
+    @JsonProperty("sni_children_per_parent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sniChildrenPerParent = null;
 
-  @JsonProperty("strings_per_stringgroup")
-  @JsonInclude(Include.NON_NULL)
-  private Integer stringsPerStringgroup = null;
+    @JsonProperty("strings_per_stringgroup")
+    @JsonInclude(Include.NON_NULL)
+    private Integer stringsPerStringgroup = null;
 
-  @JsonProperty("vs_bgp_scaleout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsBgpScaleout = null;
+    @JsonProperty("vs_bgp_scaleout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsBgpScaleout = null;
 
-  @JsonProperty("vs_l2_scaleout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsL2Scaleout = null;
+    @JsonProperty("vs_l2_scaleout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsL2Scaleout = null;
 
 
 
@@ -94,6 +94,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of certificates per virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return certificatesPerVirtualservice
    */
   @VsoMethod
@@ -105,6 +106,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of certificates per virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param certificatesPerVirtualservice set the certificatesPerVirtualservice.
    */
   @VsoMethod
@@ -116,6 +118,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller system limits specific to cloud type for all controller sizes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerCloudLimits
    */
   @VsoMethod
@@ -127,6 +130,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method. this will set the controllerCloudLimits
    * Controller system limits specific to cloud type for all controller sizes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerCloudLimits
    */
   @VsoMethod
@@ -138,6 +142,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method this will set the controllerCloudLimits
    * Controller system limits specific to cloud type for all controller sizes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerCloudLimits
    */
   @VsoMethod
@@ -154,6 +159,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller system limits specific to controller sizing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizingLimits
    */
   @VsoMethod
@@ -165,6 +171,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method. this will set the controllerSizingLimits
    * Controller system limits specific to controller sizing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizingLimits
    */
   @VsoMethod
@@ -176,6 +183,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method this will set the controllerSizingLimits
    * Controller system limits specific to controller sizing.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizingLimits
    */
   @VsoMethod
@@ -192,6 +200,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of default routes per vrfcontext.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return defaultRoutesPerVrfcontext
    */
   @VsoMethod
@@ -203,6 +212,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of default routes per vrfcontext.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param defaultRoutesPerVrfcontext set the defaultRoutesPerVrfcontext.
    */
   @VsoMethod
@@ -214,6 +224,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of ip's per ipaddrgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipsPerIpgroup
    */
   @VsoMethod
@@ -225,6 +236,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of ip's per ipaddrgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipsPerIpgroup set the ipsPerIpgroup.
    */
   @VsoMethod
@@ -236,6 +248,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of poolgroups per virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolgroupsPerVirtualservice
    */
   @VsoMethod
@@ -247,6 +260,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of poolgroups per virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolgroupsPerVirtualservice set the poolgroupsPerVirtualservice.
    */
   @VsoMethod
@@ -258,6 +272,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of pools per poolgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolsPerPoolgroup
    */
   @VsoMethod
@@ -269,6 +284,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of pools per poolgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolsPerPoolgroup set the poolsPerPoolgroup.
    */
   @VsoMethod
@@ -280,6 +296,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of pools per virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolsPerVirtualservice
    */
   @VsoMethod
@@ -291,6 +308,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of pools per virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolsPerVirtualservice set the poolsPerVirtualservice.
    */
   @VsoMethod
@@ -302,6 +320,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of routes per vrfcontext.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routesPerVrfcontext
    */
   @VsoMethod
@@ -313,6 +332,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of routes per vrfcontext.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routesPerVrfcontext set the routesPerVrfcontext.
    */
   @VsoMethod
@@ -324,6 +344,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of rules per httppolicy.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rulesPerHttppolicy
    */
   @VsoMethod
@@ -335,6 +356,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of rules per httppolicy.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rulesPerHttppolicy set the rulesPerHttppolicy.
    */
   @VsoMethod
@@ -346,6 +368,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of rules per networksecuritypolicy.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rulesPerNetworksecuritypolicy
    */
   @VsoMethod
@@ -357,6 +380,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of rules per networksecuritypolicy.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rulesPerNetworksecuritypolicy set the rulesPerNetworksecuritypolicy.
    */
   @VsoMethod
@@ -368,6 +392,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of servers per pool.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serversPerPool
    */
   @VsoMethod
@@ -379,6 +404,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of servers per pool.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serversPerPool set the serversPerPool.
    */
   @VsoMethod
@@ -390,6 +416,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of sni children virtualservices per sni parent virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sniChildrenPerParent
    */
   @VsoMethod
@@ -401,6 +428,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of sni children virtualservices per sni parent virtualservice.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sniChildrenPerParent set the sniChildrenPerParent.
    */
   @VsoMethod
@@ -412,6 +440,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of strings per stringgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringsPerStringgroup
    */
   @VsoMethod
@@ -423,6 +452,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of strings per stringgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stringsPerStringgroup set the stringsPerStringgroup.
    */
   @VsoMethod
@@ -434,6 +464,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of serviceengine per virtualservice in bgp scaleout mode.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsBgpScaleout
    */
   @VsoMethod
@@ -445,6 +476,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of serviceengine per virtualservice in bgp scaleout mode.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsBgpScaleout set the vsBgpScaleout.
    */
   @VsoMethod
@@ -456,6 +488,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of serviceengine per virtualservice in layer 2 scaleout mode.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsL2Scaleout
    */
   @VsoMethod
@@ -467,6 +500,7 @@ public class ControllerLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of serviceengine per virtualservice in layer 2 scaleout mode.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsL2Scaleout set the vsL2Scaleout.
    */
   @VsoMethod

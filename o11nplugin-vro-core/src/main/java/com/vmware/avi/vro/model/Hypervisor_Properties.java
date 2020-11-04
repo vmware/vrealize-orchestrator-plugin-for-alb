@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Hypervisor_Properties extends AviRestResource {
-  @JsonProperty("htype")
-  @JsonInclude(Include.NON_NULL)
-  private String htype = null;
+    @JsonProperty("htype")
+    @JsonInclude(Include.NON_NULL)
+    private String htype = null;
 
-  @JsonProperty("max_ips_per_nic")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxIpsPerNic = null;
+    @JsonProperty("max_ips_per_nic")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxIpsPerNic = null;
 
-  @JsonProperty("max_nics")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxNics = null;
+    @JsonProperty("max_nics")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxNics = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return htype
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class Hypervisor_Properties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param htype set the htype.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class Hypervisor_Properties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_ips_per_nic of obj type hypervisor_properties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxIpsPerNic
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class Hypervisor_Properties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_ips_per_nic of obj type hypervisor_properties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxIpsPerNic set the maxIpsPerNic.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class Hypervisor_Properties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_nics of obj type hypervisor_properties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNics
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class Hypervisor_Properties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_nics of obj type hypervisor_properties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNics set the maxNics.
    */
   @VsoMethod

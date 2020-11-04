@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesAccountUser extends AviRestResource {
-  @JsonProperty("email")
-  @JsonInclude(Include.NON_NULL)
-  private String email = null;
+    @JsonProperty("email")
+    @JsonInclude(Include.NON_NULL)
+    private String email = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("phone")
-  @JsonInclude(Include.NON_NULL)
-  private String phone = null;
+    @JsonProperty("phone")
+    @JsonInclude(Include.NON_NULL)
+    private String phone = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return email
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class ALBServicesAccountUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param email set the email.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class ALBServicesAccountUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class ALBServicesAccountUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class ALBServicesAccountUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return phone
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class ALBServicesAccountUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param phone set the phone.
    */
   @VsoMethod

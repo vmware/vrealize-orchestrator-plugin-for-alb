@@ -37,409 +37,409 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VirtualService extends AviRestResource {
-  @JsonProperty("active_standby_se_tag")
-  @JsonInclude(Include.NON_NULL)
-  private String activeStandbySeTag = "ACTIVE_STANDBY_SE_1";
-
-  @JsonProperty("advertise_down_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean advertiseDownVs = false;
-
-  @JsonProperty("allow_invalid_client_cert")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowInvalidClientCert = false;
-
-  @JsonProperty("analytics_policy")
-  @JsonInclude(Include.NON_NULL)
-  private AnalyticsPolicy analyticsPolicy = null;
-
-  @JsonProperty("analytics_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String analyticsProfileRef = null;
-
-  @JsonProperty("apic_contract_graph")
-  @JsonInclude(Include.NON_NULL)
-  private String apicContractGraph = null;
-
-  @JsonProperty("application_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String applicationProfileRef = null;
-
-  @JsonProperty("auto_allocate_floating_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoAllocateFloatingIp = null;
-
-  @JsonProperty("auto_allocate_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoAllocateIp = null;
-
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
-
-  @JsonProperty("avi_allocated_fip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aviAllocatedFip = null;
-
-  @JsonProperty("avi_allocated_vip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aviAllocatedVip = null;
-
-  @JsonProperty("azure_availability_set")
-  @JsonInclude(Include.NON_NULL)
-  private String azureAvailabilitySet = null;
-
-  @JsonProperty("bulk_sync_kvcache")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean bulkSyncKvcache = false;
-
-  @JsonProperty("client_auth")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPClientAuthenticationParams clientAuth = null;
-
-  @JsonProperty("close_client_conn_on_config_update")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean closeClientConnOnConfigUpdate = false;
-
-  @JsonProperty("cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudConfigCksum = null;
-
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
-
-  @JsonProperty("cloud_type")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudType = "CLOUD_NONE";
-
-  @JsonProperty("connections_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile connectionsRateLimit = null;
-
-  @JsonProperty("content_rewrite")
-  @JsonInclude(Include.NON_NULL)
-  private ContentRewriteProfile contentRewrite = null;
-
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
-
-  @JsonProperty("delay_fairness")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean delayFairness = false;
-
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
-
-  @JsonProperty("discovered_network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> discoveredNetworkRef = null;
-
-  @JsonProperty("discovered_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<DiscoveredNetwork> discoveredNetworks = null;
-
-  @JsonProperty("discovered_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> discoveredSubnet = null;
-
-  @JsonProperty("dns_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsInfo> dnsInfo = null;
-
-  @JsonProperty("dns_policies")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsPolicies> dnsPolicies = null;
-
-  @JsonProperty("east_west_placement")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean eastWestPlacement = false;
-
-  @JsonProperty("enable_autogw")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutogw = true;
-
-  @JsonProperty("enable_rhi")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRhi = null;
-
-  @JsonProperty("enable_rhi_snat")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRhiSnat = null;
-
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
-
-  @JsonProperty("error_page_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String errorPageProfileRef = null;
-
-  @JsonProperty("floating_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr floatingIp = null;
-
-  @JsonProperty("floating_subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String floatingSubnetUuid = null;
-
-  @JsonProperty("flow_dist")
-  @JsonInclude(Include.NON_NULL)
-  private String flowDist = "LOAD_AWARE";
-
-  @JsonProperty("flow_label_type")
-  @JsonInclude(Include.NON_NULL)
-  private String flowLabelType = "NO_LABEL";
-
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private String fqdn = null;
-
-  @JsonProperty("host_name_xlate")
-  @JsonInclude(Include.NON_NULL)
-  private String hostNameXlate = null;
-
-  @JsonProperty("http_policies")
-  @JsonInclude(Include.NON_NULL)
-  private List<HTTPPolicies> httpPolicies = null;
-
-  @JsonProperty("icap_request_profile_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> icapRequestProfileRefs = null;
-
-  @JsonProperty("ign_pool_net_reach")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignPoolNetReach = false;
-
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddress = null;
-
-  @JsonProperty("ipam_network_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IPNetworkSubnet ipamNetworkSubnet = null;
-
-  @JsonProperty("l4_policies")
-  @JsonInclude(Include.NON_NULL)
-  private List<L4Policies> l4Policies = null;
-
-  @JsonProperty("limit_doser")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean limitDoser = false;
-
-  @JsonProperty("max_cps_per_client")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxCpsPerClient = 0;
-
-  @JsonProperty("microservice_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String microserviceRef = null;
-
-  @JsonProperty("min_pools_up")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minPoolsUp = null;
-
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
-
-  @JsonProperty("network_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkProfileRef = null;
-
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
-
-  @JsonProperty("network_security_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkSecurityPolicyRef = null;
-
-  @JsonProperty("nsx_securitygroup")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> nsxSecuritygroup = null;
-
-  @JsonProperty("performance_limits")
-  @JsonInclude(Include.NON_NULL)
-  private PerformanceLimits performanceLimits = null;
-
-  @JsonProperty("pool_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolGroupRef = null;
-
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
-
-  @JsonProperty("port_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String portUuid = null;
-
-  @JsonProperty("remove_listening_port_on_vs_down")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean removeListeningPortOnVsDown = false;
-
-  @JsonProperty("requests_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile requestsRateLimit = null;
-
-  @JsonProperty("saml_sp_config")
-  @JsonInclude(Include.NON_NULL)
-  private SAMLSPConfig samlSpConfig = null;
-
-  @JsonProperty("scaleout_ecmp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleoutEcmp = false;
-
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
-
-  @JsonProperty("security_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String securityPolicyRef = null;
-
-  @JsonProperty("server_network_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String serverNetworkProfileRef = null;
-
-  @JsonProperty("service_metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceMetadata = null;
-
-  @JsonProperty("service_pool_select")
-  @JsonInclude(Include.NON_NULL)
-  private List<ServicePoolSelector> servicePoolSelect = null;
-
-  @JsonProperty("services")
-  @JsonInclude(Include.NON_NULL)
-  private List<com.vmware.avi.vro.model.Service> services = null;
-
-  @JsonProperty("sideband_profile")
-  @JsonInclude(Include.NON_NULL)
-  private SidebandProfile sidebandProfile = null;
-
-  @JsonProperty("snat_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> snatIp = null;
-
-  @JsonProperty("sp_pool_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> spPoolRefs = null;
-
-  @JsonProperty("ssl_key_and_certificate_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sslKeyAndCertificateRefs = null;
-
-  @JsonProperty("ssl_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslProfileRef = null;
-
-  @JsonProperty("ssl_profile_selectors")
-  @JsonInclude(Include.NON_NULL)
-  private List<SSLProfileSelector> sslProfileSelectors = null;
-
-  @JsonProperty("ssl_sess_cache_avg_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sslSessCacheAvgSize = 1024;
-
-  @JsonProperty("sso_policy")
-  @JsonInclude(Include.NON_NULL)
-  private SSOPolicy ssoPolicy = null;
-
-  @JsonProperty("sso_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String ssoPolicyRef = null;
-
-  @JsonProperty("static_dns_records")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsRecord> staticDnsRecords = null;
-
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
-
-  @JsonProperty("subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetUuid = null;
-
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
-
-  @JsonProperty("test_se_datastore_level_1_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String testSeDatastoreLevel1Ref = null;
-
-  @JsonProperty("topology_policies")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsPolicies> topologyPolicies = null;
-
-  @JsonProperty("traffic_clone_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String trafficCloneProfileRef = null;
-
-  @JsonProperty("traffic_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean trafficEnabled = true;
-
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "VS_TYPE_NORMAL";
-
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
-
-  @JsonProperty("use_bridge_ip_as_vip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useBridgeIpAsVip = false;
-
-  @JsonProperty("use_vip_as_snat")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useVipAsSnat = false;
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
-
-  @JsonProperty("vh_domain_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vhDomainName = null;
-
-  @JsonProperty("vh_parent_vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vhParentVsUuid = null;
-
-  @JsonProperty("vip")
-  @JsonInclude(Include.NON_NULL)
-  private List<Vip> vip = null;
-
-  @JsonProperty("vrf_context_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfContextRef = null;
-
-  @JsonProperty("vs_datascripts")
-  @JsonInclude(Include.NON_NULL)
-  private List<VSDataScripts> vsDatascripts = null;
-
-  @JsonProperty("vsvip_cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String vsvipCloudConfigCksum = null;
-
-  @JsonProperty("vsvip_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vsvipRef = null;
-
-  @JsonProperty("waf_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String wafPolicyRef = null;
-
-  @JsonProperty("weight")
-  @JsonInclude(Include.NON_NULL)
-  private Integer weight = 1;
+    @JsonProperty("active_standby_se_tag")
+    @JsonInclude(Include.NON_NULL)
+    private String activeStandbySeTag = "ACTIVE_STANDBY_SE_1";
+
+    @JsonProperty("advertise_down_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean advertiseDownVs = false;
+
+    @JsonProperty("allow_invalid_client_cert")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowInvalidClientCert = false;
+
+    @JsonProperty("analytics_policy")
+    @JsonInclude(Include.NON_NULL)
+    private AnalyticsPolicy analyticsPolicy = null;
+
+    @JsonProperty("analytics_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String analyticsProfileRef = null;
+
+    @JsonProperty("apic_contract_graph")
+    @JsonInclude(Include.NON_NULL)
+    private String apicContractGraph = null;
+
+    @JsonProperty("application_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String applicationProfileRef = null;
+
+    @JsonProperty("auto_allocate_floating_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoAllocateFloatingIp;
+
+    @JsonProperty("auto_allocate_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoAllocateIp;
+
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone;
+
+    @JsonProperty("avi_allocated_fip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aviAllocatedFip;
+
+    @JsonProperty("avi_allocated_vip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aviAllocatedVip;
+
+    @JsonProperty("azure_availability_set")
+    @JsonInclude(Include.NON_NULL)
+    private String azureAvailabilitySet = null;
+
+    @JsonProperty("bulk_sync_kvcache")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean bulkSyncKvcache = false;
+
+    @JsonProperty("client_auth")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPClientAuthenticationParams clientAuth = null;
+
+    @JsonProperty("close_client_conn_on_config_update")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean closeClientConnOnConfigUpdate = false;
+
+    @JsonProperty("cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudConfigCksum = null;
+
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
+
+    @JsonProperty("cloud_type")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudType = "CLOUD_NONE";
+
+    @JsonProperty("connections_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile connectionsRateLimit = null;
+
+    @JsonProperty("content_rewrite")
+    @JsonInclude(Include.NON_NULL)
+    private ContentRewriteProfile contentRewrite = null;
+
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
+
+    @JsonProperty("delay_fairness")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean delayFairness = false;
+
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
+
+    @JsonProperty("discovered_network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> discoveredNetworkRef;
+
+    @JsonProperty("discovered_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<DiscoveredNetwork> discoveredNetworks;
+
+    @JsonProperty("discovered_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> discoveredSubnet;
+
+    @JsonProperty("dns_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsInfo> dnsInfo = null;
+
+    @JsonProperty("dns_policies")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsPolicies> dnsPolicies = null;
+
+    @JsonProperty("east_west_placement")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean eastWestPlacement = false;
+
+    @JsonProperty("enable_autogw")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutogw = true;
+
+    @JsonProperty("enable_rhi")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRhi = null;
+
+    @JsonProperty("enable_rhi_snat")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRhiSnat = null;
+
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
+
+    @JsonProperty("error_page_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String errorPageProfileRef = null;
+
+    @JsonProperty("floating_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr floatingIp;
+
+    @JsonProperty("floating_subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String floatingSubnetUuid;
+
+    @JsonProperty("flow_dist")
+    @JsonInclude(Include.NON_NULL)
+    private String flowDist = "LOAD_AWARE";
+
+    @JsonProperty("flow_label_type")
+    @JsonInclude(Include.NON_NULL)
+    private String flowLabelType = "NO_LABEL";
+
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private String fqdn = null;
+
+    @JsonProperty("host_name_xlate")
+    @JsonInclude(Include.NON_NULL)
+    private String hostNameXlate = null;
+
+    @JsonProperty("http_policies")
+    @JsonInclude(Include.NON_NULL)
+    private List<HTTPPolicies> httpPolicies = null;
+
+    @JsonProperty("icap_request_profile_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> icapRequestProfileRefs = null;
+
+    @JsonProperty("ign_pool_net_reach")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignPoolNetReach = false;
+
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddress;
+
+    @JsonProperty("ipam_network_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IPNetworkSubnet ipamNetworkSubnet;
+
+    @JsonProperty("l4_policies")
+    @JsonInclude(Include.NON_NULL)
+    private List<L4Policies> l4Policies = null;
+
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
+
+    @JsonProperty("limit_doser")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean limitDoser = false;
+
+    @JsonProperty("max_cps_per_client")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxCpsPerClient = 0;
+
+    @JsonProperty("microservice_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String microserviceRef = null;
+
+    @JsonProperty("min_pools_up")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minPoolsUp = null;
+
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
+
+    @JsonProperty("network_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkProfileRef = null;
+
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef;
+
+    @JsonProperty("network_security_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkSecurityPolicyRef = null;
+
+    @JsonProperty("nsx_securitygroup")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> nsxSecuritygroup = null;
+
+    @JsonProperty("performance_limits")
+    @JsonInclude(Include.NON_NULL)
+    private PerformanceLimits performanceLimits = null;
+
+    @JsonProperty("pool_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolGroupRef = null;
+
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
+
+    @JsonProperty("port_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String portUuid;
+
+    @JsonProperty("remove_listening_port_on_vs_down")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean removeListeningPortOnVsDown = false;
+
+    @JsonProperty("requests_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile requestsRateLimit = null;
+
+    @JsonProperty("saml_sp_config")
+    @JsonInclude(Include.NON_NULL)
+    private SAMLSPConfig samlSpConfig = null;
+
+    @JsonProperty("scaleout_ecmp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleoutEcmp = false;
+
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef = null;
+
+    @JsonProperty("security_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String securityPolicyRef = null;
+
+    @JsonProperty("server_network_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String serverNetworkProfileRef = null;
+
+    @JsonProperty("service_metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceMetadata = null;
+
+    @JsonProperty("service_pool_select")
+    @JsonInclude(Include.NON_NULL)
+    private List<ServicePoolSelector> servicePoolSelect = null;
+
+    @JsonProperty("services")
+    @JsonInclude(Include.NON_NULL)
+    private List<com.vmware.avi.vro.model.Service> services = null;
+
+    @JsonProperty("sideband_profile")
+    @JsonInclude(Include.NON_NULL)
+    private SidebandProfile sidebandProfile = null;
+
+    @JsonProperty("snat_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> snatIp = null;
+
+    @JsonProperty("sp_pool_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> spPoolRefs = null;
+
+    @JsonProperty("ssl_key_and_certificate_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sslKeyAndCertificateRefs = null;
+
+    @JsonProperty("ssl_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslProfileRef = null;
+
+    @JsonProperty("ssl_profile_selectors")
+    @JsonInclude(Include.NON_NULL)
+    private List<SSLProfileSelector> sslProfileSelectors = null;
+
+    @JsonProperty("ssl_sess_cache_avg_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sslSessCacheAvgSize = 1024;
+
+    @JsonProperty("sso_policy")
+    @JsonInclude(Include.NON_NULL)
+    private SSOPolicy ssoPolicy;
+
+    @JsonProperty("sso_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String ssoPolicyRef = null;
+
+    @JsonProperty("static_dns_records")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsRecord> staticDnsRecords = null;
+
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet;
+
+    @JsonProperty("subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetUuid;
+
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
+
+    @JsonProperty("test_se_datastore_level_1_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String testSeDatastoreLevel1Ref = null;
+
+    @JsonProperty("topology_policies")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsPolicies> topologyPolicies = null;
+
+    @JsonProperty("traffic_clone_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String trafficCloneProfileRef = null;
+
+    @JsonProperty("traffic_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean trafficEnabled = true;
+
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "VS_TYPE_NORMAL";
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("use_bridge_ip_as_vip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useBridgeIpAsVip = false;
+
+    @JsonProperty("use_vip_as_snat")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useVipAsSnat = false;
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("vh_domain_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vhDomainName = null;
+
+    @JsonProperty("vh_parent_vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vhParentVsUuid = null;
+
+    @JsonProperty("vip")
+    @JsonInclude(Include.NON_NULL)
+    private List<Vip> vip = null;
+
+    @JsonProperty("vrf_context_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfContextRef = null;
+
+    @JsonProperty("vs_datascripts")
+    @JsonInclude(Include.NON_NULL)
+    private List<VSDataScripts> vsDatascripts = null;
+
+    @JsonProperty("vsvip_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vsvipRef = null;
+
+    @JsonProperty("waf_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String wafPolicyRef = null;
+
+    @JsonProperty("weight")
+    @JsonInclude(Include.NON_NULL)
+    private Integer weight = 1;
 
 
 
@@ -452,7 +452,7 @@ public class VirtualService extends AviRestResource {
    * Redistribution of the virtualservices can be either manual or automated when the failed serviceengine recovers.
    * Redistribution is based on the auto redistribute property of the serviceenginegroup.
    * Enum options - ACTIVE_STANDBY_SE_1, ACTIVE_STANDBY_SE_2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ACTIVE_STANDBY_SE_1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ACTIVE_STANDBY_SE_1".
    * @return activeStandbySeTag
    */
   @VsoMethod
@@ -469,7 +469,7 @@ public class VirtualService extends AviRestResource {
    * Redistribution of the virtualservices can be either manual or automated when the failed serviceengine recovers.
    * Redistribution is based on the auto redistribute property of the serviceenginegroup.
    * Enum options - ACTIVE_STANDBY_SE_1, ACTIVE_STANDBY_SE_2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ACTIVE_STANDBY_SE_1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ACTIVE_STANDBY_SE_1".
    * @param activeStandbySeTag set the activeStandbySeTag.
    */
   @VsoMethod
@@ -534,6 +534,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Determines analytics settings for the application.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return analyticsPolicy
    */
   @VsoMethod
@@ -544,6 +545,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Determines analytics settings for the application.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param analyticsPolicy set the analyticsPolicy.
    */
   @VsoMethod
@@ -555,6 +557,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies settings related to analytics.
    * It is a reference to an object of type analyticsprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return analyticsProfileRef
    */
   @VsoMethod
@@ -566,6 +569,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies settings related to analytics.
    * It is a reference to an object of type analyticsprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param analyticsProfileRef set the analyticsProfileRef.
    */
   @VsoMethod
@@ -579,6 +583,7 @@ public class VirtualService extends AviRestResource {
    * Should be in the <contract name> <graph name> format.
    * This is applicable only for service integration mode with cisco apic controller.
    * Field introduced in 17.2.12,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicContractGraph
    */
   @VsoMethod
@@ -592,6 +597,7 @@ public class VirtualService extends AviRestResource {
    * Should be in the <contract name> <graph name> format.
    * This is applicable only for service integration mode with cisco apic controller.
    * Field introduced in 17.2.12,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicContractGraph set the apicContractGraph.
    */
   @VsoMethod
@@ -603,6 +609,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable application layer specific features for the virtual service.
    * It is a reference to an object of type applicationprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationProfileRef
    */
   @VsoMethod
@@ -614,6 +621,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable application layer specific features for the virtual service.
    * It is a reference to an object of type applicationprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationProfileRef set the applicationProfileRef.
    */
   @VsoMethod
@@ -737,6 +745,7 @@ public class VirtualService extends AviRestResource {
    * Azure availability set to which this vs is associated.
    * Internally set by the cloud connector.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureAvailabilitySet
    */
   @VsoMethod
@@ -750,6 +759,7 @@ public class VirtualService extends AviRestResource {
    * Azure availability set to which this vs is associated.
    * Internally set by the cloud connector.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureAvailabilitySet set the azureAvailabilitySet.
    */
   @VsoMethod
@@ -790,6 +800,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http authentication configuration for protected resources.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientAuth
    */
   @VsoMethod
@@ -800,6 +811,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http authentication configuration for protected resources.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientAuth set the clientAuth.
    */
   @VsoMethod
@@ -835,6 +847,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Checksum of cloud configuration for vs.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
   @VsoMethod
@@ -846,6 +859,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Checksum of cloud configuration for vs.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
   @VsoMethod
@@ -856,6 +870,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -866,6 +881,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -877,7 +893,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @return cloudType
    */
   @VsoMethod
@@ -889,7 +905,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @param cloudType set the cloudType.
    */
   @VsoMethod
@@ -900,6 +916,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit the incoming connections to this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connectionsRateLimit
    */
   @VsoMethod
@@ -910,6 +927,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit the incoming connections to this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connectionsRateLimit set the connectionsRateLimit.
    */
   @VsoMethod
@@ -920,6 +938,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Profile used to match and rewrite strings in request and/or response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contentRewrite
    */
   @VsoMethod
@@ -930,6 +949,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Profile used to match and rewrite strings in request and/or response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contentRewrite set the contentRewrite.
    */
   @VsoMethod
@@ -940,6 +960,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -950,6 +971,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -984,6 +1006,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -994,6 +1017,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -1131,6 +1155,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Note that only one of fqdn and dns_info setting is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -1142,6 +1167,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the dnsInfo
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Note that only one of fqdn and dns_info setting is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -1153,6 +1179,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the dnsInfo
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Note that only one of fqdn and dns_info setting is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -1169,6 +1196,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns policies applied on the dns traffic of the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsPolicies
    */
   @VsoMethod
@@ -1180,6 +1208,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the dnsPolicies
    * Dns policies applied on the dns traffic of the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsPolicies
    */
   @VsoMethod
@@ -1191,6 +1220,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the dnsPolicies
    * Dns policies applied on the dns traffic of the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsPolicies
    */
   @VsoMethod
@@ -1250,6 +1280,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable route health injection using the bgp config in the vrf context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enableRhi
    */
   @VsoMethod
@@ -1260,6 +1291,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable route health injection using the bgp config in the vrf context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enableRhi set the enableRhi.
    */
   @VsoMethod
@@ -1270,6 +1302,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable route health injection for source nat'ted floating ip address using the bgp config in the vrf context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enableRhiSnat
    */
   @VsoMethod
@@ -1280,6 +1313,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable route health injection for source nat'ted floating ip address using the bgp config in the vrf context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enableRhiSnat set the enableRhiSnat.
    */
   @VsoMethod
@@ -1314,6 +1348,7 @@ public class VirtualService extends AviRestResource {
    * Error page profile to be used for this virtualservice.this profile is used to send the custom error page to the client generated by the proxy.
    * It is a reference to an object of type errorpageprofile.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorPageProfileRef
    */
   @VsoMethod
@@ -1326,6 +1361,7 @@ public class VirtualService extends AviRestResource {
    * Error page profile to be used for this virtualservice.this profile is used to send the custom error page to the client generated by the proxy.
    * It is a reference to an object of type errorpageprofile.
    * Field introduced in 17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorPageProfileRef set the errorPageProfileRef.
    */
   @VsoMethod
@@ -1385,7 +1421,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criteria for flow distribution among ses.
    * Enum options - LOAD_AWARE, CONSISTENT_HASH_SOURCE_IP_ADDRESS, CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOAD_AWARE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOAD_AWARE".
    * @return flowDist
    */
   @VsoMethod
@@ -1397,7 +1433,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Criteria for flow distribution among ses.
    * Enum options - LOAD_AWARE, CONSISTENT_HASH_SOURCE_IP_ADDRESS, CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOAD_AWARE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOAD_AWARE".
    * @param flowDist set the flowDist.
    */
   @VsoMethod
@@ -1409,7 +1445,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criteria for flow labelling.
    * Enum options - NO_LABEL, APPLICATION_LABEL, SERVICE_LABEL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as NO_LABEL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NO_LABEL".
    * @return flowLabelType
    */
   @VsoMethod
@@ -1421,7 +1457,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Criteria for flow labelling.
    * Enum options - NO_LABEL, APPLICATION_LABEL, SERVICE_LABEL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as NO_LABEL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NO_LABEL".
    * @param flowLabelType set the flowLabelType.
    */
   @VsoMethod
@@ -1433,6 +1469,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resolvable, fully qualified domain name of the virtualservice.
    * Only one of 'fqdn' and 'dns_info' configuration is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -1444,6 +1481,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns resolvable, fully qualified domain name of the virtualservice.
    * Only one of 'fqdn' and 'dns_info' configuration is allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
   @VsoMethod
@@ -1455,6 +1493,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Translate the host name sent to the servers to this value.
    * Translate the host name sent from servers back to the value used by the client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostNameXlate
    */
   @VsoMethod
@@ -1466,6 +1505,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Translate the host name sent to the servers to this value.
    * Translate the host name sent from servers back to the value used by the client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostNameXlate set the hostNameXlate.
    */
   @VsoMethod
@@ -1476,6 +1516,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http policies applied on the data traffic of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPolicies
    */
   @VsoMethod
@@ -1486,6 +1527,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method. this will set the httpPolicies
    * Http policies applied on the data traffic of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPolicies
    */
   @VsoMethod
@@ -1496,6 +1538,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method this will set the httpPolicies
    * Http policies applied on the data traffic of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpPolicies
    */
   @VsoMethod
@@ -1513,6 +1556,7 @@ public class VirtualService extends AviRestResource {
    * The config settings for the icap server when checking the http request.
    * It is a reference to an object of type icapprofile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapRequestProfileRefs
    */
   @VsoMethod
@@ -1525,6 +1569,7 @@ public class VirtualService extends AviRestResource {
    * The config settings for the icap server when checking the http request.
    * It is a reference to an object of type icapprofile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapRequestProfileRefs
    */
   @VsoMethod
@@ -1537,6 +1582,7 @@ public class VirtualService extends AviRestResource {
    * The config settings for the icap server when checking the http request.
    * It is a reference to an object of type icapprofile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return icapRequestProfileRefs
    */
   @VsoMethod
@@ -1619,6 +1665,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * L4 policies applied to the data traffic of the virtual service.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return l4Policies
    */
   @VsoMethod
@@ -1630,6 +1677,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the l4Policies
    * L4 policies applied to the data traffic of the virtual service.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return l4Policies
    */
   @VsoMethod
@@ -1641,6 +1689,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the l4Policies
    * L4 policies applied to the data traffic of the virtual service.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return l4Policies
    */
   @VsoMethod
@@ -1649,6 +1698,50 @@ public class VirtualService extends AviRestResource {
       this.l4Policies = new ArrayList<L4Policies>();
     }
     this.l4Policies.add(l4PoliciesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public VirtualService addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
     return this;
   }
 
@@ -1705,6 +1798,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Microservice representing the virtual service.
    * It is a reference to an object of type microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microserviceRef
    */
   @VsoMethod
@@ -1716,6 +1810,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Microservice representing the virtual service.
    * It is a reference to an object of type microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microserviceRef set the microserviceRef.
    */
   @VsoMethod
@@ -1727,6 +1822,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of up pools to mark vs up.
    * Field introduced in 18.2.1, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minPoolsUp
    */
   @VsoMethod
@@ -1738,6 +1834,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of up pools to mark vs up.
    * Field introduced in 18.2.1, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minPoolsUp set the minPoolsUp.
    */
   @VsoMethod
@@ -1748,6 +1845,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -1758,6 +1856,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -1769,6 +1868,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines network settings such as protocol, tcp or udp, and related options for the protocol.
    * It is a reference to an object of type networkprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkProfileRef
    */
   @VsoMethod
@@ -1780,6 +1880,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines network settings such as protocol, tcp or udp, and related options for the protocol.
    * It is a reference to an object of type networkprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkProfileRef set the networkProfileRef.
    */
   @VsoMethod
@@ -1815,6 +1916,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Network security policies for the virtual service.
    * It is a reference to an object of type networksecuritypolicy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkSecurityPolicyRef
    */
   @VsoMethod
@@ -1826,6 +1928,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Network security policies for the virtual service.
    * It is a reference to an object of type networksecuritypolicy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkSecurityPolicyRef set the networkSecurityPolicyRef.
    */
   @VsoMethod
@@ -1835,8 +1938,9 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * A list of nsx service groups representing the clients which can access the virtual ip of the virtual service.
+   * A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
   @VsoMethod
@@ -1846,8 +1950,9 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the setter method. this will set the nsxSecuritygroup
-   * A list of nsx service groups representing the clients which can access the virtual ip of the virtual service.
+   * A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
   @VsoMethod
@@ -1857,8 +1962,9 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the setter method this will set the nsxSecuritygroup
-   * A list of nsx service groups representing the clients which can access the virtual ip of the virtual service.
+   * A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
   @VsoMethod
@@ -1874,6 +1980,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Optional settings that determine performance limits like max connections or bandwdith etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return performanceLimits
    */
   @VsoMethod
@@ -1884,6 +1991,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Optional settings that determine performance limits like max connections or bandwdith etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param performanceLimits set the performanceLimits.
    */
   @VsoMethod
@@ -1895,6 +2003,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The pool group is an object that contains pools.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
   @VsoMethod
@@ -1906,6 +2015,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * The pool group is an object that contains pools.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
   @VsoMethod
@@ -1917,6 +2027,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The pool is an object that contains destination servers and related attributes such as load-balancing and persistence.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -1928,6 +2039,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * The pool is an object that contains destination servers and related attributes such as load-balancing and persistence.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod
@@ -1982,6 +2094,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit the incoming requests to this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestsRateLimit
    */
   @VsoMethod
@@ -1992,6 +2105,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit the incoming requests to this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestsRateLimit set the requestsRateLimit.
    */
   @VsoMethod
@@ -2003,6 +2117,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Application-specific saml config.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return samlSpConfig
    */
   @VsoMethod
@@ -2014,6 +2129,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Application-specific saml config.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param samlSpConfig set the samlSpConfig.
    */
   @VsoMethod
@@ -2050,6 +2166,7 @@ public class VirtualService extends AviRestResource {
    * The service engine group to use for this virtual service.
    * Moving to a new se group is disruptive to existing connections for this vs.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
   @VsoMethod
@@ -2062,6 +2179,7 @@ public class VirtualService extends AviRestResource {
    * The service engine group to use for this virtual service.
    * Moving to a new se group is disruptive to existing connections for this vs.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
   @VsoMethod
@@ -2075,6 +2193,7 @@ public class VirtualService extends AviRestResource {
    * This policy is used to perform security actions such as distributed denial of service (ddos) attack mitigation, etc.
    * It is a reference to an object of type securitypolicy.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return securityPolicyRef
    */
   @VsoMethod
@@ -2088,6 +2207,7 @@ public class VirtualService extends AviRestResource {
    * This policy is used to perform security actions such as distributed denial of service (ddos) attack mitigation, etc.
    * It is a reference to an object of type securitypolicy.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param securityPolicyRef set the securityPolicyRef.
    */
   @VsoMethod
@@ -2100,6 +2220,7 @@ public class VirtualService extends AviRestResource {
    * Determines the network settings profile for the server side of tcp proxied connections.
    * Leave blank to use the same settings as the client to vs side of the connection.
    * It is a reference to an object of type networkprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverNetworkProfileRef
    */
   @VsoMethod
@@ -2112,6 +2233,7 @@ public class VirtualService extends AviRestResource {
    * Determines the network settings profile for the server side of tcp proxied connections.
    * Leave blank to use the same settings as the client to vs side of the connection.
    * It is a reference to an object of type networkprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverNetworkProfileRef set the serverNetworkProfileRef.
    */
   @VsoMethod
@@ -2124,6 +2246,7 @@ public class VirtualService extends AviRestResource {
    * Metadata pertaining to the service provided by this virtual service.
    * In openshift/kubernetes environments, egress pod info is stored.
    * Any user input to this field will be overwritten by avi vantage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceMetadata
    */
   @VsoMethod
@@ -2136,6 +2259,7 @@ public class VirtualService extends AviRestResource {
    * Metadata pertaining to the service provided by this virtual service.
    * In openshift/kubernetes environments, egress pod info is stored.
    * Any user input to this field will be overwritten by avi vantage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceMetadata set the serviceMetadata.
    */
   @VsoMethod
@@ -2146,6 +2270,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Select pool based on destination port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolSelect
    */
   @VsoMethod
@@ -2156,6 +2281,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method. this will set the servicePoolSelect
    * Select pool based on destination port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolSelect
    */
   @VsoMethod
@@ -2166,6 +2292,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method this will set the servicePoolSelect
    * Select pool based on destination port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolSelect
    */
   @VsoMethod
@@ -2181,6 +2308,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of services defined for this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -2191,6 +2319,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method. this will set the services
    * List of services defined for this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -2201,6 +2330,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method this will set the services
    * List of services defined for this virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return services
    */
   @VsoMethod
@@ -2216,6 +2346,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sidebandProfile
    */
   @VsoMethod
@@ -2226,6 +2357,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sidebandProfile set the sidebandProfile.
    */
   @VsoMethod
@@ -2236,6 +2368,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nat'ted floating source ip address(es) for upstream connection to servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
    */
   @VsoMethod
@@ -2246,6 +2379,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method. this will set the snatIp
    * Nat'ted floating source ip address(es) for upstream connection to servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
    */
   @VsoMethod
@@ -2256,6 +2390,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method this will set the snatIp
    * Nat'ted floating source ip address(es) for upstream connection to servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
    */
   @VsoMethod
@@ -2275,6 +2410,7 @@ public class VirtualService extends AviRestResource {
    * This is a read-only field for the user.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPoolRefs
    */
   @VsoMethod
@@ -2289,6 +2425,7 @@ public class VirtualService extends AviRestResource {
    * This is a read-only field for the user.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPoolRefs
    */
   @VsoMethod
@@ -2303,6 +2440,7 @@ public class VirtualService extends AviRestResource {
    * This is a read-only field for the user.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPoolRefs
    */
   @VsoMethod
@@ -2319,6 +2457,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRefs
    */
   @VsoMethod
@@ -2330,6 +2469,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the sslKeyAndCertificateRefs
    * Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRefs
    */
   @VsoMethod
@@ -2341,6 +2481,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the sslKeyAndCertificateRefs
    * Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRefs
    */
   @VsoMethod
@@ -2357,6 +2498,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines the set of ssl versions and ciphers to accept for ssl/tls terminated connections.
    * It is a reference to an object of type sslprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
    */
   @VsoMethod
@@ -2368,6 +2510,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines the set of ssl versions and ciphers to accept for ssl/tls terminated connections.
    * It is a reference to an object of type sslprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
    */
   @VsoMethod
@@ -2379,6 +2522,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select ssl profile based on client ip address match.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileSelectors
    */
   @VsoMethod
@@ -2390,6 +2534,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the sslProfileSelectors
    * Select ssl profile based on client ip address match.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileSelectors
    */
   @VsoMethod
@@ -2401,6 +2546,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the sslProfileSelectors
    * Select ssl profile based on client ip address match.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileSelectors
    */
   @VsoMethod
@@ -2466,6 +2612,7 @@ public class VirtualService extends AviRestResource {
    * The sso policy attached to the virtualservice.
    * It is a reference to an object of type ssopolicy.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ssoPolicyRef
    */
   @VsoMethod
@@ -2478,6 +2625,7 @@ public class VirtualService extends AviRestResource {
    * The sso policy attached to the virtualservice.
    * It is a reference to an object of type ssopolicy.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ssoPolicyRef set the ssoPolicyRef.
    */
   @VsoMethod
@@ -2489,6 +2637,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of static dns records applied to this virtual service.
    * These are static entries and no health monitoring is performed against the ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticDnsRecords
    */
   @VsoMethod
@@ -2500,6 +2649,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the staticDnsRecords
    * List of static dns records applied to this virtual service.
    * These are static entries and no health monitoring is performed against the ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticDnsRecords
    */
   @VsoMethod
@@ -2511,6 +2661,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the staticDnsRecords
    * List of static dns records applied to this virtual service.
    * These are static entries and no health monitoring is performed against the ip addresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticDnsRecords
    */
   @VsoMethod
@@ -2572,6 +2723,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -2582,6 +2734,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -2594,6 +2747,7 @@ public class VirtualService extends AviRestResource {
    * Used for testing se datastore upgrade 2.0 functionality.
    * It is a reference to an object of type testsedatastorelevel1.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return testSeDatastoreLevel1Ref
    */
   @VsoMethod
@@ -2606,6 +2760,7 @@ public class VirtualService extends AviRestResource {
    * Used for testing se datastore upgrade 2.0 functionality.
    * It is a reference to an object of type testsedatastorelevel1.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param testSeDatastoreLevel1Ref set the testSeDatastoreLevel1Ref.
    */
   @VsoMethod
@@ -2617,6 +2772,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Topology policies applied on the dns traffic of the virtual service based ongslb topology algorithm.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return topologyPolicies
    */
   @VsoMethod
@@ -2628,6 +2784,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the topologyPolicies
    * Topology policies applied on the dns traffic of the virtual service based ongslb topology algorithm.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return topologyPolicies
    */
   @VsoMethod
@@ -2639,6 +2796,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the topologyPolicies
    * Topology policies applied on the dns traffic of the virtual service based ongslb topology algorithm.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return topologyPolicies
    */
   @VsoMethod
@@ -2656,6 +2814,7 @@ public class VirtualService extends AviRestResource {
    * Server network or list of servers for cloning traffic.
    * It is a reference to an object of type trafficcloneprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trafficCloneProfileRef
    */
   @VsoMethod
@@ -2668,6 +2827,7 @@ public class VirtualService extends AviRestResource {
    * Server network or list of servers for cloning traffic.
    * It is a reference to an object of type trafficcloneprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trafficCloneProfileRef set the trafficCloneProfileRef.
    */
   @VsoMethod
@@ -2705,7 +2865,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specify if this is a normal virtual service, or if it is the parent or child of an sni-enabled virtual hosted virtual service.
    * Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_NORMAL".
    * @return type
    */
   @VsoMethod
@@ -2717,7 +2877,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Specify if this is a normal virtual service, or if it is the parent or child of an sni-enabled virtual hosted virtual service.
    * Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_NORMAL".
    * @param type set the type.
    */
   @VsoMethod
@@ -2797,6 +2957,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -2807,6 +2968,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -2818,6 +2980,7 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The exact name requested from the client's sni-enabled tls hello domain name field.
    * If this is a match, the parent vs will forward the connection to this child vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhDomainName
    */
   @VsoMethod
@@ -2829,6 +2992,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method. this will set the vhDomainName
    * The exact name requested from the client's sni-enabled tls hello domain name field.
    * If this is a match, the parent vs will forward the connection to this child vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhDomainName
    */
   @VsoMethod
@@ -2840,6 +3004,7 @@ public class VirtualService extends AviRestResource {
    * This is the setter method this will set the vhDomainName
    * The exact name requested from the client's sni-enabled tls hello domain name field.
    * If this is a match, the parent vs will forward the connection to this child vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhDomainName
    */
   @VsoMethod
@@ -2855,6 +3020,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the virtual service acting as virtual hosting (sni) parent.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vhParentVsUuid
    */
   @VsoMethod
@@ -2865,6 +3031,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the virtual service acting as virtual hosting (sni) parent.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vhParentVsUuid set the vhParentVsUuid.
    */
   @VsoMethod
@@ -2877,6 +3044,7 @@ public class VirtualService extends AviRestResource {
    * List of virtual service ips.
    * While creating a 'shared vs',please use vsvip_ref to point to the shared entities.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -2889,6 +3057,7 @@ public class VirtualService extends AviRestResource {
    * List of virtual service ips.
    * While creating a 'shared vs',please use vsvip_ref to point to the shared entities.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -2901,6 +3070,7 @@ public class VirtualService extends AviRestResource {
    * List of virtual service ips.
    * While creating a 'shared vs',please use vsvip_ref to point to the shared entities.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -2918,6 +3088,7 @@ public class VirtualService extends AviRestResource {
    * Virtual routing context that the virtual service is bound to.
    * This is used to provide the isolation of the set of networks the application is attached to.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfContextRef
    */
   @VsoMethod
@@ -2930,6 +3101,7 @@ public class VirtualService extends AviRestResource {
    * Virtual routing context that the virtual service is bound to.
    * This is used to provide the isolation of the set of networks the application is attached to.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfContextRef set the vrfContextRef.
    */
   @VsoMethod
@@ -2940,6 +3112,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Datascripts applied on the data traffic of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsDatascripts
    */
   @VsoMethod
@@ -2950,6 +3123,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method. this will set the vsDatascripts
    * Datascripts applied on the data traffic of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsDatascripts
    */
   @VsoMethod
@@ -2960,6 +3134,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method this will set the vsDatascripts
    * Datascripts applied on the data traffic of the virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsDatascripts
    */
   @VsoMethod
@@ -2974,33 +3149,10 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Checksum of cloud configuration for vsvip.
-   * Internally set by cloud connector.
-   * Field introduced in 17.2.9, 18.1.2.
-   * @return vsvipCloudConfigCksum
-   */
-  @VsoMethod
-  public String getVsvipCloudConfigCksum() {
-    return vsvipCloudConfigCksum;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Checksum of cloud configuration for vsvip.
-   * Internally set by cloud connector.
-   * Field introduced in 17.2.9, 18.1.2.
-   * @param vsvipCloudConfigCksum set the vsvipCloudConfigCksum.
-   */
-  @VsoMethod
-  public void setVsvipCloudConfigCksum(String  vsvipCloudConfigCksum) {
-    this.vsvipCloudConfigCksum = vsvipCloudConfigCksum;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Mostly used during the creation of shared vs, this field refers to entities that can be shared across virtual services.
    * It is a reference to an object of type vsvip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsvipRef
    */
   @VsoMethod
@@ -3013,6 +3165,7 @@ public class VirtualService extends AviRestResource {
    * Mostly used during the creation of shared vs, this field refers to entities that can be shared across virtual services.
    * It is a reference to an object of type vsvip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsvipRef set the vsvipRef.
    */
   @VsoMethod
@@ -3025,6 +3178,7 @@ public class VirtualService extends AviRestResource {
    * Waf policy for the virtual service.
    * It is a reference to an object of type wafpolicy.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafPolicyRef
    */
   @VsoMethod
@@ -3037,6 +3191,7 @@ public class VirtualService extends AviRestResource {
    * Waf policy for the virtual service.
    * It is a reference to an object of type wafpolicy.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param wafPolicyRef set the wafPolicyRef.
    */
   @VsoMethod
@@ -3174,7 +3329,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.l4Policies, objVirtualService.l4Policies)&&
   Objects.equals(this.trafficEnabled, objVirtualService.trafficEnabled)&&
   Objects.equals(this.apicContractGraph, objVirtualService.apicContractGraph)&&
-  Objects.equals(this.vsvipCloudConfigCksum, objVirtualService.vsvipCloudConfigCksum)&&
+  Objects.equals(this.labels, objVirtualService.labels)&&
   Objects.equals(this.azureAvailabilitySet, objVirtualService.azureAvailabilitySet)&&
   Objects.equals(this.minPoolsUp, objVirtualService.minPoolsUp)&&
   Objects.equals(this.ssoPolicy, objVirtualService.ssoPolicy)&&
@@ -3237,6 +3392,7 @@ public String toString() {
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    ipamNetworkSubnet: ").append(toIndentedString(ipamNetworkSubnet)).append("\n");
         sb.append("    l4Policies: ").append(toIndentedString(l4Policies)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    limitDoser: ").append(toIndentedString(limitDoser)).append("\n");
         sb.append("    maxCpsPerClient: ").append(toIndentedString(maxCpsPerClient)).append("\n");
         sb.append("    microserviceRef: ").append(toIndentedString(microserviceRef)).append("\n");
@@ -3286,7 +3442,6 @@ public String toString() {
         sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
         sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
         sb.append("    vsDatascripts: ").append(toIndentedString(vsDatascripts)).append("\n");
-        sb.append("    vsvipCloudConfigCksum: ").append(toIndentedString(vsvipCloudConfigCksum)).append("\n");
         sb.append("    vsvipRef: ").append(toIndentedString(vsvipRef)).append("\n");
         sb.append("    wafPolicyRef: ").append(toIndentedString(wafPolicyRef)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");

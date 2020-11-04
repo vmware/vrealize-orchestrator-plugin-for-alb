@@ -26,41 +26,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtConfiguration extends AviRestResource {
-  @JsonProperty("automate_dfw_rules")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean automateDfwRules = false;
+    @JsonProperty("automate_dfw_rules")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean automateDfwRules = false;
 
-  @JsonProperty("domain_id")
-  @JsonInclude(Include.NON_NULL)
-  private String domainId = "default";
+    @JsonProperty("domain_id")
+    @JsonInclude(Include.NON_NULL)
+    private String domainId = "default";
 
-  @JsonProperty("enforcementpoint_id")
-  @JsonInclude(Include.NON_NULL)
-  private String enforcementpointId = "default";
+    @JsonProperty("enforcementpoint_id")
+    @JsonInclude(Include.NON_NULL)
+    private String enforcementpointId = "default";
 
-  @JsonProperty("management_segment")
-  @JsonInclude(Include.NON_NULL)
-  private Tier1LogicalRouterInfo managementSegment = null;
+    @JsonProperty("management_segment")
+    @JsonInclude(Include.NON_NULL)
+    private Tier1LogicalRouterInfo managementSegment = null;
 
-  @JsonProperty("nsxt_credentials_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String nsxtCredentialsRef = null;
+    @JsonProperty("nsxt_credentials_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String nsxtCredentialsRef = null;
 
-  @JsonProperty("nsxt_url")
-  @JsonInclude(Include.NON_NULL)
-  private String nsxtUrl = null;
+    @JsonProperty("nsxt_url")
+    @JsonInclude(Include.NON_NULL)
+    private String nsxtUrl = null;
 
-  @JsonProperty("site_id")
-  @JsonInclude(Include.NON_NULL)
-  private String siteId = "default";
+    @JsonProperty("site_id")
+    @JsonInclude(Include.NON_NULL)
+    private String siteId = "default";
 
-  @JsonProperty("tier1_segment_config")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtTier1SegmentConfig tier1SegmentConfig = null;
+    @JsonProperty("tier1_segment_config")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtTier1SegmentConfig tier1SegmentConfig = null;
 
-  @JsonProperty("transport_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String transportZone = null;
+    @JsonProperty("transport_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String transportZone = null;
 
 
 
@@ -92,7 +92,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Domain where nsgroup objects belongs to.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return domainId
    */
   @VsoMethod
@@ -104,7 +104,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Domain where nsgroup objects belongs to.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param domainId set the domainId.
    */
   @VsoMethod
@@ -116,7 +116,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enforcement point is where the rules of a policy to apply.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return enforcementpointId
    */
   @VsoMethod
@@ -128,7 +128,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Enforcement point is where the rules of a policy to apply.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param enforcementpointId set the enforcementpointId.
    */
   @VsoMethod
@@ -140,6 +140,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Management network segment to use for avi service engines.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementSegment
    */
   @VsoMethod
@@ -151,6 +152,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Management network segment to use for avi service engines.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementSegment set the managementSegment.
    */
   @VsoMethod
@@ -163,6 +165,7 @@ public class NsxtConfiguration extends AviRestResource {
    * Credentials to access nsx-t manager.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtCredentialsRef
    */
   @VsoMethod
@@ -175,6 +178,7 @@ public class NsxtConfiguration extends AviRestResource {
    * Credentials to access nsx-t manager.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtCredentialsRef set the nsxtCredentialsRef.
    */
   @VsoMethod
@@ -186,6 +190,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsx-t manager hostname or ip address.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtUrl
    */
   @VsoMethod
@@ -197,6 +202,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsx-t manager hostname or ip address.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtUrl set the nsxtUrl.
    */
   @VsoMethod
@@ -208,7 +214,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site where transport zone belongs to.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return siteId
    */
   @VsoMethod
@@ -220,7 +226,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Site where transport zone belongs to.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param siteId set the siteId.
    */
   @VsoMethod
@@ -232,6 +238,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsxt tier1 segment configuration for avi service engine data path.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1SegmentConfig
    */
   @VsoMethod
@@ -243,6 +250,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsxt tier1 segment configuration for avi service engine data path.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1SegmentConfig set the tier1SegmentConfig.
    */
   @VsoMethod
@@ -255,6 +263,7 @@ public class NsxtConfiguration extends AviRestResource {
    * Network zone where nodes can talk via overlay.
    * Virtual ips and service engines will belong to this zone.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return transportZone
    */
   @VsoMethod
@@ -267,6 +276,7 @@ public class NsxtConfiguration extends AviRestResource {
    * Network zone where nodes can talk via overlay.
    * Virtual ips and service engines will belong to this zone.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param transportZone set the transportZone.
    */
   @VsoMethod

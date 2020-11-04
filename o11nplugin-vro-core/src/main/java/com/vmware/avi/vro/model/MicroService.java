@@ -24,55 +24,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MicroService extends AviRestResource {
-  @JsonProperty("application_name")
-  @JsonInclude(Include.NON_NULL)
-  private String applicationName = null;
+    @JsonProperty("application_name")
+    @JsonInclude(Include.NON_NULL)
+    private String applicationName = null;
 
-  @JsonProperty("cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudConfigCksum = null;
+    @JsonProperty("cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudConfigCksum = null;
 
-  @JsonProperty("containers")
-  @JsonInclude(Include.NON_NULL)
-  private List<MicroServiceContainer> containers = null;
+    @JsonProperty("containers")
+    @JsonInclude(Include.NON_NULL)
+    private List<MicroServiceContainer> containers = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("ip_list")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ipList = null;
+    @JsonProperty("ip_list")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ipList = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("orchestrator_name")
-  @JsonInclude(Include.NON_NULL)
-  private String orchestratorName = null;
+    @JsonProperty("orchestrator_name")
+    @JsonInclude(Include.NON_NULL)
+    private String orchestratorName = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property application_name of obj type microservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationName
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property application_name of obj type microservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationName set the applicationName.
    */
   @VsoMethod
@@ -95,6 +97,7 @@ public class MicroService extends AviRestResource {
    * Checksum of cloud configuration for microservice.
    * Internally set by cloud connector.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
   @VsoMethod
@@ -107,6 +110,7 @@ public class MicroService extends AviRestResource {
    * Checksum of cloud configuration for microservice.
    * Internally set by cloud connector.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The list of containers for this microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containers
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method. this will set the containers
    * The list of containers for this microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containers
    */
   @VsoMethod
@@ -137,6 +143,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method this will set the containers
    * The list of containers for this microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containers
    */
   @VsoMethod
@@ -152,6 +159,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -162,6 +170,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -172,6 +181,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -182,6 +192,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -192,6 +203,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Flag to indicate if container ip list is provided by cloud connectorthis is applicable for overlay cases.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipList
    */
   @VsoMethod
@@ -202,6 +214,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Flag to indicate if container ip list is provided by cloud connectorthis is applicable for overlay cases.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipList set the ipList.
    */
   @VsoMethod
@@ -212,6 +225,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -222,6 +236,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -232,6 +247,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property orchestrator_name of obj type microservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return orchestratorName
    */
   @VsoMethod
@@ -242,6 +258,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property orchestrator_name of obj type microservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param orchestratorName set the orchestratorName.
    */
   @VsoMethod
@@ -252,6 +269,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -262,6 +280,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -291,6 +310,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -301,6 +321,7 @@ public class MicroService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

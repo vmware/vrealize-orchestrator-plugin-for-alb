@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MesosAttribute extends AviRestResource {
-  @JsonProperty("attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String attribute = null;
+    @JsonProperty("attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String attribute = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private String value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private String value = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Attribute to match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attribute
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class MesosAttribute extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Attribute to match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attribute set the attribute.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class MesosAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute value.
    * If not set, match any value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class MesosAttribute extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute value.
    * If not set, match any value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

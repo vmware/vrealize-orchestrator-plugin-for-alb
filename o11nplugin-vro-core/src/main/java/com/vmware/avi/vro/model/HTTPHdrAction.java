@@ -26,17 +26,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPHdrAction extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("cookie")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPCookieData cookie = null;
+    @JsonProperty("cookie")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPCookieData cookie = null;
 
-  @JsonProperty("hdr")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPHdrData hdr = null;
+    @JsonProperty("hdr")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPHdrData hdr = null;
 
 
 
@@ -47,6 +47,7 @@ public class HTTPHdrAction extends AviRestResource {
    * and a new header with the new value is added.
    * Remove  all the headers of the given name are removed.
    * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class HTTPHdrAction extends AviRestResource {
    * and a new header with the new value is added.
    * Remove  all the headers of the given name are removed.
    * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cookie information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookie
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cookie information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookie set the cookie.
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdr
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class HTTPHdrAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdr set the hdr.
    */
   @VsoMethod

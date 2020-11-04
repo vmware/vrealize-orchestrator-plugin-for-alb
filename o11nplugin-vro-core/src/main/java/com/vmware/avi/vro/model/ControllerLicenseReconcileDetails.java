@@ -24,51 +24,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerLicenseReconcileDetails extends AviRestResource {
-  @JsonProperty("new_available_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float newAvailableServiceCores = null;
+    @JsonProperty("new_available_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float newAvailableServiceCores = null;
 
-  @JsonProperty("new_consumed_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float newConsumedServiceCores = null;
+    @JsonProperty("new_consumed_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float newConsumedServiceCores = null;
 
-  @JsonProperty("new_escrow_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float newEscrowServiceCores = null;
+    @JsonProperty("new_escrow_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float newEscrowServiceCores = null;
 
-  @JsonProperty("new_remaining_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float newRemainingServiceCores = null;
+    @JsonProperty("new_remaining_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float newRemainingServiceCores = null;
 
-  @JsonProperty("old_available_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float oldAvailableServiceCores = null;
+    @JsonProperty("old_available_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float oldAvailableServiceCores = null;
 
-  @JsonProperty("old_consumed_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float oldConsumedServiceCores = null;
+    @JsonProperty("old_consumed_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float oldConsumedServiceCores = null;
 
-  @JsonProperty("old_escrow_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float oldEscrowServiceCores = null;
+    @JsonProperty("old_escrow_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float oldEscrowServiceCores = null;
 
-  @JsonProperty("old_remaining_service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float oldRemainingServiceCores = null;
+    @JsonProperty("old_remaining_service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float oldRemainingServiceCores = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
-  @JsonProperty("tier")
-  @JsonInclude(Include.NON_NULL)
-  private String tier = null;
+    @JsonProperty("tier")
+    @JsonInclude(Include.NON_NULL)
+    private String tier = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newAvailableServiceCores
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newAvailableServiceCores set the newAvailableServiceCores.
    */
   @VsoMethod
@@ -89,6 +91,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newConsumedServiceCores
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newConsumedServiceCores set the newConsumedServiceCores.
    */
   @VsoMethod
@@ -109,6 +113,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newEscrowServiceCores
    */
   @VsoMethod
@@ -119,6 +124,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newEscrowServiceCores set the newEscrowServiceCores.
    */
   @VsoMethod
@@ -129,6 +135,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newRemainingServiceCores
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newRemainingServiceCores set the newRemainingServiceCores.
    */
   @VsoMethod
@@ -149,6 +157,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property old_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldAvailableServiceCores
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property old_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldAvailableServiceCores set the oldAvailableServiceCores.
    */
   @VsoMethod
@@ -169,6 +179,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property old_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldConsumedServiceCores
    */
   @VsoMethod
@@ -179,6 +190,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property old_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldConsumedServiceCores set the oldConsumedServiceCores.
    */
   @VsoMethod
@@ -189,6 +201,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property old_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldEscrowServiceCores
    */
   @VsoMethod
@@ -199,6 +212,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property old_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldEscrowServiceCores set the oldEscrowServiceCores.
    */
   @VsoMethod
@@ -209,6 +223,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property old_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oldRemainingServiceCores
    */
   @VsoMethod
@@ -219,6 +234,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property old_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oldRemainingServiceCores set the oldRemainingServiceCores.
    */
   @VsoMethod
@@ -229,6 +245,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -239,6 +256,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -249,6 +267,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tier of obj type controllerlicensereconciledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier
    */
   @VsoMethod
@@ -259,6 +278,7 @@ public class ControllerLicenseReconcileDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tier of obj type controllerlicensereconciledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier set the tier.
    */
   @VsoMethod

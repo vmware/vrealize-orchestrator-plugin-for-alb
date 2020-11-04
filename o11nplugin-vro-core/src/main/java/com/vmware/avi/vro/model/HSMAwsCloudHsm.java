@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HSMAwsCloudHsm extends AviRestResource {
-  @JsonProperty("client_config")
-  @JsonInclude(Include.NON_NULL)
-  private String clientConfig = null;
+    @JsonProperty("client_config")
+    @JsonInclude(Include.NON_NULL)
+    private String clientConfig = null;
 
-  @JsonProperty("cluster_cert")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterCert = null;
+    @JsonProperty("cluster_cert")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterCert = null;
 
-  @JsonProperty("crypto_user_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cryptoUserName = null;
+    @JsonProperty("crypto_user_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cryptoUserName = null;
 
-  @JsonProperty("crypto_user_password")
-  @JsonInclude(Include.NON_NULL)
-  private String cryptoUserPassword = null;
+    @JsonProperty("crypto_user_password")
+    @JsonInclude(Include.NON_NULL)
+    private String cryptoUserPassword = null;
 
-  @JsonProperty("hsm_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> hsmIp = null;
+    @JsonProperty("hsm_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> hsmIp = null;
 
-  @JsonProperty("mgmt_config")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtConfig = null;
+    @JsonProperty("mgmt_config")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtConfig = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientConfig
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientConfig set the clientConfig.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws cloudhsm cluster certificate.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterCert
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws cloudhsm cluster certificate.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterCert set the clusterCert.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Username of the crypto user.
    * This will be used to access the keys on the hsm.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cryptoUserName
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Username of the crypto user.
    * This will be used to access the keys on the hsm.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cryptoUserName set the cryptoUserName.
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Password of the crypto user.
    * This will be used to access the keys on the hsm.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cryptoUserPassword
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Password of the crypto user.
    * This will be used to access the keys on the hsm.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cryptoUserPassword set the cryptoUserPassword.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Ip address of the hsm in the cluster.
    * If there are more than one hsms, only one is sufficient.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsmIp
    */
   @VsoMethod
@@ -157,6 +166,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Ip address of the hsm in the cluster.
    * If there are more than one hsms, only one is sufficient.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsmIp
    */
   @VsoMethod
@@ -169,6 +179,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
    * Ip address of the hsm in the cluster.
    * If there are more than one hsms, only one is sufficient.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsmIp
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtConfig
    */
   @VsoMethod
@@ -194,6 +206,7 @@ public class HSMAwsCloudHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtConfig set the mgmtConfig.
    */
   @VsoMethod

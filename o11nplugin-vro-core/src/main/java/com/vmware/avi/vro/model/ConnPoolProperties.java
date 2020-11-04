@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConnPoolProperties extends AviRestResource {
-  @JsonProperty("upstream_connpool_conn_idle_tmo")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnIdleTmo = 60000;
+    @JsonProperty("upstream_connpool_conn_idle_tmo")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnIdleTmo = 60000;
 
-  @JsonProperty("upstream_connpool_conn_life_tmo")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnLifeTmo = 600000;
+    @JsonProperty("upstream_connpool_conn_life_tmo")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnLifeTmo = 600000;
 
-  @JsonProperty("upstream_connpool_conn_max_reuse")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolConnMaxReuse = 0;
+    @JsonProperty("upstream_connpool_conn_max_reuse")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolConnMaxReuse = 0;
 
-  @JsonProperty("upstream_connpool_server_max_cache")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upstreamConnpoolServerMaxCache = 0;
+    @JsonProperty("upstream_connpool_server_max_cache")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upstreamConnpoolServerMaxCache = 0;
 
 
 

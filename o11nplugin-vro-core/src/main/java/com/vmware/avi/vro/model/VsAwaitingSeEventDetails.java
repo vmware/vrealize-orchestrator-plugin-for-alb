@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsAwaitingSeEventDetails extends AviRestResource {
-  @JsonProperty("awaitingse_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer awaitingseTimeout = null;
+    @JsonProperty("awaitingse_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer awaitingseTimeout = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("se_assigned")
-  @JsonInclude(Include.NON_NULL)
-  private List<VipSeAssigned> seAssigned = null;
+    @JsonProperty("se_assigned")
+    @JsonInclude(Include.NON_NULL)
+    private List<VipSeAssigned> seAssigned = null;
 
-  @JsonProperty("se_requested")
-  @JsonInclude(Include.NON_NULL)
-  private VirtualServiceResource seRequested = null;
+    @JsonProperty("se_requested")
+    @JsonInclude(Include.NON_NULL)
+    private VirtualServiceResource seRequested = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property awaitingse_timeout of obj type vsawaitingseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awaitingseTimeout
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property awaitingse_timeout of obj type vsawaitingseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awaitingseTimeout set the awaitingseTimeout.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type vsawaitingseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type vsawaitingseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_assigned of obj type vsawaitingseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the seAssigned
    * Placeholder for description of property se_assigned of obj type vsawaitingseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the seAssigned
    * Placeholder for description of property se_assigned of obj type vsawaitingseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_requested of obj type vsawaitingseeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRequested
    */
   @VsoMethod
@@ -135,6 +143,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_requested of obj type vsawaitingseeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRequested set the seRequested.
    */
   @VsoMethod
@@ -145,6 +154,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -155,6 +165,7 @@ public class VsAwaitingSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

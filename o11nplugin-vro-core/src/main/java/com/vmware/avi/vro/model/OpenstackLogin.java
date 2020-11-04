@@ -24,36 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenstackLogin extends AviRestResource {
-  @JsonProperty("admin_tenant")
-  @JsonInclude(Include.NON_NULL)
-  private String adminTenant = "admin";
+    @JsonProperty("admin_tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String adminTenant = "admin";
 
-  @JsonProperty("auth_url")
-  @JsonInclude(Include.NON_NULL)
-  private String authUrl = null;
+    @JsonProperty("auth_url")
+    @JsonInclude(Include.NON_NULL)
+    private String authUrl = null;
 
-  @JsonProperty("keystone_host")
-  @JsonInclude(Include.NON_NULL)
-  private String keystoneHost = null;
+    @JsonProperty("keystone_host")
+    @JsonInclude(Include.NON_NULL)
+    private String keystoneHost = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property admin_tenant of obj type openstacklogin field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as admin.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
    * @return adminTenant
    */
   @VsoMethod
@@ -64,7 +64,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property admin_tenant of obj type openstacklogin field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as admin.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
    * @param adminTenant set the adminTenant.
    */
   @VsoMethod
@@ -75,6 +75,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property auth_url of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authUrl
    */
   @VsoMethod
@@ -85,6 +86,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property auth_url of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authUrl set the authUrl.
    */
   @VsoMethod
@@ -95,6 +97,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property keystone_host of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keystoneHost
    */
   @VsoMethod
@@ -105,6 +108,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property keystone_host of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keystoneHost set the keystoneHost.
    */
   @VsoMethod
@@ -115,6 +119,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property password of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property password of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -135,6 +141,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property region of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property region of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -155,6 +163,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property username of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class OpenstackLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property username of obj type openstacklogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

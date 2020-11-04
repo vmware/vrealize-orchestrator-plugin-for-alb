@@ -26,21 +26,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloneServer extends AviRestResource {
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddress = null;
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddress = null;
 
-  @JsonProperty("mac")
-  @JsonInclude(Include.NON_NULL)
-  private String mac = null;
+    @JsonProperty("mac")
+    @JsonInclude(Include.NON_NULL)
+    private String mac = null;
 
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
 
 
@@ -48,6 +48,7 @@ public class CloneServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of the clone server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class CloneServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of the clone server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddress set the ipAddress.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class CloneServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mac address of the clone server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mac
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class CloneServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Mac address of the clone server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mac set the mac.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class CloneServer extends AviRestResource {
    * Network to clone the traffic to.
    * It is a reference to an object of type network.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class CloneServer extends AviRestResource {
    * Network to clone the traffic to.
    * It is a reference to an object of type network.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -116,6 +122,7 @@ public class CloneServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet of the network to clone the traffic to.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -127,6 +134,7 @@ public class CloneServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet of the network to clone the traffic to.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod

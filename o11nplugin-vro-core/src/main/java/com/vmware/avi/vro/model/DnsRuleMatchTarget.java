@@ -30,29 +30,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleMatchTarget extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp;
 
-  @JsonProperty("client_ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private DnsClientIpMatch clientIpAddress = null;
+    @JsonProperty("client_ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private DnsClientIpMatch clientIpAddress = null;
 
-  @JsonProperty("geo_location")
-  @JsonInclude(Include.NON_NULL)
-  private DnsGeoLocationMatch geoLocation = null;
+    @JsonProperty("geo_location")
+    @JsonInclude(Include.NON_NULL)
+    private DnsGeoLocationMatch geoLocation = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private DnsTransportProtocolMatch protocol = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private DnsTransportProtocolMatch protocol = null;
 
-  @JsonProperty("query_name")
-  @JsonInclude(Include.NON_NULL)
-  private DnsQueryNameMatch queryName = null;
+    @JsonProperty("query_name")
+    @JsonInclude(Include.NON_NULL)
+    private DnsQueryNameMatch queryName = null;
 
-  @JsonProperty("query_type")
-  @JsonInclude(Include.NON_NULL)
-  private DnsQueryTypeMatch queryType = null;
+    @JsonProperty("query_type")
+    @JsonInclude(Include.NON_NULL)
+    private DnsQueryTypeMatch queryType = null;
 
 
 
@@ -86,6 +86,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip addresses to match against client ip or the edns client subnet ip.
    * Field introduced in 17.1.6,17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpAddress
    */
   @VsoMethod
@@ -97,6 +98,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip addresses to match against client ip or the edns client subnet ip.
    * Field introduced in 17.1.6,17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpAddress set the clientIpAddress.
    */
   @VsoMethod
@@ -108,6 +110,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geographical location attribute to match against that of the client ip.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoLocation
    */
   @VsoMethod
@@ -119,6 +122,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Geographical location attribute to match against that of the client ip.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoLocation set the geoLocation.
    */
   @VsoMethod
@@ -130,6 +134,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns transport protocol match.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -141,6 +146,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns transport protocol match.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -152,6 +158,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Domain names to match against query name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryName
    */
   @VsoMethod
@@ -163,6 +170,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Domain names to match against query name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryName set the queryName.
    */
   @VsoMethod
@@ -174,6 +182,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns query types to match against request query type.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
   @VsoMethod
@@ -185,6 +194,7 @@ public class DnsRuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns query types to match against request query type.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryType set the queryType.
    */
   @VsoMethod

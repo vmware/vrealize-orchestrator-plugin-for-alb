@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FeProxyRoutePublishConfig extends AviRestResource {
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = "FE_PROXY_ROUTE_PUBLISH_NONE";
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = "FE_PROXY_ROUTE_PUBLISH_NONE";
 
-  @JsonProperty("publisher_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer publisherPort = 80;
+    @JsonProperty("publisher_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer publisherPort = 80;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private Integer subnet = 32;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private Integer subnet = 32;
 
-  @JsonProperty("token")
-  @JsonInclude(Include.NON_NULL)
-  private String token = null;
+    @JsonProperty("token")
+    @JsonInclude(Include.NON_NULL)
+    private String token = null;
 
 
 
@@ -46,7 +46,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Publish ecmp route to upstream router for vip.
    * Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
-   * Default value when not specified in API or module is interpreted by Avi Controller as FE_PROXY_ROUTE_PUBLISH_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "FE_PROXY_ROUTE_PUBLISH_NONE".
    * @return mode
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Publish ecmp route to upstream router for vip.
    * Enum options - FE_PROXY_ROUTE_PUBLISH_NONE, FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.
-   * Default value when not specified in API or module is interpreted by Avi Controller as FE_PROXY_ROUTE_PUBLISH_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "FE_PROXY_ROUTE_PUBLISH_NONE".
    * @param mode set the mode.
    */
   @VsoMethod
@@ -113,6 +113,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Token for tracking changes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return token
    */
   @VsoMethod
@@ -123,6 +124,7 @@ public class FeProxyRoutePublishConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Token for tracking changes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param token set the token.
    */
   @VsoMethod

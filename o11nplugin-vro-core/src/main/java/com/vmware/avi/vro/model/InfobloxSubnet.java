@@ -26,13 +26,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class InfobloxSubnet extends AviRestResource {
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
-  @JsonProperty("subnet6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet6 = null;
+    @JsonProperty("subnet6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet6 = null;
 
 
 
@@ -40,6 +40,7 @@ public class InfobloxSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv4 subnet to use for infoblox allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class InfobloxSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv4 subnet to use for infoblox allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class InfobloxSubnet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 subnet to use for infoblox allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class InfobloxSubnet extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 subnet to use for infoblox allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */
   @VsoMethod

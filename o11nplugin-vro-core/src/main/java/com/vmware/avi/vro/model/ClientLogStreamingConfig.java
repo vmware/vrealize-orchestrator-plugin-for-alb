@@ -26,33 +26,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClientLogStreamingConfig extends AviRestResource {
-  @JsonProperty("external_server")
-  @JsonInclude(Include.NON_NULL)
-  private String externalServer = null;
+    @JsonProperty("external_server")
+    @JsonInclude(Include.NON_NULL)
+    private String externalServer = null;
 
-  @JsonProperty("external_server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer externalServerPort = 514;
+    @JsonProperty("external_server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer externalServerPort = 514;
 
-  @JsonProperty("format_config")
-  @JsonInclude(Include.NON_NULL)
-  private ClientLogStreamingFormat formatConfig = null;
+    @JsonProperty("format_config")
+    @JsonInclude(Include.NON_NULL)
+    private ClientLogStreamingFormat formatConfig = null;
 
-  @JsonProperty("log_types_to_send")
-  @JsonInclude(Include.NON_NULL)
-  private String logTypesToSend = "LOGS_ALL";
+    @JsonProperty("log_types_to_send")
+    @JsonInclude(Include.NON_NULL)
+    private String logTypesToSend = "LOGS_ALL";
 
-  @JsonProperty("max_logs_per_second")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxLogsPerSecond = 100;
+    @JsonProperty("max_logs_per_second")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxLogsPerSecond = 100;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String protocol = "LOG_STREAMING_PROTOCOL_UDP";
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String protocol = "LOG_STREAMING_PROTOCOL_UDP";
 
-  @JsonProperty("syslog_config")
-  @JsonInclude(Include.NON_NULL)
-  private StreamingSyslogConfig syslogConfig = null;
+    @JsonProperty("syslog_config")
+    @JsonInclude(Include.NON_NULL)
+    private StreamingSyslogConfig syslogConfig = null;
 
 
 
@@ -63,6 +63,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
    * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalServer
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
    * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalServer set the externalServer.
    */
   @VsoMethod
@@ -117,6 +119,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Configuration to specify the format of streamed logs.
    * By default, each log is encoded in json format.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return formatConfig
    */
   @VsoMethod
@@ -129,6 +132,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Configuration to specify the format of streamed logs.
    * By default, each log is encoded in json format.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param formatConfig set the formatConfig.
    */
   @VsoMethod
@@ -142,7 +146,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Default is logs_all, i.e., send all logs.
    * Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_ALL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_ALL".
    * @return logTypesToSend
    */
   @VsoMethod
@@ -156,7 +160,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Default is logs_all, i.e., send all logs.
    * Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_ALL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_ALL".
    * @param logTypesToSend set the logTypesToSend.
    */
   @VsoMethod
@@ -198,7 +202,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP,
    * LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOG_STREAMING_PROTOCOL_UDP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_STREAMING_PROTOCOL_UDP".
    * @return protocol
    */
   @VsoMethod
@@ -212,7 +216,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP,
    * LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOG_STREAMING_PROTOCOL_UDP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_STREAMING_PROTOCOL_UDP".
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -224,6 +228,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Syslog configuration if a syslog-based protocol is specified for streaming.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogConfig
    */
   @VsoMethod
@@ -235,6 +240,7 @@ public class ClientLogStreamingConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Syslog configuration if a syslog-based protocol is specified for streaming.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syslogConfig set the syslogConfig.
    */
   @VsoMethod

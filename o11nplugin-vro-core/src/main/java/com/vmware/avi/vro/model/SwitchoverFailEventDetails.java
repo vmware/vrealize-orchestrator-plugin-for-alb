@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SwitchoverFailEventDetails extends AviRestResource {
-  @JsonProperty("from_se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String fromSeName = null;
+    @JsonProperty("from_se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String fromSeName = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("ip6")
-  @JsonInclude(Include.NON_NULL)
-  private String ip6 = null;
+    @JsonProperty("ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String ip6 = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vsName = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property from_se_name of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromSeName
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property from_se_name of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromSeName set the fromSeName.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip6 of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip6 of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6 set the ip6.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_name of obj type switchoverfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class SwitchoverFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

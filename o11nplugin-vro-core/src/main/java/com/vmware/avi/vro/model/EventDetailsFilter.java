@@ -24,24 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EventDetailsFilter extends AviRestResource {
-  @JsonProperty("comparator")
-  @JsonInclude(Include.NON_NULL)
-  private String comparator = "ALERT_OP_EQ";
+    @JsonProperty("comparator")
+    @JsonInclude(Include.NON_NULL)
+    private String comparator = "ALERT_OP_EQ";
 
-  @JsonProperty("event_details_key")
-  @JsonInclude(Include.NON_NULL)
-  private String eventDetailsKey = null;
+    @JsonProperty("event_details_key")
+    @JsonInclude(Include.NON_NULL)
+    private String eventDetailsKey = null;
 
-  @JsonProperty("event_details_value")
-  @JsonInclude(Include.NON_NULL)
-  private String eventDetailsValue = null;
+    @JsonProperty("event_details_value")
+    @JsonInclude(Include.NON_NULL)
+    private String eventDetailsValue = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - ALERT_OP_LT, ALERT_OP_LE, ALERT_OP_EQ, ALERT_OP_NE, ALERT_OP_GE, ALERT_OP_GT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ALERT_OP_EQ.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_OP_EQ".
    * @return comparator
    */
   @VsoMethod
@@ -52,7 +52,7 @@ public class EventDetailsFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - ALERT_OP_LT, ALERT_OP_LE, ALERT_OP_EQ, ALERT_OP_NE, ALERT_OP_GE, ALERT_OP_GT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ALERT_OP_EQ.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ALERT_OP_EQ".
    * @param comparator set the comparator.
    */
   @VsoMethod
@@ -63,6 +63,7 @@ public class EventDetailsFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property event_details_key of obj type eventdetailsfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventDetailsKey
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class EventDetailsFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property event_details_key of obj type eventdetailsfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventDetailsKey set the eventDetailsKey.
    */
   @VsoMethod
@@ -83,6 +85,7 @@ public class EventDetailsFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property event_details_value of obj type eventdetailsfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventDetailsValue
    */
   @VsoMethod
@@ -93,6 +96,7 @@ public class EventDetailsFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property event_details_value of obj type eventdetailsfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventDetailsValue set the eventDetailsValue.
    */
   @VsoMethod

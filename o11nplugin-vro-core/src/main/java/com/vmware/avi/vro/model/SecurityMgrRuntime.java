@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecurityMgrRuntime extends AviRestResource {
-  @JsonProperty("thresholds")
-  @JsonInclude(Include.NON_NULL)
-  private List<SecMgrThreshold> thresholds = null;
+    @JsonProperty("thresholds")
+    @JsonInclude(Include.NON_NULL)
+    private List<SecMgrThreshold> thresholds = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thresholds
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class SecurityMgrRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the thresholds
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thresholds
    */
   @VsoMethod
@@ -53,6 +55,7 @@ public class SecurityMgrRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the thresholds
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thresholds
    */
   @VsoMethod

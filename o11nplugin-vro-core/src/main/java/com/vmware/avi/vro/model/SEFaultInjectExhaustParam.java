@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SEFaultInjectExhaustParam extends AviRestResource {
-  @JsonProperty("leak")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean leak = null;
+    @JsonProperty("leak")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean leak = null;
 
-  @JsonProperty("num")
-  @JsonInclude(Include.NON_NULL)
-  private Integer num = null;
+    @JsonProperty("num")
+    @JsonInclude(Include.NON_NULL)
+    private Integer num = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property leak of obj type sefaultinjectexhaustparam field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leak
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SEFaultInjectExhaustParam extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property leak of obj type sefaultinjectexhaustparam field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param leak set the leak.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class SEFaultInjectExhaustParam extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num of obj type sefaultinjectexhaustparam field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return num
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class SEFaultInjectExhaustParam extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num of obj type sefaultinjectexhaustparam field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param num set the num.
    */
   @VsoMethod

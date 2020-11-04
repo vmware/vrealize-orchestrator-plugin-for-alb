@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeBootupCompressionProperties extends AviRestResource {
-  @JsonProperty("buf_num")
-  @JsonInclude(Include.NON_NULL)
-  private Integer bufNum = 128;
+    @JsonProperty("buf_num")
+    @JsonInclude(Include.NON_NULL)
+    private Integer bufNum = 128;
 
-  @JsonProperty("buf_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer bufSize = 4096;
+    @JsonProperty("buf_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer bufSize = 4096;
 
-  @JsonProperty("hash_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hashSize = 16384;
+    @JsonProperty("hash_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hashSize = 16384;
 
-  @JsonProperty("level_aggressive")
-  @JsonInclude(Include.NON_NULL)
-  private Integer levelAggressive = 5;
+    @JsonProperty("level_aggressive")
+    @JsonInclude(Include.NON_NULL)
+    private Integer levelAggressive = 5;
 
-  @JsonProperty("level_normal")
-  @JsonInclude(Include.NON_NULL)
-  private Integer levelNormal = 1;
+    @JsonProperty("level_normal")
+    @JsonInclude(Include.NON_NULL)
+    private Integer levelNormal = 1;
 
-  @JsonProperty("window_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer windowSize = 4096;
+    @JsonProperty("window_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer windowSize = 4096;
 
 
 

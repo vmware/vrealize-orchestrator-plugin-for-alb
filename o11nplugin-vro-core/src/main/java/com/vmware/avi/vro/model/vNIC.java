@@ -24,131 +24,132 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class vNIC extends AviRestResource {
-  @JsonProperty("adapter")
-  @JsonInclude(Include.NON_NULL)
-  private String adapter = null;
+    @JsonProperty("adapter")
+    @JsonInclude(Include.NON_NULL)
+    private String adapter = null;
 
-  @JsonProperty("aggregator_chgd")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aggregatorChgd = false;
+    @JsonProperty("aggregator_chgd")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aggregatorChgd = false;
 
-  @JsonProperty("can_se_dp_takeover")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean canSeDpTakeover = true;
+    @JsonProperty("can_se_dp_takeover")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean canSeDpTakeover = true;
 
-  @JsonProperty("connected")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean connected = null;
+    @JsonProperty("connected")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean connected = null;
 
-  @JsonProperty("del_pending")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean delPending = false;
+    @JsonProperty("del_pending")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean delPending = false;
 
-  @JsonProperty("delete_vnic")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean deleteVnic = false;
+    @JsonProperty("delete_vnic")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean deleteVnic = false;
 
-  @JsonProperty("dhcp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dhcpEnabled = true;
+    @JsonProperty("dhcp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dhcpEnabled = true;
 
-  @JsonProperty("dp_deletion_done")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dpDeletionDone = false;
+    @JsonProperty("dp_deletion_done")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dpDeletionDone = false;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("ip6_autocfg_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ip6AutocfgEnabled = true;
+    @JsonProperty("ip6_autocfg_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ip6AutocfgEnabled = true;
 
-  @JsonProperty("is_asm")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isAsm = false;
+    @JsonProperty("is_asm")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isAsm = false;
 
-  @JsonProperty("is_avi_internal_network")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isAviInternalNetwork = false;
+    @JsonProperty("is_avi_internal_network")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isAviInternalNetwork = false;
 
-  @JsonProperty("is_hsm")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isHsm = false;
+    @JsonProperty("is_hsm")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isHsm = false;
 
-  @JsonProperty("is_mgmt")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isMgmt = false;
+    @JsonProperty("is_mgmt")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isMgmt = false;
 
-  @JsonProperty("is_portchannel")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isPortchannel = false;
+    @JsonProperty("is_portchannel")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isPortchannel = false;
 
-  @JsonProperty("link_up")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean linkUp = true;
+    @JsonProperty("link_up")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean linkUp = true;
 
-  @JsonProperty("linux_name")
-  @JsonInclude(Include.NON_NULL)
-  private String linuxName = null;
+    @JsonProperty("linux_name")
+    @JsonInclude(Include.NON_NULL)
+    private String linuxName = null;
 
-  @JsonProperty("mac_address")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddress = null;
+    @JsonProperty("mac_address")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddress = null;
 
-  @JsonProperty("members")
-  @JsonInclude(Include.NON_NULL)
-  private List<MemberInterface> members = null;
+    @JsonProperty("members")
+    @JsonInclude(Include.NON_NULL)
+    private List<MemberInterface> members = null;
 
-  @JsonProperty("mtu")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mtu = 1500;
+    @JsonProperty("mtu")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mtu = 1500;
 
-  @JsonProperty("network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String networkName = null;
+    @JsonProperty("network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String networkName = null;
 
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("pci_id")
-  @JsonInclude(Include.NON_NULL)
-  private String pciId = null;
+    @JsonProperty("pci_id")
+    @JsonInclude(Include.NON_NULL)
+    private String pciId = null;
 
-  @JsonProperty("port_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String portUuid = null;
+    @JsonProperty("port_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String portUuid = null;
 
-  @JsonProperty("vlan_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vlanId = 0;
+    @JsonProperty("vlan_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vlanId = 0;
 
-  @JsonProperty("vlan_interfaces")
-  @JsonInclude(Include.NON_NULL)
-  private List<VlanInterface> vlanInterfaces = null;
+    @JsonProperty("vlan_interfaces")
+    @JsonInclude(Include.NON_NULL)
+    private List<VlanInterface> vlanInterfaces = null;
 
-  @JsonProperty("vnic_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<vNICNetwork> vnicNetworks = null;
+    @JsonProperty("vnic_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<vNICNetwork> vnicNetworks = null;
 
-  @JsonProperty("vrf_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vrfId = 0;
+    @JsonProperty("vrf_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vrfId = 0;
 
-  @JsonProperty("vrf_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfRef = null;
+    @JsonProperty("vrf_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property adapter of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return adapter
    */
   @VsoMethod
@@ -159,6 +160,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property adapter of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param adapter set the adapter.
    */
   @VsoMethod
@@ -213,6 +215,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property connected of obj type vnic field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connected
    */
   @VsoMethod
@@ -223,6 +226,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property connected of obj type vnic field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connected set the connected.
    */
   @VsoMethod
@@ -349,6 +353,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property if_name of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -359,6 +364,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property if_name of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -527,6 +533,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property linux_name of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return linuxName
    */
   @VsoMethod
@@ -537,6 +544,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property linux_name of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param linuxName set the linuxName.
    */
   @VsoMethod
@@ -547,6 +555,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac_address of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
   @VsoMethod
@@ -557,6 +566,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mac_address of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
   @VsoMethod
@@ -567,6 +577,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property members of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -577,6 +588,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method. this will set the members
    * Placeholder for description of property members of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -587,6 +599,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method this will set the members
    * Placeholder for description of property members of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -624,6 +637,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_name of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkName
    */
   @VsoMethod
@@ -634,6 +648,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network_name of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkName set the networkName.
    */
   @VsoMethod
@@ -644,6 +659,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -654,6 +670,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -664,6 +681,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pci_id of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pciId
    */
   @VsoMethod
@@ -674,6 +692,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pci_id of obj type vnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pciId set the pciId.
    */
   @VsoMethod
@@ -684,6 +703,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portUuid
    */
   @VsoMethod
@@ -694,6 +714,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portUuid set the portUuid.
    */
   @VsoMethod
@@ -726,6 +747,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vlan_interfaces of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vlanInterfaces
    */
   @VsoMethod
@@ -736,6 +758,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method. this will set the vlanInterfaces
    * Placeholder for description of property vlan_interfaces of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vlanInterfaces
    */
   @VsoMethod
@@ -746,6 +769,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method this will set the vlanInterfaces
    * Placeholder for description of property vlan_interfaces of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vlanInterfaces
    */
   @VsoMethod
@@ -761,6 +785,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vnic_networks of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
   @VsoMethod
@@ -771,6 +796,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method. this will set the vnicNetworks
    * Placeholder for description of property vnic_networks of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
   @VsoMethod
@@ -781,6 +807,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method this will set the vnicNetworks
    * Placeholder for description of property vnic_networks of obj type vnic field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
   @VsoMethod
@@ -818,6 +845,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
   @VsoMethod
@@ -828,6 +856,7 @@ public class vNIC extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */
   @VsoMethod

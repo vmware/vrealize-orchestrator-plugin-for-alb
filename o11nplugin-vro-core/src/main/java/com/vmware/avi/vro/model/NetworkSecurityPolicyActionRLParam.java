@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
-  @JsonProperty("burst_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer burstSize = 0;
+    @JsonProperty("burst_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer burstSize = 0;
 
-  @JsonProperty("max_rate")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRate = null;
+    @JsonProperty("max_rate")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRate = null;
 
 
 
@@ -60,6 +60,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of connections or requests or packets per second.
    * Allowed values are 1-4294967295.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRate
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class NetworkSecurityPolicyActionRLParam extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of connections or requests or packets per second.
    * Allowed values are 1-4294967295.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRate set the maxRate.
    */
   @VsoMethod

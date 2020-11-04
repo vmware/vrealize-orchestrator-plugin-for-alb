@@ -3,29 +3,26 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item2" object-name="workflow:name=generic"
-	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.0.8"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.3.5"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Edit Servers in Pool]]></display-name>
+	<display-name><![CDATA[Edit Servers In Pool]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
-		<param name="Name" type="string">
-			<description><![CDATA[Add pool name]]></description>
+		<param name="name" type="string">
+			<description><![CDATA[name]]></description>
 		</param>
 		<param name="controller" type="string">
-			<description><![CDATA[AVI Controller(AVI controller on which resources to be deployed).]]></description>
+			<description><![CDATA[controller]]></description>
 		</param>
-		<param name="PoolServers" type="Array/string">
-			<description><![CDATA[Server details]]></description>
+		<param name="pool_servers" type="Array/string">
+			<description><![CDATA[pool_servers]]></description>
 		</param>
-		<param name="cloud" type="string">
-			<description><![CDATA[Select Cloud]]></description>
+		<param name="server_cloud" type="string">
+			<description><![CDATA[server_cloud]]></description>
 		</param>
-		<param name="tenant" type="string">
-			<description><![CDATA[Select Tenant]]></description>
-		</param>
-		<param name="port" type="string">
-			<description><![CDATA[Port]]></description>
+		<param name="port" type="number">
+			<description><![CDATA[port]]></description>
 		</param>
 	</input>
 	<attrib name="actionEerrorCode" type="string" read-only="false">
@@ -50,15 +47,16 @@
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
 System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,tenant,aviVroClient,ratio,port) ;]]></script>
 		<in-binding>
-			<bind name="poolname" type="string" export-name="Name"></bind>
+			<bind name="poolname" type="string" export-name="name"></bind>
 			<bind name="serverType" type="string" export-name="serverType"></bind>
 			<bind name="serverArray" type="Array/string"
-				export-name="PoolServers"></bind>
+				export-name="pool_servers"></bind>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
 				export-name="actionResult1"></bind>
-			<bind name="cloud" type="string" export-name="cloud"></bind>
-			<bind name="tenant" type="string" export-name="tenant"></bind>
-			<bind name="port" type="string" export-name="port"></bind>
+			<bind name="cloud" type="string" export-name="server_cloud"></bind>
+			<bind name="tenant" type="string" explicitly-not-bound="true"
+				export-name="NULL"></bind>
+			<bind name="port" type="number" export-name="port"></bind>
 			<bind name="ratio" type="string" explicitly-not-bound="true"
 				export-name="NULL"></bind>
 		</in-binding>
@@ -84,34 +82,29 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 	<presentation>
 		<desc><![CDATA[<b>Update Pool</b> ]]></desc>
 		<p-param name="controller">
-			<desc><![CDATA[Select AVI controller]]></desc>
+			<desc><![CDATA[controller]]></desc>
 			<p-qual kind="ognl" name="genericEnumeration"
 				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
 			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 		</p-param>
-		<p-param name="cloud">
-			<desc><![CDATA[Select Cloud]]></desc>
+		<p-param name="server_cloud">
+			<desc><![CDATA[server_cloud]]></desc>
 			<p-qual kind="ognl" name="genericEnumeration"
 				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "cloud" )]]></p-qual>
 		</p-param>
-		<p-param name="tenant">
-			<desc><![CDATA[Select Tenant]]></desc>
-			<p-qual kind="ognl" name="genericEnumeration"
-				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "tenant" )]]></p-qual>
-		</p-param>
-		<p-param name="Name">
-			<desc><![CDATA[Pool name]]></desc>
+		<p-param name="name">
+			<desc><![CDATA[name]]></desc>
 			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			<p-qual kind="ognl" name="genericEnumeration"
-				type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectsNames").call( #controller , "pool" , #cloud , #tenant )]]></p-qual>
+				type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectsNames").call( #controller , "pool" , #server_cloud , #tenant )]]></p-qual>
 		</p-param>
-		<p-param name="PoolServers">
-			<desc><![CDATA[Select servers to add]]></desc>
-			<p-qual kind="ognl" name="dataBinding" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "servers" )]]></p-qual>
+		<p-param name="pool_servers">
+			<desc><![CDATA[pool_servers]]></desc>
+			<p-qual kind="ognl" name="dataBinding" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #name , "pool" , "servers" )]]></p-qual>
 		</p-param>
 		<p-param name="port">
-			<desc><![CDATA[Port]]></desc>
-			<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #Name , "pool" , "port" )]]></p-qual>
+			<desc><![CDATA[port]]></desc>
+			<p-qual kind="ognl" name="dataBinding" type="number"><![CDATA[GetAction("com.vmware.avi","getPort").call( #controller , #name , "pool" )]]></p-qual>
 		</p-param>
 	</presentation>
 </workflow>

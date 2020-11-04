@@ -25,33 +25,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugVirtualServiceCapture extends AviRestResource {
-  @JsonProperty("capture_file_size")
-  @JsonInclude(Include.NON_NULL)
-  private CaptureFileSize captureFileSize = null;
+    @JsonProperty("capture_file_size")
+    @JsonInclude(Include.NON_NULL)
+    private CaptureFileSize captureFileSize = null;
 
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = 0;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = 0;
 
-  @JsonProperty("enable_ssl_session_key_capture")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableSslSessionKeyCapture = false;
+    @JsonProperty("enable_ssl_session_key_capture")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSslSessionKeyCapture = false;
 
-  @JsonProperty("file_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer fileCount = 2;
+    @JsonProperty("file_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer fileCount = 2;
 
-  @JsonProperty("num_pkts")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numPkts = null;
+    @JsonProperty("num_pkts")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numPkts = null;
 
-  @JsonProperty("pcap_ng")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean pcapNg = true;
+    @JsonProperty("pcap_ng")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean pcapNg = true;
 
-  @JsonProperty("pkt_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pktSize = 128;
+    @JsonProperty("pkt_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pktSize = 128;
 
 
 
@@ -62,6 +62,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
    * Set both to 0 for avi default size.
    * Dos, ipc and drop pcaps not applicaple.
    * Field introduced in 18.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureFileSize
    */
   @VsoMethod
@@ -76,6 +77,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
    * Set both to 0 for avi default size.
    * Dos, ipc and drop pcaps not applicaple.
    * Field introduced in 18.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureFileSize set the captureFileSize.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
    * Number of minutes to capture packets.
    * Use 0 to capture until manually stopped.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return duration
    */
@@ -101,6 +104,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
    * Number of minutes to capture packets.
    * Use 0 to capture until manually stopped.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param duration set the duration.
    */
@@ -162,6 +166,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of packets to capture.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPkts
    */
   @VsoMethod
@@ -172,6 +177,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of packets to capture.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPkts set the numPkts.
    */
   @VsoMethod
@@ -209,6 +215,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
    * Use 0 to capture the entire packet.
    * Allowed values are 64-1514.
    * Special values are 0 - 'full capture'.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return pktSize
    */
@@ -223,6 +230,7 @@ public class DebugVirtualServiceCapture extends AviRestResource {
    * Use 0 to capture the entire packet.
    * Allowed values are 64-1514.
    * Special values are 0 - 'full capture'.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param pktSize set the pktSize.
    */

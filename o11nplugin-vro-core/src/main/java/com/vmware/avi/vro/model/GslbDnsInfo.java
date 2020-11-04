@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbDnsInfo extends AviRestResource {
-  @JsonProperty("dns_active")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dnsActive = null;
+    @JsonProperty("dns_active")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dnsActive = null;
 
-  @JsonProperty("dns_vs_states")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPerDnsState> dnsVsStates = null;
+    @JsonProperty("dns_vs_states")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPerDnsState> dnsVsStates = null;
 
-  @JsonProperty("gs_status")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDnsGsStatus gsStatus = null;
+    @JsonProperty("gs_status")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDnsGsStatus gsStatus = null;
 
-  @JsonProperty("retry_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer retryCount = null;
+    @JsonProperty("retry_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer retryCount = null;
 
-  @JsonProperty("se_table")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbDnsSeInfo> seTable = null;
+    @JsonProperty("se_table")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbDnsSeInfo> seTable;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * This field indicates that atleast one dns is active at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsActive
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This field indicates that atleast one dns is active at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsActive set the dnsActive.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dns_vs_states of obj type gslbdnsinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsStates
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the dnsVsStates
    * Placeholder for description of property dns_vs_states of obj type gslbdnsinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsStates
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class GslbDnsInfo extends AviRestResource {
   /**
    * This is the setter method this will set the dnsVsStates
    * Placeholder for description of property dns_vs_states of obj type gslbdnsinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVsStates
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class GslbDnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field encapsulates the gs-status edge-triggered framework.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsStatus
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class GslbDnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * This field encapsulates the gs-status edge-triggered framework.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsStatus set the gsStatus.
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class GslbDnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field is used to track the retry attempts for se download errors.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return retryCount
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class GslbDnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * This field is used to track the retry attempts for se download errors.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param retryCount set the retryCount.
    */
   @VsoMethod

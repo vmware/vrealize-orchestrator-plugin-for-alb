@@ -25,21 +25,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpAddrPort extends AviRestResource {
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
 
 
@@ -47,6 +47,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hostname of server.
    * One of ip address or hostname should be set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -58,6 +59,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the setter method to the attribute.
    * Hostname of server.
    * One of ip address or hostname should be set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of host.
    * One of ip address or hostname should be set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of host.
    * One of ip address or hostname should be set.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class IpAddrPort extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class IpAddrPort extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port number of server.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -122,6 +129,7 @@ public class IpAddrPort extends AviRestResource {
    * This is the setter method to the attribute.
    * Port number of server.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod

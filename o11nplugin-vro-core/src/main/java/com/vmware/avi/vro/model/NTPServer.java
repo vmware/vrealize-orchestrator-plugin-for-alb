@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NTPServer extends AviRestResource {
-  @JsonProperty("key_number")
-  @JsonInclude(Include.NON_NULL)
-  private Integer keyNumber = null;
+    @JsonProperty("key_number")
+    @JsonInclude(Include.NON_NULL)
+    private Integer keyNumber = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr server = null;
 
 
 
@@ -39,6 +39,7 @@ public class NTPServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key number from the list of trusted keys used to authenticate this server.
    * Allowed values are 1-65534.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyNumber
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class NTPServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Key number from the list of trusted keys used to authenticate this server.
    * Allowed values are 1-65534.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyNumber set the keyNumber.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class NTPServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the ntp server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -70,6 +73,7 @@ public class NTPServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the ntp server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod

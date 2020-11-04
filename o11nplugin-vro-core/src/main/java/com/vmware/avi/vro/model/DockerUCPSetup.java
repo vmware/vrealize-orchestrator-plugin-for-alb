@@ -24,59 +24,60 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DockerUCPSetup extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("docker_ucp_access")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dockerUcpAccess = null;
+    @JsonProperty("docker_ucp_access")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dockerUcpAccess = null;
 
-  @JsonProperty("failed_hosts")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> failedHosts = null;
+    @JsonProperty("failed_hosts")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> failedHosts = null;
 
-  @JsonProperty("fleet_endpoint")
-  @JsonInclude(Include.NON_NULL)
-  private String fleetEndpoint = null;
+    @JsonProperty("fleet_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String fleetEndpoint = null;
 
-  @JsonProperty("hosts")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> hosts = null;
+    @JsonProperty("hosts")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> hosts = null;
 
-  @JsonProperty("missing_hosts")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> missingHosts = null;
+    @JsonProperty("missing_hosts")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> missingHosts = null;
 
-  @JsonProperty("new_hosts")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> newHosts = null;
+    @JsonProperty("new_hosts")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> newHosts = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_deploy_method_access")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seDeployMethodAccess = null;
+    @JsonProperty("se_deploy_method_access")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seDeployMethodAccess = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("ucp_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> ucpNodes = null;
+    @JsonProperty("ucp_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ucpNodes = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -87,6 +88,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property docker_ucp_access of obj type dockerucpsetup field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerUcpAccess
    */
   @VsoMethod
@@ -107,6 +110,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property docker_ucp_access of obj type dockerucpsetup field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerUcpAccess set the dockerUcpAccess.
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property failed_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failedHosts
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the failedHosts
    * Placeholder for description of property failed_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failedHosts
    */
   @VsoMethod
@@ -137,6 +143,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method this will set the failedHosts
    * Placeholder for description of property failed_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failedHosts
    */
   @VsoMethod
@@ -152,6 +159,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property fleet_endpoint of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fleetEndpoint
    */
   @VsoMethod
@@ -162,6 +170,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property fleet_endpoint of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fleetEndpoint set the fleetEndpoint.
    */
   @VsoMethod
@@ -172,6 +181,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
   @VsoMethod
@@ -182,6 +192,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the hosts
    * Placeholder for description of property hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
   @VsoMethod
@@ -192,6 +203,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method this will set the hosts
    * Placeholder for description of property hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
   @VsoMethod
@@ -207,6 +219,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property missing_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingHosts
    */
   @VsoMethod
@@ -217,6 +230,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the missingHosts
    * Placeholder for description of property missing_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingHosts
    */
   @VsoMethod
@@ -227,6 +241,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method this will set the missingHosts
    * Placeholder for description of property missing_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingHosts
    */
   @VsoMethod
@@ -242,6 +257,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newHosts
    */
   @VsoMethod
@@ -252,6 +268,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the newHosts
    * Placeholder for description of property new_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newHosts
    */
   @VsoMethod
@@ -262,6 +279,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method this will set the newHosts
    * Placeholder for description of property new_hosts of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newHosts
    */
   @VsoMethod
@@ -277,6 +295,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -287,6 +306,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -297,6 +317,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_deploy_method_access of obj type dockerucpsetup field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDeployMethodAccess
    */
   @VsoMethod
@@ -307,6 +328,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_deploy_method_access of obj type dockerucpsetup field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDeployMethodAccess set the seDeployMethodAccess.
    */
   @VsoMethod
@@ -317,6 +339,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -327,6 +350,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -337,6 +361,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ucp_nodes of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ucpNodes
    */
   @VsoMethod
@@ -347,6 +372,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the ucpNodes
    * Placeholder for description of property ucp_nodes of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ucpNodes
    */
   @VsoMethod
@@ -357,6 +383,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method this will set the ucpNodes
    * Placeholder for description of property ucp_nodes of obj type dockerucpsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ucpNodes
    */
   @VsoMethod
@@ -372,6 +399,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property version of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -382,6 +410,7 @@ public class DockerUCPSetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property version of obj type dockerucpsetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

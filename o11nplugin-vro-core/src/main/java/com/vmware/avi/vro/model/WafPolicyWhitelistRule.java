@@ -25,33 +25,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPolicyWhitelistRule extends AviRestResource {
-  @JsonProperty("actions")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> actions = null;
+    @JsonProperty("actions")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> actions;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private MatchTarget match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private MatchTarget match;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name;
 
-  @JsonProperty("sampling_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer samplingPercent = 100;
+    @JsonProperty("sampling_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer samplingPercent;
 
 
 
@@ -59,6 +59,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Actions to be performed upon successful matching.
    * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return actions
    */
@@ -71,6 +72,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * This is the setter method. this will set the actions
    * Actions to be performed upon successful matching.
    * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return actions
    */
@@ -83,6 +85,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * This is the setter method this will set the actions
    * Actions to be performed upon successful matching.
    * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return actions
    */
@@ -99,6 +102,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of this rule.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return description
    */
@@ -110,6 +114,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of this rule.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @param description set the description.
    */
@@ -121,8 +126,8 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable or disable the rule.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
    */
   @VsoMethod
@@ -133,8 +138,8 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable or disable the rule.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
    */
   @VsoMethod
@@ -145,6 +150,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rules are executed in order of this index field.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return index
    */
@@ -156,6 +162,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rules are executed in order of this index field.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @param index set the index.
    */
@@ -167,6 +174,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match criteria describing requests to which this rule should be applied.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return match
    */
@@ -178,6 +186,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match criteria describing requests to which this rule should be applied.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @param match set the match.
    */
@@ -189,6 +198,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A name describing the rule in a short form.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return name
    */
@@ -200,6 +210,7 @@ public class WafPolicyWhitelistRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A name describing the rule in a short form.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @param name set the name.
    */
@@ -212,8 +223,9 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Percentage of traffic that is sampled.
    * Allowed values are 0-100.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * Unit is percent.
    * @return samplingPercent
    */
   @VsoMethod
@@ -225,8 +237,9 @@ public class WafPolicyWhitelistRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Percentage of traffic that is sampled.
    * Allowed values are 0-100.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * Unit is percent.
    * @param samplingPercent set the samplingPercent.
    */
   @VsoMethod

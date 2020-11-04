@@ -27,83 +27,84 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AwsConfiguration extends AviRestResource {
-  @JsonProperty("access_key_id")
-  @JsonInclude(Include.NON_NULL)
-  private String accessKeyId = null;
+    @JsonProperty("access_key_id")
+    @JsonInclude(Include.NON_NULL)
+    private String accessKeyId = null;
 
-  @JsonProperty("asg_poll_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer asgPollInterval = 600;
+    @JsonProperty("asg_poll_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer asgPollInterval = 600;
 
-  @JsonProperty("ebs_encryption")
-  @JsonInclude(Include.NON_NULL)
-  private AwsEncryption ebsEncryption = null;
+    @JsonProperty("ebs_encryption")
+    @JsonInclude(Include.NON_NULL)
+    private AwsEncryption ebsEncryption = null;
 
-  @JsonProperty("free_elasticips")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean freeElasticips = true;
+    @JsonProperty("free_elasticips")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean freeElasticips = true;
 
-  @JsonProperty("iam_assume_role")
-  @JsonInclude(Include.NON_NULL)
-  private String iamAssumeRole = null;
+    @JsonProperty("iam_assume_role")
+    @JsonInclude(Include.NON_NULL)
+    private String iamAssumeRole = null;
 
-  @JsonProperty("publish_vip_to_public_zone")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean publishVipToPublicZone = false;
+    @JsonProperty("publish_vip_to_public_zone")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean publishVipToPublicZone = false;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = "us-west-1";
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = "us-west-1";
 
-  @JsonProperty("route53_integration")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean route53Integration = false;
+    @JsonProperty("route53_integration")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean route53Integration = false;
 
-  @JsonProperty("s3_encryption")
-  @JsonInclude(Include.NON_NULL)
-  private AwsEncryption s3Encryption = null;
+    @JsonProperty("s3_encryption")
+    @JsonInclude(Include.NON_NULL)
+    private AwsEncryption s3Encryption = null;
 
-  @JsonProperty("secret_access_key")
-  @JsonInclude(Include.NON_NULL)
-  private String secretAccessKey = null;
+    @JsonProperty("secret_access_key")
+    @JsonInclude(Include.NON_NULL)
+    private String secretAccessKey = null;
 
-  @JsonProperty("sqs_encryption")
-  @JsonInclude(Include.NON_NULL)
-  private AwsEncryption sqsEncryption = null;
+    @JsonProperty("sqs_encryption")
+    @JsonInclude(Include.NON_NULL)
+    private AwsEncryption sqsEncryption = null;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = 60;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = 60;
 
-  @JsonProperty("use_iam_roles")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useIamRoles = false;
+    @JsonProperty("use_iam_roles")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useIamRoles = false;
 
-  @JsonProperty("use_sns_sqs")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useSnsSqs = false;
+    @JsonProperty("use_sns_sqs")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useSnsSqs = false;
 
-  @JsonProperty("vpc")
-  @JsonInclude(Include.NON_NULL)
-  private String vpc = null;
+    @JsonProperty("vpc")
+    @JsonInclude(Include.NON_NULL)
+    private String vpc = null;
 
-  @JsonProperty("vpc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcId = null;
+    @JsonProperty("vpc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcId = null;
 
-  @JsonProperty("wildcard_access")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean wildcardAccess = null;
+    @JsonProperty("wildcard_access")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean wildcardAccess;
 
-  @JsonProperty("zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<AwsZoneConfig> zones = null;
+    @JsonProperty("zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<AwsZoneConfig> zones = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Aws access key id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessKeyId
    */
   @VsoMethod
@@ -114,6 +115,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws access key id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessKeyId set the accessKeyId.
    */
   @VsoMethod
@@ -126,6 +128,7 @@ public class AwsConfiguration extends AviRestResource {
    * Time interval between periodic polling of all auto scaling groups.
    * Allowed values are 60-1800.
    * Field introduced in 17.1.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return asgPollInterval
    */
@@ -139,6 +142,7 @@ public class AwsConfiguration extends AviRestResource {
    * Time interval between periodic polling of all auto scaling groups.
    * Allowed values are 60-1800.
    * Field introduced in 17.1.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param asgPollInterval set the asgPollInterval.
    */
@@ -151,6 +155,7 @@ public class AwsConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ebs encryption mode and the master key to be used for encrypting se ami, volumes, and snapshots.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ebsEncryption
    */
   @VsoMethod
@@ -162,6 +167,7 @@ public class AwsConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Ebs encryption mode and the master key to be used for encrypting se ami, volumes, and snapshots.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ebsEncryption set the ebsEncryption.
    */
   @VsoMethod
@@ -194,6 +200,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Iam assume role for cross-account access.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return iamAssumeRole
    */
   @VsoMethod
@@ -204,6 +211,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Iam assume role for cross-account access.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param iamAssumeRole set the iamAssumeRole.
    */
   @VsoMethod
@@ -238,7 +246,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Aws region.
-   * Default value when not specified in API or module is interpreted by Avi Controller as us-west-1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
    * @return region
    */
   @VsoMethod
@@ -249,7 +257,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws region.
-   * Default value when not specified in API or module is interpreted by Avi Controller as us-west-1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
    * @param region set the region.
    */
   @VsoMethod
@@ -284,6 +292,7 @@ public class AwsConfiguration extends AviRestResource {
    * S3 encryption mode and the master key to be used for encrypting s3 buckets during se ami upload.
    * Only sse-kms mode is supported.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return s3Encryption
    */
   @VsoMethod
@@ -296,6 +305,7 @@ public class AwsConfiguration extends AviRestResource {
    * S3 encryption mode and the master key to be used for encrypting s3 buckets during se ami upload.
    * Only sse-kms mode is supported.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param s3Encryption set the s3Encryption.
    */
   @VsoMethod
@@ -306,6 +316,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Aws secret access key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretAccessKey
    */
   @VsoMethod
@@ -316,6 +327,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws secret access key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretAccessKey set the secretAccessKey.
    */
   @VsoMethod
@@ -327,6 +339,7 @@ public class AwsConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Server side encryption to be used for encrypting sqs queues.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sqsEncryption
    */
   @VsoMethod
@@ -338,6 +351,7 @@ public class AwsConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Server side encryption to be used for encrypting sqs queues.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sqsEncryption set the sqsEncryption.
    */
   @VsoMethod
@@ -350,6 +364,7 @@ public class AwsConfiguration extends AviRestResource {
    * Default ttl for all records.
    * Allowed values are 1-172800.
    * Field introduced in 17.1.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return ttl
    */
@@ -363,6 +378,7 @@ public class AwsConfiguration extends AviRestResource {
    * Default ttl for all records.
    * Allowed values are 1-172800.
    * Field introduced in 17.1.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param ttl set the ttl.
    */
@@ -420,6 +436,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vpc name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpc
    */
   @VsoMethod
@@ -430,6 +447,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vpc name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpc set the vpc.
    */
   @VsoMethod
@@ -440,6 +458,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vpc id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
   @VsoMethod
@@ -450,6 +469,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vpc id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */
   @VsoMethod
@@ -484,6 +504,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property zones of obj type awsconfiguration field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -494,6 +515,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the zones
    * Placeholder for description of property zones of obj type awsconfiguration field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -504,6 +526,7 @@ public class AwsConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the zones
    * Placeholder for description of property zones of obj type awsconfiguration field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod

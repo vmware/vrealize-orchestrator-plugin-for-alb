@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Property extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private String value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private String value = null;
 
 
 
@@ -38,6 +38,7 @@ public class Property extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Property name.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class Property extends AviRestResource {
    * This is the setter method to the attribute.
    * Property name.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class Property extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Property value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class Property extends AviRestResource {
    * This is the setter method to the attribute.
    * Property value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

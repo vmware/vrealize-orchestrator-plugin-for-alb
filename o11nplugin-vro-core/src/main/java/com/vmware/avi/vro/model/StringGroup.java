@@ -24,43 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class StringGroup extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("kv")
-  @JsonInclude(Include.NON_NULL)
-  private List<KeyValue> kv = null;
+    @JsonProperty("kv")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> kv = null;
 
-  @JsonProperty("longest_match")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean longestMatch = false;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("longest_match")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean longestMatch = false;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "SG_TYPE_STRING";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "SG_TYPE_STRING";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -71,6 +76,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -81,6 +87,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure key value in the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kv
    */
   @VsoMethod
@@ -91,6 +98,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the kv
    * Configure key value in the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kv
    */
   @VsoMethod
@@ -101,6 +109,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method this will set the kv
    * Configure key value in the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return kv
    */
   @VsoMethod
@@ -109,6 +118,50 @@ public class StringGroup extends AviRestResource {
       this.kv = new ArrayList<KeyValue>();
     }
     this.kv.add(kvItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public StringGroup addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
     return this;
   }
 
@@ -140,6 +193,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -150,6 +204,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -160,6 +215,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -170,6 +226,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -181,7 +238,7 @@ public class StringGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of stringgroup.
    * Enum options - SG_TYPE_STRING, SG_TYPE_KEYVAL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SG_TYPE_STRING.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SG_TYPE_STRING".
    * @return type
    */
   @VsoMethod
@@ -193,7 +250,7 @@ public class StringGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of stringgroup.
    * Enum options - SG_TYPE_STRING, SG_TYPE_KEYVAL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SG_TYPE_STRING.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SG_TYPE_STRING".
    * @param type set the type.
    */
   @VsoMethod
@@ -223,6 +280,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -233,6 +291,7 @@ public class StringGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the string group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -259,6 +318,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.kv, objStringGroup.kv)&&
   Objects.equals(this.type, objStringGroup.type)&&
   Objects.equals(this.longestMatch, objStringGroup.longestMatch)&&
+  Objects.equals(this.labels, objStringGroup.labels)&&
   Objects.equals(this.description, objStringGroup.description)&&
   Objects.equals(this.tenantRef, objStringGroup.tenantRef);
 }
@@ -269,6 +329,7 @@ public String toString() {
   sb.append("class StringGroup {\n");
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    kv: ").append(toIndentedString(kv)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    longestMatch: ").append(toIndentedString(longestMatch)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

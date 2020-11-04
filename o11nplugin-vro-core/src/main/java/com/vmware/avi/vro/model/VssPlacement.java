@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VssPlacement extends AviRestResource {
-  @JsonProperty("core_nonaffinity")
-  @JsonInclude(Include.NON_NULL)
-  private Integer coreNonaffinity = 2;
+    @JsonProperty("core_nonaffinity")
+    @JsonInclude(Include.NON_NULL)
+    private Integer coreNonaffinity = 2;
 
-  @JsonProperty("num_subcores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSubcores = 4;
+    @JsonProperty("num_subcores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSubcores = 4;
 
 
 

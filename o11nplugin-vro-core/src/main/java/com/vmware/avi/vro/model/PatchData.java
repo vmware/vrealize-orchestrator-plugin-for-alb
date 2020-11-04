@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PatchData extends AviRestResource {
-  @JsonProperty("patch_image_path")
-  @JsonInclude(Include.NON_NULL)
-  private String patchImagePath = null;
+    @JsonProperty("patch_image_path")
+    @JsonInclude(Include.NON_NULL)
+    private String patchImagePath = null;
 
-  @JsonProperty("patch_image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String patchImageRef = null;
+    @JsonProperty("patch_image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String patchImageRef = null;
 
-  @JsonProperty("patch_version")
-  @JsonInclude(Include.NON_NULL)
-  private String patchVersion = null;
+    @JsonProperty("patch_version")
+    @JsonInclude(Include.NON_NULL)
+    private String patchVersion = null;
 
 
 
@@ -42,6 +42,7 @@ public class PatchData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Image path of current patch image.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchImagePath
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class PatchData extends AviRestResource {
    * This is the setter method to the attribute.
    * Image path of current patch image.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchImagePath set the patchImagePath.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class PatchData extends AviRestResource {
    * Image uuid for identifying the patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchImageRef
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class PatchData extends AviRestResource {
    * Image uuid for identifying the patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchImageRef set the patchImageRef.
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class PatchData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch version.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchVersion
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class PatchData extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch version.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchVersion set the patchVersion.
    */
   @VsoMethod

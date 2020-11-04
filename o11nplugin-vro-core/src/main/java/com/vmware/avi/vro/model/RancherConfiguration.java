@@ -28,119 +28,120 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RancherConfiguration extends AviRestResource {
-  @JsonProperty("access_key")
-  @JsonInclude(Include.NON_NULL)
-  private String accessKey = null;
+    @JsonProperty("access_key")
+    @JsonInclude(Include.NON_NULL)
+    private String accessKey = null;
 
-  @JsonProperty("app_sync_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer appSyncFrequency = 60;
+    @JsonProperty("app_sync_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer appSyncFrequency = 60;
 
-  @JsonProperty("container_port_match_http_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean containerPortMatchHttpService = true;
+    @JsonProperty("container_port_match_http_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean containerPortMatchHttpService = true;
 
-  @JsonProperty("coredump_directory")
-  @JsonInclude(Include.NON_NULL)
-  private String coredumpDirectory = "/var/lib/systemd/coredump";
+    @JsonProperty("coredump_directory")
+    @JsonInclude(Include.NON_NULL)
+    private String coredumpDirectory = "/var/lib/systemd/coredump";
 
-  @JsonProperty("disable_auto_backend_service_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoBackendServiceSync = false;
+    @JsonProperty("disable_auto_backend_service_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoBackendServiceSync = false;
 
-  @JsonProperty("disable_auto_frontend_service_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoFrontendServiceSync = false;
+    @JsonProperty("disable_auto_frontend_service_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoFrontendServiceSync = false;
 
-  @JsonProperty("disable_auto_se_creation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoSeCreation = false;
+    @JsonProperty("disable_auto_se_creation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoSeCreation = false;
 
-  @JsonProperty("docker_registry_se")
-  @JsonInclude(Include.NON_NULL)
-  private DockerRegistry dockerRegistrySe = null;
+    @JsonProperty("docker_registry_se")
+    @JsonInclude(Include.NON_NULL)
+    private DockerRegistry dockerRegistrySe = null;
 
-  @JsonProperty("east_west_placement_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix eastWestPlacementSubnet = null;
+    @JsonProperty("east_west_placement_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix eastWestPlacementSubnet = null;
 
-  @JsonProperty("enable_event_subscription")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableEventSubscription = true;
+    @JsonProperty("enable_event_subscription")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableEventSubscription = true;
 
-  @JsonProperty("feproxy_container_port_as_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean feproxyContainerPortAsService = false;
+    @JsonProperty("feproxy_container_port_as_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean feproxyContainerPortAsService = false;
 
-  @JsonProperty("feproxy_vips_enable_proxy_arp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean feproxyVipsEnableProxyArp = true;
+    @JsonProperty("feproxy_vips_enable_proxy_arp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean feproxyVipsEnableProxyArp = true;
 
-  @JsonProperty("fleet_endpoint")
-  @JsonInclude(Include.NON_NULL)
-  private String fleetEndpoint = null;
+    @JsonProperty("fleet_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String fleetEndpoint = null;
 
-  @JsonProperty("http_container_ports")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> httpContainerPorts = null;
+    @JsonProperty("http_container_ports")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> httpContainerPorts = null;
 
-  @JsonProperty("nuage_controller")
-  @JsonInclude(Include.NON_NULL)
-  private NuageSDNController nuageController = null;
+    @JsonProperty("nuage_controller")
+    @JsonInclude(Include.NON_NULL)
+    private NuageSDNController nuageController = null;
 
-  @JsonProperty("rancher_servers")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> rancherServers = null;
+    @JsonProperty("rancher_servers")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> rancherServers = null;
 
-  @JsonProperty("se_deployment_method")
-  @JsonInclude(Include.NON_NULL)
-  private String seDeploymentMethod = "SE_CREATE_SSH";
+    @JsonProperty("se_deployment_method")
+    @JsonInclude(Include.NON_NULL)
+    private String seDeploymentMethod = "SE_CREATE_SSH";
 
-  @JsonProperty("se_exclude_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> seExcludeAttributes = null;
+    @JsonProperty("se_exclude_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> seExcludeAttributes = null;
 
-  @JsonProperty("se_include_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> seIncludeAttributes = null;
+    @JsonProperty("se_include_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> seIncludeAttributes = null;
 
-  @JsonProperty("se_spawn_rate")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seSpawnRate = 25;
+    @JsonProperty("se_spawn_rate")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seSpawnRate = 25;
 
-  @JsonProperty("se_volume")
-  @JsonInclude(Include.NON_NULL)
-  private String seVolume = "/opt/avi";
+    @JsonProperty("se_volume")
+    @JsonInclude(Include.NON_NULL)
+    private String seVolume = "/opt/avi";
 
-  @JsonProperty("secret_key")
-  @JsonInclude(Include.NON_NULL)
-  private String secretKey = null;
+    @JsonProperty("secret_key")
+    @JsonInclude(Include.NON_NULL)
+    private String secretKey = null;
 
-  @JsonProperty("services_accessible_all_interfaces")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean servicesAccessibleAllInterfaces = false;
+    @JsonProperty("services_accessible_all_interfaces")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean servicesAccessibleAllInterfaces = false;
 
-  @JsonProperty("ssh_se_deployment")
-  @JsonInclude(Include.NON_NULL)
-  private SSHSeDeployment sshSeDeployment = null;
+    @JsonProperty("ssh_se_deployment")
+    @JsonInclude(Include.NON_NULL)
+    private SSHSeDeployment sshSeDeployment;
 
-  @JsonProperty("ssh_user_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sshUserRef = null;
+    @JsonProperty("ssh_user_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sshUserRef = null;
 
-  @JsonProperty("use_container_ip_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useContainerIpPort = false;
+    @JsonProperty("use_container_ip_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useContainerIpPort = false;
 
-  @JsonProperty("use_controller_image")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useControllerImage = false;
+    @JsonProperty("use_controller_image")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useControllerImage = false;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Access key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessKey
    */
   @VsoMethod
@@ -151,6 +152,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Access key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessKey set the accessKey.
    */
   @VsoMethod
@@ -207,7 +209,7 @@ public class RancherConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @return coredumpDirectory
    */
   @VsoMethod
@@ -220,7 +222,7 @@ public class RancherConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @param coredumpDirectory set the coredumpDirectory.
    */
   @VsoMethod
@@ -297,6 +299,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Docker registry for serviceengine image.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerRegistrySe
    */
   @VsoMethod
@@ -307,6 +310,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Docker registry for serviceengine image.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerRegistrySe set the dockerRegistrySe.
    */
   @VsoMethod
@@ -317,6 +321,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match against this prefix when placing east-west vss on ses .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWestPlacementSubnet
    */
   @VsoMethod
@@ -327,6 +332,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match against this prefix when placing east-west vss on ses .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
    */
   @VsoMethod
@@ -403,6 +409,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Optional fleet remote endpoint if fleet is used for se deployment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fleetEndpoint
    */
   @VsoMethod
@@ -413,6 +420,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Optional fleet remote endpoint if fleet is used for se deployment.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fleetEndpoint set the fleetEndpoint.
    */
   @VsoMethod
@@ -424,6 +432,7 @@ public class RancherConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -435,6 +444,7 @@ public class RancherConfiguration extends AviRestResource {
    * This is the setter method. this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -446,6 +456,7 @@ public class RancherConfiguration extends AviRestResource {
    * This is the setter method this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -461,6 +472,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nuage overlay sdn controller information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuageController
    */
   @VsoMethod
@@ -471,6 +483,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Nuage overlay sdn controller information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuageController set the nuageController.
    */
   @VsoMethod
@@ -481,6 +494,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of rancher servers; in case of a load balanced rancher multi cluster, use virtual ip of the cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rancherServers
    */
   @VsoMethod
@@ -491,6 +505,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the rancherServers
    * List of rancher servers; in case of a load balanced rancher multi cluster, use virtual ip of the cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rancherServers
    */
   @VsoMethod
@@ -501,6 +516,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the rancherServers
    * List of rancher servers; in case of a load balanced rancher multi cluster, use virtual ip of the cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rancherServers
    */
   @VsoMethod
@@ -517,7 +533,7 @@ public class RancherConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use fleet/ssh for se deployment.
    * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_CREATE_SSH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_SSH".
    * @return seDeploymentMethod
    */
   @VsoMethod
@@ -529,7 +545,7 @@ public class RancherConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Use fleet/ssh for se deployment.
    * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_CREATE_SSH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_SSH".
    * @param seDeploymentMethod set the seDeploymentMethod.
    */
   @VsoMethod
@@ -540,6 +556,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -550,6 +567,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -560,6 +578,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -575,6 +594,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -585,6 +605,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -595,6 +616,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -632,7 +654,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /opt/avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi".
    * @return seVolume
    */
   @VsoMethod
@@ -643,7 +665,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /opt/avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi".
    * @param seVolume set the seVolume.
    */
   @VsoMethod
@@ -654,6 +676,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretKey
    */
   @VsoMethod
@@ -664,6 +687,7 @@ public class RancherConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretKey set the secretKey.
    */
   @VsoMethod
@@ -722,6 +746,7 @@ public class RancherConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
   @VsoMethod
@@ -734,6 +759,7 @@ public class RancherConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */
   @VsoMethod

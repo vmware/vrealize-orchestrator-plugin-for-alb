@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServicePoolSelector extends AviRestResource {
-  @JsonProperty("service_pool_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String servicePoolGroupRef = null;
+    @JsonProperty("service_pool_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String servicePoolGroupRef = null;
 
-  @JsonProperty("service_pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String servicePoolRef = null;
+    @JsonProperty("service_pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String servicePoolRef = null;
 
-  @JsonProperty("service_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer servicePort = null;
+    @JsonProperty("service_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer servicePort = null;
 
-  @JsonProperty("service_port_range_end")
-  @JsonInclude(Include.NON_NULL)
-  private Integer servicePortRangeEnd = 0;
+    @JsonProperty("service_port_range_end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer servicePortRangeEnd = 0;
 
-  @JsonProperty("service_protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceProtocol = null;
+    @JsonProperty("service_protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceProtocol = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolGroupRef
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicePoolGroupRef set the servicePoolGroupRef.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePoolRef
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class ServicePoolSelector extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicePoolRef set the servicePoolRef.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class ServicePoolSelector extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool based destination port.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicePort
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class ServicePoolSelector extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool based destination port.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicePort set the servicePort.
    */
   @VsoMethod
@@ -141,6 +147,7 @@ public class ServicePoolSelector extends AviRestResource {
    * Destination protocol to match for the pool selection.
    * If not specified, it will match any protocol.
    * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceProtocol
    */
   @VsoMethod
@@ -153,6 +160,7 @@ public class ServicePoolSelector extends AviRestResource {
    * Destination protocol to match for the pool selection.
    * If not specified, it will match any protocol.
    * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceProtocol set the serviceProtocol.
    */
   @VsoMethod

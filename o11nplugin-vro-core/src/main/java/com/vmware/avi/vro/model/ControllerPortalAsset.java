@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerPortalAsset extends AviRestResource {
-  @JsonProperty("asset_id")
-  @JsonInclude(Include.NON_NULL)
-  private String assetId = null;
+    @JsonProperty("asset_id")
+    @JsonInclude(Include.NON_NULL)
+    private String assetId = null;
 
 
 
@@ -34,6 +34,7 @@ public class ControllerPortalAsset extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Asset id corresponding to this controller cluster, returned on a successful registration.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assetId
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class ControllerPortalAsset extends AviRestResource {
    * This is the setter method to the attribute.
    * Asset id corresponding to this controller cluster, returned on a successful registration.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assetId set the assetId.
    */
   @VsoMethod

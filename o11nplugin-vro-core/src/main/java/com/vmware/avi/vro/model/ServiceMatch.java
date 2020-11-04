@@ -27,17 +27,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServiceMatch extends AviRestResource {
-  @JsonProperty("destination_port")
-  @JsonInclude(Include.NON_NULL)
-  private PortMatch destinationPort = null;
+    @JsonProperty("destination_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortMatch destinationPort = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private L4RuleProtocolMatch protocol = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private L4RuleProtocolMatch protocol = null;
 
-  @JsonProperty("source_port")
-  @JsonInclude(Include.NON_NULL)
-  private PortMatch sourcePort = null;
+    @JsonProperty("source_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortMatch sourcePort = null;
 
 
 
@@ -45,6 +45,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination port of the packet.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return destinationPort
    */
   @VsoMethod
@@ -56,6 +57,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination port of the packet.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param destinationPort set the destinationPort.
    */
   @VsoMethod
@@ -66,7 +68,9 @@ public class ServiceMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Protocol to match.
+   * Supported protocols are tcp, udp and icmp.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -77,7 +81,9 @@ public class ServiceMatch extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Protocol to match.
+   * Supported protocols are tcp, udp and icmp.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -89,6 +95,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source port of the packet.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sourcePort
    */
   @VsoMethod
@@ -100,6 +107,7 @@ public class ServiceMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Source port of the packet.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sourcePort set the sourcePort.
    */
   @VsoMethod

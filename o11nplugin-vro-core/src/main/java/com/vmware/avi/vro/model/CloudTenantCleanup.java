@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudTenantCleanup extends AviRestResource {
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("num_ports")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numPorts = null;
+    @JsonProperty("num_ports")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numPorts = null;
 
-  @JsonProperty("num_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSe = null;
+    @JsonProperty("num_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSe = null;
 
-  @JsonProperty("num_secgrp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSecgrp = null;
+    @JsonProperty("num_secgrp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSecgrp = null;
 
-  @JsonProperty("num_svrgrp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSvrgrp = null;
+    @JsonProperty("num_svrgrp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSvrgrp = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property id of obj type cloudtenantcleanup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property id of obj type cloudtenantcleanup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ports of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPorts
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ports of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPorts set the numPorts.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_secgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSecgrp
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_secgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSecgrp set the numSecgrp.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_svrgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSvrgrp
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class CloudTenantCleanup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_svrgrp of obj type cloudtenantcleanup field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSvrgrp set the numSvrgrp.
    */
   @VsoMethod

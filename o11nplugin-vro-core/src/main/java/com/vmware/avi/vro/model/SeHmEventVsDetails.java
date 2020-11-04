@@ -26,43 +26,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHmEventVsDetails extends AviRestResource {
-  @JsonProperty("ha_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String haReason = null;
+    @JsonProperty("ha_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String haReason = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("src_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String srcUuid = null;
+    @JsonProperty("src_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String srcUuid = null;
 
-  @JsonProperty("vip6_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vip6Address = null;
+    @JsonProperty("vip6_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vip6Address = null;
 
-  @JsonProperty("vip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vipAddress = null;
+    @JsonProperty("vip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vipAddress = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("virtual_service")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualService = null;
+    @JsonProperty("virtual_service")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualService = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haReason
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haReason set the haReason.
    */
   @VsoMethod
@@ -83,6 +85,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for virtual service down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -93,6 +96,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for virtual service down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -103,6 +107,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service engine name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -113,6 +118,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service engine name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -123,6 +129,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */
   @VsoMethod
@@ -143,6 +151,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip6Address
    */
   @VsoMethod
@@ -153,6 +162,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip6Address set the vip6Address.
    */
   @VsoMethod
@@ -163,6 +173,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipAddress
    */
   @VsoMethod
@@ -173,6 +184,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipAddress set the vipAddress.
    */
   @VsoMethod
@@ -183,6 +195,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -193,6 +206,7 @@ public class SeHmEventVsDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -204,6 +218,7 @@ public class SeHmEventVsDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
   @VsoMethod
@@ -215,6 +230,7 @@ public class SeHmEventVsDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */
   @VsoMethod

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsGeoLocationMatch extends AviRestResource {
-  @JsonProperty("geolocation_name")
-  @JsonInclude(Include.NON_NULL)
-  private String geolocationName = null;
+    @JsonProperty("geolocation_name")
+    @JsonInclude(Include.NON_NULL)
+    private String geolocationName = null;
 
-  @JsonProperty("geolocation_tag")
-  @JsonInclude(Include.NON_NULL)
-  private String geolocationTag = null;
+    @JsonProperty("geolocation_tag")
+    @JsonInclude(Include.NON_NULL)
+    private String geolocationTag = null;
 
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("use_edns_client_subnet_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useEdnsClientSubnetIp = true;
+    @JsonProperty("use_edns_client_subnet_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useEdnsClientSubnetIp = true;
 
 
 
@@ -48,6 +48,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This location is of the format country/state/city e.g.
    * Us/ca/santa clara.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geolocationName
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This location is of the format country/state/city e.g.
    * Us/ca/santa clara.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geolocationName set the geolocationName.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This could be any string value for the client ip, e.g.
    * Client ips from us east coast geolocation would be tagged as 'east coast'.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geolocationTag
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * This could be any string value for the client ip, e.g.
    * Client ips from us east coast geolocation would be tagged as 'east coast'.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geolocationTag set the geolocationTag.
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * Criterion to use for matching the client ip's geographical location.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class DnsGeoLocationMatch extends AviRestResource {
    * Criterion to use for matching the client ip's geographical location.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod

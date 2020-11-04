@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertFilter extends AviRestResource {
-  @JsonProperty("filter_action")
-  @JsonInclude(Include.NON_NULL)
-  private String filterAction = null;
+    @JsonProperty("filter_action")
+    @JsonInclude(Include.NON_NULL)
+    private String filterAction = null;
 
-  @JsonProperty("filter_string")
-  @JsonInclude(Include.NON_NULL)
-  private String filterString = null;
+    @JsonProperty("filter_string")
+    @JsonInclude(Include.NON_NULL)
+    private String filterString = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property filter_action of obj type alertfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filterAction
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class AlertFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property filter_action of obj type alertfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param filterAction set the filterAction.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class AlertFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property filter_string of obj type alertfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filterString
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class AlertFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property filter_string of obj type alertfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param filterString set the filterString.
    */
   @VsoMethod

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.TimeStamp;
 import com.vmware.avi.vro.model.TimeStamp;
+import com.vmware.avi.vro.model.WebApplicationSignatureServiceStatus;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -26,45 +27,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafApplicationSignatureProvider extends AviRestResource {
-  @JsonProperty("available_applications")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafApplicationSignatureAppVersion> availableApplications = null;
+    @JsonProperty("available_applications")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafApplicationSignatureAppVersion> availableApplications = null;
 
-  @JsonProperty("last_check_for_updates_error")
-  @JsonInclude(Include.NON_NULL)
-  private String lastCheckForUpdatesError = null;
+    @JsonProperty("last_check_for_updates_error")
+    @JsonInclude(Include.NON_NULL)
+    private String lastCheckForUpdatesError;
 
-  @JsonProperty("last_failed_check_for_updates")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastFailedCheckForUpdates = null;
+    @JsonProperty("last_failed_check_for_updates")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastFailedCheckForUpdates;
 
-  @JsonProperty("last_successful_check_for_updates")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastSuccessfulCheckForUpdates = null;
+    @JsonProperty("last_successful_check_for_updates")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastSuccessfulCheckForUpdates;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("ruleset_version")
-  @JsonInclude(Include.NON_NULL)
-  private String rulesetVersion = null;
+    @JsonProperty("ruleset_version")
+    @JsonInclude(Include.NON_NULL)
+    private String rulesetVersion = null;
 
-  @JsonProperty("signatures")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRule> signatures = null;
+    @JsonProperty("service_status")
+    @JsonInclude(Include.NON_NULL)
+    private WebApplicationSignatureServiceStatus serviceStatus = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -72,6 +73,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Available application names and the ruleset version, when the rules for an application changed the last time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availableApplications
    */
   @VsoMethod
@@ -83,6 +85,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method. this will set the availableApplications
    * Available application names and the ruleset version, when the rules for an application changed the last time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availableApplications
    */
   @VsoMethod
@@ -94,6 +97,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method this will set the availableApplications
    * Available application names and the ruleset version, when the rules for an application changed the last time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availableApplications
    */
   @VsoMethod
@@ -109,6 +113,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The error message indicating why the last update check failed.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * @return lastCheckForUpdatesError
    */
@@ -120,6 +125,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The error message indicating why the last update check failed.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * @param lastCheckForUpdatesError set the lastCheckForUpdatesError.
    */
@@ -131,6 +137,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The last time that we checked for updates but did not get a result because of an error.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * @return lastFailedCheckForUpdates
    */
@@ -142,6 +149,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The last time that we checked for updates but did not get a result because of an error.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * @param lastFailedCheckForUpdates set the lastFailedCheckForUpdates.
    */
@@ -153,6 +161,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The last time that we checked for updates sucessfully.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * @return lastSuccessfulCheckForUpdates
    */
@@ -164,6 +173,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The last time that we checked for updates sucessfully.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
    * @param lastSuccessfulCheckForUpdates set the lastSuccessfulCheckForUpdates.
    */
@@ -176,6 +186,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of application specific ruleset provider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -187,6 +198,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of application specific ruleset provider.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -198,6 +210,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of signatures.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rulesetVersion
    */
   @VsoMethod
@@ -209,6 +222,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of signatures.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rulesetVersion set the rulesetVersion.
    */
   @VsoMethod
@@ -218,49 +232,33 @@ public class WafApplicationSignatureProvider extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The waf rules.
-   * Not visible in the api.
-   * Field introduced in 20.1.1.
-   * @return signatures
+   * If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceStatus
    */
   @VsoMethod
-  public List<WafRule> getSignatures() {
-    return signatures;
+  public WebApplicationSignatureServiceStatus getServiceStatus() {
+    return serviceStatus;
   }
 
   /**
-   * This is the setter method. this will set the signatures
-   * The waf rules.
-   * Not visible in the api.
-   * Field introduced in 20.1.1.
-   * @return signatures
+   * This is the setter method to the attribute.
+   * If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param serviceStatus set the serviceStatus.
    */
   @VsoMethod
-  public void setSignatures(List<WafRule>  signatures) {
-    this.signatures = signatures;
+  public void setServiceStatus(WebApplicationSignatureServiceStatus serviceStatus) {
+    this.serviceStatus = serviceStatus;
   }
-
-  /**
-   * This is the setter method this will set the signatures
-   * The waf rules.
-   * Not visible in the api.
-   * Field introduced in 20.1.1.
-   * @return signatures
-   */
-  @VsoMethod
-  public WafApplicationSignatureProvider addSignaturesItem(WafRule signaturesItem) {
-    if (this.signatures == null) {
-      this.signatures = new ArrayList<WafRule>();
-    }
-    this.signatures.add(signaturesItem);
-    return this;
-  }
-
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -272,6 +270,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -301,6 +300,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -311,6 +311,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -337,10 +338,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tenantRef, objWafApplicationSignatureProvider.tenantRef)&&
   Objects.equals(this.rulesetVersion, objWafApplicationSignatureProvider.rulesetVersion)&&
   Objects.equals(this.availableApplications, objWafApplicationSignatureProvider.availableApplications)&&
-  Objects.equals(this.signatures, objWafApplicationSignatureProvider.signatures)&&
   Objects.equals(this.lastSuccessfulCheckForUpdates, objWafApplicationSignatureProvider.lastSuccessfulCheckForUpdates)&&
   Objects.equals(this.lastFailedCheckForUpdates, objWafApplicationSignatureProvider.lastFailedCheckForUpdates)&&
-  Objects.equals(this.lastCheckForUpdatesError, objWafApplicationSignatureProvider.lastCheckForUpdatesError);
+  Objects.equals(this.lastCheckForUpdatesError, objWafApplicationSignatureProvider.lastCheckForUpdatesError)&&
+  Objects.equals(this.serviceStatus, objWafApplicationSignatureProvider.serviceStatus);
 }
 
 @Override
@@ -353,7 +354,7 @@ public String toString() {
         sb.append("    lastSuccessfulCheckForUpdates: ").append(toIndentedString(lastSuccessfulCheckForUpdates)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    rulesetVersion: ").append(toIndentedString(rulesetVersion)).append("\n");
-        sb.append("    signatures: ").append(toIndentedString(signatures)).append("\n");
+        sb.append("    serviceStatus: ").append(toIndentedString(serviceStatus)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");

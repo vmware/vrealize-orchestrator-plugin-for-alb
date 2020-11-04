@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorExternal extends AviRestResource {
-  @JsonProperty("command_code")
-  @JsonInclude(Include.NON_NULL)
-  private String commandCode = null;
+    @JsonProperty("command_code")
+    @JsonInclude(Include.NON_NULL)
+    private String commandCode = null;
 
-  @JsonProperty("command_parameters")
-  @JsonInclude(Include.NON_NULL)
-  private String commandParameters = null;
+    @JsonProperty("command_parameters")
+    @JsonInclude(Include.NON_NULL)
+    private String commandParameters = null;
 
-  @JsonProperty("command_path")
-  @JsonInclude(Include.NON_NULL)
-  private String commandPath = null;
+    @JsonProperty("command_path")
+    @JsonInclude(Include.NON_NULL)
+    private String commandPath = null;
 
-  @JsonProperty("command_variables")
-  @JsonInclude(Include.NON_NULL)
-  private String commandVariables = null;
+    @JsonProperty("command_variables")
+    @JsonInclude(Include.NON_NULL)
+    private String commandVariables = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Command script provided inline.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandCode
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Command script provided inline.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandCode set the commandCode.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Optional arguments to feed into the script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandParameters
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Optional arguments to feed into the script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandParameters set the commandParameters.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path of external health monitor script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandPath
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path of external health monitor script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandPath set the commandPath.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Environment variables to be fed into the script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commandVariables
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class HealthMonitorExternal extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Environment variables to be fed into the script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commandVariables set the commandVariables.
    */
   @VsoMethod

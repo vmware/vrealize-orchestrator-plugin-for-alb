@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DispatcherTableDumpClear extends AviRestResource {
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class DispatcherTableDumpClear extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod

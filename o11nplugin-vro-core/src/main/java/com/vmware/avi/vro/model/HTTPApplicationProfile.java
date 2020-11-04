@@ -28,229 +28,229 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPApplicationProfile extends AviRestResource {
-  @JsonProperty("allow_dots_in_header_name")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowDotsInHeaderName = false;
+    @JsonProperty("allow_dots_in_header_name")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowDotsInHeaderName = false;
 
-  @JsonProperty("cache_config")
-  @JsonInclude(Include.NON_NULL)
-  private HttpCacheConfig cacheConfig = null;
+    @JsonProperty("cache_config")
+    @JsonInclude(Include.NON_NULL)
+    private HttpCacheConfig cacheConfig = null;
 
-  @JsonProperty("client_body_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientBodyTimeout = 30000;
+    @JsonProperty("client_body_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientBodyTimeout = 30000;
 
-  @JsonProperty("client_header_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientHeaderTimeout = 10000;
+    @JsonProperty("client_header_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientHeaderTimeout = 10000;
 
-  @JsonProperty("client_max_body_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientMaxBodySize = 0;
+    @JsonProperty("client_max_body_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientMaxBodySize = 0;
 
-  @JsonProperty("client_max_header_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientMaxHeaderSize = 12;
+    @JsonProperty("client_max_header_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientMaxHeaderSize = 12;
 
-  @JsonProperty("client_max_request_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clientMaxRequestSize = 48;
+    @JsonProperty("client_max_request_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clientMaxRequestSize = 48;
 
-  @JsonProperty("compression_profile")
-  @JsonInclude(Include.NON_NULL)
-  private CompressionProfile compressionProfile = null;
+    @JsonProperty("compression_profile")
+    @JsonInclude(Include.NON_NULL)
+    private CompressionProfile compressionProfile = null;
 
-  @JsonProperty("connection_multiplexing_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean connectionMultiplexingEnabled = true;
+    @JsonProperty("connection_multiplexing_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean connectionMultiplexingEnabled = true;
 
-  @JsonProperty("disable_keepalive_posts_msie6")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableKeepalivePostsMsie6 = true;
+    @JsonProperty("disable_keepalive_posts_msie6")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableKeepalivePostsMsie6 = true;
 
-  @JsonProperty("disable_sni_hostname_check")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableSniHostnameCheck = false;
+    @JsonProperty("disable_sni_hostname_check")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableSniHostnameCheck = false;
 
-  @JsonProperty("enable_chunk_merge")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableChunkMerge = true;
+    @JsonProperty("enable_chunk_merge")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableChunkMerge = true;
 
-  @JsonProperty("enable_fire_and_forget")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableFireAndForget = false;
+    @JsonProperty("enable_fire_and_forget")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableFireAndForget = false;
 
-  @JsonProperty("enable_request_body_buffering")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRequestBodyBuffering = false;
+    @JsonProperty("enable_request_body_buffering")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRequestBodyBuffering = false;
 
-  @JsonProperty("enable_request_body_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRequestBodyMetrics = false;
+    @JsonProperty("enable_request_body_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRequestBodyMetrics = false;
 
-  @JsonProperty("fwd_close_hdr_for_bound_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fwdCloseHdrForBoundConnections = true;
+    @JsonProperty("fwd_close_hdr_for_bound_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fwdCloseHdrForBoundConnections = true;
 
-  @JsonProperty("hsts_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hstsEnabled = false;
+    @JsonProperty("hsts_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hstsEnabled = false;
 
-  @JsonProperty("hsts_max_age")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hstsMaxAge = 365;
+    @JsonProperty("hsts_max_age")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hstsMaxAge = 365;
 
-  @JsonProperty("hsts_subdomains_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hstsSubdomainsEnabled = true;
+    @JsonProperty("hsts_subdomains_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hstsSubdomainsEnabled = true;
 
-  @JsonProperty("http2_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean http2Enabled = null;
+    @JsonProperty("http2_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean http2Enabled;
 
-  @JsonProperty("http2_profile")
-  @JsonInclude(Include.NON_NULL)
-  private HTTP2ApplicationProfile http2Profile = null;
+    @JsonProperty("http2_profile")
+    @JsonInclude(Include.NON_NULL)
+    private HTTP2ApplicationProfile http2Profile = null;
 
-  @JsonProperty("http_to_https")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean httpToHttps = false;
+    @JsonProperty("http_to_https")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean httpToHttps = false;
 
-  @JsonProperty("http_upstream_buffer_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer httpUpstreamBufferSize = 0;
+    @JsonProperty("http_upstream_buffer_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer httpUpstreamBufferSize = 0;
 
-  @JsonProperty("httponly_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean httponlyEnabled = false;
+    @JsonProperty("httponly_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean httponlyEnabled = false;
 
-  @JsonProperty("keepalive_header")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean keepaliveHeader = false;
+    @JsonProperty("keepalive_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean keepaliveHeader = false;
 
-  @JsonProperty("keepalive_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer keepaliveTimeout = 30000;
+    @JsonProperty("keepalive_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer keepaliveTimeout = 30000;
 
-  @JsonProperty("max_bad_rps_cip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxBadRpsCip = 0;
+    @JsonProperty("max_bad_rps_cip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxBadRpsCip = 0;
 
-  @JsonProperty("max_bad_rps_cip_uri")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxBadRpsCipUri = 0;
+    @JsonProperty("max_bad_rps_cip_uri")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxBadRpsCipUri = 0;
 
-  @JsonProperty("max_bad_rps_uri")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxBadRpsUri = 0;
+    @JsonProperty("max_bad_rps_uri")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxBadRpsUri = 0;
 
-  @JsonProperty("max_http2_concurrent_streams_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2ConcurrentStreamsPerConnection = null;
+    @JsonProperty("max_http2_concurrent_streams_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2ConcurrentStreamsPerConnection;
 
-  @JsonProperty("max_http2_control_frames_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2ControlFramesPerConnection = null;
+    @JsonProperty("max_http2_control_frames_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2ControlFramesPerConnection;
 
-  @JsonProperty("max_http2_empty_data_frames_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2EmptyDataFramesPerConnection = null;
+    @JsonProperty("max_http2_empty_data_frames_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2EmptyDataFramesPerConnection;
 
-  @JsonProperty("max_http2_queued_frames_to_client_per_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxHttp2QueuedFramesToClientPerConnection = null;
+    @JsonProperty("max_http2_queued_frames_to_client_per_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxHttp2QueuedFramesToClientPerConnection;
 
-  @JsonProperty("max_keepalive_requests")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxKeepaliveRequests = 100;
+    @JsonProperty("max_keepalive_requests")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxKeepaliveRequests = 100;
 
-  @JsonProperty("max_response_headers_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxResponseHeadersSize = 48;
+    @JsonProperty("max_response_headers_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxResponseHeadersSize = 48;
 
-  @JsonProperty("max_rps_cip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRpsCip = 0;
+    @JsonProperty("max_rps_cip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRpsCip = 0;
 
-  @JsonProperty("max_rps_cip_uri")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRpsCipUri = 0;
+    @JsonProperty("max_rps_cip_uri")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRpsCipUri = 0;
 
-  @JsonProperty("max_rps_unknown_cip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRpsUnknownCip = 0;
+    @JsonProperty("max_rps_unknown_cip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRpsUnknownCip = 0;
 
-  @JsonProperty("max_rps_unknown_uri")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRpsUnknownUri = 0;
+    @JsonProperty("max_rps_unknown_uri")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRpsUnknownUri = 0;
 
-  @JsonProperty("max_rps_uri")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRpsUri = 0;
+    @JsonProperty("max_rps_uri")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRpsUri = 0;
 
-  @JsonProperty("pki_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String pkiProfileRef = null;
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef = null;
 
-  @JsonProperty("post_accept_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer postAcceptTimeout = 30000;
+    @JsonProperty("post_accept_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer postAcceptTimeout = 30000;
 
-  @JsonProperty("reset_conn_http_on_ssl_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resetConnHttpOnSslPort = false;
+    @JsonProperty("reset_conn_http_on_ssl_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resetConnHttpOnSslPort = false;
 
-  @JsonProperty("respond_with_100_continue")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean respondWith100Continue = true;
+    @JsonProperty("respond_with_100_continue")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean respondWith100Continue = true;
 
-  @JsonProperty("secure_cookie_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean secureCookieEnabled = false;
+    @JsonProperty("secure_cookie_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean secureCookieEnabled = false;
 
-  @JsonProperty("server_side_redirect_to_https")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean serverSideRedirectToHttps = false;
+    @JsonProperty("server_side_redirect_to_https")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean serverSideRedirectToHttps = false;
 
-  @JsonProperty("spdy_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean spdyEnabled = null;
+    @JsonProperty("spdy_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean spdyEnabled;
 
-  @JsonProperty("spdy_fwd_proxy_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean spdyFwdProxyMode = null;
+    @JsonProperty("spdy_fwd_proxy_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean spdyFwdProxyMode;
 
-  @JsonProperty("ssl_client_certificate_action")
-  @JsonInclude(Include.NON_NULL)
-  private SSLClientCertificateAction sslClientCertificateAction = null;
+    @JsonProperty("ssl_client_certificate_action")
+    @JsonInclude(Include.NON_NULL)
+    private SSLClientCertificateAction sslClientCertificateAction = null;
 
-  @JsonProperty("ssl_client_certificate_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String sslClientCertificateMode = "SSL_CLIENT_CERTIFICATE_NONE";
+    @JsonProperty("ssl_client_certificate_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String sslClientCertificateMode = "SSL_CLIENT_CERTIFICATE_NONE";
 
-  @JsonProperty("ssl_everywhere_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sslEverywhereEnabled = null;
+    @JsonProperty("ssl_everywhere_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sslEverywhereEnabled;
 
-  @JsonProperty("use_app_keepalive_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useAppKeepaliveTimeout = false;
+    @JsonProperty("use_app_keepalive_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useAppKeepaliveTimeout = false;
 
-  @JsonProperty("websockets_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean websocketsEnabled = true;
+    @JsonProperty("websockets_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean websocketsEnabled = true;
 
-  @JsonProperty("x_forwarded_proto_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean xForwardedProtoEnabled = false;
+    @JsonProperty("x_forwarded_proto_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean xForwardedProtoEnabled = false;
 
-  @JsonProperty("xff_alternate_name")
-  @JsonInclude(Include.NON_NULL)
-  private String xffAlternateName = "X-Forwarded-For";
+    @JsonProperty("xff_alternate_name")
+    @JsonInclude(Include.NON_NULL)
+    private String xffAlternateName = "X-Forwarded-For";
 
-  @JsonProperty("xff_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean xffEnabled = true;
+    @JsonProperty("xff_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean xffEnabled = true;
 
 
 
@@ -279,6 +279,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http caching config to use with this http profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cacheConfig
    */
   @VsoMethod
@@ -289,6 +290,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http caching config to use with this http profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cacheConfig set the cacheConfig.
    */
   @VsoMethod
@@ -302,6 +304,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The value '0' specifies no timeout.
    * This setting generally impacts the length of time allowed for a client to send a post.
    * Allowed values are 0-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return clientBodyTimeout
    */
@@ -316,6 +319,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The value '0' specifies no timeout.
    * This setting generally impacts the length of time allowed for a client to send a post.
    * Allowed values are 0-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param clientBodyTimeout set the clientBodyTimeout.
    */
@@ -329,6 +333,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The maximum length of time allowed for a client to transmit an entire request header.
    * This helps mitigate various forms of slowloris attacks.
    * Allowed values are 10-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return clientHeaderTimeout
    */
@@ -342,6 +347,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The maximum length of time allowed for a client to transmit an entire request header.
    * This helps mitigate various forms of slowloris attacks.
    * Allowed values are 10-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param clientHeaderTimeout set the clientHeaderTimeout.
    */
@@ -355,6 +361,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Maximum size for the client request body.
    * This limits the size of the client data that can be uploaded/posted as part of a single http request.
    * Default 0 => unlimited.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return clientMaxBodySize
    */
@@ -368,6 +375,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Maximum size for the client request body.
    * This limits the size of the client data that can be uploaded/posted as part of a single http request.
    * Default 0 => unlimited.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param clientMaxBodySize set the clientMaxBodySize.
    */
@@ -380,6 +388,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum size in kbytes of a single http header in the client request.
    * Allowed values are 1-64.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @return clientMaxHeaderSize
    */
@@ -392,6 +401,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum size in kbytes of a single http header in the client request.
    * Allowed values are 1-64.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @param clientMaxHeaderSize set the clientMaxHeaderSize.
    */
@@ -404,6 +414,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum size in kbytes of all the client http request headers.
    * Allowed values are 1-256.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @return clientMaxRequestSize
    */
@@ -416,6 +427,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum size in kbytes of all the client http request headers.
    * Allowed values are 1-256.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @param clientMaxRequestSize set the clientMaxRequestSize.
    */
@@ -427,6 +439,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http compression settings to use with this http profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compressionProfile
    */
   @VsoMethod
@@ -437,6 +450,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http compression settings to use with this http profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compressionProfile set the compressionProfile.
    */
   @VsoMethod
@@ -760,6 +774,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the http/2 specific application profile parameters.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http2Profile
    */
   @VsoMethod
@@ -771,6 +786,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the http/2 specific application profile parameters.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http2Profile set the http2Profile.
    */
   @VsoMethod
@@ -806,6 +822,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Allowed values are 1-256.
    * Special values are 0- 'auto compute the size of buffer'.
    * Field introduced in 20.1.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return httpUpstreamBufferSize
    */
@@ -820,6 +837,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Allowed values are 1-256.
    * Special values are 0- 'auto compute the size of buffer'.
    * Field introduced in 20.1.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param httpUpstreamBufferSize set the httpUpstreamBufferSize.
    */
@@ -882,6 +900,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The max idle time allowed between http requests over a keep-alive connection.
    * Allowed values are 10-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return keepaliveTimeout
    */
@@ -894,6 +913,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The max idle time allowed between http requests over a keep-alive connection.
    * Allowed values are 10-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param keepaliveTimeout set the keepaliveTimeout.
    */
@@ -1130,6 +1150,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum size in kbytes of all the http response headers.
    * Allowed values are 1-256.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @return maxResponseHeadersSize
    */
@@ -1142,6 +1163,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum size in kbytes of all the http response headers.
    * Allowed values are 1-256.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @param maxResponseHeadersSize set the maxResponseHeadersSize.
    */
@@ -1285,6 +1307,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Select the pki profile to be associated with the virtual service.
    * This profile defines the certificate authority and revocation list.
    * It is a reference to an object of type pkiprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
    */
   @VsoMethod
@@ -1297,6 +1320,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Select the pki profile to be associated with the virtual service.
    * This profile defines the certificate authority and revocation list.
    * It is a reference to an object of type pkiprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
    */
   @VsoMethod
@@ -1308,6 +1332,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
    * Allowed values are 10-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return postAcceptTimeout
    */
@@ -1320,6 +1345,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
    * Allowed values are 10-100000000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param postAcceptTimeout set the postAcceptTimeout.
    */
@@ -1473,6 +1499,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Set of match/action rules that govern what happens when the client certificate request is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslClientCertificateAction
    */
   @VsoMethod
@@ -1483,6 +1510,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Set of match/action rules that govern what happens when the client certificate request is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslClientCertificateAction set the sslClientCertificateAction.
    */
   @VsoMethod
@@ -1494,7 +1522,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies whether the client side verification is set to none, request or require.
    * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CLIENT_CERTIFICATE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
    * @return sslClientCertificateMode
    */
   @VsoMethod
@@ -1506,7 +1534,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies whether the client side verification is set to none, request or require.
    * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CLIENT_CERTIFICATE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
    * @param sslClientCertificateMode set the sslClientCertificateMode.
    */
   @VsoMethod
@@ -1617,7 +1645,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provide a custom name for the x-forwarded-for header sent to the servers.
-   * Default value when not specified in API or module is interpreted by Avi Controller as X-Forwarded-For.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "X-Forwarded-For".
    * @return xffAlternateName
    */
   @VsoMethod
@@ -1628,7 +1656,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provide a custom name for the x-forwarded-for header sent to the servers.
-   * Default value when not specified in API or module is interpreted by Avi Controller as X-Forwarded-For.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "X-Forwarded-For".
    * @param xffAlternateName set the xffAlternateName.
    */
   @VsoMethod

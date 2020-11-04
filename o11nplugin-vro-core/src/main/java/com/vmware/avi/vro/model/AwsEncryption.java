@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AwsEncryption extends AviRestResource {
-  @JsonProperty("master_key")
-  @JsonInclude(Include.NON_NULL)
-  private String masterKey = null;
+    @JsonProperty("master_key")
+    @JsonInclude(Include.NON_NULL)
+    private String masterKey = null;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = "AWS_ENCRYPTION_MODE_NONE";
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = "AWS_ENCRYPTION_MODE_NONE";
 
 
 
@@ -38,6 +38,7 @@ public class AwsEncryption extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws kms arn id of the master key for encryption.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return masterKey
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class AwsEncryption extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws kms arn id of the master key for encryption.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param masterKey set the masterKey.
    */
   @VsoMethod
@@ -61,7 +63,7 @@ public class AwsEncryption extends AviRestResource {
    * Aws encryption mode.
    * Enum options - AWS_ENCRYPTION_MODE_NONE, AWS_ENCRYPTION_MODE_SSE_KMS.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AWS_ENCRYPTION_MODE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AWS_ENCRYPTION_MODE_NONE".
    * @return mode
    */
   @VsoMethod
@@ -74,7 +76,7 @@ public class AwsEncryption extends AviRestResource {
    * Aws encryption mode.
    * Enum options - AWS_ENCRYPTION_MODE_NONE, AWS_ENCRYPTION_MODE_SSE_KMS.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AWS_ENCRYPTION_MODE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AWS_ENCRYPTION_MODE_NONE".
    * @param mode set the mode.
    */
   @VsoMethod

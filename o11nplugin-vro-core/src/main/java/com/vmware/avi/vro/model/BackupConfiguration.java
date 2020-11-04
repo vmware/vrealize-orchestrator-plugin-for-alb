@@ -24,69 +24,69 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BackupConfiguration extends AviRestResource {
-  @JsonProperty("aws_access_key")
-  @JsonInclude(Include.NON_NULL)
-  private String awsAccessKey = null;
+    @JsonProperty("aws_access_key")
+    @JsonInclude(Include.NON_NULL)
+    private String awsAccessKey = null;
 
-  @JsonProperty("aws_bucket_id")
-  @JsonInclude(Include.NON_NULL)
-  private String awsBucketId = null;
+    @JsonProperty("aws_bucket_id")
+    @JsonInclude(Include.NON_NULL)
+    private String awsBucketId = null;
 
-  @JsonProperty("aws_secret_access")
-  @JsonInclude(Include.NON_NULL)
-  private String awsSecretAccess = null;
+    @JsonProperty("aws_secret_access")
+    @JsonInclude(Include.NON_NULL)
+    private String awsSecretAccess = null;
 
-  @JsonProperty("backup_file_prefix")
-  @JsonInclude(Include.NON_NULL)
-  private String backupFilePrefix = null;
+    @JsonProperty("backup_file_prefix")
+    @JsonInclude(Include.NON_NULL)
+    private String backupFilePrefix = null;
 
-  @JsonProperty("backup_passphrase")
-  @JsonInclude(Include.NON_NULL)
-  private String backupPassphrase = null;
+    @JsonProperty("backup_passphrase")
+    @JsonInclude(Include.NON_NULL)
+    private String backupPassphrase = null;
 
-  @JsonProperty("maximum_backups_stored")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maximumBackupsStored = 4;
+    @JsonProperty("maximum_backups_stored")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maximumBackupsStored = 4;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("remote_directory")
-  @JsonInclude(Include.NON_NULL)
-  private String remoteDirectory = null;
+    @JsonProperty("remote_directory")
+    @JsonInclude(Include.NON_NULL)
+    private String remoteDirectory = null;
 
-  @JsonProperty("remote_hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String remoteHostname = null;
+    @JsonProperty("remote_hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String remoteHostname = null;
 
-  @JsonProperty("save_local")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean saveLocal = null;
+    @JsonProperty("save_local")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean saveLocal = null;
 
-  @JsonProperty("ssh_user_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sshUserRef = null;
+    @JsonProperty("ssh_user_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sshUserRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("upload_to_remote_host")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean uploadToRemoteHost = null;
+    @JsonProperty("upload_to_remote_host")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean uploadToRemoteHost = null;
 
-  @JsonProperty("upload_to_s3")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean uploadToS3 = null;
+    @JsonProperty("upload_to_s3")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean uploadToS3 = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -94,6 +94,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws access key id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsAccessKey
    */
   @VsoMethod
@@ -105,6 +106,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws access key id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsAccessKey set the awsAccessKey.
    */
   @VsoMethod
@@ -116,6 +118,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws bucket.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsBucketId
    */
   @VsoMethod
@@ -127,6 +130,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws bucket.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsBucketId set the awsBucketId.
    */
   @VsoMethod
@@ -138,6 +142,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws secret access key.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsSecretAccess
    */
   @VsoMethod
@@ -149,6 +154,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws secret access key.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsSecretAccess set the awsSecretAccess.
    */
   @VsoMethod
@@ -160,6 +166,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Prefix of the exported configuration file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupFilePrefix
    */
   @VsoMethod
@@ -171,6 +178,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Prefix of the exported configuration file.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backupFilePrefix set the backupFilePrefix.
    */
   @VsoMethod
@@ -181,6 +189,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Default passphrase for configuration export and periodic backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupPassphrase
    */
   @VsoMethod
@@ -191,6 +200,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Default passphrase for configuration export and periodic backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backupPassphrase set the backupPassphrase.
    */
   @VsoMethod
@@ -225,6 +235,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of backup configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -235,6 +246,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of backup configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -245,6 +257,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Directory at remote destination with write permission for ssh user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteDirectory
    */
   @VsoMethod
@@ -255,6 +268,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Directory at remote destination with write permission for ssh user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteDirectory set the remoteDirectory.
    */
   @VsoMethod
@@ -265,6 +279,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Remote destination.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteHostname
    */
   @VsoMethod
@@ -275,6 +290,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Remote destination.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteHostname set the remoteHostname.
    */
   @VsoMethod
@@ -285,6 +301,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Local backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return saveLocal
    */
   @VsoMethod
@@ -295,6 +312,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Local backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param saveLocal set the saveLocal.
    */
   @VsoMethod
@@ -306,6 +324,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Access credentials for remote destination.
    * It is a reference to an object of type cloudconnectoruser.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
   @VsoMethod
@@ -317,6 +336,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Access credentials for remote destination.
    * It is a reference to an object of type cloudconnectoruser.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */
   @VsoMethod
@@ -327,6 +347,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -337,6 +358,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -347,6 +369,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Remote backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uploadToRemoteHost
    */
   @VsoMethod
@@ -357,6 +380,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Remote backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uploadToRemoteHost set the uploadToRemoteHost.
    */
   @VsoMethod
@@ -368,6 +392,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud backup.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uploadToS3
    */
   @VsoMethod
@@ -379,6 +404,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud backup.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uploadToS3 set the uploadToS3.
    */
   @VsoMethod
@@ -408,6 +434,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -418,6 +445,7 @@ public class BackupConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

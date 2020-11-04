@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpAddrMatch extends AviRestResource {
-  @JsonProperty("addrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> addrs = null;
+    @JsonProperty("addrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> addrs = null;
 
-  @JsonProperty("group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> groupRefs = null;
+    @JsonProperty("group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> groupRefs = null;
 
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("prefixes")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> prefixes = null;
+    @JsonProperty("prefixes")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> prefixes = null;
 
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrRange> ranges = null;
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrRange> ranges = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the addrs
    * Ip address(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the setter method this will set the addrs
    * Ip address(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class IpAddrMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of ip address group(s).
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class IpAddrMatch extends AviRestResource {
    * This is the setter method. this will set the groupRefs
    * Uuid of ip address group(s).
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class IpAddrMatch extends AviRestResource {
    * This is the setter method this will set the groupRefs
    * Uuid of ip address group(s).
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
   @VsoMethod
@@ -123,6 +129,7 @@ public class IpAddrMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for ip address matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -134,6 +141,7 @@ public class IpAddrMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for ip address matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -144,6 +152,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address prefix(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -154,6 +163,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the prefixes
    * Ip address prefix(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -164,6 +174,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the setter method this will set the prefixes
    * Ip address prefix(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -179,6 +190,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -189,6 +201,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * Ip address range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -199,6 +212,7 @@ public class IpAddrMatch extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * Ip address range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod

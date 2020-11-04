@@ -24,31 +24,83 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Role extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("filters")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilter> filters = null;
 
-  @JsonProperty("privileges")
-  @JsonInclude(Include.NON_NULL)
-  private List<Permission> privileges = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("privileges")
+    @JsonInclude(Include.NON_NULL)
+    private List<Permission> privileges = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
+   * Filters for granular object access control based on object labels.
+   * Multiple filters are merged using the and operator.
+   * If empty, all objects according to the privileges will be accessible to the user.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return filters
+   */
+  @VsoMethod
+  public List<RoleFilter> getFilters() {
+    return filters;
+  }
+
+  /**
+   * This is the setter method. this will set the filters
+   * Filters for granular object access control based on object labels.
+   * Multiple filters are merged using the and operator.
+   * If empty, all objects according to the privileges will be accessible to the user.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return filters
+   */
+  @VsoMethod
+  public void setFilters(List<RoleFilter>  filters) {
+    this.filters = filters;
+  }
+
+  /**
+   * This is the setter method this will set the filters
+   * Filters for granular object access control based on object labels.
+   * Multiple filters are merged using the and operator.
+   * If empty, all objects according to the privileges will be accessible to the user.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return filters
+   */
+  @VsoMethod
+  public Role addFiltersItem(RoleFilter filtersItem) {
+    if (this.filters == null) {
+      this.filters = new ArrayList<RoleFilter>();
+    }
+    this.filters.add(filtersItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -59,6 +111,7 @@ public class Role extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -69,6 +122,7 @@ public class Role extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property privileges of obj type role field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privileges
    */
   @VsoMethod
@@ -79,6 +133,7 @@ public class Role extends AviRestResource {
   /**
    * This is the setter method. this will set the privileges
    * Placeholder for description of property privileges of obj type role field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privileges
    */
   @VsoMethod
@@ -89,6 +144,7 @@ public class Role extends AviRestResource {
   /**
    * This is the setter method this will set the privileges
    * Placeholder for description of property privileges of obj type role field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privileges
    */
   @VsoMethod
@@ -104,6 +160,7 @@ public class Role extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -114,6 +171,7 @@ public class Role extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -143,6 +201,7 @@ public class Role extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -153,6 +212,7 @@ public class Role extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -177,6 +237,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objRole.uuid)&&
   Objects.equals(this.name, objRole.name)&&
   Objects.equals(this.privileges, objRole.privileges)&&
+  Objects.equals(this.filters, objRole.filters)&&
   Objects.equals(this.tenantRef, objRole.tenantRef);
 }
 
@@ -184,7 +245,8 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class Role {\n");
-      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+      sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    privileges: ").append(toIndentedString(privileges)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

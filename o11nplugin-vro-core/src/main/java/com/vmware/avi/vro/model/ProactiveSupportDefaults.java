@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ProactiveSupportDefaults extends AviRestResource {
-  @JsonProperty("attach_core_dump")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean attachCoreDump = false;
+    @JsonProperty("attach_core_dump")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean attachCoreDump = false;
 
-  @JsonProperty("attach_tech_support")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean attachTechSupport = true;
+    @JsonProperty("attach_tech_support")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean attachTechSupport = true;
 
-  @JsonProperty("case_severity")
-  @JsonInclude(Include.NON_NULL)
-  private String caseSeverity = "Severity 5";
+    @JsonProperty("case_severity")
+    @JsonInclude(Include.NON_NULL)
+    private String caseSeverity = "Severity 5";
 
 
 
@@ -90,7 +90,7 @@ public class ProactiveSupportDefaults extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Case severity to be used for proactive support case creation.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Severity 5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Severity 5".
    * @return caseSeverity
    */
   @VsoMethod
@@ -102,7 +102,7 @@ public class ProactiveSupportDefaults extends AviRestResource {
    * This is the setter method to the attribute.
    * Case severity to be used for proactive support case creation.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Severity 5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Severity 5".
    * @param caseSeverity set the caseSeverity.
    */
   @VsoMethod

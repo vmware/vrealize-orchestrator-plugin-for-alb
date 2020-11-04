@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PortalFeatureOptIn extends AviRestResource {
-  @JsonProperty("enable_auto_case_creation_on_se_failure")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoCaseCreationOnSeFailure = false;
+    @JsonProperty("enable_auto_case_creation_on_se_failure")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutoCaseCreationOnSeFailure = false;
 
-  @JsonProperty("enable_auto_case_creation_on_system_failure")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoCaseCreationOnSystemFailure = false;
+    @JsonProperty("enable_auto_case_creation_on_system_failure")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutoCaseCreationOnSystemFailure = false;
 
-  @JsonProperty("enable_auto_download_waf_signatures")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoDownloadWafSignatures = false;
+    @JsonProperty("enable_auto_download_waf_signatures")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutoDownloadWafSignatures = false;
 
-  @JsonProperty("enable_ip_reputation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableIpReputation = false;
+    @JsonProperty("enable_ip_reputation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableIpReputation = false;
 
-  @JsonProperty("enable_waf_signatures_notifications")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableWafSignaturesNotifications = true;
+    @JsonProperty("enable_waf_signatures_notifications")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableWafSignaturesNotifications = true;
 
 
 

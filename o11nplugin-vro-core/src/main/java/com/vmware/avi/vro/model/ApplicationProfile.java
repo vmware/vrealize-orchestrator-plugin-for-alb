@@ -29,69 +29,69 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ApplicationProfile extends AviRestResource {
-  @JsonProperty("cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudConfigCksum = null;
+    @JsonProperty("cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudConfigCksum = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("dns_service_profile")
-  @JsonInclude(Include.NON_NULL)
-  private DnsServiceApplicationProfile dnsServiceProfile = null;
+    @JsonProperty("dns_service_profile")
+    @JsonInclude(Include.NON_NULL)
+    private DnsServiceApplicationProfile dnsServiceProfile = null;
 
-  @JsonProperty("dos_rl_profile")
-  @JsonInclude(Include.NON_NULL)
-  private DosRateLimitProfile dosRlProfile = null;
+    @JsonProperty("dos_rl_profile")
+    @JsonInclude(Include.NON_NULL)
+    private DosRateLimitProfile dosRlProfile = null;
 
-  @JsonProperty("http_profile")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPApplicationProfile httpProfile = null;
+    @JsonProperty("http_profile")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPApplicationProfile httpProfile = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("preserve_client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean preserveClientIp = false;
+    @JsonProperty("preserve_client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean preserveClientIp = false;
 
-  @JsonProperty("preserve_client_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean preserveClientPort = false;
+    @JsonProperty("preserve_client_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean preserveClientPort = false;
 
-  @JsonProperty("preserve_dest_ip_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean preserveDestIpPort = false;
+    @JsonProperty("preserve_dest_ip_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean preserveDestIpPort = false;
 
-  @JsonProperty("sip_service_profile")
-  @JsonInclude(Include.NON_NULL)
-  private SipServiceApplicationProfile sipServiceProfile = null;
+    @JsonProperty("sip_service_profile")
+    @JsonInclude(Include.NON_NULL)
+    private SipServiceApplicationProfile sipServiceProfile = null;
 
-  @JsonProperty("tcp_app_profile")
-  @JsonInclude(Include.NON_NULL)
-  private TCPApplicationProfile tcpAppProfile = null;
+    @JsonProperty("tcp_app_profile")
+    @JsonInclude(Include.NON_NULL)
+    private TCPApplicationProfile tcpAppProfile = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -100,6 +100,7 @@ public class ApplicationProfile extends AviRestResource {
    * Checksum of application profiles.
    * Internally set by cloud connector.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
   @VsoMethod
@@ -112,6 +113,7 @@ public class ApplicationProfile extends AviRestResource {
    * Checksum of application profiles.
    * Internally set by cloud connector.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
   @VsoMethod
@@ -123,6 +125,7 @@ public class ApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the application profile creator.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -134,6 +137,7 @@ public class ApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the application profile creator.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -144,6 +148,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -154,6 +159,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -164,6 +170,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies various dns service related controls for virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceProfile
    */
   @VsoMethod
@@ -174,6 +181,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies various dns service related controls for virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsServiceProfile set the dnsServiceProfile.
    */
   @VsoMethod
@@ -184,6 +192,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies various security related controls for virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dosRlProfile
    */
   @VsoMethod
@@ -194,6 +203,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies various security related controls for virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dosRlProfile set the dosRlProfile.
    */
   @VsoMethod
@@ -204,6 +214,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the http application proxy profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpProfile
    */
   @VsoMethod
@@ -214,6 +225,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the http application proxy profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpProfile set the httpProfile.
    */
   @VsoMethod
@@ -224,6 +236,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the application profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -234,6 +247,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the application profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -317,6 +331,7 @@ public class ApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies various sip service related controls for virtual service.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipServiceProfile
    */
   @VsoMethod
@@ -328,6 +343,7 @@ public class ApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies various sip service related controls for virtual service.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sipServiceProfile set the sipServiceProfile.
    */
   @VsoMethod
@@ -338,6 +354,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the tcp application proxy profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpAppProfile
    */
   @VsoMethod
@@ -348,6 +365,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the tcp application proxy profile parameters.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpAppProfile set the tcpAppProfile.
    */
   @VsoMethod
@@ -358,6 +376,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -368,6 +387,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -380,6 +400,7 @@ public class ApplicationProfile extends AviRestResource {
    * Specifies which application layer proxy is enabled for the virtual service.
    * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
    * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -392,6 +413,7 @@ public class ApplicationProfile extends AviRestResource {
    * Specifies which application layer proxy is enabled for the virtual service.
    * Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
    * APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -421,6 +443,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the application profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -431,6 +454,7 @@ public class ApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the application profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

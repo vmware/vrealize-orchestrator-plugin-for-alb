@@ -26,25 +26,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SystemLimits extends AviRestResource {
-  @JsonProperty("controller_limits")
-  @JsonInclude(Include.NON_NULL)
-  private ControllerLimits controllerLimits = null;
+    @JsonProperty("controller_limits")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerLimits controllerLimits = null;
 
-  @JsonProperty("controller_sizes")
-  @JsonInclude(Include.NON_NULL)
-  private List<ControllerSize> controllerSizes = null;
+    @JsonProperty("controller_sizes")
+    @JsonInclude(Include.NON_NULL)
+    private List<ControllerSize> controllerSizes = null;
 
-  @JsonProperty("serviceengine_limits")
-  @JsonInclude(Include.NON_NULL)
-  private ServiceEngineLimits serviceengineLimits = null;
+    @JsonProperty("serviceengine_limits")
+    @JsonInclude(Include.NON_NULL)
+    private ServiceEngineLimits serviceengineLimits = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -52,6 +52,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * System limits for the entire controller cluster.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerLimits
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * System limits for the entire controller cluster.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerLimits set the controllerLimits.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Possible controller sizes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizes
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method. this will set the controllerSizes
    * Possible controller sizes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizes
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method this will set the controllerSizes
    * Possible controller sizes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerSizes
    */
   @VsoMethod
@@ -112,6 +117,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * System limits that apply to a serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceengineLimits
    */
   @VsoMethod
@@ -123,6 +129,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * System limits that apply to a serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceengineLimits set the serviceengineLimits.
    */
   @VsoMethod
@@ -153,6 +160,7 @@ public class SystemLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid for the system limits object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -164,6 +172,7 @@ public class SystemLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid for the system limits object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

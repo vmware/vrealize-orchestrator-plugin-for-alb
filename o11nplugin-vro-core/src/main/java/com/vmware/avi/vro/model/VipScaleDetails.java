@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipScaleDetails extends AviRestResource {
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetUuid = null;
+    @JsonProperty("subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetUuid = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("vsvip_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsvipUuid = null;
+    @JsonProperty("vsvip_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsvipUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property availability_zone of obj type vipscaledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property availability_zone of obj type vipscaledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error of obj type vipscaledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error of obj type vipscaledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of subnet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetUuid
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of subnet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetUuid set the subnetUuid.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_id of obj type vipscaledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_id of obj type vipscaledetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vsvip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsvipUuid
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class VipScaleDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vsvip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsvipUuid set the vsvipUuid.
    */
   @VsoMethod

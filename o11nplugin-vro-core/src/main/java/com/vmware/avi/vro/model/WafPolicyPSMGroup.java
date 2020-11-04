@@ -24,45 +24,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPolicyPSMGroup extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("hit_action")
-  @JsonInclude(Include.NON_NULL)
-  private String hitAction = "WAF_ACTION_ALLOW_PARAMETER";
+    @JsonProperty("hit_action")
+    @JsonInclude(Include.NON_NULL)
+    private String hitAction = "WAF_ACTION_ALLOW_PARAMETER";
 
-  @JsonProperty("is_learning_group")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isLearningGroup = false;
+    @JsonProperty("is_learning_group")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isLearningGroup = false;
 
-  @JsonProperty("locations")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafPSMLocation> locations = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("miss_action")
-  @JsonInclude(Include.NON_NULL)
-  private String missAction = "WAF_ACTION_NO_OP";
+    @JsonProperty("locations")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafPSMLocation> locations = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("miss_action")
+    @JsonInclude(Include.NON_NULL)
+    private String missAction = "WAF_ACTION_NO_OP";
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -70,6 +74,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -81,6 +86,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -118,7 +124,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_allow_parameter.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_ALLOW_PARAMETER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_ALLOW_PARAMETER".
    * @return hitAction
    */
   @VsoMethod
@@ -132,7 +138,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_allow_parameter.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_ALLOW_PARAMETER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_ALLOW_PARAMETER".
    * @param hitAction set the hitAction.
    */
   @VsoMethod
@@ -166,9 +172,54 @@ public class WafPolicyPSMGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public WafPolicyPSMGroup addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
   @VsoMethod
@@ -181,6 +232,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
   @VsoMethod
@@ -193,6 +245,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
   @VsoMethod
@@ -211,7 +264,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_block.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_NO_OP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_NO_OP".
    * @return missAction
    */
   @VsoMethod
@@ -225,7 +278,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Allowed actions are waf_action_no_op and waf_action_block.
    * Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_NO_OP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_ACTION_NO_OP".
    * @param missAction set the missAction.
    */
   @VsoMethod
@@ -237,6 +290,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User defined name of the group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -248,6 +302,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * User defined name of the group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -260,6 +315,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -272,6 +328,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -302,6 +359,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of this object.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -313,6 +371,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of this object.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -342,7 +401,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hitAction, objWafPolicyPSMGroup.hitAction)&&
   Objects.equals(this.missAction, objWafPolicyPSMGroup.missAction)&&
   Objects.equals(this.description, objWafPolicyPSMGroup.description)&&
-  Objects.equals(this.isLearningGroup, objWafPolicyPSMGroup.isLearningGroup);
+  Objects.equals(this.isLearningGroup, objWafPolicyPSMGroup.isLearningGroup)&&
+  Objects.equals(this.labels, objWafPolicyPSMGroup.labels);
 }
 
 @Override
@@ -353,6 +413,7 @@ public String toString() {
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    hitAction: ").append(toIndentedString(hitAction)).append("\n");
         sb.append("    isLearningGroup: ").append(toIndentedString(isLearningGroup)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
         sb.append("    missAction: ").append(toIndentedString(missAction)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

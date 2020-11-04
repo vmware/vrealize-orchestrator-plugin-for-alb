@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OCISetup extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("compartment_id")
-  @JsonInclude(Include.NON_NULL)
-  private String compartmentId = null;
+    @JsonProperty("compartment_id")
+    @JsonInclude(Include.NON_NULL)
+    private String compartmentId = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("tenancy")
-  @JsonInclude(Include.NON_NULL)
-  private String tenancy = null;
+    @JsonProperty("tenancy")
+    @JsonInclude(Include.NON_NULL)
+    private String tenancy = null;
 
-  @JsonProperty("vcn_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vcnId = null;
+    @JsonProperty("vcn_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vcnId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property compartment_id of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compartmentId
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property compartment_id of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compartmentId set the compartmentId.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tenancy of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenancy
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tenancy of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenancy set the tenancy.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcn_id of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcnId
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class OCISetup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcn_id of obj type ocisetup field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcnId set the vcnId.
    */
   @VsoMethod

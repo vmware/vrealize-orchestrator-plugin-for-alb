@@ -26,17 +26,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsNsRdata extends AviRestResource {
-  @JsonProperty("ip6_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip6Address = null;
+    @JsonProperty("ip6_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip6Address = null;
 
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddress = null;
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddress = null;
 
-  @JsonProperty("nsname")
-  @JsonInclude(Include.NON_NULL)
-  private String nsname = null;
+    @JsonProperty("nsname")
+    @JsonInclude(Include.NON_NULL)
+    private String nsname = null;
 
 
 
@@ -44,6 +44,7 @@ public class DnsNsRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address for name server.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class DnsNsRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address for name server.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6Address set the ip6Address.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class DnsNsRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address for name server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class DnsNsRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address for name server.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddress set the ipAddress.
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class DnsNsRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name server name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsname
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class DnsNsRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Name server name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsname set the nsname.
    */
   @VsoMethod

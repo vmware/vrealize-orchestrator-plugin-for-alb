@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TencentSetup extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("vpc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcId = null;
+    @JsonProperty("vpc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcId = null;
 
 
 
@@ -46,6 +46,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent cloud id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent cloud id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent error message.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent error message.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent region id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent region id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -112,6 +118,7 @@ public class TencentSetup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent vpc id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class TencentSetup extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent vpc id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */
   @VsoMethod

@@ -26,31 +26,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SnmpTrapServer extends AviRestResource {
-  @JsonProperty("community")
-  @JsonInclude(Include.NON_NULL)
-  private String community = null;
+    @JsonProperty("community")
+    @JsonInclude(Include.NON_NULL)
+    private String community = null;
 
-  @JsonProperty("ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddr = null;
+    @JsonProperty("ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddr = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = 162;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = 162;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private SnmpV3UserParams user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private SnmpV3UserParams user = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = "SNMP_VER2";
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = "SNMP_VER2";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * The community string to communicate with the trap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class SnmpTrapServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The community string to communicate with the trap server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param community set the community.
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class SnmpTrapServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the snmp trap destination.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddr
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class SnmpTrapServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the snmp trap destination.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddr set the ipAddr.
    */
   @VsoMethod
@@ -116,6 +120,7 @@ public class SnmpTrapServer extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Snmp version 3 configuration.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class SnmpTrapServer extends AviRestResource {
    * This is the setter method to the attribute.
    * Snmp version 3 configuration.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod
@@ -140,7 +146,7 @@ public class SnmpTrapServer extends AviRestResource {
    * V2 or v3.
    * Enum options - SNMP_VER2, SNMP_VER3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SNMP_VER2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
    * @return version
    */
   @VsoMethod
@@ -154,7 +160,7 @@ public class SnmpTrapServer extends AviRestResource {
    * V2 or v3.
    * Enum options - SNMP_VER2, SNMP_VER3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SNMP_VER2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
    * @param version set the version.
    */
   @VsoMethod

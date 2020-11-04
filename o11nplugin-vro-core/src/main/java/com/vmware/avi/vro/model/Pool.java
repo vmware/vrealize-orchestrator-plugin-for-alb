@@ -30,285 +30,289 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Pool extends AviRestResource {
-  @JsonProperty("a_pool")
-  @JsonInclude(Include.NON_NULL)
-  private String aPool = null;
-
-  @JsonProperty("ab_pool")
-  @JsonInclude(Include.NON_NULL)
-  private AbPool abPool = null;
-
-  @JsonProperty("ab_priority")
-  @JsonInclude(Include.NON_NULL)
-  private Integer abPriority = null;
-
-  @JsonProperty("analytics_policy")
-  @JsonInclude(Include.NON_NULL)
-  private PoolAnalyticsPolicy analyticsPolicy = null;
-
-  @JsonProperty("analytics_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String analyticsProfileRef = null;
-
-  @JsonProperty("apic_epg_name")
-  @JsonInclude(Include.NON_NULL)
-  private String apicEpgName = null;
-
-  @JsonProperty("application_persistence_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String applicationPersistenceProfileRef = null;
-
-  @JsonProperty("autoscale_launch_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String autoscaleLaunchConfigRef = null;
-
-  @JsonProperty("autoscale_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> autoscaleNetworks = null;
-
-  @JsonProperty("autoscale_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String autoscalePolicyRef = null;
-
-  @JsonProperty("capacity_estimation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean capacityEstimation = false;
-
-  @JsonProperty("capacity_estimation_ttfb_thresh")
-  @JsonInclude(Include.NON_NULL)
-  private Integer capacityEstimationTtfbThresh = 0;
-
-  @JsonProperty("cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudConfigCksum = null;
-
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
-
-  @JsonProperty("conn_pool_properties")
-  @JsonInclude(Include.NON_NULL)
-  private ConnPoolProperties connPoolProperties = null;
-
-  @JsonProperty("connection_ramp_duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer connectionRampDuration = 10;
-
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
-
-  @JsonProperty("default_server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer defaultServerPort = 80;
-
-  @JsonProperty("delete_server_on_dns_refresh")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean deleteServerOnDnsRefresh = true;
-
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
-
-  @JsonProperty("domain_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> domainName = null;
-
-  @JsonProperty("east_west")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean eastWest = null;
-
-  @JsonProperty("enable_http2")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableHttp2 = false;
-
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
-
-  @JsonProperty("external_autoscale_groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> externalAutoscaleGroups = null;
-
-  @JsonProperty("fail_action")
-  @JsonInclude(Include.NON_NULL)
-  private FailAction failAction = null;
-
-  @JsonProperty("fewest_tasks_feedback_delay")
-  @JsonInclude(Include.NON_NULL)
-  private Integer fewestTasksFeedbackDelay = 10;
-
-  @JsonProperty("graceful_disable_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gracefulDisableTimeout = 1;
-
-  @JsonProperty("gslb_sp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean gslbSpEnabled = null;
-
-  @JsonProperty("health_monitor_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> healthMonitorRefs = null;
-
-  @JsonProperty("host_check_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hostCheckEnabled = false;
-
-  @JsonProperty("ignore_server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignoreServerPort = false;
-
-  @JsonProperty("inline_health_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean inlineHealthMonitor = true;
-
-  @JsonProperty("ipaddrgroup_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String ipaddrgroupRef = null;
-
-  @JsonProperty("lb_algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
-
-  @JsonProperty("lb_algorithm_consistent_hash_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private String lbAlgorithmConsistentHashHdr = null;
-
-  @JsonProperty("lb_algorithm_core_nonaffinity")
-  @JsonInclude(Include.NON_NULL)
-  private Integer lbAlgorithmCoreNonaffinity = 2;
-
-  @JsonProperty("lb_algorithm_hash")
-  @JsonInclude(Include.NON_NULL)
-  private String lbAlgorithmHash = "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS";
-
-  @JsonProperty("lookup_server_by_name")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean lookupServerByName = false;
-
-  @JsonProperty("max_concurrent_connections_per_server")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxConcurrentConnectionsPerServer = 0;
-
-  @JsonProperty("max_conn_rate_per_server")
-  @JsonInclude(Include.NON_NULL)
-  private RateProfile maxConnRatePerServer = null;
-
-  @JsonProperty("min_health_monitors_up")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minHealthMonitorsUp = null;
-
-  @JsonProperty("min_servers_up")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minServersUp = null;
-
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
-
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<NetworkFilter> networks = null;
-
-  @JsonProperty("nsx_securitygroup")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> nsxSecuritygroup = null;
-
-  @JsonProperty("pki_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String pkiProfileRef = null;
-
-  @JsonProperty("placement_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<PlacementNetwork> placementNetworks = null;
-
-  @JsonProperty("prst_hdr_name")
-  @JsonInclude(Include.NON_NULL)
-  private String prstHdrName = null;
-
-  @JsonProperty("request_queue_depth")
-  @JsonInclude(Include.NON_NULL)
-  private Integer requestQueueDepth = 128;
-
-  @JsonProperty("request_queue_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean requestQueueEnabled = false;
-
-  @JsonProperty("rewrite_host_header_to_server_name")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rewriteHostHeaderToServerName = false;
-
-  @JsonProperty("rewrite_host_header_to_sni")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rewriteHostHeaderToSni = false;
-
-  @JsonProperty("routing_pool")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean routingPool = false;
-
-  @JsonProperty("server_auto_scale")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean serverAutoScale = null;
-
-  @JsonProperty("server_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverCount = null;
-
-  @JsonProperty("server_name")
-  @JsonInclude(Include.NON_NULL)
-  private String serverName = null;
-
-  @JsonProperty("server_reselect")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPServerReselect serverReselect = null;
-
-  @JsonProperty("server_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverTimeout = 0;
-
-  @JsonProperty("servers")
-  @JsonInclude(Include.NON_NULL)
-  private List<Server> servers = null;
-
-  @JsonProperty("service_metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceMetadata = null;
-
-  @JsonProperty("sni_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sniEnabled = true;
-
-  @JsonProperty("ssl_key_and_certificate_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslKeyAndCertificateRef = null;
-
-  @JsonProperty("ssl_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslProfileRef = null;
-
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
-
-  @JsonProperty("tier1_lr")
-  @JsonInclude(Include.NON_NULL)
-  private String tier1Lr = null;
-
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
-
-  @JsonProperty("use_service_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useServicePort = false;
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
-
-  @JsonProperty("vrf_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfRef = null;
+    @JsonProperty("a_pool")
+    @JsonInclude(Include.NON_NULL)
+    private String aPool;
+
+    @JsonProperty("ab_pool")
+    @JsonInclude(Include.NON_NULL)
+    private AbPool abPool;
+
+    @JsonProperty("ab_priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer abPriority;
+
+    @JsonProperty("analytics_policy")
+    @JsonInclude(Include.NON_NULL)
+    private PoolAnalyticsPolicy analyticsPolicy = null;
+
+    @JsonProperty("analytics_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String analyticsProfileRef = null;
+
+    @JsonProperty("apic_epg_name")
+    @JsonInclude(Include.NON_NULL)
+    private String apicEpgName = null;
+
+    @JsonProperty("application_persistence_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String applicationPersistenceProfileRef = null;
+
+    @JsonProperty("autoscale_launch_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String autoscaleLaunchConfigRef = null;
+
+    @JsonProperty("autoscale_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> autoscaleNetworks = null;
+
+    @JsonProperty("autoscale_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String autoscalePolicyRef = null;
+
+    @JsonProperty("capacity_estimation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean capacityEstimation = false;
+
+    @JsonProperty("capacity_estimation_ttfb_thresh")
+    @JsonInclude(Include.NON_NULL)
+    private Integer capacityEstimationTtfbThresh = 0;
+
+    @JsonProperty("cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudConfigCksum = null;
+
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
+
+    @JsonProperty("conn_pool_properties")
+    @JsonInclude(Include.NON_NULL)
+    private ConnPoolProperties connPoolProperties = null;
+
+    @JsonProperty("connection_ramp_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer connectionRampDuration = 10;
+
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
+
+    @JsonProperty("default_server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer defaultServerPort = 80;
+
+    @JsonProperty("delete_server_on_dns_refresh")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean deleteServerOnDnsRefresh = true;
+
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
+
+    @JsonProperty("domain_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> domainName = null;
+
+    @JsonProperty("east_west")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean eastWest = null;
+
+    @JsonProperty("enable_http2")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHttp2 = false;
+
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
+
+    @JsonProperty("external_autoscale_groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> externalAutoscaleGroups = null;
+
+    @JsonProperty("fail_action")
+    @JsonInclude(Include.NON_NULL)
+    private FailAction failAction = null;
+
+    @JsonProperty("fewest_tasks_feedback_delay")
+    @JsonInclude(Include.NON_NULL)
+    private Integer fewestTasksFeedbackDelay = 10;
+
+    @JsonProperty("graceful_disable_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gracefulDisableTimeout = 1;
+
+    @JsonProperty("gslb_sp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean gslbSpEnabled = null;
+
+    @JsonProperty("health_monitor_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> healthMonitorRefs = null;
+
+    @JsonProperty("host_check_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hostCheckEnabled = false;
+
+    @JsonProperty("ignore_server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreServerPort = false;
+
+    @JsonProperty("inline_health_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean inlineHealthMonitor = true;
+
+    @JsonProperty("ipaddrgroup_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String ipaddrgroupRef = null;
+
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
+
+    @JsonProperty("lb_algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
+
+    @JsonProperty("lb_algorithm_consistent_hash_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private String lbAlgorithmConsistentHashHdr = null;
+
+    @JsonProperty("lb_algorithm_core_nonaffinity")
+    @JsonInclude(Include.NON_NULL)
+    private Integer lbAlgorithmCoreNonaffinity = 2;
+
+    @JsonProperty("lb_algorithm_hash")
+    @JsonInclude(Include.NON_NULL)
+    private String lbAlgorithmHash = "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS";
+
+    @JsonProperty("lookup_server_by_name")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean lookupServerByName = false;
+
+    @JsonProperty("max_concurrent_connections_per_server")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxConcurrentConnectionsPerServer = 0;
+
+    @JsonProperty("max_conn_rate_per_server")
+    @JsonInclude(Include.NON_NULL)
+    private RateProfile maxConnRatePerServer = null;
+
+    @JsonProperty("min_health_monitors_up")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minHealthMonitorsUp = null;
+
+    @JsonProperty("min_servers_up")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minServersUp = null;
+
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
+
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<NetworkFilter> networks = null;
+
+    @JsonProperty("nsx_securitygroup")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> nsxSecuritygroup = null;
+
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef = null;
+
+    @JsonProperty("placement_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<PlacementNetwork> placementNetworks = null;
+
+    @JsonProperty("prst_hdr_name")
+    @JsonInclude(Include.NON_NULL)
+    private String prstHdrName;
+
+    @JsonProperty("request_queue_depth")
+    @JsonInclude(Include.NON_NULL)
+    private Integer requestQueueDepth = 128;
+
+    @JsonProperty("request_queue_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean requestQueueEnabled = false;
+
+    @JsonProperty("rewrite_host_header_to_server_name")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rewriteHostHeaderToServerName = false;
+
+    @JsonProperty("rewrite_host_header_to_sni")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rewriteHostHeaderToSni = false;
+
+    @JsonProperty("routing_pool")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean routingPool = false;
+
+    @JsonProperty("server_auto_scale")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean serverAutoScale;
+
+    @JsonProperty("server_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverCount;
+
+    @JsonProperty("server_name")
+    @JsonInclude(Include.NON_NULL)
+    private String serverName = null;
+
+    @JsonProperty("server_reselect")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPServerReselect serverReselect = null;
+
+    @JsonProperty("server_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverTimeout = 0;
+
+    @JsonProperty("servers")
+    @JsonInclude(Include.NON_NULL)
+    private List<Server> servers = null;
+
+    @JsonProperty("service_metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceMetadata = null;
+
+    @JsonProperty("sni_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sniEnabled = true;
+
+    @JsonProperty("ssl_key_and_certificate_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslKeyAndCertificateRef = null;
+
+    @JsonProperty("ssl_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslProfileRef = null;
+
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
+
+    @JsonProperty("tier1_lr")
+    @JsonInclude(Include.NON_NULL)
+    private String tier1Lr = null;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("use_service_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useServicePort = false;
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("vrf_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfRef = null;
 
 
 
@@ -384,6 +388,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines analytics settings for the pool.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return analyticsPolicy
    */
   @VsoMethod
@@ -395,6 +400,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines analytics settings for the pool.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param analyticsPolicy set the analyticsPolicy.
    */
   @VsoMethod
@@ -407,6 +413,7 @@ public class Pool extends AviRestResource {
    * Specifies settings related to analytics.
    * It is a reference to an object of type analyticsprofile.
    * Field introduced in 18.1.4,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return analyticsProfileRef
    */
   @VsoMethod
@@ -419,6 +426,7 @@ public class Pool extends AviRestResource {
    * Specifies settings related to analytics.
    * It is a reference to an object of type analyticsprofile.
    * Field introduced in 18.1.4,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param analyticsProfileRef set the analyticsProfileRef.
    */
   @VsoMethod
@@ -429,6 +437,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Synchronize cisco apic epg members with pool servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicEpgName
    */
   @VsoMethod
@@ -439,6 +448,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Synchronize cisco apic epg members with pool servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicEpgName set the apicEpgName.
    */
   @VsoMethod
@@ -450,6 +460,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Persistence will ensure the same user sticks to the same server for a desired duration of time.
    * It is a reference to an object of type applicationpersistenceprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationPersistenceProfileRef
    */
   @VsoMethod
@@ -461,6 +472,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Persistence will ensure the same user sticks to the same server for a desired duration of time.
    * It is a reference to an object of type applicationpersistenceprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationPersistenceProfileRef set the applicationPersistenceProfileRef.
    */
   @VsoMethod
@@ -471,8 +483,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If configured then avi will trigger orchestration of pool server creation and deletion.
-   * It is only supported for container clouds like mesos, opensift, kubernates, docker etc.
    * It is a reference to an object of type autoscalelaunchconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleLaunchConfigRef
    */
   @VsoMethod
@@ -483,8 +495,8 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If configured then avi will trigger orchestration of pool server creation and deletion.
-   * It is only supported for container clouds like mesos, opensift, kubernates, docker etc.
    * It is a reference to an object of type autoscalelaunchconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscaleLaunchConfigRef set the autoscaleLaunchConfigRef.
    */
   @VsoMethod
@@ -495,6 +507,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network ids for the launch configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleNetworks
    */
   @VsoMethod
@@ -505,6 +518,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method. this will set the autoscaleNetworks
    * Network ids for the launch configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleNetworks
    */
   @VsoMethod
@@ -515,6 +529,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method this will set the autoscaleNetworks
    * Network ids for the launch configuration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscaleNetworks
    */
   @VsoMethod
@@ -531,6 +546,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reference to server autoscale policy.
    * It is a reference to an object of type serverautoscalepolicy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscalePolicyRef
    */
   @VsoMethod
@@ -542,6 +558,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Reference to server autoscale policy.
    * It is a reference to an object of type serverautoscalepolicy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscalePolicyRef set the autoscalePolicyRef.
    */
   @VsoMethod
@@ -576,6 +593,7 @@ public class Pool extends AviRestResource {
    * The maximum time-to-first-byte of a server.
    * Allowed values are 1-5000.
    * Special values are 0 - 'automatic'.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return capacityEstimationTtfbThresh
    */
@@ -589,6 +607,7 @@ public class Pool extends AviRestResource {
    * The maximum time-to-first-byte of a server.
    * Allowed values are 1-5000.
    * Special values are 0 - 'automatic'.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param capacityEstimationTtfbThresh set the capacityEstimationTtfbThresh.
    */
@@ -601,6 +620,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Checksum of cloud configuration for pool.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
   @VsoMethod
@@ -612,6 +632,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Checksum of cloud configuration for pool.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
   @VsoMethod
@@ -622,6 +643,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -632,6 +654,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -643,6 +666,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connnection pool properties.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connPoolProperties
    */
   @VsoMethod
@@ -654,6 +678,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Connnection pool properties.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connPoolProperties set the connPoolProperties.
    */
   @VsoMethod
@@ -667,6 +692,7 @@ public class Pool extends AviRestResource {
    * Useful for lb algorithms that are least connection based.
    * Allowed values are 1-300.
    * Special values are 0 - 'immediate'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return connectionRampDuration
    */
@@ -681,6 +707,7 @@ public class Pool extends AviRestResource {
    * Useful for lb algorithms that are least connection based.
    * Allowed values are 1-300.
    * Special values are 0 - 'immediate'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param connectionRampDuration set the connectionRampDuration.
    */
@@ -692,6 +719,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -702,6 +730,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -768,6 +797,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A description of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -778,6 +808,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A description of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -789,6 +820,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
    * It is performed only when common name check host_check_enabled is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -800,6 +832,7 @@ public class Pool extends AviRestResource {
    * This is the setter method. this will set the domainName
    * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
    * It is performed only when common name check host_check_enabled is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -811,6 +844,7 @@ public class Pool extends AviRestResource {
    * This is the setter method this will set the domainName
    * Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
    * It is performed only when common name check host_check_enabled is enabled.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -826,6 +860,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Inherited config from virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWest
    */
   @VsoMethod
@@ -836,6 +871,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Inherited config from virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWest set the eastWest.
    */
   @VsoMethod
@@ -896,6 +932,7 @@ public class Pool extends AviRestResource {
    * Names of external auto-scale groups for pool servers.
    * Currently available only for aws and azure.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalAutoscaleGroups
    */
   @VsoMethod
@@ -908,6 +945,7 @@ public class Pool extends AviRestResource {
    * Names of external auto-scale groups for pool servers.
    * Currently available only for aws and azure.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalAutoscaleGroups
    */
   @VsoMethod
@@ -920,6 +958,7 @@ public class Pool extends AviRestResource {
    * Names of external auto-scale groups for pool servers.
    * Currently available only for aws and azure.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalAutoscaleGroups
    */
   @VsoMethod
@@ -936,6 +975,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable an action - close connection, http redirect or local http response - when a pool failure happens.
    * By default, a connection will be closed, in case the pool experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failAction
    */
   @VsoMethod
@@ -947,6 +987,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable an action - close connection, http redirect or local http response - when a pool failure happens.
    * By default, a connection will be closed, in case the pool experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failAction set the failAction.
    */
   @VsoMethod
@@ -958,6 +999,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Periodicity of feedback for fewest tasks server selection algorithm.
    * Allowed values are 1-300.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return fewestTasksFeedbackDelay
    */
@@ -970,6 +1012,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Periodicity of feedback for fewest tasks server selection algorithm.
    * Allowed values are 1-300.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param fewestTasksFeedbackDelay set the fewestTasksFeedbackDelay.
    */
@@ -984,6 +1027,7 @@ public class Pool extends AviRestResource {
    * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
    * Allowed values are 1-7200.
    * Special values are 0 - 'immediate', -1 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return gracefulDisableTimeout
    */
@@ -998,6 +1042,7 @@ public class Pool extends AviRestResource {
    * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
    * Allowed values are 1-7200.
    * Special values are 0 - 'immediate', -1 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param gracefulDisableTimeout set the gracefulDisableTimeout.
    */
@@ -1010,6 +1055,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates if the pool is a site-persistence pool.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbSpEnabled
    */
   @VsoMethod
@@ -1021,6 +1067,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates if the pool is a site-persistence pool.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbSpEnabled set the gslbSpEnabled.
    */
   @VsoMethod
@@ -1035,6 +1082,7 @@ public class Pool extends AviRestResource {
    * The passive monitor listens only to client to server communication.
    * It raises or lowers the ratio of traffic destined to a server based on successful responses.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
   @VsoMethod
@@ -1049,6 +1097,7 @@ public class Pool extends AviRestResource {
    * The passive monitor listens only to client to server communication.
    * It raises or lowers the ratio of traffic destined to a server based on successful responses.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
   @VsoMethod
@@ -1063,6 +1112,7 @@ public class Pool extends AviRestResource {
    * The passive monitor listens only to client to server communication.
    * It raises or lowers the ratio of traffic destined to a server based on successful responses.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
   @VsoMethod
@@ -1153,6 +1203,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use list of servers from ip address group.
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipaddrgroupRef
    */
   @VsoMethod
@@ -1164,6 +1215,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Use list of servers from ip address group.
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipaddrgroupRef set the ipaddrgroupRef.
    */
   @VsoMethod
@@ -1173,11 +1225,55 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public Pool addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The load balancing algorithm will pick a server within the pool's list of available servers.
    * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
    * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
    * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_LEAST_CONNECTIONS".
    * @return lbAlgorithm
    */
   @VsoMethod
@@ -1191,7 +1287,7 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
    * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
    * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_LEAST_CONNECTIONS".
    * @param lbAlgorithm set the lbAlgorithm.
    */
   @VsoMethod
@@ -1202,6 +1298,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header name to be used for the hash key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lbAlgorithmConsistentHashHdr
    */
   @VsoMethod
@@ -1212,6 +1309,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header name to be used for the hash key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lbAlgorithmConsistentHashHdr set the lbAlgorithmConsistentHashHdr.
    */
   @VsoMethod
@@ -1251,7 +1349,7 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
    * LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
    * LB_ALGORITHM_CONSISTENT_HASH_CALLID.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS".
    * @return lbAlgorithmHash
    */
   @VsoMethod
@@ -1265,7 +1363,7 @@ public class Pool extends AviRestResource {
    * Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
    * LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
    * LB_ALGORITHM_CONSISTENT_HASH_CALLID.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS".
    * @param lbAlgorithmHash set the lbAlgorithmHash.
    */
   @VsoMethod
@@ -1326,6 +1424,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit connections to each server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxConnRatePerServer
    */
   @VsoMethod
@@ -1336,6 +1435,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit connections to each server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxConnRatePerServer set the maxConnRatePerServer.
    */
   @VsoMethod
@@ -1347,6 +1447,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of health monitors in up state to mark server up.
    * Field introduced in 18.2.1, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minHealthMonitorsUp
    */
   @VsoMethod
@@ -1358,6 +1459,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of health monitors in up state to mark server up.
    * Field introduced in 18.2.1, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minHealthMonitorsUp set the minHealthMonitorsUp.
    */
   @VsoMethod
@@ -1369,6 +1471,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of servers in up state for marking the pool up.
    * Field introduced in 18.2.1, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minServersUp
    */
   @VsoMethod
@@ -1380,6 +1483,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of servers in up state for marking the pool up.
    * Field introduced in 18.2.1, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minServersUp set the minServersUp.
    */
   @VsoMethod
@@ -1390,6 +1494,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -1400,6 +1505,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -1412,6 +1518,7 @@ public class Pool extends AviRestResource {
    * (internal-use) networks designated as containing servers for this pool.
    * The servers may be further narrowed down by a filter.
    * This field is used internally by avi, not editable by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -1424,6 +1531,7 @@ public class Pool extends AviRestResource {
    * (internal-use) networks designated as containing servers for this pool.
    * The servers may be further narrowed down by a filter.
    * This field is used internally by avi, not editable by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -1436,6 +1544,7 @@ public class Pool extends AviRestResource {
    * (internal-use) networks designated as containing servers for this pool.
    * The servers may be further narrowed down by a filter.
    * This field is used internally by avi, not editable by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -1450,8 +1559,9 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * A list of nsx service groups where the servers for the pool are created.
+   * A list of nsx groups where the servers for the pool are created.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
   @VsoMethod
@@ -1461,8 +1571,9 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the setter method. this will set the nsxSecuritygroup
-   * A list of nsx service groups where the servers for the pool are created.
+   * A list of nsx groups where the servers for the pool are created.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
   @VsoMethod
@@ -1472,8 +1583,9 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the setter method this will set the nsxSecuritygroup
-   * A list of nsx service groups where the servers for the pool are created.
+   * A list of nsx groups where the servers for the pool are created.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxSecuritygroup
    */
   @VsoMethod
@@ -1490,6 +1602,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi will validate the ssl certificate present by a server against the selected pki profile.
    * It is a reference to an object of type pkiprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
    */
   @VsoMethod
@@ -1501,6 +1614,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi will validate the ssl certificate present by a server against the selected pki profile.
    * It is a reference to an object of type pkiprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
    */
   @VsoMethod
@@ -1513,6 +1627,7 @@ public class Pool extends AviRestResource {
    * Manually select the networks and subnets used to provide reachability to the pool's servers.
    * Specify the subnet using the following syntax  10-1-1-0/24.
    * Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
   @VsoMethod
@@ -1525,6 +1640,7 @@ public class Pool extends AviRestResource {
    * Manually select the networks and subnets used to provide reachability to the pool's servers.
    * Specify the subnet using the following syntax  10-1-1-0/24.
    * Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
   @VsoMethod
@@ -1537,6 +1653,7 @@ public class Pool extends AviRestResource {
    * Manually select the networks and subnets used to provide reachability to the pool's servers.
    * Specify the subnet using the following syntax  10-1-1-0/24.
    * Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
   @VsoMethod
@@ -1735,6 +1852,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
    * If no value is specified, avi will use the incoming host header instead.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
   @VsoMethod
@@ -1746,6 +1864,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
    * If no value is specified, avi will use the incoming host header instead.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
   @VsoMethod
@@ -1756,6 +1875,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server reselect configuration for http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverReselect
    */
   @VsoMethod
@@ -1766,6 +1886,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server reselect configuration for http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverReselect set the serverReselect.
    */
   @VsoMethod
@@ -1780,6 +1901,7 @@ public class Pool extends AviRestResource {
    * Value of 0 results in using default timeout of 60 minutes.
    * Allowed values are 0-3600000.
    * Field introduced in 18.1.5,18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return serverTimeout
    */
@@ -1795,6 +1917,7 @@ public class Pool extends AviRestResource {
    * Value of 0 results in using default timeout of 60 minutes.
    * Allowed values are 0-3600000.
    * Field introduced in 18.1.5,18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param serverTimeout set the serverTimeout.
    */
@@ -1807,6 +1930,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The pool directs load balanced traffic to this list of destination servers.
    * The servers can be configured by ip address, name, network or via ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -1818,6 +1942,7 @@ public class Pool extends AviRestResource {
    * This is the setter method. this will set the servers
    * The pool directs load balanced traffic to this list of destination servers.
    * The servers can be configured by ip address, name, network or via ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -1829,6 +1954,7 @@ public class Pool extends AviRestResource {
    * This is the setter method this will set the servers
    * The pool directs load balanced traffic to this list of destination servers.
    * The servers can be configured by ip address, name, network or via ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -1847,6 +1973,7 @@ public class Pool extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceMetadata
    */
   @VsoMethod
@@ -1860,6 +1987,7 @@ public class Pool extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceMetadata set the serviceMetadata.
    */
   @VsoMethod
@@ -1895,6 +2023,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines will present a client ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
    */
   @VsoMethod
@@ -1906,6 +2035,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engines will present a client ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
    */
   @VsoMethod
@@ -1918,6 +2048,7 @@ public class Pool extends AviRestResource {
    * When enabled, avi re-encrypts traffic to the backend servers.
    * The specific ssl profile defines which ciphers and ssl versions will be supported.
    * It is a reference to an object of type sslprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
    */
   @VsoMethod
@@ -1930,6 +2061,7 @@ public class Pool extends AviRestResource {
    * When enabled, avi re-encrypts traffic to the backend servers.
    * The specific ssl profile defines which ciphers and ssl versions will be supported.
    * It is a reference to an object of type sslprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
    */
   @VsoMethod
@@ -1940,6 +2072,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -1950,6 +2083,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -1961,6 +2095,7 @@ public class Pool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This tier1_lr field should be set same as virtualservice associated for nsx-t.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1Lr
    */
   @VsoMethod
@@ -1972,6 +2107,7 @@ public class Pool extends AviRestResource {
    * This is the setter method to the attribute.
    * This tier1_lr field should be set same as virtualservice associated for nsx-t.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1Lr set the tier1Lr.
    */
   @VsoMethod
@@ -2025,6 +2161,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -2035,6 +2172,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -2048,6 +2186,7 @@ public class Pool extends AviRestResource {
    * This is used to provide the isolation of the set of networks the pool is attached to.
    * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
   @VsoMethod
@@ -2061,6 +2200,7 @@ public class Pool extends AviRestResource {
    * This is used to provide the isolation of the set of networks the pool is attached to.
    * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */
   @VsoMethod
@@ -2139,6 +2279,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.analyticsProfileRef, objPool.analyticsProfileRef)&&
   Objects.equals(this.analyticsPolicy, objPool.analyticsPolicy)&&
   Objects.equals(this.serviceMetadata, objPool.serviceMetadata)&&
+  Objects.equals(this.labels, objPool.labels)&&
   Objects.equals(this.description, objPool.description)&&
   Objects.equals(this.tenantRef, objPool.tenantRef)&&
   Objects.equals(this.cloudRef, objPool.cloudRef)&&
@@ -2191,6 +2332,7 @@ public String toString() {
         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
         sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
         sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
         sb.append("    lbAlgorithmConsistentHashHdr: ").append(toIndentedString(lbAlgorithmConsistentHashHdr)).append("\n");
         sb.append("    lbAlgorithmCoreNonaffinity: ").append(toIndentedString(lbAlgorithmCoreNonaffinity)).append("\n");

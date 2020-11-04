@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ParamInfo extends AviRestResource {
-  @JsonProperty("param_hits")
-  @JsonInclude(Include.NON_NULL)
-  private Integer paramHits = null;
+    @JsonProperty("param_hits")
+    @JsonInclude(Include.NON_NULL)
+    private Integer paramHits = null;
 
-  @JsonProperty("param_key")
-  @JsonInclude(Include.NON_NULL)
-  private String paramKey = null;
+    @JsonProperty("param_key")
+    @JsonInclude(Include.NON_NULL)
+    private String paramKey = null;
 
-  @JsonProperty("param_size_classes")
-  @JsonInclude(Include.NON_NULL)
-  private List<ParamSizeClass> paramSizeClasses = null;
+    @JsonProperty("param_size_classes")
+    @JsonInclude(Include.NON_NULL)
+    private List<ParamSizeClass> paramSizeClasses = null;
 
-  @JsonProperty("param_type_classes")
-  @JsonInclude(Include.NON_NULL)
-  private List<ParamTypeClass> paramTypeClasses = null;
+    @JsonProperty("param_type_classes")
+    @JsonInclude(Include.NON_NULL)
+    private List<ParamTypeClass> paramTypeClasses = null;
 
 
 
@@ -46,6 +46,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of hits for a param.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramHits
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of hits for a param.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paramHits set the paramHits.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Param name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramKey
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Param name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paramKey set the paramKey.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Various param size and its respective hit count.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramSizeClasses
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method. this will set the paramSizeClasses
    * Various param size and its respective hit count.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramSizeClasses
    */
   @VsoMethod
@@ -112,6 +118,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method this will set the paramSizeClasses
    * Various param size and its respective hit count.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramSizeClasses
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class ParamInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Various param type and its respective hit count.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramTypeClasses
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method. this will set the paramTypeClasses
    * Various param type and its respective hit count.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramTypeClasses
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class ParamInfo extends AviRestResource {
    * This is the setter method this will set the paramTypeClasses
    * Various param type and its respective hit count.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paramTypeClasses
    */
   @VsoMethod

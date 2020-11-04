@@ -28,75 +28,76 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSiteRuntimeInfo extends AviRestResource {
-  @JsonProperty("cluster_leader")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterLeader = null;
+    @JsonProperty("cluster_leader")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterLeader = null;
 
-  @JsonProperty("cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterUuid = null;
+    @JsonProperty("cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterUuid = null;
 
-  @JsonProperty("dns_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbDnsInfo dnsInfo = null;
+    @JsonProperty("dns_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbDnsInfo dnsInfo = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = null;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = null;
 
-  @JsonProperty("event_cache")
-  @JsonInclude(Include.NON_NULL)
-  private EventCache eventCache = null;
+    @JsonProperty("event_cache")
+    @JsonInclude(Include.NON_NULL)
+    private EventCache eventCache = null;
 
-  @JsonProperty("hs_state")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hsState = null;
+    @JsonProperty("hs_state")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hsState = null;
 
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("num_of_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numOfRetries = 0;
+    @JsonProperty("num_of_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numOfRetries = 0;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("role")
-  @JsonInclude(Include.NON_NULL)
-  private String role = "GSLB_NOT_A_MEMBER";
+    @JsonProperty("role")
+    @JsonInclude(Include.NON_NULL)
+    private String role = "GSLB_NOT_A_MEMBER";
 
-  @JsonProperty("rrtoken")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> rrtoken = null;
+    @JsonProperty("rrtoken")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> rrtoken = null;
 
-  @JsonProperty("site_type")
-  @JsonInclude(Include.NON_NULL)
-  private String siteType = null;
+    @JsonProperty("site_type")
+    @JsonInclude(Include.NON_NULL)
+    private String siteType = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = "SITE_STATE_NULL";
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = "SITE_STATE_NULL";
 
-  @JsonProperty("state_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String stateReason = null;
+    @JsonProperty("state_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String stateReason = null;
 
-  @JsonProperty("sw_version")
-  @JsonInclude(Include.NON_NULL)
-  private String swVersion = "Not-Initialized";
+    @JsonProperty("sw_version")
+    @JsonInclude(Include.NON_NULL)
+    private String swVersion = "Not-Initialized";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * The leader-ip/vip/fqdn of the site-cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterLeader
    */
   @VsoMethod
@@ -107,6 +108,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The leader-ip/vip/fqdn of the site-cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterLeader set the clusterLeader.
    */
   @VsoMethod
@@ -117,6 +119,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
   @VsoMethod
@@ -127,6 +130,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
   @VsoMethod
@@ -137,6 +141,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Operational dns state at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
   @VsoMethod
@@ -147,6 +152,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Operational dns state at the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsInfo set the dnsInfo.
    */
   @VsoMethod
@@ -157,6 +163,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable/disable state retrieved from the cfg .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enabled
    */
   @VsoMethod
@@ -167,6 +174,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable/disable state retrieved from the cfg .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enabled set the enabled.
    */
   @VsoMethod
@@ -177,6 +185,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Event-cache used for event throttling.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventCache
    */
   @VsoMethod
@@ -187,6 +196,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Event-cache used for event throttling.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventCache set the eventCache.
    */
   @VsoMethod
@@ -197,6 +207,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health-status monitoring enable or disable.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsState
    */
   @VsoMethod
@@ -207,6 +218,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health-status monitoring enable or disable.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hsState set the hsState.
    */
   @VsoMethod
@@ -217,6 +229,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_changed_time of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -227,6 +240,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_changed_time of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -237,6 +251,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -247,6 +262,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -279,6 +295,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oper_status of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -289,6 +306,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oper_status of obj type gslbsiteruntimeinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -300,7 +318,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site role  leader or follower.
    * Enum options - GSLB_LEADER, GSLB_MEMBER, GSLB_NOT_A_MEMBER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_NOT_A_MEMBER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_NOT_A_MEMBER".
    * @return role
    */
   @VsoMethod
@@ -312,7 +330,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Site role  leader or follower.
    * Enum options - GSLB_LEADER, GSLB_MEMBER, GSLB_NOT_A_MEMBER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_NOT_A_MEMBER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_NOT_A_MEMBER".
    * @param role set the role.
    */
   @VsoMethod
@@ -323,6 +341,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current outstanding request-response token of the message to this site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rrtoken
    */
   @VsoMethod
@@ -333,6 +352,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the rrtoken
    * Current outstanding request-response token of the message to this site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rrtoken
    */
   @VsoMethod
@@ -343,6 +363,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method this will set the rrtoken
    * Current outstanding request-response token of the message to this site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rrtoken
    */
   @VsoMethod
@@ -360,6 +381,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * Indicates if it is avi site or third-party.
    * Enum options - GSLB_AVI_SITE, GSLB_THIRD_PARTY_SITE.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteType
    */
   @VsoMethod
@@ -372,6 +394,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * Indicates if it is avi site or third-party.
    * Enum options - GSLB_AVI_SITE, GSLB_THIRD_PARTY_SITE.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteType set the siteType.
    */
   @VsoMethod
@@ -383,7 +406,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - SITE_STATE_NULL, SITE_STATE_JOIN_IN_PROGRESS, SITE_STATE_LEAVE_IN_PROGRESS, SITE_STATE_INIT, SITE_STATE_UNREACHABLE,
    * SITE_STATE_MMODE, SITE_STATE_DISABLE_IN_PROGRESS, SITE_STATE_DISABLED.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SITE_STATE_NULL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SITE_STATE_NULL".
    * @return state
    */
   @VsoMethod
@@ -395,7 +418,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - SITE_STATE_NULL, SITE_STATE_JOIN_IN_PROGRESS, SITE_STATE_LEAVE_IN_PROGRESS, SITE_STATE_INIT, SITE_STATE_UNREACHABLE,
    * SITE_STATE_MMODE, SITE_STATE_DISABLE_IN_PROGRESS, SITE_STATE_DISABLED.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SITE_STATE_NULL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SITE_STATE_NULL".
    * @param state set the state.
    */
   @VsoMethod
@@ -406,6 +429,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * State - reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stateReason
    */
   @VsoMethod
@@ -416,6 +440,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * State - reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stateReason set the stateReason.
    */
   @VsoMethod
@@ -426,7 +451,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Current software version of the site.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Not-Initialized.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Not-Initialized".
    * @return swVersion
    */
   @VsoMethod
@@ -437,7 +462,7 @@ public class GslbSiteRuntimeInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current software version of the site.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Not-Initialized.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Not-Initialized".
    * @param swVersion set the swVersion.
    */
   @VsoMethod

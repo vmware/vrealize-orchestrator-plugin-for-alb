@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VlanInterface extends AviRestResource {
-  @JsonProperty("dhcp_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dhcpEnabled = true;
+    @JsonProperty("dhcp_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dhcpEnabled = true;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("ip6_autocfg_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ip6AutocfgEnabled = true;
+    @JsonProperty("ip6_autocfg_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ip6AutocfgEnabled = true;
 
-  @JsonProperty("is_mgmt")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isMgmt = false;
+    @JsonProperty("is_mgmt")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isMgmt = false;
 
-  @JsonProperty("vlan_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vlanId = 0;
+    @JsonProperty("vlan_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vlanId = 0;
 
-  @JsonProperty("vnic_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<vNICNetwork> vnicNetworks = null;
+    @JsonProperty("vnic_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<vNICNetwork> vnicNetworks = null;
 
-  @JsonProperty("vrf_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfRef = null;
+    @JsonProperty("vrf_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfRef = null;
 
 
 
@@ -107,6 +107,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property if_name of obj type vlaninterface field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -117,6 +118,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property if_name of obj type vlaninterface field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -197,6 +199,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vnic_networks of obj type vlaninterface field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
   @VsoMethod
@@ -207,6 +210,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the setter method. this will set the vnicNetworks
    * Placeholder for description of property vnic_networks of obj type vlaninterface field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
   @VsoMethod
@@ -217,6 +221,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the setter method this will set the vnicNetworks
    * Placeholder for description of property vnic_networks of obj type vlaninterface field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworks
    */
   @VsoMethod
@@ -232,6 +237,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
   @VsoMethod
@@ -242,6 +248,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vrfcontext.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */
   @VsoMethod

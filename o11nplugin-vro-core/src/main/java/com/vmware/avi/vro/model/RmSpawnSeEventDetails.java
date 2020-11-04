@@ -24,83 +24,88 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmSpawnSeEventDetails extends AviRestResource {
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("cloud_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudName = null;
+    @JsonProperty("cloud_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudName = null;
 
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("host_name")
-  @JsonInclude(Include.NON_NULL)
-  private String hostName = null;
+    @JsonProperty("flavor_name")
+    @JsonInclude(Include.NON_NULL)
+    private String flavorName = null;
 
-  @JsonProperty("host_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String hostUuid = null;
+    @JsonProperty("host_name")
+    @JsonInclude(Include.NON_NULL)
+    private String hostName = null;
 
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = null;
+    @JsonProperty("host_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String hostUuid = null;
 
-  @JsonProperty("network_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> networkNames = null;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = null;
 
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> networks = null;
+    @JsonProperty("network_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> networkNames = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> networks = null;
 
-  @JsonProperty("se_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String seCookie = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_grp_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpName = null;
+    @JsonProperty("se_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String seCookie = null;
 
-  @JsonProperty("se_grp_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpUuid = null;
+    @JsonProperty("se_grp_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpName = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_grp_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpUuid = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer statusCode = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vcpus = null;
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer statusCode = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vsName = null;
+    @JsonProperty("vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vcpus = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vsName = null;
+
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property availability_zone of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property availability_zone of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudName
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudName set the cloudName.
    */
   @VsoMethod
@@ -141,6 +149,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -160,7 +170,30 @@ public class RmSpawnSeEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return flavorName
+   */
+  @VsoMethod
+  public String getFlavorName() {
+    return flavorName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param flavorName set the flavorName.
+   */
+  @VsoMethod
+  public void setFlavorName(String  flavorName) {
+    this.flavorName = flavorName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -171,6 +204,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostName set the hostName.
    */
   @VsoMethod
@@ -181,6 +215,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostUuid
    */
   @VsoMethod
@@ -191,6 +226,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostUuid set the hostUuid.
    */
   @VsoMethod
@@ -201,6 +237,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property memory of obj type rmspawnseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
   @VsoMethod
@@ -211,6 +248,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property memory of obj type rmspawnseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
   @VsoMethod
@@ -221,6 +259,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_names of obj type rmspawnseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkNames
    */
   @VsoMethod
@@ -231,6 +270,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the networkNames
    * Placeholder for description of property network_names of obj type rmspawnseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkNames
    */
   @VsoMethod
@@ -241,6 +281,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the networkNames
    * Placeholder for description of property network_names of obj type rmspawnseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkNames
    */
   @VsoMethod
@@ -256,6 +297,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property networks of obj type rmspawnseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -266,6 +308,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Placeholder for description of property networks of obj type rmspawnseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -276,6 +319,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Placeholder for description of property networks of obj type rmspawnseeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -291,6 +335,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -301,6 +346,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -311,6 +357,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_cookie of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seCookie
    */
   @VsoMethod
@@ -321,6 +368,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_cookie of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seCookie set the seCookie.
    */
   @VsoMethod
@@ -331,6 +379,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_grp_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpName
    */
   @VsoMethod
@@ -341,6 +390,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_grp_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpName set the seGrpName.
    */
   @VsoMethod
@@ -351,6 +401,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpUuid
    */
   @VsoMethod
@@ -361,6 +412,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpUuid set the seGrpUuid.
    */
   @VsoMethod
@@ -371,6 +423,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -381,6 +434,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -391,6 +445,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -401,6 +456,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -411,6 +467,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status_code of obj type rmspawnseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
   @VsoMethod
@@ -421,6 +478,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status_code of obj type rmspawnseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
   @VsoMethod
@@ -431,6 +489,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcpus of obj type rmspawnseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcpus
    */
   @VsoMethod
@@ -441,6 +500,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcpus of obj type rmspawnseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcpus set the vcpus.
    */
   @VsoMethod
@@ -451,6 +511,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -461,6 +522,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_name of obj type rmspawnseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -471,6 +533,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -481,6 +544,7 @@ public class RmSpawnSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod
@@ -516,7 +580,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seGrpUuid, objRmSpawnSeEventDetails.seGrpUuid)&&
   Objects.equals(this.seGrpName, objRmSpawnSeEventDetails.seGrpName)&&
   Objects.equals(this.cloudUuid, objRmSpawnSeEventDetails.cloudUuid)&&
-  Objects.equals(this.cloudName, objRmSpawnSeEventDetails.cloudName);
+  Objects.equals(this.cloudName, objRmSpawnSeEventDetails.cloudName)&&
+  Objects.equals(this.flavorName, objRmSpawnSeEventDetails.flavorName);
 }
 
 @Override
@@ -526,6 +591,7 @@ public String toString() {
       sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    cloudName: ").append(toIndentedString(cloudName)).append("\n");
         sb.append("    cloudUuid: ").append(toIndentedString(cloudUuid)).append("\n");
+        sb.append("    flavorName: ").append(toIndentedString(flavorName)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostUuid: ").append(toIndentedString(hostUuid)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");

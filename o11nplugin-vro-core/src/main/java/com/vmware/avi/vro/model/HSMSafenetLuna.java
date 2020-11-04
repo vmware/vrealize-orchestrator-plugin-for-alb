@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HSMSafenetLuna extends AviRestResource {
-  @JsonProperty("ha_group_num")
-  @JsonInclude(Include.NON_NULL)
-  private Integer haGroupNum = null;
+    @JsonProperty("ha_group_num")
+    @JsonInclude(Include.NON_NULL)
+    private Integer haGroupNum = null;
 
-  @JsonProperty("is_ha")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isHa = false;
+    @JsonProperty("is_ha")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isHa = false;
 
-  @JsonProperty("node_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<HSMSafenetClientInfo> nodeInfo = null;
+    @JsonProperty("node_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<HSMSafenetClientInfo> nodeInfo = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private List<HSMSafenetLunaServer> server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private List<HSMSafenetLunaServer> server = null;
 
-  @JsonProperty("server_pem")
-  @JsonInclude(Include.NON_NULL)
-  private String serverPem = null;
+    @JsonProperty("server_pem")
+    @JsonInclude(Include.NON_NULL)
+    private String serverPem = null;
 
-  @JsonProperty("use_dedicated_network")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useDedicatedNetwork = false;
+    @JsonProperty("use_dedicated_network")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useDedicatedNetwork = false;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Group number of generated ha group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haGroupNum
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Group number of generated ha group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haGroupNum set the haGroupNum.
    */
   @VsoMethod
@@ -95,6 +97,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Node specific information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeInfo
    */
   @VsoMethod
@@ -105,6 +108,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method. this will set the nodeInfo
    * Node specific information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeInfo
    */
   @VsoMethod
@@ -115,6 +119,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method this will set the nodeInfo
    * Node specific information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeInfo
    */
   @VsoMethod
@@ -130,6 +135,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Safenet/gemalto hsm servers used for crypto operations.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -140,6 +146,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method. this will set the server
    * Safenet/gemalto hsm servers used for crypto operations.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -150,6 +157,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method this will set the server
    * Safenet/gemalto hsm servers used for crypto operations.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -165,6 +173,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Generated file - server.pem.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPem
    */
   @VsoMethod
@@ -175,6 +184,7 @@ public class HSMSafenetLuna extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Generated file - server.pem.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPem set the serverPem.
    */
   @VsoMethod

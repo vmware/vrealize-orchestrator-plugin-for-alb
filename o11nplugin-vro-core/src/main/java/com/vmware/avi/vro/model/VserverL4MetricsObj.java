@@ -24,383 +24,384 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VserverL4MetricsObj extends AviRestResource {
-  @JsonProperty("apdexc")
-  @JsonInclude(Include.NON_NULL)
-  private Float apdexc = null;
-
-  @JsonProperty("apdexrtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float apdexrtt = null;
-
-  @JsonProperty("avg_application_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgApplicationDosAttacks = null;
-
-  @JsonProperty("avg_bandwidth")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgBandwidth = null;
-
-  @JsonProperty("avg_bytes_policy_drops")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgBytesPolicyDrops = null;
-
-  @JsonProperty("avg_complete_conns")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgCompleteConns = null;
-
-  @JsonProperty("avg_connections_dropped")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgConnectionsDropped = null;
-
-  @JsonProperty("avg_dos_app_error")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosAppError = null;
-
-  @JsonProperty("avg_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosAttacks = null;
-
-  @JsonProperty("avg_dos_bad_rst_flood")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosBadRstFlood = null;
-
-  @JsonProperty("avg_dos_bandwidth")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosBandwidth = null;
-
-  @JsonProperty("avg_dos_conn")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosConn = null;
-
-  @JsonProperty("avg_dos_conn_ip_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosConnIpRlDrop = null;
-
-  @JsonProperty("avg_dos_conn_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosConnRlDrop = null;
-
-  @JsonProperty("avg_dos_fake_session")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosFakeSession = null;
-
-  @JsonProperty("avg_dos_http_abort")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosHttpAbort = null;
-
-  @JsonProperty("avg_dos_http_error")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosHttpError = null;
-
-  @JsonProperty("avg_dos_http_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosHttpTimeout = null;
-
-  @JsonProperty("avg_dos_malformed_flood")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosMalformedFlood = null;
-
-  @JsonProperty("avg_dos_non_syn_flood")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosNonSynFlood = null;
-
-  @JsonProperty("avg_dos_req")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReq = null;
-
-  @JsonProperty("avg_dos_req_cookie_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqCookieRlDrop = null;
-
-  @JsonProperty("avg_dos_req_custom_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqCustomRlDrop = null;
-
-  @JsonProperty("avg_dos_req_hdr_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqHdrRlDrop = null;
-
-  @JsonProperty("avg_dos_req_ip_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqIpRlDrop = null;
-
-  @JsonProperty("avg_dos_req_ip_rl_drop_bad")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqIpRlDropBad = null;
-
-  @JsonProperty("avg_dos_req_ip_scan_bad_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqIpScanBadRlDrop = null;
-
-  @JsonProperty("avg_dos_req_ip_scan_unknown_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqIpScanUnknownRlDrop = null;
-
-  @JsonProperty("avg_dos_req_ip_uri_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqIpUriRlDrop = null;
-
-  @JsonProperty("avg_dos_req_ip_uri_rl_drop_bad")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqIpUriRlDropBad = null;
-
-  @JsonProperty("avg_dos_req_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqRlDrop = null;
-
-  @JsonProperty("avg_dos_req_uri_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqUriRlDrop = null;
-
-  @JsonProperty("avg_dos_req_uri_rl_drop_bad")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqUriRlDropBad = null;
-
-  @JsonProperty("avg_dos_req_uri_scan_bad_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqUriScanBadRlDrop = null;
-
-  @JsonProperty("avg_dos_req_uri_scan_unknown_rl_drop")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosReqUriScanUnknownRlDrop = null;
-
-  @JsonProperty("avg_dos_rx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosRxBytes = null;
-
-  @JsonProperty("avg_dos_slow_uri")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosSlowUri = null;
-
-  @JsonProperty("avg_dos_small_window_stress")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosSmallWindowStress = null;
-
-  @JsonProperty("avg_dos_ssl_error")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosSslError = null;
-
-  @JsonProperty("avg_dos_syn_flood")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosSynFlood = null;
-
-  @JsonProperty("avg_dos_total_req")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosTotalReq = null;
-
-  @JsonProperty("avg_dos_tx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosTxBytes = null;
-
-  @JsonProperty("avg_dos_zero_window_stress")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDosZeroWindowStress = null;
-
-  @JsonProperty("avg_errored_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgErroredConnections = null;
-
-  @JsonProperty("avg_l4_client_latency")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgL4ClientLatency = null;
-
-  @JsonProperty("avg_lossy_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgLossyConnections = null;
-
-  @JsonProperty("avg_lossy_req")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgLossyReq = null;
-
-  @JsonProperty("avg_network_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgNetworkDosAttacks = null;
-
-  @JsonProperty("avg_new_established_conns")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgNewEstablishedConns = null;
-
-  @JsonProperty("avg_pkts_policy_drops")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPktsPolicyDrops = null;
-
-  @JsonProperty("avg_policy_drops")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPolicyDrops = null;
-
-  @JsonProperty("avg_rx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgRxBytes = null;
-
-  @JsonProperty("avg_rx_bytes_dropped")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgRxBytesDropped = null;
-
-  @JsonProperty("avg_rx_pkts")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgRxPkts = null;
-
-  @JsonProperty("avg_rx_pkts_dropped")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgRxPktsDropped = null;
-
-  @JsonProperty("avg_syns")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSyns = null;
-
-  @JsonProperty("avg_total_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgTotalConnections = null;
-
-  @JsonProperty("avg_total_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgTotalRtt = null;
-
-  @JsonProperty("avg_tx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgTxBytes = null;
-
-  @JsonProperty("avg_tx_pkts")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgTxPkts = null;
-
-  @JsonProperty("max_num_active_se")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxNumActiveSe = null;
-
-  @JsonProperty("max_open_conns")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxOpenConns = null;
-
-  @JsonProperty("max_rx_bytes_absolute")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxRxBytesAbsolute = null;
-
-  @JsonProperty("max_rx_pkts_absolute")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxRxPktsAbsolute = null;
-
-  @JsonProperty("max_tx_bytes_absolute")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxTxBytesAbsolute = null;
-
-  @JsonProperty("max_tx_pkts_absolute")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxTxPktsAbsolute = null;
-
-  @JsonProperty("node_obj_id")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeObjId = null;
-
-  @JsonProperty("pct_application_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctApplicationDosAttacks = null;
-
-  @JsonProperty("pct_connection_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctConnectionErrors = null;
-
-  @JsonProperty("pct_connections_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctConnectionsDosAttacks = null;
-
-  @JsonProperty("pct_dos_bandwidth")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctDosBandwidth = null;
-
-  @JsonProperty("pct_dos_rx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctDosRxBytes = null;
-
-  @JsonProperty("pct_network_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctNetworkDosAttacks = null;
-
-  @JsonProperty("pct_pkts_dos_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctPktsDosAttacks = null;
-
-  @JsonProperty("pct_policy_drops")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctPolicyDrops = null;
-
-  @JsonProperty("sum_conn_duration")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumConnDuration = null;
-
-  @JsonProperty("sum_connection_dropped_user_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumConnectionDroppedUserLimit = null;
-
-  @JsonProperty("sum_connection_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumConnectionErrors = null;
-
-  @JsonProperty("sum_connections_dropped")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumConnectionsDropped = null;
-
-  @JsonProperty("sum_dup_ack_retransmits")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumDupAckRetransmits = null;
-
-  @JsonProperty("sum_end_to_end_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumEndToEndRtt = null;
-
-  @JsonProperty("sum_end_to_end_rtt_bucket1")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumEndToEndRttBucket1 = null;
-
-  @JsonProperty("sum_end_to_end_rtt_bucket2")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumEndToEndRttBucket2 = null;
-
-  @JsonProperty("sum_finished_conns")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumFinishedConns = null;
-
-  @JsonProperty("sum_lossy_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumLossyConnections = null;
-
-  @JsonProperty("sum_lossy_req")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumLossyReq = null;
-
-  @JsonProperty("sum_out_of_orders")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumOutOfOrders = null;
-
-  @JsonProperty("sum_packet_dropped_user_bandwidth_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPacketDroppedUserBandwidthLimit = null;
-
-  @JsonProperty("sum_rtt_valid_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumRttValidConnections = null;
-
-  @JsonProperty("sum_sack_retransmits")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumSackRetransmits = null;
-
-  @JsonProperty("sum_server_flow_control")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumServerFlowControl = null;
-
-  @JsonProperty("sum_timeout_retransmits")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumTimeoutRetransmits = null;
-
-  @JsonProperty("sum_zero_window_size_events")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumZeroWindowSizeEvents = null;
+    @JsonProperty("apdexc")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexc = null;
+
+    @JsonProperty("apdexrtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexrtt = null;
+
+    @JsonProperty("avg_application_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgApplicationDosAttacks = null;
+
+    @JsonProperty("avg_bandwidth")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgBandwidth = null;
+
+    @JsonProperty("avg_bytes_policy_drops")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgBytesPolicyDrops = null;
+
+    @JsonProperty("avg_complete_conns")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgCompleteConns = null;
+
+    @JsonProperty("avg_connections_dropped")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgConnectionsDropped = null;
+
+    @JsonProperty("avg_dos_app_error")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosAppError = null;
+
+    @JsonProperty("avg_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosAttacks = null;
+
+    @JsonProperty("avg_dos_bad_rst_flood")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosBadRstFlood = null;
+
+    @JsonProperty("avg_dos_bandwidth")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosBandwidth = null;
+
+    @JsonProperty("avg_dos_conn")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosConn = null;
+
+    @JsonProperty("avg_dos_conn_ip_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosConnIpRlDrop = null;
+
+    @JsonProperty("avg_dos_conn_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosConnRlDrop = null;
+
+    @JsonProperty("avg_dos_fake_session")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosFakeSession = null;
+
+    @JsonProperty("avg_dos_http_abort")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosHttpAbort = null;
+
+    @JsonProperty("avg_dos_http_error")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosHttpError = null;
+
+    @JsonProperty("avg_dos_http_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosHttpTimeout = null;
+
+    @JsonProperty("avg_dos_malformed_flood")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosMalformedFlood = null;
+
+    @JsonProperty("avg_dos_non_syn_flood")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosNonSynFlood = null;
+
+    @JsonProperty("avg_dos_req")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReq = null;
+
+    @JsonProperty("avg_dos_req_cookie_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqCookieRlDrop = null;
+
+    @JsonProperty("avg_dos_req_custom_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqCustomRlDrop = null;
+
+    @JsonProperty("avg_dos_req_hdr_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqHdrRlDrop = null;
+
+    @JsonProperty("avg_dos_req_ip_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqIpRlDrop = null;
+
+    @JsonProperty("avg_dos_req_ip_rl_drop_bad")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqIpRlDropBad = null;
+
+    @JsonProperty("avg_dos_req_ip_scan_bad_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqIpScanBadRlDrop = null;
+
+    @JsonProperty("avg_dos_req_ip_scan_unknown_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqIpScanUnknownRlDrop = null;
+
+    @JsonProperty("avg_dos_req_ip_uri_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqIpUriRlDrop = null;
+
+    @JsonProperty("avg_dos_req_ip_uri_rl_drop_bad")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqIpUriRlDropBad = null;
+
+    @JsonProperty("avg_dos_req_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqRlDrop = null;
+
+    @JsonProperty("avg_dos_req_uri_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqUriRlDrop = null;
+
+    @JsonProperty("avg_dos_req_uri_rl_drop_bad")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqUriRlDropBad = null;
+
+    @JsonProperty("avg_dos_req_uri_scan_bad_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqUriScanBadRlDrop = null;
+
+    @JsonProperty("avg_dos_req_uri_scan_unknown_rl_drop")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosReqUriScanUnknownRlDrop = null;
+
+    @JsonProperty("avg_dos_rx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosRxBytes = null;
+
+    @JsonProperty("avg_dos_slow_uri")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosSlowUri = null;
+
+    @JsonProperty("avg_dos_small_window_stress")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosSmallWindowStress = null;
+
+    @JsonProperty("avg_dos_ssl_error")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosSslError = null;
+
+    @JsonProperty("avg_dos_syn_flood")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosSynFlood = null;
+
+    @JsonProperty("avg_dos_total_req")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosTotalReq = null;
+
+    @JsonProperty("avg_dos_tx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosTxBytes = null;
+
+    @JsonProperty("avg_dos_zero_window_stress")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDosZeroWindowStress = null;
+
+    @JsonProperty("avg_errored_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgErroredConnections = null;
+
+    @JsonProperty("avg_l4_client_latency")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgL4ClientLatency = null;
+
+    @JsonProperty("avg_lossy_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgLossyConnections = null;
+
+    @JsonProperty("avg_lossy_req")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgLossyReq = null;
+
+    @JsonProperty("avg_network_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgNetworkDosAttacks = null;
+
+    @JsonProperty("avg_new_established_conns")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgNewEstablishedConns = null;
+
+    @JsonProperty("avg_pkts_policy_drops")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPktsPolicyDrops = null;
+
+    @JsonProperty("avg_policy_drops")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPolicyDrops = null;
+
+    @JsonProperty("avg_rx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgRxBytes = null;
+
+    @JsonProperty("avg_rx_bytes_dropped")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgRxBytesDropped = null;
+
+    @JsonProperty("avg_rx_pkts")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgRxPkts = null;
+
+    @JsonProperty("avg_rx_pkts_dropped")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgRxPktsDropped = null;
+
+    @JsonProperty("avg_syns")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSyns = null;
+
+    @JsonProperty("avg_total_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgTotalConnections = null;
+
+    @JsonProperty("avg_total_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgTotalRtt = null;
+
+    @JsonProperty("avg_tx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgTxBytes = null;
+
+    @JsonProperty("avg_tx_pkts")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgTxPkts = null;
+
+    @JsonProperty("max_num_active_se")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxNumActiveSe = null;
+
+    @JsonProperty("max_open_conns")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxOpenConns = null;
+
+    @JsonProperty("max_rx_bytes_absolute")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxRxBytesAbsolute = null;
+
+    @JsonProperty("max_rx_pkts_absolute")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxRxPktsAbsolute = null;
+
+    @JsonProperty("max_tx_bytes_absolute")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxTxBytesAbsolute = null;
+
+    @JsonProperty("max_tx_pkts_absolute")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxTxPktsAbsolute = null;
+
+    @JsonProperty("node_obj_id")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeObjId = null;
+
+    @JsonProperty("pct_application_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctApplicationDosAttacks = null;
+
+    @JsonProperty("pct_connection_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctConnectionErrors = null;
+
+    @JsonProperty("pct_connections_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctConnectionsDosAttacks = null;
+
+    @JsonProperty("pct_dos_bandwidth")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctDosBandwidth = null;
+
+    @JsonProperty("pct_dos_rx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctDosRxBytes = null;
+
+    @JsonProperty("pct_network_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctNetworkDosAttacks = null;
+
+    @JsonProperty("pct_pkts_dos_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctPktsDosAttacks = null;
+
+    @JsonProperty("pct_policy_drops")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctPolicyDrops = null;
+
+    @JsonProperty("sum_conn_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumConnDuration = null;
+
+    @JsonProperty("sum_connection_dropped_user_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumConnectionDroppedUserLimit = null;
+
+    @JsonProperty("sum_connection_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumConnectionErrors = null;
+
+    @JsonProperty("sum_connections_dropped")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumConnectionsDropped = null;
+
+    @JsonProperty("sum_dup_ack_retransmits")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumDupAckRetransmits = null;
+
+    @JsonProperty("sum_end_to_end_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumEndToEndRtt = null;
+
+    @JsonProperty("sum_end_to_end_rtt_bucket1")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumEndToEndRttBucket1 = null;
+
+    @JsonProperty("sum_end_to_end_rtt_bucket2")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumEndToEndRttBucket2 = null;
+
+    @JsonProperty("sum_finished_conns")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumFinishedConns = null;
+
+    @JsonProperty("sum_lossy_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumLossyConnections = null;
+
+    @JsonProperty("sum_lossy_req")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumLossyReq = null;
+
+    @JsonProperty("sum_out_of_orders")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumOutOfOrders = null;
+
+    @JsonProperty("sum_packet_dropped_user_bandwidth_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPacketDroppedUserBandwidthLimit = null;
+
+    @JsonProperty("sum_rtt_valid_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumRttValidConnections = null;
+
+    @JsonProperty("sum_sack_retransmits")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumSackRetransmits = null;
+
+    @JsonProperty("sum_server_flow_control")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumServerFlowControl = null;
+
+    @JsonProperty("sum_timeout_retransmits")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumTimeoutRetransmits = null;
+
+    @JsonProperty("sum_zero_window_size_events")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumZeroWindowSizeEvents = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Apdex measuring quality of network connections to servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apdexc
    */
   @VsoMethod
@@ -411,6 +412,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Apdex measuring quality of network connections to servers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apdexc set the apdexc.
    */
   @VsoMethod
@@ -421,6 +423,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Apdex measuring network connection quality based on rtt.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apdexrtt
    */
   @VsoMethod
@@ -431,6 +434,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Apdex measuring network connection quality based on rtt.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apdexrtt set the apdexrtt.
    */
   @VsoMethod
@@ -441,6 +445,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of application ddos attacks occurring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgApplicationDosAttacks
    */
   @VsoMethod
@@ -451,6 +456,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of application ddos attacks occurring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgApplicationDosAttacks set the avgApplicationDosAttacks.
    */
   @VsoMethod
@@ -461,6 +467,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average transmit and receive network bandwidth between client and virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgBandwidth
    */
   @VsoMethod
@@ -471,6 +478,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average transmit and receive network bandwidth between client and virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgBandwidth set the avgBandwidth.
    */
   @VsoMethod
@@ -481,6 +489,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate bytes dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgBytesPolicyDrops
    */
   @VsoMethod
@@ -491,6 +500,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate bytes dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgBytesPolicyDrops set the avgBytesPolicyDrops.
    */
   @VsoMethod
@@ -501,6 +511,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of total connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCompleteConns
    */
   @VsoMethod
@@ -511,6 +522,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of total connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCompleteConns set the avgCompleteConns.
    */
   @VsoMethod
@@ -521,6 +533,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of dropped connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgConnectionsDropped
    */
   @VsoMethod
@@ -531,6 +544,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of dropped connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgConnectionsDropped set the avgConnectionsDropped.
    */
   @VsoMethod
@@ -541,6 +555,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http app errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosAppError
    */
   @VsoMethod
@@ -551,6 +566,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http app errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosAppError set the avgDosAppError.
    */
   @VsoMethod
@@ -561,6 +577,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number ddos attacks occurring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosAttacks
    */
   @VsoMethod
@@ -571,6 +588,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number ddos attacks occurring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosAttacks set the avgDosAttacks.
    */
   @VsoMethod
@@ -581,6 +599,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of bad rst floods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosBadRstFlood
    */
   @VsoMethod
@@ -591,6 +610,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of bad rst floods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosBadRstFlood set the avgDosBadRstFlood.
    */
   @VsoMethod
@@ -601,6 +621,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average transmit and receive network bandwidth between client and virtual service related to ddos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosBandwidth
    */
   @VsoMethod
@@ -611,6 +632,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average transmit and receive network bandwidth between client and virtual service related to ddos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosBandwidth set the avgDosBandwidth.
    */
   @VsoMethod
@@ -621,6 +643,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of connections considered as dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosConn
    */
   @VsoMethod
@@ -631,6 +654,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of connections considered as dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosConn set the avgDosConn.
    */
   @VsoMethod
@@ -641,6 +665,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  connections dropped due to ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosConnIpRlDrop
    */
   @VsoMethod
@@ -651,6 +676,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  connections dropped due to ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosConnIpRlDrop set the avgDosConnIpRlDrop.
    */
   @VsoMethod
@@ -661,6 +687,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  connections dropped due to vs rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosConnRlDrop
    */
   @VsoMethod
@@ -671,6 +698,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  connections dropped due to vs rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosConnRlDrop set the avgDosConnRlDrop.
    */
   @VsoMethod
@@ -681,6 +709,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of fake sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosFakeSession
    */
   @VsoMethod
@@ -691,6 +720,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of fake sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosFakeSession set the avgDosFakeSession.
    */
   @VsoMethod
@@ -701,6 +731,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http aborts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosHttpAbort
    */
   @VsoMethod
@@ -711,6 +742,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http aborts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosHttpAbort set the avgDosHttpAbort.
    */
   @VsoMethod
@@ -721,6 +753,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosHttpError
    */
   @VsoMethod
@@ -731,6 +764,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosHttpError set the avgDosHttpError.
    */
   @VsoMethod
@@ -741,6 +775,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http timeouts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosHttpTimeout
    */
   @VsoMethod
@@ -751,6 +786,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http timeouts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosHttpTimeout set the avgDosHttpTimeout.
    */
   @VsoMethod
@@ -761,6 +797,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of malformed packet floods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosMalformedFlood
    */
   @VsoMethod
@@ -771,6 +808,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of malformed packet floods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosMalformedFlood set the avgDosMalformedFlood.
    */
   @VsoMethod
@@ -781,6 +819,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  non syn packet flood.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosNonSynFlood
    */
   @VsoMethod
@@ -791,6 +830,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  non syn packet flood.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosNonSynFlood set the avgDosNonSynFlood.
    */
   @VsoMethod
@@ -801,6 +841,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of request considered as dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReq
    */
   @VsoMethod
@@ -811,6 +852,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of request considered as dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReq set the avgDosReq.
    */
   @VsoMethod
@@ -821,6 +863,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to cookie rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqCookieRlDrop
    */
   @VsoMethod
@@ -831,6 +874,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to cookie rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqCookieRlDrop set the avgDosReqCookieRlDrop.
    */
   @VsoMethod
@@ -842,6 +886,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to custom rate limit.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqCustomRlDrop
    */
   @VsoMethod
@@ -853,6 +898,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to custom rate limit.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqCustomRlDrop set the avgDosReqCustomRlDrop.
    */
   @VsoMethod
@@ -863,6 +909,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to header rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqHdrRlDrop
    */
   @VsoMethod
@@ -873,6 +920,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to header rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqHdrRlDrop set the avgDosReqHdrRlDrop.
    */
   @VsoMethod
@@ -883,6 +931,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpRlDrop
    */
   @VsoMethod
@@ -893,6 +942,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpRlDrop set the avgDosReqIpRlDrop.
    */
   @VsoMethod
@@ -903,6 +953,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip rate limit for bad requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpRlDropBad
    */
   @VsoMethod
@@ -913,6 +964,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip rate limit for bad requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpRlDropBad set the avgDosReqIpRlDropBad.
    */
   @VsoMethod
@@ -923,6 +975,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to bad ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpScanBadRlDrop
    */
   @VsoMethod
@@ -933,6 +986,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to bad ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpScanBadRlDrop set the avgDosReqIpScanBadRlDrop.
    */
   @VsoMethod
@@ -943,6 +997,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to unknown ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpScanUnknownRlDrop
    */
   @VsoMethod
@@ -953,6 +1008,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to unknown ip rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpScanUnknownRlDrop set the avgDosReqIpScanUnknownRlDrop.
    */
   @VsoMethod
@@ -963,6 +1019,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip+url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpUriRlDrop
    */
   @VsoMethod
@@ -973,6 +1030,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip+url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpUriRlDrop set the avgDosReqIpUriRlDrop.
    */
   @VsoMethod
@@ -983,6 +1041,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to ip+url rate limit for bad requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqIpUriRlDropBad
    */
   @VsoMethod
@@ -993,6 +1052,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to ip+url rate limit for bad requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqIpUriRlDropBad set the avgDosReqIpUriRlDropBad.
    */
   @VsoMethod
@@ -1003,6 +1063,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to vs rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqRlDrop
    */
   @VsoMethod
@@ -1013,6 +1074,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to vs rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqRlDrop set the avgDosReqRlDrop.
    */
   @VsoMethod
@@ -1023,6 +1085,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriRlDrop
    */
   @VsoMethod
@@ -1033,6 +1096,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriRlDrop set the avgDosReqUriRlDrop.
    */
   @VsoMethod
@@ -1043,6 +1107,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to url rate limit for bad requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriRlDropBad
    */
   @VsoMethod
@@ -1053,6 +1118,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to url rate limit for bad requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriRlDropBad set the avgDosReqUriRlDropBad.
    */
   @VsoMethod
@@ -1063,6 +1129,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to bad url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriScanBadRlDrop
    */
   @VsoMethod
@@ -1073,6 +1140,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to bad url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriScanBadRlDrop set the avgDosReqUriScanBadRlDrop.
    */
   @VsoMethod
@@ -1083,6 +1151,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  requests dropped due to unknown url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosReqUriScanUnknownRlDrop
    */
   @VsoMethod
@@ -1093,6 +1162,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  requests dropped due to unknown url rate limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosReqUriScanUnknownRlDrop set the avgDosReqUriScanUnknownRlDrop.
    */
   @VsoMethod
@@ -1103,6 +1173,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes received per second related to ddos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosRxBytes
    */
   @VsoMethod
@@ -1113,6 +1184,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes received per second related to ddos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosRxBytes set the avgDosRxBytes.
    */
   @VsoMethod
@@ -1123,6 +1195,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  slow uri.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSlowUri
    */
   @VsoMethod
@@ -1133,6 +1206,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  slow uri.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSlowUri set the avgDosSlowUri.
    */
   @VsoMethod
@@ -1143,6 +1217,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of small window stresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSmallWindowStress
    */
   @VsoMethod
@@ -1153,6 +1228,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of small window stresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSmallWindowStress set the avgDosSmallWindowStress.
    */
   @VsoMethod
@@ -1163,6 +1239,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of http ssl errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSslError
    */
   @VsoMethod
@@ -1173,6 +1250,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of http ssl errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSslError set the avgDosSslError.
    */
   @VsoMethod
@@ -1183,6 +1261,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of syn floods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosSynFlood
    */
   @VsoMethod
@@ -1193,6 +1272,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of syn floods.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosSynFlood set the avgDosSynFlood.
    */
   @VsoMethod
@@ -1203,6 +1283,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of request used for l7 dos requests normalization.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosTotalReq
    */
   @VsoMethod
@@ -1213,6 +1294,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of request used for l7 dos requests normalization.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosTotalReq set the avgDosTotalReq.
    */
   @VsoMethod
@@ -1223,6 +1305,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes transmitted per second related to ddos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosTxBytes
    */
   @VsoMethod
@@ -1233,6 +1316,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes transmitted per second related to ddos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosTxBytes set the avgDosTxBytes.
    */
   @VsoMethod
@@ -1243,6 +1327,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos attack  rate of zero window stresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDosZeroWindowStress
    */
   @VsoMethod
@@ -1253,6 +1338,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos attack  rate of zero window stresses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDosZeroWindowStress set the avgDosZeroWindowStress.
    */
   @VsoMethod
@@ -1263,6 +1349,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of total errored connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgErroredConnections
    */
   @VsoMethod
@@ -1273,6 +1360,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of total errored connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgErroredConnections set the avgErroredConnections.
    */
   @VsoMethod
@@ -1283,6 +1371,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average l4 connection duration which does not include client rtt.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgL4ClientLatency
    */
   @VsoMethod
@@ -1293,6 +1382,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average l4 connection duration which does not include client rtt.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgL4ClientLatency set the avgL4ClientLatency.
    */
   @VsoMethod
@@ -1303,6 +1393,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of lossy connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgLossyConnections
    */
   @VsoMethod
@@ -1313,6 +1404,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of lossy connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgLossyConnections set the avgLossyConnections.
    */
   @VsoMethod
@@ -1323,6 +1415,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate of lossy request per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgLossyReq
    */
   @VsoMethod
@@ -1333,6 +1426,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate of lossy request per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgLossyReq set the avgLossyReq.
    */
   @VsoMethod
@@ -1343,6 +1437,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of network ddos attacks occurring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgNetworkDosAttacks
    */
   @VsoMethod
@@ -1353,6 +1448,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of network ddos attacks occurring.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgNetworkDosAttacks set the avgNetworkDosAttacks.
    */
   @VsoMethod
@@ -1363,6 +1459,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate of new client connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgNewEstablishedConns
    */
   @VsoMethod
@@ -1373,6 +1470,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate of new client connections per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgNewEstablishedConns set the avgNewEstablishedConns.
    */
   @VsoMethod
@@ -1383,6 +1481,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate of dropped packets per second due to policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPktsPolicyDrops
    */
   @VsoMethod
@@ -1393,6 +1492,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate of dropped packets per second due to policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPktsPolicyDrops set the avgPktsPolicyDrops.
    */
   @VsoMethod
@@ -1404,6 +1504,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate of total connections dropped due to vs policy per second.
    * It includes drops due to rate limits, security policy drops, connection limits etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPolicyDrops
    */
   @VsoMethod
@@ -1415,6 +1516,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate of total connections dropped due to vs policy per second.
    * It includes drops due to rate limits, security policy drops, connection limits etc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPolicyDrops set the avgPolicyDrops.
    */
   @VsoMethod
@@ -1425,6 +1527,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes received per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxBytes
    */
   @VsoMethod
@@ -1435,6 +1538,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes received per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxBytes set the avgRxBytes.
    */
   @VsoMethod
@@ -1445,6 +1549,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of received bytes dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxBytesDropped
    */
   @VsoMethod
@@ -1455,6 +1560,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of received bytes dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxBytesDropped set the avgRxBytesDropped.
    */
   @VsoMethod
@@ -1465,6 +1571,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of packets received per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxPkts
    */
   @VsoMethod
@@ -1475,6 +1582,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of packets received per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxPkts set the avgRxPkts.
    */
   @VsoMethod
@@ -1485,6 +1593,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of received packets dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRxPktsDropped
    */
   @VsoMethod
@@ -1495,6 +1604,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of received packets dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRxPktsDropped set the avgRxPktsDropped.
    */
   @VsoMethod
@@ -1505,6 +1615,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total syncs sent across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSyns
    */
   @VsoMethod
@@ -1515,6 +1626,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total syncs sent across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSyns set the avgSyns.
    */
   @VsoMethod
@@ -1525,6 +1637,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Averaged rate bytes dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTotalConnections
    */
   @VsoMethod
@@ -1535,6 +1648,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Averaged rate bytes dropped per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTotalConnections set the avgTotalConnections.
    */
   @VsoMethod
@@ -1545,6 +1659,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average network round trip time between client and virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTotalRtt
    */
   @VsoMethod
@@ -1555,6 +1670,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average network round trip time between client and virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTotalRtt set the avgTotalRtt.
    */
   @VsoMethod
@@ -1565,6 +1681,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of bytes transmitted per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTxBytes
    */
   @VsoMethod
@@ -1575,6 +1692,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of bytes transmitted per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTxBytes set the avgTxBytes.
    */
   @VsoMethod
@@ -1585,6 +1703,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of packets transmitted per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTxPkts
    */
   @VsoMethod
@@ -1595,6 +1714,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of packets transmitted per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTxPkts set the avgTxPkts.
    */
   @VsoMethod
@@ -1605,6 +1725,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Max number of ses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNumActiveSe
    */
   @VsoMethod
@@ -1615,6 +1736,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Max number of ses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNumActiveSe set the maxNumActiveSe.
    */
   @VsoMethod
@@ -1625,6 +1747,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Max number of open connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxOpenConns
    */
   @VsoMethod
@@ -1635,6 +1758,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Max number of open connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxOpenConns set the maxOpenConns.
    */
   @VsoMethod
@@ -1645,6 +1769,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of received bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRxBytesAbsolute
    */
   @VsoMethod
@@ -1655,6 +1780,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of received bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRxBytesAbsolute set the maxRxBytesAbsolute.
    */
   @VsoMethod
@@ -1665,6 +1791,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of received frames.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRxPktsAbsolute
    */
   @VsoMethod
@@ -1675,6 +1802,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of received frames.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRxPktsAbsolute set the maxRxPktsAbsolute.
    */
   @VsoMethod
@@ -1685,6 +1813,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of transmitted bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxTxBytesAbsolute
    */
   @VsoMethod
@@ -1695,6 +1824,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of transmitted bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxTxBytesAbsolute set the maxTxBytesAbsolute.
    */
   @VsoMethod
@@ -1705,6 +1835,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of transmitted frames.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxTxPktsAbsolute
    */
   @VsoMethod
@@ -1715,6 +1846,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of transmitted frames.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxTxPktsAbsolute set the maxTxPktsAbsolute.
    */
   @VsoMethod
@@ -1725,6 +1857,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property node_obj_id of obj type vserverl4metricsobj field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeObjId
    */
   @VsoMethod
@@ -1735,6 +1868,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property node_obj_id of obj type vserverl4metricsobj field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeObjId set the nodeObjId.
    */
   @VsoMethod
@@ -1745,6 +1879,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of l7 requests owing to dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctApplicationDosAttacks
    */
   @VsoMethod
@@ -1755,6 +1890,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of l7 requests owing to dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctApplicationDosAttacks set the pctApplicationDosAttacks.
    */
   @VsoMethod
@@ -1765,6 +1901,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percent of l4 connection dropped and lossy for virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctConnectionErrors
    */
   @VsoMethod
@@ -1775,6 +1912,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percent of l4 connection dropped and lossy for virtual service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctConnectionErrors set the pctConnectionErrors.
    */
   @VsoMethod
@@ -1785,6 +1923,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of l4 connections owing to dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctConnectionsDosAttacks
    */
   @VsoMethod
@@ -1795,6 +1934,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of l4 connections owing to dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctConnectionsDosAttacks set the pctConnectionsDosAttacks.
    */
   @VsoMethod
@@ -1805,6 +1945,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dos bandwidth percentage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctDosBandwidth
    */
   @VsoMethod
@@ -1815,6 +1956,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dos bandwidth percentage.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctDosBandwidth set the pctDosBandwidth.
    */
   @VsoMethod
@@ -1825,6 +1967,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percentage of received bytes as part of a dos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctDosRxBytes
    */
   @VsoMethod
@@ -1835,6 +1978,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percentage of received bytes as part of a dos attack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctDosRxBytes set the pctDosRxBytes.
    */
   @VsoMethod
@@ -1845,6 +1989,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Deprecated.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctNetworkDosAttacks
    */
   @VsoMethod
@@ -1855,6 +2000,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Deprecated.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctNetworkDosAttacks set the pctNetworkDosAttacks.
    */
   @VsoMethod
@@ -1865,6 +2011,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of packets owing to dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctPktsDosAttacks
    */
   @VsoMethod
@@ -1875,6 +2022,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of packets owing to dos.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctPktsDosAttacks set the pctPktsDosAttacks.
    */
   @VsoMethod
@@ -1885,6 +2033,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fraction of l4 requests dropped owing to policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctPolicyDrops
    */
   @VsoMethod
@@ -1895,6 +2044,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fraction of l4 requests dropped owing to policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctPolicyDrops set the pctPolicyDrops.
    */
   @VsoMethod
@@ -1905,6 +2055,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total duration across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnDuration
    */
   @VsoMethod
@@ -1915,6 +2066,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total duration across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnDuration set the sumConnDuration.
    */
   @VsoMethod
@@ -1925,6 +2077,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of connection dropped due to vserver connection limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionDroppedUserLimit
    */
   @VsoMethod
@@ -1935,6 +2088,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of connection dropped due to vserver connection limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionDroppedUserLimit set the sumConnectionDroppedUserLimit.
    */
   @VsoMethod
@@ -1945,6 +2099,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of client network connections that were lossy or dropped.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionErrors
    */
   @VsoMethod
@@ -1955,6 +2110,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of client network connections that were lossy or dropped.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionErrors set the sumConnectionErrors.
    */
   @VsoMethod
@@ -1965,6 +2121,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections dropped including failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionsDropped
    */
   @VsoMethod
@@ -1975,6 +2132,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections dropped including failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionsDropped set the sumConnectionsDropped.
    */
   @VsoMethod
@@ -1985,6 +2143,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total duplicate ack retransmits across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumDupAckRetransmits
    */
   @VsoMethod
@@ -1995,6 +2154,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total duplicate ack retransmits across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumDupAckRetransmits set the sumDupAckRetransmits.
    */
   @VsoMethod
@@ -2006,6 +2166,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sum of end to end network rtt experienced by end clients.
    * Higher value would increase response times experienced by clients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumEndToEndRtt
    */
   @VsoMethod
@@ -2017,6 +2178,7 @@ public class VserverL4MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Sum of end to end network rtt experienced by end clients.
    * Higher value would increase response times experienced by clients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumEndToEndRtt set the sumEndToEndRtt.
    */
   @VsoMethod
@@ -2027,6 +2189,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections that have rtt values from 0 to rtt threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumEndToEndRttBucket1
    */
   @VsoMethod
@@ -2037,6 +2200,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections that have rtt values from 0 to rtt threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumEndToEndRttBucket1 set the sumEndToEndRttBucket1.
    */
   @VsoMethod
@@ -2047,6 +2211,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections that have rtt values rtt threshold and above.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumEndToEndRttBucket2
    */
   @VsoMethod
@@ -2057,6 +2222,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections that have rtt values rtt threshold and above.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumEndToEndRttBucket2 set the sumEndToEndRttBucket2.
    */
   @VsoMethod
@@ -2067,6 +2233,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of finished connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumFinishedConns
    */
   @VsoMethod
@@ -2077,6 +2244,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of finished connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumFinishedConns set the sumFinishedConns.
    */
   @VsoMethod
@@ -2087,6 +2255,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connections that were lossy due to high packet retransmissions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumLossyConnections
    */
   @VsoMethod
@@ -2097,6 +2266,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connections that were lossy due to high packet retransmissions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumLossyConnections set the sumLossyConnections.
    */
   @VsoMethod
@@ -2107,6 +2277,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total requests that were lossy due to high packet retransmissions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumLossyReq
    */
   @VsoMethod
@@ -2117,6 +2288,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total requests that were lossy due to high packet retransmissions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumLossyReq set the sumLossyReq.
    */
   @VsoMethod
@@ -2127,6 +2299,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total out of order packets across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumOutOfOrders
    */
   @VsoMethod
@@ -2137,6 +2310,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total out of order packets across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumOutOfOrders set the sumOutOfOrders.
    */
   @VsoMethod
@@ -2147,6 +2321,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of packets dropped due to vserver bandwidth limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPacketDroppedUserBandwidthLimit
    */
   @VsoMethod
@@ -2157,6 +2332,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of packets dropped due to vserver bandwidth limit.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPacketDroppedUserBandwidthLimit set the sumPacketDroppedUserBandwidthLimit.
    */
   @VsoMethod
@@ -2167,6 +2343,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number connections used for rtt.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumRttValidConnections
    */
   @VsoMethod
@@ -2177,6 +2354,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number connections used for rtt.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumRttValidConnections set the sumRttValidConnections.
    */
   @VsoMethod
@@ -2187,6 +2365,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total sack retransmits across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumSackRetransmits
    */
   @VsoMethod
@@ -2197,6 +2376,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total sack retransmits across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumSackRetransmits set the sumSackRetransmits.
    */
   @VsoMethod
@@ -2207,6 +2387,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of connections with server flow control condition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumServerFlowControl
    */
   @VsoMethod
@@ -2217,6 +2398,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of connections with server flow control condition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumServerFlowControl set the sumServerFlowControl.
    */
   @VsoMethod
@@ -2227,6 +2409,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total connection timeouts in the interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumTimeoutRetransmits
    */
   @VsoMethod
@@ -2237,6 +2420,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total connection timeouts in the interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumTimeoutRetransmits set the sumTimeoutRetransmits.
    */
   @VsoMethod
@@ -2247,6 +2431,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of zero window size events across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumZeroWindowSizeEvents
    */
   @VsoMethod
@@ -2257,6 +2442,7 @@ public class VserverL4MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of zero window size events across all connections.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumZeroWindowSizeEvents set the sumZeroWindowSizeEvents.
    */
   @VsoMethod

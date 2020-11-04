@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesAccount extends AviRestResource {
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("users")
-  @JsonInclude(Include.NON_NULL)
-  private List<ALBServicesAccountUser> users = null;
+    @JsonProperty("users")
+    @JsonInclude(Include.NON_NULL)
+    private List<ALBServicesAccountUser> users = null;
 
 
 
@@ -42,6 +42,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Id of an account in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the setter method to the attribute.
    * Id of an account in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Account to which the customer portal user belongs.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the setter method to the attribute.
    * Account to which the customer portal user belongs.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about users within the account in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return users
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the setter method. this will set the users
    * Information about users within the account in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return users
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class ALBServicesAccount extends AviRestResource {
    * This is the setter method this will set the users
    * Information about users within the account in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return users
    */
   @VsoMethod

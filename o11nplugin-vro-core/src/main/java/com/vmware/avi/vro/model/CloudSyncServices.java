@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudSyncServices extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("se_vm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seVmUuid = null;
+    @JsonProperty("se_vm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seVmUuid = null;
 
-  @JsonProperty("vips")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> vips = null;
+    @JsonProperty("vips")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> vips = null;
 
-  @JsonProperty("vtype")
-  @JsonInclude(Include.NON_NULL)
-  private String vtype = null;
+    @JsonProperty("vtype")
+    @JsonInclude(Include.NON_NULL)
+    private String vtype = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type cloudsyncservices field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class CloudSyncServices extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type cloudsyncservices field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class CloudSyncServices extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_string of obj type cloudsyncservices field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class CloudSyncServices extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_string of obj type cloudsyncservices field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class CloudSyncServices extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVmUuid
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class CloudSyncServices extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVmUuid set the seVmUuid.
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class CloudSyncServices extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of vips.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vips
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class CloudSyncServices extends AviRestResource {
    * This is the setter method. this will set the vips
    * List of vips.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vips
    */
   @VsoMethod
@@ -132,6 +140,7 @@ public class CloudSyncServices extends AviRestResource {
    * This is the setter method this will set the vips
    * List of vips.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vips
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class CloudSyncServices extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vtype
    */
   @VsoMethod
@@ -159,6 +169,7 @@ public class CloudSyncServices extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vtype set the vtype.
    */
   @VsoMethod

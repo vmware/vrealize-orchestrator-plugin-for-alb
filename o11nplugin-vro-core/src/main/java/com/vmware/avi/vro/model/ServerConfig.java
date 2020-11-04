@@ -27,51 +27,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServerConfig extends AviRestResource {
-  @JsonProperty("def_port")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean defPort = null;
+    @JsonProperty("def_port")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean defPort = null;
 
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddr = null;
+    @JsonProperty("ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddr = null;
 
-  @JsonProperty("is_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isEnabled = null;
+    @JsonProperty("is_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isEnabled = null;
 
-  @JsonProperty("last_state")
-  @JsonInclude(Include.NON_NULL)
-  private String lastState = "OPER_UNAVAIL";
+    @JsonProperty("last_state")
+    @JsonInclude(Include.NON_NULL)
+    private String lastState = "OPER_UNAVAIL";
 
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private GeoLocation location = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private GeoLocation location = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("propogate_state")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean propogateState = null;
+    @JsonProperty("propogate_state")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean propogateState = null;
 
-  @JsonProperty("timer_exists")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean timerExists = false;
+    @JsonProperty("timer_exists")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean timerExists = false;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property def_port of obj type serverconfig field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return defPort
    */
   @VsoMethod
@@ -82,6 +83,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property def_port of obj type serverconfig field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param defPort set the defPort.
    */
   @VsoMethod
@@ -92,6 +94,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hostname of obj type serverconfig field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -102,6 +105,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property hostname of obj type serverconfig field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -112,6 +116,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_addr of obj type serverconfig field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddr
    */
   @VsoMethod
@@ -122,6 +127,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip_addr of obj type serverconfig field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddr set the ipAddr.
    */
   @VsoMethod
@@ -132,6 +138,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property is_enabled of obj type serverconfig field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isEnabled
    */
   @VsoMethod
@@ -142,6 +149,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property is_enabled of obj type serverconfig field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isEnabled set the isEnabled.
    */
   @VsoMethod
@@ -154,7 +162,7 @@ public class ServerConfig extends AviRestResource {
    * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
    * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
    * OPER_FAILED, OPER_UNAVAIL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OPER_UNAVAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
    * @return lastState
    */
   @VsoMethod
@@ -167,7 +175,7 @@ public class ServerConfig extends AviRestResource {
    * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
    * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
    * OPER_FAILED, OPER_UNAVAIL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OPER_UNAVAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
    * @param lastState set the lastState.
    */
   @VsoMethod
@@ -178,6 +186,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Virtualservice member in case this server is a member of gs group, and geo location available.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -188,6 +197,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Virtualservice member in case this server is a member of gs group, and geo location available.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -198,6 +208,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oper_status of obj type serverconfig field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -208,6 +219,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oper_status of obj type serverconfig field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -218,6 +230,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property port of obj type serverconfig field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -228,6 +241,7 @@ public class ServerConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property port of obj type serverconfig field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -239,6 +253,7 @@ public class ServerConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If this is set, propogate this server state to other ses for this vs.
    * Applicable to eastwest vs and gs hm-sharding.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return propogateState
    */
   @VsoMethod
@@ -250,6 +265,7 @@ public class ServerConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * If this is set, propogate this server state to other ses for this vs.
    * Applicable to eastwest vs and gs hm-sharding.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param propogateState set the propogateState.
    */
   @VsoMethod

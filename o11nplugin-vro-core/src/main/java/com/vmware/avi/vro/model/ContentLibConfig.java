@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ContentLibConfig extends AviRestResource {
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -38,6 +38,7 @@ public class ContentLibConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Content library id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class ContentLibConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Content library id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class ContentLibConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Content library name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class ContentLibConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Content library name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureInfo extends AviRestResource {
-  @JsonProperty("availability_set")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilitySet = null;
+    @JsonProperty("availability_set")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilitySet = null;
 
-  @JsonProperty("fault_domain")
-  @JsonInclude(Include.NON_NULL)
-  private String faultDomain = null;
+    @JsonProperty("fault_domain")
+    @JsonInclude(Include.NON_NULL)
+    private String faultDomain = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("resource_group")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceGroup = null;
+    @JsonProperty("resource_group")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceGroup = null;
 
-  @JsonProperty("subnet_id")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetId = null;
+    @JsonProperty("subnet_id")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetId = null;
 
-  @JsonProperty("update_domain")
-  @JsonInclude(Include.NON_NULL)
-  private String updateDomain = null;
+    @JsonProperty("update_domain")
+    @JsonInclude(Include.NON_NULL)
+    private String updateDomain = null;
 
-  @JsonProperty("vm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vmUuid = null;
+    @JsonProperty("vm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vmUuid = null;
 
-  @JsonProperty("vnic_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vnicId = null;
+    @JsonProperty("vnic_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vnicId = null;
 
 
 
@@ -62,6 +62,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the availability set of which the vm is a part of.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilitySet
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the availability set of which the vm is a part of.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilitySet set the availabilitySet.
    */
   @VsoMethod
@@ -84,6 +86,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fault domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faultDomain
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Fault domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param faultDomain set the faultDomain.
    */
   @VsoMethod
@@ -106,6 +110,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the azure vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -117,6 +122,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the azure vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -128,6 +134,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Resource group name for the vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceGroup
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Resource group name for the vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceGroup set the resourceGroup.
    */
   @VsoMethod
@@ -150,6 +158,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet id of the primary nic of the vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetId
    */
   @VsoMethod
@@ -161,6 +170,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet id of the primary nic of the vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetId set the subnetId.
    */
   @VsoMethod
@@ -172,6 +182,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Update domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return updateDomain
    */
   @VsoMethod
@@ -183,6 +194,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Update domain within the availability set the vm is a part of.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param updateDomain set the updateDomain.
    */
   @VsoMethod
@@ -194,6 +206,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure vm uuid for the se vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmUuid
    */
   @VsoMethod
@@ -205,6 +218,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure vm uuid for the se vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmUuid set the vmUuid.
    */
   @VsoMethod
@@ -216,6 +230,7 @@ public class AzureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vnic id of the primary nic of the vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicId
    */
   @VsoMethod
@@ -227,6 +242,7 @@ public class AzureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Vnic id of the primary nic of the vm.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnicId set the vnicId.
    */
   @VsoMethod

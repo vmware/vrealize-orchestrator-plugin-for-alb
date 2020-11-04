@@ -3,38 +3,38 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="525ce7d4-05ae-4955-bb14-134d2495d60d" version="0.0.4"
+	id="525ce7d4-05ae-4955-bb14-134d2495d60d" version="0.0.6"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Create health monitor]]></display-name>
+	<display-name><![CDATA[Create Health Monitor]]></display-name>
 	<position y="50.0" x="100.0"></position>
 	<input>
 		<param name="controller" type="string">
-			<description><![CDATA[Controller IP]]></description>
+			<description><![CDATA[controller]]></description>
 		</param>
-		<param name="hm_type" type="string">
-			<description><![CDATA[Health monitor type ]]></description>
+		<param name="health_monitor_type" type="string">
+			<description><![CDATA[health_monitor_type]]></description>
 		</param>
-		<param name="hm_description" type="string">
-			<description><![CDATA[Health monitor description]]></description>
+		<param name="health_monitor_description" type="string">
+			<description><![CDATA[health_monitor_description]]></description>
 		</param>
 		<param name="command_code" type="string">
-			<description><![CDATA[Command code for  external type healthmonitor]]></description>
+			<description><![CDATA[command_code]]></description>
 		</param>
 		<param name="udp_request" type="string">
-			<description><![CDATA[Command code for  UDP type healthmonitor]]></description>
+			<description><![CDATA[udp_request]]></description>
 		</param>
 		<param name="dns_query_name" type="string">
-			<description><![CDATA[Command code for DNS type healthmonitor]]></description>
+			<description><![CDATA[dns_query_name]]></description>
 		</param>
 		<param name="http_response_code" type="Array/string">
-			<description><![CDATA[Respose code for HTTP type healthmonitor]]></description>
+			<description><![CDATA[http_response_code]]></description>
 		</param>
 		<param name="https_response_code" type="Array/string">
-			<description><![CDATA[Respose code for HTTPS type healthmonitor]]></description>
+			<description><![CDATA[https_response_code]]></description>
 		</param>
-		<param name="hm_name" type="string">
-			<description><![CDATA[Health monitor name]]></description>
+		<param name="health_monitor_name" type="string">
+			<description><![CDATA[health_monitor_name]]></description>
 		</param>
 	</input>
 	<attrib name="aviVroClient" type="Avi:AviVroClient"
@@ -67,11 +67,12 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
-				export-name="hm_type"></bind>
+				export-name="health_monitor_type"></bind>
 			<bind name="hm_type" type="string" explicitly-not-bound="true"></bind>
-			<bind name="hm_name" type="string" export-name="hm_name"></bind>
+			<bind name="hm_name" type="string"
+				export-name="health_monitor_name"></bind>
 			<bind name="hm_description" type="string"
-				export-name="hm_description"></bind>
+				export-name="health_monitor_description"></bind>
 			<bind name="is_federated" type="boolean"
 				explicitly-not-bound="true"></bind>
 			<bind name="monitor_port" type="number"
@@ -124,47 +125,47 @@ System.log("Health monitor created successfully")]]></script>
 		<p-step>
 			<title><![CDATA[Controller]]></title>
 			<p-param name="controller">
-				<desc><![CDATA[Controller IP]]></desc>
+				<desc><![CDATA[controller]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Health Monitor details]]></title>
-			<p-param name="hm_type">
-				<desc><![CDATA[Health monitor type]]></desc>
+			<p-param name="health_monitor_type">
+				<desc><![CDATA[health_monitor_type]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#TCP#;#string#HTTPS#;#string#External#;#string#UDP#;#string#DNS#;#string#HTTP#;#string#Ping#}#]]></p-qual>
 			</p-param>
-			<p-param name="hm_name">
-				<desc><![CDATA[Health monitor name]]></desc>
+			<p-param name="health_monitor_name">
+				<desc><![CDATA[health_monitor_name]]></desc>
 			</p-param>
-			<p-param name="hm_description">
-				<desc><![CDATA[Health monitor description]]></desc>
+			<p-param name="health_monitor_description">
+				<desc><![CDATA[health_monitor_description]]></desc>
 			</p-param>
 			<p-param name="command_code">
-				<desc><![CDATA[Command code for  external type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#hm_type=="External"]]></p-qual>
+				<desc><![CDATA[command_code]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="External"]]></p-qual>
 			</p-param>
 			<p-param name="udp_request">
-				<desc><![CDATA[Command code for  UDP type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#hm_type=="UDP"]]></p-qual>
+				<desc><![CDATA[udp_request]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="UDP"]]></p-qual>
 			</p-param>
 			<p-param name="dns_query_name">
-				<desc><![CDATA[Command code for DNS type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#hm_type=="DNS"]]></p-qual>
+				<desc><![CDATA[dns_query_name]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="DNS"]]></p-qual>
 			</p-param>
 			<p-param name="http_response_code">
-				<desc><![CDATA[Respose code for HTTP type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#hm_type=="HTTP"]]></p-qual>
+				<desc><![CDATA[http_response_code]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="HTTP"]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
+					type="Array/Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 			<p-param name="https_response_code">
-				<desc><![CDATA[Respose code for HTTPS type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#hm_type=="HTTPS"]]></p-qual>
+				<desc><![CDATA[https_response_code]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="HTTPS"]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
+					type="Array/Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 		</p-step>
 	</presentation>

@@ -24,39 +24,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TrafficCloneProfile extends AviRestResource {
-  @JsonProperty("clone_servers")
-  @JsonInclude(Include.NON_NULL)
-  private List<CloneServer> cloneServers = null;
+    @JsonProperty("clone_servers")
+    @JsonInclude(Include.NON_NULL)
+    private List<CloneServer> cloneServers = null;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("preserve_client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean preserveClientIp = false;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("preserve_client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean preserveClientIp = false;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
   @VsoMethod
@@ -67,6 +72,7 @@ public class TrafficCloneProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the cloneServers
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
   @VsoMethod
@@ -77,6 +83,7 @@ public class TrafficCloneProfile extends AviRestResource {
   /**
    * This is the setter method this will set the cloneServers
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloneServers
    */
   @VsoMethod
@@ -93,6 +100,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -104,6 +112,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -113,8 +122,53 @@ public class TrafficCloneProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public TrafficCloneProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name for the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -126,6 +180,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name for the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -161,6 +216,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -172,6 +228,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -202,6 +259,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -213,6 +271,7 @@ public class TrafficCloneProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the traffic clone profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -238,6 +297,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objTrafficCloneProfile.name)&&
   Objects.equals(this.cloneServers, objTrafficCloneProfile.cloneServers)&&
   Objects.equals(this.preserveClientIp, objTrafficCloneProfile.preserveClientIp)&&
+  Objects.equals(this.labels, objTrafficCloneProfile.labels)&&
   Objects.equals(this.tenantRef, objTrafficCloneProfile.tenantRef)&&
   Objects.equals(this.cloudRef, objTrafficCloneProfile.cloudRef);
 }
@@ -248,6 +308,7 @@ public String toString() {
   sb.append("class TrafficCloneProfile {\n");
       sb.append("    cloneServers: ").append(toIndentedString(cloneServers)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

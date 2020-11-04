@@ -24,25 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigUserAuthrzByRule extends AviRestResource {
-  @JsonProperty("policies")
-  @JsonInclude(Include.NON_NULL)
-  private String policies = null;
+    @JsonProperty("policies")
+    @JsonInclude(Include.NON_NULL)
+    private String policies = null;
 
-  @JsonProperty("roles")
-  @JsonInclude(Include.NON_NULL)
-  private String roles = null;
+    @JsonProperty("roles")
+    @JsonInclude(Include.NON_NULL)
+    private String roles = null;
 
-  @JsonProperty("rule")
-  @JsonInclude(Include.NON_NULL)
-  private String rule = null;
+    @JsonProperty("rule")
+    @JsonInclude(Include.NON_NULL)
+    private String rule = null;
 
-  @JsonProperty("tenants")
-  @JsonInclude(Include.NON_NULL)
-  private String tenants = null;
+    @JsonProperty("tenants")
+    @JsonInclude(Include.NON_NULL)
+    private String tenants = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
+
+    @JsonProperty("userprofile")
+    @JsonInclude(Include.NON_NULL)
+    private String userprofile = null;
 
 
 
@@ -50,6 +54,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return policies
    */
   @VsoMethod
@@ -61,6 +66,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Comma separated list of policies assigned to the user.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param policies set the policies.
    */
   @VsoMethod
@@ -71,6 +77,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned roles.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roles
    */
   @VsoMethod
@@ -81,6 +88,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned roles.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param roles set the roles.
    */
   @VsoMethod
@@ -91,6 +99,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Matching rule string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rule
    */
   @VsoMethod
@@ -101,6 +110,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Matching rule string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rule set the rule.
    */
   @VsoMethod
@@ -111,6 +121,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Assigned tenants.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenants
    */
   @VsoMethod
@@ -121,6 +132,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Assigned tenants.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenants set the tenants.
    */
   @VsoMethod
@@ -131,6 +143,7 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -141,11 +154,36 @@ public class ConfigUserAuthrzByRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod
   public void setUser(String  user) {
     this.user = user;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Assigned user account profile name.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return userprofile
+   */
+  @VsoMethod
+  public String getUserprofile() {
+    return userprofile;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Assigned user account profile name.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param userprofile set the userprofile.
+   */
+  @VsoMethod
+  public void setUserprofile(String  userprofile) {
+    this.userprofile = userprofile;
   }
 
 
@@ -163,7 +201,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.rule, objConfigUserAuthrzByRule.rule)&&
   Objects.equals(this.roles, objConfigUserAuthrzByRule.roles)&&
   Objects.equals(this.tenants, objConfigUserAuthrzByRule.tenants)&&
-  Objects.equals(this.policies, objConfigUserAuthrzByRule.policies);
+  Objects.equals(this.policies, objConfigUserAuthrzByRule.policies)&&
+  Objects.equals(this.userprofile, objConfigUserAuthrzByRule.userprofile);
 }
 
 @Override
@@ -175,6 +214,7 @@ public String toString() {
         sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
         sb.append("    tenants: ").append(toIndentedString(tenants)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
+        sb.append("    userprofile: ").append(toIndentedString(userprofile)).append("\n");
       sb.append("}");
   return sb.toString();
 }

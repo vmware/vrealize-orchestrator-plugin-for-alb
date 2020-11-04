@@ -26,19 +26,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DosRateLimitProfile extends AviRestResource {
-  @JsonProperty("dos_profile")
-  @JsonInclude(Include.NON_NULL)
-  private DosThresholdProfile dosProfile = null;
+    @JsonProperty("dos_profile")
+    @JsonInclude(Include.NON_NULL)
+    private DosThresholdProfile dosProfile = null;
 
-  @JsonProperty("rl_profile")
-  @JsonInclude(Include.NON_NULL)
-  private RateLimiterProfile rlProfile = null;
+    @JsonProperty("rl_profile")
+    @JsonInclude(Include.NON_NULL)
+    private RateLimiterProfile rlProfile = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Profile for dos attack detection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dosProfile
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class DosRateLimitProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Profile for dos attack detection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dosProfile set the dosProfile.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class DosRateLimitProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Profile for connections/requests rate limiting.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlProfile
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class DosRateLimitProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Profile for connections/requests rate limiting.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlProfile set the rlProfile.
    */
   @VsoMethod

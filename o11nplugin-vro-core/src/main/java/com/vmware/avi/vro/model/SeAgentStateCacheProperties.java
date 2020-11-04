@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeAgentStateCacheProperties extends AviRestResource {
-  @JsonProperty("sc_batch_buffer_flush_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scBatchBufferFlushLimit = 300;
+    @JsonProperty("sc_batch_buffer_flush_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scBatchBufferFlushLimit = 300;
 
-  @JsonProperty("sc_shard_cleanup_max_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scShardCleanupMaxTime = 900;
+    @JsonProperty("sc_shard_cleanup_max_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scShardCleanupMaxTime = 900;
 
-  @JsonProperty("sc_state_ring_batch_dequeue_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scStateRingBatchDequeueLimit = 300;
+    @JsonProperty("sc_state_ring_batch_dequeue_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scStateRingBatchDequeueLimit = 300;
 
-  @JsonProperty("sc_states_flush_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scStatesFlushInterval = 100;
+    @JsonProperty("sc_states_flush_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scStatesFlushInterval = 100;
 
-  @JsonProperty("sc_stream_check_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scStreamCheckInterval = 5000;
+    @JsonProperty("sc_stream_check_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scStreamCheckInterval = 5000;
 
-  @JsonProperty("sc_thread_q_batch_dequeue_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scThreadQBatchDequeueLimit = 100;
+    @JsonProperty("sc_thread_q_batch_dequeue_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scThreadQBatchDequeueLimit = 100;
 
-  @JsonProperty("sc_thread_q_max_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scThreadQMaxSize = 4096;
+    @JsonProperty("sc_thread_q_max_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scThreadQMaxSize = 4096;
 
-  @JsonProperty("sc_thread_sleep_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scThreadSleepInterval = 10;
+    @JsonProperty("sc_thread_sleep_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scThreadSleepInterval = 10;
 
 
 
@@ -89,6 +89,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max time to wait by the statecache thread before cleaning up connection to the controller shard.
    * Allowed values are 1-1000000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @return scShardCleanupMaxTime
    */
@@ -102,6 +103,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Max time to wait by the statecache thread before cleaning up connection to the controller shard.
    * Allowed values are 1-1000000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @param scShardCleanupMaxTime set the scShardCleanupMaxTime.
    */
@@ -141,6 +143,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Interval for update of operational states to controller.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return scStatesFlushInterval
    */
@@ -154,6 +157,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Interval for update of operational states to controller.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param scStatesFlushInterval set the scStatesFlushInterval.
    */
@@ -167,6 +171,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Interval for checking health of grpc streams to statecache_mgr.
    * Allowed values are 1-90000.
    * Field introduced in 18.2.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return scStreamCheckInterval
    */
@@ -180,6 +185,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Interval for checking health of grpc streams to statecache_mgr.
    * Allowed values are 1-90000.
    * Field introduced in 18.2.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param scStreamCheckInterval set the scStreamCheckInterval.
    */
@@ -245,6 +251,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Interval for grpc thread to sleep between doing work.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return scThreadSleepInterval
    */
@@ -258,6 +265,7 @@ public class SeAgentStateCacheProperties extends AviRestResource {
    * Interval for grpc thread to sleep between doing work.
    * Allowed values are 1-10000.
    * Field introduced in 18.2.5.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param scThreadSleepInterval set the scThreadSleepInterval.
    */

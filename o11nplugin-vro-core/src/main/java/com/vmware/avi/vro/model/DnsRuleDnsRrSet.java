@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleDnsRrSet extends AviRestResource {
-  @JsonProperty("resource_record_set")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRrSet resourceRecordSet = null;
+    @JsonProperty("resource_record_set")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRrSet resourceRecordSet = null;
 
-  @JsonProperty("section")
-  @JsonInclude(Include.NON_NULL)
-  private String section = "DNS_MESSAGE_SECTION_ANSWER";
+    @JsonProperty("section")
+    @JsonInclude(Include.NON_NULL)
+    private String section = "DNS_MESSAGE_SECTION_ANSWER";
 
 
 
@@ -39,6 +39,7 @@ public class DnsRuleDnsRrSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resource record set - (records in the resource record set share the dns domain name, type, and class).
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRecordSet
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class DnsRuleDnsRrSet extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns resource record set - (records in the resource record set share the dns domain name, type, and class).
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceRecordSet set the resourceRecordSet.
    */
   @VsoMethod
@@ -62,7 +64,7 @@ public class DnsRuleDnsRrSet extends AviRestResource {
    * Dns message section for the resource record set.
    * Enum options - DNS_MESSAGE_SECTION_QUESTION, DNS_MESSAGE_SECTION_ANSWER, DNS_MESSAGE_SECTION_AUTHORITY, DNS_MESSAGE_SECTION_ADDITIONAL.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_MESSAGE_SECTION_ANSWER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_MESSAGE_SECTION_ANSWER".
    * @return section
    */
   @VsoMethod
@@ -75,7 +77,7 @@ public class DnsRuleDnsRrSet extends AviRestResource {
    * Dns message section for the resource record set.
    * Enum options - DNS_MESSAGE_SECTION_QUESTION, DNS_MESSAGE_SECTION_ANSWER, DNS_MESSAGE_SECTION_AUTHORITY, DNS_MESSAGE_SECTION_ADDITIONAL.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_MESSAGE_SECTION_ANSWER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_MESSAGE_SECTION_ANSWER".
    * @param section set the section.
    */
   @VsoMethod

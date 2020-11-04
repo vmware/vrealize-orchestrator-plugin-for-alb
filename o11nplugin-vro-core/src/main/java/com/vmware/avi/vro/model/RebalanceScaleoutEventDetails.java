@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RebalanceScaleoutEventDetails extends AviRestResource {
-  @JsonProperty("scaleout_params")
-  @JsonInclude(Include.NON_NULL)
-  private VsScaleoutParams scaleoutParams = null;
+    @JsonProperty("scaleout_params")
+    @JsonInclude(Include.NON_NULL)
+    private VsScaleoutParams scaleoutParams = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property scaleout_params of obj type rebalancescaleouteventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutParams
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class RebalanceScaleoutEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property scaleout_params of obj type rebalancescaleouteventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleoutParams set the scaleoutParams.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class RebalanceScaleoutEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -68,6 +71,7 @@ public class RebalanceScaleoutEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

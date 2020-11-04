@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FailActionBackupPool extends AviRestResource {
-  @JsonProperty("backup_pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String backupPoolRef = null;
+    @JsonProperty("backup_pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String backupPoolRef = null;
 
 
 
@@ -34,6 +34,7 @@ public class FailActionBackupPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the uuid of the pool acting as backup pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupPoolRef
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class FailActionBackupPool extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the uuid of the pool acting as backup pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backupPoolRef set the backupPoolRef.
    */
   @VsoMethod

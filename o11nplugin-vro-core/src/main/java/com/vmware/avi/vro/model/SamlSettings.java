@@ -26,13 +26,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlSettings extends AviRestResource {
-  @JsonProperty("idp")
-  @JsonInclude(Include.NON_NULL)
-  private SamlIdentityProviderSettings idp = null;
+    @JsonProperty("idp")
+    @JsonInclude(Include.NON_NULL)
+    private SamlIdentityProviderSettings idp = null;
 
-  @JsonProperty("sp")
-  @JsonInclude(Include.NON_NULL)
-  private SamlServiceProviderSettings sp = null;
+    @JsonProperty("sp")
+    @JsonInclude(Include.NON_NULL)
+    private SamlServiceProviderSettings sp = null;
 
 
 
@@ -40,6 +40,7 @@ public class SamlSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure remote identity provider settings.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return idp
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class SamlSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure remote identity provider settings.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param idp set the idp.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class SamlSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure service provider settings for the controller.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sp
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class SamlSettings extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure service provider settings for the controller.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sp set the sp.
    */
   @VsoMethod

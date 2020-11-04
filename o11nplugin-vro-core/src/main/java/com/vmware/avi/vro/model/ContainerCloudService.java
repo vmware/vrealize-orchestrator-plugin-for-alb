@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ContainerCloudService extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("object")
-  @JsonInclude(Include.NON_NULL)
-  private String object = null;
+    @JsonProperty("object")
+    @JsonInclude(Include.NON_NULL)
+    private String object = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("service")
-  @JsonInclude(Include.NON_NULL)
-  private String service = null;
+    @JsonProperty("service")
+    @JsonInclude(Include.NON_NULL)
+    private String service = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property object of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return object
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property object of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param object set the object.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property service of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return service
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property service of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param service set the service.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class ContainerCloudService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status of obj type containercloudservice field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod

@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClusterCloudDetails extends AviRestResource {
-  @JsonProperty("azure_info")
-  @JsonInclude(Include.NON_NULL)
-  private AzureClusterInfo azureInfo = null;
+    @JsonProperty("azure_info")
+    @JsonInclude(Include.NON_NULL)
+    private AzureClusterInfo azureInfo = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -51,6 +51,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure info to configure cluster_vip on the controller.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureInfo
    */
   @VsoMethod
@@ -62,6 +63,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure info to configure cluster_vip on the controller.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureInfo set the azureInfo.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -82,6 +85,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class ClusterCloudDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -133,6 +139,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class ClusterCloudDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

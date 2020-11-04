@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SamlAttribute extends AviRestResource {
-  @JsonProperty("attr_name")
-  @JsonInclude(Include.NON_NULL)
-  private String attrName = null;
+    @JsonProperty("attr_name")
+    @JsonInclude(Include.NON_NULL)
+    private String attrName = null;
 
-  @JsonProperty("attr_values")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> attrValues = null;
+    @JsonProperty("attr_values")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> attrValues = null;
 
 
 
@@ -38,6 +38,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml attribute name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrName
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml attribute name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attrName set the attrName.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml attribute values.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrValues
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the setter method. this will set the attrValues
    * Saml attribute values.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrValues
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class SamlAttribute extends AviRestResource {
    * This is the setter method this will set the attrValues
    * Saml attribute values.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrValues
    */
   @VsoMethod

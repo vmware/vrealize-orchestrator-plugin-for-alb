@@ -24,19 +24,19 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CC_Properties extends AviRestResource {
-  @JsonProperty("rpc_poll_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rpcPollInterval = 60;
+    @JsonProperty("rpc_poll_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rpcPollInterval = 60;
 
-  @JsonProperty("rpc_queue_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rpcQueueSize = 100;
+    @JsonProperty("rpc_queue_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rpcQueueSize = 100;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property rpc_poll_interval of obj type cc_properties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return rpcPollInterval
    */
@@ -47,7 +47,7 @@ public class CC_Properties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property rpc_poll_interval of obj type cc_properties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param rpcPollInterval set the rpcPollInterval.
    */

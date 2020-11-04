@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraVcenterConnectivityStatus extends AviRestResource {
-  @JsonProperty("cloud")
-  @JsonInclude(Include.NON_NULL)
-  private String cloud = null;
+    @JsonProperty("cloud")
+    @JsonInclude(Include.NON_NULL)
+    private String cloud = null;
 
-  @JsonProperty("datacenter")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenter = null;
+    @JsonProperty("datacenter")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenter = null;
 
-  @JsonProperty("vcenter")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenter = null;
+    @JsonProperty("vcenter")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud of obj type vinfravcenterconnectivitystatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloud
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VinfraVcenterConnectivityStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud of obj type vinfravcenterconnectivitystatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloud set the cloud.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VinfraVcenterConnectivityStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datacenter of obj type vinfravcenterconnectivitystatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenter
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class VinfraVcenterConnectivityStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datacenter of obj type vinfravcenterconnectivitystatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenter set the datacenter.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class VinfraVcenterConnectivityStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter of obj type vinfravcenterconnectivitystatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenter
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class VinfraVcenterConnectivityStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter of obj type vinfravcenterconnectivitystatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenter set the vcenter.
    */
   @VsoMethod

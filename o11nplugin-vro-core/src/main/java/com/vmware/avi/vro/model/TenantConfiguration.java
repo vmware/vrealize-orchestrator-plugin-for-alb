@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TenantConfiguration extends AviRestResource {
-  @JsonProperty("se_in_provider_context")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seInProviderContext = true;
+    @JsonProperty("se_in_provider_context")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seInProviderContext = true;
 
-  @JsonProperty("tenant_access_to_provider_se")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tenantAccessToProviderSe = true;
+    @JsonProperty("tenant_access_to_provider_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tenantAccessToProviderSe = true;
 
-  @JsonProperty("tenant_vrf")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tenantVrf = false;
+    @JsonProperty("tenant_vrf")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tenantVrf = false;
 
 
 

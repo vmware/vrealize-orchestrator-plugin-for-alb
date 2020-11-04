@@ -26,23 +26,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SCServerStateInfo extends AviRestResource {
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("server_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr serverIp = null;
+    @JsonProperty("server_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr serverIp = null;
 
-  @JsonProperty("server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverPort = null;
+    @JsonProperty("server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverPort = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class SCServerStateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class SCServerStateInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class SCServerStateInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
   @VsoMethod
@@ -84,6 +88,7 @@ public class SCServerStateInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allowed values are 1-65535.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPort
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class SCServerStateInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Allowed values are 1-65535.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPort set the serverPort.
    */
   @VsoMethod

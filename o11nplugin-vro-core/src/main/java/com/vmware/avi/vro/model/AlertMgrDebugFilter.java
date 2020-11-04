@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertMgrDebugFilter extends AviRestResource {
-  @JsonProperty("alert_objid")
-  @JsonInclude(Include.NON_NULL)
-  private String alertObjid = null;
+    @JsonProperty("alert_objid")
+    @JsonInclude(Include.NON_NULL)
+    private String alertObjid = null;
 
-  @JsonProperty("alert_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String alertUuid = null;
+    @JsonProperty("alert_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String alertUuid = null;
 
-  @JsonProperty("cfg_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cfgUuid = null;
+    @JsonProperty("cfg_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cfgUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for entity uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alertObjid
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for entity uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param alertObjid set the alertObjid.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for an alert id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alertUuid
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for an alert id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param alertUuid set the alertUuid.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Filter debugs for an alert config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cfgUuid
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class AlertMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Filter debugs for an alert config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cfgUuid set the cfgUuid.
    */
   @VsoMethod

@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AppHdr extends AviRestResource {
-  @JsonProperty("hdr_match_case")
-  @JsonInclude(Include.NON_NULL)
-  private String hdrMatchCase = null;
+    @JsonProperty("hdr_match_case")
+    @JsonInclude(Include.NON_NULL)
+    private String hdrMatchCase = null;
 
-  @JsonProperty("hdr_name")
-  @JsonInclude(Include.NON_NULL)
-  private String hdrName = null;
+    @JsonProperty("hdr_name")
+    @JsonInclude(Include.NON_NULL)
+    private String hdrName = null;
 
-  @JsonProperty("hdr_string_op")
-  @JsonInclude(Include.NON_NULL)
-  private String hdrStringOp = null;
+    @JsonProperty("hdr_string_op")
+    @JsonInclude(Include.NON_NULL)
+    private String hdrStringOp = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - SENSITIVE, INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrMatchCase
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class AppHdr extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SENSITIVE, INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdrMatchCase set the hdrMatchCase.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class AppHdr extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hdr_name of obj type apphdr field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrName
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class AppHdr extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property hdr_name of obj type apphdr field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdrName set the hdrName.
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class AppHdr extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrStringOp
    */
   @VsoMethod
@@ -93,6 +98,7 @@ public class AppHdr extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hdrStringOp set the hdrStringOp.
    */
   @VsoMethod

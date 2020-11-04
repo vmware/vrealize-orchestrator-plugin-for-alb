@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ContainerCloudBatchSetup extends AviRestResource {
-  @JsonProperty("ccs")
-  @JsonInclude(Include.NON_NULL)
-  private List<ContainerCloudSetup> ccs = null;
+    @JsonProperty("ccs")
+    @JsonInclude(Include.NON_NULL)
+    private List<ContainerCloudSetup> ccs = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ccs of obj type containercloudbatchsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccs
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class ContainerCloudBatchSetup extends AviRestResource {
   /**
    * This is the setter method. this will set the ccs
    * Placeholder for description of property ccs of obj type containercloudbatchsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccs
    */
   @VsoMethod
@@ -53,6 +55,7 @@ public class ContainerCloudBatchSetup extends AviRestResource {
   /**
    * This is the setter method this will set the ccs
    * Placeholder for description of property ccs of obj type containercloudbatchsetup field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccs
    */
   @VsoMethod

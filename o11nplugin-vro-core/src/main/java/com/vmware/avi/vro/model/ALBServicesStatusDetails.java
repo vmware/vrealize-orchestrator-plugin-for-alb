@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesStatusDetails extends AviRestResource {
-  @JsonProperty("connectivity")
-  @JsonInclude(Include.NON_NULL)
-  private String connectivity = null;
+    @JsonProperty("connectivity")
+    @JsonInclude(Include.NON_NULL)
+    private String connectivity = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("registration")
-  @JsonInclude(Include.NON_NULL)
-  private String registration = null;
+    @JsonProperty("registration")
+    @JsonInclude(Include.NON_NULL)
+    private String registration = null;
 
 
 
@@ -43,6 +43,7 @@ public class ALBServicesStatusDetails extends AviRestResource {
    * Connection status of the controller cluster to albservices.
    * Enum options - ALBSERVICES_CONNECTIVITY_UNKNOWN, ALBSERVICES_DISCONNECTED, ALBSERVICES_CONNECTED.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connectivity
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ALBServicesStatusDetails extends AviRestResource {
    * Connection status of the controller cluster to albservices.
    * Enum options - ALBSERVICES_CONNECTIVITY_UNKNOWN, ALBSERVICES_DISCONNECTED, ALBSERVICES_CONNECTED.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connectivity set the connectivity.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class ALBServicesStatusDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status change reason.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class ALBServicesStatusDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Status change reason.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class ALBServicesStatusDetails extends AviRestResource {
    * Registration status of the controller cluster to albservices.
    * Enum options - ALBSERVICES_REGISTRATION_UNKNOWN, ALBSERVICES_REGISTERED, ALBSERVICES_DEREGISTERED.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return registration
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class ALBServicesStatusDetails extends AviRestResource {
    * Registration status of the controller cluster to albservices.
    * Enum options - ALBSERVICES_REGISTRATION_UNKNOWN, ALBSERVICES_REGISTERED, ALBSERVICES_DEREGISTERED.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param registration set the registration.
    */
   @VsoMethod

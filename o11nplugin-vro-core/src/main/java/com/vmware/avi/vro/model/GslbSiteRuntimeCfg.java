@@ -34,45 +34,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSiteRuntimeCfg extends AviRestResource {
-  @JsonProperty("fd_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo fdInfo = null;
+    @JsonProperty("fd_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo fdInfo = null;
 
-  @JsonProperty("gap_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo gapInfo = null;
+    @JsonProperty("gap_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo gapInfo = null;
 
-  @JsonProperty("geo_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo geoInfo = null;
+    @JsonProperty("geo_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo geoInfo = null;
 
-  @JsonProperty("ghm_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo ghmInfo = null;
+    @JsonProperty("ghm_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo ghmInfo = null;
 
-  @JsonProperty("glb_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo glbInfo = null;
+    @JsonProperty("glb_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo glbInfo = null;
 
-  @JsonProperty("gpki_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo gpkiInfo = null;
+    @JsonProperty("gpki_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo gpkiInfo = null;
 
-  @JsonProperty("gs_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo gsInfo = null;
+    @JsonProperty("gs_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo gsInfo = null;
 
-  @JsonProperty("mm_info")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo mmInfo = null;
+    @JsonProperty("mm_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo mmInfo = null;
 
-  @JsonProperty("repl_queue")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigInfo replQueue = null;
+    @JsonProperty("repl_queue")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo replQueue = null;
 
-  @JsonProperty("sync_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteCfgSyncInfo syncInfo = null;
+    @JsonProperty("sync_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteCfgSyncInfo syncInfo = null;
 
 
 
@@ -80,6 +80,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb geodb files published for a site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fdInfo
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb geodb files published for a site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fdInfo set the fdInfo.
    */
   @VsoMethod
@@ -102,6 +104,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb application persistence info published for a site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gapInfo
    */
   @VsoMethod
@@ -113,6 +116,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb application persistence info published for a site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gapInfo set the gapInfo.
    */
   @VsoMethod
@@ -124,6 +128,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb geodb info published for a site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoInfo
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb geodb info published for a site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoInfo set the geoInfo.
    */
   @VsoMethod
@@ -145,6 +151,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ghm info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ghmInfo
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ghm info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ghmInfo set the ghmInfo.
    */
   @VsoMethod
@@ -165,6 +173,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslb info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbInfo
    */
   @VsoMethod
@@ -175,6 +184,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslb info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param glbInfo set the glbInfo.
    */
   @VsoMethod
@@ -186,6 +196,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb pki info published for a site.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gpkiInfo
    */
   @VsoMethod
@@ -197,6 +208,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb pki info published for a site.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gpkiInfo set the gpkiInfo.
    */
   @VsoMethod
@@ -207,6 +219,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gs info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsInfo
    */
   @VsoMethod
@@ -217,6 +230,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gs info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsInfo set the gsInfo.
    */
   @VsoMethod
@@ -227,6 +241,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maintenance mode info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mmInfo
    */
   @VsoMethod
@@ -237,6 +252,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maintenance mode info published for a site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mmInfo set the mmInfo.
    */
   @VsoMethod
@@ -248,6 +264,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The replication queue for all object-types for a site.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return replQueue
    */
   @VsoMethod
@@ -259,6 +276,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
    * This is the setter method to the attribute.
    * The replication queue for all object-types for a site.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param replQueue set the replQueue.
    */
   @VsoMethod
@@ -269,6 +287,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configuration sync-info of the site .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syncInfo
    */
   @VsoMethod
@@ -279,6 +298,7 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configuration sync-info of the site .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syncInfo set the syncInfo.
    */
   @VsoMethod

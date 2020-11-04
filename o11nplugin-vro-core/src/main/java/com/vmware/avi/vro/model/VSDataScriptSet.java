@@ -24,57 +24,65 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VSDataScriptSet extends AviRestResource {
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("datascript")
-  @JsonInclude(Include.NON_NULL)
-  private List<VSDataScript> datascript = null;
+    @JsonProperty("datascript")
+    @JsonInclude(Include.NON_NULL)
+    private List<VSDataScript> datascript = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("ipgroup_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> ipgroupRefs = null;
+    @JsonProperty("ip_reputation_db_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String ipReputationDbRef = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("ipgroup_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ipgroupRefs = null;
 
-  @JsonProperty("pool_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> poolGroupRefs = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("pool_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> poolRefs = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("protocol_parser_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> protocolParserRefs = null;
+    @JsonProperty("pool_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> poolGroupRefs = null;
 
-  @JsonProperty("rate_limiters")
-  @JsonInclude(Include.NON_NULL)
-  private List<RateLimiter> rateLimiters = null;
+    @JsonProperty("pool_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> poolRefs = null;
 
-  @JsonProperty("string_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> stringGroupRefs = null;
+    @JsonProperty("protocol_parser_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> protocolParserRefs = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("rate_limiters")
+    @JsonInclude(Include.NON_NULL)
+    private List<RateLimiter> rateLimiters = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("string_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> stringGroupRefs = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -82,6 +90,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Creator name.
    * Field introduced in 17.1.11,17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -93,6 +102,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method to the attribute.
    * Creator name.
    * Field introduced in 17.1.11,17.2.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -103,6 +113,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Datascripts to execute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascript
    */
   @VsoMethod
@@ -113,6 +124,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method. this will set the datascript
    * Datascripts to execute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascript
    */
   @VsoMethod
@@ -123,6 +135,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method this will set the datascript
    * Datascripts to execute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datascript
    */
   @VsoMethod
@@ -138,6 +151,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -148,6 +162,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -157,8 +172,35 @@ public class VSDataScriptSet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ip reputation database that can be used by datascript functions.
+   * It is a reference to an object of type ipreputationdb.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipReputationDbRef
+   */
+  @VsoMethod
+  public String getIpReputationDbRef() {
+    return ipReputationDbRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip reputation database that can be used by datascript functions.
+   * It is a reference to an object of type ipreputationdb.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ipReputationDbRef set the ipReputationDbRef.
+   */
+  @VsoMethod
+  public void setIpReputationDbRef(String  ipReputationDbRef) {
+    this.ipReputationDbRef = ipReputationDbRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Uuid of ip groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupRefs
    */
   @VsoMethod
@@ -170,6 +212,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the ipgroupRefs
    * Uuid of ip groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupRefs
    */
   @VsoMethod
@@ -181,6 +224,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the ipgroupRefs
    * Uuid of ip groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type ipaddrgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupRefs
    */
   @VsoMethod
@@ -195,7 +239,52 @@ public class VSDataScriptSet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public VSDataScriptSet addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name for the virtual service datascript collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -206,6 +295,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the virtual service datascript collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -217,6 +307,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of pool groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRefs
    */
   @VsoMethod
@@ -228,6 +319,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the poolGroupRefs
    * Uuid of pool groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRefs
    */
   @VsoMethod
@@ -239,6 +331,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the poolGroupRefs
    * Uuid of pool groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRefs
    */
   @VsoMethod
@@ -255,6 +348,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of pools that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRefs
    */
   @VsoMethod
@@ -266,6 +360,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the poolRefs
    * Uuid of pools that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRefs
    */
   @VsoMethod
@@ -277,6 +372,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the poolRefs
    * Uuid of pools that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRefs
    */
   @VsoMethod
@@ -294,6 +390,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
   @VsoMethod
@@ -306,6 +403,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
   @VsoMethod
@@ -318,6 +416,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
   @VsoMethod
@@ -335,6 +434,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
   @VsoMethod
@@ -347,6 +447,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
   @VsoMethod
@@ -359,6 +460,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
   @VsoMethod
@@ -375,6 +477,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of string groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -386,6 +489,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of string groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -397,6 +501,7 @@ public class VSDataScriptSet extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of string groups that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -412,6 +517,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -422,6 +528,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -451,6 +558,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the virtual service datascript collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -461,6 +569,7 @@ public class VSDataScriptSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the virtual service datascript collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -491,6 +600,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.stringGroupRefs, objVSDataScriptSet.stringGroupRefs)&&
   Objects.equals(this.createdBy, objVSDataScriptSet.createdBy)&&
   Objects.equals(this.protocolParserRefs, objVSDataScriptSet.protocolParserRefs)&&
+  Objects.equals(this.labels, objVSDataScriptSet.labels)&&
+  Objects.equals(this.ipReputationDbRef, objVSDataScriptSet.ipReputationDbRef)&&
   Objects.equals(this.description, objVSDataScriptSet.description)&&
   Objects.equals(this.tenantRef, objVSDataScriptSet.tenantRef)&&
   Objects.equals(this.rateLimiters, objVSDataScriptSet.rateLimiters);
@@ -503,7 +614,9 @@ public String toString() {
       sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    datascript: ").append(toIndentedString(datascript)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    ipReputationDbRef: ").append(toIndentedString(ipReputationDbRef)).append("\n");
         sb.append("    ipgroupRefs: ").append(toIndentedString(ipgroupRefs)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    poolGroupRefs: ").append(toIndentedString(poolGroupRefs)).append("\n");
         sb.append("    poolRefs: ").append(toIndentedString(poolRefs)).append("\n");

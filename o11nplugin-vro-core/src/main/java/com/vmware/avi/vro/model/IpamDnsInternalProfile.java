@@ -24,27 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsInternalProfile extends AviRestResource {
-  @JsonProperty("dns_service_domain")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsServiceDomain> dnsServiceDomain = null;
+    @JsonProperty("dns_service_domain")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsServiceDomain> dnsServiceDomain = null;
 
-  @JsonProperty("dns_virtualservice_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String dnsVirtualserviceRef = null;
+    @JsonProperty("dns_virtualservice_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String dnsVirtualserviceRef = null;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = 30;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = 30;
 
-  @JsonProperty("usable_network_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableNetworkRefs = null;
+    @JsonProperty("usable_network_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableNetworkRefs = null;
+
+    @JsonProperty("usable_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpamUsableNetwork> usableNetworks = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * List of service domains.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceDomain
    */
   @VsoMethod
@@ -55,6 +60,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the dnsServiceDomain
    * List of service domains.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceDomain
    */
   @VsoMethod
@@ -65,6 +71,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
   /**
    * This is the setter method this will set the dnsServiceDomain
    * List of service domains.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsServiceDomain
    */
   @VsoMethod
@@ -81,6 +88,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi virtualservice to be used for serving dns records.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVirtualserviceRef
    */
   @VsoMethod
@@ -92,6 +100,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi virtualservice to be used for serving dns records.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsVirtualserviceRef set the dnsVirtualserviceRef.
    */
   @VsoMethod
@@ -103,6 +112,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
    * Allowed values are 1-604800.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return ttl
    */
@@ -115,6 +125,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Default ttl for all records, overridden by ttl value for each service domain configured in dnsservicedomain.
    * Allowed values are 1-604800.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param ttl set the ttl.
    */
@@ -129,6 +140,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
   @VsoMethod
@@ -142,6 +154,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
   @VsoMethod
@@ -155,6 +168,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
   @VsoMethod
@@ -163,6 +177,53 @@ public class IpamDnsInternalProfile extends AviRestResource {
       this.usableNetworkRefs = new ArrayList<String>();
     }
     this.usableNetworkRefs.add(usableNetworkRefsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return usableNetworks
+   */
+  @VsoMethod
+  public List<IpamUsableNetwork> getUsableNetworks() {
+    return usableNetworks;
+  }
+
+  /**
+   * This is the setter method. this will set the usableNetworks
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return usableNetworks
+   */
+  @VsoMethod
+  public void setUsableNetworks(List<IpamUsableNetwork>  usableNetworks) {
+    this.usableNetworks = usableNetworks;
+  }
+
+  /**
+   * This is the setter method this will set the usableNetworks
+   * Usable networks for virtual ip.
+   * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
+   * allocation.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return usableNetworks
+   */
+  @VsoMethod
+  public IpamDnsInternalProfile addUsableNetworksItem(IpamUsableNetwork usableNetworksItem) {
+    if (this.usableNetworks == null) {
+      this.usableNetworks = new ArrayList<IpamUsableNetwork>();
+    }
+    this.usableNetworks.add(usableNetworksItem);
     return this;
   }
 
@@ -181,7 +242,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.dnsServiceDomain, objIpamDnsInternalProfile.dnsServiceDomain)&&
   Objects.equals(this.ttl, objIpamDnsInternalProfile.ttl)&&
   Objects.equals(this.dnsVirtualserviceRef, objIpamDnsInternalProfile.dnsVirtualserviceRef)&&
-  Objects.equals(this.usableNetworkRefs, objIpamDnsInternalProfile.usableNetworkRefs);
+  Objects.equals(this.usableNetworkRefs, objIpamDnsInternalProfile.usableNetworkRefs)&&
+  Objects.equals(this.usableNetworks, objIpamDnsInternalProfile.usableNetworks);
 }
 
 @Override
@@ -192,6 +254,7 @@ public String toString() {
         sb.append("    dnsVirtualserviceRef: ").append(toIndentedString(dnsVirtualserviceRef)).append("\n");
         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
         sb.append("    usableNetworkRefs: ").append(toIndentedString(usableNetworkRefs)).append("\n");
+        sb.append("    usableNetworks: ").append(toIndentedString(usableNetworks)).append("\n");
       sb.append("}");
   return sb.toString();
 }

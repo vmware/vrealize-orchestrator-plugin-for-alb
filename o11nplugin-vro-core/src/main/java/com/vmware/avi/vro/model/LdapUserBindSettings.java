@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LdapUserBindSettings extends AviRestResource {
-  @JsonProperty("dn_template")
-  @JsonInclude(Include.NON_NULL)
-  private String dnTemplate = null;
+    @JsonProperty("dn_template")
+    @JsonInclude(Include.NON_NULL)
+    private String dnTemplate = null;
 
-  @JsonProperty("token")
-  @JsonInclude(Include.NON_NULL)
-  private String token = "<user>";
+    @JsonProperty("token")
+    @JsonInclude(Include.NON_NULL)
+    private String token = "<user>";
 
-  @JsonProperty("user_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> userAttributes = null;
+    @JsonProperty("user_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> userAttributes = null;
 
-  @JsonProperty("user_id_attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String userIdAttribute = null;
+    @JsonProperty("user_id_attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String userIdAttribute = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user dn pattern is used to bind ldap user after replacing the user token with real username.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnTemplate
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap user dn pattern is used to bind ldap user after replacing the user token with real username.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnTemplate set the dnTemplate.
    */
   @VsoMethod
@@ -65,7 +67,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap token is replaced with real user name in the user dn pattern.
-   * Default value when not specified in API or module is interpreted by Avi Controller as <user>.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "<user>".
    * @return token
    */
   @VsoMethod
@@ -76,7 +78,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap token is replaced with real user name in the user dn pattern.
-   * Default value when not specified in API or module is interpreted by Avi Controller as <user>.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "<user>".
    * @param token set the token.
    */
   @VsoMethod
@@ -87,6 +89,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user attributes to fetch on a successful user bind.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
   @VsoMethod
@@ -97,6 +100,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method. this will set the userAttributes
    * Ldap user attributes to fetch on a successful user bind.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
   @VsoMethod
@@ -107,6 +111,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method this will set the userAttributes
    * Ldap user attributes to fetch on a successful user bind.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userAttributes
    */
   @VsoMethod
@@ -122,6 +127,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userIdAttribute
    */
   @VsoMethod
@@ -132,6 +138,7 @@ public class LdapUserBindSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ldap user id attribute is the login attribute that uniquely identifies a single user record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param userIdAttribute set the userIdAttribute.
    */
   @VsoMethod

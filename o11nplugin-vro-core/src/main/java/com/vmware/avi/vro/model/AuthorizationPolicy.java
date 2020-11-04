@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthorizationPolicy extends AviRestResource {
-  @JsonProperty("authz_rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<AuthorizationRule> authzRules = null;
+    @JsonProperty("authz_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<AuthorizationRule> authzRules = null;
 
 
 
@@ -34,6 +34,7 @@ public class AuthorizationPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization policy rules.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authzRules
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class AuthorizationPolicy extends AviRestResource {
    * This is the setter method. this will set the authzRules
    * Authorization policy rules.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authzRules
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class AuthorizationPolicy extends AviRestResource {
    * This is the setter method this will set the authzRules
    * Authorization policy rules.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authzRules
    */
   @VsoMethod

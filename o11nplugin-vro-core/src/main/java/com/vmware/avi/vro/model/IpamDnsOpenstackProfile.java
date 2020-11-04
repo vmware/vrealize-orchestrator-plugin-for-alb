@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsOpenstackProfile extends AviRestResource {
-  @JsonProperty("keystone_host")
-  @JsonInclude(Include.NON_NULL)
-  private String keystoneHost = null;
+    @JsonProperty("keystone_host")
+    @JsonInclude(Include.NON_NULL)
+    private String keystoneHost = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("tenant")
-  @JsonInclude(Include.NON_NULL)
-  private String tenant = null;
+    @JsonProperty("tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String tenant = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
-  @JsonProperty("vip_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vipNetworkName = null;
+    @JsonProperty("vip_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vipNetworkName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Keystone's hostname or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keystoneHost
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Keystone's hostname or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keystoneHost set the keystoneHost.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating to keystone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating to keystone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Region name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Region name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Openstack tenant name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenant
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Openstack tenant name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenant set the tenant.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating to keystone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating to keystone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network to be used for vip allocation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipNetworkName
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class IpamDnsOpenstackProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network to be used for vip allocation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipNetworkName set the vipNetworkName.
    */
   @VsoMethod

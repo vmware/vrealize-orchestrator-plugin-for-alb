@@ -24,61 +24,61 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthScoreDetails extends AviRestResource {
-  @JsonProperty("anomaly_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private Integer anomalyPenalty = 0;
+    @JsonProperty("anomaly_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Integer anomalyPenalty = 0;
 
-  @JsonProperty("anomaly_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String anomalyReason = null;
+    @JsonProperty("anomaly_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String anomalyReason = null;
 
-  @JsonProperty("performance_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String performanceReason = null;
+    @JsonProperty("performance_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String performanceReason = null;
 
-  @JsonProperty("performance_score")
-  @JsonInclude(Include.NON_NULL)
-  private Integer performanceScore = 100;
+    @JsonProperty("performance_score")
+    @JsonInclude(Include.NON_NULL)
+    private Integer performanceScore = 100;
 
-  @JsonProperty("previous_value")
-  @JsonInclude(Include.NON_NULL)
-  private Float previousValue = null;
+    @JsonProperty("previous_value")
+    @JsonInclude(Include.NON_NULL)
+    private Float previousValue = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("resources_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private Integer resourcesPenalty = 0;
+    @JsonProperty("resources_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Integer resourcesPenalty = 0;
 
-  @JsonProperty("resources_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String resourcesReason = null;
+    @JsonProperty("resources_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String resourcesReason = null;
 
-  @JsonProperty("security_penalty")
-  @JsonInclude(Include.NON_NULL)
-  private Integer securityPenalty = 0;
+    @JsonProperty("security_penalty")
+    @JsonInclude(Include.NON_NULL)
+    private Integer securityPenalty = 0;
 
-  @JsonProperty("security_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String securityReason = null;
+    @JsonProperty("security_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String securityReason = null;
 
-  @JsonProperty("step")
-  @JsonInclude(Include.NON_NULL)
-  private Integer step = null;
+    @JsonProperty("step")
+    @JsonInclude(Include.NON_NULL)
+    private Integer step = null;
 
-  @JsonProperty("sub_resource_prefix")
-  @JsonInclude(Include.NON_NULL)
-  private String subResourcePrefix = null;
+    @JsonProperty("sub_resource_prefix")
+    @JsonInclude(Include.NON_NULL)
+    private String subResourcePrefix = null;
 
-  @JsonProperty("timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private String timestamp = null;
+    @JsonProperty("timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private String timestamp = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private Float value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private Float value = null;
 
 
 
@@ -107,6 +107,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for anomaly penalty.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return anomalyReason
    */
   @VsoMethod
@@ -117,6 +118,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for anomaly penalty.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param anomalyReason set the anomalyReason.
    */
   @VsoMethod
@@ -127,6 +129,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for performance score.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return performanceReason
    */
   @VsoMethod
@@ -137,6 +140,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for performance score.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param performanceReason set the performanceReason.
    */
   @VsoMethod
@@ -169,6 +173,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property previous_value of obj type healthscoredetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previousValue
    */
   @VsoMethod
@@ -179,6 +184,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property previous_value of obj type healthscoredetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param previousValue set the previousValue.
    */
   @VsoMethod
@@ -189,6 +195,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for the health score change.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -199,6 +206,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for the health score change.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -231,6 +239,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for resources penalty.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourcesReason
    */
   @VsoMethod
@@ -241,6 +250,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for resources penalty.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourcesReason set the resourcesReason.
    */
   @VsoMethod
@@ -273,6 +283,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for security threat level.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return securityReason
    */
   @VsoMethod
@@ -283,6 +294,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for security threat level.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param securityReason set the securityReason.
    */
   @VsoMethod
@@ -293,6 +305,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The step interval in seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return step
    */
   @VsoMethod
@@ -303,6 +316,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The step interval in seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param step set the step.
    */
   @VsoMethod
@@ -313,6 +327,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Resource prefix containing entity information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subResourcePrefix
    */
   @VsoMethod
@@ -323,6 +338,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Resource prefix containing entity information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subResourcePrefix set the subResourcePrefix.
    */
   @VsoMethod
@@ -333,6 +349,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property timestamp of obj type healthscoredetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timestamp
    */
   @VsoMethod
@@ -343,6 +360,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property timestamp of obj type healthscoredetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timestamp set the timestamp.
    */
   @VsoMethod
@@ -353,6 +371,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property value of obj type healthscoredetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -363,6 +382,7 @@ public class HealthScoreDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property value of obj type healthscoredetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

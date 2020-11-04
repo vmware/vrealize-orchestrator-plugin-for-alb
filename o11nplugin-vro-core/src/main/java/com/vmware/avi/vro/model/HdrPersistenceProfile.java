@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HdrPersistenceProfile extends AviRestResource {
-  @JsonProperty("prst_hdr_name")
-  @JsonInclude(Include.NON_NULL)
-  private String prstHdrName = null;
+    @JsonProperty("prst_hdr_name")
+    @JsonInclude(Include.NON_NULL)
+    private String prstHdrName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Header name for custom header persistence.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prstHdrName
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class HdrPersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Header name for custom header persistence.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prstHdrName set the prstHdrName.
    */
   @VsoMethod

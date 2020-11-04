@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertSyslogServer extends AviRestResource {
-  @JsonProperty("anon_auth")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean anonAuth = false;
+    @JsonProperty("anon_auth")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean anonAuth = false;
 
-  @JsonProperty("format")
-  @JsonInclude(Include.NON_NULL)
-  private String format = "SYSLOG_LEGACY";
+    @JsonProperty("format")
+    @JsonInclude(Include.NON_NULL)
+    private String format = "SYSLOG_LEGACY";
 
-  @JsonProperty("pkiprofile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String pkiprofileRef = null;
+    @JsonProperty("pkiprofile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiprofileRef = null;
 
-  @JsonProperty("ssl_key_and_certificate_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslKeyAndCertificateRef = null;
+    @JsonProperty("ssl_key_and_certificate_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslKeyAndCertificateRef = null;
 
-  @JsonProperty("syslog_server")
-  @JsonInclude(Include.NON_NULL)
-  private String syslogServer = null;
+    @JsonProperty("syslog_server")
+    @JsonInclude(Include.NON_NULL)
+    private String syslogServer = null;
 
-  @JsonProperty("syslog_server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer syslogServerPort = 514;
+    @JsonProperty("syslog_server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer syslogServerPort = 514;
 
-  @JsonProperty("tls_enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tlsEnable = false;
+    @JsonProperty("tls_enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tlsEnable = false;
 
-  @JsonProperty("udp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean udp = true;
+    @JsonProperty("udp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean udp = true;
 
 
 
@@ -85,9 +85,9 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Syslog output format - legacy, rfc 5424, json.
-   * Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON.
+   * Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED.
    * Field introduced in 17.2.8.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSLOG_LEGACY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSLOG_LEGACY".
    * @return format
    */
   @VsoMethod
@@ -98,9 +98,9 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Syslog output format - legacy, rfc 5424, json.
-   * Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON.
+   * Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED.
    * Field introduced in 17.2.8.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSLOG_LEGACY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSLOG_LEGACY".
    * @param format set the format.
    */
   @VsoMethod
@@ -113,6 +113,7 @@ public class AlertSyslogServer extends AviRestResource {
    * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.2.17, 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiprofileRef
    */
   @VsoMethod
@@ -125,6 +126,7 @@ public class AlertSyslogServer extends AviRestResource {
    * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.2.17, 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiprofileRef set the pkiprofileRef.
    */
   @VsoMethod
@@ -137,6 +139,7 @@ public class AlertSyslogServer extends AviRestResource {
    * Select a certificate and key which will be used to authenticate to the syslog server.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 17.2.17, 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
    */
   @VsoMethod
@@ -149,6 +152,7 @@ public class AlertSyslogServer extends AviRestResource {
    * Select a certificate and key which will be used to authenticate to the syslog server.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 17.2.17, 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
    */
   @VsoMethod
@@ -159,6 +163,7 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The destination syslog server ip address or hostname.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syslogServer
    */
   @VsoMethod
@@ -169,6 +174,7 @@ public class AlertSyslogServer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The destination syslog server ip address or hostname.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syslogServer set the syslogServer.
    */
   @VsoMethod

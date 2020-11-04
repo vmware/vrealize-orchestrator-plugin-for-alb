@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class URIParamToken extends AviRestResource {
-  @JsonProperty("end_index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer endIndex = null;
+    @JsonProperty("end_index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer endIndex = null;
 
-  @JsonProperty("start_index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer startIndex = null;
+    @JsonProperty("start_index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer startIndex = null;
 
-  @JsonProperty("str_value")
-  @JsonInclude(Include.NON_NULL)
-  private String strValue = null;
+    @JsonProperty("str_value")
+    @JsonInclude(Include.NON_NULL)
+    private String strValue = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -47,6 +47,7 @@ public class URIParamToken extends AviRestResource {
    * Index of the ending token in the incoming uri.
    * Allowed values are 0-65534.
    * Special values are 65535 - 'end of string'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endIndex
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class URIParamToken extends AviRestResource {
    * Index of the ending token in the incoming uri.
    * Allowed values are 0-65534.
    * Special values are 65535 - 'end of string'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endIndex set the endIndex.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class URIParamToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Index of the starting token in the incoming uri.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startIndex
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class URIParamToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Index of the starting token in the incoming uri.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startIndex set the startIndex.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class URIParamToken extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Constant string to use as a token.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return strValue
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class URIParamToken extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Constant string to use as a token.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param strValue set the strValue.
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class URIParamToken extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Token type for constructing the uri.
    * Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class URIParamToken extends AviRestResource {
    * This is the setter method to the attribute.
    * Token type for constructing the uri.
    * Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

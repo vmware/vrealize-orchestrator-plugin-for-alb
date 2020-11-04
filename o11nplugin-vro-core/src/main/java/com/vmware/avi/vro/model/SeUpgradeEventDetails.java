@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeUpgradeEventDetails extends AviRestResource {
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("num_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVs = null;
+    @JsonProperty("num_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVs = null;
 
-  @JsonProperty("se_grp_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpUuid = null;
+    @JsonProperty("se_grp_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpUuid = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type seupgradeeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type seupgradeeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type seupgradeeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vs of obj type seupgradeeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVs
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vs of obj type seupgradeeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVs set the numVs.
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpUuid
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpUuid set the seGrpUuid.
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class SeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod

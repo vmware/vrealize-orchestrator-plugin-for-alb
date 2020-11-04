@@ -26,19 +26,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipAutoscaleGroup extends AviRestResource {
-  @JsonProperty("configuration")
-  @JsonInclude(Include.NON_NULL)
-  private VipAutoscaleConfiguration configuration = null;
+    @JsonProperty("configuration")
+    @JsonInclude(Include.NON_NULL)
+    private VipAutoscaleConfiguration configuration = null;
 
-  @JsonProperty("policy")
-  @JsonInclude(Include.NON_NULL)
-  private VipAutoscalePolicy policy = null;
+    @JsonProperty("policy")
+    @JsonInclude(Include.NON_NULL)
+    private VipAutoscalePolicy policy = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configuration
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configuration set the configuration.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return policy
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class VipAutoscaleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param policy set the policy.
    */
   @VsoMethod

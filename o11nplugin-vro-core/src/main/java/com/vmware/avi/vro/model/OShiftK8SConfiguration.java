@@ -31,245 +31,245 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OShiftK8SConfiguration extends AviRestResource {
-  @JsonProperty("app_sync_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer appSyncFrequency = 300;
+    @JsonProperty("app_sync_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer appSyncFrequency = 300;
 
-  @JsonProperty("auto_assign_fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoAssignFqdn = true;
+    @JsonProperty("auto_assign_fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoAssignFqdn = true;
 
-  @JsonProperty("avi_bridge_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix aviBridgeSubnet = null;
+    @JsonProperty("avi_bridge_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix aviBridgeSubnet = null;
 
-  @JsonProperty("ca_tls_key_and_certificate_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String caTlsKeyAndCertificateRef = null;
+    @JsonProperty("ca_tls_key_and_certificate_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String caTlsKeyAndCertificateRef = null;
 
-  @JsonProperty("client_tls_key_and_certificate_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String clientTlsKeyAndCertificateRef = null;
+    @JsonProperty("client_tls_key_and_certificate_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String clientTlsKeyAndCertificateRef = null;
 
-  @JsonProperty("cluster_tag")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterTag = null;
+    @JsonProperty("cluster_tag")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterTag = null;
 
-  @JsonProperty("container_port_match_http_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean containerPortMatchHttpService = true;
+    @JsonProperty("container_port_match_http_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean containerPortMatchHttpService = true;
 
-  @JsonProperty("coredump_directory")
-  @JsonInclude(Include.NON_NULL)
-  private String coredumpDirectory = "/var/lib/systemd/coredump";
+    @JsonProperty("coredump_directory")
+    @JsonInclude(Include.NON_NULL)
+    private String coredumpDirectory = "/var/lib/systemd/coredump";
 
-  @JsonProperty("default_service_as_east_west_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean defaultServiceAsEastWestService = true;
+    @JsonProperty("default_service_as_east_west_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean defaultServiceAsEastWestService = true;
 
-  @JsonProperty("default_shared_virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private OshiftSharedVirtualService defaultSharedVirtualservice = null;
+    @JsonProperty("default_shared_virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private OshiftSharedVirtualService defaultSharedVirtualservice;
 
-  @JsonProperty("disable_auto_backend_service_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoBackendServiceSync = false;
+    @JsonProperty("disable_auto_backend_service_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoBackendServiceSync = false;
 
-  @JsonProperty("disable_auto_frontend_service_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoFrontendServiceSync = false;
+    @JsonProperty("disable_auto_frontend_service_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoFrontendServiceSync = false;
 
-  @JsonProperty("disable_auto_gs_sync")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoGsSync = false;
+    @JsonProperty("disable_auto_gs_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoGsSync = false;
 
-  @JsonProperty("disable_auto_se_creation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableAutoSeCreation = false;
+    @JsonProperty("disable_auto_se_creation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableAutoSeCreation = false;
 
-  @JsonProperty("docker_endpoint")
-  @JsonInclude(Include.NON_NULL)
-  private String dockerEndpoint = "/var/run/docker.sock";
+    @JsonProperty("docker_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String dockerEndpoint = "/var/run/docker.sock";
 
-  @JsonProperty("docker_registry_se")
-  @JsonInclude(Include.NON_NULL)
-  private DockerRegistry dockerRegistrySe = null;
+    @JsonProperty("docker_registry_se")
+    @JsonInclude(Include.NON_NULL)
+    private DockerRegistry dockerRegistrySe = null;
 
-  @JsonProperty("east_west_placement_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix eastWestPlacementSubnet = null;
+    @JsonProperty("east_west_placement_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix eastWestPlacementSubnet = null;
 
-  @JsonProperty("enable_event_subscription")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableEventSubscription = true;
+    @JsonProperty("enable_event_subscription")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableEventSubscription = true;
 
-  @JsonProperty("enable_route_ingress_hardening")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRouteIngressHardening = true;
+    @JsonProperty("enable_route_ingress_hardening")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRouteIngressHardening = true;
 
-  @JsonProperty("feproxy_vips_enable_proxy_arp")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean feproxyVipsEnableProxyArp = true;
+    @JsonProperty("feproxy_vips_enable_proxy_arp")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean feproxyVipsEnableProxyArp = true;
 
-  @JsonProperty("fleet_endpoint")
-  @JsonInclude(Include.NON_NULL)
-  private String fleetEndpoint = null;
+    @JsonProperty("fleet_endpoint")
+    @JsonInclude(Include.NON_NULL)
+    private String fleetEndpoint;
 
-  @JsonProperty("http_container_ports")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> httpContainerPorts = null;
+    @JsonProperty("http_container_ports")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> httpContainerPorts = null;
 
-  @JsonProperty("ing_exclude_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<IngAttribute> ingExcludeAttributes = null;
+    @JsonProperty("ing_exclude_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<IngAttribute> ingExcludeAttributes = null;
 
-  @JsonProperty("ing_include_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<IngAttribute> ingIncludeAttributes = null;
+    @JsonProperty("ing_include_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<IngAttribute> ingIncludeAttributes = null;
 
-  @JsonProperty("l4_health_monitoring")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean l4HealthMonitoring = true;
+    @JsonProperty("l4_health_monitoring")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean l4HealthMonitoring = true;
 
-  @JsonProperty("master_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> masterNodes = null;
+    @JsonProperty("master_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> masterNodes = null;
 
-  @JsonProperty("node_availability_zone_label")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeAvailabilityZoneLabel = null;
+    @JsonProperty("node_availability_zone_label")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeAvailabilityZoneLabel = null;
 
-  @JsonProperty("ns_exclude_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> nsExcludeAttributes = null;
+    @JsonProperty("ns_exclude_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> nsExcludeAttributes = null;
 
-  @JsonProperty("ns_include_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> nsIncludeAttributes = null;
+    @JsonProperty("ns_include_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> nsIncludeAttributes = null;
 
-  @JsonProperty("nuage_controller")
-  @JsonInclude(Include.NON_NULL)
-  private NuageSDNController nuageController = null;
+    @JsonProperty("nuage_controller")
+    @JsonInclude(Include.NON_NULL)
+    private NuageSDNController nuageController;
 
-  @JsonProperty("num_shards")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numShards = 0;
+    @JsonProperty("num_shards")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numShards = 0;
 
-  @JsonProperty("override_service_ports")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean overrideServicePorts = true;
+    @JsonProperty("override_service_ports")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean overrideServicePorts = true;
 
-  @JsonProperty("persistent_volume_claim")
-  @JsonInclude(Include.NON_NULL)
-  private String persistentVolumeClaim = null;
+    @JsonProperty("persistent_volume_claim")
+    @JsonInclude(Include.NON_NULL)
+    private String persistentVolumeClaim = null;
 
-  @JsonProperty("routes")
-  @JsonInclude(Include.NON_NULL)
-  private List<RouteInfo> routes = null;
+    @JsonProperty("routes")
+    @JsonInclude(Include.NON_NULL)
+    private List<RouteInfo> routes = null;
 
-  @JsonProperty("routes_share_virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean routesShareVirtualservice = null;
+    @JsonProperty("routes_share_virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean routesShareVirtualservice;
 
-  @JsonProperty("sdn_overlay")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sdnOverlay = true;
+    @JsonProperty("sdn_overlay")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sdnOverlay = true;
 
-  @JsonProperty("se_deployment_method")
-  @JsonInclude(Include.NON_NULL)
-  private String seDeploymentMethod = "SE_CREATE_POD";
+    @JsonProperty("se_deployment_method")
+    @JsonInclude(Include.NON_NULL)
+    private String seDeploymentMethod = "SE_CREATE_POD";
 
-  @JsonProperty("se_exclude_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> seExcludeAttributes = null;
+    @JsonProperty("se_exclude_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> seExcludeAttributes = null;
 
-  @JsonProperty("se_image_pull_secret")
-  @JsonInclude(Include.NON_NULL)
-  private String seImagePullSecret = null;
+    @JsonProperty("se_image_pull_secret")
+    @JsonInclude(Include.NON_NULL)
+    private String seImagePullSecret = null;
 
-  @JsonProperty("se_include_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<MesosAttribute> seIncludeAttributes = null;
+    @JsonProperty("se_include_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<MesosAttribute> seIncludeAttributes = null;
 
-  @JsonProperty("se_namespace")
-  @JsonInclude(Include.NON_NULL)
-  private String seNamespace = "default";
+    @JsonProperty("se_namespace")
+    @JsonInclude(Include.NON_NULL)
+    private String seNamespace = "default";
 
-  @JsonProperty("se_pod_tolerations")
-  @JsonInclude(Include.NON_NULL)
-  private List<PodToleration> sePodTolerations = null;
+    @JsonProperty("se_pod_tolerations")
+    @JsonInclude(Include.NON_NULL)
+    private List<PodToleration> sePodTolerations = null;
 
-  @JsonProperty("se_priority_class")
-  @JsonInclude(Include.NON_NULL)
-  private String sePriorityClass = null;
+    @JsonProperty("se_priority_class")
+    @JsonInclude(Include.NON_NULL)
+    private String sePriorityClass = null;
 
-  @JsonProperty("se_restart_batch_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seRestartBatchSize = 1;
+    @JsonProperty("se_restart_batch_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seRestartBatchSize = 1;
 
-  @JsonProperty("se_restart_force")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seRestartForce = false;
+    @JsonProperty("se_restart_force")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seRestartForce = false;
 
-  @JsonProperty("se_spawn_rate")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seSpawnRate = 25;
+    @JsonProperty("se_spawn_rate")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seSpawnRate;
 
-  @JsonProperty("se_volume")
-  @JsonInclude(Include.NON_NULL)
-  private String seVolume = "/var/lib/avi";
+    @JsonProperty("se_volume")
+    @JsonInclude(Include.NON_NULL)
+    private String seVolume = "/var/lib/avi";
 
-  @JsonProperty("secure_egress_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean secureEgressMode = false;
+    @JsonProperty("secure_egress_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean secureEgressMode = false;
 
-  @JsonProperty("service_account_token")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceAccountToken = null;
+    @JsonProperty("service_account_token")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceAccountToken = null;
 
-  @JsonProperty("service_port_match_http_service")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean servicePortMatchHttpService = null;
+    @JsonProperty("service_port_match_http_service")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean servicePortMatchHttpService;
 
-  @JsonProperty("shard_prefix")
-  @JsonInclude(Include.NON_NULL)
-  private String shardPrefix = null;
+    @JsonProperty("shard_prefix")
+    @JsonInclude(Include.NON_NULL)
+    private String shardPrefix = null;
 
-  @JsonProperty("shared_virtualservice_namespace")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sharedVirtualserviceNamespace = false;
+    @JsonProperty("shared_virtualservice_namespace")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sharedVirtualserviceNamespace = false;
 
-  @JsonProperty("ssh_se_deployment")
-  @JsonInclude(Include.NON_NULL)
-  private SSHSeDeployment sshSeDeployment = null;
+    @JsonProperty("ssh_se_deployment")
+    @JsonInclude(Include.NON_NULL)
+    private SSHSeDeployment sshSeDeployment;
 
-  @JsonProperty("ssh_user_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sshUserRef = null;
+    @JsonProperty("ssh_user_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sshUserRef = null;
 
-  @JsonProperty("sync_not_ready_addresses")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean syncNotReadyAddresses = true;
+    @JsonProperty("sync_not_ready_addresses")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean syncNotReadyAddresses = true;
 
-  @JsonProperty("use_controller_image")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useControllerImage = false;
+    @JsonProperty("use_controller_image")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useControllerImage = false;
 
-  @JsonProperty("use_resource_definition_as_ssot")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useResourceDefinitionAsSsot = false;
+    @JsonProperty("use_resource_definition_as_ssot")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useResourceDefinitionAsSsot = false;
 
-  @JsonProperty("use_scheduling_disabled_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useSchedulingDisabledNodes = false;
+    @JsonProperty("use_scheduling_disabled_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useSchedulingDisabledNodes = false;
 
-  @JsonProperty("use_service_cluster_ip_as_ew_vip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useServiceClusterIpAsEwVip = false;
+    @JsonProperty("use_service_cluster_ip_as_ew_vip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useServiceClusterIpAsEwVip = false;
 
-  @JsonProperty("vip_default_gateway")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vipDefaultGateway = null;
+    @JsonProperty("vip_default_gateway")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vipDefaultGateway = null;
 
 
 
@@ -322,6 +322,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi linux bridge subnet on openshift/k8s nodes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return aviBridgeSubnet
    */
   @VsoMethod
@@ -332,6 +333,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi linux bridge subnet on openshift/k8s nodes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param aviBridgeSubnet set the aviBridgeSubnet.
    */
   @VsoMethod
@@ -343,6 +345,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the ucp ca tls cert and key.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caTlsKeyAndCertificateRef
    */
   @VsoMethod
@@ -354,6 +357,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the ucp ca tls cert and key.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param caTlsKeyAndCertificateRef set the caTlsKeyAndCertificateRef.
    */
   @VsoMethod
@@ -366,6 +370,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Uuid of the client tls cert and key instead of service account token.
    * One of client certificate or token is required.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientTlsKeyAndCertificateRef
    */
   @VsoMethod
@@ -378,6 +383,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Uuid of the client tls cert and key instead of service account token.
    * One of client certificate or token is required.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientTlsKeyAndCertificateRef set the clientTlsKeyAndCertificateRef.
    */
   @VsoMethod
@@ -391,6 +397,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * In order to use more than one openshift/k8s cloud on this controller, cluster_tag has to be unique across these clouds.
    * Changing cluster_tag is disruptive as all virtual services in the cloud will be recreated.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterTag
    */
   @VsoMethod
@@ -404,6 +411,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * In order to use more than one openshift/k8s cloud on this controller, cluster_tag has to be unique across these clouds.
    * Changing cluster_tag is disruptive as all virtual services in the cloud will be recreated.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterTag set the clusterTag.
    */
   @VsoMethod
@@ -440,7 +448,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @return coredumpDirectory
    */
   @VsoMethod
@@ -453,7 +461,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Directory to mount to check for core dumps on service engines.
    * This will be mapped read only to /var/crash on any new service engines.
    * This is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/systemd/coredump.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
    * @param coredumpDirectory set the coredumpDirectory.
    */
   @VsoMethod
@@ -603,7 +611,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host docker server unix socket endpoint.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/run/docker.sock.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/run/docker.sock".
    * @return dockerEndpoint
    */
   @VsoMethod
@@ -615,7 +623,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Host docker server unix socket endpoint.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/run/docker.sock.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/run/docker.sock".
    * @param dockerEndpoint set the dockerEndpoint.
    */
   @VsoMethod
@@ -626,6 +634,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Docker registry for serviceengine image.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerRegistrySe
    */
   @VsoMethod
@@ -636,6 +645,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Docker registry for serviceengine image.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerRegistrySe set the dockerRegistrySe.
    */
   @VsoMethod
@@ -646,6 +656,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match against this prefix when placing east-west vss on ses .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eastWestPlacementSubnet
    */
   @VsoMethod
@@ -656,6 +667,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match against this prefix when placing east-west vss on ses .
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
    */
   @VsoMethod
@@ -761,6 +773,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80, 8080, 443 and 8443.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -772,6 +785,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method. this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80, 8080, 443 and 8443.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -783,6 +797,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method this will set the httpContainerPorts
    * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
    * Defaults to 80, 8080, 443 and 8443.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpContainerPorts
    */
   @VsoMethod
@@ -799,6 +814,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Do not sync applications only for ingress that have these exclude attributes configured.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ingExcludeAttributes
    */
   @VsoMethod
@@ -810,6 +826,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method. this will set the ingExcludeAttributes
    * Do not sync applications only for ingress that have these exclude attributes configured.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ingExcludeAttributes
    */
   @VsoMethod
@@ -821,6 +838,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method this will set the ingExcludeAttributes
    * Do not sync applications only for ingress that have these exclude attributes configured.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ingExcludeAttributes
    */
   @VsoMethod
@@ -839,6 +857,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Default values are populated for this field if not provided.
    * The default value are  'attribute'  'kubernetes.io/ingress.class', 'value' 'avi'.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ingIncludeAttributes
    */
   @VsoMethod
@@ -852,6 +871,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Default values are populated for this field if not provided.
    * The default value are  'attribute'  'kubernetes.io/ingress.class', 'value' 'avi'.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ingIncludeAttributes
    */
   @VsoMethod
@@ -865,6 +885,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Default values are populated for this field if not provided.
    * The default value are  'attribute'  'kubernetes.io/ingress.class', 'value' 'avi'.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ingIncludeAttributes
    */
   @VsoMethod
@@ -904,6 +925,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * List of openshift/kubernetes master nodes; in case of a load balanced openshift/k8s cluster, use virtual ip of the cluster.
    * Each node is of the form node 8443 or http //node 8080.
    * If scheme is not provided, https is assumed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return masterNodes
    */
   @VsoMethod
@@ -916,6 +938,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * List of openshift/kubernetes master nodes; in case of a load balanced openshift/k8s cluster, use virtual ip of the cluster.
    * Each node is of the form node 8443 or http //node 8080.
    * If scheme is not provided, https is assumed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return masterNodes
    */
   @VsoMethod
@@ -928,6 +951,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * List of openshift/kubernetes master nodes; in case of a load balanced openshift/k8s cluster, use virtual ip of the cluster.
    * Each node is of the form node 8443 or http //node 8080.
    * If scheme is not provided, https is assumed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return masterNodes
    */
   @VsoMethod
@@ -944,6 +968,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Openshift/k8s node label to be used as openshift/k8s node's availability zone in a dual availability zone deployment.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeAvailabilityZoneLabel
    */
   @VsoMethod
@@ -955,6 +980,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Openshift/k8s node label to be used as openshift/k8s node's availability zone in a dual availability zone deployment.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeAvailabilityZoneLabel set the nodeAvailabilityZoneLabel.
    */
   @VsoMethod
@@ -967,6 +993,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Syncing of applications is disabled only for namespaces/projects that have these exclude attributes configured.
    * If there are apps synced already for these namespaces, they will be removed from avi.
    * Field introduced in 17.1.9,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsExcludeAttributes
    */
   @VsoMethod
@@ -979,6 +1006,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Syncing of applications is disabled only for namespaces/projects that have these exclude attributes configured.
    * If there are apps synced already for these namespaces, they will be removed from avi.
    * Field introduced in 17.1.9,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsExcludeAttributes
    */
   @VsoMethod
@@ -991,6 +1019,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Syncing of applications is disabled only for namespaces/projects that have these exclude attributes configured.
    * If there are apps synced already for these namespaces, they will be removed from avi.
    * Field introduced in 17.1.9,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsExcludeAttributes
    */
   @VsoMethod
@@ -1007,6 +1036,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sync applications only for namespaces/projects that have these include attributes configured.
    * Field introduced in 17.1.9,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsIncludeAttributes
    */
   @VsoMethod
@@ -1018,6 +1048,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method. this will set the nsIncludeAttributes
    * Sync applications only for namespaces/projects that have these include attributes configured.
    * Field introduced in 17.1.9,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsIncludeAttributes
    */
   @VsoMethod
@@ -1029,6 +1060,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method this will set the nsIncludeAttributes
    * Sync applications only for namespaces/projects that have these include attributes configured.
    * Field introduced in 17.1.9,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsIncludeAttributes
    */
   @VsoMethod
@@ -1121,6 +1153,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This could be used in scenarios where host based volumes are ephemeral.
    * Refer https //kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims for more details on the usage of this field.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistentVolumeClaim
    */
   @VsoMethod
@@ -1134,6 +1167,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This could be used in scenarios where host based volumes are ephemeral.
    * Refer https //kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims for more details on the usage of this field.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistentVolumeClaim set the persistentVolumeClaim.
    */
   @VsoMethod
@@ -1153,6 +1187,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Handling north-south traffic originating from with in the node when the default gateway for outgoing traffic of vs is configured.4.
    * Handling the container/pod traffic by adding the routes in the container/pod.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routes
    */
   @VsoMethod
@@ -1172,6 +1207,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Handling north-south traffic originating from with in the node when the default gateway for outgoing traffic of vs is configured.4.
    * Handling the container/pod traffic by adding the routes in the container/pod.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routes
    */
   @VsoMethod
@@ -1191,6 +1227,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Handling north-south traffic originating from with in the node when the default gateway for outgoing traffic of vs is configured.4.
    * Handling the container/pod traffic by adding the routes in the container/pod.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routes
    */
   @VsoMethod
@@ -1257,7 +1294,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use ssh/pod for se deployment.
    * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_CREATE_POD.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_POD".
    * @return seDeploymentMethod
    */
   @VsoMethod
@@ -1269,7 +1306,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Use ssh/pod for se deployment.
    * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SE_CREATE_POD.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_POD".
    * @param seDeploymentMethod set the seDeploymentMethod.
    */
   @VsoMethod
@@ -1280,6 +1317,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -1290,6 +1328,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -1300,6 +1339,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seExcludeAttributes
    * Exclude hosts with attributes for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seExcludeAttributes
    */
   @VsoMethod
@@ -1317,6 +1357,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Openshift/k8s secret name to be used for private docker repos when deploying se as a pod.
    * Reference link  https //kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seImagePullSecret
    */
   @VsoMethod
@@ -1329,6 +1370,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Openshift/k8s secret name to be used for private docker repos when deploying se as a pod.
    * Reference link  https //kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.
    * Field introduced in 17.2.13,18.1.3,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seImagePullSecret set the seImagePullSecret.
    */
   @VsoMethod
@@ -1339,6 +1381,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -1349,6 +1392,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -1359,6 +1403,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the seIncludeAttributes
    * Create ses just on hosts with include attributes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIncludeAttributes
    */
   @VsoMethod
@@ -1379,7 +1424,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Setting this value is a disruptive operation and assumes the namespace exists in kubernetes.
    * 'default' namespace is picked if this field is unset.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return seNamespace
    */
   @VsoMethod
@@ -1395,7 +1440,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Setting this value is a disruptive operation and assumes the namespace exists in kubernetes.
    * 'default' namespace is picked if this field is unset.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param seNamespace set the seNamespace.
    */
   @VsoMethod
@@ -1407,6 +1452,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match se pod tolerations against taints of openshift/k8s nodes https //kubernetes.io/docs/concepts/configuration/taint-and-toleration/.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePodTolerations
    */
   @VsoMethod
@@ -1418,6 +1464,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method. this will set the sePodTolerations
    * Match se pod tolerations against taints of openshift/k8s nodes https //kubernetes.io/docs/concepts/configuration/taint-and-toleration/.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePodTolerations
    */
   @VsoMethod
@@ -1429,6 +1476,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method this will set the sePodTolerations
    * Match se pod tolerations against taints of openshift/k8s nodes https //kubernetes.io/docs/concepts/configuration/taint-and-toleration/.
    * Field introduced in 17.2.14, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePodTolerations
    */
   @VsoMethod
@@ -1448,6 +1496,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * If the priority class doesn't exist while assigning this field, the se pods may not start.
    * If empty no priority class will be used for deploying se pods (default behaviour).
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePriorityClass
    */
   @VsoMethod
@@ -1462,6 +1511,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * If the priority class doesn't exist while assigning this field, the se pods may not start.
    * If empty no priority class will be used for deploying se pods (default behaviour).
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePriorityClass set the sePriorityClass.
    */
   @VsoMethod
@@ -1521,7 +1571,6 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * New se spawn rate per minute.
    * Field deprecated in 17.2.13,18.1.5,18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @return seSpawnRate
    */
   @VsoMethod
@@ -1533,7 +1582,6 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * New se spawn rate per minute.
    * Field deprecated in 17.2.13,18.1.5,18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 25.
    * @param seSpawnRate set the seSpawnRate.
    */
   @VsoMethod
@@ -1544,7 +1592,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/avi".
    * @return seVolume
    */
   @VsoMethod
@@ -1555,7 +1603,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host volume to be used as a disk for avi se, this is a disruptive change.
-   * Default value when not specified in API or module is interpreted by Avi Controller as /var/lib/avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/avi".
    * @param seVolume set the seVolume.
    */
   @VsoMethod
@@ -1597,6 +1645,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization token for service account instead of client certificate.
    * One of client certificate or token is required.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceAccountToken
    */
   @VsoMethod
@@ -1608,6 +1657,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization token for service account instead of client certificate.
    * One of client certificate or token is required.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceAccountToken set the serviceAccountToken.
    */
   @VsoMethod
@@ -1642,6 +1692,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Prefix to be used for shard vs name when num_shards knob is non zero.
    * Format for shard vs name will be <shard_prefix>-<idx>-cloudname-segroupname.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shardPrefix
    */
   @VsoMethod
@@ -1654,6 +1705,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Prefix to be used for shard vs name when num_shards knob is non zero.
    * Format for shard vs name will be <shard_prefix>-<idx>-cloudname-segroupname.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shardPrefix set the shardPrefix.
    */
   @VsoMethod
@@ -1714,6 +1766,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
   @VsoMethod
@@ -1726,6 +1779,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */
   @VsoMethod
@@ -1855,6 +1909,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualservice default gateway if multiple nics are present in the host.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipDefaultGateway
    */
   @VsoMethod
@@ -1866,6 +1921,7 @@ public class OShiftK8SConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtualservice default gateway if multiple nics are present in the host.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipDefaultGateway set the vipDefaultGateway.
    */
   @VsoMethod

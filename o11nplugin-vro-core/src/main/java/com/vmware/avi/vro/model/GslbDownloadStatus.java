@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbDownloadStatus extends AviRestResource {
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = "GSLB_DOWNLOAD_NONE";
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = "GSLB_DOWNLOAD_NONE";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class GslbDownloadStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -60,7 +62,7 @@ public class GslbDownloadStatus extends AviRestResource {
    * This field indicates the download state to a dns-vs(es) or a vs or a se depending on the usage context.
    * Enum options - GSLB_DOWNLOAD_NONE, GSLB_DOWNLOAD_DONE, GSLB_DOWNLOAD_PENDING, GSLB_DOWNLOAD_ERROR.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_DOWNLOAD_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_DOWNLOAD_NONE".
    * @return state
    */
   @VsoMethod
@@ -73,7 +75,7 @@ public class GslbDownloadStatus extends AviRestResource {
    * This field indicates the download state to a dns-vs(es) or a vs or a se depending on the usage context.
    * Enum options - GSLB_DOWNLOAD_NONE, GSLB_DOWNLOAD_DONE, GSLB_DOWNLOAD_PENDING, GSLB_DOWNLOAD_ERROR.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_DOWNLOAD_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_DOWNLOAD_NONE".
    * @param state set the state.
    */
   @VsoMethod

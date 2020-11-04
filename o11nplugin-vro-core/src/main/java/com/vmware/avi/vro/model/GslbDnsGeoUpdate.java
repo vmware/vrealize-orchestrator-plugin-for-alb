@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbDnsGeoUpdate extends AviRestResource {
-  @JsonProperty("obj_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbObjectInfo> objInfo = null;
+    @JsonProperty("obj_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbObjectInfo> objInfo;
 
-  @JsonProperty("ops")
-  @JsonInclude(Include.NON_NULL)
-  private String ops = null;
+    @JsonProperty("ops")
+    @JsonInclude(Include.NON_NULL)
+    private String ops;
 
-  @JsonProperty("se_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seList = null;
+    @JsonProperty("se_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seList;
 
 
 

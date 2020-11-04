@@ -26,17 +26,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPVIPAllocation extends AviRestResource {
-  @JsonProperty("ilb")
-  @JsonInclude(Include.NON_NULL)
-  private GCPVIPILB ilb = null;
+    @JsonProperty("ilb")
+    @JsonInclude(Include.NON_NULL)
+    private GCPVIPILB ilb = null;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = "ROUTES";
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = "ROUTES";
 
-  @JsonProperty("routes")
-  @JsonInclude(Include.NON_NULL)
-  private GCPVIPRoutes routes = null;
+    @JsonProperty("routes")
+    @JsonInclude(Include.NON_NULL)
+    private GCPVIPRoutes routes = null;
 
 
 
@@ -44,7 +44,8 @@ public class GCPVIPAllocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure google cloud internal loadbalancer for vip.
    * The vip will be auto allocated from a google cloud vpc subnet.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ilb
    */
   @VsoMethod
@@ -56,7 +57,8 @@ public class GCPVIPAllocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure google cloud internal loadbalancer for vip.
    * The vip will be auto allocated from a google cloud vpc subnet.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ilb set the ilb.
    */
   @VsoMethod
@@ -68,8 +70,8 @@ public class GCPVIPAllocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vip allocation mode.
    * Enum options - ROUTES, ILB.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ROUTES.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ROUTES".
    * @return mode
    */
   @VsoMethod
@@ -81,8 +83,8 @@ public class GCPVIPAllocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Vip allocation mode.
    * Enum options - ROUTES, ILB.
-   * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ROUTES.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ROUTES".
    * @param mode set the mode.
    */
   @VsoMethod
@@ -95,7 +97,8 @@ public class GCPVIPAllocation extends AviRestResource {
    * Configure google cloud vpc routes for vip.
    * The vip can either be a static ip or auto allocted from avi internal network.
    * The vip should not overlap with any of the subnet ranges in google cloud vpc.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routes
    */
   @VsoMethod
@@ -108,7 +111,8 @@ public class GCPVIPAllocation extends AviRestResource {
    * Configure google cloud vpc routes for vip.
    * The vip can either be a static ip or auto allocted from avi internal network.
    * The vip should not overlap with any of the subnet ranges in google cloud vpc.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routes set the routes.
    */
   @VsoMethod

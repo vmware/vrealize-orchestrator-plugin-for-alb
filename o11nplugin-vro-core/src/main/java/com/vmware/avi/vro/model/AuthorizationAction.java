@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthorizationAction extends AviRestResource {
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCode = "HTTP_RESPONSE_STATUS_CODE_403";
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCode = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "ALLOW_ACCESS";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "ALLOW_ACCESS";
 
 
 
@@ -39,7 +39,7 @@ public class AuthorizationAction extends AviRestResource {
    * Http status code to use for local response when an policy rule is matched.
    * Enum options - HTTP_RESPONSE_STATUS_CODE_403.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_RESPONSE_STATUS_CODE_403.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
   @VsoMethod
@@ -52,7 +52,7 @@ public class AuthorizationAction extends AviRestResource {
    * Http status code to use for local response when an policy rule is matched.
    * Enum options - HTTP_RESPONSE_STATUS_CODE_403.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_RESPONSE_STATUS_CODE_403.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
   @VsoMethod
@@ -62,10 +62,11 @@ public class AuthorizationAction extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Defines the action taken when an authorization policy rule is matched.by default, access is allowed to the requested resource.
+   * Defines the action taken when an authorization policy rule is matched.
+   * By default, access is allowed to the requested resource.
    * Enum options - ALLOW_ACCESS, CLOSE_CONNECTION, HTTP_LOCAL_RESPONSE.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ALLOW_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ALLOW_ACCESS".
    * @return type
    */
   @VsoMethod
@@ -75,10 +76,11 @@ public class AuthorizationAction extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Defines the action taken when an authorization policy rule is matched.by default, access is allowed to the requested resource.
+   * Defines the action taken when an authorization policy rule is matched.
+   * By default, access is allowed to the requested resource.
    * Enum options - ALLOW_ACCESS, CLOSE_CONNECTION, HTTP_LOCAL_RESPONSE.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ALLOW_ACCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ALLOW_ACCESS".
    * @param type set the type.
    */
   @VsoMethod

@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafLearning extends AviRestResource {
-  @JsonProperty("arg_summarization_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer argSummarizationThreshold = null;
+    @JsonProperty("arg_summarization_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer argSummarizationThreshold;
 
-  @JsonProperty("confidence")
-  @JsonInclude(Include.NON_NULL)
-  private Integer confidence = null;
+    @JsonProperty("confidence")
+    @JsonInclude(Include.NON_NULL)
+    private Integer confidence;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = null;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable;
 
-  @JsonProperty("path_summarization_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pathSummarizationThreshold = null;
+    @JsonProperty("path_summarization_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pathSummarizationThreshold;
 
-  @JsonProperty("sampling_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer samplingPercent = null;
+    @JsonProperty("sampling_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer samplingPercent;
 
 
 
@@ -78,6 +78,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 60-100.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Unit is percent.
    * @return confidence
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 60-100.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Unit is percent.
    * @param confidence set the confidence.
    */
   @VsoMethod
@@ -154,6 +156,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 1-100.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Unit is percent.
    * @return samplingPercent
    */
   @VsoMethod
@@ -167,6 +170,7 @@ public class WafLearning extends AviRestResource {
    * Allowed values are 1-100.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.1.2.
+   * Unit is percent.
    * @param samplingPercent set the samplingPercent.
    */
   @VsoMethod
