@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPReselectRespCode extends AviRestResource {
-  @JsonProperty("codes")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> codes = null;
+    @JsonProperty("codes")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> codes = null;
 
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<HTTPStatusRange> ranges = null;
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<HTTPStatusRange> ranges = null;
 
-  @JsonProperty("resp_code_block")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> respCodeBlock = null;
+    @JsonProperty("resp_code_block")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> respCodeBlock = null;
 
 
 
@@ -42,6 +42,7 @@ public class HTTPReselectRespCode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http response code to be matched.
    * Allowed values are 400-599.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return codes
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class HTTPReselectRespCode extends AviRestResource {
    * This is the setter method. this will set the codes
    * Http response code to be matched.
    * Allowed values are 400-599.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return codes
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class HTTPReselectRespCode extends AviRestResource {
    * This is the setter method this will set the codes
    * Http response code to be matched.
    * Allowed values are 400-599.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return codes
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class HTTPReselectRespCode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http response code ranges to match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class HTTPReselectRespCode extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * Http response code ranges to match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class HTTPReselectRespCode extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * Http response code ranges to match.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class HTTPReselectRespCode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Block of http response codes to match for server reselect.
    * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
   @VsoMethod
@@ -126,6 +133,7 @@ public class HTTPReselectRespCode extends AviRestResource {
    * This is the setter method. this will set the respCodeBlock
    * Block of http response codes to match for server reselect.
    * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
   @VsoMethod
@@ -137,6 +145,7 @@ public class HTTPReselectRespCode extends AviRestResource {
    * This is the setter method this will set the respCodeBlock
    * Block of http response codes to match for server reselect.
    * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return respCodeBlock
    */
   @VsoMethod

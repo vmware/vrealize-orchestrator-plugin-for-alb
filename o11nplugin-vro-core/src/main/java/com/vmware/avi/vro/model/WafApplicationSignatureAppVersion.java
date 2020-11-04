@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafApplicationSignatureAppVersion extends AviRestResource {
-  @JsonProperty("application")
-  @JsonInclude(Include.NON_NULL)
-  private String application = null;
+    @JsonProperty("application")
+    @JsonInclude(Include.NON_NULL)
+    private String application = null;
 
-  @JsonProperty("last_changed_ruleset_version")
-  @JsonInclude(Include.NON_NULL)
-  private String lastChangedRulesetVersion = null;
+    @JsonProperty("last_changed_ruleset_version")
+    @JsonInclude(Include.NON_NULL)
+    private String lastChangedRulesetVersion = null;
 
 
 
@@ -38,6 +38,7 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of an application in the rule set.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return application
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of an application in the rule set.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param application set the application.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The last version of the rule set when the rules corresponding to the application changed.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedRulesetVersion
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * The last version of the rule set when the rules corresponding to the application changed.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedRulesetVersion set the lastChangedRulesetVersion.
    */
   @VsoMethod

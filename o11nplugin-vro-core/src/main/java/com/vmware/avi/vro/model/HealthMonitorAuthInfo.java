@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorAuthInfo extends AviRestResource {
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
@@ -38,6 +38,7 @@ public class HealthMonitorAuthInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Password for server authentication.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class HealthMonitorAuthInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Password for server authentication.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class HealthMonitorAuthInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Username for server authentication.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class HealthMonitorAuthInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Username for server authentication.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

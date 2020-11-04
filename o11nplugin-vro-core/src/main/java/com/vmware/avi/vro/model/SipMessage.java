@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SipMessage extends AviRestResource {
-  @JsonProperty("content")
-  @JsonInclude(Include.NON_NULL)
-  private String content = null;
+    @JsonProperty("content")
+    @JsonInclude(Include.NON_NULL)
+    private String content = null;
 
-  @JsonProperty("from_client")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fromClient = null;
+    @JsonProperty("from_client")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fromClient = null;
 
-  @JsonProperty("method")
-  @JsonInclude(Include.NON_NULL)
-  private String method = null;
+    @JsonProperty("method")
+    @JsonInclude(Include.NON_NULL)
+    private String method = null;
 
-  @JsonProperty("rcv_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rcvTimestamp = null;
+    @JsonProperty("rcv_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rcvTimestamp = null;
 
-  @JsonProperty("rx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rxBytes = null;
+    @JsonProperty("rx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rxBytes = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer statusCode = null;
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer statusCode = null;
 
-  @JsonProperty("tx_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Integer txBytes = null;
+    @JsonProperty("tx_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Integer txBytes = null;
 
 
 
@@ -62,6 +62,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contents up to first 128 bytes of a sip message for which could not be parsed.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return content
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Contents up to first 128 bytes of a sip message for which could not be parsed.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param content set the content.
    */
   @VsoMethod
@@ -84,6 +86,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Indicates if sip message is received from a client.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromClient
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Indicates if sip message is received from a client.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromClient set the fromClient.
    */
   @VsoMethod
@@ -106,6 +110,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip request method string.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
   @VsoMethod
@@ -117,6 +122,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip request method string.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
   @VsoMethod
@@ -128,6 +134,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip message receive time stamp.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rcvTimestamp
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip message receive time stamp.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rcvTimestamp set the rcvTimestamp.
    */
   @VsoMethod
@@ -150,6 +158,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip message size before modifications.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rxBytes
    */
   @VsoMethod
@@ -161,6 +170,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip message size before modifications.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rxBytes set the rxBytes.
    */
   @VsoMethod
@@ -172,6 +182,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip response status string.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -183,6 +194,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip response status string.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -194,6 +206,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip response status code, 2xx response means success.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
   @VsoMethod
@@ -205,6 +218,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip response status code, 2xx response means success.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
   @VsoMethod
@@ -216,6 +230,7 @@ public class SipMessage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip message size post modifications.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txBytes
    */
   @VsoMethod
@@ -227,6 +242,7 @@ public class SipMessage extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip message size post modifications.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param txBytes set the txBytes.
    */
   @VsoMethod

@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigUserLogout extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String clientIp = null;
 
-  @JsonProperty("error_message")
-  @JsonInclude(Include.NON_NULL)
-  private String errorMessage = null;
+    @JsonProperty("error_message")
+    @JsonInclude(Include.NON_NULL)
+    private String errorMessage = null;
 
-  @JsonProperty("local")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean local = null;
+    @JsonProperty("local")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean local = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client ip.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Error message if logging out failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Error message if logging out failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class ConfigUserLogout extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Local user.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return local
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class ConfigUserLogout extends AviRestResource {
    * This is the setter method to the attribute.
    * Local user.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param local set the local.
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -131,6 +139,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -141,6 +150,7 @@ public class ConfigUserLogout extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod

@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BgpRoutingOptions extends AviRestResource {
-  @JsonProperty("advertise_default_route")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean advertiseDefaultRoute = null;
+    @JsonProperty("advertise_default_route")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean advertiseDefaultRoute = null;
 
-  @JsonProperty("advertise_learned_routes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean advertiseLearnedRoutes = null;
+    @JsonProperty("advertise_learned_routes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean advertiseLearnedRoutes = null;
 
-  @JsonProperty("label")
-  @JsonInclude(Include.NON_NULL)
-  private String label = null;
+    @JsonProperty("label")
+    @JsonInclude(Include.NON_NULL)
+    private String label = null;
 
-  @JsonProperty("learn_only_default_route")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean learnOnlyDefaultRoute = null;
+    @JsonProperty("learn_only_default_route")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean learnOnlyDefaultRoute = null;
 
-  @JsonProperty("learn_routes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean learnRoutes = null;
+    @JsonProperty("learn_routes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean learnRoutes = null;
 
-  @JsonProperty("max_learn_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxLearnLimit = 50;
+    @JsonProperty("max_learn_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxLearnLimit = 50;
 
 
 
@@ -54,6 +54,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Advertise self as default router to the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return advertiseDefaultRoute
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Advertise self as default router to the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param advertiseDefaultRoute set the advertiseDefaultRoute.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Advertise the learned routes to the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return advertiseLearnedRoutes
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Advertise the learned routes to the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param advertiseLearnedRoutes set the advertiseLearnedRoutes.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Features are applied to peers matching this label.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return label
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Features are applied to peers matching this label.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param label set the label.
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learn only default route from the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learnOnlyDefaultRoute
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Learn only default route from the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learnOnlyDefaultRoute set the learnOnlyDefaultRoute.
    */
   @VsoMethod
@@ -142,6 +150,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learn routes from the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return learnRoutes
    */
   @VsoMethod
@@ -153,6 +162,7 @@ public class BgpRoutingOptions extends AviRestResource {
    * This is the setter method to the attribute.
    * Learn routes from the bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param learnRoutes set the learnRoutes.
    */
   @VsoMethod

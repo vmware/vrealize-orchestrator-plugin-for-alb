@@ -26,21 +26,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPSecurityActionRateProfile extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private RateLimiterAction action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private RateLimiterAction action = null;
 
-  @JsonProperty("per_client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean perClientIp = null;
+    @JsonProperty("per_client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean perClientIp = null;
 
-  @JsonProperty("per_uri_path")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean perUriPath = null;
+    @JsonProperty("per_uri_path")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean perUriPath = null;
 
-  @JsonProperty("rate_limiter")
-  @JsonInclude(Include.NON_NULL)
-  private RateLimiter rateLimiter = null;
+    @JsonProperty("rate_limiter")
+    @JsonInclude(Include.NON_NULL)
+    private RateLimiter rateLimiter = null;
 
 
 
@@ -48,6 +48,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The action to take when the rate limit has been reached.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The action to take when the rate limit has been reached.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiting should be done on a per client ip basis.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return perClientIp
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiting should be done on a per client ip basis.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param perClientIp set the perClientIp.
    */
   @VsoMethod
@@ -92,6 +96,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiting should be done on a per request uri path basis.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return perUriPath
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiting should be done on a per request uri path basis.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param perUriPath set the perUriPath.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The rate limiter used when this action is triggered.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiter
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class HTTPSecurityActionRateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The rate limiter used when this action is triggered.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateLimiter set the rateLimiter.
    */
   @VsoMethod

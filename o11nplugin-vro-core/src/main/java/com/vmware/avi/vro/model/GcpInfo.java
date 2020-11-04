@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GcpInfo extends AviRestResource {
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("network")
-  @JsonInclude(Include.NON_NULL)
-  private String network = null;
+    @JsonProperty("network")
+    @JsonInclude(Include.NON_NULL)
+    private String network = null;
 
-  @JsonProperty("project")
-  @JsonInclude(Include.NON_NULL)
-  private String project = null;
+    @JsonProperty("project")
+    @JsonInclude(Include.NON_NULL)
+    private String project = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet = null;
 
-  @JsonProperty("zone")
-  @JsonInclude(Include.NON_NULL)
-  private String zone = null;
+    @JsonProperty("zone")
+    @JsonInclude(Include.NON_NULL)
+    private String zone = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Hostname of this se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hostname of this se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network this se is assigned.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network this se is assigned.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Project this se belongs to.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return project
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Project this se belongs to.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param project set the project.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Subnet assigned to this se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Subnet assigned to this se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Zone this se is part of.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zone
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class GcpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Zone this se is part of.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param zone set the zone.
    */
   @VsoMethod

@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VlanRange extends AviRestResource {
-  @JsonProperty("end")
-  @JsonInclude(Include.NON_NULL)
-  private Integer end = null;
+    @JsonProperty("end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer end = null;
 
-  @JsonProperty("start")
-  @JsonInclude(Include.NON_NULL)
-  private Integer start = null;
+    @JsonProperty("start")
+    @JsonInclude(Include.NON_NULL)
+    private Integer start = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end of obj type vlanrange field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return end
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VlanRange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end of obj type vlanrange field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param end set the end.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class VlanRange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start of obj type vlanrange field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return start
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class VlanRange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start of obj type vlanrange field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param start set the start.
    */
   @VsoMethod

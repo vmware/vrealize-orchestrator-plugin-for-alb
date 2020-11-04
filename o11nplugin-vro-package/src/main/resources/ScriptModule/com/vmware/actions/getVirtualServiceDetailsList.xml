@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="getVirtualServiceDetailsList" result-type="Array/string"
+	api-version="6.0.0" id="766762db-2c4d-444d-b6c6-d45920610bae"
+	version="0.0.2" allowed-operations="vfe">
+	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
+	]]></param>
+	<param n="object" t="string"><![CDATA[
+	]]></param>
+	<param n="field" t="string"><![CDATA[
+	]]></param>
+	<script encoded="false"><![CDATA[if(vsObject!=null){
+    var url=vsObject.getUrl();
+    var controller=url.substring(url.indexOf("//")+2, url.indexOf("/api"));
+    var aviVroClient=null;
+    vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+    for each(vroClient in vroClientArray){
+            if(vroClient !=null){
+            vroController=vroClient.cred.controller;
+            if(vroController==controller){
+            aviVroClient=vroClient;
+            }
+        }	
+    }
+try{	
+	if(aviVroClient!=null)
+	{
+		if(object=="pool"){
+			var poolref=vsObject.getPoolRef();	
+			if(poolref!=null){
+				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+				var poolObject = new AviPool() ;
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				if(field == "pool_servers"){
+					var servers = poolObject.servers;
+					var ServerList= new Array();
+					for each(index in servers){
+						ServerList.push(index.ip.addr)
+					}
+					return ServerList;
+				}
+            }   
+        }else if(object=="healthmonitor"){
+			var poolref=vsObject.getPoolRef();	
+			if(poolref!=null){
+				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+				var poolObject = new AviPool() ;
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				
+                var reference = poolObject.getHealthMonitorRefs();
+                var hmName;
+                for (index=0; index<=reference.length-1; index++){
+                    hmName = reference[index];
+                }
+                var path = hmName.split("/")
+                var splitUUID =(path[path.length-1]).split('#');
+                var uuid=(splitUUID[splitUUID.length-2]);
+                var myAviHealthMonitor = new AviHealthMonitor();
+                var myAviHealthMonitor = aviVroClient.getObjectByUUID(path[path.length-2],uuid,null);
+                var myAviHealthMonitorHttp= new AviHealthMonitorHttp()
+                myAviHealthMonitorHttp=myAviHealthMonitor.getHttpMonitor();
+                if(myAviHealthMonitorHttp==null){
+                    myAviHealthMonitorHttp=myAviHealthMonitor.getHttpsMonitor();
+                }
+                if(field == "response_code"){
+					var responses = myAviHealthMonitorHttp.getHttpResponseCode();
+					var responseList= new Array();
+					for each(index in responses){
+                        index =index.replace("HTTP_", "");
+                        responseList.push(index)
+					}
+                    System.log(responseList)
+					return responseList;
+				}
+            }   
+        }else{
+
+        }
+    }   
+    }catch(e){
+	    System.log("Error occured while getting object detail: "+e)
+    }
+}]]></script>
+</dunes-script-module>

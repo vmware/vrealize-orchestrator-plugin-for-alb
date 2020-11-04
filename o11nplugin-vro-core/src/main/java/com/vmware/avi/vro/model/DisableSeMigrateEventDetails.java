@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DisableSeMigrateEventDetails extends AviRestResource {
-  @JsonProperty("migrate_params")
-  @JsonInclude(Include.NON_NULL)
-  private VsMigrateParams migrateParams = null;
+    @JsonProperty("migrate_params")
+    @JsonInclude(Include.NON_NULL)
+    private VsMigrateParams migrateParams = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property migrate_params of obj type disablesemigrateeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return migrateParams
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class DisableSeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property migrate_params of obj type disablesemigrateeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param migrateParams set the migrateParams.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class DisableSeMigrateEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -68,6 +71,7 @@ public class DisableSeMigrateEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

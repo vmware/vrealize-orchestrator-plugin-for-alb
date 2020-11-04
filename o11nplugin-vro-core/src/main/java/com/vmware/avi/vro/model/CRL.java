@@ -24,49 +24,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CRL extends AviRestResource {
-  @JsonProperty("body")
-  @JsonInclude(Include.NON_NULL)
-  private String body = null;
+    @JsonProperty("body")
+    @JsonInclude(Include.NON_NULL)
+    private String body = null;
 
-  @JsonProperty("common_name")
-  @JsonInclude(Include.NON_NULL)
-  private String commonName = null;
+    @JsonProperty("common_name")
+    @JsonInclude(Include.NON_NULL)
+    private String commonName = null;
 
-  @JsonProperty("distinguished_name")
-  @JsonInclude(Include.NON_NULL)
-  private String distinguishedName = null;
+    @JsonProperty("distinguished_name")
+    @JsonInclude(Include.NON_NULL)
+    private String distinguishedName = null;
 
-  @JsonProperty("etag")
-  @JsonInclude(Include.NON_NULL)
-  private String etag = null;
+    @JsonProperty("etag")
+    @JsonInclude(Include.NON_NULL)
+    private String etag = null;
 
-  @JsonProperty("fingerprint")
-  @JsonInclude(Include.NON_NULL)
-  private String fingerprint = null;
+    @JsonProperty("fingerprint")
+    @JsonInclude(Include.NON_NULL)
+    private String fingerprint = null;
 
-  @JsonProperty("last_refreshed")
-  @JsonInclude(Include.NON_NULL)
-  private String lastRefreshed = null;
+    @JsonProperty("last_refreshed")
+    @JsonInclude(Include.NON_NULL)
+    private String lastRefreshed = null;
 
-  @JsonProperty("last_update")
-  @JsonInclude(Include.NON_NULL)
-  private String lastUpdate = null;
+    @JsonProperty("last_update")
+    @JsonInclude(Include.NON_NULL)
+    private String lastUpdate = null;
 
-  @JsonProperty("next_update")
-  @JsonInclude(Include.NON_NULL)
-  private String nextUpdate = null;
+    @JsonProperty("next_update")
+    @JsonInclude(Include.NON_NULL)
+    private String nextUpdate = null;
 
-  @JsonProperty("server_url")
-  @JsonInclude(Include.NON_NULL)
-  private String serverUrl = null;
+    @JsonProperty("server_url")
+    @JsonInclude(Include.NON_NULL)
+    private String serverUrl = null;
 
-  @JsonProperty("text")
-  @JsonInclude(Include.NON_NULL)
-  private String text = null;
+    @JsonProperty("text")
+    @JsonInclude(Include.NON_NULL)
+    private String text = null;
 
-  @JsonProperty("update_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer updateInterval = null;
+    @JsonProperty("update_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer updateInterval = null;
 
 
 
@@ -74,6 +74,7 @@ public class CRL extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Certificate revocation list from a given issuer in pem format.
    * This can either be configured directly or via the server_url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return body
    */
   @VsoMethod
@@ -85,6 +86,7 @@ public class CRL extends AviRestResource {
    * This is the setter method to the attribute.
    * Certificate revocation list from a given issuer in pem format.
    * This can either be configured directly or via the server_url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param body set the body.
    */
   @VsoMethod
@@ -95,6 +97,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Common name of the issuer in the certificate revocation list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commonName
    */
   @VsoMethod
@@ -105,6 +108,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Common name of the issuer in the certificate revocation list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commonName set the commonName.
    */
   @VsoMethod
@@ -115,6 +119,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Distinguished name of the issuer in the certificate revocation list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return distinguishedName
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Distinguished name of the issuer in the certificate revocation list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param distinguishedName set the distinguishedName.
    */
   @VsoMethod
@@ -135,6 +141,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cached etag to optimize the download of the crl.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return etag
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cached etag to optimize the download of the crl.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param etag set the etag.
    */
   @VsoMethod
@@ -156,6 +164,7 @@ public class CRL extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fingerprint of the crl.
    * Used to avoid configuring duplicates.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fingerprint
    */
   @VsoMethod
@@ -167,6 +176,7 @@ public class CRL extends AviRestResource {
    * This is the setter method to the attribute.
    * Fingerprint of the crl.
    * Used to avoid configuring duplicates.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fingerprint set the fingerprint.
    */
   @VsoMethod
@@ -178,6 +188,7 @@ public class CRL extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last time crl was refreshed by the system.
    * This is an internal field used by the system.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastRefreshed
    */
   @VsoMethod
@@ -189,6 +200,7 @@ public class CRL extends AviRestResource {
    * This is the setter method to the attribute.
    * Last time crl was refreshed by the system.
    * This is an internal field used by the system.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastRefreshed set the lastRefreshed.
    */
   @VsoMethod
@@ -199,6 +211,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The date when this crl was last issued.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastUpdate
    */
   @VsoMethod
@@ -209,6 +222,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The date when this crl was last issued.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastUpdate set the lastUpdate.
    */
   @VsoMethod
@@ -220,6 +234,7 @@ public class CRL extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The date when a newer crl will be available.
    * Also conveys the date after which the crl should be considered obsolete.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nextUpdate
    */
   @VsoMethod
@@ -231,6 +246,7 @@ public class CRL extends AviRestResource {
    * This is the setter method to the attribute.
    * The date when a newer crl will be available.
    * Also conveys the date after which the crl should be considered obsolete.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nextUpdate set the nextUpdate.
    */
   @VsoMethod
@@ -243,6 +259,7 @@ public class CRL extends AviRestResource {
    * Url of a server that issues the certificate revocation list.
    * If this is configured, crl will be periodically downloaded either based on the configured update interval or the next update interval in the crl.
    * Crl itself is stored in the body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverUrl
    */
   @VsoMethod
@@ -255,6 +272,7 @@ public class CRL extends AviRestResource {
    * Url of a server that issues the certificate revocation list.
    * If this is configured, crl will be periodically downloaded either based on the configured update interval or the next update interval in the crl.
    * Crl itself is stored in the body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverUrl set the serverUrl.
    */
   @VsoMethod
@@ -265,6 +283,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Certificate revocation list in plain text for readability.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return text
    */
   @VsoMethod
@@ -275,6 +294,7 @@ public class CRL extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Certificate revocation list in plain text for readability.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param text set the text.
    */
   @VsoMethod
@@ -286,7 +306,9 @@ public class CRL extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Interval in minutes to check for crl update.
    * If not specified, interval will be 1 day.
-   * Allowed values are 30-max.
+   * Allowed values are 30-525600.
+   * Unit is min.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return updateInterval
    */
   @VsoMethod
@@ -298,7 +320,9 @@ public class CRL extends AviRestResource {
    * This is the setter method to the attribute.
    * Interval in minutes to check for crl update.
    * If not specified, interval will be 1 day.
-   * Allowed values are 30-max.
+   * Allowed values are 30-525600.
+   * Unit is min.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param updateInterval set the updateInterval.
    */
   @VsoMethod

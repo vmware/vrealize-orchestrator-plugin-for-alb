@@ -24,181 +24,181 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeGroupStatus extends AviRestResource {
-  @JsonProperty("controller_version")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerVersion = null;
+    @JsonProperty("controller_version")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerVersion = null;
 
-  @JsonProperty("disrupted_vs_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> disruptedVsRef = null;
+    @JsonProperty("disrupted_vs_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> disruptedVsRef = null;
 
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private String duration = null;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private String duration = null;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("enqueue_time")
-  @JsonInclude(Include.NON_NULL)
-  private String enqueueTime = null;
+    @JsonProperty("enqueue_time")
+    @JsonInclude(Include.NON_NULL)
+    private String enqueueTime = null;
 
-  @JsonProperty("ha_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String haMode = null;
+    @JsonProperty("ha_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String haMode = null;
 
-  @JsonProperty("in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean inProgress = null;
+    @JsonProperty("in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean inProgress = null;
 
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("num_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSe = null;
+    @JsonProperty("num_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSe = null;
 
-  @JsonProperty("num_se_with_no_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSeWithNoVs = null;
+    @JsonProperty("num_se_with_no_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSeWithNoVs = null;
 
-  @JsonProperty("num_se_with_vs_not_scaledout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSeWithVsNotScaledout = null;
+    @JsonProperty("num_se_with_vs_not_scaledout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSeWithVsNotScaledout = null;
 
-  @JsonProperty("num_se_with_vs_scaledout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSeWithVsScaledout = null;
+    @JsonProperty("num_se_with_vs_scaledout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSeWithVsScaledout = null;
 
-  @JsonProperty("num_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVs = null;
+    @JsonProperty("num_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVs = null;
 
-  @JsonProperty("num_vs_disrupted")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVsDisrupted = null;
+    @JsonProperty("num_vs_disrupted")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVsDisrupted = null;
 
-  @JsonProperty("progress")
-  @JsonInclude(Include.NON_NULL)
-  private Integer progress = null;
+    @JsonProperty("progress")
+    @JsonInclude(Include.NON_NULL)
+    private Integer progress = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reason = null;
 
-  @JsonProperty("request_time")
-  @JsonInclude(Include.NON_NULL)
-  private String requestTime = null;
+    @JsonProperty("request_time")
+    @JsonInclude(Include.NON_NULL)
+    private String requestTime = null;
 
-  @JsonProperty("se_already_upgraded_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seAlreadyUpgradedAtStart = null;
+    @JsonProperty("se_already_upgraded_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seAlreadyUpgradedAtStart = null;
 
-  @JsonProperty("se_disconnected_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seDisconnectedAtStart = null;
+    @JsonProperty("se_disconnected_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seDisconnectedAtStart = null;
 
-  @JsonProperty("se_group_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupName = null;
+    @JsonProperty("se_group_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupName = null;
 
-  @JsonProperty("se_group_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupUuid = null;
+    @JsonProperty("se_group_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupUuid = null;
 
-  @JsonProperty("se_ip_missing_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seIpMissingAtStart = null;
+    @JsonProperty("se_ip_missing_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seIpMissingAtStart = null;
 
-  @JsonProperty("se_poweredoff_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sePoweredoffAtStart = null;
+    @JsonProperty("se_poweredoff_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sePoweredoffAtStart = null;
 
-  @JsonProperty("se_reboot_in_progress_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRebootInProgressRef = null;
+    @JsonProperty("se_reboot_in_progress_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRebootInProgressRef = null;
 
-  @JsonProperty("se_upgrade_completed")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeCompleted = null;
+    @JsonProperty("se_upgrade_completed")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeCompleted = null;
 
-  @JsonProperty("se_upgrade_errors")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeUpgradeEvents> seUpgradeErrors = null;
+    @JsonProperty("se_upgrade_errors")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeUpgradeEvents> seUpgradeErrors = null;
 
-  @JsonProperty("se_upgrade_failed")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeFailed = null;
+    @JsonProperty("se_upgrade_failed")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeFailed = null;
 
-  @JsonProperty("se_upgrade_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeInProgress = null;
+    @JsonProperty("se_upgrade_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeInProgress = null;
 
-  @JsonProperty("se_upgrade_not_started")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeNotStarted = null;
+    @JsonProperty("se_upgrade_not_started")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeNotStarted = null;
 
-  @JsonProperty("se_upgrade_skip_suspended")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeSkipSuspended = null;
+    @JsonProperty("se_upgrade_skip_suspended")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeSkipSuspended = null;
 
-  @JsonProperty("se_upgrade_suspended")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeSuspended = null;
+    @JsonProperty("se_upgrade_suspended")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeSuspended = null;
 
-  @JsonProperty("se_with_no_vs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seWithNoVs = null;
+    @JsonProperty("se_with_no_vs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seWithNoVs = null;
 
-  @JsonProperty("se_with_vs_not_scaledout")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seWithVsNotScaledout = null;
+    @JsonProperty("se_with_vs_not_scaledout")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seWithVsNotScaledout = null;
 
-  @JsonProperty("se_with_vs_scaledout")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seWithVsScaledout = null;
+    @JsonProperty("se_with_vs_scaledout")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seWithVsScaledout = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("thread")
-  @JsonInclude(Include.NON_NULL)
-  private String thread = null;
+    @JsonProperty("thread")
+    @JsonInclude(Include.NON_NULL)
+    private String thread = null;
 
-  @JsonProperty("traffic_status")
-  @JsonInclude(Include.NON_NULL)
-  private String trafficStatus = null;
+    @JsonProperty("traffic_status")
+    @JsonInclude(Include.NON_NULL)
+    private String trafficStatus = null;
 
-  @JsonProperty("vs_errors")
-  @JsonInclude(Include.NON_NULL)
-  private List<VsError> vsErrors = null;
+    @JsonProperty("vs_errors")
+    @JsonInclude(Include.NON_NULL)
+    private List<VsError> vsErrors = null;
 
-  @JsonProperty("vs_migrate_in_progress_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsMigrateInProgressRef = null;
+    @JsonProperty("vs_migrate_in_progress_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsMigrateInProgressRef = null;
 
-  @JsonProperty("vs_scalein_in_progress_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsScaleinInProgressRef = null;
+    @JsonProperty("vs_scalein_in_progress_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsScaleinInProgressRef = null;
 
-  @JsonProperty("vs_scaleout_in_progress_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsScaleoutInProgressRef = null;
+    @JsonProperty("vs_scaleout_in_progress_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsScaleoutInProgressRef = null;
 
-  @JsonProperty("worker")
-  @JsonInclude(Include.NON_NULL)
-  private String worker = null;
+    @JsonProperty("worker")
+    @JsonInclude(Include.NON_NULL)
+    private String worker = null;
 
 
 
@@ -206,6 +206,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller version.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerVersion
    */
   @VsoMethod
@@ -217,6 +218,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Controller version.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerVersion set the controllerVersion.
    */
   @VsoMethod
@@ -227,6 +229,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disruptedVsRef
    */
   @VsoMethod
@@ -237,6 +240,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the disruptedVsRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disruptedVsRef
    */
   @VsoMethod
@@ -247,6 +251,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the disruptedVsRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disruptedVsRef
    */
   @VsoMethod
@@ -262,6 +267,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property duration of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
   @VsoMethod
@@ -272,6 +278,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property duration of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
   @VsoMethod
@@ -282,6 +289,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -292,6 +300,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -302,6 +311,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property enqueue_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enqueueTime
    */
   @VsoMethod
@@ -312,6 +322,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property enqueue_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enqueueTime set the enqueueTime.
    */
   @VsoMethod
@@ -322,6 +333,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haMode
    */
   @VsoMethod
@@ -332,6 +344,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haMode set the haMode.
    */
   @VsoMethod
@@ -343,6 +356,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Serviceenginegroup upgrade in progress.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inProgress
    */
   @VsoMethod
@@ -354,6 +368,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * Serviceenginegroup upgrade in progress.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inProgress set the inProgress.
    */
   @VsoMethod
@@ -364,6 +379,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type segroupstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -374,6 +390,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type segroupstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -384,6 +401,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type segroupstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -399,6 +417,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
   @VsoMethod
@@ -409,6 +428,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
   @VsoMethod
@@ -419,6 +439,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se_with_no_vs of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeWithNoVs
    */
   @VsoMethod
@@ -429,6 +450,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se_with_no_vs of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeWithNoVs set the numSeWithNoVs.
    */
   @VsoMethod
@@ -439,6 +461,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se_with_vs_not_scaledout of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeWithVsNotScaledout
    */
   @VsoMethod
@@ -449,6 +472,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se_with_vs_not_scaledout of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeWithVsNotScaledout set the numSeWithVsNotScaledout.
    */
   @VsoMethod
@@ -459,6 +483,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se_with_vs_scaledout of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeWithVsScaledout
    */
   @VsoMethod
@@ -469,6 +494,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se_with_vs_scaledout of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeWithVsScaledout set the numSeWithVsScaledout.
    */
   @VsoMethod
@@ -479,6 +505,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vs of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVs
    */
   @VsoMethod
@@ -489,6 +516,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vs of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVs set the numVs.
    */
   @VsoMethod
@@ -499,6 +527,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vs_disrupted of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVsDisrupted
    */
   @VsoMethod
@@ -509,6 +538,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vs_disrupted of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVsDisrupted set the numVsDisrupted.
    */
   @VsoMethod
@@ -519,6 +549,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property progress of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return progress
    */
   @VsoMethod
@@ -529,6 +560,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property progress of obj type segroupstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param progress set the progress.
    */
   @VsoMethod
@@ -539,6 +571,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type segroupstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -549,6 +582,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the reason
    * Placeholder for description of property reason of obj type segroupstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -559,6 +593,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the reason
    * Placeholder for description of property reason of obj type segroupstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -574,6 +609,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property request_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestTime
    */
   @VsoMethod
@@ -584,6 +620,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property request_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestTime set the requestTime.
    */
   @VsoMethod
@@ -596,6 +633,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines are already upgraded before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAlreadyUpgradedAtStart
    */
   @VsoMethod
@@ -608,6 +646,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines are already upgraded before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAlreadyUpgradedAtStart
    */
   @VsoMethod
@@ -620,6 +659,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines are already upgraded before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAlreadyUpgradedAtStart
    */
   @VsoMethod
@@ -637,6 +677,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines in disconnected state before starting the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDisconnectedAtStart
    */
   @VsoMethod
@@ -649,6 +690,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines in disconnected state before starting the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDisconnectedAtStart
    */
   @VsoMethod
@@ -661,6 +703,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines in disconnected state before starting the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDisconnectedAtStart
    */
   @VsoMethod
@@ -676,6 +719,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_group_name of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupName
    */
   @VsoMethod
@@ -686,6 +730,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_group_name of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupName set the seGroupName.
    */
   @VsoMethod
@@ -696,6 +741,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupUuid
    */
   @VsoMethod
@@ -706,6 +752,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupUuid set the seGroupUuid.
    */
   @VsoMethod
@@ -718,6 +765,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines local ip not present before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpMissingAtStart
    */
   @VsoMethod
@@ -730,6 +778,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines local ip not present before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpMissingAtStart
    */
   @VsoMethod
@@ -742,6 +791,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines local ip not present before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpMissingAtStart
    */
   @VsoMethod
@@ -759,6 +809,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines in poweredoff state before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoweredoffAtStart
    */
   @VsoMethod
@@ -771,6 +822,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines in poweredoff state before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoweredoffAtStart
    */
   @VsoMethod
@@ -783,6 +835,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines in poweredoff state before the upgrade.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoweredoffAtStart
    */
   @VsoMethod
@@ -798,6 +851,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRebootInProgressRef
    */
   @VsoMethod
@@ -808,6 +862,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRebootInProgressRef set the seRebootInProgressRef.
    */
   @VsoMethod
@@ -820,6 +875,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade completed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeCompleted
    */
   @VsoMethod
@@ -832,6 +888,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade completed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeCompleted
    */
   @VsoMethod
@@ -844,6 +901,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade completed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeCompleted
    */
   @VsoMethod
@@ -860,6 +918,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Serviceenginegroup upgrade errors.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeErrors
    */
   @VsoMethod
@@ -871,6 +930,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method. this will set the seUpgradeErrors
    * Serviceenginegroup upgrade errors.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeErrors
    */
   @VsoMethod
@@ -882,6 +942,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method this will set the seUpgradeErrors
    * Serviceenginegroup upgrade errors.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeErrors
    */
   @VsoMethod
@@ -899,6 +960,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade failed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeFailed
    */
   @VsoMethod
@@ -911,6 +973,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade failed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeFailed
    */
   @VsoMethod
@@ -923,6 +986,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade failed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeFailed
    */
   @VsoMethod
@@ -940,6 +1004,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade in progress.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeInProgress
    */
   @VsoMethod
@@ -952,6 +1017,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade in progress.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeInProgress
    */
   @VsoMethod
@@ -964,6 +1030,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade in progress.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeInProgress
    */
   @VsoMethod
@@ -981,6 +1048,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade not started.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeNotStarted
    */
   @VsoMethod
@@ -993,6 +1061,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade not started.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeNotStarted
    */
   @VsoMethod
@@ -1005,6 +1074,7 @@ public class SeGroupStatus extends AviRestResource {
    * Serviceengines upgrade not started.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeNotStarted
    */
   @VsoMethod
@@ -1021,6 +1091,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines that were in suspended state and were skipped upon service engine group ugprade resumption.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSkipSuspended
    */
   @VsoMethod
@@ -1032,6 +1103,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method. this will set the seUpgradeSkipSuspended
    * Service engines that were in suspended state and were skipped upon service engine group ugprade resumption.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSkipSuspended
    */
   @VsoMethod
@@ -1043,6 +1115,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method this will set the seUpgradeSkipSuspended
    * Service engines that were in suspended state and were skipped upon service engine group ugprade resumption.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSkipSuspended
    */
   @VsoMethod
@@ -1059,6 +1132,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines which triggered service engine group to be in suspended state.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSuspended
    */
   @VsoMethod
@@ -1070,6 +1144,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method. this will set the seUpgradeSuspended
    * Service engines which triggered service engine group to be in suspended state.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSuspended
    */
   @VsoMethod
@@ -1081,6 +1156,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method this will set the seUpgradeSuspended
    * Service engines which triggered service engine group to be in suspended state.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSuspended
    */
   @VsoMethod
@@ -1096,6 +1172,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithNoVs
    */
   @VsoMethod
@@ -1106,6 +1183,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the seWithNoVs
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithNoVs
    */
   @VsoMethod
@@ -1116,6 +1194,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the seWithNoVs
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithNoVs
    */
   @VsoMethod
@@ -1131,6 +1210,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithVsNotScaledout
    */
   @VsoMethod
@@ -1141,6 +1221,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the seWithVsNotScaledout
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithVsNotScaledout
    */
   @VsoMethod
@@ -1151,6 +1232,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the seWithVsNotScaledout
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithVsNotScaledout
    */
   @VsoMethod
@@ -1166,6 +1248,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithVsScaledout
    */
   @VsoMethod
@@ -1176,6 +1259,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the seWithVsScaledout
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithVsScaledout
    */
   @VsoMethod
@@ -1186,6 +1270,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the seWithVsScaledout
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seWithVsScaledout
    */
   @VsoMethod
@@ -1201,6 +1286,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -1211,6 +1297,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start_time of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod
@@ -1224,6 +1311,7 @@ public class SeGroupStatus extends AviRestResource {
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
    * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -1237,6 +1325,7 @@ public class SeGroupStatus extends AviRestResource {
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
    * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -1247,6 +1336,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -1257,6 +1347,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -1267,6 +1358,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property thread of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thread
    */
   @VsoMethod
@@ -1277,6 +1369,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property thread of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param thread set the thread.
    */
   @VsoMethod
@@ -1287,6 +1380,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trafficStatus
    */
   @VsoMethod
@@ -1297,6 +1391,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trafficStatus set the trafficStatus.
    */
   @VsoMethod
@@ -1308,6 +1403,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualservice errors during the segroup upgrade.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrors
    */
   @VsoMethod
@@ -1319,6 +1415,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method. this will set the vsErrors
    * Virtualservice errors during the segroup upgrade.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrors
    */
   @VsoMethod
@@ -1330,6 +1427,7 @@ public class SeGroupStatus extends AviRestResource {
    * This is the setter method this will set the vsErrors
    * Virtualservice errors during the segroup upgrade.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrors
    */
   @VsoMethod
@@ -1345,6 +1443,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsMigrateInProgressRef
    */
   @VsoMethod
@@ -1355,6 +1454,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the vsMigrateInProgressRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsMigrateInProgressRef
    */
   @VsoMethod
@@ -1365,6 +1465,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the vsMigrateInProgressRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsMigrateInProgressRef
    */
   @VsoMethod
@@ -1380,6 +1481,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleinInProgressRef
    */
   @VsoMethod
@@ -1390,6 +1492,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the vsScaleinInProgressRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleinInProgressRef
    */
   @VsoMethod
@@ -1400,6 +1503,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the vsScaleinInProgressRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleinInProgressRef
    */
   @VsoMethod
@@ -1415,6 +1519,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleoutInProgressRef
    */
   @VsoMethod
@@ -1425,6 +1530,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the vsScaleoutInProgressRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleoutInProgressRef
    */
   @VsoMethod
@@ -1435,6 +1541,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method this will set the vsScaleoutInProgressRef
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleoutInProgressRef
    */
   @VsoMethod
@@ -1450,6 +1557,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property worker of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return worker
    */
   @VsoMethod
@@ -1460,6 +1568,7 @@ public class SeGroupStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property worker of obj type segroupstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param worker set the worker.
    */
   @VsoMethod

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafRuleMatchData extends AviRestResource {
-  @JsonProperty("is_internal")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isInternal = false;
+    @JsonProperty("is_internal")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isInternal = false;
 
-  @JsonProperty("match_element")
-  @JsonInclude(Include.NON_NULL)
-  private String matchElement = null;
+    @JsonProperty("match_element")
+    @JsonInclude(Include.NON_NULL)
+    private String matchElement = null;
 
-  @JsonProperty("match_value")
-  @JsonInclude(Include.NON_NULL)
-  private String matchValue = null;
+    @JsonProperty("match_value")
+    @JsonInclude(Include.NON_NULL)
+    private String matchValue = null;
 
 
 
@@ -68,6 +68,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_element is args password.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElement
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the setter method to the attribute.
    * Field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_element is args password.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElement set the matchElement.
    */
   @VsoMethod
@@ -90,6 +92,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Value for a field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_value is foobar.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValue
    */
   @VsoMethod
@@ -101,6 +104,7 @@ public class WafRuleMatchData extends AviRestResource {
    * This is the setter method to the attribute.
    * Value for a field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_value is foobar.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValue set the matchValue.
    */
   @VsoMethod

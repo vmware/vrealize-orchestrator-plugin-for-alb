@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecMgrThreshold extends AviRestResource {
-  @JsonProperty("attack_type")
-  @JsonInclude(Include.NON_NULL)
-  private String attackType = null;
+    @JsonProperty("attack_type")
+    @JsonInclude(Include.NON_NULL)
+    private String attackType = null;
 
-  @JsonProperty("threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer threshold = null;
+    @JsonProperty("threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer threshold = null;
 
 
 
@@ -40,6 +40,7 @@ public class SecMgrThreshold extends AviRestResource {
    * PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS,
    * DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT...
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attackType
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class SecMgrThreshold extends AviRestResource {
    * PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS,
    * DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT...
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attackType set the attackType.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class SecMgrThreshold extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class SecMgrThreshold extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
   @VsoMethod

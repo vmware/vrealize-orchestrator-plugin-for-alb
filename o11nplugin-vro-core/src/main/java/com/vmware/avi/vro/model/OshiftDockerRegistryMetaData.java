@@ -25,24 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OshiftDockerRegistryMetaData extends AviRestResource {
-  @JsonProperty("registry_namespace")
-  @JsonInclude(Include.NON_NULL)
-  private String registryNamespace = "default";
+    @JsonProperty("registry_namespace")
+    @JsonInclude(Include.NON_NULL)
+    private String registryNamespace = "default";
 
-  @JsonProperty("registry_service")
-  @JsonInclude(Include.NON_NULL)
-  private String registryService = "docker-registry";
+    @JsonProperty("registry_service")
+    @JsonInclude(Include.NON_NULL)
+    private String registryService = "docker-registry";
 
-  @JsonProperty("registry_vip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr registryVip = null;
+    @JsonProperty("registry_vip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr registryVip = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Namespace for the serviceengine image to be hosted in openshift integrated registry.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return registryNamespace
    */
   @VsoMethod
@@ -53,7 +53,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Namespace for the serviceengine image to be hosted in openshift integrated registry.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param registryNamespace set the registryNamespace.
    */
   @VsoMethod
@@ -64,7 +64,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the integrated registry service in openshift.
-   * Default value when not specified in API or module is interpreted by Avi Controller as docker-registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "docker-registry".
    * @return registryService
    */
   @VsoMethod
@@ -75,7 +75,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the integrated registry service in openshift.
-   * Default value when not specified in API or module is interpreted by Avi Controller as docker-registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "docker-registry".
    * @param registryService set the registryService.
    */
   @VsoMethod
@@ -91,6 +91,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
    * can be used for this vip and ip pool can start from 172.50.0.3 onwards.
    * Use this static vip in '--insecure-registry <this-vip> 5000' docker config if using an insecure registry or add this to the list of ips/hostnames
    * when generating certificates if using a secure tls registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return registryVip
    */
   @VsoMethod
@@ -106,6 +107,7 @@ public class OshiftDockerRegistryMetaData extends AviRestResource {
    * can be used for this vip and ip pool can start from 172.50.0.3 onwards.
    * Use this static vip in '--insecure-registry <this-vip> 5000' docker config if using an insecure registry or add this to the list of ips/hostnames
    * when generating certificates if using a secure tls registry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param registryVip set the registryVip.
    */
   @VsoMethod

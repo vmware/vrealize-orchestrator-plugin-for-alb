@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpReputationConfig extends AviRestResource {
-  @JsonProperty("ip_reputation_file_object_expiry_duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipReputationFileObjectExpiryDuration = 3;
+    @JsonProperty("ip_reputation_file_object_expiry_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipReputationFileObjectExpiryDuration = 3;
 
-  @JsonProperty("ip_reputation_sync_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipReputationSyncInterval = 60;
+    @JsonProperty("ip_reputation_sync_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipReputationSyncInterval = 60;
 
 
 
@@ -39,6 +39,7 @@ public class IpReputationConfig extends AviRestResource {
    * Ip reputation db file object expiry duration in days.
    * Allowed values are 1-7.
    * Field introduced in 20.1.1.
+   * Unit is days.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return ipReputationFileObjectExpiryDuration
    */
@@ -52,6 +53,7 @@ public class IpReputationConfig extends AviRestResource {
    * Ip reputation db file object expiry duration in days.
    * Allowed values are 1-7.
    * Field introduced in 20.1.1.
+   * Unit is days.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param ipReputationFileObjectExpiryDuration set the ipReputationFileObjectExpiryDuration.
    */
@@ -65,6 +67,7 @@ public class IpReputationConfig extends AviRestResource {
    * Ip reputation db sync interval in minutes.
    * Allowed values are 2-1440.
    * Field introduced in 20.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return ipReputationSyncInterval
    */
@@ -78,6 +81,7 @@ public class IpReputationConfig extends AviRestResource {
    * Ip reputation db sync interval in minutes.
    * Allowed values are 2-1440.
    * Field introduced in 20.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param ipReputationSyncInterval set the ipReputationSyncInterval.
    */

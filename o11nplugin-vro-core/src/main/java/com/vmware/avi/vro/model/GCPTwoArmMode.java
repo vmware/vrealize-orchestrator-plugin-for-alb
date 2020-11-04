@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPTwoArmMode extends AviRestResource {
-  @JsonProperty("backend_data_vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String backendDataVpcNetworkName = null;
+    @JsonProperty("backend_data_vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String backendDataVpcNetworkName = null;
 
-  @JsonProperty("backend_data_vpc_subnet_name")
-  @JsonInclude(Include.NON_NULL)
-  private String backendDataVpcSubnetName = null;
+    @JsonProperty("backend_data_vpc_subnet_name")
+    @JsonInclude(Include.NON_NULL)
+    private String backendDataVpcSubnetName = null;
 
-  @JsonProperty("frontend_data_vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String frontendDataVpcNetworkName = null;
+    @JsonProperty("frontend_data_vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String frontendDataVpcNetworkName = null;
 
-  @JsonProperty("frontend_data_vpc_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String frontendDataVpcProjectId = null;
+    @JsonProperty("frontend_data_vpc_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String frontendDataVpcProjectId = null;
 
-  @JsonProperty("frontend_data_vpc_subnet_name")
-  @JsonInclude(Include.NON_NULL)
-  private String frontendDataVpcSubnetName = null;
+    @JsonProperty("frontend_data_vpc_subnet_name")
+    @JsonInclude(Include.NON_NULL)
+    private String frontendDataVpcSubnetName = null;
 
-  @JsonProperty("management_vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String managementVpcNetworkName = null;
+    @JsonProperty("management_vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String managementVpcNetworkName = null;
 
-  @JsonProperty("management_vpc_subnet_name")
-  @JsonInclude(Include.NON_NULL)
-  private String managementVpcSubnetName = null;
+    @JsonProperty("management_vpc_subnet_name")
+    @JsonInclude(Include.NON_NULL)
+    private String managementVpcSubnetName = null;
 
 
 
@@ -58,6 +58,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine backend data network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backendDataVpcNetworkName
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine backend data network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backendDataVpcNetworkName set the backendDataVpcNetworkName.
    */
   @VsoMethod
@@ -80,6 +82,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine backend data network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backendDataVpcSubnetName
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine backend data network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backendDataVpcSubnetName set the backendDataVpcSubnetName.
    */
   @VsoMethod
@@ -102,6 +106,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine frontend data network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frontendDataVpcNetworkName
    */
   @VsoMethod
@@ -113,6 +118,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine frontend data network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frontendDataVpcNetworkName set the frontendDataVpcNetworkName.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * Project id of the service engine frontend data network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frontendDataVpcProjectId
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * Project id of the service engine frontend data network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frontendDataVpcProjectId set the frontendDataVpcProjectId.
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine frontend data network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frontendDataVpcSubnetName
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine frontend data network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frontendDataVpcSubnetName set the frontendDataVpcSubnetName.
    */
   @VsoMethod
@@ -170,6 +180,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine management network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcNetworkName
    */
   @VsoMethod
@@ -181,6 +192,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine management network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcNetworkName set the managementVpcNetworkName.
    */
   @VsoMethod
@@ -192,6 +204,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine management network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcSubnetName
    */
   @VsoMethod
@@ -203,6 +216,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine management network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcSubnetName set the managementVpcSubnetName.
    */
   @VsoMethod

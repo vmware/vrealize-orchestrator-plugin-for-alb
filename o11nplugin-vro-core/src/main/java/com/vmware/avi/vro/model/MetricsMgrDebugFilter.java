@@ -24,47 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsMgrDebugFilter extends AviRestResource {
-  @JsonProperty("disable_hw_training")
-  @JsonInclude(Include.NON_NULL)
-  private String disableHwTraining = null;
+    @JsonProperty("disable_hw_training")
+    @JsonInclude(Include.NON_NULL)
+    private String disableHwTraining = null;
 
-  @JsonProperty("entity")
-  @JsonInclude(Include.NON_NULL)
-  private String entity = null;
+    @JsonProperty("entity")
+    @JsonInclude(Include.NON_NULL)
+    private String entity = null;
 
-  @JsonProperty("license_grace_period")
-  @JsonInclude(Include.NON_NULL)
-  private String licenseGracePeriod = null;
+    @JsonProperty("license_grace_period")
+    @JsonInclude(Include.NON_NULL)
+    private String licenseGracePeriod = null;
 
-  @JsonProperty("log_first_n")
-  @JsonInclude(Include.NON_NULL)
-  private String logFirstN = null;
+    @JsonProperty("log_first_n")
+    @JsonInclude(Include.NON_NULL)
+    private String logFirstN = null;
 
-  @JsonProperty("logging_freq")
-  @JsonInclude(Include.NON_NULL)
-  private String loggingFreq = null;
+    @JsonProperty("logging_freq")
+    @JsonInclude(Include.NON_NULL)
+    private String loggingFreq = null;
 
-  @JsonProperty("metric_instance_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricInstanceId = null;
+    @JsonProperty("metric_instance_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricInstanceId = null;
 
-  @JsonProperty("obj")
-  @JsonInclude(Include.NON_NULL)
-  private String obj = null;
+    @JsonProperty("obj")
+    @JsonInclude(Include.NON_NULL)
+    private String obj = null;
 
-  @JsonProperty("skip_cluster_map_check")
-  @JsonInclude(Include.NON_NULL)
-  private String skipClusterMapCheck = null;
+    @JsonProperty("skip_cluster_map_check")
+    @JsonInclude(Include.NON_NULL)
+    private String skipClusterMapCheck = null;
 
-  @JsonProperty("skip_metrics_db_writes")
-  @JsonInclude(Include.NON_NULL)
-  private String skipMetricsDbWrites = null;
+    @JsonProperty("skip_metrics_db_writes")
+    @JsonInclude(Include.NON_NULL)
+    private String skipMetricsDbWrites = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property disable_hw_training of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disableHwTraining
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property disable_hw_training of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disableHwTraining set the disableHwTraining.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property entity of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entity
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property entity of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entity set the entity.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Setting to reduce the grace period for license expiry in hours.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseGracePeriod
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Setting to reduce the grace period for license expiry in hours.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseGracePeriod set the licenseGracePeriod.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property log_first_n of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logFirstN
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property log_first_n of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param logFirstN set the logFirstN.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property logging_freq of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return loggingFreq
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property logging_freq of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param loggingFreq set the loggingFreq.
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_instance_id of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricInstanceId
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_instance_id of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricInstanceId set the metricInstanceId.
    */
   @VsoMethod
@@ -185,6 +197,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property obj of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return obj
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property obj of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param obj set the obj.
    */
   @VsoMethod
@@ -205,6 +219,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property skip_cluster_map_check of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skipClusterMapCheck
    */
   @VsoMethod
@@ -215,6 +230,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property skip_cluster_map_check of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param skipClusterMapCheck set the skipClusterMapCheck.
    */
   @VsoMethod
@@ -225,6 +241,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property skip_metrics_db_writes of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skipMetricsDbWrites
    */
   @VsoMethod
@@ -235,6 +252,7 @@ public class MetricsMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property skip_metrics_db_writes of obj type metricsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param skipMetricsDbWrites set the skipMetricsDbWrites.
    */
   @VsoMethod

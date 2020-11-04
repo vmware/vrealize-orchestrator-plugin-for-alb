@@ -26,29 +26,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPSwitchingAction extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("file")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPLocalFile file = null;
+    @JsonProperty("file")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPLocalFile file = null;
 
-  @JsonProperty("pool_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolGroupRef = null;
+    @JsonProperty("pool_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolGroupRef = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private PoolServer server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private PoolServer server = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCode = null;
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCode = null;
 
 
 
@@ -56,6 +56,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Content switching action type.
    * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Content switching action type.
    * Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class HTTPSwitchingAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * File from which to serve local response to the request.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return file
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class HTTPSwitchingAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * File from which to serve local response to the request.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param file set the file.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool group to serve the request.
    * It is a reference to an object of type poolgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool of servers to serve the request.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool of servers to serve the request.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod
@@ -141,6 +149,7 @@ public class HTTPSwitchingAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specific pool server to select.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class HTTPSwitchingAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specific pool server to select.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod
@@ -163,6 +173,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * Http status code to use when serving local response.
    * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
    * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class HTTPSwitchingAction extends AviRestResource {
    * Http status code to use when serving local response.
    * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
    * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
   @VsoMethod

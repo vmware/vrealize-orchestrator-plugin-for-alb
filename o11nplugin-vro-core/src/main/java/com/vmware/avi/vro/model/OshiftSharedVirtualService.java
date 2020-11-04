@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OshiftSharedVirtualService extends AviRestResource {
-  @JsonProperty("virtualservice_name")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualserviceName = null;
+    @JsonProperty("virtualservice_name")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualserviceName = null;
 
 
 
@@ -35,6 +35,7 @@ public class OshiftSharedVirtualService extends AviRestResource {
    * Name of shared virtualservice.
    * Virtualservice will be created automatically by cloud connector.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualserviceName
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class OshiftSharedVirtualService extends AviRestResource {
    * Name of shared virtualservice.
    * Virtualservice will be created automatically by cloud connector.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualserviceName set the virtualserviceName.
    */
   @VsoMethod

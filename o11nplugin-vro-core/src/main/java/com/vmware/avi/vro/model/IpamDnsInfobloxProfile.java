@@ -25,52 +25,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsInfobloxProfile extends AviRestResource {
-  @JsonProperty("dns_view")
-  @JsonInclude(Include.NON_NULL)
-  private String dnsView = "default";
+    @JsonProperty("dns_view")
+    @JsonInclude(Include.NON_NULL)
+    private String dnsView = "default";
 
-  @JsonProperty("extensible_attributes")
-  @JsonInclude(Include.NON_NULL)
-  private List<CustomParams> extensibleAttributes = null;
+    @JsonProperty("extensible_attributes")
+    @JsonInclude(Include.NON_NULL)
+    private List<CustomParams> extensibleAttributes = null;
 
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddress = null;
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddress = null;
 
-  @JsonProperty("network_view")
-  @JsonInclude(Include.NON_NULL)
-  private String networkView = "default";
+    @JsonProperty("network_view")
+    @JsonInclude(Include.NON_NULL)
+    private String networkView = "default";
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("usable_alloc_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<InfobloxSubnet> usableAllocSubnets = null;
+    @JsonProperty("usable_alloc_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<InfobloxSubnet> usableAllocSubnets = null;
 
-  @JsonProperty("usable_domains")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableDomains = null;
+    @JsonProperty("usable_domains")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableDomains = null;
 
-  @JsonProperty("usable_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> usableSubnets = null;
+    @JsonProperty("usable_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> usableSubnets;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
-  @JsonProperty("wapi_version")
-  @JsonInclude(Include.NON_NULL)
-  private String wapiVersion = "2.0";
+    @JsonProperty("wapi_version")
+    @JsonInclude(Include.NON_NULL)
+    private String wapiVersion = "2.0";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Dns view.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return dnsView
    */
   @VsoMethod
@@ -81,7 +81,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dns view.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param dnsView set the dnsView.
    */
   @VsoMethod
@@ -93,6 +93,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Custom parameters that will passed to the infoblox provider as extensible attributes.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return extensibleAttributes
    */
   @VsoMethod
@@ -104,6 +105,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method. this will set the extensibleAttributes
    * Custom parameters that will passed to the infoblox provider as extensible attributes.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return extensibleAttributes
    */
   @VsoMethod
@@ -115,6 +117,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method this will set the extensibleAttributes
    * Custom parameters that will passed to the infoblox provider as extensible attributes.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return extensibleAttributes
    */
   @VsoMethod
@@ -130,6 +133,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Address of infoblox appliance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -140,6 +144,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Address of infoblox appliance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddress set the ipAddress.
    */
   @VsoMethod
@@ -150,7 +155,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network view.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @return networkView
    */
   @VsoMethod
@@ -161,7 +166,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network view.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default".
    * @param networkView set the networkView.
    */
   @VsoMethod
@@ -172,6 +177,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password for api access for infoblox appliance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -182,6 +188,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password for api access for infoblox appliance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -193,6 +200,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnets to use for infoblox ip allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
   @VsoMethod
@@ -204,6 +212,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method. this will set the usableAllocSubnets
    * Subnets to use for infoblox ip allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
   @VsoMethod
@@ -215,6 +224,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
    * This is the setter method this will set the usableAllocSubnets
    * Subnets to use for infoblox ip allocation.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableAllocSubnets
    */
   @VsoMethod
@@ -230,6 +240,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Usable domains to pick from infoblox.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -240,6 +251,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the usableDomains
    * Usable domains to pick from infoblox.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -250,6 +262,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method this will set the usableDomains
    * Usable domains to pick from infoblox.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -303,6 +316,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Username for api access for infoblox appliance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -313,6 +327,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Username for api access for infoblox appliance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod
@@ -323,7 +338,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Wapi version.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "2.0".
    * @return wapiVersion
    */
   @VsoMethod
@@ -334,7 +349,7 @@ public class IpamDnsInfobloxProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Wapi version.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "2.0".
    * @param wapiVersion set the wapiVersion.
    */
   @VsoMethod

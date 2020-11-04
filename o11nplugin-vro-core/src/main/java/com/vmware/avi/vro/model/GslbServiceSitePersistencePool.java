@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbServiceSitePersistencePool extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("num_servers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numServers = null;
+    @JsonProperty("num_servers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numServers = null;
 
-  @JsonProperty("num_servers_up")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numServersUp = null;
+    @JsonProperty("num_servers_up")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numServersUp = null;
 
-  @JsonProperty("servers")
-  @JsonInclude(Include.NON_NULL)
-  private List<ServerConfig> servers = null;
+    @JsonProperty("servers")
+    @JsonInclude(Include.NON_NULL)
+    private List<ServerConfig> servers = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -50,6 +50,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site persistence pool's name.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Site persistence pool's name.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers configured in the pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServers
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers configured in the pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServers set the numServers.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of servers operationally up in the pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numServersUp
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of servers operationally up in the pool.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numServersUp set the numServersUp.
    */
   @VsoMethod
@@ -116,6 +122,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detailed information of the servers in the pool.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -127,6 +134,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method. this will set the servers
    * Detailed information of the servers in the pool.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method this will set the servers
    * Detailed information of the servers in the pool.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -154,6 +163,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Site persistence pool's uuid.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
    * This is the setter method to the attribute.
    * Site persistence pool's uuid.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

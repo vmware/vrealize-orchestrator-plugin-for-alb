@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MarathonServicePortConflict extends AviRestResource {
-  @JsonProperty("app_name")
-  @JsonInclude(Include.NON_NULL)
-  private String appName = null;
+    @JsonProperty("app_name")
+    @JsonInclude(Include.NON_NULL)
+    private String appName = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("marathon_url")
-  @JsonInclude(Include.NON_NULL)
-  private String marathonUrl = null;
+    @JsonProperty("marathon_url")
+    @JsonInclude(Include.NON_NULL)
+    private String marathonUrl = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property app_name of obj type marathonserviceportconflict field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appName
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property app_name of obj type marathonserviceportconflict field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appName set the appName.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_id of obj type marathonserviceportconflict field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_id of obj type marathonserviceportconflict field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property marathon_url of obj type marathonserviceportconflict field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonUrl
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property marathon_url of obj type marathonserviceportconflict field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonUrl set the marathonUrl.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property port of obj type marathonserviceportconflict field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class MarathonServicePortConflict extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property port of obj type marathonserviceportconflict field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod

@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDerivationData extends AviRestResource {
-  @JsonProperty("derivation_fn")
-  @JsonInclude(Include.NON_NULL)
-  private String derivationFn = null;
+    @JsonProperty("derivation_fn")
+    @JsonInclude(Include.NON_NULL)
+    private String derivationFn = null;
 
-  @JsonProperty("exclude_derived_metric")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excludeDerivedMetric = false;
+    @JsonProperty("exclude_derived_metric")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excludeDerivedMetric = false;
 
-  @JsonProperty("include_derivation_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean includeDerivationMetrics = false;
+    @JsonProperty("include_derivation_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean includeDerivationMetrics = false;
 
-  @JsonProperty("join_tables")
-  @JsonInclude(Include.NON_NULL)
-  private String joinTables = null;
+    @JsonProperty("join_tables")
+    @JsonInclude(Include.NON_NULL)
+    private String joinTables = null;
 
-  @JsonProperty("metric_ids")
-  @JsonInclude(Include.NON_NULL)
-  private String metricIds = null;
+    @JsonProperty("metric_ids")
+    @JsonInclude(Include.NON_NULL)
+    private String metricIds = null;
 
-  @JsonProperty("result_has_additional_fields")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resultHasAdditionalFields = false;
+    @JsonProperty("result_has_additional_fields")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resultHasAdditionalFields = false;
 
-  @JsonProperty("second_order_derivation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean secondOrderDerivation = false;
+    @JsonProperty("second_order_derivation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean secondOrderDerivation = false;
 
-  @JsonProperty("skip_backend_derivation")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipBackendDerivation = false;
+    @JsonProperty("skip_backend_derivation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipBackendDerivation = false;
 
 
 
@@ -64,6 +64,7 @@ public class MetricsDerivationData extends AviRestResource {
    * SUM_GAUGE, SUM_N_METRICS, APPDEX_ON_5_BUCKETS, APPDEX_ON_6_BUCKETS, APPDEX_ON_CONNECTIONS, APPDEX_ON_2_BUCKETS, AVG_CLIENT_LATENCY,
    * AVG_APPLICATION_LATENCY, MIN_N_METRICS, SUM_FIRST_N_DIVIDE_BY_LAST_PERCENTAGE, L4_CONNECTION_ERROR_PERCENTAGE, AVG_L4_CLIENT_LATENCY,
    * CHECK_FOR_TRANSITIONS, SUBSTRACT_ALL_FROM_FIRST...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return derivationFn
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class MetricsDerivationData extends AviRestResource {
    * SUM_GAUGE, SUM_N_METRICS, APPDEX_ON_5_BUCKETS, APPDEX_ON_6_BUCKETS, APPDEX_ON_CONNECTIONS, APPDEX_ON_2_BUCKETS, AVG_CLIENT_LATENCY,
    * AVG_APPLICATION_LATENCY, MIN_N_METRICS, SUM_FIRST_N_DIVIDE_BY_LAST_PERCENTAGE, L4_CONNECTION_ERROR_PERCENTAGE, AVG_L4_CLIENT_LATENCY,
    * CHECK_FOR_TRANSITIONS, SUBSTRACT_ALL_FROM_FIRST...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param derivationFn set the derivationFn.
    */
   @VsoMethod
@@ -135,6 +137,7 @@ public class MetricsDerivationData extends AviRestResource {
    * METRICS_TABLE_RUM_PREAGG_BROWSER, METRICS_TABLE_RUM_PREAGG_COUNTRY, METRICS_TABLE_RUM_PREAGG_DEVTYPE, METRICS_TABLE_RUM_PREAGG_LANG,
    * METRICS_TABLE_RUM_PREAGG_OS, METRICS_TABLE_RUM_PREAGG_URL, METRICS_TABLE_RUM_ANALYTICS, METRICS_TABLE_VM_STATS, METRICS_TABLE_RESOURCE_TIMING_DIM,
    * METRICS_TABLE_RESOURCE_TIMING_BLOB, METRICS_TABLE_RUM_PREAGG_IPGROUP...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return joinTables
    */
   @VsoMethod
@@ -149,6 +152,7 @@ public class MetricsDerivationData extends AviRestResource {
    * METRICS_TABLE_RUM_PREAGG_BROWSER, METRICS_TABLE_RUM_PREAGG_COUNTRY, METRICS_TABLE_RUM_PREAGG_DEVTYPE, METRICS_TABLE_RUM_PREAGG_LANG,
    * METRICS_TABLE_RUM_PREAGG_OS, METRICS_TABLE_RUM_PREAGG_URL, METRICS_TABLE_RUM_ANALYTICS, METRICS_TABLE_VM_STATS, METRICS_TABLE_RESOURCE_TIMING_DIM,
    * METRICS_TABLE_RESOURCE_TIMING_BLOB, METRICS_TABLE_RUM_PREAGG_IPGROUP...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param joinTables set the joinTables.
    */
   @VsoMethod
@@ -159,6 +163,7 @@ public class MetricsDerivationData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_ids of obj type metricsderivationdata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricIds
    */
   @VsoMethod
@@ -169,6 +174,7 @@ public class MetricsDerivationData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_ids of obj type metricsderivationdata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricIds set the metricIds.
    */
   @VsoMethod

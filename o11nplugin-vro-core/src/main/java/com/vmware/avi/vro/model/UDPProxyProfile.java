@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UDPProxyProfile extends AviRestResource {
-  @JsonProperty("session_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sessionIdleTimeout = 10;
+    @JsonProperty("session_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sessionIdleTimeout = 10;
 
 
 
@@ -35,6 +35,7 @@ public class UDPProxyProfile extends AviRestResource {
    * The amount of time (in sec) for which a flow needs to be idle before it is deleted.
    * Allowed values are 2-3600.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return sessionIdleTimeout
    */
@@ -48,6 +49,7 @@ public class UDPProxyProfile extends AviRestResource {
    * The amount of time (in sec) for which a flow needs to be idle before it is deleted.
    * Allowed values are 2-3600.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param sessionIdleTimeout set the sessionIdleTimeout.
    */

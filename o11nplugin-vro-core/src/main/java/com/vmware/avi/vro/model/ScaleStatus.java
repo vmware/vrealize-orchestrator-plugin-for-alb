@@ -25,57 +25,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ScaleStatus extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("action_success")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean actionSuccess = null;
+    @JsonProperty("action_success")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean actionSuccess = null;
 
-  @JsonProperty("end_time_str")
-  @JsonInclude(Include.NON_NULL)
-  private String endTimeStr = null;
+    @JsonProperty("end_time_str")
+    @JsonInclude(Include.NON_NULL)
+    private String endTimeStr = null;
 
-  @JsonProperty("num_se_assigned")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSeAssigned = null;
+    @JsonProperty("num_se_assigned")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSeAssigned = null;
 
-  @JsonProperty("num_se_requested")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSeRequested = null;
+    @JsonProperty("num_se_requested")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSeRequested = null;
 
-  @JsonProperty("placement_read_fail_cnt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer placementReadFailCnt = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reason = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reason = null;
+    @JsonProperty("reason_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer reasonCode = null;
 
-  @JsonProperty("reason_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer reasonCode = null;
+    @JsonProperty("reason_code_string")
+    @JsonInclude(Include.NON_NULL)
+    private String reasonCodeString = null;
 
-  @JsonProperty("reason_code_string")
-  @JsonInclude(Include.NON_NULL)
-  private String reasonCodeString = null;
+    @JsonProperty("scale_se")
+    @JsonInclude(Include.NON_NULL)
+    private String scaleSe = null;
 
-  @JsonProperty("scale_se")
-  @JsonInclude(Include.NON_NULL)
-  private String scaleSe = null;
+    @JsonProperty("start_time_str")
+    @JsonInclude(Include.NON_NULL)
+    private String startTimeStr = null;
 
-  @JsonProperty("start_time_str")
-  @JsonInclude(Include.NON_NULL)
-  private String startTimeStr = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
-
-  @JsonProperty("vip_placement_resolution_info")
-  @JsonInclude(Include.NON_NULL)
-  private VipPlacementResolutionInfo vipPlacementResolutionInfo = null;
+    @JsonProperty("vip_placement_resolution_info")
+    @JsonInclude(Include.NON_NULL)
+    private VipPlacementResolutionInfo vipPlacementResolutionInfo = null;
 
 
 
@@ -84,6 +80,7 @@ public class ScaleStatus extends AviRestResource {
    * Enum options - OTHER, CREATE, READ, UPDATE, DELETE, SCALE_OUT, SCALE_IN, SE_REMOVED, SE_DISCONNECT, SE_RECONNECT, WARM_RESTART, COLD_RESTART,
    * UPDATE_LOGMGR_MAP, MIGRATE_SCALEOUT, MIGRATE_SCALEIN, INITIAL_PLACEMENT, ROTATE_KEYS, GLB_MGR_UPDATE, UPDATE_DNS_RECORDS, SCALEOUT_ADMINUP...
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -96,6 +93,7 @@ public class ScaleStatus extends AviRestResource {
    * Enum options - OTHER, CREATE, READ, UPDATE, DELETE, SCALE_OUT, SCALE_IN, SE_REMOVED, SE_DISCONNECT, SE_RECONNECT, WARM_RESTART, COLD_RESTART,
    * UPDATE_LOGMGR_MAP, MIGRATE_SCALEOUT, MIGRATE_SCALEIN, INITIAL_PLACEMENT, ROTATE_KEYS, GLB_MGR_UPDATE, UPDATE_DNS_RECORDS, SCALEOUT_ADMINUP...
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -106,6 +104,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionSuccess
    */
   @VsoMethod
@@ -116,6 +115,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionSuccess set the actionSuccess.
    */
   @VsoMethod
@@ -126,6 +126,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end_time_str of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTimeStr
    */
   @VsoMethod
@@ -136,6 +137,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end_time_str of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTimeStr set the endTimeStr.
    */
   @VsoMethod
@@ -146,6 +148,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se_assigned of obj type scalestatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeAssigned
    */
   @VsoMethod
@@ -156,6 +159,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se_assigned of obj type scalestatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeAssigned set the numSeAssigned.
    */
   @VsoMethod
@@ -166,6 +170,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se_requested of obj type scalestatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeRequested
    */
   @VsoMethod
@@ -176,6 +181,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se_requested of obj type scalestatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeRequested set the numSeRequested.
    */
   @VsoMethod
@@ -185,27 +191,8 @@ public class ScaleStatus extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field introduced in 18.2.6.
-   * @return placementReadFailCnt
-   */
-  @VsoMethod
-  public Integer getPlacementReadFailCnt() {
-    return placementReadFailCnt;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field introduced in 18.2.6.
-   * @param placementReadFailCnt set the placementReadFailCnt.
-   */
-  @VsoMethod
-  public void setPlacementReadFailCnt(Integer  placementReadFailCnt) {
-    this.placementReadFailCnt = placementReadFailCnt;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type scalestatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -216,6 +203,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the reason
    * Placeholder for description of property reason of obj type scalestatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -226,6 +214,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method this will set the reason
    * Placeholder for description of property reason of obj type scalestatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -241,6 +230,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason_code of obj type scalestatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCode
    */
   @VsoMethod
@@ -251,6 +241,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason_code of obj type scalestatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCode set the reasonCode.
    */
   @VsoMethod
@@ -261,6 +252,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason_code_string of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCodeString
    */
   @VsoMethod
@@ -271,6 +263,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason_code_string of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCodeString set the reasonCodeString.
    */
   @VsoMethod
@@ -281,6 +274,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property scale_se of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleSe
    */
   @VsoMethod
@@ -291,6 +285,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property scale_se of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleSe set the scaleSe.
    */
   @VsoMethod
@@ -301,6 +296,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start_time_str of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTimeStr
    */
   @VsoMethod
@@ -311,6 +307,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start_time_str of obj type scalestatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTimeStr set the startTimeStr.
    */
   @VsoMethod
@@ -324,6 +321,7 @@ public class ScaleStatus extends AviRestResource {
    * SCALEOUT_WAIT_FOR_SE_READY, SCALEOUT_SUCCESS, SCALEOUT_ERROR, SCALEOUT_ROLLBACK, SCALEOUT_ERROR_DISABLED, SCALEIN_AWAITING_SE_PRE_RELEASE,
    * SCALEIN_AWAITING_SE_PROGRAMMING, SCALEIN_WAIT_FOR_SE_READY, SCALEIN_AWAITING_SE_RELEASE, SCALEIN_SUCCESS, SCALEIN_ERROR,
    * MIGRATE_SCALEOUT_AWAITING_SE_ASSIGNMENT, MIGRATE_SCALEOUT_CREATING_SE, MIGRATE_SCALEOUT_RESOURCES, MIGRATE_SCALEOUT_AWAITING_SE_PROGRAMMING...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -337,6 +335,7 @@ public class ScaleStatus extends AviRestResource {
    * SCALEOUT_WAIT_FOR_SE_READY, SCALEOUT_SUCCESS, SCALEOUT_ERROR, SCALEOUT_ROLLBACK, SCALEOUT_ERROR_DISABLED, SCALEIN_AWAITING_SE_PRE_RELEASE,
    * SCALEIN_AWAITING_SE_PROGRAMMING, SCALEIN_WAIT_FOR_SE_READY, SCALEIN_AWAITING_SE_RELEASE, SCALEIN_SUCCESS, SCALEIN_ERROR,
    * MIGRATE_SCALEOUT_AWAITING_SE_ASSIGNMENT, MIGRATE_SCALEOUT_CREATING_SE, MIGRATE_SCALEOUT_RESOURCES, MIGRATE_SCALEOUT_AWAITING_SE_PROGRAMMING...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -347,6 +346,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_placement_resolution_info of obj type scalestatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipPlacementResolutionInfo
    */
   @VsoMethod
@@ -357,6 +357,7 @@ public class ScaleStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_placement_resolution_info of obj type scalestatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipPlacementResolutionInfo set the vipPlacementResolutionInfo.
    */
   @VsoMethod
@@ -386,8 +387,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.startTimeStr, objScaleStatus.startTimeStr)&&
   Objects.equals(this.endTimeStr, objScaleStatus.endTimeStr)&&
   Objects.equals(this.action, objScaleStatus.action)&&
-  Objects.equals(this.actionSuccess, objScaleStatus.actionSuccess)&&
-  Objects.equals(this.placementReadFailCnt, objScaleStatus.placementReadFailCnt);
+  Objects.equals(this.actionSuccess, objScaleStatus.actionSuccess);
 }
 
 @Override
@@ -399,7 +399,6 @@ public String toString() {
         sb.append("    endTimeStr: ").append(toIndentedString(endTimeStr)).append("\n");
         sb.append("    numSeAssigned: ").append(toIndentedString(numSeAssigned)).append("\n");
         sb.append("    numSeRequested: ").append(toIndentedString(numSeRequested)).append("\n");
-        sb.append("    placementReadFailCnt: ").append(toIndentedString(placementReadFailCnt)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
         sb.append("    reasonCodeString: ").append(toIndentedString(reasonCodeString)).append("\n");

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CRSDetails extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("release_date")
-  @JsonInclude(Include.NON_NULL)
-  private String releaseDate = null;
+    @JsonProperty("release_date")
+    @JsonInclude(Include.NON_NULL)
+    private String releaseDate = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -46,6 +46,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the crs release.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the crs release.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Crs release date.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return releaseDate
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Crs release date.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param releaseDate set the releaseDate.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Download link of the crs release.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method. this will set the url
    * Download link of the crs release.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class CRSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of the crs release.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -122,6 +129,7 @@ public class CRSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of the crs release.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

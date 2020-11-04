@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ProxyConfiguration extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Proxy hostname or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Proxy hostname or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Password for proxy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password for proxy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Proxy port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Proxy port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Username for proxy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class ProxyConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Username for proxy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Webhook extends AviRestResource {
-  @JsonProperty("callback_url")
-  @JsonInclude(Include.NON_NULL)
-  private String callbackUrl = null;
+    @JsonProperty("callback_url")
+    @JsonInclude(Include.NON_NULL)
+    private String callbackUrl = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("verification_token")
-  @JsonInclude(Include.NON_NULL)
-  private String verificationToken = null;
+    @JsonProperty("verification_token")
+    @JsonInclude(Include.NON_NULL)
+    private String verificationToken = null;
 
 
 
@@ -58,6 +58,7 @@ public class Webhook extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Callback url for the webhook.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return callbackUrl
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class Webhook extends AviRestResource {
    * This is the setter method to the attribute.
    * Callback url for the webhook.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param callbackUrl set the callbackUrl.
    */
   @VsoMethod
@@ -79,6 +81,7 @@ public class Webhook extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class Webhook extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -100,6 +104,7 @@ public class Webhook extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the webhook profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class Webhook extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the webhook profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class Webhook extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class Webhook extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -163,6 +171,7 @@ public class Webhook extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the webhook profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -174,6 +183,7 @@ public class Webhook extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the webhook profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -185,6 +195,7 @@ public class Webhook extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Verification token sent back with the callback asquery parameters.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return verificationToken
    */
   @VsoMethod
@@ -196,6 +207,7 @@ public class Webhook extends AviRestResource {
    * This is the setter method to the attribute.
    * Verification token sent back with the callback asquery parameters.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param verificationToken set the verificationToken.
    */
   @VsoMethod

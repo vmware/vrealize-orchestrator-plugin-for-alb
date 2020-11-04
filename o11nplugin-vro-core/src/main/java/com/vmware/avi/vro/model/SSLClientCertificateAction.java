@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLClientCertificateAction extends AviRestResource {
-  @JsonProperty("close_connection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean closeConnection = false;
+    @JsonProperty("close_connection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean closeConnection = false;
 
-  @JsonProperty("headers")
-  @JsonInclude(Include.NON_NULL)
-  private List<SSLClientRequestHeader> headers = null;
+    @JsonProperty("headers")
+    @JsonInclude(Include.NON_NULL)
+    private List<SSLClientRequestHeader> headers = null;
 
 
 
@@ -59,6 +59,7 @@ public class SSLClientCertificateAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property headers of obj type sslclientcertificateaction field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headers
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class SSLClientCertificateAction extends AviRestResource {
   /**
    * This is the setter method. this will set the headers
    * Placeholder for description of property headers of obj type sslclientcertificateaction field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headers
    */
   @VsoMethod
@@ -79,6 +81,7 @@ public class SSLClientCertificateAction extends AviRestResource {
   /**
    * This is the setter method this will set the headers
    * Placeholder for description of property headers of obj type sslclientcertificateaction field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headers
    */
   @VsoMethod

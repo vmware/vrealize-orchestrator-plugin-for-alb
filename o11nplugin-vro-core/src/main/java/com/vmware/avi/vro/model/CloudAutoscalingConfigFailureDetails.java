@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudAutoscalingConfigFailureDetails extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
 
 
@@ -38,6 +38,7 @@ public class CloudAutoscalingConfigFailureDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class CloudAutoscalingConfigFailureDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class CloudAutoscalingConfigFailureDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Failure reason if autoscaling configuration fails.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class CloudAutoscalingConfigFailureDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Failure reason if autoscaling configuration fails.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod

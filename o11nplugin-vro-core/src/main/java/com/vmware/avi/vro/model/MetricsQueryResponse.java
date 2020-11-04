@@ -24,47 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsQueryResponse extends AviRestResource {
-  @JsonProperty("entity_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String entityUuid = null;
+    @JsonProperty("entity_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String entityUuid = null;
 
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer limit = null;
+    @JsonProperty("limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer limit = null;
 
-  @JsonProperty("metric_entity")
-  @JsonInclude(Include.NON_NULL)
-  private String metricEntity = null;
+    @JsonProperty("metric_entity")
+    @JsonInclude(Include.NON_NULL)
+    private String metricEntity = null;
 
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = null;
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = null;
 
-  @JsonProperty("series")
-  @JsonInclude(Include.NON_NULL)
-  private List<MetricsDataSeries> series = null;
+    @JsonProperty("series")
+    @JsonInclude(Include.NON_NULL)
+    private List<MetricsDataSeries> series = null;
 
-  @JsonProperty("start")
-  @JsonInclude(Include.NON_NULL)
-  private String start = null;
+    @JsonProperty("start")
+    @JsonInclude(Include.NON_NULL)
+    private String start = null;
 
-  @JsonProperty("step")
-  @JsonInclude(Include.NON_NULL)
-  private Integer step = null;
+    @JsonProperty("step")
+    @JsonInclude(Include.NON_NULL)
+    private Integer step = null;
 
-  @JsonProperty("stop")
-  @JsonInclude(Include.NON_NULL)
-  private String stop = null;
+    @JsonProperty("stop")
+    @JsonInclude(Include.NON_NULL)
+    private String stop = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of entity.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityUuid
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of entity.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityUuid set the entityUuid.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Returns the id specified in the query.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Returns the id specified in the query.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property limit of obj type metricsqueryresponse field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return limit
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property limit of obj type metricsqueryresponse field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param limit set the limit.
    */
   @VsoMethod
@@ -126,6 +132,7 @@ public class MetricsQueryResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricEntity
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class MetricsQueryResponse extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricEntity set the metricEntity.
    */
   @VsoMethod
@@ -147,6 +155,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_id of obj type metricsqueryresponse field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
   @VsoMethod
@@ -157,6 +166,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_id of obj type metricsqueryresponse field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -167,6 +177,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property series of obj type metricsqueryresponse field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return series
    */
   @VsoMethod
@@ -177,6 +188,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method. this will set the series
    * Placeholder for description of property series of obj type metricsqueryresponse field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return series
    */
   @VsoMethod
@@ -187,6 +199,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method this will set the series
    * Placeholder for description of property series of obj type metricsqueryresponse field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return series
    */
   @VsoMethod
@@ -202,6 +215,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start of obj type metricsqueryresponse field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return start
    */
   @VsoMethod
@@ -212,6 +226,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start of obj type metricsqueryresponse field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param start set the start.
    */
   @VsoMethod
@@ -222,6 +237,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property step of obj type metricsqueryresponse field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return step
    */
   @VsoMethod
@@ -232,6 +248,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property step of obj type metricsqueryresponse field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param step set the step.
    */
   @VsoMethod
@@ -242,6 +259,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property stop of obj type metricsqueryresponse field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stop
    */
   @VsoMethod
@@ -252,6 +270,7 @@ public class MetricsQueryResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property stop of obj type metricsqueryresponse field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param stop set the stop.
    */
   @VsoMethod

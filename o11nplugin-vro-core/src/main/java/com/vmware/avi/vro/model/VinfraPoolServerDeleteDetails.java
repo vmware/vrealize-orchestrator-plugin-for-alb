@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraPoolServerDeleteDetails extends AviRestResource {
-  @JsonProperty("pool_name")
-  @JsonInclude(Include.NON_NULL)
-  private String poolName = null;
+    @JsonProperty("pool_name")
+    @JsonInclude(Include.NON_NULL)
+    private String poolName = null;
 
-  @JsonProperty("server_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> serverIp = null;
+    @JsonProperty("server_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> serverIp = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_name of obj type vinfrapoolserverdeletedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VinfraPoolServerDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_name of obj type vinfrapoolserverdeletedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class VinfraPoolServerDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_ip of obj type vinfrapoolserverdeletedetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class VinfraPoolServerDeleteDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the serverIp
    * Placeholder for description of property server_ip of obj type vinfrapoolserverdeletedetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -77,6 +81,7 @@ public class VinfraPoolServerDeleteDetails extends AviRestResource {
   /**
    * This is the setter method this will set the serverIp
    * Placeholder for description of property server_ip of obj type vinfrapoolserverdeletedetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod

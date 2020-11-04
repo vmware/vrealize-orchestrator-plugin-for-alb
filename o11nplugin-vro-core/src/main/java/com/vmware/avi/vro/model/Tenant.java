@@ -25,39 +25,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Tenant extends AviRestResource {
-  @JsonProperty("config_settings")
-  @JsonInclude(Include.NON_NULL)
-  private TenantConfiguration configSettings = null;
+    @JsonProperty("config_settings")
+    @JsonInclude(Include.NON_NULL)
+    private TenantConfiguration configSettings = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("local")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean local = true;
+    @JsonProperty("local")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean local = true;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("suggested_object_labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<TenantLabel> suggestedObjectLabels = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_settings of obj type tenant field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configSettings
    */
   @VsoMethod
@@ -68,6 +73,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_settings of obj type tenant field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configSettings set the configSettings.
    */
   @VsoMethod
@@ -78,6 +84,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator of this tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -88,6 +95,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator of this tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -98,6 +106,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -108,6 +117,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -140,6 +150,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -150,12 +161,57 @@ public class Tenant extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
   public void setName(String  name) {
     this.name = name;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Suggestive pool of key value pairs for recommending assignment of labels to objects in the user interface.
+   * Every entry is unique in both key and value.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return suggestedObjectLabels
+   */
+  @VsoMethod
+  public List<TenantLabel> getSuggestedObjectLabels() {
+    return suggestedObjectLabels;
+  }
+
+  /**
+   * This is the setter method. this will set the suggestedObjectLabels
+   * Suggestive pool of key value pairs for recommending assignment of labels to objects in the user interface.
+   * Every entry is unique in both key and value.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return suggestedObjectLabels
+   */
+  @VsoMethod
+  public void setSuggestedObjectLabels(List<TenantLabel>  suggestedObjectLabels) {
+    this.suggestedObjectLabels = suggestedObjectLabels;
+  }
+
+  /**
+   * This is the setter method this will set the suggestedObjectLabels
+   * Suggestive pool of key value pairs for recommending assignment of labels to objects in the user interface.
+   * Every entry is unique in both key and value.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return suggestedObjectLabels
+   */
+  @VsoMethod
+  public Tenant addSuggestedObjectLabelsItem(TenantLabel suggestedObjectLabelsItem) {
+    if (this.suggestedObjectLabels == null) {
+      this.suggestedObjectLabels = new ArrayList<TenantLabel>();
+    }
+    this.suggestedObjectLabels.add(suggestedObjectLabelsItem);
+    return this;
+  }
+
 /**
    * This is the getter method this will return the attribute value.
    * Avi controller URL of the object.
@@ -179,6 +235,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -189,6 +246,7 @@ public class Tenant extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -215,7 +273,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.local, objTenant.local)&&
   Objects.equals(this.description, objTenant.description)&&
   Objects.equals(this.configSettings, objTenant.configSettings)&&
-  Objects.equals(this.createdBy, objTenant.createdBy);
+  Objects.equals(this.createdBy, objTenant.createdBy)&&
+  Objects.equals(this.suggestedObjectLabels, objTenant.suggestedObjectLabels);
 }
 
 @Override
@@ -227,6 +286,7 @@ public String toString() {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    local: ").append(toIndentedString(local)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    suggestedObjectLabels: ").append(toIndentedString(suggestedObjectLabels)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();

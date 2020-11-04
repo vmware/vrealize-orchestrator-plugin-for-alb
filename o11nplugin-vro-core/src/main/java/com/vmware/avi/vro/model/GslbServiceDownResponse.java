@@ -26,23 +26,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbServiceDownResponse extends AviRestResource {
-  @JsonProperty("fallback_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr fallbackIp = null;
+    @JsonProperty("fallback_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr fallbackIp = null;
 
-  @JsonProperty("fallback_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr fallbackIp6 = null;
+    @JsonProperty("fallback_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr fallbackIp6 = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "GSLB_SERVICE_DOWN_RESPONSE_NONE";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "GSLB_SERVICE_DOWN_RESPONSE_NONE";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Fallback ip address to use in a response to the client query when the gslb service is down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackIp
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class GslbServiceDownResponse extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fallback ip address to use in a response to the client query when the gslb service is down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fallbackIp set the fallbackIp.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fallback ipv6 address to use in aaaa response to the client query when the gslb service is down.
    * Field introduced in 18.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackIp6
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * This is the setter method to the attribute.
    * Fallback ipv6 address to use in aaaa response to the client query when the gslb service is down.
    * Field introduced in 18.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fallbackIp6 set the fallbackIp6.
    */
   @VsoMethod
@@ -87,7 +91,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * Response from dns service towards the client when the gslb service is down.
    * Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP,
    * GSLB_SERVICE_DOWN_RESPONSE_EMPTY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_DOWN_RESPONSE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_DOWN_RESPONSE_NONE".
    * @return type
    */
   @VsoMethod
@@ -100,7 +104,7 @@ public class GslbServiceDownResponse extends AviRestResource {
    * Response from dns service towards the client when the gslb service is down.
    * Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP,
    * GSLB_SERVICE_DOWN_RESPONSE_EMPTY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_DOWN_RESPONSE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_DOWN_RESPONSE_NONE".
    * @param type set the type.
    */
   @VsoMethod

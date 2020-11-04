@@ -25,69 +25,69 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRecord extends AviRestResource {
-  @JsonProperty("algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String algorithm = "DNS_RECORD_RESPONSE_ROUND_ROBIN";
+    @JsonProperty("algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String algorithm = "DNS_RECORD_RESPONSE_ROUND_ROBIN";
 
-  @JsonProperty("cname")
-  @JsonInclude(Include.NON_NULL)
-  private DnsCnameRdata cname = null;
+    @JsonProperty("cname")
+    @JsonInclude(Include.NON_NULL)
+    private DnsCnameRdata cname = null;
 
-  @JsonProperty("delegated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean delegated = false;
+    @JsonProperty("delegated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean delegated = false;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> fqdn = null;
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> fqdn = null;
 
-  @JsonProperty("ip6_address")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsAAAARdata> ip6Address = null;
+    @JsonProperty("ip6_address")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsAAAARdata> ip6Address = null;
 
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsARdata> ipAddress = null;
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsARdata> ipAddress = null;
 
-  @JsonProperty("metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String metadata = null;
+    @JsonProperty("metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String metadata = null;
 
-  @JsonProperty("mx_records")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsMxRdata> mxRecords = null;
+    @JsonProperty("mx_records")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsMxRdata> mxRecords = null;
 
-  @JsonProperty("ns")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsNsRdata> ns = null;
+    @JsonProperty("ns")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsNsRdata> ns = null;
 
-  @JsonProperty("num_records_in_response")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numRecordsInResponse = 0;
+    @JsonProperty("num_records_in_response")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numRecordsInResponse = 0;
 
-  @JsonProperty("service_locator")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsSrvRdata> serviceLocator = null;
+    @JsonProperty("service_locator")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsSrvRdata> serviceLocator = null;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = null;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = null;
 
-  @JsonProperty("txt_records")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsTxtRdata> txtRecords = null;
+    @JsonProperty("txt_records")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsTxtRdata> txtRecords = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("wildcard_match")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean wildcardMatch = false;
+    @JsonProperty("wildcard_match")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean wildcardMatch = false;
 
 
 
@@ -98,7 +98,7 @@ public class DnsRecord extends AviRestResource {
    * Default is round-robin.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_RESPONSE_ROUND_ROBIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_ROUND_ROBIN".
    * @return algorithm
    */
   @VsoMethod
@@ -113,7 +113,7 @@ public class DnsRecord extends AviRestResource {
    * Default is round-robin.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_RESPONSE_ROUND_ROBIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_ROUND_ROBIN".
    * @param algorithm set the algorithm.
    */
   @VsoMethod
@@ -124,6 +124,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Canonical name in cname record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cname
    */
   @VsoMethod
@@ -134,6 +135,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Canonical name in cname record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cname set the cname.
    */
   @VsoMethod
@@ -170,6 +172,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Details of dns record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -180,6 +183,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Details of dns record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -190,6 +194,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -200,6 +205,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method. this will set the fqdn
    * Fully qualified domain name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -210,6 +216,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method this will set the fqdn
    * Fully qualified domain name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -226,6 +233,7 @@ public class DnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address in aaaa record.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
   @VsoMethod
@@ -237,6 +245,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method. this will set the ip6Address
    * Ipv6 address in aaaa record.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
   @VsoMethod
@@ -248,6 +257,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method this will set the ip6Address
    * Ipv6 address in aaaa record.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
   @VsoMethod
@@ -263,6 +273,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address in a record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -273,6 +284,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method. this will set the ipAddress
    * Ip address in a record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -283,6 +295,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method this will set the ipAddress
    * Ip address in a record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -299,6 +312,7 @@ public class DnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal metadata for the dns record.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -310,6 +324,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal metadata for the dns record.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
    */
   @VsoMethod
@@ -321,6 +336,7 @@ public class DnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mx record.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mxRecords
    */
   @VsoMethod
@@ -332,6 +348,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method. this will set the mxRecords
    * Mx record.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mxRecords
    */
   @VsoMethod
@@ -343,6 +360,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method this will set the mxRecords
    * Mx record.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mxRecords
    */
   @VsoMethod
@@ -359,6 +377,7 @@ public class DnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name server information in ns record.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ns
    */
   @VsoMethod
@@ -370,6 +389,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method. this will set the ns
    * Name server information in ns record.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ns
    */
   @VsoMethod
@@ -381,6 +401,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method this will set the ns
    * Name server information in ns record.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ns
    */
   @VsoMethod
@@ -428,6 +449,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service locator info in srv record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceLocator
    */
   @VsoMethod
@@ -438,6 +460,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method. this will set the serviceLocator
    * Service locator info in srv record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceLocator
    */
   @VsoMethod
@@ -448,6 +471,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method this will set the serviceLocator
    * Service locator info in srv record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceLocator
    */
   @VsoMethod
@@ -463,6 +487,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time to live for this dns record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ttl
    */
   @VsoMethod
@@ -473,6 +498,7 @@ public class DnsRecord extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time to live for this dns record.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ttl set the ttl.
    */
   @VsoMethod
@@ -484,6 +510,7 @@ public class DnsRecord extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Text record.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txtRecords
    */
   @VsoMethod
@@ -495,6 +522,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method. this will set the txtRecords
    * Text record.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txtRecords
    */
   @VsoMethod
@@ -506,6 +534,7 @@ public class DnsRecord extends AviRestResource {
    * This is the setter method this will set the txtRecords
    * Text record.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return txtRecords
    */
   @VsoMethod
@@ -524,6 +553,7 @@ public class DnsRecord extends AviRestResource {
    * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -537,6 +567,7 @@ public class DnsRecord extends AviRestResource {
    * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

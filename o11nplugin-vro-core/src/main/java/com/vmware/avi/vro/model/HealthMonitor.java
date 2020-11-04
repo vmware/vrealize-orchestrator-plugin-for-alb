@@ -33,97 +33,97 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitor extends AviRestResource {
-  @JsonProperty("allow_duplicate_monitors")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowDuplicateMonitors = null;
+    @JsonProperty("allow_duplicate_monitors")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowDuplicateMonitors = null;
 
-  @JsonProperty("authentication")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorAuthInfo authentication = null;
+    @JsonProperty("authentication")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorAuthInfo authentication = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("disable_quickstart")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableQuickstart = null;
+    @JsonProperty("disable_quickstart")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableQuickstart = null;
 
-  @JsonProperty("dns_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorDNS dnsMonitor = null;
+    @JsonProperty("dns_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorDNS dnsMonitor = null;
 
-  @JsonProperty("external_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorExternal externalMonitor = null;
+    @JsonProperty("external_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorExternal externalMonitor = null;
 
-  @JsonProperty("failed_checks")
-  @JsonInclude(Include.NON_NULL)
-  private Integer failedChecks = 2;
+    @JsonProperty("failed_checks")
+    @JsonInclude(Include.NON_NULL)
+    private Integer failedChecks = 2;
 
-  @JsonProperty("http_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorHttp httpMonitor = null;
+    @JsonProperty("http_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorHttp httpMonitor = null;
 
-  @JsonProperty("https_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorHttp httpsMonitor = null;
+    @JsonProperty("https_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorHttp httpsMonitor = null;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = false;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = false;
 
-  @JsonProperty("monitor_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer monitorPort = null;
+    @JsonProperty("monitor_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer monitorPort = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("radius_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorRadius radiusMonitor = null;
+    @JsonProperty("radius_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorRadius radiusMonitor = null;
 
-  @JsonProperty("receive_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer receiveTimeout = 4;
+    @JsonProperty("receive_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer receiveTimeout = 4;
 
-  @JsonProperty("send_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sendInterval = 10;
+    @JsonProperty("send_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sendInterval = 10;
 
-  @JsonProperty("sip_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorSIP sipMonitor = null;
+    @JsonProperty("sip_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorSIP sipMonitor = null;
 
-  @JsonProperty("successful_checks")
-  @JsonInclude(Include.NON_NULL)
-  private Integer successfulChecks = 2;
+    @JsonProperty("successful_checks")
+    @JsonInclude(Include.NON_NULL)
+    private Integer successfulChecks = 2;
 
-  @JsonProperty("tcp_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorTcp tcpMonitor = null;
+    @JsonProperty("tcp_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorTcp tcpMonitor = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("udp_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private HealthMonitorUdp udpMonitor = null;
+    @JsonProperty("udp_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorUdp udpMonitor = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -134,6 +134,7 @@ public class HealthMonitor extends AviRestResource {
    * desired.
    * Use this knob to allow duplicates.
    * Field introduced in 18.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowDuplicateMonitors
    */
   @VsoMethod
@@ -148,6 +149,7 @@ public class HealthMonitor extends AviRestResource {
    * desired.
    * Use this knob to allow duplicates.
    * Field introduced in 18.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allowDuplicateMonitors set the allowDuplicateMonitors.
    */
   @VsoMethod
@@ -159,6 +161,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authentication information for username/password.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authentication
    */
   @VsoMethod
@@ -170,6 +173,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * Authentication information for username/password.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authentication set the authentication.
    */
   @VsoMethod
@@ -180,6 +184,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -190,6 +195,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -203,6 +209,7 @@ public class HealthMonitor extends AviRestResource {
    * kick in, to mark the server up as soon as possible.
    * This knob may be used to turn this feature off.
    * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disableQuickstart
    */
   @VsoMethod
@@ -216,6 +223,7 @@ public class HealthMonitor extends AviRestResource {
    * kick in, to mark the server up as soon as possible.
    * This knob may be used to turn this feature off.
    * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disableQuickstart set the disableQuickstart.
    */
   @VsoMethod
@@ -226,6 +234,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dns_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsMonitor
    */
   @VsoMethod
@@ -236,6 +245,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dns_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsMonitor set the dnsMonitor.
    */
   @VsoMethod
@@ -246,6 +256,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property external_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalMonitor
    */
   @VsoMethod
@@ -256,6 +267,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property external_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalMonitor set the externalMonitor.
    */
   @VsoMethod
@@ -290,6 +302,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property http_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpMonitor
    */
   @VsoMethod
@@ -300,6 +313,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property http_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpMonitor set the httpMonitor.
    */
   @VsoMethod
@@ -310,6 +324,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property https_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpsMonitor
    */
   @VsoMethod
@@ -320,6 +335,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property https_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpsMonitor set the httpsMonitor.
    */
   @VsoMethod
@@ -361,6 +377,7 @@ public class HealthMonitor extends AviRestResource {
    * If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool.
    * Allowed values are 1-65535.
    * Special values are 0 - 'use server port'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return monitorPort
    */
   @VsoMethod
@@ -374,6 +391,7 @@ public class HealthMonitor extends AviRestResource {
    * If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool.
    * Allowed values are 1-65535.
    * Special values are 0 - 'use server port'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param monitorPort set the monitorPort.
    */
   @VsoMethod
@@ -384,6 +402,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A user friendly name for this health monitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -394,6 +413,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A user friendly name for this health monitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -405,6 +425,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Health monitor for radius.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return radiusMonitor
    */
   @VsoMethod
@@ -416,6 +437,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * Health monitor for radius.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param radiusMonitor set the radiusMonitor.
    */
   @VsoMethod
@@ -429,6 +451,7 @@ public class HealthMonitor extends AviRestResource {
    * This timeout must be less than the send interval.
    * If server status is regularly flapping up and down, consider increasing this value.
    * Allowed values are 1-2400.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return receiveTimeout
    */
@@ -443,6 +466,7 @@ public class HealthMonitor extends AviRestResource {
    * This timeout must be less than the send interval.
    * If server status is regularly flapping up and down, consider increasing this value.
    * Allowed values are 1-2400.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param receiveTimeout set the receiveTimeout.
    */
@@ -455,6 +479,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Frequency, in seconds, that monitors are sent to a server.
    * Allowed values are 1-3600.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return sendInterval
    */
@@ -467,6 +492,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * Frequency, in seconds, that monitors are sent to a server.
    * Allowed values are 1-3600.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param sendInterval set the sendInterval.
    */
@@ -479,6 +505,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Health monitor for sip.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipMonitor
    */
   @VsoMethod
@@ -490,6 +517,7 @@ public class HealthMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * Health monitor for sip.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sipMonitor set the sipMonitor.
    */
   @VsoMethod
@@ -524,6 +552,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tcp_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpMonitor
    */
   @VsoMethod
@@ -534,6 +563,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tcp_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpMonitor set the tcpMonitor.
    */
   @VsoMethod
@@ -544,6 +574,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -554,6 +585,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -566,6 +598,7 @@ public class HealthMonitor extends AviRestResource {
    * Type of the health monitor.
    * Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
    * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -578,6 +611,7 @@ public class HealthMonitor extends AviRestResource {
    * Type of the health monitor.
    * Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
    * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -588,6 +622,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property udp_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpMonitor
    */
   @VsoMethod
@@ -598,6 +633,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property udp_monitor of obj type healthmonitor field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpMonitor set the udpMonitor.
    */
   @VsoMethod
@@ -627,6 +663,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the health monitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -637,6 +674,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the health monitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

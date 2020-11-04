@@ -24,49 +24,57 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPSMRule extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("match_case")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCase = "INSENSITIVE";
+    @JsonProperty("match_case")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCase = "INSENSITIVE";
 
-  @JsonProperty("match_elements")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafPSMMatchElement> matchElements = null;
+    @JsonProperty("match_elements")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafPSMMatchElement> matchElements = null;
 
-  @JsonProperty("match_value_max_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer matchValueMaxLength = null;
+    @JsonProperty("match_value_max_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer matchValueMaxLength = null;
 
-  @JsonProperty("match_value_pattern")
-  @JsonInclude(Include.NON_NULL)
-  private String matchValuePattern = null;
+    @JsonProperty("match_value_pattern")
+    @JsonInclude(Include.NON_NULL)
+    private String matchValuePattern = null;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = null;
+    @JsonProperty("match_value_string_group_key")
+    @JsonInclude(Include.NON_NULL)
+    private String matchValueStringGroupKey = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("match_value_string_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String matchValueStringGroupRef = null;
 
-  @JsonProperty("paranoia_level")
-  @JsonInclude(Include.NON_NULL)
-  private String paranoiaLevel = "WAF_PARANOIA_LEVEL_LOW";
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = null;
 
-  @JsonProperty("rule_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ruleId = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
+
+    @JsonProperty("paranoia_level")
+    @JsonInclude(Include.NON_NULL)
+    private String paranoiaLevel = "WAF_PARANOIA_LEVEL_LOW";
+
+    @JsonProperty("rule_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ruleId = null;
 
 
 
@@ -74,6 +82,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this rule.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -85,6 +94,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this rule.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -120,6 +130,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule index, this is used to determine the order of the rules.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -131,6 +142,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule index, this is used to determine the order of the rules.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -143,7 +155,7 @@ public class WafPSMRule extends AviRestResource {
    * The field match_value_pattern regular expression is case sensitive.
    * Enum options - SENSITIVE, INSENSITIVE.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
   @VsoMethod
@@ -156,7 +168,7 @@ public class WafPSMRule extends AviRestResource {
    * The field match_value_pattern regular expression is case sensitive.
    * Enum options - SENSITIVE, INSENSITIVE.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
   @VsoMethod
@@ -168,6 +180,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The match elements, for example args id or args|!args password.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElements
    */
   @VsoMethod
@@ -179,6 +192,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method. this will set the matchElements
    * The match elements, for example args id or args|!args password.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElements
    */
   @VsoMethod
@@ -190,6 +204,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method this will set the matchElements
    * The match elements, for example args id or args|!args password.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElements
    */
   @VsoMethod
@@ -207,6 +222,7 @@ public class WafPSMRule extends AviRestResource {
    * The maximum allowed length of the match_value.
    * If this is not set, the length will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValueMaxLength
    */
   @VsoMethod
@@ -219,6 +235,7 @@ public class WafPSMRule extends AviRestResource {
    * The maximum allowed length of the match_value.
    * If this is not set, the length will not be checked.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValueMaxLength set the matchValueMaxLength.
    */
   @VsoMethod
@@ -230,6 +247,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A regular expression which describes the expected value.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchValuePattern
    */
   @VsoMethod
@@ -241,11 +259,62 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * A regular expression which describes the expected value.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchValuePattern set the matchValuePattern.
    */
   @VsoMethod
   public void setMatchValuePattern(String  matchValuePattern) {
     this.matchValuePattern = matchValuePattern;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return matchValueStringGroupKey
+   */
+  @VsoMethod
+  public String getMatchValueStringGroupKey() {
+    return matchValueStringGroupKey;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * If match_value_string_group_uuid and match_value_string_group_key are set, the referenced regular expression is used as match_value_pattern.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param matchValueStringGroupKey set the matchValueStringGroupKey.
+   */
+  @VsoMethod
+  public void setMatchValueStringGroupKey(String  matchValueStringGroupKey) {
+    this.matchValueStringGroupKey = matchValueStringGroupKey;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * The uuid of a string group containing key used in match_value_string_group_key.
+   * It is a reference to an object of type stringgroup.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return matchValueStringGroupRef
+   */
+  @VsoMethod
+  public String getMatchValueStringGroupRef() {
+    return matchValueStringGroupRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * The uuid of a string group containing key used in match_value_string_group_key.
+   * It is a reference to an object of type stringgroup.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param matchValueStringGroupRef set the matchValueStringGroupRef.
+   */
+  @VsoMethod
+  public void setMatchValueStringGroupRef(String  matchValueStringGroupRef) {
+    this.matchValueStringGroupRef = matchValueStringGroupRef;
   }
 
   /**
@@ -256,6 +325,7 @@ public class WafPSMRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
   @VsoMethod
@@ -271,6 +341,7 @@ public class WafPSMRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
   @VsoMethod
@@ -282,6 +353,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -293,6 +365,7 @@ public class WafPSMRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -306,7 +379,7 @@ public class WafPSMRule extends AviRestResource {
    * This is used to select rules based on the paranoia-level.
    * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_PARANOIA_LEVEL_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
    * @return paranoiaLevel
    */
   @VsoMethod
@@ -320,7 +393,7 @@ public class WafPSMRule extends AviRestResource {
    * This is used to select rules based on the paranoia-level.
    * Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_PARANOIA_LEVEL_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_PARANOIA_LEVEL_LOW".
    * @param paranoiaLevel set the paranoiaLevel.
    */
   @VsoMethod
@@ -333,6 +406,7 @@ public class WafPSMRule extends AviRestResource {
    * Id field which is used for log and metric generation.
    * This id must be unique for all rules in this group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleId
    */
   @VsoMethod
@@ -345,6 +419,7 @@ public class WafPSMRule extends AviRestResource {
    * Id field which is used for log and metric generation.
    * This id must be unique for all rules in this group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleId set the ruleId.
    */
   @VsoMethod
@@ -373,7 +448,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.matchValueMaxLength, objWafPSMRule.matchValueMaxLength)&&
   Objects.equals(this.matchValuePattern, objWafPSMRule.matchValuePattern)&&
   Objects.equals(this.matchCase, objWafPSMRule.matchCase)&&
-  Objects.equals(this.description, objWafPSMRule.description);
+  Objects.equals(this.description, objWafPSMRule.description)&&
+  Objects.equals(this.matchValueStringGroupRef, objWafPSMRule.matchValueStringGroupRef)&&
+  Objects.equals(this.matchValueStringGroupKey, objWafPSMRule.matchValueStringGroupKey);
 }
 
 @Override
@@ -387,6 +464,8 @@ public String toString() {
         sb.append("    matchElements: ").append(toIndentedString(matchElements)).append("\n");
         sb.append("    matchValueMaxLength: ").append(toIndentedString(matchValueMaxLength)).append("\n");
         sb.append("    matchValuePattern: ").append(toIndentedString(matchValuePattern)).append("\n");
+        sb.append("    matchValueStringGroupKey: ").append(toIndentedString(matchValueStringGroupKey)).append("\n");
+        sb.append("    matchValueStringGroupRef: ").append(toIndentedString(matchValueStringGroupRef)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    paranoiaLevel: ").append(toIndentedString(paranoiaLevel)).append("\n");

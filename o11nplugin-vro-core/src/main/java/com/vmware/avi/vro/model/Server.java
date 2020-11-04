@@ -26,97 +26,97 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Server extends AviRestResource {
-  @JsonProperty("autoscaling_group_name")
-  @JsonInclude(Include.NON_NULL)
-  private String autoscalingGroupName = null;
+    @JsonProperty("autoscaling_group_name")
+    @JsonInclude(Include.NON_NULL)
+    private String autoscalingGroupName = null;
 
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("discovered_network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> discoveredNetworkRef = null;
+    @JsonProperty("discovered_network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> discoveredNetworkRef;
 
-  @JsonProperty("discovered_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<DiscoveredNetwork> discoveredNetworks = null;
+    @JsonProperty("discovered_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<DiscoveredNetwork> discoveredNetworks = null;
 
-  @JsonProperty("discovered_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> discoveredSubnet = null;
+    @JsonProperty("discovered_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> discoveredSubnet;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("external_orchestration_id")
-  @JsonInclude(Include.NON_NULL)
-  private String externalOrchestrationId = null;
+    @JsonProperty("external_orchestration_id")
+    @JsonInclude(Include.NON_NULL)
+    private String externalOrchestrationId = null;
 
-  @JsonProperty("external_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String externalUuid = null;
+    @JsonProperty("external_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String externalUuid = null;
 
-  @JsonProperty("hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String hostname = null;
+    @JsonProperty("hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String hostname = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("is_static")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isStatic = false;
+    @JsonProperty("static")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isStatic = false;
 
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private GeoLocation location = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private GeoLocation location = null;
 
-  @JsonProperty("mac_address")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddress = null;
+    @JsonProperty("mac_address")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddress = null;
 
-  @JsonProperty("nw_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String nwRef = null;
+    @JsonProperty("nw_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String nwRef = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("prst_hdr_val")
-  @JsonInclude(Include.NON_NULL)
-  private String prstHdrVal = null;
+    @JsonProperty("prst_hdr_val")
+    @JsonInclude(Include.NON_NULL)
+    private String prstHdrVal = null;
 
-  @JsonProperty("ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ratio = 1;
+    @JsonProperty("ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ratio = 1;
 
-  @JsonProperty("resolve_server_by_dns")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resolveServerByDns = false;
+    @JsonProperty("resolve_server_by_dns")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resolveServerByDns = false;
 
-  @JsonProperty("rewrite_host_header")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rewriteHostHeader = false;
+    @JsonProperty("rewrite_host_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rewriteHostHeader = false;
 
-  @JsonProperty("server_node")
-  @JsonInclude(Include.NON_NULL)
-  private String serverNode = null;
+    @JsonProperty("server_node")
+    @JsonInclude(Include.NON_NULL)
+    private String serverNode = null;
 
-  @JsonProperty("verify_network")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean verifyNetwork = false;
+    @JsonProperty("verify_network")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean verifyNetwork = false;
 
-  @JsonProperty("vm_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vmRef = null;
+    @JsonProperty("vm_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vmRef = null;
 
 
 
@@ -124,6 +124,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscalingGroupName
    */
   @VsoMethod
@@ -135,6 +136,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscalingGroupName set the autoscalingGroupName.
    */
   @VsoMethod
@@ -145,6 +147,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Availability-zone of the server vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -155,6 +158,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Availability-zone of the server vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -165,6 +169,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A description of the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -175,6 +180,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A description of the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -230,6 +236,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) discovered networks providing reachability for server ip.
    * This field is used internally by avi, not editable by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
   @VsoMethod
@@ -241,6 +248,7 @@ public class Server extends AviRestResource {
    * This is the setter method. this will set the discoveredNetworks
    * (internal-use) discovered networks providing reachability for server ip.
    * This field is used internally by avi, not editable by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
   @VsoMethod
@@ -252,6 +260,7 @@ public class Server extends AviRestResource {
    * This is the setter method this will set the discoveredNetworks
    * (internal-use) discovered networks providing reachability for server ip.
    * This field is used internally by avi, not editable by the user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
   @VsoMethod
@@ -330,6 +339,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uid of server in external orchestration systems.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalOrchestrationId
    */
   @VsoMethod
@@ -340,6 +350,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uid of server in external orchestration systems.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalOrchestrationId set the externalOrchestrationId.
    */
   @VsoMethod
@@ -350,6 +361,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid identifying vm in openstack and other external compute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalUuid
    */
   @VsoMethod
@@ -360,6 +372,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid identifying vm in openstack and other external compute.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalUuid set the externalUuid.
    */
   @VsoMethod
@@ -371,6 +384,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostname
    */
   @VsoMethod
@@ -382,6 +396,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns resolvable name of the server.
    * May be used in place of the ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostname set the hostname.
    */
   @VsoMethod
@@ -393,6 +408,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of the server.
    * Required if there is no resolvable host name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -404,6 +420,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of the server.
    * Required if there is no resolvable host name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -437,6 +454,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -448,6 +466,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -458,6 +477,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mac address of server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
   @VsoMethod
@@ -468,6 +488,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mac address of server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
   @VsoMethod
@@ -479,6 +500,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwRef
    */
   @VsoMethod
@@ -490,6 +512,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrnwruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nwRef set the nwRef.
    */
   @VsoMethod
@@ -503,6 +526,7 @@ public class Server extends AviRestResource {
    * This will override the pool's default server port attribute.
    * Allowed values are 1-65535.
    * Special values are 0- 'use backend port in pool'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -516,6 +540,7 @@ public class Server extends AviRestResource {
    * This will override the pool's default server port attribute.
    * Allowed values are 1-65535.
    * Special values are 0- 'use backend port in pool'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -526,6 +551,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Header value for custom header persistence.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prstHdrVal
    */
   @VsoMethod
@@ -536,6 +562,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Header value for custom header persistence.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prstHdrVal set the prstHdrVal.
    */
   @VsoMethod
@@ -614,6 +641,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hostname of the node where the server vm or container resides.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverNode
    */
   @VsoMethod
@@ -624,6 +652,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hostname of the node where the server vm or container resides.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverNode set the serverNode.
    */
   @VsoMethod
@@ -659,6 +688,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrvmruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmRef
    */
   @VsoMethod
@@ -670,6 +700,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) this field is used internally by avi, not editable by the user.
    * It is a reference to an object of type vimgrvmruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmRef set the vmRef.
    */
   @VsoMethod

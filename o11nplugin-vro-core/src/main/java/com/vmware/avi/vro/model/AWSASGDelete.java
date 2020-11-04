@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AWSASGDelete extends AviRestResource {
-  @JsonProperty("asgs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> asgs = null;
+    @JsonProperty("asgs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> asgs = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("pool_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String poolUuid = null;
+    @JsonProperty("pool_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String poolUuid = null;
 
 
 
@@ -42,6 +42,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of autoscale groups deleted from aws.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgs
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method. this will set the asgs
    * List of autoscale groups deleted from aws.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgs
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method this will set the asgs
    * List of autoscale groups deleted from aws.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgs
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the cloud.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the cloud.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -102,6 +107,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class AWSASGDelete extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
   @VsoMethod

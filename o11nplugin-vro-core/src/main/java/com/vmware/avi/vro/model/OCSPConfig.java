@@ -24,37 +24,38 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OCSPConfig extends AviRestResource {
-  @JsonProperty("failed_ocsp_jobs_retry_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer failedOcspJobsRetryInterval = 3600;
+    @JsonProperty("failed_ocsp_jobs_retry_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer failedOcspJobsRetryInterval = 3600;
 
-  @JsonProperty("max_tries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxTries = 10;
+    @JsonProperty("max_tries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxTries = 10;
 
-  @JsonProperty("ocsp_req_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ocspReqInterval = 86400;
+    @JsonProperty("ocsp_req_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ocspReqInterval = 86400;
 
-  @JsonProperty("ocsp_resp_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ocspRespTimeout = 30;
+    @JsonProperty("ocsp_resp_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ocspRespTimeout = null;
 
-  @JsonProperty("responder_url_lists")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> responderUrlLists = null;
+    @JsonProperty("responder_url_lists")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> responderUrlLists = null;
 
-  @JsonProperty("url_action")
-  @JsonInclude(Include.NON_NULL)
-  private String urlAction = "OCSP_RESPONDER_URL_FAILOVER";
+    @JsonProperty("url_action")
+    @JsonInclude(Include.NON_NULL)
+    private String urlAction = "OCSP_RESPONDER_URL_FAILOVER";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Describes the time interval after which the next ocsp job needs to be scheduled in case of the ocsp job failures.
-   * Allowed values are 60-max.
+   * Allowed values are 60-86400.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
    * @return failedOcspJobsRetryInterval
    */
@@ -66,8 +67,9 @@ public class OCSPConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Describes the time interval after which the next ocsp job needs to be scheduled in case of the ocsp job failures.
-   * Allowed values are 60-max.
+   * Allowed values are 60-86400.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
    * @param failedOcspJobsRetryInterval set the failedOcspJobsRetryInterval.
    */
@@ -78,7 +80,7 @@ public class OCSPConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum number of times the failed ocsp job can be rescheduled with failed_ocsp_jobs_retry_interval.
+   * Maximum number of times the failed ocsp jobs can be scheduled.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxTries
@@ -90,7 +92,7 @@ public class OCSPConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum number of times the failed ocsp job can be rescheduled with failed_ocsp_jobs_retry_interval.
+   * Maximum number of times the failed ocsp jobs can be scheduled.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxTries set the maxTries.
@@ -103,8 +105,9 @@ public class OCSPConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Interval between the ocsp queries.
-   * Allowed values are 60-max.
+   * Allowed values are 60-31536000.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @return ocspReqInterval
    */
@@ -116,8 +119,9 @@ public class OCSPConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Interval between the ocsp queries.
-   * Allowed values are 60-max.
+   * Allowed values are 60-31536000.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
    * @param ocspReqInterval set the ocspReqInterval.
    */
@@ -130,7 +134,8 @@ public class OCSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time in seconds that the system waits for a reply from the ocsp responder before dropping the connection.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspRespTimeout
    */
   @VsoMethod
@@ -142,7 +147,8 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Time in seconds that the system waits for a reply from the ocsp responder before dropping the connection.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspRespTimeout set the ocspRespTimeout.
    */
   @VsoMethod
@@ -154,6 +160,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of responder urls configured by user to do failover/override the aia extension contained in the ocsp responder's ssl/tls certificate.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responderUrlLists
    */
   @VsoMethod
@@ -165,6 +172,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method. this will set the responderUrlLists
    * List of responder urls configured by user to do failover/override the aia extension contained in the ocsp responder's ssl/tls certificate.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responderUrlLists
    */
   @VsoMethod
@@ -176,6 +184,7 @@ public class OCSPConfig extends AviRestResource {
    * This is the setter method this will set the responderUrlLists
    * List of responder urls configured by user to do failover/override the aia extension contained in the ocsp responder's ssl/tls certificate.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responderUrlLists
    */
   @VsoMethod
@@ -193,7 +202,7 @@ public class OCSPConfig extends AviRestResource {
    * Describes the type of action to take with the responder urls.
    * Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OCSP_RESPONDER_URL_FAILOVER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OCSP_RESPONDER_URL_FAILOVER".
    * @return urlAction
    */
   @VsoMethod
@@ -206,7 +215,7 @@ public class OCSPConfig extends AviRestResource {
    * Describes the type of action to take with the responder urls.
    * Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OCSP_RESPONDER_URL_FAILOVER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OCSP_RESPONDER_URL_FAILOVER".
    * @param urlAction set the urlAction.
    */
   @VsoMethod

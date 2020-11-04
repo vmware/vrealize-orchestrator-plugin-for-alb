@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LinuxConfiguration extends AviRestResource {
-  @JsonProperty("banner")
-  @JsonInclude(Include.NON_NULL)
-  private String banner = null;
+    @JsonProperty("banner")
+    @JsonInclude(Include.NON_NULL)
+    private String banner = null;
 
-  @JsonProperty("cis_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cisMode = false;
+    @JsonProperty("cis_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cisMode = false;
 
-  @JsonProperty("motd")
-  @JsonInclude(Include.NON_NULL)
-  private String motd = null;
+    @JsonProperty("motd")
+    @JsonInclude(Include.NON_NULL)
+    private String motd = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Banner displayed before login to ssh, and ui.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return banner
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class LinuxConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Banner displayed before login to ssh, and ui.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param banner set the banner.
    */
   @VsoMethod
@@ -87,6 +89,7 @@ public class LinuxConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Message of the day, shown to users on login via the command line interface, web interface, or ssh.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return motd
    */
   @VsoMethod
@@ -97,6 +100,7 @@ public class LinuxConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Message of the day, shown to users on login via the command line interface, web interface, or ssh.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param motd set the motd.
    */
   @VsoMethod

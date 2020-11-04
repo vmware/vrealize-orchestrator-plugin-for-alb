@@ -27,17 +27,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4RuleMatchTarget extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private L4RulePortMatch port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private L4RulePortMatch port = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private L4RuleProtocolMatch protocol = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private L4RuleProtocolMatch protocol = null;
 
 
 
@@ -45,6 +45,7 @@ public class L4RuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip addresses to match against client ip.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -56,6 +57,7 @@ public class L4RuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip addresses to match against client ip.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class L4RuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port number to match against virtual service listner port.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -78,6 +81,7 @@ public class L4RuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Port number to match against virtual service listner port.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class L4RuleMatchTarget extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp/udp/icmp protocol to match against transport protocol.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class L4RuleMatchTarget extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp/udp/icmp protocol to match against transport protocol.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod

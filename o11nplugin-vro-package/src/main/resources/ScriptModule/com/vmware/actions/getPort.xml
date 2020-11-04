@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="getPort" result-type="number" api-version="6.0.0" id="12989189-7a07-4df9-a5fd-4cebaae1b72f" allowed-operations="vfe" version="0.0.1">
+  <param n="controller" t="string"></param>
+  <param n="objectName" t="string"></param>
+  <param n="objectType" t="string"></param>
+  <script encoded="false"><![CDATA[try{
+	// Check the restHost is selected ot not.
+	if(controller == null){
+	  return null;
+	}
+	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+	var aviPlugin = null;
+    System.log("vroClientArray : "+vroClientArray)
+	for each(aviVroClient in vroClientArray){
+            if(aviVroClient !=null){
+            vroController=aviVroClient.cred.controller;
+            if(vroController==controller){
+                aviPlugin=aviVroClient;
+            }
+	    }	
+    }
+
+	if((aviPlugin != null) && ((objectName != null)&&(objectName != ''))){
+            var myAviPool = new AviPool();
+            myAviPool = aviPlugin.getObjectByName(objectType,objectName);
+            var defaultPort = myAviPool.getDefaultServerPort();
+            var servers = myAviPool.getServers();
+            var Port;
+            for each(index in servers){
+                Port = index.getPort() == null ? defaultPort : index.getPort();
+            }
+             System.log("Port : "+Port)
+		    return Port;
+        }
+}catch(e){
+	    throw "Error when fetch AVI object --> "+ e
+}]]></script>
+</dunes-script-module>

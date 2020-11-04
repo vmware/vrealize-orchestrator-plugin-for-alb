@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MemoryBalancerInfo extends AviRestResource {
-  @JsonProperty("child")
-  @JsonInclude(Include.NON_NULL)
-  private List<ChildProcessInfo> child = null;
+    @JsonProperty("child")
+    @JsonInclude(Include.NON_NULL)
+    private List<ChildProcessInfo> child = null;
 
-  @JsonProperty("controller_memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer controllerMemory = null;
+    @JsonProperty("controller_memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer controllerMemory = null;
 
-  @JsonProperty("limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer limit = null;
+    @JsonProperty("limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer limit = null;
 
-  @JsonProperty("memory_used")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memoryUsed = null;
+    @JsonProperty("memory_used")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memoryUsed = null;
 
-  @JsonProperty("pid")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pid = null;
+    @JsonProperty("pid")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pid = null;
 
-  @JsonProperty("process")
-  @JsonInclude(Include.NON_NULL)
-  private String process = null;
+    @JsonProperty("process")
+    @JsonInclude(Include.NON_NULL)
+    private String process = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Child process information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return child
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the child
    * Child process information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return child
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method this will set the child
    * Child process information.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return child
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Controller memory.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerMemory
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Controller memory.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerMemory set the controllerMemory.
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Limit on the memory (in mb) for the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return limit
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Limit on the memory (in mb) for the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param limit set the limit.
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Amount of memory (in mb) used by the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memoryUsed
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Amount of memory (in mb) used by the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memoryUsed set the memoryUsed.
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Pid of the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pid
    */
   @VsoMethod
@@ -158,6 +168,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Pid of the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pid set the pid.
    */
   @VsoMethod
@@ -168,6 +179,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return process
    */
   @VsoMethod
@@ -178,6 +190,7 @@ public class MemoryBalancerInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param process set the process.
    */
   @VsoMethod

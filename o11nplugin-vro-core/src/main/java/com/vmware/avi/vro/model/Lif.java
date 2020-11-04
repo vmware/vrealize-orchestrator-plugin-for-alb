@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Lif extends AviRestResource {
-  @JsonProperty("cifs")
-  @JsonInclude(Include.NON_NULL)
-  private List<Cif> cifs = null;
+    @JsonProperty("cifs")
+    @JsonInclude(Include.NON_NULL)
+    private List<Cif> cifs = null;
 
-  @JsonProperty("lif")
-  @JsonInclude(Include.NON_NULL)
-  private String lif = null;
+    @JsonProperty("lif")
+    @JsonInclude(Include.NON_NULL)
+    private String lif = null;
 
-  @JsonProperty("lif_label")
-  @JsonInclude(Include.NON_NULL)
-  private String lifLabel = null;
+    @JsonProperty("lif_label")
+    @JsonInclude(Include.NON_NULL)
+    private String lifLabel = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cifs of obj type lif field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cifs
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method. this will set the cifs
    * Placeholder for description of property cifs of obj type lif field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cifs
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method this will set the cifs
    * Placeholder for description of property cifs of obj type lif field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cifs
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property lif of obj type lif field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lif
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property lif of obj type lif field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lif set the lif.
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property lif_label of obj type lif field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifLabel
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property lif_label of obj type lif field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lifLabel set the lifLabel.
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet of obj type lif field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class Lif extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property subnet of obj type lif field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod

@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxConfiguration extends AviRestResource {
-  @JsonProperty("avi_nsx_prefix")
-  @JsonInclude(Include.NON_NULL)
-  private String aviNsxPrefix = null;
+    @JsonProperty("avi_nsx_prefix")
+    @JsonInclude(Include.NON_NULL)
+    private String aviNsxPrefix = null;
 
-  @JsonProperty("nsx_manager_name")
-  @JsonInclude(Include.NON_NULL)
-  private String nsxManagerName = null;
+    @JsonProperty("nsx_manager_name")
+    @JsonInclude(Include.NON_NULL)
+    private String nsxManagerName = null;
 
-  @JsonProperty("nsx_manager_password")
-  @JsonInclude(Include.NON_NULL)
-  private String nsxManagerPassword = null;
+    @JsonProperty("nsx_manager_password")
+    @JsonInclude(Include.NON_NULL)
+    private String nsxManagerPassword = null;
 
-  @JsonProperty("nsx_manager_username")
-  @JsonInclude(Include.NON_NULL)
-  private String nsxManagerUsername = null;
+    @JsonProperty("nsx_manager_username")
+    @JsonInclude(Include.NON_NULL)
+    private String nsxManagerUsername = null;
 
-  @JsonProperty("nsx_poll_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nsxPollTime = 300;
+    @JsonProperty("nsx_poll_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nsxPollTime = 300;
 
 
 
@@ -51,6 +51,7 @@ public class NsxConfiguration extends AviRestResource {
    * This prefix will be added to the names of all nsx objects created by avi controller.
    * It should be unique across all the avi controller clusters.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return aviNsxPrefix
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class NsxConfiguration extends AviRestResource {
    * This prefix will be added to the names of all nsx objects created by avi controller.
    * It should be unique across all the avi controller clusters.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param aviNsxPrefix set the aviNsxPrefix.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The hostname or ip address of the nsx mgr.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxManagerName
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * The hostname or ip address of the nsx mgr.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxManagerName set the nsxManagerName.
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating with nsx mgr.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxManagerPassword
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating with nsx mgr.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxManagerPassword set the nsxManagerPassword.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating with nsx mgr.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxManagerUsername
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating with nsx mgr.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxManagerUsername set the nsxManagerUsername.
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The interval (in secs) with which avi controller polls the nsx manager for updates.
    * Field introduced in 17.1.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return nsxPollTime
    */
@@ -152,6 +161,7 @@ public class NsxConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * The interval (in secs) with which avi controller polls the nsx manager for updates.
    * Field introduced in 17.1.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param nsxPollTime set the nsxPollTime.
    */

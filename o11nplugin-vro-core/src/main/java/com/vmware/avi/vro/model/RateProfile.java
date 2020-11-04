@@ -26,47 +26,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RateProfile extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private RateLimiterAction action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private RateLimiterAction action = null;
 
-  @JsonProperty("burst_sz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer burstSz = null;
+    @JsonProperty("burst_sz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer burstSz;
 
-  @JsonProperty("count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer count = null;
+    @JsonProperty("count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer count;
 
-  @JsonProperty("explicit_tracking")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean explicitTracking = false;
+    @JsonProperty("explicit_tracking")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean explicitTracking = false;
 
-  @JsonProperty("fine_grain")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fineGrain = false;
+    @JsonProperty("fine_grain")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fineGrain = false;
 
-  @JsonProperty("http_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String httpCookie = null;
+    @JsonProperty("http_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String httpCookie = null;
 
-  @JsonProperty("http_header")
-  @JsonInclude(Include.NON_NULL)
-  private String httpHeader = null;
+    @JsonProperty("http_header")
+    @JsonInclude(Include.NON_NULL)
+    private String httpHeader = null;
 
-  @JsonProperty("period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer period = null;
+    @JsonProperty("period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer period;
 
-  @JsonProperty("rate_limiter")
-  @JsonInclude(Include.NON_NULL)
-  private RateLimiter rateLimiter = null;
+    @JsonProperty("rate_limiter")
+    @JsonInclude(Include.NON_NULL)
+    private RateLimiter rateLimiter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Action to perform upon rate limiting.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class RateProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Action to perform upon rate limiting.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -184,6 +186,7 @@ public class RateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http cookie name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpCookie
    */
   @VsoMethod
@@ -195,6 +198,7 @@ public class RateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Http cookie name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpCookie set the httpCookie.
    */
   @VsoMethod
@@ -206,6 +210,7 @@ public class RateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http header name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpHeader
    */
   @VsoMethod
@@ -217,6 +222,7 @@ public class RateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Http header name.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpHeader set the httpHeader.
    */
   @VsoMethod
@@ -229,6 +235,7 @@ public class RateProfile extends AviRestResource {
    * Time value in seconds to enforce rate count.
    * Allowed values are 1-300.
    * Field deprecated in 18.2.9.
+   * Unit is sec.
    * @return period
    */
   @VsoMethod
@@ -241,6 +248,7 @@ public class RateProfile extends AviRestResource {
    * Time value in seconds to enforce rate count.
    * Allowed values are 1-300.
    * Field deprecated in 18.2.9.
+   * Unit is sec.
    * @param period set the period.
    */
   @VsoMethod
@@ -252,6 +260,7 @@ public class RateProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The rate limiter configuration for this rate profile.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiter
    */
   @VsoMethod
@@ -263,6 +272,7 @@ public class RateProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The rate limiter configuration for this rate profile.
    * Field introduced in 18.2.9.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateLimiter set the rateLimiter.
    */
   @VsoMethod

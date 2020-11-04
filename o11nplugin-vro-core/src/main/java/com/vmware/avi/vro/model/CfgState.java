@@ -25,39 +25,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CfgState extends AviRestResource {
-  @JsonProperty("cfg_version")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cfgVersion = null;
+    @JsonProperty("cfg_version")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cfgVersion = null;
 
-  @JsonProperty("cfg_version_in_flight")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cfgVersionInFlight = null;
+    @JsonProperty("cfg_version_in_flight")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cfgVersionInFlight = null;
 
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("site_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String siteUuid = null;
+    @JsonProperty("site_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String siteUuid = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = "SYSERR_SUCCESS";
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = "SYSERR_SUCCESS";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Cfg-version synced to follower.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cfgVersion
    */
   @VsoMethod
@@ -68,6 +69,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cfg-version synced to follower.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cfgVersion set the cfgVersion.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cfg-version in flight to follower.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cfgVersionInFlight
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cfg-version in flight to follower.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cfgVersionInFlight set the cfgVersionInFlight.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_changed_time of obj type cfgstate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_changed_time of obj type cfgstate field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type cfgstate field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type cfgstate field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Site_uuid to which the object was synced.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteUuid
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Site_uuid to which the object was synced.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteUuid set the siteUuid.
    */
   @VsoMethod
@@ -161,7 +171,7 @@ public class CfgState extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSERR_SUCCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @return status
    */
   @VsoMethod
@@ -175,7 +185,7 @@ public class CfgState extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSERR_SUCCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @param status set the status.
    */
   @VsoMethod
@@ -186,6 +196,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Object-uuid that is being synced to follower.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -196,6 +207,7 @@ public class CfgState extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Object-uuid that is being synced to follower.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

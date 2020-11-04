@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPHdrData extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPHdrValue value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPHdrValue value = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Http header name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class HTTPHdrData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class HTTPHdrData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http header value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -68,6 +71,7 @@ public class HTTPHdrData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http header value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DiskUsage extends AviRestResource {
-  @JsonProperty("cntlr_disk_free")
-  @JsonInclude(Include.NON_NULL)
-  private List<OverallInfo> cntlrDiskFree = null;
+    @JsonProperty("cntlr_disk_free")
+    @JsonInclude(Include.NON_NULL)
+    private List<OverallInfo> cntlrDiskFree = null;
 
-  @JsonProperty("cntlr_disk_usage")
-  @JsonInclude(Include.NON_NULL)
-  private List<PartitionInfo> cntlrDiskUsage = null;
+    @JsonProperty("cntlr_disk_usage")
+    @JsonInclude(Include.NON_NULL)
+    private List<PartitionInfo> cntlrDiskUsage = null;
 
-  @JsonProperty("se_disk_free")
-  @JsonInclude(Include.NON_NULL)
-  private List<OverallInfo> seDiskFree = null;
+    @JsonProperty("se_disk_free")
+    @JsonInclude(Include.NON_NULL)
+    private List<OverallInfo> seDiskFree = null;
 
-  @JsonProperty("se_disk_usage")
-  @JsonInclude(Include.NON_NULL)
-  private List<PartitionInfo> seDiskUsage = null;
+    @JsonProperty("se_disk_usage")
+    @JsonInclude(Include.NON_NULL)
+    private List<PartitionInfo> seDiskUsage = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cntlr_disk_free of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrDiskFree
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method. this will set the cntlrDiskFree
    * Placeholder for description of property cntlr_disk_free of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrDiskFree
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method this will set the cntlrDiskFree
    * Placeholder for description of property cntlr_disk_free of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrDiskFree
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cntlr_disk_usage of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrDiskUsage
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method. this will set the cntlrDiskUsage
    * Placeholder for description of property cntlr_disk_usage of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrDiskUsage
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method this will set the cntlrDiskUsage
    * Placeholder for description of property cntlr_disk_usage of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrDiskUsage
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_disk_free of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskFree
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method. this will set the seDiskFree
    * Placeholder for description of property se_disk_free of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskFree
    */
   @VsoMethod
@@ -135,6 +143,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method this will set the seDiskFree
    * Placeholder for description of property se_disk_free of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskFree
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_disk_usage of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskUsage
    */
   @VsoMethod
@@ -160,6 +170,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method. this will set the seDiskUsage
    * Placeholder for description of property se_disk_usage of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskUsage
    */
   @VsoMethod
@@ -170,6 +181,7 @@ public class DiskUsage extends AviRestResource {
   /**
    * This is the setter method this will set the seDiskUsage
    * Placeholder for description of property se_disk_usage of obj type diskusage field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDiskUsage
    */
   @VsoMethod

@@ -24,49 +24,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafRule extends AviRestResource {
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("exclude_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafExcludeListEntry> excludeList = null;
+    @JsonProperty("exclude_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafExcludeListEntry> excludeList = null;
 
-  @JsonProperty("force_detection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean forceDetection = null;
+    @JsonProperty("force_detection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean forceDetection;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("is_sensitive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isSensitive = false;
+    @JsonProperty("is_sensitive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isSensitive = false;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = null;
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("phase")
-  @JsonInclude(Include.NON_NULL)
-  private String phase = null;
+    @JsonProperty("phase")
+    @JsonInclude(Include.NON_NULL)
+    private String phase = null;
 
-  @JsonProperty("rule")
-  @JsonInclude(Include.NON_NULL)
-  private String rule = null;
+    @JsonProperty("rule")
+    @JsonInclude(Include.NON_NULL)
+    private String rule = null;
 
-  @JsonProperty("rule_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ruleId = null;
+    @JsonProperty("rule_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ruleId = null;
 
-  @JsonProperty("tags")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> tags = null;
+    @JsonProperty("tags")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> tags = null;
 
 
 
@@ -100,6 +100,7 @@ public class WafRule extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
   @VsoMethod
@@ -113,6 +114,7 @@ public class WafRule extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
   @VsoMethod
@@ -126,6 +128,7 @@ public class WafRule extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
   @VsoMethod
@@ -167,6 +170,7 @@ public class WafRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -177,6 +181,7 @@ public class WafRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -216,6 +221,7 @@ public class WafRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mode
    */
   @VsoMethod
@@ -231,6 +237,7 @@ public class WafRule extends AviRestResource {
    * This only takes effect if the policy allows delegation.
    * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mode set the mode.
    */
   @VsoMethod
@@ -242,6 +249,7 @@ public class WafRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User-friendly optional name for a rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -253,6 +261,7 @@ public class WafRule extends AviRestResource {
    * This is the setter method to the attribute.
    * User-friendly optional name for a rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -266,6 +275,7 @@ public class WafRule extends AviRestResource {
    * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
    * WAF_PHASE_LOGGING.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return phase
    */
   @VsoMethod
@@ -279,6 +289,7 @@ public class WafRule extends AviRestResource {
    * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
    * WAF_PHASE_LOGGING.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param phase set the phase.
    */
   @VsoMethod
@@ -290,6 +301,7 @@ public class WafRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule as per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rule
    */
   @VsoMethod
@@ -301,6 +313,7 @@ public class WafRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule as per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rule set the rule.
    */
   @VsoMethod
@@ -315,6 +328,7 @@ public class WafRule extends AviRestResource {
    * It is extracted from the id action in a modsec rule.
    * Rules within a single waf policy are required to have unique rule_ids.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleId
    */
   @VsoMethod
@@ -329,6 +343,7 @@ public class WafRule extends AviRestResource {
    * It is extracted from the id action in a modsec rule.
    * Rules within a single waf policy are required to have unique rule_ids.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleId set the ruleId.
    */
   @VsoMethod
@@ -341,6 +356,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
   @VsoMethod
@@ -353,6 +369,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
   @VsoMethod
@@ -365,6 +382,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
   @VsoMethod

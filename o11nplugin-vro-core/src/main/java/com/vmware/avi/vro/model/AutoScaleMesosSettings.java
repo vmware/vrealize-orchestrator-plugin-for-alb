@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AutoScaleMesosSettings extends AviRestResource {
-  @JsonProperty("force")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean force = true;
+    @JsonProperty("force")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean force = true;
 
 
 

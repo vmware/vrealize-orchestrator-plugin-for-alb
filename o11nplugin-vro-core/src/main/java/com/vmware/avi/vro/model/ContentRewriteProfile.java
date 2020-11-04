@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ContentRewriteProfile extends AviRestResource {
-  @JsonProperty("req_match_replace_pair")
-  @JsonInclude(Include.NON_NULL)
-  private List<MatchReplacePair> reqMatchReplacePair = null;
+    @JsonProperty("req_match_replace_pair")
+    @JsonInclude(Include.NON_NULL)
+    private List<MatchReplacePair> reqMatchReplacePair = null;
 
-  @JsonProperty("request_rewrite_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean requestRewriteEnabled = false;
+    @JsonProperty("request_rewrite_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean requestRewriteEnabled = false;
 
-  @JsonProperty("response_rewrite_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean responseRewriteEnabled = false;
+    @JsonProperty("response_rewrite_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean responseRewriteEnabled = false;
 
-  @JsonProperty("rewritable_content_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String rewritableContentRef = null;
+    @JsonProperty("rewritable_content_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String rewritableContentRef = null;
 
-  @JsonProperty("rsp_match_replace_pair")
-  @JsonInclude(Include.NON_NULL)
-  private List<MatchReplacePair> rspMatchReplacePair = null;
+    @JsonProperty("rsp_match_replace_pair")
+    @JsonInclude(Include.NON_NULL)
+    private List<MatchReplacePair> rspMatchReplacePair = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Strings to be matched and replaced with on the request body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reqMatchReplacePair
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class ContentRewriteProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the reqMatchReplacePair
    * Strings to be matched and replaced with on the request body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reqMatchReplacePair
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class ContentRewriteProfile extends AviRestResource {
   /**
    * This is the setter method this will set the reqMatchReplacePair
    * Strings to be matched and replaced with on the request body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reqMatchReplacePair
    */
   @VsoMethod
@@ -130,6 +133,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Rewrite only content types listed in this string group.
    * Content types not present in this list are not rewritten.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rewritableContentRef
    */
   @VsoMethod
@@ -142,6 +146,7 @@ public class ContentRewriteProfile extends AviRestResource {
    * Rewrite only content types listed in this string group.
    * Content types not present in this list are not rewritten.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rewritableContentRef set the rewritableContentRef.
    */
   @VsoMethod
@@ -152,6 +157,7 @@ public class ContentRewriteProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Strings to be matched and replaced with on the response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspMatchReplacePair
    */
   @VsoMethod
@@ -162,6 +168,7 @@ public class ContentRewriteProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the rspMatchReplacePair
    * Strings to be matched and replaced with on the response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspMatchReplacePair
    */
   @VsoMethod
@@ -172,6 +179,7 @@ public class ContentRewriteProfile extends AviRestResource {
   /**
    * This is the setter method this will set the rspMatchReplacePair
    * Strings to be matched and replaced with on the response body.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rspMatchReplacePair
    */
   @VsoMethod

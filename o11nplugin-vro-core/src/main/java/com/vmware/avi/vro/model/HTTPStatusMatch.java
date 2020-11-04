@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPStatusMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<HTTPStatusRange> ranges = null;
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<HTTPStatusRange> ranges = null;
 
-  @JsonProperty("status_codes")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> statusCodes = null;
+    @JsonProperty("status_codes")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> statusCodes = null;
 
 
 
@@ -42,6 +42,7 @@ public class HTTPStatusMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for matching the http response status code(s).
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class HTTPStatusMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for matching the http response status code(s).
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class HTTPStatusMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http response status code range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class HTTPStatusMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * Http response status code range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class HTTPStatusMatch extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * Http response status code range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class HTTPStatusMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http response status code(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCodes
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class HTTPStatusMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the statusCodes
    * Http response status code(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCodes
    */
   @VsoMethod
@@ -118,6 +125,7 @@ public class HTTPStatusMatch extends AviRestResource {
   /**
    * This is the setter method this will set the statusCodes
    * Http response status code(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCodes
    */
   @VsoMethod

@@ -24,61 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsScaleoutParams extends AviRestResource {
-  @JsonProperty("admin_up")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean adminUp = false;
+    @JsonProperty("new_vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer newVcpus = null;
 
-  @JsonProperty("new_vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer newVcpus = null;
+    @JsonProperty("to_host_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String toHostRef = null;
 
-  @JsonProperty("to_host_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String toHostRef = null;
+    @JsonProperty("to_new_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean toNewSe = false;
 
-  @JsonProperty("to_new_se")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean toNewSe = false;
+    @JsonProperty("to_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String toSeRef = null;
 
-  @JsonProperty("to_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String toSeRef = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
-
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Placeholder for description of property admin_up of obj type vsscaleoutparams field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return adminUp
-   */
-  @VsoMethod
-  public Boolean getAdminUp() {
-    return adminUp;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Placeholder for description of property admin_up of obj type vsscaleoutparams field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param adminUp set the adminUp.
-   */
-  @VsoMethod
-  public void setAdminUp(Boolean  adminUp) {
-    this.adminUp = adminUp;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_vcpus of obj type vsscaleoutparams field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newVcpus
    */
   @VsoMethod
@@ -89,6 +64,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_vcpus of obj type vsscaleoutparams field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newVcpus set the newVcpus.
    */
   @VsoMethod
@@ -99,6 +75,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toHostRef
    */
   @VsoMethod
@@ -109,6 +86,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toHostRef set the toHostRef.
    */
   @VsoMethod
@@ -141,6 +119,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toSeRef
    */
   @VsoMethod
@@ -151,6 +130,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toSeRef set the toSeRef.
    */
   @VsoMethod
@@ -161,6 +141,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -171,6 +152,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -181,6 +163,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -191,6 +174,7 @@ public class VsScaleoutParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -213,7 +197,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.toSeRef, objVsScaleoutParams.toSeRef)&&
   Objects.equals(this.toNewSe, objVsScaleoutParams.toNewSe)&&
   Objects.equals(this.toHostRef, objVsScaleoutParams.toHostRef)&&
-  Objects.equals(this.adminUp, objVsScaleoutParams.adminUp)&&
   Objects.equals(this.newVcpus, objVsScaleoutParams.newVcpus)&&
   Objects.equals(this.vipId, objVsScaleoutParams.vipId);
 }
@@ -222,8 +205,7 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VsScaleoutParams {\n");
-      sb.append("    adminUp: ").append(toIndentedString(adminUp)).append("\n");
-        sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
+      sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
         sb.append("    toHostRef: ").append(toIndentedString(toHostRef)).append("\n");
         sb.append("    toNewSe: ").append(toIndentedString(toNewSe)).append("\n");
         sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");

@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MesosMetricsDebugFilter extends AviRestResource {
-  @JsonProperty("mesos_master")
-  @JsonInclude(Include.NON_NULL)
-  private String mesosMaster = null;
+    @JsonProperty("mesos_master")
+    @JsonInclude(Include.NON_NULL)
+    private String mesosMaster = null;
 
-  @JsonProperty("mesos_slave")
-  @JsonInclude(Include.NON_NULL)
-  private String mesosSlave = null;
+    @JsonProperty("mesos_slave")
+    @JsonInclude(Include.NON_NULL)
+    private String mesosSlave = null;
 
-  @JsonProperty("metric_entity")
-  @JsonInclude(Include.NON_NULL)
-  private String metricEntity = null;
+    @JsonProperty("metric_entity")
+    @JsonInclude(Include.NON_NULL)
+    private String metricEntity = null;
 
-  @JsonProperty("metrics_collection_frq")
-  @JsonInclude(Include.NON_NULL)
-  private Integer metricsCollectionFrq = 60;
+    @JsonProperty("metrics_collection_frq")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsCollectionFrq = 60;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mesos_master of obj type mesosmetricsdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosMaster
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mesos_master of obj type mesosmetricsdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosMaster set the mesosMaster.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mesos_slave of obj type mesosmetricsdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosSlave
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mesos_slave of obj type mesosmetricsdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosSlave set the mesosSlave.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricEntity
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class MesosMetricsDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricEntity set the metricEntity.
    */
   @VsoMethod

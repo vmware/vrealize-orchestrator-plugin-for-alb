@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IPThreatDBEventData extends AviRestResource {
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -42,6 +42,7 @@ public class IPThreatDBEventData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for ipthreatdb transaction failure.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class IPThreatDBEventData extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for ipthreatdb transaction failure.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class IPThreatDBEventData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Status of ipthreatdb transaction.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class IPThreatDBEventData extends AviRestResource {
    * This is the setter method to the attribute.
    * Status of ipthreatdb transaction.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class IPThreatDBEventData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Last synced version of the ipthreatdb.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class IPThreatDBEventData extends AviRestResource {
    * This is the setter method to the attribute.
    * Last synced version of the ipthreatdb.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

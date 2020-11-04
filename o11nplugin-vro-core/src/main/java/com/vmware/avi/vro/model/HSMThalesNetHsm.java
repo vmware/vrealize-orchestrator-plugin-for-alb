@@ -25,29 +25,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HSMThalesNetHsm extends AviRestResource {
-  @JsonProperty("esn")
-  @JsonInclude(Include.NON_NULL)
-  private String esn = null;
+    @JsonProperty("esn")
+    @JsonInclude(Include.NON_NULL)
+    private String esn = null;
 
-  @JsonProperty("keyhash")
-  @JsonInclude(Include.NON_NULL)
-  private String keyhash = null;
+    @JsonProperty("keyhash")
+    @JsonInclude(Include.NON_NULL)
+    private String keyhash = null;
 
-  @JsonProperty("module_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer moduleId = 0;
+    @JsonProperty("module_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer moduleId = 0;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private Integer priority = 100;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer priority = 100;
 
-  @JsonProperty("remote_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr remoteIp = null;
+    @JsonProperty("remote_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr remoteIp = null;
 
-  @JsonProperty("remote_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer remotePort = 9004;
+    @JsonProperty("remote_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer remotePort = 9004;
 
 
 
@@ -55,6 +55,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Electronic serial number of the nethsm device.
    * Use thales anonkneti utility to find the nethsm esn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return esn
    */
   @VsoMethod
@@ -66,6 +67,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the setter method to the attribute.
    * Electronic serial number of the nethsm device.
    * Use thales anonkneti utility to find the nethsm esn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param esn set the esn.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Hash of the key that nethsm device uses to authenticate itself.
    * Use thales anonkneti utility to find the nethsm keyhash.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyhash
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class HSMThalesNetHsm extends AviRestResource {
    * This is the setter method to the attribute.
    * Hash of the key that nethsm device uses to authenticate itself.
    * Use thales anonkneti utility to find the nethsm keyhash.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyhash set the keyhash.
    */
   @VsoMethod
@@ -146,6 +150,7 @@ public class HSMThalesNetHsm extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the nethsm device.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteIp
    */
   @VsoMethod
@@ -156,6 +161,7 @@ public class HSMThalesNetHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the nethsm device.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteIp set the remoteIp.
    */
   @VsoMethod

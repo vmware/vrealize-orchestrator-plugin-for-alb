@@ -24,739 +24,740 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VserverL7MetricsObj extends AviRestResource {
-  @JsonProperty("apdexr")
-  @JsonInclude(Include.NON_NULL)
-  private Float apdexr = null;
-
-  @JsonProperty("avg_application_response_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgApplicationResponseTime = null;
-
-  @JsonProperty("avg_blocking_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgBlockingTime = null;
-
-  @JsonProperty("avg_browser_rendering_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgBrowserRenderingTime = null;
-
-  @JsonProperty("avg_cache_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgCacheBytes = null;
-
-  @JsonProperty("avg_cache_hits")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgCacheHits = null;
-
-  @JsonProperty("avg_cacheable_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgCacheableBytes = null;
-
-  @JsonProperty("avg_cacheable_hits")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgCacheableHits = null;
-
-  @JsonProperty("avg_client_data_transfer_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgClientDataTransferTime = null;
-
-  @JsonProperty("avg_client_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgClientRtt = null;
-
-  @JsonProperty("avg_client_txn_latency")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgClientTxnLatency = null;
-
-  @JsonProperty("avg_complete_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgCompleteResponses = null;
-
-  @JsonProperty("avg_connection_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgConnectionTime = null;
-
-  @JsonProperty("avg_dns_lookup_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDnsLookupTime = null;
-
-  @JsonProperty("avg_dom_content_load_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgDomContentLoadTime = null;
-
-  @JsonProperty("avg_error_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgErrorResponses = null;
-
-  @JsonProperty("avg_errors_excluded")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgErrorsExcluded = null;
-
-  @JsonProperty("avg_frustrated_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgFrustratedResponses = null;
-
-  @JsonProperty("avg_http_headers_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgHttpHeadersBytes = null;
-
-  @JsonProperty("avg_http_headers_count")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgHttpHeadersCount = null;
-
-  @JsonProperty("avg_http_params_count")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgHttpParamsCount = null;
-
-  @JsonProperty("avg_page_download_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPageDownloadTime = null;
-
-  @JsonProperty("avg_page_load_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPageLoadTime = null;
-
-  @JsonProperty("avg_params_per_req")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgParamsPerReq = null;
-
-  @JsonProperty("avg_post_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPostBytes = null;
-
-  @JsonProperty("avg_post_compression_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPostCompressionBytes = null;
-
-  @JsonProperty("avg_pre_compression_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgPreCompressionBytes = null;
-
-  @JsonProperty("avg_redirection_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgRedirectionTime = null;
-
-  @JsonProperty("avg_reqs_per_session")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgReqsPerSession = null;
-
-  @JsonProperty("avg_resp_1xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp1Xx = null;
-
-  @JsonProperty("avg_resp_2xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp2Xx = null;
-
-  @JsonProperty("avg_resp_3xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp3Xx = null;
-
-  @JsonProperty("avg_resp_4xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp4Xx = null;
-
-  @JsonProperty("avg_resp_4xx_avi_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp4XxAviErrors = null;
-
-  @JsonProperty("avg_resp_5xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp5Xx = null;
-
-  @JsonProperty("avg_resp_5xx_avi_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgResp5XxAviErrors = null;
-
-  @JsonProperty("avg_rum_client_data_transfer_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgRumClientDataTransferTime = null;
-
-  @JsonProperty("avg_satisfactory_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSatisfactoryResponses = null;
-
-  @JsonProperty("avg_server_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgServerRtt = null;
-
-  @JsonProperty("avg_service_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgServiceTime = null;
-
-  @JsonProperty("avg_ssl_auth_dsa")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslAuthDsa = null;
-
-  @JsonProperty("avg_ssl_auth_ecdsa")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslAuthEcdsa = null;
-
-  @JsonProperty("avg_ssl_auth_rsa")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslAuthRsa = null;
-
-  @JsonProperty("avg_ssl_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslConnections = null;
-
-  @JsonProperty("avg_ssl_ecdsa_non_pfs")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslEcdsaNonPfs = null;
-
-  @JsonProperty("avg_ssl_ecdsa_pfs")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslEcdsaPfs = null;
-
-  @JsonProperty("avg_ssl_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslErrors = null;
-
-  @JsonProperty("avg_ssl_failed_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslFailedConnections = null;
-
-  @JsonProperty("avg_ssl_handshake_network_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakeNetworkErrors = null;
-
-  @JsonProperty("avg_ssl_handshake_protocol_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakeProtocolErrors = null;
-
-  @JsonProperty("avg_ssl_handshakes_new")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakesNew = null;
-
-  @JsonProperty("avg_ssl_handshakes_non_pfs")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakesNonPfs = null;
-
-  @JsonProperty("avg_ssl_handshakes_pfs")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakesPfs = null;
-
-  @JsonProperty("avg_ssl_handshakes_reused")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakesReused = null;
-
-  @JsonProperty("avg_ssl_handshakes_timedout")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslHandshakesTimedout = null;
-
-  @JsonProperty("avg_ssl_kx_dh")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslKxDh = null;
-
-  @JsonProperty("avg_ssl_kx_ecdh")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslKxEcdh = null;
-
-  @JsonProperty("avg_ssl_kx_rsa")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslKxRsa = null;
-
-  @JsonProperty("avg_ssl_rsa_non_pfs")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslRsaNonPfs = null;
-
-  @JsonProperty("avg_ssl_rsa_pfs")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslRsaPfs = null;
-
-  @JsonProperty("avg_ssl_ver_ssl30")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslVerSsl30 = null;
-
-  @JsonProperty("avg_ssl_ver_tls10")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslVerTls10 = null;
-
-  @JsonProperty("avg_ssl_ver_tls11")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslVerTls11 = null;
-
-  @JsonProperty("avg_ssl_ver_tls12")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslVerTls12 = null;
-
-  @JsonProperty("avg_ssl_ver_tls13")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgSslVerTls13 = null;
-
-  @JsonProperty("avg_tolerated_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgToleratedResponses = null;
-
-  @JsonProperty("avg_total_http2_requests")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgTotalHttp2Requests = null;
-
-  @JsonProperty("avg_total_requests")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgTotalRequests = null;
-
-  @JsonProperty("avg_uri_length")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgUriLength = null;
-
-  @JsonProperty("avg_waf_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafAttacks = null;
-
-  @JsonProperty("avg_waf_disabled")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafDisabled = null;
-
-  @JsonProperty("avg_waf_evaluated")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafEvaluated = null;
-
-  @JsonProperty("avg_waf_evaluated_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafEvaluatedRequestBodyPhase = null;
-
-  @JsonProperty("avg_waf_evaluated_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafEvaluatedRequestHeaderPhase = null;
-
-  @JsonProperty("avg_waf_evaluated_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafEvaluatedResponseBodyPhase = null;
-
-  @JsonProperty("avg_waf_evaluated_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafEvaluatedResponseHeaderPhase = null;
-
-  @JsonProperty("avg_waf_flagged")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafFlagged = null;
-
-  @JsonProperty("avg_waf_flagged_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafFlaggedRequestBodyPhase = null;
-
-  @JsonProperty("avg_waf_flagged_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafFlaggedRequestHeaderPhase = null;
-
-  @JsonProperty("avg_waf_flagged_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafFlaggedResponseBodyPhase = null;
-
-  @JsonProperty("avg_waf_flagged_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafFlaggedResponseHeaderPhase = null;
-
-  @JsonProperty("avg_waf_latency_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafLatencyRequestBodyPhase = null;
-
-  @JsonProperty("avg_waf_latency_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafLatencyRequestHeaderPhase = null;
-
-  @JsonProperty("avg_waf_latency_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafLatencyResponseBodyPhase = null;
-
-  @JsonProperty("avg_waf_latency_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafLatencyResponseHeaderPhase = null;
-
-  @JsonProperty("avg_waf_matched")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafMatched = null;
-
-  @JsonProperty("avg_waf_matched_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafMatchedRequestBodyPhase = null;
-
-  @JsonProperty("avg_waf_matched_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafMatchedRequestHeaderPhase = null;
-
-  @JsonProperty("avg_waf_matched_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafMatchedResponseBodyPhase = null;
-
-  @JsonProperty("avg_waf_matched_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafMatchedResponseHeaderPhase = null;
-
-  @JsonProperty("avg_waf_rejected")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafRejected = null;
-
-  @JsonProperty("avg_waf_rejected_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafRejectedRequestBodyPhase = null;
-
-  @JsonProperty("avg_waf_rejected_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafRejectedRequestHeaderPhase = null;
-
-  @JsonProperty("avg_waf_rejected_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafRejectedResponseBodyPhase = null;
-
-  @JsonProperty("avg_waf_rejected_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWafRejectedResponseHeaderPhase = null;
-
-  @JsonProperty("avg_waiting_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float avgWaitingTime = null;
-
-  @JsonProperty("max_concurrent_sessions")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxConcurrentSessions = null;
-
-  @JsonProperty("max_ssl_open_sessions")
-  @JsonInclude(Include.NON_NULL)
-  private Float maxSslOpenSessions = null;
-
-  @JsonProperty("node_obj_id")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeObjId = null;
-
-  @JsonProperty("pct_cache_hits")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctCacheHits = null;
-
-  @JsonProperty("pct_cacheable_hits")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctCacheableHits = null;
-
-  @JsonProperty("pct_get_reqs")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctGetReqs = null;
-
-  @JsonProperty("pct_post_reqs")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctPostReqs = null;
-
-  @JsonProperty("pct_response_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctResponseErrors = null;
-
-  @JsonProperty("pct_ssl_failed_connections")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctSslFailedConnections = null;
-
-  @JsonProperty("pct_waf_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctWafAttacks = null;
-
-  @JsonProperty("pct_waf_disabled")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctWafDisabled = null;
-
-  @JsonProperty("pct_waf_evaluated")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctWafEvaluated = null;
-
-  @JsonProperty("pct_waf_flagged")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctWafFlagged = null;
-
-  @JsonProperty("pct_waf_matched")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctWafMatched = null;
-
-  @JsonProperty("pct_waf_rejected")
-  @JsonInclude(Include.NON_NULL)
-  private Float pctWafRejected = null;
-
-  @JsonProperty("rum_apdexr")
-  @JsonInclude(Include.NON_NULL)
-  private Float rumApdexr = null;
-
-  @JsonProperty("ssl_protocol_strength")
-  @JsonInclude(Include.NON_NULL)
-  private Float sslProtocolStrength = null;
-
-  @JsonProperty("sum_application_response_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumApplicationResponseTime = null;
-
-  @JsonProperty("sum_blocking_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumBlockingTime = null;
-
-  @JsonProperty("sum_browser_rendering_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumBrowserRenderingTime = null;
-
-  @JsonProperty("sum_client_data_transfer_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumClientDataTransferTime = null;
-
-  @JsonProperty("sum_client_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumClientRtt = null;
-
-  @JsonProperty("sum_connection_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumConnectionTime = null;
-
-  @JsonProperty("sum_dns_lookup_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumDnsLookupTime = null;
-
-  @JsonProperty("sum_dom_content_load_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumDomContentLoadTime = null;
-
-  @JsonProperty("sum_errors")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumErrors = null;
-
-  @JsonProperty("sum_finished_sessions")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumFinishedSessions = null;
-
-  @JsonProperty("sum_get_client_txn_latency")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumGetClientTxnLatency = null;
-
-  @JsonProperty("sum_get_client_txn_latency_bucket1")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumGetClientTxnLatencyBucket1 = null;
-
-  @JsonProperty("sum_get_client_txn_latency_bucket2")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumGetClientTxnLatencyBucket2 = null;
-
-  @JsonProperty("sum_get_reqs")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumGetReqs = null;
-
-  @JsonProperty("sum_http_headers_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumHttpHeadersBytes = null;
-
-  @JsonProperty("sum_http_headers_count")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumHttpHeadersCount = null;
-
-  @JsonProperty("sum_http_params_count")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumHttpParamsCount = null;
-
-  @JsonProperty("sum_num_page_load_time_bucket1")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumNumPageLoadTimeBucket1 = null;
-
-  @JsonProperty("sum_num_page_load_time_bucket2")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumNumPageLoadTimeBucket2 = null;
-
-  @JsonProperty("sum_num_rum_samples")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumNumRumSamples = null;
-
-  @JsonProperty("sum_other_client_txn_latency")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumOtherClientTxnLatency = null;
-
-  @JsonProperty("sum_other_client_txn_latency_bucket1")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumOtherClientTxnLatencyBucket1 = null;
-
-  @JsonProperty("sum_other_client_txn_latency_bucket2")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumOtherClientTxnLatencyBucket2 = null;
-
-  @JsonProperty("sum_other_reqs")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumOtherReqs = null;
-
-  @JsonProperty("sum_page_download_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPageDownloadTime = null;
-
-  @JsonProperty("sum_page_load_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPageLoadTime = null;
-
-  @JsonProperty("sum_post_bytes")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPostBytes = null;
-
-  @JsonProperty("sum_post_client_txn_latency")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPostClientTxnLatency = null;
-
-  @JsonProperty("sum_post_client_txn_latency_bucket1")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPostClientTxnLatencyBucket1 = null;
-
-  @JsonProperty("sum_post_client_txn_latency_bucket2")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPostClientTxnLatencyBucket2 = null;
-
-  @JsonProperty("sum_post_reqs")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumPostReqs = null;
-
-  @JsonProperty("sum_redirection_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumRedirectionTime = null;
-
-  @JsonProperty("sum_reqs_finished_sessions")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumReqsFinishedSessions = null;
-
-  @JsonProperty("sum_reqs_with_params")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumReqsWithParams = null;
-
-  @JsonProperty("sum_resp_1xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumResp1Xx = null;
-
-  @JsonProperty("sum_resp_2xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumResp2Xx = null;
-
-  @JsonProperty("sum_resp_3xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumResp3Xx = null;
-
-  @JsonProperty("sum_resp_4xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumResp4Xx = null;
-
-  @JsonProperty("sum_resp_5xx")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumResp5Xx = null;
-
-  @JsonProperty("sum_rum_client_data_transfer_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumRumClientDataTransferTime = null;
-
-  @JsonProperty("sum_server_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumServerRtt = null;
-
-  @JsonProperty("sum_service_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumServiceTime = null;
-
-  @JsonProperty("sum_total_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumTotalResponses = null;
-
-  @JsonProperty("sum_uri_length")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumUriLength = null;
-
-  @JsonProperty("sum_waf_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafAttacks = null;
-
-  @JsonProperty("sum_waf_disabled")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafDisabled = null;
-
-  @JsonProperty("sum_waf_evaluated_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafEvaluatedRequestBodyPhase = null;
-
-  @JsonProperty("sum_waf_evaluated_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafEvaluatedRequestHeaderPhase = null;
-
-  @JsonProperty("sum_waf_evaluated_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafEvaluatedResponseBodyPhase = null;
-
-  @JsonProperty("sum_waf_evaluated_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafEvaluatedResponseHeaderPhase = null;
-
-  @JsonProperty("sum_waf_flagged")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafFlagged = null;
-
-  @JsonProperty("sum_waf_flagged_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafFlaggedRequestBodyPhase = null;
-
-  @JsonProperty("sum_waf_flagged_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafFlaggedRequestHeaderPhase = null;
-
-  @JsonProperty("sum_waf_flagged_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafFlaggedResponseBodyPhase = null;
-
-  @JsonProperty("sum_waf_flagged_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafFlaggedResponseHeaderPhase = null;
-
-  @JsonProperty("sum_waf_latency_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafLatencyRequestBodyPhase = null;
-
-  @JsonProperty("sum_waf_latency_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafLatencyRequestHeaderPhase = null;
-
-  @JsonProperty("sum_waf_latency_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafLatencyResponseBodyPhase = null;
-
-  @JsonProperty("sum_waf_latency_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafLatencyResponseHeaderPhase = null;
-
-  @JsonProperty("sum_waf_matched_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafMatchedRequestBodyPhase = null;
-
-  @JsonProperty("sum_waf_matched_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafMatchedRequestHeaderPhase = null;
-
-  @JsonProperty("sum_waf_matched_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafMatchedResponseBodyPhase = null;
-
-  @JsonProperty("sum_waf_matched_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafMatchedResponseHeaderPhase = null;
-
-  @JsonProperty("sum_waf_rejected")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafRejected = null;
-
-  @JsonProperty("sum_waf_rejected_request_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafRejectedRequestBodyPhase = null;
-
-  @JsonProperty("sum_waf_rejected_request_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafRejectedRequestHeaderPhase = null;
-
-  @JsonProperty("sum_waf_rejected_response_body_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafRejectedResponseBodyPhase = null;
-
-  @JsonProperty("sum_waf_rejected_response_header_phase")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWafRejectedResponseHeaderPhase = null;
-
-  @JsonProperty("sum_waiting_time")
-  @JsonInclude(Include.NON_NULL)
-  private Float sumWaitingTime = null;
+    @JsonProperty("apdexr")
+    @JsonInclude(Include.NON_NULL)
+    private Float apdexr = null;
+
+    @JsonProperty("avg_application_response_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgApplicationResponseTime = null;
+
+    @JsonProperty("avg_blocking_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgBlockingTime = null;
+
+    @JsonProperty("avg_browser_rendering_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgBrowserRenderingTime = null;
+
+    @JsonProperty("avg_cache_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgCacheBytes = null;
+
+    @JsonProperty("avg_cache_hits")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgCacheHits = null;
+
+    @JsonProperty("avg_cacheable_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgCacheableBytes = null;
+
+    @JsonProperty("avg_cacheable_hits")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgCacheableHits = null;
+
+    @JsonProperty("avg_client_data_transfer_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgClientDataTransferTime = null;
+
+    @JsonProperty("avg_client_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgClientRtt = null;
+
+    @JsonProperty("avg_client_txn_latency")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgClientTxnLatency = null;
+
+    @JsonProperty("avg_complete_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgCompleteResponses = null;
+
+    @JsonProperty("avg_connection_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgConnectionTime = null;
+
+    @JsonProperty("avg_dns_lookup_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDnsLookupTime = null;
+
+    @JsonProperty("avg_dom_content_load_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgDomContentLoadTime = null;
+
+    @JsonProperty("avg_error_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgErrorResponses = null;
+
+    @JsonProperty("avg_errors_excluded")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgErrorsExcluded = null;
+
+    @JsonProperty("avg_frustrated_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgFrustratedResponses = null;
+
+    @JsonProperty("avg_http_headers_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgHttpHeadersBytes = null;
+
+    @JsonProperty("avg_http_headers_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgHttpHeadersCount = null;
+
+    @JsonProperty("avg_http_params_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgHttpParamsCount = null;
+
+    @JsonProperty("avg_page_download_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPageDownloadTime = null;
+
+    @JsonProperty("avg_page_load_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPageLoadTime = null;
+
+    @JsonProperty("avg_params_per_req")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgParamsPerReq = null;
+
+    @JsonProperty("avg_post_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPostBytes = null;
+
+    @JsonProperty("avg_post_compression_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPostCompressionBytes = null;
+
+    @JsonProperty("avg_pre_compression_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgPreCompressionBytes = null;
+
+    @JsonProperty("avg_redirection_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgRedirectionTime = null;
+
+    @JsonProperty("avg_reqs_per_session")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgReqsPerSession = null;
+
+    @JsonProperty("avg_resp_1xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp1Xx = null;
+
+    @JsonProperty("avg_resp_2xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp2Xx = null;
+
+    @JsonProperty("avg_resp_3xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp3Xx = null;
+
+    @JsonProperty("avg_resp_4xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp4Xx = null;
+
+    @JsonProperty("avg_resp_4xx_avi_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp4XxAviErrors = null;
+
+    @JsonProperty("avg_resp_5xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp5Xx = null;
+
+    @JsonProperty("avg_resp_5xx_avi_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgResp5XxAviErrors = null;
+
+    @JsonProperty("avg_rum_client_data_transfer_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgRumClientDataTransferTime = null;
+
+    @JsonProperty("avg_satisfactory_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSatisfactoryResponses = null;
+
+    @JsonProperty("avg_server_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgServerRtt = null;
+
+    @JsonProperty("avg_service_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgServiceTime = null;
+
+    @JsonProperty("avg_ssl_auth_dsa")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslAuthDsa = null;
+
+    @JsonProperty("avg_ssl_auth_ecdsa")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslAuthEcdsa = null;
+
+    @JsonProperty("avg_ssl_auth_rsa")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslAuthRsa = null;
+
+    @JsonProperty("avg_ssl_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslConnections = null;
+
+    @JsonProperty("avg_ssl_ecdsa_non_pfs")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslEcdsaNonPfs = null;
+
+    @JsonProperty("avg_ssl_ecdsa_pfs")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslEcdsaPfs = null;
+
+    @JsonProperty("avg_ssl_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslErrors = null;
+
+    @JsonProperty("avg_ssl_failed_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslFailedConnections = null;
+
+    @JsonProperty("avg_ssl_handshake_network_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakeNetworkErrors = null;
+
+    @JsonProperty("avg_ssl_handshake_protocol_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakeProtocolErrors = null;
+
+    @JsonProperty("avg_ssl_handshakes_new")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakesNew = null;
+
+    @JsonProperty("avg_ssl_handshakes_non_pfs")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakesNonPfs = null;
+
+    @JsonProperty("avg_ssl_handshakes_pfs")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakesPfs = null;
+
+    @JsonProperty("avg_ssl_handshakes_reused")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakesReused = null;
+
+    @JsonProperty("avg_ssl_handshakes_timedout")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslHandshakesTimedout = null;
+
+    @JsonProperty("avg_ssl_kx_dh")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslKxDh = null;
+
+    @JsonProperty("avg_ssl_kx_ecdh")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslKxEcdh = null;
+
+    @JsonProperty("avg_ssl_kx_rsa")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslKxRsa = null;
+
+    @JsonProperty("avg_ssl_rsa_non_pfs")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslRsaNonPfs = null;
+
+    @JsonProperty("avg_ssl_rsa_pfs")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslRsaPfs = null;
+
+    @JsonProperty("avg_ssl_ver_ssl30")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslVerSsl30 = null;
+
+    @JsonProperty("avg_ssl_ver_tls10")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslVerTls10 = null;
+
+    @JsonProperty("avg_ssl_ver_tls11")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslVerTls11 = null;
+
+    @JsonProperty("avg_ssl_ver_tls12")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslVerTls12 = null;
+
+    @JsonProperty("avg_ssl_ver_tls13")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgSslVerTls13 = null;
+
+    @JsonProperty("avg_tolerated_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgToleratedResponses = null;
+
+    @JsonProperty("avg_total_http2_requests")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgTotalHttp2Requests = null;
+
+    @JsonProperty("avg_total_requests")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgTotalRequests = null;
+
+    @JsonProperty("avg_uri_length")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgUriLength = null;
+
+    @JsonProperty("avg_waf_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafAttacks = null;
+
+    @JsonProperty("avg_waf_disabled")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafDisabled = null;
+
+    @JsonProperty("avg_waf_evaluated")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafEvaluated = null;
+
+    @JsonProperty("avg_waf_evaluated_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafEvaluatedRequestBodyPhase = null;
+
+    @JsonProperty("avg_waf_evaluated_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafEvaluatedRequestHeaderPhase = null;
+
+    @JsonProperty("avg_waf_evaluated_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafEvaluatedResponseBodyPhase = null;
+
+    @JsonProperty("avg_waf_evaluated_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafEvaluatedResponseHeaderPhase = null;
+
+    @JsonProperty("avg_waf_flagged")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafFlagged = null;
+
+    @JsonProperty("avg_waf_flagged_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafFlaggedRequestBodyPhase = null;
+
+    @JsonProperty("avg_waf_flagged_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafFlaggedRequestHeaderPhase = null;
+
+    @JsonProperty("avg_waf_flagged_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafFlaggedResponseBodyPhase = null;
+
+    @JsonProperty("avg_waf_flagged_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafFlaggedResponseHeaderPhase = null;
+
+    @JsonProperty("avg_waf_latency_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafLatencyRequestBodyPhase = null;
+
+    @JsonProperty("avg_waf_latency_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafLatencyRequestHeaderPhase = null;
+
+    @JsonProperty("avg_waf_latency_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafLatencyResponseBodyPhase = null;
+
+    @JsonProperty("avg_waf_latency_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafLatencyResponseHeaderPhase = null;
+
+    @JsonProperty("avg_waf_matched")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafMatched = null;
+
+    @JsonProperty("avg_waf_matched_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafMatchedRequestBodyPhase = null;
+
+    @JsonProperty("avg_waf_matched_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafMatchedRequestHeaderPhase = null;
+
+    @JsonProperty("avg_waf_matched_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafMatchedResponseBodyPhase = null;
+
+    @JsonProperty("avg_waf_matched_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafMatchedResponseHeaderPhase = null;
+
+    @JsonProperty("avg_waf_rejected")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafRejected = null;
+
+    @JsonProperty("avg_waf_rejected_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafRejectedRequestBodyPhase = null;
+
+    @JsonProperty("avg_waf_rejected_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafRejectedRequestHeaderPhase = null;
+
+    @JsonProperty("avg_waf_rejected_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafRejectedResponseBodyPhase = null;
+
+    @JsonProperty("avg_waf_rejected_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWafRejectedResponseHeaderPhase = null;
+
+    @JsonProperty("avg_waiting_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float avgWaitingTime = null;
+
+    @JsonProperty("max_concurrent_sessions")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxConcurrentSessions = null;
+
+    @JsonProperty("max_ssl_open_sessions")
+    @JsonInclude(Include.NON_NULL)
+    private Float maxSslOpenSessions = null;
+
+    @JsonProperty("node_obj_id")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeObjId = null;
+
+    @JsonProperty("pct_cache_hits")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctCacheHits = null;
+
+    @JsonProperty("pct_cacheable_hits")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctCacheableHits = null;
+
+    @JsonProperty("pct_get_reqs")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctGetReqs = null;
+
+    @JsonProperty("pct_post_reqs")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctPostReqs = null;
+
+    @JsonProperty("pct_response_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctResponseErrors = null;
+
+    @JsonProperty("pct_ssl_failed_connections")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctSslFailedConnections = null;
+
+    @JsonProperty("pct_waf_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctWafAttacks = null;
+
+    @JsonProperty("pct_waf_disabled")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctWafDisabled = null;
+
+    @JsonProperty("pct_waf_evaluated")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctWafEvaluated = null;
+
+    @JsonProperty("pct_waf_flagged")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctWafFlagged = null;
+
+    @JsonProperty("pct_waf_matched")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctWafMatched = null;
+
+    @JsonProperty("pct_waf_rejected")
+    @JsonInclude(Include.NON_NULL)
+    private Float pctWafRejected = null;
+
+    @JsonProperty("rum_apdexr")
+    @JsonInclude(Include.NON_NULL)
+    private Float rumApdexr = null;
+
+    @JsonProperty("ssl_protocol_strength")
+    @JsonInclude(Include.NON_NULL)
+    private Float sslProtocolStrength = null;
+
+    @JsonProperty("sum_application_response_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumApplicationResponseTime = null;
+
+    @JsonProperty("sum_blocking_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumBlockingTime = null;
+
+    @JsonProperty("sum_browser_rendering_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumBrowserRenderingTime = null;
+
+    @JsonProperty("sum_client_data_transfer_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumClientDataTransferTime = null;
+
+    @JsonProperty("sum_client_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumClientRtt = null;
+
+    @JsonProperty("sum_connection_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumConnectionTime = null;
+
+    @JsonProperty("sum_dns_lookup_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumDnsLookupTime = null;
+
+    @JsonProperty("sum_dom_content_load_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumDomContentLoadTime = null;
+
+    @JsonProperty("sum_errors")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumErrors = null;
+
+    @JsonProperty("sum_finished_sessions")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumFinishedSessions = null;
+
+    @JsonProperty("sum_get_client_txn_latency")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumGetClientTxnLatency = null;
+
+    @JsonProperty("sum_get_client_txn_latency_bucket1")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumGetClientTxnLatencyBucket1 = null;
+
+    @JsonProperty("sum_get_client_txn_latency_bucket2")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumGetClientTxnLatencyBucket2 = null;
+
+    @JsonProperty("sum_get_reqs")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumGetReqs = null;
+
+    @JsonProperty("sum_http_headers_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumHttpHeadersBytes = null;
+
+    @JsonProperty("sum_http_headers_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumHttpHeadersCount = null;
+
+    @JsonProperty("sum_http_params_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumHttpParamsCount = null;
+
+    @JsonProperty("sum_num_page_load_time_bucket1")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumNumPageLoadTimeBucket1 = null;
+
+    @JsonProperty("sum_num_page_load_time_bucket2")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumNumPageLoadTimeBucket2 = null;
+
+    @JsonProperty("sum_num_rum_samples")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumNumRumSamples = null;
+
+    @JsonProperty("sum_other_client_txn_latency")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumOtherClientTxnLatency = null;
+
+    @JsonProperty("sum_other_client_txn_latency_bucket1")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumOtherClientTxnLatencyBucket1 = null;
+
+    @JsonProperty("sum_other_client_txn_latency_bucket2")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumOtherClientTxnLatencyBucket2 = null;
+
+    @JsonProperty("sum_other_reqs")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumOtherReqs = null;
+
+    @JsonProperty("sum_page_download_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPageDownloadTime = null;
+
+    @JsonProperty("sum_page_load_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPageLoadTime = null;
+
+    @JsonProperty("sum_post_bytes")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPostBytes = null;
+
+    @JsonProperty("sum_post_client_txn_latency")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPostClientTxnLatency = null;
+
+    @JsonProperty("sum_post_client_txn_latency_bucket1")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPostClientTxnLatencyBucket1 = null;
+
+    @JsonProperty("sum_post_client_txn_latency_bucket2")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPostClientTxnLatencyBucket2 = null;
+
+    @JsonProperty("sum_post_reqs")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumPostReqs = null;
+
+    @JsonProperty("sum_redirection_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumRedirectionTime = null;
+
+    @JsonProperty("sum_reqs_finished_sessions")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumReqsFinishedSessions = null;
+
+    @JsonProperty("sum_reqs_with_params")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumReqsWithParams = null;
+
+    @JsonProperty("sum_resp_1xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumResp1Xx = null;
+
+    @JsonProperty("sum_resp_2xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumResp2Xx = null;
+
+    @JsonProperty("sum_resp_3xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumResp3Xx = null;
+
+    @JsonProperty("sum_resp_4xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumResp4Xx = null;
+
+    @JsonProperty("sum_resp_5xx")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumResp5Xx = null;
+
+    @JsonProperty("sum_rum_client_data_transfer_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumRumClientDataTransferTime = null;
+
+    @JsonProperty("sum_server_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumServerRtt = null;
+
+    @JsonProperty("sum_service_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumServiceTime = null;
+
+    @JsonProperty("sum_total_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumTotalResponses = null;
+
+    @JsonProperty("sum_uri_length")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumUriLength = null;
+
+    @JsonProperty("sum_waf_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafAttacks = null;
+
+    @JsonProperty("sum_waf_disabled")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafDisabled = null;
+
+    @JsonProperty("sum_waf_evaluated_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafEvaluatedRequestBodyPhase = null;
+
+    @JsonProperty("sum_waf_evaluated_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafEvaluatedRequestHeaderPhase = null;
+
+    @JsonProperty("sum_waf_evaluated_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafEvaluatedResponseBodyPhase = null;
+
+    @JsonProperty("sum_waf_evaluated_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafEvaluatedResponseHeaderPhase = null;
+
+    @JsonProperty("sum_waf_flagged")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafFlagged = null;
+
+    @JsonProperty("sum_waf_flagged_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafFlaggedRequestBodyPhase = null;
+
+    @JsonProperty("sum_waf_flagged_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafFlaggedRequestHeaderPhase = null;
+
+    @JsonProperty("sum_waf_flagged_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafFlaggedResponseBodyPhase = null;
+
+    @JsonProperty("sum_waf_flagged_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafFlaggedResponseHeaderPhase = null;
+
+    @JsonProperty("sum_waf_latency_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafLatencyRequestBodyPhase = null;
+
+    @JsonProperty("sum_waf_latency_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafLatencyRequestHeaderPhase = null;
+
+    @JsonProperty("sum_waf_latency_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafLatencyResponseBodyPhase = null;
+
+    @JsonProperty("sum_waf_latency_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafLatencyResponseHeaderPhase = null;
+
+    @JsonProperty("sum_waf_matched_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafMatchedRequestBodyPhase = null;
+
+    @JsonProperty("sum_waf_matched_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafMatchedRequestHeaderPhase = null;
+
+    @JsonProperty("sum_waf_matched_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafMatchedResponseBodyPhase = null;
+
+    @JsonProperty("sum_waf_matched_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafMatchedResponseHeaderPhase = null;
+
+    @JsonProperty("sum_waf_rejected")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafRejected = null;
+
+    @JsonProperty("sum_waf_rejected_request_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafRejectedRequestBodyPhase = null;
+
+    @JsonProperty("sum_waf_rejected_request_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafRejectedRequestHeaderPhase = null;
+
+    @JsonProperty("sum_waf_rejected_response_body_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafRejectedResponseBodyPhase = null;
+
+    @JsonProperty("sum_waf_rejected_response_header_phase")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWafRejectedResponseHeaderPhase = null;
+
+    @JsonProperty("sum_waiting_time")
+    @JsonInclude(Include.NON_NULL)
+    private Float sumWaitingTime = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Client apdex measures quality of server response based on latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apdexr
    */
   @VsoMethod
@@ -767,6 +768,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client apdex measures quality of server response based on latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apdexr set the apdexr.
    */
   @VsoMethod
@@ -777,6 +779,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average server/application response latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgApplicationResponseTime
    */
   @VsoMethod
@@ -787,6 +790,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average server/application response latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgApplicationResponseTime set the avgApplicationResponseTime.
    */
   @VsoMethod
@@ -797,6 +801,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average time client was blocked as reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgBlockingTime
    */
   @VsoMethod
@@ -807,6 +812,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average time client was blocked as reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgBlockingTime set the avgBlockingTime.
    */
   @VsoMethod
@@ -817,6 +823,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average browser rendering latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgBrowserRenderingTime
    */
   @VsoMethod
@@ -827,6 +834,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average browser rendering latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgBrowserRenderingTime set the avgBrowserRenderingTime.
    */
   @VsoMethod
@@ -837,6 +845,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average cache bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCacheBytes
    */
   @VsoMethod
@@ -847,6 +856,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average cache bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCacheBytes set the avgCacheBytes.
    */
   @VsoMethod
@@ -857,6 +867,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average cache hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCacheHits
    */
   @VsoMethod
@@ -867,6 +878,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average cache hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCacheHits set the avgCacheHits.
    */
   @VsoMethod
@@ -877,6 +889,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average cacheable bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCacheableBytes
    */
   @VsoMethod
@@ -887,6 +900,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average cacheable bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCacheableBytes set the avgCacheableBytes.
    */
   @VsoMethod
@@ -897,6 +911,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average cacheable hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCacheableHits
    */
   @VsoMethod
@@ -907,6 +922,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average cacheable hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCacheableHits set the avgCacheableHits.
    */
   @VsoMethod
@@ -918,6 +934,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average client data transfer time that represents latency of sending response to the client excluding the rtt time.
    * Higher client data transfer time signifies lower bandwidth  between client and avi service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgClientDataTransferTime
    */
   @VsoMethod
@@ -929,6 +946,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average client data transfer time that represents latency of sending response to the client excluding the rtt time.
    * Higher client data transfer time signifies lower bandwidth  between client and avi service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgClientDataTransferTime set the avgClientDataTransferTime.
    */
   @VsoMethod
@@ -939,6 +957,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average client round trip time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgClientRtt
    */
   @VsoMethod
@@ -949,6 +968,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average client round trip time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgClientRtt set the avgClientRtt.
    */
   @VsoMethod
@@ -959,6 +979,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average client transaction latency computed by adding response latencies across all http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgClientTxnLatency
    */
   @VsoMethod
@@ -969,6 +990,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average client transaction latency computed by adding response latencies across all http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgClientTxnLatency set the avgClientTxnLatency.
    */
   @VsoMethod
@@ -979,6 +1001,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgCompleteResponses
    */
   @VsoMethod
@@ -989,6 +1012,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgCompleteResponses set the avgCompleteResponses.
    */
   @VsoMethod
@@ -999,6 +1023,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average client connection latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgConnectionTime
    */
   @VsoMethod
@@ -1009,6 +1034,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average client connection latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgConnectionTime set the avgConnectionTime.
    */
   @VsoMethod
@@ -1019,6 +1045,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average domain lookup latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDnsLookupTime
    */
   @VsoMethod
@@ -1029,6 +1056,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average domain lookup latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDnsLookupTime set the avgDnsLookupTime.
    */
   @VsoMethod
@@ -1039,6 +1067,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average dom content load time reported by clients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgDomContentLoadTime
    */
   @VsoMethod
@@ -1049,6 +1078,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average dom content load time reported by clients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgDomContentLoadTime set the avgDomContentLoadTime.
    */
   @VsoMethod
@@ -1060,6 +1090,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate of http error responses sent per second.
    * It does not include errors excluded in analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgErrorResponses
    */
   @VsoMethod
@@ -1071,6 +1102,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate of http error responses sent per second.
    * It does not include errors excluded in analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgErrorResponses set the avgErrorResponses.
    */
   @VsoMethod
@@ -1081,6 +1113,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of http responses excluded as errors based on analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgErrorsExcluded
    */
   @VsoMethod
@@ -1091,6 +1124,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of http responses excluded as errors based on analytics profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgErrorsExcluded set the avgErrorsExcluded.
    */
   @VsoMethod
@@ -1101,6 +1135,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avg number of http requests that completed within frustrated latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgFrustratedResponses
    */
   @VsoMethod
@@ -1111,6 +1146,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avg number of http requests that completed within frustrated latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgFrustratedResponses set the avgFrustratedResponses.
    */
   @VsoMethod
@@ -1122,6 +1158,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average size of http headers per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgHttpHeadersBytes
    */
   @VsoMethod
@@ -1133,6 +1170,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average size of http headers per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgHttpHeadersBytes set the avgHttpHeadersBytes.
    */
   @VsoMethod
@@ -1144,6 +1182,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of http headers per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgHttpHeadersCount
    */
   @VsoMethod
@@ -1155,6 +1194,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of http headers per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgHttpHeadersCount set the avgHttpHeadersCount.
    */
   @VsoMethod
@@ -1166,6 +1206,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of http request parameters per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgHttpParamsCount
    */
   @VsoMethod
@@ -1177,6 +1218,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of http request parameters per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgHttpParamsCount set the avgHttpParamsCount.
    */
   @VsoMethod
@@ -1187,6 +1229,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average page load time reported by clients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPageDownloadTime
    */
   @VsoMethod
@@ -1197,6 +1240,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average page load time reported by clients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPageDownloadTime set the avgPageDownloadTime.
    */
   @VsoMethod
@@ -1207,6 +1251,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average page load time reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPageLoadTime
    */
   @VsoMethod
@@ -1217,6 +1262,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average page load time reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPageLoadTime set the avgPageLoadTime.
    */
   @VsoMethod
@@ -1228,6 +1274,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of http request parameters per request, taking into account only requests with parameters.
    * Field introduced in 17.2.12, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgParamsPerReq
    */
   @VsoMethod
@@ -1239,6 +1286,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of http request parameters per request, taking into account only requests with parameters.
    * Field introduced in 17.2.12, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgParamsPerReq set the avgParamsPerReq.
    */
   @VsoMethod
@@ -1250,6 +1298,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average size of http post request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPostBytes
    */
   @VsoMethod
@@ -1261,6 +1310,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average size of http post request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPostBytes set the avgPostBytes.
    */
   @VsoMethod
@@ -1271,6 +1321,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average post compression bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPostCompressionBytes
    */
   @VsoMethod
@@ -1281,6 +1332,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average post compression bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPostCompressionBytes set the avgPostCompressionBytes.
    */
   @VsoMethod
@@ -1291,6 +1343,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average pre compression bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgPreCompressionBytes
    */
   @VsoMethod
@@ -1301,6 +1354,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average pre compression bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgPreCompressionBytes set the avgPreCompressionBytes.
    */
   @VsoMethod
@@ -1311,6 +1365,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average redirect latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRedirectionTime
    */
   @VsoMethod
@@ -1321,6 +1376,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average redirect latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRedirectionTime set the avgRedirectionTime.
    */
   @VsoMethod
@@ -1331,6 +1387,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average requests per session measured for closed sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgReqsPerSession
    */
   @VsoMethod
@@ -1341,6 +1398,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average requests per session measured for closed sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgReqsPerSession set the avgReqsPerSession.
    */
   @VsoMethod
@@ -1351,6 +1409,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 1xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp1Xx
    */
   @VsoMethod
@@ -1361,6 +1420,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 1xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp1Xx set the avgResp1Xx.
    */
   @VsoMethod
@@ -1371,6 +1431,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 2xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp2Xx
    */
   @VsoMethod
@@ -1381,6 +1442,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 2xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp2Xx set the avgResp2Xx.
    */
   @VsoMethod
@@ -1391,6 +1453,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 3xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp3Xx
    */
   @VsoMethod
@@ -1401,6 +1464,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 3xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp3Xx set the avgResp3Xx.
    */
   @VsoMethod
@@ -1411,6 +1475,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 4xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp4Xx
    */
   @VsoMethod
@@ -1421,6 +1486,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 4xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp4Xx set the avgResp4Xx.
    */
   @VsoMethod
@@ -1432,6 +1498,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate of 4xx http responses as errors sent by avi.
    * It does not include any error codes excluded in the analytics profile and pool server errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp4XxAviErrors
    */
   @VsoMethod
@@ -1443,6 +1510,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate of 4xx http responses as errors sent by avi.
    * It does not include any error codes excluded in the analytics profile and pool server errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp4XxAviErrors set the avgResp4XxAviErrors.
    */
   @VsoMethod
@@ -1453,6 +1521,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate of 5xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp5Xx
    */
   @VsoMethod
@@ -1463,6 +1532,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate of 5xx http responses sent per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp5Xx set the avgResp5Xx.
    */
   @VsoMethod
@@ -1474,6 +1544,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate of 5xx http responses as errors sent by avi.
    * It does not include any error codes excluded in the analytics profile and pool server errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgResp5XxAviErrors
    */
   @VsoMethod
@@ -1485,6 +1556,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate of 5xx http responses as errors sent by avi.
    * It does not include any error codes excluded in the analytics profile and pool server errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgResp5XxAviErrors set the avgResp5XxAviErrors.
    */
   @VsoMethod
@@ -1495,6 +1567,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total client data transfer time by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgRumClientDataTransferTime
    */
   @VsoMethod
@@ -1505,6 +1578,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total client data transfer time by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgRumClientDataTransferTime set the avgRumClientDataTransferTime.
    */
   @VsoMethod
@@ -1515,6 +1589,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avg number of http requests that completed within satisfactory latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSatisfactoryResponses
    */
   @VsoMethod
@@ -1525,6 +1600,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avg number of http requests that completed within satisfactory latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSatisfactoryResponses set the avgSatisfactoryResponses.
    */
   @VsoMethod
@@ -1535,6 +1611,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average server round trip time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgServerRtt
    */
   @VsoMethod
@@ -1545,6 +1622,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average server round trip time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgServerRtt set the avgServerRtt.
    */
   @VsoMethod
@@ -1555,6 +1633,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average latency from receipt of request to start of response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgServiceTime
    */
   @VsoMethod
@@ -1565,6 +1644,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average latency from receipt of request to start of response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgServiceTime set the avgServiceTime.
    */
   @VsoMethod
@@ -1575,6 +1655,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions using dsa certificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslAuthDsa
    */
   @VsoMethod
@@ -1585,6 +1666,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions using dsa certificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslAuthDsa set the avgSslAuthDsa.
    */
   @VsoMethod
@@ -1595,6 +1677,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions using elliptic curve dsa (ecdsa) certificates.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslAuthEcdsa
    */
   @VsoMethod
@@ -1605,6 +1688,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions using elliptic curve dsa (ecdsa) certificates.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslAuthEcdsa set the avgSslAuthEcdsa.
    */
   @VsoMethod
@@ -1615,6 +1699,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions using rsa certificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslAuthRsa
    */
   @VsoMethod
@@ -1625,6 +1710,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions using rsa certificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslAuthRsa set the avgSslAuthRsa.
    */
   @VsoMethod
@@ -1635,6 +1721,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslConnections
    */
   @VsoMethod
@@ -1645,6 +1732,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslConnections set the avgSslConnections.
    */
   @VsoMethod
@@ -1655,6 +1743,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using ec cerificates without pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslEcdsaNonPfs
    */
   @VsoMethod
@@ -1665,6 +1754,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using ec cerificates without pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslEcdsaNonPfs set the avgSslEcdsaNonPfs.
    */
   @VsoMethod
@@ -1675,6 +1765,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using ec cerificates and pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslEcdsaPfs
    */
   @VsoMethod
@@ -1685,6 +1776,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using ec cerificates and pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslEcdsaPfs set the avgSslEcdsaPfs.
    */
   @VsoMethod
@@ -1695,6 +1787,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl errors due to clients, protocol errors,network errors and handshake timeouts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslErrors
    */
   @VsoMethod
@@ -1705,6 +1798,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl errors due to clients, protocol errors,network errors and handshake timeouts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslErrors set the avgSslErrors.
    */
   @VsoMethod
@@ -1715,6 +1809,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl connections failed due to protocol , network or timeout reasons.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslFailedConnections
    */
   @VsoMethod
@@ -1725,6 +1820,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl connections failed due to protocol , network or timeout reasons.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslFailedConnections set the avgSslFailedConnections.
    */
   @VsoMethod
@@ -1735,6 +1831,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl handshakes failed due to network errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakeNetworkErrors
    */
   @VsoMethod
@@ -1745,6 +1842,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl handshakes failed due to network errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakeNetworkErrors set the avgSslHandshakeNetworkErrors.
    */
   @VsoMethod
@@ -1755,6 +1853,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl handshake failed due to clients or protocol errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakeProtocolErrors
    */
   @VsoMethod
@@ -1765,6 +1864,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl handshake failed due to clients or protocol errors.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakeProtocolErrors set the avgSslHandshakeProtocolErrors.
    */
   @VsoMethod
@@ -1775,6 +1875,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average new successful ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakesNew
    */
   @VsoMethod
@@ -1785,6 +1886,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average new successful ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakesNew set the avgSslHandshakesNew.
    */
   @VsoMethod
@@ -1795,6 +1897,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using non-pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakesNonPfs
    */
   @VsoMethod
@@ -1805,6 +1908,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using non-pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakesNonPfs set the avgSslHandshakesNonPfs.
    */
   @VsoMethod
@@ -1815,6 +1919,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakesPfs
    */
   @VsoMethod
@@ -1825,6 +1930,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakesPfs set the avgSslHandshakesPfs.
    */
   @VsoMethod
@@ -1835,6 +1941,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average new successful resumed ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakesReused
    */
   @VsoMethod
@@ -1845,6 +1952,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average new successful resumed ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakesReused set the avgSslHandshakesReused.
    */
   @VsoMethod
@@ -1855,6 +1963,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl handshakes timed out.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslHandshakesTimedout
    */
   @VsoMethod
@@ -1865,6 +1974,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl handshakes timed out.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslHandshakesTimedout set the avgSslHandshakesTimedout.
    */
   @VsoMethod
@@ -1875,6 +1985,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using diffie-hellman.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslKxDh
    */
   @VsoMethod
@@ -1885,6 +1996,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using diffie-hellman.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslKxDh set the avgSslKxDh.
    */
   @VsoMethod
@@ -1895,6 +2007,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using rsa.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslKxEcdh
    */
   @VsoMethod
@@ -1905,6 +2018,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using rsa.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslKxEcdh set the avgSslKxEcdh.
    */
   @VsoMethod
@@ -1915,6 +2029,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using rsa.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslKxRsa
    */
   @VsoMethod
@@ -1925,6 +2040,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using rsa.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslKxRsa set the avgSslKxRsa.
    */
   @VsoMethod
@@ -1935,6 +2051,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using rsa cerificates without pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslRsaNonPfs
    */
   @VsoMethod
@@ -1945,6 +2062,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using rsa cerificates without pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslRsaNonPfs set the avgSslRsaNonPfs.
    */
   @VsoMethod
@@ -1955,6 +2073,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl exchanges using rsa cerificates and pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslRsaPfs
    */
   @VsoMethod
@@ -1965,6 +2084,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl exchanges using rsa cerificates and pfs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslRsaPfs set the avgSslRsaPfs.
    */
   @VsoMethod
@@ -1975,6 +2095,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions with version 3.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslVerSsl30
    */
   @VsoMethod
@@ -1985,6 +2106,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions with version 3.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslVerSsl30 set the avgSslVerSsl30.
    */
   @VsoMethod
@@ -1995,6 +2117,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions with tls version 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslVerTls10
    */
   @VsoMethod
@@ -2005,6 +2128,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions with tls version 1.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslVerTls10 set the avgSslVerTls10.
    */
   @VsoMethod
@@ -2015,6 +2139,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions with tls version 1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslVerTls11
    */
   @VsoMethod
@@ -2025,6 +2150,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions with tls version 1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslVerTls11 set the avgSslVerTls11.
    */
   @VsoMethod
@@ -2035,6 +2161,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average ssl sessions with tls version 1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslVerTls12
    */
   @VsoMethod
@@ -2045,6 +2172,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average ssl sessions with tls version 1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslVerTls12 set the avgSslVerTls12.
    */
   @VsoMethod
@@ -2056,6 +2184,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average ssl sessions with tls version 1.3.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgSslVerTls13
    */
   @VsoMethod
@@ -2067,6 +2196,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average ssl sessions with tls version 1.3.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgSslVerTls13 set the avgSslVerTls13.
    */
   @VsoMethod
@@ -2077,6 +2207,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avg number of http requests that completed within tolerated latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgToleratedResponses
    */
   @VsoMethod
@@ -2087,6 +2218,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avg number of http requests that completed within tolerated latency.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgToleratedResponses set the avgToleratedResponses.
    */
   @VsoMethod
@@ -2098,6 +2230,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of client http2 requests received by the virtual service per second.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTotalHttp2Requests
    */
   @VsoMethod
@@ -2109,6 +2242,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of client http2 requests received by the virtual service per second.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTotalHttp2Requests set the avgTotalHttp2Requests.
    */
   @VsoMethod
@@ -2119,6 +2253,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average rate of client http requests received by the virtual service per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgTotalRequests
    */
   @VsoMethod
@@ -2129,6 +2264,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average rate of client http requests received by the virtual service per second.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgTotalRequests set the avgTotalRequests.
    */
   @VsoMethod
@@ -2140,6 +2276,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average length of http uri per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgUriLength
    */
   @VsoMethod
@@ -2151,6 +2288,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average length of http uri per request.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgUriLength set the avgUriLength.
    */
   @VsoMethod
@@ -2162,6 +2300,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of transactions per second identified by waf as attacks.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafAttacks
    */
   @VsoMethod
@@ -2173,6 +2312,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of transactions per second identified by waf as attacks.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafAttacks set the avgWafAttacks.
    */
   @VsoMethod
@@ -2184,6 +2324,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of transactions per second bypassing waf.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafDisabled
    */
   @VsoMethod
@@ -2195,6 +2336,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of transactions per second bypassing waf.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafDisabled set the avgWafDisabled.
    */
   @VsoMethod
@@ -2206,6 +2348,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of transactions per second evaluated by waf.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafEvaluated
    */
   @VsoMethod
@@ -2217,6 +2360,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of transactions per second evaluated by waf.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafEvaluated set the avgWafEvaluated.
    */
   @VsoMethod
@@ -2228,6 +2372,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second evaluated by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafEvaluatedRequestBodyPhase
    */
   @VsoMethod
@@ -2239,6 +2384,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second evaluated by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafEvaluatedRequestBodyPhase set the avgWafEvaluatedRequestBodyPhase.
    */
   @VsoMethod
@@ -2250,6 +2396,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second evaluated by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafEvaluatedRequestHeaderPhase
    */
   @VsoMethod
@@ -2261,6 +2408,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second evaluated by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafEvaluatedRequestHeaderPhase set the avgWafEvaluatedRequestHeaderPhase.
    */
   @VsoMethod
@@ -2272,6 +2420,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second evaluated by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafEvaluatedResponseBodyPhase
    */
   @VsoMethod
@@ -2283,6 +2432,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second evaluated by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafEvaluatedResponseBodyPhase set the avgWafEvaluatedResponseBodyPhase.
    */
   @VsoMethod
@@ -2294,6 +2444,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responsess per second evaluated by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafEvaluatedResponseHeaderPhase
    */
   @VsoMethod
@@ -2305,6 +2456,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responsess per second evaluated by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafEvaluatedResponseHeaderPhase set the avgWafEvaluatedResponseHeaderPhase.
    */
   @VsoMethod
@@ -2316,6 +2468,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of transactions per second flagged by waf.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafFlagged
    */
   @VsoMethod
@@ -2327,6 +2480,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of transactions per second flagged by waf.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafFlagged set the avgWafFlagged.
    */
   @VsoMethod
@@ -2338,6 +2492,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second flagged (but not rejected) by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafFlaggedRequestBodyPhase
    */
   @VsoMethod
@@ -2349,6 +2504,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second flagged (but not rejected) by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafFlaggedRequestBodyPhase set the avgWafFlaggedRequestBodyPhase.
    */
   @VsoMethod
@@ -2360,6 +2516,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second flagged (but not rejected) by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafFlaggedRequestHeaderPhase
    */
   @VsoMethod
@@ -2371,6 +2528,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second flagged (but not rejected) by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafFlaggedRequestHeaderPhase set the avgWafFlaggedRequestHeaderPhase.
    */
   @VsoMethod
@@ -2382,6 +2540,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second flagged (but not rejected) by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafFlaggedResponseBodyPhase
    */
   @VsoMethod
@@ -2393,6 +2552,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second flagged (but not rejected) by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafFlaggedResponseBodyPhase set the avgWafFlaggedResponseBodyPhase.
    */
   @VsoMethod
@@ -2404,6 +2564,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second flagged (but not rejected) by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafFlaggedResponseHeaderPhase
    */
   @VsoMethod
@@ -2415,6 +2576,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second flagged (but not rejected) by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafFlaggedResponseHeaderPhase set the avgWafFlaggedResponseHeaderPhase.
    */
   @VsoMethod
@@ -2426,6 +2588,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average waf latency seen due to waf request body processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafLatencyRequestBodyPhase
    */
   @VsoMethod
@@ -2437,6 +2600,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average waf latency seen due to waf request body processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafLatencyRequestBodyPhase set the avgWafLatencyRequestBodyPhase.
    */
   @VsoMethod
@@ -2448,6 +2612,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average waf latency seen due to waf request header processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafLatencyRequestHeaderPhase
    */
   @VsoMethod
@@ -2459,6 +2624,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average waf latency seen due to waf request header processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafLatencyRequestHeaderPhase set the avgWafLatencyRequestHeaderPhase.
    */
   @VsoMethod
@@ -2470,6 +2636,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average waf latency seen due to waf response body processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafLatencyResponseBodyPhase
    */
   @VsoMethod
@@ -2481,6 +2648,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average waf latency seen due to waf response body processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafLatencyResponseBodyPhase set the avgWafLatencyResponseBodyPhase.
    */
   @VsoMethod
@@ -2492,6 +2660,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average waf latency seen due to waf response header processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafLatencyResponseHeaderPhase
    */
   @VsoMethod
@@ -2503,6 +2672,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average waf latency seen due to waf response header processing.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafLatencyResponseHeaderPhase set the avgWafLatencyResponseHeaderPhase.
    */
   @VsoMethod
@@ -2514,6 +2684,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of transactions per second matched by waf rule/rules.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafMatched
    */
   @VsoMethod
@@ -2525,6 +2696,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of transactions per second matched by waf rule/rules.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafMatched set the avgWafMatched.
    */
   @VsoMethod
@@ -2536,6 +2708,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second matched by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafMatchedRequestBodyPhase
    */
   @VsoMethod
@@ -2547,6 +2720,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second matched by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafMatchedRequestBodyPhase set the avgWafMatchedRequestBodyPhase.
    */
   @VsoMethod
@@ -2558,6 +2732,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second matched by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafMatchedRequestHeaderPhase
    */
   @VsoMethod
@@ -2569,6 +2744,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second matched by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafMatchedRequestHeaderPhase set the avgWafMatchedRequestHeaderPhase.
    */
   @VsoMethod
@@ -2580,6 +2756,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second matched by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafMatchedResponseBodyPhase
    */
   @VsoMethod
@@ -2591,6 +2768,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second matched by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafMatchedResponseBodyPhase set the avgWafMatchedResponseBodyPhase.
    */
   @VsoMethod
@@ -2602,6 +2780,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second matched by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafMatchedResponseHeaderPhase
    */
   @VsoMethod
@@ -2613,6 +2792,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second matched by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafMatchedResponseHeaderPhase set the avgWafMatchedResponseHeaderPhase.
    */
   @VsoMethod
@@ -2624,6 +2804,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of transactions per second rejected by waf.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafRejected
    */
   @VsoMethod
@@ -2635,6 +2816,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of transactions per second rejected by waf.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafRejected set the avgWafRejected.
    */
   @VsoMethod
@@ -2646,6 +2828,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second rejected by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafRejectedRequestBodyPhase
    */
   @VsoMethod
@@ -2657,6 +2840,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second rejected by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafRejectedRequestBodyPhase set the avgWafRejectedRequestBodyPhase.
    */
   @VsoMethod
@@ -2668,6 +2852,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of requests per second rejected by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafRejectedRequestHeaderPhase
    */
   @VsoMethod
@@ -2679,6 +2864,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of requests per second rejected by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafRejectedRequestHeaderPhase set the avgWafRejectedRequestHeaderPhase.
    */
   @VsoMethod
@@ -2690,6 +2876,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second rejected by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafRejectedResponseBodyPhase
    */
   @VsoMethod
@@ -2701,6 +2888,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second rejected by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafRejectedResponseBodyPhase set the avgWafRejectedResponseBodyPhase.
    */
   @VsoMethod
@@ -2712,6 +2900,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Average number of responses per second rejected by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWafRejectedResponseHeaderPhase
    */
   @VsoMethod
@@ -2723,6 +2912,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Average number of responses per second rejected by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWafRejectedResponseHeaderPhase set the avgWafRejectedResponseHeaderPhase.
    */
   @VsoMethod
@@ -2733,6 +2923,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average waiting time reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgWaitingTime
    */
   @VsoMethod
@@ -2743,6 +2934,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average waiting time reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgWaitingTime set the avgWaitingTime.
    */
   @VsoMethod
@@ -2753,6 +2945,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of concurrent http sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxConcurrentSessions
    */
   @VsoMethod
@@ -2763,6 +2956,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of concurrent http sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxConcurrentSessions set the maxConcurrentSessions.
    */
   @VsoMethod
@@ -2773,6 +2967,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of open ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSslOpenSessions
    */
   @VsoMethod
@@ -2783,6 +2978,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of open ssl sessions.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSslOpenSessions set the maxSslOpenSessions.
    */
   @VsoMethod
@@ -2793,6 +2989,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property node_obj_id of obj type vserverl7metricsobj field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeObjId
    */
   @VsoMethod
@@ -2803,6 +3000,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property node_obj_id of obj type vserverl7metricsobj field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeObjId set the nodeObjId.
    */
   @VsoMethod
@@ -2813,6 +3011,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percentage cache hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctCacheHits
    */
   @VsoMethod
@@ -2823,6 +3022,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percentage cache hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctCacheHits set the pctCacheHits.
    */
   @VsoMethod
@@ -2833,6 +3033,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percentage cacheable hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctCacheableHits
    */
   @VsoMethod
@@ -2843,6 +3044,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percentage cacheable hit of requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctCacheableHits set the pctCacheableHits.
    */
   @VsoMethod
@@ -2854,6 +3056,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of http get requests as a percentage of total requests received.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctGetReqs
    */
   @VsoMethod
@@ -2865,6 +3068,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of http get requests as a percentage of total requests received.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctGetReqs set the pctGetReqs.
    */
   @VsoMethod
@@ -2876,6 +3080,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of http post requests as a percentage of total requests received.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctPostReqs
    */
   @VsoMethod
@@ -2887,6 +3092,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of http post requests as a percentage of total requests received.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctPostReqs set the pctPostReqs.
    */
   @VsoMethod
@@ -2897,6 +3103,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percent of 4xx and 5xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctResponseErrors
    */
   @VsoMethod
@@ -2907,6 +3114,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percent of 4xx and 5xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctResponseErrors set the pctResponseErrors.
    */
   @VsoMethod
@@ -2917,6 +3125,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Percent of ssl connections failured due to protocol , network or timeout reasons.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctSslFailedConnections
    */
   @VsoMethod
@@ -2927,6 +3136,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Percent of ssl connections failured due to protocol , network or timeout reasons.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctSslFailedConnections set the pctSslFailedConnections.
    */
   @VsoMethod
@@ -2938,6 +3148,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Malicious transactions (attacks) identified by waf as the pecentage  of total requests received.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctWafAttacks
    */
   @VsoMethod
@@ -2949,6 +3160,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Malicious transactions (attacks) identified by waf as the pecentage  of total requests received.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctWafAttacks set the pctWafAttacks.
    */
   @VsoMethod
@@ -2960,6 +3172,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Transactions bypassing waf as the percentage of total requests received.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctWafDisabled
    */
   @VsoMethod
@@ -2971,6 +3184,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Transactions bypassing waf as the percentage of total requests received.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctWafDisabled set the pctWafDisabled.
    */
   @VsoMethod
@@ -2982,6 +3196,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf evaluated transactions as the pecentage of total requests received.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctWafEvaluated
    */
   @VsoMethod
@@ -2993,6 +3208,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf evaluated transactions as the pecentage of total requests received.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctWafEvaluated set the pctWafEvaluated.
    */
   @VsoMethod
@@ -3004,6 +3220,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf flagged transactions as the percentage of total waf evaluated transactions.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctWafFlagged
    */
   @VsoMethod
@@ -3015,6 +3232,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf flagged transactions as the percentage of total waf evaluated transactions.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctWafFlagged set the pctWafFlagged.
    */
   @VsoMethod
@@ -3026,6 +3244,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf matched requests as the percentage of total waf evaluated requests.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctWafMatched
    */
   @VsoMethod
@@ -3037,6 +3256,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf matched requests as the percentage of total waf evaluated requests.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctWafMatched set the pctWafMatched.
    */
   @VsoMethod
@@ -3048,6 +3268,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf rejected transactions as the percentage of total waf evaluated transactions.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pctWafRejected
    */
   @VsoMethod
@@ -3059,6 +3280,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf rejected transactions as the percentage of total waf evaluated transactions.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pctWafRejected set the pctWafRejected.
    */
   @VsoMethod
@@ -3069,6 +3291,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Apdex measures quality of server response based on real user metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rumApdexr
    */
   @VsoMethod
@@ -3079,6 +3302,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Apdex measures quality of server response based on real user metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rumApdexr set the rumApdexr.
    */
   @VsoMethod
@@ -3089,6 +3313,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Protocol strength of ssl ciphers used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProtocolStrength
    */
   @VsoMethod
@@ -3099,6 +3324,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Protocol strength of ssl ciphers used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProtocolStrength set the sslProtocolStrength.
    */
   @VsoMethod
@@ -3109,6 +3335,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total time taken by server to respond to requesti.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumApplicationResponseTime
    */
   @VsoMethod
@@ -3119,6 +3346,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total time taken by server to respond to requesti.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumApplicationResponseTime set the sumApplicationResponseTime.
    */
   @VsoMethod
@@ -3129,6 +3357,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total time client was blocked.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumBlockingTime
    */
   @VsoMethod
@@ -3139,6 +3368,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total time client was blocked.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumBlockingTime set the sumBlockingTime.
    */
   @VsoMethod
@@ -3149,6 +3379,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total browser rendering latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumBrowserRenderingTime
    */
   @VsoMethod
@@ -3159,6 +3390,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total browser rendering latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumBrowserRenderingTime set the sumBrowserRenderingTime.
    */
   @VsoMethod
@@ -3169,6 +3401,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Average client data transfer time computed by adding response latencies across all http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumClientDataTransferTime
    */
   @VsoMethod
@@ -3179,6 +3412,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Average client data transfer time computed by adding response latencies across all http requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumClientDataTransferTime set the sumClientDataTransferTime.
    */
   @VsoMethod
@@ -3189,6 +3423,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sum of all client round trip times for all samples.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumClientRtt
    */
   @VsoMethod
@@ -3199,6 +3434,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sum of all client round trip times for all samples.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumClientRtt set the sumClientRtt.
    */
   @VsoMethod
@@ -3209,6 +3445,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total client connection latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumConnectionTime
    */
   @VsoMethod
@@ -3219,6 +3456,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total client connection latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumConnectionTime set the sumConnectionTime.
    */
   @VsoMethod
@@ -3229,6 +3467,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total domain lookup latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumDnsLookupTime
    */
   @VsoMethod
@@ -3239,6 +3478,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total domain lookup latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumDnsLookupTime set the sumDnsLookupTime.
    */
   @VsoMethod
@@ -3249,6 +3489,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total dom content latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumDomContentLoadTime
    */
   @VsoMethod
@@ -3259,6 +3500,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total dom content latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumDomContentLoadTime set the sumDomContentLoadTime.
    */
   @VsoMethod
@@ -3269,6 +3511,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Count of http 400 and 500 errors for a virtual service in a time interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumErrors
    */
   @VsoMethod
@@ -3279,6 +3522,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Count of http 400 and 500 errors for a virtual service in a time interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumErrors set the sumErrors.
    */
   @VsoMethod
@@ -3289,6 +3533,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of server sessions closed in this interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumFinishedSessions
    */
   @VsoMethod
@@ -3299,6 +3544,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of server sessions closed in this interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumFinishedSessions set the sumFinishedSessions.
    */
   @VsoMethod
@@ -3309,6 +3555,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total latency from responses to all the get requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumGetClientTxnLatency
    */
   @VsoMethod
@@ -3319,6 +3566,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total latency from responses to all the get requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumGetClientTxnLatency set the sumGetClientTxnLatency.
    */
   @VsoMethod
@@ -3329,6 +3577,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http get requests that were responded satisfactorily within latency threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumGetClientTxnLatencyBucket1
    */
   @VsoMethod
@@ -3339,6 +3588,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http get requests that were responded satisfactorily within latency threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumGetClientTxnLatencyBucket1 set the sumGetClientTxnLatencyBucket1.
    */
   @VsoMethod
@@ -3349,6 +3599,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http get requests that were responded beyond latency threshold but within tolerated limits.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumGetClientTxnLatencyBucket2
    */
   @VsoMethod
@@ -3359,6 +3610,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http get requests that were responded beyond latency threshold but within tolerated limits.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumGetClientTxnLatencyBucket2 set the sumGetClientTxnLatencyBucket2.
    */
   @VsoMethod
@@ -3369,6 +3621,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http get requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumGetReqs
    */
   @VsoMethod
@@ -3379,6 +3632,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http get requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumGetReqs set the sumGetReqs.
    */
   @VsoMethod
@@ -3390,6 +3644,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total size of http request headers.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumHttpHeadersBytes
    */
   @VsoMethod
@@ -3401,6 +3656,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total size of http request headers.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumHttpHeadersBytes set the sumHttpHeadersBytes.
    */
   @VsoMethod
@@ -3412,6 +3668,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of http headers across all requests in a given metrics interval.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumHttpHeadersCount
    */
   @VsoMethod
@@ -3423,6 +3680,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of http headers across all requests in a given metrics interval.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumHttpHeadersCount set the sumHttpHeadersCount.
    */
   @VsoMethod
@@ -3434,6 +3692,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of http request parameters.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumHttpParamsCount
    */
   @VsoMethod
@@ -3445,6 +3704,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of http request parameters.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumHttpParamsCount set the sumHttpParamsCount.
    */
   @VsoMethod
@@ -3455,6 +3715,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total samples that had satisfactory page load time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumNumPageLoadTimeBucket1
    */
   @VsoMethod
@@ -3465,6 +3726,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total samples that had satisfactory page load time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumNumPageLoadTimeBucket1 set the sumNumPageLoadTimeBucket1.
    */
   @VsoMethod
@@ -3475,6 +3737,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total samples that had tolerated page load time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumNumPageLoadTimeBucket2
    */
   @VsoMethod
@@ -3485,6 +3748,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total samples that had tolerated page load time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumNumPageLoadTimeBucket2 set the sumNumPageLoadTimeBucket2.
    */
   @VsoMethod
@@ -3495,6 +3759,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total samples used for rum metrics.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumNumRumSamples
    */
   @VsoMethod
@@ -3505,6 +3770,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total samples used for rum metrics.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumNumRumSamples set the sumNumRumSamples.
    */
   @VsoMethod
@@ -3515,6 +3781,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total latency from responses to all the requests other than get or post.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumOtherClientTxnLatency
    */
   @VsoMethod
@@ -3525,6 +3792,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total latency from responses to all the requests other than get or post.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumOtherClientTxnLatency set the sumOtherClientTxnLatency.
    */
   @VsoMethod
@@ -3535,6 +3803,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http requests other than get or post that were responded satisfactorily within latency threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumOtherClientTxnLatencyBucket1
    */
   @VsoMethod
@@ -3545,6 +3814,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http requests other than get or post that were responded satisfactorily within latency threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumOtherClientTxnLatencyBucket1 set the sumOtherClientTxnLatencyBucket1.
    */
   @VsoMethod
@@ -3555,6 +3825,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http requests other than get or post that were responded beyond latency threshold but within tolerated limits.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumOtherClientTxnLatencyBucket2
    */
   @VsoMethod
@@ -3565,6 +3836,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http requests other than get or post that were responded beyond latency threshold but within tolerated limits.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumOtherClientTxnLatencyBucket2 set the sumOtherClientTxnLatencyBucket2.
    */
   @VsoMethod
@@ -3575,6 +3847,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http requests that are not get or post requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumOtherReqs
    */
   @VsoMethod
@@ -3585,6 +3858,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http requests that are not get or post requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumOtherReqs set the sumOtherReqs.
    */
   @VsoMethod
@@ -3595,6 +3869,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total time to transfer response to client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPageDownloadTime
    */
   @VsoMethod
@@ -3605,6 +3880,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total time to transfer response to client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPageDownloadTime set the sumPageDownloadTime.
    */
   @VsoMethod
@@ -3615,6 +3891,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total page load time reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPageLoadTime
    */
   @VsoMethod
@@ -3625,6 +3902,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total page load time reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPageLoadTime set the sumPageLoadTime.
    */
   @VsoMethod
@@ -3636,6 +3914,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total size of http post requests.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPostBytes
    */
   @VsoMethod
@@ -3647,6 +3926,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total size of http post requests.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPostBytes set the sumPostBytes.
    */
   @VsoMethod
@@ -3657,6 +3937,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total latency from responses to all the post requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPostClientTxnLatency
    */
   @VsoMethod
@@ -3667,6 +3948,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total latency from responses to all the post requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPostClientTxnLatency set the sumPostClientTxnLatency.
    */
   @VsoMethod
@@ -3677,6 +3959,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http post requests that were responded satisfactorily within latency threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPostClientTxnLatencyBucket1
    */
   @VsoMethod
@@ -3687,6 +3970,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http post requests that were responded satisfactorily within latency threshold.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPostClientTxnLatencyBucket1 set the sumPostClientTxnLatencyBucket1.
    */
   @VsoMethod
@@ -3697,6 +3981,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http post requests that were responded beyond latency threshold but within tolerated limits.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPostClientTxnLatencyBucket2
    */
   @VsoMethod
@@ -3707,6 +3992,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http post requests that were responded beyond latency threshold but within tolerated limits.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPostClientTxnLatencyBucket2 set the sumPostClientTxnLatencyBucket2.
    */
   @VsoMethod
@@ -3717,6 +4003,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http post requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumPostReqs
    */
   @VsoMethod
@@ -3727,6 +4014,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http post requests.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumPostReqs set the sumPostReqs.
    */
   @VsoMethod
@@ -3737,6 +4025,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total redirect latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumRedirectionTime
    */
   @VsoMethod
@@ -3747,6 +4036,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total redirect latency reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumRedirectionTime set the sumRedirectionTime.
    */
   @VsoMethod
@@ -3757,6 +4047,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of requests served across server sessions closed in the interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumReqsFinishedSessions
    */
   @VsoMethod
@@ -3767,6 +4058,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of requests served across server sessions closed in the interval.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumReqsFinishedSessions set the sumReqsFinishedSessions.
    */
   @VsoMethod
@@ -3778,6 +4070,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of http requests containing at least one parameter.
    * Field introduced in 17.2.12, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumReqsWithParams
    */
   @VsoMethod
@@ -3789,6 +4082,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of http requests containing at least one parameter.
    * Field introduced in 17.2.12, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumReqsWithParams set the sumReqsWithParams.
    */
   @VsoMethod
@@ -3799,6 +4093,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http 1xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumResp1Xx
    */
   @VsoMethod
@@ -3809,6 +4104,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http 1xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumResp1Xx set the sumResp1Xx.
    */
   @VsoMethod
@@ -3819,6 +4115,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http 2xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumResp2Xx
    */
   @VsoMethod
@@ -3829,6 +4126,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http 2xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumResp2Xx set the sumResp2Xx.
    */
   @VsoMethod
@@ -3839,6 +4137,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http 3xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumResp3Xx
    */
   @VsoMethod
@@ -3849,6 +4148,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http 3xx responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumResp3Xx set the sumResp3Xx.
    */
   @VsoMethod
@@ -3859,6 +4159,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http 4xx error responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumResp4Xx
    */
   @VsoMethod
@@ -3869,6 +4170,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http 4xx error responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumResp4Xx set the sumResp4Xx.
    */
   @VsoMethod
@@ -3879,6 +4181,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http 5xx error responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumResp5Xx
    */
   @VsoMethod
@@ -3889,6 +4192,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http 5xx error responses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumResp5Xx set the sumResp5Xx.
    */
   @VsoMethod
@@ -3899,6 +4203,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total client data transfer time by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumRumClientDataTransferTime
    */
   @VsoMethod
@@ -3909,6 +4214,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total client data transfer time by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumRumClientDataTransferTime set the sumRumClientDataTransferTime.
    */
   @VsoMethod
@@ -3919,6 +4225,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sum of all server round trip times for all samples.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumServerRtt
    */
   @VsoMethod
@@ -3929,6 +4236,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sum of all server round trip times for all samples.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumServerRtt set the sumServerRtt.
    */
   @VsoMethod
@@ -3939,6 +4247,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total time from receipt of request to start of response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumServiceTime
    */
   @VsoMethod
@@ -3949,6 +4258,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total time from receipt of request to start of response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumServiceTime set the sumServiceTime.
    */
   @VsoMethod
@@ -3959,6 +4269,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total number of http responses sent.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumTotalResponses
    */
   @VsoMethod
@@ -3969,6 +4280,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total number of http responses sent.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumTotalResponses set the sumTotalResponses.
    */
   @VsoMethod
@@ -3980,6 +4292,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total length of http request uris.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumUriLength
    */
   @VsoMethod
@@ -3991,6 +4304,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total length of http request uris.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumUriLength set the sumUriLength.
    */
   @VsoMethod
@@ -4002,6 +4316,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of transactions identified by waf as attacks.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafAttacks
    */
   @VsoMethod
@@ -4013,6 +4328,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of transactions identified by waf as attacks.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafAttacks set the sumWafAttacks.
    */
   @VsoMethod
@@ -4024,6 +4340,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests bypassing waf.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafDisabled
    */
   @VsoMethod
@@ -4035,6 +4352,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests bypassing waf.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafDisabled set the sumWafDisabled.
    */
   @VsoMethod
@@ -4046,6 +4364,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests evaluated by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafEvaluatedRequestBodyPhase
    */
   @VsoMethod
@@ -4057,6 +4376,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests evaluated by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafEvaluatedRequestBodyPhase set the sumWafEvaluatedRequestBodyPhase.
    */
   @VsoMethod
@@ -4068,6 +4388,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests evaluated by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafEvaluatedRequestHeaderPhase
    */
   @VsoMethod
@@ -4079,6 +4400,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests evaluated by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafEvaluatedRequestHeaderPhase set the sumWafEvaluatedRequestHeaderPhase.
    */
   @VsoMethod
@@ -4090,6 +4412,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses evaluated by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafEvaluatedResponseBodyPhase
    */
   @VsoMethod
@@ -4101,6 +4424,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses evaluated by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafEvaluatedResponseBodyPhase set the sumWafEvaluatedResponseBodyPhase.
    */
   @VsoMethod
@@ -4112,6 +4436,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses evaluated by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafEvaluatedResponseHeaderPhase
    */
   @VsoMethod
@@ -4123,6 +4448,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses evaluated by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafEvaluatedResponseHeaderPhase set the sumWafEvaluatedResponseHeaderPhase.
    */
   @VsoMethod
@@ -4134,6 +4460,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of transactions (requests or responses) flagged as attack by waf.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafFlagged
    */
   @VsoMethod
@@ -4145,6 +4472,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of transactions (requests or responses) flagged as attack by waf.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafFlagged set the sumWafFlagged.
    */
   @VsoMethod
@@ -4156,6 +4484,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests flagged (but not rejected) by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafFlaggedRequestBodyPhase
    */
   @VsoMethod
@@ -4167,6 +4496,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests flagged (but not rejected) by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafFlaggedRequestBodyPhase set the sumWafFlaggedRequestBodyPhase.
    */
   @VsoMethod
@@ -4178,6 +4508,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests flagged (but not rejected) by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafFlaggedRequestHeaderPhase
    */
   @VsoMethod
@@ -4189,6 +4520,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests flagged (but not rejected) by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafFlaggedRequestHeaderPhase set the sumWafFlaggedRequestHeaderPhase.
    */
   @VsoMethod
@@ -4200,6 +4532,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses flagged (but not rejected) by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafFlaggedResponseBodyPhase
    */
   @VsoMethod
@@ -4211,6 +4544,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses flagged (but not rejected) by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafFlaggedResponseBodyPhase set the sumWafFlaggedResponseBodyPhase.
    */
   @VsoMethod
@@ -4222,6 +4556,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses flagged (but not rejected) by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafFlaggedResponseHeaderPhase
    */
   @VsoMethod
@@ -4233,6 +4568,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses flagged (but not rejected) by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafFlaggedResponseHeaderPhase set the sumWafFlaggedResponseHeaderPhase.
    */
   @VsoMethod
@@ -4244,6 +4580,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total latency seen by all evaluated requests in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafLatencyRequestBodyPhase
    */
   @VsoMethod
@@ -4255,6 +4592,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total latency seen by all evaluated requests in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafLatencyRequestBodyPhase set the sumWafLatencyRequestBodyPhase.
    */
   @VsoMethod
@@ -4266,6 +4604,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total latency seen by all transactions evaluated by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafLatencyRequestHeaderPhase
    */
   @VsoMethod
@@ -4277,6 +4616,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total latency seen by all transactions evaluated by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafLatencyRequestHeaderPhase set the sumWafLatencyRequestHeaderPhase.
    */
   @VsoMethod
@@ -4288,6 +4628,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total latency seen by all evaluated responses in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafLatencyResponseBodyPhase
    */
   @VsoMethod
@@ -4299,6 +4640,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total latency seen by all evaluated responses in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafLatencyResponseBodyPhase set the sumWafLatencyResponseBodyPhase.
    */
   @VsoMethod
@@ -4310,6 +4652,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total latency seen by all evaluated responsess in waf response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafLatencyResponseHeaderPhase
    */
   @VsoMethod
@@ -4321,6 +4664,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total latency seen by all evaluated responsess in waf response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafLatencyResponseHeaderPhase set the sumWafLatencyResponseHeaderPhase.
    */
   @VsoMethod
@@ -4332,6 +4676,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests matched by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafMatchedRequestBodyPhase
    */
   @VsoMethod
@@ -4343,6 +4688,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests matched by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafMatchedRequestBodyPhase set the sumWafMatchedRequestBodyPhase.
    */
   @VsoMethod
@@ -4354,6 +4700,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests matched by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafMatchedRequestHeaderPhase
    */
   @VsoMethod
@@ -4365,6 +4712,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests matched by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafMatchedRequestHeaderPhase set the sumWafMatchedRequestHeaderPhase.
    */
   @VsoMethod
@@ -4376,6 +4724,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses matched by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafMatchedResponseBodyPhase
    */
   @VsoMethod
@@ -4387,6 +4736,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses matched by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafMatchedResponseBodyPhase set the sumWafMatchedResponseBodyPhase.
    */
   @VsoMethod
@@ -4398,6 +4748,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses matched by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafMatchedResponseHeaderPhase
    */
   @VsoMethod
@@ -4409,6 +4760,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses matched by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafMatchedResponseHeaderPhase set the sumWafMatchedResponseHeaderPhase.
    */
   @VsoMethod
@@ -4420,6 +4772,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of transactions (requests or responses) rejected by waf.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafRejected
    */
   @VsoMethod
@@ -4431,6 +4784,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of transactions (requests or responses) rejected by waf.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafRejected set the sumWafRejected.
    */
   @VsoMethod
@@ -4442,6 +4796,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests rejected by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafRejectedRequestBodyPhase
    */
   @VsoMethod
@@ -4453,6 +4808,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests rejected by waf in request body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafRejectedRequestBodyPhase set the sumWafRejectedRequestBodyPhase.
    */
   @VsoMethod
@@ -4464,6 +4820,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of requests rejected by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafRejectedRequestHeaderPhase
    */
   @VsoMethod
@@ -4475,6 +4832,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of requests rejected by waf in request header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafRejectedRequestHeaderPhase set the sumWafRejectedRequestHeaderPhase.
    */
   @VsoMethod
@@ -4486,6 +4844,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses rejected by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafRejectedResponseBodyPhase
    */
   @VsoMethod
@@ -4497,6 +4856,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses rejected by waf in response body phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafRejectedResponseBodyPhase set the sumWafRejectedResponseBodyPhase.
    */
   @VsoMethod
@@ -4508,6 +4868,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total number of responses rejected by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWafRejectedResponseHeaderPhase
    */
   @VsoMethod
@@ -4519,6 +4880,7 @@ public class VserverL7MetricsObj extends AviRestResource {
    * This is the setter method to the attribute.
    * Total number of responses rejected by waf in response header phase.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWafRejectedResponseHeaderPhase set the sumWafRejectedResponseHeaderPhase.
    */
   @VsoMethod
@@ -4529,6 +4891,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Total waiting reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sumWaitingTime
    */
   @VsoMethod
@@ -4539,6 +4902,7 @@ public class VserverL7MetricsObj extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Total waiting reported by client.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sumWaitingTime set the sumWaitingTime.
    */
   @VsoMethod

@@ -24,187 +24,188 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSiteRuntimeStats extends AviRestResource {
-  @JsonProperty("num_file_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numFileCrTxed = null;
+    @JsonProperty("num_file_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numFileCrTxed = null;
 
-  @JsonProperty("num_file_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numFileDelTxed = null;
+    @JsonProperty("num_file_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numFileDelTxed = null;
 
-  @JsonProperty("num_gap_cr_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGapCrRxed = null;
+    @JsonProperty("num_gap_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGapCrRxed = null;
 
-  @JsonProperty("num_gap_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGapCrTxed = null;
+    @JsonProperty("num_gap_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGapCrTxed = null;
 
-  @JsonProperty("num_gap_del_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGapDelRxed = null;
+    @JsonProperty("num_gap_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGapDelRxed = null;
 
-  @JsonProperty("num_gap_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGapDelTxed = null;
+    @JsonProperty("num_gap_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGapDelTxed = null;
 
-  @JsonProperty("num_gap_upd_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGapUpdRxed = null;
+    @JsonProperty("num_gap_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGapUpdRxed = null;
 
-  @JsonProperty("num_gap_upd_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGapUpdTxed = null;
+    @JsonProperty("num_gap_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGapUpdTxed = null;
 
-  @JsonProperty("num_geo_cr_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGeoCrRxed = null;
+    @JsonProperty("num_geo_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGeoCrRxed = null;
 
-  @JsonProperty("num_geo_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGeoCrTxed = null;
+    @JsonProperty("num_geo_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGeoCrTxed = null;
 
-  @JsonProperty("num_geo_del_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGeoDelRxed = null;
+    @JsonProperty("num_geo_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGeoDelRxed = null;
 
-  @JsonProperty("num_geo_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGeoDelTxed = null;
+    @JsonProperty("num_geo_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGeoDelTxed = null;
 
-  @JsonProperty("num_geo_upd_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGeoUpdRxed = null;
+    @JsonProperty("num_geo_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGeoUpdRxed = null;
 
-  @JsonProperty("num_geo_upd_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGeoUpdTxed = null;
+    @JsonProperty("num_geo_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGeoUpdTxed = null;
 
-  @JsonProperty("num_ghm_cr_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGhmCrRxed = null;
+    @JsonProperty("num_ghm_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGhmCrRxed = null;
 
-  @JsonProperty("num_ghm_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGhmCrTxed = null;
+    @JsonProperty("num_ghm_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGhmCrTxed = null;
 
-  @JsonProperty("num_ghm_del_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGhmDelRxed = null;
+    @JsonProperty("num_ghm_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGhmDelRxed = null;
 
-  @JsonProperty("num_ghm_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGhmDelTxed = null;
+    @JsonProperty("num_ghm_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGhmDelTxed = null;
 
-  @JsonProperty("num_ghm_upd_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGhmUpdRxed = null;
+    @JsonProperty("num_ghm_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGhmUpdRxed = null;
 
-  @JsonProperty("num_ghm_upd_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGhmUpdTxed = null;
+    @JsonProperty("num_ghm_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGhmUpdTxed = null;
 
-  @JsonProperty("num_glb_cr_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGlbCrRxed = null;
+    @JsonProperty("num_glb_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGlbCrRxed = null;
 
-  @JsonProperty("num_glb_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGlbCrTxed = null;
+    @JsonProperty("num_glb_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGlbCrTxed = null;
 
-  @JsonProperty("num_glb_del_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGlbDelRxed = null;
+    @JsonProperty("num_glb_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGlbDelRxed = null;
 
-  @JsonProperty("num_glb_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGlbDelTxed = null;
+    @JsonProperty("num_glb_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGlbDelTxed = null;
 
-  @JsonProperty("num_glb_upd_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGlbUpdRxed = null;
+    @JsonProperty("num_glb_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGlbUpdRxed = null;
 
-  @JsonProperty("num_glb_upd_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGlbUpdTxed = null;
+    @JsonProperty("num_glb_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGlbUpdTxed = null;
 
-  @JsonProperty("num_gpki_cr_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGpkiCrRxed = null;
+    @JsonProperty("num_gpki_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGpkiCrRxed = null;
 
-  @JsonProperty("num_gpki_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGpkiCrTxed = null;
+    @JsonProperty("num_gpki_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGpkiCrTxed = null;
 
-  @JsonProperty("num_gpki_del_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGpkiDelRxed = null;
+    @JsonProperty("num_gpki_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGpkiDelRxed = null;
 
-  @JsonProperty("num_gpki_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGpkiDelTxed = null;
+    @JsonProperty("num_gpki_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGpkiDelTxed = null;
 
-  @JsonProperty("num_gpki_upd_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGpkiUpdRxed = null;
+    @JsonProperty("num_gpki_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGpkiUpdRxed = null;
 
-  @JsonProperty("num_gpki_upd_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGpkiUpdTxed = null;
+    @JsonProperty("num_gpki_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGpkiUpdTxed = null;
 
-  @JsonProperty("num_gs_cr_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGsCrRxed = null;
+    @JsonProperty("num_gs_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsCrRxed = null;
 
-  @JsonProperty("num_gs_cr_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGsCrTxed = null;
+    @JsonProperty("num_gs_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsCrTxed = null;
 
-  @JsonProperty("num_gs_del_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGsDelRxed = null;
+    @JsonProperty("num_gs_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsDelRxed = null;
 
-  @JsonProperty("num_gs_del_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGsDelTxed = null;
+    @JsonProperty("num_gs_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsDelTxed = null;
 
-  @JsonProperty("num_gs_upd_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGsUpdRxed = null;
+    @JsonProperty("num_gs_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsUpdRxed = null;
 
-  @JsonProperty("num_gs_upd_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numGsUpdTxed = null;
+    @JsonProperty("num_gs_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGsUpdTxed = null;
 
-  @JsonProperty("num_health_msgs_rxed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numHealthMsgsRxed = null;
+    @JsonProperty("num_health_msgs_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numHealthMsgsRxed = null;
 
-  @JsonProperty("num_health_msgs_txed")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numHealthMsgsTxed = null;
+    @JsonProperty("num_health_msgs_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numHealthMsgsTxed = null;
 
-  @JsonProperty("num_of_bad_responses")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numOfBadResponses = null;
+    @JsonProperty("num_of_bad_responses")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numOfBadResponses = null;
 
-  @JsonProperty("num_of_events_generated")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numOfEventsGenerated = null;
+    @JsonProperty("num_of_events_generated")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numOfEventsGenerated = null;
 
-  @JsonProperty("num_of_skip_outstanding_requests")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numOfSkipOutstandingRequests = null;
+    @JsonProperty("num_of_skip_outstanding_requests")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numOfSkipOutstandingRequests = null;
 
-  @JsonProperty("num_of_timeouts")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numOfTimeouts = null;
+    @JsonProperty("num_of_timeouts")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numOfTimeouts = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numFileCrTxed
    */
   @VsoMethod
@@ -215,6 +216,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numFileCrTxed set the numFileCrTxed.
    */
   @VsoMethod
@@ -225,6 +227,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numFileDelTxed
    */
   @VsoMethod
@@ -235,6 +238,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numFileDelTxed set the numFileDelTxed.
    */
   @VsoMethod
@@ -245,6 +249,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapCrRxed
    */
   @VsoMethod
@@ -255,6 +260,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapCrRxed set the numGapCrRxed.
    */
   @VsoMethod
@@ -265,6 +271,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapCrTxed
    */
   @VsoMethod
@@ -275,6 +282,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapCrTxed set the numGapCrTxed.
    */
   @VsoMethod
@@ -285,6 +293,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapDelRxed
    */
   @VsoMethod
@@ -295,6 +304,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapDelRxed set the numGapDelRxed.
    */
   @VsoMethod
@@ -305,6 +315,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapDelTxed
    */
   @VsoMethod
@@ -315,6 +326,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapDelTxed set the numGapDelTxed.
    */
   @VsoMethod
@@ -325,6 +337,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapUpdRxed
    */
   @VsoMethod
@@ -335,6 +348,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapUpdRxed set the numGapUpdRxed.
    */
   @VsoMethod
@@ -345,6 +359,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGapUpdTxed
    */
   @VsoMethod
@@ -355,6 +370,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGapUpdTxed set the numGapUpdTxed.
    */
   @VsoMethod
@@ -365,6 +381,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoCrRxed
    */
   @VsoMethod
@@ -375,6 +392,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoCrRxed set the numGeoCrRxed.
    */
   @VsoMethod
@@ -385,6 +403,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoCrTxed
    */
   @VsoMethod
@@ -395,6 +414,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoCrTxed set the numGeoCrTxed.
    */
   @VsoMethod
@@ -405,6 +425,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoDelRxed
    */
   @VsoMethod
@@ -415,6 +436,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoDelRxed set the numGeoDelRxed.
    */
   @VsoMethod
@@ -425,6 +447,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoDelTxed
    */
   @VsoMethod
@@ -435,6 +458,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoDelTxed set the numGeoDelTxed.
    */
   @VsoMethod
@@ -445,6 +469,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoUpdRxed
    */
   @VsoMethod
@@ -455,6 +480,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoUpdRxed set the numGeoUpdRxed.
    */
   @VsoMethod
@@ -465,6 +491,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGeoUpdTxed
    */
   @VsoMethod
@@ -475,6 +502,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGeoUpdTxed set the numGeoUpdTxed.
    */
   @VsoMethod
@@ -485,6 +513,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ghm_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmCrRxed
    */
   @VsoMethod
@@ -495,6 +524,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ghm_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmCrRxed set the numGhmCrRxed.
    */
   @VsoMethod
@@ -505,6 +535,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ghm_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmCrTxed
    */
   @VsoMethod
@@ -515,6 +546,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ghm_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmCrTxed set the numGhmCrTxed.
    */
   @VsoMethod
@@ -525,6 +557,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ghm_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmDelRxed
    */
   @VsoMethod
@@ -535,6 +568,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ghm_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmDelRxed set the numGhmDelRxed.
    */
   @VsoMethod
@@ -545,6 +579,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ghm_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmDelTxed
    */
   @VsoMethod
@@ -555,6 +590,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ghm_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmDelTxed set the numGhmDelTxed.
    */
   @VsoMethod
@@ -565,6 +601,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ghm_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmUpdRxed
    */
   @VsoMethod
@@ -575,6 +612,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ghm_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmUpdRxed set the numGhmUpdRxed.
    */
   @VsoMethod
@@ -585,6 +623,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_ghm_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGhmUpdTxed
    */
   @VsoMethod
@@ -595,6 +634,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_ghm_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGhmUpdTxed set the numGhmUpdTxed.
    */
   @VsoMethod
@@ -605,6 +645,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_glb_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbCrRxed
    */
   @VsoMethod
@@ -615,6 +656,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_glb_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbCrRxed set the numGlbCrRxed.
    */
   @VsoMethod
@@ -625,6 +667,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_glb_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbCrTxed
    */
   @VsoMethod
@@ -635,6 +678,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_glb_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbCrTxed set the numGlbCrTxed.
    */
   @VsoMethod
@@ -645,6 +689,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_glb_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbDelRxed
    */
   @VsoMethod
@@ -655,6 +700,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_glb_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbDelRxed set the numGlbDelRxed.
    */
   @VsoMethod
@@ -665,6 +711,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_glb_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbDelTxed
    */
   @VsoMethod
@@ -675,6 +722,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_glb_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbDelTxed set the numGlbDelTxed.
    */
   @VsoMethod
@@ -685,6 +733,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_glb_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbUpdRxed
    */
   @VsoMethod
@@ -695,6 +744,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_glb_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbUpdRxed set the numGlbUpdRxed.
    */
   @VsoMethod
@@ -705,6 +755,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_glb_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGlbUpdTxed
    */
   @VsoMethod
@@ -715,6 +766,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_glb_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGlbUpdTxed set the numGlbUpdTxed.
    */
   @VsoMethod
@@ -725,6 +777,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiCrRxed
    */
   @VsoMethod
@@ -735,6 +788,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiCrRxed set the numGpkiCrRxed.
    */
   @VsoMethod
@@ -745,6 +799,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiCrTxed
    */
   @VsoMethod
@@ -755,6 +810,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiCrTxed set the numGpkiCrTxed.
    */
   @VsoMethod
@@ -765,6 +821,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiDelRxed
    */
   @VsoMethod
@@ -775,6 +832,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiDelRxed set the numGpkiDelRxed.
    */
   @VsoMethod
@@ -785,6 +843,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiDelTxed
    */
   @VsoMethod
@@ -795,6 +854,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiDelTxed set the numGpkiDelTxed.
    */
   @VsoMethod
@@ -805,6 +865,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiUpdRxed
    */
   @VsoMethod
@@ -815,6 +876,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiUpdRxed set the numGpkiUpdRxed.
    */
   @VsoMethod
@@ -825,6 +887,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGpkiUpdTxed
    */
   @VsoMethod
@@ -835,6 +898,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGpkiUpdTxed set the numGpkiUpdTxed.
    */
   @VsoMethod
@@ -845,6 +909,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_gs_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsCrRxed
    */
   @VsoMethod
@@ -855,6 +920,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_gs_cr_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsCrRxed set the numGsCrRxed.
    */
   @VsoMethod
@@ -865,6 +931,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_gs_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsCrTxed
    */
   @VsoMethod
@@ -875,6 +942,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_gs_cr_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsCrTxed set the numGsCrTxed.
    */
   @VsoMethod
@@ -885,6 +953,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_gs_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsDelRxed
    */
   @VsoMethod
@@ -895,6 +964,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_gs_del_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsDelRxed set the numGsDelRxed.
    */
   @VsoMethod
@@ -905,6 +975,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_gs_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsDelTxed
    */
   @VsoMethod
@@ -915,6 +986,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_gs_del_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsDelTxed set the numGsDelTxed.
    */
   @VsoMethod
@@ -925,6 +997,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_gs_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsUpdRxed
    */
   @VsoMethod
@@ -935,6 +1008,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_gs_upd_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsUpdRxed set the numGsUpdRxed.
    */
   @VsoMethod
@@ -945,6 +1019,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_gs_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numGsUpdTxed
    */
   @VsoMethod
@@ -955,6 +1030,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_gs_upd_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numGsUpdTxed set the numGsUpdTxed.
    */
   @VsoMethod
@@ -965,6 +1041,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_health_msgs_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numHealthMsgsRxed
    */
   @VsoMethod
@@ -975,6 +1052,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_health_msgs_rxed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numHealthMsgsRxed set the numHealthMsgsRxed.
    */
   @VsoMethod
@@ -985,6 +1063,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_health_msgs_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numHealthMsgsTxed
    */
   @VsoMethod
@@ -995,6 +1074,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_health_msgs_txed of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numHealthMsgsTxed set the numHealthMsgsTxed.
    */
   @VsoMethod
@@ -1005,6 +1085,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_of_bad_responses of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfBadResponses
    */
   @VsoMethod
@@ -1015,6 +1096,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_of_bad_responses of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfBadResponses set the numOfBadResponses.
    */
   @VsoMethod
@@ -1025,6 +1107,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_of_events_generated of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfEventsGenerated
    */
   @VsoMethod
@@ -1035,6 +1118,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_of_events_generated of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfEventsGenerated set the numOfEventsGenerated.
    */
   @VsoMethod
@@ -1045,6 +1129,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_of_skip_outstanding_requests of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfSkipOutstandingRequests
    */
   @VsoMethod
@@ -1055,6 +1140,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_of_skip_outstanding_requests of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfSkipOutstandingRequests set the numOfSkipOutstandingRequests.
    */
   @VsoMethod
@@ -1065,6 +1151,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_of_timeouts of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numOfTimeouts
    */
   @VsoMethod
@@ -1075,6 +1162,7 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_of_timeouts of obj type gslbsiteruntimestats field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numOfTimeouts set the numOfTimeouts.
    */
   @VsoMethod

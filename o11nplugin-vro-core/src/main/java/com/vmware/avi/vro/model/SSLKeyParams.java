@@ -26,24 +26,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLKeyParams extends AviRestResource {
-  @JsonProperty("algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String algorithm = "SSL_KEY_ALGORITHM_RSA";
+    @JsonProperty("algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String algorithm = "SSL_KEY_ALGORITHM_RSA";
 
-  @JsonProperty("ec_params")
-  @JsonInclude(Include.NON_NULL)
-  private SSLKeyECParams ecParams = null;
+    @JsonProperty("ec_params")
+    @JsonInclude(Include.NON_NULL)
+    private SSLKeyECParams ecParams = null;
 
-  @JsonProperty("rsa_params")
-  @JsonInclude(Include.NON_NULL)
-  private SSLKeyRSAParams rsaParams = null;
+    @JsonProperty("rsa_params")
+    @JsonInclude(Include.NON_NULL)
+    private SSLKeyRSAParams rsaParams = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_KEY_ALGORITHM_RSA.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
    * @return algorithm
    */
   @VsoMethod
@@ -54,7 +54,7 @@ public class SSLKeyParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_KEY_ALGORITHM_RSA.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
    * @param algorithm set the algorithm.
    */
   @VsoMethod
@@ -65,6 +65,7 @@ public class SSLKeyParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ec_params of obj type sslkeyparams field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ecParams
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class SSLKeyParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ec_params of obj type sslkeyparams field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ecParams set the ecParams.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class SSLKeyParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rsa_params of obj type sslkeyparams field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rsaParams
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class SSLKeyParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rsa_params of obj type sslkeyparams field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rsaParams set the rsaParams.
    */
   @VsoMethod

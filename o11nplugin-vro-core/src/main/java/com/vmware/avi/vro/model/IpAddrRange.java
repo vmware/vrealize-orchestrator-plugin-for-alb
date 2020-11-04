@@ -26,19 +26,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpAddrRange extends AviRestResource {
-  @JsonProperty("begin")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr begin = null;
+    @JsonProperty("begin")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr begin = null;
 
-  @JsonProperty("end")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr end = null;
+    @JsonProperty("end")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr end = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Starting ip address of the range.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return begin
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class IpAddrRange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Starting ip address of the range.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param begin set the begin.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class IpAddrRange extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ending ip address of the range.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return end
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class IpAddrRange extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ending ip address of the range.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param end set the end.
    */
   @VsoMethod

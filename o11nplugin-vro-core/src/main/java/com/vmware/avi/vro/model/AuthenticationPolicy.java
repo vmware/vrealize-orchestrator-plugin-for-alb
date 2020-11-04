@@ -24,41 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthenticationPolicy extends AviRestResource {
-  @JsonProperty("auth_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String authProfileRef = null;
+    @JsonProperty("auth_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String authProfileRef;
 
-  @JsonProperty("authn_rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<AuthenticationRule> authnRules = null;
+    @JsonProperty("authn_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<AuthenticationRule> authnRules = null;
 
-  @JsonProperty("cookie_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cookieName = null;
+    @JsonProperty("cookie_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cookieName;
 
-  @JsonProperty("cookie_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cookieTimeout = 60;
+    @JsonProperty("cookie_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cookieTimeout;
 
-  @JsonProperty("default_auth_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String defaultAuthProfileRef = null;
+    @JsonProperty("default_auth_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String defaultAuthProfileRef = null;
 
-  @JsonProperty("entity_id")
-  @JsonInclude(Include.NON_NULL)
-  private String entityId = null;
+    @JsonProperty("entity_id")
+    @JsonInclude(Include.NON_NULL)
+    private String entityId;
 
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private List<HttpCookiePersistenceKey> key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private List<HttpCookiePersistenceKey> key;
 
-  @JsonProperty("single_signon_url")
-  @JsonInclude(Include.NON_NULL)
-  private String singleSignonUrl = null;
+    @JsonProperty("single_signon_url")
+    @JsonInclude(Include.NON_NULL)
+    private String singleSignonUrl;
 
-  @JsonProperty("sp_metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String spMetadata = null;
+    @JsonProperty("sp_metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String spMetadata;
 
 
 
@@ -92,6 +92,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Add rules to apply auth profile to specific targets.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRules
    */
   @VsoMethod
@@ -103,6 +104,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * This is the setter method. this will set the authnRules
    * Add rules to apply auth profile to specific targets.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRules
    */
   @VsoMethod
@@ -114,6 +116,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * This is the setter method this will set the authnRules
    * Add rules to apply auth profile to specific targets.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authnRules
    */
   @VsoMethod
@@ -156,7 +159,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Allowed values are 1-1440.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * Unit is min.
    * @return cookieTimeout
    */
   @VsoMethod
@@ -170,7 +173,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Allowed values are 1-1440.
    * Field deprecated in 18.2.3.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * Unit is min.
    * @param cookieTimeout set the cookieTimeout.
    */
   @VsoMethod
@@ -183,6 +186,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return defaultAuthProfileRef
    */
   @VsoMethod
@@ -195,6 +199,7 @@ public class AuthenticationPolicy extends AviRestResource {
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param defaultAuthProfileRef set the defaultAuthProfileRef.
    */
   @VsoMethod

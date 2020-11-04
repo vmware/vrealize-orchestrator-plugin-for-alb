@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CRSDeploymentFailure extends AviRestResource {
-  @JsonProperty("crs_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<CRSDetails> crsInfo = null;
+    @JsonProperty("crs_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<CRSDetails> crsInfo = null;
 
-  @JsonProperty("message")
-  @JsonInclude(Include.NON_NULL)
-  private String message = null;
+    @JsonProperty("message")
+    @JsonInclude(Include.NON_NULL)
+    private String message = null;
 
 
 
@@ -38,6 +38,7 @@ public class CRSDeploymentFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of all crs updates that failed to install.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsInfo
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class CRSDeploymentFailure extends AviRestResource {
    * This is the setter method. this will set the crsInfo
    * List of all crs updates that failed to install.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsInfo
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class CRSDeploymentFailure extends AviRestResource {
    * This is the setter method this will set the crsInfo
    * List of all crs updates that failed to install.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsInfo
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class CRSDeploymentFailure extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error message to be conveyed to controller ui.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class CRSDeploymentFailure extends AviRestResource {
    * This is the setter method to the attribute.
    * Error message to be conveyed to controller ui.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
   @VsoMethod

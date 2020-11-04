@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConnpoolFilter extends AviRestResource {
-  @JsonProperty("ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String ipAddr = null;
+    @JsonProperty("ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String ipAddr = null;
 
-  @JsonProperty("ip_mask")
-  @JsonInclude(Include.NON_NULL)
-  private String ipMask = null;
+    @JsonProperty("ip_mask")
+    @JsonInclude(Include.NON_NULL)
+    private String ipMask = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Backend or se ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddr
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ConnpoolFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Backend or se ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddr set the ipAddr.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class ConnpoolFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Backend or se ip address mask.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipMask
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class ConnpoolFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Backend or se ip address mask.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipMask set the ipMask.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class ConnpoolFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Backend or se port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class ConnpoolFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Backend or se port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class ConnpoolFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cache type.
    * Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -117,6 +124,7 @@ public class ConnpoolFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Cache type.
    * Enum options - CP_ALL, CP_FREE, CP_BIND, CP_CACHED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

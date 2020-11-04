@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SummarizedInfo extends AviRestResource {
-  @JsonProperty("subnet_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<SummarizedSubnetInfo> subnetInfo = null;
+    @JsonProperty("subnet_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<SummarizedSubnetInfo> subnetInfo = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet_info of obj type summarizedinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetInfo
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class SummarizedInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the subnetInfo
    * Placeholder for description of property subnet_info of obj type summarizedinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetInfo
    */
   @VsoMethod
@@ -53,6 +55,7 @@ public class SummarizedInfo extends AviRestResource {
   /**
    * This is the setter method this will set the subnetInfo
    * Placeholder for description of property subnet_info of obj type summarizedinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetInfo
    */
   @VsoMethod

@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IPPersistenceProfile extends AviRestResource {
-  @JsonProperty("ip_mask")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipMask = null;
+    @JsonProperty("ip_mask")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipMask = null;
 
-  @JsonProperty("ip_persistent_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipPersistentTimeout = 5;
+    @JsonProperty("ip_persistent_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipPersistentTimeout = 5;
 
 
 
@@ -41,6 +41,7 @@ public class IPPersistenceProfile extends AviRestResource {
    * When set to 0, all requests are sent to the same server.
    * Allowed values are 0-128.
    * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipMask
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class IPPersistenceProfile extends AviRestResource {
    * When set to 0, all requests are sent to the same server.
    * Allowed values are 0-128.
    * Field introduced in 18.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipMask set the ipMask.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class IPPersistenceProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The length of time after a client's connections have closed before expiring the client's persistence to a server.
    * Allowed values are 1-720.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return ipPersistentTimeout
    */
@@ -78,6 +81,7 @@ public class IPPersistenceProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The length of time after a client's connections have closed before expiring the client's persistence to a server.
    * Allowed values are 1-720.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param ipPersistentTimeout set the ipPersistentTimeout.
    */

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AppLearningConfidenceOverride extends AviRestResource {
-  @JsonProperty("confid_high_value")
-  @JsonInclude(Include.NON_NULL)
-  private Integer confidHighValue = 9500;
+    @JsonProperty("confid_high_value")
+    @JsonInclude(Include.NON_NULL)
+    private Integer confidHighValue = 9500;
 
-  @JsonProperty("confid_low_value")
-  @JsonInclude(Include.NON_NULL)
-  private Integer confidLowValue = 7500;
+    @JsonProperty("confid_low_value")
+    @JsonInclude(Include.NON_NULL)
+    private Integer confidLowValue = 7500;
 
-  @JsonProperty("confid_probable_value")
-  @JsonInclude(Include.NON_NULL)
-  private Integer confidProbableValue = 9000;
+    @JsonProperty("confid_probable_value")
+    @JsonInclude(Include.NON_NULL)
+    private Integer confidProbableValue = 9000;
 
-  @JsonProperty("confid_very_high_value")
-  @JsonInclude(Include.NON_NULL)
-  private Integer confidVeryHighValue = 9999;
+    @JsonProperty("confid_very_high_value")
+    @JsonInclude(Include.NON_NULL)
+    private Integer confidVeryHighValue = 9999;
 
 
 

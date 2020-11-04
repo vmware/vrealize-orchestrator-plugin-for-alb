@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbDnsGsStatus extends AviRestResource {
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("num_partial_updates")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numPartialUpdates = null;
+    @JsonProperty("num_partial_updates")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numPartialUpdates = null;
 
-  @JsonProperty("partial_update_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer partialUpdateThreshold = 10;
+    @JsonProperty("partial_update_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer partialUpdateThreshold = 10;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class GslbDnsGsStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Counter to track the number of partial updates sent.
    * Once it reaches the partial updates threshold, a full update is sent.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPartialUpdates
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Counter to track the number of partial updates sent.
    * Once it reaches the partial updates threshold, a full update is sent.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPartialUpdates set the numPartialUpdates.
    */
   @VsoMethod
@@ -120,6 +124,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * State variable to trigger full or partial update.
    * Enum options - GSLB_FULL_UPDATE_PENDING, GSLB_PARTIAL_UPDATE_PENDING.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -132,6 +137,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * State variable to trigger full or partial update.
    * Enum options - GSLB_FULL_UPDATE_PENDING, GSLB_PARTIAL_UPDATE_PENDING.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -144,6 +150,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Describes the type (partial/full) of the last gs status sent to dns-vs(es).
    * Enum options - GSLB_NO_UPDATE, GSLB_FULL_UPDATE, GSLB_PARTIAL_UPDATE.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -156,6 +163,7 @@ public class GslbDnsGsStatus extends AviRestResource {
    * Describes the type (partial/full) of the last gs status sent to dns-vs(es).
    * Enum options - GSLB_NO_UPDATE, GSLB_FULL_UPDATE, GSLB_PARTIAL_UPDATE.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleActionAllowDrop extends AviRestResource {
-  @JsonProperty("allow")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allow = true;
+    @JsonProperty("allow")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allow = true;
 
-  @JsonProperty("reset_conn")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resetConn = true;
+    @JsonProperty("reset_conn")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resetConn = true;
 
 
 

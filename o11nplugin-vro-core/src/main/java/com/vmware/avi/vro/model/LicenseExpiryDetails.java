@@ -24,67 +24,68 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseExpiryDetails extends AviRestResource {
-  @JsonProperty("backend_servers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer backendServers = null;
+    @JsonProperty("backend_servers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer backendServers = null;
 
-  @JsonProperty("burst_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer burstCores = null;
+    @JsonProperty("burst_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer burstCores = null;
 
-  @JsonProperty("cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cores = null;
+    @JsonProperty("cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cores = null;
 
-  @JsonProperty("cpu_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float cpuCores = null;
+    @JsonProperty("cpu_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float cpuCores = null;
 
-  @JsonProperty("expiry_at")
-  @JsonInclude(Include.NON_NULL)
-  private String expiryAt = null;
+    @JsonProperty("expiry_at")
+    @JsonInclude(Include.NON_NULL)
+    private String expiryAt = null;
 
-  @JsonProperty("license_id")
-  @JsonInclude(Include.NON_NULL)
-  private String licenseId = null;
+    @JsonProperty("license_id")
+    @JsonInclude(Include.NON_NULL)
+    private String licenseId = null;
 
-  @JsonProperty("license_tier")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> licenseTier = null;
+    @JsonProperty("license_tier")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> licenseTier = null;
 
-  @JsonProperty("license_type")
-  @JsonInclude(Include.NON_NULL)
-  private String licenseType = null;
+    @JsonProperty("license_type")
+    @JsonInclude(Include.NON_NULL)
+    private String licenseType = null;
 
-  @JsonProperty("max_apps")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxApps = null;
+    @JsonProperty("max_apps")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxApps = null;
 
-  @JsonProperty("max_ses")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSes = null;
+    @JsonProperty("max_ses")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSes = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("service_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Float serviceCores = null;
+    @JsonProperty("service_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Float serviceCores = null;
 
-  @JsonProperty("sockets")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sockets = null;
+    @JsonProperty("sockets")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sockets = null;
 
-  @JsonProperty("throughput")
-  @JsonInclude(Include.NON_NULL)
-  private Integer throughput = null;
+    @JsonProperty("throughput")
+    @JsonInclude(Include.NON_NULL)
+    private Integer throughput = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property backend_servers of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backendServers
    */
   @VsoMethod
@@ -95,6 +96,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property backend_servers of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backendServers set the backendServers.
    */
   @VsoMethod
@@ -105,6 +107,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property burst_cores of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return burstCores
    */
   @VsoMethod
@@ -115,6 +118,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property burst_cores of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param burstCores set the burstCores.
    */
   @VsoMethod
@@ -125,6 +129,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cores of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cores
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cores of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cores set the cores.
    */
   @VsoMethod
@@ -145,6 +151,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cpu_cores of obj type licenseexpirydetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpuCores
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cpu_cores of obj type licenseexpirydetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpuCores set the cpuCores.
    */
   @VsoMethod
@@ -165,6 +173,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property expiry_at of obj type licenseexpirydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expiryAt
    */
   @VsoMethod
@@ -175,6 +184,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property expiry_at of obj type licenseexpirydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expiryAt set the expiryAt.
    */
   @VsoMethod
@@ -185,6 +195,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_id of obj type licenseexpirydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseId
    */
   @VsoMethod
@@ -195,6 +206,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property license_id of obj type licenseexpirydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseId set the licenseId.
    */
   @VsoMethod
@@ -205,6 +217,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_tier of obj type licenseexpirydetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
   @VsoMethod
@@ -215,6 +228,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the licenseTier
    * Placeholder for description of property license_tier of obj type licenseexpirydetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
   @VsoMethod
@@ -225,6 +239,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method this will set the licenseTier
    * Placeholder for description of property license_tier of obj type licenseexpirydetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTier
    */
   @VsoMethod
@@ -240,6 +255,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_type of obj type licenseexpirydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseType
    */
   @VsoMethod
@@ -250,6 +266,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property license_type of obj type licenseexpirydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseType set the licenseType.
    */
   @VsoMethod
@@ -260,6 +277,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_apps of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxApps
    */
   @VsoMethod
@@ -270,6 +288,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_apps of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxApps set the maxApps.
    */
   @VsoMethod
@@ -280,6 +299,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_ses of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSes
    */
   @VsoMethod
@@ -290,6 +310,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_ses of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSes set the maxSes.
    */
   @VsoMethod
@@ -300,6 +321,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -310,6 +332,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -320,6 +343,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property service_cores of obj type licenseexpirydetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceCores
    */
   @VsoMethod
@@ -330,6 +354,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property service_cores of obj type licenseexpirydetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceCores set the serviceCores.
    */
   @VsoMethod
@@ -340,6 +365,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property sockets of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sockets
    */
   @VsoMethod
@@ -350,6 +376,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property sockets of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sockets set the sockets.
    */
   @VsoMethod
@@ -360,6 +387,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property throughput of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return throughput
    */
   @VsoMethod
@@ -370,6 +398,7 @@ public class LicenseExpiryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property throughput of obj type licenseexpirydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param throughput set the throughput.
    */
   @VsoMethod

@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmAddNetworksEventDetails extends AviRestResource {
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<RmAddVnic> networks = null;
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<RmAddVnic> networks = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("vs_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsName = null;
+    @JsonProperty("vs_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsName = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property networks of obj type rmaddnetworkseventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Placeholder for description of property networks of obj type rmaddnetworkseventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Placeholder for description of property networks of obj type rmaddnetworkseventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type rmaddnetworkseventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type rmaddnetworkseventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type rmaddnetworkseventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type rmaddnetworkseventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_name of obj type rmaddnetworkseventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -158,6 +168,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vsName
    * Placeholder for description of property vs_name of obj type rmaddnetworkseventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -168,6 +179,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vsName
    * Placeholder for description of property vs_name of obj type rmaddnetworkseventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -183,6 +195,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -193,6 +206,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the vsUuid
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -203,6 +217,7 @@ public class RmAddNetworksEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the vsUuid
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod

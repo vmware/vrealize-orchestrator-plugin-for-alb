@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHmEventGSDetails extends AviRestResource {
-  @JsonProperty("gslb_service")
-  @JsonInclude(Include.NON_NULL)
-  private String gslbService = null;
+    @JsonProperty("gslb_service")
+    @JsonInclude(Include.NON_NULL)
+    private String gslbService = null;
 
-  @JsonProperty("ha_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String haReason = null;
+    @JsonProperty("ha_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String haReason = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("src_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String srcUuid = null;
+    @JsonProperty("src_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String srcUuid = null;
 
 
 
@@ -50,6 +50,7 @@ public class SeHmEventGSDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslbservice name.
    * It is a reference to an object of type gslbservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbService
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class SeHmEventGSDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslbservice name.
    * It is a reference to an object of type gslbservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbService set the gslbService.
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haReason
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haReason set the haReason.
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason gslb service is down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason gslb service is down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service engine name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service engine name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -131,6 +139,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
   @VsoMethod
@@ -141,6 +150,7 @@ public class SeHmEventGSDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */
   @VsoMethod

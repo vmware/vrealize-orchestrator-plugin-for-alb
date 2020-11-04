@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorUdp extends AviRestResource {
-  @JsonProperty("maintenance_response")
-  @JsonInclude(Include.NON_NULL)
-  private String maintenanceResponse = null;
+    @JsonProperty("maintenance_response")
+    @JsonInclude(Include.NON_NULL)
+    private String maintenanceResponse = null;
 
-  @JsonProperty("udp_request")
-  @JsonInclude(Include.NON_NULL)
-  private String udpRequest = null;
+    @JsonProperty("udp_request")
+    @JsonInclude(Include.NON_NULL)
+    private String udpRequest = null;
 
-  @JsonProperty("udp_response")
-  @JsonInclude(Include.NON_NULL)
-  private String udpResponse = null;
+    @JsonProperty("udp_response")
+    @JsonInclude(Include.NON_NULL)
+    private String udpResponse = null;
 
 
 
@@ -42,6 +42,7 @@ public class HealthMonitorUdp extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
    * A successful match results in the server being marked down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceResponse
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class HealthMonitorUdp extends AviRestResource {
    * This is the setter method to the attribute.
    * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
    * A successful match results in the server being marked down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maintenanceResponse set the maintenanceResponse.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Send udp request.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpRequest
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Send udp request.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpRequest set the udpRequest.
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Match for keyword in the udp response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpResponse
    */
   @VsoMethod
@@ -93,6 +98,7 @@ public class HealthMonitorUdp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Match for keyword in the udp response.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpResponse set the udpResponse.
    */
   @VsoMethod

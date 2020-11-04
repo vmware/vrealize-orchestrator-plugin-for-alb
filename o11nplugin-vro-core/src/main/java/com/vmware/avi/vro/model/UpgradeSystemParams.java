@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeSystemParams extends AviRestResource {
-  @JsonProperty("controller_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerPatchRef = null;
+    @JsonProperty("controller_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerPatchRef = null;
 
-  @JsonProperty("image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String imageRef = null;
+    @JsonProperty("image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String imageRef = null;
 
-  @JsonProperty("se_group_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupOptions seGroupOptions = null;
+    @JsonProperty("se_group_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupOptions seGroupOptions = null;
 
-  @JsonProperty("se_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sePatchRef = null;
+    @JsonProperty("se_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sePatchRef = null;
 
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
 
 
@@ -52,6 +52,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se group options for the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Se group options for the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchRef
    */
   @VsoMethod
@@ -134,6 +141,7 @@ public class UpgradeSystemParams extends AviRestResource {
    * Image uuid for identifying the se patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchRef set the sePatchRef.
    */
   @VsoMethod

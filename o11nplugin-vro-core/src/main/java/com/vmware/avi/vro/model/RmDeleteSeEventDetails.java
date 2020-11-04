@@ -24,55 +24,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmDeleteSeEventDetails extends AviRestResource {
-  @JsonProperty("cloud_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudName = null;
+    @JsonProperty("cloud_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudName = null;
 
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("host_name")
-  @JsonInclude(Include.NON_NULL)
-  private String hostName = null;
+    @JsonProperty("host_name")
+    @JsonInclude(Include.NON_NULL)
+    private String hostName = null;
 
-  @JsonProperty("host_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String hostUuid = null;
+    @JsonProperty("host_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String hostUuid = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String seCookie = null;
+    @JsonProperty("se_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String seCookie = null;
 
-  @JsonProperty("se_grp_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpName = null;
+    @JsonProperty("se_grp_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpName = null;
 
-  @JsonProperty("se_grp_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpUuid = null;
+    @JsonProperty("se_grp_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpUuid = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer statusCode = null;
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer statusCode = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudName
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudName set the cloudName.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -113,6 +117,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostName set the hostName.
    */
   @VsoMethod
@@ -133,6 +139,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostUuid
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostUuid set the hostUuid.
    */
   @VsoMethod
@@ -153,6 +161,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -163,6 +172,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -173,6 +183,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_cookie of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seCookie
    */
   @VsoMethod
@@ -183,6 +194,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_cookie of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seCookie set the seCookie.
    */
   @VsoMethod
@@ -193,6 +205,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_grp_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpName
    */
   @VsoMethod
@@ -203,6 +216,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_grp_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpName set the seGrpName.
    */
   @VsoMethod
@@ -213,6 +227,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpUuid
    */
   @VsoMethod
@@ -223,6 +238,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpUuid set the seGrpUuid.
    */
   @VsoMethod
@@ -233,6 +249,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -243,6 +260,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type rmdeleteseeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -253,6 +271,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -263,6 +282,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -273,6 +293,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status_code of obj type rmdeleteseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusCode
    */
   @VsoMethod
@@ -283,6 +304,7 @@ public class RmDeleteSeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status_code of obj type rmdeleteseeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusCode set the statusCode.
    */
   @VsoMethod

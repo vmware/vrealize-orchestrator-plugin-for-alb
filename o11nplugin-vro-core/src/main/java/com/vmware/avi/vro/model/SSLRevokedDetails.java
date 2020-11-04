@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLRevokedDetails extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
 
 
@@ -38,6 +38,7 @@ public class SSLRevokedDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of ssl certificate.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class SSLRevokedDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of ssl certificate.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class SSLRevokedDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Certificate revocation reason provided by ocsp responder.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class SSLRevokedDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Certificate revocation reason provided by ocsp responder.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod

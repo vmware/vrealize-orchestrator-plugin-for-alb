@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VSDataScript extends AviRestResource {
-  @JsonProperty("evt")
-  @JsonInclude(Include.NON_NULL)
-  private String evt = null;
+    @JsonProperty("evt")
+    @JsonInclude(Include.NON_NULL)
+    private String evt = null;
 
-  @JsonProperty("script")
-  @JsonInclude(Include.NON_NULL)
-  private String script = null;
+    @JsonProperty("script")
+    @JsonInclude(Include.NON_NULL)
+    private String script = null;
 
 
 
@@ -38,9 +38,10 @@ public class VSDataScript extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Event triggering execution of datascript.
    * Enum options - VS_DATASCRIPT_EVT_HTTP_REQ, VS_DATASCRIPT_EVT_HTTP_RESP, VS_DATASCRIPT_EVT_HTTP_RESP_DATA, VS_DATASCRIPT_EVT_HTTP_LB_FAILED,
-   * VS_DATASCRIPT_EVT_HTTP_REQ_DATA, VS_DATASCRIPT_EVT_HTTP_RESP_FAILED, VS_DATASCRIPT_EVT_HTTP_LB_DONE, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT,
-   * VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST,
-   * VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
+   * VS_DATASCRIPT_EVT_HTTP_REQ_DATA, VS_DATASCRIPT_EVT_HTTP_RESP_FAILED, VS_DATASCRIPT_EVT_HTTP_LB_DONE, VS_DATASCRIPT_EVT_HTTP_AUTH,
+   * VS_DATASCRIPT_EVT_HTTP_POST_AUTH, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT, VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_DNS_REQ,
+   * VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return evt
    */
   @VsoMethod
@@ -52,9 +53,10 @@ public class VSDataScript extends AviRestResource {
    * This is the setter method to the attribute.
    * Event triggering execution of datascript.
    * Enum options - VS_DATASCRIPT_EVT_HTTP_REQ, VS_DATASCRIPT_EVT_HTTP_RESP, VS_DATASCRIPT_EVT_HTTP_RESP_DATA, VS_DATASCRIPT_EVT_HTTP_LB_FAILED,
-   * VS_DATASCRIPT_EVT_HTTP_REQ_DATA, VS_DATASCRIPT_EVT_HTTP_RESP_FAILED, VS_DATASCRIPT_EVT_HTTP_LB_DONE, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT,
-   * VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST,
-   * VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
+   * VS_DATASCRIPT_EVT_HTTP_REQ_DATA, VS_DATASCRIPT_EVT_HTTP_RESP_FAILED, VS_DATASCRIPT_EVT_HTTP_LB_DONE, VS_DATASCRIPT_EVT_HTTP_AUTH,
+   * VS_DATASCRIPT_EVT_HTTP_POST_AUTH, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT, VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_DNS_REQ,
+   * VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param evt set the evt.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class VSDataScript extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Datascript to execute when the event triggers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return script
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class VSDataScript extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Datascript to execute when the event triggers.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param script set the script.
    */
   @VsoMethod

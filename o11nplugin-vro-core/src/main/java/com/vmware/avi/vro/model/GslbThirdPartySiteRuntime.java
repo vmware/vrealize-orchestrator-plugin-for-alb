@@ -25,15 +25,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbThirdPartySiteRuntime extends AviRestResource {
-  @JsonProperty("site_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteRuntimeInfo siteInfo = null;
+    @JsonProperty("site_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteRuntimeInfo siteInfo = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteInfo
    */
   @VsoMethod
@@ -44,6 +45,7 @@ public class GslbThirdPartySiteRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteInfo set the siteInfo.
    */
   @VsoMethod

@@ -25,21 +25,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPClientAuthenticationParams extends AviRestResource {
-  @JsonProperty("auth_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String authProfileRef = null;
+    @JsonProperty("auth_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String authProfileRef = null;
 
-  @JsonProperty("realm")
-  @JsonInclude(Include.NON_NULL)
-  private String realm = null;
+    @JsonProperty("realm")
+    @JsonInclude(Include.NON_NULL)
+    private String realm = null;
 
-  @JsonProperty("request_uri_path")
-  @JsonInclude(Include.NON_NULL)
-  private StringMatch requestUriPath = null;
+    @JsonProperty("request_uri_path")
+    @JsonInclude(Include.NON_NULL)
+    private StringMatch requestUriPath = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -47,6 +47,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authProfileRef
    */
   @VsoMethod
@@ -58,6 +59,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Auth profile to use for validating users.
    * It is a reference to an object of type authprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authProfileRef set the authProfileRef.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Basic authentication realm to present to a user along with the prompt for credentials.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return realm
    */
   @VsoMethod
@@ -78,6 +81,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Basic authentication realm to present to a user along with the prompt for credentials.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param realm set the realm.
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rrequest uri path when the authentication applies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestUriPath
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rrequest uri path when the authentication applies.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestUriPath set the requestUriPath.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of client authentication.
    * Enum options - HTTP_BASIC_AUTH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class HTTPClientAuthenticationParams extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of client authentication.
    * Enum options - HTTP_BASIC_AUTH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

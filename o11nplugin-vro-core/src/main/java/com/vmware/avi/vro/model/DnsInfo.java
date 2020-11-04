@@ -25,33 +25,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsInfo extends AviRestResource {
-  @JsonProperty("algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String algorithm = "DNS_RECORD_RESPONSE_CONSISTENT_HASH";
+    @JsonProperty("algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String algorithm = "DNS_RECORD_RESPONSE_CONSISTENT_HASH";
 
-  @JsonProperty("cname")
-  @JsonInclude(Include.NON_NULL)
-  private DnsCnameRdata cname = null;
+    @JsonProperty("cname")
+    @JsonInclude(Include.NON_NULL)
+    private DnsCnameRdata cname = null;
 
-  @JsonProperty("fqdn")
-  @JsonInclude(Include.NON_NULL)
-  private String fqdn = null;
+    @JsonProperty("fqdn")
+    @JsonInclude(Include.NON_NULL)
+    private String fqdn = null;
 
-  @JsonProperty("metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String metadata = null;
+    @JsonProperty("metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String metadata = null;
 
-  @JsonProperty("num_records_in_response")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numRecordsInResponse = 1;
+    @JsonProperty("num_records_in_response")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numRecordsInResponse = 1;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = null;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "DNS_RECORD_A";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "DNS_RECORD_A";
 
 
 
@@ -62,7 +62,7 @@ public class DnsInfo extends AviRestResource {
    * Default is consistent hash.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_RESPONSE_CONSISTENT_HASH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_CONSISTENT_HASH".
    * @return algorithm
    */
   @VsoMethod
@@ -77,7 +77,7 @@ public class DnsInfo extends AviRestResource {
    * Default is consistent hash.
    * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_RESPONSE_CONSISTENT_HASH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_CONSISTENT_HASH".
    * @param algorithm set the algorithm.
    */
   @VsoMethod
@@ -89,6 +89,7 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Canonical name in cname record.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cname
    */
   @VsoMethod
@@ -100,6 +101,7 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Canonical name in cname record.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cname set the cname.
    */
   @VsoMethod
@@ -110,6 +112,7 @@ public class DnsInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fqdn
    */
   @VsoMethod
@@ -120,6 +123,7 @@ public class DnsInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Fully qualified domain name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fqdn set the fqdn.
    */
   @VsoMethod
@@ -131,6 +135,7 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Any metadata associated with this record.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -142,6 +147,7 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Any metadata associated with this record.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
    */
   @VsoMethod
@@ -185,6 +191,7 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time to live for fqdn record.
    * Default value is chosen from dns profile for this cloud if no value provided.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ttl
    */
   @VsoMethod
@@ -196,6 +203,7 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Time to live for fqdn record.
    * Default value is chosen from dns profile for this cloud if no value provided.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ttl set the ttl.
    */
   @VsoMethod
@@ -209,7 +217,7 @@ public class DnsInfo extends AviRestResource {
    * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_A.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @return type
    */
   @VsoMethod
@@ -223,7 +231,7 @@ public class DnsInfo extends AviRestResource {
    * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_A.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @param type set the type.
    */
   @VsoMethod

@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UserAccountProfile extends AviRestResource {
-  @JsonProperty("account_lock_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer accountLockTimeout = 30;
+    @JsonProperty("account_lock_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer accountLockTimeout = 30;
 
-  @JsonProperty("credentials_timeout_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer credentialsTimeoutThreshold = 180;
+    @JsonProperty("credentials_timeout_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer credentialsTimeoutThreshold = 180;
 
-  @JsonProperty("max_concurrent_sessions")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxConcurrentSessions = 0;
+    @JsonProperty("max_concurrent_sessions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxConcurrentSessions = 0;
 
-  @JsonProperty("max_login_failure_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxLoginFailureCount = 3;
+    @JsonProperty("max_login_failure_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxLoginFailureCount = 3;
 
-  @JsonProperty("max_password_history_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxPasswordHistoryCount = 4;
+    @JsonProperty("max_password_history_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxPasswordHistoryCount = 4;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -62,6 +62,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Lock timeout period (in minutes).
    * Default is 30 minutes.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return accountLockTimeout
    */
@@ -74,6 +75,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Lock timeout period (in minutes).
    * Default is 30 minutes.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param accountLockTimeout set the accountLockTimeout.
    */
@@ -86,6 +88,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The time period after which credentials expire.
    * Default is 180 days.
+   * Unit is days.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @return credentialsTimeoutThreshold
    */
@@ -98,6 +101,7 @@ public class UserAccountProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The time period after which credentials expire.
    * Default is 180 days.
+   * Unit is days.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @param credentialsTimeoutThreshold set the credentialsTimeoutThreshold.
    */
@@ -181,6 +185,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -191,6 +196,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -220,6 +226,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -230,6 +237,7 @@ public class UserAccountProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

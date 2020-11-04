@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraVcenterBadCredentials extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("previous_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer previousCount = null;
+    @JsonProperty("previous_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer previousCount = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
-  @JsonProperty("vcenter")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenter = null;
+    @JsonProperty("vcenter")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenter = null;
 
-  @JsonProperty("vcenter_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterName = null;
+    @JsonProperty("vcenter_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterName = null;
 
-  @JsonProperty("vcenter_object")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterObject = null;
+    @JsonProperty("vcenter_object")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterObject = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property previous_count of obj type vinfravcenterbadcredentials field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return previousCount
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property previous_count of obj type vinfravcenterbadcredentials field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param previousCount set the previousCount.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property user of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property user of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenter
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenter set the vcenter.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_name of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterName
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_name of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterName set the vcenterName.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_object of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterObject
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class VinfraVcenterBadCredentials extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_object of obj type vinfravcenterbadcredentials field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterObject set the vcenterObject.
    */
   @VsoMethod

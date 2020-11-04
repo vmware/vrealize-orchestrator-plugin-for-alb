@@ -28,43 +28,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PersistenceFilter extends AviRestResource {
-  @JsonProperty("persistence_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String persistenceCookie = null;
+    @JsonProperty("persistence_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String persistenceCookie = null;
 
-  @JsonProperty("persistence_end_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr persistenceEndIp = null;
+    @JsonProperty("persistence_end_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr persistenceEndIp = null;
 
-  @JsonProperty("persistence_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr persistenceIp = null;
+    @JsonProperty("persistence_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr persistenceIp = null;
 
-  @JsonProperty("persistence_mask")
-  @JsonInclude(Include.NON_NULL)
-  private Integer persistenceMask = null;
+    @JsonProperty("persistence_mask")
+    @JsonInclude(Include.NON_NULL)
+    private Integer persistenceMask = null;
 
-  @JsonProperty("server_end_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr serverEndIp = null;
+    @JsonProperty("server_end_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr serverEndIp = null;
 
-  @JsonProperty("server_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr serverIp = null;
+    @JsonProperty("server_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr serverIp = null;
 
-  @JsonProperty("server_mask")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverMask = null;
+    @JsonProperty("server_mask")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverMask = null;
 
-  @JsonProperty("server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverPort = null;
+    @JsonProperty("server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverPort = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Persistence cookie.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceCookie
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Persistence cookie.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceCookie set the persistenceCookie.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property persistence_end_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceEndIp
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property persistence_end_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceEndIp set the persistenceEndIp.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property persistence_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceIp
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property persistence_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceIp set the persistenceIp.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property persistence_mask of obj type persistencefilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return persistenceMask
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property persistence_mask of obj type persistencefilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param persistenceMask set the persistenceMask.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_end_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverEndIp
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_end_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverEndIp set the serverEndIp.
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_ip of obj type persistencefilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
   @VsoMethod
@@ -185,6 +197,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_mask of obj type persistencefilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverMask
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_mask of obj type persistencefilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverMask set the serverMask.
    */
   @VsoMethod
@@ -205,6 +219,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_port of obj type persistencefilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverPort
    */
   @VsoMethod
@@ -215,6 +230,7 @@ public class PersistenceFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_port of obj type persistencefilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverPort set the serverPort.
    */
   @VsoMethod

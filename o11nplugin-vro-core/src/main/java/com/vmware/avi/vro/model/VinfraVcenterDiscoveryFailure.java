@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraVcenterDiscoveryFailure extends AviRestResource {
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("vcenter")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenter = null;
+    @JsonProperty("vcenter")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property state of obj type vinfravcenterdiscoveryfailure field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VinfraVcenterDiscoveryFailure extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property state of obj type vinfravcenterdiscoveryfailure field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class VinfraVcenterDiscoveryFailure extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter of obj type vinfravcenterdiscoveryfailure field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenter
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class VinfraVcenterDiscoveryFailure extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter of obj type vinfravcenterdiscoveryfailure field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenter set the vcenter.
    */
   @VsoMethod

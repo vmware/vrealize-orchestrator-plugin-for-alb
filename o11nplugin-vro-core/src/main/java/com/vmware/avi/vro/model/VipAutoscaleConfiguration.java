@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipAutoscaleConfiguration extends AviRestResource {
-  @JsonProperty("zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<VipAutoscaleZones> zones = null;
+    @JsonProperty("zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<VipAutoscaleZones> zones = null;
 
 
 
@@ -34,6 +34,7 @@ public class VipAutoscaleConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This is the list of az+subnet in which vips will be spawned.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class VipAutoscaleConfiguration extends AviRestResource {
    * This is the setter method. this will set the zones
    * This is the list of az+subnet in which vips will be spawned.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class VipAutoscaleConfiguration extends AviRestResource {
    * This is the setter method this will set the zones
    * This is the list of az+subnet in which vips will be spawned.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
   @VsoMethod

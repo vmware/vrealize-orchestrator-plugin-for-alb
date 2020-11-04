@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigInfo extends AviRestResource {
-  @JsonProperty("queue")
-  @JsonInclude(Include.NON_NULL)
-  private List<VersionInfo> queue = null;
+    @JsonProperty("queue")
+    @JsonInclude(Include.NON_NULL)
+    private List<VersionInfo> queue = null;
 
-  @JsonProperty("reader_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer readerCount = null;
+    @JsonProperty("reader_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer readerCount = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("writer_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer writerCount = null;
+    @JsonProperty("writer_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer writerCount = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property queue of obj type configinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queue
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the queue
    * Placeholder for description of property queue of obj type configinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queue
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the setter method this will set the queue
    * Placeholder for description of property queue of obj type configinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queue
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reader_count of obj type configinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return readerCount
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reader_count of obj type configinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param readerCount set the readerCount.
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - REPL_NONE, REPL_ENABLED, REPL_DISABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - REPL_NONE, REPL_ENABLED, REPL_DISABLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property writer_count of obj type configinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return writerCount
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class ConfigInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property writer_count of obj type configinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param writerCount set the writerCount.
    */
   @VsoMethod

@@ -24,39 +24,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbGeoDbProfile extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("entries")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbGeoDbEntry> entries = null;
+    @JsonProperty("entries")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbGeoDbEntry> entries = null;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = true;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = true;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -67,6 +72,7 @@ public class GslbGeoDbProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -79,6 +85,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * List of geodb entries.
    * An entry can either be a geodb file or an ip address group with geo properties.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
   @VsoMethod
@@ -91,6 +98,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * List of geodb entries.
    * An entry can either be a geodb file or an ip address group with geo properties.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
   @VsoMethod
@@ -103,6 +111,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * List of geodb entries.
    * An entry can either be a geodb file or an ip address group with geo properties.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
   @VsoMethod
@@ -141,8 +150,53 @@ public class GslbGeoDbProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public GslbGeoDbProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * A user-friendly name for the geodb profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -154,6 +208,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A user-friendly name for the geodb profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -165,6 +220,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -176,6 +232,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -206,6 +263,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the geodb profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -217,6 +275,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the geodb profile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -241,6 +300,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objGslbGeoDbProfile.uuid)&&
   Objects.equals(this.name, objGslbGeoDbProfile.name)&&
   Objects.equals(this.entries, objGslbGeoDbProfile.entries)&&
+  Objects.equals(this.labels, objGslbGeoDbProfile.labels)&&
   Objects.equals(this.isFederated, objGslbGeoDbProfile.isFederated)&&
   Objects.equals(this.description, objGslbGeoDbProfile.description)&&
   Objects.equals(this.tenantRef, objGslbGeoDbProfile.tenantRef);
@@ -253,6 +313,7 @@ public String toString() {
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    entries: ").append(toIndentedString(entries)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PortMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("ports")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> ports = null;
+    @JsonProperty("ports")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> ports = null;
 
 
 
@@ -38,6 +38,7 @@ public class PortMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for port matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class PortMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for port matching the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class PortMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Listening tcp port(s).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class PortMatch extends AviRestResource {
    * This is the setter method. this will set the ports
    * Listening tcp port(s).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class PortMatch extends AviRestResource {
    * This is the setter method this will set the ports
    * Listening tcp port(s).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
   @VsoMethod

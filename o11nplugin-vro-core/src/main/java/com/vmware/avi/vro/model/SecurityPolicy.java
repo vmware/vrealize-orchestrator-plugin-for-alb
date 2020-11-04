@@ -25,41 +25,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecurityPolicy extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("dns_attacks")
-  @JsonInclude(Include.NON_NULL)
-  private DnsAttacks dnsAttacks = null;
+    @JsonProperty("dns_attacks")
+    @JsonInclude(Include.NON_NULL)
+    private DnsAttacks dnsAttacks = null;
 
-  @JsonProperty("dns_policy_index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dnsPolicyIndex = 0;
+    @JsonProperty("dns_policy_index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dnsPolicyIndex = 0;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("network_security_policy_index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer networkSecurityPolicyIndex = 0;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("oper_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String operMode = "DETECTION";
+    @JsonProperty("network_security_policy_index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer networkSecurityPolicyIndex = 0;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("oper_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String operMode = "DETECTION";
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -68,6 +72,7 @@ public class SecurityPolicy extends AviRestResource {
    * Security policy is used to specify various configuration information used to perform distributed denial of service (ddos) attacks detection and
    * mitigation.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -80,6 +85,7 @@ public class SecurityPolicy extends AviRestResource {
    * Security policy is used to specify various configuration information used to perform distributed denial of service (ddos) attacks detection and
    * mitigation.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -91,6 +97,7 @@ public class SecurityPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attacks utilizing the dns protocol operations.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsAttacks
    */
   @VsoMethod
@@ -102,6 +109,7 @@ public class SecurityPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Attacks utilizing the dns protocol operations.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsAttacks set the dnsAttacks.
    */
   @VsoMethod
@@ -135,8 +143,53 @@ public class SecurityPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public SecurityPolicy addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the security policy.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -148,6 +201,7 @@ public class SecurityPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the security policy.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -184,7 +238,7 @@ public class SecurityPolicy extends AviRestResource {
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Enum options - DETECTION, MITIGATION.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DETECTION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DETECTION".
    * @return operMode
    */
   @VsoMethod
@@ -197,7 +251,7 @@ public class SecurityPolicy extends AviRestResource {
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Enum options - DETECTION, MITIGATION.
    * Field introduced in 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DETECTION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DETECTION".
    * @param operMode set the operMode.
    */
   @VsoMethod
@@ -210,6 +264,7 @@ public class SecurityPolicy extends AviRestResource {
    * Tenancy of the security policy.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -222,6 +277,7 @@ public class SecurityPolicy extends AviRestResource {
    * Tenancy of the security policy.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -252,6 +308,7 @@ public class SecurityPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uuid of the security policy.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -263,6 +320,7 @@ public class SecurityPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * The uuid of the security policy.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -290,6 +348,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.dnsAttacks, objSecurityPolicy.dnsAttacks)&&
   Objects.equals(this.networkSecurityPolicyIndex, objSecurityPolicy.networkSecurityPolicyIndex)&&
   Objects.equals(this.dnsPolicyIndex, objSecurityPolicy.dnsPolicyIndex)&&
+  Objects.equals(this.labels, objSecurityPolicy.labels)&&
   Objects.equals(this.description, objSecurityPolicy.description)&&
   Objects.equals(this.tenantRef, objSecurityPolicy.tenantRef);
 }
@@ -301,6 +360,7 @@ public String toString() {
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    dnsAttacks: ").append(toIndentedString(dnsAttacks)).append("\n");
         sb.append("    dnsPolicyIndex: ").append(toIndentedString(dnsPolicyIndex)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    networkSecurityPolicyIndex: ").append(toIndentedString(networkSecurityPolicyIndex)).append("\n");
         sb.append("    operMode: ").append(toIndentedString(operMode)).append("\n");

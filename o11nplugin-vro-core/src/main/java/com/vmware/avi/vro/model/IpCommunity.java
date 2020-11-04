@@ -26,17 +26,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpCommunity extends AviRestResource {
-  @JsonProperty("community")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> community = null;
+    @JsonProperty("community")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> community = null;
 
-  @JsonProperty("ip_begin")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipBegin = null;
+    @JsonProperty("ip_begin")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipBegin = null;
 
-  @JsonProperty("ip_end")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipEnd = null;
+    @JsonProperty("ip_end")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipEnd = null;
 
 
 
@@ -44,6 +44,7 @@ public class IpCommunity extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class IpCommunity extends AviRestResource {
    * This is the setter method. this will set the community
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class IpCommunity extends AviRestResource {
    * This is the setter method this will set the community
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
   @VsoMethod
@@ -82,6 +85,7 @@ public class IpCommunity extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Beginning of ip address range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipBegin
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class IpCommunity extends AviRestResource {
    * This is the setter method to the attribute.
    * Beginning of ip address range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipBegin set the ipBegin.
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class IpCommunity extends AviRestResource {
    * End of ip address range.
    * Optional if ip_begin is the only ip address in specified ip range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipEnd
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class IpCommunity extends AviRestResource {
    * End of ip address range.
    * Optional if ip_begin is the only ip address in specified ip range.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipEnd set the ipEnd.
    */
   @VsoMethod

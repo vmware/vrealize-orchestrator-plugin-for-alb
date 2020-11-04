@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerVersion extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("patch")
-  @JsonInclude(Include.NON_NULL)
-  private String patch = null;
+    @JsonProperty("patch")
+    @JsonInclude(Include.NON_NULL)
+    private String patch = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class ControllerVersion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class ControllerVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch level for controller.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patch
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class ControllerVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch level for controller.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patch set the patch.
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class ControllerVersion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property version of obj type controllerversion field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -93,6 +98,7 @@ public class ControllerVersion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property version of obj type controllerversion field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

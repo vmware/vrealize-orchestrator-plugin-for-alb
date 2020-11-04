@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsQueryTypeMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("query_type")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> queryType = null;
+    @JsonProperty("query_type")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> queryType = null;
 
 
 
@@ -39,6 +39,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * Criterion to use for matching the dns query typein the question section.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * Criterion to use for matching the dns query typein the question section.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class DnsQueryTypeMatch extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryType
    */
   @VsoMethod

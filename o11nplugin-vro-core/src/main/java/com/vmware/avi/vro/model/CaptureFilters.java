@@ -26,49 +26,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CaptureFilters extends AviRestResource {
-  @JsonProperty("capture_ip")
-  @JsonInclude(Include.NON_NULL)
-  private DebugIpAddr captureIp = null;
+    @JsonProperty("capture_ip")
+    @JsonInclude(Include.NON_NULL)
+    private DebugIpAddr captureIp = null;
 
-  @JsonProperty("capture_ipc")
-  @JsonInclude(Include.NON_NULL)
-  private CaptureIPC captureIpc = null;
+    @JsonProperty("capture_ipc")
+    @JsonInclude(Include.NON_NULL)
+    private CaptureIPC captureIpc = null;
 
-  @JsonProperty("dst_port_end")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dstPortEnd = null;
+    @JsonProperty("dst_port_end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dstPortEnd = null;
 
-  @JsonProperty("dst_port_start")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dstPortStart = null;
+    @JsonProperty("dst_port_start")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dstPortStart = null;
 
-  @JsonProperty("eth_proto")
-  @JsonInclude(Include.NON_NULL)
-  private String ethProto = null;
+    @JsonProperty("eth_proto")
+    @JsonInclude(Include.NON_NULL)
+    private String ethProto = null;
 
-  @JsonProperty("ip_proto")
-  @JsonInclude(Include.NON_NULL)
-  private String ipProto = null;
+    @JsonProperty("ip_proto")
+    @JsonInclude(Include.NON_NULL)
+    private String ipProto = null;
 
-  @JsonProperty("src_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer srcPort = null;
+    @JsonProperty("src_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer srcPort = null;
 
-  @JsonProperty("tcp_ack")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tcpAck = null;
+    @JsonProperty("tcp_ack")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tcpAck = null;
 
-  @JsonProperty("tcp_fin")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tcpFin = null;
+    @JsonProperty("tcp_fin")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tcpFin = null;
 
-  @JsonProperty("tcp_push")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tcpPush = null;
+    @JsonProperty("tcp_push")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tcpPush = null;
 
-  @JsonProperty("tcp_syn")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean tcpSyn = null;
+    @JsonProperty("tcp_syn")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tcpSyn = null;
 
 
 
@@ -78,6 +78,7 @@ public class CaptureFilters extends AviRestResource {
    * Matches with source and destination address.
    * Curently not applicable for debugserviceengine.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureIp
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class CaptureFilters extends AviRestResource {
    * Matches with source and destination address.
    * Curently not applicable for debugserviceengine.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureIp set the captureIp.
    */
   @VsoMethod
@@ -103,6 +105,7 @@ public class CaptureFilters extends AviRestResource {
    * Capture filter for se ipc.
    * Not applicable for debug virtual service.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return captureIpc
    */
   @VsoMethod
@@ -115,6 +118,7 @@ public class CaptureFilters extends AviRestResource {
    * Capture filter for se ipc.
    * Not applicable for debug virtual service.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param captureIpc set the captureIpc.
    */
   @VsoMethod
@@ -126,6 +130,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination port range filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPortEnd
    */
   @VsoMethod
@@ -137,6 +142,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination port range filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPortEnd set the dstPortEnd.
    */
   @VsoMethod
@@ -148,6 +154,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Destination port range filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPortStart
    */
   @VsoMethod
@@ -159,6 +166,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Destination port range filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPortStart set the dstPortStart.
    */
   @VsoMethod
@@ -171,6 +179,7 @@ public class CaptureFilters extends AviRestResource {
    * Ethernet proto filter.
    * Enum options - ETH_TYPE_IPV4.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ethProto
    */
   @VsoMethod
@@ -183,6 +192,7 @@ public class CaptureFilters extends AviRestResource {
    * Ethernet proto filter.
    * Enum options - ETH_TYPE_IPV4.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ethProto set the ethProto.
    */
   @VsoMethod
@@ -196,6 +206,7 @@ public class CaptureFilters extends AviRestResource {
    * Support for tcp only for now.
    * Enum options - IP_TYPE_TCP.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipProto
    */
   @VsoMethod
@@ -209,6 +220,7 @@ public class CaptureFilters extends AviRestResource {
    * Support for tcp only for now.
    * Enum options - IP_TYPE_TCP.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipProto set the ipProto.
    */
   @VsoMethod
@@ -220,6 +232,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Source port filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcPort
    */
   @VsoMethod
@@ -231,6 +244,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Source port filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcPort set the srcPort.
    */
   @VsoMethod
@@ -242,6 +256,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp ack flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpAck
    */
   @VsoMethod
@@ -253,6 +268,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp ack flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpAck set the tcpAck.
    */
   @VsoMethod
@@ -264,6 +280,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp fin flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpFin
    */
   @VsoMethod
@@ -275,6 +292,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp fin flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpFin set the tcpFin.
    */
   @VsoMethod
@@ -286,6 +304,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp push flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpPush
    */
   @VsoMethod
@@ -297,6 +316,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp push flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpPush set the tcpPush.
    */
   @VsoMethod
@@ -308,6 +328,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp syn flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpSyn
    */
   @VsoMethod
@@ -319,6 +340,7 @@ public class CaptureFilters extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp syn flag filter.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpSyn set the tcpSyn.
    */
   @VsoMethod

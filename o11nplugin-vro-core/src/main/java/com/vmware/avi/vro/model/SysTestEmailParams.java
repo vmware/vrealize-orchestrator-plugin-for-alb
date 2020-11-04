@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SysTestEmailParams extends AviRestResource {
-  @JsonProperty("cc_emails")
-  @JsonInclude(Include.NON_NULL)
-  private String ccEmails = null;
+    @JsonProperty("cc_emails")
+    @JsonInclude(Include.NON_NULL)
+    private String ccEmails = null;
 
-  @JsonProperty("subject")
-  @JsonInclude(Include.NON_NULL)
-  private String subject = null;
+    @JsonProperty("subject")
+    @JsonInclude(Include.NON_NULL)
+    private String subject = null;
 
-  @JsonProperty("text")
-  @JsonInclude(Include.NON_NULL)
-  private String text = null;
+    @JsonProperty("text")
+    @JsonInclude(Include.NON_NULL)
+    private String text = null;
 
-  @JsonProperty("to_emails")
-  @JsonInclude(Include.NON_NULL)
-  private String toEmails = null;
+    @JsonProperty("to_emails")
+    @JsonInclude(Include.NON_NULL)
+    private String toEmails = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Alerts are copied to the comma separated list of  email recipients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccEmails
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Alerts are copied to the comma separated list of  email recipients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccEmails set the ccEmails.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The subject line of the originating email from  avi controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subject
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The subject line of the originating email from  avi controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subject set the subject.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The email context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return text
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The email context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param text set the text.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Alerts are sent to the comma separated list of  email recipients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toEmails
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class SysTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Alerts are sent to the comma separated list of  email recipients.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toEmails set the toEmails.
    */
   @VsoMethod

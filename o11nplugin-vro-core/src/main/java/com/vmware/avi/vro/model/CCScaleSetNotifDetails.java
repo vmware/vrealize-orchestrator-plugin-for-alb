@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CCScaleSetNotifDetails extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("scaleset_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> scalesetNames = null;
+    @JsonProperty("scaleset_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> scalesetNames = null;
 
 
 
@@ -42,6 +42,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud id.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud id.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detailed reason for the scale set notification.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Detailed reason for the scale set notification.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Names of scale sets for which polling failed.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scalesetNames
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method. this will set the scalesetNames
    * Names of scale sets for which polling failed.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scalesetNames
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class CCScaleSetNotifDetails extends AviRestResource {
    * This is the setter method this will set the scalesetNames
    * Names of scale sets for which polling failed.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scalesetNames
    */
   @VsoMethod

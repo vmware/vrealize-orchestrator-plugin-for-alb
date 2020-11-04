@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHmEventGslbPoolDetails extends AviRestResource {
-  @JsonProperty("gsgroup")
-  @JsonInclude(Include.NON_NULL)
-  private String gsgroup = null;
+    @JsonProperty("gsgroup")
+    @JsonInclude(Include.NON_NULL)
+    private String gsgroup = null;
 
-  @JsonProperty("gslb_service")
-  @JsonInclude(Include.NON_NULL)
-  private String gslbService = null;
+    @JsonProperty("gslb_service")
+    @JsonInclude(Include.NON_NULL)
+    private String gslbService = null;
 
-  @JsonProperty("gsmember")
-  @JsonInclude(Include.NON_NULL)
-  private SeHmEventGslbPoolMemberDetails gsmember = null;
+    @JsonProperty("gsmember")
+    @JsonInclude(Include.NON_NULL)
+    private SeHmEventGslbPoolMemberDetails gsmember = null;
 
-  @JsonProperty("ha_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String haReason = null;
+    @JsonProperty("ha_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String haReason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("src_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String srcUuid = null;
+    @JsonProperty("src_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String srcUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Gslbservice pool name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsgroup
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslbservice pool name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsgroup set the gsgroup.
    */
   @VsoMethod
@@ -75,6 +77,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb service name.
    * It is a reference to an object of type gslbservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbService
    */
   @VsoMethod
@@ -86,6 +89,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb service name.
    * It is a reference to an object of type gslbservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbService set the gslbService.
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Gslbservice member details.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsmember
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Gslbservice member details.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsmember set the gsmember.
    */
   @VsoMethod
@@ -116,6 +122,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return haReason
    */
   @VsoMethod
@@ -126,6 +133,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ha compromised reason.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param haReason set the haReason.
    */
   @VsoMethod
@@ -136,6 +144,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -146,6 +155,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Service engine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -156,6 +166,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
   @VsoMethod
@@ -166,6 +177,7 @@ public class SeHmEventGslbPoolDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */
   @VsoMethod

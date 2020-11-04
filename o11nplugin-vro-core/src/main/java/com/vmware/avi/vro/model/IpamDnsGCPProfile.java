@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsGCPProfile extends AviRestResource {
-  @JsonProperty("match_se_group_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean matchSeGroupSubnet = false;
+    @JsonProperty("match_se_group_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean matchSeGroupSubnet = false;
 
-  @JsonProperty("network_host_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String networkHostProjectId = null;
+    @JsonProperty("network_host_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String networkHostProjectId = null;
 
-  @JsonProperty("region_name")
-  @JsonInclude(Include.NON_NULL)
-  private String regionName = null;
+    @JsonProperty("region_name")
+    @JsonInclude(Include.NON_NULL)
+    private String regionName = null;
 
-  @JsonProperty("se_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String seProjectId = null;
+    @JsonProperty("se_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String seProjectId = null;
 
-  @JsonProperty("usable_network_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableNetworkRefs = null;
+    @JsonProperty("usable_network_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableNetworkRefs = null;
 
-  @JsonProperty("use_gcp_network")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useGcpNetwork = false;
+    @JsonProperty("use_gcp_network")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useGcpNetwork = false;
 
-  @JsonProperty("vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcNetworkName = null;
+    @JsonProperty("vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcNetworkName = null;
 
 
 
@@ -85,6 +85,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * Google cloud platform network host project id.
    * This is the host project in which google cloud platform network resides.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkHostProjectId
    */
   @VsoMethod
@@ -97,6 +98,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * Google cloud platform network host project id.
    * This is the host project in which google cloud platform network resides.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkHostProjectId set the networkHostProjectId.
    */
   @VsoMethod
@@ -108,6 +110,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform region name.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return regionName
    */
   @VsoMethod
@@ -119,6 +122,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform region name.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param regionName set the regionName.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This field is optional.
    * By default it will use the value of the field network_host_project_id.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seProjectId
    */
   @VsoMethod
@@ -147,6 +152,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This field is optional.
    * By default it will use the value of the field network_host_project_id.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seProjectId set the seProjectId.
    */
   @VsoMethod
@@ -160,6 +166,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
   @VsoMethod
@@ -173,6 +180,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
   @VsoMethod
@@ -186,6 +194,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkRefs
    */
   @VsoMethod
@@ -228,6 +237,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform vpc network name.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcNetworkName
    */
   @VsoMethod
@@ -239,6 +249,7 @@ public class IpamDnsGCPProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform vpc network name.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcNetworkName set the vpcNetworkName.
    */
   @VsoMethod

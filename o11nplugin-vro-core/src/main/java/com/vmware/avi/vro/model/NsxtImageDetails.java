@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtImageDetails extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("image_version")
-  @JsonInclude(Include.NON_NULL)
-  private String imageVersion = null;
+    @JsonProperty("image_version")
+    @JsonInclude(Include.NON_NULL)
+    private String imageVersion = null;
 
-  @JsonProperty("vc_url")
-  @JsonInclude(Include.NON_NULL)
-  private String vcUrl = null;
+    @JsonProperty("vc_url")
+    @JsonInclude(Include.NON_NULL)
+    private String vcUrl = null;
 
 
 
@@ -46,6 +46,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error message.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Error message.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Image version.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageVersion
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Image version.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageVersion set the imageVersion.
    */
   @VsoMethod
@@ -112,6 +118,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vc url.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcUrl
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class NsxtImageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Vc url.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcUrl set the vcUrl.
    */
   @VsoMethod

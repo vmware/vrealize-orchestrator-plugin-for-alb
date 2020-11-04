@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVsVIPObj"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="cbc96b90-dab9-4801-85a7-de03725e9f87" version="0.2.0"
+	id="cbc96b90-dab9-4801-85a7-de03725e9f87" version="0.2.1"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -13,7 +13,9 @@
 	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
 	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
 	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
-	<param n="tier1" t="string"><![CDATA[]]>
+	<param n="tier1" t="string"><![CDATA[
+	]]></param>
+	<param n="ServerCloud" t="string"><![CDATA[]]>
 	</param>
 	<script encoded="false"><![CDATA[/************************************************************
 * This action initializes VS_VIP properties objects         *
@@ -54,6 +56,9 @@ try{
 			vsVipObject.setVip(vsVipList);
 			if(tier1!==null && tier1!=""){
 				vsVipObject.setTier1Lr(tier1);
+			}
+			if(ServerCloud!==null && ServerCloud!=""){
+				vsVipObject.setCloudRef("/api/cloud?name="+ServerCloud);
 			}
 			aviVroClient.addObject(vsVipObject);
 			System.log("vsVipObject : "+vsVipObject);

@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsPoolNwFilterEventDetails extends AviRestResource {
-  @JsonProperty("filter")
-  @JsonInclude(Include.NON_NULL)
-  private String filter = null;
+    @JsonProperty("filter")
+    @JsonInclude(Include.NON_NULL)
+    private String filter = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("network")
-  @JsonInclude(Include.NON_NULL)
-  private String network = null;
+    @JsonProperty("network")
+    @JsonInclude(Include.NON_NULL)
+    private String network = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property filter of obj type vspoolnwfiltereventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filter
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VsPoolNwFilterEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property filter of obj type vspoolnwfiltereventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param filter set the filter.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VsPoolNwFilterEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class VsPoolNwFilterEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class VsPoolNwFilterEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network of obj type vspoolnwfiltereventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return network
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class VsPoolNwFilterEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network of obj type vspoolnwfiltereventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param network set the network.
    */
   @VsoMethod

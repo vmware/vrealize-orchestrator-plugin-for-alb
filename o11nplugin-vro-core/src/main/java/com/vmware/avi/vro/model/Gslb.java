@@ -26,81 +26,77 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Gslb extends AviRestResource {
-  @JsonProperty("async_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer asyncInterval = 0;
+    @JsonProperty("async_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer asyncInterval = 0;
 
-  @JsonProperty("clear_on_max_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clearOnMaxRetries = 20;
+    @JsonProperty("clear_on_max_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clearOnMaxRetries = 20;
 
-  @JsonProperty("client_ip_addr_group")
-  @JsonInclude(Include.NON_NULL)
-  private GslbClientIpAddrGroup clientIpAddrGroup = null;
+    @JsonProperty("client_ip_addr_group")
+    @JsonInclude(Include.NON_NULL)
+    private GslbClientIpAddrGroup clientIpAddrGroup = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("dns_configs")
-  @JsonInclude(Include.NON_NULL)
-  private List<DNSConfig> dnsConfigs = null;
+    @JsonProperty("dns_configs")
+    @JsonInclude(Include.NON_NULL)
+    private List<DNSConfig> dnsConfigs = null;
 
-  @JsonProperty("error_resync_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer errorResyncInterval = 300;
+    @JsonProperty("error_resync_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer errorResyncInterval = 300;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = true;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = true;
 
-  @JsonProperty("leader_cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String leaderClusterUuid = null;
+    @JsonProperty("leader_cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String leaderClusterUuid = null;
 
-  @JsonProperty("maintenance_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean maintenanceMode = false;
+    @JsonProperty("maintenance_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean maintenanceMode = false;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("replication_policy")
-  @JsonInclude(Include.NON_NULL)
-  private ReplicationPolicy replicationPolicy = null;
+    @JsonProperty("replication_policy")
+    @JsonInclude(Include.NON_NULL)
+    private ReplicationPolicy replicationPolicy = null;
 
-  @JsonProperty("send_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sendInterval = 15;
+    @JsonProperty("send_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sendInterval = 15;
 
-  @JsonProperty("send_interval_prior_to_maintenance_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sendIntervalPriorToMaintenanceMode = null;
+    @JsonProperty("sites")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbSite> sites = null;
 
-  @JsonProperty("sites")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbSite> sites = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("third_party_sites")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbThirdPartySite> thirdPartySites = null;
 
-  @JsonProperty("third_party_sites")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbThirdPartySite> thirdPartySites = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
-
-  @JsonProperty("view_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer viewId = 0;
+    @JsonProperty("view_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer viewId = 0;
 
 
 
@@ -110,6 +106,7 @@ public class Gslb extends AviRestResource {
    * Value of 0 disables async behavior and rpc are sent inline.
    * Allowed values are 0-5.
    * Field introduced in 18.2.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return asyncInterval
    */
@@ -124,6 +121,7 @@ public class Gslb extends AviRestResource {
    * Value of 0 disables async behavior and rpc are sent inline.
    * Allowed values are 0-5.
    * Field introduced in 18.2.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param asyncInterval set the asyncInterval.
    */
@@ -162,6 +160,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Group to specify if the client ip addresses are public or private.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpAddrGroup
    */
   @VsoMethod
@@ -173,6 +172,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method to the attribute.
    * Group to specify if the client ip addresses are public or private.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpAddrGroup set the clientIpAddrGroup.
    */
   @VsoMethod
@@ -183,6 +183,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -193,6 +194,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -204,6 +206,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sub domain configuration for the gslb.
    * Gslb service's fqdn must be a match one of these subdomains.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsConfigs
    */
   @VsoMethod
@@ -215,6 +218,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method. this will set the dnsConfigs
    * Sub domain configuration for the gslb.
    * Gslb service's fqdn must be a match one of these subdomains.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsConfigs
    */
   @VsoMethod
@@ -226,6 +230,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method this will set the dnsConfigs
    * Sub domain configuration for the gslb.
    * Gslb service's fqdn must be a match one of these subdomains.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsConfigs
    */
   @VsoMethod
@@ -245,6 +250,7 @@ public class Gslb extends AviRestResource {
    * Allowed values are 60-3600.
    * Special values are 0 - 'disable'.
    * Field introduced in 18.2.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return errorResyncInterval
    */
@@ -260,6 +266,7 @@ public class Gslb extends AviRestResource {
    * Allowed values are 60-3600.
    * Special values are 0 - 'disable'.
    * Field introduced in 18.2.3.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param errorResyncInterval set the errorResyncInterval.
    */
@@ -296,6 +303,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mark this site as leader of gslb configuration.
    * This site is the one among the avi sites.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return leaderClusterUuid
    */
   @VsoMethod
@@ -307,6 +315,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method to the attribute.
    * Mark this site as leader of gslb configuration.
    * This site is the one among the avi sites.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param leaderClusterUuid set the leaderClusterUuid.
    */
   @VsoMethod
@@ -349,6 +358,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name for the gslb object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -359,6 +369,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the gslb object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -370,6 +381,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Policy for replicating configuration to the active follower sites.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return replicationPolicy
    */
   @VsoMethod
@@ -381,6 +393,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method to the attribute.
    * Policy for replicating configuration to the active follower sites.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param replicationPolicy set the replicationPolicy.
    */
   @VsoMethod
@@ -392,6 +405,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Frequency with which group members communicate.
    * Allowed values are 1-3600.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return sendInterval
    */
@@ -404,6 +418,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method to the attribute.
    * Frequency with which group members communicate.
    * Allowed values are 1-3600.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @param sendInterval set the sendInterval.
    */
@@ -414,35 +429,8 @@ public class Gslb extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The user can specify a send-interval while entering maintenance mode.
-   * The validity of this 'maintenance send-interval' is only during maintenance mode.
-   * When the user leaves maintenance mode, the original send-interval is reinstated.
-   * This internal variable is used to store the original send-interval.
-   * Field introduced in 18.2.3.
-   * @return sendIntervalPriorToMaintenanceMode
-   */
-  @VsoMethod
-  public Integer getSendIntervalPriorToMaintenanceMode() {
-    return sendIntervalPriorToMaintenanceMode;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * The user can specify a send-interval while entering maintenance mode.
-   * The validity of this 'maintenance send-interval' is only during maintenance mode.
-   * When the user leaves maintenance mode, the original send-interval is reinstated.
-   * This internal variable is used to store the original send-interval.
-   * Field introduced in 18.2.3.
-   * @param sendIntervalPriorToMaintenanceMode set the sendIntervalPriorToMaintenanceMode.
-   */
-  @VsoMethod
-  public void setSendIntervalPriorToMaintenanceMode(Integer  sendIntervalPriorToMaintenanceMode) {
-    this.sendIntervalPriorToMaintenanceMode = sendIntervalPriorToMaintenanceMode;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Select avi site member belonging to this gslb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sites
    */
   @VsoMethod
@@ -453,6 +441,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the setter method. this will set the sites
    * Select avi site member belonging to this gslb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sites
    */
   @VsoMethod
@@ -463,6 +452,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the setter method this will set the sites
    * Select avi site member belonging to this gslb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sites
    */
   @VsoMethod
@@ -478,6 +468,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -488,6 +479,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -499,6 +491,7 @@ public class Gslb extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Third party site member belonging to this gslb.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySites
    */
   @VsoMethod
@@ -510,6 +503,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method. this will set the thirdPartySites
    * Third party site member belonging to this gslb.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySites
    */
   @VsoMethod
@@ -521,6 +515,7 @@ public class Gslb extends AviRestResource {
    * This is the setter method this will set the thirdPartySites
    * Third party site member belonging to this gslb.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySites
    */
   @VsoMethod
@@ -555,6 +550,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the gslb object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -565,6 +561,7 @@ public class Gslb extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the gslb object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -623,7 +620,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.asyncInterval, objGslb.asyncInterval)&&
   Objects.equals(this.errorResyncInterval, objGslb.errorResyncInterval)&&
   Objects.equals(this.replicationPolicy, objGslb.replicationPolicy)&&
-  Objects.equals(this.sendIntervalPriorToMaintenanceMode, objGslb.sendIntervalPriorToMaintenanceMode)&&
   Objects.equals(this.maintenanceMode, objGslb.maintenanceMode)&&
   Objects.equals(this.isFederated, objGslb.isFederated)&&
   Objects.equals(this.description, objGslb.description)&&
@@ -646,7 +642,6 @@ public String toString() {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    replicationPolicy: ").append(toIndentedString(replicationPolicy)).append("\n");
         sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
-        sb.append("    sendIntervalPriorToMaintenanceMode: ").append(toIndentedString(sendIntervalPriorToMaintenanceMode)).append("\n");
         sb.append("    sites: ").append(toIndentedString(sites)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    thirdPartySites: ").append(toIndentedString(thirdPartySites)).append("\n");

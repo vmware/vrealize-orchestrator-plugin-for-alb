@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CookieMatch extends AviRestResource {
-  @JsonProperty("match_case")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCase = "INSENSITIVE";
+    @JsonProperty("match_case")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCase = "INSENSITIVE";
 
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private String value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private String value = null;
 
 
 
@@ -46,7 +46,7 @@ public class CookieMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class CookieMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
   @VsoMethod
@@ -71,6 +71,7 @@ public class CookieMatch extends AviRestResource {
    * Criterion to use for matching the cookie in the http request.
    * Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH,
    * HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class CookieMatch extends AviRestResource {
    * Criterion to use for matching the cookie in the http request.
    * Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH,
    * HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class CookieMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the cookie.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class CookieMatch extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the cookie.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -113,6 +117,7 @@ public class CookieMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String value in the cookie.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class CookieMatch extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * String value in the cookie.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

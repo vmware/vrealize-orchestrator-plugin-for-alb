@@ -24,49 +24,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureConfiguration extends AviRestResource {
-  @JsonProperty("availability_zones")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> availabilityZones = null;
+    @JsonProperty("availability_zones")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> availabilityZones = null;
 
-  @JsonProperty("cloud_credentials_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudCredentialsRef = null;
+    @JsonProperty("cloud_credentials_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudCredentialsRef = null;
 
-  @JsonProperty("des_id")
-  @JsonInclude(Include.NON_NULL)
-  private String desId = null;
+    @JsonProperty("des_id")
+    @JsonInclude(Include.NON_NULL)
+    private String desId = null;
 
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private String location = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private String location = null;
 
-  @JsonProperty("network_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<AzureNetworkInfo> networkInfo = null;
+    @JsonProperty("network_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<AzureNetworkInfo> networkInfo = null;
 
-  @JsonProperty("resource_group")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceGroup = null;
+    @JsonProperty("resource_group")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceGroup = null;
 
-  @JsonProperty("subscription_id")
-  @JsonInclude(Include.NON_NULL)
-  private String subscriptionId = null;
+    @JsonProperty("subscription_id")
+    @JsonInclude(Include.NON_NULL)
+    private String subscriptionId = null;
 
-  @JsonProperty("use_azure_dns")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useAzureDns = false;
+    @JsonProperty("use_azure_dns")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useAzureDns = false;
 
-  @JsonProperty("use_enhanced_ha")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useEnhancedHa = false;
+    @JsonProperty("use_enhanced_ha")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useEnhancedHa = false;
 
-  @JsonProperty("use_managed_disks")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useManagedDisks = true;
+    @JsonProperty("use_managed_disks")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useManagedDisks = true;
 
-  @JsonProperty("use_standard_alb")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useStandardAlb = false;
+    @JsonProperty("use_standard_alb")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useStandardAlb = false;
 
 
 
@@ -74,6 +74,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availability zones to be used in azure.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZones
    */
   @VsoMethod
@@ -85,6 +86,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method. this will set the availabilityZones
    * Availability zones to be used in azure.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZones
    */
   @VsoMethod
@@ -96,6 +98,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method this will set the availabilityZones
    * Availability zones to be used in azure.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZones
    */
   @VsoMethod
@@ -113,6 +116,7 @@ public class AzureConfiguration extends AviRestResource {
    * Credentials to access azure cloud.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudCredentialsRef
    */
   @VsoMethod
@@ -125,6 +129,7 @@ public class AzureConfiguration extends AviRestResource {
    * Credentials to access azure cloud.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudCredentialsRef set the cloudCredentialsRef.
    */
   @VsoMethod
@@ -136,6 +141,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Disks encryption set resource-id (des_id) to encrypt se image and managed disk using customer-managed-keys.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return desId
    */
   @VsoMethod
@@ -147,6 +153,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Disks encryption set resource-id (des_id) to encrypt se image and managed disk using customer-managed-keys.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param desId set the desId.
    */
   @VsoMethod
@@ -158,6 +165,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure location where this cloud will be located.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -169,6 +177,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure location where this cloud will be located.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -180,6 +189,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure virtual network and subnet information.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkInfo
    */
   @VsoMethod
@@ -191,6 +201,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method. this will set the networkInfo
    * Azure virtual network and subnet information.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkInfo
    */
   @VsoMethod
@@ -202,6 +213,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method this will set the networkInfo
    * Azure virtual network and subnet information.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkInfo
    */
   @VsoMethod
@@ -219,6 +231,7 @@ public class AzureConfiguration extends AviRestResource {
    * Azure resource group dedicated for avi controller.
    * Avi controller will create all its resources in this resource group.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceGroup
    */
   @VsoMethod
@@ -231,6 +244,7 @@ public class AzureConfiguration extends AviRestResource {
    * Azure resource group dedicated for avi controller.
    * Avi controller will create all its resources in this resource group.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceGroup set the resourceGroup.
    */
   @VsoMethod
@@ -242,6 +256,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subscription id for the azure subscription.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subscriptionId
    */
   @VsoMethod
@@ -253,6 +268,7 @@ public class AzureConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Subscription id for the azure subscription.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subscriptionId set the subscriptionId.
    */
   @VsoMethod

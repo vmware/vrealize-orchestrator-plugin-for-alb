@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClientLogConfiguration extends AviRestResource {
-  @JsonProperty("enable_significant_log_collection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableSignificantLogCollection = true;
+    @JsonProperty("enable_significant_log_collection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableSignificantLogCollection = true;
 
-  @JsonProperty("filtered_log_processing")
-  @JsonInclude(Include.NON_NULL)
-  private String filteredLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
+    @JsonProperty("filtered_log_processing")
+    @JsonInclude(Include.NON_NULL)
+    private String filteredLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
 
-  @JsonProperty("non_significant_log_processing")
-  @JsonInclude(Include.NON_NULL)
-  private String nonSignificantLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
+    @JsonProperty("non_significant_log_processing")
+    @JsonInclude(Include.NON_NULL)
+    private String nonSignificantLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
 
-  @JsonProperty("significant_log_processing")
-  @JsonInclude(Include.NON_NULL)
-  private String significantLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
+    @JsonProperty("significant_log_processing")
+    @JsonInclude(Include.NON_NULL)
+    private String significantLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
 
 
 
@@ -47,7 +47,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enable significant log collection.
    * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
    * For example, these logs correspond to error conditions such as when the response code for a request is 500.
-   * Users can disable this flag to turn off default significant log collection.
+   * Users can deactivate this flag to turn off default significant log collection.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableSignificantLogCollection
    */
@@ -61,7 +61,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enable significant log collection.
    * By default, this flag is enabled, which means that avi ses collect significant logs and forward them to controller for further processing.
    * For example, these logs correspond to error conditions such as when the response code for a request is 500.
-   * Users can disable this flag to turn off default significant log collection.
+   * Users can deactivate this flag to turn off default significant log collection.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableSignificantLogCollection set the enableSignificantLogCollection.
    */
@@ -77,7 +77,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
    * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
    * @return filteredLogProcessing
    */
   @VsoMethod
@@ -92,7 +92,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
    * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
    * @param filteredLogProcessing set the filteredLogProcessing.
    */
   @VsoMethod
@@ -106,7 +106,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
    * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
    * @return nonSignificantLogProcessing
    */
   @VsoMethod
@@ -120,7 +120,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
    * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
    * @param nonSignificantLogProcessing set the nonSignificantLogProcessing.
    */
   @VsoMethod
@@ -134,7 +134,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
    * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
    * @return significantLogProcessing
    */
   @VsoMethod
@@ -148,7 +148,7 @@ public class ClientLogConfiguration extends AviRestResource {
    * Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX,
    * LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND".
    * @param significantLogProcessing set the significantLogProcessing.
    */
   @VsoMethod

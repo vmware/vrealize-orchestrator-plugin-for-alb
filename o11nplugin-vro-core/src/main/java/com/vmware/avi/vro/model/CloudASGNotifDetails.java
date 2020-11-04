@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudASGNotifDetails extends AviRestResource {
-  @JsonProperty("asg_name")
-  @JsonInclude(Include.NON_NULL)
-  private String asgName = null;
+    @JsonProperty("asg_name")
+    @JsonInclude(Include.NON_NULL)
+    private String asgName = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
 
 
@@ -46,6 +46,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Autoscale group name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return asgName
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Autoscale group name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param asgName set the asgName.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Failure reason if autoscale group creation or deletion fails.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Failure reason if autoscale group creation or deletion fails.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * Pool uuid.
    * It is a reference to an object of type pool.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class CloudASGNotifDetails extends AviRestResource {
    * Pool uuid.
    * It is a reference to an object of type pool.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod

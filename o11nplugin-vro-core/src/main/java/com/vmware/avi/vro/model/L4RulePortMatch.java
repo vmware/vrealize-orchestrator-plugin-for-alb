@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4RulePortMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("port_ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<PortRange> portRanges = null;
+    @JsonProperty("port_ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<PortRange> portRanges = null;
 
-  @JsonProperty("ports")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> ports = null;
+    @JsonProperty("ports")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> ports = null;
 
 
 
@@ -43,6 +43,7 @@ public class L4RulePortMatch extends AviRestResource {
    * Criterion to use for virtual service port matching.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class L4RulePortMatch extends AviRestResource {
    * Criterion to use for virtual service port matching.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class L4RulePortMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Range of tcp/udp port numbers of the virtual service.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portRanges
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class L4RulePortMatch extends AviRestResource {
    * This is the setter method. this will set the portRanges
    * Range of tcp/udp port numbers of the virtual service.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portRanges
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class L4RulePortMatch extends AviRestResource {
    * This is the setter method this will set the portRanges
    * Range of tcp/udp port numbers of the virtual service.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portRanges
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class L4RulePortMatch extends AviRestResource {
    * Virtual service's listening port(s).
    * Allowed values are 1-65535.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class L4RulePortMatch extends AviRestResource {
    * Virtual service's listening port(s).
    * Allowed values are 1-65535.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class L4RulePortMatch extends AviRestResource {
    * Virtual service's listening port(s).
    * Allowed values are 1-65535.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
   @VsoMethod

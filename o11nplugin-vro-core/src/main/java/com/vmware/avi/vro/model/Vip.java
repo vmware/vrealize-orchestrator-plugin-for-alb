@@ -31,101 +31,101 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Vip extends AviRestResource {
-  @JsonProperty("auto_allocate_floating_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoAllocateFloatingIp = false;
+    @JsonProperty("auto_allocate_floating_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoAllocateFloatingIp = false;
 
-  @JsonProperty("auto_allocate_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoAllocateIp = false;
+    @JsonProperty("auto_allocate_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoAllocateIp = false;
 
-  @JsonProperty("auto_allocate_ip_type")
-  @JsonInclude(Include.NON_NULL)
-  private String autoAllocateIpType = "V4_ONLY";
+    @JsonProperty("auto_allocate_ip_type")
+    @JsonInclude(Include.NON_NULL)
+    private String autoAllocateIpType = "V4_ONLY";
 
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("avi_allocated_fip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aviAllocatedFip = false;
+    @JsonProperty("avi_allocated_fip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aviAllocatedFip = false;
 
-  @JsonProperty("avi_allocated_vip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aviAllocatedVip = false;
+    @JsonProperty("avi_allocated_vip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aviAllocatedVip = false;
 
-  @JsonProperty("discovered_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<DiscoveredNetwork> discoveredNetworks = null;
+    @JsonProperty("discovered_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<DiscoveredNetwork> discoveredNetworks = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("floating_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr floatingIp = null;
+    @JsonProperty("floating_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr floatingIp = null;
 
-  @JsonProperty("floating_ip6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr floatingIp6 = null;
+    @JsonProperty("floating_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr floatingIp6 = null;
 
-  @JsonProperty("floating_subnet6_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String floatingSubnet6Uuid = null;
+    @JsonProperty("floating_subnet6_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String floatingSubnet6Uuid = null;
 
-  @JsonProperty("floating_subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String floatingSubnetUuid = null;
+    @JsonProperty("floating_subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String floatingSubnetUuid = null;
 
-  @JsonProperty("ip6_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip6Address = null;
+    @JsonProperty("ip6_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip6Address = null;
 
-  @JsonProperty("ip_address")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ipAddress = null;
+    @JsonProperty("ip_address")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ipAddress = null;
 
-  @JsonProperty("ipam_network_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IPNetworkSubnet ipamNetworkSubnet = null;
+    @JsonProperty("ipam_network_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IPNetworkSubnet ipamNetworkSubnet = null;
 
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("placement_networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<VipPlacementNetwork> placementNetworks = null;
+    @JsonProperty("placement_networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<VipPlacementNetwork> placementNetworks = null;
 
-  @JsonProperty("port_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String portUuid = null;
+    @JsonProperty("port_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String portUuid = null;
 
-  @JsonProperty("prefix_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer prefixLength = 32;
+    @JsonProperty("prefix_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer prefixLength = 32;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
-  @JsonProperty("subnet6")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet6 = null;
+    @JsonProperty("subnet6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet6 = null;
 
-  @JsonProperty("subnet6_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet6Uuid = null;
+    @JsonProperty("subnet6_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet6Uuid = null;
 
-  @JsonProperty("subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetUuid = null;
+    @JsonProperty("subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetUuid = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
 
 
@@ -182,7 +182,7 @@ public class Vip extends AviRestResource {
    * Specifies whether to auto-allocate only a v4 address, only a v6 address, or one of each type.
    * Enum options - V4_ONLY, V6_ONLY, V4_V6.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as V4_ONLY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "V4_ONLY".
    * @return autoAllocateIpType
    */
   @VsoMethod
@@ -195,7 +195,7 @@ public class Vip extends AviRestResource {
    * Specifies whether to auto-allocate only a v4 address, only a v6 address, or one of each type.
    * Enum options - V4_ONLY, V6_ONLY, V4_V6.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as V4_ONLY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "V4_ONLY".
    * @param autoAllocateIpType set the autoAllocateIpType.
    */
   @VsoMethod
@@ -207,6 +207,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availability-zone to place the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -218,6 +219,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Availability-zone to place the virtual service.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -277,6 +279,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Discovered networks providing reachability for client facing vip ip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
   @VsoMethod
@@ -288,6 +291,7 @@ public class Vip extends AviRestResource {
    * This is the setter method. this will set the discoveredNetworks
    * Discovered networks providing reachability for client facing vip ip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
   @VsoMethod
@@ -299,6 +303,7 @@ public class Vip extends AviRestResource {
    * This is the setter method this will set the discoveredNetworks
    * Discovered networks providing reachability for client facing vip ip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discoveredNetworks
    */
   @VsoMethod
@@ -339,6 +344,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floating ipv4 to associate with this vip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIp
    */
   @VsoMethod
@@ -350,6 +356,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Floating ipv4 to associate with this vip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param floatingIp set the floatingIp.
    */
   @VsoMethod
@@ -361,6 +368,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floating ipv6 address to associate with this vip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIp6
    */
   @VsoMethod
@@ -372,6 +380,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Floating ipv6 address to associate with this vip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param floatingIp6 set the floatingIp6.
    */
   @VsoMethod
@@ -383,6 +392,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ipv6 address allocation.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingSubnet6Uuid
    */
   @VsoMethod
@@ -394,6 +404,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ipv6 address allocation.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param floatingSubnet6Uuid set the floatingSubnet6Uuid.
    */
   @VsoMethod
@@ -405,6 +416,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingSubnetUuid
    */
   @VsoMethod
@@ -416,6 +428,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param floatingSubnetUuid set the floatingSubnetUuid.
    */
   @VsoMethod
@@ -427,6 +440,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv6 address of the vip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6Address
    */
   @VsoMethod
@@ -438,6 +452,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv6 address of the vip.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6Address set the ip6Address.
    */
   @VsoMethod
@@ -449,6 +464,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipv4 address of the vip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddress
    */
   @VsoMethod
@@ -460,6 +476,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipv4 address of the vip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddress set the ipAddress.
    */
   @VsoMethod
@@ -471,6 +488,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet and/or network for allocating virtualservice ip by ipam provider module.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipamNetworkSubnet
    */
   @VsoMethod
@@ -482,6 +500,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet and/or network for allocating virtualservice ip by ipam provider module.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipamNetworkSubnet set the ipamNetworkSubnet.
    */
   @VsoMethod
@@ -494,6 +513,7 @@ public class Vip extends AviRestResource {
    * Manually override the network on which the vip is placed.
    * It is a reference to an object of type network.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -506,6 +526,7 @@ public class Vip extends AviRestResource {
    * Manually override the network on which the vip is placed.
    * It is a reference to an object of type network.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -517,6 +538,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Placement networks/subnets to use for vip placement.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
   @VsoMethod
@@ -528,6 +550,7 @@ public class Vip extends AviRestResource {
    * This is the setter method. this will set the placementNetworks
    * Placement networks/subnets to use for vip placement.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
   @VsoMethod
@@ -539,6 +562,7 @@ public class Vip extends AviRestResource {
    * This is the setter method this will set the placementNetworks
    * Placement networks/subnets to use for vip placement.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return placementNetworks
    */
   @VsoMethod
@@ -555,6 +579,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) network port assigned to the vip ip address.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portUuid
    */
   @VsoMethod
@@ -566,6 +591,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) network port assigned to the vip ip address.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portUuid set the portUuid.
    */
   @VsoMethod
@@ -603,6 +629,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet providing reachability for client facing vip ip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -614,6 +641,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet providing reachability for client facing vip ip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -625,6 +653,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet providing reachability for client facing vip ipv6.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
   @VsoMethod
@@ -636,6 +665,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet providing reachability for client facing vip ipv6.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */
   @VsoMethod
@@ -649,6 +679,7 @@ public class Vip extends AviRestResource {
    * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
    * selected.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6Uuid
    */
   @VsoMethod
@@ -662,6 +693,7 @@ public class Vip extends AviRestResource {
    * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
    * selected.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6Uuid set the subnet6Uuid.
    */
   @VsoMethod
@@ -675,6 +707,7 @@ public class Vip extends AviRestResource {
    * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
    * selected.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetUuid
    */
   @VsoMethod
@@ -688,6 +721,7 @@ public class Vip extends AviRestResource {
    * This field is applicable only if the virtualservice belongs to an openstack or aws cloud, in which case it is mandatory, if auto_allocate is
    * selected.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetUuid set the subnetUuid.
    */
   @VsoMethod
@@ -699,6 +733,7 @@ public class Vip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Unique id associated with the vip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -710,6 +745,7 @@ public class Vip extends AviRestResource {
    * This is the setter method to the attribute.
    * Unique id associated with the vip.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod

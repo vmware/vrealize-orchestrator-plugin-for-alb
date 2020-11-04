@@ -24,59 +24,60 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeUpgradeEvents extends AviRestResource {
-  @JsonProperty("from_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String fromSeRef = null;
+    @JsonProperty("from_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String fromSeRef = null;
 
-  @JsonProperty("num_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSe = null;
+    @JsonProperty("num_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSe = null;
 
-  @JsonProperty("num_se_group")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSeGroup = null;
+    @JsonProperty("num_se_group")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSeGroup = null;
 
-  @JsonProperty("num_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVs = null;
+    @JsonProperty("num_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVs = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reason = null;
 
-  @JsonProperty("se_group_ha_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupHaMode = null;
+    @JsonProperty("se_group_ha_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupHaMode = null;
 
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
-  @JsonProperty("task")
-  @JsonInclude(Include.NON_NULL)
-  private String task = null;
+    @JsonProperty("task")
+    @JsonInclude(Include.NON_NULL)
+    private String task = null;
 
-  @JsonProperty("to_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String toSeRef = null;
+    @JsonProperty("to_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String toSeRef = null;
 
-  @JsonProperty("traffic_status")
-  @JsonInclude(Include.NON_NULL)
-  private String trafficStatus = null;
+    @JsonProperty("traffic_status")
+    @JsonInclude(Include.NON_NULL)
+    private String trafficStatus = null;
 
-  @JsonProperty("vs_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vsRef = null;
+    @JsonProperty("vs_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vsRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromSeRef
    */
   @VsoMethod
@@ -87,6 +88,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromSeRef set the fromSeRef.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se of obj type seupgradeevents field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
   @VsoMethod
@@ -107,6 +110,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se of obj type seupgradeevents field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se_group of obj type seupgradeevents field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSeGroup
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se_group of obj type seupgradeevents field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSeGroup set the numSeGroup.
    */
   @VsoMethod
@@ -137,6 +143,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vs of obj type seupgradeevents field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVs
    */
   @VsoMethod
@@ -147,6 +154,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vs of obj type seupgradeevents field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVs set the numVs.
    */
   @VsoMethod
@@ -157,6 +165,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type seupgradeevents field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -167,6 +176,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method. this will set the reason
    * Placeholder for description of property reason of obj type seupgradeevents field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -177,6 +187,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method this will set the reason
    * Placeholder for description of property reason of obj type seupgradeevents field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -192,6 +203,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupHaMode
    */
   @VsoMethod
@@ -202,6 +214,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupHaMode set the seGroupHaMode.
    */
   @VsoMethod
@@ -212,6 +225,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
   @VsoMethod
@@ -222,6 +236,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
   @VsoMethod
@@ -232,6 +247,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -242,6 +258,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -255,6 +272,7 @@ public class SeUpgradeEvents extends AviRestResource {
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
    * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return task
    */
   @VsoMethod
@@ -268,6 +286,7 @@ public class SeUpgradeEvents extends AviRestResource {
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
    * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param task set the task.
    */
   @VsoMethod
@@ -278,6 +297,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return toSeRef
    */
   @VsoMethod
@@ -288,6 +308,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param toSeRef set the toSeRef.
    */
   @VsoMethod
@@ -298,6 +319,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trafficStatus
    */
   @VsoMethod
@@ -308,6 +330,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trafficStatus set the trafficStatus.
    */
   @VsoMethod
@@ -318,6 +341,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRef
    */
   @VsoMethod
@@ -328,6 +352,7 @@ public class SeUpgradeEvents extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRef set the vsRef.
    */
   @VsoMethod

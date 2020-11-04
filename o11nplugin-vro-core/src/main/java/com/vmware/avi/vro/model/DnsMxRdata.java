@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsMxRdata extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private Integer priority = null;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer priority = null;
 
 
 
@@ -39,6 +39,7 @@ public class DnsMxRdata extends AviRestResource {
    * Fully qualified domain name of a mailserver.
    * The host name maps directly to one or more address records in the dns table, and must not point to any cname records (rfc 2181).
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DnsMxRdata extends AviRestResource {
    * Fully qualified domain name of a mailserver.
    * The host name maps directly to one or more address records in the dns table, and must not point to any cname records (rfc 2181).
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class DnsMxRdata extends AviRestResource {
    * The priority field identifies which mail server should be preferred.
    * Allowed values are 0-65535.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priority
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class DnsMxRdata extends AviRestResource {
    * The priority field identifies which mail server should be preferred.
    * Allowed values are 0-65535.
    * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priority set the priority.
    */
   @VsoMethod

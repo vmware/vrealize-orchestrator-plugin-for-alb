@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4ConnectionPolicy extends AviRestResource {
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<L4Rule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<L4Rule> rules = null;
 
 
 
@@ -34,6 +34,7 @@ public class L4ConnectionPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules to apply when a new transport connection is setup.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class L4ConnectionPolicy extends AviRestResource {
    * This is the setter method. this will set the rules
    * Rules to apply when a new transport connection is setup.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class L4ConnectionPolicy extends AviRestResource {
    * This is the setter method this will set the rules
    * Rules to apply when a new transport connection is setup.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod

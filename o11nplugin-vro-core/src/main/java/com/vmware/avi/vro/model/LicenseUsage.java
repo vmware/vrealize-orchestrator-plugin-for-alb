@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseUsage extends AviRestResource {
-  @JsonProperty("available")
-  @JsonInclude(Include.NON_NULL)
-  private float available = 0.0f;
+    @JsonProperty("available")
+    @JsonInclude(Include.NON_NULL)
+    private Float available = 0.0f;
 
-  @JsonProperty("consumed")
-  @JsonInclude(Include.NON_NULL)
-  private float consumed = 0.0f;
+    @JsonProperty("consumed")
+    @JsonInclude(Include.NON_NULL)
+    private Float consumed = 0.0f;
 
-  @JsonProperty("escrow")
-  @JsonInclude(Include.NON_NULL)
-  private float escrow = 0.0f;
+    @JsonProperty("escrow")
+    @JsonInclude(Include.NON_NULL)
+    private Float escrow = 0.0f;
 
-  @JsonProperty("remaining")
-  @JsonInclude(Include.NON_NULL)
-  private float remaining = 0.0f;
+    @JsonProperty("remaining")
+    @JsonInclude(Include.NON_NULL)
+    private Float remaining = 0.0f;
 
 
 
@@ -46,7 +46,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores available for consumption.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return available
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores available for consumption.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param available set the available.
    */
   @VsoMethod
@@ -70,7 +70,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores consumed.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return consumed
    */
   @VsoMethod
@@ -82,7 +82,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores consumed.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param consumed set the consumed.
    */
   @VsoMethod
@@ -94,7 +94,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores reserved or escrowed.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return escrow
    */
   @VsoMethod
@@ -106,7 +106,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores reserved or escrowed.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param escrow set the escrow.
    */
   @VsoMethod
@@ -118,7 +118,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Total license cores remaining for consumption.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return remaining
    */
   @VsoMethod
@@ -130,7 +130,7 @@ public class LicenseUsage extends AviRestResource {
    * This is the setter method to the attribute.
    * Total license cores remaining for consumption.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param remaining set the remaining.
    */
   @VsoMethod

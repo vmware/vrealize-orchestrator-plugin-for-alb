@@ -25,27 +25,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LinuxServerHost extends AviRestResource {
-  @JsonProperty("host_attr")
-  @JsonInclude(Include.NON_NULL)
-  private List<HostAttributes> hostAttr = null;
+    @JsonProperty("host_attr")
+    @JsonInclude(Include.NON_NULL)
+    private List<HostAttributes> hostAttr = null;
 
-  @JsonProperty("host_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr hostIp = null;
+    @JsonProperty("host_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr hostIp = null;
 
-  @JsonProperty("node_availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeAvailabilityZone = null;
+    @JsonProperty("node_availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeAvailabilityZone = null;
 
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostAttr
    */
   @VsoMethod
@@ -56,6 +57,7 @@ public class LinuxServerHost extends AviRestResource {
   /**
    * This is the setter method. this will set the hostAttr
    * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostAttr
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class LinuxServerHost extends AviRestResource {
   /**
    * This is the setter method this will set the hostAttr
    * Placeholder for description of property host_attr of obj type linuxserverhost field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostAttr
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class LinuxServerHost extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_ip of obj type linuxserverhost field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIp
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class LinuxServerHost extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host_ip of obj type linuxserverhost field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostIp set the hostIp.
    */
   @VsoMethod
@@ -102,6 +107,7 @@ public class LinuxServerHost extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Node's availability zone.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeAvailabilityZone
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class LinuxServerHost extends AviRestResource {
    * This is the setter method to the attribute.
    * Node's availability zone.
    * Serviceengines belonging to the availability zone will be rebooted during a manual dr failover.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeAvailabilityZone set the nodeAvailabilityZone.
    */
   @VsoMethod
@@ -126,6 +133,7 @@ public class LinuxServerHost extends AviRestResource {
    * If none, then 'default-group' segroup is associated with the se.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class LinuxServerHost extends AviRestResource {
    * If none, then 'default-group' segroup is associated with the se.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
   @VsoMethod

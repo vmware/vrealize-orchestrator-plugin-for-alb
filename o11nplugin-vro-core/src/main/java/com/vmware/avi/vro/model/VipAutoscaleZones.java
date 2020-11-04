@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipAutoscaleZones extends AviRestResource {
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("fip_capable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fipCapable = null;
+    @JsonProperty("fip_capable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fipCapable = null;
 
-  @JsonProperty("subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetUuid = null;
+    @JsonProperty("subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetUuid = null;
 
 
 
@@ -42,6 +42,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availability zone associated with the subnet.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Availability zone associated with the subnet.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines if the subnet is capable of hosting publicly accessible ip.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipCapable
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines if the subnet is capable of hosting publicly accessible ip.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fipCapable set the fipCapable.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the subnet for new ip address allocation.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetUuid
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the subnet for new ip address allocation.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetUuid set the subnetUuid.
    */
   @VsoMethod

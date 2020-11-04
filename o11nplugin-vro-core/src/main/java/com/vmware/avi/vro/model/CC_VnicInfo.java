@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CC_VnicInfo extends AviRestResource {
-  @JsonProperty("mac_address")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddress = null;
+    @JsonProperty("mac_address")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddress = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("port_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String portUuid = null;
+    @JsonProperty("port_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String portUuid = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = "SYSERR_SUCCESS";
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = "SYSERR_SUCCESS";
 
-  @JsonProperty("status_string")
-  @JsonInclude(Include.NON_NULL)
-  private String statusString = null;
+    @JsonProperty("status_string")
+    @JsonInclude(Include.NON_NULL)
+    private String statusString = null;
 
-  @JsonProperty("subnet_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String subnetUuid = null;
+    @JsonProperty("subnet_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String subnetUuid = null;
 
-  @JsonProperty("vrf_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfUuid = null;
+    @JsonProperty("vrf_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac_address of obj type cc_vnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mac_address of obj type cc_vnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portUuid
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portUuid set the portUuid.
    */
   @VsoMethod
@@ -119,7 +125,7 @@ public class CC_VnicInfo extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSERR_SUCCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @return status
    */
   @VsoMethod
@@ -132,7 +138,7 @@ public class CC_VnicInfo extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
-   * Default value when not specified in API or module is interpreted by Avi Controller as SYSERR_SUCCESS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
    * @param status set the status.
    */
   @VsoMethod
@@ -143,6 +149,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property status_string of obj type cc_vnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statusString
    */
   @VsoMethod
@@ -153,6 +160,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property status_string of obj type cc_vnicinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statusString set the statusString.
    */
   @VsoMethod
@@ -163,6 +171,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of subnet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnetUuid
    */
   @VsoMethod
@@ -173,6 +182,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of subnet.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnetUuid set the subnetUuid.
    */
   @VsoMethod
@@ -183,6 +193,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vrf.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfUuid
    */
   @VsoMethod
@@ -193,6 +204,7 @@ public class CC_VnicInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vrf.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfUuid set the vrfUuid.
    */
   @VsoMethod

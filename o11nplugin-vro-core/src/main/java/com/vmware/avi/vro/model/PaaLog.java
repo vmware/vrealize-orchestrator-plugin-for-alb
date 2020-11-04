@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PaaLog extends AviRestResource {
-  @JsonProperty("cache_hit")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cacheHit = null;
+    @JsonProperty("cache_hit")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cacheHit = null;
 
-  @JsonProperty("client_request_body_sent")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean clientRequestBodySent = null;
+    @JsonProperty("client_request_body_sent")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean clientRequestBodySent = null;
 
-  @JsonProperty("request_logs")
-  @JsonInclude(Include.NON_NULL)
-  private List<PaaRequestLog> requestLogs = null;
+    @JsonProperty("request_logs")
+    @JsonInclude(Include.NON_NULL)
+    private List<PaaRequestLog> requestLogs = null;
 
 
 
@@ -42,6 +42,7 @@ public class PaaLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pingaccess agent cache was used for authentication.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cacheHit
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Pingaccess agent cache was used for authentication.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cacheHit set the cacheHit.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class PaaLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The pingaccess server required the client request body for authentication.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientRequestBodySent
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The pingaccess server required the client request body for authentication.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientRequestBodySent set the clientRequestBodySent.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class PaaLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Logs for each request sent to pa server to completeauthentication for the initial request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method. this will set the requestLogs
    * Logs for each request sent to pa server to completeauthentication for the initial request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
   @VsoMethod
@@ -108,6 +114,7 @@ public class PaaLog extends AviRestResource {
    * This is the setter method this will set the requestLogs
    * Logs for each request sent to pa server to completeauthentication for the initial request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestLogs
    */
   @VsoMethod

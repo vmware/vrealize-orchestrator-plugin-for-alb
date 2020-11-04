@@ -25,21 +25,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UDPFastPathProfile extends AviRestResource {
-  @JsonProperty("dsr_profile")
-  @JsonInclude(Include.NON_NULL)
-  private DsrProfile dsrProfile = null;
+    @JsonProperty("dsr_profile")
+    @JsonInclude(Include.NON_NULL)
+    private DsrProfile dsrProfile = null;
 
-  @JsonProperty("per_pkt_loadbalance")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean perPktLoadbalance = false;
+    @JsonProperty("per_pkt_loadbalance")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean perPktLoadbalance = false;
 
-  @JsonProperty("session_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sessionIdleTimeout = 10;
+    @JsonProperty("session_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sessionIdleTimeout = 10;
 
-  @JsonProperty("snat")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean snat = true;
+    @JsonProperty("snat")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean snat = true;
 
 
 
@@ -47,6 +47,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dsr profile information.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dsrProfile
    */
   @VsoMethod
@@ -58,6 +59,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Dsr profile information.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dsrProfile set the dsrProfile.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The amount of time (in sec) for which a flow needs to be idle before it is deleted.
    * Allowed values are 2-3600.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return sessionIdleTimeout
    */
@@ -105,6 +108,7 @@ public class UDPFastPathProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * The amount of time (in sec) for which a flow needs to be idle before it is deleted.
    * Allowed values are 2-3600.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param sessionIdleTimeout set the sessionIdleTimeout.
    */

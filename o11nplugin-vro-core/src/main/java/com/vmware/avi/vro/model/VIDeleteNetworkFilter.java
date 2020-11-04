@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIDeleteNetworkFilter extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("datacenter")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenter = null;
+    @JsonProperty("datacenter")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenter = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("vcenter_url")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterUrl = null;
+    @JsonProperty("vcenter_url")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterUrl = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenter
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenter set the datacenter.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterUrl
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class VIDeleteNetworkFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterUrl set the vcenterUrl.
    */
   @VsoMethod

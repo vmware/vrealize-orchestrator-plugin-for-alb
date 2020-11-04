@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SePoolLbEventDetails extends AviRestResource {
-  @JsonProperty("failure_code")
-  @JsonInclude(Include.NON_NULL)
-  private String failureCode = null;
+    @JsonProperty("failure_code")
+    @JsonInclude(Include.NON_NULL)
+    private String failureCode = null;
 
-  @JsonProperty("pool")
-  @JsonInclude(Include.NON_NULL)
-  private String pool = null;
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private String pool = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("src_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String srcUuid = null;
+    @JsonProperty("src_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String srcUuid = null;
 
-  @JsonProperty("virtual_service")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualService = null;
+    @JsonProperty("virtual_service")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualService = null;
 
 
 
@@ -51,6 +51,7 @@ public class SePoolLbEventDetails extends AviRestResource {
    * Reason code for load balancing failure.
    * Enum options - PERSISTENT_SERVER_INVALID, PERSISTENT_SERVER_DOWN, SRVR_DOWN, ADD_PENDING, SLOW_START_MAX_CONN, MAX_CONN, NO_LPORT, SUSPECT_STATE,
    * MAX_CONN_RATE, CAPEST_RAND_MAX_CONN, GET_NEXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failureCode
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class SePoolLbEventDetails extends AviRestResource {
    * Reason code for load balancing failure.
    * Enum options - PERSISTENT_SERVER_INVALID, PERSISTENT_SERVER_DOWN, SRVR_DOWN, ADD_PENDING, SLOW_START_MAX_CONN, MAX_CONN, NO_LPORT, SUSPECT_STATE,
    * MAX_CONN_RATE, CAPEST_RAND_MAX_CONN, GET_NEXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failureCode set the failureCode.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class SePoolLbEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool name.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class SePoolLbEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool name.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
   @VsoMethod
@@ -95,6 +99,7 @@ public class SePoolLbEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason for load balancing failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class SePoolLbEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for load balancing failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class SePoolLbEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcUuid
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class SePoolLbEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of event generator.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcUuid set the srcUuid.
    */
   @VsoMethod
@@ -136,6 +144,7 @@ public class SePoolLbEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
   @VsoMethod
@@ -147,6 +156,7 @@ public class SePoolLbEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */
   @VsoMethod

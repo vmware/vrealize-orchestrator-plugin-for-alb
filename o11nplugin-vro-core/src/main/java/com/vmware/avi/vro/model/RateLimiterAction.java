@@ -26,27 +26,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RateLimiterAction extends AviRestResource {
-  @JsonProperty("file")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPLocalFile file = null;
+    @JsonProperty("file")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPLocalFile file = null;
 
-  @JsonProperty("redirect")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPRedirectAction redirect = null;
+    @JsonProperty("redirect")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPRedirectAction redirect = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCode = "HTTP_LOCAL_RESPONSE_STATUS_CODE_429";
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCode = "HTTP_LOCAL_RESPONSE_STATUS_CODE_429";
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "RL_ACTION_NONE";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "RL_ACTION_NONE";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * File to be used for http local response rate limit action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return file
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class RateLimiterAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * File to be used for http local response rate limit action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param file set the file.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class RateLimiterAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Parameters for http redirect rate limit action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return redirect
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class RateLimiterAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Parameters for http redirect rate limit action.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param redirect set the redirect.
    */
   @VsoMethod
@@ -89,7 +93,7 @@ public class RateLimiterAction extends AviRestResource {
    * Http status code for local response rate limit action.
    * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
    * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_LOCAL_RESPONSE_STATUS_CODE_429.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_LOCAL_RESPONSE_STATUS_CODE_429".
    * @return statusCode
    */
   @VsoMethod
@@ -102,7 +106,7 @@ public class RateLimiterAction extends AviRestResource {
    * Http status code for local response rate limit action.
    * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
    * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_LOCAL_RESPONSE_STATUS_CODE_429.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_LOCAL_RESPONSE_STATUS_CODE_429".
    * @param statusCode set the statusCode.
    */
   @VsoMethod
@@ -114,7 +118,7 @@ public class RateLimiterAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of action to be enforced upon hitting the rate limit.
    * Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as RL_ACTION_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "RL_ACTION_NONE".
    * @return type
    */
   @VsoMethod
@@ -126,7 +130,7 @@ public class RateLimiterAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of action to be enforced upon hitting the rate limit.
    * Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.
-   * Default value when not specified in API or module is interpreted by Avi Controller as RL_ACTION_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "RL_ACTION_NONE".
    * @param type set the type.
    */
   @VsoMethod

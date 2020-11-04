@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ParamSizeClass extends AviRestResource {
-  @JsonProperty("hits")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hits = null;
+    @JsonProperty("hits")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hits = null;
 
-  @JsonProperty("len")
-  @JsonInclude(Include.NON_NULL)
-  private String len = null;
+    @JsonProperty("len")
+    @JsonInclude(Include.NON_NULL)
+    private String len = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hits
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class ParamSizeClass extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hits set the hits.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class ParamSizeClass extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return len
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class ParamSizeClass extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param len set the len.
    */
   @VsoMethod

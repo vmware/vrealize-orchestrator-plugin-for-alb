@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EventCache extends AviRestResource {
-  @JsonProperty("dns_state")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean dnsState = null;
+    @JsonProperty("dns_state")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean dnsState = null;
 
-  @JsonProperty("exceptions")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> exceptions = null;
+    @JsonProperty("exceptions")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> exceptions = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dns_state of obj type eventcache field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsState
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dns_state of obj type eventcache field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsState set the dnsState.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cache the exception strings in the system.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exceptions
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the setter method. this will set the exceptions
    * Cache the exception strings in the system.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exceptions
    */
   @VsoMethod
@@ -77,6 +81,7 @@ public class EventCache extends AviRestResource {
   /**
    * This is the setter method this will set the exceptions
    * Cache the exception strings in the system.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return exceptions
    */
   @VsoMethod

@@ -25,43 +25,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PingAccessAgent extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("pingaccess_pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String pingaccessPoolRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("primary_server")
-  @JsonInclude(Include.NON_NULL)
-  private PoolServer primaryServer = null;
+    @JsonProperty("pingaccess_pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pingaccessPoolRef = null;
 
-  @JsonProperty("properties_file_data")
-  @JsonInclude(Include.NON_NULL)
-  private String propertiesFileData = null;
+    @JsonProperty("primary_server")
+    @JsonInclude(Include.NON_NULL)
+    private PoolServer primaryServer = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("properties_file_data")
+    @JsonInclude(Include.NON_NULL)
+    private String propertiesFileData = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -72,6 +77,7 @@ public class PingAccessAgent extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -81,8 +87,53 @@ public class PingAccessAgent extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public PingAccessAgent addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the pingaccess agent.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -94,6 +145,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the pingaccess agent.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -106,6 +158,7 @@ public class PingAccessAgent extends AviRestResource {
    * Pool containing a primary pingaccess server, as well as any failover servers included in the agent.properties file.
    * It is a reference to an object of type pool.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pingaccessPoolRef
    */
   @VsoMethod
@@ -118,6 +171,7 @@ public class PingAccessAgent extends AviRestResource {
    * Pool containing a primary pingaccess server, as well as any failover servers included in the agent.properties file.
    * It is a reference to an object of type pool.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pingaccessPoolRef set the pingaccessPoolRef.
    */
   @VsoMethod
@@ -129,6 +183,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ip and port of the primary pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return primaryServer
    */
   @VsoMethod
@@ -140,6 +195,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the setter method to the attribute.
    * The ip and port of the primary pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param primaryServer set the primaryServer.
    */
   @VsoMethod
@@ -151,6 +207,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pingaccessagent's agent.properties file generated by pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return propertiesFileData
    */
   @VsoMethod
@@ -162,6 +219,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the setter method to the attribute.
    * Pingaccessagent's agent.properties file generated by pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param propertiesFileData set the propertiesFileData.
    */
   @VsoMethod
@@ -173,6 +231,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -184,6 +243,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -214,6 +274,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pingaccess agent.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -225,6 +286,7 @@ public class PingAccessAgent extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pingaccess agent.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -251,6 +313,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.pingaccessPoolRef, objPingAccessAgent.pingaccessPoolRef)&&
   Objects.equals(this.propertiesFileData, objPingAccessAgent.propertiesFileData)&&
   Objects.equals(this.primaryServer, objPingAccessAgent.primaryServer)&&
+  Objects.equals(this.labels, objPingAccessAgent.labels)&&
   Objects.equals(this.description, objPingAccessAgent.description)&&
   Objects.equals(this.tenantRef, objPingAccessAgent.tenantRef);
 }
@@ -260,6 +323,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PingAccessAgent {\n");
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    pingaccessPoolRef: ").append(toIndentedString(pingaccessPoolRef)).append("\n");
         sb.append("    primaryServer: ").append(toIndentedString(primaryServer)).append("\n");

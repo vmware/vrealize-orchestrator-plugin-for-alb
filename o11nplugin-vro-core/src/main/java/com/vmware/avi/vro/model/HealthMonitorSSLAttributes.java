@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorSSLAttributes extends AviRestResource {
-  @JsonProperty("pki_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String pkiProfileRef = null;
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef = null;
 
-  @JsonProperty("server_name")
-  @JsonInclude(Include.NON_NULL)
-  private String serverName = null;
+    @JsonProperty("server_name")
+    @JsonInclude(Include.NON_NULL)
+    private String serverName = null;
 
-  @JsonProperty("ssl_key_and_certificate_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslKeyAndCertificateRef = null;
+    @JsonProperty("ssl_key_and_certificate_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslKeyAndCertificateRef = null;
 
-  @JsonProperty("ssl_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslProfileRef = null;
+    @JsonProperty("ssl_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslProfileRef = null;
 
 
 
@@ -47,6 +47,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Pki profile used to validate the ssl certificate presented by a server.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Pki profile used to validate the ssl certificate presented by a server.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections indicating sni is enabled.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverName
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * This is the setter method to the attribute.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections indicating sni is enabled.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverName set the serverName.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Service engines will present this ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslKeyAndCertificateRef
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Service engines will present this ssl certificate to the server.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Ssl profile defines ciphers and ssl versions to be used for healthmonitor traffic to the back-end servers.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class HealthMonitorSSLAttributes extends AviRestResource {
    * Ssl profile defines ciphers and ssl versions to be used for healthmonitor traffic to the back-end servers.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
    */
   @VsoMethod

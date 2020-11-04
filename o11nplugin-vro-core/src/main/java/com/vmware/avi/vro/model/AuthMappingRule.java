@@ -26,57 +26,69 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthMappingRule extends AviRestResource {
-  @JsonProperty("assign_policy")
-  @JsonInclude(Include.NON_NULL)
-  private String assignPolicy = null;
+    @JsonProperty("assign_policy")
+    @JsonInclude(Include.NON_NULL)
+    private String assignPolicy = null;
 
-  @JsonProperty("assign_role")
-  @JsonInclude(Include.NON_NULL)
-  private String assignRole = null;
+    @JsonProperty("assign_role")
+    @JsonInclude(Include.NON_NULL)
+    private String assignRole = null;
 
-  @JsonProperty("assign_tenant")
-  @JsonInclude(Include.NON_NULL)
-  private String assignTenant = null;
+    @JsonProperty("assign_tenant")
+    @JsonInclude(Include.NON_NULL)
+    private String assignTenant = null;
 
-  @JsonProperty("attribute_match")
-  @JsonInclude(Include.NON_NULL)
-  private AuthMatchAttribute attributeMatch = null;
+    @JsonProperty("assign_userprofile")
+    @JsonInclude(Include.NON_NULL)
+    private String assignUserprofile = null;
 
-  @JsonProperty("group_match")
-  @JsonInclude(Include.NON_NULL)
-  private AuthMatchGroupMembership groupMatch = null;
+    @JsonProperty("attribute_match")
+    @JsonInclude(Include.NON_NULL)
+    private AuthMatchAttribute attributeMatch = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("group_match")
+    @JsonInclude(Include.NON_NULL)
+    private AuthMatchGroupMembership groupMatch = null;
 
-  @JsonProperty("is_superuser")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isSuperuser = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("object_access_policy_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> objectAccessPolicyRefs = null;
+    @JsonProperty("is_superuser")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isSuperuser = null;
 
-  @JsonProperty("policy_attribute_name")
-  @JsonInclude(Include.NON_NULL)
-  private String policyAttributeName = null;
+    @JsonProperty("object_access_policy_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> objectAccessPolicyRefs;
 
-  @JsonProperty("role_attribute_name")
-  @JsonInclude(Include.NON_NULL)
-  private String roleAttributeName = null;
+    @JsonProperty("policy_attribute_name")
+    @JsonInclude(Include.NON_NULL)
+    private String policyAttributeName = null;
 
-  @JsonProperty("role_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> roleRefs = null;
+    @JsonProperty("role_attribute_name")
+    @JsonInclude(Include.NON_NULL)
+    private String roleAttributeName = null;
 
-  @JsonProperty("tenant_attribute_name")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantAttributeName = null;
+    @JsonProperty("role_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> roleRefs = null;
 
-  @JsonProperty("tenant_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> tenantRefs = null;
+    @JsonProperty("tenant_attribute_name")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantAttributeName = null;
+
+    @JsonProperty("tenant_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> tenantRefs = null;
+
+    @JsonProperty("userprofile_attribute_name")
+    @JsonInclude(Include.NON_NULL)
+    private String userprofileAttributeName = null;
+
+    @JsonProperty("userprofile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String userprofileRef = null;
 
 
 
@@ -86,6 +98,7 @@ public class AuthMappingRule extends AviRestResource {
    * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
    * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assignPolicy
    */
   @VsoMethod
@@ -99,6 +112,7 @@ public class AuthMappingRule extends AviRestResource {
    * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
    * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assignPolicy set the assignPolicy.
    */
   @VsoMethod
@@ -110,6 +124,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
    * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assignRole
    */
   @VsoMethod
@@ -121,6 +136,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
    * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assignRole set the assignRole.
    */
   @VsoMethod
@@ -132,6 +148,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
    * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assignTenant
    */
   @VsoMethod
@@ -143,6 +160,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
    * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assignTenant set the assignTenant.
    */
   @VsoMethod
@@ -152,7 +170,36 @@ public class AuthMappingRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Assignment rule for the user account profile.
+   * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
+   * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return assignUserprofile
+   */
+  @VsoMethod
+  public String getAssignUserprofile() {
+    return assignUserprofile;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Assignment rule for the user account profile.
+   * Enum options - ASSIGN_ALL, ASSIGN_FROM_SELECT_LIST, ASSIGN_MATCHING_GROUP_NAME, ASSIGN_MATCHING_ATTRIBUTE_VALUE, ASSIGN_MATCHING_GROUP_REGEX,
+   * ASSIGN_MATCHING_ATTRIBUTE_REGEX.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param assignUserprofile set the assignUserprofile.
+   */
+  @VsoMethod
+  public void setAssignUserprofile(String  assignUserprofile) {
+    this.assignUserprofile = assignUserprofile;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property attribute_match of obj type authmappingrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeMatch
    */
   @VsoMethod
@@ -163,6 +210,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property attribute_match of obj type authmappingrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeMatch set the attributeMatch.
    */
   @VsoMethod
@@ -173,6 +221,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property group_match of obj type authmappingrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupMatch
    */
   @VsoMethod
@@ -183,6 +232,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property group_match of obj type authmappingrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param groupMatch set the groupMatch.
    */
   @VsoMethod
@@ -193,6 +243,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property index of obj type authmappingrule field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -203,6 +254,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property index of obj type authmappingrule field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -213,6 +265,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property is_superuser of obj type authmappingrule field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return isSuperuser
    */
   @VsoMethod
@@ -223,6 +276,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property is_superuser of obj type authmappingrule field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param isSuperuser set the isSuperuser.
    */
   @VsoMethod
@@ -234,6 +288,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Object access policies to assign to user on successful match.
    * It is a reference to an object of type objectaccesspolicy.
+   * Field deprecated in 20.1.2.
    * Field introduced in 18.2.7, 20.1.1.
    * @return objectAccessPolicyRefs
    */
@@ -246,6 +301,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the setter method. this will set the objectAccessPolicyRefs
    * Object access policies to assign to user on successful match.
    * It is a reference to an object of type objectaccesspolicy.
+   * Field deprecated in 20.1.2.
    * Field introduced in 18.2.7, 20.1.1.
    * @return objectAccessPolicyRefs
    */
@@ -258,6 +314,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the setter method this will set the objectAccessPolicyRefs
    * Object access policies to assign to user on successful match.
    * It is a reference to an object of type objectaccesspolicy.
+   * Field deprecated in 20.1.2.
    * Field introduced in 18.2.7, 20.1.1.
    * @return objectAccessPolicyRefs
    */
@@ -275,6 +332,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute name for object access policy assignment.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return policyAttributeName
    */
   @VsoMethod
@@ -286,6 +344,7 @@ public class AuthMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute name for object access policy assignment.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param policyAttributeName set the policyAttributeName.
    */
   @VsoMethod
@@ -296,6 +355,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property role_attribute_name of obj type authmappingrule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleAttributeName
    */
   @VsoMethod
@@ -306,6 +366,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property role_attribute_name of obj type authmappingrule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param roleAttributeName set the roleAttributeName.
    */
   @VsoMethod
@@ -316,6 +377,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type role.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleRefs
    */
   @VsoMethod
@@ -326,6 +388,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method. this will set the roleRefs
    * It is a reference to an object of type role.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleRefs
    */
   @VsoMethod
@@ -336,6 +399,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method this will set the roleRefs
    * It is a reference to an object of type role.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return roleRefs
    */
   @VsoMethod
@@ -351,6 +415,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tenant_attribute_name of obj type authmappingrule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantAttributeName
    */
   @VsoMethod
@@ -361,6 +426,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tenant_attribute_name of obj type authmappingrule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantAttributeName set the tenantAttributeName.
    */
   @VsoMethod
@@ -371,6 +437,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRefs
    */
   @VsoMethod
@@ -381,6 +448,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method. this will set the tenantRefs
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRefs
    */
   @VsoMethod
@@ -391,6 +459,7 @@ public class AuthMappingRule extends AviRestResource {
   /**
    * This is the setter method this will set the tenantRefs
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRefs
    */
   @VsoMethod
@@ -402,6 +471,56 @@ public class AuthMappingRule extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Attribute name for user account profile assignment.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return userprofileAttributeName
+   */
+  @VsoMethod
+  public String getUserprofileAttributeName() {
+    return userprofileAttributeName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Attribute name for user account profile assignment.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param userprofileAttributeName set the userprofileAttributeName.
+   */
+  @VsoMethod
+  public void setUserprofileAttributeName(String  userprofileAttributeName) {
+    this.userprofileAttributeName = userprofileAttributeName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * User account profile to assign to user on successful match.
+   * It is a reference to an object of type useraccountprofile.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return userprofileRef
+   */
+  @VsoMethod
+  public String getUserprofileRef() {
+    return userprofileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * User account profile to assign to user on successful match.
+   * It is a reference to an object of type useraccountprofile.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param userprofileRef set the userprofileRef.
+   */
+  @VsoMethod
+  public void setUserprofileRef(String  userprofileRef) {
+    this.userprofileRef = userprofileRef;
+  }
 
 
 
@@ -426,7 +545,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.isSuperuser, objAuthMappingRule.isSuperuser)&&
   Objects.equals(this.assignPolicy, objAuthMappingRule.assignPolicy)&&
   Objects.equals(this.policyAttributeName, objAuthMappingRule.policyAttributeName)&&
-  Objects.equals(this.objectAccessPolicyRefs, objAuthMappingRule.objectAccessPolicyRefs);
+  Objects.equals(this.objectAccessPolicyRefs, objAuthMappingRule.objectAccessPolicyRefs)&&
+  Objects.equals(this.assignUserprofile, objAuthMappingRule.assignUserprofile)&&
+  Objects.equals(this.userprofileAttributeName, objAuthMappingRule.userprofileAttributeName)&&
+  Objects.equals(this.userprofileRef, objAuthMappingRule.userprofileRef);
 }
 
 @Override
@@ -436,6 +558,7 @@ public String toString() {
       sb.append("    assignPolicy: ").append(toIndentedString(assignPolicy)).append("\n");
         sb.append("    assignRole: ").append(toIndentedString(assignRole)).append("\n");
         sb.append("    assignTenant: ").append(toIndentedString(assignTenant)).append("\n");
+        sb.append("    assignUserprofile: ").append(toIndentedString(assignUserprofile)).append("\n");
         sb.append("    attributeMatch: ").append(toIndentedString(attributeMatch)).append("\n");
         sb.append("    groupMatch: ").append(toIndentedString(groupMatch)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
@@ -446,6 +569,8 @@ public String toString() {
         sb.append("    roleRefs: ").append(toIndentedString(roleRefs)).append("\n");
         sb.append("    tenantAttributeName: ").append(toIndentedString(tenantAttributeName)).append("\n");
         sb.append("    tenantRefs: ").append(toIndentedString(tenantRefs)).append("\n");
+        sb.append("    userprofileAttributeName: ").append(toIndentedString(userprofileAttributeName)).append("\n");
+        sb.append("    userprofileRef: ").append(toIndentedString(userprofileRef)).append("\n");
       sb.append("}");
   return sb.toString();
 }

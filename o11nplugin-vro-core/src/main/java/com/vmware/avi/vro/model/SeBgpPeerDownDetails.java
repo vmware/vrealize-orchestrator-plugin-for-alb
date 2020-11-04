@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeBgpPeerDownDetails extends AviRestResource {
-  @JsonProperty("message")
-  @JsonInclude(Include.NON_NULL)
-  private String message = null;
+    @JsonProperty("message")
+    @JsonInclude(Include.NON_NULL)
+    private String message = null;
 
-  @JsonProperty("peer_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String peerIp = null;
+    @JsonProperty("peer_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String peerIp = null;
 
-  @JsonProperty("vrf_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfName = null;
+    @JsonProperty("vrf_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfName = null;
 
 
 
@@ -42,6 +42,7 @@ public class SeBgpPeerDownDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Message specific to the down condition.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return message
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class SeBgpPeerDownDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Message specific to the down condition.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param message set the message.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class SeBgpPeerDownDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address of bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peerIp
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeBgpPeerDownDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip address of bgp peer.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param peerIp set the peerIp.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class SeBgpPeerDownDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of virtual routing context in which bgp is configured.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfName
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class SeBgpPeerDownDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of virtual routing context in which bgp is configured.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfName set the vrfName.
    */
   @VsoMethod

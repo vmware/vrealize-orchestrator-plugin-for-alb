@@ -29,45 +29,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSiteRuntime extends AviRestResource {
-  @JsonProperty("clear_on_max_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clearOnMaxRetries = null;
+    @JsonProperty("clear_on_max_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clearOnMaxRetries = null;
 
-  @JsonProperty("glb_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String glbUuid = null;
+    @JsonProperty("glb_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String glbUuid = null;
 
-  @JsonProperty("replication_stats")
-  @JsonInclude(Include.NON_NULL)
-  private GslbReplicationStats replicationStats = null;
+    @JsonProperty("replication_stats")
+    @JsonInclude(Include.NON_NULL)
+    private GslbReplicationStats replicationStats = null;
 
-  @JsonProperty("rxed_site_hs")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteHealthStatus rxedSiteHs = null;
+    @JsonProperty("rxed_site_hs")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteHealthStatus rxedSiteHs = null;
 
-  @JsonProperty("send_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sendInterval = null;
+    @JsonProperty("send_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sendInterval = null;
 
-  @JsonProperty("site_cfg")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteRuntimeCfg siteCfg = null;
+    @JsonProperty("site_cfg")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteRuntimeCfg siteCfg = null;
 
-  @JsonProperty("site_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteRuntimeInfo siteInfo = null;
+    @JsonProperty("site_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteRuntimeInfo siteInfo = null;
 
-  @JsonProperty("site_stats")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteRuntimeStats siteStats = null;
+    @JsonProperty("site_stats")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteRuntimeStats siteStats = null;
 
-  @JsonProperty("tenant_name")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantName = null;
+    @JsonProperty("tenant_name")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantName = null;
 
-  @JsonProperty("view_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer viewId = null;
+    @JsonProperty("view_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer viewId = null;
 
 
 
@@ -75,6 +75,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field shadows glb_cfg.clear_on_max_retries.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clearOnMaxRetries
    */
   @VsoMethod
@@ -86,6 +87,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * This field shadows glb_cfg.clear_on_max_retries.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clearOnMaxRetries set the clearOnMaxRetries.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field tracks the glb-uuid.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbUuid
    */
   @VsoMethod
@@ -108,6 +111,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * This field tracks the glb-uuid.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param glbUuid set the glbUuid.
    */
   @VsoMethod
@@ -119,6 +123,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Carries replication stats for a given site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return replicationStats
    */
   @VsoMethod
@@ -130,6 +135,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Carries replication stats for a given site.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param replicationStats set the replicationStats.
    */
   @VsoMethod
@@ -140,6 +146,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rxed_site_hs of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rxedSiteHs
    */
   @VsoMethod
@@ -150,6 +157,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rxed_site_hs of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rxedSiteHs set the rxedSiteHs.
    */
   @VsoMethod
@@ -162,6 +170,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * Frequency with which group members communicate.
    * This field shadows glb_cfg.send_interval.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sendInterval
    */
   @VsoMethod
@@ -174,6 +183,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * Frequency with which group members communicate.
    * This field shadows glb_cfg.send_interval.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sendInterval set the sendInterval.
    */
   @VsoMethod
@@ -184,6 +194,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property site_cfg of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteCfg
    */
   @VsoMethod
@@ -194,6 +205,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property site_cfg of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteCfg set the siteCfg.
    */
   @VsoMethod
@@ -204,6 +216,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property site_info of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteInfo
    */
   @VsoMethod
@@ -214,6 +227,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property site_info of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteInfo set the siteInfo.
    */
   @VsoMethod
@@ -224,6 +238,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property site_stats of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteStats
    */
   @VsoMethod
@@ -234,6 +249,7 @@ public class GslbSiteRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property site_stats of obj type gslbsiteruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteStats set the siteStats.
    */
   @VsoMethod
@@ -245,6 +261,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Remap the tenant_uuid to its tenant-name so that we can use the tenant_name directly in remote-site ops.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -256,6 +273,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Remap the tenant_uuid to its tenant-name so that we can use the tenant_name directly in remote-site ops.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -267,6 +285,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field shadows the glb_cfg.view_id.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return viewId
    */
   @VsoMethod
@@ -278,6 +297,7 @@ public class GslbSiteRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * This field shadows the glb_cfg.view_id.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param viewId set the viewId.
    */
   @VsoMethod

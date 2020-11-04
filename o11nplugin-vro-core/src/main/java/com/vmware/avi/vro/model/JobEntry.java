@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class JobEntry extends AviRestResource {
-  @JsonProperty("expires_at")
-  @JsonInclude(Include.NON_NULL)
-  private String expiresAt = null;
+    @JsonProperty("expires_at")
+    @JsonInclude(Include.NON_NULL)
+    private String expiresAt = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("obj_key")
-  @JsonInclude(Include.NON_NULL)
-  private String objKey = null;
+    @JsonProperty("obj_key")
+    @JsonInclude(Include.NON_NULL)
+    private String objKey = null;
 
-  @JsonProperty("subjobs")
-  @JsonInclude(Include.NON_NULL)
-  private List<SubJob> subjobs = null;
+    @JsonProperty("subjobs")
+    @JsonInclude(Include.NON_NULL)
+    private List<SubJob> subjobs = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property expires_at of obj type jobentry field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expiresAt
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property expires_at of obj type jobentry field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expiresAt set the expiresAt.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property obj_key of obj type jobentry field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objKey
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property obj_key of obj type jobentry field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objKey set the objKey.
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subjobs
    */
   @VsoMethod
@@ -127,6 +134,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method. this will set the subjobs
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subjobs
    */
   @VsoMethod
@@ -137,6 +145,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method this will set the subjobs
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subjobs
    */
   @VsoMethod
@@ -152,6 +161,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -162,6 +172,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -191,6 +202,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -201,6 +213,7 @@ public class JobEntry extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

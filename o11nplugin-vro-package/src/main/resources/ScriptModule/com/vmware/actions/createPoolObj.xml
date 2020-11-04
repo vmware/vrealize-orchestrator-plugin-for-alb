@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPoolObj"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="d0d1e5cd-5bf4-47d2-8b64-1db0a867f383" version="0.2.2"
+	id="d0d1e5cd-5bf4-47d2-8b64-1db0a867f383" version="0.2.3"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="enablePool" t="boolean"><![CDATA[Pool status]]></param>
@@ -47,7 +47,9 @@
 	<param n="PersistenceProfileRef" t="string"><![CDATA[Application persistence profile reference]]></param>
 	<param n="ratio" t="number"><![CDATA[Ratio]]></param>
 	<param n="port" t="string"><![CDATA[Port]]></param>
-	<param n="addPersistenceProfileRef" t="boolean"><![CDATA[]]>
+	<param n="addPersistenceProfileRef" t="boolean"><![CDATA[
+	]]></param>
+	<param n="tier1_lr" t="string"><![CDATA[]]>
 	</param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
@@ -230,6 +232,9 @@ try{
 			}
 			serverObject.setPort(port);
 			servers.push(serverObject);
+		}
+		if(tier1_lr!==null && tier1_lr!=""){
+			poolObject.setTier1Lr(tier1_lr);
 		}	
 		// Set servers object in properties
 		poolObject.setServers(servers);	

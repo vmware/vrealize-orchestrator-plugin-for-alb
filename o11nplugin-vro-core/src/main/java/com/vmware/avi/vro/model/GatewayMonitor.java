@@ -26,31 +26,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GatewayMonitor extends AviRestResource {
-  @JsonProperty("gateway_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr gatewayIp = null;
+    @JsonProperty("gateway_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr gatewayIp = null;
 
-  @JsonProperty("gateway_monitor_fail_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gatewayMonitorFailThreshold = 10;
+    @JsonProperty("gateway_monitor_fail_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gatewayMonitorFailThreshold = 10;
 
-  @JsonProperty("gateway_monitor_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gatewayMonitorInterval = 1000;
+    @JsonProperty("gateway_monitor_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gatewayMonitorInterval = 1000;
 
-  @JsonProperty("gateway_monitor_success_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer gatewayMonitorSuccessThreshold = 15;
+    @JsonProperty("gateway_monitor_success_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer gatewayMonitorSuccessThreshold = 15;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of next hop gateway to be monitored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayIp
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class GatewayMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of next hop gateway to be monitored.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gatewayIp set the gatewayIp.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class GatewayMonitor extends AviRestResource {
    * The interval between two ping requests sent by the gateway monitor in milliseconds.
    * If a value is not specified, requests are sent every second.
    * Allowed values are 100-60000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return gatewayMonitorInterval
    */
@@ -110,6 +113,7 @@ public class GatewayMonitor extends AviRestResource {
    * The interval between two ping requests sent by the gateway monitor in milliseconds.
    * If a value is not specified, requests are sent every second.
    * Allowed values are 100-60000.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param gatewayMonitorInterval set the gatewayMonitorInterval.
    */
@@ -146,6 +150,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subnet providing reachability for multi-hop gateway.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -157,6 +162,7 @@ public class GatewayMonitor extends AviRestResource {
    * This is the setter method to the attribute.
    * Subnet providing reachability for multi-hop gateway.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod

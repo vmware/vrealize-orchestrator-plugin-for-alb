@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TacacsPlusAuthSettings extends AviRestResource {
-  @JsonProperty("authorization_attrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<AuthTacacsPlusAttributeValuePair> authorizationAttrs = null;
+    @JsonProperty("authorization_attrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<AuthTacacsPlusAttributeValuePair> authorizationAttrs = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = 49;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = 49;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> server = null;
 
-  @JsonProperty("service")
-  @JsonInclude(Include.NON_NULL)
-  private String service = "AUTH_TACACS_PLUS_SERVICE_LOGIN";
+    @JsonProperty("service")
+    @JsonInclude(Include.NON_NULL)
+    private String service = "AUTH_TACACS_PLUS_SERVICE_LOGIN";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Tacacs+ authorization attribute value pairs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authorizationAttrs
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the setter method. this will set the authorizationAttrs
    * Tacacs+ authorization attribute value pairs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authorizationAttrs
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the setter method this will set the authorizationAttrs
    * Tacacs+ authorization attribute value pairs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authorizationAttrs
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tacacs+ server shared secret.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tacacs+ server shared secret.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -126,6 +131,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tacacs+ server ip address or fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -136,6 +142,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the setter method. this will set the server
    * Tacacs+ server ip address or fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -146,6 +153,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
   /**
    * This is the setter method this will set the server
    * Tacacs+ server ip address or fqdn.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -164,7 +172,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
    * Enum options - AUTH_TACACS_PLUS_SERVICE_NONE, AUTH_TACACS_PLUS_SERVICE_LOGIN, AUTH_TACACS_PLUS_SERVICE_ENABLE, AUTH_TACACS_PLUS_SERVICE_PPP,
    * AUTH_TACACS_PLUS_SERVICE_ARAP, AUTH_TACACS_PLUS_SERVICE_PT, AUTH_TACACS_PLUS_SERVICE_RCMD, AUTH_TACACS_PLUS_SERVICE_X25,
    * AUTH_TACACS_PLUS_SERVICE_NASI, AUTH_TACACS_PLUS_SERVICE_FWPROXY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTH_TACACS_PLUS_SERVICE_LOGIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_TACACS_PLUS_SERVICE_LOGIN".
    * @return service
    */
   @VsoMethod
@@ -178,7 +186,7 @@ public class TacacsPlusAuthSettings extends AviRestResource {
    * Enum options - AUTH_TACACS_PLUS_SERVICE_NONE, AUTH_TACACS_PLUS_SERVICE_LOGIN, AUTH_TACACS_PLUS_SERVICE_ENABLE, AUTH_TACACS_PLUS_SERVICE_PPP,
    * AUTH_TACACS_PLUS_SERVICE_ARAP, AUTH_TACACS_PLUS_SERVICE_PT, AUTH_TACACS_PLUS_SERVICE_RCMD, AUTH_TACACS_PLUS_SERVICE_X25,
    * AUTH_TACACS_PLUS_SERVICE_NASI, AUTH_TACACS_PLUS_SERVICE_FWPROXY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTH_TACACS_PLUS_SERVICE_LOGIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_TACACS_PLUS_SERVICE_LOGIN".
    * @param service set the service.
    */
   @VsoMethod

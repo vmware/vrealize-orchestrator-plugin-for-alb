@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AppLearningParams extends AviRestResource {
-  @JsonProperty("enable_per_uri_learning")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enablePerUriLearning = true;
+    @JsonProperty("enable_per_uri_learning")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePerUriLearning = true;
 
-  @JsonProperty("max_params")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxParams = 100;
+    @JsonProperty("max_params")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxParams = 100;
 
-  @JsonProperty("max_uris")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxUris = 500;
+    @JsonProperty("max_uris")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxUris = 500;
 
-  @JsonProperty("min_hits_to_learn")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minHitsToLearn = 10000;
+    @JsonProperty("min_hits_to_learn")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minHitsToLearn = 10000;
 
-  @JsonProperty("sampling_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer samplingPercent = 1;
+    @JsonProperty("sampling_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer samplingPercent = 1;
 
-  @JsonProperty("update_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer updateInterval = 30;
+    @JsonProperty("update_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer updateInterval = 30;
 
 
 
@@ -155,6 +155,7 @@ public class AppLearningParams extends AviRestResource {
    * Percent of the requests subjected to application learning.
    * Allowed values are 1-100.
    * Field introduced in 18.2.3.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return samplingPercent
    */
@@ -168,6 +169,7 @@ public class AppLearningParams extends AviRestResource {
    * Percent of the requests subjected to application learning.
    * Allowed values are 1-100.
    * Field introduced in 18.2.3.
+   * Unit is percent.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param samplingPercent set the samplingPercent.
    */
@@ -179,8 +181,9 @@ public class AppLearningParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Frequency with which se publishes application learning data to controller.
-   * Allowed values are 1-10080.
+   * Allowed values are 1-60.
    * Field introduced in 18.2.3.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return updateInterval
    */
@@ -192,8 +195,9 @@ public class AppLearningParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Frequency with which se publishes application learning data to controller.
-   * Allowed values are 1-10080.
+   * Allowed values are 1-60.
    * Field introduced in 18.2.3.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param updateInterval set the updateInterval.
    */

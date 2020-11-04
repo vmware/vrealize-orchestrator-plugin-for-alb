@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugVirtualServiceSeParams extends AviRestResource {
-  @JsonProperty("se_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seRefs = null;
+    @JsonProperty("se_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seRefs = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRefs
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class DebugVirtualServiceSeParams extends AviRestResource {
   /**
    * This is the setter method. this will set the seRefs
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRefs
    */
   @VsoMethod
@@ -53,6 +55,7 @@ public class DebugVirtualServiceSeParams extends AviRestResource {
   /**
    * This is the setter method this will set the seRefs
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRefs
    */
   @VsoMethod

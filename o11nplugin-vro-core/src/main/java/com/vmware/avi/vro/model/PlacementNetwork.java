@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PlacementNetwork extends AviRestResource {
-  @JsonProperty("network_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String networkRef = null;
+    @JsonProperty("network_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String networkRef = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRef
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class PlacementNetwork extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkRef set the networkRef.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class PlacementNetwork extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet of obj type placementnetwork field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -68,6 +71,7 @@ public class PlacementNetwork extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property subnet of obj type placementnetwork field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod

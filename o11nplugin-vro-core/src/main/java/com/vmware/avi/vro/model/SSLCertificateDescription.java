@@ -24,43 +24,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLCertificateDescription extends AviRestResource {
-  @JsonProperty("common_name")
-  @JsonInclude(Include.NON_NULL)
-  private String commonName = null;
+    @JsonProperty("common_name")
+    @JsonInclude(Include.NON_NULL)
+    private String commonName = null;
 
-  @JsonProperty("country")
-  @JsonInclude(Include.NON_NULL)
-  private String country = null;
+    @JsonProperty("country")
+    @JsonInclude(Include.NON_NULL)
+    private String country = null;
 
-  @JsonProperty("distinguished_name")
-  @JsonInclude(Include.NON_NULL)
-  private String distinguishedName = null;
+    @JsonProperty("distinguished_name")
+    @JsonInclude(Include.NON_NULL)
+    private String distinguishedName = null;
 
-  @JsonProperty("email_address")
-  @JsonInclude(Include.NON_NULL)
-  private String emailAddress = null;
+    @JsonProperty("email_address")
+    @JsonInclude(Include.NON_NULL)
+    private String emailAddress = null;
 
-  @JsonProperty("locality")
-  @JsonInclude(Include.NON_NULL)
-  private String locality = null;
+    @JsonProperty("locality")
+    @JsonInclude(Include.NON_NULL)
+    private String locality = null;
 
-  @JsonProperty("organization")
-  @JsonInclude(Include.NON_NULL)
-  private String organization = null;
+    @JsonProperty("organization")
+    @JsonInclude(Include.NON_NULL)
+    private String organization = null;
 
-  @JsonProperty("organization_unit")
-  @JsonInclude(Include.NON_NULL)
-  private String organizationUnit = null;
+    @JsonProperty("organization_unit")
+    @JsonInclude(Include.NON_NULL)
+    private String organizationUnit = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property common_name of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return commonName
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property common_name of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param commonName set the commonName.
    */
   @VsoMethod
@@ -81,6 +83,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property country of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return country
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property country of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param country set the country.
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property distinguished_name of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return distinguishedName
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property distinguished_name of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param distinguishedName set the distinguishedName.
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property email_address of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return emailAddress
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property email_address of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param emailAddress set the emailAddress.
    */
   @VsoMethod
@@ -141,6 +149,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property locality of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locality
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property locality of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param locality set the locality.
    */
   @VsoMethod
@@ -161,6 +171,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property organization of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return organization
    */
   @VsoMethod
@@ -171,6 +182,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property organization of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param organization set the organization.
    */
   @VsoMethod
@@ -181,6 +193,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property organization_unit of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return organizationUnit
    */
   @VsoMethod
@@ -191,6 +204,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property organization_unit of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param organizationUnit set the organizationUnit.
    */
   @VsoMethod
@@ -201,6 +215,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property state of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -211,6 +226,7 @@ public class SSLCertificateDescription extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property state of obj type sslcertificatedescription field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod

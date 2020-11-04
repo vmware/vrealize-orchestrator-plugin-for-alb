@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServerScaleInParams extends AviRestResource {
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("servers")
-  @JsonInclude(Include.NON_NULL)
-  private List<ServerId> servers = null;
+    @JsonProperty("servers")
+    @JsonInclude(Include.NON_NULL)
+    private List<ServerId> servers = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Reason for the manual scalein.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class ServerScaleInParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason for the manual scalein.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class ServerScaleInParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of server ids that should be scaled in.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class ServerScaleInParams extends AviRestResource {
   /**
    * This is the setter method. this will set the servers
    * List of server ids that should be scaled in.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class ServerScaleInParams extends AviRestResource {
   /**
    * This is the setter method this will set the servers
    * List of server ids that should be scaled in.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servers
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class ServerScaleInParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class ServerScaleInParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

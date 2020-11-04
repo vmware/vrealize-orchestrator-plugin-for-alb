@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureClusterInfo extends AviRestResource {
-  @JsonProperty("cloud_credential_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudCredentialRef = null;
+    @JsonProperty("cloud_credential_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudCredentialRef = null;
 
-  @JsonProperty("subscription_id")
-  @JsonInclude(Include.NON_NULL)
-  private String subscriptionId = null;
+    @JsonProperty("subscription_id")
+    @JsonInclude(Include.NON_NULL)
+    private String subscriptionId = null;
 
 
 
@@ -38,6 +38,7 @@ public class AzureClusterInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudCredentialRef
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class AzureClusterInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudCredentialRef set the cloudCredentialRef.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class AzureClusterInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subscriptionId
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class AzureClusterInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subscriptionId set the subscriptionId.
    */
   @VsoMethod

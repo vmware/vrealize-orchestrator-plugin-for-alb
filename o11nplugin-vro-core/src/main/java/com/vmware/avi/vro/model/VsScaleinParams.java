@@ -24,53 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsScaleinParams extends AviRestResource {
-  @JsonProperty("admin_down")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean adminDown = false;
+    @JsonProperty("from_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String fromSeRef = null;
 
-  @JsonProperty("from_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String fromSeRef = null;
+    @JsonProperty("scalein_primary")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleinPrimary = null;
 
-  @JsonProperty("scalein_primary")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleinPrimary = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
-
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Placeholder for description of property admin_down of obj type vsscaleinparams field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return adminDown
-   */
-  @VsoMethod
-  public Boolean getAdminDown() {
-    return adminDown;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Placeholder for description of property admin_down of obj type vsscaleinparams field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param adminDown set the adminDown.
-   */
-  @VsoMethod
-  public void setAdminDown(Boolean  adminDown) {
-    this.adminDown = adminDown;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fromSeRef
    */
   @VsoMethod
@@ -81,6 +56,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fromSeRef set the fromSeRef.
    */
   @VsoMethod
@@ -91,6 +67,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property scalein_primary of obj type vsscaleinparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinPrimary
    */
   @VsoMethod
@@ -101,6 +78,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property scalein_primary of obj type vsscaleinparams field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleinPrimary set the scaleinPrimary.
    */
   @VsoMethod
@@ -111,6 +89,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -121,6 +100,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -131,6 +111,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -141,6 +122,7 @@ public class VsScaleinParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -162,7 +144,6 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objVsScaleinParams.uuid)&&
   Objects.equals(this.fromSeRef, objVsScaleinParams.fromSeRef)&&
   Objects.equals(this.scaleinPrimary, objVsScaleinParams.scaleinPrimary)&&
-  Objects.equals(this.adminDown, objVsScaleinParams.adminDown)&&
   Objects.equals(this.vipId, objVsScaleinParams.vipId);
 }
 
@@ -170,8 +151,7 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VsScaleinParams {\n");
-      sb.append("    adminDown: ").append(toIndentedString(adminDown)).append("\n");
-        sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
+      sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
         sb.append("    scaleinPrimary: ").append(toIndentedString(scaleinPrimary)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");

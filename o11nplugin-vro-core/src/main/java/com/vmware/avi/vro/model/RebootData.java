@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RebootData extends AviRestResource {
-  @JsonProperty("patch_version")
-  @JsonInclude(Include.NON_NULL)
-  private String patchVersion = null;
+    @JsonProperty("patch_version")
+    @JsonInclude(Include.NON_NULL)
+    private String patchVersion = null;
 
-  @JsonProperty("reboot")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean reboot = null;
+    @JsonProperty("reboot")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean reboot = null;
 
 
 
@@ -38,6 +38,7 @@ public class RebootData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch version for which reboot flag need to be computed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchVersion
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class RebootData extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch version for which reboot flag need to be computed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchVersion set the patchVersion.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class RebootData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This variable tells whether reboot has to be performed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reboot
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class RebootData extends AviRestResource {
    * This is the setter method to the attribute.
    * This variable tells whether reboot has to be performed.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reboot set the reboot.
    */
   @VsoMethod

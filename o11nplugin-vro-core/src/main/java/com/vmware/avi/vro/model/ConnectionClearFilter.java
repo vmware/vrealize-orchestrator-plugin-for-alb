@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConnectionClearFilter extends AviRestResource {
-  @JsonProperty("ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String ipAddr = null;
+    @JsonProperty("ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String ipAddr = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address in dotted decimal notation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddr
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address in dotted decimal notation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipAddr set the ipAddr.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Port number.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class ConnectionClearFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Port number.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod

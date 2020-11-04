@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmAddVnic extends AviRestResource {
-  @JsonProperty("network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String networkName = null;
+    @JsonProperty("network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String networkName = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private String subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private String subnet = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_name of obj type rmaddvnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkName
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class RmAddVnic extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network_name of obj type rmaddvnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkName set the networkName.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class RmAddVnic extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class RmAddVnic extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class RmAddVnic extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet of obj type rmaddvnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class RmAddVnic extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property subnet of obj type rmaddvnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod

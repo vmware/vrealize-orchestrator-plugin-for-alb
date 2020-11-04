@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MesosSeResources extends AviRestResource {
-  @JsonProperty("attribute_key")
-  @JsonInclude(Include.NON_NULL)
-  private String attributeKey = null;
+    @JsonProperty("attribute_key")
+    @JsonInclude(Include.NON_NULL)
+    private String attributeKey = null;
 
-  @JsonProperty("attribute_value")
-  @JsonInclude(Include.NON_NULL)
-  private String attributeValue = null;
+    @JsonProperty("attribute_value")
+    @JsonInclude(Include.NON_NULL)
+    private String attributeValue = null;
 
-  @JsonProperty("cpu")
-  @JsonInclude(Include.NON_NULL)
-  private float cpu = 2.0f;
+    @JsonProperty("cpu")
+    @JsonInclude(Include.NON_NULL)
+    private Float cpu = 2.0f;
 
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = 4096;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = 4096;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Attribute (fleet or mesos) key of hosts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeKey
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class MesosSeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Attribute (fleet or mesos) key of hosts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeKey set the attributeKey.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class MesosSeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Attribute (fleet or mesos) value of hosts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeValue
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class MesosSeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Attribute (fleet or mesos) value of hosts.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeValue set the attributeValue.
    */
   @VsoMethod
@@ -85,7 +89,7 @@ public class MesosSeResources extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Obsolete - ignored.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
    * @return cpu
    */
   @VsoMethod
@@ -96,7 +100,7 @@ public class MesosSeResources extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Obsolete - ignored.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
    * @param cpu set the cpu.
    */
   @VsoMethod

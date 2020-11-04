@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertTestEmailParams extends AviRestResource {
-  @JsonProperty("subject")
-  @JsonInclude(Include.NON_NULL)
-  private String subject = null;
+    @JsonProperty("subject")
+    @JsonInclude(Include.NON_NULL)
+    private String subject = null;
 
-  @JsonProperty("text")
-  @JsonInclude(Include.NON_NULL)
-  private String text = null;
+    @JsonProperty("text")
+    @JsonInclude(Include.NON_NULL)
+    private String text = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * The subject line of the originating email from  avi controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subject
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The subject line of the originating email from  avi controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subject set the subject.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The email context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return text
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The email context.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param text set the text.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class AlertTestEmailParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

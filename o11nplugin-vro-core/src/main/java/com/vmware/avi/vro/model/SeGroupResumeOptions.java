@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeGroupResumeOptions extends AviRestResource {
-  @JsonProperty("action_on_error")
-  @JsonInclude(Include.NON_NULL)
-  private String actionOnError = "SUSPEND_UPGRADE_OPS_ON_ERROR";
+    @JsonProperty("action_on_error")
+    @JsonInclude(Include.NON_NULL)
+    private String actionOnError = "SUSPEND_UPGRADE_OPS_ON_ERROR";
 
-  @JsonProperty("disruptive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disruptive = false;
+    @JsonProperty("disruptive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disruptive = false;
 
-  @JsonProperty("skip_suspended")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipSuspended = false;
+    @JsonProperty("skip_suspended")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipSuspended = false;
 
 
 
@@ -43,7 +43,7 @@ public class SeGroupResumeOptions extends AviRestResource {
    * The error recovery action configured for a se group.
    * Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SUSPEND_UPGRADE_OPS_ON_ERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SUSPEND_UPGRADE_OPS_ON_ERROR".
    * @return actionOnError
    */
   @VsoMethod
@@ -56,7 +56,7 @@ public class SeGroupResumeOptions extends AviRestResource {
    * The error recovery action configured for a se group.
    * Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SUSPEND_UPGRADE_OPS_ON_ERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SUSPEND_UPGRADE_OPS_ON_ERROR".
    * @param actionOnError set the actionOnError.
    */
   @VsoMethod

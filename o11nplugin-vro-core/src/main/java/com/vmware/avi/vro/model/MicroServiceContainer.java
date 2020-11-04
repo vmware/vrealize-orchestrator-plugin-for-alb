@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MicroServiceContainer extends AviRestResource {
-  @JsonProperty("container_id")
-  @JsonInclude(Include.NON_NULL)
-  private String containerId = null;
+    @JsonProperty("container_id")
+    @JsonInclude(Include.NON_NULL)
+    private String containerId = null;
 
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("task_id")
-  @JsonInclude(Include.NON_NULL)
-  private String taskId = null;
+    @JsonProperty("task_id")
+    @JsonInclude(Include.NON_NULL)
+    private String taskId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Id of the container.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containerId
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Id of the container.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param containerId set the containerId.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Id or name of the host where the container is.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Id or name of the host where the container is.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of the container.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of the container.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Port nunber of the instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Port nunber of the instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Marathon task id of the instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return taskId
    */
   @VsoMethod
@@ -140,6 +149,7 @@ public class MicroServiceContainer extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Marathon task id of the instance.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param taskId set the taskId.
    */
   @VsoMethod

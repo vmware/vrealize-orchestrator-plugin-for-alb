@@ -27,21 +27,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPNetworkConfig extends AviRestResource {
-  @JsonProperty("config")
-  @JsonInclude(Include.NON_NULL)
-  private String config = null;
+    @JsonProperty("config")
+    @JsonInclude(Include.NON_NULL)
+    private String config = null;
 
-  @JsonProperty("inband")
-  @JsonInclude(Include.NON_NULL)
-  private GCPInBandManagement inband = null;
+    @JsonProperty("inband")
+    @JsonInclude(Include.NON_NULL)
+    private GCPInBandManagement inband = null;
 
-  @JsonProperty("one_arm")
-  @JsonInclude(Include.NON_NULL)
-  private GCPOneArmMode oneArm = null;
+    @JsonProperty("one_arm")
+    @JsonInclude(Include.NON_NULL)
+    private GCPOneArmMode oneArm = null;
 
-  @JsonProperty("two_arm")
-  @JsonInclude(Include.NON_NULL)
-  private GCPTwoArmMode twoArm = null;
+    @JsonProperty("two_arm")
+    @JsonInclude(Include.NON_NULL)
+    private GCPTwoArmMode twoArm = null;
 
 
 
@@ -50,6 +50,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Config mode for google cloud network configuration.
    * Enum options - INBAND_MANAGEMENT, ONE_ARM_MODE, TWO_ARM_MODE.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return config
    */
   @VsoMethod
@@ -62,6 +63,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Config mode for google cloud network configuration.
    * Enum options - INBAND_MANAGEMENT, ONE_ARM_MODE, TWO_ARM_MODE.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param config set the config.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure inband management as google cloud network configuration.
    * In this configuration the data network and management network for service engines will be same.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inband
    */
   @VsoMethod
@@ -86,6 +89,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure inband management as google cloud network configuration.
    * In this configuration the data network and management network for service engines will be same.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inband set the inband.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure one arm mode as google cloud network configuration.
    * In this configuration the data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return oneArm
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure one arm mode as google cloud network configuration.
    * In this configuration the data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param oneArm set the oneArm.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure two arm mode as google cloud network configuration.
    * In this configuration the frontend data network, backend data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return twoArm
    */
   @VsoMethod
@@ -134,6 +141,7 @@ public class GCPNetworkConfig extends AviRestResource {
    * Configure two arm mode as google cloud network configuration.
    * In this configuration the frontend data network, backend data network and the management network for the service engines will be separated.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param twoArm set the twoArm.
    */
   @VsoMethod

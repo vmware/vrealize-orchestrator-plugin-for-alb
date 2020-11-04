@@ -24,55 +24,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NuageSDNController extends AviRestResource {
-  @JsonProperty("nuage_organization")
-  @JsonInclude(Include.NON_NULL)
-  private String nuageOrganization = null;
+    @JsonProperty("nuage_organization")
+    @JsonInclude(Include.NON_NULL)
+    private String nuageOrganization = null;
 
-  @JsonProperty("nuage_password")
-  @JsonInclude(Include.NON_NULL)
-  private String nuagePassword = null;
+    @JsonProperty("nuage_password")
+    @JsonInclude(Include.NON_NULL)
+    private String nuagePassword = null;
 
-  @JsonProperty("nuage_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nuagePort = 8443;
+    @JsonProperty("nuage_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nuagePort = 8443;
 
-  @JsonProperty("nuage_username")
-  @JsonInclude(Include.NON_NULL)
-  private String nuageUsername = null;
+    @JsonProperty("nuage_username")
+    @JsonInclude(Include.NON_NULL)
+    private String nuageUsername = null;
 
-  @JsonProperty("nuage_vsd_host")
-  @JsonInclude(Include.NON_NULL)
-  private String nuageVsdHost = null;
+    @JsonProperty("nuage_vsd_host")
+    @JsonInclude(Include.NON_NULL)
+    private String nuageVsdHost = null;
 
-  @JsonProperty("se_domain")
-  @JsonInclude(Include.NON_NULL)
-  private String seDomain = null;
+    @JsonProperty("se_domain")
+    @JsonInclude(Include.NON_NULL)
+    private String seDomain = null;
 
-  @JsonProperty("se_enterprise")
-  @JsonInclude(Include.NON_NULL)
-  private String seEnterprise = null;
+    @JsonProperty("se_enterprise")
+    @JsonInclude(Include.NON_NULL)
+    private String seEnterprise = null;
 
-  @JsonProperty("se_network")
-  @JsonInclude(Include.NON_NULL)
-  private String seNetwork = null;
+    @JsonProperty("se_network")
+    @JsonInclude(Include.NON_NULL)
+    private String seNetwork = null;
 
-  @JsonProperty("se_policy_group")
-  @JsonInclude(Include.NON_NULL)
-  private String sePolicyGroup = null;
+    @JsonProperty("se_policy_group")
+    @JsonInclude(Include.NON_NULL)
+    private String sePolicyGroup = null;
 
-  @JsonProperty("se_user")
-  @JsonInclude(Include.NON_NULL)
-  private String seUser = null;
+    @JsonProperty("se_user")
+    @JsonInclude(Include.NON_NULL)
+    private String seUser = null;
 
-  @JsonProperty("se_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String seZone = null;
+    @JsonProperty("se_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String seZone = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nuage_organization of obj type nuagesdncontroller field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuageOrganization
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nuage_organization of obj type nuagesdncontroller field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuageOrganization set the nuageOrganization.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nuage_password of obj type nuagesdncontroller field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuagePassword
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nuage_password of obj type nuagesdncontroller field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuagePassword set the nuagePassword.
    */
   @VsoMethod
@@ -135,6 +139,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nuage_username of obj type nuagesdncontroller field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuageUsername
    */
   @VsoMethod
@@ -145,6 +150,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nuage_username of obj type nuagesdncontroller field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuageUsername set the nuageUsername.
    */
   @VsoMethod
@@ -155,6 +161,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Nuage vsd host name or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nuageVsdHost
    */
   @VsoMethod
@@ -165,6 +172,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Nuage vsd host name or ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nuageVsdHost set the nuageVsdHost.
    */
   @VsoMethod
@@ -175,6 +183,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Domain to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDomain
    */
   @VsoMethod
@@ -185,6 +194,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Domain to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDomain set the seDomain.
    */
   @VsoMethod
@@ -195,6 +205,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enterprise to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seEnterprise
    */
   @VsoMethod
@@ -205,6 +216,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enterprise to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seEnterprise set the seEnterprise.
    */
   @VsoMethod
@@ -215,6 +227,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Network to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seNetwork
    */
   @VsoMethod
@@ -225,6 +238,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Network to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seNetwork set the seNetwork.
    */
   @VsoMethod
@@ -235,6 +249,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Policy group to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePolicyGroup
    */
   @VsoMethod
@@ -245,6 +260,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Policy group to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePolicyGroup set the sePolicyGroup.
    */
   @VsoMethod
@@ -255,6 +271,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUser
    */
   @VsoMethod
@@ -265,6 +282,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUser set the seUser.
    */
   @VsoMethod
@@ -275,6 +293,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Zone to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seZone
    */
   @VsoMethod
@@ -285,6 +304,7 @@ public class NuageSDNController extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Zone to be used for se creation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seZone set the seZone.
    */
   @VsoMethod

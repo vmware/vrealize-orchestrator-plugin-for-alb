@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AttackMetaData extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("max_resp_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRespTime = null;
+    @JsonProperty("max_resp_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRespTime = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type attackmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class AttackMetaData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type attackmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class AttackMetaData extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property max_resp_time of obj type attackmetadata field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxRespTime
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class AttackMetaData extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property max_resp_time of obj type attackmetadata field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxRespTime set the maxRespTime.
    */
   @VsoMethod
@@ -80,6 +84,7 @@ public class AttackMetaData extends AviRestResource {
 /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property url of obj type attackmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
   @VsoMethod
@@ -90,6 +95,7 @@ public class AttackMetaData extends AviRestResource {
   /**
    * This is the setter method. this will set the url
    * Placeholder for description of property url of obj type attackmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return url
    */
   @VsoMethod

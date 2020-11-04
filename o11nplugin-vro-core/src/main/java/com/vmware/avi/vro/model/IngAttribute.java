@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IngAttribute extends AviRestResource {
-  @JsonProperty("attribute")
-  @JsonInclude(Include.NON_NULL)
-  private String attribute = null;
+    @JsonProperty("attribute")
+    @JsonInclude(Include.NON_NULL)
+    private String attribute = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private String value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private String value = null;
 
 
 
@@ -38,6 +38,7 @@ public class IngAttribute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute to match.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attribute
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class IngAttribute extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute to match.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attribute set the attribute.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class IngAttribute extends AviRestResource {
    * Attribute value.
    * If not set, match any value.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class IngAttribute extends AviRestResource {
    * Attribute value.
    * If not set, match any value.
    * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

@@ -24,60 +24,60 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AnomalyEventDetails extends AviRestResource {
-  @JsonProperty("deviation")
-  @JsonInclude(Include.NON_NULL)
-  private float deviation = 0.0f;
+    @JsonProperty("deviation")
+    @JsonInclude(Include.NON_NULL)
+    private Float deviation = 0.0f;
 
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = null;
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = null;
 
-  @JsonProperty("metric_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private String metricTimestamp = null;
+    @JsonProperty("metric_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private String metricTimestamp = null;
 
-  @JsonProperty("model")
-  @JsonInclude(Include.NON_NULL)
-  private String model = "EXPONENTIAL_WEIGHTED_MOVING_AVG";
+    @JsonProperty("model")
+    @JsonInclude(Include.NON_NULL)
+    private String model = "EXPONENTIAL_WEIGHTED_MOVING_AVG";
 
-  @JsonProperty("models")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> models = null;
+    @JsonProperty("models")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> models = null;
 
-  @JsonProperty("node_id")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeId = null;
+    @JsonProperty("node_id")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeId = null;
 
-  @JsonProperty("obj_type")
-  @JsonInclude(Include.NON_NULL)
-  private String objType = null;
+    @JsonProperty("obj_type")
+    @JsonInclude(Include.NON_NULL)
+    private String objType = null;
 
-  @JsonProperty("pool_name")
-  @JsonInclude(Include.NON_NULL)
-  private String poolName = null;
+    @JsonProperty("pool_name")
+    @JsonInclude(Include.NON_NULL)
+    private String poolName = null;
 
-  @JsonProperty("pool_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String poolUuid = null;
+    @JsonProperty("pool_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String poolUuid = null;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private String priority = null;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private String priority = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private String server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private String server = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private Float value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private Float value = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property deviation of obj type anomalyeventdetails field type str  type float.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @return deviation
    */
   @VsoMethod
@@ -88,7 +88,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property deviation of obj type anomalyeventdetails field type str  type float.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
    * @param deviation set the deviation.
    */
   @VsoMethod
@@ -99,6 +99,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_id of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
   @VsoMethod
@@ -109,6 +110,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_id of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -119,6 +121,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_timestamp of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricTimestamp
    */
   @VsoMethod
@@ -129,6 +132,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_timestamp of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricTimestamp set the metricTimestamp.
    */
   @VsoMethod
@@ -140,7 +144,7 @@ public class AnomalyEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deprecated.
    * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as EXPONENTIAL_WEIGHTED_MOVING_AVG.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "EXPONENTIAL_WEIGHTED_MOVING_AVG".
    * @return model
    */
   @VsoMethod
@@ -152,7 +156,7 @@ public class AnomalyEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Deprecated.
    * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as EXPONENTIAL_WEIGHTED_MOVING_AVG.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "EXPONENTIAL_WEIGHTED_MOVING_AVG".
    * @param model set the model.
    */
   @VsoMethod
@@ -163,6 +167,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return models
    */
   @VsoMethod
@@ -173,6 +178,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the models
    * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return models
    */
   @VsoMethod
@@ -183,6 +189,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the models
    * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return models
    */
   @VsoMethod
@@ -198,6 +205,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property node_id of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeId
    */
   @VsoMethod
@@ -208,6 +216,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property node_id of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeId set the nodeId.
    */
   @VsoMethod
@@ -221,6 +230,7 @@ public class AnomalyEventDetails extends AviRestResource {
    * SE_METRICS_OBJ, VSERVER_RUM, CONTROLLER_METRICS_OBJ, METRICS_COLLECTION, METRICS_RUM_PREAGG_BROWSER_OBJ, METRICS_RUM_PREAGG_COUNTRY_OBJ,
    * METRICS_RUM_PREAGG_DEVTYPE_OBJ, METRICS_RUM_PREAGG_LANG_OBJ, METRICS_RUM_PREAGG_OS_OBJ, METRICS_RUM_PREAGG_URL_OBJ, METRICS_ANOMALY_OBJ,
    * METRICS_HEALTHSCORE_OBJ, METRICS_RESOURCE_TIMING_BROWSER_OBJ, METRICS_RESOURCE_TIMING_OS_OBJ...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objType
    */
   @VsoMethod
@@ -234,6 +244,7 @@ public class AnomalyEventDetails extends AviRestResource {
    * SE_METRICS_OBJ, VSERVER_RUM, CONTROLLER_METRICS_OBJ, METRICS_COLLECTION, METRICS_RUM_PREAGG_BROWSER_OBJ, METRICS_RUM_PREAGG_COUNTRY_OBJ,
    * METRICS_RUM_PREAGG_DEVTYPE_OBJ, METRICS_RUM_PREAGG_LANG_OBJ, METRICS_RUM_PREAGG_OS_OBJ, METRICS_RUM_PREAGG_URL_OBJ, METRICS_ANOMALY_OBJ,
    * METRICS_HEALTHSCORE_OBJ, METRICS_RESOURCE_TIMING_BROWSER_OBJ, METRICS_RESOURCE_TIMING_OS_OBJ...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objType set the objType.
    */
   @VsoMethod
@@ -244,6 +255,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_name of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
   @VsoMethod
@@ -254,6 +266,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_name of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
   @VsoMethod
@@ -264,6 +277,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
   @VsoMethod
@@ -274,6 +288,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
   @VsoMethod
@@ -284,6 +299,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priority
    */
   @VsoMethod
@@ -294,6 +310,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priority set the priority.
    */
   @VsoMethod
@@ -304,6 +321,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -314,6 +332,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server of obj type anomalyeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod
@@ -324,6 +343,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property value of obj type anomalyeventdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -334,6 +354,7 @@ public class AnomalyEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property value of obj type anomalyeventdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IpAddr;
+import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.OperationalStatus;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -26,41 +28,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipSeAssigned extends AviRestResource {
-  @JsonProperty("admin_down_requested")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean adminDownRequested = false;
+    @JsonProperty("admin_down_requested")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean adminDownRequested = false;
 
-  @JsonProperty("connected")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean connected = null;
+    @JsonProperty("connected")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean connected = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("mgmt_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr mgmtIp = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("mgmt_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr mgmtIp6 = null;
 
-  @JsonProperty("primary")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean primary = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("ref")
-  @JsonInclude(Include.NON_NULL)
-  private String ref = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("scalein_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleinInProgress = false;
+    @JsonProperty("primary")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean primary = null;
 
-  @JsonProperty("snat_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr snatIp = null;
+    @JsonProperty("ref")
+    @JsonInclude(Include.NON_NULL)
+    private String ref = null;
 
-  @JsonProperty("standby")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean standby = null;
+    @JsonProperty("scalein_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleinInProgress = false;
+
+    @JsonProperty("snat_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr snatIp = null;
+
+    @JsonProperty("standby")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean standby = null;
 
 
 
@@ -89,6 +99,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property connected of obj type vipseassigned field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connected
    */
   @VsoMethod
@@ -99,6 +110,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property connected of obj type vipseassigned field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connected set the connected.
    */
   @VsoMethod
@@ -108,7 +120,56 @@ public class VipSeAssigned extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Management ipv4 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mgmtIp
+   */
+  @VsoMethod
+  public IpAddr getMgmtIp() {
+    return mgmtIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Management ipv4 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mgmtIp set the mgmtIp.
+   */
+  @VsoMethod
+  public void setMgmtIp(IpAddr mgmtIp) {
+    this.mgmtIp = mgmtIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Management ipv6 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return mgmtIp6
+   */
+  @VsoMethod
+  public IpAddr getMgmtIp6() {
+    return mgmtIp6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Management ipv6 address of se.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param mgmtIp6 set the mgmtIp6.
+   */
+  @VsoMethod
+  public void setMgmtIp6(IpAddr mgmtIp6) {
+    this.mgmtIp6 = mgmtIp6;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -119,6 +180,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -129,6 +191,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oper_status of obj type vipseassigned field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -139,6 +202,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oper_status of obj type vipseassigned field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -149,6 +213,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property primary of obj type vipseassigned field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return primary
    */
   @VsoMethod
@@ -159,6 +224,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property primary of obj type vipseassigned field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param primary set the primary.
    */
   @VsoMethod
@@ -169,6 +235,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ref
    */
   @VsoMethod
@@ -179,6 +246,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ref set the ref.
    */
   @VsoMethod
@@ -211,6 +279,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property snat_ip of obj type vipseassigned field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
    */
   @VsoMethod
@@ -221,6 +290,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property snat_ip of obj type vipseassigned field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param snatIp set the snatIp.
    */
   @VsoMethod
@@ -231,6 +301,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property standby of obj type vipseassigned field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return standby
    */
   @VsoMethod
@@ -241,6 +312,7 @@ public class VipSeAssigned extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property standby of obj type vipseassigned field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param standby set the standby.
    */
   @VsoMethod
@@ -267,6 +339,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.operStatus, objVipSeAssigned.operStatus)&&
   Objects.equals(this.snatIp, objVipSeAssigned.snatIp)&&
   Objects.equals(this.adminDownRequested, objVipSeAssigned.adminDownRequested)&&
+  Objects.equals(this.mgmtIp, objVipSeAssigned.mgmtIp)&&
+  Objects.equals(this.mgmtIp6, objVipSeAssigned.mgmtIp6)&&
   Objects.equals(this.ref, objVipSeAssigned.ref);
 }
 
@@ -276,6 +350,8 @@ public String toString() {
   sb.append("class VipSeAssigned {\n");
       sb.append("    adminDownRequested: ").append(toIndentedString(adminDownRequested)).append("\n");
         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
+        sb.append("    mgmtIp: ").append(toIndentedString(mgmtIp)).append("\n");
+        sb.append("    mgmtIp6: ").append(toIndentedString(mgmtIp6)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    operStatus: ").append(toIndentedString(operStatus)).append("\n");
         sb.append("    primary: ").append(toIndentedString(primary)).append("\n");

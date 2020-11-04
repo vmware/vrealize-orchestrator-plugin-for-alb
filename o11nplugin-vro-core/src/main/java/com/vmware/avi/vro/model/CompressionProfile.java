@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CompressionProfile extends AviRestResource {
-  @JsonProperty("compressible_content_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String compressibleContentRef = null;
+    @JsonProperty("compressible_content_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String compressibleContentRef = null;
 
-  @JsonProperty("compression")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean compression = false;
+    @JsonProperty("compression")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean compression = false;
 
-  @JsonProperty("filter")
-  @JsonInclude(Include.NON_NULL)
-  private List<CompressionFilter> filter = null;
+    @JsonProperty("filter")
+    @JsonInclude(Include.NON_NULL)
+    private List<CompressionFilter> filter = null;
 
-  @JsonProperty("remove_accept_encoding_header")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean removeAcceptEncodingHeader = true;
+    @JsonProperty("remove_accept_encoding_header")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean removeAcceptEncodingHeader = true;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "AUTO_COMPRESSION";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "AUTO_COMPRESSION";
 
 
 
@@ -51,6 +51,7 @@ public class CompressionProfile extends AviRestResource {
    * Compress only content types listed in this string group.
    * Content types not present in this list are not compressed.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return compressibleContentRef
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class CompressionProfile extends AviRestResource {
    * Compress only content types listed in this string group.
    * Content types not present in this list are not compressed.
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param compressibleContentRef set the compressibleContentRef.
    */
   @VsoMethod
@@ -95,6 +97,7 @@ public class CompressionProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Custom filters used when auto compression is not selected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filter
    */
   @VsoMethod
@@ -105,6 +108,7 @@ public class CompressionProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the filter
    * Custom filters used when auto compression is not selected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filter
    */
   @VsoMethod
@@ -115,6 +119,7 @@ public class CompressionProfile extends AviRestResource {
   /**
    * This is the setter method this will set the filter
    * Custom filters used when auto compression is not selected.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return filter
    */
   @VsoMethod
@@ -155,7 +160,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Compress content automatically or add custom filters to define compressible content and compression levels.
    * Enum options - AUTO_COMPRESSION, CUSTOM_COMPRESSION.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTO_COMPRESSION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTO_COMPRESSION".
    * @return type
    */
   @VsoMethod
@@ -167,7 +172,7 @@ public class CompressionProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Compress content automatically or add custom filters to define compressible content and compression levels.
    * Enum options - AUTO_COMPRESSION, CUSTOM_COMPRESSION.
-   * Default value when not specified in API or module is interpreted by Avi Controller as AUTO_COMPRESSION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTO_COMPRESSION".
    * @param type set the type.
    */
   @VsoMethod

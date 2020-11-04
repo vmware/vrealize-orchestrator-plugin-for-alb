@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraCntlrHostUnreachableList extends AviRestResource {
-  @JsonProperty("host_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> hostName = null;
+    @JsonProperty("host_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> hostName = null;
 
-  @JsonProperty("vcenter")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenter = null;
+    @JsonProperty("vcenter")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_name of obj type vinfracntlrhostunreachablelist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VinfraCntlrHostUnreachableList extends AviRestResource {
   /**
    * This is the setter method. this will set the hostName
    * Placeholder for description of property host_name of obj type vinfracntlrhostunreachablelist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class VinfraCntlrHostUnreachableList extends AviRestResource {
   /**
    * This is the setter method this will set the hostName
    * Placeholder for description of property host_name of obj type vinfracntlrhostunreachablelist field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class VinfraCntlrHostUnreachableList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter of obj type vinfracntlrhostunreachablelist field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenter
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class VinfraCntlrHostUnreachableList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter of obj type vinfracntlrhostunreachablelist field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenter set the vcenter.
    */
   @VsoMethod

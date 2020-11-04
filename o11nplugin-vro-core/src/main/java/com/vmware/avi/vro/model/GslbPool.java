@@ -24,45 +24,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbPool extends AviRestResource {
-  @JsonProperty("algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String algorithm = "GSLB_ALGORITHM_ROUND_ROBIN";
+    @JsonProperty("algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String algorithm = "GSLB_ALGORITHM_ROUND_ROBIN";
 
-  @JsonProperty("consistent_hash_mask")
-  @JsonInclude(Include.NON_NULL)
-  private Integer consistentHashMask = null;
+    @JsonProperty("consistent_hash_mask")
+    @JsonInclude(Include.NON_NULL)
+    private Integer consistentHashMask = null;
 
-  @JsonProperty("consistent_hash_mask6")
-  @JsonInclude(Include.NON_NULL)
-  private Integer consistentHashMask6 = null;
+    @JsonProperty("consistent_hash_mask6")
+    @JsonInclude(Include.NON_NULL)
+    private Integer consistentHashMask6 = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("fallback_algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String fallbackAlgorithm = null;
+    @JsonProperty("fallback_algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String fallbackAlgorithm = null;
 
-  @JsonProperty("members")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPoolMember> members = null;
+    @JsonProperty("members")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPoolMember> members = null;
 
-  @JsonProperty("min_health_monitors_up")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minHealthMonitorsUp = null;
+    @JsonProperty("min_health_monitors_up")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minHealthMonitorsUp = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private Integer priority = 10;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer priority = 10;
 
 
 
@@ -70,7 +70,7 @@ public class GslbPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The load balancing algorithm will pick a local member within the gslb service list of available members.
    * Enum options - GSLB_ALGORITHM_ROUND_ROBIN, GSLB_ALGORITHM_CONSISTENT_HASH, GSLB_ALGORITHM_GEO, GSLB_ALGORITHM_TOPOLOGY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_ALGORITHM_ROUND_ROBIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_ALGORITHM_ROUND_ROBIN".
    * @return algorithm
    */
   @VsoMethod
@@ -82,7 +82,7 @@ public class GslbPool extends AviRestResource {
    * This is the setter method to the attribute.
    * The load balancing algorithm will pick a local member within the gslb service list of available members.
    * Enum options - GSLB_ALGORITHM_ROUND_ROBIN, GSLB_ALGORITHM_CONSISTENT_HASH, GSLB_ALGORITHM_GEO, GSLB_ALGORITHM_TOPOLOGY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_ALGORITHM_ROUND_ROBIN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_ALGORITHM_ROUND_ROBIN".
    * @param algorithm set the algorithm.
    */
   @VsoMethod
@@ -94,6 +94,7 @@ public class GslbPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mask to be applied on client ip for consistent hash algorithm.
    * Allowed values are 1-31.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return consistentHashMask
    */
   @VsoMethod
@@ -105,6 +106,7 @@ public class GslbPool extends AviRestResource {
    * This is the setter method to the attribute.
    * Mask to be applied on client ip for consistent hash algorithm.
    * Allowed values are 1-31.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param consistentHashMask set the consistentHashMask.
    */
   @VsoMethod
@@ -117,6 +119,7 @@ public class GslbPool extends AviRestResource {
    * Mask to be applied on client ipv6 address for consistent hash algorithm.
    * Allowed values are 1-127.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return consistentHashMask6
    */
   @VsoMethod
@@ -129,6 +132,7 @@ public class GslbPool extends AviRestResource {
    * Mask to be applied on client ipv6 address for consistent hash algorithm.
    * Allowed values are 1-127.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param consistentHashMask6 set the consistentHashMask6.
    */
   @VsoMethod
@@ -140,6 +144,7 @@ public class GslbPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User provided information that records member details such as application owner name, contact, etc.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -151,6 +156,7 @@ public class GslbPool extends AviRestResource {
    * This is the setter method to the attribute.
    * User provided information that records member details such as application owner name, contact, etc.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -188,6 +194,7 @@ public class GslbPool extends AviRestResource {
    * For instance when algorithm is geo and client/server do not have valid geo location.
    * Enum options - GSLB_ALGORITHM_ROUND_ROBIN, GSLB_ALGORITHM_CONSISTENT_HASH, GSLB_ALGORITHM_GEO, GSLB_ALGORITHM_TOPOLOGY.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fallbackAlgorithm
    */
   @VsoMethod
@@ -201,6 +208,7 @@ public class GslbPool extends AviRestResource {
    * For instance when algorithm is geo and client/server do not have valid geo location.
    * Enum options - GSLB_ALGORITHM_ROUND_ROBIN, GSLB_ALGORITHM_CONSISTENT_HASH, GSLB_ALGORITHM_GEO, GSLB_ALGORITHM_TOPOLOGY.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fallbackAlgorithm set the fallbackAlgorithm.
    */
   @VsoMethod
@@ -211,6 +219,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Select list of vips belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -221,6 +230,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the setter method. this will set the members
    * Select list of vips belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -231,6 +241,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the setter method this will set the members
    * Select list of vips belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -247,6 +258,7 @@ public class GslbPool extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of health monitors in up state to mark the member up.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minHealthMonitorsUp
    */
   @VsoMethod
@@ -258,6 +270,7 @@ public class GslbPool extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of health monitors in up state to mark the member up.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minHealthMonitorsUp set the minHealthMonitorsUp.
    */
   @VsoMethod
@@ -268,6 +281,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the gslb service pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -278,6 +292,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the gslb service pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

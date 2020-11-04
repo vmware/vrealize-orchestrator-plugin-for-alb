@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RediscoverVcenterParam extends AviRestResource {
-  @JsonProperty("cloud")
-  @JsonInclude(Include.NON_NULL)
-  private String cloud = null;
+    @JsonProperty("cloud")
+    @JsonInclude(Include.NON_NULL)
+    private String cloud = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud of obj type rediscovervcenterparam field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloud
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class RediscoverVcenterParam extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud of obj type rediscovervcenterparam field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloud set the cloud.
    */
   @VsoMethod

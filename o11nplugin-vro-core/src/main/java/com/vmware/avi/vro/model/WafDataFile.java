@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafDataFile extends AviRestResource {
-  @JsonProperty("data")
-  @JsonInclude(Include.NON_NULL)
-  private String data = null;
+    @JsonProperty("data")
+    @JsonInclude(Include.NON_NULL)
+    private String data = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "WAF_DATAFILE_PM_FROM_FILE";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "WAF_DATAFILE_PM_FROM_FILE";
 
 
 
@@ -42,6 +42,7 @@ public class WafDataFile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Stringified waf file data.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return data
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class WafDataFile extends AviRestResource {
    * This is the setter method to the attribute.
    * Stringified waf file data.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param data set the data.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class WafDataFile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf data file name.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class WafDataFile extends AviRestResource {
    * This is the setter method to the attribute.
    * Waf data file name.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -87,7 +91,7 @@ public class WafDataFile extends AviRestResource {
    * Waf data file type.
    * Enum options - WAF_DATAFILE_PM_FROM_FILE, WAF_DATAFILE_DTD, WAF_DATAFILE_XSD.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_DATAFILE_PM_FROM_FILE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_DATAFILE_PM_FROM_FILE".
    * @return type
    */
   @VsoMethod
@@ -100,7 +104,7 @@ public class WafDataFile extends AviRestResource {
    * Waf data file type.
    * Enum options - WAF_DATAFILE_PM_FROM_FILE, WAF_DATAFILE_DTD, WAF_DATAFILE_XSD.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as WAF_DATAFILE_PM_FROM_FILE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "WAF_DATAFILE_PM_FROM_FILE".
    * @param type set the type.
    */
   @VsoMethod

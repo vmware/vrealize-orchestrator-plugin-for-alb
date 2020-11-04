@@ -24,41 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureMarketplace extends AviRestResource {
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("offer")
-  @JsonInclude(Include.NON_NULL)
-  private String offer = null;
+    @JsonProperty("offer")
+    @JsonInclude(Include.NON_NULL)
+    private String offer = null;
 
-  @JsonProperty("publisher")
-  @JsonInclude(Include.NON_NULL)
-  private String publisher = null;
+    @JsonProperty("publisher")
+    @JsonInclude(Include.NON_NULL)
+    private String publisher = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("resource_group")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceGroup = null;
+    @JsonProperty("resource_group")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceGroup = null;
 
-  @JsonProperty("skus")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> skus = null;
+    @JsonProperty("skus")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> skus = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("subscription_id")
-  @JsonInclude(Include.NON_NULL)
-  private String subscriptionId = null;
+    @JsonProperty("subscription_id")
+    @JsonInclude(Include.NON_NULL)
+    private String subscriptionId = null;
 
-  @JsonProperty("vnet_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vnetId = null;
+    @JsonProperty("vnet_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vnetId = null;
 
 
 
@@ -66,6 +66,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure cloud id.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure cloud id.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi azure marketplace offer name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return offer
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi azure marketplace offer name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param offer set the offer.
    */
   @VsoMethod
@@ -110,6 +114,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi azure marketplace publisher name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publisher
    */
   @VsoMethod
@@ -121,6 +126,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi azure marketplace publisher name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publisher set the publisher.
    */
   @VsoMethod
@@ -132,6 +138,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure marketplace license term failure status.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure marketplace license term failure status.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -154,6 +162,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure resource group name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceGroup
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure resource group name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceGroup set the resourceGroup.
    */
   @VsoMethod
@@ -176,6 +186,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi azure marketplace skus list.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skus
    */
   @VsoMethod
@@ -187,6 +198,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method. this will set the skus
    * Avi azure marketplace skus list.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skus
    */
   @VsoMethod
@@ -198,6 +210,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method this will set the skus
    * Avi azure marketplace skus list.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skus
    */
   @VsoMethod
@@ -214,6 +227,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure marketplace license term acceptance status.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -225,6 +239,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure marketplace license term acceptance status.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -236,6 +251,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure subscription id.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subscriptionId
    */
   @VsoMethod
@@ -247,6 +263,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure subscription id.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subscriptionId set the subscriptionId.
    */
   @VsoMethod
@@ -258,6 +275,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure vnet id.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnetId
    */
   @VsoMethod
@@ -269,6 +287,7 @@ public class AzureMarketplace extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure vnet id.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vnetId set the vnetId.
    */
   @VsoMethod

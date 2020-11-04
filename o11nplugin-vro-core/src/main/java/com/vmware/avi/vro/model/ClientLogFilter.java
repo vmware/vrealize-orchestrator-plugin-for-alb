@@ -26,33 +26,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClientLogFilter extends AviRestResource {
-  @JsonProperty("all_headers")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allHeaders = false;
+    @JsonProperty("all_headers")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allHeaders = false;
 
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp = null;
 
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = 30;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = 30;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = false;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = false;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("uri")
-  @JsonInclude(Include.NON_NULL)
-  private StringMatch uri = null;
+    @JsonProperty("uri")
+    @JsonInclude(Include.NON_NULL)
+    private StringMatch uri = null;
 
 
 
@@ -81,6 +81,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_ip of obj type clientlogfilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_ip of obj type clientlogfilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -101,6 +103,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return duration
    */
@@ -112,6 +115,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Special values are 0 - 'infinite'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param duration set the duration.
    */
@@ -145,6 +149,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property index of obj type clientlogfilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -155,6 +160,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property index of obj type clientlogfilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -165,6 +171,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -175,6 +182,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -185,6 +193,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property uri of obj type clientlogfilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uri
    */
   @VsoMethod
@@ -195,6 +204,7 @@ public class ClientLogFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property uri of obj type clientlogfilter field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uri set the uri.
    */
   @VsoMethod

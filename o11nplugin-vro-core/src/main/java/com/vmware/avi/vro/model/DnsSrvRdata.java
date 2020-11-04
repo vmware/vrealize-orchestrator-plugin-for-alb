@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsSrvRdata extends AviRestResource {
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private Integer priority = 0;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer priority = 0;
 
-  @JsonProperty("target")
-  @JsonInclude(Include.NON_NULL)
-  private String target = "default.host";
+    @JsonProperty("target")
+    @JsonInclude(Include.NON_NULL)
+    private String target = "default.host";
 
-  @JsonProperty("weight")
-  @JsonInclude(Include.NON_NULL)
-  private Integer weight = 0;
+    @JsonProperty("weight")
+    @JsonInclude(Include.NON_NULL)
+    private Integer weight = 0;
 
 
 
@@ -46,6 +46,7 @@ public class DnsSrvRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service port.
    * Allowed values are 0-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class DnsSrvRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Service port.
    * Allowed values are 0-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -92,7 +94,7 @@ public class DnsSrvRdata extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Canonical hostname, of the machine hosting the service, with no trailing period.
    * 'default.host' is valid but not 'default.host.'.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default.host".
    * @return target
    */
   @VsoMethod
@@ -104,7 +106,7 @@ public class DnsSrvRdata extends AviRestResource {
    * This is the setter method to the attribute.
    * Canonical hostname, of the machine hosting the service, with no trailing period.
    * 'default.host' is valid but not 'default.host.'.
-   * Default value when not specified in API or module is interpreted by Avi Controller as default.host.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "default.host".
    * @param target set the target.
    */
   @VsoMethod

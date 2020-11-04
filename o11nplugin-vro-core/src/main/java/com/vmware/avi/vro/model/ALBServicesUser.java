@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesUser extends AviRestResource {
-  @JsonProperty("account_id")
-  @JsonInclude(Include.NON_NULL)
-  private String accountId = null;
+    @JsonProperty("account_id")
+    @JsonInclude(Include.NON_NULL)
+    private String accountId = null;
 
-  @JsonProperty("account_name")
-  @JsonInclude(Include.NON_NULL)
-  private String accountName = null;
+    @JsonProperty("account_name")
+    @JsonInclude(Include.NON_NULL)
+    private String accountName = null;
 
-  @JsonProperty("email")
-  @JsonInclude(Include.NON_NULL)
-  private String email = null;
+    @JsonProperty("email")
+    @JsonInclude(Include.NON_NULL)
+    private String email = null;
 
-  @JsonProperty("managed_accounts")
-  @JsonInclude(Include.NON_NULL)
-  private List<ALBServicesAccount> managedAccounts = null;
+    @JsonProperty("managed_accounts")
+    @JsonInclude(Include.NON_NULL)
+    private List<ALBServicesAccount> managedAccounts = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("phone")
-  @JsonInclude(Include.NON_NULL)
-  private String phone = null;
+    @JsonProperty("phone")
+    @JsonInclude(Include.NON_NULL)
+    private String phone = null;
 
 
 
@@ -54,6 +54,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Id of primary account of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accountId
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Id of primary account of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accountId set the accountId.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of primary account of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accountName
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of primary account of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accountName set the accountName.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Email id of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return email
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Email id of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param email set the email.
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about all the accounts managed by user in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedAccounts
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method. this will set the managedAccounts
    * Information about all the accounts managed by user in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedAccounts
    */
   @VsoMethod
@@ -142,6 +150,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method this will set the managedAccounts
    * Information about all the accounts managed by user in the customer portal.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedAccounts
    */
   @VsoMethod
@@ -158,6 +167,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -169,6 +179,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the portal user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -180,6 +191,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Phone number of the user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return phone
    */
   @VsoMethod
@@ -191,6 +203,7 @@ public class ALBServicesUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Phone number of the user.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param phone set the phone.
    */
   @VsoMethod

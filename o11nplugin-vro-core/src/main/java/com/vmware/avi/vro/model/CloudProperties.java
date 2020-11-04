@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudProperties extends AviRestResource {
-  @JsonProperty("cc_props")
-  @JsonInclude(Include.NON_NULL)
-  private CC_Properties ccProps = null;
+    @JsonProperty("cc_props")
+    @JsonInclude(Include.NON_NULL)
+    private CC_Properties ccProps = null;
 
-  @JsonProperty("cc_vtypes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> ccVtypes = null;
+    @JsonProperty("cc_vtypes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ccVtypes = null;
 
-  @JsonProperty("hyp_props")
-  @JsonInclude(Include.NON_NULL)
-  private List<Hypervisor_Properties> hypProps = null;
+    @JsonProperty("hyp_props")
+    @JsonInclude(Include.NON_NULL)
+    private List<Hypervisor_Properties> hypProps = null;
 
-  @JsonProperty("info")
-  @JsonInclude(Include.NON_NULL)
-  private List<CloudInfo> info = null;
+    @JsonProperty("info")
+    @JsonInclude(Include.NON_NULL)
+    private List<CloudInfo> info = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Cloudconnector properties.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccProps
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudconnector properties.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccProps set the ccProps.
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class CloudProperties extends AviRestResource {
    * Cloud types supported by cloudconnector.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVtypes
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class CloudProperties extends AviRestResource {
    * Cloud types supported by cloudconnector.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVtypes
    */
   @VsoMethod
@@ -100,6 +104,7 @@ public class CloudProperties extends AviRestResource {
    * Cloud types supported by cloudconnector.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVtypes
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hypervisor properties.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypProps
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the hypProps
    * Hypervisor properties.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypProps
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method this will set the hypProps
    * Hypervisor properties.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hypProps
    */
   @VsoMethod
@@ -150,6 +158,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Properties specific to a cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
   @VsoMethod
@@ -160,6 +169,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the info
    * Properties specific to a cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
   @VsoMethod
@@ -170,6 +180,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method this will set the info
    * Properties specific to a cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return info
    */
   @VsoMethod
@@ -204,6 +215,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -214,6 +226,7 @@ public class CloudProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

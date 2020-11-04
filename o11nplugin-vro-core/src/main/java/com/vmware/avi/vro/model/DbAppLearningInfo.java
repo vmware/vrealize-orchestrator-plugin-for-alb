@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DbAppLearningInfo extends AviRestResource {
-  @JsonProperty("app_id")
-  @JsonInclude(Include.NON_NULL)
-  private String appId = null;
+    @JsonProperty("app_id")
+    @JsonInclude(Include.NON_NULL)
+    private String appId = null;
 
-  @JsonProperty("uri_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<URIInfo> uriInfo = null;
+    @JsonProperty("uri_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<URIInfo> uriInfo = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
@@ -43,6 +43,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * Application uuid.
    * Combination of virtualservice uuid and waf policy uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appId
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * Application uuid.
    * Combination of virtualservice uuid and waf policy uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param appId set the appId.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about various uris under a application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriInfo
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * This is the setter method. this will set the uriInfo
    * Information about various uris under a application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriInfo
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * This is the setter method this will set the uriInfo
    * Information about various uris under a application.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriInfo
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtualserivce uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class DbAppLearningInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtualserivce uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

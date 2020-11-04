@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CPUUsage extends AviRestResource {
-  @JsonProperty("num_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numCores = null;
+    @JsonProperty("num_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numCores = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_cores of obj type cpuusage field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numCores
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class CPUUsage extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_cores of obj type cpuusage field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numCores set the numCores.
    */
   @VsoMethod

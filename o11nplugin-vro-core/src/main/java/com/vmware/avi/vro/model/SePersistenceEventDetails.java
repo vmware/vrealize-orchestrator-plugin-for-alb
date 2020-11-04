@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SePersistenceEventDetails extends AviRestResource {
-  @JsonProperty("entries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer entries = null;
+    @JsonProperty("entries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer entries = null;
 
-  @JsonProperty("pool")
-  @JsonInclude(Include.NON_NULL)
-  private String pool = null;
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private String pool = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Current number of entries in the client ip persistence table.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class SePersistenceEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Current number of entries in the client ip persistence table.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entries set the entries.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class SePersistenceEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of pool whose persistence table limits were reached.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class SePersistenceEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of pool whose persistence table limits were reached.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class SePersistenceEventDetails extends AviRestResource {
    * Type of persistence.
    * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
    * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class SePersistenceEventDetails extends AviRestResource {
    * Type of persistence.
    * Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
    * PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

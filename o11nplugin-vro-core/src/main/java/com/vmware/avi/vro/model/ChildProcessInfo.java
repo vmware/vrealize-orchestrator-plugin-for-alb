@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ChildProcessInfo extends AviRestResource {
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = null;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = null;
 
-  @JsonProperty("pid")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pid = null;
+    @JsonProperty("pid")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Amount of memory (in mb) used by the sub process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Amount of memory (in mb) used by the sub process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Process id of the sub process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pid
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class ChildProcessInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Process id of the sub process.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pid set the pid.
    */
   @VsoMethod

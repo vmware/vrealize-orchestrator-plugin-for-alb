@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IptableRuleSet extends AviRestResource {
-  @JsonProperty("chain")
-  @JsonInclude(Include.NON_NULL)
-  private String chain = null;
+    @JsonProperty("chain")
+    @JsonInclude(Include.NON_NULL)
+    private String chain = null;
 
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<IptableRule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<IptableRule> rules = null;
 
-  @JsonProperty("table")
-  @JsonInclude(Include.NON_NULL)
-  private String table = null;
+    @JsonProperty("table")
+    @JsonInclude(Include.NON_NULL)
+    private String table = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property chain of obj type iptableruleset field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return chain
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class IptableRuleSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property chain of obj type iptableruleset field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param chain set the chain.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class IptableRuleSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rules of obj type iptableruleset field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class IptableRuleSet extends AviRestResource {
   /**
    * This is the setter method. this will set the rules
    * Placeholder for description of property rules of obj type iptableruleset field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class IptableRuleSet extends AviRestResource {
   /**
    * This is the setter method this will set the rules
    * Placeholder for description of property rules of obj type iptableruleset field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class IptableRuleSet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property table of obj type iptableruleset field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return table
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class IptableRuleSet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property table of obj type iptableruleset field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param table set the table.
    */
   @VsoMethod

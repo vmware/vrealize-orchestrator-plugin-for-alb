@@ -24,39 +24,44 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PriorityLabels extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("equivalent_labels")
-  @JsonInclude(Include.NON_NULL)
-  private List<EquivalentLabels> equivalentLabels = null;
+    @JsonProperty("equivalent_labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<EquivalentLabels> equivalentLabels = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -67,6 +72,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -77,6 +83,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * A description of the priority labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -87,6 +94,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * A description of the priority labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -97,6 +105,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Equivalent priority labels in descending order.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return equivalentLabels
    */
   @VsoMethod
@@ -107,6 +116,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method. this will set the equivalentLabels
    * Equivalent priority labels in descending order.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return equivalentLabels
    */
   @VsoMethod
@@ -117,6 +127,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method this will set the equivalentLabels
    * Equivalent priority labels in descending order.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return equivalentLabels
    */
   @VsoMethod
@@ -131,7 +142,52 @@ public class PriorityLabels extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public PriorityLabels addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the priority labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -142,6 +198,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the priority labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -152,6 +209,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -162,6 +220,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -191,6 +250,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the priority labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -201,6 +261,7 @@ public class PriorityLabels extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the priority labels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -225,6 +286,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objPriorityLabels.uuid)&&
   Objects.equals(this.name, objPriorityLabels.name)&&
   Objects.equals(this.equivalentLabels, objPriorityLabels.equivalentLabels)&&
+  Objects.equals(this.labels, objPriorityLabels.labels)&&
   Objects.equals(this.description, objPriorityLabels.description)&&
   Objects.equals(this.tenantRef, objPriorityLabels.tenantRef)&&
   Objects.equals(this.cloudRef, objPriorityLabels.cloudRef);
@@ -237,6 +299,7 @@ public String toString() {
       sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    equivalentLabels: ").append(toIndentedString(equivalentLabels)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

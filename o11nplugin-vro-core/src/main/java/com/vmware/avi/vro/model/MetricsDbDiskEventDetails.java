@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDbDiskEventDetails extends AviRestResource {
-  @JsonProperty("metrics_deleted_tables")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> metricsDeletedTables = null;
+    @JsonProperty("metrics_deleted_tables")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> metricsDeletedTables = null;
 
-  @JsonProperty("metrics_free_sz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer metricsFreeSz = null;
+    @JsonProperty("metrics_free_sz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsFreeSz = null;
 
-  @JsonProperty("metrics_quota")
-  @JsonInclude(Include.NON_NULL)
-  private Integer metricsQuota = null;
+    @JsonProperty("metrics_quota")
+    @JsonInclude(Include.NON_NULL)
+    private Integer metricsQuota = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_deleted_tables of obj type metricsdbdiskeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the metricsDeletedTables
    * Placeholder for description of property metrics_deleted_tables of obj type metricsdbdiskeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the metricsDeletedTables
    * Placeholder for description of property metrics_deleted_tables of obj type metricsdbdiskeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDeletedTables
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_free_sz of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsFreeSz
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_free_sz of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsFreeSz set the metricsFreeSz.
    */
   @VsoMethod
@@ -96,6 +101,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_quota of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsQuota
    */
   @VsoMethod
@@ -106,6 +112,7 @@ public class MetricsDbDiskEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_quota of obj type metricsdbdiskeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsQuota set the metricsQuota.
    */
   @VsoMethod

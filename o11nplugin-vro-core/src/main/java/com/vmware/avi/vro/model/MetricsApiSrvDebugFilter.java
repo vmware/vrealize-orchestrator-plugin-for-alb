@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsApiSrvDebugFilter extends AviRestResource {
-  @JsonProperty("entity_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String entityRef = null;
+    @JsonProperty("entity_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String entityRef = null;
 
 
 
@@ -35,6 +35,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityRef
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class MetricsApiSrvDebugFilter extends AviRestResource {
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityRef set the entityRef.
    */
   @VsoMethod

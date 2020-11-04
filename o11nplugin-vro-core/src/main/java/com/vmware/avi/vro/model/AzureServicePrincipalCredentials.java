@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureServicePrincipalCredentials extends AviRestResource {
-  @JsonProperty("application_id")
-  @JsonInclude(Include.NON_NULL)
-  private String applicationId = null;
+    @JsonProperty("application_id")
+    @JsonInclude(Include.NON_NULL)
+    private String applicationId = null;
 
-  @JsonProperty("authentication_token")
-  @JsonInclude(Include.NON_NULL)
-  private String authenticationToken = null;
+    @JsonProperty("authentication_token")
+    @JsonInclude(Include.NON_NULL)
+    private String authenticationToken = null;
 
-  @JsonProperty("tenant_id")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantId = null;
+    @JsonProperty("tenant_id")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantId = null;
 
 
 
@@ -43,6 +43,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Application id created for avi controller.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationId
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Application id created for avi controller.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationId set the applicationId.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Authentication token created for the avi controller application.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authenticationToken
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Authentication token created for the avi controller application.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authenticationToken set the authenticationToken.
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Tenant id for the subscription.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantId
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class AzureServicePrincipalCredentials extends AviRestResource {
    * Tenant id for the subscription.
    * Required for application id based authentication only.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantId set the tenantId.
    */
   @VsoMethod

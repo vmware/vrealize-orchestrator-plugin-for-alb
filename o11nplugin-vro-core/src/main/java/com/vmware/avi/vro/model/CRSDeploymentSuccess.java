@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CRSDeploymentSuccess extends AviRestResource {
-  @JsonProperty("crs_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<CRSDetails> crsInfo = null;
+    @JsonProperty("crs_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<CRSDetails> crsInfo = null;
 
 
 
@@ -34,6 +34,7 @@ public class CRSDeploymentSuccess extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of all installed crs updates.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsInfo
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class CRSDeploymentSuccess extends AviRestResource {
    * This is the setter method. this will set the crsInfo
    * List of all installed crs updates.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsInfo
    */
   @VsoMethod
@@ -56,6 +58,7 @@ public class CRSDeploymentSuccess extends AviRestResource {
    * This is the setter method this will set the crsInfo
    * List of all installed crs updates.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsInfo
    */
   @VsoMethod

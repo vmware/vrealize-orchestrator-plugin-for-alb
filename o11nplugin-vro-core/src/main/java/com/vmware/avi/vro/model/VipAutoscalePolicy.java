@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipAutoscalePolicy extends AviRestResource {
-  @JsonProperty("dns_cooldown")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dnsCooldown = 60;
+    @JsonProperty("dns_cooldown")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dnsCooldown = 60;
 
-  @JsonProperty("max_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSize = 5;
+    @JsonProperty("max_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSize = 5;
 
-  @JsonProperty("min_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minSize = 1;
+    @JsonProperty("min_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minSize = 1;
 
-  @JsonProperty("suspend")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean suspend = false;
+    @JsonProperty("suspend")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean suspend = false;
 
 
 
@@ -46,6 +46,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The amount of time, in seconds, when a vip is withdrawn before a scaling activity starts.
    * Field introduced in 17.2.12, 18.1.2.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return dnsCooldown
    */
@@ -58,6 +59,7 @@ public class VipAutoscalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * The amount of time, in seconds, when a vip is withdrawn before a scaling activity starts.
    * Field introduced in 17.2.12, 18.1.2.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param dnsCooldown set the dnsCooldown.
    */

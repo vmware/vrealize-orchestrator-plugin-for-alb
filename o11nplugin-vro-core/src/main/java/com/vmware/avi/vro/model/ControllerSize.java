@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerSize extends AviRestResource {
-  @JsonProperty("flavor")
-  @JsonInclude(Include.NON_NULL)
-  private String flavor = null;
+    @JsonProperty("flavor")
+    @JsonInclude(Include.NON_NULL)
+    private String flavor = null;
 
-  @JsonProperty("min_cpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minCpus = null;
+    @JsonProperty("min_cpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minCpus = null;
 
-  @JsonProperty("min_memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minMemory = null;
+    @JsonProperty("min_memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minMemory = null;
 
 
 
@@ -43,6 +43,7 @@ public class ControllerSize extends AviRestResource {
    * Controller flavor (s/m/l) for this controller size.
    * Enum options - CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavor
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class ControllerSize extends AviRestResource {
    * Controller flavor (s/m/l) for this controller size.
    * Enum options - CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flavor set the flavor.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class ControllerSize extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of cpu cores required.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minCpus
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class ControllerSize extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of cpu cores required.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minCpus set the minCpus.
    */
   @VsoMethod
@@ -88,6 +92,8 @@ public class ControllerSize extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum memory required.
    * Field introduced in 20.1.1.
+   * Unit is gb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minMemory
    */
   @VsoMethod
@@ -99,6 +105,8 @@ public class ControllerSize extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum memory required.
    * Field introduced in 20.1.1.
+   * Unit is gb.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minMemory set the minMemory.
    */
   @VsoMethod

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorRadius extends AviRestResource {
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("shared_secret")
-  @JsonInclude(Include.NON_NULL)
-  private String sharedSecret = null;
+    @JsonProperty("shared_secret")
+    @JsonInclude(Include.NON_NULL)
+    private String sharedSecret = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
@@ -42,6 +42,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Radius monitor will query radius server with this password.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the setter method to the attribute.
    * Radius monitor will query radius server with this password.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Radius monitor will query radius server with this shared secret.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sharedSecret
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the setter method to the attribute.
    * Radius monitor will query radius server with this shared secret.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sharedSecret set the sharedSecret.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Radius monitor will query radius server with this username.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class HealthMonitorRadius extends AviRestResource {
    * This is the setter method to the attribute.
    * Radius monitor will query radius server with this username.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OverallInfo extends AviRestResource {
-  @JsonProperty("available")
-  @JsonInclude(Include.NON_NULL)
-  private Integer available = null;
+    @JsonProperty("available")
+    @JsonInclude(Include.NON_NULL)
+    private Integer available = null;
 
-  @JsonProperty("free_percent")
-  @JsonInclude(Include.NON_NULL)
-  private String freePercent = null;
+    @JsonProperty("free_percent")
+    @JsonInclude(Include.NON_NULL)
+    private String freePercent = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private String path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path = null;
 
-  @JsonProperty("size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer size = null;
+    @JsonProperty("size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer size = null;
 
-  @JsonProperty("used")
-  @JsonInclude(Include.NON_NULL)
-  private Integer used = null;
+    @JsonProperty("used")
+    @JsonInclude(Include.NON_NULL)
+    private Integer used = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property available of obj type overallinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return available
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property available of obj type overallinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param available set the available.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property free_percent of obj type overallinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freePercent
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property free_percent of obj type overallinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param freePercent set the freePercent.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property path of obj type overallinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property path of obj type overallinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property size of obj type overallinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return size
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property size of obj type overallinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param size set the size.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property used of obj type overallinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return used
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class OverallInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property used of obj type overallinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param used set the used.
    */
   @VsoMethod

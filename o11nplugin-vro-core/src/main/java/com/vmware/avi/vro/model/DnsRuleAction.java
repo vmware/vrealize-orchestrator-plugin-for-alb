@@ -30,29 +30,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRuleAction extends AviRestResource {
-  @JsonProperty("allow")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleActionAllowDrop allow = null;
+    @JsonProperty("allow")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleActionAllowDrop allow = null;
 
-  @JsonProperty("dns_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRateProfile dnsRateLimit = null;
+    @JsonProperty("dns_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRateProfile dnsRateLimit;
 
-  @JsonProperty("dns_rate_limiter")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRateLimiter dnsRateLimiter = null;
+    @JsonProperty("dns_rate_limiter")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRateLimiter dnsRateLimiter = null;
 
-  @JsonProperty("gslb_site_selection")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleActionGslbSiteSelection gslbSiteSelection = null;
+    @JsonProperty("gslb_site_selection")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleActionGslbSiteSelection gslbSiteSelection = null;
 
-  @JsonProperty("pool_switching")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleActionPoolSwitching poolSwitching = null;
+    @JsonProperty("pool_switching")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleActionPoolSwitching poolSwitching = null;
 
-  @JsonProperty("response")
-  @JsonInclude(Include.NON_NULL)
-  private DnsRuleActionResponse response = null;
+    @JsonProperty("response")
+    @JsonInclude(Include.NON_NULL)
+    private DnsRuleActionResponse response = null;
 
 
 
@@ -60,6 +60,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Allow or drop the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allow
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Allow or drop the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allow set the allow.
    */
   @VsoMethod
@@ -106,6 +108,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limits the dns requests.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsRateLimiter
    */
   @VsoMethod
@@ -117,6 +120,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limits the dns requests.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsRateLimiter set the dnsRateLimiter.
    */
   @VsoMethod
@@ -129,6 +133,7 @@ public class DnsRuleAction extends AviRestResource {
    * Select a specific gslb site for the dns query.
    * This action should be used only when gslb services have been configured for the dns virtual service.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbSiteSelection
    */
   @VsoMethod
@@ -141,6 +146,7 @@ public class DnsRuleAction extends AviRestResource {
    * Select a specific gslb site for the dns query.
    * This action should be used only when gslb services have been configured for the dns virtual service.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbSiteSelection set the gslbSiteSelection.
    */
   @VsoMethod
@@ -152,6 +158,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Select a pool or pool group for the passthrough dns query which cannot be served locally but could be served by upstream servers.
    * Field introduced in 18.1.3, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolSwitching
    */
   @VsoMethod
@@ -163,6 +170,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Select a pool or pool group for the passthrough dns query which cannot be served locally but could be served by upstream servers.
    * Field introduced in 18.1.3, 17.2.12.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolSwitching set the poolSwitching.
    */
   @VsoMethod
@@ -174,6 +182,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Generate a response for the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return response
    */
   @VsoMethod
@@ -185,6 +194,7 @@ public class DnsRuleAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Generate a response for the dns query.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param response set the response.
    */
   @VsoMethod

@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DosAttackEventDetails extends AviRestResource {
-  @JsonProperty("attack")
-  @JsonInclude(Include.NON_NULL)
-  private String attack = null;
+    @JsonProperty("attack")
+    @JsonInclude(Include.NON_NULL)
+    private String attack = null;
 
-  @JsonProperty("attack_count")
-  @JsonInclude(Include.NON_NULL)
-  private Float attackCount = null;
+    @JsonProperty("attack_count")
+    @JsonInclude(Include.NON_NULL)
+    private Float attackCount = null;
 
-  @JsonProperty("ipgroup_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> ipgroupUuids = null;
+    @JsonProperty("ipgroup_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ipgroupUuids = null;
 
-  @JsonProperty("meta_data")
-  @JsonInclude(Include.NON_NULL)
-  private List<AttackMetaData> metaData = null;
+    @JsonProperty("meta_data")
+    @JsonInclude(Include.NON_NULL)
+    private List<AttackMetaData> metaData = null;
 
-  @JsonProperty("src_ips")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> srcIps = null;
+    @JsonProperty("src_ips")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> srcIps = null;
 
-  @JsonProperty("urls")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> urls = null;
+    @JsonProperty("urls")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> urls = null;
 
 
 
@@ -55,6 +55,7 @@ public class DosAttackEventDetails extends AviRestResource {
    * Enum options - LAND, SMURF, ICMP_PING_FLOOD, UNKOWN_PROTOCOL, TEARDROP, IP_FRAG_OVERRUN, IP_FRAG_TOOSMALL, IP_FRAG_FULL, IP_FRAG_INCOMPLETE,
    * PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS,
    * DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attack
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class DosAttackEventDetails extends AviRestResource {
    * Enum options - LAND, SMURF, ICMP_PING_FLOOD, UNKOWN_PROTOCOL, TEARDROP, IP_FRAG_OVERRUN, IP_FRAG_TOOSMALL, IP_FRAG_FULL, IP_FRAG_INCOMPLETE,
    * PORT_SCAN, TCP_NON_SYN_FLOOD_OLD, SYN_FLOOD, BAD_RST_FLOOD, MALFORMED_FLOOD, FAKE_SESSION, ZERO_WINDOW_STRESS, SMALL_WINDOW_STRESS,
    * DOS_HTTP_TIMEOUT, DOS_HTTP_ERROR, DOS_HTTP_ABORT...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attack set the attack.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property attack_count of obj type dosattackeventdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attackCount
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property attack_count of obj type dosattackeventdetails field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attackCount set the attackCount.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifiers of ipgroups.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupUuids
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the ipgroupUuids
    * Unique object identifiers of ipgroups.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupUuids
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the ipgroupUuids
    * Unique object identifiers of ipgroups.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipgroupUuids
    */
   @VsoMethod
@@ -132,6 +139,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property meta_data of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metaData
    */
   @VsoMethod
@@ -142,6 +150,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the metaData
    * Placeholder for description of property meta_data of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metaData
    */
   @VsoMethod
@@ -152,6 +161,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the metaData
    * Placeholder for description of property meta_data of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metaData
    */
   @VsoMethod
@@ -167,6 +177,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property src_ips of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcIps
    */
   @VsoMethod
@@ -177,6 +188,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the srcIps
    * Placeholder for description of property src_ips of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcIps
    */
   @VsoMethod
@@ -187,6 +199,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the srcIps
    * Placeholder for description of property src_ips of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcIps
    */
   @VsoMethod
@@ -202,6 +215,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property urls of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return urls
    */
   @VsoMethod
@@ -212,6 +226,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the urls
    * Placeholder for description of property urls of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return urls
    */
   @VsoMethod
@@ -222,6 +237,7 @@ public class DosAttackEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the urls
    * Placeholder for description of property urls of obj type dosattackeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return urls
    */
   @VsoMethod

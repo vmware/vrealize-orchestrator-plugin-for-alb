@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeRuntimeCompressionProperties extends AviRestResource {
-  @JsonProperty("max_low_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxLowRtt = 10;
+    @JsonProperty("max_low_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxLowRtt = 10;
 
-  @JsonProperty("min_high_rtt")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minHighRtt = 200;
+    @JsonProperty("min_high_rtt")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minHighRtt = 200;
 
-  @JsonProperty("min_length")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minLength = 128;
+    @JsonProperty("min_length")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minLength = 128;
 
-  @JsonProperty("mobile_str")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> mobileStr = null;
+    @JsonProperty("mobile_str")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> mobileStr = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * If client rtt is higher than this threshold, enable normal compression on the response.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxLowRtt
    */
@@ -56,6 +57,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If client rtt is higher than this threshold, enable normal compression on the response.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxLowRtt set the maxLowRtt.
    */
@@ -67,6 +69,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If client rtt is higher than this threshold, enable aggressive compression on the response.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 200.
    * @return minHighRtt
    */
@@ -78,6 +81,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If client rtt is higher than this threshold, enable aggressive compression on the response.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 200.
    * @param minHighRtt set the minHighRtt.
    */
@@ -111,6 +115,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Values that identify mobile browsers in order to enable aggressive compression.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mobileStr
    */
   @VsoMethod
@@ -121,6 +126,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the mobileStr
    * Values that identify mobile browsers in order to enable aggressive compression.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mobileStr
    */
   @VsoMethod
@@ -131,6 +137,7 @@ public class SeRuntimeCompressionProperties extends AviRestResource {
   /**
    * This is the setter method this will set the mobileStr
    * Values that identify mobile browsers in order to enable aggressive compression.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mobileStr
    */
   @VsoMethod

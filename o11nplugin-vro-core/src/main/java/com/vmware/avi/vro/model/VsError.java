@@ -25,41 +25,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsError extends AviRestResource {
-  @JsonProperty("event_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp eventTimestamp = null;
+    @JsonProperty("event_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp eventTimestamp = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reason = null;
 
-  @JsonProperty("se_group_ha_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupHaMode = null;
+    @JsonProperty("se_group_ha_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupHaMode = null;
 
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("traffic_status")
-  @JsonInclude(Include.NON_NULL)
-  private String trafficStatus = null;
+    @JsonProperty("traffic_status")
+    @JsonInclude(Include.NON_NULL)
+    private String trafficStatus = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("vs_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vsRef = null;
+    @JsonProperty("vs_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vsRef = null;
 
 
 
@@ -67,6 +67,7 @@ public class VsError extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The time at which the error occurred.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventTimestamp
    */
   @VsoMethod
@@ -78,6 +79,7 @@ public class VsError extends AviRestResource {
    * This is the setter method to the attribute.
    * The time at which the error occurred.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventTimestamp set the eventTimestamp.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type vserror field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -98,6 +101,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method. this will set the reason
    * Placeholder for description of property reason of obj type vserror field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -108,6 +112,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method this will set the reason
    * Placeholder for description of property reason of obj type vserror field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupHaMode
    */
   @VsoMethod
@@ -133,6 +139,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupHaMode set the seGroupHaMode.
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
   @VsoMethod
@@ -153,6 +161,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type serviceenginegroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class VsError extends AviRestResource {
    * The se on which the vs errored during scale-in/scale-out operations.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -177,6 +187,7 @@ public class VsError extends AviRestResource {
    * The se on which the vs errored during scale-in/scale-out operations.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -187,6 +198,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -197,6 +209,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -207,6 +220,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trafficStatus
    */
   @VsoMethod
@@ -217,6 +231,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trafficStatus set the trafficStatus.
    */
   @VsoMethod
@@ -227,6 +242,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_id of obj type vserror field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -237,6 +253,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_id of obj type vserror field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -247,6 +264,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsRef
    */
   @VsoMethod
@@ -257,6 +275,7 @@ public class VsError extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsRef set the vsRef.
    */
   @VsoMethod

@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsOCIProfile extends AviRestResource {
-  @JsonProperty("cloud_credentials_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudCredentialsRef = null;
+    @JsonProperty("cloud_credentials_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudCredentialsRef = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = null;
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = null;
 
-  @JsonProperty("tenancy")
-  @JsonInclude(Include.NON_NULL)
-  private String tenancy = null;
+    @JsonProperty("tenancy")
+    @JsonInclude(Include.NON_NULL)
+    private String tenancy = null;
 
-  @JsonProperty("vcn_compartment_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vcnCompartmentId = null;
+    @JsonProperty("vcn_compartment_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vcnCompartmentId = null;
 
-  @JsonProperty("vcn_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vcnId = null;
+    @JsonProperty("vcn_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vcnId = null;
 
 
 
@@ -51,6 +51,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * Credentials to access oracle cloud.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudCredentialsRef
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * Credentials to access oracle cloud.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudCredentialsRef set the cloudCredentialsRef.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Region in which oracle cloud resource resides.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return region
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Region in which oracle cloud resource resides.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param region set the region.
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oracle cloud id for tenant aka root compartment.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenancy
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Oracle cloud id for tenant aka root compartment.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenancy set the tenancy.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Oracle cloud compartment id in which vcn resides.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcnCompartmentId
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Oracle cloud compartment id in which vcn resides.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcnCompartmentId set the vcnCompartmentId.
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual cloud network id where virtual ip will belong.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcnId
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class IpamDnsOCIProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual cloud network id where virtual ip will belong.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcnId set the vcnId.
    */
   @VsoMethod

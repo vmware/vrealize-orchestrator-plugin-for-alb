@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsTransportProtocolMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String protocol = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String protocol = null;
 
 
 
@@ -39,6 +39,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Criterion to use for matching the dns transport protocol.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Criterion to use for matching the dns transport protocol.
    * Enum options - IS_IN, IS_NOT_IN.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Protocol to match against transport protocol used by dns query.
    * Enum options - DNS_OVER_UDP, DNS_OVER_TCP.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class DnsTransportProtocolMatch extends AviRestResource {
    * Protocol to match against transport protocol used by dns query.
    * Enum options - DNS_OVER_UDP, DNS_OVER_TCP.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod

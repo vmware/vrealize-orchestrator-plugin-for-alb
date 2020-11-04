@@ -25,23 +25,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Subnet extends AviRestResource {
-  @JsonProperty("prefix")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix prefix = null;
+    @JsonProperty("prefix")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix prefix = null;
 
-  @JsonProperty("static_ips")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> staticIps = null;
+    @JsonProperty("static_ip_ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<StaticIpRange> staticIpRanges = null;
 
-  @JsonProperty("static_ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrRange> staticRanges = null;
+    @JsonProperty("static_ips")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> staticIps = null;
+
+    @JsonProperty("static_ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrRange> staticRanges = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Specify an ip subnet prefix for this network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
   @VsoMethod
@@ -52,6 +57,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specify an ip subnet prefix for this network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
   @VsoMethod
@@ -61,7 +67,49 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Static ip ranges for this subnet.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return staticIpRanges
+   */
+  @VsoMethod
+  public List<StaticIpRange> getStaticIpRanges() {
+    return staticIpRanges;
+  }
+
+  /**
+   * This is the setter method. this will set the staticIpRanges
+   * Static ip ranges for this subnet.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return staticIpRanges
+   */
+  @VsoMethod
+  public void setStaticIpRanges(List<StaticIpRange>  staticIpRanges) {
+    this.staticIpRanges = staticIpRanges;
+  }
+
+  /**
+   * This is the setter method this will set the staticIpRanges
+   * Static ip ranges for this subnet.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return staticIpRanges
+   */
+  @VsoMethod
+  public Subnet addStaticIpRangesItem(StaticIpRange staticIpRangesItem) {
+    if (this.staticIpRanges == null) {
+      this.staticIpRanges = new ArrayList<StaticIpRange>();
+    }
+    this.staticIpRanges.add(staticIpRangesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Specify a pool of ip addresses for use in service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticIps
    */
   @VsoMethod
@@ -72,6 +120,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the setter method. this will set the staticIps
    * Specify a pool of ip addresses for use in service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticIps
    */
   @VsoMethod
@@ -82,6 +131,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the setter method this will set the staticIps
    * Specify a pool of ip addresses for use in service engines.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticIps
    */
   @VsoMethod
@@ -97,6 +147,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property static_ranges of obj type subnet field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRanges
    */
   @VsoMethod
@@ -107,6 +158,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the setter method. this will set the staticRanges
    * Placeholder for description of property static_ranges of obj type subnet field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRanges
    */
   @VsoMethod
@@ -117,6 +169,7 @@ public class Subnet extends AviRestResource {
   /**
    * This is the setter method this will set the staticRanges
    * Placeholder for description of property static_ranges of obj type subnet field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRanges
    */
   @VsoMethod
@@ -142,7 +195,8 @@ public boolean equals(java.lang.Object o) {
   Subnet objSubnet = (Subnet) o;
   return   Objects.equals(this.prefix, objSubnet.prefix)&&
   Objects.equals(this.staticIps, objSubnet.staticIps)&&
-  Objects.equals(this.staticRanges, objSubnet.staticRanges);
+  Objects.equals(this.staticRanges, objSubnet.staticRanges)&&
+  Objects.equals(this.staticIpRanges, objSubnet.staticIpRanges);
 }
 
 @Override
@@ -150,6 +204,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class Subnet {\n");
       sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
+        sb.append("    staticIpRanges: ").append(toIndentedString(staticIpRanges)).append("\n");
         sb.append("    staticIps: ").append(toIndentedString(staticIps)).append("\n");
         sb.append("    staticRanges: ").append(toIndentedString(staticRanges)).append("\n");
       sb.append("}");

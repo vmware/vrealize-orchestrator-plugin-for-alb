@@ -28,72 +28,118 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VrfContext extends AviRestResource {
-  @JsonProperty("bfd_profile")
-  @JsonInclude(Include.NON_NULL)
-  private BfdProfile bfdProfile = null;
+    @JsonProperty("attrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> attrs = null;
 
-  @JsonProperty("bgp_profile")
-  @JsonInclude(Include.NON_NULL)
-  private BgpProfile bgpProfile = null;
+    @JsonProperty("bfd_profile")
+    @JsonInclude(Include.NON_NULL)
+    private BfdProfile bfdProfile = null;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("bgp_profile")
+    @JsonInclude(Include.NON_NULL)
+    private BgpProfile bgpProfile = null;
 
-  @JsonProperty("debugvrfcontext")
-  @JsonInclude(Include.NON_NULL)
-  private DebugVrfContext debugvrfcontext = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("debugvrfcontext")
+    @JsonInclude(Include.NON_NULL)
+    private DebugVrfContext debugvrfcontext = null;
 
-  @JsonProperty("gateway_mon")
-  @JsonInclude(Include.NON_NULL)
-  private List<GatewayMonitor> gatewayMon = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("internal_gateway_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private InternalGatewayMonitor internalGatewayMonitor = null;
+    @JsonProperty("gateway_mon")
+    @JsonInclude(Include.NON_NULL)
+    private List<GatewayMonitor> gatewayMon = null;
 
-  @JsonProperty("labels")
-  @JsonInclude(Include.NON_NULL)
-  private List<KeyValue> labels = null;
+    @JsonProperty("internal_gateway_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private InternalGatewayMonitor internalGatewayMonitor = null;
 
-  @JsonProperty("lldp_enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean lldpEnable = true;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("lldp_enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean lldpEnable = true;
 
-  @JsonProperty("static_routes")
-  @JsonInclude(Include.NON_NULL)
-  private List<StaticRoute> staticRoutes = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("system_default")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean systemDefault = false;
+    @JsonProperty("static_routes")
+    @JsonInclude(Include.NON_NULL)
+    private List<StaticRoute> staticRoutes = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("system_default")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean systemDefault = false;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key/value vrfcontext attributes.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attrs
+   */
+  @VsoMethod
+  public List<KeyValue> getAttrs() {
+    return attrs;
+  }
+
+  /**
+   * This is the setter method. this will set the attrs
+   * Key/value vrfcontext attributes.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attrs
+   */
+  @VsoMethod
+  public void setAttrs(List<KeyValue>  attrs) {
+    this.attrs = attrs;
+  }
+
+  /**
+   * This is the setter method this will set the attrs
+   * Key/value vrfcontext attributes.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attrs
+   */
+  @VsoMethod
+  public VrfContext addAttrsItem(KeyValue attrsItem) {
+    if (this.attrs == null) {
+      this.attrs = new ArrayList<KeyValue>();
+    }
+    this.attrs.add(attrsItem);
+    return this;
+  }
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Bfd configuration profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bfdProfile
    */
   @VsoMethod
@@ -105,6 +151,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Bfd configuration profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bfdProfile set the bfdProfile.
    */
   @VsoMethod
@@ -115,6 +162,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Bgp local and peer info.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bgpProfile
    */
   @VsoMethod
@@ -125,6 +173,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Bgp local and peer info.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bgpProfile set the bgpProfile.
    */
   @VsoMethod
@@ -135,6 +184,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -145,6 +195,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -156,6 +207,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure debug flags for vrf.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return debugvrfcontext
    */
   @VsoMethod
@@ -167,6 +219,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure debug flags for vrf.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param debugvrfcontext set the debugvrfcontext.
    */
   @VsoMethod
@@ -177,6 +230,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -187,6 +241,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -197,6 +252,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ping based heartbeat check for gateway in service engines of vrf.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
   @VsoMethod
@@ -207,6 +263,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method. this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
   @VsoMethod
@@ -217,6 +274,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
   @VsoMethod
@@ -233,6 +291,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure ping based heartbeat check for all default gateways in service engines of vrf.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return internalGatewayMonitor
    */
   @VsoMethod
@@ -244,6 +303,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure ping based heartbeat check for all default gateways in service engines of vrf.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param internalGatewayMonitor set the internalGatewayMonitor.
    */
   @VsoMethod
@@ -255,6 +315,7 @@ public class VrfContext extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key/value labels which can be used for object access policy permission scoping.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -266,6 +327,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method. this will set the labels
    * Key/value labels which can be used for object access policy permission scoping.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -277,6 +339,7 @@ public class VrfContext extends AviRestResource {
    * This is the setter method this will set the labels
    * Key/value labels which can be used for object access policy permission scoping.
    * Field introduced in 18.2.7, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -316,6 +379,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -326,6 +390,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -336,6 +401,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property static_routes of obj type vrfcontext field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRoutes
    */
   @VsoMethod
@@ -346,6 +412,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method. this will set the staticRoutes
    * Placeholder for description of property static_routes of obj type vrfcontext field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRoutes
    */
   @VsoMethod
@@ -356,6 +423,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method this will set the staticRoutes
    * Placeholder for description of property static_routes of obj type vrfcontext field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticRoutes
    */
   @VsoMethod
@@ -393,6 +461,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -403,6 +472,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -432,6 +502,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -442,6 +513,7 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -474,6 +546,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.labels, objVrfContext.labels)&&
   Objects.equals(this.bfdProfile, objVrfContext.bfdProfile)&&
   Objects.equals(this.lldpEnable, objVrfContext.lldpEnable)&&
+  Objects.equals(this.attrs, objVrfContext.attrs)&&
   Objects.equals(this.description, objVrfContext.description)&&
   Objects.equals(this.tenantRef, objVrfContext.tenantRef)&&
   Objects.equals(this.cloudRef, objVrfContext.cloudRef);
@@ -483,7 +556,8 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VrfContext {\n");
-      sb.append("    bfdProfile: ").append(toIndentedString(bfdProfile)).append("\n");
+      sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
+        sb.append("    bfdProfile: ").append(toIndentedString(bfdProfile)).append("\n");
         sb.append("    bgpProfile: ").append(toIndentedString(bgpProfile)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    debugvrfcontext: ").append(toIndentedString(debugvrfcontext)).append("\n");

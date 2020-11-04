@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbClientIpAddrGroup extends AviRestResource {
-  @JsonProperty("addrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> addrs = null;
+    @JsonProperty("addrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> addrs = null;
 
-  @JsonProperty("prefixes")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> prefixes = null;
+    @JsonProperty("prefixes")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> prefixes = null;
 
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrRange> ranges = null;
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrRange> ranges = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "GSLB_IP_PUBLIC";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "GSLB_IP_PUBLIC";
 
 
 
@@ -46,6 +46,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure ip address(es).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the setter method. this will set the addrs
    * Configure ip address(es).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the setter method this will set the addrs
    * Configure ip address(es).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure ip address prefix(es).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -95,6 +99,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the setter method. this will set the prefixes
    * Configure ip address prefix(es).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the setter method this will set the prefixes
    * Configure ip address prefix(es).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure ip address range(s).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the setter method. this will set the ranges
    * Configure ip address range(s).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -144,6 +152,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * This is the setter method this will set the ranges
    * Configure ip address range(s).
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -161,7 +170,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * Specify whether this client ip address range is public or private.
    * Enum options - GSLB_IP_PUBLIC, GSLB_IP_PRIVATE.
    * Field introduced in 17.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_IP_PUBLIC.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_IP_PUBLIC".
    * @return type
    */
   @VsoMethod
@@ -174,7 +183,7 @@ public class GslbClientIpAddrGroup extends AviRestResource {
    * Specify whether this client ip address range is public or private.
    * Enum options - GSLB_IP_PUBLIC, GSLB_IP_PRIVATE.
    * Field introduced in 17.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_IP_PUBLIC.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_IP_PUBLIC".
    * @param type set the type.
    */
   @VsoMethod

@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIRetrievePGNames extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("datacenter")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenter = null;
+    @JsonProperty("datacenter")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenter = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = "vmware";
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = "vmware";
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = "root";
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = "root";
 
-  @JsonProperty("vcenter_url")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterUrl = null;
+    @JsonProperty("vcenter_url")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterUrl = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datacenter of obj type viretrievepgnames field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenter
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datacenter of obj type viretrievepgnames field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenter set the datacenter.
    */
   @VsoMethod
@@ -89,7 +93,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property password of obj type viretrievepgnames field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as vmware.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
    * @return password
    */
   @VsoMethod
@@ -100,7 +104,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property password of obj type viretrievepgnames field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as vmware.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
    * @param password set the password.
    */
   @VsoMethod
@@ -111,7 +115,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property username of obj type viretrievepgnames field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as root.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "root".
    * @return username
    */
   @VsoMethod
@@ -122,7 +126,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property username of obj type viretrievepgnames field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as root.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "root".
    * @param username set the username.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_url of obj type viretrievepgnames field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterUrl
    */
   @VsoMethod
@@ -143,6 +148,7 @@ public class VIRetrievePGNames extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_url of obj type viretrievepgnames field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterUrl set the vcenterUrl.
    */
   @VsoMethod

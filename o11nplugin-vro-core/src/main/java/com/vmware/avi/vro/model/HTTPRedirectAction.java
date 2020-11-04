@@ -26,35 +26,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPRedirectAction extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private URIParam host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private URIParam host = null;
 
-  @JsonProperty("keep_query")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean keepQuery = true;
+    @JsonProperty("keep_query")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean keepQuery = true;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private URIParam path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private URIParam path = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
-  @JsonProperty("protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String protocol = null;
+    @JsonProperty("protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String protocol = null;
 
-  @JsonProperty("status_code")
-  @JsonInclude(Include.NON_NULL)
-  private String statusCode = "HTTP_REDIRECT_STATUS_CODE_302";
+    @JsonProperty("status_code")
+    @JsonInclude(Include.NON_NULL)
+    private String statusCode = "HTTP_REDIRECT_STATUS_CODE_302";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Host config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class HTTPRedirectAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Host config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class HTTPRedirectAction extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Path config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -107,6 +110,7 @@ public class HTTPRedirectAction extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Path config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -118,6 +122,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Port to which redirect the request.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -129,6 +134,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Port to which redirect the request.
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -140,6 +146,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Protocol type.
    * Enum options - HTTP, HTTPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
    */
   @VsoMethod
@@ -151,6 +158,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Protocol type.
    * Enum options - HTTP, HTTPS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
    */
   @VsoMethod
@@ -162,7 +170,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http redirect status code.
    * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_REDIRECT_STATUS_CODE_302.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
    * @return statusCode
    */
   @VsoMethod
@@ -174,7 +182,7 @@ public class HTTPRedirectAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Http redirect status code.
    * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HTTP_REDIRECT_STATUS_CODE_302.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
    * @param statusCode set the statusCode.
    */
   @VsoMethod

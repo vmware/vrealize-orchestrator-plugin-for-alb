@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DiskUsagePerNode extends AviRestResource {
-  @JsonProperty("disk_info")
-  @JsonInclude(Include.NON_NULL)
-  private DiskUsage diskInfo = null;
+    @JsonProperty("disk_info")
+    @JsonInclude(Include.NON_NULL)
+    private DiskUsage diskInfo = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -39,6 +39,7 @@ public class DiskUsagePerNode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifies the disk usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return diskInfo
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class DiskUsagePerNode extends AviRestResource {
    * This is the setter method to the attribute.
    * Identifies the disk usage of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param diskInfo set the diskInfo.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class DiskUsagePerNode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Identifies the name of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class DiskUsagePerNode extends AviRestResource {
    * This is the setter method to the attribute.
    * Identifies the name of the node.
    * Field introduced in 17.2.12, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

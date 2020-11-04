@@ -25,45 +25,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IPReputationDB extends AviRestResource {
-  @JsonProperty("base_file_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> baseFileRefs = null;
+    @JsonProperty("base_file_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> baseFileRefs = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("incremental_file_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> incrementalFileRefs = null;
+    @JsonProperty("incremental_file_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> incrementalFileRefs = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("service_status")
-  @JsonInclude(Include.NON_NULL)
-  private IPReputationServiceStatus serviceStatus = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("service_status")
+    @JsonInclude(Include.NON_NULL)
+    private IPReputationServiceStatus serviceStatus = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("vendor")
-  @JsonInclude(Include.NON_NULL)
-  private String vendor = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("vendor")
+    @JsonInclude(Include.NON_NULL)
+    private String vendor = null;
+
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -72,6 +76,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db base file.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
   @VsoMethod
@@ -84,6 +89,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db base file.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
   @VsoMethod
@@ -96,6 +102,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db base file.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
   @VsoMethod
@@ -112,6 +119,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -123,6 +131,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * Description.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -135,6 +144,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db incremental update files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incrementalFileRefs
    */
   @VsoMethod
@@ -147,6 +157,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db incremental update files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incrementalFileRefs
    */
   @VsoMethod
@@ -159,6 +170,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db incremental update files.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return incrementalFileRefs
    */
   @VsoMethod
@@ -173,8 +185,53 @@ public class IPReputationDB extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public IPReputationDB addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Ip reputation db name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -186,6 +243,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip reputation db name.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -197,6 +255,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If this object is managed by the ip reputation service, this field contain the status of this syncronization.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceStatus
    */
   @VsoMethod
@@ -208,6 +267,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * If this object is managed by the ip reputation service, this field contain the status of this syncronization.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceStatus set the serviceStatus.
    */
   @VsoMethod
@@ -220,6 +280,7 @@ public class IPReputationDB extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -232,6 +293,7 @@ public class IPReputationDB extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -262,6 +324,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of this object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -273,6 +336,7 @@ public class IPReputationDB extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of this object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -285,6 +349,7 @@ public class IPReputationDB extends AviRestResource {
    * Organization providing ip reputation data.
    * Enum options - IP_REPUTATION_VENDOR_WEBROOT.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vendor
    */
   @VsoMethod
@@ -297,6 +362,7 @@ public class IPReputationDB extends AviRestResource {
    * Organization providing ip reputation data.
    * Enum options - IP_REPUTATION_VENDOR_WEBROOT.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vendor set the vendor.
    */
   @VsoMethod
@@ -309,6 +375,7 @@ public class IPReputationDB extends AviRestResource {
    * A version number for this database object.
    * This is informal for the consumer of this api only, a tool which manages this object can store version information here.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -321,6 +388,7 @@ public class IPReputationDB extends AviRestResource {
    * A version number for this database object.
    * This is informal for the consumer of this api only, a tool which manages this object can store version information here.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod
@@ -350,7 +418,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.incrementalFileRefs, objIPReputationDB.incrementalFileRefs)&&
   Objects.equals(this.vendor, objIPReputationDB.vendor)&&
   Objects.equals(this.version, objIPReputationDB.version)&&
-  Objects.equals(this.serviceStatus, objIPReputationDB.serviceStatus);
+  Objects.equals(this.serviceStatus, objIPReputationDB.serviceStatus)&&
+  Objects.equals(this.labels, objIPReputationDB.labels);
 }
 
 @Override
@@ -360,6 +429,7 @@ public String toString() {
       sb.append("    baseFileRefs: ").append(toIndentedString(baseFileRefs)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    incrementalFileRefs: ").append(toIndentedString(incrementalFileRefs)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    serviceStatus: ").append(toIndentedString(serviceStatus)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

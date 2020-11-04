@@ -25,39 +25,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VISetvNicNwReq extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("dc_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String dcUuid = null;
+    @JsonProperty("dc_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String dcUuid = null;
 
-  @JsonProperty("rm_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String rmCookie = null;
+    @JsonProperty("rm_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String rmCookie = null;
 
-  @JsonProperty("sevm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String sevmUuid = null;
+    @JsonProperty("sevm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String sevmUuid = null;
 
-  @JsonProperty("vcenter_admin")
-  @JsonInclude(Include.NON_NULL)
-  private VIAdminCredentials vcenterAdmin = null;
+    @JsonProperty("vcenter_admin")
+    @JsonInclude(Include.NON_NULL)
+    private VIAdminCredentials vcenterAdmin = null;
 
-  @JsonProperty("vcenter_sevm_mor")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterSevmMor = null;
+    @JsonProperty("vcenter_sevm_mor")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterSevmMor = null;
 
-  @JsonProperty("vcenter_vnic_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<VIVmVnicInfo> vcenterVnicInfo = null;
+    @JsonProperty("vcenter_vnic_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<VIVmVnicInfo> vcenterVnicInfo = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -68,6 +69,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of dc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dcUuid
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of dc.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dcUuid set the dcUuid.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rm_cookie of obj type visetvnicnwreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rmCookie
    */
   @VsoMethod
@@ -108,6 +113,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rm_cookie of obj type visetvnicnwreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rmCookie set the rmCookie.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of sevm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sevmUuid
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of sevm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sevmUuid set the sevmUuid.
    */
   @VsoMethod
@@ -138,6 +146,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_admin of obj type visetvnicnwreq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterAdmin
    */
   @VsoMethod
@@ -148,6 +157,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_admin of obj type visetvnicnwreq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterAdmin set the vcenterAdmin.
    */
   @VsoMethod
@@ -158,6 +168,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_sevm_mor of obj type visetvnicnwreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterSevmMor
    */
   @VsoMethod
@@ -168,6 +179,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_sevm_mor of obj type visetvnicnwreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterSevmMor set the vcenterSevmMor.
    */
   @VsoMethod
@@ -178,6 +190,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicInfo
    */
   @VsoMethod
@@ -188,6 +201,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method. this will set the vcenterVnicInfo
    * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicInfo
    */
   @VsoMethod
@@ -198,6 +212,7 @@ public class VISetvNicNwReq extends AviRestResource {
   /**
    * This is the setter method this will set the vcenterVnicInfo
    * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicInfo
    */
   @VsoMethod

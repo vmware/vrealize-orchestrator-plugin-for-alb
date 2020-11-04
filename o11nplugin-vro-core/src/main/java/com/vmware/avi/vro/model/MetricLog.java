@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricLog extends AviRestResource {
-  @JsonProperty("end_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Float endTimestamp = null;
+    @JsonProperty("end_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Float endTimestamp = null;
 
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = null;
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = null;
 
-  @JsonProperty("report_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Float reportTimestamp = null;
+    @JsonProperty("report_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Float reportTimestamp = null;
 
-  @JsonProperty("step")
-  @JsonInclude(Include.NON_NULL)
-  private Integer step = null;
+    @JsonProperty("step")
+    @JsonInclude(Include.NON_NULL)
+    private Integer step = null;
 
-  @JsonProperty("time_series")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsQueryResponse timeSeries = null;
+    @JsonProperty("time_series")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsQueryResponse timeSeries = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private Float value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private Float value = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end_timestamp of obj type metriclog field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTimestamp
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end_timestamp of obj type metriclog field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTimestamp set the endTimestamp.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_id of obj type metriclog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_id of obj type metriclog field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property report_timestamp of obj type metriclog field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportTimestamp
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property report_timestamp of obj type metriclog field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportTimestamp set the reportTimestamp.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property step of obj type metriclog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return step
    */
   @VsoMethod
@@ -124,6 +131,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property step of obj type metriclog field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param step set the step.
    */
   @VsoMethod
@@ -134,6 +142,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property time_series of obj type metriclog field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeSeries
    */
   @VsoMethod
@@ -144,6 +153,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property time_series of obj type metriclog field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeSeries set the timeSeries.
    */
   @VsoMethod
@@ -154,6 +164,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property value of obj type metriclog field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -164,6 +175,7 @@ public class MetricLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property value of obj type metriclog field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

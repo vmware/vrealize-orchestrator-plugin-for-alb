@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ImageCloudSpecificData extends AviRestResource {
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private String key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private String key = null;
 
-  @JsonProperty("values")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> values = null;
+    @JsonProperty("values")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> values = null;
 
 
 
@@ -38,6 +38,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Each cloud has specific parameters.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the setter method to the attribute.
    * Each cloud has specific parameters.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Each parameter can have multiple values.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the setter method. this will set the values
    * Each parameter can have multiple values.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class ImageCloudSpecificData extends AviRestResource {
    * This is the setter method this will set the values
    * Each parameter can have multiple values.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return values
    */
   @VsoMethod

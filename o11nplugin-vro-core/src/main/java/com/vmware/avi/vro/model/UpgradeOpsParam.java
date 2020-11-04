@@ -26,21 +26,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeOpsParam extends AviRestResource {
-  @JsonProperty("image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String imageRef = null;
+    @JsonProperty("image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String imageRef = null;
 
-  @JsonProperty("patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String patchRef = null;
+    @JsonProperty("patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String patchRef = null;
 
-  @JsonProperty("se_group_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupOptions seGroupOptions = null;
+    @JsonProperty("se_group_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupOptions seGroupOptions = null;
 
-  @JsonProperty("se_group_resume_options")
-  @JsonInclude(Include.NON_NULL)
-  private SeGroupResumeOptions seGroupResumeOptions = null;
+    @JsonProperty("se_group_resume_options")
+    @JsonInclude(Include.NON_NULL)
+    private SeGroupResumeOptions seGroupResumeOptions = null;
 
 
 
@@ -49,6 +49,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchRef
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * Image uuid for identifying patch.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchRef set the patchRef.
    */
   @VsoMethod
@@ -96,6 +100,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field identifies se group options that need to be applied during the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupOptions
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the setter method to the attribute.
    * This field identifies se group options that need to be applied during the upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupOptions set the seGroupOptions.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Apply options while resuming se group upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupResumeOptions
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class UpgradeOpsParam extends AviRestResource {
    * This is the setter method to the attribute.
    * Apply options while resuming se group upgrade operations.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupResumeOptions set the seGroupResumeOptions.
    */
   @VsoMethod

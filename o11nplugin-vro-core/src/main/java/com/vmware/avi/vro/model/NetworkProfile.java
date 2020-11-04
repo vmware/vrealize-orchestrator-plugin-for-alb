@@ -25,33 +25,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkProfile extends AviRestResource {
-  @JsonProperty("connection_mirror")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean connectionMirror = false;
+    @JsonProperty("connection_mirror")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean connectionMirror = false;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("profile")
-  @JsonInclude(Include.NON_NULL)
-  private NetworkProfileUnion profile = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("profile")
+    @JsonInclude(Include.NON_NULL)
+    private NetworkProfileUnion profile = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -84,6 +88,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -94,6 +99,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -103,7 +109,52 @@ public class NetworkProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public NetworkProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the network profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -114,6 +165,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the network profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -124,6 +176,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property profile of obj type networkprofile field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return profile
    */
   @VsoMethod
@@ -134,6 +187,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property profile of obj type networkprofile field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param profile set the profile.
    */
   @VsoMethod
@@ -144,6 +198,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -154,6 +209,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -183,6 +239,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the network profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -193,6 +250,7 @@ public class NetworkProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the network profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -219,7 +277,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.profile, objNetworkProfile.profile)&&
   Objects.equals(this.description, objNetworkProfile.description)&&
   Objects.equals(this.tenantRef, objNetworkProfile.tenantRef)&&
-  Objects.equals(this.connectionMirror, objNetworkProfile.connectionMirror);
+  Objects.equals(this.connectionMirror, objNetworkProfile.connectionMirror)&&
+  Objects.equals(this.labels, objNetworkProfile.labels);
 }
 
 @Override
@@ -228,6 +287,7 @@ public String toString() {
   sb.append("class NetworkProfile {\n");
       sb.append("    connectionMirror: ").append(toIndentedString(connectionMirror)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

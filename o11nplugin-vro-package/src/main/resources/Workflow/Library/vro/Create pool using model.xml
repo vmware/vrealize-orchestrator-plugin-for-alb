@@ -3,87 +3,82 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.1.2"
+	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.2.1"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Create pool]]></display-name>
+	<display-name><![CDATA[Create Pool]]></display-name>
 	<position y="9.545454545454543" x="5.0"></position>
 	<input>
-		<param name="Name" type="string">
-			<description><![CDATA[Add virtualservice name]]></description>
+		<param name="name" type="string">
+			<description><![CDATA[name]]></description>
 		</param>
 		<param name="controller" type="string">
-			<description><![CDATA[AVI Controller(AVI controller on which resources to be deployed).]]></description>
+			<description><![CDATA[controller]]></description>
 		</param>
-		<param name="Tenant" type="string">
-			<description><![CDATA[Select Tenant ]]></description>
+		<param name="tenant" type="string">
+			<description><![CDATA[tenant]]></description>
 		</param>
-		<param name="ServerCloud" type="string">
-			<description><![CDATA[Select Cloud Server Type]]></description>
+		<param name="server_cloud" type="string">
+			<description><![CDATA[server_cloud]]></description>
 		</param>
-		<param name="PoolServers" type="Array/string">
-			<description><![CDATA[Server details]]></description>
+		<param name="pool_servers" type="Array/string">
+			<description><![CDATA[pool_servers]]></description>
 		</param>
-		<param name="CreateHealthMonitor" type="boolean">
-			<description><![CDATA[Create HealthMonitor]]></description>
+		<param name="create_health_monitor" type="boolean">
+			<description><![CDATA[create_health_monitor]]></description>
 		</param>
-		<param name="healthMonitor" type="Array/string">
-			<description><![CDATA[Select the HealthMonitor]]></description>
+		<param name="add_servers" type="string">
+			<description><![CDATA[add_servers]]></description>
 		</param>
-		<param name="AddServers" type="string">
-			<description><![CDATA[How would you like to add Servers?]]></description>
+		<param name="ip_group" type="string">
+			<description><![CDATA[ip_group]]></description>
 		</param>
-		<param name="IPGroup" type="string">
-			<description><![CDATA[IP Group]]></description>
+		<param name="network" type="string">
+			<description><![CDATA[network]]></description>
 		</param>
-		<param name="Network" type="string">
-			<description><![CDATA[Type IP Address or Select by Network]]></description>
+		<param name="add_existing_server_ips" type="boolean">
+			<description><![CDATA[add_existing_server_ips]]></description>
 		</param>
-		<param name="AddExistingServerIPs" type="boolean">
-			<description><![CDATA[Check existing server IP]]></description>
+		<param name="pg_name" type="string">
+			<description><![CDATA[pg_name]]></description>
 		</param>
-		<param name="PGNames" type="string">
-			<description><![CDATA[Network PG names]]></description>
+		<param name="lb_algorithm" type="string">
+			<description><![CDATA[lb_algorithm]]></description>
 		</param>
-		<param name="failActionType" type="string">
-			<description><![CDATA[Failactiontype for poolgroup]]></description>
+		<param name="lb_consistent_hash" type="string">
+			<description><![CDATA[lb_consistent_hash]]></description>
 		</param>
-		<param name="lbAlgorithm" type="string">
-			<description><![CDATA[Pool LB algorithm type]]></description>
+		<param name="lb_custom_header_name" type="string">
+			<description><![CDATA[lb_custom_header_name]]></description>
 		</param>
-		<param name="lbConsistentHash" type="string">
-			<description><![CDATA[Load balancer consistent hash]]></description>
+		<param name="server_type" type="string">
+			<description><![CDATA[server_type]]></description>
 		</param>
-		<param name="lbCustomHeaderName" type="string">
-			<description><![CDATA[Load balancer custom header name]]></description>
+		<param name="health_monitor_type" type="string">
+			<description><![CDATA[health_monitor_type]]></description>
 		</param>
-		<param name="serverType" type="string">
-			<description><![CDATA[Server Type]]></description>
+		<param name="command" type="string">
+			<description><![CDATA[command]]></description>
 		</param>
-		<param name="statusCode" type="string">
-			<description><![CDATA[Status code for failaction type of poolgroup]]></description>
+		<param name="request" type="string">
+			<description><![CDATA[request]]></description>
 		</param>
-		<param name="statusProtocol" type="string">
-			<description><![CDATA[Protocol for failaction type of poolgroup]]></description>
+		<param name="http_response_code" type="Array/string">
+			<description><![CDATA[http_response_code]]></description>
 		</param>
-		<param name="failActionURL" type="string">
-			<description><![CDATA[Redirect url for failaction type]]></description>
+		<param name="https_response_code" type="Array/string">
+			<description><![CDATA[https_response_code]]></description>
 		</param>
-		<param name="monitorType" type="string">
-			<description><![CDATA[Healthmonitor type ]]></description>
+		<param name="port" type="string">
+			<description><![CDATA[port]]></description>
 		</param>
-		<param name="Command" type="string">
-			<description><![CDATA[Command code for  external type healthmonitor]]></description>
+		<param name="persistence_profile_ref" type="string">
+			<description><![CDATA[persistence_profile_ref]]></description>
 		</param>
-		<param name="Request" type="string">
-			<description><![CDATA[Command code for  UDP type healthmonitor]]></description>
+		<param name="add_persistence_profile_ref" type="boolean">
+			<description><![CDATA[add_persistence_profile_ref]]></description>
 		</param>
-		<param name="selectExistingPools" type="boolean"></param>
-		<param name="http_response_code" type="Array/string"></param>
-		<param name="https_response_code" type="Array/string"></param>
-		<param name="port" type="string"></param>
-		<param name="PersistenceProfileRef" type="string"></param>
-		<param name="addPersistenceProfileRef" type="boolean"></param>
+		<param name="tier1_lr" type="string"></param>
 	</input>
 	<attrib name="configErrorCode" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
@@ -105,10 +100,32 @@
 	</attrib>
 	<attrib name="aviVroClient" type="Avi:AviVroClient"
 		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
+		<value encoded="n"><![CDATA[
+		]]></value>
+	</attrib>
+	<attrib name="status_code" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+		<description><![CDATA[status_code]]></description>
+	</attrib>
+	<attrib name="protocol" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+		<description><![CDATA[protocol]]></description>
+	</attrib>
+	<attrib name="fail_action_URL" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+		<description><![CDATA[fail_action_URL]]></description>
+	</attrib>
+	<attrib name="fail_action_type" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+		<description><![CDATA[fail_action_type]]></description>
 	</attrib>
 	<workflow-item name="item0"
 		throw-bind-name="actionEerrorCode" type="end" end-mode="0">
+		<in-binding></in-binding>
 		<position y="9.045454545454543" x="664.5"></position>
 	</workflow-item>
 	<workflow-item name="item6" out-name="item5"
@@ -120,7 +137,7 @@ version=aviVroClient.cred.version
 
 ]]></script>
 		<in-binding>
-			<bind name="Name" type="string" export-name="Name">
+			<bind name="Name" type="string" export-name="name">
 				<description><![CDATA[Add virtualservice name]]></description>
 			</bind>
 			<bind name="HealthMonitorName" type="string"
@@ -169,8 +186,9 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
-				export-name="monitorType"></bind>
-			<bind name="hm_type" type="string" export-name="monitorType"></bind>
+				export-name="health_monitor_type"></bind>
+			<bind name="hm_type" type="string"
+				export-name="health_monitor_type"></bind>
 			<bind name="hm_name" type="string"
 				export-name="HealthMonitorName"></bind>
 			<bind name="hm_description" type="string"
@@ -186,12 +204,12 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				explicitly-not-bound="true"></bind>
 			<bind name="failed_check" type="number"
 				explicitly-not-bound="true"></bind>
-			<bind name="command_code" type="string" export-name="Command"></bind>
-			<bind name="udp_request" type="string" export-name="Request"></bind>
-			<bind name="dns_query_name" type="string" export-name="Name"></bind>
+			<bind name="command_code" type="string" export-name="command"></bind>
+			<bind name="udp_request" type="string" export-name="request"></bind>
+			<bind name="dns_query_name" type="string" export-name="request"></bind>
 			<bind name="http_response_code" type="Array/string"
 				export-name="http_response_code"></bind>
-			<bind name="tcp_request" type="string" export-name="Request"></bind>
+			<bind name="tcp_request" type="string" export-name="request"></bind>
 			<bind name="tcp_response" type="string"
 				explicitly-not-bound="true"></bind>
 			<bind name="tcp_half_open" type="boolean"
@@ -213,10 +231,10 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 		script-module="com.vmware.avi/createPoolObj">
 		<display-name><![CDATA[createPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port,addPersistenceProfileRef) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port,addPersistenceProfileRef,tier1_lr) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
-				export-name="PoolServers">
+				export-name="pool_servers">
 				<description><![CDATA[Pool servers list ]]></description>
 			</bind>
 			<bind name="enablePool" type="boolean"
@@ -224,10 +242,10 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Pool status]]></description>
 			</bind>
 			<bind name="CreateHealthMonitor" type="boolean"
-				export-name="CreateHealthMonitor">
+				export-name="create_health_monitor">
 				<description><![CDATA[Check create healthmonitor or not]]></description>
 			</bind>
-			<bind name="poolName" type="string" export-name="Name">
+			<bind name="poolName" type="string" export-name="name">
 				<description><![CDATA[Pool name]]></description>
 			</bind>
 			<bind name="defaultServerPort" type="string"
@@ -235,24 +253,25 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Default server port]]></description>
 			</bind>
 			<bind name="loadBalancerAlgo" type="string"
-				export-name="lbAlgorithm">
+				export-name="lb_algorithm">
 				<description><![CDATA[Pool LB algorithm type]]></description>
 			</bind>
-			<bind name="serverType" type="string" export-name="serverType">
+			<bind name="serverType" type="string" export-name="server_type">
 				<description><![CDATA[Server type]]></description>
 			</bind>
 			<bind name="lbConsistentHash" type="string"
-				export-name="lbConsistentHash">
+				export-name="lb_consistent_hash">
 				<description><![CDATA[Consistent hash data for load balancer algorithm type is consistent hash]]></description>
 			</bind>
 			<bind name="lbCustomHeaderName" type="string"
-				export-name="lbCustomHeaderName">
+				export-name="lb_custom_header_name">
 				<description><![CDATA[Custom headers consistent hash type]]></description>
 			</bind>
-			<bind name="ServerCloud" type="string" export-name="ServerCloud">
+			<bind name="ServerCloud" type="string"
+				export-name="server_cloud">
 				<description><![CDATA[Servercloud name]]></description>
 			</bind>
-			<bind name="Tenant" type="string" export-name="Tenant">
+			<bind name="Tenant" type="string" export-name="tenant">
 				<description><![CDATA[Tenant name]]></description>
 			</bind>
 			<bind name="HealthMonitorName" type="string"
@@ -260,7 +279,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[New healthmonitor name]]></description>
 			</bind>
 			<bind name="healthMonitor" type="Array/string"
-				export-name="healthMonitor">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[List of existing healthmonitors name]]></description>
 			</bind>
 			<bind name="Version" type="string" export-name="version">
@@ -291,82 +310,81 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Add graceful disable timeout]]></description>
 			</bind>
 			<bind name="hostCheckEnabled" type="boolean"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add host check enabled]]></description>
 			</bind>
 			<bind name="lookupServerByName" type="boolean"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add lookup server by name]]></description>
 			</bind>
 			<bind name="rewriteHostHeaderServerName" type="boolean"
-				explicitly-not-bound="true">
+				export-name="create_health_monitor">
 				<description><![CDATA[Add rewrite host header server name]]></description>
 			</bind>
 			<bind name="maxConcurrentConnectionsPerServer" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add max concurrent connections per server]]></description>
 			</bind>
 			<bind name="domainName" type="string"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add domain name]]></description>
 			</bind>
 			<bind name="fewestTasksFeedbackDelay" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add fewest tasks feedback delay]]></description>
 			</bind>
 			<bind name="connectionRampDuration" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Connection ramp]]></description>
 			</bind>
 			<bind name="upstreamConnpoolConnIdleTmo" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Connection Idle Timeout]]></description>
 			</bind>
 			<bind name="upstreamConnpoolConnLifeTmo" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Connection Life Timeout]]></description>
 			</bind>
 			<bind name="upstreamConnpoolConnMaxReuse" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Connection Max Used Times]]></description>
 			</bind>
 			<bind name="upstreamConnpoolServerMaxCache" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Max Cache Connections Per Server]]></description>
 			</bind>
 			<bind name="requestQueueEnabled" type="boolean"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add request queue enabled]]></description>
 			</bind>
 			<bind name="useServicePort" type="boolean"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Disable Port Translation]]></description>
 			</bind>
 			<bind name="sniEnabled" type="boolean"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Add sni enabled]]></description>
 			</bind>
 			<bind name="serverTimeout" type="number"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Default Server Timeout]]></description>
 			</bind>
 			<bind name="enableRealtimeMetrics" type="boolean"
-				explicitly-not-bound="true">
+				explicitly-not-bound="true" export-name="NULL">
 				<description><![CDATA[Enable real time metrics]]></description>
 			</bind>
-			<bind name="statusCode" type="string" export-name="statusCode">
+			<bind name="statusCode" type="string" export-name="status_code">
 				<description><![CDATA[Status code for fail action type of pool]]></description>
 			</bind>
 			<bind name="failActionURL" type="string"
-				export-name="failActionURL">
+				export-name="fail_action_URL">
 				<description><![CDATA[Redirect url for fail action type of pool]]></description>
 			</bind>
-			<bind name="statusProtocol" type="string"
-				export-name="statusProtocol">
+			<bind name="statusProtocol" type="string" export-name="protocol">
 				<description><![CDATA[Add status protocol for pool fail action]]></description>
 			</bind>
 			<bind name="failActiontype" type="string"
-				export-name="failActionType">
+				export-name="fail_action_type">
 				<description><![CDATA[Pool fail action type]]></description>
 			</bind>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
@@ -374,11 +392,13 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Object of the plugin]]></description>
 			</bind>
 			<bind name="PersistenceProfileRef" type="string"
-				export-name="PersistenceProfileRef"></bind>
+				export-name="persistence_profile_ref"></bind>
 			<bind name="port" type="string" export-name="port"></bind>
-			<bind name="ratio" type="number" explicitly-not-bound="true"></bind>
+			<bind name="ratio" type="number" explicitly-not-bound="true"
+				export-name="NULL"></bind>
 			<bind name="addPersistenceProfileRef" type="boolean"
-				export-name="addPersistenceProfileRef"></bind>
+				export-name="add_persistence_profile_ref"></bind>
+			<bind name="tier1_lr" type="string" export-name="tier1_lr"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
@@ -390,12 +410,13 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 		type="condition" alt-out-name="item4" comparator="0">
 		<display-name><![CDATA[Decision]]></display-name>
 		<script encoded="false"><![CDATA[//Generated by the system, cannot be edited
-return (CreateHealthMonitor == true) ;]]></script>
+return (create_health_monitor == true) ;]]></script>
 		<in-binding>
-			<bind name="CreateHealthMonitor" type="boolean"
-				export-name="CreateHealthMonitor"></bind>
+			<bind name="create_health_monitor" type="boolean"
+				export-name="create_health_monitor"></bind>
 		</in-binding>
-		<condition name="CreateHealthMonitor" type="boolean"
+		<out-binding></out-binding>
+		<condition name="create_health_monitor" type="boolean"
 			comparator="0" label="null">false</condition>
 		<position y="9.045454545454543" x="225.0"></position>
 	</workflow-item>
@@ -403,170 +424,136 @@ return (CreateHealthMonitor == true) ;]]></script>
 		<p-step>
 			<title><![CDATA[Basic details]]></title>
 			<p-param name="controller">
-				<desc><![CDATA[AVI controller]]></desc>
+				<desc><![CDATA[controller]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
 			</p-param>
-			<p-param name="Tenant">
-				<desc><![CDATA[Select tenant ]]></desc>
+			<p-param name="tenant">
+				<desc><![CDATA[tenant ]]></desc>
 				<p-qual kind="static" name="defaultValue" type="string"><![CDATA[admin]]></p-qual>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="ServerCloud">
-				<desc><![CDATA[Select cloud]]></desc>
+			<p-param name="server_cloud">
+				<desc><![CDATA[server_cloud]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "cloud" )]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Pool details]]></title>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#selectExistingPools != true]]></p-qual>
-			<p-param name="Name">
-				<desc><![CDATA[Pool name]]></desc>
+			<p-param name="name">
+				<desc><![CDATA[name]]></desc>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="lbAlgorithm">
-				<desc><![CDATA[Select pool LB algorithm]]></desc>
+			<p-param name="lb_algorithm">
+				<desc><![CDATA[lb_algorithm]]></desc>
 				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#poolOrPoolgrous != true]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#Least Connections#;#string#Round Robin#;#string#Least Load#;#string#Fewest Servers#;#string#Consistent Hash#;#string#Fastest Response#;#string#Core Affinity#}#]]></p-qual>
 				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "lbAlgorithm" , #ApplicationProfile , #resourceElement )]]></p-qual>
 			</p-param>
-			<p-param name="lbConsistentHash">
-				<desc><![CDATA[Load balancer consistent hash]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#lbAlgorithm == "Consistent Hash "]]></p-qual>
+			<p-param name="lb_consistent_hash">
+				<desc><![CDATA[lb_consistent_hash]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#lb_algorithm == "Consistent Hash "]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#Source IP Address #;#string#Source IP Address And Port #;#string#Callid#;#string#URI #;#string#Custom String#;#string#Custom Header#}#]]></p-qual>
 			</p-param>
-			<p-param name="lbCustomHeaderName">
-				<desc><![CDATA[Load balancer custom header name]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#lbConsistentHash == "Custom Header"]]></p-qual>
+			<p-param name="lb_custom_header_name">
+				<desc><![CDATA[lb_custom_header_name]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#lb_consistent_hash == "Custom Header"]]></p-qual>
 			</p-param>
-			<p-param name="CreateHealthMonitor">
-				<desc><![CDATA[Create healthmonitor]]></desc>
+			<p-param name="create_health_monitor">
+				<desc><![CDATA[create_health_monitor]]></desc>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[false]]></p-qual>
 			</p-param>
-			<p-param name="healthMonitor">
-				<desc><![CDATA[Select healthmonitors]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#CreateHealthMonitor == false]]></p-qual>
-				<p-qual kind="ognl" name="genericEnumeration"
-					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectsNames").call( #controller , "healthmonitor" , "" , #Tenant )]]></p-qual>
+			<p-param name="tier1_lr">
+				<desc><![CDATA[tier1_lr]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[GetAction("com.vmware.avi","getCloudType").call( #controller , #server_cloud )]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Healthmonitor details]]></title>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#CreateHealthMonitor == true]]></p-qual>
-			<p-param name="monitorType">
-				<desc><![CDATA[Healthmonitor type ]]></desc>
+			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#create_health_monitor==true]]></p-qual>
+			<p-param name="health_monitor_type">
+				<desc><![CDATA[health_monitor_type ]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#TCP#;#string#HTTPS#;#string#External#;#string#UDP#;#string#DNS#;#string#HTTP#;#string#Ping#}#]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#CreateHealthMonitor==true ]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#create_health_monitor==true ]]></p-qual>
 			</p-param>
-			<p-param name="Command">
-				<desc><![CDATA[Command code for  external type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="External"]]></p-qual>
+			<p-param name="command">
+				<desc><![CDATA[command]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="External"]]></p-qual>
 			</p-param>
-			<p-param name="Request">
-				<desc><![CDATA[Command code for  UDP type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="UDP"]]></p-qual>
+			<p-param name="request">
+				<desc><![CDATA[request]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="UDP" || #health_monitor_type=="DNS"]]></p-qual>
 			</p-param>
 			<p-param name="http_response_code">
-				<desc><![CDATA[Respose code for HTTP type healthmonitor]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTP"]]></p-qual>
+				<desc><![CDATA[http_respose_code]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="HTTP"]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
+					type="Array/Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 			<p-param name="https_response_code">
 				<desc><![CDATA[https_response_code]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#monitorType=="HTTPS"]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#health_monitor_type=="HTTPS"]]></p-qual>
 				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
+					type="Array/Array/string"><![CDATA[#{#string#1XX#;#string#2XX#;#string#3XX#;#string#4XX#;#string#5XX#;#string#ANY#}#]]></p-qual>
 			</p-param>
 		</p-step>
 		<p-step>
 			<title><![CDATA[Server details]]></title>
-			<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#selectExistingPools == true]]></p-qual>
-			<p-param name="AddServers">
-				<desc><![CDATA[Connect servers]]></desc>
+			<p-param name="add_servers">
+				<desc><![CDATA[add_servers]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
 					type="Array/string"><![CDATA[#{#string#IP Address#;#string#Select by network#;#string#IP Group#}#]]></p-qual>
 				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="AddExistingServerIPs">
-				<desc><![CDATA[Add server by network]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#AddServers == "Select by network"]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddServers != "Select by network"]]></p-qual>
+			<p-param name="add_existing_server_ips">
+				<desc><![CDATA[add_existing_server_ips]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#add_servers == "Select by network"]]></p-qual>
+				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#add_servers != "Select by network"]]></p-qual>
 			</p-param>
-			<p-param name="IPGroup">
-				<desc><![CDATA[Select IP group]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#AddServers=="IP Group"]]></p-qual>
+			<p-param name="ip_group">
+				<desc><![CDATA[ip_group]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#add_servers=="IP Group"]]></p-qual>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "ipaddrgroup" , #Tenant , "" , #version )]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddServers!="IP Group"]]></p-qual>
+				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#add_servers!="IP Group"]]></p-qual>
 			</p-param>
-			<p-param name="PGNames">
-				<desc><![CDATA[Search server networks to select servers within that networks:]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#AddExistingServerIPs == true ]]></p-qual>
+			<p-param name="pg_name">
+				<desc><![CDATA[pg_name]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#add_existing_server_ips == true ]]></p-qual>
 				<p-qual kind="ognl" name="defaultValue" type="string"><![CDATA[""]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddExistingServerIPs != true || #AddServers != "Select by network"]]></p-qual>
+				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#add_existing_server_ips != true || #add_servers != "Select by network"]]></p-qual>
 			</p-param>
-			<p-param name="Network">
-				<desc><![CDATA[Select server networks]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[ #AddExistingServerIPs == true ]]></p-qual>
+			<p-param name="network">
+				<desc><![CDATA[network]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[ #add_existing_server_ips == true ]]></p-qual>
 				<p-qual kind="ognl" name="genericEnumeration"
-					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "vimgrnwruntime" , #Tenant , #PGNames , #version )]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#AddExistingServerIPs != true || #AddServers != "Select by network"]]></p-qual>
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectList").call( #controller , "vimgrnwruntime" , #Tenant , #pg_name , #version )]]></p-qual>
+				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[#add_existing_server_ips != true || #add_servers != "Select by network"]]></p-qual>
 			</p-param>
-			<p-param name="PoolServers">
-				<desc><![CDATA[Select servers to add]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchServerIP").call( #controller , #Tenant , #AddServers , #IPGroup , #Network , #AddExistingServerIPs )]]></p-qual>
+			<p-param name="pool_servers">
+				<desc><![CDATA[pool_servers]]></desc>
+				<p-qual kind="ognl" name="dataBinding" type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchServerIP").call( #controller , #Tenant , #add_servers , #ip_group , #network , #add_existing_server_ips )]]></p-qual>
 			</p-param>
 			<p-param name="port">
-				<desc><![CDATA[Port]]></desc>
+				<desc><![CDATA[port]]></desc>
 			</p-param>
-			<p-param name="addPersistenceProfileRef">
-				<desc><![CDATA[Add Persistence Profile Ref]]></desc>
+			<p-param name="add_persistence_profile_ref">
+				<desc><![CDATA[add_persistence_profile_ref]]></desc>
 			</p-param>
-			<p-param name="PersistenceProfileRef">
-				<desc><![CDATA[PersistenceProfileRef]]></desc>
+			<p-param name="persistence_profile_ref">
+				<desc><![CDATA[persistence_profile_ref]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "applicationpersistenceprofile" )]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#addPersistenceProfileRef==true]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#add_persistence_profile_ref==true]]></p-qual>
 			</p-param>
-			<p-param name="serverType">
-				<desc><![CDATA[Server type]]></desc>
+			<p-param name="server_type">
+				<desc><![CDATA[server_type]]></desc>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 				<p-qual kind="static" name="defaultValue" type="string"><![CDATA[V4]]></p-qual>
-			</p-param>
-		</p-step>
-		<p-step>
-			<title><![CDATA[PG details]]></title>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[false]]></p-qual>
-			<p-param name="failActionType">
-				<desc><![CDATA[Fail action type]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "failActionType" , #ApplicationProfile , #resourceElement )]]></p-qual>
-				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#Close Connection#;#string#HTTP Redirect#}#]]></p-qual>
-			</p-param>
-			<p-param name="statusCode">
-				<desc><![CDATA[Select status code]]></desc>
-				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#301#;#string#302#;#string#307#}#]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#failActionType=="HTTP Redirect"]]></p-qual>
-			</p-param>
-			<p-param name="statusProtocol">
-				<desc><![CDATA[Add protocol]]></desc>
-				<p-qual kind="static" name="genericEnumeration"
-					type="Array/string"><![CDATA[#{#string#HTTP#;#string#HTTPS#}#]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#failActionType=="HTTP Redirect"]]></p-qual>
-			</p-param>
-			<p-param name="failActionURL">
-				<desc><![CDATA[URL for redirect]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#failActionType=="HTTP Redirect"]]></p-qual>
-			</p-param>
-			<p-param name="selectExistingPools">
-				<desc><![CDATA[Select existing pools]]></desc>
-				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[false]]></p-qual>
 			</p-param>
 		</p-step>
 	</presentation>

@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPCredentials extends AviRestResource {
-  @JsonProperty("service_account_keyfile_data")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceAccountKeyfileData = null;
+    @JsonProperty("service_account_keyfile_data")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceAccountKeyfileData = null;
 
 
 
@@ -34,6 +34,7 @@ public class GCPCredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform service account keyfile data in json format.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceAccountKeyfileData
    */
   @VsoMethod
@@ -45,6 +46,7 @@ public class GCPCredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform service account keyfile data in json format.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceAccountKeyfileData set the serviceAccountKeyfileData.
    */
   @VsoMethod

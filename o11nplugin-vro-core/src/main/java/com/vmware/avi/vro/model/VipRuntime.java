@@ -33,127 +33,128 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipRuntime extends AviRestResource {
-  @JsonProperty("ev")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> ev = null;
+    @JsonProperty("ev")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ev = null;
 
-  @JsonProperty("ev_status")
-  @JsonInclude(Include.NON_NULL)
-  private VsEvStatus evStatus = null;
+    @JsonProperty("ev_status")
+    @JsonInclude(Include.NON_NULL)
+    private VsEvStatus evStatus = null;
 
-  @JsonProperty("first_se_assigned_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp firstSeAssignedTime = null;
+    @JsonProperty("first_se_assigned_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp firstSeAssignedTime = null;
 
-  @JsonProperty("first_time_placement")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean firstTimePlacement = false;
+    @JsonProperty("first_time_placement")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean firstTimePlacement = false;
 
-  @JsonProperty("fsm_state_id")
-  @JsonInclude(Include.NON_NULL)
-  private String fsmStateId = "0";
+    @JsonProperty("fsm_state_id")
+    @JsonInclude(Include.NON_NULL)
+    private String fsmStateId = "0";
 
-  @JsonProperty("fsm_state_name")
-  @JsonInclude(Include.NON_NULL)
-  private String fsmStateName = "VipFsmMap::Inactive";
+    @JsonProperty("fsm_state_name")
+    @JsonInclude(Include.NON_NULL)
+    private String fsmStateName = "VipFsmMap::Inactive";
 
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("last_scale_status")
-  @JsonInclude(Include.NON_NULL)
-  private ScaleStatus lastScaleStatus = null;
+    @JsonProperty("last_scale_status")
+    @JsonInclude(Include.NON_NULL)
+    private ScaleStatus lastScaleStatus = null;
 
-  @JsonProperty("marked_for_delete")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean markedForDelete = false;
+    @JsonProperty("marked_for_delete")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean markedForDelete = false;
 
-  @JsonProperty("metrics_mgr_port")
-  @JsonInclude(Include.NON_NULL)
-  private String metricsMgrPort = null;
+    @JsonProperty("metrics_mgr_port")
+    @JsonInclude(Include.NON_NULL)
+    private String metricsMgrPort = null;
 
-  @JsonProperty("migrate_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean migrateInProgress = false;
+    @JsonProperty("migrate_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean migrateInProgress = false;
 
-  @JsonProperty("migrate_request")
-  @JsonInclude(Include.NON_NULL)
-  private VsMigrateParams migrateRequest = null;
+    @JsonProperty("migrate_request")
+    @JsonInclude(Include.NON_NULL)
+    private VsMigrateParams migrateRequest = null;
 
-  @JsonProperty("migrate_scalein_pending")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean migrateScaleinPending = false;
+    @JsonProperty("migrate_scalein_pending")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean migrateScaleinPending = false;
 
-  @JsonProperty("migrate_scaleout_pending")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean migrateScaleoutPending = false;
+    @JsonProperty("migrate_scaleout_pending")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean migrateScaleoutPending = false;
 
-  @JsonProperty("num_additional_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numAdditionalSe = 0;
+    @JsonProperty("num_additional_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numAdditionalSe = 0;
 
-  @JsonProperty("prev_metrics_mgr_port")
-  @JsonInclude(Include.NON_NULL)
-  private String prevMetricsMgrPort = null;
+    @JsonProperty("prev_metrics_mgr_port")
+    @JsonInclude(Include.NON_NULL)
+    private String prevMetricsMgrPort = null;
 
-  @JsonProperty("progress_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer progressPercent = 0;
+    @JsonProperty("progress_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer progressPercent = 0;
 
-  @JsonProperty("requested_resource")
-  @JsonInclude(Include.NON_NULL)
-  private VirtualServiceResource requestedResource = null;
+    @JsonProperty("requested_resource")
+    @JsonInclude(Include.NON_NULL)
+    private VirtualServiceResource requestedResource = null;
 
-  @JsonProperty("scale_status")
-  @JsonInclude(Include.NON_NULL)
-  private ScaleStatus scaleStatus = null;
+    @JsonProperty("scale_status")
+    @JsonInclude(Include.NON_NULL)
+    private ScaleStatus scaleStatus = null;
 
-  @JsonProperty("scalein_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleinInProgress = false;
+    @JsonProperty("scalein_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleinInProgress = false;
 
-  @JsonProperty("scalein_request")
-  @JsonInclude(Include.NON_NULL)
-  private VsScaleinParams scaleinRequest = null;
+    @JsonProperty("scalein_request")
+    @JsonInclude(Include.NON_NULL)
+    private VsScaleinParams scaleinRequest = null;
 
-  @JsonProperty("scaleout_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleoutInProgress = false;
+    @JsonProperty("scaleout_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleoutInProgress = false;
 
-  @JsonProperty("se_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeList> seList = null;
+    @JsonProperty("se_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeList> seList = null;
 
-  @JsonProperty("servers_configured")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean serversConfigured = true;
+    @JsonProperty("servers_configured")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean serversConfigured;
 
-  @JsonProperty("supp_runtime_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus suppRuntimeStatus = null;
+    @JsonProperty("supp_runtime_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus suppRuntimeStatus = null;
 
-  @JsonProperty("user_scaleout_pending")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean userScaleoutPending = false;
+    @JsonProperty("user_scaleout_pending")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean userScaleoutPending = false;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("warmstart_resync_done")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean warmstartResyncDone = false;
+    @JsonProperty("warmstart_resync_done")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean warmstartResyncDone = false;
 
-  @JsonProperty("warmstart_resync_sent")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean warmstartResyncSent = false;
+    @JsonProperty("warmstart_resync_sent")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean warmstartResyncSent = false;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ev of obj type vipruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ev
    */
   @VsoMethod
@@ -164,6 +165,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the ev
    * Placeholder for description of property ev of obj type vipruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ev
    */
   @VsoMethod
@@ -174,6 +176,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the ev
    * Placeholder for description of property ev of obj type vipruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ev
    */
   @VsoMethod
@@ -189,6 +192,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ev_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return evStatus
    */
   @VsoMethod
@@ -199,6 +203,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ev_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param evStatus set the evStatus.
    */
   @VsoMethod
@@ -209,6 +214,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property first_se_assigned_time of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return firstSeAssignedTime
    */
   @VsoMethod
@@ -219,6 +225,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property first_se_assigned_time of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param firstSeAssignedTime set the firstSeAssignedTime.
    */
   @VsoMethod
@@ -251,7 +258,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property fsm_state_id of obj type vipruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "0".
    * @return fsmStateId
    */
   @VsoMethod
@@ -262,7 +269,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property fsm_state_id of obj type vipruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "0".
    * @param fsmStateId set the fsmStateId.
    */
   @VsoMethod
@@ -273,7 +280,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property fsm_state_name of obj type vipruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VipFsmMap::Inactive.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VipFsmMap::Inactive".
    * @return fsmStateName
    */
   @VsoMethod
@@ -284,7 +291,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property fsm_state_name of obj type vipruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as VipFsmMap::Inactive.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "VipFsmMap::Inactive".
    * @param fsmStateName set the fsmStateName.
    */
   @VsoMethod
@@ -295,6 +302,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_changed_time of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -305,6 +313,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_changed_time of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -315,6 +324,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_scale_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastScaleStatus
    */
   @VsoMethod
@@ -325,6 +335,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_scale_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastScaleStatus set the lastScaleStatus.
    */
   @VsoMethod
@@ -357,6 +368,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsMgrPort
    */
   @VsoMethod
@@ -367,6 +379,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsMgrPort set the metricsMgrPort.
    */
   @VsoMethod
@@ -399,6 +412,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property migrate_request of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return migrateRequest
    */
   @VsoMethod
@@ -409,6 +423,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property migrate_request of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param migrateRequest set the migrateRequest.
    */
   @VsoMethod
@@ -485,6 +500,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prevMetricsMgrPort
    */
   @VsoMethod
@@ -495,6 +511,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prevMetricsMgrPort set the prevMetricsMgrPort.
    */
   @VsoMethod
@@ -527,6 +544,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property requested_resource of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestedResource
    */
   @VsoMethod
@@ -537,6 +555,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property requested_resource of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestedResource set the requestedResource.
    */
   @VsoMethod
@@ -547,6 +566,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property scale_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleStatus
    */
   @VsoMethod
@@ -557,6 +577,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property scale_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleStatus set the scaleStatus.
    */
   @VsoMethod
@@ -589,6 +610,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property scalein_request of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinRequest
    */
   @VsoMethod
@@ -599,6 +621,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property scalein_request of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scaleinRequest set the scaleinRequest.
    */
   @VsoMethod
@@ -631,6 +654,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_list of obj type vipruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
   @VsoMethod
@@ -641,6 +665,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the seList
    * Placeholder for description of property se_list of obj type vipruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
   @VsoMethod
@@ -651,6 +676,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the seList
    * Placeholder for description of property se_list of obj type vipruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seList
    */
   @VsoMethod
@@ -666,7 +692,6 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return serversConfigured
    */
   @VsoMethod
@@ -677,7 +702,6 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param serversConfigured set the serversConfigured.
    */
   @VsoMethod
@@ -688,6 +712,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property supp_runtime_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return suppRuntimeStatus
    */
   @VsoMethod
@@ -698,6 +723,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property supp_runtime_status of obj type vipruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param suppRuntimeStatus set the suppRuntimeStatus.
    */
   @VsoMethod
@@ -730,6 +756,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_id of obj type vipruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -740,6 +767,7 @@ public class VipRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_id of obj type vipruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod

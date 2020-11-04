@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPSMLocation extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private WafPSMLocationMatch match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private WafPSMLocationMatch match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafPSMRule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafPSMRule> rules = null;
 
 
 
@@ -51,6 +51,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this location.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -62,6 +63,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this location.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Location index, this is used to determine the order of the locations.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Location index, this is used to determine the order of the locations.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -95,6 +99,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Apply these rules only if the request is matching this description.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Apply these rules only if the request is matching this description.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * User defined name for this location, it must be unique in the group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -128,6 +135,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * User defined name for this location, it must be unique in the group.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method. this will set the rules
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -161,6 +171,7 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method this will set the rules
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod

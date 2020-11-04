@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LicenseLedgerDetails extends AviRestResource {
-  @JsonProperty("escrow_infos")
-  @JsonInclude(Include.NON_NULL)
-  private List<LicenseInfo> escrowInfos = null;
+    @JsonProperty("escrow_infos")
+    @JsonInclude(Include.NON_NULL)
+    private List<LicenseInfo> escrowInfos = null;
 
-  @JsonProperty("se_infos")
-  @JsonInclude(Include.NON_NULL)
-  private List<LicenseInfo> seInfos = null;
+    @JsonProperty("se_infos")
+    @JsonInclude(Include.NON_NULL)
+    private List<LicenseInfo> seInfos = null;
 
-  @JsonProperty("tier_usages")
-  @JsonInclude(Include.NON_NULL)
-  private List<LicenseTierUsage> tierUsages = null;
+    @JsonProperty("tier_usages")
+    @JsonInclude(Include.NON_NULL)
+    private List<LicenseTierUsage> tierUsages = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -50,6 +50,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maintain information about reservation against cookie.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return escrowInfos
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method. this will set the escrowInfos
    * Maintain information about reservation against cookie.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return escrowInfos
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method this will set the escrowInfos
    * Maintain information about reservation against cookie.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return escrowInfos
    */
   @VsoMethod
@@ -88,6 +91,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maintain information about consumed licenses against se_uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seInfos
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method. this will set the seInfos
    * Maintain information about consumed licenses against se_uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seInfos
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method this will set the seInfos
    * Maintain information about consumed licenses against se_uuid.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seInfos
    */
   @VsoMethod
@@ -126,6 +132,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * License usage per tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tierUsages
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method. this will set the tierUsages
    * License usage per tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tierUsages
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method this will set the tierUsages
    * License usage per tier.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tierUsages
    */
   @VsoMethod
@@ -183,6 +192,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid for reference.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -194,6 +204,7 @@ public class LicenseLedgerDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid for reference.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

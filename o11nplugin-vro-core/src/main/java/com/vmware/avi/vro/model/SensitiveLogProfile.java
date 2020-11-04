@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SensitiveLogProfile extends AviRestResource {
-  @JsonProperty("header_field_rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<SensitiveFieldRule> headerFieldRules = null;
+    @JsonProperty("header_field_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<SensitiveFieldRule> headerFieldRules = null;
 
-  @JsonProperty("waf_field_rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<SensitiveFieldRule> wafFieldRules = null;
+    @JsonProperty("waf_field_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<SensitiveFieldRule> wafFieldRules = null;
 
 
 
@@ -38,6 +38,7 @@ public class SensitiveLogProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match sensitive header fields in http application log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headerFieldRules
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class SensitiveLogProfile extends AviRestResource {
    * This is the setter method. this will set the headerFieldRules
    * Match sensitive header fields in http application log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headerFieldRules
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class SensitiveLogProfile extends AviRestResource {
    * This is the setter method this will set the headerFieldRules
    * Match sensitive header fields in http application log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headerFieldRules
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class SensitiveLogProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match sensitive waf log fields in http application log.
    * Field introduced in 17.2.13, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafFieldRules
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class SensitiveLogProfile extends AviRestResource {
    * This is the setter method. this will set the wafFieldRules
    * Match sensitive waf log fields in http application log.
    * Field introduced in 17.2.13, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafFieldRules
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class SensitiveLogProfile extends AviRestResource {
    * This is the setter method this will set the wafFieldRules
    * Match sensitive waf log fields in http application log.
    * Field introduced in 17.2.13, 18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return wafFieldRules
    */
   @VsoMethod

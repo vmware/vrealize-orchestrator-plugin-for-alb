@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmSeIpFailEventDetails extends AviRestResource {
-  @JsonProperty("host_name")
-  @JsonInclude(Include.NON_NULL)
-  private String hostName = null;
+    @JsonProperty("host_name")
+    @JsonInclude(Include.NON_NULL)
+    private String hostName = null;
 
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<RmAddVnic> networks = null;
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<RmAddVnic> networks = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_name of obj type rmseipfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostName
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host_name of obj type rmseipfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostName set the hostName.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property networks of obj type rmseipfaileventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Placeholder for description of property networks of obj type rmseipfaileventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Placeholder for description of property networks of obj type rmseipfaileventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type rmseipfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type rmseipfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -120,6 +127,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type rmseipfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -130,6 +138,7 @@ public class RmSeIpFailEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type rmseipfaileventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod

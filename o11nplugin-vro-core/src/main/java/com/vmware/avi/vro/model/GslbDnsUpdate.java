@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbDnsUpdate extends AviRestResource {
-  @JsonProperty("clear_on_max_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clearOnMaxRetries = null;
+    @JsonProperty("clear_on_max_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clearOnMaxRetries = null;
 
-  @JsonProperty("gslb_geo_db_profile_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> gslbGeoDbProfileUuids = null;
+    @JsonProperty("gslb_geo_db_profile_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> gslbGeoDbProfileUuids = null;
 
-  @JsonProperty("gslb_service_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> gslbServiceUuids = null;
+    @JsonProperty("gslb_service_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> gslbServiceUuids = null;
 
-  @JsonProperty("gslb_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> gslbUuids = null;
+    @JsonProperty("gslb_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> gslbUuids = null;
 
-  @JsonProperty("obj_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbObjectInfo> objInfo = null;
+    @JsonProperty("obj_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbObjectInfo> objInfo = null;
 
-  @JsonProperty("send_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sendInterval = null;
+    @JsonProperty("send_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sendInterval = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property clear_on_max_retries of obj type gslbdnsupdate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clearOnMaxRetries
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class GslbDnsUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property clear_on_max_retries of obj type gslbdnsupdate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clearOnMaxRetries set the clearOnMaxRetries.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of geo db profiles associated with this dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuids
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the gslbGeoDbProfileUuids
    * List of geo db profiles associated with this dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuids
    */
   @VsoMethod
@@ -100,6 +104,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the gslbGeoDbProfileUuids
    * List of geo db profiles associated with this dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbGeoDbProfileUuids
    */
   @VsoMethod
@@ -116,6 +121,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of gslb services associated with the dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuids
    */
   @VsoMethod
@@ -127,6 +133,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the gslbServiceUuids
    * List of gslb services associated with the dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuids
    */
   @VsoMethod
@@ -138,6 +145,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the gslbServiceUuids
    * List of gslb services associated with the dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceUuids
    */
   @VsoMethod
@@ -154,6 +162,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb object associated with the dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuids
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the gslbUuids
    * Gslb object associated with the dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuids
    */
   @VsoMethod
@@ -176,6 +186,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the gslbUuids
    * Gslb object associated with the dns vs.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbUuids
    */
   @VsoMethod
@@ -192,6 +203,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb, gslbservice objects that is pushed on a per dns basis.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
   @VsoMethod
@@ -203,6 +215,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method. this will set the objInfo
    * Gslb, gslbservice objects that is pushed on a per dns basis.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
   @VsoMethod
@@ -214,6 +227,7 @@ public class GslbDnsUpdate extends AviRestResource {
    * This is the setter method this will set the objInfo
    * Gslb, gslbservice objects that is pushed on a per dns basis.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objInfo
    */
   @VsoMethod
@@ -229,6 +243,7 @@ public class GslbDnsUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property send_interval of obj type gslbdnsupdate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sendInterval
    */
   @VsoMethod
@@ -239,6 +254,7 @@ public class GslbDnsUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property send_interval of obj type gslbdnsupdate field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sendInterval set the sendInterval.
    */
   @VsoMethod
@@ -249,6 +265,7 @@ public class GslbDnsUpdate extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -259,6 +276,7 @@ public class GslbDnsUpdate extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

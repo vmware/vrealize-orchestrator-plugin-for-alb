@@ -25,69 +25,73 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolGroup extends AviRestResource {
-  @JsonProperty("cloud_config_cksum")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudConfigCksum = null;
+    @JsonProperty("cloud_config_cksum")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudConfigCksum = null;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("deployment_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String deploymentPolicyRef = null;
+    @JsonProperty("deployment_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String deploymentPolicyRef = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("enable_http2")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableHttp2 = false;
+    @JsonProperty("enable_http2")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHttp2 = false;
 
-  @JsonProperty("fail_action")
-  @JsonInclude(Include.NON_NULL)
-  private FailAction failAction = null;
+    @JsonProperty("fail_action")
+    @JsonInclude(Include.NON_NULL)
+    private FailAction failAction = null;
 
-  @JsonProperty("implicit_priority_labels")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean implicitPriorityLabels = false;
+    @JsonProperty("implicit_priority_labels")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean implicitPriorityLabels = false;
 
-  @JsonProperty("members")
-  @JsonInclude(Include.NON_NULL)
-  private List<PoolGroupMember> members = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("min_servers")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minServers = 0;
+    @JsonProperty("members")
+    @JsonInclude(Include.NON_NULL)
+    private List<PoolGroupMember> members = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("min_servers")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minServers = 0;
 
-  @JsonProperty("priority_labels_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String priorityLabelsRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("service_metadata")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceMetadata = null;
+    @JsonProperty("priority_labels_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String priorityLabelsRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("service_metadata")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceMetadata = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -95,6 +99,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Checksum of cloud configuration for poolgroup.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudConfigCksum
    */
   @VsoMethod
@@ -106,6 +111,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Checksum of cloud configuration for poolgroup.
    * Internally set by cloud connector.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudConfigCksum set the cloudConfigCksum.
    */
   @VsoMethod
@@ -116,6 +122,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -126,6 +133,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -136,6 +144,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the user who created the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -146,6 +155,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the user who created the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -157,6 +167,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When setup autoscale manager will automatically promote new pools into production when deployment goals are met.
    * It is a reference to an object of type poolgroupdeploymentpolicy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deploymentPolicyRef
    */
   @VsoMethod
@@ -168,6 +179,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * When setup autoscale manager will automatically promote new pools into production when deployment goals are met.
    * It is a reference to an object of type poolgroupdeploymentpolicy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deploymentPolicyRef set the deploymentPolicyRef.
    */
   @VsoMethod
@@ -178,6 +190,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Description of pool group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -188,6 +201,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Description of pool group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -223,6 +237,7 @@ public class PoolGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable an action - close connection, http redirect, or local http response - when a pool group failure happens.
    * By default, a connection will be closed, in case the pool group experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return failAction
    */
   @VsoMethod
@@ -234,6 +249,7 @@ public class PoolGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable an action - close connection, http redirect, or local http response - when a pool group failure happens.
    * By default, a connection will be closed, in case the pool group experiences a failure.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param failAction set the failAction.
    */
   @VsoMethod
@@ -267,7 +283,52 @@ public class PoolGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public PoolGroup addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * List of pool group members object of type poolgroupmember.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -278,6 +339,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the members
    * List of pool group members object of type poolgroupmember.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -288,6 +350,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method this will set the members
    * List of pool group members object of type poolgroupmember.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
   @VsoMethod
@@ -329,6 +392,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The name of the pool group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -339,6 +403,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the pool group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -351,6 +416,7 @@ public class PoolGroup extends AviRestResource {
    * Uuid of the priority labels.
    * If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority.
    * It is a reference to an object of type prioritylabels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priorityLabelsRef
    */
   @VsoMethod
@@ -363,6 +429,7 @@ public class PoolGroup extends AviRestResource {
    * Uuid of the priority labels.
    * If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority.
    * It is a reference to an object of type prioritylabels.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priorityLabelsRef set the priorityLabelsRef.
    */
   @VsoMethod
@@ -376,6 +443,7 @@ public class PoolGroup extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceMetadata
    */
   @VsoMethod
@@ -389,6 +457,7 @@ public class PoolGroup extends AviRestResource {
    * In openshift/kubernetes environments, app metadata info is stored.
    * Any user input to this field will be overwritten by avi vantage.
    * Field introduced in 17.2.14,18.1.5,18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceMetadata set the serviceMetadata.
    */
   @VsoMethod
@@ -399,6 +468,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -409,6 +479,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -438,6 +509,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the pool group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -448,6 +520,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the pool group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -478,6 +551,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.failAction, objPoolGroup.failAction)&&
   Objects.equals(this.implicitPriorityLabels, objPoolGroup.implicitPriorityLabels)&&
   Objects.equals(this.serviceMetadata, objPoolGroup.serviceMetadata)&&
+  Objects.equals(this.labels, objPoolGroup.labels)&&
   Objects.equals(this.createdBy, objPoolGroup.createdBy)&&
   Objects.equals(this.cloudConfigCksum, objPoolGroup.cloudConfigCksum)&&
   Objects.equals(this.description, objPoolGroup.description)&&
@@ -498,6 +572,7 @@ public String toString() {
         sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
         sb.append("    implicitPriorityLabels: ").append(toIndentedString(implicitPriorityLabels)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    minServers: ").append(toIndentedString(minServers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

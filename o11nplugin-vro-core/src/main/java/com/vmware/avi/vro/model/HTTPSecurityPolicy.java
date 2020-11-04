@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPSecurityPolicy extends AviRestResource {
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<HTTPSecurityRule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<HTTPSecurityRule> rules = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Add rules to the http security policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class HTTPSecurityPolicy extends AviRestResource {
   /**
    * This is the setter method. this will set the rules
    * Add rules to the http security policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -53,6 +55,7 @@ public class HTTPSecurityPolicy extends AviRestResource {
   /**
    * This is the setter method this will set the rules
    * Add rules to the http security policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod

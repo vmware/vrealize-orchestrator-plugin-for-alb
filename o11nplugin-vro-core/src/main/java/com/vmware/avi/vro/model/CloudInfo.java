@@ -26,35 +26,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudInfo extends AviRestResource {
-  @JsonProperty("cca_props")
-  @JsonInclude(Include.NON_NULL)
-  private CC_AgentProperties ccaProps = null;
+    @JsonProperty("cca_props")
+    @JsonInclude(Include.NON_NULL)
+    private CC_AgentProperties ccaProps = null;
 
-  @JsonProperty("controller_props")
-  @JsonInclude(Include.NON_NULL)
-  private ControllerProperties controllerProps = null;
+    @JsonProperty("controller_props")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerProperties controllerProps = null;
 
-  @JsonProperty("flavor_props")
-  @JsonInclude(Include.NON_NULL)
-  private List<CloudFlavor> flavorProps = null;
+    @JsonProperty("flavor_props")
+    @JsonInclude(Include.NON_NULL)
+    private List<CloudFlavor> flavorProps = null;
 
-  @JsonProperty("flavor_regex_filter")
-  @JsonInclude(Include.NON_NULL)
-  private String flavorRegexFilter = null;
+    @JsonProperty("flavor_regex_filter")
+    @JsonInclude(Include.NON_NULL)
+    private String flavorRegexFilter = null;
 
-  @JsonProperty("htypes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> htypes = null;
+    @JsonProperty("htypes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> htypes = null;
 
-  @JsonProperty("vtype")
-  @JsonInclude(Include.NON_NULL)
-  private String vtype = null;
+    @JsonProperty("vtype")
+    @JsonInclude(Include.NON_NULL)
+    private String vtype = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Cloudconnectoragent properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccaProps
    */
   @VsoMethod
@@ -65,6 +66,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudconnectoragent properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccaProps set the ccaProps.
    */
   @VsoMethod
@@ -75,6 +77,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Controller properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerProps
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Controller properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerProps set the controllerProps.
    */
   @VsoMethod
@@ -95,6 +99,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Flavor properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavorProps
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the flavorProps
    * Flavor properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavorProps
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the setter method this will set the flavorProps
    * Flavor properties specific to this cloud type.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavorProps
    */
   @VsoMethod
@@ -130,6 +137,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property flavor_regex_filter of obj type cloudinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavorRegexFilter
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class CloudInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property flavor_regex_filter of obj type cloudinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flavorRegexFilter set the flavorRegexFilter.
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class CloudInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Supported hypervisors.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return htypes
    */
   @VsoMethod
@@ -162,6 +172,7 @@ public class CloudInfo extends AviRestResource {
    * This is the setter method. this will set the htypes
    * Supported hypervisors.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return htypes
    */
   @VsoMethod
@@ -173,6 +184,7 @@ public class CloudInfo extends AviRestResource {
    * This is the setter method this will set the htypes
    * Supported hypervisors.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return htypes
    */
   @VsoMethod
@@ -190,6 +202,7 @@ public class CloudInfo extends AviRestResource {
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vtype
    */
   @VsoMethod
@@ -202,6 +215,7 @@ public class CloudInfo extends AviRestResource {
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vtype set the vtype.
    */
   @VsoMethod

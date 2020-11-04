@@ -24,41 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServiceEngineLimits extends AviRestResource {
-  @JsonProperty("all_virtualservices_per_serviceengine")
-  @JsonInclude(Include.NON_NULL)
-  private Integer allVirtualservicesPerServiceengine = null;
+    @JsonProperty("all_virtualservices_per_serviceengine")
+    @JsonInclude(Include.NON_NULL)
+    private Integer allVirtualservicesPerServiceengine = null;
 
-  @JsonProperty("ew_virtualservices_per_serviceengine")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ewVirtualservicesPerServiceengine = null;
+    @JsonProperty("ew_virtualservices_per_serviceengine")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ewVirtualservicesPerServiceengine = null;
 
-  @JsonProperty("ns_virtualservices_per_serviceengine")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nsVirtualservicesPerServiceengine = null;
+    @JsonProperty("ns_virtualservices_per_serviceengine")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nsVirtualservicesPerServiceengine = null;
 
-  @JsonProperty("num_logical_intf_per_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numLogicalIntfPerSe = null;
+    @JsonProperty("num_logical_intf_per_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numLogicalIntfPerSe = null;
 
-  @JsonProperty("num_phy_intf_per_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numPhyIntfPerSe = null;
+    @JsonProperty("num_phy_intf_per_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numPhyIntfPerSe = null;
 
-  @JsonProperty("num_virtualservices_rt_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVirtualservicesRtMetrics = null;
+    @JsonProperty("num_virtualservices_rt_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVirtualservicesRtMetrics = null;
 
-  @JsonProperty("num_vlan_intf_per_phy_intf")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVlanIntfPerPhyIntf = null;
+    @JsonProperty("num_vlan_intf_per_phy_intf")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVlanIntfPerPhyIntf = null;
 
-  @JsonProperty("num_vlan_intf_per_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVlanIntfPerSe = null;
+    @JsonProperty("num_vlan_intf_per_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVlanIntfPerSe = null;
 
-  @JsonProperty("serviceengine_cloud_limits")
-  @JsonInclude(Include.NON_NULL)
-  private List<ServiceEngineCloudLimits> serviceengineCloudLimits = null;
+    @JsonProperty("serviceengine_cloud_limits")
+    @JsonInclude(Include.NON_NULL)
+    private List<ServiceEngineCloudLimits> serviceengineCloudLimits = null;
 
 
 
@@ -66,6 +66,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices per serviceengine, including east-west virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allVirtualservicesPerServiceengine
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices per serviceengine, including east-west virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allVirtualservicesPerServiceengine set the allVirtualservicesPerServiceengine.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ewVirtualservicesPerServiceengine
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ewVirtualservicesPerServiceengine set the ewVirtualservicesPerServiceengine.
    */
   @VsoMethod
@@ -110,6 +114,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsVirtualservicesPerServiceengine
    */
   @VsoMethod
@@ -121,6 +126,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsVirtualservicesPerServiceengine set the nsVirtualservicesPerServiceengine.
    */
   @VsoMethod
@@ -132,6 +138,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of logical interfaces (vlan, bond) per serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numLogicalIntfPerSe
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of logical interfaces (vlan, bond) per serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numLogicalIntfPerSe set the numLogicalIntfPerSe.
    */
   @VsoMethod
@@ -154,6 +162,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of physical interfaces per serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numPhyIntfPerSe
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of physical interfaces per serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numPhyIntfPerSe set the numPhyIntfPerSe.
    */
   @VsoMethod
@@ -176,6 +186,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of virtualservices with realtime metrics enabled.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVirtualservicesRtMetrics
    */
   @VsoMethod
@@ -187,6 +198,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of virtualservices with realtime metrics enabled.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVirtualservicesRtMetrics set the numVirtualservicesRtMetrics.
    */
   @VsoMethod
@@ -198,6 +210,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of vlan interfaces per physical interface.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVlanIntfPerPhyIntf
    */
   @VsoMethod
@@ -209,6 +222,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of vlan interfaces per physical interface.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVlanIntfPerPhyIntf set the numVlanIntfPerPhyIntf.
    */
   @VsoMethod
@@ -220,6 +234,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of vlan interfaces per serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVlanIntfPerSe
    */
   @VsoMethod
@@ -231,6 +246,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of vlan interfaces per serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVlanIntfPerSe set the numVlanIntfPerSe.
    */
   @VsoMethod
@@ -242,6 +258,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Serviceengine system limits specific to cloud type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceengineCloudLimits
    */
   @VsoMethod
@@ -253,6 +270,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method. this will set the serviceengineCloudLimits
    * Serviceengine system limits specific to cloud type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceengineCloudLimits
    */
   @VsoMethod
@@ -264,6 +282,7 @@ public class ServiceEngineLimits extends AviRestResource {
    * This is the setter method this will set the serviceengineCloudLimits
    * Serviceengine system limits specific to cloud type.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceengineCloudLimits
    */
   @VsoMethod

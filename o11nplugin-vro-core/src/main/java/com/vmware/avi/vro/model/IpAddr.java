@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpAddr extends AviRestResource {
-  @JsonProperty("addr")
-  @JsonInclude(Include.NON_NULL)
-  private String addr = null;
+    @JsonProperty("addr")
+    @JsonInclude(Include.NON_NULL)
+    private String addr = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addr
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class IpAddr extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addr set the addr.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class IpAddr extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - V4, DNS, V6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class IpAddr extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - V4, DNS, V6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

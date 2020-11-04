@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudStackConfiguration extends AviRestResource {
-  @JsonProperty("access_key_id")
-  @JsonInclude(Include.NON_NULL)
-  private String accessKeyId = null;
+    @JsonProperty("access_key_id")
+    @JsonInclude(Include.NON_NULL)
+    private String accessKeyId = null;
 
-  @JsonProperty("api_url")
-  @JsonInclude(Include.NON_NULL)
-  private String apiUrl = null;
+    @JsonProperty("api_url")
+    @JsonInclude(Include.NON_NULL)
+    private String apiUrl = null;
 
-  @JsonProperty("cntr_public_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String cntrPublicIp = null;
+    @JsonProperty("cntr_public_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String cntrPublicIp = null;
 
-  @JsonProperty("hypervisor")
-  @JsonInclude(Include.NON_NULL)
-  private String hypervisor = "KVM";
+    @JsonProperty("hypervisor")
+    @JsonInclude(Include.NON_NULL)
+    private String hypervisor = "KVM";
 
-  @JsonProperty("mgmt_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetworkName = null;
+    @JsonProperty("mgmt_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetworkName = null;
 
-  @JsonProperty("mgmt_network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetworkUuid = null;
+    @JsonProperty("mgmt_network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetworkUuid = null;
 
-  @JsonProperty("secret_access_key")
-  @JsonInclude(Include.NON_NULL)
-  private String secretAccessKey = null;
+    @JsonProperty("secret_access_key")
+    @JsonInclude(Include.NON_NULL)
+    private String secretAccessKey = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Cloudstack api key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessKeyId
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudstack api key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessKeyId set the accessKeyId.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloudstack api url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiUrl
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudstack api url.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiUrl set the apiUrl.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If controller's management ip is in a private network, a publicly accessible ip to reach the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntrPublicIp
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * If controller's management ip is in a private network, a publicly accessible ip to reach the controller.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cntrPublicIp set the cntrPublicIp.
    */
   @VsoMethod
@@ -118,7 +124,7 @@ public class CloudStackConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default hypervisor type.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Default value when not specified in API or module is interpreted by Avi Controller as KVM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @return hypervisor
    */
   @VsoMethod
@@ -130,7 +136,7 @@ public class CloudStackConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Default hypervisor type.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
-   * Default value when not specified in API or module is interpreted by Avi Controller as KVM.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "KVM".
    * @param hypervisor set the hypervisor.
    */
   @VsoMethod
@@ -141,6 +147,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi management network name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkName
    */
   @VsoMethod
@@ -151,6 +158,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi management network name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkName set the mgmtNetworkName.
    */
   @VsoMethod
@@ -161,6 +169,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Avi management network name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkUuid
    */
   @VsoMethod
@@ -171,6 +180,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Avi management network name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkUuid set the mgmtNetworkUuid.
    */
   @VsoMethod
@@ -181,6 +191,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cloudstack secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretAccessKey
    */
   @VsoMethod
@@ -191,6 +202,7 @@ public class CloudStackConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cloudstack secret key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretAccessKey set the secretAccessKey.
    */
   @VsoMethod

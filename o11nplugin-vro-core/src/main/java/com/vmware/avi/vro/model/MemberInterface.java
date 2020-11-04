@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MemberInterface extends AviRestResource {
-  @JsonProperty("active")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean active = false;
+    @JsonProperty("active")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean active = false;
 
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("mac_address")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddress = null;
+    @JsonProperty("mac_address")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddress = null;
 
 
 
@@ -63,6 +63,7 @@ public class MemberInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property if_name of obj type memberinterface field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class MemberInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property if_name of obj type memberinterface field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -83,6 +85,7 @@ public class MemberInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddress
    */
   @VsoMethod
@@ -93,6 +96,7 @@ public class MemberInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddress set the macAddress.
    */
   @VsoMethod

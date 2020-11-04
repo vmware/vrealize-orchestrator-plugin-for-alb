@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HttpCookiePersistenceProfile extends AviRestResource {
-  @JsonProperty("always_send_cookie")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean alwaysSendCookie = false;
+    @JsonProperty("always_send_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean alwaysSendCookie = false;
 
-  @JsonProperty("cookie_name")
-  @JsonInclude(Include.NON_NULL)
-  private String cookieName = null;
+    @JsonProperty("cookie_name")
+    @JsonInclude(Include.NON_NULL)
+    private String cookieName = null;
 
-  @JsonProperty("encryption_key")
-  @JsonInclude(Include.NON_NULL)
-  private String encryptionKey = null;
+    @JsonProperty("encryption_key")
+    @JsonInclude(Include.NON_NULL)
+    private String encryptionKey = null;
 
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private List<HttpCookiePersistenceKey> key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private List<HttpCookiePersistenceKey> key = null;
 
-  @JsonProperty("timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer timeout = null;
+    @JsonProperty("timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer timeout = null;
 
 
 
@@ -71,6 +71,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http cookie name for cookie persistence.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookieName
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http cookie name for cookie persistence.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookieName set the cookieName.
    */
   @VsoMethod
@@ -91,6 +93,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Key name to use for cookie encryption.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return encryptionKey
    */
   @VsoMethod
@@ -101,6 +104,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Key name to use for cookie encryption.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param encryptionKey set the encryptionKey.
    */
   @VsoMethod
@@ -111,6 +115,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property key of obj type httpcookiepersistenceprofile field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -121,6 +126,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the key
    * Placeholder for description of property key of obj type httpcookiepersistenceprofile field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -131,6 +137,7 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   /**
    * This is the setter method this will set the key
    * Placeholder for description of property key of obj type httpcookiepersistenceprofile field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -149,6 +156,8 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * No value or 'zero' indicates no timeout.
    * Allowed values are 1-14400.
    * Special values are 0- 'no timeout'.
+   * Unit is min.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timeout
    */
   @VsoMethod
@@ -162,6 +171,8 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
    * No value or 'zero' indicates no timeout.
    * Allowed values are 1-14400.
    * Special values are 0- 'no timeout'.
+   * Unit is min.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timeout set the timeout.
    */
   @VsoMethod

@@ -24,53 +24,57 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolGroupDeploymentPolicy extends AviRestResource {
-  @JsonProperty("auto_disable_old_prod_pools")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoDisableOldProdPools = true;
+    @JsonProperty("auto_disable_old_prod_pools")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoDisableOldProdPools = true;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("evaluation_duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer evaluationDuration = 300;
+    @JsonProperty("evaluation_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer evaluationDuration = 300;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<PGDeploymentRule> rules = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("scheme")
-  @JsonInclude(Include.NON_NULL)
-  private String scheme = "BLUE_GREEN";
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<PGDeploymentRule> rules = null;
 
-  @JsonProperty("target_test_traffic_ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer targetTestTrafficRatio = 100;
+    @JsonProperty("scheme")
+    @JsonInclude(Include.NON_NULL)
+    private String scheme = "BLUE_GREEN";
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("target_test_traffic_ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer targetTestTrafficRatio = 100;
 
-  @JsonProperty("test_traffic_ratio_rampup")
-  @JsonInclude(Include.NON_NULL)
-  private Integer testTrafficRatioRampup = 100;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("test_traffic_ratio_rampup")
+    @JsonInclude(Include.NON_NULL)
+    private Integer testTrafficRatioRampup = 100;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("webhook_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String webhookRef = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("webhook_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String webhookRef = null;
 
 
 
@@ -99,6 +103,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Duration of evaluation period for automatic deployment.
    * Allowed values are 60-86400.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return evaluationDuration
    */
@@ -132,6 +139,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Duration of evaluation period for automatic deployment.
    * Allowed values are 60-86400.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param evaluationDuration set the evaluationDuration.
    */
@@ -142,7 +150,52 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public PoolGroupDeploymentPolicy addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the pool group deployment policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -153,6 +206,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The name of the pool group deployment policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -163,6 +217,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rules of obj type poolgroupdeploymentpolicy field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -173,6 +228,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method. this will set the rules
    * Placeholder for description of property rules of obj type poolgroupdeploymentpolicy field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -183,6 +239,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method this will set the rules
    * Placeholder for description of property rules of obj type poolgroupdeploymentpolicy field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -199,7 +256,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Deployment scheme.
    * Enum options - BLUE_GREEN, CANARY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as BLUE_GREEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "BLUE_GREEN".
    * @return scheme
    */
   @VsoMethod
@@ -211,7 +268,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Deployment scheme.
    * Enum options - BLUE_GREEN, CANARY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as BLUE_GREEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "BLUE_GREEN".
    * @param scheme set the scheme.
    */
   @VsoMethod
@@ -223,6 +280,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Target traffic ratio before pool is made production.
    * Allowed values are 1-100.
+   * Unit is ratio.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return targetTestTrafficRatio
    */
@@ -235,6 +293,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Target traffic ratio before pool is made production.
    * Allowed values are 1-100.
+   * Unit is ratio.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param targetTestTrafficRatio set the targetTestTrafficRatio.
    */
@@ -246,6 +305,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -256,6 +316,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -311,6 +372,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the pool group deployment policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -321,6 +383,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the pool group deployment policy.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -334,6 +397,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * rule results.
    * It is a reference to an object of type webhook.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return webhookRef
    */
   @VsoMethod
@@ -347,6 +411,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource {
    * rule results.
    * It is a reference to an object of type webhook.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param webhookRef set the webhookRef.
    */
   @VsoMethod
@@ -377,6 +442,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.evaluationDuration, objPoolGroupDeploymentPolicy.evaluationDuration)&&
   Objects.equals(this.targetTestTrafficRatio, objPoolGroupDeploymentPolicy.targetTestTrafficRatio)&&
   Objects.equals(this.autoDisableOldProdPools, objPoolGroupDeploymentPolicy.autoDisableOldProdPools)&&
+  Objects.equals(this.labels, objPoolGroupDeploymentPolicy.labels)&&
   Objects.equals(this.description, objPoolGroupDeploymentPolicy.description)&&
   Objects.equals(this.tenantRef, objPoolGroupDeploymentPolicy.tenantRef);
 }
@@ -388,6 +454,7 @@ public String toString() {
       sb.append("    autoDisableOldProdPools: ").append(toIndentedString(autoDisableOldProdPools)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    evaluationDuration: ").append(toIndentedString(evaluationDuration)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");

@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HTTPServerReselect extends AviRestResource {
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = false;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = false;
 
-  @JsonProperty("num_retries")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numRetries = 4;
+    @JsonProperty("num_retries")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numRetries = 4;
 
-  @JsonProperty("retry_nonidempotent")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean retryNonidempotent = false;
+    @JsonProperty("retry_nonidempotent")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean retryNonidempotent = false;
 
-  @JsonProperty("retry_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer retryTimeout = 0;
+    @JsonProperty("retry_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer retryTimeout = 0;
 
-  @JsonProperty("svr_resp_code")
-  @JsonInclude(Include.NON_NULL)
-  private HTTPReselectRespCode svrRespCode = null;
+    @JsonProperty("svr_resp_code")
+    @JsonInclude(Include.NON_NULL)
+    private HTTPReselectRespCode svrRespCode = null;
 
 
 
@@ -119,6 +119,7 @@ public class HTTPServerReselect extends AviRestResource {
    * Value of 0 indicates default timeout.
    * Allowed values are 0-3600000.
    * Field introduced in 18.1.5,18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return retryTimeout
    */
@@ -133,6 +134,7 @@ public class HTTPServerReselect extends AviRestResource {
    * Value of 0 indicates default timeout.
    * Allowed values are 0-3600000.
    * Field introduced in 18.1.5,18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param retryTimeout set the retryTimeout.
    */
@@ -144,6 +146,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server response codes which will trigger an http request retry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return svrRespCode
    */
   @VsoMethod
@@ -154,6 +157,7 @@ public class HTTPServerReselect extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server response codes which will trigger an http request retry.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param svrRespCode set the svrRespCode.
    */
   @VsoMethod

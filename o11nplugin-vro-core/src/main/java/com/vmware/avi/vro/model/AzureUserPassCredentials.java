@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AzureUserPassCredentials extends AviRestResource {
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("tenant_name")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantName = null;
+    @JsonProperty("tenant_name")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantName = null;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
@@ -43,6 +43,7 @@ public class AzureUserPassCredentials extends AviRestResource {
    * Password for azure subscription.
    * Required only if username is provided.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class AzureUserPassCredentials extends AviRestResource {
    * Password for azure subscription.
    * Required only if username is provided.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class AzureUserPassCredentials extends AviRestResource {
    * Tenant or the active directory associated with the subscription.
    * Required for user name password authentication.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class AzureUserPassCredentials extends AviRestResource {
    * Tenant or the active directory associated with the subscription.
    * Required for user name password authentication.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class AzureUserPassCredentials extends AviRestResource {
    * Username for azure subscription.
    * Required only for username password based authentication.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class AzureUserPassCredentials extends AviRestResource {
    * Username for azure subscription.
    * Required only for username password based authentication.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod

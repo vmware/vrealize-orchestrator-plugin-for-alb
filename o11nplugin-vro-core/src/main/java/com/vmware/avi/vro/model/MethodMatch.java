@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MethodMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("methods")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> methods = null;
+    @JsonProperty("methods")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> methods = null;
 
 
 
@@ -38,6 +38,7 @@ public class MethodMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for http method matching the method in the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class MethodMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for http method matching the method in the http request.
    * Enum options - IS_IN, IS_NOT_IN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class MethodMatch extends AviRestResource {
    * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class MethodMatch extends AviRestResource {
    * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class MethodMatch extends AviRestResource {
    * Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE,
    * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
    * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methods
    */
   @VsoMethod

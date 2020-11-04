@@ -3,53 +3,79 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="bd36bdb3-8266-436e-bac7-c01174effa6e" version="0.0.3"
+	id="bd36bdb3-8266-436e-bac7-c01174effa6e" version="0.0.6"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[Delete VS with dependent objects]]></display-name>
-	<position y="50.0" x="100.0"></position>
+	<display-name><![CDATA[Delete VS With Dependent Objects]]></display-name>
+	<position y="50.0" x="100.0" />
 	<input>
-		<param name="controller" type="string"></param>
-		<param name="deleteVS" type="boolean"></param>
-		<param name="vsname" type="string"></param>
-		<param name="vipname" type="string"></param>
-		<param name="deletePool" type="boolean"></param>
-		<param name="poolname" type="string"></param>
-		<param name="deletePoolGroup" type="boolean"></param>
-		<param name="poolgroupname" type="string"></param>
-		<param name="deleteHm" type="boolean"></param>
-		<param name="hmname" type="Array/string"></param>
+		<param name="controller" type="string">
+			<description><![CDATA[controller]]></description>
+		</param>
+		<param name="delete_vs" type="boolean">
+			<description><![CDATA[delete_vs]]></description>
+		</param>
+		<param name="vs_name" type="string">
+			<description><![CDATA[vs_name]]></description>
+		</param>
+		<param name="vip_name" type="string">
+			<description><![CDATA[vip_name]]></description>
+		</param>
+		<param name="delete_pool" type="boolean">
+			<description><![CDATA[delete_pool]]></description>
+		</param>
+		<param name="pool_name" type="string">
+			<description><![CDATA[pool_name]]></description>
+		</param>
+		<param name="delete_pool_group" type="boolean">
+			<description><![CDATA[delete_pool_group]]></description>
+		</param>
+		<param name="pool_group_name" type="string">
+			<description><![CDATA[pool_group_name]]></description>
+		</param>
+		<param name="delete_health_monitor" type="boolean">
+			<description><![CDATA[delete_health_monitor]]></description>
+		</param>
+		<param name="health_monitor_name" type="Array/string">
+			<description><![CDATA[health_monitor_name]]></description>
+		</param>
+		<param name="delete_vs_vip" type="boolean">
+			<description><![CDATA[delete_vs_vip]]></description>
+		</param>
 	</input>
 	<attrib name="actionResult1" type="Avi:AviVroClient"
 		read-only="false">
 		<value encoded="n"><![CDATA[__NULL__]]></value>
 	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
-		<position y="45.40909090909091" x="584.5"></position>
+		<position y="45.40909090909091" x="584.5" />
 	</workflow-item>
 	<workflow-item name="item2" out-name="item0" type="task"
 		script-module="com.vmware.avi/deleteObjectObj">
 		<display-name><![CDATA[deleteObjectObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-System.getModule("com.vmware.avi").deleteObjectObj(deleteVS,vsname,deletePool,poolname,deletePoolGroup,poolgroupname,deleteHm,hmnameArray,aviVroClient,vipname) ;]]></script>
+System.getModule("com.vmware.avi").deleteObjectObj(deleteVS,vsname,deletePool,poolname,deletePoolGroup,poolgroupname,deleteHm,hmnameArray,aviVroClient,vipname,deleteVsVip) ;]]></script>
 		<in-binding>
-			<bind name="deleteVS" type="boolean" export-name="deleteVS"></bind>
-			<bind name="vsname" type="string" export-name="vsname"></bind>
-			<bind name="deletePool" type="boolean" export-name="deletePool"></bind>
-			<bind name="poolname" type="string" export-name="poolname"></bind>
+			<bind name="deleteVS" type="boolean" export-name="delete_vs" />
+			<bind name="vsname" type="string" export-name="vs_name" />
+			<bind name="deletePool" type="boolean" export-name="delete_pool" />
+			<bind name="poolname" type="string" export-name="pool_name" />
 			<bind name="deletePoolGroup" type="boolean"
-				export-name="deletePoolGroup"></bind>
+				export-name="delete_pool_group" />
 			<bind name="poolgroupname" type="string"
-				export-name="poolgroupname"></bind>
-			<bind name="deleteHm" type="boolean" export-name="deleteHm"></bind>
+				export-name="pool_group_name" />
+			<bind name="deleteHm" type="boolean"
+				export-name="delete_health_monitor" />
 			<bind name="hmnameArray" type="Array/string"
-				export-name="hmname"></bind>
+				export-name="health_monitor_name" />
 			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="actionResult1"></bind>
-			<bind name="vipname" type="string" export-name="vipname"></bind>
+				export-name="actionResult1" />
+			<bind name="vipname" type="string" export-name="vip_name" />
+			<bind name="deleteVsVip" type="boolean"
+				export-name="delete_vs_vip" />
 		</in-binding>
-		<out-binding></out-binding>
-		<position y="55.40909090909091" x="364.5"></position>
+		<out-binding />
+		<position y="55.40909090909091" x="364.5" />
 	</workflow-item>
 	<workflow-item name="item1" out-name="item2" type="task"
 		script-module="com.vmware.avi/getAviVroClient">
@@ -63,9 +89,9 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:AviVroClient"
-				export-name="actionResult1"></bind>
+				export-name="actionResult1" />
 		</out-binding>
-		<position y="55.40909090909091" x="204.5"></position>
+		<position y="55.40909090909091" x="204.5" />
 	</workflow-item>
 	<presentation>
 		<p-step>
@@ -79,49 +105,52 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		</p-step>
 		<p-step>
 			<title><![CDATA[Object Details]]></title>
-			<p-param name="deleteVS">
-				<desc><![CDATA[delete VS]]></desc>
+			<p-param name="delete_vs">
+				<desc><![CDATA[delete_vs]]></desc>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="vsname">
-				<desc><![CDATA[Virtual Service Name]]></desc>
+			<p-param name="vs_name">
+				<desc><![CDATA[vs_name]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "virtualservice" )]]></p-qual>
 			</p-param>
-			<p-param name="vipname">
-				<desc><![CDATA[vipname]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getObjectReference").call( #controller , #vsname , "virtualservice" , "vsvip" )]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#deleteVS==true?true:false]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[false]]></p-qual>
-			</p-param>
-			<p-param name="deletePool">
-				<desc><![CDATA[delete Pool]]></desc>
+			<p-param name="delete_vs_vip">
+				<desc><![CDATA[delete_vs_vip]]></desc>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
-			<p-param name="poolname">
-				<desc><![CDATA[Pool Name]]></desc>
-				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getObjectReference").call( #controller , #vsname , "virtualservice" , "pool" )]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#deletePool==true?true:false]]></p-qual>
+			<p-param name="vip_name">
+				<desc><![CDATA[vip_name]]></desc>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getObjectReference").call( #controller , #vs_name , "virtualservice" , "vsvip" )]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#delete_vs_vip==true?true:false]]></p-qual>
 			</p-param>
-			<p-param name="deletePoolGroup">
-				<desc><![CDATA[deletePoolGroup]]></desc>
+			<p-param name="delete_pool">
+				<desc><![CDATA[delete_pool]]></desc>
+				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+			<p-param name="pool_name">
+				<desc><![CDATA[pool_name]]></desc>
+				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getObjectReference").call( #controller , #vs_name , "virtualservice" , "pool" )]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#delete_pool==true?true:false]]></p-qual>
+			</p-param>
+			<p-param name="delete_pool_group">
+				<desc><![CDATA[delete_pool_group]]></desc>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[__NULL__]]></p-qual>
 			</p-param>
-			<p-param name="poolgroupname">
-				<desc><![CDATA[poolgroupname]]></desc>
+			<p-param name="pool_group_name">
+				<desc><![CDATA[pool_group_name]]></desc>
 				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#deletePoolGroup==true?true:false]]></p-qual>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#delete_pool_group==true?true:false]]></p-qual>
 			</p-param>
-			<p-param name="deleteHm">
-				<desc><![CDATA[Delete Health Monitor]]></desc>
+			<p-param name="delete_health_monitor">
+				<desc><![CDATA[delete_health_monitor]]></desc>
 				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[__NULL__]]></p-qual>
 			</p-param>
-			<p-param name="hmname">
-				<desc><![CDATA[Health Monitor Name]]></desc>
-				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#deleteHm==true?true:false]]></p-qual>
+			<p-param name="health_monitor_name">
+				<desc><![CDATA[health_monitor_name]]></desc>
+				<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#delete_health_monitor==true?true:false]]></p-qual>
 				<p-qual kind="ognl" name="genericEnumeration"
-					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getHealthMonitorsList").call( #controller , #poolname , "pool" )]]></p-qual>
+					type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #vs_name , "virtualservice" , "healthmonitor" )]]></p-qual>
 			</p-param>
 		</p-step>
 	</presentation>

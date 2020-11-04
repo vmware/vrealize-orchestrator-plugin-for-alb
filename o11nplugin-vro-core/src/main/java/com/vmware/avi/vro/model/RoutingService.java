@@ -25,49 +25,49 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RoutingService extends AviRestResource {
-  @JsonProperty("advertise_backend_networks")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean advertiseBackendNetworks = false;
+    @JsonProperty("advertise_backend_networks")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean advertiseBackendNetworks = false;
 
-  @JsonProperty("enable_auto_gateway")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableAutoGateway = false;
+    @JsonProperty("enable_auto_gateway")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableAutoGateway = false;
 
-  @JsonProperty("enable_routing")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRouting = false;
+    @JsonProperty("enable_routing")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRouting = false;
 
-  @JsonProperty("enable_vip_on_all_interfaces")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableVipOnAllInterfaces = true;
+    @JsonProperty("enable_vip_on_all_interfaces")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableVipOnAllInterfaces = true;
 
-  @JsonProperty("enable_vmac")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableVmac = false;
+    @JsonProperty("enable_vmac")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableVmac = false;
 
-  @JsonProperty("floating_intf_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> floatingIntfIp = null;
+    @JsonProperty("floating_intf_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> floatingIntfIp = null;
 
-  @JsonProperty("floating_intf_ip_se_2")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> floatingIntfIpSe2 = null;
+    @JsonProperty("floating_intf_ip_se_2")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> floatingIntfIpSe2 = null;
 
-  @JsonProperty("flowtable_profile")
-  @JsonInclude(Include.NON_NULL)
-  private FlowtableProfile flowtableProfile = null;
+    @JsonProperty("flowtable_profile")
+    @JsonInclude(Include.NON_NULL)
+    private FlowtableProfile flowtableProfile = null;
 
-  @JsonProperty("graceful_restart")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean gracefulRestart = false;
+    @JsonProperty("graceful_restart")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean gracefulRestart = false;
 
-  @JsonProperty("nat_policy_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String natPolicyRef = null;
+    @JsonProperty("nat_policy_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String natPolicyRef = null;
 
-  @JsonProperty("routing_by_linux_ipstack")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean routingByLinuxIpstack = false;
+    @JsonProperty("routing_by_linux_ipstack")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean routingByLinuxIpstack = false;
 
 
 
@@ -195,6 +195,7 @@ public class RoutingService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floating interface ips for the routingservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -206,6 +207,7 @@ public class RoutingService extends AviRestResource {
    * This is the setter method. this will set the floatingIntfIp
    * Floating interface ips for the routingservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -217,6 +219,7 @@ public class RoutingService extends AviRestResource {
    * This is the setter method this will set the floatingIntfIp
    * Floating interface ips for the routingservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -235,6 +238,7 @@ public class RoutingService extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIpSe2
    */
   @VsoMethod
@@ -248,6 +252,7 @@ public class RoutingService extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIpSe2
    */
   @VsoMethod
@@ -261,6 +266,7 @@ public class RoutingService extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIpSe2
    */
   @VsoMethod
@@ -277,6 +283,7 @@ public class RoutingService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Routing service related flow profile information.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowtableProfile
    */
   @VsoMethod
@@ -288,6 +295,7 @@ public class RoutingService extends AviRestResource {
    * This is the setter method to the attribute.
    * Routing service related flow profile information.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowtableProfile set the flowtableProfile.
    */
   @VsoMethod
@@ -327,6 +335,7 @@ public class RoutingService extends AviRestResource {
    * This is done in post-routing.
    * It is a reference to an object of type natpolicy.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return natPolicyRef
    */
   @VsoMethod
@@ -340,6 +349,7 @@ public class RoutingService extends AviRestResource {
    * This is done in post-routing.
    * It is a reference to an object of type natpolicy.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param natPolicyRef set the natPolicyRef.
    */
   @VsoMethod

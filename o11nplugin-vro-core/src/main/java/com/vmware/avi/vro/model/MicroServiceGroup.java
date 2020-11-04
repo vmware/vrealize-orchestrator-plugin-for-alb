@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MicroServiceGroup extends AviRestResource {
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("service_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> serviceRefs = null;
+    @JsonProperty("service_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> serviceRefs = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the microservice group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the microservice group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -118,6 +124,7 @@ public class MicroServiceGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure microservice(es).
    * It is a reference to an object of type microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceRefs
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class MicroServiceGroup extends AviRestResource {
    * This is the setter method. this will set the serviceRefs
    * Configure microservice(es).
    * It is a reference to an object of type microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceRefs
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class MicroServiceGroup extends AviRestResource {
    * This is the setter method this will set the serviceRefs
    * Configure microservice(es).
    * It is a reference to an object of type microservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceRefs
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -194,6 +205,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the microservice group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -204,6 +216,7 @@ public class MicroServiceGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the microservice group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

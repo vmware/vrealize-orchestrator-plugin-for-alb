@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsClientIpMatch extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp = null;
 
-  @JsonProperty("use_edns_client_subnet_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useEdnsClientSubnetIp = true;
+    @JsonProperty("use_edns_client_subnet_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useEdnsClientSubnetIp = true;
 
 
 
@@ -39,6 +39,7 @@ public class DnsClientIpMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip addresses to match against client ip.
    * Field introduced in 17.1.6,17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class DnsClientIpMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Ip addresses to match against client ip.
    * Field introduced in 17.1.6,17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod

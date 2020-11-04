@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugVrfContext extends AviRestResource {
-  @JsonProperty("command_buffer_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer commandBufferInterval = 2;
+    @JsonProperty("command_buffer_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer commandBufferInterval = 2;
 
-  @JsonProperty("command_buffer_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer commandBufferSize = 32768;
+    @JsonProperty("command_buffer_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer commandBufferSize = 32768;
 
-  @JsonProperty("flags")
-  @JsonInclude(Include.NON_NULL)
-  private List<DebugVrf> flags = null;
+    @JsonProperty("flags")
+    @JsonInclude(Include.NON_NULL)
+    private List<DebugVrf> flags = null;
 
 
 
@@ -43,6 +43,7 @@ public class DebugVrfContext extends AviRestResource {
    * Vrf config command buffer process interval.
    * Allowed values are 1-4.
    * Field introduced in 17.2.13,18.1.5,18.2.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return commandBufferInterval
    */
@@ -56,6 +57,7 @@ public class DebugVrfContext extends AviRestResource {
    * Vrf config command buffer process interval.
    * Allowed values are 1-4.
    * Field introduced in 17.2.13,18.1.5,18.2.1.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param commandBufferInterval set the commandBufferInterval.
    */
@@ -69,6 +71,7 @@ public class DebugVrfContext extends AviRestResource {
    * Vrf config command buffer size.
    * Allowed values are 1-32768.
    * Field introduced in 17.2.13,18.1.5,18.2.1.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
    * @return commandBufferSize
    */
@@ -82,6 +85,7 @@ public class DebugVrfContext extends AviRestResource {
    * Vrf config command buffer size.
    * Allowed values are 1-32768.
    * Field introduced in 17.2.13,18.1.5,18.2.1.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
    * @param commandBufferSize set the commandBufferSize.
    */
@@ -93,6 +97,7 @@ public class DebugVrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class DebugVrfContext extends AviRestResource {
   /**
    * This is the setter method. this will set the flags
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class DebugVrfContext extends AviRestResource {
   /**
    * This is the setter method this will set the flags
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flags
    */
   @VsoMethod

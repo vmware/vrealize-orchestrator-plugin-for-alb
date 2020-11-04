@@ -52,10 +52,12 @@ mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.al
 
 if [ $IS_FINAL = true ]; then
     cp o11nplugin-vro/target/o11nplugin-vro-$REL.dar .
-    assets="$assets -a o11nplugin-vro-$REL.dar"
+    cp o11nplugin-vro-core/target/o11nplugin-vro-core-$REL-javadoc.jar .
+    assets="$assets -a o11nplugin-vro-$REL.dar -a o11nplugin-vro-core-$REL-javadoc.jar"
 else
-	cp o11nplugin-vro/target/o11nplugin-vro-$REL-beta-$BUILD_NUMBER.dar .
-	assets="$assets -a o11nplugin-vro-$REL-beta-$BUILD_NUMBER.dar"
+        cp o11nplugin-vro/target/o11nplugin-vro-$REL-beta-$BUILD_NUMBER.dar .
+        cp o11nplugin-vro-core/target/o11nplugin-vro-core-$REL-beta-$BUILD_NUMBER-javadoc.jar .
+        assets="$assets -a o11nplugin-vro-$REL-beta-$BUILD_NUMBER.dar -a o11nplugin-vro-core-$REL-beta-$BUILD_NUMBER-javadoc.jar"
 fi
 
 /usr/local/bin/hub release $hub_op $assets -F ReleaseNote $REL_TAG

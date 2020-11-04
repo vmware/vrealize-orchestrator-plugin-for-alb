@@ -24,55 +24,56 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIMgrGuestNicRuntime extends AviRestResource {
-  @JsonProperty("avi_internal_network")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aviInternalNetwork = null;
+    @JsonProperty("avi_internal_network")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aviInternalNetwork = null;
 
-  @JsonProperty("connected")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean connected = null;
+    @JsonProperty("connected")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean connected = null;
 
-  @JsonProperty("del_pending")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean delPending = false;
+    @JsonProperty("del_pending")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean delPending = false;
 
-  @JsonProperty("guest_ip")
-  @JsonInclude(Include.NON_NULL)
-  private List<VIMgrIPSubnetRuntime> guestIp = null;
+    @JsonProperty("guest_ip")
+    @JsonInclude(Include.NON_NULL)
+    private List<VIMgrIPSubnetRuntime> guestIp = null;
 
-  @JsonProperty("label")
-  @JsonInclude(Include.NON_NULL)
-  private String label = "Unknown";
+    @JsonProperty("label")
+    @JsonInclude(Include.NON_NULL)
+    private String label = "Unknown";
 
-  @JsonProperty("mac_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String macAddr = null;
+    @JsonProperty("mac_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddr = null;
 
-  @JsonProperty("mgmt_vnic")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean mgmtVnic = null;
+    @JsonProperty("mgmt_vnic")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean mgmtVnic = null;
 
-  @JsonProperty("network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String networkName = null;
+    @JsonProperty("network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String networkName = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("os_port_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String osPortUuid = null;
+    @JsonProperty("os_port_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String osPortUuid = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property avi_internal_network of obj type vimgrguestnicruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return aviInternalNetwork
    */
   @VsoMethod
@@ -83,6 +84,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property avi_internal_network of obj type vimgrguestnicruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param aviInternalNetwork set the aviInternalNetwork.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property connected of obj type vimgrguestnicruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connected
    */
   @VsoMethod
@@ -103,6 +106,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property connected of obj type vimgrguestnicruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connected set the connected.
    */
   @VsoMethod
@@ -135,6 +139,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property guest_ip of obj type vimgrguestnicruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return guestIp
    */
   @VsoMethod
@@ -145,6 +150,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the guestIp
    * Placeholder for description of property guest_ip of obj type vimgrguestnicruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return guestIp
    */
   @VsoMethod
@@ -155,6 +161,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the guestIp
    * Placeholder for description of property guest_ip of obj type vimgrguestnicruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return guestIp
    */
   @VsoMethod
@@ -170,7 +177,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property label of obj type vimgrguestnicruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Unknown.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Unknown".
    * @return label
    */
   @VsoMethod
@@ -181,7 +188,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property label of obj type vimgrguestnicruntime field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as Unknown.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "Unknown".
    * @param label set the label.
    */
   @VsoMethod
@@ -192,6 +199,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac_addr of obj type vimgrguestnicruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return macAddr
    */
   @VsoMethod
@@ -202,6 +210,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mac_addr of obj type vimgrguestnicruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param macAddr set the macAddr.
    */
   @VsoMethod
@@ -212,6 +221,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_vnic of obj type vimgrguestnicruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtVnic
    */
   @VsoMethod
@@ -222,6 +232,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmt_vnic of obj type vimgrguestnicruntime field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtVnic set the mgmtVnic.
    */
   @VsoMethod
@@ -232,6 +243,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_name of obj type vimgrguestnicruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkName
    */
   @VsoMethod
@@ -242,6 +254,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network_name of obj type vimgrguestnicruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkName set the networkName.
    */
   @VsoMethod
@@ -252,6 +265,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -262,6 +276,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -272,6 +287,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of os_port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osPortUuid
    */
   @VsoMethod
@@ -282,6 +298,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of os_port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osPortUuid set the osPortUuid.
    */
   @VsoMethod
@@ -293,6 +310,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -304,6 +322,7 @@ public class VIMgrGuestNicRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

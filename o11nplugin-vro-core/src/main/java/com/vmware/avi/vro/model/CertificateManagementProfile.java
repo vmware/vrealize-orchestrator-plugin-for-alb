@@ -24,35 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CertificateManagementProfile extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("script_params")
-  @JsonInclude(Include.NON_NULL)
-  private List<CustomParams> scriptParams = null;
+    @JsonProperty("run_script_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String runScriptRef = null;
 
-  @JsonProperty("script_path")
-  @JsonInclude(Include.NON_NULL)
-  private String scriptPath = null;
+    @JsonProperty("script_params")
+    @JsonInclude(Include.NON_NULL)
+    private List<CustomParams> scriptParams = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("script_path")
+    @JsonInclude(Include.NON_NULL)
+    private String scriptPath;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Name of the pki profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -63,6 +68,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the pki profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -72,7 +78,34 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Alert script config object for certificate management profile.
+   * It is a reference to an object of type alertscriptconfig.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return runScriptRef
+   */
+  @VsoMethod
+  public String getRunScriptRef() {
+    return runScriptRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Alert script config object for certificate management profile.
+   * It is a reference to an object of type alertscriptconfig.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param runScriptRef set the runScriptRef.
+   */
+  @VsoMethod
+  public void setRunScriptRef(String  runScriptRef) {
+    this.runScriptRef = runScriptRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property script_params of obj type certificatemanagementprofile field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
   @VsoMethod
@@ -83,6 +116,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the scriptParams
    * Placeholder for description of property script_params of obj type certificatemanagementprofile field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
   @VsoMethod
@@ -93,6 +127,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method this will set the scriptParams
    * Placeholder for description of property script_params of obj type certificatemanagementprofile field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptParams
    */
   @VsoMethod
@@ -107,7 +142,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property script_path of obj type certificatemanagementprofile field type str  type string.
+   * Field deprecated in 20.1.3.
    * @return scriptPath
    */
   @VsoMethod
@@ -117,7 +152,7 @@ public class CertificateManagementProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property script_path of obj type certificatemanagementprofile field type str  type string.
+   * Field deprecated in 20.1.3.
    * @param scriptPath set the scriptPath.
    */
   @VsoMethod
@@ -128,6 +163,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -138,6 +174,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -167,6 +204,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -177,6 +215,7 @@ public class CertificateManagementProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -202,6 +241,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objCertificateManagementProfile.name)&&
   Objects.equals(this.scriptParams, objCertificateManagementProfile.scriptParams)&&
   Objects.equals(this.scriptPath, objCertificateManagementProfile.scriptPath)&&
+  Objects.equals(this.runScriptRef, objCertificateManagementProfile.runScriptRef)&&
   Objects.equals(this.tenantRef, objCertificateManagementProfile.tenantRef);
 }
 
@@ -210,6 +250,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class CertificateManagementProfile {\n");
       sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    runScriptRef: ").append(toIndentedString(runScriptRef)).append("\n");
         sb.append("    scriptParams: ").append(toIndentedString(scriptParams)).append("\n");
         sb.append("    scriptPath: ").append(toIndentedString(scriptPath)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TLSTicket extends AviRestResource {
-  @JsonProperty("aes_key")
-  @JsonInclude(Include.NON_NULL)
-  private String aesKey = null;
+    @JsonProperty("aes_key")
+    @JsonInclude(Include.NON_NULL)
+    private String aesKey = null;
 
-  @JsonProperty("hmac_key")
-  @JsonInclude(Include.NON_NULL)
-  private String hmacKey = null;
+    @JsonProperty("hmac_key")
+    @JsonInclude(Include.NON_NULL)
+    private String hmacKey = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property aes_key of obj type tlsticket field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return aesKey
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class TLSTicket extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property aes_key of obj type tlsticket field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param aesKey set the aesKey.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class TLSTicket extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hmac_key of obj type tlsticket field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hmacKey
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class TLSTicket extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property hmac_key of obj type tlsticket field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hmacKey set the hmacKey.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class TLSTicket extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class TLSTicket extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

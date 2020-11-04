@@ -26,13 +26,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NatAddrInfo extends AviRestResource {
-  @JsonProperty("nat_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr natIp = null;
+    @JsonProperty("nat_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr natIp = null;
 
-  @JsonProperty("nat_ip_range")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrRange natIpRange = null;
+    @JsonProperty("nat_ip_range")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrRange natIpRange = null;
 
 
 
@@ -40,6 +40,7 @@ public class NatAddrInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat ip address.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return natIp
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class NatAddrInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat ip address.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param natIp set the natIp.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class NatAddrInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nat ip address range.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return natIpRange
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class NatAddrInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Nat ip address range.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param natIpRange set the natIpRange.
    */
   @VsoMethod

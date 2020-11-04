@@ -26,33 +26,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSOPolicy extends AviRestResource {
-  @JsonProperty("authentication_policy")
-  @JsonInclude(Include.NON_NULL)
-  private AuthenticationPolicy authenticationPolicy = null;
+    @JsonProperty("authentication_policy")
+    @JsonInclude(Include.NON_NULL)
+    private AuthenticationPolicy authenticationPolicy = null;
 
-  @JsonProperty("authorization_policy")
-  @JsonInclude(Include.NON_NULL)
-  private AuthorizationPolicy authorizationPolicy = null;
+    @JsonProperty("authorization_policy")
+    @JsonInclude(Include.NON_NULL)
+    private AuthorizationPolicy authorizationPolicy = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "SSO_TYPE_SAML";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "SSO_TYPE_SAML";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -60,6 +64,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authentication policy settings.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authenticationPolicy
    */
   @VsoMethod
@@ -71,6 +76,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Authentication policy settings.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authenticationPolicy set the authenticationPolicy.
    */
   @VsoMethod
@@ -82,6 +88,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Authorization policy settings.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authorizationPolicy
    */
   @VsoMethod
@@ -93,6 +100,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Authorization policy settings.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authorizationPolicy set the authorizationPolicy.
    */
   @VsoMethod
@@ -102,8 +110,53 @@ public class SSOPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public SSOPolicy addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the sso policy.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -115,6 +168,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the sso policy.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -127,6 +181,7 @@ public class SSOPolicy extends AviRestResource {
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -139,6 +194,7 @@ public class SSOPolicy extends AviRestResource {
    * Uuid of the tenant.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -151,7 +207,7 @@ public class SSOPolicy extends AviRestResource {
    * Sso policy type.
    * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSO_TYPE_SAML.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @return type
    */
   @VsoMethod
@@ -164,7 +220,7 @@ public class SSOPolicy extends AviRestResource {
    * Sso policy type.
    * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSO_TYPE_SAML.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @param type set the type.
    */
   @VsoMethod
@@ -195,6 +251,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the sso policy.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -206,6 +263,7 @@ public class SSOPolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the sso policy.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -232,6 +290,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.authenticationPolicy, objSSOPolicy.authenticationPolicy)&&
   Objects.equals(this.authorizationPolicy, objSSOPolicy.authorizationPolicy)&&
   Objects.equals(this.type, objSSOPolicy.type)&&
+  Objects.equals(this.labels, objSSOPolicy.labels)&&
   Objects.equals(this.tenantRef, objSSOPolicy.tenantRef);
 }
 
@@ -241,6 +300,7 @@ public String toString() {
   sb.append("class SSOPolicy {\n");
       sb.append("    authenticationPolicy: ").append(toIndentedString(authenticationPolicy)).append("\n");
         sb.append("    authorizationPolicy: ").append(toIndentedString(authorizationPolicy)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

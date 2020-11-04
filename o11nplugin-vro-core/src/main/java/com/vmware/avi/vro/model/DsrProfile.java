@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DsrProfile extends AviRestResource {
-  @JsonProperty("dsr_encap_type")
-  @JsonInclude(Include.NON_NULL)
-  private String dsrEncapType = "ENCAP_IPINIP";
+    @JsonProperty("dsr_encap_type")
+    @JsonInclude(Include.NON_NULL)
+    private String dsrEncapType = "ENCAP_IPINIP";
 
-  @JsonProperty("dsr_type")
-  @JsonInclude(Include.NON_NULL)
-  private String dsrType = "DSR_TYPE_L3";
+    @JsonProperty("dsr_type")
+    @JsonInclude(Include.NON_NULL)
+    private String dsrType = "DSR_TYPE_L3";
 
 
 
@@ -39,7 +39,7 @@ public class DsrProfile extends AviRestResource {
    * Encapsulation type to use when dsr is l3.
    * Enum options - ENCAP_IPINIP.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ENCAP_IPINIP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
    * @return dsrEncapType
    */
   @VsoMethod
@@ -52,7 +52,7 @@ public class DsrProfile extends AviRestResource {
    * Encapsulation type to use when dsr is l3.
    * Enum options - ENCAP_IPINIP.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ENCAP_IPINIP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
    * @param dsrEncapType set the dsrEncapType.
    */
   @VsoMethod
@@ -65,7 +65,7 @@ public class DsrProfile extends AviRestResource {
    * Dsr type l2/l3.
    * Enum options - DSR_TYPE_L2, DSR_TYPE_L3.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DSR_TYPE_L3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DSR_TYPE_L3".
    * @return dsrType
    */
   @VsoMethod
@@ -78,7 +78,7 @@ public class DsrProfile extends AviRestResource {
    * Dsr type l2/l3.
    * Enum options - DSR_TYPE_L2, DSR_TYPE_L3.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DSR_TYPE_L3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DSR_TYPE_L3".
    * @param dsrType set the dsrType.
    */
   @VsoMethod

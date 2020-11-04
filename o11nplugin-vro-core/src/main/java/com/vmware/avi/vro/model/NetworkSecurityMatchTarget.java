@@ -28,27 +28,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkSecurityMatchTarget extends AviRestResource {
-  @JsonProperty("client_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIp = null;
+    @JsonProperty("client_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIp = null;
 
-  @JsonProperty("ip_reputation_type")
-  @JsonInclude(Include.NON_NULL)
-  private IPReputationTypeMatch ipReputationType = null;
+    @JsonProperty("ip_reputation_type")
+    @JsonInclude(Include.NON_NULL)
+    private IPReputationTypeMatch ipReputationType = null;
 
-  @JsonProperty("microservice")
-  @JsonInclude(Include.NON_NULL)
-  private MicroServiceMatch microservice = null;
+    @JsonProperty("microservice")
+    @JsonInclude(Include.NON_NULL)
+    private MicroServiceMatch microservice = null;
 
-  @JsonProperty("vs_port")
-  @JsonInclude(Include.NON_NULL)
-  private PortMatch vsPort = null;
+    @JsonProperty("vs_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortMatch vsPort = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property client_ip of obj type networksecuritymatchtarget field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property client_ip of obj type networksecuritymatchtarget field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationType
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationType set the ipReputationType.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property microservice of obj type networksecuritymatchtarget field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return microservice
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property microservice of obj type networksecuritymatchtarget field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param microservice set the microservice.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_port of obj type networksecuritymatchtarget field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsPort
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_port of obj type networksecuritymatchtarget field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsPort set the vsPort.
    */
   @VsoMethod

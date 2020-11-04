@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class BurstLicenseDetails extends AviRestResource {
-  @JsonProperty("cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cores = null;
+    @JsonProperty("cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cores = null;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("se_name")
-  @JsonInclude(Include.NON_NULL)
-  private String seName = null;
+    @JsonProperty("se_name")
+    @JsonInclude(Include.NON_NULL)
+    private String seName = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cores of obj type burstlicensedetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cores
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cores of obj type burstlicensedetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cores set the cores.
    */
   @VsoMethod
@@ -69,6 +71,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end_time of obj type burstlicensedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end_time of obj type burstlicensedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_name of obj type burstlicensedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seName
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_name of obj type burstlicensedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seName set the seName.
    */
   @VsoMethod
@@ -109,6 +115,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -119,6 +126,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -129,6 +137,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start_time of obj type burstlicensedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -139,6 +148,7 @@ public class BurstLicenseDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start_time of obj type burstlicensedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod

@@ -27,29 +27,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafExcludeListEntry extends AviRestResource {
-  @JsonProperty("client_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix clientSubnet = null;
+    @JsonProperty("client_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix clientSubnet = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("match_element")
-  @JsonInclude(Include.NON_NULL)
-  private String matchElement = null;
+    @JsonProperty("match_element")
+    @JsonInclude(Include.NON_NULL)
+    private String matchElement = null;
 
-  @JsonProperty("match_element_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private WafExclusionType matchElementCriteria = null;
+    @JsonProperty("match_element_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private WafExclusionType matchElementCriteria = null;
 
-  @JsonProperty("uri_match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private WafExclusionType uriMatchCriteria = null;
+    @JsonProperty("uri_match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private WafExclusionType uriMatchCriteria = null;
 
-  @JsonProperty("uri_path")
-  @JsonInclude(Include.NON_NULL)
-  private String uriPath = null;
+    @JsonProperty("uri_path")
+    @JsonInclude(Include.NON_NULL)
+    private String uriPath = null;
 
 
 
@@ -57,6 +57,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Client ip subnet to exclude for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientSubnet
    */
   @VsoMethod
@@ -68,6 +69,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Client ip subnet to exclude for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientSubnet set the clientSubnet.
    */
   @VsoMethod
@@ -79,6 +81,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Free-text comment about this exclusion.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -90,6 +93,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Free-text comment about this exclusion.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -103,6 +107,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * 'request_body', 'request_uri', 'request_uri_raw', 'request_cookies xxx', 'request_headers xxx' or 'response_headers xxx'.
    * These match_elements in the http transaction (if present) will be excluded when executing waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElement
    */
   @VsoMethod
@@ -116,6 +121,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * 'request_body', 'request_uri', 'request_uri_raw', 'request_cookies xxx', 'request_headers xxx' or 'response_headers xxx'.
    * These match_elements in the http transaction (if present) will be excluded when executing waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElement set the matchElement.
    */
   @VsoMethod
@@ -127,6 +133,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criteria for match_element matching.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchElementCriteria
    */
   @VsoMethod
@@ -138,6 +145,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Criteria for match_element matching.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchElementCriteria set the matchElementCriteria.
    */
   @VsoMethod
@@ -149,6 +157,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criteria for uri matching.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriMatchCriteria
    */
   @VsoMethod
@@ -160,6 +169,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Criteria for uri matching.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriMatchCriteria set the uriMatchCriteria.
    */
   @VsoMethod
@@ -171,6 +181,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uri path to exclude for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriPath
    */
   @VsoMethod
@@ -182,6 +193,7 @@ public class WafExcludeListEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Uri path to exclude for waf rules.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriPath set the uriPath.
    */
   @VsoMethod

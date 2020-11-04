@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PortRange extends AviRestResource {
-  @JsonProperty("end")
-  @JsonInclude(Include.NON_NULL)
-  private Integer end = null;
+    @JsonProperty("end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer end = null;
 
-  @JsonProperty("start")
-  @JsonInclude(Include.NON_NULL)
-  private Integer start = null;
+    @JsonProperty("start")
+    @JsonInclude(Include.NON_NULL)
+    private Integer start = null;
 
 
 
@@ -38,6 +38,7 @@ public class PortRange extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp/udp port range end (inclusive).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return end
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class PortRange extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp/udp port range end (inclusive).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param end set the end.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class PortRange extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tcp/udp port range start (inclusive).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return start
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class PortRange extends AviRestResource {
    * This is the setter method to the attribute.
    * Tcp/udp port range start (inclusive).
    * Allowed values are 1-65535.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param start set the start.
    */
   @VsoMethod

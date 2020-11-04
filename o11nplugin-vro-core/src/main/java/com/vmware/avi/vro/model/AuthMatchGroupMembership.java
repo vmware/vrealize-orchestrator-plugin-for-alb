@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthMatchGroupMembership extends AviRestResource {
-  @JsonProperty("criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String criteria = null;
+    @JsonProperty("criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String criteria = null;
 
-  @JsonProperty("groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> groups = null;
+    @JsonProperty("groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> groups = null;
 
 
 
@@ -38,6 +38,7 @@ public class AuthMatchGroupMembership extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule match criteria.
    * Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return criteria
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class AuthMatchGroupMembership extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule match criteria.
    * Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param criteria set the criteria.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class AuthMatchGroupMembership extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property groups of obj type authmatchgroupmembership field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class AuthMatchGroupMembership extends AviRestResource {
   /**
    * This is the setter method. this will set the groups
    * Placeholder for description of property groups of obj type authmatchgroupmembership field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -79,6 +83,7 @@ public class AuthMatchGroupMembership extends AviRestResource {
   /**
    * This is the setter method this will set the groups
    * Placeholder for description of property groups of obj type authmatchgroupmembership field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod

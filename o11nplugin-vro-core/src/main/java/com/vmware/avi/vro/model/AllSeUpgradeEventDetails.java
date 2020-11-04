@@ -25,27 +25,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AllSeUpgradeEventDetails extends AviRestResource {
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("num_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSe = null;
+    @JsonProperty("num_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSe = null;
 
-  @JsonProperty("num_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVs = null;
+    @JsonProperty("num_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVs = null;
 
-  @JsonProperty("request")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeParams request = null;
+    @JsonProperty("request")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeParams request = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type allseupgradeeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -56,6 +57,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type allseupgradeeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type allseupgradeeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se of obj type allseupgradeeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
   @VsoMethod
@@ -91,6 +95,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se of obj type allseupgradeeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vs of obj type allseupgradeeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVs
    */
   @VsoMethod
@@ -111,6 +117,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vs of obj type allseupgradeeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVs set the numVs.
    */
   @VsoMethod
@@ -121,6 +128,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property request of obj type allseupgradeeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return request
    */
   @VsoMethod
@@ -131,6 +139,7 @@ public class AllSeUpgradeEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property request of obj type allseupgradeeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param request set the request.
    */
   @VsoMethod

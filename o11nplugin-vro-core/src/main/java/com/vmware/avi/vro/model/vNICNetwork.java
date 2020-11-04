@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class vNICNetwork extends AviRestResource {
-  @JsonProperty("ctlr_alloc")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ctlrAlloc = false;
+    @JsonProperty("ctlr_alloc")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ctlrAlloc = false;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix ip = null;
 
-  @JsonProperty("mode")
-  @JsonInclude(Include.NON_NULL)
-  private String mode = "DHCP";
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = "DHCP";
 
 
 
@@ -64,6 +64,7 @@ public class vNICNetwork extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type vnicnetwork field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -74,6 +75,7 @@ public class vNICNetwork extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type vnicnetwork field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -84,7 +86,7 @@ public class vNICNetwork extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DHCP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DHCP".
    * @return mode
    */
   @VsoMethod
@@ -95,7 +97,7 @@ public class vNICNetwork extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DHCP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DHCP".
    * @param mode set the mode.
    */
   @VsoMethod

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TCPApplicationProfile extends AviRestResource {
-  @JsonProperty("pki_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String pkiProfileRef = null;
+    @JsonProperty("pki_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String pkiProfileRef = null;
 
-  @JsonProperty("proxy_protocol_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean proxyProtocolEnabled = false;
+    @JsonProperty("proxy_protocol_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean proxyProtocolEnabled = false;
 
-  @JsonProperty("proxy_protocol_version")
-  @JsonInclude(Include.NON_NULL)
-  private String proxyProtocolVersion = "PROXY_PROTOCOL_VERSION_1";
+    @JsonProperty("proxy_protocol_version")
+    @JsonInclude(Include.NON_NULL)
+    private String proxyProtocolVersion = "PROXY_PROTOCOL_VERSION_1";
 
-  @JsonProperty("ssl_client_certificate_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String sslClientCertificateMode = "SSL_CLIENT_CERTIFICATE_NONE";
+    @JsonProperty("ssl_client_certificate_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String sslClientCertificateMode = "SSL_CLIENT_CERTIFICATE_NONE";
 
 
 
@@ -48,6 +48,7 @@ public class TCPApplicationProfile extends AviRestResource {
    * This profile defines the certificate authority and revocation list.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pkiProfileRef
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class TCPApplicationProfile extends AviRestResource {
    * This profile defines the certificate authority and revocation list.
    * It is a reference to an object of type pkiprofile.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pkiProfileRef set the pkiProfileRef.
    */
   @VsoMethod
@@ -96,7 +98,7 @@ public class TCPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of proxy protocol to be used to convey client connection information to the back-end servers.
    * Enum options - PROXY_PROTOCOL_VERSION_1, PROXY_PROTOCOL_VERSION_2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as PROXY_PROTOCOL_VERSION_1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "PROXY_PROTOCOL_VERSION_1".
    * @return proxyProtocolVersion
    */
   @VsoMethod
@@ -108,7 +110,7 @@ public class TCPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of proxy protocol to be used to convey client connection information to the back-end servers.
    * Enum options - PROXY_PROTOCOL_VERSION_1, PROXY_PROTOCOL_VERSION_2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as PROXY_PROTOCOL_VERSION_1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "PROXY_PROTOCOL_VERSION_1".
    * @param proxyProtocolVersion set the proxyProtocolVersion.
    */
   @VsoMethod
@@ -121,7 +123,7 @@ public class TCPApplicationProfile extends AviRestResource {
    * Specifies whether the client side verification is set to none, request or require.
    * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CLIENT_CERTIFICATE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
    * @return sslClientCertificateMode
    */
   @VsoMethod
@@ -134,7 +136,7 @@ public class TCPApplicationProfile extends AviRestResource {
    * Specifies whether the client side verification is set to none, request or require.
    * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SSL_CLIENT_CERTIFICATE_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
    * @param sslClientCertificateMode set the sslClientCertificateMode.
    */
   @VsoMethod

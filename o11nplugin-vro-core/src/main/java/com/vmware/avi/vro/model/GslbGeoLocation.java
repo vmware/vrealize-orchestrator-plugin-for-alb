@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbGeoLocation extends AviRestResource {
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private GeoLocation location = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private GeoLocation location = null;
 
-  @JsonProperty("source")
-  @JsonInclude(Include.NON_NULL)
-  private String source = null;
+    @JsonProperty("source")
+    @JsonInclude(Include.NON_NULL)
+    private String source = null;
 
 
 
@@ -39,6 +39,7 @@ public class GslbGeoLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geographic location of the site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class GslbGeoLocation extends AviRestResource {
    * This is the setter method to the attribute.
    * Geographic location of the site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class GslbGeoLocation extends AviRestResource {
    * This field describes the source of the geolocation.
    * Enum options - GSLB_LOCATION_SRC_USER_CONFIGURED, GSLB_LOCATION_SRC_INHERIT_FROM_SITE, GSLB_LOCATION_SRC_FROM_GEODB.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return source
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class GslbGeoLocation extends AviRestResource {
    * This field describes the source of the geolocation.
    * Enum options - GSLB_LOCATION_SRC_USER_CONFIGURED, GSLB_LOCATION_SRC_INHERIT_FROM_SITE, GSLB_LOCATION_SRC_FROM_GEODB.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param source set the source.
    */
   @VsoMethod

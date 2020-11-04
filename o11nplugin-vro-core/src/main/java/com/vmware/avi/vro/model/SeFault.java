@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeFault extends AviRestResource {
-  @JsonProperty("arg")
-  @JsonInclude(Include.NON_NULL)
-  private Integer arg = null;
+    @JsonProperty("arg")
+    @JsonInclude(Include.NON_NULL)
+    private Integer arg = null;
 
-  @JsonProperty("fault_name")
-  @JsonInclude(Include.NON_NULL)
-  private String faultName = null;
+    @JsonProperty("fault_name")
+    @JsonInclude(Include.NON_NULL)
+    private String faultName = null;
 
-  @JsonProperty("function_name")
-  @JsonInclude(Include.NON_NULL)
-  private String functionName = null;
+    @JsonProperty("function_name")
+    @JsonInclude(Include.NON_NULL)
+    private String functionName = null;
 
-  @JsonProperty("num_executions")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numExecutions = 1;
+    @JsonProperty("num_executions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numExecutions = 1;
 
-  @JsonProperty("num_skips")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSkips = 0;
+    @JsonProperty("num_skips")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSkips = 0;
 
 
 
@@ -50,6 +50,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Optional 64 bit unsigned integer that can be used within the enabled fault.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return arg
    */
   @VsoMethod
@@ -61,6 +62,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * Optional 64 bit unsigned integer that can be used within the enabled fault.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param arg set the arg.
    */
   @VsoMethod
@@ -72,6 +74,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the target fault.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faultName
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the target fault.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param faultName set the faultName.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class SeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the function that contains the target fault.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return functionName
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class SeFault extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the function that contains the target fault.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param functionName set the functionName.
    */
   @VsoMethod

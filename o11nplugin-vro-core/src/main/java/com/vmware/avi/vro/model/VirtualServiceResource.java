@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VirtualServiceResource extends AviRestResource {
-  @JsonProperty("is_exclusive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isExclusive = null;
+    @JsonProperty("is_exclusive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isExclusive;
 
-  @JsonProperty("memory")
-  @JsonInclude(Include.NON_NULL)
-  private Integer memory = null;
+    @JsonProperty("memory")
+    @JsonInclude(Include.NON_NULL)
+    private Integer memory = null;
 
-  @JsonProperty("num_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSe = null;
+    @JsonProperty("num_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSe = null;
 
-  @JsonProperty("num_standby_se")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numStandbySe = null;
+    @JsonProperty("num_standby_se")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numStandbySe = null;
 
-  @JsonProperty("num_vcpus")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVcpus = null;
+    @JsonProperty("num_vcpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVcpus = null;
 
-  @JsonProperty("scalein_primary")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean scaleinPrimary = null;
+    @JsonProperty("scalein_primary")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleinPrimary;
 
-  @JsonProperty("scalein_se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String scaleinSeUuid = null;
+    @JsonProperty("scalein_se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String scaleinSeUuid;
 
 
 
@@ -79,6 +79,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property memory of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memory
    */
   @VsoMethod
@@ -89,6 +90,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property memory of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memory set the memory.
    */
   @VsoMethod
@@ -99,6 +101,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_se of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSe
    */
   @VsoMethod
@@ -109,6 +112,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_se of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSe set the numSe.
    */
   @VsoMethod
@@ -119,6 +123,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_standby_se of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numStandbySe
    */
   @VsoMethod
@@ -129,6 +134,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_standby_se of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numStandbySe set the numStandbySe.
    */
   @VsoMethod
@@ -139,6 +145,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vcpus of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVcpus
    */
   @VsoMethod
@@ -149,6 +156,7 @@ public class VirtualServiceResource extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vcpus of obj type virtualserviceresource field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVcpus set the numVcpus.
    */
   @VsoMethod

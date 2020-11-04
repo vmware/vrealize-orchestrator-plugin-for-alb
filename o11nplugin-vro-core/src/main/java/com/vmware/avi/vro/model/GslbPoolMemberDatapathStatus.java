@@ -26,23 +26,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbPoolMemberDatapathStatus extends AviRestResource {
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private GeoLocation location = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private GeoLocation location = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("site_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String siteUuid = null;
+    @JsonProperty("site_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String siteUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class GslbPoolMemberDatapathStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -63,6 +65,7 @@ public class GslbPoolMemberDatapathStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oper_status of obj type gslbpoolmemberdatapathstatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class GslbPoolMemberDatapathStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oper_status of obj type gslbpoolmemberdatapathstatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class GslbPoolMemberDatapathStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return siteUuid
    */
   @VsoMethod
@@ -93,6 +98,7 @@ public class GslbPoolMemberDatapathStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param siteUuid set the siteUuid.
    */
   @VsoMethod

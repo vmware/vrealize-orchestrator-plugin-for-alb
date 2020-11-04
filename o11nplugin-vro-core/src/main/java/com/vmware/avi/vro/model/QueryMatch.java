@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class QueryMatch extends AviRestResource {
-  @JsonProperty("match_case")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCase = "INSENSITIVE";
+    @JsonProperty("match_case")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCase = "INSENSITIVE";
 
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("match_str")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> matchStr = null;
+    @JsonProperty("match_str")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> matchStr = null;
 
-  @JsonProperty("string_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> stringGroupRefs = null;
+    @JsonProperty("string_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> stringGroupRefs = null;
 
 
 
@@ -46,7 +46,7 @@ public class QueryMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
   @VsoMethod
@@ -70,6 +70,7 @@ public class QueryMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for matching the query in http request uri.
    * Enum options - QUERY_MATCH_CONTAINS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for matching the query in http request uri.
    * Enum options - QUERY_MATCH_CONTAINS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -91,6 +93,7 @@ public class QueryMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String value(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -101,6 +104,7 @@ public class QueryMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the matchStr
    * String value(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -111,6 +115,7 @@ public class QueryMatch extends AviRestResource {
   /**
    * This is the setter method this will set the matchStr
    * String value(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class QueryMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -138,6 +144,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -149,6 +156,7 @@ public class QueryMatch extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod

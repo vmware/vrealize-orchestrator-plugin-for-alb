@@ -24,16 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPVIPILB extends AviRestResource {
-  @JsonProperty("cloud_router_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> cloudRouterNames = null;
+    @JsonProperty("cloud_router_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> cloudRouterNames = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Google cloud router names to advertise byoip.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRouterNames
    */
   @VsoMethod
@@ -44,7 +45,8 @@ public class GCPVIPILB extends AviRestResource {
   /**
    * This is the setter method. this will set the cloudRouterNames
    * Google cloud router names to advertise byoip.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRouterNames
    */
   @VsoMethod
@@ -55,7 +57,8 @@ public class GCPVIPILB extends AviRestResource {
   /**
    * This is the setter method this will set the cloudRouterNames
    * Google cloud router names to advertise byoip.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRouterNames
    */
   @VsoMethod

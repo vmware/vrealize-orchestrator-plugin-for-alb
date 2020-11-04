@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthenticationAction extends AviRestResource {
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "USE_DEFAULT_AUTHENTICATION";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "USE_DEFAULT_AUTHENTICATION";
 
 
 
@@ -35,7 +35,7 @@ public class AuthenticationAction extends AviRestResource {
    * Authentication action to be taken for a matched rule.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as USE_DEFAULT_AUTHENTICATION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "USE_DEFAULT_AUTHENTICATION".
    * @return type
    */
   @VsoMethod
@@ -48,7 +48,7 @@ public class AuthenticationAction extends AviRestResource {
    * Authentication action to be taken for a matched rule.
    * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as USE_DEFAULT_AUTHENTICATION.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "USE_DEFAULT_AUTHENTICATION".
    * @param type set the type.
    */
   @VsoMethod

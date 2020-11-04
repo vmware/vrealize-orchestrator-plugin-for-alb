@@ -24,41 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PaaRequestLog extends AviRestResource {
-  @JsonProperty("headers_received_from_server")
-  @JsonInclude(Include.NON_NULL)
-  private String headersReceivedFromServer = null;
+    @JsonProperty("headers_received_from_server")
+    @JsonInclude(Include.NON_NULL)
+    private String headersReceivedFromServer = null;
 
-  @JsonProperty("headers_sent_to_server")
-  @JsonInclude(Include.NON_NULL)
-  private String headersSentToServer = null;
+    @JsonProperty("headers_sent_to_server")
+    @JsonInclude(Include.NON_NULL)
+    private String headersSentToServer = null;
 
-  @JsonProperty("http_version")
-  @JsonInclude(Include.NON_NULL)
-  private String httpVersion = null;
+    @JsonProperty("http_version")
+    @JsonInclude(Include.NON_NULL)
+    private String httpVersion = null;
 
-  @JsonProperty("method")
-  @JsonInclude(Include.NON_NULL)
-  private String method = null;
+    @JsonProperty("method")
+    @JsonInclude(Include.NON_NULL)
+    private String method = null;
 
-  @JsonProperty("pool_name")
-  @JsonInclude(Include.NON_NULL)
-  private String poolName = null;
+    @JsonProperty("pool_name")
+    @JsonInclude(Include.NON_NULL)
+    private String poolName = null;
 
-  @JsonProperty("response_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseCode = null;
+    @JsonProperty("response_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseCode = null;
 
-  @JsonProperty("server_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serverIp = null;
+    @JsonProperty("server_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serverIp = null;
 
-  @JsonProperty("servers_tried")
-  @JsonInclude(Include.NON_NULL)
-  private Integer serversTried = 0;
+    @JsonProperty("servers_tried")
+    @JsonInclude(Include.NON_NULL)
+    private Integer serversTried = 0;
 
-  @JsonProperty("uri_path")
-  @JsonInclude(Include.NON_NULL)
-  private String uriPath = null;
+    @JsonProperty("uri_path")
+    @JsonInclude(Include.NON_NULL)
+    private String uriPath = null;
 
 
 
@@ -66,6 +66,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Response headers received from pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersReceivedFromServer
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Response headers received from pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersReceivedFromServer set the headersReceivedFromServer.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Request headers sent to pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return headersSentToServer
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Request headers sent to pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param headersSentToServer set the headersSentToServer.
    */
   @VsoMethod
@@ -110,6 +114,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http version of the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpVersion
    */
   @VsoMethod
@@ -121,6 +126,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http version of the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param httpVersion set the httpVersion.
    */
   @VsoMethod
@@ -132,6 +138,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The http method of the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
   @VsoMethod
@@ -143,6 +150,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The http method of the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
   @VsoMethod
@@ -154,6 +162,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of the pool that was used for the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolName
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of the pool that was used for the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolName set the poolName.
    */
   @VsoMethod
@@ -176,6 +186,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The response code received from the pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseCode
    */
   @VsoMethod
@@ -187,6 +198,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The response code received from the pingaccess server.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseCode set the responseCode.
    */
   @VsoMethod
@@ -198,6 +210,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ip of the server that was sent the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -209,6 +222,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The ip of the server that was sent the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
   @VsoMethod
@@ -244,6 +258,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The uri of the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uriPath
    */
   @VsoMethod
@@ -255,6 +270,7 @@ public class PaaRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * The uri of the request.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uriPath set the uriPath.
    */
   @VsoMethod

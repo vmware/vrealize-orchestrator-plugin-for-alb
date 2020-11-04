@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPositiveSecurityModel extends AviRestResource {
-  @JsonProperty("group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> groupRefs = null;
+    @JsonProperty("group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> groupRefs = null;
 
 
 
@@ -36,6 +36,7 @@ public class WafPositiveSecurityModel extends AviRestResource {
    * The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts.
    * It is a reference to an object of type wafpolicypsmgroup.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class WafPositiveSecurityModel extends AviRestResource {
    * The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts.
    * It is a reference to an object of type wafpolicypsmgroup.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class WafPositiveSecurityModel extends AviRestResource {
    * The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts.
    * It is a reference to an object of type wafpolicypsmgroup.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groupRefs
    */
   @VsoMethod

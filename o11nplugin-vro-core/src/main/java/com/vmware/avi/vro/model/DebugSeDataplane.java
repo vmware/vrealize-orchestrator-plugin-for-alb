@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugSeDataplane extends AviRestResource {
-  @JsonProperty("flag")
-  @JsonInclude(Include.NON_NULL)
-  private String flag = null;
+    @JsonProperty("flag")
+    @JsonInclude(Include.NON_NULL)
+    private String flag = null;
 
 
 
@@ -35,6 +35,7 @@ public class DebugSeDataplane extends AviRestResource {
    * Enum options - DEBUG_DISPATCHER_FLOW, DEBUG_DISPATCHER_FLOW_DETAIL, DEBUG_DISPATCHER_FLOW_ALL, DEBUG_CONFIG, DEBUG_IP, DEBUG_IP_PKT_IN,
    * DEBUG_IP_PKT_OUT, DEBUG_ARP, DEBUG_ARP_PKT_IN, DEBUG_ARP_PKT_OUT, DEBUG_ETHERNET, DEBUG_ETHERNET_PKT_IN, DEBUG_ETHERNET_PKT_OUT, DEBUG_ICMP,
    * DEBUG_PCAP_RX, DEBUG_PCAP_TX, DEBUG_PCAP_DROP, DEBUG_PCAP_ALL, DEBUG_MISC, DEBUG_CRUD...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flag
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class DebugSeDataplane extends AviRestResource {
    * Enum options - DEBUG_DISPATCHER_FLOW, DEBUG_DISPATCHER_FLOW_DETAIL, DEBUG_DISPATCHER_FLOW_ALL, DEBUG_CONFIG, DEBUG_IP, DEBUG_IP_PKT_IN,
    * DEBUG_IP_PKT_OUT, DEBUG_ARP, DEBUG_ARP_PKT_IN, DEBUG_ARP_PKT_OUT, DEBUG_ETHERNET, DEBUG_ETHERNET_PKT_IN, DEBUG_ETHERNET_PKT_OUT, DEBUG_ICMP,
    * DEBUG_PCAP_RX, DEBUG_PCAP_TX, DEBUG_PCAP_DROP, DEBUG_PCAP_ALL, DEBUG_MISC, DEBUG_CRUD...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flag set the flag.
    */
   @VsoMethod

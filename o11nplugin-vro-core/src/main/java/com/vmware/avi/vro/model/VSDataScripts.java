@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VSDataScripts extends AviRestResource {
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("vs_datascript_set_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vsDatascriptSetRef = null;
+    @JsonProperty("vs_datascript_set_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vsDatascriptSetRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Index of the virtual service datascript collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class VSDataScripts extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Index of the virtual service datascript collection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class VSDataScripts extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the virtual service datascript collection.
    * It is a reference to an object of type vsdatascriptset.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsDatascriptSetRef
    */
   @VsoMethod
@@ -69,6 +72,7 @@ public class VSDataScripts extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the virtual service datascript collection.
    * It is a reference to an object of type vsdatascriptset.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsDatascriptSetRef set the vsDatascriptSetRef.
    */
   @VsoMethod

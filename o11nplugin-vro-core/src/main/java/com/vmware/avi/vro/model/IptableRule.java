@@ -29,51 +29,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IptableRule extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("dnat_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr dnatIp = null;
+    @JsonProperty("dnat_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr dnatIp = null;
 
-  @JsonProperty("dst_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix dstIp = null;
+    @JsonProperty("dst_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix dstIp = null;
 
-  @JsonProperty("dst_port")
-  @JsonInclude(Include.NON_NULL)
-  private PortRange dstPort = null;
+    @JsonProperty("dst_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortRange dstPort = null;
 
-  @JsonProperty("input_interface")
-  @JsonInclude(Include.NON_NULL)
-  private String inputInterface = null;
+    @JsonProperty("input_interface")
+    @JsonInclude(Include.NON_NULL)
+    private String inputInterface = null;
 
-  @JsonProperty("output_interface")
-  @JsonInclude(Include.NON_NULL)
-  private String outputInterface = null;
+    @JsonProperty("output_interface")
+    @JsonInclude(Include.NON_NULL)
+    private String outputInterface = null;
 
-  @JsonProperty("proto")
-  @JsonInclude(Include.NON_NULL)
-  private String proto = null;
+    @JsonProperty("proto")
+    @JsonInclude(Include.NON_NULL)
+    private String proto = null;
 
-  @JsonProperty("src_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix srcIp = null;
+    @JsonProperty("src_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix srcIp = null;
 
-  @JsonProperty("src_port")
-  @JsonInclude(Include.NON_NULL)
-  private PortRange srcPort = null;
+    @JsonProperty("src_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortRange srcPort = null;
 
-  @JsonProperty("tag")
-  @JsonInclude(Include.NON_NULL)
-  private String tag = null;
+    @JsonProperty("tag")
+    @JsonInclude(Include.NON_NULL)
+    private String tag = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - ACCEPT, DROP, REJECT, DNAT, MASQUERADE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -84,6 +85,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - ACCEPT, DROP, REJECT, DNAT, MASQUERADE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -94,6 +96,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dnat_ip of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnatIp
    */
   @VsoMethod
@@ -104,6 +107,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dnat_ip of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnatIp set the dnatIp.
    */
   @VsoMethod
@@ -114,6 +118,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dst_ip of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstIp
    */
   @VsoMethod
@@ -124,6 +129,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dst_ip of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstIp set the dstIp.
    */
   @VsoMethod
@@ -134,6 +140,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dst_port of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dstPort
    */
   @VsoMethod
@@ -144,6 +151,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dst_port of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dstPort set the dstPort.
    */
   @VsoMethod
@@ -154,6 +162,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property input_interface of obj type iptablerule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inputInterface
    */
   @VsoMethod
@@ -164,6 +173,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property input_interface of obj type iptablerule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inputInterface set the inputInterface.
    */
   @VsoMethod
@@ -174,6 +184,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property output_interface of obj type iptablerule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return outputInterface
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property output_interface of obj type iptablerule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param outputInterface set the outputInterface.
    */
   @VsoMethod
@@ -194,6 +206,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - PROTO_TCP, PROTO_UDP, PROTO_ICMP, PROTO_ALL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proto
    */
   @VsoMethod
@@ -204,6 +217,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - PROTO_TCP, PROTO_UDP, PROTO_ICMP, PROTO_ALL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proto set the proto.
    */
   @VsoMethod
@@ -214,6 +228,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property src_ip of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcIp
    */
   @VsoMethod
@@ -224,6 +239,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property src_ip of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcIp set the srcIp.
    */
   @VsoMethod
@@ -234,6 +250,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property src_port of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return srcPort
    */
   @VsoMethod
@@ -244,6 +261,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property src_port of obj type iptablerule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param srcPort set the srcPort.
    */
   @VsoMethod
@@ -254,6 +272,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tag of obj type iptablerule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tag
    */
   @VsoMethod
@@ -264,6 +283,7 @@ public class IptableRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tag of obj type iptablerule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tag set the tag.
    */
   @VsoMethod

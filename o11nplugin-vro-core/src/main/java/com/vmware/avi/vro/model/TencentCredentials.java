@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TencentCredentials extends AviRestResource {
-  @JsonProperty("secret_id")
-  @JsonInclude(Include.NON_NULL)
-  private String secretId = null;
+    @JsonProperty("secret_id")
+    @JsonInclude(Include.NON_NULL)
+    private String secretId = null;
 
-  @JsonProperty("secret_key")
-  @JsonInclude(Include.NON_NULL)
-  private String secretKey = null;
+    @JsonProperty("secret_key")
+    @JsonInclude(Include.NON_NULL)
+    private String secretKey = null;
 
 
 
@@ -38,6 +38,7 @@ public class TencentCredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent secret id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretId
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class TencentCredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent secret id.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretId set the secretId.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class TencentCredentials extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tencent secret key.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretKey
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class TencentCredentials extends AviRestResource {
    * This is the setter method to the attribute.
    * Tencent secret key.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretKey set the secretKey.
    */
   @VsoMethod

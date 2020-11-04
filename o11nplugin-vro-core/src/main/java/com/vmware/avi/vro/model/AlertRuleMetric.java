@@ -25,23 +25,26 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertRuleMetric extends AviRestResource {
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer duration = null;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = null;
 
-  @JsonProperty("metric_id")
-  @JsonInclude(Include.NON_NULL)
-  private String metricId = null;
+    @JsonProperty("metric_id")
+    @JsonInclude(Include.NON_NULL)
+    private String metricId = null;
 
-  @JsonProperty("metric_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private AlertMetricThreshold metricThreshold = null;
+    @JsonProperty("metric_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private AlertMetricThreshold metricThreshold = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Evaluation window for the metrics.
+   * Allowed values are 600-86400.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
   @VsoMethod
@@ -52,6 +55,9 @@ public class AlertRuleMetric extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Evaluation window for the metrics.
+   * Allowed values are 600-86400.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
   @VsoMethod
@@ -64,6 +70,7 @@ public class AlertRuleMetric extends AviRestResource {
    * Metric id for the alert.
    * Eg.
    * L4_client.avg_complete_conns.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricId
    */
   @VsoMethod
@@ -76,6 +83,7 @@ public class AlertRuleMetric extends AviRestResource {
    * Metric id for the alert.
    * Eg.
    * L4_client.avg_complete_conns.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricId set the metricId.
    */
   @VsoMethod
@@ -86,6 +94,7 @@ public class AlertRuleMetric extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_threshold of obj type alertrulemetric field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricThreshold
    */
   @VsoMethod
@@ -96,6 +105,7 @@ public class AlertRuleMetric extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_threshold of obj type alertrulemetric field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricThreshold set the metricThreshold.
    */
   @VsoMethod

@@ -25,31 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SubnetRuntime extends AviRestResource {
-  @JsonProperty("free_ip_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer freeIpCount = null;
+    @JsonProperty("free_ip_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer freeIpCount = null;
 
-  @JsonProperty("ip_alloced")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAllocInfo> ipAlloced = null;
+    @JsonProperty("ip_alloced")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAllocInfo> ipAlloced = null;
 
-  @JsonProperty("prefix")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix prefix = null;
+    @JsonProperty("ip_range_runtimes")
+    @JsonInclude(Include.NON_NULL)
+    private List<StaticIpRangeRuntime> ipRangeRuntimes = null;
 
-  @JsonProperty("total_ip_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer totalIpCount = null;
+    @JsonProperty("prefix")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix prefix = null;
 
-  @JsonProperty("used_ip_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer usedIpCount = null;
+    @JsonProperty("total_ip_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalIpCount = null;
+
+    @JsonProperty("used_ip_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer usedIpCount = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property free_ip_count of obj type subnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return freeIpCount
    */
   @VsoMethod
@@ -60,6 +65,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property free_ip_count of obj type subnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param freeIpCount set the freeIpCount.
    */
   @VsoMethod
@@ -70,6 +76,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_alloced of obj type subnetruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAlloced
    */
   @VsoMethod
@@ -80,6 +87,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the ipAlloced
    * Placeholder for description of property ip_alloced of obj type subnetruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAlloced
    */
   @VsoMethod
@@ -90,6 +98,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the ipAlloced
    * Placeholder for description of property ip_alloced of obj type subnetruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAlloced
    */
   @VsoMethod
@@ -104,7 +113,49 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Static ip range runtime.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipRangeRuntimes
+   */
+  @VsoMethod
+  public List<StaticIpRangeRuntime> getIpRangeRuntimes() {
+    return ipRangeRuntimes;
+  }
+
+  /**
+   * This is the setter method. this will set the ipRangeRuntimes
+   * Static ip range runtime.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipRangeRuntimes
+   */
+  @VsoMethod
+  public void setIpRangeRuntimes(List<StaticIpRangeRuntime>  ipRangeRuntimes) {
+    this.ipRangeRuntimes = ipRangeRuntimes;
+  }
+
+  /**
+   * This is the setter method this will set the ipRangeRuntimes
+   * Static ip range runtime.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipRangeRuntimes
+   */
+  @VsoMethod
+  public SubnetRuntime addIpRangeRuntimesItem(StaticIpRangeRuntime ipRangeRuntimesItem) {
+    if (this.ipRangeRuntimes == null) {
+      this.ipRangeRuntimes = new ArrayList<StaticIpRangeRuntime>();
+    }
+    this.ipRangeRuntimes.add(ipRangeRuntimesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property prefix of obj type subnetruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
   @VsoMethod
@@ -115,6 +166,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property prefix of obj type subnetruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
   @VsoMethod
@@ -125,6 +177,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property total_ip_count of obj type subnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return totalIpCount
    */
   @VsoMethod
@@ -135,6 +188,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property total_ip_count of obj type subnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param totalIpCount set the totalIpCount.
    */
   @VsoMethod
@@ -145,6 +199,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property used_ip_count of obj type subnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usedIpCount
    */
   @VsoMethod
@@ -155,6 +210,7 @@ public class SubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property used_ip_count of obj type subnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param usedIpCount set the usedIpCount.
    */
   @VsoMethod
@@ -177,7 +233,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ipAlloced, objSubnetRuntime.ipAlloced)&&
   Objects.equals(this.totalIpCount, objSubnetRuntime.totalIpCount)&&
   Objects.equals(this.usedIpCount, objSubnetRuntime.usedIpCount)&&
-  Objects.equals(this.freeIpCount, objSubnetRuntime.freeIpCount);
+  Objects.equals(this.freeIpCount, objSubnetRuntime.freeIpCount)&&
+  Objects.equals(this.ipRangeRuntimes, objSubnetRuntime.ipRangeRuntimes);
 }
 
 @Override
@@ -186,6 +243,7 @@ public String toString() {
   sb.append("class SubnetRuntime {\n");
       sb.append("    freeIpCount: ").append(toIndentedString(freeIpCount)).append("\n");
         sb.append("    ipAlloced: ").append(toIndentedString(ipAlloced)).append("\n");
+        sb.append("    ipRangeRuntimes: ").append(toIndentedString(ipRangeRuntimes)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
         sb.append("    totalIpCount: ").append(toIndentedString(totalIpCount)).append("\n");
         sb.append("    usedIpCount: ").append(toIndentedString(usedIpCount)).append("\n");

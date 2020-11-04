@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CustomParams extends AviRestResource {
-  @JsonProperty("is_dynamic")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isDynamic = false;
+    @JsonProperty("is_dynamic")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isDynamic = false;
 
-  @JsonProperty("is_sensitive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isSensitive = false;
+    @JsonProperty("is_sensitive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isSensitive = false;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private String value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private String value = null;
 
 
 
@@ -89,6 +89,7 @@ public class CustomParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -99,6 +100,7 @@ public class CustomParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -109,6 +111,7 @@ public class CustomParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property value of obj type customparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -119,6 +122,7 @@ public class CustomParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property value of obj type customparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param value set the value.
    */
   @VsoMethod

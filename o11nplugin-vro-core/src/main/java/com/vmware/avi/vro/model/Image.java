@@ -27,65 +27,65 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Image extends AviRestResource {
-  @JsonProperty("cloud_info_values")
-  @JsonInclude(Include.NON_NULL)
-  private List<ImageCloudData> cloudInfoValues = null;
+    @JsonProperty("cloud_info_values")
+    @JsonInclude(Include.NON_NULL)
+    private List<ImageCloudData> cloudInfoValues = null;
 
-  @JsonProperty("controller_info")
-  @JsonInclude(Include.NON_NULL)
-  private PackageDetails controllerInfo = null;
+    @JsonProperty("controller_info")
+    @JsonInclude(Include.NON_NULL)
+    private PackageDetails controllerInfo = null;
 
-  @JsonProperty("controller_patch_name")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerPatchName = null;
+    @JsonProperty("controller_patch_name")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerPatchName = null;
 
-  @JsonProperty("controller_patch_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerPatchUuid = null;
+    @JsonProperty("controller_patch_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerPatchUuid = null;
 
-  @JsonProperty("migrations")
-  @JsonInclude(Include.NON_NULL)
-  private SupportedMigrations migrations = null;
+    @JsonProperty("migrations")
+    @JsonInclude(Include.NON_NULL)
+    private SupportedMigrations migrations = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("se_info")
-  @JsonInclude(Include.NON_NULL)
-  private PackageDetails seInfo = null;
+    @JsonProperty("se_info")
+    @JsonInclude(Include.NON_NULL)
+    private PackageDetails seInfo = null;
 
-  @JsonProperty("se_patch_name")
-  @JsonInclude(Include.NON_NULL)
-  private String sePatchName = null;
+    @JsonProperty("se_patch_name")
+    @JsonInclude(Include.NON_NULL)
+    private String sePatchName = null;
 
-  @JsonProperty("se_patch_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String sePatchUuid = null;
+    @JsonProperty("se_patch_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String sePatchUuid = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("uber_bundle")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean uberBundle = false;
+    @JsonProperty("uber_bundle")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean uberBundle = false;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -93,6 +93,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the cloud info specific to the base image.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudInfoValues
    */
   @VsoMethod
@@ -104,6 +105,7 @@ public class Image extends AviRestResource {
    * This is the setter method. this will set the cloudInfoValues
    * This field describes the cloud info specific to the base image.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudInfoValues
    */
   @VsoMethod
@@ -115,6 +117,7 @@ public class Image extends AviRestResource {
    * This is the setter method this will set the cloudInfoValues
    * This field describes the cloud info specific to the base image.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudInfoValues
    */
   @VsoMethod
@@ -131,6 +134,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controller package details.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerInfo
    */
   @VsoMethod
@@ -142,6 +146,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * Controller package details.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerInfo set the controllerInfo.
    */
   @VsoMethod
@@ -153,6 +158,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mandatory controller patch name that is applied along with this base image.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchName
    */
   @VsoMethod
@@ -164,6 +170,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * Mandatory controller patch name that is applied along with this base image.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchName set the controllerPatchName.
    */
   @VsoMethod
@@ -175,6 +182,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It references the controller-patch associated with the uber image.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchUuid
    */
   @VsoMethod
@@ -186,6 +194,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * It references the controller-patch associated with the uber image.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchUuid set the controllerPatchUuid.
    */
   @VsoMethod
@@ -197,6 +206,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field describes the api migration related information.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return migrations
    */
   @VsoMethod
@@ -208,6 +218,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * This field describes the api migration related information.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param migrations set the migrations.
    */
   @VsoMethod
@@ -219,6 +230,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -230,6 +242,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -241,6 +254,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se package details.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seInfo
    */
   @VsoMethod
@@ -252,6 +266,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * Se package details.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seInfo set the seInfo.
    */
   @VsoMethod
@@ -263,6 +278,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mandatory serviceengine patch name that is applied along with this base image.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchName
    */
   @VsoMethod
@@ -274,6 +290,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * Mandatory serviceengine patch name that is applied along with this base image.
    * Field introduced in 18.2.10, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchName set the sePatchName.
    */
   @VsoMethod
@@ -285,6 +302,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It references the service engine patch associated with the uber image.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePatchUuid
    */
   @VsoMethod
@@ -296,6 +314,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * It references the service engine patch associated with the uber image.
    * Field introduced in 18.2.8, 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePatchUuid set the sePatchUuid.
    */
   @VsoMethod
@@ -310,6 +329,7 @@ public class Image extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -324,6 +344,7 @@ public class Image extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_BAD_REQUEST, SYSERR_TEST1...
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -336,6 +357,7 @@ public class Image extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -348,6 +370,7 @@ public class Image extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -360,6 +383,7 @@ public class Image extends AviRestResource {
    * Type of the image patch/system.
    * Enum options - IMAGE_TYPE_PATCH, IMAGE_TYPE_SYSTEM.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -372,6 +396,7 @@ public class Image extends AviRestResource {
    * Type of the image patch/system.
    * Enum options - IMAGE_TYPE_PATCH, IMAGE_TYPE_SYSTEM.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -426,6 +451,7 @@ public class Image extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -437,6 +463,7 @@ public class Image extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

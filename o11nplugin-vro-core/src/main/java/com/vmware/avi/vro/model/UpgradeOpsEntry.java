@@ -26,37 +26,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeOpsEntry extends AviRestResource {
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("node_type")
-  @JsonInclude(Include.NON_NULL)
-  private String nodeType = null;
+    @JsonProperty("node_type")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeType = null;
 
-  @JsonProperty("obj_cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String objCloudRef = null;
+    @JsonProperty("obj_cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String objCloudRef = null;
 
-  @JsonProperty("params")
-  @JsonInclude(Include.NON_NULL)
-  private UpgradeOpsParam params = null;
+    @JsonProperty("params")
+    @JsonInclude(Include.NON_NULL)
+    private UpgradeOpsParam params = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("upgrade_info")
-  @JsonInclude(Include.NON_NULL)
-  private UpgradeStatusInfo upgradeInfo = null;
+    @JsonProperty("upgrade_info")
+    @JsonInclude(Include.NON_NULL)
+    private UpgradeStatusInfo upgradeInfo = null;
 
-  @JsonProperty("upgrade_ops")
-  @JsonInclude(Include.NON_NULL)
-  private String upgradeOps = null;
+    @JsonProperty("upgrade_ops")
+    @JsonInclude(Include.NON_NULL)
+    private String upgradeOps = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -64,6 +64,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the system such as cluster name, se group name and se name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the system such as cluster name, se group name and se name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -87,6 +89,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Describes the system  controller or se-group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nodeType
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Describes the system  controller or se-group or se.
    * Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nodeType set the nodeType.
    */
   @VsoMethod
@@ -111,6 +115,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objCloudRef
    */
   @VsoMethod
@@ -123,6 +128,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Cloud that this object belongs to.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objCloudRef set the objCloudRef.
    */
   @VsoMethod
@@ -134,6 +140,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Parameters associated with the upgrade ops request.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return params
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Parameters associated with the upgrade ops request.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param params set the params.
    */
   @VsoMethod
@@ -157,6 +165,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -169,6 +178,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -180,6 +190,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current upgrade status info for this node.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeInfo
    */
   @VsoMethod
@@ -191,6 +202,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Current upgrade status info for this node.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeInfo set the upgradeInfo.
    */
   @VsoMethod
@@ -203,6 +215,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Identifies the upgrade operations.
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeOps
    */
   @VsoMethod
@@ -215,6 +228,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * Identifies the upgrade operations.
    * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeOps set the upgradeOps.
    */
   @VsoMethod
@@ -226,6 +240,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid identifier for the system such as cluster, se group and se.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -237,6 +252,7 @@ public class UpgradeOpsEntry extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid identifier for the system such as cluster, se group and se.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

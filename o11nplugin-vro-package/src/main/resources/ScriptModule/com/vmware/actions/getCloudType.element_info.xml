@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">getHealthMonitorsList</entry>
+<entry key="name">getCloudType</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">59df9061-505a-479f-92f5-7bc4dc72fb3f</entry>
+<entry key="id">87c11f52-a470-477b-a3f5-c362497c5dd4</entry>
 </properties>

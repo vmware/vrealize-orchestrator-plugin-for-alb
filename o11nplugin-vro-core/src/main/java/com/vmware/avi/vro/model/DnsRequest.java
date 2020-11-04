@@ -26,53 +26,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsRequest extends AviRestResource {
-  @JsonProperty("additional_records_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer additionalRecordsCount = null;
+    @JsonProperty("additional_records_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer additionalRecordsCount = null;
 
-  @JsonProperty("answer_records_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer answerRecordsCount = null;
+    @JsonProperty("answer_records_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer answerRecordsCount = null;
 
-  @JsonProperty("authentic_data")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean authenticData = null;
+    @JsonProperty("authentic_data")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean authenticData = null;
 
-  @JsonProperty("checking_disabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean checkingDisabled = null;
+    @JsonProperty("checking_disabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean checkingDisabled = null;
 
-  @JsonProperty("client_location")
-  @JsonInclude(Include.NON_NULL)
-  private GeoLocation clientLocation = null;
+    @JsonProperty("client_location")
+    @JsonInclude(Include.NON_NULL)
+    private GeoLocation clientLocation = null;
 
-  @JsonProperty("identifier")
-  @JsonInclude(Include.NON_NULL)
-  private Integer identifier = null;
+    @JsonProperty("identifier")
+    @JsonInclude(Include.NON_NULL)
+    private Integer identifier = null;
 
-  @JsonProperty("nameserver_records_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer nameserverRecordsCount = null;
+    @JsonProperty("nameserver_records_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer nameserverRecordsCount = null;
 
-  @JsonProperty("opcode")
-  @JsonInclude(Include.NON_NULL)
-  private String opcode = null;
+    @JsonProperty("opcode")
+    @JsonInclude(Include.NON_NULL)
+    private String opcode = null;
 
-  @JsonProperty("opt_record")
-  @JsonInclude(Include.NON_NULL)
-  private DnsOptRecord optRecord = null;
+    @JsonProperty("opt_record")
+    @JsonInclude(Include.NON_NULL)
+    private DnsOptRecord optRecord = null;
 
-  @JsonProperty("query_or_response")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean queryOrResponse = null;
+    @JsonProperty("query_or_response")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean queryOrResponse = null;
 
-  @JsonProperty("question_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer questionCount = null;
+    @JsonProperty("question_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer questionCount = null;
 
-  @JsonProperty("recursion_desired")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean recursionDesired = null;
+    @JsonProperty("recursion_desired")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean recursionDesired = null;
 
 
 
@@ -80,6 +80,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of additional records.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return additionalRecordsCount
    */
   @VsoMethod
@@ -91,6 +92,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of additional records.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param additionalRecordsCount set the additionalRecordsCount.
    */
   @VsoMethod
@@ -102,6 +104,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of answer records in the client dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return answerRecordsCount
    */
   @VsoMethod
@@ -113,6 +116,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of answer records in the client dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param answerRecordsCount set the answerRecordsCount.
    */
   @VsoMethod
@@ -124,6 +128,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag indicating client understands ad bit and is interested in the value of ad bit in the response.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authenticData
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag indicating client understands ad bit and is interested in the value of ad bit in the response.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authenticData set the authenticData.
    */
   @VsoMethod
@@ -146,6 +152,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag indicating client does not want dnssec validation of the response.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checkingDisabled
    */
   @VsoMethod
@@ -157,6 +164,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag indicating client does not want dnssec validation of the response.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checkingDisabled set the checkingDisabled.
    */
   @VsoMethod
@@ -168,6 +176,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geo location of client.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientLocation
    */
   @VsoMethod
@@ -179,6 +188,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Geo location of client.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientLocation set the clientLocation.
    */
   @VsoMethod
@@ -190,6 +200,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Id of the dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifier
    */
   @VsoMethod
@@ -201,6 +212,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Id of the dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param identifier set the identifier.
    */
   @VsoMethod
@@ -212,6 +224,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of nameserver records in the client dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nameserverRecordsCount
    */
   @VsoMethod
@@ -223,6 +236,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of nameserver records in the client dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nameserverRecordsCount set the nameserverRecordsCount.
    */
   @VsoMethod
@@ -236,6 +250,7 @@ public class DnsRequest extends AviRestResource {
    * Query, notify, etc.
    * Enum options - DNS_OPCODE_QUERY, DNS_OPCODE_IQUERY, DNS_OPCODE_STATUS, DNS_OPCODE_NOTIFY, DNS_OPCODE_UPDATE.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return opcode
    */
   @VsoMethod
@@ -249,6 +264,7 @@ public class DnsRequest extends AviRestResource {
    * Query, notify, etc.
    * Enum options - DNS_OPCODE_QUERY, DNS_OPCODE_IQUERY, DNS_OPCODE_STATUS, DNS_OPCODE_NOTIFY, DNS_OPCODE_UPDATE.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param opcode set the opcode.
    */
   @VsoMethod
@@ -260,6 +276,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Opt resource records in the request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return optRecord
    */
   @VsoMethod
@@ -271,6 +288,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Opt resource records in the request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param optRecord set the optRecord.
    */
   @VsoMethod
@@ -282,6 +300,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag indicating request is a client query (false) or server response (true).
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryOrResponse
    */
   @VsoMethod
@@ -293,6 +312,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag indicating request is a client query (false) or server response (true).
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryOrResponse set the queryOrResponse.
    */
   @VsoMethod
@@ -304,6 +324,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of questions in the client dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return questionCount
    */
   @VsoMethod
@@ -315,6 +336,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of questions in the client dns request.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param questionCount set the questionCount.
    */
   @VsoMethod
@@ -326,6 +348,7 @@ public class DnsRequest extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag indicating client request for recursive resolution.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recursionDesired
    */
   @VsoMethod
@@ -337,6 +360,7 @@ public class DnsRequest extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag indicating client request for recursive resolution.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recursionDesired set the recursionDesired.
    */
   @VsoMethod

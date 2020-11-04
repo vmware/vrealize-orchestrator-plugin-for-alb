@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AlertRule extends AviRestResource {
-  @JsonProperty("conn_app_log_rule")
-  @JsonInclude(Include.NON_NULL)
-  private AlertFilter connAppLogRule = null;
+    @JsonProperty("conn_app_log_rule")
+    @JsonInclude(Include.NON_NULL)
+    private AlertFilter connAppLogRule = null;
 
-  @JsonProperty("event_match_filter")
-  @JsonInclude(Include.NON_NULL)
-  private String eventMatchFilter = null;
+    @JsonProperty("event_match_filter")
+    @JsonInclude(Include.NON_NULL)
+    private String eventMatchFilter = null;
 
-  @JsonProperty("metrics_rule")
-  @JsonInclude(Include.NON_NULL)
-  private List<AlertRuleMetric> metricsRule = null;
+    @JsonProperty("metrics_rule")
+    @JsonInclude(Include.NON_NULL)
+    private List<AlertRuleMetric> metricsRule = null;
 
-  @JsonProperty("operator")
-  @JsonInclude(Include.NON_NULL)
-  private String operator = "OPERATOR_AND";
+    @JsonProperty("operator")
+    @JsonInclude(Include.NON_NULL)
+    private String operator = "OPERATOR_AND";
 
-  @JsonProperty("sys_event_rule")
-  @JsonInclude(Include.NON_NULL)
-  private List<AlertRuleEvent> sysEventRule = null;
+    @JsonProperty("sys_event_rule")
+    @JsonInclude(Include.NON_NULL)
+    private List<AlertRuleEvent> sysEventRule = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property conn_app_log_rule of obj type alertrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connAppLogRule
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property conn_app_log_rule of obj type alertrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connAppLogRule set the connAppLogRule.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property event_match_filter of obj type alertrule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventMatchFilter
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property event_match_filter of obj type alertrule field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param eventMatchFilter set the eventMatchFilter.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_rule of obj type alertrule field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRule
    */
   @VsoMethod
@@ -100,6 +105,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method. this will set the metricsRule
    * Placeholder for description of property metrics_rule of obj type alertrule field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRule
    */
   @VsoMethod
@@ -110,6 +116,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method this will set the metricsRule
    * Placeholder for description of property metrics_rule of obj type alertrule field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsRule
    */
   @VsoMethod
@@ -125,7 +132,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - OPERATOR_AND, OPERATOR_OR.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OPERATOR_AND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OPERATOR_AND".
    * @return operator
    */
   @VsoMethod
@@ -136,7 +143,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - OPERATOR_AND, OPERATOR_OR.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OPERATOR_AND.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OPERATOR_AND".
    * @param operator set the operator.
    */
   @VsoMethod
@@ -147,6 +154,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property sys_event_rule of obj type alertrule field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysEventRule
    */
   @VsoMethod
@@ -157,6 +165,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method. this will set the sysEventRule
    * Placeholder for description of property sys_event_rule of obj type alertrule field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysEventRule
    */
   @VsoMethod
@@ -167,6 +176,7 @@ public class AlertRule extends AviRestResource {
   /**
    * This is the setter method this will set the sysEventRule
    * Placeholder for description of property sys_event_rule of obj type alertrule field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sysEventRule
    */
   @VsoMethod

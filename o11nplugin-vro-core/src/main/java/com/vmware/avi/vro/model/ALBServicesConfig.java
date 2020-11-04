@@ -29,45 +29,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesConfig extends AviRestResource {
-  @JsonProperty("asset_contact")
-  @JsonInclude(Include.NON_NULL)
-  private ALBServicesUser assetContact = null;
+    @JsonProperty("asset_contact")
+    @JsonInclude(Include.NON_NULL)
+    private ALBServicesUser assetContact = null;
 
-  @JsonProperty("feature_opt_in_status")
-  @JsonInclude(Include.NON_NULL)
-  private PortalFeatureOptIn featureOptInStatus = null;
+    @JsonProperty("feature_opt_in_status")
+    @JsonInclude(Include.NON_NULL)
+    private PortalFeatureOptIn featureOptInStatus = null;
 
-  @JsonProperty("ip_reputation_config")
-  @JsonInclude(Include.NON_NULL)
-  private IpReputationConfig ipReputationConfig = null;
+    @JsonProperty("ip_reputation_config")
+    @JsonInclude(Include.NON_NULL)
+    private IpReputationConfig ipReputationConfig = null;
 
-  @JsonProperty("polling_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer pollingInterval = 10;
+    @JsonProperty("mode")
+    @JsonInclude(Include.NON_NULL)
+    private String mode = "SALESFORCE";
 
-  @JsonProperty("portal_url")
-  @JsonInclude(Include.NON_NULL)
-  private String portalUrl = null;
+    @JsonProperty("polling_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer pollingInterval = 10;
 
-  @JsonProperty("proactive_support_defaults")
-  @JsonInclude(Include.NON_NULL)
-  private ProactiveSupportDefaults proactiveSupportDefaults = null;
+    @JsonProperty("portal_url")
+    @JsonInclude(Include.NON_NULL)
+    private String portalUrl = null;
 
-  @JsonProperty("split_proxy_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private ProxyConfiguration splitProxyConfiguration = null;
+    @JsonProperty("proactive_support_defaults")
+    @JsonInclude(Include.NON_NULL)
+    private ProactiveSupportDefaults proactiveSupportDefaults = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("split_proxy_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private ProxyConfiguration splitProxyConfiguration = null;
 
-  @JsonProperty("use_split_proxy")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useSplitProxy = false;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("use_split_proxy")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useSplitProxy = false;
+
+    @JsonProperty("use_tls")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useTls = true;
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -75,6 +83,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about the default contact for this controller cluster.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assetContact
    */
   @VsoMethod
@@ -86,6 +95,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Information about the default contact for this controller cluster.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assetContact set the assetContact.
    */
   @VsoMethod
@@ -97,6 +107,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Information about the portal features opted in for controller.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return featureOptInStatus
    */
   @VsoMethod
@@ -108,6 +119,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Information about the portal features opted in for controller.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param featureOptInStatus set the featureOptInStatus.
    */
   @VsoMethod
@@ -119,6 +131,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values to be used for ip reputation sync.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationConfig
    */
   @VsoMethod
@@ -130,11 +143,38 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values to be used for ip reputation sync.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationConfig set the ipReputationConfig.
    */
   @VsoMethod
   public void setIpReputationConfig(IpReputationConfig ipReputationConfig) {
     this.ipReputationConfig = ipReputationConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Mode helps log collection and upload.
+   * Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SALESFORCE".
+   * @return mode
+   */
+  @VsoMethod
+  public String getMode() {
+    return mode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mode helps log collection and upload.
+   * Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SALESFORCE".
+   * @param mode set the mode.
+   */
+  @VsoMethod
+  public void setMode(String  mode) {
+    this.mode = mode;
   }
 
   /**
@@ -167,6 +207,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The fqdn or ip address of the customer portal.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portalUrl
    */
   @VsoMethod
@@ -178,6 +219,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * The fqdn or ip address of the customer portal.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portalUrl set the portalUrl.
    */
   @VsoMethod
@@ -189,6 +231,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default values to be used during proactive case creation and techsupport attachment.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proactiveSupportDefaults
    */
   @VsoMethod
@@ -200,6 +243,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Default values to be used during proactive case creation and techsupport attachment.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proactiveSupportDefaults set the proactiveSupportDefaults.
    */
   @VsoMethod
@@ -211,6 +255,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Split proxy configuration to connect external pulse services.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return splitProxyConfiguration
    */
   @VsoMethod
@@ -222,6 +267,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Split proxy configuration to connect external pulse services.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param splitProxyConfiguration set the splitProxyConfiguration.
    */
   @VsoMethod
@@ -274,7 +320,32 @@ public class ALBServicesConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Secure the controller to pulse communication over tls.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return useTls
+   */
+  @VsoMethod
+  public Boolean getUseTls() {
+    return useTls;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Secure the controller to pulse communication over tls.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param useTls set the useTls.
+   */
+  @VsoMethod
+  public void setUseTls(Boolean  useTls) {
+    this.useTls = useTls;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -285,6 +356,7 @@ public class ALBServicesConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -314,7 +386,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.proactiveSupportDefaults, objALBServicesConfig.proactiveSupportDefaults)&&
   Objects.equals(this.useSplitProxy, objALBServicesConfig.useSplitProxy)&&
   Objects.equals(this.splitProxyConfiguration, objALBServicesConfig.splitProxyConfiguration)&&
-  Objects.equals(this.ipReputationConfig, objALBServicesConfig.ipReputationConfig);
+  Objects.equals(this.ipReputationConfig, objALBServicesConfig.ipReputationConfig)&&
+  Objects.equals(this.useTls, objALBServicesConfig.useTls)&&
+  Objects.equals(this.mode, objALBServicesConfig.mode);
 }
 
 @Override
@@ -324,11 +398,13 @@ public String toString() {
       sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
         sb.append("    portalUrl: ").append(toIndentedString(portalUrl)).append("\n");
         sb.append("    proactiveSupportDefaults: ").append(toIndentedString(proactiveSupportDefaults)).append("\n");
         sb.append("    splitProxyConfiguration: ").append(toIndentedString(splitProxyConfiguration)).append("\n");
             sb.append("    useSplitProxy: ").append(toIndentedString(useSplitProxy)).append("\n");
+        sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();

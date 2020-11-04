@@ -24,27 +24,28 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VISeVmIpConfParams extends AviRestResource {
-  @JsonProperty("default_gw")
-  @JsonInclude(Include.NON_NULL)
-  private String defaultGw = null;
+    @JsonProperty("default_gw")
+    @JsonInclude(Include.NON_NULL)
+    private String defaultGw = null;
 
-  @JsonProperty("mgmt_ip_addr")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtIpAddr = null;
+    @JsonProperty("mgmt_ip_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtIpAddr = null;
 
-  @JsonProperty("mgmt_ip_type")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtIpType = null;
+    @JsonProperty("mgmt_ip_type")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtIpType = null;
 
-  @JsonProperty("mgmt_net_mask")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetMask = null;
+    @JsonProperty("mgmt_net_mask")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetMask = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property default_gw of obj type visevmipconfparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return defaultGw
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property default_gw of obj type visevmipconfparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param defaultGw set the defaultGw.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_ip_addr of obj type visevmipconfparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtIpAddr
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmt_ip_addr of obj type visevmipconfparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtIpAddr set the mgmtIpAddr.
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - VNIC_IP_TYPE_DHCP, VNIC_IP_TYPE_STATIC.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtIpType
    */
   @VsoMethod
@@ -95,6 +100,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - VNIC_IP_TYPE_DHCP, VNIC_IP_TYPE_STATIC.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtIpType set the mgmtIpType.
    */
   @VsoMethod
@@ -105,6 +111,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_net_mask of obj type visevmipconfparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetMask
    */
   @VsoMethod
@@ -115,6 +122,7 @@ public class VISeVmIpConfParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmt_net_mask of obj type visevmipconfparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetMask set the mgmtNetMask.
    */
   @VsoMethod

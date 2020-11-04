@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPInBandManagement extends AviRestResource {
-  @JsonProperty("vpc_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcNetworkName = null;
+    @JsonProperty("vpc_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcNetworkName = null;
 
-  @JsonProperty("vpc_project_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcProjectId = null;
+    @JsonProperty("vpc_project_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcProjectId = null;
 
-  @JsonProperty("vpc_subnet_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcSubnetName = null;
+    @JsonProperty("vpc_subnet_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcSubnetName = null;
 
 
 
@@ -42,6 +42,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcNetworkName
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine network name.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcNetworkName set the vpcNetworkName.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class GCPInBandManagement extends AviRestResource {
    * Project id of the service engine network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcProjectId
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class GCPInBandManagement extends AviRestResource {
    * Project id of the service engine network.
    * By default, service engine project id will be used.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcProjectId set the vpcProjectId.
    */
   @VsoMethod
@@ -88,6 +92,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcSubnetName
    */
   @VsoMethod
@@ -99,6 +104,7 @@ public class GCPInBandManagement extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine network subnet name.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcSubnetName set the vpcSubnetName.
    */
   @VsoMethod

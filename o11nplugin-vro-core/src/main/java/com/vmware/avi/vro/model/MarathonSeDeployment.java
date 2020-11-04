@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MarathonSeDeployment extends AviRestResource {
-  @JsonProperty("docker_image")
-  @JsonInclude(Include.NON_NULL)
-  private String dockerImage = "fedora";
+    @JsonProperty("docker_image")
+    @JsonInclude(Include.NON_NULL)
+    private String dockerImage = "fedora";
 
-  @JsonProperty("host_os")
-  @JsonInclude(Include.NON_NULL)
-  private String hostOs = "COREOS";
+    @JsonProperty("host_os")
+    @JsonInclude(Include.NON_NULL)
+    private String hostOs = "COREOS";
 
-  @JsonProperty("resource_roles")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> resourceRoles = null;
+    @JsonProperty("resource_roles")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> resourceRoles = null;
 
-  @JsonProperty("uris")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> uris = null;
+    @JsonProperty("uris")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> uris = null;
 
 
 
@@ -46,7 +46,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Docker image to be used for avi se installation e.g.
    * Fedora, ubuntu.
-   * Default value when not specified in API or module is interpreted by Avi Controller as fedora.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "fedora".
    * @return dockerImage
    */
   @VsoMethod
@@ -58,7 +58,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Docker image to be used for avi se installation e.g.
    * Fedora, ubuntu.
-   * Default value when not specified in API or module is interpreted by Avi Controller as fedora.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "fedora".
    * @param dockerImage set the dockerImage.
    */
   @VsoMethod
@@ -70,7 +70,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
-   * Default value when not specified in API or module is interpreted by Avi Controller as COREOS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "COREOS".
    * @return hostOs
    */
   @VsoMethod
@@ -82,7 +82,7 @@ public class MarathonSeDeployment extends AviRestResource {
    * This is the setter method to the attribute.
    * Host os distribution e.g.
    * Coreos, ubuntu, redhat.
-   * Default value when not specified in API or module is interpreted by Avi Controller as COREOS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "COREOS".
    * @param hostOs set the hostOs.
    */
   @VsoMethod
@@ -93,6 +93,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Accepted resource roles for ses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRoles
    */
   @VsoMethod
@@ -103,6 +104,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method. this will set the resourceRoles
    * Accepted resource roles for ses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRoles
    */
   @VsoMethod
@@ -113,6 +115,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method this will set the resourceRoles
    * Accepted resource roles for ses.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceRoles
    */
   @VsoMethod
@@ -128,6 +131,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uris to be resolved for starting the application.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uris
    */
   @VsoMethod
@@ -138,6 +142,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method. this will set the uris
    * Uris to be resolved for starting the application.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uris
    */
   @VsoMethod
@@ -148,6 +153,7 @@ public class MarathonSeDeployment extends AviRestResource {
   /**
    * This is the setter method this will set the uris
    * Uris to be resolved for starting the application.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uris
    */
   @VsoMethod

@@ -24,41 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafCRS extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRuleGroup> groups = null;
+    @JsonProperty("groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleGroup> groups = null;
 
-  @JsonProperty("integrity")
-  @JsonInclude(Include.NON_NULL)
-  private String integrity = null;
+    @JsonProperty("integrity")
+    @JsonInclude(Include.NON_NULL)
+    private String integrity = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("release_date")
-  @JsonInclude(Include.NON_NULL)
-  private String releaseDate = null;
+    @JsonProperty("release_date")
+    @JsonInclude(Include.NON_NULL)
+    private String releaseDate = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -66,6 +66,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A short description of this ruleset.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * A short description of this ruleset.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method. this will set the groups
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -110,6 +114,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method this will set the groups
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -126,6 +131,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Integrity protection value.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return integrity
    */
   @VsoMethod
@@ -137,6 +143,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * Integrity protection value.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param integrity set the integrity.
    */
   @VsoMethod
@@ -148,6 +155,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The name of this ruleset object.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -159,6 +167,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * The name of this ruleset object.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -170,6 +179,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The release date of this version in rfc 3339 / iso 8601 format.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return releaseDate
    */
   @VsoMethod
@@ -181,6 +191,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * The release date of this version in rfc 3339 / iso 8601 format.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param releaseDate set the releaseDate.
    */
   @VsoMethod
@@ -193,6 +204,7 @@ public class WafCRS extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -205,6 +217,7 @@ public class WafCRS extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -234,6 +247,7 @@ public class WafCRS extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -244,6 +258,7 @@ public class WafCRS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -255,6 +270,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The version of this ruleset object.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -266,6 +282,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method to the attribute.
    * The version of this ruleset object.
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeGeoDbDetails extends AviRestResource {
-  @JsonProperty("file_name")
-  @JsonInclude(Include.NON_NULL)
-  private String fileName = null;
+    @JsonProperty("file_name")
+    @JsonInclude(Include.NON_NULL)
+    private String fileName = null;
 
-  @JsonProperty("geo_db_profile_name")
-  @JsonInclude(Include.NON_NULL)
-  private String geoDbProfileName = null;
+    @JsonProperty("geo_db_profile_name")
+    @JsonInclude(Include.NON_NULL)
+    private String geoDbProfileName = null;
 
-  @JsonProperty("geo_db_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String geoDbProfileRef = null;
+    @JsonProperty("geo_db_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String geoDbProfileRef = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
-  @JsonProperty("vip_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vipId = null;
+    @JsonProperty("vip_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vipId = null;
 
-  @JsonProperty("virtual_service")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualService = null;
+    @JsonProperty("virtual_service")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualService = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Geo db file name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fileName
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class SeGeoDbDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Geo db file name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fileName set the fileName.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class SeGeoDbDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the gslb geo db profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoDbProfileName
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class SeGeoDbDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the gslb geo db profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoDbProfileName set the geoDbProfileName.
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the gslb geo db profile.
    * It is a reference to an object of type gslbgeodbprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return geoDbProfileRef
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the gslb geo db profile.
    * It is a reference to an object of type gslbgeodbprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param geoDbProfileRef set the geoDbProfileRef.
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for gslb geo db failure.
    * Enum options - NO_ERROR, FILE_ERROR, FILE_FORMAT_ERROR, FILE_NO_RESOURCES.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for gslb geo db failure.
    * Enum options - NO_ERROR, FILE_ERROR, FILE_FORMAT_ERROR, FILE_NO_RESOURCES.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -142,6 +150,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -153,6 +162,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod
@@ -163,6 +173,7 @@ public class SeGeoDbDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vip id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipId
    */
   @VsoMethod
@@ -173,6 +184,7 @@ public class SeGeoDbDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vip id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipId set the vipId.
    */
   @VsoMethod
@@ -184,6 +196,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualService
    */
   @VsoMethod
@@ -195,6 +208,7 @@ public class SeGeoDbDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service name.
    * It is a reference to an object of type virtualservice.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualService set the virtualService.
    */
   @VsoMethod

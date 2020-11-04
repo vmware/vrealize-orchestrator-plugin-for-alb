@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CdpLldpInfo extends AviRestResource {
-  @JsonProperty("chassis")
-  @JsonInclude(Include.NON_NULL)
-  private String chassis = null;
+    @JsonProperty("chassis")
+    @JsonInclude(Include.NON_NULL)
+    private String chassis = null;
 
-  @JsonProperty("device")
-  @JsonInclude(Include.NON_NULL)
-  private String device = null;
+    @JsonProperty("device")
+    @JsonInclude(Include.NON_NULL)
+    private String device = null;
 
-  @JsonProperty("mgmtaddr")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtaddr = null;
+    @JsonProperty("mgmtaddr")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtaddr = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private String port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private String port = null;
 
-  @JsonProperty("switch_info_type")
-  @JsonInclude(Include.NON_NULL)
-  private String switchInfoType = null;
+    @JsonProperty("switch_info_type")
+    @JsonInclude(Include.NON_NULL)
+    private String switchInfoType = null;
 
-  @JsonProperty("system_name")
-  @JsonInclude(Include.NON_NULL)
-  private String systemName = null;
+    @JsonProperty("system_name")
+    @JsonInclude(Include.NON_NULL)
+    private String systemName = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property chassis of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return chassis
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property chassis of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param chassis set the chassis.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property device of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return device
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property device of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param device set the device.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmtaddr of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtaddr
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmtaddr of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtaddr set the mgmtaddr.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property port of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property port of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - CDP, LLDP, NOT_APPLICABLE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return switchInfoType
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - CDP, LLDP, NOT_APPLICABLE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param switchInfoType set the switchInfoType.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property system_name of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemName
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class CdpLldpInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property system_name of obj type cdplldpinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param systemName set the systemName.
    */
   @VsoMethod

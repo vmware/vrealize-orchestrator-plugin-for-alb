@@ -3,7 +3,7 @@
 <properties>
 	<comment>Exported from [server]</comment>
 	<entry key="categoryPath">Library.Avi.VRA</entry>
-	<entry key="name">Create Virtual service</entry>
+	<entry key="name">Create Virtual Service Cloud Agnostic LB</entry>
 	<entry key="type">Workflow</entry>
 	<entry key="id">73a23dce-5ad0-4d6b-b85e-27a81a9b6abd</entry>
 </properties>

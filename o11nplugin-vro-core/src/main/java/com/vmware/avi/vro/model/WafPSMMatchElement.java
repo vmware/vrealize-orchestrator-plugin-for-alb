@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPSMMatchElement extends AviRestResource {
-  @JsonProperty("excluded")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean excluded = false;
+    @JsonProperty("excluded")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean excluded = false;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("sub_element")
-  @JsonInclude(Include.NON_NULL)
-  private String subElement = null;
+    @JsonProperty("sub_element")
+    @JsonInclude(Include.NON_NULL)
+    private String subElement = null;
 
 
 
@@ -70,6 +70,7 @@ public class WafPSMMatchElement extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match_element index.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class WafPSMMatchElement extends AviRestResource {
    * This is the setter method to the attribute.
    * Match_element index.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -96,6 +98,7 @@ public class WafPSMMatchElement extends AviRestResource {
    * Enum options - WAF_VARIABLE_ARGS, WAF_VARIABLE_ARGS_GET, WAF_VARIABLE_ARGS_POST, WAF_VARIABLE_ARGS_NAMES, WAF_VARIABLE_REQUEST_COOKIES,
    * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -111,6 +114,7 @@ public class WafPSMMatchElement extends AviRestResource {
    * Enum options - WAF_VARIABLE_ARGS, WAF_VARIABLE_ARGS_GET, WAF_VARIABLE_ARGS_POST, WAF_VARIABLE_ARGS_NAMES, WAF_VARIABLE_REQUEST_COOKIES,
    * WAF_VARIABLE_QUERY_STRING, WAF_VARIABLE_REQUEST_BASENAME, WAF_VARIABLE_REQUEST_URI, WAF_VARIABLE_PATH_INFO.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -123,6 +127,7 @@ public class WafPSMMatchElement extends AviRestResource {
    * The name of the request collection element.
    * This can be empty, if we address the whole collection or a scalar element.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subElement
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class WafPSMMatchElement extends AviRestResource {
    * The name of the request collection element.
    * This can be empty, if we address the whole collection or a scalar element.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subElement set the subElement.
    */
   @VsoMethod

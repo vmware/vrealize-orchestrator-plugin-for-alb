@@ -26,25 +26,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4Rule extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private L4RuleAction action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private L4RuleAction action = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private L4RuleMatchTarget match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private L4RuleMatchTarget match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
@@ -52,6 +52,7 @@ public class L4Rule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action to be performed upon successful rule match.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class L4Rule extends AviRestResource {
    * This is the setter method to the attribute.
    * Action to be performed upon successful rule match.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -98,6 +100,7 @@ public class L4Rule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the rule.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -109,6 +112,7 @@ public class L4Rule extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the rule.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -120,6 +124,7 @@ public class L4Rule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match criteria of the rule.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -131,6 +136,7 @@ public class L4Rule extends AviRestResource {
    * This is the setter method to the attribute.
    * Match criteria of the rule.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -142,6 +148,7 @@ public class L4Rule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -153,6 +160,7 @@ public class L4Rule extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

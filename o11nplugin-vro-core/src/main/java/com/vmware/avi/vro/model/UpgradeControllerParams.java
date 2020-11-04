@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeControllerParams extends AviRestResource {
-  @JsonProperty("controller_patch_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerPatchRef = null;
+    @JsonProperty("controller_patch_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerPatchRef = null;
 
-  @JsonProperty("image_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String imageRef = null;
+    @JsonProperty("image_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String imageRef = null;
 
-  @JsonProperty("skip_warnings")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipWarnings = false;
+    @JsonProperty("skip_warnings")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipWarnings = false;
 
 
 
@@ -43,6 +43,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerPatchRef
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying controller patch image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerPatchRef set the controllerPatchRef.
    */
   @VsoMethod
@@ -67,6 +69,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imageRef
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class UpgradeControllerParams extends AviRestResource {
    * Image uuid for identifying base image.
    * It is a reference to an object of type image.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imageRef set the imageRef.
    */
   @VsoMethod

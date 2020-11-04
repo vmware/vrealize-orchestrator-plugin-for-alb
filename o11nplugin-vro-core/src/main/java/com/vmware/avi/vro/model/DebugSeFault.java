@@ -24,37 +24,37 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugSeFault extends AviRestResource {
-  @JsonProperty("faults")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeFault> faults = null;
+    @JsonProperty("faults")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeFault> faults = null;
 
-  @JsonProperty("se_malloc_fail_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seMallocFailFrequency = 0;
+    @JsonProperty("se_malloc_fail_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seMallocFailFrequency = 0;
 
-  @JsonProperty("se_malloc_fail_type")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seMallocFailType = 0;
+    @JsonProperty("se_malloc_fail_type")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seMallocFailType = 0;
 
-  @JsonProperty("se_mbuf_cl_sanity")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seMbufClSanity = false;
+    @JsonProperty("se_mbuf_cl_sanity")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seMbufClSanity = false;
 
-  @JsonProperty("se_shm_malloc_fail_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seShmMallocFailFrequency = 0;
+    @JsonProperty("se_shm_malloc_fail_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seShmMallocFailFrequency = 0;
 
-  @JsonProperty("se_shm_malloc_fail_type")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seShmMallocFailType = 0;
+    @JsonProperty("se_shm_malloc_fail_type")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seShmMallocFailType = 0;
 
-  @JsonProperty("se_waf_alloc_fail_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seWafAllocFailFrequency = 0;
+    @JsonProperty("se_waf_alloc_fail_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seWafAllocFailFrequency = 0;
 
-  @JsonProperty("se_waf_learning_alloc_fail_frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seWafLearningAllocFailFrequency = 0;
+    @JsonProperty("se_waf_learning_alloc_fail_frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seWafLearningAllocFailFrequency = 0;
 
 
 
@@ -62,6 +62,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Set of faults to enable/disable.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faults
    */
   @VsoMethod
@@ -73,6 +74,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method. this will set the faults
    * Set of faults to enable/disable.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faults
    */
   @VsoMethod
@@ -84,6 +86,7 @@ public class DebugSeFault extends AviRestResource {
    * This is the setter method this will set the faults
    * Set of faults to enable/disable.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return faults
    */
   @VsoMethod

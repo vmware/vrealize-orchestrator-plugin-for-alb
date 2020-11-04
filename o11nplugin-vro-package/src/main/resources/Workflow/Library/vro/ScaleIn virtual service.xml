@@ -3,13 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="8d6d0b08-eea2-403d-a0ab-6d0a1a6ab10b" version="0.0.2"
+	id="8d6d0b08-eea2-403d-a0ab-6d0a1a6ab10b" version="0.0.4"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
-	<display-name><![CDATA[ScaleIn virtual service]]></display-name>
+	<display-name><![CDATA[ScaleIn Virtual Service]]></display-name>
 	<position y="50.0" x="100.0"></position>
 	<input>
-		<param name="virtualServiceObject" type="Avi:VirtualService"></param>
+		<param name="virtual_service_object" type="Avi:VirtualService">
+			<description><![CDATA[virtual_service_object]]></description>
+		</param>
 	</input>
 	<workflow-item name="item0" type="end" end-mode="0">
 		<position y="45.40909090909091" x="384.5"></position>
@@ -44,14 +46,14 @@ try{
 }]]></script>
 		<in-binding>
 			<bind name="virtualServiceObject" type="Avi:VirtualService"
-				export-name="virtualServiceObject"></bind>
+				export-name="virtual_service_object"></bind>
 		</in-binding>
 		<out-binding></out-binding>
 		<position y="55.40909090909091" x="204.5"></position>
 	</workflow-item>
 	<presentation>
-		<p-param name="virtualServiceObject">
-			<desc><![CDATA[virtualServiceObject]]></desc>
+		<p-param name="virtual_service_object">
+			<desc><![CDATA[virtual_service_object]]></desc>
 		</p-param>
 	</presentation>
 </workflow>

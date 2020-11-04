@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="getVirtualServiceDetailsNumber" result-type="number"
+	api-version="6.0.0" id="08cc75f3-bd2a-4cd9-89f9-7cfa3165d412"
+	version="0.0.2" allowed-operations="vfe">
+	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
+	]]></param>
+	<param n="object" t="string"><![CDATA[
+	]]></param>
+	<param n="field" t="string"><![CDATA[
+	]]></param>
+	<script encoded="false"><![CDATA[if(vsObject!=null){
+    var url=vsObject.getUrl();
+    var controller=url.substring(url.indexOf("//")+2, url.indexOf("/api"));
+    var aviVroClient=null;
+    vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+    for each(vroClient in vroClientArray){
+            if(vroClient !=null){
+            vroController=vroClient.cred.controller;
+            if(vroController==controller){
+            aviVroClient=vroClient;
+            }
+        }	
+    }
+try{	
+	if(aviVroClient!=null)
+	{
+		if(object=="virtualservice"){
+		    if(field == "service_port"){
+				var myAviService = new AviService() ;
+				myAviService=vsObject.getServices()[0];
+				return myAviService.getPort();
+			}
+		}else if(object=="pool"){
+			var poolref=vsObject.getPoolRef();	
+			if(poolref!=null){
+				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+				var poolObject = new AviPool() ;
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var servers = poolObject.servers;		
+				var port;
+				for each(index in servers){
+					port = index.port;
+				}
+				return port
+	
+			}
+		}else{
+			var poolref=vsObject.getPoolRef();	
+			if(poolref!=null){
+				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
+				var poolObject = new AviPool() ;
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var hmArray=poolObject.getHealthMonitorRefs();
+				var HealthMonitor_ref=hmArray[0];
+				var hmUuid =HealthMonitor_ref.substring(HealthMonitor_ref.indexOf("/healthmonitor-")+1, HealthMonitor_ref.indexOf("#"));
+				var hmObject = new AviHealthMonitor();
+				hmObject=aviVroClient.getObjectByUUID('healthmonitor',hmUuid);
+				if(field=="monitor_port"){
+					return monitor_port=hmObject.getMonitorPort();
+				}else if(field=="time_out"){
+					return hmObject.getReceiveTimeout();
+				}else if(field=="send_interval"){
+					return hmObject.getSendInterval();
+				}else if(field=="successful_check"){
+					return hmObject.getSuccessfulChecks();
+				}else{
+					return hmObject.getFailedChecks();
+				}
+				
+			}
+		
+		}
+	}
+    }catch(e){
+	    System.log("Error occured while getting object detail: "+e)
+    }
+}]]></script>
+</dunes-script-module>

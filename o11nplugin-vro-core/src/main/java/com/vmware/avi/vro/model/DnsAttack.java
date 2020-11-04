@@ -25,25 +25,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsAttack extends AviRestResource {
-  @JsonProperty("attack_vector")
-  @JsonInclude(Include.NON_NULL)
-  private String attackVector = null;
+    @JsonProperty("attack_vector")
+    @JsonInclude(Include.NON_NULL)
+    private String attackVector = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("max_mitigation_age")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxMitigationAge = 60;
+    @JsonProperty("max_mitigation_age")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxMitigationAge = 60;
 
-  @JsonProperty("mitigation_action")
-  @JsonInclude(Include.NON_NULL)
-  private AttackMitigationAction mitigationAction = null;
+    @JsonProperty("mitigation_action")
+    @JsonInclude(Include.NON_NULL)
+    private AttackMitigationAction mitigationAction = null;
 
-  @JsonProperty("threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer threshold = null;
+    @JsonProperty("threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer threshold = null;
 
 
 
@@ -52,6 +52,7 @@ public class DnsAttack extends AviRestResource {
    * The dns attack vector.
    * Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attackVector
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class DnsAttack extends AviRestResource {
    * The dns attack vector.
    * Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attackVector set the attackVector.
    */
   @VsoMethod
@@ -101,6 +103,7 @@ public class DnsAttack extends AviRestResource {
    * Allowed values are 1-4294967295.
    * Special values are 0- 'blocked for ever'.
    * Field introduced in 18.2.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return maxMitigationAge
    */
@@ -115,6 +118,7 @@ public class DnsAttack extends AviRestResource {
    * Allowed values are 1-4294967295.
    * Special values are 0- 'blocked for ever'.
    * Field introduced in 18.2.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param maxMitigationAge set the maxMitigationAge.
    */
@@ -127,6 +131,7 @@ public class DnsAttack extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mitigation action to perform for this dns attack vector.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mitigationAction
    */
   @VsoMethod
@@ -138,6 +143,7 @@ public class DnsAttack extends AviRestResource {
    * This is the setter method to the attribute.
    * Mitigation action to perform for this dns attack vector.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mitigationAction set the mitigationAction.
    */
   @VsoMethod
@@ -149,6 +155,7 @@ public class DnsAttack extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Threshold, in terms of dns packet per second, for the dns attack vector.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
   @VsoMethod
@@ -160,6 +167,7 @@ public class DnsAttack extends AviRestResource {
    * This is the setter method to the attribute.
    * Threshold, in terms of dns packet per second, for the dns attack vector.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
   @VsoMethod

@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolAnalyticsPolicy extends AviRestResource {
-  @JsonProperty("enable_realtime_metrics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableRealtimeMetrics = false;
+    @JsonProperty("enable_realtime_metrics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableRealtimeMetrics = false;
 
 
 

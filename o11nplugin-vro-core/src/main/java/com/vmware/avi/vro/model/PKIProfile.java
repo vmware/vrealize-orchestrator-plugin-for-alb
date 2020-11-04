@@ -24,55 +24,60 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PKIProfile extends AviRestResource {
-  @JsonProperty("ca_certs")
-  @JsonInclude(Include.NON_NULL)
-  private List<SSLCertificate> caCerts = null;
+    @JsonProperty("ca_certs")
+    @JsonInclude(Include.NON_NULL)
+    private List<SSLCertificate> caCerts = null;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("crl_check")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean crlCheck = true;
+    @JsonProperty("crl_check")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean crlCheck = true;
 
-  @JsonProperty("crls")
-  @JsonInclude(Include.NON_NULL)
-  private List<CRL> crls = null;
+    @JsonProperty("crls")
+    @JsonInclude(Include.NON_NULL)
+    private List<CRL> crls = null;
 
-  @JsonProperty("ignore_peer_chain")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignorePeerChain = false;
+    @JsonProperty("ignore_peer_chain")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignorePeerChain = false;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = false;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = false;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("validate_only_leaf_crl")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean validateOnlyLeafCrl = true;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("validate_only_leaf_crl")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean validateOnlyLeafCrl = true;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caCerts
    */
   @VsoMethod
@@ -83,6 +88,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the caCerts
    * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caCerts
    */
   @VsoMethod
@@ -93,6 +99,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method this will set the caCerts
    * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caCerts
    */
   @VsoMethod
@@ -108,6 +115,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -118,6 +126,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Certificate revocation lists.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crls
    */
   @VsoMethod
@@ -160,6 +170,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the crls
    * Certificate revocation lists.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crls
    */
   @VsoMethod
@@ -170,6 +181,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method this will set the crls
    * Certificate revocation lists.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crls
    */
   @VsoMethod
@@ -236,7 +248,52 @@ public class PKIProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public PKIProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the pki profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -247,6 +304,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the pki profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -257,6 +315,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -267,6 +326,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -296,6 +356,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -306,6 +367,7 @@ public class PKIProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -359,6 +421,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.crlCheck, objPKIProfile.crlCheck)&&
   Objects.equals(this.validateOnlyLeafCrl, objPKIProfile.validateOnlyLeafCrl)&&
   Objects.equals(this.createdBy, objPKIProfile.createdBy)&&
+  Objects.equals(this.labels, objPKIProfile.labels)&&
   Objects.equals(this.isFederated, objPKIProfile.isFederated)&&
   Objects.equals(this.tenantRef, objPKIProfile.tenantRef);
 }
@@ -373,6 +436,7 @@ public String toString() {
         sb.append("    crls: ").append(toIndentedString(crls)).append("\n");
         sb.append("    ignorePeerChain: ").append(toIndentedString(ignorePeerChain)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

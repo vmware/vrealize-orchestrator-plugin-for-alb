@@ -24,107 +24,108 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Alert extends AviRestResource {
-  @JsonProperty("action_script_output")
-  @JsonInclude(Include.NON_NULL)
-  private String actionScriptOutput = null;
+    @JsonProperty("action_script_output")
+    @JsonInclude(Include.NON_NULL)
+    private String actionScriptOutput = null;
 
-  @JsonProperty("alert_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String alertConfigRef = null;
+    @JsonProperty("alert_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String alertConfigRef = null;
 
-  @JsonProperty("app_events")
-  @JsonInclude(Include.NON_NULL)
-  private List<ApplicationLog> appEvents = null;
+    @JsonProperty("app_events")
+    @JsonInclude(Include.NON_NULL)
+    private List<ApplicationLog> appEvents = null;
 
-  @JsonProperty("conn_events")
-  @JsonInclude(Include.NON_NULL)
-  private List<ConnectionLog> connEvents = null;
+    @JsonProperty("conn_events")
+    @JsonInclude(Include.NON_NULL)
+    private List<ConnectionLog> connEvents = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("event_pages")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> eventPages = null;
+    @JsonProperty("event_pages")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> eventPages = null;
 
-  @JsonProperty("events")
-  @JsonInclude(Include.NON_NULL)
-  private List<EventLog> events = null;
+    @JsonProperty("events")
+    @JsonInclude(Include.NON_NULL)
+    private List<EventLog> events = null;
 
-  @JsonProperty("last_throttle_timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Float lastThrottleTimestamp = null;
+    @JsonProperty("last_throttle_timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Float lastThrottleTimestamp = null;
 
-  @JsonProperty("level")
-  @JsonInclude(Include.NON_NULL)
-  private String level = null;
+    @JsonProperty("level")
+    @JsonInclude(Include.NON_NULL)
+    private String level = null;
 
-  @JsonProperty("metric_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<MetricLog> metricInfo = null;
+    @JsonProperty("metric_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<MetricLog> metricInfo = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("obj_key")
-  @JsonInclude(Include.NON_NULL)
-  private String objKey = null;
+    @JsonProperty("obj_key")
+    @JsonInclude(Include.NON_NULL)
+    private String objKey = null;
 
-  @JsonProperty("obj_name")
-  @JsonInclude(Include.NON_NULL)
-  private String objName = null;
+    @JsonProperty("obj_name")
+    @JsonInclude(Include.NON_NULL)
+    private String objName = null;
 
-  @JsonProperty("obj_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String objUuid = null;
+    @JsonProperty("obj_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String objUuid = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("related_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> relatedUuids = null;
+    @JsonProperty("related_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> relatedUuids = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("summary")
-  @JsonInclude(Include.NON_NULL)
-  private String summary = null;
+    @JsonProperty("summary")
+    @JsonInclude(Include.NON_NULL)
+    private String summary = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer threshold = null;
+    @JsonProperty("threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer threshold = null;
 
-  @JsonProperty("throttle_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer throttleCount = 0;
+    @JsonProperty("throttle_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer throttleCount = 0;
 
-  @JsonProperty("timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private Float timestamp = null;
+    @JsonProperty("timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private Float timestamp = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Output of the alert action script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return actionScriptOutput
    */
   @VsoMethod
@@ -135,6 +136,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Output of the alert action script.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param actionScriptOutput set the actionScriptOutput.
    */
   @VsoMethod
@@ -145,6 +147,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return alertConfigRef
    */
   @VsoMethod
@@ -155,6 +158,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param alertConfigRef set the alertConfigRef.
    */
   @VsoMethod
@@ -165,6 +169,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property app_events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appEvents
    */
   @VsoMethod
@@ -175,6 +180,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method. this will set the appEvents
    * Placeholder for description of property app_events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appEvents
    */
   @VsoMethod
@@ -185,6 +191,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method this will set the appEvents
    * Placeholder for description of property app_events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return appEvents
    */
   @VsoMethod
@@ -200,6 +207,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property conn_events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEvents
    */
   @VsoMethod
@@ -210,6 +218,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method. this will set the connEvents
    * Placeholder for description of property conn_events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEvents
    */
   @VsoMethod
@@ -220,6 +229,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method this will set the connEvents
    * Placeholder for description of property conn_events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connEvents
    */
   @VsoMethod
@@ -235,6 +245,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Alert generation criteria.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -245,6 +256,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Alert generation criteria.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -255,6 +267,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * List of event pages this alert is associated with.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventPages
    */
   @VsoMethod
@@ -265,6 +278,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method. this will set the eventPages
    * List of event pages this alert is associated with.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventPages
    */
   @VsoMethod
@@ -275,6 +289,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method this will set the eventPages
    * List of event pages this alert is associated with.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return eventPages
    */
   @VsoMethod
@@ -290,6 +305,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
   @VsoMethod
@@ -300,6 +316,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method. this will set the events
    * Placeholder for description of property events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
   @VsoMethod
@@ -310,6 +327,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method this will set the events
    * Placeholder for description of property events of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
   @VsoMethod
@@ -325,6 +343,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unix timestamp of the last throttling in seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastThrottleTimestamp
    */
   @VsoMethod
@@ -335,6 +354,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unix timestamp of the last throttling in seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastThrottleTimestamp set the lastThrottleTimestamp.
    */
   @VsoMethod
@@ -346,6 +366,7 @@ public class Alert extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Resolved alert type.
    * Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return level
    */
   @VsoMethod
@@ -357,6 +378,7 @@ public class Alert extends AviRestResource {
    * This is the setter method to the attribute.
    * Resolved alert type.
    * Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param level set the level.
    */
   @VsoMethod
@@ -367,6 +389,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_info of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricInfo
    */
   @VsoMethod
@@ -377,6 +400,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method. this will set the metricInfo
    * Placeholder for description of property metric_info of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricInfo
    */
   @VsoMethod
@@ -387,6 +411,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method this will set the metricInfo
    * Placeholder for description of property metric_info of obj type alert field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricInfo
    */
   @VsoMethod
@@ -402,6 +427,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -412,6 +438,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -422,6 +449,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objKey
    */
   @VsoMethod
@@ -432,6 +460,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objKey set the objKey.
    */
   @VsoMethod
@@ -442,6 +471,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objName
    */
   @VsoMethod
@@ -452,6 +482,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objName set the objName.
    */
   @VsoMethod
@@ -462,6 +493,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objUuid
    */
   @VsoMethod
@@ -472,6 +504,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objUuid set the objUuid.
    */
   @VsoMethod
@@ -482,6 +515,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type alert field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -492,6 +526,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason of obj type alert field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -505,6 +540,7 @@ public class Alert extends AviRestResource {
    * Only log agent needs to fill this.
    * Server uuid should be in formatpool_uuid-ip-port.
    * In case of no port is set for server it shouldstill be operational port for the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relatedUuids
    */
   @VsoMethod
@@ -518,6 +554,7 @@ public class Alert extends AviRestResource {
    * Only log agent needs to fill this.
    * Server uuid should be in formatpool_uuid-ip-port.
    * In case of no port is set for server it shouldstill be operational port for the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relatedUuids
    */
   @VsoMethod
@@ -531,6 +568,7 @@ public class Alert extends AviRestResource {
    * Only log agent needs to fill this.
    * Server uuid should be in formatpool_uuid-ip-port.
    * In case of no port is set for server it shouldstill be operational port for the server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relatedUuids
    */
   @VsoMethod
@@ -548,6 +586,7 @@ public class Alert extends AviRestResource {
    * State of the alert.
    * It would be active when createdit would be changed to state read when read by the admin.
    * Enum options - ALERT_STATE_ON, ALERT_STATE_DISMISSED, ALERT_STATE_THROTTLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -560,6 +599,7 @@ public class Alert extends AviRestResource {
    * State of the alert.
    * It would be active when createdit would be changed to state read when read by the admin.
    * Enum options - ALERT_STATE_ON, ALERT_STATE_DISMISSED, ALERT_STATE_THROTTLED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -570,6 +610,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Summary of alert based on alert config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return summary
    */
   @VsoMethod
@@ -580,6 +621,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Summary of alert based on alert config.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param summary set the summary.
    */
   @VsoMethod
@@ -590,6 +632,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -600,6 +643,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -610,6 +654,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property threshold of obj type alert field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshold
    */
   @VsoMethod
@@ -620,6 +665,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property threshold of obj type alert field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threshold set the threshold.
    */
   @VsoMethod
@@ -652,6 +698,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unix timestamp of the last throttling in seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timestamp
    */
   @VsoMethod
@@ -662,6 +709,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unix timestamp of the last throttling in seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timestamp set the timestamp.
    */
   @VsoMethod
@@ -691,6 +739,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -701,6 +750,7 @@ public class Alert extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

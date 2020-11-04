@@ -25,23 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServerId extends AviRestResource {
-  @JsonProperty("external_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String externalUuid = null;
+    @JsonProperty("external_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String externalUuid = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = null;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * This is the external cloud uuid of the pool server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return externalUuid
    */
   @VsoMethod
@@ -52,6 +53,7 @@ public class ServerId extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This is the external cloud uuid of the pool server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param externalUuid set the externalUuid.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class ServerId extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type serverid field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class ServerId extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type serverid field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -82,6 +86,7 @@ public class ServerId extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property port of obj type serverid field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return port
    */
   @VsoMethod
@@ -92,6 +97,7 @@ public class ServerId extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property port of obj type serverid field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param port set the port.
    */
   @VsoMethod

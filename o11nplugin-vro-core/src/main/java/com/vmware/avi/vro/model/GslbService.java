@@ -25,101 +25,101 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbService extends AviRestResource {
-  @JsonProperty("application_persistence_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String applicationPersistenceProfileRef = null;
+    @JsonProperty("application_persistence_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String applicationPersistenceProfileRef = null;
 
-  @JsonProperty("controller_health_status_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean controllerHealthStatusEnabled = true;
+    @JsonProperty("controller_health_status_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean controllerHealthStatusEnabled = true;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("domain_names")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> domainNames = null;
+    @JsonProperty("domain_names")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> domainNames = null;
 
-  @JsonProperty("down_response")
-  @JsonInclude(Include.NON_NULL)
-  private GslbServiceDownResponse downResponse = null;
+    @JsonProperty("down_response")
+    @JsonInclude(Include.NON_NULL)
+    private GslbServiceDownResponse downResponse = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPool> groups = null;
+    @JsonProperty("groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPool> groups = null;
 
-  @JsonProperty("health_monitor_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> healthMonitorRefs = null;
+    @JsonProperty("health_monitor_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> healthMonitorRefs = null;
 
-  @JsonProperty("health_monitor_scope")
-  @JsonInclude(Include.NON_NULL)
-  private String healthMonitorScope = "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS";
+    @JsonProperty("health_monitor_scope")
+    @JsonInclude(Include.NON_NULL)
+    private String healthMonitorScope = "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS";
 
-  @JsonProperty("hm_off")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hmOff = null;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = true;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = true;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("min_members")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minMembers = 0;
+    @JsonProperty("min_members")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minMembers = 0;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("num_dns_ip")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numDnsIp = null;
+    @JsonProperty("num_dns_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numDnsIp = null;
 
-  @JsonProperty("pool_algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String poolAlgorithm = "GSLB_SERVICE_ALGORITHM_PRIORITY";
+    @JsonProperty("pool_algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String poolAlgorithm = "GSLB_SERVICE_ALGORITHM_PRIORITY";
 
-  @JsonProperty("resolve_cname")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resolveCname = false;
+    @JsonProperty("resolve_cname")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean resolveCname = false;
 
-  @JsonProperty("site_persistence_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sitePersistenceEnabled = false;
+    @JsonProperty("site_persistence_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sitePersistenceEnabled = false;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ttl = null;
+    @JsonProperty("ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ttl = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("use_edns_client_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useEdnsClientSubnet = true;
+    @JsonProperty("use_edns_client_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useEdnsClientSubnet = true;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("wildcard_match")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean wildcardMatch = false;
+    @JsonProperty("wildcard_match")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean wildcardMatch = false;
 
 
 
@@ -128,6 +128,7 @@ public class GslbService extends AviRestResource {
    * The federated application persistence associated with gslbservice site persistence functionality.
    * It is a reference to an object of type applicationpersistenceprofile.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return applicationPersistenceProfileRef
    */
   @VsoMethod
@@ -140,6 +141,7 @@ public class GslbService extends AviRestResource {
    * The federated application persistence associated with gslbservice site persistence functionality.
    * It is a reference to an object of type applicationpersistenceprofile.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param applicationPersistenceProfileRef set the applicationPersistenceProfileRef.
    */
   @VsoMethod
@@ -177,6 +179,7 @@ public class GslbService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Creator name.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -188,6 +191,7 @@ public class GslbService extends AviRestResource {
    * This is the setter method to the attribute.
    * Creator name.
    * Field introduced in 17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -198,6 +202,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -208,6 +213,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -218,6 +224,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name of the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
   @VsoMethod
@@ -228,6 +235,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method. this will set the domainNames
    * Fully qualified domain name of the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
   @VsoMethod
@@ -238,6 +246,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method this will set the domainNames
    * Fully qualified domain name of the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
   @VsoMethod
@@ -253,6 +262,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Response to the client query when the gslb service is down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return downResponse
    */
   @VsoMethod
@@ -263,6 +273,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Response to the client query when the gslb service is down.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param downResponse set the downResponse.
    */
   @VsoMethod
@@ -299,6 +310,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Select list of pools belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -309,6 +321,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method. this will set the groups
    * Select list of pools belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -319,6 +332,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method this will set the groups
    * Select list of pools belonging to this gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -336,6 +350,7 @@ public class GslbService extends AviRestResource {
    * Verify vs health by applying one or more health monitors.
    * Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
   @VsoMethod
@@ -348,6 +363,7 @@ public class GslbService extends AviRestResource {
    * Verify vs health by applying one or more health monitors.
    * Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
   @VsoMethod
@@ -360,6 +376,7 @@ public class GslbService extends AviRestResource {
    * Verify vs health by applying one or more health monitors.
    * Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
    * It is a reference to an object of type healthmonitor.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
   @VsoMethod
@@ -378,7 +395,7 @@ public class GslbService extends AviRestResource {
    * This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario.
    * In such a case, avi members can have controller derived status while non-avi members can be probed by via health monitor probes in dataplane.
    * Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS".
    * @return healthMonitorScope
    */
   @VsoMethod
@@ -392,34 +409,12 @@ public class GslbService extends AviRestResource {
    * This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario.
    * In such a case, avi members can have controller derived status while non-avi members can be probed by via health monitor probes in dataplane.
    * Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS".
    * @param healthMonitorScope set the healthMonitorScope.
    */
   @VsoMethod
   public void setHealthMonitorScope(String  healthMonitorScope) {
     this.healthMonitorScope = healthMonitorScope;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * This field is an internal field and is used in se.
-   * Field introduced in 18.2.2.
-   * @return hmOff
-   */
-  @VsoMethod
-  public Boolean getHmOff() {
-    return hmOff;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This field is an internal field and is used in se.
-   * Field introduced in 18.2.2.
-   * @param hmOff set the hmOff.
-   */
-  @VsoMethod
-  public void setHmOff(Boolean  hmOff) {
-    this.hmOff = hmOff;
   }
 
   /**
@@ -445,6 +440,50 @@ public class GslbService extends AviRestResource {
   public void setIsFederated(Boolean  isFederated) {
     this.isFederated = isFederated;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public GslbService addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -477,6 +516,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name for the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -487,6 +527,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -500,6 +541,7 @@ public class GslbService extends AviRestResource {
    * Enter 0 to return all ip addresses.
    * Allowed values are 1-20.
    * Special values are 0- 'return all ip addresses'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDnsIp
    */
   @VsoMethod
@@ -513,6 +555,7 @@ public class GslbService extends AviRestResource {
    * Enter 0 to return all ip addresses.
    * Allowed values are 1-20.
    * Special values are 0- 'return all ip addresses'.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDnsIp set the numDnsIp.
    */
   @VsoMethod
@@ -525,7 +568,7 @@ public class GslbService extends AviRestResource {
    * The load balancing algorithm will pick a gslb pool within the gslb service list of available pools.
    * Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_ALGORITHM_PRIORITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_ALGORITHM_PRIORITY".
    * @return poolAlgorithm
    */
   @VsoMethod
@@ -538,7 +581,7 @@ public class GslbService extends AviRestResource {
    * The load balancing algorithm will pick a gslb pool within the gslb service list of available pools.
    * Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_ALGORITHM_PRIORITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_SERVICE_ALGORITHM_PRIORITY".
    * @param poolAlgorithm set the poolAlgorithm.
    */
   @VsoMethod
@@ -597,6 +640,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -607,6 +651,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -618,6 +663,8 @@ public class GslbService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ttl value (in seconds) for records served for this gslb service by the dns service.
    * Allowed values are 0-86400.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ttl
    */
   @VsoMethod
@@ -629,6 +676,8 @@ public class GslbService extends AviRestResource {
    * This is the setter method to the attribute.
    * Ttl value (in seconds) for records served for this gslb service by the dns service.
    * Allowed values are 0-86400.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ttl set the ttl.
    */
   @VsoMethod
@@ -684,6 +733,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -694,6 +744,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the gslb service.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -760,8 +811,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.applicationPersistenceProfileRef, objGslbService.applicationPersistenceProfileRef)&&
   Objects.equals(this.poolAlgorithm, objGslbService.poolAlgorithm)&&
   Objects.equals(this.minMembers, objGslbService.minMembers)&&
-  Objects.equals(this.hmOff, objGslbService.hmOff)&&
   Objects.equals(this.resolveCname, objGslbService.resolveCname)&&
+  Objects.equals(this.labels, objGslbService.labels)&&
   Objects.equals(this.isFederated, objGslbService.isFederated)&&
   Objects.equals(this.createdBy, objGslbService.createdBy)&&
   Objects.equals(this.description, objGslbService.description)&&
@@ -782,8 +833,8 @@ public String toString() {
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
         sb.append("    healthMonitorScope: ").append(toIndentedString(healthMonitorScope)).append("\n");
-        sb.append("    hmOff: ").append(toIndentedString(hmOff)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    minMembers: ").append(toIndentedString(minMembers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    numDnsIp: ").append(toIndentedString(numDnsIp)).append("\n");

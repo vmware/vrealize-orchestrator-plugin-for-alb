@@ -26,45 +26,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsAzureProfile extends AviRestResource {
-  @JsonProperty("azure_serviceprincipal")
-  @JsonInclude(Include.NON_NULL)
-  private AzureServicePrincipalCredentials azureServiceprincipal = null;
+    @JsonProperty("azure_serviceprincipal")
+    @JsonInclude(Include.NON_NULL)
+    private AzureServicePrincipalCredentials azureServiceprincipal = null;
 
-  @JsonProperty("azure_userpass")
-  @JsonInclude(Include.NON_NULL)
-  private AzureUserPassCredentials azureUserpass = null;
+    @JsonProperty("azure_userpass")
+    @JsonInclude(Include.NON_NULL)
+    private AzureUserPassCredentials azureUserpass = null;
 
-  @JsonProperty("egress_service_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> egressServiceSubnets = null;
+    @JsonProperty("egress_service_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> egressServiceSubnets = null;
 
-  @JsonProperty("resource_group")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceGroup = null;
+    @JsonProperty("resource_group")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceGroup = null;
 
-  @JsonProperty("subscription_id")
-  @JsonInclude(Include.NON_NULL)
-  private String subscriptionId = null;
+    @JsonProperty("subscription_id")
+    @JsonInclude(Include.NON_NULL)
+    private String subscriptionId = null;
 
-  @JsonProperty("usable_domains")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableDomains = null;
+    @JsonProperty("usable_domains")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableDomains = null;
 
-  @JsonProperty("usable_network_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> usableNetworkUuids = null;
+    @JsonProperty("usable_network_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> usableNetworkUuids = null;
 
-  @JsonProperty("use_enhanced_ha")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useEnhancedHa = false;
+    @JsonProperty("use_enhanced_ha")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useEnhancedHa = false;
 
-  @JsonProperty("use_standard_alb")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useStandardAlb = false;
+    @JsonProperty("use_standard_alb")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useStandardAlb = false;
 
-  @JsonProperty("virtual_network_ids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> virtualNetworkIds = null;
+    @JsonProperty("virtual_network_ids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> virtualNetworkIds = null;
 
 
 
@@ -73,6 +73,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * Service principal based credentials for azure.
    * Only one of azure_userpass or azure_serviceprincipal is allowed.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureServiceprincipal
    */
   @VsoMethod
@@ -85,6 +86,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * Service principal based credentials for azure.
    * Only one of azure_userpass or azure_serviceprincipal is allowed.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureServiceprincipal set the azureServiceprincipal.
    */
   @VsoMethod
@@ -97,6 +99,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * User name password based credentials for azure.
    * Only one of azure_userpass or azure_serviceprincipal is allowed.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureUserpass
    */
   @VsoMethod
@@ -109,6 +112,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * User name password based credentials for azure.
    * Only one of azure_userpass or azure_serviceprincipal is allowed.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureUserpass set the azureUserpass.
    */
   @VsoMethod
@@ -120,6 +124,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Used for allocating egress service source ips.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
   @VsoMethod
@@ -131,6 +136,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method. this will set the egressServiceSubnets
    * Used for allocating egress service source ips.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
   @VsoMethod
@@ -142,6 +148,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method this will set the egressServiceSubnets
    * Used for allocating egress service source ips.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
   @VsoMethod
@@ -159,6 +166,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * Azure resource group dedicated for avi controller.
    * Avi controller will create all its resources in this resource group.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceGroup
    */
   @VsoMethod
@@ -171,6 +179,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * Azure resource group dedicated for avi controller.
    * Avi controller will create all its resources in this resource group.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceGroup set the resourceGroup.
    */
   @VsoMethod
@@ -182,6 +191,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subscription id for the azure subscription.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subscriptionId
    */
   @VsoMethod
@@ -193,6 +203,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Subscription id for the azure subscription.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subscriptionId set the subscriptionId.
    */
   @VsoMethod
@@ -204,6 +215,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Usable domains to pick from azure dns.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -215,6 +227,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method. this will set the usableDomains
    * Usable domains to pick from azure dns.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -226,6 +239,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method this will set the usableDomains
    * Usable domains to pick from azure dns.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableDomains
    */
   @VsoMethod
@@ -244,6 +258,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
   @VsoMethod
@@ -257,6 +272,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
   @VsoMethod
@@ -270,6 +286,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
   @VsoMethod
@@ -338,6 +355,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual networks where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkIds
    */
   @VsoMethod
@@ -349,6 +367,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method. this will set the virtualNetworkIds
    * Virtual networks where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkIds
    */
   @VsoMethod
@@ -360,6 +379,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method this will set the virtualNetworkIds
    * Virtual networks where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkIds
    */
   @VsoMethod

@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHBEventDetails extends AviRestResource {
-  @JsonProperty("hb_type")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hbType = 1;
+    @JsonProperty("hb_type")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hbType = 1;
 
-  @JsonProperty("remote_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String remoteSeRef = null;
+    @JsonProperty("remote_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String remoteSeRef = null;
 
-  @JsonProperty("reporting_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String reportingSeRef = null;
+    @JsonProperty("reporting_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String reportingSeRef = null;
 
-  @JsonProperty("se_ref1")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef1 = null;
+    @JsonProperty("se_ref1")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef1;
 
-  @JsonProperty("se_ref2")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef2 = null;
+    @JsonProperty("se_ref2")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef2;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
@@ -77,6 +77,7 @@ public class SeHBEventDetails extends AviRestResource {
    * Uuid of the se with which heartbeat failed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteSeRef
    */
   @VsoMethod
@@ -89,6 +90,7 @@ public class SeHBEventDetails extends AviRestResource {
    * Uuid of the se with which heartbeat failed.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteSeRef set the remoteSeRef.
    */
   @VsoMethod
@@ -101,6 +103,7 @@ public class SeHBEventDetails extends AviRestResource {
    * Uuid of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportingSeRef
    */
   @VsoMethod
@@ -113,6 +116,7 @@ public class SeHBEventDetails extends AviRestResource {
    * Uuid of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportingSeRef set the reportingSeRef.
    */
   @VsoMethod
@@ -172,6 +176,7 @@ public class SeHBEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the virtual service which is placed on reporting-se and remote-se.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -183,6 +188,7 @@ public class SeHBEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the virtual service which is placed on reporting-se and remote-se.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

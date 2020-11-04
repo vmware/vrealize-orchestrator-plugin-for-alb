@@ -26,41 +26,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkSecurityRule extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("age")
-  @JsonInclude(Include.NON_NULL)
-  private Integer age = 0;
+    @JsonProperty("age")
+    @JsonInclude(Include.NON_NULL)
+    private Integer age = 0;
 
-  @JsonProperty("created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String createdBy = null;
+    @JsonProperty("created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String createdBy = null;
 
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = null;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = null;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("log")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean log = false;
+    @JsonProperty("log")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean log = false;
 
-  @JsonProperty("match")
-  @JsonInclude(Include.NON_NULL)
-  private NetworkSecurityMatchTarget match = null;
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private NetworkSecurityMatchTarget match = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("rl_param")
-  @JsonInclude(Include.NON_NULL)
-  private NetworkSecurityPolicyActionRLParam rlParam = null;
+    @JsonProperty("rl_param")
+    @JsonInclude(Include.NON_NULL)
+    private NetworkSecurityPolicyActionRLParam rlParam = null;
 
 
 
@@ -68,6 +68,7 @@ public class NetworkSecurityRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
    * NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class NetworkSecurityRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
    * NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -91,6 +93,7 @@ public class NetworkSecurityRule extends AviRestResource {
    * Time in minutes after which rule will be deleted.
    * Allowed values are 1-4294967295.
    * Special values are 0- 'blocked for ever'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return age
    */
@@ -104,6 +107,7 @@ public class NetworkSecurityRule extends AviRestResource {
    * Time in minutes after which rule will be deleted.
    * Allowed values are 1-4294967295.
    * Special values are 0- 'blocked for ever'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param age set the age.
    */
@@ -115,6 +119,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdBy
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Creator name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdBy set the createdBy.
    */
   @VsoMethod
@@ -135,6 +141,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property enable of obj type networksecurityrule field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return enable
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property enable of obj type networksecurityrule field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param enable set the enable.
    */
   @VsoMethod
@@ -155,6 +163,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property index of obj type networksecurityrule field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property index of obj type networksecurityrule field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -197,6 +207,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property match of obj type networksecurityrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
   @VsoMethod
@@ -207,6 +218,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property match of obj type networksecurityrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */
   @VsoMethod
@@ -217,6 +229,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -227,6 +240,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -237,6 +251,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rl_param of obj type networksecurityrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rlParam
    */
   @VsoMethod
@@ -247,6 +262,7 @@ public class NetworkSecurityRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rl_param of obj type networksecurityrule field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rlParam set the rlParam.
    */
   @VsoMethod

@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugDnsOptions extends AviRestResource {
-  @JsonProperty("domain_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> domainName = null;
+    @JsonProperty("domain_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> domainName = null;
 
-  @JsonProperty("gslb_service_name")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> gslbServiceName = null;
+    @JsonProperty("gslb_service_name")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> gslbServiceName = null;
 
 
 
@@ -38,6 +38,7 @@ public class DebugDnsOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field filters the fqdn for dns debug.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class DebugDnsOptions extends AviRestResource {
    * This is the setter method. this will set the domainName
    * This field filters the fqdn for dns debug.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class DebugDnsOptions extends AviRestResource {
    * This is the setter method this will set the domainName
    * This field filters the fqdn for dns debug.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainName
    */
   @VsoMethod
@@ -76,6 +79,7 @@ public class DebugDnsOptions extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field filters the gslb service for dns debug.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceName
    */
   @VsoMethod
@@ -87,6 +91,7 @@ public class DebugDnsOptions extends AviRestResource {
    * This is the setter method. this will set the gslbServiceName
    * This field filters the gslb service for dns debug.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceName
    */
   @VsoMethod
@@ -98,6 +103,7 @@ public class DebugDnsOptions extends AviRestResource {
    * This is the setter method this will set the gslbServiceName
    * This field filters the gslb service for dns debug.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbServiceName
    */
   @VsoMethod

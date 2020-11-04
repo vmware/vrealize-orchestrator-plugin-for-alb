@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafRuleLog extends AviRestResource {
-  @JsonProperty("matches")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRuleMatchData> matches = null;
+    @JsonProperty("matches")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleMatchData> matches = null;
 
-  @JsonProperty("msg")
-  @JsonInclude(Include.NON_NULL)
-  private String msg = null;
+    @JsonProperty("msg")
+    @JsonInclude(Include.NON_NULL)
+    private String msg = null;
 
-  @JsonProperty("phase")
-  @JsonInclude(Include.NON_NULL)
-  private String phase = null;
+    @JsonProperty("phase")
+    @JsonInclude(Include.NON_NULL)
+    private String phase = null;
 
-  @JsonProperty("rule_group")
-  @JsonInclude(Include.NON_NULL)
-  private String ruleGroup = null;
+    @JsonProperty("rule_group")
+    @JsonInclude(Include.NON_NULL)
+    private String ruleGroup = null;
 
-  @JsonProperty("rule_id")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ruleId = null;
+    @JsonProperty("rule_id")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ruleId = null;
 
-  @JsonProperty("rule_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ruleName = null;
+    @JsonProperty("rule_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ruleName = null;
 
-  @JsonProperty("tags")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> tags = null;
+    @JsonProperty("tags")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> tags = null;
 
 
 
@@ -58,6 +58,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Transaction data that matched the rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matches
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method. this will set the matches
    * Transaction data that matched the rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matches
    */
   @VsoMethod
@@ -80,6 +82,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method this will set the matches
    * Transaction data that matched the rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matches
    */
   @VsoMethod
@@ -96,6 +99,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule's msg string per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return msg
    */
   @VsoMethod
@@ -107,6 +111,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule's msg string per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param msg set the msg.
    */
   @VsoMethod
@@ -118,6 +123,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Phase in which transaction matched the rule - for instance, request header phase.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return phase
    */
   @VsoMethod
@@ -129,6 +135,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Phase in which transaction matched the rule - for instance, request header phase.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param phase set the phase.
    */
   @VsoMethod
@@ -140,6 +147,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule group for the matching rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleGroup
    */
   @VsoMethod
@@ -151,6 +159,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Rule group for the matching rule.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleGroup set the ruleGroup.
    */
   @VsoMethod
@@ -162,6 +171,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Id of the matching rule per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleId
    */
   @VsoMethod
@@ -173,6 +183,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Id of the matching rule per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleId set the ruleId.
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the rule.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ruleName
    */
   @VsoMethod
@@ -195,6 +207,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the rule.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ruleName set the ruleName.
    */
   @VsoMethod
@@ -206,6 +219,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rule's tags per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
   @VsoMethod
@@ -217,6 +231,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method. this will set the tags
    * Rule's tags per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
   @VsoMethod
@@ -228,6 +243,7 @@ public class WafRuleLog extends AviRestResource {
    * This is the setter method this will set the tags
    * Rule's tags per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
   @VsoMethod

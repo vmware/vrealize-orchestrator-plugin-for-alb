@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TimeStamp extends AviRestResource {
-  @JsonProperty("secs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer secs = null;
+    @JsonProperty("secs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer secs = null;
 
-  @JsonProperty("usecs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer usecs = null;
+    @JsonProperty("usecs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer usecs = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property secs of obj type timestamp field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secs
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class TimeStamp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property secs of obj type timestamp field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secs set the secs.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class TimeStamp extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property usecs of obj type timestamp field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usecs
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class TimeStamp extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property usecs of obj type timestamp field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param usecs set the usecs.
    */
   @VsoMethod

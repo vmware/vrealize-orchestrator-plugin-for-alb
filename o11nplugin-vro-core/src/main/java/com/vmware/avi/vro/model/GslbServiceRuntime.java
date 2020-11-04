@@ -27,59 +27,60 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbServiceRuntime extends AviRestResource {
-  @JsonProperty("checksum")
-  @JsonInclude(Include.NON_NULL)
-  private String checksum = null;
+    @JsonProperty("checksum")
+    @JsonInclude(Include.NON_NULL)
+    private String checksum = null;
 
-  @JsonProperty("flr_state")
-  @JsonInclude(Include.NON_NULL)
-  private List<CfgState> flrState = null;
+    @JsonProperty("flr_state")
+    @JsonInclude(Include.NON_NULL)
+    private List<CfgState> flrState = null;
 
-  @JsonProperty("groups")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbPoolRuntime> groups = null;
+    @JsonProperty("groups")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbPoolRuntime> groups = null;
 
-  @JsonProperty("ldr_state")
-  @JsonInclude(Include.NON_NULL)
-  private CfgState ldrState = null;
+    @JsonProperty("ldr_state")
+    @JsonInclude(Include.NON_NULL)
+    private CfgState ldrState = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus operStatus = null;
+    @JsonProperty("oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus operStatus = null;
 
-  @JsonProperty("send_event")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sendEvent = null;
+    @JsonProperty("send_event")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sendEvent = null;
 
-  @JsonProperty("send_status")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sendStatus = null;
+    @JsonProperty("send_status")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sendStatus = null;
 
-  @JsonProperty("services_state")
-  @JsonInclude(Include.NON_NULL)
-  private String servicesState = null;
+    @JsonProperty("services_state")
+    @JsonInclude(Include.NON_NULL)
+    private String servicesState = null;
 
-  @JsonProperty("sp_oper_status")
-  @JsonInclude(Include.NON_NULL)
-  private OperationalStatus spOperStatus = null;
+    @JsonProperty("sp_oper_status")
+    @JsonInclude(Include.NON_NULL)
+    private OperationalStatus spOperStatus = null;
 
-  @JsonProperty("tenant_name")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantName = null;
+    @JsonProperty("tenant_name")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantName = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checksum
    */
   @VsoMethod
@@ -90,6 +91,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checksum set the checksum.
    */
   @VsoMethod
@@ -100,6 +102,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property flr_state of obj type gslbserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flrState
    */
   @VsoMethod
@@ -110,6 +113,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the flrState
    * Placeholder for description of property flr_state of obj type gslbserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flrState
    */
   @VsoMethod
@@ -120,6 +124,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the flrState
    * Placeholder for description of property flr_state of obj type gslbserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flrState
    */
   @VsoMethod
@@ -135,6 +140,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property groups of obj type gslbserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -145,6 +151,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the groups
    * Placeholder for description of property groups of obj type gslbserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the groups
    * Placeholder for description of property groups of obj type gslbserviceruntime field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
   @VsoMethod
@@ -170,6 +178,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ldr_state of obj type gslbserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ldrState
    */
   @VsoMethod
@@ -180,6 +189,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ldr_state of obj type gslbserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ldrState set the ldrState.
    */
   @VsoMethod
@@ -190,6 +200,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -200,6 +211,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -210,6 +222,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oper_status of obj type gslbserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operStatus
    */
   @VsoMethod
@@ -220,6 +233,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oper_status of obj type gslbserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operStatus set the operStatus.
    */
   @VsoMethod
@@ -230,6 +244,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sendEvent
    */
   @VsoMethod
@@ -240,6 +255,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sendEvent set the sendEvent.
    */
   @VsoMethod
@@ -250,6 +266,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sendStatus
    */
   @VsoMethod
@@ -260,6 +277,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sendStatus set the sendStatus.
    */
   @VsoMethod
@@ -270,6 +288,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property services_state of obj type gslbserviceruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return servicesState
    */
   @VsoMethod
@@ -280,6 +299,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property services_state of obj type gslbserviceruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param servicesState set the servicesState.
    */
   @VsoMethod
@@ -291,6 +311,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gslb site persistence consolidated status.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spOperStatus
    */
   @VsoMethod
@@ -302,6 +323,7 @@ public class GslbServiceRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Gslb site persistence consolidated status.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spOperStatus set the spOperStatus.
    */
   @VsoMethod
@@ -312,6 +334,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tenant name (and not uuid) is required in logs/metrics generated by the se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -322,6 +345,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tenant name (and not uuid) is required in logs/metrics generated by the se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -332,6 +356,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -342,6 +367,7 @@ public class GslbServiceRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DnsAttacks extends AviRestResource {
-  @JsonProperty("attacks")
-  @JsonInclude(Include.NON_NULL)
-  private List<DnsAttack> attacks = null;
+    @JsonProperty("attacks")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsAttack> attacks = null;
 
-  @JsonProperty("oper_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String operMode = null;
+    @JsonProperty("oper_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String operMode = null;
 
 
 
@@ -38,6 +38,7 @@ public class DnsAttacks extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attacks
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class DnsAttacks extends AviRestResource {
    * This is the setter method. this will set the attacks
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attacks
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class DnsAttacks extends AviRestResource {
    * This is the setter method this will set the attacks
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attacks
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class DnsAttacks extends AviRestResource {
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Enum options - DETECTION, MITIGATION.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return operMode
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class DnsAttacks extends AviRestResource {
    * Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
    * Enum options - DETECTION, MITIGATION.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param operMode set the operMode.
    */
   @VsoMethod

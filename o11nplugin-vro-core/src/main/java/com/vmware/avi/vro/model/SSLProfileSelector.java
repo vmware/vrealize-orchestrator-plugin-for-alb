@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLProfileSelector extends AviRestResource {
-  @JsonProperty("client_ip_list")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrMatch clientIpList = null;
+    @JsonProperty("client_ip_list")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch clientIpList = null;
 
-  @JsonProperty("ssl_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sslProfileRef = null;
+    @JsonProperty("ssl_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sslProfileRef = null;
 
 
 
@@ -39,6 +39,7 @@ public class SSLProfileSelector extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure client ip address groups.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIpList
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class SSLProfileSelector extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure client ip address groups.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIpList set the clientIpList.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class SSLProfileSelector extends AviRestResource {
    * Ssl profile for the client ip addresses listed.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslProfileRef
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class SSLProfileSelector extends AviRestResource {
    * Ssl profile for the client ip addresses listed.
    * It is a reference to an object of type sslprofile.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslProfileRef set the sslProfileRef.
    */
   @VsoMethod

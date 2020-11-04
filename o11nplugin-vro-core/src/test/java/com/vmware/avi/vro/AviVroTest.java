@@ -561,8 +561,8 @@ public class AviVroTest {
 				testingVRO.executeWorkflow();
 			} catch (Exception e) {
 				String message = e.getMessage();
-				assertTrue(message.contains("BAD REQUEST"));
-				//assertTrue(message.contains("shares the same VIP"));
+				//assertTrue(message.contains("BAD REQUEST"));
+				assertTrue(message.contains("shares the same VIP"));
 			}
 			// delete virtualservice and its refered objects
 			testingVRO.delete("virtualservice", testObject.deleteVS());

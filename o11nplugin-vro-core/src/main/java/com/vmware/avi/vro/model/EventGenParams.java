@@ -24,31 +24,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EventGenParams extends AviRestResource {
-  @JsonProperty("cluster")
-  @JsonInclude(Include.NON_NULL)
-  private String cluster = null;
+    @JsonProperty("cluster")
+    @JsonInclude(Include.NON_NULL)
+    private String cluster = null;
 
-  @JsonProperty("events")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> events = null;
+    @JsonProperty("events")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> events = null;
 
-  @JsonProperty("pool")
-  @JsonInclude(Include.NON_NULL)
-  private String pool = null;
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private String pool = null;
 
-  @JsonProperty("sslkeyandcertificate")
-  @JsonInclude(Include.NON_NULL)
-  private String sslkeyandcertificate = null;
+    @JsonProperty("sslkeyandcertificate")
+    @JsonInclude(Include.NON_NULL)
+    private String sslkeyandcertificate = null;
 
-  @JsonProperty("virtualservice")
-  @JsonInclude(Include.NON_NULL)
-  private String virtualservice = null;
+    @JsonProperty("virtualservice")
+    @JsonInclude(Include.NON_NULL)
+    private String virtualservice = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cluster
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cluster set the cluster.
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class EventGenParams extends AviRestResource {
    * Enum options - VINFRA_DISC_DC, VINFRA_DISC_HOST, VINFRA_DISC_CLUSTER, VINFRA_DISC_VM, VINFRA_DISC_NW, MGMT_NW_NAME_CHANGED,
    * DISCOVERY_DATACENTER_DEL, VM_ADDED, VM_REMOVED, VINFRA_DISC_COMPLETE, VCENTER_ADDRESS_ERROR, SE_GROUP_CLUSTER_DEL, SE_GROUP_MGMT_NW_DEL,
    * MGMT_NW_DEL, VCENTER_BAD_CREDENTIALS, ESX_HOST_UNREACHABLE, SERVER_DELETED, SE_GROUP_HOST_DEL, VINFRA_DISC_FAILURE, ESX_HOST_POWERED_DOWN...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class EventGenParams extends AviRestResource {
    * Enum options - VINFRA_DISC_DC, VINFRA_DISC_HOST, VINFRA_DISC_CLUSTER, VINFRA_DISC_VM, VINFRA_DISC_NW, MGMT_NW_NAME_CHANGED,
    * DISCOVERY_DATACENTER_DEL, VM_ADDED, VM_REMOVED, VINFRA_DISC_COMPLETE, VCENTER_ADDRESS_ERROR, SE_GROUP_CLUSTER_DEL, SE_GROUP_MGMT_NW_DEL,
    * MGMT_NW_DEL, VCENTER_BAD_CREDENTIALS, ESX_HOST_UNREACHABLE, SERVER_DELETED, SE_GROUP_HOST_DEL, VINFRA_DISC_FAILURE, ESX_HOST_POWERED_DOWN...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
   @VsoMethod
@@ -95,6 +99,7 @@ public class EventGenParams extends AviRestResource {
    * Enum options - VINFRA_DISC_DC, VINFRA_DISC_HOST, VINFRA_DISC_CLUSTER, VINFRA_DISC_VM, VINFRA_DISC_NW, MGMT_NW_NAME_CHANGED,
    * DISCOVERY_DATACENTER_DEL, VM_ADDED, VM_REMOVED, VINFRA_DISC_COMPLETE, VCENTER_ADDRESS_ERROR, SE_GROUP_CLUSTER_DEL, SE_GROUP_MGMT_NW_DEL,
    * MGMT_NW_DEL, VCENTER_BAD_CREDENTIALS, ESX_HOST_UNREACHABLE, SERVER_DELETED, SE_GROUP_HOST_DEL, VINFRA_DISC_FAILURE, ESX_HOST_POWERED_DOWN...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return events
    */
   @VsoMethod
@@ -110,6 +115,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
   @VsoMethod
@@ -130,6 +137,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property sslkeyandcertificate of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificate
    */
   @VsoMethod
@@ -140,6 +148,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property sslkeyandcertificate of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslkeyandcertificate set the sslkeyandcertificate.
    */
   @VsoMethod
@@ -150,6 +159,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property virtualservice of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualservice
    */
   @VsoMethod
@@ -160,6 +170,7 @@ public class EventGenParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property virtualservice of obj type eventgenparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param virtualservice set the virtualservice.
    */
   @VsoMethod

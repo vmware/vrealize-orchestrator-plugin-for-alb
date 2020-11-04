@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HSMgrDebugFilter extends AviRestResource {
-  @JsonProperty("entity")
-  @JsonInclude(Include.NON_NULL)
-  private String entity = null;
+    @JsonProperty("entity")
+    @JsonInclude(Include.NON_NULL)
+    private String entity = null;
 
-  @JsonProperty("metric_entity")
-  @JsonInclude(Include.NON_NULL)
-  private String metricEntity = null;
+    @JsonProperty("metric_entity")
+    @JsonInclude(Include.NON_NULL)
+    private String metricEntity = null;
 
-  @JsonProperty("period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer period = null;
+    @JsonProperty("period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer period = null;
 
-  @JsonProperty("pool")
-  @JsonInclude(Include.NON_NULL)
-  private String pool = null;
+    @JsonProperty("pool")
+    @JsonInclude(Include.NON_NULL)
+    private String pool = null;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private String server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private String server = null;
 
-  @JsonProperty("skip_hs_db_writes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipHsDbWrites = null;
+    @JsonProperty("skip_hs_db_writes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean skipHsDbWrites = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property entity of obj type hsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entity
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property entity of obj type hsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entity set the entity.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricEntity
    */
   @VsoMethod
@@ -85,6 +88,7 @@ public class HSMgrDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY,
    * TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricEntity set the metricEntity.
    */
   @VsoMethod
@@ -95,6 +99,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property period of obj type hsmgrdebugfilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return period
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property period of obj type hsmgrdebugfilter field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param period set the period.
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool of obj type hsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pool
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool of obj type hsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pool set the pool.
    */
   @VsoMethod
@@ -135,6 +143,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server of obj type hsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -145,6 +154,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server of obj type hsmgrdebugfilter field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod
@@ -155,6 +165,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property skip_hs_db_writes of obj type hsmgrdebugfilter field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return skipHsDbWrites
    */
   @VsoMethod
@@ -165,6 +176,7 @@ public class HSMgrDebugFilter extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property skip_hs_db_writes of obj type hsmgrdebugfilter field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param skipHsDbWrites set the skipHsDbWrites.
    */
   @VsoMethod

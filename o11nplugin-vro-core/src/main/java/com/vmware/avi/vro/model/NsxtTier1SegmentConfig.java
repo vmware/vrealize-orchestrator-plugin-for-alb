@@ -26,17 +26,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtTier1SegmentConfig extends AviRestResource {
-  @JsonProperty("automatic")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtTier1SegmentAutomaticMode automatic = null;
+    @JsonProperty("automatic")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtTier1SegmentAutomaticMode automatic = null;
 
-  @JsonProperty("manual")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtTier1SegmentManualMode manual = null;
+    @JsonProperty("manual")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtTier1SegmentManualMode manual = null;
 
-  @JsonProperty("segment_config_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String segmentConfigMode = "TIER1_SEGMENT_MANUAL";
+    @JsonProperty("segment_config_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String segmentConfigMode = "TIER1_SEGMENT_MANUAL";
 
 
 
@@ -44,6 +44,7 @@ public class NsxtTier1SegmentConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi controller creates and manages logical segments for a tier-1 lr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return automatic
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class NsxtTier1SegmentConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi controller creates and manages logical segments for a tier-1 lr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param automatic set the automatic.
    */
   @VsoMethod
@@ -66,6 +68,7 @@ public class NsxtTier1SegmentConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Avi admin selects an available logical segment (created by nsx-t admin) associated with a tier-1 lr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return manual
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class NsxtTier1SegmentConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Avi admin selects an available logical segment (created by nsx-t admin) associated with a tier-1 lr.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param manual set the manual.
    */
   @VsoMethod
@@ -89,7 +93,7 @@ public class NsxtTier1SegmentConfig extends AviRestResource {
    * Config mode for selecting the placement logical segments for avi serviceengine data path.
    * Enum options - TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as TIER1_SEGMENT_MANUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "TIER1_SEGMENT_MANUAL".
    * @return segmentConfigMode
    */
   @VsoMethod
@@ -102,7 +106,7 @@ public class NsxtTier1SegmentConfig extends AviRestResource {
    * Config mode for selecting the placement logical segments for avi serviceengine data path.
    * Enum options - TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as TIER1_SEGMENT_MANUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "TIER1_SEGMENT_MANUAL".
    * @param segmentConfigMode set the segmentConfigMode.
    */
   @VsoMethod

@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeHbRecoveredEventDetails extends AviRestResource {
-  @JsonProperty("hb_type")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hbType = 1;
+    @JsonProperty("hb_type")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hbType = 1;
 
-  @JsonProperty("remote_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String remoteSeRef = null;
+    @JsonProperty("remote_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String remoteSeRef = null;
 
-  @JsonProperty("reporting_se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String reportingSeRef = null;
+    @JsonProperty("reporting_se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String reportingSeRef = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
@@ -69,6 +69,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the remote se with which dataplane heartbeat recovered.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteSeRef
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the remote se with which dataplane heartbeat recovered.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteSeRef set the remoteSeRef.
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reportingSeRef
    */
   @VsoMethod
@@ -105,6 +108,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * Uuid of the se reporting this event.
    * It is a reference to an object of type serviceengine.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reportingSeRef set the reportingSeRef.
    */
   @VsoMethod
@@ -116,6 +120,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of a vs which is placed on reporting-se and remote-se.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class SeHbRecoveredEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of a vs which is placed on reporting-se and remote-se.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

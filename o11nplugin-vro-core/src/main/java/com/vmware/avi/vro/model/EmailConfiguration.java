@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EmailConfiguration extends AviRestResource {
-  @JsonProperty("auth_password")
-  @JsonInclude(Include.NON_NULL)
-  private String authPassword = null;
+    @JsonProperty("auth_password")
+    @JsonInclude(Include.NON_NULL)
+    private String authPassword = null;
 
-  @JsonProperty("auth_username")
-  @JsonInclude(Include.NON_NULL)
-  private String authUsername = null;
+    @JsonProperty("auth_username")
+    @JsonInclude(Include.NON_NULL)
+    private String authUsername = null;
 
-  @JsonProperty("disable_tls")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableTls = false;
+    @JsonProperty("disable_tls")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableTls = false;
 
-  @JsonProperty("from_email")
-  @JsonInclude(Include.NON_NULL)
-  private String fromEmail = "admin@avicontroller.net";
+    @JsonProperty("from_email")
+    @JsonInclude(Include.NON_NULL)
+    private String fromEmail = "admin@avicontroller.net";
 
-  @JsonProperty("mail_server_name")
-  @JsonInclude(Include.NON_NULL)
-  private String mailServerName = "localhost";
+    @JsonProperty("mail_server_name")
+    @JsonInclude(Include.NON_NULL)
+    private String mailServerName = "localhost";
 
-  @JsonProperty("mail_server_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer mailServerPort = 25;
+    @JsonProperty("mail_server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer mailServerPort = 25;
 
-  @JsonProperty("smtp_type")
-  @JsonInclude(Include.NON_NULL)
-  private String smtpType = "SMTP_LOCAL_HOST";
+    @JsonProperty("smtp_type")
+    @JsonInclude(Include.NON_NULL)
+    private String smtpType = "SMTP_LOCAL_HOST";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Password for mail server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authPassword
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Password for mail server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authPassword set the authPassword.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Username for mail server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authUsername
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Username for mail server.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authUsername set the authUsername.
    */
   @VsoMethod
@@ -121,7 +125,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Email address in from field.
-   * Default value when not specified in API or module is interpreted by Avi Controller as admin@avicontroller.net.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "admin@avicontroller.net".
    * @return fromEmail
    */
   @VsoMethod
@@ -132,7 +136,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Email address in from field.
-   * Default value when not specified in API or module is interpreted by Avi Controller as admin@avicontroller.net.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "admin@avicontroller.net".
    * @param fromEmail set the fromEmail.
    */
   @VsoMethod
@@ -143,7 +147,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Mail server host.
-   * Default value when not specified in API or module is interpreted by Avi Controller as localhost.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @return mailServerName
    */
   @VsoMethod
@@ -154,7 +158,7 @@ public class EmailConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Mail server host.
-   * Default value when not specified in API or module is interpreted by Avi Controller as localhost.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
    * @param mailServerName set the mailServerName.
    */
   @VsoMethod
@@ -188,7 +192,7 @@ public class EmailConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Type of smtp mail service.
    * Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SMTP_LOCAL_HOST.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SMTP_LOCAL_HOST".
    * @return smtpType
    */
   @VsoMethod
@@ -200,7 +204,7 @@ public class EmailConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Type of smtp mail service.
    * Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SMTP_LOCAL_HOST.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SMTP_LOCAL_HOST".
    * @param smtpType set the smtpType.
    */
   @VsoMethod

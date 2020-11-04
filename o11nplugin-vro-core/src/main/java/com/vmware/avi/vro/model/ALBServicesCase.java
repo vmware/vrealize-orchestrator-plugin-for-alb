@@ -25,111 +25,112 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesCase extends AviRestResource {
-  @JsonProperty("asset_id")
-  @JsonInclude(Include.NON_NULL)
-  private String assetId = null;
+    @JsonProperty("asset_id")
+    @JsonInclude(Include.NON_NULL)
+    private String assetId = null;
 
-  @JsonProperty("case_attachments")
-  @JsonInclude(Include.NON_NULL)
-  private List<ALBServicesCaseAttachment> caseAttachments = null;
+    @JsonProperty("case_attachments")
+    @JsonInclude(Include.NON_NULL)
+    private List<ALBServicesCaseAttachment> caseAttachments = null;
 
-  @JsonProperty("case_created_by")
-  @JsonInclude(Include.NON_NULL)
-  private String caseCreatedBy = null;
+    @JsonProperty("case_created_by")
+    @JsonInclude(Include.NON_NULL)
+    private String caseCreatedBy = null;
 
-  @JsonProperty("case_number")
-  @JsonInclude(Include.NON_NULL)
-  private String caseNumber = null;
+    @JsonProperty("case_number")
+    @JsonInclude(Include.NON_NULL)
+    private String caseNumber = null;
 
-  @JsonProperty("case_status")
-  @JsonInclude(Include.NON_NULL)
-  private String caseStatus = null;
+    @JsonProperty("case_status")
+    @JsonInclude(Include.NON_NULL)
+    private String caseStatus = null;
 
-  @JsonProperty("contact_info")
-  @JsonInclude(Include.NON_NULL)
-  private ALBServicesUser contactInfo = null;
+    @JsonProperty("contact_info")
+    @JsonInclude(Include.NON_NULL)
+    private ALBServicesUser contactInfo = null;
 
-  @JsonProperty("created_date")
-  @JsonInclude(Include.NON_NULL)
-  private String createdDate = null;
+    @JsonProperty("created_date")
+    @JsonInclude(Include.NON_NULL)
+    private String createdDate = null;
 
-  @JsonProperty("custom_tag")
-  @JsonInclude(Include.NON_NULL)
-  private String customTag = null;
+    @JsonProperty("custom_tag")
+    @JsonInclude(Include.NON_NULL)
+    private String customTag = null;
 
-  @JsonProperty("deployment_environment")
-  @JsonInclude(Include.NON_NULL)
-  private String deploymentEnvironment = null;
+    @JsonProperty("deployment_environment")
+    @JsonInclude(Include.NON_NULL)
+    private String deploymentEnvironment = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("email")
-  @JsonInclude(Include.NON_NULL)
-  private String email = null;
+    @JsonProperty("email")
+    @JsonInclude(Include.NON_NULL)
+    private String email = null;
 
-  @JsonProperty("environment")
-  @JsonInclude(Include.NON_NULL)
-  private String environment = null;
+    @JsonProperty("environment")
+    @JsonInclude(Include.NON_NULL)
+    private String environment = null;
 
-  @JsonProperty("fr_business_justification")
-  @JsonInclude(Include.NON_NULL)
-  private String frBusinessJustification = null;
+    @JsonProperty("fr_business_justification")
+    @JsonInclude(Include.NON_NULL)
+    private String frBusinessJustification = null;
 
-  @JsonProperty("fr_current_solution")
-  @JsonInclude(Include.NON_NULL)
-  private String frCurrentSolution = null;
+    @JsonProperty("fr_current_solution")
+    @JsonInclude(Include.NON_NULL)
+    private String frCurrentSolution = null;
 
-  @JsonProperty("fr_timing")
-  @JsonInclude(Include.NON_NULL)
-  private String frTiming = null;
+    @JsonProperty("fr_timing")
+    @JsonInclude(Include.NON_NULL)
+    private String frTiming = null;
 
-  @JsonProperty("fr_use_cases")
-  @JsonInclude(Include.NON_NULL)
-  private String frUseCases = null;
+    @JsonProperty("fr_use_cases")
+    @JsonInclude(Include.NON_NULL)
+    private String frUseCases = null;
 
-  @JsonProperty("id")
-  @JsonInclude(Include.NON_NULL)
-  private String id = null;
+    @JsonProperty("id")
+    @JsonInclude(Include.NON_NULL)
+    private String id = null;
 
-  @JsonProperty("last_modified_date")
-  @JsonInclude(Include.NON_NULL)
-  private String lastModifiedDate = null;
+    @JsonProperty("last_modified_date")
+    @JsonInclude(Include.NON_NULL)
+    private String lastModifiedDate = null;
 
-  @JsonProperty("patch_version")
-  @JsonInclude(Include.NON_NULL)
-  private String patchVersion = null;
+    @JsonProperty("patch_version")
+    @JsonInclude(Include.NON_NULL)
+    private String patchVersion = null;
 
-  @JsonProperty("severity")
-  @JsonInclude(Include.NON_NULL)
-  private String severity = null;
+    @JsonProperty("severity")
+    @JsonInclude(Include.NON_NULL)
+    private String severity = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("subject")
-  @JsonInclude(Include.NON_NULL)
-  private String subject = null;
+    @JsonProperty("subject")
+    @JsonInclude(Include.NON_NULL)
+    private String subject = null;
 
-  @JsonProperty("time")
-  @JsonInclude(Include.NON_NULL)
-  private String time = null;
+    @JsonProperty("time")
+    @JsonInclude(Include.NON_NULL)
+    private String time = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return assetId
    */
   @VsoMethod
@@ -140,6 +141,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param assetId set the assetId.
    */
   @VsoMethod
@@ -150,6 +152,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseAttachments
    */
   @VsoMethod
@@ -160,6 +163,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method. this will set the caseAttachments
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseAttachments
    */
   @VsoMethod
@@ -170,6 +174,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method this will set the caseAttachments
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseAttachments
    */
   @VsoMethod
@@ -185,6 +190,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseCreatedBy
    */
   @VsoMethod
@@ -195,6 +201,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param caseCreatedBy set the caseCreatedBy.
    */
   @VsoMethod
@@ -205,6 +212,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseNumber
    */
   @VsoMethod
@@ -215,6 +223,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param caseNumber set the caseNumber.
    */
   @VsoMethod
@@ -225,6 +234,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return caseStatus
    */
   @VsoMethod
@@ -235,6 +245,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param caseStatus set the caseStatus.
    */
   @VsoMethod
@@ -246,6 +257,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Contact information associated to particular case.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contactInfo
    */
   @VsoMethod
@@ -257,6 +269,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the setter method to the attribute.
    * Contact information associated to particular case.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param contactInfo set the contactInfo.
    */
   @VsoMethod
@@ -267,6 +280,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return createdDate
    */
   @VsoMethod
@@ -277,6 +291,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param createdDate set the createdDate.
    */
   @VsoMethod
@@ -287,6 +302,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customTag
    */
   @VsoMethod
@@ -297,6 +313,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customTag set the customTag.
    */
   @VsoMethod
@@ -307,6 +324,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deploymentEnvironment
    */
   @VsoMethod
@@ -317,6 +335,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deploymentEnvironment set the deploymentEnvironment.
    */
   @VsoMethod
@@ -327,6 +346,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -337,6 +357,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -348,6 +369,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Email of the point of contact for a particular support case.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return email
    */
   @VsoMethod
@@ -359,6 +381,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the setter method to the attribute.
    * Email of the point of contact for a particular support case.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param email set the email.
    */
   @VsoMethod
@@ -369,6 +392,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return environment
    */
   @VsoMethod
@@ -379,6 +403,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param environment set the environment.
    */
   @VsoMethod
@@ -390,6 +415,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Business justification for a feature request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frBusinessJustification
    */
   @VsoMethod
@@ -401,6 +427,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the setter method to the attribute.
    * Business justification for a feature request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frBusinessJustification set the frBusinessJustification.
    */
   @VsoMethod
@@ -412,6 +439,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Current solution/workaround for a feature request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frCurrentSolution
    */
   @VsoMethod
@@ -423,6 +451,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the setter method to the attribute.
    * Current solution/workaround for a feature request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frCurrentSolution set the frCurrentSolution.
    */
   @VsoMethod
@@ -434,6 +463,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Expected date of delivery for a feature request in yyyy-mm-dd format.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frTiming
    */
   @VsoMethod
@@ -445,6 +475,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the setter method to the attribute.
    * Expected date of delivery for a feature request in yyyy-mm-dd format.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frTiming set the frTiming.
    */
   @VsoMethod
@@ -456,6 +487,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Possible use cases for a feature request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frUseCases
    */
   @VsoMethod
@@ -467,6 +499,7 @@ public class ALBServicesCase extends AviRestResource {
    * This is the setter method to the attribute.
    * Possible use cases for a feature request.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frUseCases set the frUseCases.
    */
   @VsoMethod
@@ -477,6 +510,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return id
    */
   @VsoMethod
@@ -487,6 +521,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param id set the id.
    */
   @VsoMethod
@@ -497,6 +532,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastModifiedDate
    */
   @VsoMethod
@@ -507,6 +543,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastModifiedDate set the lastModifiedDate.
    */
   @VsoMethod
@@ -517,6 +554,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patchVersion
    */
   @VsoMethod
@@ -527,6 +565,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patchVersion set the patchVersion.
    */
   @VsoMethod
@@ -537,6 +576,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return severity
    */
   @VsoMethod
@@ -547,6 +587,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param severity set the severity.
    */
   @VsoMethod
@@ -557,6 +598,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -567,6 +609,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -577,6 +620,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subject
    */
   @VsoMethod
@@ -587,6 +631,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subject set the subject.
    */
   @VsoMethod
@@ -597,6 +642,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return time
    */
   @VsoMethod
@@ -607,6 +653,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param time set the time.
    */
   @VsoMethod
@@ -617,6 +664,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -627,6 +675,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -637,6 +686,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -647,6 +697,7 @@ public class ALBServicesCase extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

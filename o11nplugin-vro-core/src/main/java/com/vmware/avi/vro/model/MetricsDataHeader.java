@@ -26,79 +26,80 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDataHeader extends AviRestResource {
-  @JsonProperty("derivation_data")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsDerivationData derivationData = null;
+    @JsonProperty("derivation_data")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDerivationData derivationData = null;
 
-  @JsonProperty("dimension_data")
-  @JsonInclude(Include.NON_NULL)
-  private List<MetricsDimensionData> dimensionData = null;
+    @JsonProperty("dimension_data")
+    @JsonInclude(Include.NON_NULL)
+    private List<MetricsDimensionData> dimensionData = null;
 
-  @JsonProperty("entity_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String entityUuid = null;
+    @JsonProperty("entity_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String entityUuid = null;
 
-  @JsonProperty("metric_description")
-  @JsonInclude(Include.NON_NULL)
-  private String metricDescription = null;
+    @JsonProperty("metric_description")
+    @JsonInclude(Include.NON_NULL)
+    private String metricDescription = null;
 
-  @JsonProperty("metrics_min_scale")
-  @JsonInclude(Include.NON_NULL)
-  private Float metricsMinScale = null;
+    @JsonProperty("metrics_min_scale")
+    @JsonInclude(Include.NON_NULL)
+    private Float metricsMinScale = null;
 
-  @JsonProperty("metrics_sum_agg_invalid")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean metricsSumAggInvalid = false;
+    @JsonProperty("metrics_sum_agg_invalid")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean metricsSumAggInvalid = false;
 
-  @JsonProperty("missing_intervals")
-  @JsonInclude(Include.NON_NULL)
-  private List<MetricsMissingDataInterval> missingIntervals = null;
+    @JsonProperty("missing_intervals")
+    @JsonInclude(Include.NON_NULL)
+    private List<MetricsMissingDataInterval> missingIntervals = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("obj_id")
-  @JsonInclude(Include.NON_NULL)
-  private String objId = null;
+    @JsonProperty("obj_id")
+    @JsonInclude(Include.NON_NULL)
+    private String objId = null;
 
-  @JsonProperty("obj_id_type")
-  @JsonInclude(Include.NON_NULL)
-  private String objIdType = null;
+    @JsonProperty("obj_id_type")
+    @JsonInclude(Include.NON_NULL)
+    private String objIdType = null;
 
-  @JsonProperty("pool_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String poolUuid = null;
+    @JsonProperty("pool_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String poolUuid = null;
 
-  @JsonProperty("priority")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean priority = true;
+    @JsonProperty("priority")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean priority = true;
 
-  @JsonProperty("server")
-  @JsonInclude(Include.NON_NULL)
-  private String server = null;
+    @JsonProperty("server")
+    @JsonInclude(Include.NON_NULL)
+    private String server = null;
 
-  @JsonProperty("serviceengine_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceengineUuid = null;
+    @JsonProperty("serviceengine_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceengineUuid = null;
 
-  @JsonProperty("statistics")
-  @JsonInclude(Include.NON_NULL)
-  private MetricStatistics statistics = null;
+    @JsonProperty("statistics")
+    @JsonInclude(Include.NON_NULL)
+    private MetricStatistics statistics = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
-  @JsonProperty("units")
-  @JsonInclude(Include.NON_NULL)
-  private String units = "METRIC_COUNT";
+    @JsonProperty("units")
+    @JsonInclude(Include.NON_NULL)
+    private String units = "METRIC_COUNT";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Metrics derivation info.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return derivationData
    */
   @VsoMethod
@@ -109,6 +110,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Metrics derivation info.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param derivationData set the derivationData.
    */
   @VsoMethod
@@ -119,6 +121,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dimension_data of obj type metricsdataheader field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dimensionData
    */
   @VsoMethod
@@ -129,6 +132,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method. this will set the dimensionData
    * Placeholder for description of property dimension_data of obj type metricsdataheader field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dimensionData
    */
   @VsoMethod
@@ -139,6 +143,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method this will set the dimensionData
    * Placeholder for description of property dimension_data of obj type metricsdataheader field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dimensionData
    */
   @VsoMethod
@@ -154,6 +159,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Entity uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityUuid
    */
   @VsoMethod
@@ -164,6 +170,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Entity uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityUuid set the entityUuid.
    */
   @VsoMethod
@@ -174,6 +181,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_description of obj type metricsdataheader field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricDescription
    */
   @VsoMethod
@@ -184,6 +192,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_description of obj type metricsdataheader field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricDescription set the metricDescription.
    */
   @VsoMethod
@@ -194,6 +203,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_min_scale of obj type metricsdataheader field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsMinScale
    */
   @VsoMethod
@@ -204,6 +214,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_min_scale of obj type metricsdataheader field type str  type float.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsMinScale set the metricsMinScale.
    */
   @VsoMethod
@@ -237,6 +248,7 @@ public class MetricsDataHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Missing data intervals.
    * Data in these intervals are not used for stats calculation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingIntervals
    */
   @VsoMethod
@@ -248,6 +260,7 @@ public class MetricsDataHeader extends AviRestResource {
    * This is the setter method. this will set the missingIntervals
    * Missing data intervals.
    * Data in these intervals are not used for stats calculation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingIntervals
    */
   @VsoMethod
@@ -259,6 +272,7 @@ public class MetricsDataHeader extends AviRestResource {
    * This is the setter method this will set the missingIntervals
    * Missing data intervals.
    * Data in these intervals are not used for stats calculation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return missingIntervals
    */
   @VsoMethod
@@ -274,6 +288,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the column.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -284,6 +299,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the column.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -294,6 +310,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Object id of the series when object id was specified in the metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objId
    */
   @VsoMethod
@@ -304,6 +321,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Object id of the series when object id was specified in the metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objId set the objId.
    */
   @VsoMethod
@@ -317,6 +335,7 @@ public class MetricsDataHeader extends AviRestResource {
    * Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE,
    * METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER,
    * METRICS_OBJ_ID_TYPE_SE_INTERFACE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return objIdType
    */
   @VsoMethod
@@ -330,6 +349,7 @@ public class MetricsDataHeader extends AviRestResource {
    * Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE,
    * METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER,
    * METRICS_OBJ_ID_TYPE_SE_INTERFACE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param objIdType set the objIdType.
    */
   @VsoMethod
@@ -340,6 +360,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Pool_id for the metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
    */
   @VsoMethod
@@ -350,6 +371,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Pool_id for the metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.
    */
   @VsoMethod
@@ -382,6 +404,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Server ip port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
   @VsoMethod
@@ -392,6 +415,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Server ip port.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param server set the server.
    */
   @VsoMethod
@@ -403,6 +427,7 @@ public class MetricsDataHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engine ref or uuid.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceengineUuid
    */
   @VsoMethod
@@ -414,6 +439,7 @@ public class MetricsDataHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * Service engine ref or uuid.
    * Field introduced in 17.2.8.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceengineUuid set the serviceengineUuid.
    */
   @VsoMethod
@@ -424,6 +450,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Statistics of the metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return statistics
    */
   @VsoMethod
@@ -434,6 +461,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Statistics of the metric.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param statistics set the statistics.
    */
   @VsoMethod
@@ -444,6 +472,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tenant ref or uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -454,6 +483,7 @@ public class MetricsDataHeader extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Tenant ref or uuid.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -466,7 +496,7 @@ public class MetricsDataHeader extends AviRestResource {
    * Units of the column data.
    * Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND,
    * BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB...
-   * Default value when not specified in API or module is interpreted by Avi Controller as METRIC_COUNT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "METRIC_COUNT".
    * @return units
    */
   @VsoMethod
@@ -479,7 +509,7 @@ public class MetricsDataHeader extends AviRestResource {
    * Units of the column data.
    * Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND,
    * BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB...
-   * Default value when not specified in API or module is interpreted by Avi Controller as METRIC_COUNT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "METRIC_COUNT".
    * @param units set the units.
    */
   @VsoMethod

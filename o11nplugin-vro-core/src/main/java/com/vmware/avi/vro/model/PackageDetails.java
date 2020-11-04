@@ -26,21 +26,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PackageDetails extends AviRestResource {
-  @JsonProperty("build")
-  @JsonInclude(Include.NON_NULL)
-  private BuildInfo build = null;
+    @JsonProperty("build")
+    @JsonInclude(Include.NON_NULL)
+    private BuildInfo build = null;
 
-  @JsonProperty("hash")
-  @JsonInclude(Include.NON_NULL)
-  private String hash = null;
+    @JsonProperty("hash")
+    @JsonInclude(Include.NON_NULL)
+    private String hash = null;
 
-  @JsonProperty("patch")
-  @JsonInclude(Include.NON_NULL)
-  private PatchInfo patch = null;
+    @JsonProperty("patch")
+    @JsonInclude(Include.NON_NULL)
+    private PatchInfo patch = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private String path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path = null;
 
 
 
@@ -48,6 +48,7 @@ public class PackageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This contains build related information.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return build
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class PackageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * This contains build related information.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param build set the build.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class PackageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Md5 checksum over the entire package.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hash
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class PackageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Md5 checksum over the entire package.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hash set the hash.
    */
   @VsoMethod
@@ -92,6 +96,7 @@ public class PackageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Patch related necessary information.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return patch
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class PackageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Patch related necessary information.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param patch set the patch.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class PackageDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Path of the package in the repository.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class PackageDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Path of the package in the repository.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod

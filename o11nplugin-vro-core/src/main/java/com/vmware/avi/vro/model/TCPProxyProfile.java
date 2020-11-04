@@ -24,89 +24,89 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class TCPProxyProfile extends AviRestResource {
-  @JsonProperty("aggressive_congestion_avoidance")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean aggressiveCongestionAvoidance = false;
+    @JsonProperty("aggressive_congestion_avoidance")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean aggressiveCongestionAvoidance = false;
 
-  @JsonProperty("auto_window_growth")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean autoWindowGrowth = true;
+    @JsonProperty("auto_window_growth")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean autoWindowGrowth = true;
 
-  @JsonProperty("automatic")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean automatic = true;
+    @JsonProperty("automatic")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean automatic = true;
 
-  @JsonProperty("cc_algo")
-  @JsonInclude(Include.NON_NULL)
-  private String ccAlgo = "CC_ALGO_NEW_RENO";
+    @JsonProperty("cc_algo")
+    @JsonInclude(Include.NON_NULL)
+    private String ccAlgo = "CC_ALGO_NEW_RENO";
 
-  @JsonProperty("congestion_recovery_scaling_factor")
-  @JsonInclude(Include.NON_NULL)
-  private Integer congestionRecoveryScalingFactor = 2;
+    @JsonProperty("congestion_recovery_scaling_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Integer congestionRecoveryScalingFactor = 2;
 
-  @JsonProperty("idle_connection_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer idleConnectionTimeout = 600;
+    @JsonProperty("idle_connection_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer idleConnectionTimeout = 600;
 
-  @JsonProperty("idle_connection_type")
-  @JsonInclude(Include.NON_NULL)
-  private String idleConnectionType = "KEEP_ALIVE";
+    @JsonProperty("idle_connection_type")
+    @JsonInclude(Include.NON_NULL)
+    private String idleConnectionType = "KEEP_ALIVE";
 
-  @JsonProperty("ignore_time_wait")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ignoreTimeWait = false;
+    @JsonProperty("ignore_time_wait")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ignoreTimeWait = false;
 
-  @JsonProperty("ip_dscp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ipDscp = 0;
+    @JsonProperty("ip_dscp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ipDscp = 0;
 
-  @JsonProperty("keepalive_in_halfclose_state")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean keepaliveInHalfcloseState = true;
+    @JsonProperty("keepalive_in_halfclose_state")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean keepaliveInHalfcloseState = true;
 
-  @JsonProperty("max_retransmissions")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxRetransmissions = 8;
+    @JsonProperty("max_retransmissions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxRetransmissions = 8;
 
-  @JsonProperty("max_segment_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSegmentSize = null;
+    @JsonProperty("max_segment_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSegmentSize = null;
 
-  @JsonProperty("max_syn_retransmissions")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSynRetransmissions = 8;
+    @JsonProperty("max_syn_retransmissions")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSynRetransmissions = 8;
 
-  @JsonProperty("min_rexmt_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minRexmtTimeout = null;
+    @JsonProperty("min_rexmt_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minRexmtTimeout = null;
 
-  @JsonProperty("nagles_algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean naglesAlgorithm = false;
+    @JsonProperty("nagles_algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean naglesAlgorithm = false;
 
-  @JsonProperty("reassembly_queue_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer reassemblyQueueSize = 0;
+    @JsonProperty("reassembly_queue_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer reassemblyQueueSize = 0;
 
-  @JsonProperty("receive_window")
-  @JsonInclude(Include.NON_NULL)
-  private Integer receiveWindow = 64;
+    @JsonProperty("receive_window")
+    @JsonInclude(Include.NON_NULL)
+    private Integer receiveWindow = 64;
 
-  @JsonProperty("reorder_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer reorderThreshold = null;
+    @JsonProperty("reorder_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer reorderThreshold = null;
 
-  @JsonProperty("slow_start_scaling_factor")
-  @JsonInclude(Include.NON_NULL)
-  private Integer slowStartScalingFactor = 1;
+    @JsonProperty("slow_start_scaling_factor")
+    @JsonInclude(Include.NON_NULL)
+    private Integer slowStartScalingFactor = 1;
 
-  @JsonProperty("time_wait_delay")
-  @JsonInclude(Include.NON_NULL)
-  private Integer timeWaitDelay = 2000;
+    @JsonProperty("time_wait_delay")
+    @JsonInclude(Include.NON_NULL)
+    private Integer timeWaitDelay = 2000;
 
-  @JsonProperty("use_interface_mtu")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useInterfaceMtu = true;
+    @JsonProperty("use_interface_mtu")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useInterfaceMtu = true;
 
 
 
@@ -184,7 +184,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controls the congestion control algorithm we use.
    * Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CC_ALGO_NEW_RENO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CC_ALGO_NEW_RENO".
    * @return ccAlgo
    */
   @VsoMethod
@@ -196,7 +196,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Controls the congestion control algorithm we use.
    * Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP.
-   * Default value when not specified in API or module is interpreted by Avi Controller as CC_ALGO_NEW_RENO.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "CC_ALGO_NEW_RENO".
    * @param ccAlgo set the ccAlgo.
    */
   @VsoMethod
@@ -237,6 +237,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Set to 0 to allow infinite idle time.
    * Allowed values are 5-14400.
    * Special values are 0 - 'infinite'.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return idleConnectionTimeout
    */
@@ -252,6 +253,7 @@ public class TCPProxyProfile extends AviRestResource {
    * Set to 0 to allow infinite idle time.
    * Allowed values are 5-14400.
    * Special values are 0 - 'infinite'.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param idleConnectionTimeout set the idleConnectionTimeout.
    */
@@ -264,7 +266,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Controls the behavior of idle connections.
    * Enum options - KEEP_ALIVE, CLOSE_IDLE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as KEEP_ALIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "KEEP_ALIVE".
    * @return idleConnectionType
    */
   @VsoMethod
@@ -276,7 +278,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Controls the behavior of idle connections.
    * Enum options - KEEP_ALIVE, CLOSE_IDLE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as KEEP_ALIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "KEEP_ALIVE".
    * @param idleConnectionType set the idleConnectionType.
    */
   @VsoMethod
@@ -393,6 +395,8 @@ public class TCPProxyProfile extends AviRestResource {
    * Maximum tcp segment size.
    * Allowed values are 512-9000.
    * Special values are 0 - 'use interface mtu'.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSegmentSize
    */
   @VsoMethod
@@ -405,6 +409,8 @@ public class TCPProxyProfile extends AviRestResource {
    * Maximum tcp segment size.
    * Allowed values are 512-9000.
    * Special values are 0 - 'use interface mtu'.
+   * Unit is bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSegmentSize set the maxSegmentSize.
    */
   @VsoMethod
@@ -441,6 +447,8 @@ public class TCPProxyProfile extends AviRestResource {
    * The minimum wait time (in millisec) to retransmit packet.
    * Allowed values are 50-5000.
    * Field introduced in 17.2.8.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minRexmtTimeout
    */
   @VsoMethod
@@ -453,6 +461,8 @@ public class TCPProxyProfile extends AviRestResource {
    * The minimum wait time (in millisec) to retransmit packet.
    * Allowed values are 50-5000.
    * Field introduced in 17.2.8.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minRexmtTimeout set the minRexmtTimeout.
    */
   @VsoMethod
@@ -514,6 +524,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Size of the receive window.
    * Allowed values are 2-65536.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return receiveWindow
    */
@@ -526,6 +537,7 @@ public class TCPProxyProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Size of the receive window.
    * Allowed values are 2-65536.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param receiveWindow set the receiveWindow.
    */
@@ -542,6 +554,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The default value is 8 in public cloud platforms (aws, azure, gcp), and 3 in other environments.
    * Allowed values are 1-100.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reorderThreshold
    */
   @VsoMethod
@@ -557,6 +570,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The default value is 8 in public cloud platforms (aws, azure, gcp), and 3 in other environments.
    * Allowed values are 1-100.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reorderThreshold set the reorderThreshold.
    */
   @VsoMethod
@@ -595,6 +609,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The time (in millisec) to wait before closing a connection in the time_wait state.
    * Allowed values are 500-2000.
    * Special values are 0 - 'immediate'.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return timeWaitDelay
    */
@@ -608,6 +623,7 @@ public class TCPProxyProfile extends AviRestResource {
    * The time (in millisec) to wait before closing a connection in the time_wait state.
    * Allowed values are 500-2000.
    * Special values are 0 - 'immediate'.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param timeWaitDelay set the timeWaitDelay.
    */

@@ -24,51 +24,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIMgrClusterRuntime extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("datacenter_managed_object_id")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenterManagedObjectId = null;
+    @JsonProperty("datacenter_managed_object_id")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenterManagedObjectId = null;
 
-  @JsonProperty("datacenter_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenterUuid = null;
+    @JsonProperty("datacenter_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenterUuid = null;
 
-  @JsonProperty("host_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> hostRefs = null;
+    @JsonProperty("host_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> hostRefs = null;
 
-  @JsonProperty("managed_object_id")
-  @JsonInclude(Include.NON_NULL)
-  private String managedObjectId = null;
+    @JsonProperty("managed_object_id")
+    @JsonInclude(Include.NON_NULL)
+    private String managedObjectId = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -89,6 +91,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datacenter_managed_object_id of obj type vimgrclusterruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenterManagedObjectId
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datacenter_managed_object_id of obj type vimgrclusterruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenterManagedObjectId set the datacenterManagedObjectId.
    */
   @VsoMethod
@@ -109,6 +113,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of datacenter.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenterUuid
    */
   @VsoMethod
@@ -119,6 +124,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of datacenter.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenterUuid set the datacenterUuid.
    */
   @VsoMethod
@@ -129,6 +135,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRefs
    */
   @VsoMethod
@@ -139,6 +146,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the hostRefs
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRefs
    */
   @VsoMethod
@@ -149,6 +157,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the hostRefs
    * It is a reference to an object of type vimgrhostruntime.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostRefs
    */
   @VsoMethod
@@ -164,6 +173,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property managed_object_id of obj type vimgrclusterruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managedObjectId
    */
   @VsoMethod
@@ -174,6 +184,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property managed_object_id of obj type vimgrclusterruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managedObjectId set the managedObjectId.
    */
   @VsoMethod
@@ -184,6 +195,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -194,6 +206,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -204,6 +217,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -214,6 +228,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -225,6 +240,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -236,6 +252,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -265,6 +282,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -275,6 +293,7 @@ public class VIMgrClusterRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

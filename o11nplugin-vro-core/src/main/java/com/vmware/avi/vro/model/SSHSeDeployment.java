@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSHSeDeployment extends AviRestResource {
-  @JsonProperty("host_os")
-  @JsonInclude(Include.NON_NULL)
-  private String hostOs = null;
+    @JsonProperty("host_os")
+    @JsonInclude(Include.NON_NULL)
+    private String hostOs;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password;
 
-  @JsonProperty("ssh_user")
-  @JsonInclude(Include.NON_NULL)
-  private String sshUser = null;
+    @JsonProperty("ssh_user")
+    @JsonInclude(Include.NON_NULL)
+    private String sshUser;
 
-  @JsonProperty("sudo_user")
-  @JsonInclude(Include.NON_NULL)
-  private String sudoUser = null;
+    @JsonProperty("sudo_user")
+    @JsonInclude(Include.NON_NULL)
+    private String sudoUser;
 
 
 

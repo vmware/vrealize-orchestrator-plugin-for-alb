@@ -34,69 +34,73 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpamDnsProviderProfile extends AviRestResource {
-  @JsonProperty("allocate_ip_in_vrf")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allocateIpInVrf = false;
+    @JsonProperty("allocate_ip_in_vrf")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allocateIpInVrf = false;
 
-  @JsonProperty("aws_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsAwsProfile awsProfile = null;
+    @JsonProperty("aws_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsAwsProfile awsProfile = null;
 
-  @JsonProperty("azure_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsAzureProfile azureProfile = null;
+    @JsonProperty("azure_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsAzureProfile azureProfile = null;
 
-  @JsonProperty("custom_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsCustomProfile customProfile = null;
+    @JsonProperty("custom_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsCustomProfile customProfile = null;
 
-  @JsonProperty("gcp_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsGCPProfile gcpProfile = null;
+    @JsonProperty("gcp_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsGCPProfile gcpProfile = null;
 
-  @JsonProperty("infoblox_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsInfobloxProfile infobloxProfile = null;
+    @JsonProperty("infoblox_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsInfobloxProfile infobloxProfile = null;
 
-  @JsonProperty("internal_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsInternalProfile internalProfile = null;
+    @JsonProperty("internal_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsInternalProfile internalProfile = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("oci_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsOCIProfile ociProfile = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("openstack_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsOpenstackProfile openstackProfile = null;
+    @JsonProperty("oci_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsOCIProfile ociProfile = null;
 
-  @JsonProperty("proxy_configuration")
-  @JsonInclude(Include.NON_NULL)
-  private ProxyConfiguration proxyConfiguration = null;
+    @JsonProperty("openstack_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsOpenstackProfile openstackProfile = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("proxy_configuration")
+    @JsonInclude(Include.NON_NULL)
+    private ProxyConfiguration proxyConfiguration = null;
 
-  @JsonProperty("tencent_profile")
-  @JsonInclude(Include.NON_NULL)
-  private IpamDnsTencentProfile tencentProfile = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("tencent_profile")
+    @JsonInclude(Include.NON_NULL)
+    private IpamDnsTencentProfile tencentProfile = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -129,6 +133,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provider details if type is aws.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsProfile
    */
   @VsoMethod
@@ -139,6 +144,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provider details if type is aws.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsProfile set the awsProfile.
    */
   @VsoMethod
@@ -150,6 +156,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Provider details if type is microsoft azure.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureProfile
    */
   @VsoMethod
@@ -161,6 +168,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Provider details if type is microsoft azure.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureProfile set the azureProfile.
    */
   @VsoMethod
@@ -172,6 +180,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Provider details if type is custom.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return customProfile
    */
   @VsoMethod
@@ -183,6 +192,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Provider details if type is custom.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param customProfile set the customProfile.
    */
   @VsoMethod
@@ -193,6 +203,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provider details if type is google cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpProfile
    */
   @VsoMethod
@@ -203,6 +214,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provider details if type is google cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpProfile set the gcpProfile.
    */
   @VsoMethod
@@ -213,6 +225,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provider details if type is infoblox.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return infobloxProfile
    */
   @VsoMethod
@@ -223,6 +236,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provider details if type is infoblox.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param infobloxProfile set the infobloxProfile.
    */
   @VsoMethod
@@ -233,6 +247,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provider details if type is avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return internalProfile
    */
   @VsoMethod
@@ -243,6 +258,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provider details if type is avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param internalProfile set the internalProfile.
    */
   @VsoMethod
@@ -252,7 +268,52 @@ public class IpamDnsProviderProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public IpamDnsProviderProfile addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name for the ipam/dns provider profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -263,6 +324,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the ipam/dns provider profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -274,6 +336,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Provider details for oracle cloud.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ociProfile
    */
   @VsoMethod
@@ -285,6 +348,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Provider details for oracle cloud.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ociProfile set the ociProfile.
    */
   @VsoMethod
@@ -295,6 +359,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Provider details if type is openstack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return openstackProfile
    */
   @VsoMethod
@@ -305,6 +370,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Provider details if type is openstack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param openstackProfile set the openstackProfile.
    */
   @VsoMethod
@@ -315,6 +381,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proxyConfiguration
    */
   @VsoMethod
@@ -325,6 +392,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proxyConfiguration set the proxyConfiguration.
    */
   @VsoMethod
@@ -335,6 +403,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -345,6 +414,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -356,6 +426,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Provider details for tencent cloud.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tencentProfile
    */
   @VsoMethod
@@ -367,6 +438,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Provider details for tencent cloud.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tencentProfile set the tencentProfile.
    */
   @VsoMethod
@@ -380,6 +452,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
    * IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS,
    * IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -393,6 +466,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
    * Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
    * IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS,
    * IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -422,6 +496,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the ipam/dns provider profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -432,6 +507,7 @@ public class IpamDnsProviderProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the ipam/dns provider profile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -467,6 +543,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tencentProfile, objIpamDnsProviderProfile.tencentProfile)&&
   Objects.equals(this.proxyConfiguration, objIpamDnsProviderProfile.proxyConfiguration)&&
   Objects.equals(this.allocateIpInVrf, objIpamDnsProviderProfile.allocateIpInVrf)&&
+  Objects.equals(this.labels, objIpamDnsProviderProfile.labels)&&
   Objects.equals(this.tenantRef, objIpamDnsProviderProfile.tenantRef);
 }
 
@@ -481,6 +558,7 @@ public String toString() {
         sb.append("    gcpProfile: ").append(toIndentedString(gcpProfile)).append("\n");
         sb.append("    infobloxProfile: ").append(toIndentedString(infobloxProfile)).append("\n");
         sb.append("    internalProfile: ").append(toIndentedString(internalProfile)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ociProfile: ").append(toIndentedString(ociProfile)).append("\n");
         sb.append("    openstackProfile: ").append(toIndentedString(openstackProfile)).append("\n");

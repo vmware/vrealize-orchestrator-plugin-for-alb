@@ -25,45 +25,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VIMgrIPSubnetRuntime extends AviRestResource {
-  @JsonProperty("fip_available")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fipAvailable = false;
+    @JsonProperty("fip_available")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fipAvailable = false;
 
-  @JsonProperty("fip_subnet_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> fipSubnetUuids = null;
+    @JsonProperty("fip_subnet_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> fipSubnetUuids = null;
 
-  @JsonProperty("floatingip_subnets")
-  @JsonInclude(Include.NON_NULL)
-  private List<FloatingIpSubnet> floatingipSubnets = null;
+    @JsonProperty("floatingip_subnets")
+    @JsonInclude(Include.NON_NULL)
+    private List<FloatingIpSubnet> floatingipSubnets = null;
 
-  @JsonProperty("ip_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private String ipSubnet = null;
+    @JsonProperty("ip_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private String ipSubnet = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("prefix")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix prefix = null;
+    @JsonProperty("prefix")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix prefix = null;
 
-  @JsonProperty("primary")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean primary = false;
+    @JsonProperty("primary")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean primary = false;
 
-  @JsonProperty("ref_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer refCount = null;
+    @JsonProperty("ref_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer refCount = null;
 
-  @JsonProperty("se_ref_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seRefCount = 0;
+    @JsonProperty("se_ref_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seRefCount = 0;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -92,6 +92,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipSubnetUuids
    */
   @VsoMethod
@@ -102,6 +103,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method. this will set the fipSubnetUuids
    * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipSubnetUuids
    */
   @VsoMethod
@@ -112,6 +114,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method this will set the fipSubnetUuids
    * If fip_available is true, this is list of supported fip subnets, possibly empty if cloud does not support such a network list.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipSubnetUuids
    */
   @VsoMethod
@@ -128,6 +131,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingipSubnets
    */
   @VsoMethod
@@ -139,6 +143,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
    * This is the setter method. this will set the floatingipSubnets
    * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingipSubnets
    */
   @VsoMethod
@@ -150,6 +155,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
    * This is the setter method this will set the floatingipSubnets
    * If fip_available is true, the list of associated floatingip subnets, possibly empty if unsupported or implictly defined by the cloud.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingipSubnets
    */
   @VsoMethod
@@ -165,6 +171,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_subnet of obj type vimgripsubnetruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipSubnet
    */
   @VsoMethod
@@ -175,6 +182,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip_subnet of obj type vimgripsubnetruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipSubnet set the ipSubnet.
    */
   @VsoMethod
@@ -185,6 +193,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -195,6 +204,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -205,6 +215,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property prefix of obj type vimgripsubnetruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
   @VsoMethod
@@ -215,6 +226,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property prefix of obj type vimgripsubnetruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
   @VsoMethod
@@ -247,6 +259,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ref_count of obj type vimgripsubnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return refCount
    */
   @VsoMethod
@@ -257,6 +270,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ref_count of obj type vimgripsubnetruntime field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param refCount set the refCount.
    */
   @VsoMethod
@@ -289,6 +303,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -299,6 +314,7 @@ public class VIMgrIPSubnetRuntime extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

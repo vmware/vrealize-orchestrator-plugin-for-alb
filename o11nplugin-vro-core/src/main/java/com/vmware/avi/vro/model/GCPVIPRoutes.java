@@ -24,9 +24,9 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPVIPRoutes extends AviRestResource {
-  @JsonProperty("match_se_group_subnet")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean matchSeGroupSubnet = false;
+    @JsonProperty("match_se_group_subnet")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean matchSeGroupSubnet = false;
 
 
 
@@ -34,7 +34,7 @@ public class GCPVIPRoutes extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Match se group subnets for vip placement.
    * Default is to not match se group subnets.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return matchSeGroupSubnet
    */
@@ -47,7 +47,7 @@ public class GCPVIPRoutes extends AviRestResource {
    * This is the setter method to the attribute.
    * Match se group subnets for vip placement.
    * Default is to not match se group subnets.
-   * Field introduced in 20.1.1.
+   * Field introduced in 18.2.9, 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param matchSeGroupSubnet set the matchSeGroupSubnet.
    */

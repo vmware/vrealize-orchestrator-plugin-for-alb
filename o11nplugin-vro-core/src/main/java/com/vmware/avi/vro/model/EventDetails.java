@@ -76,6 +76,7 @@ import com.vmware.avi.vro.model.DockerUCPSetup;
 import com.vmware.avi.vro.model.DosAttackEventDetails;
 import com.vmware.avi.vro.model.GCPCloudRouterUpdate;
 import com.vmware.avi.vro.model.GCPSetup;
+import com.vmware.avi.vro.model.AuditComplianceEventInfo;
 import com.vmware.avi.vro.model.GslbStatus;
 import com.vmware.avi.vro.model.GslbServiceStatus;
 import com.vmware.avi.vro.model.HostUnavailEventDetails;
@@ -210,755 +211,760 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EventDetails extends AviRestResource {
-  @JsonProperty("add_networks_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmAddNetworksEventDetails addNetworksDetails = null;
-
-  @JsonProperty("albservices_case_details")
-  @JsonInclude(Include.NON_NULL)
-  private ALBServicesCase albservicesCaseDetails = null;
-
-  @JsonProperty("albservices_file_upload_details")
-  @JsonInclude(Include.NON_NULL)
-  private ALBServicesFileUpload albservicesFileUploadDetails = null;
-
-  @JsonProperty("albservices_status_details")
-  @JsonInclude(Include.NON_NULL)
-  private ALBServicesStatusDetails albservicesStatusDetails = null;
-
-  @JsonProperty("all_seupgrade_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private AllSeUpgradeEventDetails allSeupgradeEventDetails = null;
-
-  @JsonProperty("anomaly_details")
-  @JsonInclude(Include.NON_NULL)
-  private AnomalyEventDetails anomalyDetails = null;
-
-  @JsonProperty("apic_agent_bd_vrf_details")
-  @JsonInclude(Include.NON_NULL)
-  private ApicAgentBridgeDomainVrfChange apicAgentBdVrfDetails = null;
-
-  @JsonProperty("apic_agent_generic_details")
-  @JsonInclude(Include.NON_NULL)
-  private ApicAgentGenericEventDetails apicAgentGenericDetails = null;
-
-  @JsonProperty("apic_agent_vs_network_error")
-  @JsonInclude(Include.NON_NULL)
-  private ApicAgentVsNetworkError apicAgentVsNetworkError = null;
-
-  @JsonProperty("avg_uptime_change_details")
-  @JsonInclude(Include.NON_NULL)
-  private AvgUptimeChangeDetails avgUptimeChangeDetails = null;
-
-  @JsonProperty("aws_asg_deletion_details")
-  @JsonInclude(Include.NON_NULL)
-  private AWSASGDelete awsAsgDeletionDetails = null;
-
-  @JsonProperty("aws_asg_notif_details")
-  @JsonInclude(Include.NON_NULL)
-  private AWSASGNotifDetails awsAsgNotifDetails = null;
-
-  @JsonProperty("aws_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private AWSSetup awsInfraDetails = null;
-
-  @JsonProperty("azure_info")
-  @JsonInclude(Include.NON_NULL)
-  private AzureSetup azureInfo = null;
-
-  @JsonProperty("azure_mp_info")
-  @JsonInclude(Include.NON_NULL)
-  private AzureMarketplace azureMpInfo = null;
-
-  @JsonProperty("bind_vs_se_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmBindVsSeEventDetails bindVsSeDetails = null;
-
-  @JsonProperty("bm_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private BMSetup bmInfraDetails = null;
-
-  @JsonProperty("bootup_fail_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmSeBootupFailEventDetails bootupFailDetails = null;
-
-  @JsonProperty("burst_checkout_details")
-  @JsonInclude(Include.NON_NULL)
-  private BurstLicenseDetails burstCheckoutDetails = null;
-
-  @JsonProperty("cc_cluster_vip_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudClusterVip ccClusterVipDetails = null;
-
-  @JsonProperty("cc_dns_update_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudDnsUpdate ccDnsUpdateDetails = null;
-
-  @JsonProperty("cc_health_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudHealth ccHealthDetails = null;
-
-  @JsonProperty("cc_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudGeneric ccInfraDetails = null;
-
-  @JsonProperty("cc_ip_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudIpChange ccIpDetails = null;
-
-  @JsonProperty("cc_parkintf_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudVipParkingIntf ccParkintfDetails = null;
-
-  @JsonProperty("cc_scaleset_notif_details")
-  @JsonInclude(Include.NON_NULL)
-  private CCScaleSetNotifDetails ccScalesetNotifDetails = null;
-
-  @JsonProperty("cc_se_vm_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudSeVmChange ccSeVmDetails = null;
-
-  @JsonProperty("cc_sync_services_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudSyncServices ccSyncServicesDetails = null;
-
-  @JsonProperty("cc_tenant_del_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudTenantsDeleted ccTenantDelDetails = null;
-
-  @JsonProperty("cc_vip_update_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudVipUpdate ccVipUpdateDetails = null;
-
-  @JsonProperty("cc_vnic_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudVnicChange ccVnicDetails = null;
-
-  @JsonProperty("cloud_asg_notif_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudASGNotifDetails cloudAsgNotifDetails = null;
-
-  @JsonProperty("cloud_autoscaling_config_failure_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudAutoscalingConfigFailureDetails cloudAutoscalingConfigFailureDetails = null;
-
-  @JsonProperty("cluster_config_failed_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterConfigFailedEvent clusterConfigFailedDetails = null;
-
-  @JsonProperty("cluster_leader_failover_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterLeaderFailoverEvent clusterLeaderFailoverDetails = null;
-
-  @JsonProperty("cluster_node_add_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNodeAddEvent clusterNodeAddDetails = null;
-
-  @JsonProperty("cluster_node_db_failed_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNodeDbFailedEvent clusterNodeDbFailedDetails = null;
-
-  @JsonProperty("cluster_node_remove_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNodeRemoveEvent clusterNodeRemoveDetails = null;
-
-  @JsonProperty("cluster_node_shutdown_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNodeShutdownEvent clusterNodeShutdownDetails = null;
-
-  @JsonProperty("cluster_node_started_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterNodeStartedEvent clusterNodeStartedDetails = null;
-
-  @JsonProperty("cluster_service_critical_failure_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterServiceCriticalFailureEvent clusterServiceCriticalFailureDetails = null;
-
-  @JsonProperty("cluster_service_failed_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterServiceFailedEvent clusterServiceFailedDetails = null;
-
-  @JsonProperty("cluster_service_restored_details")
-  @JsonInclude(Include.NON_NULL)
-  private ClusterServiceRestoredEvent clusterServiceRestoredDetails = null;
-
-  @JsonProperty("cntlr_host_list_details")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraCntlrHostUnreachableList cntlrHostListDetails = null;
-
-  @JsonProperty("config_action_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigActionDetails configActionDetails = null;
-
-  @JsonProperty("config_create_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigCreateDetails configCreateDetails = null;
-
-  @JsonProperty("config_delete_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigDeleteDetails configDeleteDetails = null;
-
-  @JsonProperty("config_password_change_request_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigUserPasswordChangeRequest configPasswordChangeRequestDetails = null;
-
-  @JsonProperty("config_se_grp_flv_update_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigSeGrpFlvUpdate configSeGrpFlvUpdateDetails = null;
-
-  @JsonProperty("config_update_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigUpdateDetails configUpdateDetails = null;
-
-  @JsonProperty("config_user_authrz_rule_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigUserAuthrzByRule configUserAuthrzRuleDetails = null;
-
-  @JsonProperty("config_user_login_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigUserLogin configUserLoginDetails = null;
-
-  @JsonProperty("config_user_logout_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigUserLogout configUserLogoutDetails = null;
-
-  @JsonProperty("config_user_not_authrz_rule_details")
-  @JsonInclude(Include.NON_NULL)
-  private ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails = null;
-
-  @JsonProperty("container_cloud_batch_setup")
-  @JsonInclude(Include.NON_NULL)
-  private ContainerCloudBatchSetup containerCloudBatchSetup = null;
-
-  @JsonProperty("container_cloud_setup")
-  @JsonInclude(Include.NON_NULL)
-  private ContainerCloudSetup containerCloudSetup = null;
-
-  @JsonProperty("container_cloud_sevice")
-  @JsonInclude(Include.NON_NULL)
-  private ContainerCloudService containerCloudSevice = null;
-
-  @JsonProperty("controller_license_reconcile_details")
-  @JsonInclude(Include.NON_NULL)
-  private ControllerLicenseReconcileDetails controllerLicenseReconcileDetails = null;
-
-  @JsonProperty("crs_deployment_failure")
-  @JsonInclude(Include.NON_NULL)
-  private CRSDeploymentFailure crsDeploymentFailure = null;
-
-  @JsonProperty("crs_deployment_success")
-  @JsonInclude(Include.NON_NULL)
-  private CRSDeploymentSuccess crsDeploymentSuccess = null;
-
-  @JsonProperty("crs_details")
-  @JsonInclude(Include.NON_NULL)
-  private CRSDetails crsDetails = null;
-
-  @JsonProperty("crs_update_details")
-  @JsonInclude(Include.NON_NULL)
-  private CRSUpdateDetails crsUpdateDetails = null;
-
-  @JsonProperty("cs_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private CloudStackSetup csInfraDetails = null;
-
-  @JsonProperty("delete_se_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmDeleteSeEventDetails deleteSeDetails = null;
-
-  @JsonProperty("disable_se_migrate_details")
-  @JsonInclude(Include.NON_NULL)
-  private DisableSeMigrateEventDetails disableSeMigrateDetails = null;
-
-  @JsonProperty("disc_summary")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraDiscSummaryDetails discSummary = null;
-
-  @JsonProperty("dns_sync_info")
-  @JsonInclude(Include.NON_NULL)
-  private DNSVsSyncInfo dnsSyncInfo = null;
-
-  @JsonProperty("docker_ucp_details")
-  @JsonInclude(Include.NON_NULL)
-  private DockerUCPSetup dockerUcpDetails = null;
-
-  @JsonProperty("dos_attack_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private DosAttackEventDetails dosAttackEventDetails = null;
-
-  @JsonProperty("gcp_cloud_router_info")
-  @JsonInclude(Include.NON_NULL)
-  private GCPCloudRouterUpdate gcpCloudRouterInfo = null;
-
-  @JsonProperty("gcp_info")
-  @JsonInclude(Include.NON_NULL)
-  private GCPSetup gcpInfo = null;
-
-  @JsonProperty("glb_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbStatus glbInfo = null;
-
-  @JsonProperty("gs_info")
-  @JsonInclude(Include.NON_NULL)
-  private GslbServiceStatus gsInfo = null;
-
-  @JsonProperty("host_unavail_details")
-  @JsonInclude(Include.NON_NULL)
-  private HostUnavailEventDetails hostUnavailDetails = null;
-
-  @JsonProperty("hs_details")
-  @JsonInclude(Include.NON_NULL)
-  private HealthScoreDetails hsDetails = null;
-
-  @JsonProperty("ip_fail_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmSeIpFailEventDetails ipFailDetails = null;
-
-  @JsonProperty("ip_threat_db_event_data")
-  @JsonInclude(Include.NON_NULL)
-  private IPThreatDBEventData ipThreatDbEventData = null;
-
-  @JsonProperty("license_details")
-  @JsonInclude(Include.NON_NULL)
-  private LicenseDetails licenseDetails = null;
-
-  @JsonProperty("license_expiry_details")
-  @JsonInclude(Include.NON_NULL)
-  private LicenseExpiryDetails licenseExpiryDetails = null;
-
-  @JsonProperty("license_transaction_details")
-  @JsonInclude(Include.NON_NULL)
-  private LicenseTransactionDetails licenseTransactionDetails = null;
-
-  @JsonProperty("marathon_service_port_conflict_details")
-  @JsonInclude(Include.NON_NULL)
-  private MarathonServicePortConflict marathonServicePortConflictDetails = null;
-
-  @JsonProperty("memory_balancer_info")
-  @JsonInclude(Include.NON_NULL)
-  private MemoryBalancerInfo memoryBalancerInfo = null;
-
-  @JsonProperty("mesos_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private MesosSetup mesosInfraDetails = null;
-
-  @JsonProperty("metric_threshold_up_details")
-  @JsonInclude(Include.NON_NULL)
-  private MetricThresoldUpDetails metricThresholdUpDetails = null;
-
-  @JsonProperty("metrics_db_disk_details")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsDbDiskEventDetails metricsDbDiskDetails = null;
-
-  @JsonProperty("metrics_db_queue_full_details")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsDbQueueFullEventDetails metricsDbQueueFullDetails = null;
-
-  @JsonProperty("metrics_db_queue_healthy_details")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsDbQueueHealthyEventDetails metricsDbQueueHealthyDetails = null;
-
-  @JsonProperty("mgmt_nw_change_details")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraMgmtNwChangeDetails mgmtNwChangeDetails = null;
-
-  @JsonProperty("modify_networks_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmModifyNetworksEventDetails modifyNetworksDetails = null;
-
-  @JsonProperty("network_subnet_details")
-  @JsonInclude(Include.NON_NULL)
-  private NetworkSubnetInfo networkSubnetDetails = null;
-
-  @JsonProperty("nsxt_img_details")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtImageDetails nsxtImgDetails = null;
-
-  @JsonProperty("nsxt_info")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtSetup nsxtInfo = null;
-
-  @JsonProperty("nw_subnet_clash_details")
-  @JsonInclude(Include.NON_NULL)
-  private NetworkSubnetClash nwSubnetClashDetails = null;
-
-  @JsonProperty("nw_summarized_details")
-  @JsonInclude(Include.NON_NULL)
-  private SummarizedInfo nwSummarizedDetails = null;
-
-  @JsonProperty("oci_info")
-  @JsonInclude(Include.NON_NULL)
-  private OCISetup ociInfo = null;
-
-  @JsonProperty("os_api_ver_check_failure")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackApiVersionCheckFailure osApiVerCheckFailure = null;
-
-  @JsonProperty("os_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackClusterSetup osInfraDetails = null;
-
-  @JsonProperty("os_ip_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackIpChange osIpDetails = null;
-
-  @JsonProperty("os_lbaudit_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackLbProvAuditCheck osLbauditDetails = null;
-
-  @JsonProperty("os_lbplugin_op_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackLbPluginOp osLbpluginOpDetails = null;
-
-  @JsonProperty("os_se_vm_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackSeVmChange osSeVmDetails = null;
-
-  @JsonProperty("os_sync_services_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackSyncServices osSyncServicesDetails = null;
-
-  @JsonProperty("os_vnic_details")
-  @JsonInclude(Include.NON_NULL)
-  private OpenStackVnicChange osVnicDetails = null;
-
-  @JsonProperty("pool_deployment_failure_info")
-  @JsonInclude(Include.NON_NULL)
-  private PoolDeploymentFailureInfo poolDeploymentFailureInfo = null;
-
-  @JsonProperty("pool_deployment_success_info")
-  @JsonInclude(Include.NON_NULL)
-  private PoolDeploymentSuccessInfo poolDeploymentSuccessInfo = null;
-
-  @JsonProperty("pool_deployment_update_info")
-  @JsonInclude(Include.NON_NULL)
-  private PoolDeploymentUpdateInfo poolDeploymentUpdateInfo = null;
-
-  @JsonProperty("pool_server_delete_details")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraPoolServerDeleteDetails poolServerDeleteDetails = null;
-
-  @JsonProperty("psm_program_details")
-  @JsonInclude(Include.NON_NULL)
-  private PsmProgramDetails psmProgramDetails = null;
-
-  @JsonProperty("rate_limiter_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private RateLimiterEventDetails rateLimiterEventDetails = null;
-
-  @JsonProperty("rebalance_migrate_details")
-  @JsonInclude(Include.NON_NULL)
-  private RebalanceMigrateEventDetails rebalanceMigrateDetails = null;
-
-  @JsonProperty("rebalance_scalein_details")
-  @JsonInclude(Include.NON_NULL)
-  private RebalanceScaleinEventDetails rebalanceScaleinDetails = null;
-
-  @JsonProperty("rebalance_scaleout_details")
-  @JsonInclude(Include.NON_NULL)
-  private RebalanceScaleoutEventDetails rebalanceScaleoutDetails = null;
-
-  @JsonProperty("reboot_se_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmRebootSeEventDetails rebootSeDetails = null;
-
-  @JsonProperty("scheduler_action_info")
-  @JsonInclude(Include.NON_NULL)
-  private SchedulerActionDetails schedulerActionInfo = null;
-
-  @JsonProperty("se_bgp_peer_down_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeBgpPeerDownDetails seBgpPeerDownDetails = null;
-
-  @JsonProperty("se_bgp_peer_state_change_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
-
-  @JsonProperty("se_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeMgrEventDetails seDetails = null;
-
-  @JsonProperty("se_dupip_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeDupipEventDetails seDupipEventDetails = null;
-
-  @JsonProperty("se_gateway_heartbeat_failed_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeGatewayHeartbeatFailedDetails seGatewayHeartbeatFailedDetails = null;
-
-  @JsonProperty("se_gateway_heartbeat_success_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeGatewayHeartbeatSuccessDetails seGatewayHeartbeatSuccessDetails = null;
-
-  @JsonProperty("se_geo_db_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeGeoDbDetails seGeoDbDetails = null;
-
-  @JsonProperty("se_hb_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeHBEventDetails seHbEventDetails = null;
-
-  @JsonProperty("se_hb_recovered_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeHbRecoveredEventDetails seHbRecoveredEventDetails = null;
-
-  @JsonProperty("se_hm_gs_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeHmEventGSDetails seHmGsDetails = null;
-
-  @JsonProperty("se_hm_gsgroup_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeHmEventGslbPoolDetails seHmGsgroupDetails = null;
-
-  @JsonProperty("se_hm_pool_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeHmEventPoolDetails seHmPoolDetails = null;
-
-  @JsonProperty("se_hm_vs_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeHmEventVsDetails seHmVsDetails = null;
-
-  @JsonProperty("se_ip6_dad_failed_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeIP6DadFailedEventDetails seIp6DadFailedEventDetails = null;
-
-  @JsonProperty("se_ip_added_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeIpAddedEventDetails seIpAddedEventDetails = null;
-
-  @JsonProperty("se_ip_removed_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeIpRemovedEventDetails seIpRemovedEventDetails = null;
-
-  @JsonProperty("se_ipfailure_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeIpfailureEventDetails seIpfailureEventDetails = null;
-
-  @JsonProperty("se_licensed_bandwdith_exceeded_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeLicensedBandwdithExceededEventDetails seLicensedBandwdithExceededEventDetails = null;
-
-  @JsonProperty("se_memory_limit_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeMemoryLimitEventDetails seMemoryLimitEventDetails = null;
-
-  @JsonProperty("se_persistence_details")
-  @JsonInclude(Include.NON_NULL)
-  private SePersistenceEventDetails sePersistenceDetails = null;
-
-  @JsonProperty("se_pool_lb_details")
-  @JsonInclude(Include.NON_NULL)
-  private SePoolLbEventDetails sePoolLbDetails = null;
-
-  @JsonProperty("se_reconcile_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeReconcileDetails seReconcileDetails = null;
-
-  @JsonProperty("se_thresh_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeThreshEventDetails seThreshEventDetails = null;
-
-  @JsonProperty("se_version_check_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeVersionCheckFailedEvent seVersionCheckDetails = null;
-
-  @JsonProperty("se_vnic_down_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeVnicDownEventDetails seVnicDownEventDetails = null;
-
-  @JsonProperty("se_vnic_tx_queue_stall_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeVnicTxQueueStallEventDetails seVnicTxQueueStallEventDetails = null;
-
-  @JsonProperty("se_vnic_up_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeVnicUpEventDetails seVnicUpEventDetails = null;
-
-  @JsonProperty("se_vs_fault_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeVsFaultEventDetails seVsFaultEventDetails = null;
-
-  @JsonProperty("sec_mgr_data_event")
-  @JsonInclude(Include.NON_NULL)
-  private SecMgrDataEvent secMgrDataEvent = null;
-
-  @JsonProperty("semigrate_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeMigrateEventDetails semigrateEventDetails = null;
-
-  @JsonProperty("server_autoscale_failed_info")
-  @JsonInclude(Include.NON_NULL)
-  private ServerAutoScaleFailedInfo serverAutoscaleFailedInfo = null;
-
-  @JsonProperty("server_autoscalein_complete_info")
-  @JsonInclude(Include.NON_NULL)
-  private ServerAutoScaleInCompleteInfo serverAutoscaleinCompleteInfo = null;
-
-  @JsonProperty("server_autoscalein_info")
-  @JsonInclude(Include.NON_NULL)
-  private ServerAutoScaleInInfo serverAutoscaleinInfo = null;
-
-  @JsonProperty("server_autoscaleout_complete_info")
-  @JsonInclude(Include.NON_NULL)
-  private ServerAutoScaleOutCompleteInfo serverAutoscaleoutCompleteInfo = null;
-
-  @JsonProperty("server_autoscaleout_info")
-  @JsonInclude(Include.NON_NULL)
-  private ServerAutoScaleOutInfo serverAutoscaleoutInfo = null;
-
-  @JsonProperty("seupgrade_disrupted_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeVsDisruptedEventDetails seupgradeDisruptedDetails = null;
-
-  @JsonProperty("seupgrade_event_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeEventDetails seupgradeEventDetails = null;
-
-  @JsonProperty("seupgrade_migrate_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeMigrateEventDetails seupgradeMigrateDetails = null;
-
-  @JsonProperty("seupgrade_scalein_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeScaleinEventDetails seupgradeScaleinDetails = null;
-
-  @JsonProperty("seupgrade_scaleout_details")
-  @JsonInclude(Include.NON_NULL)
-  private SeUpgradeScaleoutEventDetails seupgradeScaleoutDetails = null;
-
-  @JsonProperty("spawn_se_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmSpawnSeEventDetails spawnSeDetails = null;
-
-  @JsonProperty("ssl_expire_details")
-  @JsonInclude(Include.NON_NULL)
-  private SSLExpireDetails sslExpireDetails = null;
-
-  @JsonProperty("ssl_export_details")
-  @JsonInclude(Include.NON_NULL)
-  private SSLExportDetails sslExportDetails = null;
-
-  @JsonProperty("ssl_ignored_details")
-  @JsonInclude(Include.NON_NULL)
-  private SSLIgnoredDetails sslIgnoredDetails = null;
-
-  @JsonProperty("ssl_renew_details")
-  @JsonInclude(Include.NON_NULL)
-  private SSLRenewDetails sslRenewDetails = null;
-
-  @JsonProperty("ssl_renew_failed_details")
-  @JsonInclude(Include.NON_NULL)
-  private SSLRenewFailedDetails sslRenewFailedDetails = null;
-
-  @JsonProperty("ssl_revoked_details")
-  @JsonInclude(Include.NON_NULL)
-  private SSLRevokedDetails sslRevokedDetails = null;
-
-  @JsonProperty("switchover_details")
-  @JsonInclude(Include.NON_NULL)
-  private SwitchoverEventDetails switchoverDetails = null;
-
-  @JsonProperty("switchover_fail_details")
-  @JsonInclude(Include.NON_NULL)
-  private SwitchoverFailEventDetails switchoverFailDetails = null;
-
-  @JsonProperty("sync_services_info")
-  @JsonInclude(Include.NON_NULL)
-  private CloudSyncServices syncServicesInfo = null;
-
-  @JsonProperty("system_upgrade_details")
-  @JsonInclude(Include.NON_NULL)
-  private SystemUpgradeDetails systemUpgradeDetails = null;
-
-  @JsonProperty("tencent_info")
-  @JsonInclude(Include.NON_NULL)
-  private TencentSetup tencentInfo = null;
-
-  @JsonProperty("unbind_vs_se_details")
-  @JsonInclude(Include.NON_NULL)
-  private RmUnbindVsSeEventDetails unbindVsSeDetails = null;
-
-  @JsonProperty("upgrade_entry")
-  @JsonInclude(Include.NON_NULL)
-  private UpgradeOpsEntry upgradeEntry = null;
-
-  @JsonProperty("upgrade_status_info")
-  @JsonInclude(Include.NON_NULL)
-  private UpgradeStatusInfo upgradeStatusInfo = null;
-
-  @JsonProperty("vca_infra_details")
-  @JsonInclude(Include.NON_NULL)
-  private VCASetup vcaInfraDetails = null;
-
-  @JsonProperty("vcenter_connectivity_status")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraVcenterConnectivityStatus vcenterConnectivityStatus = null;
-
-  @JsonProperty("vcenter_details")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraVcenterBadCredentials vcenterDetails = null;
-
-  @JsonProperty("vcenter_disc_failure")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraVcenterDiscoveryFailure vcenterDiscFailure = null;
-
-  @JsonProperty("vcenter_network_limit")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraVcenterNetworkLimit vcenterNetworkLimit = null;
-
-  @JsonProperty("vcenter_obj_delete_details")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraVcenterObjDeleteDetails vcenterObjDeleteDetails = null;
-
-  @JsonProperty("vip_autoscale")
-  @JsonInclude(Include.NON_NULL)
-  private VipScaleDetails vipAutoscale = null;
-
-  @JsonProperty("vip_dns_info")
-  @JsonInclude(Include.NON_NULL)
-  private DNSRegisterInfo vipDnsInfo = null;
-
-  @JsonProperty("vm_details")
-  @JsonInclude(Include.NON_NULL)
-  private VinfraVmDetails vmDetails = null;
-
-  @JsonProperty("vs_awaitingse_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsAwaitingSeEventDetails vsAwaitingseDetails = null;
-
-  @JsonProperty("vs_error_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsErrorEventDetails vsErrorDetails = null;
-
-  @JsonProperty("vs_fsm_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsFsmEventDetails vsFsmDetails = null;
-
-  @JsonProperty("vs_initialplacement_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsInitialPlacementEventDetails vsInitialplacementDetails = null;
-
-  @JsonProperty("vs_migrate_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsMigrateEventDetails vsMigrateDetails = null;
-
-  @JsonProperty("vs_pool_nw_fltr_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsPoolNwFilterEventDetails vsPoolNwFltrDetails = null;
-
-  @JsonProperty("vs_scalein_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsScaleInEventDetails vsScaleinDetails = null;
-
-  @JsonProperty("vs_scaleout_details")
-  @JsonInclude(Include.NON_NULL)
-  private VsScaleOutEventDetails vsScaleoutDetails = null;
+    @JsonProperty("add_networks_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmAddNetworksEventDetails addNetworksDetails = null;
+
+    @JsonProperty("albservices_case_details")
+    @JsonInclude(Include.NON_NULL)
+    private ALBServicesCase albservicesCaseDetails = null;
+
+    @JsonProperty("albservices_file_upload_details")
+    @JsonInclude(Include.NON_NULL)
+    private ALBServicesFileUpload albservicesFileUploadDetails = null;
+
+    @JsonProperty("albservices_status_details")
+    @JsonInclude(Include.NON_NULL)
+    private ALBServicesStatusDetails albservicesStatusDetails = null;
+
+    @JsonProperty("all_seupgrade_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private AllSeUpgradeEventDetails allSeupgradeEventDetails = null;
+
+    @JsonProperty("anomaly_details")
+    @JsonInclude(Include.NON_NULL)
+    private AnomalyEventDetails anomalyDetails = null;
+
+    @JsonProperty("apic_agent_bd_vrf_details")
+    @JsonInclude(Include.NON_NULL)
+    private ApicAgentBridgeDomainVrfChange apicAgentBdVrfDetails = null;
+
+    @JsonProperty("apic_agent_generic_details")
+    @JsonInclude(Include.NON_NULL)
+    private ApicAgentGenericEventDetails apicAgentGenericDetails = null;
+
+    @JsonProperty("apic_agent_vs_network_error")
+    @JsonInclude(Include.NON_NULL)
+    private ApicAgentVsNetworkError apicAgentVsNetworkError = null;
+
+    @JsonProperty("avg_uptime_change_details")
+    @JsonInclude(Include.NON_NULL)
+    private AvgUptimeChangeDetails avgUptimeChangeDetails = null;
+
+    @JsonProperty("aws_asg_deletion_details")
+    @JsonInclude(Include.NON_NULL)
+    private AWSASGDelete awsAsgDeletionDetails = null;
+
+    @JsonProperty("aws_asg_notif_details")
+    @JsonInclude(Include.NON_NULL)
+    private AWSASGNotifDetails awsAsgNotifDetails = null;
+
+    @JsonProperty("aws_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private AWSSetup awsInfraDetails = null;
+
+    @JsonProperty("azure_info")
+    @JsonInclude(Include.NON_NULL)
+    private AzureSetup azureInfo = null;
+
+    @JsonProperty("azure_mp_info")
+    @JsonInclude(Include.NON_NULL)
+    private AzureMarketplace azureMpInfo = null;
+
+    @JsonProperty("bind_vs_se_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmBindVsSeEventDetails bindVsSeDetails = null;
+
+    @JsonProperty("bm_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private BMSetup bmInfraDetails = null;
+
+    @JsonProperty("bootup_fail_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmSeBootupFailEventDetails bootupFailDetails = null;
+
+    @JsonProperty("burst_checkout_details")
+    @JsonInclude(Include.NON_NULL)
+    private BurstLicenseDetails burstCheckoutDetails = null;
+
+    @JsonProperty("cc_cluster_vip_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudClusterVip ccClusterVipDetails = null;
+
+    @JsonProperty("cc_dns_update_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudDnsUpdate ccDnsUpdateDetails = null;
+
+    @JsonProperty("cc_health_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudHealth ccHealthDetails = null;
+
+    @JsonProperty("cc_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudGeneric ccInfraDetails = null;
+
+    @JsonProperty("cc_ip_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudIpChange ccIpDetails = null;
+
+    @JsonProperty("cc_parkintf_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudVipParkingIntf ccParkintfDetails = null;
+
+    @JsonProperty("cc_scaleset_notif_details")
+    @JsonInclude(Include.NON_NULL)
+    private CCScaleSetNotifDetails ccScalesetNotifDetails = null;
+
+    @JsonProperty("cc_se_vm_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudSeVmChange ccSeVmDetails = null;
+
+    @JsonProperty("cc_sync_services_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudSyncServices ccSyncServicesDetails = null;
+
+    @JsonProperty("cc_tenant_del_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudTenantsDeleted ccTenantDelDetails = null;
+
+    @JsonProperty("cc_vip_update_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudVipUpdate ccVipUpdateDetails = null;
+
+    @JsonProperty("cc_vnic_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudVnicChange ccVnicDetails = null;
+
+    @JsonProperty("cloud_asg_notif_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudASGNotifDetails cloudAsgNotifDetails = null;
+
+    @JsonProperty("cloud_autoscaling_config_failure_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudAutoscalingConfigFailureDetails cloudAutoscalingConfigFailureDetails = null;
+
+    @JsonProperty("cluster_config_failed_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterConfigFailedEvent clusterConfigFailedDetails = null;
+
+    @JsonProperty("cluster_leader_failover_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterLeaderFailoverEvent clusterLeaderFailoverDetails = null;
+
+    @JsonProperty("cluster_node_add_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNodeAddEvent clusterNodeAddDetails = null;
+
+    @JsonProperty("cluster_node_db_failed_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNodeDbFailedEvent clusterNodeDbFailedDetails = null;
+
+    @JsonProperty("cluster_node_remove_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNodeRemoveEvent clusterNodeRemoveDetails = null;
+
+    @JsonProperty("cluster_node_shutdown_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNodeShutdownEvent clusterNodeShutdownDetails = null;
+
+    @JsonProperty("cluster_node_started_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterNodeStartedEvent clusterNodeStartedDetails = null;
+
+    @JsonProperty("cluster_service_critical_failure_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterServiceCriticalFailureEvent clusterServiceCriticalFailureDetails = null;
+
+    @JsonProperty("cluster_service_failed_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterServiceFailedEvent clusterServiceFailedDetails = null;
+
+    @JsonProperty("cluster_service_restored_details")
+    @JsonInclude(Include.NON_NULL)
+    private ClusterServiceRestoredEvent clusterServiceRestoredDetails = null;
+
+    @JsonProperty("cntlr_host_list_details")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraCntlrHostUnreachableList cntlrHostListDetails = null;
+
+    @JsonProperty("config_action_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigActionDetails configActionDetails = null;
+
+    @JsonProperty("config_create_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigCreateDetails configCreateDetails = null;
+
+    @JsonProperty("config_delete_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigDeleteDetails configDeleteDetails = null;
+
+    @JsonProperty("config_password_change_request_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigUserPasswordChangeRequest configPasswordChangeRequestDetails = null;
+
+    @JsonProperty("config_se_grp_flv_update_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigSeGrpFlvUpdate configSeGrpFlvUpdateDetails = null;
+
+    @JsonProperty("config_update_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigUpdateDetails configUpdateDetails = null;
+
+    @JsonProperty("config_user_authrz_rule_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigUserAuthrzByRule configUserAuthrzRuleDetails = null;
+
+    @JsonProperty("config_user_login_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigUserLogin configUserLoginDetails = null;
+
+    @JsonProperty("config_user_logout_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigUserLogout configUserLogoutDetails = null;
+
+    @JsonProperty("config_user_not_authrz_rule_details")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails = null;
+
+    @JsonProperty("container_cloud_batch_setup")
+    @JsonInclude(Include.NON_NULL)
+    private ContainerCloudBatchSetup containerCloudBatchSetup = null;
+
+    @JsonProperty("container_cloud_setup")
+    @JsonInclude(Include.NON_NULL)
+    private ContainerCloudSetup containerCloudSetup = null;
+
+    @JsonProperty("container_cloud_sevice")
+    @JsonInclude(Include.NON_NULL)
+    private ContainerCloudService containerCloudSevice = null;
+
+    @JsonProperty("controller_license_reconcile_details")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerLicenseReconcileDetails controllerLicenseReconcileDetails = null;
+
+    @JsonProperty("crs_deployment_failure")
+    @JsonInclude(Include.NON_NULL)
+    private CRSDeploymentFailure crsDeploymentFailure = null;
+
+    @JsonProperty("crs_deployment_success")
+    @JsonInclude(Include.NON_NULL)
+    private CRSDeploymentSuccess crsDeploymentSuccess = null;
+
+    @JsonProperty("crs_details")
+    @JsonInclude(Include.NON_NULL)
+    private CRSDetails crsDetails = null;
+
+    @JsonProperty("crs_update_details")
+    @JsonInclude(Include.NON_NULL)
+    private CRSUpdateDetails crsUpdateDetails = null;
+
+    @JsonProperty("cs_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudStackSetup csInfraDetails = null;
+
+    @JsonProperty("delete_se_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmDeleteSeEventDetails deleteSeDetails = null;
+
+    @JsonProperty("disable_se_migrate_details")
+    @JsonInclude(Include.NON_NULL)
+    private DisableSeMigrateEventDetails disableSeMigrateDetails = null;
+
+    @JsonProperty("disc_summary")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraDiscSummaryDetails discSummary = null;
+
+    @JsonProperty("dns_sync_info")
+    @JsonInclude(Include.NON_NULL)
+    private DNSVsSyncInfo dnsSyncInfo = null;
+
+    @JsonProperty("docker_ucp_details")
+    @JsonInclude(Include.NON_NULL)
+    private DockerUCPSetup dockerUcpDetails = null;
+
+    @JsonProperty("dos_attack_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private DosAttackEventDetails dosAttackEventDetails = null;
+
+    @JsonProperty("gcp_cloud_router_info")
+    @JsonInclude(Include.NON_NULL)
+    private GCPCloudRouterUpdate gcpCloudRouterInfo = null;
+
+    @JsonProperty("gcp_info")
+    @JsonInclude(Include.NON_NULL)
+    private GCPSetup gcpInfo = null;
+
+    @JsonProperty("generic_audit_compliance_event_info")
+    @JsonInclude(Include.NON_NULL)
+    private AuditComplianceEventInfo genericAuditComplianceEventInfo = null;
+
+    @JsonProperty("glb_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbStatus glbInfo = null;
+
+    @JsonProperty("gs_info")
+    @JsonInclude(Include.NON_NULL)
+    private GslbServiceStatus gsInfo = null;
+
+    @JsonProperty("host_unavail_details")
+    @JsonInclude(Include.NON_NULL)
+    private HostUnavailEventDetails hostUnavailDetails = null;
+
+    @JsonProperty("hs_details")
+    @JsonInclude(Include.NON_NULL)
+    private HealthScoreDetails hsDetails = null;
+
+    @JsonProperty("ip_fail_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmSeIpFailEventDetails ipFailDetails = null;
+
+    @JsonProperty("ip_threat_db_event_data")
+    @JsonInclude(Include.NON_NULL)
+    private IPThreatDBEventData ipThreatDbEventData = null;
+
+    @JsonProperty("license_details")
+    @JsonInclude(Include.NON_NULL)
+    private LicenseDetails licenseDetails = null;
+
+    @JsonProperty("license_expiry_details")
+    @JsonInclude(Include.NON_NULL)
+    private LicenseExpiryDetails licenseExpiryDetails = null;
+
+    @JsonProperty("license_transaction_details")
+    @JsonInclude(Include.NON_NULL)
+    private LicenseTransactionDetails licenseTransactionDetails = null;
+
+    @JsonProperty("marathon_service_port_conflict_details")
+    @JsonInclude(Include.NON_NULL)
+    private MarathonServicePortConflict marathonServicePortConflictDetails = null;
+
+    @JsonProperty("memory_balancer_info")
+    @JsonInclude(Include.NON_NULL)
+    private MemoryBalancerInfo memoryBalancerInfo = null;
+
+    @JsonProperty("mesos_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private MesosSetup mesosInfraDetails = null;
+
+    @JsonProperty("metric_threshold_up_details")
+    @JsonInclude(Include.NON_NULL)
+    private MetricThresoldUpDetails metricThresholdUpDetails = null;
+
+    @JsonProperty("metrics_db_disk_details")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDbDiskEventDetails metricsDbDiskDetails = null;
+
+    @JsonProperty("metrics_db_queue_full_details")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDbQueueFullEventDetails metricsDbQueueFullDetails = null;
+
+    @JsonProperty("metrics_db_queue_healthy_details")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDbQueueHealthyEventDetails metricsDbQueueHealthyDetails = null;
+
+    @JsonProperty("mgmt_nw_change_details")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraMgmtNwChangeDetails mgmtNwChangeDetails = null;
+
+    @JsonProperty("modify_networks_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmModifyNetworksEventDetails modifyNetworksDetails = null;
+
+    @JsonProperty("network_subnet_details")
+    @JsonInclude(Include.NON_NULL)
+    private NetworkSubnetInfo networkSubnetDetails = null;
+
+    @JsonProperty("nsxt_img_details")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtImageDetails nsxtImgDetails = null;
+
+    @JsonProperty("nsxt_info")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtSetup nsxtInfo = null;
+
+    @JsonProperty("nw_subnet_clash_details")
+    @JsonInclude(Include.NON_NULL)
+    private NetworkSubnetClash nwSubnetClashDetails = null;
+
+    @JsonProperty("nw_summarized_details")
+    @JsonInclude(Include.NON_NULL)
+    private SummarizedInfo nwSummarizedDetails = null;
+
+    @JsonProperty("oci_info")
+    @JsonInclude(Include.NON_NULL)
+    private OCISetup ociInfo = null;
+
+    @JsonProperty("os_api_ver_check_failure")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackApiVersionCheckFailure osApiVerCheckFailure = null;
+
+    @JsonProperty("os_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackClusterSetup osInfraDetails = null;
+
+    @JsonProperty("os_ip_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackIpChange osIpDetails = null;
+
+    @JsonProperty("os_lbaudit_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackLbProvAuditCheck osLbauditDetails = null;
+
+    @JsonProperty("os_lbplugin_op_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackLbPluginOp osLbpluginOpDetails = null;
+
+    @JsonProperty("os_se_vm_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackSeVmChange osSeVmDetails = null;
+
+    @JsonProperty("os_sync_services_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackSyncServices osSyncServicesDetails = null;
+
+    @JsonProperty("os_vnic_details")
+    @JsonInclude(Include.NON_NULL)
+    private OpenStackVnicChange osVnicDetails = null;
+
+    @JsonProperty("pool_deployment_failure_info")
+    @JsonInclude(Include.NON_NULL)
+    private PoolDeploymentFailureInfo poolDeploymentFailureInfo = null;
+
+    @JsonProperty("pool_deployment_success_info")
+    @JsonInclude(Include.NON_NULL)
+    private PoolDeploymentSuccessInfo poolDeploymentSuccessInfo = null;
+
+    @JsonProperty("pool_deployment_update_info")
+    @JsonInclude(Include.NON_NULL)
+    private PoolDeploymentUpdateInfo poolDeploymentUpdateInfo = null;
+
+    @JsonProperty("pool_server_delete_details")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraPoolServerDeleteDetails poolServerDeleteDetails = null;
+
+    @JsonProperty("psm_program_details")
+    @JsonInclude(Include.NON_NULL)
+    private PsmProgramDetails psmProgramDetails = null;
+
+    @JsonProperty("rate_limiter_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private RateLimiterEventDetails rateLimiterEventDetails = null;
+
+    @JsonProperty("rebalance_migrate_details")
+    @JsonInclude(Include.NON_NULL)
+    private RebalanceMigrateEventDetails rebalanceMigrateDetails = null;
+
+    @JsonProperty("rebalance_scalein_details")
+    @JsonInclude(Include.NON_NULL)
+    private RebalanceScaleinEventDetails rebalanceScaleinDetails = null;
+
+    @JsonProperty("rebalance_scaleout_details")
+    @JsonInclude(Include.NON_NULL)
+    private RebalanceScaleoutEventDetails rebalanceScaleoutDetails = null;
+
+    @JsonProperty("reboot_se_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmRebootSeEventDetails rebootSeDetails = null;
+
+    @JsonProperty("scheduler_action_info")
+    @JsonInclude(Include.NON_NULL)
+    private SchedulerActionDetails schedulerActionInfo = null;
+
+    @JsonProperty("se_bgp_peer_down_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeBgpPeerDownDetails seBgpPeerDownDetails = null;
+
+    @JsonProperty("se_bgp_peer_state_change_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
+
+    @JsonProperty("se_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeMgrEventDetails seDetails = null;
+
+    @JsonProperty("se_dupip_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeDupipEventDetails seDupipEventDetails = null;
+
+    @JsonProperty("se_gateway_heartbeat_failed_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeGatewayHeartbeatFailedDetails seGatewayHeartbeatFailedDetails = null;
+
+    @JsonProperty("se_gateway_heartbeat_success_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeGatewayHeartbeatSuccessDetails seGatewayHeartbeatSuccessDetails = null;
+
+    @JsonProperty("se_geo_db_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeGeoDbDetails seGeoDbDetails = null;
+
+    @JsonProperty("se_hb_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeHBEventDetails seHbEventDetails = null;
+
+    @JsonProperty("se_hb_recovered_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeHbRecoveredEventDetails seHbRecoveredEventDetails = null;
+
+    @JsonProperty("se_hm_gs_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeHmEventGSDetails seHmGsDetails = null;
+
+    @JsonProperty("se_hm_gsgroup_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeHmEventGslbPoolDetails seHmGsgroupDetails = null;
+
+    @JsonProperty("se_hm_pool_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeHmEventPoolDetails seHmPoolDetails = null;
+
+    @JsonProperty("se_hm_vs_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeHmEventVsDetails seHmVsDetails = null;
+
+    @JsonProperty("se_ip6_dad_failed_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeIP6DadFailedEventDetails seIp6DadFailedEventDetails = null;
+
+    @JsonProperty("se_ip_added_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeIpAddedEventDetails seIpAddedEventDetails = null;
+
+    @JsonProperty("se_ip_removed_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeIpRemovedEventDetails seIpRemovedEventDetails = null;
+
+    @JsonProperty("se_ipfailure_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeIpfailureEventDetails seIpfailureEventDetails = null;
+
+    @JsonProperty("se_licensed_bandwdith_exceeded_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeLicensedBandwdithExceededEventDetails seLicensedBandwdithExceededEventDetails = null;
+
+    @JsonProperty("se_memory_limit_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeMemoryLimitEventDetails seMemoryLimitEventDetails = null;
+
+    @JsonProperty("se_persistence_details")
+    @JsonInclude(Include.NON_NULL)
+    private SePersistenceEventDetails sePersistenceDetails = null;
+
+    @JsonProperty("se_pool_lb_details")
+    @JsonInclude(Include.NON_NULL)
+    private SePoolLbEventDetails sePoolLbDetails = null;
+
+    @JsonProperty("se_reconcile_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeReconcileDetails seReconcileDetails = null;
+
+    @JsonProperty("se_thresh_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeThreshEventDetails seThreshEventDetails = null;
+
+    @JsonProperty("se_version_check_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeVersionCheckFailedEvent seVersionCheckDetails = null;
+
+    @JsonProperty("se_vnic_down_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeVnicDownEventDetails seVnicDownEventDetails = null;
+
+    @JsonProperty("se_vnic_tx_queue_stall_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeVnicTxQueueStallEventDetails seVnicTxQueueStallEventDetails = null;
+
+    @JsonProperty("se_vnic_up_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeVnicUpEventDetails seVnicUpEventDetails = null;
+
+    @JsonProperty("se_vs_fault_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeVsFaultEventDetails seVsFaultEventDetails = null;
+
+    @JsonProperty("sec_mgr_data_event")
+    @JsonInclude(Include.NON_NULL)
+    private SecMgrDataEvent secMgrDataEvent = null;
+
+    @JsonProperty("semigrate_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeMigrateEventDetails semigrateEventDetails = null;
+
+    @JsonProperty("server_autoscale_failed_info")
+    @JsonInclude(Include.NON_NULL)
+    private ServerAutoScaleFailedInfo serverAutoscaleFailedInfo = null;
+
+    @JsonProperty("server_autoscalein_complete_info")
+    @JsonInclude(Include.NON_NULL)
+    private ServerAutoScaleInCompleteInfo serverAutoscaleinCompleteInfo = null;
+
+    @JsonProperty("server_autoscalein_info")
+    @JsonInclude(Include.NON_NULL)
+    private ServerAutoScaleInInfo serverAutoscaleinInfo = null;
+
+    @JsonProperty("server_autoscaleout_complete_info")
+    @JsonInclude(Include.NON_NULL)
+    private ServerAutoScaleOutCompleteInfo serverAutoscaleoutCompleteInfo = null;
+
+    @JsonProperty("server_autoscaleout_info")
+    @JsonInclude(Include.NON_NULL)
+    private ServerAutoScaleOutInfo serverAutoscaleoutInfo = null;
+
+    @JsonProperty("seupgrade_disrupted_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeVsDisruptedEventDetails seupgradeDisruptedDetails = null;
+
+    @JsonProperty("seupgrade_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeEventDetails seupgradeEventDetails = null;
+
+    @JsonProperty("seupgrade_migrate_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeMigrateEventDetails seupgradeMigrateDetails = null;
+
+    @JsonProperty("seupgrade_scalein_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeScaleinEventDetails seupgradeScaleinDetails = null;
+
+    @JsonProperty("seupgrade_scaleout_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeUpgradeScaleoutEventDetails seupgradeScaleoutDetails = null;
+
+    @JsonProperty("spawn_se_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmSpawnSeEventDetails spawnSeDetails = null;
+
+    @JsonProperty("ssl_expire_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLExpireDetails sslExpireDetails = null;
+
+    @JsonProperty("ssl_export_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLExportDetails sslExportDetails = null;
+
+    @JsonProperty("ssl_ignored_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLIgnoredDetails sslIgnoredDetails = null;
+
+    @JsonProperty("ssl_renew_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLRenewDetails sslRenewDetails = null;
+
+    @JsonProperty("ssl_renew_failed_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLRenewFailedDetails sslRenewFailedDetails = null;
+
+    @JsonProperty("ssl_revoked_details")
+    @JsonInclude(Include.NON_NULL)
+    private SSLRevokedDetails sslRevokedDetails = null;
+
+    @JsonProperty("switchover_details")
+    @JsonInclude(Include.NON_NULL)
+    private SwitchoverEventDetails switchoverDetails = null;
+
+    @JsonProperty("switchover_fail_details")
+    @JsonInclude(Include.NON_NULL)
+    private SwitchoverFailEventDetails switchoverFailDetails = null;
+
+    @JsonProperty("sync_services_info")
+    @JsonInclude(Include.NON_NULL)
+    private CloudSyncServices syncServicesInfo = null;
+
+    @JsonProperty("system_upgrade_details")
+    @JsonInclude(Include.NON_NULL)
+    private SystemUpgradeDetails systemUpgradeDetails = null;
+
+    @JsonProperty("tencent_info")
+    @JsonInclude(Include.NON_NULL)
+    private TencentSetup tencentInfo = null;
+
+    @JsonProperty("unbind_vs_se_details")
+    @JsonInclude(Include.NON_NULL)
+    private RmUnbindVsSeEventDetails unbindVsSeDetails = null;
+
+    @JsonProperty("upgrade_entry")
+    @JsonInclude(Include.NON_NULL)
+    private UpgradeOpsEntry upgradeEntry = null;
+
+    @JsonProperty("upgrade_status_info")
+    @JsonInclude(Include.NON_NULL)
+    private UpgradeStatusInfo upgradeStatusInfo = null;
+
+    @JsonProperty("vca_infra_details")
+    @JsonInclude(Include.NON_NULL)
+    private VCASetup vcaInfraDetails = null;
+
+    @JsonProperty("vcenter_connectivity_status")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraVcenterConnectivityStatus vcenterConnectivityStatus = null;
+
+    @JsonProperty("vcenter_details")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraVcenterBadCredentials vcenterDetails = null;
+
+    @JsonProperty("vcenter_disc_failure")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraVcenterDiscoveryFailure vcenterDiscFailure = null;
+
+    @JsonProperty("vcenter_network_limit")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraVcenterNetworkLimit vcenterNetworkLimit = null;
+
+    @JsonProperty("vcenter_obj_delete_details")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraVcenterObjDeleteDetails vcenterObjDeleteDetails = null;
+
+    @JsonProperty("vip_autoscale")
+    @JsonInclude(Include.NON_NULL)
+    private VipScaleDetails vipAutoscale = null;
+
+    @JsonProperty("vip_dns_info")
+    @JsonInclude(Include.NON_NULL)
+    private DNSRegisterInfo vipDnsInfo = null;
+
+    @JsonProperty("vm_details")
+    @JsonInclude(Include.NON_NULL)
+    private VinfraVmDetails vmDetails = null;
+
+    @JsonProperty("vs_awaitingse_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsAwaitingSeEventDetails vsAwaitingseDetails = null;
+
+    @JsonProperty("vs_error_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsErrorEventDetails vsErrorDetails = null;
+
+    @JsonProperty("vs_fsm_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsFsmEventDetails vsFsmDetails = null;
+
+    @JsonProperty("vs_initialplacement_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsInitialPlacementEventDetails vsInitialplacementDetails = null;
+
+    @JsonProperty("vs_migrate_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsMigrateEventDetails vsMigrateDetails = null;
+
+    @JsonProperty("vs_pool_nw_fltr_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsPoolNwFilterEventDetails vsPoolNwFltrDetails = null;
+
+    @JsonProperty("vs_scalein_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsScaleInEventDetails vsScaleinDetails = null;
+
+    @JsonProperty("vs_scaleout_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsScaleOutEventDetails vsScaleoutDetails = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property add_networks_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addNetworksDetails
    */
   @VsoMethod
@@ -969,6 +975,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property add_networks_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param addNetworksDetails set the addNetworksDetails.
    */
   @VsoMethod
@@ -979,6 +986,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property albservices_case_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return albservicesCaseDetails
    */
   @VsoMethod
@@ -989,6 +997,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property albservices_case_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param albservicesCaseDetails set the albservicesCaseDetails.
    */
   @VsoMethod
@@ -999,6 +1008,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property albservices_file_upload_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return albservicesFileUploadDetails
    */
   @VsoMethod
@@ -1009,6 +1019,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property albservices_file_upload_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param albservicesFileUploadDetails set the albservicesFileUploadDetails.
    */
   @VsoMethod
@@ -1019,6 +1030,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property albservices_status_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return albservicesStatusDetails
    */
   @VsoMethod
@@ -1029,6 +1041,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property albservices_status_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param albservicesStatusDetails set the albservicesStatusDetails.
    */
   @VsoMethod
@@ -1039,6 +1052,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property all_seupgrade_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allSeupgradeEventDetails
    */
   @VsoMethod
@@ -1049,6 +1063,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property all_seupgrade_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param allSeupgradeEventDetails set the allSeupgradeEventDetails.
    */
   @VsoMethod
@@ -1059,6 +1074,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property anomaly_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return anomalyDetails
    */
   @VsoMethod
@@ -1069,6 +1085,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property anomaly_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param anomalyDetails set the anomalyDetails.
    */
   @VsoMethod
@@ -1079,6 +1096,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property apic_agent_bd_vrf_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicAgentBdVrfDetails
    */
   @VsoMethod
@@ -1089,6 +1107,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property apic_agent_bd_vrf_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicAgentBdVrfDetails set the apicAgentBdVrfDetails.
    */
   @VsoMethod
@@ -1099,6 +1118,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property apic_agent_generic_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicAgentGenericDetails
    */
   @VsoMethod
@@ -1109,6 +1129,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property apic_agent_generic_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicAgentGenericDetails set the apicAgentGenericDetails.
    */
   @VsoMethod
@@ -1119,6 +1140,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property apic_agent_vs_network_error of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicAgentVsNetworkError
    */
   @VsoMethod
@@ -1129,6 +1151,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property apic_agent_vs_network_error of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicAgentVsNetworkError set the apicAgentVsNetworkError.
    */
   @VsoMethod
@@ -1139,6 +1162,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property avg_uptime_change_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return avgUptimeChangeDetails
    */
   @VsoMethod
@@ -1149,6 +1173,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property avg_uptime_change_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param avgUptimeChangeDetails set the avgUptimeChangeDetails.
    */
   @VsoMethod
@@ -1159,6 +1184,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsAsgDeletionDetails
    */
   @VsoMethod
@@ -1169,6 +1195,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsAsgDeletionDetails set the awsAsgDeletionDetails.
    */
   @VsoMethod
@@ -1179,6 +1206,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property aws_asg_notif_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsAsgNotifDetails
    */
   @VsoMethod
@@ -1189,6 +1217,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property aws_asg_notif_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsAsgNotifDetails set the awsAsgNotifDetails.
    */
   @VsoMethod
@@ -1199,6 +1228,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property aws_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsInfraDetails
    */
   @VsoMethod
@@ -1209,6 +1239,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property aws_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsInfraDetails set the awsInfraDetails.
    */
   @VsoMethod
@@ -1219,6 +1250,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property azure_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureInfo
    */
   @VsoMethod
@@ -1229,6 +1261,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property azure_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureInfo set the azureInfo.
    */
   @VsoMethod
@@ -1240,6 +1273,7 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure marketplace license term acceptance event.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureMpInfo
    */
   @VsoMethod
@@ -1251,6 +1285,7 @@ public class EventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure marketplace license term acceptance event.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureMpInfo set the azureMpInfo.
    */
   @VsoMethod
@@ -1261,6 +1296,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property bind_vs_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bindVsSeDetails
    */
   @VsoMethod
@@ -1271,6 +1307,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property bind_vs_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bindVsSeDetails set the bindVsSeDetails.
    */
   @VsoMethod
@@ -1281,6 +1318,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property bm_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bmInfraDetails
    */
   @VsoMethod
@@ -1291,6 +1329,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property bm_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bmInfraDetails set the bmInfraDetails.
    */
   @VsoMethod
@@ -1301,6 +1340,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property bootup_fail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return bootupFailDetails
    */
   @VsoMethod
@@ -1311,6 +1351,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property bootup_fail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param bootupFailDetails set the bootupFailDetails.
    */
   @VsoMethod
@@ -1321,6 +1362,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property burst_checkout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return burstCheckoutDetails
    */
   @VsoMethod
@@ -1331,6 +1373,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property burst_checkout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param burstCheckoutDetails set the burstCheckoutDetails.
    */
   @VsoMethod
@@ -1341,6 +1384,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_cluster_vip_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccClusterVipDetails
    */
   @VsoMethod
@@ -1351,6 +1395,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_cluster_vip_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccClusterVipDetails set the ccClusterVipDetails.
    */
   @VsoMethod
@@ -1361,6 +1406,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_dns_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccDnsUpdateDetails
    */
   @VsoMethod
@@ -1371,6 +1417,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_dns_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccDnsUpdateDetails set the ccDnsUpdateDetails.
    */
   @VsoMethod
@@ -1381,6 +1428,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_health_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccHealthDetails
    */
   @VsoMethod
@@ -1391,6 +1439,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_health_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccHealthDetails set the ccHealthDetails.
    */
   @VsoMethod
@@ -1401,6 +1450,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccInfraDetails
    */
   @VsoMethod
@@ -1411,6 +1461,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccInfraDetails set the ccInfraDetails.
    */
   @VsoMethod
@@ -1421,6 +1472,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_ip_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccIpDetails
    */
   @VsoMethod
@@ -1431,6 +1483,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_ip_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccIpDetails set the ccIpDetails.
    */
   @VsoMethod
@@ -1441,6 +1494,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_parkintf_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccParkintfDetails
    */
   @VsoMethod
@@ -1451,6 +1505,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_parkintf_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccParkintfDetails set the ccParkintfDetails.
    */
   @VsoMethod
@@ -1461,6 +1516,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccScalesetNotifDetails
    */
   @VsoMethod
@@ -1471,6 +1527,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccScalesetNotifDetails set the ccScalesetNotifDetails.
    */
   @VsoMethod
@@ -1481,6 +1538,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_se_vm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccSeVmDetails
    */
   @VsoMethod
@@ -1491,6 +1549,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_se_vm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccSeVmDetails set the ccSeVmDetails.
    */
   @VsoMethod
@@ -1501,6 +1560,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_sync_services_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccSyncServicesDetails
    */
   @VsoMethod
@@ -1511,6 +1571,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_sync_services_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccSyncServicesDetails set the ccSyncServicesDetails.
    */
   @VsoMethod
@@ -1521,6 +1582,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_tenant_del_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccTenantDelDetails
    */
   @VsoMethod
@@ -1531,6 +1593,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_tenant_del_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccTenantDelDetails set the ccTenantDelDetails.
    */
   @VsoMethod
@@ -1541,6 +1604,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_vip_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVipUpdateDetails
    */
   @VsoMethod
@@ -1551,6 +1615,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_vip_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccVipUpdateDetails set the ccVipUpdateDetails.
    */
   @VsoMethod
@@ -1561,6 +1626,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cc_vnic_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccVnicDetails
    */
   @VsoMethod
@@ -1571,6 +1637,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cc_vnic_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccVnicDetails set the ccVnicDetails.
    */
   @VsoMethod
@@ -1581,6 +1648,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud_asg_notif_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudAsgNotifDetails
    */
   @VsoMethod
@@ -1591,6 +1659,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud_asg_notif_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudAsgNotifDetails set the cloudAsgNotifDetails.
    */
   @VsoMethod
@@ -1601,6 +1670,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cloud_autoscaling_config_failure_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudAutoscalingConfigFailureDetails
    */
   @VsoMethod
@@ -1611,6 +1681,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cloud_autoscaling_config_failure_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudAutoscalingConfigFailureDetails set the cloudAutoscalingConfigFailureDetails.
    */
   @VsoMethod
@@ -1621,6 +1692,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_config_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterConfigFailedDetails
    */
   @VsoMethod
@@ -1631,6 +1703,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_config_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterConfigFailedDetails set the clusterConfigFailedDetails.
    */
   @VsoMethod
@@ -1641,6 +1714,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_leader_failover_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterLeaderFailoverDetails
    */
   @VsoMethod
@@ -1651,6 +1725,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_leader_failover_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterLeaderFailoverDetails set the clusterLeaderFailoverDetails.
    */
   @VsoMethod
@@ -1661,6 +1736,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_node_add_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterNodeAddDetails
    */
   @VsoMethod
@@ -1671,6 +1747,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_node_add_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterNodeAddDetails set the clusterNodeAddDetails.
    */
   @VsoMethod
@@ -1681,6 +1758,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_node_db_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterNodeDbFailedDetails
    */
   @VsoMethod
@@ -1691,6 +1769,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_node_db_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterNodeDbFailedDetails set the clusterNodeDbFailedDetails.
    */
   @VsoMethod
@@ -1701,6 +1780,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_node_remove_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterNodeRemoveDetails
    */
   @VsoMethod
@@ -1711,6 +1791,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_node_remove_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterNodeRemoveDetails set the clusterNodeRemoveDetails.
    */
   @VsoMethod
@@ -1721,6 +1802,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_node_shutdown_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterNodeShutdownDetails
    */
   @VsoMethod
@@ -1731,6 +1813,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_node_shutdown_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterNodeShutdownDetails set the clusterNodeShutdownDetails.
    */
   @VsoMethod
@@ -1741,6 +1824,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_node_started_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterNodeStartedDetails
    */
   @VsoMethod
@@ -1751,6 +1835,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_node_started_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterNodeStartedDetails set the clusterNodeStartedDetails.
    */
   @VsoMethod
@@ -1761,6 +1846,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_service_critical_failure_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterServiceCriticalFailureDetails
    */
   @VsoMethod
@@ -1771,6 +1857,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_service_critical_failure_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterServiceCriticalFailureDetails set the clusterServiceCriticalFailureDetails.
    */
   @VsoMethod
@@ -1781,6 +1868,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_service_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterServiceFailedDetails
    */
   @VsoMethod
@@ -1791,6 +1879,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_service_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterServiceFailedDetails set the clusterServiceFailedDetails.
    */
   @VsoMethod
@@ -1801,6 +1890,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cluster_service_restored_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterServiceRestoredDetails
    */
   @VsoMethod
@@ -1811,6 +1901,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cluster_service_restored_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterServiceRestoredDetails set the clusterServiceRestoredDetails.
    */
   @VsoMethod
@@ -1821,6 +1912,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cntlr_host_list_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cntlrHostListDetails
    */
   @VsoMethod
@@ -1831,6 +1923,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cntlr_host_list_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cntlrHostListDetails set the cntlrHostListDetails.
    */
   @VsoMethod
@@ -1841,6 +1934,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_action_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configActionDetails
    */
   @VsoMethod
@@ -1851,6 +1945,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_action_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configActionDetails set the configActionDetails.
    */
   @VsoMethod
@@ -1861,6 +1956,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_create_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configCreateDetails
    */
   @VsoMethod
@@ -1871,6 +1967,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_create_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configCreateDetails set the configCreateDetails.
    */
   @VsoMethod
@@ -1881,6 +1978,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_delete_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configDeleteDetails
    */
   @VsoMethod
@@ -1891,6 +1989,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_delete_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configDeleteDetails set the configDeleteDetails.
    */
   @VsoMethod
@@ -1901,6 +2000,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_password_change_request_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configPasswordChangeRequestDetails
    */
   @VsoMethod
@@ -1911,6 +2011,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_password_change_request_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configPasswordChangeRequestDetails set the configPasswordChangeRequestDetails.
    */
   @VsoMethod
@@ -1921,6 +2022,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_se_grp_flv_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configSeGrpFlvUpdateDetails
    */
   @VsoMethod
@@ -1931,6 +2033,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_se_grp_flv_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configSeGrpFlvUpdateDetails set the configSeGrpFlvUpdateDetails.
    */
   @VsoMethod
@@ -1941,6 +2044,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configUpdateDetails
    */
   @VsoMethod
@@ -1951,6 +2055,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configUpdateDetails set the configUpdateDetails.
    */
   @VsoMethod
@@ -1961,6 +2066,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_user_authrz_rule_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configUserAuthrzRuleDetails
    */
   @VsoMethod
@@ -1971,6 +2077,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_user_authrz_rule_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configUserAuthrzRuleDetails set the configUserAuthrzRuleDetails.
    */
   @VsoMethod
@@ -1981,6 +2088,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_user_login_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configUserLoginDetails
    */
   @VsoMethod
@@ -1991,6 +2099,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_user_login_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configUserLoginDetails set the configUserLoginDetails.
    */
   @VsoMethod
@@ -2001,6 +2110,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_user_logout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configUserLogoutDetails
    */
   @VsoMethod
@@ -2011,6 +2121,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_user_logout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configUserLogoutDetails set the configUserLogoutDetails.
    */
   @VsoMethod
@@ -2021,6 +2132,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property config_user_not_authrz_rule_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return configUserNotAuthrzRuleDetails
    */
   @VsoMethod
@@ -2031,6 +2143,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property config_user_not_authrz_rule_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param configUserNotAuthrzRuleDetails set the configUserNotAuthrzRuleDetails.
    */
   @VsoMethod
@@ -2041,6 +2154,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property container_cloud_batch_setup of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containerCloudBatchSetup
    */
   @VsoMethod
@@ -2051,6 +2165,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property container_cloud_batch_setup of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param containerCloudBatchSetup set the containerCloudBatchSetup.
    */
   @VsoMethod
@@ -2061,6 +2176,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property container_cloud_setup of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containerCloudSetup
    */
   @VsoMethod
@@ -2071,6 +2187,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property container_cloud_setup of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param containerCloudSetup set the containerCloudSetup.
    */
   @VsoMethod
@@ -2081,6 +2198,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property container_cloud_sevice of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containerCloudSevice
    */
   @VsoMethod
@@ -2091,6 +2209,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property container_cloud_sevice of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param containerCloudSevice set the containerCloudSevice.
    */
   @VsoMethod
@@ -2101,6 +2220,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_license_reconcile_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerLicenseReconcileDetails
    */
   @VsoMethod
@@ -2111,6 +2231,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_license_reconcile_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerLicenseReconcileDetails set the controllerLicenseReconcileDetails.
    */
   @VsoMethod
@@ -2121,6 +2242,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property crs_deployment_failure of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsDeploymentFailure
    */
   @VsoMethod
@@ -2131,6 +2253,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property crs_deployment_failure of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param crsDeploymentFailure set the crsDeploymentFailure.
    */
   @VsoMethod
@@ -2141,6 +2264,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property crs_deployment_success of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsDeploymentSuccess
    */
   @VsoMethod
@@ -2151,6 +2275,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property crs_deployment_success of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param crsDeploymentSuccess set the crsDeploymentSuccess.
    */
   @VsoMethod
@@ -2161,6 +2286,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property crs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsDetails
    */
   @VsoMethod
@@ -2171,6 +2297,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property crs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param crsDetails set the crsDetails.
    */
   @VsoMethod
@@ -2181,6 +2308,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property crs_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsUpdateDetails
    */
   @VsoMethod
@@ -2191,6 +2319,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property crs_update_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param crsUpdateDetails set the crsUpdateDetails.
    */
   @VsoMethod
@@ -2201,6 +2330,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cs_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return csInfraDetails
    */
   @VsoMethod
@@ -2211,6 +2341,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cs_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param csInfraDetails set the csInfraDetails.
    */
   @VsoMethod
@@ -2221,6 +2352,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property delete_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deleteSeDetails
    */
   @VsoMethod
@@ -2231,6 +2363,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property delete_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deleteSeDetails set the deleteSeDetails.
    */
   @VsoMethod
@@ -2241,6 +2374,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property disable_se_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disableSeMigrateDetails
    */
   @VsoMethod
@@ -2251,6 +2385,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property disable_se_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disableSeMigrateDetails set the disableSeMigrateDetails.
    */
   @VsoMethod
@@ -2261,6 +2396,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property disc_summary of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return discSummary
    */
   @VsoMethod
@@ -2271,6 +2407,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property disc_summary of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param discSummary set the discSummary.
    */
   @VsoMethod
@@ -2281,6 +2418,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dns_sync_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsSyncInfo
    */
   @VsoMethod
@@ -2291,6 +2429,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dns_sync_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dnsSyncInfo set the dnsSyncInfo.
    */
   @VsoMethod
@@ -2301,6 +2440,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property docker_ucp_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dockerUcpDetails
    */
   @VsoMethod
@@ -2311,6 +2451,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property docker_ucp_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dockerUcpDetails set the dockerUcpDetails.
    */
   @VsoMethod
@@ -2321,6 +2462,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dos_attack_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dosAttackEventDetails
    */
   @VsoMethod
@@ -2331,6 +2473,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dos_attack_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dosAttackEventDetails set the dosAttackEventDetails.
    */
   @VsoMethod
@@ -2341,6 +2484,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gcp_cloud_router_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpCloudRouterInfo
    */
   @VsoMethod
@@ -2351,6 +2495,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gcp_cloud_router_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpCloudRouterInfo set the gcpCloudRouterInfo.
    */
   @VsoMethod
@@ -2361,6 +2506,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gcp_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpInfo
    */
   @VsoMethod
@@ -2371,6 +2517,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gcp_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpInfo set the gcpInfo.
    */
   @VsoMethod
@@ -2380,7 +2527,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Placeholder for description of property generic_audit_compliance_event_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return genericAuditComplianceEventInfo
+   */
+  @VsoMethod
+  public AuditComplianceEventInfo getGenericAuditComplianceEventInfo() {
+    return genericAuditComplianceEventInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property generic_audit_compliance_event_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param genericAuditComplianceEventInfo set the genericAuditComplianceEventInfo.
+   */
+  @VsoMethod
+  public void setGenericAuditComplianceEventInfo(AuditComplianceEventInfo genericAuditComplianceEventInfo) {
+    this.genericAuditComplianceEventInfo = genericAuditComplianceEventInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property glb_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return glbInfo
    */
   @VsoMethod
@@ -2391,6 +2561,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property glb_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param glbInfo set the glbInfo.
    */
   @VsoMethod
@@ -2401,6 +2572,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gs_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gsInfo
    */
   @VsoMethod
@@ -2411,6 +2583,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gs_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gsInfo set the gsInfo.
    */
   @VsoMethod
@@ -2421,6 +2594,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host_unavail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostUnavailDetails
    */
   @VsoMethod
@@ -2431,6 +2605,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host_unavail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostUnavailDetails set the hostUnavailDetails.
    */
   @VsoMethod
@@ -2441,6 +2616,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hsDetails
    */
   @VsoMethod
@@ -2451,6 +2627,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property hs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hsDetails set the hsDetails.
    */
   @VsoMethod
@@ -2461,6 +2638,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_fail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipFailDetails
    */
   @VsoMethod
@@ -2471,6 +2649,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip_fail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipFailDetails set the ipFailDetails.
    */
   @VsoMethod
@@ -2481,6 +2660,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_threat_db_event_data of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipThreatDbEventData
    */
   @VsoMethod
@@ -2491,6 +2671,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip_threat_db_event_data of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipThreatDbEventData set the ipThreatDbEventData.
    */
   @VsoMethod
@@ -2501,6 +2682,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseDetails
    */
   @VsoMethod
@@ -2511,6 +2693,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property license_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseDetails set the licenseDetails.
    */
   @VsoMethod
@@ -2521,6 +2704,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_expiry_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseExpiryDetails
    */
   @VsoMethod
@@ -2531,6 +2715,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property license_expiry_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseExpiryDetails set the licenseExpiryDetails.
    */
   @VsoMethod
@@ -2541,6 +2726,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property license_transaction_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return licenseTransactionDetails
    */
   @VsoMethod
@@ -2551,6 +2737,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property license_transaction_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param licenseTransactionDetails set the licenseTransactionDetails.
    */
   @VsoMethod
@@ -2561,6 +2748,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property marathon_service_port_conflict_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonServicePortConflictDetails
    */
   @VsoMethod
@@ -2571,6 +2759,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property marathon_service_port_conflict_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonServicePortConflictDetails set the marathonServicePortConflictDetails.
    */
   @VsoMethod
@@ -2581,6 +2770,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property memory_balancer_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memoryBalancerInfo
    */
   @VsoMethod
@@ -2591,6 +2781,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property memory_balancer_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memoryBalancerInfo set the memoryBalancerInfo.
    */
   @VsoMethod
@@ -2601,6 +2792,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mesos_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mesosInfraDetails
    */
   @VsoMethod
@@ -2611,6 +2803,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mesos_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mesosInfraDetails set the mesosInfraDetails.
    */
   @VsoMethod
@@ -2621,6 +2814,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metric_threshold_up_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricThresholdUpDetails
    */
   @VsoMethod
@@ -2631,6 +2825,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metric_threshold_up_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricThresholdUpDetails set the metricThresholdUpDetails.
    */
   @VsoMethod
@@ -2641,6 +2836,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_db_disk_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDbDiskDetails
    */
   @VsoMethod
@@ -2651,6 +2847,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_db_disk_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsDbDiskDetails set the metricsDbDiskDetails.
    */
   @VsoMethod
@@ -2661,6 +2858,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_db_queue_full_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDbQueueFullDetails
    */
   @VsoMethod
@@ -2671,6 +2869,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_db_queue_full_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsDbQueueFullDetails set the metricsDbQueueFullDetails.
    */
   @VsoMethod
@@ -2681,6 +2880,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property metrics_db_queue_healthy_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricsDbQueueHealthyDetails
    */
   @VsoMethod
@@ -2691,6 +2891,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property metrics_db_queue_healthy_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricsDbQueueHealthyDetails set the metricsDbQueueHealthyDetails.
    */
   @VsoMethod
@@ -2701,6 +2902,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_nw_change_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNwChangeDetails
    */
   @VsoMethod
@@ -2711,6 +2913,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mgmt_nw_change_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNwChangeDetails set the mgmtNwChangeDetails.
    */
   @VsoMethod
@@ -2721,6 +2924,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property modify_networks_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return modifyNetworksDetails
    */
   @VsoMethod
@@ -2731,6 +2935,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property modify_networks_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param modifyNetworksDetails set the modifyNetworksDetails.
    */
   @VsoMethod
@@ -2741,6 +2946,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_subnet_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkSubnetDetails
    */
   @VsoMethod
@@ -2751,6 +2957,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network_subnet_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkSubnetDetails set the networkSubnetDetails.
    */
   @VsoMethod
@@ -2762,6 +2969,7 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsxt image event.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtImgDetails
    */
   @VsoMethod
@@ -2773,6 +2981,7 @@ public class EventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsxt image event.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtImgDetails set the nsxtImgDetails.
    */
   @VsoMethod
@@ -2784,6 +2993,7 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsxt cloud event.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtInfo
    */
   @VsoMethod
@@ -2795,6 +3005,7 @@ public class EventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsxt cloud event.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtInfo set the nsxtInfo.
    */
   @VsoMethod
@@ -2805,6 +3016,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nw_subnet_clash_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwSubnetClashDetails
    */
   @VsoMethod
@@ -2815,6 +3027,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nw_subnet_clash_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nwSubnetClashDetails set the nwSubnetClashDetails.
    */
   @VsoMethod
@@ -2825,6 +3038,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property nw_summarized_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nwSummarizedDetails
    */
   @VsoMethod
@@ -2835,6 +3049,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property nw_summarized_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nwSummarizedDetails set the nwSummarizedDetails.
    */
   @VsoMethod
@@ -2845,6 +3060,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property oci_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ociInfo
    */
   @VsoMethod
@@ -2855,6 +3071,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property oci_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ociInfo set the ociInfo.
    */
   @VsoMethod
@@ -2865,6 +3082,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osApiVerCheckFailure
    */
   @VsoMethod
@@ -2875,6 +3093,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osApiVerCheckFailure set the osApiVerCheckFailure.
    */
   @VsoMethod
@@ -2885,6 +3104,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osInfraDetails
    */
   @VsoMethod
@@ -2895,6 +3115,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osInfraDetails set the osInfraDetails.
    */
   @VsoMethod
@@ -2905,6 +3126,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_ip_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osIpDetails
    */
   @VsoMethod
@@ -2915,6 +3137,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_ip_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osIpDetails set the osIpDetails.
    */
   @VsoMethod
@@ -2925,6 +3148,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_lbaudit_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osLbauditDetails
    */
   @VsoMethod
@@ -2935,6 +3159,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_lbaudit_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osLbauditDetails set the osLbauditDetails.
    */
   @VsoMethod
@@ -2945,6 +3170,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_lbplugin_op_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osLbpluginOpDetails
    */
   @VsoMethod
@@ -2955,6 +3181,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_lbplugin_op_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osLbpluginOpDetails set the osLbpluginOpDetails.
    */
   @VsoMethod
@@ -2965,6 +3192,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_se_vm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osSeVmDetails
    */
   @VsoMethod
@@ -2975,6 +3203,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_se_vm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osSeVmDetails set the osSeVmDetails.
    */
   @VsoMethod
@@ -2985,6 +3214,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_sync_services_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osSyncServicesDetails
    */
   @VsoMethod
@@ -2995,6 +3225,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_sync_services_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osSyncServicesDetails set the osSyncServicesDetails.
    */
   @VsoMethod
@@ -3005,6 +3236,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property os_vnic_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osVnicDetails
    */
   @VsoMethod
@@ -3015,6 +3247,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property os_vnic_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osVnicDetails set the osVnicDetails.
    */
   @VsoMethod
@@ -3025,6 +3258,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_deployment_failure_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolDeploymentFailureInfo
    */
   @VsoMethod
@@ -3035,6 +3269,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_deployment_failure_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolDeploymentFailureInfo set the poolDeploymentFailureInfo.
    */
   @VsoMethod
@@ -3045,6 +3280,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_deployment_success_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolDeploymentSuccessInfo
    */
   @VsoMethod
@@ -3055,6 +3291,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_deployment_success_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolDeploymentSuccessInfo set the poolDeploymentSuccessInfo.
    */
   @VsoMethod
@@ -3065,6 +3302,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_deployment_update_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolDeploymentUpdateInfo
    */
   @VsoMethod
@@ -3075,6 +3313,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_deployment_update_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolDeploymentUpdateInfo set the poolDeploymentUpdateInfo.
    */
   @VsoMethod
@@ -3085,6 +3324,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pool_server_delete_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolServerDeleteDetails
    */
   @VsoMethod
@@ -3095,6 +3335,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pool_server_delete_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolServerDeleteDetails set the poolServerDeleteDetails.
    */
   @VsoMethod
@@ -3105,6 +3346,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property psm_program_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return psmProgramDetails
    */
   @VsoMethod
@@ -3115,6 +3357,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property psm_program_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param psmProgramDetails set the psmProgramDetails.
    */
   @VsoMethod
@@ -3125,6 +3368,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiterEventDetails
    */
   @VsoMethod
@@ -3135,6 +3379,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateLimiterEventDetails set the rateLimiterEventDetails.
    */
   @VsoMethod
@@ -3145,6 +3390,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rebalance_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebalanceMigrateDetails
    */
   @VsoMethod
@@ -3155,6 +3401,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rebalance_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rebalanceMigrateDetails set the rebalanceMigrateDetails.
    */
   @VsoMethod
@@ -3165,6 +3412,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rebalance_scalein_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebalanceScaleinDetails
    */
   @VsoMethod
@@ -3175,6 +3423,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rebalance_scalein_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rebalanceScaleinDetails set the rebalanceScaleinDetails.
    */
   @VsoMethod
@@ -3185,6 +3434,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rebalance_scaleout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebalanceScaleoutDetails
    */
   @VsoMethod
@@ -3195,6 +3445,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rebalance_scaleout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rebalanceScaleoutDetails set the rebalanceScaleoutDetails.
    */
   @VsoMethod
@@ -3205,6 +3456,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reboot_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rebootSeDetails
    */
   @VsoMethod
@@ -3215,6 +3467,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reboot_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rebootSeDetails set the rebootSeDetails.
    */
   @VsoMethod
@@ -3225,6 +3478,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property scheduler_action_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schedulerActionInfo
    */
   @VsoMethod
@@ -3235,6 +3489,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property scheduler_action_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param schedulerActionInfo set the schedulerActionInfo.
    */
   @VsoMethod
@@ -3245,6 +3500,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBgpPeerDownDetails
    */
   @VsoMethod
@@ -3255,6 +3511,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seBgpPeerDownDetails set the seBgpPeerDownDetails.
    */
   @VsoMethod
@@ -3265,6 +3522,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_bgp_peer_state_change_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBgpPeerStateChangeDetails
    */
   @VsoMethod
@@ -3275,6 +3533,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_bgp_peer_state_change_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seBgpPeerStateChangeDetails set the seBgpPeerStateChangeDetails.
    */
   @VsoMethod
@@ -3285,6 +3544,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDetails
    */
   @VsoMethod
@@ -3295,6 +3555,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDetails set the seDetails.
    */
   @VsoMethod
@@ -3305,6 +3566,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_dupip_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDupipEventDetails
    */
   @VsoMethod
@@ -3315,6 +3577,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_dupip_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDupipEventDetails set the seDupipEventDetails.
    */
   @VsoMethod
@@ -3325,6 +3588,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_gateway_heartbeat_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGatewayHeartbeatFailedDetails
    */
   @VsoMethod
@@ -3335,6 +3599,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_gateway_heartbeat_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGatewayHeartbeatFailedDetails set the seGatewayHeartbeatFailedDetails.
    */
   @VsoMethod
@@ -3345,6 +3610,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_gateway_heartbeat_success_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGatewayHeartbeatSuccessDetails
    */
   @VsoMethod
@@ -3355,6 +3621,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_gateway_heartbeat_success_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGatewayHeartbeatSuccessDetails set the seGatewayHeartbeatSuccessDetails.
    */
   @VsoMethod
@@ -3365,6 +3632,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_geo_db_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGeoDbDetails
    */
   @VsoMethod
@@ -3375,6 +3643,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_geo_db_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGeoDbDetails set the seGeoDbDetails.
    */
   @VsoMethod
@@ -3385,6 +3654,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_hb_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seHbEventDetails
    */
   @VsoMethod
@@ -3395,6 +3665,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_hb_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seHbEventDetails set the seHbEventDetails.
    */
   @VsoMethod
@@ -3407,6 +3678,7 @@ public class EventDetails extends AviRestResource {
    * Inter-se datapath heartbeat recovered.
    * One event is generated when heartbeat recovers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seHbRecoveredEventDetails
    */
   @VsoMethod
@@ -3419,6 +3691,7 @@ public class EventDetails extends AviRestResource {
    * Inter-se datapath heartbeat recovered.
    * One event is generated when heartbeat recovers.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seHbRecoveredEventDetails set the seHbRecoveredEventDetails.
    */
   @VsoMethod
@@ -3429,6 +3702,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_hm_gs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seHmGsDetails
    */
   @VsoMethod
@@ -3439,6 +3713,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_hm_gs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seHmGsDetails set the seHmGsDetails.
    */
   @VsoMethod
@@ -3449,6 +3724,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_hm_gsgroup_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seHmGsgroupDetails
    */
   @VsoMethod
@@ -3459,6 +3735,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_hm_gsgroup_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seHmGsgroupDetails set the seHmGsgroupDetails.
    */
   @VsoMethod
@@ -3469,6 +3746,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_hm_pool_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seHmPoolDetails
    */
   @VsoMethod
@@ -3479,6 +3757,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_hm_pool_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seHmPoolDetails set the seHmPoolDetails.
    */
   @VsoMethod
@@ -3489,6 +3768,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_hm_vs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seHmVsDetails
    */
   @VsoMethod
@@ -3499,6 +3779,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_hm_vs_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seHmVsDetails set the seHmVsDetails.
    */
   @VsoMethod
@@ -3509,6 +3790,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_ip6_dad_failed_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIp6DadFailedEventDetails
    */
   @VsoMethod
@@ -3519,6 +3801,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_ip6_dad_failed_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seIp6DadFailedEventDetails set the seIp6DadFailedEventDetails.
    */
   @VsoMethod
@@ -3529,6 +3812,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_ip_added_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpAddedEventDetails
    */
   @VsoMethod
@@ -3539,6 +3823,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_ip_added_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seIpAddedEventDetails set the seIpAddedEventDetails.
    */
   @VsoMethod
@@ -3549,6 +3834,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_ip_removed_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpRemovedEventDetails
    */
   @VsoMethod
@@ -3559,6 +3845,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_ip_removed_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seIpRemovedEventDetails set the seIpRemovedEventDetails.
    */
   @VsoMethod
@@ -3569,6 +3856,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_ipfailure_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpfailureEventDetails
    */
   @VsoMethod
@@ -3579,6 +3867,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_ipfailure_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seIpfailureEventDetails set the seIpfailureEventDetails.
    */
   @VsoMethod
@@ -3589,6 +3878,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_licensed_bandwdith_exceeded_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seLicensedBandwdithExceededEventDetails
    */
   @VsoMethod
@@ -3599,6 +3889,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_licensed_bandwdith_exceeded_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seLicensedBandwdithExceededEventDetails set the seLicensedBandwdithExceededEventDetails.
    */
   @VsoMethod
@@ -3609,6 +3900,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seMemoryLimitEventDetails
    */
   @VsoMethod
@@ -3619,6 +3911,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seMemoryLimitEventDetails set the seMemoryLimitEventDetails.
    */
   @VsoMethod
@@ -3629,6 +3922,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_persistence_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePersistenceDetails
    */
   @VsoMethod
@@ -3639,6 +3933,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_persistence_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePersistenceDetails set the sePersistenceDetails.
    */
   @VsoMethod
@@ -3649,6 +3944,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_pool_lb_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoolLbDetails
    */
   @VsoMethod
@@ -3659,6 +3955,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_pool_lb_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sePoolLbDetails set the sePoolLbDetails.
    */
   @VsoMethod
@@ -3669,6 +3966,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_reconcile_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seReconcileDetails
    */
   @VsoMethod
@@ -3679,6 +3977,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_reconcile_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seReconcileDetails set the seReconcileDetails.
    */
   @VsoMethod
@@ -3689,6 +3988,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_thresh_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seThreshEventDetails
    */
   @VsoMethod
@@ -3699,6 +3999,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_thresh_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seThreshEventDetails set the seThreshEventDetails.
    */
   @VsoMethod
@@ -3709,6 +4010,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_version_check_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVersionCheckDetails
    */
   @VsoMethod
@@ -3719,6 +4021,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_version_check_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVersionCheckDetails set the seVersionCheckDetails.
    */
   @VsoMethod
@@ -3729,6 +4032,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_vnic_down_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVnicDownEventDetails
    */
   @VsoMethod
@@ -3739,6 +4043,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_vnic_down_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVnicDownEventDetails set the seVnicDownEventDetails.
    */
   @VsoMethod
@@ -3749,6 +4054,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_vnic_tx_queue_stall_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVnicTxQueueStallEventDetails
    */
   @VsoMethod
@@ -3759,6 +4065,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_vnic_tx_queue_stall_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVnicTxQueueStallEventDetails set the seVnicTxQueueStallEventDetails.
    */
   @VsoMethod
@@ -3769,6 +4076,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_vnic_up_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVnicUpEventDetails
    */
   @VsoMethod
@@ -3779,6 +4087,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_vnic_up_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVnicUpEventDetails set the seVnicUpEventDetails.
    */
   @VsoMethod
@@ -3789,6 +4098,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_vs_fault_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seVsFaultEventDetails
    */
   @VsoMethod
@@ -3799,6 +4109,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_vs_fault_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seVsFaultEventDetails set the seVsFaultEventDetails.
    */
   @VsoMethod
@@ -3809,6 +4120,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property sec_mgr_data_event of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secMgrDataEvent
    */
   @VsoMethod
@@ -3819,6 +4131,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property sec_mgr_data_event of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secMgrDataEvent set the secMgrDataEvent.
    */
   @VsoMethod
@@ -3829,6 +4142,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property semigrate_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return semigrateEventDetails
    */
   @VsoMethod
@@ -3839,6 +4153,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property semigrate_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param semigrateEventDetails set the semigrateEventDetails.
    */
   @VsoMethod
@@ -3849,6 +4164,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_autoscale_failed_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverAutoscaleFailedInfo
    */
   @VsoMethod
@@ -3859,6 +4175,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_autoscale_failed_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverAutoscaleFailedInfo set the serverAutoscaleFailedInfo.
    */
   @VsoMethod
@@ -3869,6 +4186,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_autoscalein_complete_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverAutoscaleinCompleteInfo
    */
   @VsoMethod
@@ -3879,6 +4197,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_autoscalein_complete_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverAutoscaleinCompleteInfo set the serverAutoscaleinCompleteInfo.
    */
   @VsoMethod
@@ -3889,6 +4208,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_autoscalein_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverAutoscaleinInfo
    */
   @VsoMethod
@@ -3899,6 +4219,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_autoscalein_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverAutoscaleinInfo set the serverAutoscaleinInfo.
    */
   @VsoMethod
@@ -3909,6 +4230,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_autoscaleout_complete_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverAutoscaleoutCompleteInfo
    */
   @VsoMethod
@@ -3919,6 +4241,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_autoscaleout_complete_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverAutoscaleoutCompleteInfo set the serverAutoscaleoutCompleteInfo.
    */
   @VsoMethod
@@ -3929,6 +4252,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property server_autoscaleout_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverAutoscaleoutInfo
    */
   @VsoMethod
@@ -3939,6 +4263,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property server_autoscaleout_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverAutoscaleoutInfo set the serverAutoscaleoutInfo.
    */
   @VsoMethod
@@ -3949,6 +4274,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property seupgrade_disrupted_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seupgradeDisruptedDetails
    */
   @VsoMethod
@@ -3959,6 +4285,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property seupgrade_disrupted_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seupgradeDisruptedDetails set the seupgradeDisruptedDetails.
    */
   @VsoMethod
@@ -3969,6 +4296,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property seupgrade_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seupgradeEventDetails
    */
   @VsoMethod
@@ -3979,6 +4307,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property seupgrade_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seupgradeEventDetails set the seupgradeEventDetails.
    */
   @VsoMethod
@@ -3989,6 +4318,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property seupgrade_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seupgradeMigrateDetails
    */
   @VsoMethod
@@ -3999,6 +4329,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property seupgrade_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seupgradeMigrateDetails set the seupgradeMigrateDetails.
    */
   @VsoMethod
@@ -4009,6 +4340,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property seupgrade_scalein_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seupgradeScaleinDetails
    */
   @VsoMethod
@@ -4019,6 +4351,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property seupgrade_scalein_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seupgradeScaleinDetails set the seupgradeScaleinDetails.
    */
   @VsoMethod
@@ -4029,6 +4362,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property seupgrade_scaleout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seupgradeScaleoutDetails
    */
   @VsoMethod
@@ -4039,6 +4373,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property seupgrade_scaleout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seupgradeScaleoutDetails set the seupgradeScaleoutDetails.
    */
   @VsoMethod
@@ -4049,6 +4384,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property spawn_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spawnSeDetails
    */
   @VsoMethod
@@ -4059,6 +4395,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property spawn_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spawnSeDetails set the spawnSeDetails.
    */
   @VsoMethod
@@ -4069,6 +4406,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_expire_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslExpireDetails
    */
   @VsoMethod
@@ -4079,6 +4417,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_expire_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslExpireDetails set the sslExpireDetails.
    */
   @VsoMethod
@@ -4089,6 +4428,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_export_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslExportDetails
    */
   @VsoMethod
@@ -4099,6 +4439,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_export_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslExportDetails set the sslExportDetails.
    */
   @VsoMethod
@@ -4109,6 +4450,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_ignored_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslIgnoredDetails
    */
   @VsoMethod
@@ -4119,6 +4461,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_ignored_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslIgnoredDetails set the sslIgnoredDetails.
    */
   @VsoMethod
@@ -4129,6 +4472,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_renew_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslRenewDetails
    */
   @VsoMethod
@@ -4139,6 +4483,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_renew_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslRenewDetails set the sslRenewDetails.
    */
   @VsoMethod
@@ -4149,6 +4494,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_renew_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslRenewFailedDetails
    */
   @VsoMethod
@@ -4159,6 +4505,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_renew_failed_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslRenewFailedDetails set the sslRenewFailedDetails.
    */
   @VsoMethod
@@ -4169,6 +4516,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_revoked_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslRevokedDetails
    */
   @VsoMethod
@@ -4179,6 +4527,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ssl_revoked_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslRevokedDetails set the sslRevokedDetails.
    */
   @VsoMethod
@@ -4189,6 +4538,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property switchover_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return switchoverDetails
    */
   @VsoMethod
@@ -4199,6 +4549,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property switchover_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param switchoverDetails set the switchoverDetails.
    */
   @VsoMethod
@@ -4209,6 +4560,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property switchover_fail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return switchoverFailDetails
    */
   @VsoMethod
@@ -4219,6 +4571,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property switchover_fail_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param switchoverFailDetails set the switchoverFailDetails.
    */
   @VsoMethod
@@ -4230,6 +4583,7 @@ public class EventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Azure cloud sync services event details.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return syncServicesInfo
    */
   @VsoMethod
@@ -4241,6 +4595,7 @@ public class EventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Azure cloud sync services event details.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param syncServicesInfo set the syncServicesInfo.
    */
   @VsoMethod
@@ -4251,6 +4606,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property system_upgrade_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return systemUpgradeDetails
    */
   @VsoMethod
@@ -4261,6 +4617,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property system_upgrade_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param systemUpgradeDetails set the systemUpgradeDetails.
    */
   @VsoMethod
@@ -4271,6 +4628,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tencent_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tencentInfo
    */
   @VsoMethod
@@ -4281,6 +4639,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tencent_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tencentInfo set the tencentInfo.
    */
   @VsoMethod
@@ -4291,6 +4650,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property unbind_vs_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return unbindVsSeDetails
    */
   @VsoMethod
@@ -4301,6 +4661,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property unbind_vs_se_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param unbindVsSeDetails set the unbindVsSeDetails.
    */
   @VsoMethod
@@ -4311,6 +4672,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeEntry
    */
   @VsoMethod
@@ -4321,6 +4683,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeEntry set the upgradeEntry.
    */
   @VsoMethod
@@ -4331,6 +4694,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return upgradeStatusInfo
    */
   @VsoMethod
@@ -4341,6 +4705,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param upgradeStatusInfo set the upgradeStatusInfo.
    */
   @VsoMethod
@@ -4351,6 +4716,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vca_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcaInfraDetails
    */
   @VsoMethod
@@ -4361,6 +4727,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vca_infra_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcaInfraDetails set the vcaInfraDetails.
    */
   @VsoMethod
@@ -4371,6 +4738,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_connectivity_status of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterConnectivityStatus
    */
   @VsoMethod
@@ -4381,6 +4749,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_connectivity_status of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterConnectivityStatus set the vcenterConnectivityStatus.
    */
   @VsoMethod
@@ -4391,6 +4760,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDetails
    */
   @VsoMethod
@@ -4401,6 +4771,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterDetails set the vcenterDetails.
    */
   @VsoMethod
@@ -4411,6 +4782,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_disc_failure of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterDiscFailure
    */
   @VsoMethod
@@ -4421,6 +4793,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_disc_failure of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterDiscFailure set the vcenterDiscFailure.
    */
   @VsoMethod
@@ -4431,6 +4804,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_network_limit of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterNetworkLimit
    */
   @VsoMethod
@@ -4441,6 +4815,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_network_limit of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterNetworkLimit set the vcenterNetworkLimit.
    */
   @VsoMethod
@@ -4451,6 +4826,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_obj_delete_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterObjDeleteDetails
    */
   @VsoMethod
@@ -4461,6 +4837,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_obj_delete_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterObjDeleteDetails set the vcenterObjDeleteDetails.
    */
   @VsoMethod
@@ -4471,6 +4848,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_autoscale of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipAutoscale
    */
   @VsoMethod
@@ -4481,6 +4859,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_autoscale of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipAutoscale set the vipAutoscale.
    */
   @VsoMethod
@@ -4491,6 +4870,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vip_dns_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vipDnsInfo
    */
   @VsoMethod
@@ -4501,6 +4881,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vip_dns_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vipDnsInfo set the vipDnsInfo.
    */
   @VsoMethod
@@ -4511,6 +4892,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmDetails
    */
   @VsoMethod
@@ -4521,6 +4903,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmDetails set the vmDetails.
    */
   @VsoMethod
@@ -4531,6 +4914,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_awaitingse_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsAwaitingseDetails
    */
   @VsoMethod
@@ -4541,6 +4925,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_awaitingse_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsAwaitingseDetails set the vsAwaitingseDetails.
    */
   @VsoMethod
@@ -4551,6 +4936,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_error_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrorDetails
    */
   @VsoMethod
@@ -4561,6 +4947,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_error_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsErrorDetails set the vsErrorDetails.
    */
   @VsoMethod
@@ -4571,6 +4958,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_fsm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsFsmDetails
    */
   @VsoMethod
@@ -4581,6 +4969,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_fsm_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsFsmDetails set the vsFsmDetails.
    */
   @VsoMethod
@@ -4591,6 +4980,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_initialplacement_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsInitialplacementDetails
    */
   @VsoMethod
@@ -4601,6 +4991,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_initialplacement_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsInitialplacementDetails set the vsInitialplacementDetails.
    */
   @VsoMethod
@@ -4611,6 +5002,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsMigrateDetails
    */
   @VsoMethod
@@ -4621,6 +5013,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_migrate_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsMigrateDetails set the vsMigrateDetails.
    */
   @VsoMethod
@@ -4631,6 +5024,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_pool_nw_fltr_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsPoolNwFltrDetails
    */
   @VsoMethod
@@ -4641,6 +5035,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_pool_nw_fltr_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsPoolNwFltrDetails set the vsPoolNwFltrDetails.
    */
   @VsoMethod
@@ -4651,6 +5046,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_scalein_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleinDetails
    */
   @VsoMethod
@@ -4661,6 +5057,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_scalein_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsScaleinDetails set the vsScaleinDetails.
    */
   @VsoMethod
@@ -4671,6 +5068,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_scaleout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsScaleoutDetails
    */
   @VsoMethod
@@ -4681,6 +5079,7 @@ public class EventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vs_scaleout_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsScaleoutDetails set the vsScaleoutDetails.
    */
   @VsoMethod
@@ -4884,7 +5283,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
   Objects.equals(this.licenseTransactionDetails, objEventDetails.licenseTransactionDetails)&&
   Objects.equals(this.seReconcileDetails, objEventDetails.seReconcileDetails)&&
-  Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails);
+  Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails)&&
+  Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo);
 }
 
 @Override
@@ -4962,6 +5362,7 @@ public String toString() {
         sb.append("    dosAttackEventDetails: ").append(toIndentedString(dosAttackEventDetails)).append("\n");
         sb.append("    gcpCloudRouterInfo: ").append(toIndentedString(gcpCloudRouterInfo)).append("\n");
         sb.append("    gcpInfo: ").append(toIndentedString(gcpInfo)).append("\n");
+        sb.append("    genericAuditComplianceEventInfo: ").append(toIndentedString(genericAuditComplianceEventInfo)).append("\n");
         sb.append("    glbInfo: ").append(toIndentedString(glbInfo)).append("\n");
         sb.append("    gsInfo: ").append(toIndentedString(gsInfo)).append("\n");
         sb.append("    hostUnavailDetails: ").append(toIndentedString(hostUnavailDetails)).append("\n");

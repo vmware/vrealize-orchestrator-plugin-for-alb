@@ -25,13 +25,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IPReputationServiceStatus extends AviRestResource {
-  @JsonProperty("error")
-  @JsonInclude(Include.NON_NULL)
-  private String error = null;
+    @JsonProperty("error")
+    @JsonInclude(Include.NON_NULL)
+    private String error = null;
 
-  @JsonProperty("last_successful_update_check")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastSuccessfulUpdateCheck = null;
+    @JsonProperty("last_successful_update_check")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastSuccessfulUpdateCheck = null;
 
 
 
@@ -39,6 +39,7 @@ public class IPReputationServiceStatus extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If the last attempted update failed, this is a more detailed error message.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -50,6 +51,7 @@ public class IPReputationServiceStatus extends AviRestResource {
    * This is the setter method to the attribute.
    * If the last attempted update failed, this is a more detailed error message.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class IPReputationServiceStatus extends AviRestResource {
    * It will be not update, if an error occurs during an update attempt.
    * In this case, the errror will be set.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastSuccessfulUpdateCheck
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class IPReputationServiceStatus extends AviRestResource {
    * It will be not update, if an error occurs during an update attempt.
    * In this case, the errror will be set.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastSuccessfulUpdateCheck set the lastSuccessfulUpdateCheck.
    */
   @VsoMethod

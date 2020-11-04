@@ -26,29 +26,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class StaticRoute extends AviRestResource {
-  @JsonProperty("disable_gateway_monitor")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disableGatewayMonitor = null;
+    @JsonProperty("disable_gateway_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disableGatewayMonitor = null;
 
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("labels")
-  @JsonInclude(Include.NON_NULL)
-  private List<KeyValue> labels = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("next_hop")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr nextHop = null;
+    @JsonProperty("next_hop")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr nextHop = null;
 
-  @JsonProperty("prefix")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix prefix = null;
+    @JsonProperty("prefix")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix prefix = null;
 
-  @JsonProperty("route_id")
-  @JsonInclude(Include.NON_NULL)
-  private String routeId = null;
+    @JsonProperty("route_id")
+    @JsonInclude(Include.NON_NULL)
+    private String routeId = null;
 
 
 
@@ -57,6 +57,7 @@ public class StaticRoute extends AviRestResource {
    * Disable the gateway monitor for default gateway.
    * They are monitored by default.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return disableGatewayMonitor
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class StaticRoute extends AviRestResource {
    * Disable the gateway monitor for default gateway.
    * They are monitored by default.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param disableGatewayMonitor set the disableGatewayMonitor.
    */
   @VsoMethod
@@ -79,6 +81,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property if_name of obj type staticroute field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property if_name of obj type staticroute field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -100,6 +104,7 @@ public class StaticRoute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Labels associated with this route.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class StaticRoute extends AviRestResource {
    * This is the setter method. this will set the labels
    * Labels associated with this route.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class StaticRoute extends AviRestResource {
    * This is the setter method this will set the labels
    * Labels associated with this route.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property next_hop of obj type staticroute field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nextHop
    */
   @VsoMethod
@@ -147,6 +155,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property next_hop of obj type staticroute field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nextHop set the nextHop.
    */
   @VsoMethod
@@ -157,6 +166,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property prefix of obj type staticroute field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefix
    */
   @VsoMethod
@@ -167,6 +177,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property prefix of obj type staticroute field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param prefix set the prefix.
    */
   @VsoMethod
@@ -177,6 +188,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property route_id of obj type staticroute field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routeId
    */
   @VsoMethod
@@ -187,6 +199,7 @@ public class StaticRoute extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property route_id of obj type staticroute field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routeId set the routeId.
    */
   @VsoMethod

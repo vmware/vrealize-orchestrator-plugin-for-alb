@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecureChannelMetadata extends AviRestResource {
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private String key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private String key = null;
 
-  @JsonProperty("val")
-  @JsonInclude(Include.NON_NULL)
-  private String val = null;
+    @JsonProperty("val")
+    @JsonInclude(Include.NON_NULL)
+    private String val = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property key of obj type securechannelmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SecureChannelMetadata extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property key of obj type securechannelmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class SecureChannelMetadata extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property val of obj type securechannelmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return val
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class SecureChannelMetadata extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property val of obj type securechannelmetadata field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param val set the val.
    */
   @VsoMethod

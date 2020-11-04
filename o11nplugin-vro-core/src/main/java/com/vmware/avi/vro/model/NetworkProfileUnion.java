@@ -28,31 +28,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkProfileUnion extends AviRestResource {
-  @JsonProperty("tcp_fast_path_profile")
-  @JsonInclude(Include.NON_NULL)
-  private TCPFastPathProfile tcpFastPathProfile = null;
+    @JsonProperty("tcp_fast_path_profile")
+    @JsonInclude(Include.NON_NULL)
+    private TCPFastPathProfile tcpFastPathProfile = null;
 
-  @JsonProperty("tcp_proxy_profile")
-  @JsonInclude(Include.NON_NULL)
-  private TCPProxyProfile tcpProxyProfile = null;
+    @JsonProperty("tcp_proxy_profile")
+    @JsonInclude(Include.NON_NULL)
+    private TCPProxyProfile tcpProxyProfile = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = "PROTOCOL_TYPE_TCP_PROXY";
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = "PROTOCOL_TYPE_TCP_PROXY";
 
-  @JsonProperty("udp_fast_path_profile")
-  @JsonInclude(Include.NON_NULL)
-  private UDPFastPathProfile udpFastPathProfile = null;
+    @JsonProperty("udp_fast_path_profile")
+    @JsonInclude(Include.NON_NULL)
+    private UDPFastPathProfile udpFastPathProfile = null;
 
-  @JsonProperty("udp_proxy_profile")
-  @JsonInclude(Include.NON_NULL)
-  private UDPProxyProfile udpProxyProfile = null;
+    @JsonProperty("udp_proxy_profile")
+    @JsonInclude(Include.NON_NULL)
+    private UDPProxyProfile udpProxyProfile = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tcp_fast_path_profile of obj type networkprofileunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpFastPathProfile
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class NetworkProfileUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tcp_fast_path_profile of obj type networkprofileunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpFastPathProfile set the tcpFastPathProfile.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class NetworkProfileUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property tcp_proxy_profile of obj type networkprofileunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tcpProxyProfile
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class NetworkProfileUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property tcp_proxy_profile of obj type networkprofileunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tcpProxyProfile set the tcpProxyProfile.
    */
   @VsoMethod
@@ -94,7 +98,7 @@ public class NetworkProfileUnion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure one of either proxy or fast path profiles.
    * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as PROTOCOL_TYPE_TCP_PROXY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "PROTOCOL_TYPE_TCP_PROXY".
    * @return type
    */
   @VsoMethod
@@ -106,7 +110,7 @@ public class NetworkProfileUnion extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure one of either proxy or fast path profiles.
    * Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY.
-   * Default value when not specified in API or module is interpreted by Avi Controller as PROTOCOL_TYPE_TCP_PROXY.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "PROTOCOL_TYPE_TCP_PROXY".
    * @param type set the type.
    */
   @VsoMethod
@@ -117,6 +121,7 @@ public class NetworkProfileUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property udp_fast_path_profile of obj type networkprofileunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpFastPathProfile
    */
   @VsoMethod
@@ -127,6 +132,7 @@ public class NetworkProfileUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property udp_fast_path_profile of obj type networkprofileunion field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpFastPathProfile set the udpFastPathProfile.
    */
   @VsoMethod
@@ -138,6 +144,7 @@ public class NetworkProfileUnion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configure udp proxy network profile.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return udpProxyProfile
    */
   @VsoMethod
@@ -149,6 +156,7 @@ public class NetworkProfileUnion extends AviRestResource {
    * This is the setter method to the attribute.
    * Configure udp proxy network profile.
    * Field introduced in 17.2.8, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param udpProxyProfile set the udpProxyProfile.
    */
   @VsoMethod

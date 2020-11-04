@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLClientRequestHeader extends AviRestResource {
-  @JsonProperty("request_header")
-  @JsonInclude(Include.NON_NULL)
-  private String requestHeader = null;
+    @JsonProperty("request_header")
+    @JsonInclude(Include.NON_NULL)
+    private String requestHeader = null;
 
-  @JsonProperty("request_header_value")
-  @JsonInclude(Include.NON_NULL)
-  private String requestHeaderValue = null;
+    @JsonProperty("request_header_value")
+    @JsonInclude(Include.NON_NULL)
+    private String requestHeaderValue = null;
 
 
 
@@ -38,6 +38,7 @@ public class SSLClientRequestHeader extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If this header exists, reset the connection.
    * If the ssl variable is specified, add a header with this value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestHeader
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class SSLClientRequestHeader extends AviRestResource {
    * This is the setter method to the attribute.
    * If this header exists, reset the connection.
    * If the ssl variable is specified, add a header with this value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestHeader set the requestHeader.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class SSLClientRequestHeader extends AviRestResource {
    * HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT,
    * HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME,
    * HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return requestHeaderValue
    */
   @VsoMethod
@@ -81,6 +84,7 @@ public class SSLClientRequestHeader extends AviRestResource {
    * HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT,
    * HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME,
    * HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param requestHeaderValue set the requestHeaderValue.
    */
   @VsoMethod

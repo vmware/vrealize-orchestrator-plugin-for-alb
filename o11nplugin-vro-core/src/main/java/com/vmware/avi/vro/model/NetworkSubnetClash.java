@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkSubnetClash extends AviRestResource {
-  @JsonProperty("ip_nw")
-  @JsonInclude(Include.NON_NULL)
-  private String ipNw = null;
+    @JsonProperty("ip_nw")
+    @JsonInclude(Include.NON_NULL)
+    private String ipNw = null;
 
-  @JsonProperty("networks")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> networks = null;
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> networks = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip_nw of obj type networksubnetclash field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipNw
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class NetworkSubnetClash extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip_nw of obj type networksubnetclash field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipNw set the ipNw.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class NetworkSubnetClash extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property networks of obj type networksubnetclash field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class NetworkSubnetClash extends AviRestResource {
   /**
    * This is the setter method. this will set the networks
    * Placeholder for description of property networks of obj type networksubnetclash field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -77,6 +81,7 @@ public class NetworkSubnetClash extends AviRestResource {
   /**
    * This is the setter method this will set the networks
    * Placeholder for description of property networks of obj type networksubnetclash field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod

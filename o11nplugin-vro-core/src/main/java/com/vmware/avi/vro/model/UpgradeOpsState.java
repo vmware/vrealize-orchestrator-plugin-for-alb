@@ -25,17 +25,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class UpgradeOpsState extends AviRestResource {
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private String reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private String reason = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("rebooted")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rebooted = null;
+
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
 
 
@@ -43,6 +47,7 @@ public class UpgradeOpsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The last time the state changed.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -54,6 +59,7 @@ public class UpgradeOpsState extends AviRestResource {
    * This is the setter method to the attribute.
    * The last time the state changed.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -65,6 +71,7 @@ public class UpgradeOpsState extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Descriptive reason for the state-change.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -76,6 +83,7 @@ public class UpgradeOpsState extends AviRestResource {
    * This is the setter method to the attribute.
    * Descriptive reason for the state-change.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -85,11 +93,36 @@ public class UpgradeOpsState extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * State for keeping track of reboot status during upgrade operation.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return rebooted
+   */
+  @VsoMethod
+  public Boolean getRebooted() {
+    return rebooted;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * State for keeping track of reboot status during upgrade operation.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param rebooted set the rebooted.
+   */
+  @VsoMethod
+  public void setRebooted(Boolean  rebooted) {
+    this.rebooted = rebooted;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The upgrade operations current fsm-state.
    * Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR,
    * UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED,
-   * UPGRADE_FSM_DUMMY_1, UPGRADE_FSM_DUMMY_2, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5.
+   * UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -102,8 +135,9 @@ public class UpgradeOpsState extends AviRestResource {
    * The upgrade operations current fsm-state.
    * Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR,
    * UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED,
-   * UPGRADE_FSM_DUMMY_1, UPGRADE_FSM_DUMMY_2, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5.
+   * UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -124,7 +158,8 @@ public boolean equals(java.lang.Object o) {
   UpgradeOpsState objUpgradeOpsState = (UpgradeOpsState) o;
   return   Objects.equals(this.state, objUpgradeOpsState.state)&&
   Objects.equals(this.lastChangedTime, objUpgradeOpsState.lastChangedTime)&&
-  Objects.equals(this.reason, objUpgradeOpsState.reason);
+  Objects.equals(this.reason, objUpgradeOpsState.reason)&&
+  Objects.equals(this.rebooted, objUpgradeOpsState.rebooted);
 }
 
 @Override
@@ -133,6 +168,7 @@ public String toString() {
   sb.append("class UpgradeOpsState {\n");
       sb.append("    lastChangedTime: ").append(toIndentedString(lastChangedTime)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    rebooted: ").append(toIndentedString(rebooted)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
       sb.append("}");
   return sb.toString();

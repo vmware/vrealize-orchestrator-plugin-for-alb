@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class L4Policies extends AviRestResource {
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("l4_policy_set_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String l4PolicySetRef = null;
+    @JsonProperty("l4_policy_set_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String l4PolicySetRef = null;
 
 
 
@@ -38,6 +38,7 @@ public class L4Policies extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Index of the virtual service l4 policy set.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class L4Policies extends AviRestResource {
    * This is the setter method to the attribute.
    * Index of the virtual service l4 policy set.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class L4Policies extends AviRestResource {
    * Id of the virtual service l4 policy set.
    * It is a reference to an object of type l4policyset.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return l4PolicySetRef
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class L4Policies extends AviRestResource {
    * Id of the virtual service l4 policy set.
    * It is a reference to an object of type l4policyset.
    * Field introduced in 17.2.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param l4PolicySetRef set the l4PolicySetRef.
    */
   @VsoMethod

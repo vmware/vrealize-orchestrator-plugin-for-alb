@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SSLExpireDetails extends AviRestResource {
-  @JsonProperty("days_left")
-  @JsonInclude(Include.NON_NULL)
-  private Integer daysLeft = null;
+    @JsonProperty("days_left")
+    @JsonInclude(Include.NON_NULL)
+    private Integer daysLeft = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Number of days until certificate is expired.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return daysLeft
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class SSLExpireDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of days until certificate is expired.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param daysLeft set the daysLeft.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class SSLExpireDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of ssl certificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class SSLExpireDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of ssl certificate.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeRpcProxyDebugFilter extends AviRestResource {
-  @JsonProperty("method_name")
-  @JsonInclude(Include.NON_NULL)
-  private String methodName = null;
+    @JsonProperty("method_name")
+    @JsonInclude(Include.NON_NULL)
+    private String methodName = null;
 
-  @JsonProperty("queue")
-  @JsonInclude(Include.NON_NULL)
-  private String queue = null;
+    @JsonProperty("queue")
+    @JsonInclude(Include.NON_NULL)
+    private String queue = null;
 
-  @JsonProperty("se_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seUuid = null;
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
 
 
 
@@ -42,6 +42,7 @@ public class SeRpcProxyDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Method name of rpc.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return methodName
    */
   @VsoMethod
@@ -53,6 +54,7 @@ public class SeRpcProxyDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Method name of rpc.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param methodName set the methodName.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class SeRpcProxyDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Queue name of rpc.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queue
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class SeRpcProxyDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Queue name of rpc.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queue set the queue.
    */
   @VsoMethod
@@ -86,6 +90,7 @@ public class SeRpcProxyDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of service engine.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -97,6 +102,7 @@ public class SeRpcProxyDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of service engine.
    * Field introduced in 18.1.5, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod

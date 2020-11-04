@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackRoleMapping extends AviRestResource {
-  @JsonProperty("avi_role")
-  @JsonInclude(Include.NON_NULL)
-  private String aviRole = null;
+    @JsonProperty("avi_role")
+    @JsonInclude(Include.NON_NULL)
+    private String aviRole = null;
 
-  @JsonProperty("os_role")
-  @JsonInclude(Include.NON_NULL)
-  private String osRole = null;
+    @JsonProperty("os_role")
+    @JsonInclude(Include.NON_NULL)
+    private String osRole = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Role name in avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return aviRole
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class OpenStackRoleMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Role name in avi.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param aviRole set the aviRole.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class OpenStackRoleMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Role name in openstack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osRole
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class OpenStackRoleMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Role name in openstack.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osRole set the osRole.
    */
   @VsoMethod

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class StringMatch extends AviRestResource {
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("match_str")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> matchStr = null;
+    @JsonProperty("match_str")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> matchStr = null;
 
-  @JsonProperty("string_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> stringGroupRefs = null;
+    @JsonProperty("string_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> stringGroupRefs = null;
 
 
 
@@ -43,6 +43,7 @@ public class StringMatch extends AviRestResource {
    * Criterion to use for string matching the http request.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -55,6 +56,7 @@ public class StringMatch extends AviRestResource {
    * Criterion to use for string matching the http request.
    * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
    * REGEX_DOES_NOT_MATCH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -65,6 +67,7 @@ public class StringMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String value(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -75,6 +78,7 @@ public class StringMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the matchStr
    * String value(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class StringMatch extends AviRestResource {
   /**
    * This is the setter method this will set the matchStr
    * String value(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchStr
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class StringMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -112,6 +118,7 @@ public class StringMatch extends AviRestResource {
    * This is the setter method. this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class StringMatch extends AviRestResource {
    * This is the setter method this will set the stringGroupRefs
    * Uuid of the string group(s).
    * It is a reference to an object of type stringgroup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return stringGroupRefs
    */
   @VsoMethod

@@ -24,39 +24,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ConfigDeleteDetails extends AviRestResource {
-  @JsonProperty("error_message")
-  @JsonInclude(Include.NON_NULL)
-  private String errorMessage = null;
+    @JsonProperty("error_message")
+    @JsonInclude(Include.NON_NULL)
+    private String errorMessage = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private String path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path = null;
 
-  @JsonProperty("resource_data")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceData = null;
+    @JsonProperty("resource_data")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceData = null;
 
-  @JsonProperty("resource_name")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceName = null;
+    @JsonProperty("resource_name")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceName = null;
 
-  @JsonProperty("resource_type")
-  @JsonInclude(Include.NON_NULL)
-  private String resourceType = null;
+    @JsonProperty("resource_type")
+    @JsonInclude(Include.NON_NULL)
+    private String resourceType = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = null;
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = null;
 
-  @JsonProperty("user")
-  @JsonInclude(Include.NON_NULL)
-  private String user = null;
+    @JsonProperty("user")
+    @JsonInclude(Include.NON_NULL)
+    private String user = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Error message if request failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Error message if request failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
   @VsoMethod
@@ -77,6 +79,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Api path.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Api path.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -97,6 +101,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Deleted data of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceData
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Deleted data of the resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceData set the resourceData.
    */
   @VsoMethod
@@ -117,6 +123,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the deleted resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceName
    */
   @VsoMethod
@@ -127,6 +134,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the deleted resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceName set the resourceName.
    */
   @VsoMethod
@@ -137,6 +145,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Config type of the deleted resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return resourceType
    */
   @VsoMethod
@@ -147,6 +156,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Config type of the deleted resource.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param resourceType set the resourceType.
    */
   @VsoMethod
@@ -157,6 +167,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -167,6 +178,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Status.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
@@ -177,6 +189,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return user
    */
   @VsoMethod
@@ -187,6 +200,7 @@ public class ConfigDeleteDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Request user.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param user set the user.
    */
   @VsoMethod

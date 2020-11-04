@@ -25,19 +25,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricsDataSeries extends AviRestResource {
-  @JsonProperty("data")
-  @JsonInclude(Include.NON_NULL)
-  private List<MetricsData> data = null;
+    @JsonProperty("data")
+    @JsonInclude(Include.NON_NULL)
+    private List<MetricsData> data = null;
 
-  @JsonProperty("header")
-  @JsonInclude(Include.NON_NULL)
-  private MetricsDataHeader header = null;
+    @JsonProperty("header")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDataHeader header = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property data of obj type metricsdataseries field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return data
    */
   @VsoMethod
@@ -48,6 +49,7 @@ public class MetricsDataSeries extends AviRestResource {
   /**
    * This is the setter method. this will set the data
    * Placeholder for description of property data of obj type metricsdataseries field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return data
    */
   @VsoMethod
@@ -58,6 +60,7 @@ public class MetricsDataSeries extends AviRestResource {
   /**
    * This is the setter method this will set the data
    * Placeholder for description of property data of obj type metricsdataseries field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return data
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class MetricsDataSeries extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property header of obj type metricsdataseries field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return header
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class MetricsDataSeries extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property header of obj type metricsdataseries field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param header set the header.
    */
   @VsoMethod

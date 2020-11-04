@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafRuleGroup extends AviRestResource {
-  @JsonProperty("enable")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enable = true;
+    @JsonProperty("enable")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enable = true;
 
-  @JsonProperty("exclude_list")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafExcludeListEntry> excludeList = null;
+    @JsonProperty("exclude_list")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafExcludeListEntry> excludeList = null;
 
-  @JsonProperty("force_detection")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean forceDetection = null;
+    @JsonProperty("force_detection")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean forceDetection;
 
-  @JsonProperty("index")
-  @JsonInclude(Include.NON_NULL)
-  private Integer index = null;
+    @JsonProperty("index")
+    @JsonInclude(Include.NON_NULL)
+    private Integer index = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafRule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRule> rules = null;
 
 
 
@@ -80,6 +80,7 @@ public class WafRuleGroup extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
   @VsoMethod
@@ -93,6 +94,7 @@ public class WafRuleGroup extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
   @VsoMethod
@@ -106,6 +108,7 @@ public class WafRuleGroup extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
   @VsoMethod
@@ -147,6 +150,7 @@ public class WafRuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return index
    */
   @VsoMethod
@@ -157,6 +161,7 @@ public class WafRuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param index set the index.
    */
   @VsoMethod
@@ -167,6 +172,7 @@ public class WafRuleGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -177,6 +183,7 @@ public class WafRuleGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -188,6 +195,7 @@ public class WafRuleGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules as per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -199,6 +207,7 @@ public class WafRuleGroup extends AviRestResource {
    * This is the setter method. this will set the rules
    * Rules as per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -210,6 +219,7 @@ public class WafRuleGroup extends AviRestResource {
    * This is the setter method this will set the rules
    * Rules as per modsec language.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod

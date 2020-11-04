@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraMgmtNwChangeDetails extends AviRestResource {
-  @JsonProperty("existing_nw")
-  @JsonInclude(Include.NON_NULL)
-  private String existingNw = null;
+    @JsonProperty("existing_nw")
+    @JsonInclude(Include.NON_NULL)
+    private String existingNw = null;
 
-  @JsonProperty("new_nw")
-  @JsonInclude(Include.NON_NULL)
-  private String newNw = null;
+    @JsonProperty("new_nw")
+    @JsonInclude(Include.NON_NULL)
+    private String newNw = null;
 
-  @JsonProperty("vcenter")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenter = null;
+    @JsonProperty("vcenter")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property existing_nw of obj type vinframgmtnwchangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return existingNw
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VinfraMgmtNwChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property existing_nw of obj type vinframgmtnwchangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param existingNw set the existingNw.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VinfraMgmtNwChangeDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property new_nw of obj type vinframgmtnwchangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return newNw
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class VinfraMgmtNwChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property new_nw of obj type vinframgmtnwchangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param newNw set the newNw.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class VinfraMgmtNwChangeDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter of obj type vinframgmtnwchangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenter
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class VinfraMgmtNwChangeDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter of obj type vinframgmtnwchangedetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenter set the vcenter.
    */
   @VsoMethod

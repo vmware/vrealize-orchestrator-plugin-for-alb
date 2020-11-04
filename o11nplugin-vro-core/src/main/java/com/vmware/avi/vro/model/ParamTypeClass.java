@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ParamTypeClass extends AviRestResource {
-  @JsonProperty("hits")
-  @JsonInclude(Include.NON_NULL)
-  private Integer hits = null;
+    @JsonProperty("hits")
+    @JsonInclude(Include.NON_NULL)
+    private Integer hits = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hits
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class ParamTypeClass extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hits set the hits.
    */
   @VsoMethod
@@ -59,6 +61,7 @@ public class ParamTypeClass extends AviRestResource {
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class ParamTypeClass extends AviRestResource {
    * Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT,
    * PARAM_TEXT_MULTILINE, PARAM_ALL.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

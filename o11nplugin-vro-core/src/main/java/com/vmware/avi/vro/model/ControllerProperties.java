@@ -24,301 +24,313 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ControllerProperties extends AviRestResource {
-  @JsonProperty("allow_admin_network_updates")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowAdminNetworkUpdates = false;
-
-  @JsonProperty("allow_ip_forwarding")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowIpForwarding = false;
-
-  @JsonProperty("allow_unauthenticated_apis")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowUnauthenticatedApis = false;
-
-  @JsonProperty("allow_unauthenticated_nodes")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowUnauthenticatedNodes = false;
-
-  @JsonProperty("api_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apiIdleTimeout = 15;
-
-  @JsonProperty("api_perf_logging_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer apiPerfLoggingThreshold = 10000;
-
-  @JsonProperty("appviewx_compat_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean appviewxCompatMode = false;
-
-  @JsonProperty("attach_ip_retry_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer attachIpRetryInterval = 360;
-
-  @JsonProperty("attach_ip_retry_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer attachIpRetryLimit = 4;
-
-  @JsonProperty("bm_use_ansible")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean bmUseAnsible = true;
-
-  @JsonProperty("cleanup_expired_authtoken_timeout_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cleanupExpiredAuthtokenTimeoutPeriod = 60;
-
-  @JsonProperty("cleanup_sessions_timeout_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cleanupSessionsTimeoutPeriod = 60;
-
-  @JsonProperty("cloud_reconcile")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean cloudReconcile = true;
-
-  @JsonProperty("cluster_ip_gratuitous_arp_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer clusterIpGratuitousArpPeriod = 60;
-
-  @JsonProperty("consistency_check_timeout_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer consistencyCheckTimeoutPeriod = 60;
-
-  @JsonProperty("crashed_se_reboot")
-  @JsonInclude(Include.NON_NULL)
-  private Integer crashedSeReboot = 900;
-
-  @JsonProperty("dead_se_detection_timer")
-  @JsonInclude(Include.NON_NULL)
-  private Integer deadSeDetectionTimer = 360;
-
-  @JsonProperty("default_minimum_api_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer defaultMinimumApiTimeout = 60;
-
-  @JsonProperty("dns_refresh_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dnsRefreshPeriod = 60;
-
-  @JsonProperty("dummy")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dummy = null;
-
-  @JsonProperty("edit_system_limits")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean editSystemLimits = false;
-
-  @JsonProperty("enable_api_sharding")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableApiSharding = true;
-
-  @JsonProperty("enable_memory_balancer")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enableMemoryBalancer = true;
-
-  @JsonProperty("fatal_error_lease_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer fatalErrorLeaseTime = 120;
-
-  @JsonProperty("federated_datastore_cleanup_duration")
-  @JsonInclude(Include.NON_NULL)
-  private Integer federatedDatastoreCleanupDuration = 120;
-
-  @JsonProperty("file_object_cleanup_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer fileObjectCleanupPeriod = 1440;
-
-  @JsonProperty("max_dead_se_in_grp")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxDeadSeInGrp = 1;
-
-  @JsonProperty("max_pcap_per_tenant")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxPcapPerTenant = 4;
-
-  @JsonProperty("max_se_spawn_interval_delay")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSeSpawnIntervalDelay = 1800;
-
-  @JsonProperty("max_seq_attach_ip_failures")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSeqAttachIpFailures = 3;
-
-  @JsonProperty("max_seq_vnic_failures")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSeqVnicFailures = 3;
-
-  @JsonProperty("permission_scoped_shared_admin_networks")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean permissionScopedSharedAdminNetworks = false;
-
-  @JsonProperty("persistence_key_rotate_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer persistenceKeyRotatePeriod = 0;
-
-  @JsonProperty("portal_request_burst_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer portalRequestBurstLimit = 0;
-
-  @JsonProperty("portal_request_rate_limit")
-  @JsonInclude(Include.NON_NULL)
-  private Integer portalRequestRateLimit = 0;
-
-  @JsonProperty("portal_token")
-  @JsonInclude(Include.NON_NULL)
-  private String portalToken = null;
-
-  @JsonProperty("process_locked_useraccounts_timeout_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer processLockedUseraccountsTimeoutPeriod = 1;
-
-  @JsonProperty("process_pki_profile_timeout_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer processPkiProfileTimeoutPeriod = 1440;
-
-  @JsonProperty("query_host_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer queryHostFail = 180;
-
-  @JsonProperty("safenet_hsm_version")
-  @JsonInclude(Include.NON_NULL)
-  private String safenetHsmVersion = null;
-
-  @JsonProperty("se_create_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seCreateTimeout = 900;
-
-  @JsonProperty("se_failover_attempt_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seFailoverAttemptInterval = 300;
-
-  @JsonProperty("se_from_marketplace")
-  @JsonInclude(Include.NON_NULL)
-  private String seFromMarketplace = "IMAGE";
-
-  @JsonProperty("se_offline_del")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seOfflineDel = 172000;
-
-  @JsonProperty("se_spawn_retry_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seSpawnRetryInterval = 300;
-
-  @JsonProperty("se_vnic_cooldown")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seVnicCooldown = 120;
-
-  @JsonProperty("secure_channel_cleanup_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer secureChannelCleanupTimeout = 60;
-
-  @JsonProperty("secure_channel_controller_token_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer secureChannelControllerTokenTimeout = 60;
-
-  @JsonProperty("secure_channel_se_token_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer secureChannelSeTokenTimeout = 60;
-
-  @JsonProperty("seupgrade_copy_pool_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seupgradeCopyPoolSize = 5;
-
-  @JsonProperty("seupgrade_fabric_pool_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seupgradeFabricPoolSize = 20;
-
-  @JsonProperty("seupgrade_segroup_min_dead_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seupgradeSegroupMinDeadTimeout = 360;
-
-  @JsonProperty("shared_ssl_certificates")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean sharedSslCertificates = false;
-
-  @JsonProperty("ssl_certificate_expiry_warning_days")
-  @JsonInclude(Include.NON_NULL)
-  private List<Integer> sslCertificateExpiryWarningDays = null;
-
-  @JsonProperty("unresponsive_se_reboot")
-  @JsonInclude(Include.NON_NULL)
-  private Integer unresponsiveSeReboot = 300;
-
-  @JsonProperty("upgrade_dns_ttl")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upgradeDnsTtl = 5;
-
-  @JsonProperty("upgrade_fat_se_lease_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upgradeFatSeLeaseTime = 1200;
-
-  @JsonProperty("upgrade_lease_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upgradeLeaseTime = 600;
-
-  @JsonProperty("upgrade_se_per_vs_scale_ops_txn_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer upgradeSePerVsScaleOpsTxnTime = 3;
-
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
-
-  @JsonProperty("vnic_op_fail_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vnicOpFailTime = 180;
-
-  @JsonProperty("vs_apic_scaleout_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsApicScaleoutTimeout = 360;
-
-  @JsonProperty("vs_awaiting_se_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsAwaitingSeTimeout = 60;
-
-  @JsonProperty("vs_key_rotate_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsKeyRotatePeriod = 360;
-
-  @JsonProperty("vs_scaleout_ready_check_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsScaleoutReadyCheckInterval = 60;
-
-  @JsonProperty("vs_se_attach_ip_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsSeAttachIpFail = 600;
-
-  @JsonProperty("vs_se_bootup_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsSeBootupFail = 480;
-
-  @JsonProperty("vs_se_create_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsSeCreateFail = 1500;
-
-  @JsonProperty("vs_se_ping_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsSePingFail = 60;
-
-  @JsonProperty("vs_se_vnic_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsSeVnicFail = 300;
-
-  @JsonProperty("vs_se_vnic_ip_fail")
-  @JsonInclude(Include.NON_NULL)
-  private Integer vsSeVnicIpFail = 120;
-
-  @JsonProperty("warmstart_se_reconnect_wait_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer warmstartSeReconnectWaitTime = 480;
-
-  @JsonProperty("warmstart_vs_resync_wait_time")
-  @JsonInclude(Include.NON_NULL)
-  private Integer warmstartVsResyncWaitTime = 300;
+    @JsonProperty("allow_admin_network_updates")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowAdminNetworkUpdates = false;
+
+    @JsonProperty("allow_ip_forwarding")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowIpForwarding = false;
+
+    @JsonProperty("allow_unauthenticated_apis")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowUnauthenticatedApis = false;
+
+    @JsonProperty("allow_unauthenticated_nodes")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowUnauthenticatedNodes = false;
+
+    @JsonProperty("api_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apiIdleTimeout = 15;
+
+    @JsonProperty("api_perf_logging_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer apiPerfLoggingThreshold = 10000;
+
+    @JsonProperty("appviewx_compat_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean appviewxCompatMode = false;
+
+    @JsonProperty("async_patch_merge_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer asyncPatchMergePeriod = 0;
+
+    @JsonProperty("async_patch_request_cleanup_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer asyncPatchRequestCleanupDuration = 60;
+
+    @JsonProperty("attach_ip_retry_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer attachIpRetryInterval = 360;
+
+    @JsonProperty("attach_ip_retry_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer attachIpRetryLimit = 4;
+
+    @JsonProperty("bm_use_ansible")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean bmUseAnsible = true;
+
+    @JsonProperty("cleanup_expired_authtoken_timeout_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cleanupExpiredAuthtokenTimeoutPeriod = 60;
+
+    @JsonProperty("cleanup_sessions_timeout_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cleanupSessionsTimeoutPeriod = 60;
+
+    @JsonProperty("cloud_reconcile")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cloudReconcile = true;
+
+    @JsonProperty("cluster_ip_gratuitous_arp_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer clusterIpGratuitousArpPeriod = 60;
+
+    @JsonProperty("consistency_check_timeout_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer consistencyCheckTimeoutPeriod = 60;
+
+    @JsonProperty("crashed_se_reboot")
+    @JsonInclude(Include.NON_NULL)
+    private Integer crashedSeReboot = 900;
+
+    @JsonProperty("dead_se_detection_timer")
+    @JsonInclude(Include.NON_NULL)
+    private Integer deadSeDetectionTimer = 360;
+
+    @JsonProperty("default_minimum_api_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer defaultMinimumApiTimeout = 60;
+
+    @JsonProperty("dns_refresh_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dnsRefreshPeriod = 60;
+
+    @JsonProperty("dummy")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dummy = null;
+
+    @JsonProperty("edit_system_limits")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean editSystemLimits = false;
+
+    @JsonProperty("enable_api_sharding")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableApiSharding = true;
+
+    @JsonProperty("enable_memory_balancer")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableMemoryBalancer = true;
+
+    @JsonProperty("fatal_error_lease_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer fatalErrorLeaseTime = 120;
+
+    @JsonProperty("federated_datastore_cleanup_duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer federatedDatastoreCleanupDuration = 120;
+
+    @JsonProperty("file_object_cleanup_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer fileObjectCleanupPeriod = 1440;
+
+    @JsonProperty("max_dead_se_in_grp")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxDeadSeInGrp = 1;
+
+    @JsonProperty("max_pcap_per_tenant")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxPcapPerTenant = 4;
+
+    @JsonProperty("max_se_spawn_interval_delay")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSeSpawnIntervalDelay = 1800;
+
+    @JsonProperty("max_seq_attach_ip_failures")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSeqAttachIpFailures = 3;
+
+    @JsonProperty("max_seq_vnic_failures")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSeqVnicFailures = 3;
+
+    @JsonProperty("max_threads_cc_vip_bg_worker")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxThreadsCcVipBgWorker = 20;
+
+    @JsonProperty("permission_scoped_shared_admin_networks")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean permissionScopedSharedAdminNetworks = false;
+
+    @JsonProperty("persistence_key_rotate_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer persistenceKeyRotatePeriod = 0;
+
+    @JsonProperty("portal_request_burst_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer portalRequestBurstLimit = 0;
+
+    @JsonProperty("portal_request_rate_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer portalRequestRateLimit = 0;
+
+    @JsonProperty("portal_token")
+    @JsonInclude(Include.NON_NULL)
+    private String portalToken = null;
+
+    @JsonProperty("process_locked_useraccounts_timeout_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer processLockedUseraccountsTimeoutPeriod = 1;
+
+    @JsonProperty("process_pki_profile_timeout_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer processPkiProfileTimeoutPeriod = 1440;
+
+    @JsonProperty("query_host_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer queryHostFail = 180;
+
+    @JsonProperty("safenet_hsm_version")
+    @JsonInclude(Include.NON_NULL)
+    private String safenetHsmVersion = null;
+
+    @JsonProperty("se_create_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seCreateTimeout = 900;
+
+    @JsonProperty("se_failover_attempt_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seFailoverAttemptInterval = 300;
+
+    @JsonProperty("se_from_marketplace")
+    @JsonInclude(Include.NON_NULL)
+    private String seFromMarketplace = "IMAGE";
+
+    @JsonProperty("se_offline_del")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seOfflineDel = 172000;
+
+    @JsonProperty("se_spawn_retry_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seSpawnRetryInterval = 300;
+
+    @JsonProperty("se_vnic_cooldown")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seVnicCooldown = 120;
+
+    @JsonProperty("secure_channel_cleanup_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer secureChannelCleanupTimeout = 60;
+
+    @JsonProperty("secure_channel_controller_token_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer secureChannelControllerTokenTimeout = 60;
+
+    @JsonProperty("secure_channel_se_token_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer secureChannelSeTokenTimeout = 60;
+
+    @JsonProperty("seupgrade_copy_pool_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seupgradeCopyPoolSize = 5;
+
+    @JsonProperty("seupgrade_fabric_pool_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seupgradeFabricPoolSize = 20;
+
+    @JsonProperty("seupgrade_segroup_min_dead_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seupgradeSegroupMinDeadTimeout = 360;
+
+    @JsonProperty("shared_ssl_certificates")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean sharedSslCertificates = false;
+
+    @JsonProperty("ssl_certificate_expiry_warning_days")
+    @JsonInclude(Include.NON_NULL)
+    private List<Integer> sslCertificateExpiryWarningDays = null;
+
+    @JsonProperty("unresponsive_se_reboot")
+    @JsonInclude(Include.NON_NULL)
+    private Integer unresponsiveSeReboot = 300;
+
+    @JsonProperty("upgrade_dns_ttl")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upgradeDnsTtl = 5;
+
+    @JsonProperty("upgrade_fat_se_lease_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upgradeFatSeLeaseTime = 1200;
+
+    @JsonProperty("upgrade_lease_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upgradeLeaseTime = 600;
+
+    @JsonProperty("upgrade_se_per_vs_scale_ops_txn_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer upgradeSePerVsScaleOpsTxnTime = 3;
+
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("vnic_op_fail_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vnicOpFailTime = 180;
+
+    @JsonProperty("vs_apic_scaleout_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsApicScaleoutTimeout = 360;
+
+    @JsonProperty("vs_awaiting_se_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsAwaitingSeTimeout = 60;
+
+    @JsonProperty("vs_key_rotate_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsKeyRotatePeriod = 360;
+
+    @JsonProperty("vs_scaleout_ready_check_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsScaleoutReadyCheckInterval = 60;
+
+    @JsonProperty("vs_se_attach_ip_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeAttachIpFail = 600;
+
+    @JsonProperty("vs_se_bootup_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeBootupFail = 480;
+
+    @JsonProperty("vs_se_create_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeCreateFail = 1500;
+
+    @JsonProperty("vs_se_ping_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSePingFail = 60;
+
+    @JsonProperty("vs_se_vnic_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeVnicFail = 300;
+
+    @JsonProperty("vs_se_vnic_ip_fail")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsSeVnicIpFail = 120;
+
+    @JsonProperty("warmstart_se_reconnect_wait_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer warmstartSeReconnectWaitTime = 480;
+
+    @JsonProperty("warmstart_vs_resync_wait_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer warmstartVsResyncWaitTime = 300;
 
 
 
@@ -415,6 +427,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allowed values are 0-1440.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @return apiIdleTimeout
    */
@@ -426,6 +439,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allowed values are 0-1440.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 15.
    * @param apiIdleTimeout set the apiIdleTimeout.
    */
@@ -439,6 +453,7 @@ public class ControllerProperties extends AviRestResource {
    * Threshold to log request timing in portal_performance.log and server-timing response header.
    * Any stage taking longer than 1% of the threshold will be included in the server-timing header.
    * Field introduced in 18.1.4, 18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return apiPerfLoggingThreshold
    */
@@ -452,6 +467,7 @@ public class ControllerProperties extends AviRestResource {
    * Threshold to log request timing in portal_performance.log and server-timing response header.
    * Any stage taking longer than 1% of the threshold will be included in the server-timing header.
    * Field introduced in 18.1.4, 18.2.1.
+   * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param apiPerfLoggingThreshold set the apiPerfLoggingThreshold.
    */
@@ -486,7 +502,65 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property attach_ip_retry_interval of obj type controllerproperties field type str  type integer.
+   * Period for which asynchronous patch requests are queued.
+   * Allowed values are 30-120.
+   * Special values are 0 - 'deactivated'.
+   * Field introduced in 18.2.11, 20.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return asyncPatchMergePeriod
+   */
+  @VsoMethod
+  public Integer getAsyncPatchMergePeriod() {
+    return asyncPatchMergePeriod;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Period for which asynchronous patch requests are queued.
+   * Allowed values are 30-120.
+   * Special values are 0 - 'deactivated'.
+   * Field introduced in 18.2.11, 20.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param asyncPatchMergePeriod set the asyncPatchMergePeriod.
+   */
+  @VsoMethod
+  public void setAsyncPatchMergePeriod(Integer  asyncPatchMergePeriod) {
+    this.asyncPatchMergePeriod = asyncPatchMergePeriod;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Duration for which asynchronous patch requests should be kept, after being marked as success or fail.
+   * Allowed values are 5-120.
+   * Field introduced in 18.2.11, 20.1.3.
+   * Unit is min.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return asyncPatchRequestCleanupDuration
+   */
+  @VsoMethod
+  public Integer getAsyncPatchRequestCleanupDuration() {
+    return asyncPatchRequestCleanupDuration;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Duration for which asynchronous patch requests should be kept, after being marked as success or fail.
+   * Allowed values are 5-120.
+   * Field introduced in 18.2.11, 20.1.3.
+   * Unit is min.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param asyncPatchRequestCleanupDuration set the asyncPatchRequestCleanupDuration.
+   */
+  @VsoMethod
+  public void setAsyncPatchRequestCleanupDuration(Integer  asyncPatchRequestCleanupDuration) {
+    this.asyncPatchRequestCleanupDuration = asyncPatchRequestCleanupDuration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return attachIpRetryInterval
    */
@@ -497,7 +571,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property attach_ip_retry_interval of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param attachIpRetryInterval set the attachIpRetryInterval.
    */
@@ -556,6 +630,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for auth token cleanup job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cleanupExpiredAuthtokenTimeoutPeriod
    */
@@ -568,6 +643,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for auth token cleanup job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param cleanupExpiredAuthtokenTimeoutPeriod set the cleanupExpiredAuthtokenTimeoutPeriod.
    */
@@ -580,6 +656,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for sessions cleanup job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return cleanupSessionsTimeoutPeriod
    */
@@ -592,6 +669,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for sessions cleanup job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param cleanupSessionsTimeoutPeriod set the cleanupSessionsTimeoutPeriod.
    */
@@ -627,6 +705,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Period for cluster ip gratuitous arp job.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return clusterIpGratuitousArpPeriod
    */
@@ -638,6 +717,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Period for cluster ip gratuitous arp job.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param clusterIpGratuitousArpPeriod set the clusterIpGratuitousArpPeriod.
    */
@@ -650,6 +730,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for consistency check job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return consistencyCheckTimeoutPeriod
    */
@@ -662,6 +743,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for consistency check job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param consistencyCheckTimeoutPeriod set the consistencyCheckTimeoutPeriod.
    */
@@ -672,7 +754,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property crashed_se_reboot of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @return crashedSeReboot
    */
@@ -683,7 +765,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property crashed_se_reboot of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @param crashedSeReboot set the crashedSeReboot.
    */
@@ -694,7 +776,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property dead_se_detection_timer of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return deadSeDetectionTimer
    */
@@ -705,7 +787,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property dead_se_detection_timer of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param deadSeDetectionTimer set the deadSeDetectionTimer.
    */
@@ -720,6 +802,7 @@ public class ControllerProperties extends AviRestResource {
    * a specific timeout but is less than this value, this value will become the new timeout.
    * Allowed values are 60-3600.
    * Field introduced in 18.2.6.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return defaultMinimumApiTimeout
    */
@@ -734,6 +817,7 @@ public class ControllerProperties extends AviRestResource {
    * a specific timeout but is less than this value, this value will become the new timeout.
    * Allowed values are 60-3600.
    * Field introduced in 18.2.6.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param defaultMinimumApiTimeout set the defaultMinimumApiTimeout.
    */
@@ -745,6 +829,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Period for refresh pool and gslb dns job.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return dnsRefreshPeriod
    */
@@ -756,6 +841,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Period for refresh pool and gslb dns job.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param dnsRefreshPeriod set the dnsRefreshPeriod.
    */
@@ -767,6 +853,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dummy of obj type controllerproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dummy
    */
   @VsoMethod
@@ -777,6 +864,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dummy of obj type controllerproperties field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dummy set the dummy.
    */
   @VsoMethod
@@ -864,7 +952,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property fatal_error_lease_time of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return fatalErrorLeaseTime
    */
@@ -875,7 +963,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property fatal_error_lease_time of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param fatalErrorLeaseTime set the fatalErrorLeaseTime.
    */
@@ -888,6 +976,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Federated datastore will not cleanup diffs unless they are at least this duration in the past.
    * Field introduced in 20.1.1.
+   * Unit is hours.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return federatedDatastoreCleanupDuration
    */
@@ -900,6 +989,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Federated datastore will not cleanup diffs unless they are at least this duration in the past.
    * Field introduced in 20.1.1.
+   * Unit is hours.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param federatedDatastoreCleanupDuration set the federatedDatastoreCleanupDuration.
    */
@@ -912,6 +1002,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for file object cleanup job.
    * Field introduced in 20.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @return fileObjectCleanupPeriod
    */
@@ -924,6 +1015,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for file object cleanup job.
    * Field introduced in 20.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @param fileObjectCleanupPeriod set the fileObjectCleanupPeriod.
    */
@@ -980,6 +1072,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum delay possible to add to se_spawn_retry_interval after successive se spawn failure.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @return maxSeSpawnIntervalDelay
    */
@@ -992,6 +1085,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum delay possible to add to se_spawn_retry_interval after successive se spawn failure.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
    * @param maxSeSpawnIntervalDelay set the maxSeSpawnIntervalDelay.
    */
@@ -1048,6 +1142,32 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Maximum number of threads in threadpool used by cloud connector ccvipbgworker.
+   * Allowed values are 1-100.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @return maxThreadsCcVipBgWorker
+   */
+  @VsoMethod
+  public Integer getMaxThreadsCcVipBgWorker() {
+    return maxThreadsCcVipBgWorker;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of threads in threadpool used by cloud connector ccvipbgworker.
+   * Allowed values are 1-100.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @param maxThreadsCcVipBgWorker set the maxThreadsCcVipBgWorker.
+   */
+  @VsoMethod
+  public void setMaxThreadsCcVipBgWorker(Integer  maxThreadsCcVipBgWorker) {
+    this.maxThreadsCcVipBgWorker = maxThreadsCcVipBgWorker;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Network and vrfcontext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted.
    * Field introduced in 18.2.7, 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -1075,6 +1195,7 @@ public class ControllerProperties extends AviRestResource {
    * Period for rotate app persistence keys job.
    * Allowed values are 1-1051200.
    * Special values are 0 - 'disabled'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return persistenceKeyRotatePeriod
    */
@@ -1088,6 +1209,7 @@ public class ControllerProperties extends AviRestResource {
    * Period for rotate app persistence keys job.
    * Allowed values are 1-1051200.
    * Special values are 0 - 'disabled'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param persistenceKeyRotatePeriod set the persistenceKeyRotatePeriod.
    */
@@ -1124,6 +1246,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum average number of requests allowed per second0 to disable.
    * Field introduced in 20.1.1.
+   * Unit is per_second.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return portalRequestRateLimit
    */
@@ -1136,6 +1259,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum average number of requests allowed per second0 to disable.
    * Field introduced in 20.1.1.
+   * Unit is per_second.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param portalRequestRateLimit set the portalRequestRateLimit.
    */
@@ -1148,6 +1272,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Token used for uploading tech-support to portal.
    * Field introduced in 16.4.6,17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return portalToken
    */
   @VsoMethod
@@ -1159,6 +1284,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Token used for uploading tech-support to portal.
    * Field introduced in 16.4.6,17.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param portalToken set the portalToken.
    */
   @VsoMethod
@@ -1170,6 +1296,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for process locked user accounts job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return processLockedUseraccountsTimeoutPeriod
    */
@@ -1182,6 +1309,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for process locked user accounts job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param processLockedUseraccountsTimeoutPeriod set the processLockedUseraccountsTimeoutPeriod.
    */
@@ -1194,6 +1322,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Period for process pki profile job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @return processPkiProfileTimeoutPeriod
    */
@@ -1206,6 +1335,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Period for process pki profile job.
    * Field introduced in 18.1.1.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @param processPkiProfileTimeoutPeriod set the processPkiProfileTimeoutPeriod.
    */
@@ -1216,7 +1346,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property query_host_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @return queryHostFail
    */
@@ -1227,7 +1357,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property query_host_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @param queryHostFail set the queryHostFail.
    */
@@ -1240,6 +1370,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of the safenet package installed on the controller.
    * Field introduced in 16.5.2,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return safenetHsmVersion
    */
   @VsoMethod
@@ -1251,6 +1382,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of the safenet package installed on the controller.
    * Field introduced in 16.5.2,17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param safenetHsmVersion set the safenetHsmVersion.
    */
   @VsoMethod
@@ -1260,7 +1392,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_create_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @return seCreateTimeout
    */
@@ -1271,7 +1403,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_create_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 900.
    * @param seCreateTimeout set the seCreateTimeout.
    */
@@ -1283,6 +1415,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Interval between attempting failovers to an se.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return seFailoverAttemptInterval
    */
@@ -1294,6 +1427,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Interval between attempting failovers to an se.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param seFailoverAttemptInterval set the seFailoverAttemptInterval.
    */
@@ -1308,7 +1442,7 @@ public class ControllerProperties extends AviRestResource {
    * The setting is applicable only when byol license is selected.
    * Enum options - MARKETPLACE, IMAGE.
    * Field introduced in 18.1.4, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as IMAGE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
    * @return seFromMarketplace
    */
   @VsoMethod
@@ -1322,7 +1456,7 @@ public class ControllerProperties extends AviRestResource {
    * The setting is applicable only when byol license is selected.
    * Enum options - MARKETPLACE, IMAGE.
    * Field introduced in 18.1.4, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as IMAGE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
    * @param seFromMarketplace set the seFromMarketplace.
    */
   @VsoMethod
@@ -1332,7 +1466,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_offline_del of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 172000.
    * @return seOfflineDel
    */
@@ -1343,7 +1477,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_offline_del of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 172000.
    * @param seOfflineDel set the seOfflineDel.
    */
@@ -1356,6 +1490,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Default retry period before attempting another service engine spawn in se group.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return seSpawnRetryInterval
    */
@@ -1368,6 +1503,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Default retry period before attempting another service engine spawn in se group.
    * Field introduced in 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param seSpawnRetryInterval set the seSpawnRetryInterval.
    */
@@ -1378,7 +1514,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property se_vnic_cooldown of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return seVnicCooldown
    */
@@ -1389,7 +1525,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property se_vnic_cooldown of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param seVnicCooldown set the seVnicCooldown.
    */
@@ -1401,6 +1537,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Period for secure channel cleanup job.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return secureChannelCleanupTimeout
    */
@@ -1412,6 +1549,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Period for secure channel cleanup job.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param secureChannelCleanupTimeout set the secureChannelCleanupTimeout.
    */
@@ -1422,7 +1560,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property secure_channel_controller_token_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return secureChannelControllerTokenTimeout
    */
@@ -1433,7 +1571,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property secure_channel_controller_token_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param secureChannelControllerTokenTimeout set the secureChannelControllerTokenTimeout.
    */
@@ -1444,7 +1582,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property secure_channel_se_token_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return secureChannelSeTokenTimeout
    */
@@ -1455,7 +1593,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property secure_channel_se_token_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param secureChannelSeTokenTimeout set the secureChannelSeTokenTimeout.
    */
@@ -1517,6 +1655,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time to wait before marking segroup upgrade as stuck.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return seupgradeSegroupMinDeadTimeout
    */
@@ -1528,6 +1667,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time to wait before marking segroup upgrade as stuck.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param seupgradeSegroupMinDeadTimeout set the seupgradeSegroupMinDeadTimeout.
    */
@@ -1563,6 +1703,8 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of days for ssl certificate expiry warning.
+   * Unit is days.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslCertificateExpiryWarningDays
    */
   @VsoMethod
@@ -1573,6 +1715,8 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the sslCertificateExpiryWarningDays
    * Number of days for ssl certificate expiry warning.
+   * Unit is days.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslCertificateExpiryWarningDays
    */
   @VsoMethod
@@ -1583,6 +1727,8 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method this will set the sslCertificateExpiryWarningDays
    * Number of days for ssl certificate expiry warning.
+   * Unit is days.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslCertificateExpiryWarningDays
    */
   @VsoMethod
@@ -1597,7 +1743,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property unresponsive_se_reboot of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return unresponsiveSeReboot
    */
@@ -1608,7 +1754,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property unresponsive_se_reboot of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param unresponsiveSeReboot set the unresponsiveSeReboot.
    */
@@ -1622,6 +1768,7 @@ public class ControllerProperties extends AviRestResource {
    * Time to account for dns ttl during upgrade.
    * This is in addition to vs_scalein_timeout_for_upgrade in se_group.
    * Field introduced in 17.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return upgradeDnsTtl
    */
@@ -1635,6 +1782,7 @@ public class ControllerProperties extends AviRestResource {
    * Time to account for dns ttl during upgrade.
    * This is in addition to vs_scalein_timeout_for_upgrade in se_group.
    * Field introduced in 17.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param upgradeDnsTtl set the upgradeDnsTtl.
    */
@@ -1647,6 +1795,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1200.
    * @return upgradeFatSeLeaseTime
    */
@@ -1659,6 +1808,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1200.
    * @param upgradeFatSeLeaseTime set the upgradeFatSeLeaseTime.
    */
@@ -1671,6 +1821,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade.
    * Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return upgradeLeaseTime
    */
@@ -1683,6 +1834,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade.
    * Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param upgradeLeaseTime set the upgradeLeaseTime.
    */
@@ -1697,6 +1849,7 @@ public class ControllerProperties extends AviRestResource {
    * User can tweak this parameter to a higher value if the segroup gets suspended due to sescalein or sescaleout timeout failure typically associated
    * with high number of vs(es) scaled out.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @return upgradeSePerVsScaleOpsTxnTime
    */
@@ -1711,6 +1864,7 @@ public class ControllerProperties extends AviRestResource {
    * User can tweak this parameter to a higher value if the segroup gets suspended due to sescalein or sescaleout timeout failure typically associated
    * with high number of vs(es) scaled out.
    * Field introduced in 18.2.10, 20.1.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3.
    * @param upgradeSePerVsScaleOpsTxnTime set the upgradeSePerVsScaleOpsTxnTime.
    */
@@ -1741,6 +1895,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -1751,6 +1906,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -1760,7 +1916,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vnic_op_fail_time of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @return vnicOpFailTime
    */
@@ -1771,7 +1927,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vnic_op_fail_time of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 180.
    * @param vnicOpFailTime set the vnicOpFailTime.
    */
@@ -1783,6 +1939,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return vsApicScaleoutTimeout
    */
@@ -1794,6 +1951,7 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param vsApicScaleoutTimeout set the vsApicScaleoutTimeout.
    */
@@ -1804,7 +1962,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_awaiting_se_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return vsAwaitingSeTimeout
    */
@@ -1815,7 +1973,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_awaiting_se_timeout of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param vsAwaitingSeTimeout set the vsAwaitingSeTimeout.
    */
@@ -1829,6 +1987,7 @@ public class ControllerProperties extends AviRestResource {
    * Period for rotate vs keys job.
    * Allowed values are 1-1051200.
    * Special values are 0 - 'disabled'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return vsKeyRotatePeriod
    */
@@ -1842,6 +2001,7 @@ public class ControllerProperties extends AviRestResource {
    * Period for rotate vs keys job.
    * Allowed values are 1-1051200.
    * Special values are 0 - 'disabled'.
+   * Unit is min.
    * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param vsKeyRotatePeriod set the vsKeyRotatePeriod.
    */
@@ -1854,6 +2014,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Interval for checking scaleout_ready status while controller is waiting for scaleoutready rpc from the service engine.
    * Field introduced in 18.2.2.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return vsScaleoutReadyCheckInterval
    */
@@ -1866,6 +2027,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Interval for checking scaleout_ready status while controller is waiting for scaleoutready rpc from the service engine.
    * Field introduced in 18.2.2.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param vsScaleoutReadyCheckInterval set the vsScaleoutReadyCheckInterval.
    */
@@ -1878,6 +2040,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Time to wait before marking attach ip operation on an se as failed.
    * Field introduced in 17.2.2.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @return vsSeAttachIpFail
    */
@@ -1890,6 +2053,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Time to wait before marking attach ip operation on an se as failed.
    * Field introduced in 17.2.2.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600.
    * @param vsSeAttachIpFail set the vsSeAttachIpFail.
    */
@@ -1900,7 +2064,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_se_bootup_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @return vsSeBootupFail
    */
@@ -1911,7 +2075,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_se_bootup_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @param vsSeBootupFail set the vsSeBootupFail.
    */
@@ -1922,7 +2086,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_se_create_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
    * @return vsSeCreateFail
    */
@@ -1933,7 +2097,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_se_create_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1500.
    * @param vsSeCreateFail set the vsSeCreateFail.
    */
@@ -1944,7 +2108,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_se_ping_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return vsSePingFail
    */
@@ -1955,7 +2119,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_se_ping_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param vsSePingFail set the vsSePingFail.
    */
@@ -1966,7 +2130,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_se_vnic_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return vsSeVnicFail
    */
@@ -1977,7 +2141,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_se_vnic_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param vsSeVnicFail set the vsSeVnicFail.
    */
@@ -1988,7 +2152,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_se_vnic_ip_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @return vsSeVnicIpFail
    */
@@ -1999,7 +2163,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_se_vnic_ip_fail of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 120.
    * @param vsSeVnicIpFail set the vsSeVnicIpFail.
    */
@@ -2010,7 +2174,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property warmstart_se_reconnect_wait_time of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @return warmstartSeReconnectWaitTime
    */
@@ -2021,7 +2185,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property warmstart_se_reconnect_wait_time of obj type controllerproperties field type str  type integer.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @param warmstartSeReconnectWaitTime set the warmstartSeReconnectWaitTime.
    */
@@ -2034,6 +2198,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for warmstart vs resync.
    * Field introduced in 18.1.4, 18.2.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return warmstartVsResyncWaitTime
    */
@@ -2046,6 +2211,7 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for warmstart vs resync.
    * Field introduced in 18.1.4, 18.2.1.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param warmstartVsResyncWaitTime set the warmstartVsResyncWaitTime.
    */
@@ -2140,7 +2306,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.editSystemLimits, objControllerProperties.editSystemLimits)&&
   Objects.equals(this.fileObjectCleanupPeriod, objControllerProperties.fileObjectCleanupPeriod)&&
   Objects.equals(this.upgradeFatSeLeaseTime, objControllerProperties.upgradeFatSeLeaseTime)&&
-  Objects.equals(this.upgradeSePerVsScaleOpsTxnTime, objControllerProperties.upgradeSePerVsScaleOpsTxnTime);
+  Objects.equals(this.upgradeSePerVsScaleOpsTxnTime, objControllerProperties.upgradeSePerVsScaleOpsTxnTime)&&
+  Objects.equals(this.maxThreadsCcVipBgWorker, objControllerProperties.maxThreadsCcVipBgWorker)&&
+  Objects.equals(this.asyncPatchMergePeriod, objControllerProperties.asyncPatchMergePeriod)&&
+  Objects.equals(this.asyncPatchRequestCleanupDuration, objControllerProperties.asyncPatchRequestCleanupDuration);
 }
 
 @Override
@@ -2154,6 +2323,8 @@ public String toString() {
         sb.append("    apiIdleTimeout: ").append(toIndentedString(apiIdleTimeout)).append("\n");
         sb.append("    apiPerfLoggingThreshold: ").append(toIndentedString(apiPerfLoggingThreshold)).append("\n");
         sb.append("    appviewxCompatMode: ").append(toIndentedString(appviewxCompatMode)).append("\n");
+        sb.append("    asyncPatchMergePeriod: ").append(toIndentedString(asyncPatchMergePeriod)).append("\n");
+        sb.append("    asyncPatchRequestCleanupDuration: ").append(toIndentedString(asyncPatchRequestCleanupDuration)).append("\n");
         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
@@ -2178,6 +2349,7 @@ public String toString() {
         sb.append("    maxSeSpawnIntervalDelay: ").append(toIndentedString(maxSeSpawnIntervalDelay)).append("\n");
         sb.append("    maxSeqAttachIpFailures: ").append(toIndentedString(maxSeqAttachIpFailures)).append("\n");
         sb.append("    maxSeqVnicFailures: ").append(toIndentedString(maxSeqVnicFailures)).append("\n");
+        sb.append("    maxThreadsCcVipBgWorker: ").append(toIndentedString(maxThreadsCcVipBgWorker)).append("\n");
         sb.append("    permissionScopedSharedAdminNetworks: ").append(toIndentedString(permissionScopedSharedAdminNetworks)).append("\n");
         sb.append("    persistenceKeyRotatePeriod: ").append(toIndentedString(persistenceKeyRotatePeriod)).append("\n");
         sb.append("    portalRequestBurstLimit: ").append(toIndentedString(portalRequestBurstLimit)).append("\n");

@@ -27,35 +27,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbStatus extends AviRestResource {
-  @JsonProperty("details")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> details = null;
+    @JsonProperty("details")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> details = null;
 
-  @JsonProperty("gslb_runtime")
-  @JsonInclude(Include.NON_NULL)
-  private GslbRuntime gslbRuntime = null;
+    @JsonProperty("gslb_runtime")
+    @JsonInclude(Include.NON_NULL)
+    private GslbRuntime gslbRuntime = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("site")
-  @JsonInclude(Include.NON_NULL)
-  private GslbSiteRuntime site = null;
+    @JsonProperty("site")
+    @JsonInclude(Include.NON_NULL)
+    private GslbSiteRuntime site = null;
 
-  @JsonProperty("third_party_site")
-  @JsonInclude(Include.NON_NULL)
-  private GslbThirdPartySiteRuntime thirdPartySite = null;
+    @JsonProperty("third_party_site")
+    @JsonInclude(Include.NON_NULL)
+    private GslbThirdPartySiteRuntime thirdPartySite = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property details of obj type gslbstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return details
    */
   @VsoMethod
@@ -66,6 +67,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the details
    * Placeholder for description of property details of obj type gslbstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return details
    */
   @VsoMethod
@@ -76,6 +78,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method this will set the details
    * Placeholder for description of property details of obj type gslbstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return details
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property gslb_runtime of obj type gslbstatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gslbRuntime
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property gslb_runtime of obj type gslbstatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gslbRuntime set the gslbRuntime.
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return site
    */
   @VsoMethod
@@ -141,6 +149,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param site set the site.
    */
   @VsoMethod
@@ -151,6 +160,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thirdPartySite
    */
   @VsoMethod
@@ -161,6 +171,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param thirdPartySite set the thirdPartySite.
    */
   @VsoMethod
@@ -171,6 +182,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -181,6 +193,7 @@ public class GslbStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

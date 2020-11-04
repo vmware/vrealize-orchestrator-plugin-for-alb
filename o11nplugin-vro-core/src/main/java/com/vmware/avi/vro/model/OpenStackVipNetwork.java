@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OpenStackVipNetwork extends AviRestResource {
-  @JsonProperty("os_network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String osNetworkUuid = null;
+    @JsonProperty("os_network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String osNetworkUuid = null;
 
-  @JsonProperty("os_tenant_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> osTenantUuids = null;
+    @JsonProperty("os_tenant_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> osTenantUuids = null;
 
 
 
@@ -38,6 +38,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Neutron network uuid.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osNetworkUuid
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * This is the setter method to the attribute.
    * Neutron network uuid.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param osNetworkUuid set the osNetworkUuid.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * Uuids of openstack tenants that should be allowed to use the specified neutron network for vips.
    * Use '*' to make this network available to all tenants.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osTenantUuids
    */
   @VsoMethod
@@ -73,6 +76,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * Uuids of openstack tenants that should be allowed to use the specified neutron network for vips.
    * Use '*' to make this network available to all tenants.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osTenantUuids
    */
   @VsoMethod
@@ -85,6 +89,7 @@ public class OpenStackVipNetwork extends AviRestResource {
    * Uuids of openstack tenants that should be allowed to use the specified neutron network for vips.
    * Use '*' to make this network available to all tenants.
    * Field introduced in 18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return osTenantUuids
    */
   @VsoMethod

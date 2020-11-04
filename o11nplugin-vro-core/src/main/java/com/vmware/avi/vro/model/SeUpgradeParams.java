@@ -24,49 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeUpgradeParams extends AviRestResource {
-  @JsonProperty("disruptive")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean disruptive = false;
+    @JsonProperty("disruptive")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean disruptive = false;
 
-  @JsonProperty("force")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean force = false;
+    @JsonProperty("force")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean force;
 
-  @JsonProperty("patch")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean patch = false;
+    @JsonProperty("patch")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean patch = false;
 
-  @JsonProperty("patch_rollback")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean patchRollback = false;
+    @JsonProperty("patch_rollback")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean patchRollback = false;
 
-  @JsonProperty("resume_from_suspend")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean resumeFromSuspend = false;
+    @JsonProperty("rollback")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean rollback = false;
 
-  @JsonProperty("rollback")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean rollback = false;
+    @JsonProperty("se_group_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seGroupRefs = null;
 
-  @JsonProperty("se_group_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seGroupRefs = null;
+    @JsonProperty("suspend_on_failure")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean suspendOnFailure = false;
 
-  @JsonProperty("skip_suspended")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean skipSuspended = false;
+    @JsonProperty("test")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean test;
 
-  @JsonProperty("suspend_on_failure")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean suspendOnFailure = false;
-
-  @JsonProperty("test")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean test = false;
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -95,7 +87,6 @@ public class SeUpgradeParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 18.2.10, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return force
    */
   @VsoMethod
@@ -106,7 +97,6 @@ public class SeUpgradeParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 18.2.10, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param force set the force.
    */
   @VsoMethod
@@ -162,28 +152,6 @@ public class SeUpgradeParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Resume from suspended state.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return resumeFromSuspend
-   */
-  @VsoMethod
-  public Boolean getResumeFromSuspend() {
-    return resumeFromSuspend;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Resume from suspended state.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param resumeFromSuspend set the resumeFromSuspend.
-   */
-  @VsoMethod
-  public void setResumeFromSuspend(Boolean  resumeFromSuspend) {
-    this.resumeFromSuspend = resumeFromSuspend;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * It is used in rollback operations.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return rollback
@@ -208,6 +176,7 @@ public class SeUpgradeParams extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -219,6 +188,7 @@ public class SeUpgradeParams extends AviRestResource {
    * This is the setter method. this will set the seGroupRefs
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -230,6 +200,7 @@ public class SeUpgradeParams extends AviRestResource {
    * This is the setter method this will set the seGroupRefs
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
   @VsoMethod
@@ -241,28 +212,6 @@ public class SeUpgradeParams extends AviRestResource {
     return this;
   }
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * When set, this will skip upgrade on the service engine which is upgrade suspended state.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return skipSuspended
-   */
-  @VsoMethod
-  public Boolean getSkipSuspended() {
-    return skipSuspended;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * When set, this will skip upgrade on the service engine which is upgrade suspended state.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param skipSuspended set the skipSuspended.
-   */
-  @VsoMethod
-  public void setSkipSuspended(Boolean  skipSuspended) {
-    this.skipSuspended = skipSuspended;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -293,7 +242,6 @@ public class SeUpgradeParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field deprecated in 18.2.10, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return test
    */
   @VsoMethod
@@ -304,7 +252,6 @@ public class SeUpgradeParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field deprecated in 18.2.10, 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param test set the test.
    */
   @VsoMethod
@@ -315,6 +262,7 @@ public class SeUpgradeParams extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -325,6 +273,7 @@ public class SeUpgradeParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -351,9 +300,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.suspendOnFailure, objSeUpgradeParams.suspendOnFailure)&&
   Objects.equals(this.patch, objSeUpgradeParams.patch)&&
   Objects.equals(this.seGroupRefs, objSeUpgradeParams.seGroupRefs)&&
-  Objects.equals(this.patchRollback, objSeUpgradeParams.patchRollback)&&
-  Objects.equals(this.resumeFromSuspend, objSeUpgradeParams.resumeFromSuspend)&&
-  Objects.equals(this.skipSuspended, objSeUpgradeParams.skipSuspended);
+  Objects.equals(this.patchRollback, objSeUpgradeParams.patchRollback);
 }
 
 @Override
@@ -364,10 +311,8 @@ public String toString() {
         sb.append("    force: ").append(toIndentedString(force)).append("\n");
         sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
         sb.append("    patchRollback: ").append(toIndentedString(patchRollback)).append("\n");
-        sb.append("    resumeFromSuspend: ").append(toIndentedString(resumeFromSuspend)).append("\n");
         sb.append("    rollback: ").append(toIndentedString(rollback)).append("\n");
         sb.append("    seGroupRefs: ").append(toIndentedString(seGroupRefs)).append("\n");
-        sb.append("    skipSuspended: ").append(toIndentedString(skipSuspended)).append("\n");
         sb.append("    suspendOnFailure: ").append(toIndentedString(suspendOnFailure)).append("\n");
         sb.append("    test: ").append(toIndentedString(test)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

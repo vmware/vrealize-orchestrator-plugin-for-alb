@@ -26,39 +26,40 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VICreateSEReq extends AviRestResource {
-  @JsonProperty("cloud_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudUuid = null;
+    @JsonProperty("cloud_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudUuid = null;
 
-  @JsonProperty("cookie")
-  @JsonInclude(Include.NON_NULL)
-  private String cookie = null;
+    @JsonProperty("cookie")
+    @JsonInclude(Include.NON_NULL)
+    private String cookie = null;
 
-  @JsonProperty("se_grp_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String seGrpUuid = null;
+    @JsonProperty("se_grp_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seGrpUuid = null;
 
-  @JsonProperty("se_params")
-  @JsonInclude(Include.NON_NULL)
-  private VISeVmOvaParams seParams = null;
+    @JsonProperty("se_params")
+    @JsonInclude(Include.NON_NULL)
+    private VISeVmOvaParams seParams = null;
 
-  @JsonProperty("tenant_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantUuid = null;
+    @JsonProperty("tenant_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantUuid = null;
 
-  @JsonProperty("vcenter_admin")
-  @JsonInclude(Include.NON_NULL)
-  private VIAdminCredentials vcenterAdmin = null;
+    @JsonProperty("vcenter_admin")
+    @JsonInclude(Include.NON_NULL)
+    private VIAdminCredentials vcenterAdmin = null;
 
-  @JsonProperty("vcenter_vnic_portgroups")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> vcenterVnicPortgroups = null;
+    @JsonProperty("vcenter_vnic_portgroups")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> vcenterVnicPortgroups = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudUuid
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudUuid set the cloudUuid.
    */
   @VsoMethod
@@ -79,6 +81,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cookie of obj type vicreatesereq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cookie
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cookie of obj type vicreatesereq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cookie set the cookie.
    */
   @VsoMethod
@@ -99,6 +103,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGrpUuid
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of se_grp.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGrpUuid set the seGrpUuid.
    */
   @VsoMethod
@@ -119,6 +125,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_params of obj type vicreatesereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seParams
    */
   @VsoMethod
@@ -129,6 +136,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_params of obj type vicreatesereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seParams set the seParams.
    */
   @VsoMethod
@@ -139,6 +147,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -149,6 +158,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -159,6 +169,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_admin of obj type vicreatesereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterAdmin
    */
   @VsoMethod
@@ -169,6 +180,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter_admin of obj type vicreatesereq field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterAdmin set the vcenterAdmin.
    */
   @VsoMethod
@@ -179,6 +191,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicPortgroups
    */
   @VsoMethod
@@ -189,6 +202,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method. this will set the vcenterVnicPortgroups
    * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicPortgroups
    */
   @VsoMethod
@@ -199,6 +213,7 @@ public class VICreateSEReq extends AviRestResource {
   /**
    * This is the setter method this will set the vcenterVnicPortgroups
    * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterVnicPortgroups
    */
   @VsoMethod

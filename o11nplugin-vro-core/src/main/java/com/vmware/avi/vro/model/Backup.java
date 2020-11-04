@@ -24,41 +24,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Backup extends AviRestResource {
-  @JsonProperty("backup_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String backupConfigRef = null;
+    @JsonProperty("backup_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String backupConfigRef = null;
 
-  @JsonProperty("file_name")
-  @JsonInclude(Include.NON_NULL)
-  private String fileName = null;
+    @JsonProperty("file_name")
+    @JsonInclude(Include.NON_NULL)
+    private String fileName = null;
 
-  @JsonProperty("local_file_url")
-  @JsonInclude(Include.NON_NULL)
-  private String localFileUrl = null;
+    @JsonProperty("local_file_url")
+    @JsonInclude(Include.NON_NULL)
+    private String localFileUrl = null;
 
-  @JsonProperty("remote_file_url")
-  @JsonInclude(Include.NON_NULL)
-  private String remoteFileUrl = null;
+    @JsonProperty("remote_file_url")
+    @JsonInclude(Include.NON_NULL)
+    private String remoteFileUrl = null;
 
-  @JsonProperty("scheduler_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String schedulerRef = null;
+    @JsonProperty("scheduler_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String schedulerRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("timestamp")
-  @JsonInclude(Include.NON_NULL)
-  private String timestamp = null;
+    @JsonProperty("timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private String timestamp = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -66,6 +66,7 @@ public class Backup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Backupconfiguration information.
    * It is a reference to an object of type backupconfiguration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupConfigRef
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class Backup extends AviRestResource {
    * This is the setter method to the attribute.
    * Backupconfiguration information.
    * It is a reference to an object of type backupconfiguration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backupConfigRef set the backupConfigRef.
    */
   @VsoMethod
@@ -87,6 +89,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The file name of backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fileName
    */
   @VsoMethod
@@ -97,6 +100,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The file name of backup.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fileName set the fileName.
    */
   @VsoMethod
@@ -107,6 +111,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url to download the backup file.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localFileUrl
    */
   @VsoMethod
@@ -117,6 +122,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url to download the backup file.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localFileUrl set the localFileUrl.
    */
   @VsoMethod
@@ -127,6 +133,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Url to download the backup file.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return remoteFileUrl
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Url to download the backup file.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param remoteFileUrl set the remoteFileUrl.
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class Backup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scheduler information.
    * It is a reference to an object of type scheduler.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return schedulerRef
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class Backup extends AviRestResource {
    * This is the setter method to the attribute.
    * Scheduler information.
    * It is a reference to an object of type scheduler.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param schedulerRef set the schedulerRef.
    */
   @VsoMethod
@@ -169,6 +179,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -179,6 +190,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -189,6 +201,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unix timestamp of when the backup file is created.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return timestamp
    */
   @VsoMethod
@@ -199,6 +212,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unix timestamp of when the backup file is created.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param timestamp set the timestamp.
    */
   @VsoMethod
@@ -228,6 +242,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -238,6 +253,7 @@ public class Backup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

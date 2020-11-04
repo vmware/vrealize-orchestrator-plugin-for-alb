@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DosThresholdProfile extends AviRestResource {
-  @JsonProperty("thresh_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<DosThreshold> threshInfo = null;
+    @JsonProperty("thresh_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<DosThreshold> threshInfo = null;
 
-  @JsonProperty("thresh_period")
-  @JsonInclude(Include.NON_NULL)
-  private Integer threshPeriod = 5;
+    @JsonProperty("thresh_period")
+    @JsonInclude(Include.NON_NULL)
+    private Integer threshPeriod = 5;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Attack type, min and max values for dos attack detection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshInfo
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the threshInfo
    * Attack type, min and max values for dos attack detection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshInfo
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the setter method this will set the threshInfo
    * Attack type, min and max values for dos attack detection.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threshInfo
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timer value in seconds to collect dos attack metrics based on threshold on the service engine for this virtual service.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return threshPeriod
    */
@@ -83,6 +87,7 @@ public class DosThresholdProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timer value in seconds to collect dos attack metrics based on threshold on the service engine for this virtual service.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param threshPeriod set the threshPeriod.
    */

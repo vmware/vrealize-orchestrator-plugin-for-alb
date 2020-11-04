@@ -25,145 +25,145 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeBootupProperties extends AviRestResource {
-  @JsonProperty("distribute_queues")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean distributeQueues = null;
+    @JsonProperty("distribute_queues")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean distributeQueues;
 
-  @JsonProperty("distribute_vnics")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean distributeVnics = null;
+    @JsonProperty("distribute_vnics")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean distributeVnics;
 
-  @JsonProperty("docker_backend_portend")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dockerBackendPortend = 30720;
+    @JsonProperty("docker_backend_portend")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dockerBackendPortend = 30720;
 
-  @JsonProperty("docker_backend_portstart")
-  @JsonInclude(Include.NON_NULL)
-  private Integer dockerBackendPortstart = 20480;
+    @JsonProperty("docker_backend_portstart")
+    @JsonInclude(Include.NON_NULL)
+    private Integer dockerBackendPortstart = 20480;
 
-  @JsonProperty("fair_queueing_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean fairQueueingEnabled = false;
+    @JsonProperty("fair_queueing_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean fairQueueingEnabled = false;
 
-  @JsonProperty("geo_db_granularity")
-  @JsonInclude(Include.NON_NULL)
-  private Integer geoDbGranularity = 1;
+    @JsonProperty("geo_db_granularity")
+    @JsonInclude(Include.NON_NULL)
+    private Integer geoDbGranularity = 1;
 
-  @JsonProperty("l7_conns_per_core")
-  @JsonInclude(Include.NON_NULL)
-  private Integer l7ConnsPerCore = 16384;
+    @JsonProperty("l7_conns_per_core")
+    @JsonInclude(Include.NON_NULL)
+    private Integer l7ConnsPerCore = 16384;
 
-  @JsonProperty("l7_resvd_listen_conns_per_core")
-  @JsonInclude(Include.NON_NULL)
-  private Integer l7ResvdListenConnsPerCore = 256;
+    @JsonProperty("l7_resvd_listen_conns_per_core")
+    @JsonInclude(Include.NON_NULL)
+    private Integer l7ResvdListenConnsPerCore = 256;
 
-  @JsonProperty("log_agent_debug_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean logAgentDebugEnabled = false;
+    @JsonProperty("log_agent_debug_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean logAgentDebugEnabled = false;
 
-  @JsonProperty("log_agent_trace_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean logAgentTraceEnabled = true;
+    @JsonProperty("log_agent_trace_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean logAgentTraceEnabled = true;
 
-  @JsonProperty("se_dp_compression")
-  @JsonInclude(Include.NON_NULL)
-  private SeBootupCompressionProperties seDpCompression = null;
+    @JsonProperty("se_dp_compression")
+    @JsonInclude(Include.NON_NULL)
+    private SeBootupCompressionProperties seDpCompression = null;
 
-  @JsonProperty("se_dpdk_pmd")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seDpdkPmd = null;
+    @JsonProperty("se_dpdk_pmd")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpdkPmd;
 
-  @JsonProperty("se_emulated_cores")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seEmulatedCores = 0;
+    @JsonProperty("se_emulated_cores")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seEmulatedCores = 0;
 
-  @JsonProperty("se_ip_encap_ipc")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seIpEncapIpc = 0;
+    @JsonProperty("se_ip_encap_ipc")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seIpEncapIpc = 0;
 
-  @JsonProperty("se_l3_encap_ipc")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seL3EncapIpc = 0;
+    @JsonProperty("se_l3_encap_ipc")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seL3EncapIpc = 0;
 
-  @JsonProperty("se_log_buffer_app_blocking_dequeue")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seLogBufferAppBlockingDequeue = false;
+    @JsonProperty("se_log_buffer_app_blocking_dequeue")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seLogBufferAppBlockingDequeue = false;
 
-  @JsonProperty("se_log_buffer_applog_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seLogBufferApplogSize = 4096;
+    @JsonProperty("se_log_buffer_applog_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seLogBufferApplogSize = 4096;
 
-  @JsonProperty("se_log_buffer_chunk_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seLogBufferChunkCount = 1024;
+    @JsonProperty("se_log_buffer_chunk_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seLogBufferChunkCount = 1024;
 
-  @JsonProperty("se_log_buffer_conn_blocking_dequeue")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seLogBufferConnBlockingDequeue = false;
+    @JsonProperty("se_log_buffer_conn_blocking_dequeue")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seLogBufferConnBlockingDequeue = false;
 
-  @JsonProperty("se_log_buffer_connlog_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seLogBufferConnlogSize = 1024;
+    @JsonProperty("se_log_buffer_connlog_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seLogBufferConnlogSize = 1024;
 
-  @JsonProperty("se_log_buffer_events_blocking_dequeue")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seLogBufferEventsBlockingDequeue = true;
+    @JsonProperty("se_log_buffer_events_blocking_dequeue")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seLogBufferEventsBlockingDequeue = true;
 
-  @JsonProperty("se_log_buffer_events_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seLogBufferEventsSize = 512;
+    @JsonProperty("se_log_buffer_events_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seLogBufferEventsSize = 512;
 
-  @JsonProperty("se_lro")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seLro = null;
+    @JsonProperty("se_lro")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seLro;
 
-  @JsonProperty("se_pcap_pkt_count")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sePcapPktCount = null;
+    @JsonProperty("se_pcap_pkt_count")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sePcapPktCount;
 
-  @JsonProperty("se_pcap_pkt_sz")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sePcapPktSz = null;
+    @JsonProperty("se_pcap_pkt_sz")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sePcapPktSz;
 
-  @JsonProperty("se_rum_sampling_nav_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seRumSamplingNavInterval = null;
+    @JsonProperty("se_rum_sampling_nav_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seRumSamplingNavInterval;
 
-  @JsonProperty("se_rum_sampling_nav_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seRumSamplingNavPercent = null;
+    @JsonProperty("se_rum_sampling_nav_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seRumSamplingNavPercent;
 
-  @JsonProperty("se_rum_sampling_res_interval")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seRumSamplingResInterval = null;
+    @JsonProperty("se_rum_sampling_res_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seRumSamplingResInterval;
 
-  @JsonProperty("se_rum_sampling_res_percent")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seRumSamplingResPercent = null;
+    @JsonProperty("se_rum_sampling_res_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seRumSamplingResPercent;
 
-  @JsonProperty("se_tunnel_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seTunnelMode = null;
+    @JsonProperty("se_tunnel_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seTunnelMode;
 
-  @JsonProperty("se_tx_batch_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seTxBatchSize = null;
+    @JsonProperty("se_tx_batch_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seTxBatchSize;
 
-  @JsonProperty("se_use_dpdk")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seUseDpdk = null;
+    @JsonProperty("se_use_dpdk")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seUseDpdk;
 
-  @JsonProperty("ssl_sess_cache_per_vs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sslSessCachePerVs = 4096;
+    @JsonProperty("ssl_sess_cache_per_vs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sslSessCachePerVs = 4096;
 
-  @JsonProperty("ssl_sess_cache_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer sslSessCacheTimeout = 86400;
+    @JsonProperty("ssl_sess_cache_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sslSessCacheTimeout = 86400;
 
-  @JsonProperty("tcp_syncache_hashsize")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpSyncacheHashsize = 8192;
+    @JsonProperty("tcp_syncache_hashsize")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpSyncacheHashsize = 8192;
 
 
 
@@ -412,6 +412,7 @@ public class SeBootupProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_dp_compression of obj type sebootupproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDpCompression
    */
   @VsoMethod
@@ -422,6 +423,7 @@ public class SeBootupProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_dp_compression of obj type sebootupproperties field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seDpCompression set the seDpCompression.
    */
   @VsoMethod
@@ -549,6 +551,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal application log buffer size to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is word.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @return seLogBufferApplogSize
    */
@@ -561,6 +564,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal application log buffer size to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is word.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
    * @param seLogBufferApplogSize set the seLogBufferApplogSize.
    */
@@ -573,6 +577,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of internal buffer chunks to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return seLogBufferChunkCount
    */
@@ -585,6 +590,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of internal buffer chunks to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param seLogBufferChunkCount set the seLogBufferChunkCount.
    */
@@ -619,6 +625,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal connection log buffer size to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is word.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return seLogBufferConnlogSize
    */
@@ -631,6 +638,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal connection log buffer size to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is word.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param seLogBufferConnlogSize set the seLogBufferConnlogSize.
    */
@@ -665,6 +673,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal events buffer size to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is word.
    * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @return seLogBufferEventsSize
    */
@@ -677,6 +686,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal events buffer size to use on service engine.
    * Can be fine tuned for better performance of data plane in specific environments.
+   * Unit is word.
    * Default value when not specified in API or module is interpreted by Avi Controller as 512.
    * @param seLogBufferEventsSize set the seLogBufferEventsSize.
    */

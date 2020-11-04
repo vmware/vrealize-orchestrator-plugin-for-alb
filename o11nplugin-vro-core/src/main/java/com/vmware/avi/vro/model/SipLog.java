@@ -24,29 +24,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SipLog extends AviRestResource {
-  @JsonProperty("server_protocol")
-  @JsonInclude(Include.NON_NULL)
-  private String serverProtocol = null;
+    @JsonProperty("server_protocol")
+    @JsonInclude(Include.NON_NULL)
+    private String serverProtocol = null;
 
-  @JsonProperty("sip_callid_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private String sipCallidHdr = null;
+    @JsonProperty("sip_callid_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private String sipCallidHdr = null;
 
-  @JsonProperty("sip_contact_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private String sipContactHdr = null;
+    @JsonProperty("sip_contact_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private String sipContactHdr = null;
 
-  @JsonProperty("sip_from_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private String sipFromHdr = null;
+    @JsonProperty("sip_from_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private String sipFromHdr = null;
 
-  @JsonProperty("sip_messages")
-  @JsonInclude(Include.NON_NULL)
-  private List<SipMessage> sipMessages = null;
+    @JsonProperty("sip_messages")
+    @JsonInclude(Include.NON_NULL)
+    private List<SipMessage> sipMessages = null;
 
-  @JsonProperty("sip_to_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private String sipToHdr = null;
+    @JsonProperty("sip_to_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private String sipToHdr = null;
 
 
 
@@ -55,6 +55,7 @@ public class SipLog extends AviRestResource {
    * Server connection protocol type.
    * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverProtocol
    */
   @VsoMethod
@@ -67,6 +68,7 @@ public class SipLog extends AviRestResource {
    * Server connection protocol type.
    * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverProtocol set the serverProtocol.
    */
   @VsoMethod
@@ -78,6 +80,7 @@ public class SipLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip callid header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipCallidHdr
    */
   @VsoMethod
@@ -89,6 +92,7 @@ public class SipLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip callid header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sipCallidHdr set the sipCallidHdr.
    */
   @VsoMethod
@@ -100,6 +104,7 @@ public class SipLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Client's sip contact header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipContactHdr
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class SipLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Client's sip contact header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sipContactHdr set the sipContactHdr.
    */
   @VsoMethod
@@ -122,6 +128,7 @@ public class SipLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip from header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipFromHdr
    */
   @VsoMethod
@@ -133,6 +140,7 @@ public class SipLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip from header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sipFromHdr set the sipFromHdr.
    */
   @VsoMethod
@@ -144,6 +152,7 @@ public class SipLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip messages.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipMessages
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class SipLog extends AviRestResource {
    * This is the setter method. this will set the sipMessages
    * Sip messages.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipMessages
    */
   @VsoMethod
@@ -166,6 +176,7 @@ public class SipLog extends AviRestResource {
    * This is the setter method this will set the sipMessages
    * Sip messages.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipMessages
    */
   @VsoMethod
@@ -182,6 +193,7 @@ public class SipLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sip to header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sipToHdr
    */
   @VsoMethod
@@ -193,6 +205,7 @@ public class SipLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Sip to header.
    * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sipToHdr set the sipToHdr.
    */
   @VsoMethod

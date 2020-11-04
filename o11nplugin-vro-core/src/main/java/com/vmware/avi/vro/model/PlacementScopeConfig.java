@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.NsxtDatastores;
 import com.vmware.avi.vro.model.NsxtHosts;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -25,24 +26,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PlacementScopeConfig extends AviRestResource {
-  @JsonProperty("nsxt_hosts")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtHosts nsxtHosts = null;
+    @JsonProperty("nsxt_datastores")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtDatastores nsxtDatastores = null;
 
-  @JsonProperty("vcenter_folder")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterFolder = null;
+    @JsonProperty("nsxt_hosts")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtHosts nsxtHosts = null;
 
-  @JsonProperty("vcenter_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenterRef = null;
+    @JsonProperty("vcenter_folder")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterFolder = null;
+
+    @JsonProperty("vcenter_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenterRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
+   * List of shared datastores to include or exclude.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtDatastores
+   */
+  @VsoMethod
+  public NsxtDatastores getNsxtDatastores() {
+    return nsxtDatastores;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * List of shared datastores to include or exclude.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtDatastores set the nsxtDatastores.
+   */
+  @VsoMethod
+  public void setNsxtDatastores(NsxtDatastores nsxtDatastores) {
+    this.nsxtDatastores = nsxtDatastores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * List of transport nodes include or exclude.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtHosts
    */
   @VsoMethod
@@ -54,6 +84,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * List of transport nodes include or exclude.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtHosts set the nsxtHosts.
    */
   @VsoMethod
@@ -65,6 +96,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Folder to place all the service engine virtual machines in vcenter.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterFolder
    */
   @VsoMethod
@@ -76,6 +108,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Folder to place all the service engine virtual machines in vcenter.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterFolder set the vcenterFolder.
    */
   @VsoMethod
@@ -88,6 +121,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * Vcenter server configuration.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterRef
    */
   @VsoMethod
@@ -100,6 +134,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * Vcenter server configuration.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterRef set the vcenterRef.
    */
   @VsoMethod
@@ -120,14 +155,16 @@ public boolean equals(java.lang.Object o) {
   PlacementScopeConfig objPlacementScopeConfig = (PlacementScopeConfig) o;
   return   Objects.equals(this.vcenterRef, objPlacementScopeConfig.vcenterRef)&&
   Objects.equals(this.vcenterFolder, objPlacementScopeConfig.vcenterFolder)&&
-  Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts);
+  Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts)&&
+  Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PlacementScopeConfig {\n");
-      sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
+      sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
+        sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
         sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
         sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
       sb.append("}");

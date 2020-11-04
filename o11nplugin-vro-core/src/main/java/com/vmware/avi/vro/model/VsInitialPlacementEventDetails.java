@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsInitialPlacementEventDetails extends AviRestResource {
-  @JsonProperty("error_message")
-  @JsonInclude(Include.NON_NULL)
-  private String errorMessage = null;
+    @JsonProperty("error_message")
+    @JsonInclude(Include.NON_NULL)
+    private String errorMessage = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("rpc_status")
-  @JsonInclude(Include.NON_NULL)
-  private Integer rpcStatus = null;
+    @JsonProperty("rpc_status")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rpcStatus = null;
 
-  @JsonProperty("se_assigned")
-  @JsonInclude(Include.NON_NULL)
-  private List<VipSeAssigned> seAssigned = null;
+    @JsonProperty("se_assigned")
+    @JsonInclude(Include.NON_NULL)
+    private List<VipSeAssigned> seAssigned = null;
 
-  @JsonProperty("se_requested")
-  @JsonInclude(Include.NON_NULL)
-  private VirtualServiceResource seRequested = null;
+    @JsonProperty("se_requested")
+    @JsonInclude(Include.NON_NULL)
+    private VirtualServiceResource seRequested = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property error_message of obj type vsinitialplacementeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorMessage
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property error_message of obj type vsinitialplacementeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorMessage set the errorMessage.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type vsinitialplacementeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type vsinitialplacementeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property rpc_status of obj type vsinitialplacementeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rpcStatus
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property rpc_status of obj type vsinitialplacementeventdetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rpcStatus set the rpcStatus.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_assigned of obj type vsinitialplacementeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
   @VsoMethod
@@ -124,6 +131,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method. this will set the seAssigned
    * Placeholder for description of property se_assigned of obj type vsinitialplacementeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
   @VsoMethod
@@ -134,6 +142,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method this will set the seAssigned
    * Placeholder for description of property se_assigned of obj type vsinitialplacementeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAssigned
    */
   @VsoMethod
@@ -149,6 +158,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_requested of obj type vsinitialplacementeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRequested
    */
   @VsoMethod
@@ -159,6 +169,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property se_requested of obj type vsinitialplacementeventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRequested set the seRequested.
    */
   @VsoMethod
@@ -169,6 +180,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -179,6 +191,7 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NTPAuthenticationKey extends AviRestResource {
-  @JsonProperty("algorithm")
-  @JsonInclude(Include.NON_NULL)
-  private String algorithm = "NTP_AUTH_ALGORITHM_MD5";
+    @JsonProperty("algorithm")
+    @JsonInclude(Include.NON_NULL)
+    private String algorithm = "NTP_AUTH_ALGORITHM_MD5";
 
-  @JsonProperty("key")
-  @JsonInclude(Include.NON_NULL)
-  private String key = null;
+    @JsonProperty("key")
+    @JsonInclude(Include.NON_NULL)
+    private String key = null;
 
-  @JsonProperty("key_number")
-  @JsonInclude(Include.NON_NULL)
-  private Integer keyNumber = null;
+    @JsonProperty("key_number")
+    @JsonInclude(Include.NON_NULL)
+    private Integer keyNumber = null;
 
 
 
@@ -43,7 +43,7 @@ public class NTPAuthenticationKey extends AviRestResource {
    * Message digest algorithm used for ntp authentication.
    * Default is ntp_auth_algorithm_md5.
    * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as NTP_AUTH_ALGORITHM_MD5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_MD5".
    * @return algorithm
    */
   @VsoMethod
@@ -56,7 +56,7 @@ public class NTPAuthenticationKey extends AviRestResource {
    * Message digest algorithm used for ntp authentication.
    * Default is ntp_auth_algorithm_md5.
    * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as NTP_AUTH_ALGORITHM_MD5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_MD5".
    * @param algorithm set the algorithm.
    */
   @VsoMethod
@@ -67,6 +67,7 @@ public class NTPAuthenticationKey extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ntp authentication key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
    */
   @VsoMethod
@@ -77,6 +78,7 @@ public class NTPAuthenticationKey extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ntp authentication key.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param key set the key.
    */
   @VsoMethod
@@ -88,6 +90,7 @@ public class NTPAuthenticationKey extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key number to be assigned to the authentication-key.
    * Allowed values are 1-65534.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return keyNumber
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class NTPAuthenticationKey extends AviRestResource {
    * This is the setter method to the attribute.
    * Key number to be assigned to the authentication-key.
    * Allowed values are 1-65534.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param keyNumber set the keyNumber.
    */
   @VsoMethod

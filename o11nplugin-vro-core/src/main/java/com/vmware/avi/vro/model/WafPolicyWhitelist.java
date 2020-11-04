@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class WafPolicyWhitelist extends AviRestResource {
-  @JsonProperty("rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<WafPolicyWhitelistRule> rules = null;
+    @JsonProperty("rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafPolicyWhitelistRule> rules;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Rules to bypass waf.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return rules
    */
@@ -44,6 +45,7 @@ public class WafPolicyWhitelist extends AviRestResource {
   /**
    * This is the setter method. this will set the rules
    * Rules to bypass waf.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return rules
    */
@@ -55,6 +57,7 @@ public class WafPolicyWhitelist extends AviRestResource {
   /**
    * This is the setter method this will set the rules
    * Rules to bypass waf.
+   * Field deprecated in 20.1.3.
    * Field introduced in 18.2.3.
    * @return rules
    */

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AdminAuthConfiguration extends AviRestResource {
-  @JsonProperty("allow_local_user_login")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean allowLocalUserLogin = true;
+    @JsonProperty("allow_local_user_login")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allowLocalUserLogin = true;
 
-  @JsonProperty("auth_profile_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String authProfileRef = null;
+    @JsonProperty("auth_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String authProfileRef = null;
 
-  @JsonProperty("mapping_rules")
-  @JsonInclude(Include.NON_NULL)
-  private List<AuthMappingRule> mappingRules = null;
+    @JsonProperty("mapping_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<AuthMappingRule> mappingRules = null;
 
 
 
@@ -65,6 +65,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type authprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authProfileRef
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type authprofile.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authProfileRef set the authProfileRef.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rules list for tenant or role mapping.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mappingRules
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the mappingRules
    * Rules list for tenant or role mapping.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mappingRules
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class AdminAuthConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the mappingRules
    * Rules list for tenant or role mapping.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mappingRules
    */
   @VsoMethod

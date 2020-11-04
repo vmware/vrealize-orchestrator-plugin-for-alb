@@ -25,79 +25,76 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbSite extends AviRestResource {
-  @JsonProperty("address")
-  @JsonInclude(Include.NON_NULL)
-  private String address = null;
+    @JsonProperty("address")
+    @JsonInclude(Include.NON_NULL)
+    private String address = null;
 
-  @JsonProperty("cluster_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String clusterUuid = null;
+    @JsonProperty("cluster_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String clusterUuid = null;
 
-  @JsonProperty("dns_vs_uuids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> dnsVsUuids = null;
+    @JsonProperty("dns_vs_uuids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> dnsVsUuids;
 
-  @JsonProperty("dns_vses")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbSiteDnsVs> dnsVses = null;
+    @JsonProperty("dns_vses")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbSiteDnsVs> dnsVses = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("hm_proxies")
-  @JsonInclude(Include.NON_NULL)
-  private List<GslbHealthMonitorProxy> hmProxies = null;
+    @JsonProperty("hm_proxies")
+    @JsonInclude(Include.NON_NULL)
+    private List<GslbHealthMonitorProxy> hmProxies = null;
 
-  @JsonProperty("hm_shard_enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean hmShardEnabled = false;
+    @JsonProperty("hm_shard_enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean hmShardEnabled = false;
 
-  @JsonProperty("ip_addresses")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> ipAddresses = null;
+    @JsonProperty("ip_addresses")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> ipAddresses = null;
 
-  @JsonProperty("location")
-  @JsonInclude(Include.NON_NULL)
-  private GslbGeoLocation location = null;
+    @JsonProperty("location")
+    @JsonInclude(Include.NON_NULL)
+    private GslbGeoLocation location = null;
 
-  @JsonProperty("member_type")
-  @JsonInclude(Include.NON_NULL)
-  private String memberType = "GSLB_PASSIVE_MEMBER";
+    @JsonProperty("member_type")
+    @JsonInclude(Include.NON_NULL)
+    private String memberType = "GSLB_PASSIVE_MEMBER";
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer port = 443;
+    @JsonProperty("port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer port = 443;
 
-  @JsonProperty("ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ratio = null;
+    @JsonProperty("ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ratio = null;
 
-  @JsonProperty("suspend_mode")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean suspendMode = false;
+    @JsonProperty("suspend_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean suspendMode = false;
 
-  @JsonProperty("username")
-  @JsonInclude(Include.NON_NULL)
-  private String username = null;
-
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("username")
+    @JsonInclude(Include.NON_NULL)
+    private String username = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return address
    */
   @VsoMethod
@@ -108,6 +105,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param address set the address.
    */
   @VsoMethod
@@ -118,6 +116,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the 'cluster' object of the controller cluster in this site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clusterUuid
    */
   @VsoMethod
@@ -128,6 +127,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the 'cluster' object of the controller cluster in this site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clusterUuid set the clusterUuid.
    */
   @VsoMethod
@@ -183,6 +183,7 @@ public class GslbSite extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This field identifies the dns vs and the subdomains it hosts for gslb services.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVses
    */
   @VsoMethod
@@ -194,6 +195,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method. this will set the dnsVses
    * This field identifies the dns vs and the subdomains it hosts for gslb services.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVses
    */
   @VsoMethod
@@ -205,6 +207,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method this will set the dnsVses
    * This field identifies the dns vs and the subdomains it hosts for gslb services.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsVses
    */
   @VsoMethod
@@ -258,6 +261,7 @@ public class GslbSite extends AviRestResource {
    * the reachable members.
    * If the health monitor proxies are not configured, then the default behavior is to run health monitor probes from all the active sites.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hmProxies
    */
   @VsoMethod
@@ -274,6 +278,7 @@ public class GslbSite extends AviRestResource {
    * the reachable members.
    * If the health monitor proxies are not configured, then the default behavior is to run health monitor probes from all the active sites.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hmProxies
    */
   @VsoMethod
@@ -290,6 +295,7 @@ public class GslbSite extends AviRestResource {
    * the reachable members.
    * If the health monitor proxies are not configured, then the default behavior is to run health monitor probes from all the active sites.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hmProxies
    */
   @VsoMethod
@@ -330,6 +336,7 @@ public class GslbSite extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address(es) of the site's cluster.
    * For a 3-node cluster, either the cluster vip is provided, or the list of controller ips in the cluster are provided.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
   @VsoMethod
@@ -341,6 +348,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method. this will set the ipAddresses
    * Ip address(es) of the site's cluster.
    * For a 3-node cluster, either the cluster vip is provided, or the list of controller ips in the cluster are provided.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
   @VsoMethod
@@ -352,6 +360,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method this will set the ipAddresses
    * Ip address(es) of the site's cluster.
    * For a 3-node cluster, either the cluster vip is provided, or the list of controller ips in the cluster are provided.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
   @VsoMethod
@@ -368,6 +377,7 @@ public class GslbSite extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Geographic location of the site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
   @VsoMethod
@@ -379,6 +389,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method to the attribute.
    * Geographic location of the site.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
   @VsoMethod
@@ -390,7 +401,7 @@ public class GslbSite extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The site's member type  a leader is set to active while allmembers are set to passive.
    * Enum options - GSLB_ACTIVE_MEMBER, GSLB_PASSIVE_MEMBER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_PASSIVE_MEMBER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_PASSIVE_MEMBER".
    * @return memberType
    */
   @VsoMethod
@@ -402,7 +413,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method to the attribute.
    * The site's member type  a leader is set to active while allmembers are set to passive.
    * Enum options - GSLB_ACTIVE_MEMBER, GSLB_PASSIVE_MEMBER.
-   * Default value when not specified in API or module is interpreted by Avi Controller as GSLB_PASSIVE_MEMBER.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_PASSIVE_MEMBER".
    * @param memberType set the memberType.
    */
   @VsoMethod
@@ -413,6 +424,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name for the site controller cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -423,6 +435,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name for the site controller cluster.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -433,6 +446,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password used when authenticating with the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -443,6 +457,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password used when authenticating with the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -480,6 +495,7 @@ public class GslbSite extends AviRestResource {
    * If this field is not  configured then the gslbpoolmember ratio gets applied.
    * Allowed values are 1-20.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ratio
    */
   @VsoMethod
@@ -493,6 +509,7 @@ public class GslbSite extends AviRestResource {
    * If this field is not  configured then the gslbpoolmember ratio gets applied.
    * Allowed values are 1-20.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ratio set the ratio.
    */
   @VsoMethod
@@ -529,6 +546,7 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The username used when authenticating with the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return username
    */
   @VsoMethod
@@ -539,33 +557,12 @@ public class GslbSite extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The username used when authenticating with the site.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param username set the username.
    */
   @VsoMethod
   public void setUsername(String  username) {
     this.username = username;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * This field is used as a key in the datastore for the gslbsite table to encapsulate site-related info.
-   * Field introduced in 17.2.5.
-   * @return uuid
-   */
-  @VsoMethod
-  public String getUuid() {
-    return uuid;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This field is used as a key in the datastore for the gslbsite table to encapsulate site-related info.
-   * Field introduced in 17.2.5.
-   * @param uuid set the uuid.
-   */
-  @VsoMethod
-  public void setUuid(String  uuid) {
-    this.uuid = uuid;
   }
 
 
@@ -593,7 +590,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hmProxies, objGslbSite.hmProxies)&&
   Objects.equals(this.ratio, objGslbSite.ratio)&&
   Objects.equals(this.dnsVses, objGslbSite.dnsVses)&&
-  Objects.equals(this.uuid, objGslbSite.uuid)&&
   Objects.equals(this.hmShardEnabled, objGslbSite.hmShardEnabled)&&
   Objects.equals(this.suspendMode, objGslbSite.suspendMode);
 }
@@ -618,7 +614,6 @@ public String toString() {
         sb.append("    ratio: ").append(toIndentedString(ratio)).append("\n");
         sb.append("    suspendMode: ").append(toIndentedString(suspendMode)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
-        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
 }

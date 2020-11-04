@@ -24,15 +24,16 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudConnectorUserTestParams extends AviRestResource {
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host of obj type cloudconnectorusertestparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -43,6 +44,7 @@ public class CloudConnectorUserTestParams extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host of obj type cloudconnectorusertestparams field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod

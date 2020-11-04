@@ -24,71 +24,105 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IcapProfile extends AviRestResource {
-  @JsonProperty("buffer_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer bufferSize = 51200;
+    @JsonProperty("allow_204")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean allow204 = true;
 
-  @JsonProperty("buffer_size_exceed_action")
-  @JsonInclude(Include.NON_NULL)
-  private String bufferSizeExceedAction = "ICAP_FAIL_OPEN";
+    @JsonProperty("buffer_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer bufferSize = 51200;
 
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("buffer_size_exceed_action")
+    @JsonInclude(Include.NON_NULL)
+    private String bufferSizeExceedAction = "ICAP_FAIL_OPEN";
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("enable_preview")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enablePreview = true;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("fail_action")
-  @JsonInclude(Include.NON_NULL)
-  private String failAction = "ICAP_FAIL_OPEN";
+    @JsonProperty("enable_preview")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePreview = true;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("fail_action")
+    @JsonInclude(Include.NON_NULL)
+    private String failAction = "ICAP_FAIL_OPEN";
 
-  @JsonProperty("pool_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolGroupRef = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("preview_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer previewSize = 5000;
+    @JsonProperty("pool_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolGroupRef = null;
 
-  @JsonProperty("response_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer responseTimeout = 1000;
+    @JsonProperty("preview_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer previewSize = 5000;
 
-  @JsonProperty("service_uri")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceUri = null;
+    @JsonProperty("response_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer responseTimeout = 60000;
 
-  @JsonProperty("slow_response_warning_threshold")
-  @JsonInclude(Include.NON_NULL)
-  private Integer slowResponseWarningThreshold = 500;
+    @JsonProperty("service_uri")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceUri = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("slow_response_warning_threshold")
+    @JsonInclude(Include.NON_NULL)
+    private Integer slowResponseWarningThreshold = 10000;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("vendor")
-  @JsonInclude(Include.NON_NULL)
-  private String vendor = "ICAP_VENDOR_OPSWAT";
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("vendor")
+    @JsonInclude(Include.NON_NULL)
+    private String vendor = "ICAP_VENDOR_OPSWAT";
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allow icap server to send 204 response as described in rfc 3507 section 4.5.service engine will buffer the complete request if alllow_204 is
+   * enabled.
+   * If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
+   * icap server.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return allow204
+   */
+  @VsoMethod
+  public Boolean getAllow204() {
+    return allow204;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allow icap server to send 204 response as described in rfc 3507 section 4.5.service engine will buffer the complete request if alllow_204 is
+   * enabled.
+   * If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
+   * icap server.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param allow204 set the allow204.
+   */
+  @VsoMethod
+  public void setAllow204(Boolean  allow204) {
+    this.allow204 = allow204;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -97,6 +131,7 @@ public class IcapProfile extends AviRestResource {
    * In this case, the configured action will be executed and a significant log entry will be generated.
    * Allowed values are 1-51200.
    * Field introduced in 20.1.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 51200.
    * @return bufferSize
    */
@@ -112,6 +147,7 @@ public class IcapProfile extends AviRestResource {
    * In this case, the configured action will be executed and a significant log entry will be generated.
    * Allowed values are 1-51200.
    * Field introduced in 20.1.1.
+   * Unit is kb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 51200.
    * @param bufferSize set the bufferSize.
    */
@@ -127,7 +163,7 @@ public class IcapProfile extends AviRestResource {
    * If this is set to fail closed, the request will be rejected with 413 status code.
    * Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_FAIL_OPEN".
    * @return bufferSizeExceedAction
    */
   @VsoMethod
@@ -142,7 +178,7 @@ public class IcapProfile extends AviRestResource {
    * If this is set to fail closed, the request will be rejected with 413 status code.
    * Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_FAIL_OPEN".
    * @param bufferSizeExceedAction set the bufferSizeExceedAction.
    */
   @VsoMethod
@@ -156,6 +192,7 @@ public class IcapProfile extends AviRestResource {
    * This must match the cloud referenced in the pool group below.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -169,6 +206,7 @@ public class IcapProfile extends AviRestResource {
    * This must match the cloud referenced in the pool group below.
    * It is a reference to an object of type cloud.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -180,6 +218,7 @@ public class IcapProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A description for this icap profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -191,6 +230,7 @@ public class IcapProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * A description for this icap profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -229,7 +269,7 @@ public class IcapProfile extends AviRestResource {
    * If this is set to fail closed, the request will be rejected with a 503 status code.
    * Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_FAIL_OPEN".
    * @return failAction
    */
   @VsoMethod
@@ -244,7 +284,7 @@ public class IcapProfile extends AviRestResource {
    * If this is set to fail closed, the request will be rejected with a 503 status code.
    * Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_FAIL_OPEN".
    * @param failAction set the failAction.
    */
   @VsoMethod
@@ -256,6 +296,7 @@ public class IcapProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the icap profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -267,6 +308,7 @@ public class IcapProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the icap profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -279,6 +321,7 @@ public class IcapProfile extends AviRestResource {
    * The pool group which is used to connect to icap servers.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolGroupRef
    */
   @VsoMethod
@@ -291,6 +334,7 @@ public class IcapProfile extends AviRestResource {
    * The pool group which is used to connect to icap servers.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolGroupRef set the poolGroupRef.
    */
   @VsoMethod
@@ -306,6 +350,7 @@ public class IcapProfile extends AviRestResource {
    * To disable preview completely, set the enable-preview option to false.
    * Allowed values are 0-5000.
    * Field introduced in 20.1.1.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @return previewSize
    */
@@ -322,6 +367,7 @@ public class IcapProfile extends AviRestResource {
    * To disable preview completely, set the enable-preview option to false.
    * Allowed values are 0-5000.
    * Field introduced in 20.1.1.
+   * Unit is bytes.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
    * @param previewSize set the previewSize.
    */
@@ -332,11 +378,12 @@ public class IcapProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * How long do we wait for a request to the icap server to finish.
+   * How long do we pause the client's request for icap processing.
    * If this timeout is exceeded, the request to the icap server will be aborted and the configured fail action is executed.
    * Allowed values are 50-3600000.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return responseTimeout
    */
   @VsoMethod
@@ -346,11 +393,12 @@ public class IcapProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * How long do we wait for a request to the icap server to finish.
+   * How long do we pause the client's request for icap processing.
    * If this timeout is exceeded, the request to the icap server will be aborted and the configured fail action is executed.
    * Allowed values are 50-3600000.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param responseTimeout set the responseTimeout.
    */
   @VsoMethod
@@ -363,6 +411,7 @@ public class IcapProfile extends AviRestResource {
    * The path and query component of the icap url.
    * Host name and port will be taken from the pool.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceUri
    */
   @VsoMethod
@@ -375,6 +424,7 @@ public class IcapProfile extends AviRestResource {
    * The path and query component of the icap url.
    * Host name and port will be taken from the pool.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceUri set the serviceUri.
    */
   @VsoMethod
@@ -387,7 +437,8 @@ public class IcapProfile extends AviRestResource {
    * If the icap request takes longer than this value, this request will generate a significant log entry.
    * Allowed values are 50-3600000.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return slowResponseWarningThreshold
    */
   @VsoMethod
@@ -400,7 +451,8 @@ public class IcapProfile extends AviRestResource {
    * If the icap request takes longer than this value, this request will generate a significant log entry.
    * Allowed values are 50-3600000.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * Unit is milliseconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param slowResponseWarningThreshold set the slowResponseWarningThreshold.
    */
   @VsoMethod
@@ -413,6 +465,7 @@ public class IcapProfile extends AviRestResource {
    * Tenant which this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -425,6 +478,7 @@ public class IcapProfile extends AviRestResource {
    * Tenant which this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -455,6 +509,7 @@ public class IcapProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the icap profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -466,6 +521,7 @@ public class IcapProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the icap profile.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -478,7 +534,7 @@ public class IcapProfile extends AviRestResource {
    * The vendor of the icap server.
    * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_VENDOR_OPSWAT".
    * @return vendor
    */
   @VsoMethod
@@ -491,7 +547,7 @@ public class IcapProfile extends AviRestResource {
    * The vendor of the icap server.
    * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_VENDOR_OPSWAT".
    * @param vendor set the vendor.
    */
   @VsoMethod
@@ -527,14 +583,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.previewSize, objIcapProfile.previewSize)&&
   Objects.equals(this.responseTimeout, objIcapProfile.responseTimeout)&&
   Objects.equals(this.slowResponseWarningThreshold, objIcapProfile.slowResponseWarningThreshold)&&
-  Objects.equals(this.failAction, objIcapProfile.failAction);
+  Objects.equals(this.failAction, objIcapProfile.failAction)&&
+  Objects.equals(this.allow204, objIcapProfile.allow204);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class IcapProfile {\n");
-      sb.append("    bufferSize: ").append(toIndentedString(bufferSize)).append("\n");
+      sb.append("    allow204: ").append(toIndentedString(allow204)).append("\n");
+        sb.append("    bufferSize: ").append(toIndentedString(bufferSize)).append("\n");
         sb.append("    bufferSizeExceedAction: ").append(toIndentedString(bufferSizeExceedAction)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

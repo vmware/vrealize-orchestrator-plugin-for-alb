@@ -24,33 +24,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolDeploymentFailureInfo extends AviRestResource {
-  @JsonProperty("curr_in_service_pool_name")
-  @JsonInclude(Include.NON_NULL)
-  private String currInServicePoolName = null;
+    @JsonProperty("curr_in_service_pool_name")
+    @JsonInclude(Include.NON_NULL)
+    private String currInServicePoolName = null;
 
-  @JsonProperty("curr_in_service_pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String currInServicePoolRef = null;
+    @JsonProperty("curr_in_service_pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String currInServicePoolRef = null;
 
-  @JsonProperty("ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ratio = null;
+    @JsonProperty("ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ratio = null;
 
-  @JsonProperty("results")
-  @JsonInclude(Include.NON_NULL)
-  private List<PGDeploymentRuleResult> results = null;
+    @JsonProperty("results")
+    @JsonInclude(Include.NON_NULL)
+    private List<PGDeploymentRuleResult> results = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("webhook_reason")
-  @JsonInclude(Include.NON_NULL)
-  private String webhookReason = null;
+    @JsonProperty("webhook_reason")
+    @JsonInclude(Include.NON_NULL)
+    private String webhookReason = null;
 
-  @JsonProperty("webhook_result")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean webhookResult = null;
+    @JsonProperty("webhook_result")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean webhookResult = null;
 
 
 
@@ -58,6 +58,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Curent in-service pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currInServicePoolName
    */
   @VsoMethod
@@ -69,6 +70,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Curent in-service pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currInServicePoolName set the currInServicePoolName.
    */
   @VsoMethod
@@ -80,6 +82,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Curent in service pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return currInServicePoolRef
    */
   @VsoMethod
@@ -91,6 +94,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Curent in service pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param currInServicePoolRef set the currInServicePoolRef.
    */
   @VsoMethod
@@ -101,6 +105,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Operational traffic ratio for the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ratio
    */
   @VsoMethod
@@ -111,6 +116,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Operational traffic ratio for the pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ratio set the ratio.
    */
   @VsoMethod
@@ -121,6 +127,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property results of obj type pooldeploymentfailureinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return results
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the setter method. this will set the results
    * Placeholder for description of property results of obj type pooldeploymentfailureinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return results
    */
   @VsoMethod
@@ -141,6 +149,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the setter method this will set the results
    * Placeholder for description of property results of obj type pooldeploymentfailureinfo field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return results
    */
   @VsoMethod
@@ -156,6 +165,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Pool's id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -166,6 +176,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Pool's id.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -176,6 +187,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Reason returned in webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return webhookReason
    */
   @VsoMethod
@@ -186,6 +198,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Reason returned in webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param webhookReason set the webhookReason.
    */
   @VsoMethod
@@ -196,6 +209,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Result of webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return webhookResult
    */
   @VsoMethod
@@ -206,6 +220,7 @@ public class PoolDeploymentFailureInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Result of webhook callback when configured.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param webhookResult set the webhookResult.
    */
   @VsoMethod

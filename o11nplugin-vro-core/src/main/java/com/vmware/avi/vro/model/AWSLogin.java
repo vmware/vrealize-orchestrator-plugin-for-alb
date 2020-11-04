@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AWSLogin extends AviRestResource {
-  @JsonProperty("access_key_id")
-  @JsonInclude(Include.NON_NULL)
-  private String accessKeyId = null;
+    @JsonProperty("access_key_id")
+    @JsonInclude(Include.NON_NULL)
+    private String accessKeyId = null;
 
-  @JsonProperty("iam_assume_role")
-  @JsonInclude(Include.NON_NULL)
-  private String iamAssumeRole = null;
+    @JsonProperty("iam_assume_role")
+    @JsonInclude(Include.NON_NULL)
+    private String iamAssumeRole = null;
 
-  @JsonProperty("region")
-  @JsonInclude(Include.NON_NULL)
-  private String region = "us-west-1";
+    @JsonProperty("region")
+    @JsonInclude(Include.NON_NULL)
+    private String region = "us-west-1";
 
-  @JsonProperty("secret_access_key")
-  @JsonInclude(Include.NON_NULL)
-  private String secretAccessKey = null;
+    @JsonProperty("secret_access_key")
+    @JsonInclude(Include.NON_NULL)
+    private String secretAccessKey = null;
 
-  @JsonProperty("use_iam_roles")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean useIamRoles = null;
+    @JsonProperty("use_iam_roles")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useIamRoles = null;
 
-  @JsonProperty("vpc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String vpcId = null;
+    @JsonProperty("vpc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String vpcId = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property access_key_id of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return accessKeyId
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property access_key_id of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param accessKeyId set the accessKeyId.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property iam_assume_role of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return iamAssumeRole
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property iam_assume_role of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param iamAssumeRole set the iamAssumeRole.
    */
   @VsoMethod
@@ -93,7 +97,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Aws region.
-   * Default value when not specified in API or module is interpreted by Avi Controller as us-west-1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
    * @return region
    */
   @VsoMethod
@@ -104,7 +108,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Aws region.
-   * Default value when not specified in API or module is interpreted by Avi Controller as us-west-1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
    * @param region set the region.
    */
   @VsoMethod
@@ -115,6 +119,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property secret_access_key of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secretAccessKey
    */
   @VsoMethod
@@ -125,6 +130,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property secret_access_key of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param secretAccessKey set the secretAccessKey.
    */
   @VsoMethod
@@ -135,6 +141,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property use_iam_roles of obj type awslogin field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return useIamRoles
    */
   @VsoMethod
@@ -145,6 +152,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property use_iam_roles of obj type awslogin field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param useIamRoles set the useIamRoles.
    */
   @VsoMethod
@@ -155,6 +163,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vpc_id of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vpcId
    */
   @VsoMethod
@@ -165,6 +174,7 @@ public class AWSLogin extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vpc_id of obj type awslogin field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vpcId set the vpcId.
    */
   @VsoMethod

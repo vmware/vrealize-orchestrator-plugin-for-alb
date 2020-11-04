@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecureChannelConfiguration extends AviRestResource {
-  @JsonProperty("bypass_secure_channel_must_checks")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean bypassSecureChannelMustChecks = null;
+    @JsonProperty("bypass_secure_channel_must_checks")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean bypassSecureChannelMustChecks;
 
-  @JsonProperty("sslkeyandcertificate_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sslkeyandcertificateRefs = null;
+    @JsonProperty("sslkeyandcertificate_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sslkeyandcertificateRefs = null;
 
 
 
@@ -66,6 +66,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
   @VsoMethod
@@ -92,6 +94,7 @@ public class SecureChannelConfiguration extends AviRestResource {
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
    * Field introduced in 18.1.4, 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
   @VsoMethod

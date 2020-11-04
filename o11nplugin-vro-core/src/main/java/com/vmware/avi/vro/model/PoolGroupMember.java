@@ -24,21 +24,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PoolGroupMember extends AviRestResource {
-  @JsonProperty("deployment_state")
-  @JsonInclude(Include.NON_NULL)
-  private String deploymentState = null;
+    @JsonProperty("deployment_state")
+    @JsonInclude(Include.NON_NULL)
+    private String deploymentState = null;
 
-  @JsonProperty("pool_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String poolRef = null;
+    @JsonProperty("pool_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String poolRef = null;
 
-  @JsonProperty("priority_label")
-  @JsonInclude(Include.NON_NULL)
-  private String priorityLabel = null;
+    @JsonProperty("priority_label")
+    @JsonInclude(Include.NON_NULL)
+    private String priorityLabel = null;
 
-  @JsonProperty("ratio")
-  @JsonInclude(Include.NON_NULL)
-  private Integer ratio = 1;
+    @JsonProperty("ratio")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ratio = 1;
 
 
 
@@ -46,6 +46,7 @@ public class PoolGroupMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool deployment state used with the pg deployment policy.
    * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return deploymentState
    */
   @VsoMethod
@@ -57,6 +58,7 @@ public class PoolGroupMember extends AviRestResource {
    * This is the setter method to the attribute.
    * Pool deployment state used with the pg deployment policy.
    * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param deploymentState set the deploymentState.
    */
   @VsoMethod
@@ -68,6 +70,7 @@ public class PoolGroupMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolRef
    */
   @VsoMethod
@@ -79,6 +82,7 @@ public class PoolGroupMember extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the pool.
    * It is a reference to an object of type pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolRef set the poolRef.
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class PoolGroupMember extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * All pools with same label are treated similarly in a pool group.
    * A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return priorityLabel
    */
   @VsoMethod
@@ -101,6 +106,7 @@ public class PoolGroupMember extends AviRestResource {
    * This is the setter method to the attribute.
    * All pools with same label are treated similarly in a pool group.
    * A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param priorityLabel set the priorityLabel.
    */
   @VsoMethod

@@ -24,25 +24,25 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HealthMonitorDNS extends AviRestResource {
-  @JsonProperty("qtype")
-  @JsonInclude(Include.NON_NULL)
-  private String qtype = "DNS_QUERY_TYPE";
+    @JsonProperty("qtype")
+    @JsonInclude(Include.NON_NULL)
+    private String qtype = "DNS_QUERY_TYPE";
 
-  @JsonProperty("query_name")
-  @JsonInclude(Include.NON_NULL)
-  private String queryName = null;
+    @JsonProperty("query_name")
+    @JsonInclude(Include.NON_NULL)
+    private String queryName = null;
 
-  @JsonProperty("rcode")
-  @JsonInclude(Include.NON_NULL)
-  private String rcode = "RCODE_NO_ERROR";
+    @JsonProperty("rcode")
+    @JsonInclude(Include.NON_NULL)
+    private String rcode = "RCODE_NO_ERROR";
 
-  @JsonProperty("record_type")
-  @JsonInclude(Include.NON_NULL)
-  private String recordType = "DNS_RECORD_A";
+    @JsonProperty("record_type")
+    @JsonInclude(Include.NON_NULL)
+    private String recordType = "DNS_RECORD_A";
 
-  @JsonProperty("response_string")
-  @JsonInclude(Include.NON_NULL)
-  private String responseString = null;
+    @JsonProperty("response_string")
+    @JsonInclude(Include.NON_NULL)
+    private String responseString = null;
 
 
 
@@ -51,7 +51,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * Query_type  response has atleast one answer of which      the resource record type matches the query type   any_type  response should contain
    * atleast one answer  anything  an empty answer is enough.
    * Enum options - DNS_QUERY_TYPE, DNS_ANY_TYPE, DNS_ANY_THING.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_QUERY_TYPE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_QUERY_TYPE".
    * @return qtype
    */
   @VsoMethod
@@ -64,7 +64,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * Query_type  response has atleast one answer of which      the resource record type matches the query type   any_type  response should contain
    * atleast one answer  anything  an empty answer is enough.
    * Enum options - DNS_QUERY_TYPE, DNS_ANY_TYPE, DNS_ANY_THING.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_QUERY_TYPE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_QUERY_TYPE".
    * @param qtype set the qtype.
    */
   @VsoMethod
@@ -75,6 +75,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The dns monitor will query the dns server for the fully qualified name in this field.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return queryName
    */
   @VsoMethod
@@ -85,6 +86,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The dns monitor will query the dns server for the fully qualified name in this field.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param queryName set the queryName.
    */
   @VsoMethod
@@ -97,7 +99,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * When no error is selected, a dns query will be marked failed is any error code is returned by the server.
    * With any selected, the monitor ignores error code in the responses.
    * Enum options - RCODE_NO_ERROR, RCODE_ANYTHING.
-   * Default value when not specified in API or module is interpreted by Avi Controller as RCODE_NO_ERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "RCODE_NO_ERROR".
    * @return rcode
    */
   @VsoMethod
@@ -110,7 +112,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * When no error is selected, a dns query will be marked failed is any error code is returned by the server.
    * With any selected, the monitor ignores error code in the responses.
    * Enum options - RCODE_NO_ERROR, RCODE_ANYTHING.
-   * Default value when not specified in API or module is interpreted by Avi Controller as RCODE_NO_ERROR.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "RCODE_NO_ERROR".
    * @param rcode set the rcode.
    */
   @VsoMethod
@@ -125,7 +127,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_A.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @return recordType
    */
   @VsoMethod
@@ -140,7 +142,7 @@ public class HealthMonitorDNS extends AviRestResource {
    * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
    * DNS_RECORD_ANY.
    * Field introduced in 18.2.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_A.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_A".
    * @param recordType set the recordType.
    */
   @VsoMethod
@@ -151,6 +153,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The resource record of the queried dns server's response for the request name must include the ip address defined in this field.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return responseString
    */
   @VsoMethod
@@ -161,6 +164,7 @@ public class HealthMonitorDNS extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The resource record of the queried dns server's response for the request name must include the ip address defined in this field.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param responseString set the responseString.
    */
   @VsoMethod

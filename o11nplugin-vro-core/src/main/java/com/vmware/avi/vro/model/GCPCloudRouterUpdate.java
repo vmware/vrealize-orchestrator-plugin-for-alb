@@ -26,33 +26,33 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GCPCloudRouterUpdate extends AviRestResource {
-  @JsonProperty("action")
-  @JsonInclude(Include.NON_NULL)
-  private String action = null;
+    @JsonProperty("action")
+    @JsonInclude(Include.NON_NULL)
+    private String action = null;
 
-  @JsonProperty("cc_id")
-  @JsonInclude(Include.NON_NULL)
-  private String ccId = null;
+    @JsonProperty("cc_id")
+    @JsonInclude(Include.NON_NULL)
+    private String ccId = null;
 
-  @JsonProperty("error_string")
-  @JsonInclude(Include.NON_NULL)
-  private String errorString = null;
+    @JsonProperty("error_string")
+    @JsonInclude(Include.NON_NULL)
+    private String errorString = null;
 
-  @JsonProperty("fip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr fip = null;
+    @JsonProperty("fip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr fip = null;
 
-  @JsonProperty("router_url")
-  @JsonInclude(Include.NON_NULL)
-  private String routerUrl = null;
+    @JsonProperty("router_url")
+    @JsonInclude(Include.NON_NULL)
+    private String routerUrl = null;
 
-  @JsonProperty("vip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr vip = null;
+    @JsonProperty("vip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr vip = null;
 
-  @JsonProperty("vs_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vsUuid = null;
+    @JsonProperty("vs_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vsUuid = null;
 
 
 
@@ -60,6 +60,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Action performed  action can be either route added or route removed from router.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
   @VsoMethod
@@ -71,6 +72,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Action performed  action can be either route added or route removed from router.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
   @VsoMethod
@@ -82,6 +84,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud uuid.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ccId
    */
   @VsoMethod
@@ -93,6 +96,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud uuid.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ccId set the ccId.
    */
   @VsoMethod
@@ -104,6 +108,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Reason for the failure.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorString
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Reason for the failure.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorString set the errorString.
    */
   @VsoMethod
@@ -126,6 +132,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service floating ip.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fip
    */
   @VsoMethod
@@ -137,6 +144,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service floating ip.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fip set the fip.
    */
   @VsoMethod
@@ -148,6 +156,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gcp cloud router url.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routerUrl
    */
   @VsoMethod
@@ -159,6 +168,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Gcp cloud router url.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routerUrl set the routerUrl.
    */
   @VsoMethod
@@ -170,6 +180,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service ip.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vip
    */
   @VsoMethod
@@ -181,6 +192,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service ip.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vip set the vip.
    */
   @VsoMethod
@@ -192,6 +204,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual service uuid.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -203,6 +216,7 @@ public class GCPCloudRouterUpdate extends AviRestResource {
    * This is the setter method to the attribute.
    * Virtual service uuid.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

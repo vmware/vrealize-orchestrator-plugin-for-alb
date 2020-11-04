@@ -24,47 +24,48 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MetricStatistics extends AviRestResource {
-  @JsonProperty("last_sample")
-  @JsonInclude(Include.NON_NULL)
-  private Float lastSample = null;
+    @JsonProperty("last_sample")
+    @JsonInclude(Include.NON_NULL)
+    private Float lastSample = null;
 
-  @JsonProperty("max")
-  @JsonInclude(Include.NON_NULL)
-  private Float max = null;
+    @JsonProperty("max")
+    @JsonInclude(Include.NON_NULL)
+    private Float max = null;
 
-  @JsonProperty("max_ts")
-  @JsonInclude(Include.NON_NULL)
-  private String maxTs = null;
+    @JsonProperty("max_ts")
+    @JsonInclude(Include.NON_NULL)
+    private String maxTs = null;
 
-  @JsonProperty("mean")
-  @JsonInclude(Include.NON_NULL)
-  private Float mean = null;
+    @JsonProperty("mean")
+    @JsonInclude(Include.NON_NULL)
+    private Float mean = null;
 
-  @JsonProperty("min")
-  @JsonInclude(Include.NON_NULL)
-  private Float min = null;
+    @JsonProperty("min")
+    @JsonInclude(Include.NON_NULL)
+    private Float min = null;
 
-  @JsonProperty("min_ts")
-  @JsonInclude(Include.NON_NULL)
-  private String minTs = null;
+    @JsonProperty("min_ts")
+    @JsonInclude(Include.NON_NULL)
+    private String minTs = null;
 
-  @JsonProperty("num_samples")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numSamples = null;
+    @JsonProperty("num_samples")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numSamples = null;
 
-  @JsonProperty("sum")
-  @JsonInclude(Include.NON_NULL)
-  private Float sum = null;
+    @JsonProperty("sum")
+    @JsonInclude(Include.NON_NULL)
+    private Float sum = null;
 
-  @JsonProperty("trend")
-  @JsonInclude(Include.NON_NULL)
-  private Float trend = null;
+    @JsonProperty("trend")
+    @JsonInclude(Include.NON_NULL)
+    private Float trend = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Value of the last sample.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastSample
    */
   @VsoMethod
@@ -75,6 +76,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Value of the last sample.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastSample set the lastSample.
    */
   @VsoMethod
@@ -85,6 +87,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum value in time series requested.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return max
    */
   @VsoMethod
@@ -95,6 +98,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum value in time series requested.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param max set the max.
    */
   @VsoMethod
@@ -105,6 +109,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of the minimum value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxTs
    */
   @VsoMethod
@@ -115,6 +120,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of the minimum value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxTs set the maxTs.
    */
   @VsoMethod
@@ -125,6 +131,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Arithmetic mean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mean
    */
   @VsoMethod
@@ -135,6 +142,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Arithmetic mean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mean set the mean.
    */
   @VsoMethod
@@ -145,6 +153,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum value in time series requested.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return min
    */
   @VsoMethod
@@ -155,6 +164,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum value in time series requested.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param min set the min.
    */
   @VsoMethod
@@ -165,6 +175,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timestamp of the minimum value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minTs
    */
   @VsoMethod
@@ -175,6 +186,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timestamp of the minimum value.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minTs set the minTs.
    */
   @VsoMethod
@@ -186,6 +198,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of actual data samples.
    * It excludes fake data.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numSamples
    */
   @VsoMethod
@@ -197,6 +210,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of actual data samples.
    * It excludes fake data.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numSamples set the numSamples.
    */
   @VsoMethod
@@ -207,6 +221,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Summation of all values.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sum
    */
   @VsoMethod
@@ -217,6 +232,7 @@ public class MetricStatistics extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Summation of all values.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sum set the sum.
    */
   @VsoMethod
@@ -228,6 +244,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Slope of the data points across the time series requested.
    * Trend = (last_value - avg)/avg.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return trend
    */
   @VsoMethod
@@ -239,6 +256,7 @@ public class MetricStatistics extends AviRestResource {
    * This is the setter method to the attribute.
    * Slope of the data points across the time series requested.
    * Trend = (last_value - avg)/avg.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param trend set the trend.
    */
   @VsoMethod

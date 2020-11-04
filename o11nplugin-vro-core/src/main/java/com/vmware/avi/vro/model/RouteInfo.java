@@ -26,21 +26,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RouteInfo extends AviRestResource {
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("network_namespace")
-  @JsonInclude(Include.NON_NULL)
-  private String networkNamespace = "HOST_NAMESPACE";
+    @JsonProperty("network_namespace")
+    @JsonInclude(Include.NON_NULL)
+    private String networkNamespace = "HOST_NAMESPACE";
 
-  @JsonProperty("nexthop")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr nexthop = null;
+    @JsonProperty("nexthop")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr nexthop = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
 
 
@@ -48,6 +48,7 @@ public class RouteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host interface name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -59,6 +60,7 @@ public class RouteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Host interface name.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -71,7 +73,7 @@ public class RouteInfo extends AviRestResource {
    * Network namespace type used to add an route entry in a specific namespace.
    * Enum options - LOCAL_NAMESPACE, HOST_NAMESPACE, OTHER_NAMESPACE.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HOST_NAMESPACE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HOST_NAMESPACE".
    * @return networkNamespace
    */
   @VsoMethod
@@ -84,7 +86,7 @@ public class RouteInfo extends AviRestResource {
    * Network namespace type used to add an route entry in a specific namespace.
    * Enum options - LOCAL_NAMESPACE, HOST_NAMESPACE, OTHER_NAMESPACE.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as HOST_NAMESPACE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "HOST_NAMESPACE".
    * @param networkNamespace set the networkNamespace.
    */
   @VsoMethod
@@ -96,6 +98,7 @@ public class RouteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host nexthop ip address.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nexthop
    */
   @VsoMethod
@@ -107,6 +110,7 @@ public class RouteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Host nexthop ip address.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nexthop set the nexthop.
    */
   @VsoMethod
@@ -118,6 +122,7 @@ public class RouteInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host subnet address.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -129,6 +134,7 @@ public class RouteInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Host subnet address.
    * Field introduced in 18.2.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod

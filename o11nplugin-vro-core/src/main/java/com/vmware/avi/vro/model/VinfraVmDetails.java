@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraVmDetails extends AviRestResource {
-  @JsonProperty("datacenter")
-  @JsonInclude(Include.NON_NULL)
-  private String datacenter = null;
+    @JsonProperty("datacenter")
+    @JsonInclude(Include.NON_NULL)
+    private String datacenter = null;
 
-  @JsonProperty("host")
-  @JsonInclude(Include.NON_NULL)
-  private String host = null;
+    @JsonProperty("host")
+    @JsonInclude(Include.NON_NULL)
+    private String host = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property datacenter of obj type vinfravmdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return datacenter
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VinfraVmDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property datacenter of obj type vinfravmdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param datacenter set the datacenter.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VinfraVmDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property host of obj type vinfravmdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class VinfraVmDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property host of obj type vinfravmdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class VinfraVmDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class VinfraVmDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod

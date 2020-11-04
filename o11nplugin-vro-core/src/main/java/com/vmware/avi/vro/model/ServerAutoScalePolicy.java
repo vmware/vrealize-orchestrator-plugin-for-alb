@@ -24,79 +24,84 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ServerAutoScalePolicy extends AviRestResource {
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("intelligent_autoscale")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean intelligentAutoscale = false;
+    @JsonProperty("intelligent_autoscale")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean intelligentAutoscale = false;
 
-  @JsonProperty("intelligent_scalein_margin")
-  @JsonInclude(Include.NON_NULL)
-  private Integer intelligentScaleinMargin = 40;
+    @JsonProperty("intelligent_scalein_margin")
+    @JsonInclude(Include.NON_NULL)
+    private Integer intelligentScaleinMargin = 40;
 
-  @JsonProperty("intelligent_scaleout_margin")
-  @JsonInclude(Include.NON_NULL)
-  private Integer intelligentScaleoutMargin = 20;
+    @JsonProperty("intelligent_scaleout_margin")
+    @JsonInclude(Include.NON_NULL)
+    private Integer intelligentScaleoutMargin = 20;
 
-  @JsonProperty("max_scalein_adjustment_step")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxScaleinAdjustmentStep = 1;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("max_scaleout_adjustment_step")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxScaleoutAdjustmentStep = 1;
+    @JsonProperty("max_scalein_adjustment_step")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxScaleinAdjustmentStep = 1;
 
-  @JsonProperty("max_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer maxSize = null;
+    @JsonProperty("max_scaleout_adjustment_step")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxScaleoutAdjustmentStep = 1;
 
-  @JsonProperty("min_size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer minSize = null;
+    @JsonProperty("max_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer maxSize = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("min_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer minSize = null;
 
-  @JsonProperty("scalein_alertconfig_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> scaleinAlertconfigRefs = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("scalein_cooldown")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scaleinCooldown = 300;
+    @JsonProperty("scalein_alertconfig_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> scaleinAlertconfigRefs = null;
 
-  @JsonProperty("scaleout_alertconfig_refs")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> scaleoutAlertconfigRefs = null;
+    @JsonProperty("scalein_cooldown")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scaleinCooldown = 300;
 
-  @JsonProperty("scaleout_cooldown")
-  @JsonInclude(Include.NON_NULL)
-  private Integer scaleoutCooldown = 300;
+    @JsonProperty("scaleout_alertconfig_refs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> scaleoutAlertconfigRefs = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("scaleout_cooldown")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scaleoutCooldown = 300;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("use_predicted_load")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean usePredictedLoad = false;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("use_predicted_load")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean usePredictedLoad = false;
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -107,6 +112,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -190,6 +196,50 @@ public class ServerAutoScalePolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public ServerAutoScalePolicy addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of servers to scalein simultaneously.
    * The actual number of servers to scalein is chosen such that target number of servers is always more than or equal to the min_size.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -240,6 +290,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Maximum number of servers after scaleout.
    * Allowed values are 0-400.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxSize
    */
   @VsoMethod
@@ -251,6 +302,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * Maximum number of servers after scaleout.
    * Allowed values are 0-400.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxSize set the maxSize.
    */
   @VsoMethod
@@ -262,6 +314,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * No scale-in happens once number of operationally up servers reach min_servers.
    * Allowed values are 0-400.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return minSize
    */
   @VsoMethod
@@ -273,6 +326,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method to the attribute.
    * No scale-in happens once number of operationally up servers reach min_servers.
    * Allowed values are 0-400.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param minSize set the minSize.
    */
   @VsoMethod
@@ -283,6 +337,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -293,6 +348,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -304,6 +360,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Trigger scalein when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinAlertconfigRefs
    */
   @VsoMethod
@@ -315,6 +372,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method. this will set the scaleinAlertconfigRefs
    * Trigger scalein when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinAlertconfigRefs
    */
   @VsoMethod
@@ -326,6 +384,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method this will set the scaleinAlertconfigRefs
    * Trigger scalein when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleinAlertconfigRefs
    */
   @VsoMethod
@@ -341,6 +400,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return scaleinCooldown
    */
@@ -352,6 +412,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param scaleinCooldown set the scaleinCooldown.
    */
@@ -364,6 +425,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Trigger scaleout when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutAlertconfigRefs
    */
   @VsoMethod
@@ -375,6 +437,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method. this will set the scaleoutAlertconfigRefs
    * Trigger scaleout when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutAlertconfigRefs
    */
   @VsoMethod
@@ -386,6 +449,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
    * This is the setter method this will set the scaleoutAlertconfigRefs
    * Trigger scaleout when alerts due to any of these alert configurations are raised.
    * It is a reference to an object of type alertconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scaleoutAlertconfigRefs
    */
   @VsoMethod
@@ -401,6 +465,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return scaleoutCooldown
    */
@@ -412,6 +477,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete.
+   * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param scaleoutCooldown set the scaleoutCooldown.
    */
@@ -423,6 +489,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -433,6 +500,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -484,6 +552,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -494,6 +563,7 @@ public class ServerAutoScalePolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -529,6 +599,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.scaleoutAlertconfigRefs, objServerAutoScalePolicy.scaleoutAlertconfigRefs)&&
   Objects.equals(this.scaleinAlertconfigRefs, objServerAutoScalePolicy.scaleinAlertconfigRefs)&&
   Objects.equals(this.usePredictedLoad, objServerAutoScalePolicy.usePredictedLoad)&&
+  Objects.equals(this.labels, objServerAutoScalePolicy.labels)&&
   Objects.equals(this.description, objServerAutoScalePolicy.description)&&
   Objects.equals(this.tenantRef, objServerAutoScalePolicy.tenantRef);
 }
@@ -541,6 +612,7 @@ public String toString() {
         sb.append("    intelligentAutoscale: ").append(toIndentedString(intelligentAutoscale)).append("\n");
         sb.append("    intelligentScaleinMargin: ").append(toIndentedString(intelligentScaleinMargin)).append("\n");
         sb.append("    intelligentScaleoutMargin: ").append(toIndentedString(intelligentScaleoutMargin)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    maxScaleinAdjustmentStep: ").append(toIndentedString(maxScaleinAdjustmentStep)).append("\n");
         sb.append("    maxScaleoutAdjustmentStep: ").append(toIndentedString(maxScaleoutAdjustmentStep)).append("\n");
         sb.append("    maxSize: ").append(toIndentedString(maxSize)).append("\n");

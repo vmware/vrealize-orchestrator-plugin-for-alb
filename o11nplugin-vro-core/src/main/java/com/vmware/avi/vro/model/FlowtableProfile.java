@@ -24,37 +24,70 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FlowtableProfile extends AviRestResource {
-  @JsonProperty("tcp_closed_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpClosedTimeout = 5;
+    @JsonProperty("icmp_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer icmpIdleTimeout = 60;
 
-  @JsonProperty("tcp_connection_setup_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpConnectionSetupTimeout = 10;
+    @JsonProperty("tcp_closed_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpClosedTimeout = 5;
 
-  @JsonProperty("tcp_half_closed_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpHalfClosedTimeout = 30;
+    @JsonProperty("tcp_connection_setup_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpConnectionSetupTimeout = 10;
 
-  @JsonProperty("tcp_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpIdleTimeout = 300;
+    @JsonProperty("tcp_half_closed_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpHalfClosedTimeout = 30;
 
-  @JsonProperty("tcp_reset_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer tcpResetTimeout = 1;
+    @JsonProperty("tcp_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpIdleTimeout = 300;
 
-  @JsonProperty("udp_idle_timeout")
-  @JsonInclude(Include.NON_NULL)
-  private Integer udpIdleTimeout = 10;
+    @JsonProperty("tcp_reset_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tcpResetTimeout = 1;
+
+    @JsonProperty("udp_idle_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer udpIdleTimeout = 10;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Idle timeout in seconds for icmp flows.
+   * Allowed values are 1-36000.
+   * Field introduced in 20.1.3.
+   * Unit is seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return icmpIdleTimeout
+   */
+  @VsoMethod
+  public Integer getIcmpIdleTimeout() {
+    return icmpIdleTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Idle timeout in seconds for icmp flows.
+   * Allowed values are 1-36000.
+   * Field introduced in 20.1.3.
+   * Unit is seconds.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param icmpIdleTimeout set the icmpIdleTimeout.
+   */
+  @VsoMethod
+  public void setIcmpIdleTimeout(Integer  icmpIdleTimeout) {
+    this.icmpIdleTimeout = icmpIdleTimeout;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
    * Idle timeout in seconds for tcp flows in closed state.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return tcpClosedTimeout
    */
@@ -68,6 +101,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for tcp flows in closed state.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param tcpClosedTimeout set the tcpClosedTimeout.
    */
@@ -81,6 +115,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for nat tcp flows in connection setup state.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return tcpConnectionSetupTimeout
    */
@@ -94,6 +129,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for nat tcp flows in connection setup state.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param tcpConnectionSetupTimeout set the tcpConnectionSetupTimeout.
    */
@@ -107,6 +143,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for tcp flows in half closed state.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @return tcpHalfClosedTimeout
    */
@@ -120,6 +157,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for tcp flows in half closed state.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30.
    * @param tcpHalfClosedTimeout set the tcpHalfClosedTimeout.
    */
@@ -133,6 +171,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for tcp flows.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @return tcpIdleTimeout
    */
@@ -146,6 +185,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for tcp flows.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 300.
    * @param tcpIdleTimeout set the tcpIdleTimeout.
    */
@@ -162,6 +202,7 @@ public class FlowtableProfile extends AviRestResource {
    * This state helps to mitigate the impactof rst attacks.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return tcpResetTimeout
    */
@@ -178,6 +219,7 @@ public class FlowtableProfile extends AviRestResource {
    * This state helps to mitigate the impactof rst attacks.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param tcpResetTimeout set the tcpResetTimeout.
    */
@@ -191,6 +233,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for udp flows.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return udpIdleTimeout
    */
@@ -204,6 +247,7 @@ public class FlowtableProfile extends AviRestResource {
    * Idle timeout in seconds for udp flows.
    * Allowed values are 1-36000.
    * Field introduced in 18.2.5.
+   * Unit is seconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param udpIdleTimeout set the udpIdleTimeout.
    */
@@ -228,14 +272,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tcpIdleTimeout, objFlowtableProfile.tcpIdleTimeout)&&
   Objects.equals(this.tcpHalfClosedTimeout, objFlowtableProfile.tcpHalfClosedTimeout)&&
   Objects.equals(this.tcpClosedTimeout, objFlowtableProfile.tcpClosedTimeout)&&
-  Objects.equals(this.tcpResetTimeout, objFlowtableProfile.tcpResetTimeout);
+  Objects.equals(this.tcpResetTimeout, objFlowtableProfile.tcpResetTimeout)&&
+  Objects.equals(this.icmpIdleTimeout, objFlowtableProfile.icmpIdleTimeout);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class FlowtableProfile {\n");
-      sb.append("    tcpClosedTimeout: ").append(toIndentedString(tcpClosedTimeout)).append("\n");
+      sb.append("    icmpIdleTimeout: ").append(toIndentedString(icmpIdleTimeout)).append("\n");
+        sb.append("    tcpClosedTimeout: ").append(toIndentedString(tcpClosedTimeout)).append("\n");
         sb.append("    tcpConnectionSetupTimeout: ").append(toIndentedString(tcpConnectionSetupTimeout)).append("\n");
         sb.append("    tcpHalfClosedTimeout: ").append(toIndentedString(tcpHalfClosedTimeout)).append("\n");
         sb.append("    tcpIdleTimeout: ").append(toIndentedString(tcpIdleTimeout)).append("\n");

@@ -24,69 +24,69 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class FileObject extends AviRestResource {
-  @JsonProperty("checksum")
-  @JsonInclude(Include.NON_NULL)
-  private String checksum = null;
+    @JsonProperty("checksum")
+    @JsonInclude(Include.NON_NULL)
+    private String checksum = null;
 
-  @JsonProperty("compressed")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean compressed = false;
+    @JsonProperty("compressed")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean compressed = false;
 
-  @JsonProperty("created")
-  @JsonInclude(Include.NON_NULL)
-  private String created = null;
+    @JsonProperty("created")
+    @JsonInclude(Include.NON_NULL)
+    private String created = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("expires_at")
-  @JsonInclude(Include.NON_NULL)
-  private String expiresAt = null;
+    @JsonProperty("expires_at")
+    @JsonInclude(Include.NON_NULL)
+    private String expiresAt = null;
 
-  @JsonProperty("is_federated")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isFederated = false;
+    @JsonProperty("is_federated")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isFederated = false;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private String path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private String path = null;
 
-  @JsonProperty("read_only")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean readOnly = null;
+    @JsonProperty("read_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean readOnly = null;
 
-  @JsonProperty("restrict_download")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean restrictDownload = null;
+    @JsonProperty("restrict_download")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean restrictDownload = null;
 
-  @JsonProperty("size")
-  @JsonInclude(Include.NON_NULL)
-  private Integer size = null;
+    @JsonProperty("size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer size = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("version")
-  @JsonInclude(Include.NON_NULL)
-  private String version = null;
+    @JsonProperty("version")
+    @JsonInclude(Include.NON_NULL)
+    private String version = null;
 
 
 
@@ -94,6 +94,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Sha1 checksum of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return checksum
    */
   @VsoMethod
@@ -105,6 +106,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Sha1 checksum of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param checksum set the checksum.
    */
   @VsoMethod
@@ -140,6 +142,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timestamp of creation for the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return created
    */
   @VsoMethod
@@ -151,6 +154,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Timestamp of creation for the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param created set the created.
    */
   @VsoMethod
@@ -162,6 +166,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Description of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -173,6 +178,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Description of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -185,6 +191,7 @@ public class FileObject extends AviRestResource {
    * Timestamp when the file will be no longer needed and can be removed by the system.
    * If this is set, a garbage collector process will try to remove the file after this time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return expiresAt
    */
   @VsoMethod
@@ -197,6 +204,7 @@ public class FileObject extends AviRestResource {
    * Timestamp when the file will be no longer needed and can be removed by the system.
    * If this is set, a garbage collector process will try to remove the file after this time.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param expiresAt set the expiresAt.
    */
   @VsoMethod
@@ -236,6 +244,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of the file object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -247,6 +256,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the file object.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -258,6 +268,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Path to the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -269,6 +280,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Path to the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod
@@ -280,6 +292,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enforce read-only on the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return readOnly
    */
   @VsoMethod
@@ -291,6 +304,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Enforce read-only on the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param readOnly set the readOnly.
    */
   @VsoMethod
@@ -302,6 +316,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flag to allow/restrict download of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictDownload
    */
   @VsoMethod
@@ -313,6 +328,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Flag to allow/restrict download of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param restrictDownload set the restrictDownload.
    */
   @VsoMethod
@@ -324,6 +340,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Size of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return size
    */
   @VsoMethod
@@ -335,6 +352,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Size of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param size set the size.
    */
   @VsoMethod
@@ -347,6 +365,7 @@ public class FileObject extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -359,6 +378,7 @@ public class FileObject extends AviRestResource {
    * Tenant that this object belongs to.
    * It is a reference to an object of type tenant.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -371,6 +391,7 @@ public class FileObject extends AviRestResource {
    * Type of the file.
    * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -383,6 +404,7 @@ public class FileObject extends AviRestResource {
    * Type of the file.
    * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod
@@ -413,6 +435,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -424,6 +447,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -435,6 +459,7 @@ public class FileObject extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
    */
   @VsoMethod
@@ -446,6 +471,7 @@ public class FileObject extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of the file.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param version set the version.
    */
   @VsoMethod

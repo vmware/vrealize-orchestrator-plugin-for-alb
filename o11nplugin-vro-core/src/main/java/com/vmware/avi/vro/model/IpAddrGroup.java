@@ -24,63 +24,68 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class IpAddrGroup extends AviRestResource {
-  @JsonProperty("addrs")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddr> addrs = null;
+    @JsonProperty("addrs")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddr> addrs = null;
 
-  @JsonProperty("apic_epg_name")
-  @JsonInclude(Include.NON_NULL)
-  private String apicEpgName = null;
+    @JsonProperty("apic_epg_name")
+    @JsonInclude(Include.NON_NULL)
+    private String apicEpgName = null;
 
-  @JsonProperty("country_codes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> countryCodes = null;
+    @JsonProperty("country_codes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> countryCodes = null;
 
-  @JsonProperty("description")
-  @JsonInclude(Include.NON_NULL)
-  private String description = null;
+    @JsonProperty("description")
+    @JsonInclude(Include.NON_NULL)
+    private String description = null;
 
-  @JsonProperty("ip_ports")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPort> ipPorts = null;
+    @JsonProperty("ip_ports")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPort> ipPorts = null;
 
-  @JsonProperty("marathon_app_name")
-  @JsonInclude(Include.NON_NULL)
-  private String marathonAppName = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("marathon_service_port")
-  @JsonInclude(Include.NON_NULL)
-  private Integer marathonServicePort = null;
+    @JsonProperty("marathon_app_name")
+    @JsonInclude(Include.NON_NULL)
+    private String marathonAppName = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("marathon_service_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer marathonServicePort = null;
 
-  @JsonProperty("prefixes")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrPrefix> prefixes = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("ranges")
-  @JsonInclude(Include.NON_NULL)
-  private List<IpAddrRange> ranges = null;
+    @JsonProperty("prefixes")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrPrefix> prefixes = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("ranges")
+    @JsonInclude(Include.NON_NULL)
+    private List<IpAddrRange> ranges = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
+
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip address(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the addrs
    * Configure ip address(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -101,6 +107,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method this will set the addrs
    * Configure ip address(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return addrs
    */
   @VsoMethod
@@ -116,6 +123,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Populate ip addresses from members of this cisco apic epg.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicEpgName
    */
   @VsoMethod
@@ -126,6 +134,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Populate ip addresses from members of this cisco apic epg.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicEpgName set the apicEpgName.
    */
   @VsoMethod
@@ -136,6 +145,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Populate the ip address ranges from the geo database for this country.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return countryCodes
    */
   @VsoMethod
@@ -146,6 +156,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the countryCodes
    * Populate the ip address ranges from the geo database for this country.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return countryCodes
    */
   @VsoMethod
@@ -156,6 +167,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method this will set the countryCodes
    * Populate the ip address ranges from the geo database for this country.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return countryCodes
    */
   @VsoMethod
@@ -171,6 +183,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return description
    */
   @VsoMethod
@@ -181,6 +194,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * User defined description for the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param description set the description.
    */
   @VsoMethod
@@ -191,6 +205,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure (ip address, port) tuple(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipPorts
    */
   @VsoMethod
@@ -201,6 +216,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the ipPorts
    * Configure (ip address, port) tuple(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipPorts
    */
   @VsoMethod
@@ -211,6 +227,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method this will set the ipPorts
    * Configure (ip address, port) tuple(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipPorts
    */
   @VsoMethod
@@ -225,7 +242,52 @@ public class IpAddrGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public IpAddrGroup addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Populate ip addresses from tasks of this marathon app.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonAppName
    */
   @VsoMethod
@@ -236,6 +298,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Populate ip addresses from tasks of this marathon app.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonAppName set the marathonAppName.
    */
   @VsoMethod
@@ -248,6 +311,7 @@ public class IpAddrGroup extends AviRestResource {
    * Task port associated with marathon service port.
    * If marathon app has multiple service ports, this is required.
    * Else, the first task port is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return marathonServicePort
    */
   @VsoMethod
@@ -260,6 +324,7 @@ public class IpAddrGroup extends AviRestResource {
    * Task port associated with marathon service port.
    * If marathon app has multiple service ports, this is required.
    * Else, the first task port is used.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param marathonServicePort set the marathonServicePort.
    */
   @VsoMethod
@@ -270,6 +335,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -280,6 +346,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -290,6 +357,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip address prefix(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -300,6 +368,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the prefixes
    * Configure ip address prefix(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -310,6 +379,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method this will set the prefixes
    * Configure ip address prefix(es).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return prefixes
    */
   @VsoMethod
@@ -325,6 +395,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ip address range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -335,6 +406,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the ranges
    * Configure ip address range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -345,6 +417,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method this will set the ranges
    * Configure ip address range(s).
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ranges
    */
   @VsoMethod
@@ -360,6 +433,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -370,6 +444,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -399,6 +474,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -409,6 +485,7 @@ public class IpAddrGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the ip address group.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -440,6 +517,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ipPorts, objIpAddrGroup.ipPorts)&&
   Objects.equals(this.marathonAppName, objIpAddrGroup.marathonAppName)&&
   Objects.equals(this.marathonServicePort, objIpAddrGroup.marathonServicePort)&&
+  Objects.equals(this.labels, objIpAddrGroup.labels)&&
   Objects.equals(this.description, objIpAddrGroup.description)&&
   Objects.equals(this.tenantRef, objIpAddrGroup.tenantRef);
 }
@@ -453,6 +531,7 @@ public String toString() {
         sb.append("    countryCodes: ").append(toIndentedString(countryCodes)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipPorts: ").append(toIndentedString(ipPorts)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    marathonAppName: ").append(toIndentedString(marathonAppName)).append("\n");
         sb.append("    marathonServicePort: ").append(toIndentedString(marathonServicePort)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -26,41 +26,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class LinuxServerConfiguration extends AviRestResource {
-  @JsonProperty("docker_registry_se")
-  @JsonInclude(Include.NON_NULL)
-  private DockerRegistry dockerRegistrySe = null;
+    @JsonProperty("docker_registry_se")
+    @JsonInclude(Include.NON_NULL)
+    private DockerRegistry dockerRegistrySe;
 
-  @JsonProperty("hosts")
-  @JsonInclude(Include.NON_NULL)
-  private List<LinuxServerHost> hosts = null;
+    @JsonProperty("hosts")
+    @JsonInclude(Include.NON_NULL)
+    private List<LinuxServerHost> hosts = null;
 
-  @JsonProperty("se_inband_mgmt")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean seInbandMgmt = false;
+    @JsonProperty("se_inband_mgmt")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seInbandMgmt = false;
 
-  @JsonProperty("se_log_disk_path")
-  @JsonInclude(Include.NON_NULL)
-  private String seLogDiskPath = null;
+    @JsonProperty("se_log_disk_path")
+    @JsonInclude(Include.NON_NULL)
+    private String seLogDiskPath = null;
 
-  @JsonProperty("se_log_disk_size_GB")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seLogDiskSizeGb = 5;
+    @JsonProperty("se_log_disk_size_GB")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seLogDiskSizeGb = 5;
 
-  @JsonProperty("se_sys_disk_path")
-  @JsonInclude(Include.NON_NULL)
-  private String seSysDiskPath = null;
+    @JsonProperty("se_sys_disk_path")
+    @JsonInclude(Include.NON_NULL)
+    private String seSysDiskPath = null;
 
-  @JsonProperty("se_sys_disk_size_GB")
-  @JsonInclude(Include.NON_NULL)
-  private Integer seSysDiskSizeGb = 10;
+    @JsonProperty("se_sys_disk_size_GB")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seSysDiskSizeGb = 10;
 
-  @JsonProperty("ssh_attr")
-  @JsonInclude(Include.NON_NULL)
-  private SSHSeDeployment sshAttr = null;
+    @JsonProperty("ssh_attr")
+    @JsonInclude(Include.NON_NULL)
+    private SSHSeDeployment sshAttr;
 
-  @JsonProperty("ssh_user_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String sshUserRef = null;
+    @JsonProperty("ssh_user_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String sshUserRef = null;
 
 
 
@@ -89,6 +89,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property hosts of obj type linuxserverconfiguration field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
   @VsoMethod
@@ -99,6 +100,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the hosts
    * Placeholder for description of property hosts of obj type linuxserverconfiguration field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
   @VsoMethod
@@ -109,6 +111,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the hosts
    * Placeholder for description of property hosts of obj type linuxserverconfiguration field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hosts
    */
   @VsoMethod
@@ -148,6 +151,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se client logs disk path for cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seLogDiskPath
    */
   @VsoMethod
@@ -158,6 +162,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se client logs disk path for cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seLogDiskPath set the seLogDiskPath.
    */
   @VsoMethod
@@ -190,6 +195,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Se system logs disk path for cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seSysDiskPath
    */
   @VsoMethod
@@ -200,6 +206,7 @@ public class LinuxServerConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Se system logs disk path for cloud.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seSysDiskPath set the seSysDiskPath.
    */
   @VsoMethod
@@ -256,6 +263,7 @@ public class LinuxServerConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sshUserRef
    */
   @VsoMethod
@@ -268,6 +276,7 @@ public class LinuxServerConfiguration extends AviRestResource {
    * Cloud connector user uuid for ssh to hosts.
    * It is a reference to an object of type cloudconnectoruser.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sshUserRef set the sshUserRef.
    */
   @VsoMethod

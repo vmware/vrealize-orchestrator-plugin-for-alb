@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NsxtHosts extends AviRestResource {
-  @JsonProperty("host_ids")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> hostIds = null;
+    @JsonProperty("host_ids")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> hostIds = null;
 
-  @JsonProperty("include")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean include = false;
+    @JsonProperty("include")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean include = false;
 
 
 
@@ -38,6 +38,7 @@ public class NsxtHosts extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of transport nodes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIds
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class NsxtHosts extends AviRestResource {
    * This is the setter method. this will set the hostIds
    * List of transport nodes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIds
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class NsxtHosts extends AviRestResource {
    * This is the setter method this will set the hostIds
    * List of transport nodes.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostIds
    */
   @VsoMethod

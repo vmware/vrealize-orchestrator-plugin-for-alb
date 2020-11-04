@@ -24,53 +24,53 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CaptureIPC extends AviRestResource {
-  @JsonProperty("flow_del_probe")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean flowDelProbe = null;
+    @JsonProperty("flow_del_probe")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean flowDelProbe = null;
 
-  @JsonProperty("flow_mirror_add")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean flowMirrorAdd = null;
+    @JsonProperty("flow_mirror_add")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean flowMirrorAdd = null;
 
-  @JsonProperty("flow_mirror_all")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean flowMirrorAll = null;
+    @JsonProperty("flow_mirror_all")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean flowMirrorAll = null;
 
-  @JsonProperty("flow_mirror_del")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean flowMirrorDel = null;
+    @JsonProperty("flow_mirror_del")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean flowMirrorDel = null;
 
-  @JsonProperty("flow_probe")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean flowProbe = null;
+    @JsonProperty("flow_probe")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean flowProbe = null;
 
-  @JsonProperty("flow_probe_all")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean flowProbeAll = null;
+    @JsonProperty("flow_probe_all")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean flowProbeAll = null;
 
-  @JsonProperty("ipc_batched")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ipcBatched = null;
+    @JsonProperty("ipc_batched")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ipcBatched = null;
 
-  @JsonProperty("ipc_rx_req")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ipcRxReq = null;
+    @JsonProperty("ipc_rx_req")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ipcRxReq = null;
 
-  @JsonProperty("ipc_rx_res")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ipcRxRes = null;
+    @JsonProperty("ipc_rx_res")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ipcRxRes = null;
 
-  @JsonProperty("ipc_tx_req")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ipcTxReq = null;
+    @JsonProperty("ipc_tx_req")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ipcTxReq = null;
 
-  @JsonProperty("ipc_tx_res")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean ipcTxRes = null;
+    @JsonProperty("ipc_tx_res")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean ipcTxRes = null;
 
-  @JsonProperty("vs_hb")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean vsHb = null;
+    @JsonProperty("vs_hb")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vsHb = null;
 
 
 
@@ -78,6 +78,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flow del probe filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowDelProbe
    */
   @VsoMethod
@@ -89,6 +90,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Flow del probe filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowDelProbe set the flowDelProbe.
    */
   @VsoMethod
@@ -100,6 +102,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flow mirror add filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowMirrorAdd
    */
   @VsoMethod
@@ -111,6 +114,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Flow mirror add filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowMirrorAdd set the flowMirrorAdd.
    */
   @VsoMethod
@@ -122,6 +126,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Filter for all flow mirror se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowMirrorAll
    */
   @VsoMethod
@@ -133,6 +138,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Filter for all flow mirror se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowMirrorAll set the flowMirrorAll.
    */
   @VsoMethod
@@ -144,6 +150,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flow mirror del filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowMirrorDel
    */
   @VsoMethod
@@ -155,6 +162,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Flow mirror del filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowMirrorDel set the flowMirrorDel.
    */
   @VsoMethod
@@ -166,6 +174,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Flow probe filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowProbe
    */
   @VsoMethod
@@ -177,6 +186,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Flow probe filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowProbe set the flowProbe.
    */
   @VsoMethod
@@ -188,6 +198,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Filter for all flow probe se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flowProbeAll
    */
   @VsoMethod
@@ -199,6 +210,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Filter for all flow probe se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flowProbeAll set the flowProbeAll.
    */
   @VsoMethod
@@ -210,6 +222,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ipc batched filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipcBatched
    */
   @VsoMethod
@@ -221,6 +234,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Ipc batched filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipcBatched set the ipcBatched.
    */
   @VsoMethod
@@ -232,6 +246,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Filter for incoming ipc request.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipcRxReq
    */
   @VsoMethod
@@ -243,6 +258,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Filter for incoming ipc request.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipcRxReq set the ipcRxReq.
    */
   @VsoMethod
@@ -254,6 +270,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Filter for incoming ipc response.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipcRxRes
    */
   @VsoMethod
@@ -265,6 +282,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Filter for incoming ipc response.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipcRxRes set the ipcRxRes.
    */
   @VsoMethod
@@ -276,6 +294,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Filter for outgoing ipc request.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipcTxReq
    */
   @VsoMethod
@@ -287,6 +306,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Filter for outgoing ipc request.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipcTxReq set the ipcTxReq.
    */
   @VsoMethod
@@ -298,6 +318,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Filter for outgoing ipc response.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipcTxRes
    */
   @VsoMethod
@@ -309,6 +330,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Filter for outgoing ipc response.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipcTxRes set the ipcTxRes.
    */
   @VsoMethod
@@ -320,6 +342,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Vs heart beat filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsHb
    */
   @VsoMethod
@@ -331,6 +354,7 @@ public class CaptureIPC extends AviRestResource {
    * This is the setter method to the attribute.
    * Vs heart beat filter for se ipc.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsHb set the vsHb.
    */
   @VsoMethod

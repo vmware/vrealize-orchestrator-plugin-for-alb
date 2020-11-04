@@ -25,17 +25,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PGDeploymentRuleResult extends AviRestResource {
-  @JsonProperty("metric_value")
-  @JsonInclude(Include.NON_NULL)
-  private Float metricValue = null;
+    @JsonProperty("metric_value")
+    @JsonInclude(Include.NON_NULL)
+    private Float metricValue = null;
 
-  @JsonProperty("result")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean result = null;
+    @JsonProperty("result")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean result = null;
 
-  @JsonProperty("rule")
-  @JsonInclude(Include.NON_NULL)
-  private PGDeploymentRule rule = null;
+    @JsonProperty("rule")
+    @JsonInclude(Include.NON_NULL)
+    private PGDeploymentRule rule = null;
 
 
 
@@ -43,6 +43,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Metric value that is used as the pass fail.
    * If it is not provided then it will simply compare it with current pool vs new pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metricValue
    */
   @VsoMethod
@@ -54,6 +55,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
    * This is the setter method to the attribute.
    * Metric value that is used as the pass fail.
    * If it is not provided then it will simply compare it with current pool vs new pool.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metricValue set the metricValue.
    */
   @VsoMethod
@@ -64,6 +66,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Whether rule passed or failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return result
    */
   @VsoMethod
@@ -74,6 +77,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Whether rule passed or failed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param result set the result.
    */
   @VsoMethod
@@ -84,6 +88,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rule used for evaluation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rule
    */
   @VsoMethod
@@ -94,6 +99,7 @@ public class PGDeploymentRuleResult extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rule used for evaluation.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rule set the rule.
    */
   @VsoMethod

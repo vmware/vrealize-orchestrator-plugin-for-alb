@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Tier1LogicalRouterInfo extends AviRestResource {
-  @JsonProperty("segment_id")
-  @JsonInclude(Include.NON_NULL)
-  private String segmentId = null;
+    @JsonProperty("segment_id")
+    @JsonInclude(Include.NON_NULL)
+    private String segmentId = null;
 
-  @JsonProperty("tier1_lr_id")
-  @JsonInclude(Include.NON_NULL)
-  private String tier1LrId = null;
+    @JsonProperty("tier1_lr_id")
+    @JsonInclude(Include.NON_NULL)
+    private String tier1LrId = null;
 
 
 
@@ -38,6 +38,7 @@ public class Tier1LogicalRouterInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Segment id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return segmentId
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class Tier1LogicalRouterInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Segment id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param segmentId set the segmentId.
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class Tier1LogicalRouterInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tier1 logical router id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrId
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class Tier1LogicalRouterInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Tier1 logical router id.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tier1LrId set the tier1LrId.
    */
   @VsoMethod

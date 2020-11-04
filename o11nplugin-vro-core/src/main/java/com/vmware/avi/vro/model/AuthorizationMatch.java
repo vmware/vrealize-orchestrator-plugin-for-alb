@@ -27,21 +27,21 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthorizationMatch extends AviRestResource {
-  @JsonProperty("attr_matches")
-  @JsonInclude(Include.NON_NULL)
-  private List<AuthAttributeMatch> attrMatches = null;
+    @JsonProperty("attr_matches")
+    @JsonInclude(Include.NON_NULL)
+    private List<AuthAttributeMatch> attrMatches = null;
 
-  @JsonProperty("host_hdr")
-  @JsonInclude(Include.NON_NULL)
-  private HostHdrMatch hostHdr = null;
+    @JsonProperty("host_hdr")
+    @JsonInclude(Include.NON_NULL)
+    private HostHdrMatch hostHdr = null;
 
-  @JsonProperty("method")
-  @JsonInclude(Include.NON_NULL)
-  private MethodMatch method = null;
+    @JsonProperty("method")
+    @JsonInclude(Include.NON_NULL)
+    private MethodMatch method = null;
 
-  @JsonProperty("path")
-  @JsonInclude(Include.NON_NULL)
-  private PathMatch path = null;
+    @JsonProperty("path")
+    @JsonInclude(Include.NON_NULL)
+    private PathMatch path = null;
 
 
 
@@ -49,6 +49,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attributes whose values need to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrMatches
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method. this will set the attrMatches
    * Attributes whose values need to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrMatches
    */
   @VsoMethod
@@ -71,6 +73,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method this will set the attrMatches
    * Attributes whose values need to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrMatches
    */
   @VsoMethod
@@ -87,6 +90,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Host header value to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hostHdr
    */
   @VsoMethod
@@ -98,6 +102,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Host header value to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param hostHdr set the hostHdr.
    */
   @VsoMethod
@@ -109,6 +114,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Http methods to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return method
    */
   @VsoMethod
@@ -120,6 +126,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Http methods to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param method set the method.
    */
   @VsoMethod
@@ -131,6 +138,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Paths/urls to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
   @VsoMethod
@@ -142,6 +150,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Paths/urls to be matched.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
   @VsoMethod

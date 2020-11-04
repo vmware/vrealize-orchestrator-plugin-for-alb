@@ -24,51 +24,52 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SecureChannelMapping extends AviRestResource {
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private String ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private String ip = null;
 
-  @JsonProperty("is_controller")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean isController = false;
+    @JsonProperty("is_controller")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isController = false;
 
-  @JsonProperty("local_ip")
-  @JsonInclude(Include.NON_NULL)
-  private String localIp = null;
+    @JsonProperty("local_ip")
+    @JsonInclude(Include.NON_NULL)
+    private String localIp = null;
 
-  @JsonProperty("marked_for_delete")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean markedForDelete = null;
+    @JsonProperty("marked_for_delete")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean markedForDelete = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("pub_key")
-  @JsonInclude(Include.NON_NULL)
-  private String pubKey = null;
+    @JsonProperty("pub_key")
+    @JsonInclude(Include.NON_NULL)
+    private String pubKey = null;
 
-  @JsonProperty("pub_key_pem")
-  @JsonInclude(Include.NON_NULL)
-  private String pubKeyPem = null;
+    @JsonProperty("pub_key_pem")
+    @JsonInclude(Include.NON_NULL)
+    private String pubKeyPem = null;
 
-  @JsonProperty("status")
-  @JsonInclude(Include.NON_NULL)
-  private String status = "SECURE_CHANNEL_NONE";
+    @JsonProperty("status")
+    @JsonInclude(Include.NON_NULL)
+    private String status = "SECURE_CHANNEL_NONE";
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property ip of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property ip of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -111,6 +113,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property local_ip of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return localIp
    */
   @VsoMethod
@@ -121,6 +124,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property local_ip of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param localIp set the localIp.
    */
   @VsoMethod
@@ -131,6 +135,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property marked_for_delete of obj type securechannelmapping field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markedForDelete
    */
   @VsoMethod
@@ -141,6 +146,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property marked_for_delete of obj type securechannelmapping field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param markedForDelete set the markedForDelete.
    */
   @VsoMethod
@@ -151,6 +157,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -161,6 +168,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -171,6 +179,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pub_key of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pubKey
    */
   @VsoMethod
@@ -181,6 +190,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pub_key of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pubKey set the pubKey.
    */
   @VsoMethod
@@ -191,6 +201,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property pub_key_pem of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pubKeyPem
    */
   @VsoMethod
@@ -201,6 +212,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property pub_key_pem of obj type securechannelmapping field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pubKeyPem set the pubKeyPem.
    */
   @VsoMethod
@@ -212,7 +224,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - SECURE_CHANNEL_NONE, SECURE_CHANNEL_CONNECTED, SECURE_CHANNEL_AUTH_SSH_SUCCESS, SECURE_CHANNEL_AUTH_SSH_FAILED,
    * SECURE_CHANNEL_AUTH_TOKEN_SUCCESS, SECURE_CHANNEL_AUTH_TOKEN_FAILED, SECURE_CHANNEL_AUTH_ERRORS, SECURE_CHANNEL_AUTH_IGNORED.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SECURE_CHANNEL_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SECURE_CHANNEL_NONE".
    * @return status
    */
   @VsoMethod
@@ -224,7 +236,7 @@ public class SecureChannelMapping extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - SECURE_CHANNEL_NONE, SECURE_CHANNEL_CONNECTED, SECURE_CHANNEL_AUTH_SSH_SUCCESS, SECURE_CHANNEL_AUTH_SSH_FAILED,
    * SECURE_CHANNEL_AUTH_TOKEN_SUCCESS, SECURE_CHANNEL_AUTH_TOKEN_FAILED, SECURE_CHANNEL_AUTH_ERRORS, SECURE_CHANNEL_AUTH_IGNORED.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SECURE_CHANNEL_NONE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SECURE_CHANNEL_NONE".
    * @param status set the status.
    */
   @VsoMethod
@@ -254,6 +266,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -264,6 +277,7 @@ public class SecureChannelMapping extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

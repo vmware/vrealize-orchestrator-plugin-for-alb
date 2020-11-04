@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsSeVnic extends AviRestResource {
-  @JsonProperty("lif")
-  @JsonInclude(Include.NON_NULL)
-  private String lif = null;
+    @JsonProperty("lif")
+    @JsonInclude(Include.NON_NULL)
+    private String lif = null;
 
-  @JsonProperty("mac")
-  @JsonInclude(Include.NON_NULL)
-  private String mac = null;
+    @JsonProperty("mac")
+    @JsonInclude(Include.NON_NULL)
+    private String mac = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property lif of obj type vssevnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lif
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class VsSeVnic extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property lif of obj type vssevnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lif set the lif.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class VsSeVnic extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property mac of obj type vssevnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mac
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class VsSeVnic extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property mac of obj type vssevnic field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mac set the mac.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class VsSeVnic extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enum options - VNIC_TYPE_FE, VNIC_TYPE_BE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class VsSeVnic extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enum options - VNIC_TYPE_FE, VNIC_TYPE_BE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

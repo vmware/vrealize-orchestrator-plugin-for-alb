@@ -25,41 +25,45 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkService extends AviRestResource {
-  @JsonProperty("cloud_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String cloudRef = null;
+    @JsonProperty("cloud_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudRef = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<KeyValue> labels = null;
 
-  @JsonProperty("routing_service")
-  @JsonInclude(Include.NON_NULL)
-  private RoutingService routingService = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("se_group_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seGroupRef = null;
+    @JsonProperty("routing_service")
+    @JsonInclude(Include.NON_NULL)
+    private RoutingService routingService = null;
 
-  @JsonProperty("service_type")
-  @JsonInclude(Include.NON_NULL)
-  private String serviceType = null;
+    @JsonProperty("se_group_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seGroupRef = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("service_type")
+    @JsonInclude(Include.NON_NULL)
+    private String serviceType = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("vrf_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String vrfRef = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
+
+    @JsonProperty("vrf_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String vrfRef = null;
 
 
 
@@ -67,6 +71,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cloudRef
    */
   @VsoMethod
@@ -78,6 +83,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type cloud.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cloudRef set the cloudRef.
    */
   @VsoMethod
@@ -87,8 +93,53 @@ public class NetworkService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public List<KeyValue> getLabels() {
+    return labels;
+  }
+
+  /**
+   * This is the setter method. this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public void setLabels(List<KeyValue>  labels) {
+    this.labels = labels;
+  }
+
+  /**
+   * This is the setter method this will set the labels
+   * Key value pairs for granular object access control.
+   * Also allows for classification and tagging of similar objects.
+   * Field introduced in 20.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public NetworkService addLabelsItem(KeyValue labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<KeyValue>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the networkservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -100,6 +151,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of the networkservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -111,6 +163,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Routing information of the networkservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingService
    */
   @VsoMethod
@@ -122,6 +175,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * Routing information of the networkservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param routingService set the routingService.
    */
   @VsoMethod
@@ -134,6 +188,7 @@ public class NetworkService extends AviRestResource {
    * Service engine group to which the service is applied.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRef
    */
   @VsoMethod
@@ -146,6 +201,7 @@ public class NetworkService extends AviRestResource {
    * Service engine group to which the service is applied.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seGroupRef set the seGroupRef.
    */
   @VsoMethod
@@ -158,6 +214,7 @@ public class NetworkService extends AviRestResource {
    * Indicates the type of networkservice.
    * Enum options - ROUTING_SERVICE.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceType
    */
   @VsoMethod
@@ -170,6 +227,7 @@ public class NetworkService extends AviRestResource {
    * Indicates the type of networkservice.
    * Enum options - ROUTING_SERVICE.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serviceType set the serviceType.
    */
   @VsoMethod
@@ -181,6 +239,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -192,6 +251,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -222,6 +282,7 @@ public class NetworkService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the networkservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -233,6 +294,7 @@ public class NetworkService extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the networkservice.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -245,6 +307,7 @@ public class NetworkService extends AviRestResource {
    * Vrf context to which the service is scoped.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vrfRef
    */
   @VsoMethod
@@ -257,6 +320,7 @@ public class NetworkService extends AviRestResource {
    * Vrf context to which the service is scoped.
    * It is a reference to an object of type vrfcontext.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vrfRef set the vrfRef.
    */
   @VsoMethod
@@ -284,6 +348,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vrfRef, objNetworkService.vrfRef)&&
   Objects.equals(this.serviceType, objNetworkService.serviceType)&&
   Objects.equals(this.routingService, objNetworkService.routingService)&&
+  Objects.equals(this.labels, objNetworkService.labels)&&
   Objects.equals(this.tenantRef, objNetworkService.tenantRef)&&
   Objects.equals(this.cloudRef, objNetworkService.cloudRef);
 }
@@ -293,6 +358,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class NetworkService {\n");
       sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    routingService: ").append(toIndentedString(routingService)).append("\n");
         sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");

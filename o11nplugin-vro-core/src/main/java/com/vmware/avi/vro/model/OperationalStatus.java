@@ -25,31 +25,32 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class OperationalStatus extends AviRestResource {
-  @JsonProperty("last_changed_time")
-  @JsonInclude(Include.NON_NULL)
-  private TimeStamp lastChangedTime = null;
+    @JsonProperty("last_changed_time")
+    @JsonInclude(Include.NON_NULL)
+    private TimeStamp lastChangedTime = null;
 
-  @JsonProperty("reason")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> reason = null;
+    @JsonProperty("reason")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> reason = null;
 
-  @JsonProperty("reason_code")
-  @JsonInclude(Include.NON_NULL)
-  private Integer reasonCode = null;
+    @JsonProperty("reason_code")
+    @JsonInclude(Include.NON_NULL)
+    private Integer reasonCode = null;
 
-  @JsonProperty("reason_code_string")
-  @JsonInclude(Include.NON_NULL)
-  private String reasonCodeString = null;
+    @JsonProperty("reason_code_string")
+    @JsonInclude(Include.NON_NULL)
+    private String reasonCodeString = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = "OPER_UNAVAIL";
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = "OPER_UNAVAIL";
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property last_changed_time of obj type operationalstatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedTime
    */
   @VsoMethod
@@ -60,6 +61,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property last_changed_time of obj type operationalstatus field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedTime set the lastChangedTime.
    */
   @VsoMethod
@@ -70,6 +72,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -80,6 +83,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the setter method. this will set the reason
    * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -90,6 +94,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the setter method this will set the reason
    * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -105,6 +110,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason_code of obj type operationalstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCode
    */
   @VsoMethod
@@ -115,6 +121,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason_code of obj type operationalstatus field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCode set the reasonCode.
    */
   @VsoMethod
@@ -125,6 +132,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property reason_code_string of obj type operationalstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reasonCodeString
    */
   @VsoMethod
@@ -135,6 +143,7 @@ public class OperationalStatus extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property reason_code_string of obj type operationalstatus field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reasonCodeString set the reasonCodeString.
    */
   @VsoMethod
@@ -147,7 +156,7 @@ public class OperationalStatus extends AviRestResource {
    * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
    * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
    * OPER_FAILED, OPER_UNAVAIL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OPER_UNAVAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
    * @return state
    */
   @VsoMethod
@@ -160,7 +169,7 @@ public class OperationalStatus extends AviRestResource {
    * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
    * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
    * OPER_FAILED, OPER_UNAVAIL.
-   * Default value when not specified in API or module is interpreted by Avi Controller as OPER_UNAVAIL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
    * @param state set the state.
    */
   @VsoMethod

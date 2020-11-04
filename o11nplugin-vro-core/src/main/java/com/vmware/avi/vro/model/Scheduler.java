@@ -24,57 +24,57 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Scheduler extends AviRestResource {
-  @JsonProperty("backup_config_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String backupConfigRef = null;
+    @JsonProperty("backup_config_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String backupConfigRef = null;
 
-  @JsonProperty("enabled")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean enabled = true;
+    @JsonProperty("enabled")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enabled = true;
 
-  @JsonProperty("end_date_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endDateTime = null;
+    @JsonProperty("end_date_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endDateTime = null;
 
-  @JsonProperty("frequency")
-  @JsonInclude(Include.NON_NULL)
-  private Integer frequency = null;
+    @JsonProperty("frequency")
+    @JsonInclude(Include.NON_NULL)
+    private Integer frequency = null;
 
-  @JsonProperty("frequency_unit")
-  @JsonInclude(Include.NON_NULL)
-  private String frequencyUnit = null;
+    @JsonProperty("frequency_unit")
+    @JsonInclude(Include.NON_NULL)
+    private String frequencyUnit = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("run_mode")
-  @JsonInclude(Include.NON_NULL)
-  private String runMode = null;
+    @JsonProperty("run_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String runMode = null;
 
-  @JsonProperty("run_script_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String runScriptRef = null;
+    @JsonProperty("run_script_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String runScriptRef = null;
 
-  @JsonProperty("scheduler_action")
-  @JsonInclude(Include.NON_NULL)
-  private String schedulerAction = "SCHEDULER_ACTION_BACKUP";
+    @JsonProperty("scheduler_action")
+    @JsonInclude(Include.NON_NULL)
+    private String schedulerAction = "SCHEDULER_ACTION_BACKUP";
 
-  @JsonProperty("start_date_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startDateTime = null;
+    @JsonProperty("start_date_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startDateTime = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
 
 
@@ -82,6 +82,7 @@ public class Scheduler extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Backup configuration to be executed by this scheduler.
    * It is a reference to an object of type backupconfiguration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backupConfigRef
    */
   @VsoMethod
@@ -93,6 +94,7 @@ public class Scheduler extends AviRestResource {
    * This is the setter method to the attribute.
    * Backup configuration to be executed by this scheduler.
    * It is a reference to an object of type backupconfiguration.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backupConfigRef set the backupConfigRef.
    */
   @VsoMethod
@@ -125,6 +127,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Scheduler end date and time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endDateTime
    */
   @VsoMethod
@@ -135,6 +138,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Scheduler end date and time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endDateTime set the endDateTime.
    */
   @VsoMethod
@@ -146,6 +150,7 @@ public class Scheduler extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Frequency at which custom scheduler will run.
    * Allowed values are 0-60.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frequency
    */
   @VsoMethod
@@ -157,6 +162,7 @@ public class Scheduler extends AviRestResource {
    * This is the setter method to the attribute.
    * Frequency at which custom scheduler will run.
    * Allowed values are 0-60.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frequency set the frequency.
    */
   @VsoMethod
@@ -169,6 +175,7 @@ public class Scheduler extends AviRestResource {
    * Unit at which custom scheduler will run.
    * Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK,
    * SCHEDULER_FREQUENCY_UNIT_MONTH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return frequencyUnit
    */
   @VsoMethod
@@ -181,6 +188,7 @@ public class Scheduler extends AviRestResource {
    * Unit at which custom scheduler will run.
    * Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK,
    * SCHEDULER_FREQUENCY_UNIT_MONTH.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param frequencyUnit set the frequencyUnit.
    */
   @VsoMethod
@@ -191,6 +199,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of scheduler.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -201,6 +210,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of scheduler.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -212,6 +222,7 @@ public class Scheduler extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Scheduler run mode.
    * Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return runMode
    */
   @VsoMethod
@@ -223,6 +234,7 @@ public class Scheduler extends AviRestResource {
    * This is the setter method to the attribute.
    * Scheduler run mode.
    * Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param runMode set the runMode.
    */
   @VsoMethod
@@ -234,6 +246,7 @@ public class Scheduler extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Control script to be executed by this scheduler.
    * It is a reference to an object of type alertscriptconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return runScriptRef
    */
   @VsoMethod
@@ -245,6 +258,7 @@ public class Scheduler extends AviRestResource {
    * This is the setter method to the attribute.
    * Control script to be executed by this scheduler.
    * It is a reference to an object of type alertscriptconfig.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param runScriptRef set the runScriptRef.
    */
   @VsoMethod
@@ -256,7 +270,7 @@ public class Scheduler extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Define scheduler action.
    * Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SCHEDULER_ACTION_BACKUP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEDULER_ACTION_BACKUP".
    * @return schedulerAction
    */
   @VsoMethod
@@ -268,7 +282,7 @@ public class Scheduler extends AviRestResource {
    * This is the setter method to the attribute.
    * Define scheduler action.
    * Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP.
-   * Default value when not specified in API or module is interpreted by Avi Controller as SCHEDULER_ACTION_BACKUP.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SCHEDULER_ACTION_BACKUP".
    * @param schedulerAction set the schedulerAction.
    */
   @VsoMethod
@@ -279,6 +293,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Scheduler start date and time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startDateTime
    */
   @VsoMethod
@@ -289,6 +304,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Scheduler start date and time.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startDateTime set the startDateTime.
    */
   @VsoMethod
@@ -299,6 +315,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -309,6 +326,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -338,6 +356,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -348,6 +367,7 @@ public class Scheduler extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod

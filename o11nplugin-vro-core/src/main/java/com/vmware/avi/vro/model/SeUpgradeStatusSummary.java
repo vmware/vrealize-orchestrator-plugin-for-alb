@@ -24,103 +24,104 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeUpgradeStatusSummary extends AviRestResource {
-  @JsonProperty("controller_version")
-  @JsonInclude(Include.NON_NULL)
-  private String controllerVersion = null;
+    @JsonProperty("controller_version")
+    @JsonInclude(Include.NON_NULL)
+    private String controllerVersion = null;
 
-  @JsonProperty("duration")
-  @JsonInclude(Include.NON_NULL)
-  private String duration = null;
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private String duration = null;
 
-  @JsonProperty("end_time")
-  @JsonInclude(Include.NON_NULL)
-  private String endTime = null;
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
 
-  @JsonProperty("in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private Boolean inProgress = null;
+    @JsonProperty("in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean inProgress = null;
 
-  @JsonProperty("notes")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> notes = null;
+    @JsonProperty("notes")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> notes = null;
 
-  @JsonProperty("se_already_upgraded_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seAlreadyUpgradedAtStart = null;
+    @JsonProperty("se_already_upgraded_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seAlreadyUpgradedAtStart = null;
 
-  @JsonProperty("se_disconnected_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seDisconnectedAtStart = null;
+    @JsonProperty("se_disconnected_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seDisconnectedAtStart = null;
 
-  @JsonProperty("se_group_status")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeGroupStatus> seGroupStatus = null;
+    @JsonProperty("se_group_status")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeGroupStatus> seGroupStatus = null;
 
-  @JsonProperty("se_ip_missing_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seIpMissingAtStart = null;
+    @JsonProperty("se_ip_missing_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seIpMissingAtStart = null;
 
-  @JsonProperty("se_poweredoff_at_start")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> sePoweredoffAtStart = null;
+    @JsonProperty("se_poweredoff_at_start")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> sePoweredoffAtStart = null;
 
-  @JsonProperty("se_upgrade_completed")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeCompleted = null;
+    @JsonProperty("se_upgrade_completed")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeCompleted = null;
 
-  @JsonProperty("se_upgrade_errors")
-  @JsonInclude(Include.NON_NULL)
-  private List<SeUpgradeEvents> seUpgradeErrors = null;
+    @JsonProperty("se_upgrade_errors")
+    @JsonInclude(Include.NON_NULL)
+    private List<SeUpgradeEvents> seUpgradeErrors = null;
 
-  @JsonProperty("se_upgrade_failed")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeFailed = null;
+    @JsonProperty("se_upgrade_failed")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeFailed = null;
 
-  @JsonProperty("se_upgrade_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeInProgress = null;
+    @JsonProperty("se_upgrade_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeInProgress = null;
 
-  @JsonProperty("se_upgrade_not_started")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeNotStarted = null;
+    @JsonProperty("se_upgrade_not_started")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeNotStarted = null;
 
-  @JsonProperty("se_upgrade_retry_completed")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeRetryCompleted = null;
+    @JsonProperty("se_upgrade_retry_completed")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeRetryCompleted = null;
 
-  @JsonProperty("se_upgrade_retry_failed")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeRetryFailed = null;
+    @JsonProperty("se_upgrade_retry_failed")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeRetryFailed = null;
 
-  @JsonProperty("se_upgrade_retry_in_progress")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeRetryInProgress = null;
+    @JsonProperty("se_upgrade_retry_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeRetryInProgress = null;
 
-  @JsonProperty("se_upgrade_skip_suspended")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeSkipSuspended = null;
+    @JsonProperty("se_upgrade_skip_suspended")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeSkipSuspended = null;
 
-  @JsonProperty("se_upgrade_suspended")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> seUpgradeSuspended = null;
+    @JsonProperty("se_upgrade_suspended")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> seUpgradeSuspended = null;
 
-  @JsonProperty("start_time")
-  @JsonInclude(Include.NON_NULL)
-  private String startTime = null;
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
 
-  @JsonProperty("state")
-  @JsonInclude(Include.NON_NULL)
-  private String state = null;
+    @JsonProperty("state")
+    @JsonInclude(Include.NON_NULL)
+    private String state = null;
 
-  @JsonProperty("vs_errors")
-  @JsonInclude(Include.NON_NULL)
-  private List<VsError> vsErrors = null;
+    @JsonProperty("vs_errors")
+    @JsonInclude(Include.NON_NULL)
+    private List<VsError> vsErrors = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property controller_version of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerVersion
    */
   @VsoMethod
@@ -131,6 +132,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property controller_version of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerVersion set the controllerVersion.
    */
   @VsoMethod
@@ -141,6 +143,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property duration of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return duration
    */
   @VsoMethod
@@ -151,6 +154,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property duration of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param duration set the duration.
    */
   @VsoMethod
@@ -161,6 +165,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property end_time of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endTime
    */
   @VsoMethod
@@ -171,6 +176,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property end_time of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endTime set the endTime.
    */
   @VsoMethod
@@ -181,6 +187,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property in_progress of obj type seupgradestatussummary field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return inProgress
    */
   @VsoMethod
@@ -191,6 +198,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property in_progress of obj type seupgradestatussummary field type str  type boolean.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param inProgress set the inProgress.
    */
   @VsoMethod
@@ -201,6 +209,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property notes of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -211,6 +220,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the notes
    * Placeholder for description of property notes of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -221,6 +231,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the notes
    * Placeholder for description of property notes of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return notes
    */
   @VsoMethod
@@ -236,6 +247,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAlreadyUpgradedAtStart
    */
   @VsoMethod
@@ -246,6 +258,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seAlreadyUpgradedAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAlreadyUpgradedAtStart
    */
   @VsoMethod
@@ -256,6 +269,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seAlreadyUpgradedAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seAlreadyUpgradedAtStart
    */
   @VsoMethod
@@ -271,6 +285,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDisconnectedAtStart
    */
   @VsoMethod
@@ -281,6 +296,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seDisconnectedAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDisconnectedAtStart
    */
   @VsoMethod
@@ -291,6 +307,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seDisconnectedAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seDisconnectedAtStart
    */
   @VsoMethod
@@ -306,6 +323,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_group_status of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupStatus
    */
   @VsoMethod
@@ -316,6 +334,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seGroupStatus
    * Placeholder for description of property se_group_status of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupStatus
    */
   @VsoMethod
@@ -326,6 +345,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seGroupStatus
    * Placeholder for description of property se_group_status of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupStatus
    */
   @VsoMethod
@@ -341,6 +361,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpMissingAtStart
    */
   @VsoMethod
@@ -351,6 +372,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seIpMissingAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpMissingAtStart
    */
   @VsoMethod
@@ -361,6 +383,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seIpMissingAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seIpMissingAtStart
    */
   @VsoMethod
@@ -376,6 +399,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoweredoffAtStart
    */
   @VsoMethod
@@ -386,6 +410,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the sePoweredoffAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoweredoffAtStart
    */
   @VsoMethod
@@ -396,6 +421,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the sePoweredoffAtStart
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sePoweredoffAtStart
    */
   @VsoMethod
@@ -411,6 +437,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeCompleted
    */
   @VsoMethod
@@ -421,6 +448,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeCompleted
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeCompleted
    */
   @VsoMethod
@@ -431,6 +459,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeCompleted
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeCompleted
    */
   @VsoMethod
@@ -446,6 +475,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property se_upgrade_errors of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeErrors
    */
   @VsoMethod
@@ -456,6 +486,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeErrors
    * Placeholder for description of property se_upgrade_errors of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeErrors
    */
   @VsoMethod
@@ -466,6 +497,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeErrors
    * Placeholder for description of property se_upgrade_errors of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeErrors
    */
   @VsoMethod
@@ -481,6 +513,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeFailed
    */
   @VsoMethod
@@ -491,6 +524,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeFailed
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeFailed
    */
   @VsoMethod
@@ -501,6 +535,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeFailed
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeFailed
    */
   @VsoMethod
@@ -516,6 +551,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeInProgress
    */
   @VsoMethod
@@ -526,6 +562,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeInProgress
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeInProgress
    */
   @VsoMethod
@@ -536,6 +573,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeInProgress
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeInProgress
    */
   @VsoMethod
@@ -551,6 +589,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeNotStarted
    */
   @VsoMethod
@@ -561,6 +600,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeNotStarted
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeNotStarted
    */
   @VsoMethod
@@ -571,6 +611,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeNotStarted
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeNotStarted
    */
   @VsoMethod
@@ -586,6 +627,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryCompleted
    */
   @VsoMethod
@@ -596,6 +638,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeRetryCompleted
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryCompleted
    */
   @VsoMethod
@@ -606,6 +649,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeRetryCompleted
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryCompleted
    */
   @VsoMethod
@@ -621,6 +665,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryFailed
    */
   @VsoMethod
@@ -631,6 +676,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeRetryFailed
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryFailed
    */
   @VsoMethod
@@ -641,6 +687,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeRetryFailed
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryFailed
    */
   @VsoMethod
@@ -656,6 +703,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryInProgress
    */
   @VsoMethod
@@ -666,6 +714,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the seUpgradeRetryInProgress
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryInProgress
    */
   @VsoMethod
@@ -676,6 +725,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the seUpgradeRetryInProgress
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeRetryInProgress
    */
   @VsoMethod
@@ -692,6 +742,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines that were in suspended state and were skipped upon service engine group upgrade resumption.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSkipSuspended
    */
   @VsoMethod
@@ -703,6 +754,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * This is the setter method. this will set the seUpgradeSkipSuspended
    * Service engines that were in suspended state and were skipped upon service engine group upgrade resumption.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSkipSuspended
    */
   @VsoMethod
@@ -714,6 +766,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * This is the setter method this will set the seUpgradeSkipSuspended
    * Service engines that were in suspended state and were skipped upon service engine group upgrade resumption.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSkipSuspended
    */
   @VsoMethod
@@ -730,6 +783,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service engines which triggered service engine group to be in suspended state.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSuspended
    */
   @VsoMethod
@@ -741,6 +795,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * This is the setter method. this will set the seUpgradeSuspended
    * Service engines which triggered service engine group to be in suspended state.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSuspended
    */
   @VsoMethod
@@ -752,6 +807,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * This is the setter method this will set the seUpgradeSuspended
    * Service engines which triggered service engine group to be in suspended state.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUpgradeSuspended
    */
   @VsoMethod
@@ -767,6 +823,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property start_time of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startTime
    */
   @VsoMethod
@@ -777,6 +834,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property start_time of obj type seupgradestatussummary field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startTime set the startTime.
    */
   @VsoMethod
@@ -790,6 +848,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
    * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return state
    */
   @VsoMethod
@@ -803,6 +862,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
    * SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START...
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param state set the state.
    */
   @VsoMethod
@@ -813,6 +873,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vs_errors of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrors
    */
   @VsoMethod
@@ -823,6 +884,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method. this will set the vsErrors
    * Placeholder for description of property vs_errors of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrors
    */
   @VsoMethod
@@ -833,6 +895,7 @@ public class SeUpgradeStatusSummary extends AviRestResource {
   /**
    * This is the setter method this will set the vsErrors
    * Placeholder for description of property vs_errors of obj type seupgradestatussummary field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsErrors
    */
   @VsoMethod

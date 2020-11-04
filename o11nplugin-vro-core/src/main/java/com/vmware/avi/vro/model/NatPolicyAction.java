@@ -24,13 +24,13 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NatPolicyAction extends AviRestResource {
-  @JsonProperty("nat_info")
-  @JsonInclude(Include.NON_NULL)
-  private List<NatAddrInfo> natInfo = null;
+    @JsonProperty("nat_info")
+    @JsonInclude(Include.NON_NULL)
+    private List<NatAddrInfo> natInfo = null;
 
-  @JsonProperty("type")
-  @JsonInclude(Include.NON_NULL)
-  private String type = null;
+    @JsonProperty("type")
+    @JsonInclude(Include.NON_NULL)
+    private String type = null;
 
 
 
@@ -38,6 +38,7 @@ public class NatPolicyAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Pool of ip addresses used for nat.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return natInfo
    */
   @VsoMethod
@@ -49,6 +50,7 @@ public class NatPolicyAction extends AviRestResource {
    * This is the setter method. this will set the natInfo
    * Pool of ip addresses used for nat.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return natInfo
    */
   @VsoMethod
@@ -60,6 +62,7 @@ public class NatPolicyAction extends AviRestResource {
    * This is the setter method this will set the natInfo
    * Pool of ip addresses used for nat.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return natInfo
    */
   @VsoMethod
@@ -77,6 +80,7 @@ public class NatPolicyAction extends AviRestResource {
    * Nat action type.
    * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
   @VsoMethod
@@ -89,6 +93,7 @@ public class NatPolicyAction extends AviRestResource {
    * Nat action type.
    * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
    * Field introduced in 18.2.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
   @VsoMethod

@@ -24,17 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class HostHdrMatch extends AviRestResource {
-  @JsonProperty("match_case")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCase = "INSENSITIVE";
+    @JsonProperty("match_case")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCase = "INSENSITIVE";
 
-  @JsonProperty("match_criteria")
-  @JsonInclude(Include.NON_NULL)
-  private String matchCriteria = null;
+    @JsonProperty("match_criteria")
+    @JsonInclude(Include.NON_NULL)
+    private String matchCriteria = null;
 
-  @JsonProperty("value")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> value = null;
+    @JsonProperty("value")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> value = null;
 
 
 
@@ -42,7 +42,7 @@ public class HostHdrMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @return matchCase
    */
   @VsoMethod
@@ -54,7 +54,7 @@ public class HostHdrMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Case sensitivity to use for the match.
    * Enum options - SENSITIVE, INSENSITIVE.
-   * Default value when not specified in API or module is interpreted by Avi Controller as INSENSITIVE.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
    * @param matchCase set the matchCase.
    */
   @VsoMethod
@@ -67,6 +67,7 @@ public class HostHdrMatch extends AviRestResource {
    * Criterion to use for the host header value match.
    * Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH,
    * HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return matchCriteria
    */
   @VsoMethod
@@ -79,6 +80,7 @@ public class HostHdrMatch extends AviRestResource {
    * Criterion to use for the host header value match.
    * Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH,
    * HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param matchCriteria set the matchCriteria.
    */
   @VsoMethod
@@ -89,6 +91,7 @@ public class HostHdrMatch extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * String value(s) in the host header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -99,6 +102,7 @@ public class HostHdrMatch extends AviRestResource {
   /**
    * This is the setter method. this will set the value
    * String value(s) in the host header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod
@@ -109,6 +113,7 @@ public class HostHdrMatch extends AviRestResource {
   /**
    * This is the setter method this will set the value
    * String value(s) in the host header.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return value
    */
   @VsoMethod

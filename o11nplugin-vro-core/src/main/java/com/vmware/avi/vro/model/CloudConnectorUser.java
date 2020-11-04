@@ -31,67 +31,68 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CloudConnectorUser extends AviRestResource {
-  @JsonProperty("azure_serviceprincipal")
-  @JsonInclude(Include.NON_NULL)
-  private AzureServicePrincipalCredentials azureServiceprincipal = null;
+    @JsonProperty("azure_serviceprincipal")
+    @JsonInclude(Include.NON_NULL)
+    private AzureServicePrincipalCredentials azureServiceprincipal = null;
 
-  @JsonProperty("azure_userpass")
-  @JsonInclude(Include.NON_NULL)
-  private AzureUserPassCredentials azureUserpass = null;
+    @JsonProperty("azure_userpass")
+    @JsonInclude(Include.NON_NULL)
+    private AzureUserPassCredentials azureUserpass = null;
 
-  @JsonProperty("gcp_credentials")
-  @JsonInclude(Include.NON_NULL)
-  private GCPCredentials gcpCredentials = null;
+    @JsonProperty("gcp_credentials")
+    @JsonInclude(Include.NON_NULL)
+    private GCPCredentials gcpCredentials = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = null;
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = null;
 
-  @JsonProperty("nsxt_credentials")
-  @JsonInclude(Include.NON_NULL)
-  private NsxtCredentials nsxtCredentials = null;
+    @JsonProperty("nsxt_credentials")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtCredentials nsxtCredentials = null;
 
-  @JsonProperty("oci_credentials")
-  @JsonInclude(Include.NON_NULL)
-  private OCICredentials ociCredentials = null;
+    @JsonProperty("oci_credentials")
+    @JsonInclude(Include.NON_NULL)
+    private OCICredentials ociCredentials = null;
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("private_key")
-  @JsonInclude(Include.NON_NULL)
-  private String privateKey = null;
+    @JsonProperty("private_key")
+    @JsonInclude(Include.NON_NULL)
+    private String privateKey = null;
 
-  @JsonProperty("public_key")
-  @JsonInclude(Include.NON_NULL)
-  private String publicKey = null;
+    @JsonProperty("public_key")
+    @JsonInclude(Include.NON_NULL)
+    private String publicKey = null;
 
-  @JsonProperty("tenant_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String tenantRef = null;
+    @JsonProperty("tenant_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String tenantRef = null;
 
-  @JsonProperty("tencent_credentials")
-  @JsonInclude(Include.NON_NULL)
-  private TencentCredentials tencentCredentials = null;
+    @JsonProperty("tencent_credentials")
+    @JsonInclude(Include.NON_NULL)
+    private TencentCredentials tencentCredentials = null;
 
-  @JsonProperty("url")
-  @JsonInclude(Include.NON_NULL)
-  private String url = "url";
+    @JsonProperty("url")
+    @JsonInclude(Include.NON_NULL)
+    private String url = "url";
 
-  @JsonProperty("uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String uuid = null;
+    @JsonProperty("uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String uuid = null;
 
-  @JsonProperty("vcenter_credentials")
-  @JsonInclude(Include.NON_NULL)
-  private VCenterCredentials vcenterCredentials = null;
+    @JsonProperty("vcenter_credentials")
+    @JsonInclude(Include.NON_NULL)
+    private VCenterCredentials vcenterCredentials = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureServiceprincipal
    */
   @VsoMethod
@@ -102,6 +103,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureServiceprincipal set the azureServiceprincipal.
    */
   @VsoMethod
@@ -112,6 +114,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureUserpass
    */
   @VsoMethod
@@ -122,6 +125,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureUserpass set the azureUserpass.
    */
   @VsoMethod
@@ -133,6 +137,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials for google cloud platform.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpCredentials
    */
   @VsoMethod
@@ -144,6 +149,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials for google cloud platform.
    * Field introduced in 18.2.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpCredentials set the gcpCredentials.
    */
   @VsoMethod
@@ -154,6 +160,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
   @VsoMethod
@@ -164,6 +171,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
   @VsoMethod
@@ -175,6 +183,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials to talk to nsx-t manager.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtCredentials
    */
   @VsoMethod
@@ -186,6 +195,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials to talk to nsx-t manager.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtCredentials set the nsxtCredentials.
    */
   @VsoMethod
@@ -197,6 +207,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials for oracle cloud infrastructure.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ociCredentials
    */
   @VsoMethod
@@ -208,6 +219,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials for oracle cloud infrastructure.
    * Field introduced in 18.2.1,18.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ociCredentials set the ociCredentials.
    */
   @VsoMethod
@@ -218,6 +230,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property password of obj type cloudconnectoruser field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -228,6 +241,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property password of obj type cloudconnectoruser field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -238,6 +252,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property private_key of obj type cloudconnectoruser field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return privateKey
    */
   @VsoMethod
@@ -248,6 +263,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property private_key of obj type cloudconnectoruser field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param privateKey set the privateKey.
    */
   @VsoMethod
@@ -258,6 +274,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property public_key of obj type cloudconnectoruser field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicKey
    */
   @VsoMethod
@@ -268,6 +285,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property public_key of obj type cloudconnectoruser field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicKey set the publicKey.
    */
   @VsoMethod
@@ -278,6 +296,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
   @VsoMethod
@@ -288,6 +307,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
   @VsoMethod
@@ -299,6 +319,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials for tencent cloud.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tencentCredentials
    */
   @VsoMethod
@@ -310,6 +331,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials for tencent cloud.
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tencentCredentials set the tencentCredentials.
    */
   @VsoMethod
@@ -339,6 +361,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
   @VsoMethod
@@ -349,6 +372,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of the object.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
   @VsoMethod
@@ -360,6 +384,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials to talk to vcenter.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterCredentials
    */
   @VsoMethod
@@ -371,6 +396,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials to talk to vcenter.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenterCredentials set the vcenterCredentials.
    */
   @VsoMethod

@@ -24,23 +24,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AwsZoneConfig extends AviRestResource {
-  @JsonProperty("availability_zone")
-  @JsonInclude(Include.NON_NULL)
-  private String availabilityZone = null;
+    @JsonProperty("availability_zone")
+    @JsonInclude(Include.NON_NULL)
+    private String availabilityZone = null;
 
-  @JsonProperty("mgmt_network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetworkName = null;
+    @JsonProperty("mgmt_network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetworkName = null;
 
-  @JsonProperty("mgmt_network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String mgmtNetworkUuid = null;
+    @JsonProperty("mgmt_network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String mgmtNetworkUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Availability zone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -51,6 +52,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Availability zone.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -61,6 +63,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name or cidr of the network in the availability zone that will be used as management network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkName
    */
   @VsoMethod
@@ -71,6 +74,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name or cidr of the network in the availability zone that will be used as management network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkName set the mgmtNetworkName.
    */
   @VsoMethod
@@ -81,6 +85,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid of the network in the availability zone that will be used as management network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNetworkUuid
    */
   @VsoMethod
@@ -91,6 +96,7 @@ public class AwsZoneConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid of the network in the availability zone that will be used as management network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtNetworkUuid set the mgmtNetworkUuid.
    */
   @VsoMethod

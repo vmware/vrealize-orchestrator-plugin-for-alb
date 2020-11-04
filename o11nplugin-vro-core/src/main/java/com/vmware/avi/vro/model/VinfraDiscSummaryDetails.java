@@ -24,35 +24,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VinfraDiscSummaryDetails extends AviRestResource {
-  @JsonProperty("num_clusters")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numClusters = null;
+    @JsonProperty("num_clusters")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numClusters = null;
 
-  @JsonProperty("num_dcs")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numDcs = null;
+    @JsonProperty("num_dcs")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numDcs = null;
 
-  @JsonProperty("num_hosts")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numHosts = null;
+    @JsonProperty("num_hosts")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numHosts = null;
 
-  @JsonProperty("num_nws")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numNws = null;
+    @JsonProperty("num_nws")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numNws = null;
 
-  @JsonProperty("num_vms")
-  @JsonInclude(Include.NON_NULL)
-  private Integer numVms = null;
+    @JsonProperty("num_vms")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numVms = null;
 
-  @JsonProperty("vcenter")
-  @JsonInclude(Include.NON_NULL)
-  private String vcenter = null;
+    @JsonProperty("vcenter")
+    @JsonInclude(Include.NON_NULL)
+    private String vcenter = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_clusters of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numClusters
    */
   @VsoMethod
@@ -63,6 +64,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_clusters of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numClusters set the numClusters.
    */
   @VsoMethod
@@ -73,6 +75,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_dcs of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDcs
    */
   @VsoMethod
@@ -83,6 +86,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_dcs of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDcs set the numDcs.
    */
   @VsoMethod
@@ -93,6 +97,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_hosts of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numHosts
    */
   @VsoMethod
@@ -103,6 +108,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_hosts of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numHosts set the numHosts.
    */
   @VsoMethod
@@ -113,6 +119,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_nws of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numNws
    */
   @VsoMethod
@@ -123,6 +130,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_nws of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numNws set the numNws.
    */
   @VsoMethod
@@ -133,6 +141,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property num_vms of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numVms
    */
   @VsoMethod
@@ -143,6 +152,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property num_vms of obj type vinfradiscsummarydetails field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numVms set the numVms.
    */
   @VsoMethod
@@ -153,6 +163,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter of obj type vinfradiscsummarydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenter
    */
   @VsoMethod
@@ -163,6 +174,7 @@ public class VinfraDiscSummaryDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property vcenter of obj type vinfradiscsummarydetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vcenter set the vcenter.
    */
   @VsoMethod

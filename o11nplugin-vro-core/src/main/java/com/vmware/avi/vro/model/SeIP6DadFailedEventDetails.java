@@ -25,23 +25,24 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeIP6DadFailedEventDetails extends AviRestResource {
-  @JsonProperty("dad_ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr dadIp = null;
+    @JsonProperty("dad_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr dadIp = null;
 
-  @JsonProperty("if_name")
-  @JsonInclude(Include.NON_NULL)
-  private String ifName = null;
+    @JsonProperty("if_name")
+    @JsonInclude(Include.NON_NULL)
+    private String ifName = null;
 
-  @JsonProperty("se_ref")
-  @JsonInclude(Include.NON_NULL)
-  private String seRef = null;
+    @JsonProperty("se_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String seRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Ipv6 address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dadIp
    */
   @VsoMethod
@@ -52,6 +53,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ipv6 address.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dadIp set the dadIp.
    */
   @VsoMethod
@@ -62,6 +64,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ifName
    */
   @VsoMethod
@@ -72,6 +75,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vnic name.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ifName set the ifName.
    */
   @VsoMethod
@@ -83,6 +87,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
    */
   @VsoMethod
@@ -94,6 +99,7 @@ public class SeIP6DadFailedEventDetails extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the se responsible for this event.
    * It is a reference to an object of type serviceengine.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seRef set the seRef.
    */
   @VsoMethod

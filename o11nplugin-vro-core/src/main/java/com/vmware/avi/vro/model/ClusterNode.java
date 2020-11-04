@@ -26,41 +26,41 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ClusterNode extends AviRestResource {
-  @JsonProperty("categories")
-  @JsonInclude(Include.NON_NULL)
-  private List<String> categories = null;
+    @JsonProperty("categories")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> categories = null;
 
-  @JsonProperty("ip")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr ip = null;
+    @JsonProperty("ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr ip = null;
 
-  @JsonProperty("name")
-  @JsonInclude(Include.NON_NULL)
-  private String name = "node";
+    @JsonProperty("name")
+    @JsonInclude(Include.NON_NULL)
+    private String name = "node";
 
-  @JsonProperty("password")
-  @JsonInclude(Include.NON_NULL)
-  private String password = null;
+    @JsonProperty("password")
+    @JsonInclude(Include.NON_NULL)
+    private String password = null;
 
-  @JsonProperty("public_ip_or_name")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddr publicIpOrName = null;
+    @JsonProperty("public_ip_or_name")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddr publicIpOrName = null;
 
-  @JsonProperty("vm_hostname")
-  @JsonInclude(Include.NON_NULL)
-  private String vmHostname = null;
+    @JsonProperty("vm_hostname")
+    @JsonInclude(Include.NON_NULL)
+    private String vmHostname = null;
 
-  @JsonProperty("vm_mor")
-  @JsonInclude(Include.NON_NULL)
-  private String vmMor = null;
+    @JsonProperty("vm_mor")
+    @JsonInclude(Include.NON_NULL)
+    private String vmMor = null;
 
-  @JsonProperty("vm_name")
-  @JsonInclude(Include.NON_NULL)
-  private String vmName = null;
+    @JsonProperty("vm_name")
+    @JsonInclude(Include.NON_NULL)
+    private String vmName = null;
 
-  @JsonProperty("vm_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String vmUuid = null;
+    @JsonProperty("vm_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String vmUuid = null;
 
 
 
@@ -69,6 +69,7 @@ public class ClusterNode extends AviRestResource {
    * Optional service categories that a node can be assigned (e.g.
    * System, infrastructure or analytics).
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return categories
    */
   @VsoMethod
@@ -81,6 +82,7 @@ public class ClusterNode extends AviRestResource {
    * Optional service categories that a node can be assigned (e.g.
    * System, infrastructure or analytics).
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return categories
    */
   @VsoMethod
@@ -93,6 +95,7 @@ public class ClusterNode extends AviRestResource {
    * Optional service categories that a node can be assigned (e.g.
    * System, infrastructure or analytics).
    * Field introduced in 18.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return categories
    */
   @VsoMethod
@@ -108,6 +111,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip address of controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip
    */
   @VsoMethod
@@ -118,6 +122,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ip address of controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip set the ip.
    */
   @VsoMethod
@@ -128,7 +133,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "node".
    * @return name
    */
   @VsoMethod
@@ -139,7 +144,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the object.
-   * Default value when not specified in API or module is interpreted by Avi Controller as node.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "node".
    * @param name set the name.
    */
   @VsoMethod
@@ -151,6 +156,7 @@ public class ClusterNode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The password we will use when authenticating with this node (not persisted).
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return password
    */
   @VsoMethod
@@ -162,6 +168,7 @@ public class ClusterNode extends AviRestResource {
    * This is the setter method to the attribute.
    * The password we will use when authenticating with this node (not persisted).
    * Field introduced in 18.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param password set the password.
    */
   @VsoMethod
@@ -173,6 +180,7 @@ public class ClusterNode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Public ip address or hostname of the controller vm.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return publicIpOrName
    */
   @VsoMethod
@@ -184,6 +192,7 @@ public class ClusterNode extends AviRestResource {
    * This is the setter method to the attribute.
    * Public ip address or hostname of the controller vm.
    * Field introduced in 17.2.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param publicIpOrName set the publicIpOrName.
    */
   @VsoMethod
@@ -194,6 +203,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Hostname assigned to this controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmHostname
    */
   @VsoMethod
@@ -204,6 +214,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Hostname assigned to this controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmHostname set the vmHostname.
    */
   @VsoMethod
@@ -214,6 +225,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Managed object reference of this controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmMor
    */
   @VsoMethod
@@ -224,6 +236,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Managed object reference of this controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmMor set the vmMor.
    */
   @VsoMethod
@@ -234,6 +247,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmName
    */
   @VsoMethod
@@ -244,6 +258,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmName set the vmName.
    */
   @VsoMethod
@@ -254,6 +269,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Uuid on the controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vmUuid
    */
   @VsoMethod
@@ -264,6 +280,7 @@ public class ClusterNode extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Uuid on the controller vm.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vmUuid set the vmUuid.
    */
   @VsoMethod

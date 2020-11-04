@@ -25,35 +25,36 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class NetworkSubnetInfo extends AviRestResource {
-  @JsonProperty("free")
-  @JsonInclude(Include.NON_NULL)
-  private Integer free = null;
+    @JsonProperty("free")
+    @JsonInclude(Include.NON_NULL)
+    private Integer free = null;
 
-  @JsonProperty("network_name")
-  @JsonInclude(Include.NON_NULL)
-  private String networkName = null;
+    @JsonProperty("network_name")
+    @JsonInclude(Include.NON_NULL)
+    private String networkName = null;
 
-  @JsonProperty("network_uuid")
-  @JsonInclude(Include.NON_NULL)
-  private String networkUuid = null;
+    @JsonProperty("network_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String networkUuid = null;
 
-  @JsonProperty("subnet")
-  @JsonInclude(Include.NON_NULL)
-  private IpAddrPrefix subnet = null;
+    @JsonProperty("subnet")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrPrefix subnet = null;
 
-  @JsonProperty("total")
-  @JsonInclude(Include.NON_NULL)
-  private Integer total = null;
+    @JsonProperty("total")
+    @JsonInclude(Include.NON_NULL)
+    private Integer total = null;
 
-  @JsonProperty("used")
-  @JsonInclude(Include.NON_NULL)
-  private Integer used = null;
+    @JsonProperty("used")
+    @JsonInclude(Include.NON_NULL)
+    private Integer used = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property free of obj type networksubnetinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return free
    */
   @VsoMethod
@@ -64,6 +65,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property free of obj type networksubnetinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param free set the free.
    */
   @VsoMethod
@@ -74,6 +76,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property network_name of obj type networksubnetinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkName
    */
   @VsoMethod
@@ -84,6 +87,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property network_name of obj type networksubnetinfo field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkName set the networkName.
    */
   @VsoMethod
@@ -94,6 +98,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkUuid
    */
   @VsoMethod
@@ -104,6 +109,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Unique object identifier of network.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param networkUuid set the networkUuid.
    */
   @VsoMethod
@@ -114,6 +120,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property subnet of obj type networksubnetinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet
    */
   @VsoMethod
@@ -124,6 +131,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property subnet of obj type networksubnetinfo field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet set the subnet.
    */
   @VsoMethod
@@ -134,6 +142,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property total of obj type networksubnetinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return total
    */
   @VsoMethod
@@ -144,6 +153,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property total of obj type networksubnetinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param total set the total.
    */
   @VsoMethod
@@ -154,6 +164,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property used of obj type networksubnetinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return used
    */
   @VsoMethod
@@ -164,6 +175,7 @@ public class NetworkSubnetInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property used of obj type networksubnetinfo field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param used set the used.
    */
   @VsoMethod

@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">getVirtualServiceDetails</entry>
+<entry key="name">getPort</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">e3ca802a-b1d0-413b-9e0e-8a6ef7e98571</entry>
+<entry key="id">2989189-7a07-4df9-a5fd-4cebaae1b72f</entry>
 </properties>

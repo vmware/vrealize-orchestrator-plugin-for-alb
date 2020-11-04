@@ -24,19 +24,20 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class DebugSeCpuShares extends AviRestResource {
-  @JsonProperty("cpu")
-  @JsonInclude(Include.NON_NULL)
-  private Integer cpu = null;
+    @JsonProperty("cpu")
+    @JsonInclude(Include.NON_NULL)
+    private Integer cpu = null;
 
-  @JsonProperty("shares")
-  @JsonInclude(Include.NON_NULL)
-  private Integer shares = null;
+    @JsonProperty("shares")
+    @JsonInclude(Include.NON_NULL)
+    private Integer shares = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property cpu of obj type debugsecpushares field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return cpu
    */
   @VsoMethod
@@ -47,6 +48,7 @@ public class DebugSeCpuShares extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property cpu of obj type debugsecpushares field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param cpu set the cpu.
    */
   @VsoMethod
@@ -57,6 +59,7 @@ public class DebugSeCpuShares extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property shares of obj type debugsecpushares field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return shares
    */
   @VsoMethod
@@ -67,6 +70,7 @@ public class DebugSeCpuShares extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property shares of obj type debugsecpushares field type str  type integer.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param shares set the shares.
    */
   @VsoMethod
