@@ -2,13 +2,13 @@
    This document will cover how to integrate Avi VRO Plugin in VRA to configure custom resource. This custom resource then can be used in VRA Blueprint as Load Balancer and configure Avi Controller using VRA Blueprints. 
 There are example workflows in the AVI VRO Plugin explicitly to configure VRA custom resource under Library --> Avi --> VRA. With the help of these workflows you will be able to configure Custom resource for Avi LB equivalent to cloud agnostic LB and Custom resource for Avi LB equivalent to NSX-T LB.         
      
-  ##Pre-Requisit :
+  ## Pre-Requisit :
    
    For the integration we need VRO instance with Avi VRO plugin installed on it.
    To install Avi VRO plugin on the VRO instance please refer the given wiki.
    [Adding VRO plugin into VRO](https://github.com/avinetworks/avi-vrealize-orchestrator-plugin/blob/master/README.md)
     
-   ##Integration
+   ## Integration
    To integrate VRO with VRA please follow the below process:
      
      Open the Cloud Assembly.
