@@ -175,6 +175,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -188,6 +189,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -201,6 +203,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -219,6 +222,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Maximum of 16384 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
@@ -232,6 +236,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Maximum of 16384 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */
@@ -245,6 +250,7 @@ public class WafPolicyPSMGroup extends AviRestResource {
    * Positive security model locations.
    * These are used to partition the application name space.
    * Field introduced in 18.2.3.
+   * Maximum of 16384 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return locations
    */

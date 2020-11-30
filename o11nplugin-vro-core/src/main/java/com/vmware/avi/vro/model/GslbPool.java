@@ -219,6 +219,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Select list of vips belonging to this gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -230,6 +231,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the setter method. this will set the members
    * Select list of vips belonging to this gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */
@@ -241,6 +243,7 @@ public class GslbPool extends AviRestResource {
   /**
    * This is the setter method this will set the members
    * Select list of vips belonging to this gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return members
    */

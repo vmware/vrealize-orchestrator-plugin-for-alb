@@ -113,6 +113,7 @@ public class SSOPolicy extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -126,6 +127,7 @@ public class SSOPolicy extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -139,6 +141,7 @@ public class SSOPolicy extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -205,7 +208,7 @@ public class SSOPolicy extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sso policy type.
-   * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS.
+   * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT.
    * Field introduced in 18.2.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @return type
@@ -218,7 +221,7 @@ public class SSOPolicy extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sso policy type.
-   * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS.
+   * Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT.
    * Field introduced in 18.2.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSO_TYPE_SAML".
    * @param type set the type.

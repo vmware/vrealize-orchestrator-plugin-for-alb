@@ -139,6 +139,7 @@ public class NetworkSecurityPolicy extends AviRestResource {
    * Ip reputation database.
    * It is a reference to an object of type ipreputationdb.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationDbRef
    */
@@ -152,6 +153,7 @@ public class NetworkSecurityPolicy extends AviRestResource {
    * Ip reputation database.
    * It is a reference to an object of type ipreputationdb.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationDbRef set the ipReputationDbRef.
    */
@@ -165,6 +167,7 @@ public class NetworkSecurityPolicy extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -178,6 +181,7 @@ public class NetworkSecurityPolicy extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -191,6 +195,7 @@ public class NetworkSecurityPolicy extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */

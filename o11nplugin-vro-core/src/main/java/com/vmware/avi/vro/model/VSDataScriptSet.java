@@ -242,6 +242,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -255,6 +256,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -268,6 +270,7 @@ public class VSDataScriptSet extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -390,6 +393,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
@@ -403,6 +407,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
@@ -416,6 +421,7 @@ public class VSDataScriptSet extends AviRestResource {
    * List of protocol parsers that could be referred by vsdatascriptset objects.
    * It is a reference to an object of type protocolparser.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocolParserRefs
    */
@@ -434,6 +440,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
@@ -447,6 +454,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */
@@ -460,6 +468,7 @@ public class VSDataScriptSet extends AviRestResource {
    * The rate limit definitions needed for this datascript.
    * The name is composed of the virtual service name and the datascript name.
    * Field introduced in 18.2.9.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateLimiters
    */

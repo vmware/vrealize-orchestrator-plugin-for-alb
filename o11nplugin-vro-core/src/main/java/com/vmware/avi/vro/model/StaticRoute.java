@@ -104,6 +104,7 @@ public class StaticRoute extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Labels associated with this route.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -116,6 +117,7 @@ public class StaticRoute extends AviRestResource {
    * This is the setter method. this will set the labels
    * Labels associated with this route.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -128,6 +130,7 @@ public class StaticRoute extends AviRestResource {
    * This is the setter method this will set the labels
    * Labels associated with this route.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */

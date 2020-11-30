@@ -103,6 +103,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet for virtualservice ipv6 allocation with vantage or infoblox as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6
    */
@@ -116,6 +117,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet for virtualservice ipv6 allocation with vantage or infoblox as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6 set the subnet6.
    */
@@ -129,6 +131,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet uuid or name or prefix for virtualservice ipv6 allocation with aws or openstack as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subnet6Uuid
    */
@@ -142,6 +145,7 @@ public class IPNetworkSubnet extends AviRestResource {
    * Subnet uuid or name or prefix for virtualservice ipv6 allocation with aws or openstack as the ipam provider.
    * Only one of subnet or subnet_uuid configuration is allowed.
    * Field introduced in 18.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param subnet6Uuid set the subnet6Uuid.
    */

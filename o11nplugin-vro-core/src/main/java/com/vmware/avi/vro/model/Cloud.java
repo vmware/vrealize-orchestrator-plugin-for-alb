@@ -226,7 +226,7 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property apic_mode of obj type cloud field type str  type boolean.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return apicMode
    */
@@ -237,7 +237,7 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property apic_mode of obj type cloud field type str  type boolean.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param apicMode set the apicMode.
    */
@@ -252,6 +252,7 @@ public class Cloud extends AviRestResource {
    * Allowed values are 60-3600.
    * Field introduced in 18.2.2.
    * Unit is seconds.
+   * Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @return autoscalePollingInterval
    */
@@ -266,6 +267,7 @@ public class Cloud extends AviRestResource {
    * Allowed values are 60-3600.
    * Field introduced in 18.2.2.
    * Unit is seconds.
+   * Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60.
    * @param autoscalePollingInterval set the autoscalePollingInterval.
    */
@@ -299,6 +301,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureConfiguration
    */
@@ -310,6 +313,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureConfiguration set the azureConfiguration.
    */
@@ -433,6 +437,7 @@ public class Cloud extends AviRestResource {
    * When this is set, pool member fqdns are instead resolved on service engines in this cloud.
    * This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller.
    * Field introduced in 18.2.6.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return dnsResolutionOnSe
    */
@@ -447,6 +452,7 @@ public class Cloud extends AviRestResource {
    * When this is set, pool member fqdns are instead resolved on service engines in this cloud.
    * This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller.
    * Field introduced in 18.2.6.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param dnsResolutionOnSe set the dnsResolutionOnSe.
    */
@@ -581,6 +587,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform configuration.
    * Field introduced in 18.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpConfiguration
    */
@@ -593,6 +600,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Google cloud platform configuration.
    * Field introduced in 18.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpConfiguration set the gcpConfiguration.
    */
@@ -819,6 +827,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Nsx-t cloud platform configuration.
    * Field introduced in 20.1.1.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtConfiguration
    */
@@ -831,6 +840,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Nsx-t cloud platform configuration.
    * Field introduced in 20.1.1.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtConfiguration set the nsxtConfiguration.
    */
@@ -1001,6 +1011,7 @@ public class Cloud extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns records for vips are added/deleted based on the operational state of the vips.
    * Field introduced in 17.1.12.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return stateBasedDnsRegistration
    */
@@ -1013,6 +1024,7 @@ public class Cloud extends AviRestResource {
    * This is the setter method to the attribute.
    * Dns records for vips are added/deleted based on the operational state of the vips.
    * Field introduced in 17.1.12.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param stateBasedDnsRegistration set the stateBasedDnsRegistration.
    */
@@ -1133,6 +1145,8 @@ public class Cloud extends AviRestResource {
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @return vtype
    */
@@ -1146,6 +1160,8 @@ public class Cloud extends AviRestResource {
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+   * Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @param vtype set the vtype.
    */

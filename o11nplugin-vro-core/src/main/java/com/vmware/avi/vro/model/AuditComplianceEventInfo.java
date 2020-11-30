@@ -107,7 +107,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Protocol used for communication to the external entity.
-   * Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE.
+   * Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE, SSH2_0.
    * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return protocol
@@ -120,7 +120,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Protocol used for communication to the external entity.
-   * Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE.
+   * Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE, SSH2_0.
    * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param protocol set the protocol.
@@ -160,6 +160,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subjects of audit event.
    * Field introduced in 20.1.3.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subjects
    */
@@ -172,6 +173,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
    * This is the setter method. this will set the subjects
    * Subjects of audit event.
    * Field introduced in 20.1.3.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subjects
    */
@@ -184,6 +186,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
    * This is the setter method this will set the subjects
    * Subjects of audit event.
    * Field introduced in 20.1.3.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return subjects
    */
@@ -200,7 +203,10 @@ public class AuditComplianceEventInfo extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Type of audit event.
-   * Enum options - AUDIT_INVALID_CREDENTIALS, AUDIT_NAME_RESOLUTION_ERROR, AUDIT_DIAL_X509_ERROR.
+   * Enum options - AUDIT_INVALID_CREDENTIALS, AUDIT_NAME_RESOLUTION_ERROR, AUDIT_DIAL_X509_ERROR, AUDIT_SECURE_KEY_EXCHANGE_BAD_REQUEST_FORMAT,
+   * AUDIT_SECURE_KEY_EXCHANGE_BAD_CLIENT_TYPE, AUDIT_SECURE_KEY_EXCHANGE_FIELD_NOT_FOUND, AUDIT_SECURE_KEY_EXCHANGE_BAD_FIELD_VALUE,
+   * AUDIT_SECURE_KEY_EXCHANGE_INVALID_AUTHORIZATION, AUDIT_SECURE_KEY_EXCHANGE_INTERNAL_ERROR, AUDIT_SECURE_KEY_EXCHANGE_CERTIFICATE_VERIFY_ERROR,
+   * AUDIT_SECURE_KEY_EXCHANGE_RESPONSE_ERROR.
    * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
@@ -213,7 +219,10 @@ public class AuditComplianceEventInfo extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Type of audit event.
-   * Enum options - AUDIT_INVALID_CREDENTIALS, AUDIT_NAME_RESOLUTION_ERROR, AUDIT_DIAL_X509_ERROR.
+   * Enum options - AUDIT_INVALID_CREDENTIALS, AUDIT_NAME_RESOLUTION_ERROR, AUDIT_DIAL_X509_ERROR, AUDIT_SECURE_KEY_EXCHANGE_BAD_REQUEST_FORMAT,
+   * AUDIT_SECURE_KEY_EXCHANGE_BAD_CLIENT_TYPE, AUDIT_SECURE_KEY_EXCHANGE_FIELD_NOT_FOUND, AUDIT_SECURE_KEY_EXCHANGE_BAD_FIELD_VALUE,
+   * AUDIT_SECURE_KEY_EXCHANGE_INVALID_AUTHORIZATION, AUDIT_SECURE_KEY_EXCHANGE_INTERNAL_ERROR, AUDIT_SECURE_KEY_EXCHANGE_CERTIFICATE_VERIFY_ERROR,
+   * AUDIT_SECURE_KEY_EXCHANGE_RESPONSE_ERROR.
    * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
@@ -227,6 +236,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of users (username etc) related to the audit event.
    * Field introduced in 20.1.3.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userIdentities
    */
@@ -239,6 +249,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
    * This is the setter method. this will set the userIdentities
    * List of users (username etc) related to the audit event.
    * Field introduced in 20.1.3.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userIdentities
    */
@@ -251,6 +262,7 @@ public class AuditComplianceEventInfo extends AviRestResource {
    * This is the setter method this will set the userIdentities
    * List of users (username etc) related to the audit event.
    * Field introduced in 20.1.3.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return userIdentities
    */

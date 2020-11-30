@@ -111,6 +111,8 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Field introduced in 17.1.1.
+   * Maximum of 1000 items allowed.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -123,6 +125,8 @@ public class VsVip extends AviRestResource {
    * This is the setter method. this will set the dnsInfo
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Field introduced in 17.1.1.
+   * Maximum of 1000 items allowed.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -135,6 +139,8 @@ public class VsVip extends AviRestResource {
    * This is the setter method this will set the dnsInfo
    * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
    * Field introduced in 17.1.1.
+   * Maximum of 1000 items allowed.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsInfo
    */
@@ -152,6 +158,7 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Force placement on all service engines in the service engine group (container clouds only).
    * Field introduced in 17.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return eastWestPlacement
    */
@@ -164,6 +171,7 @@ public class VsVip extends AviRestResource {
    * This is the setter method to the attribute.
    * Force placement on all service engines in the service engine group (container clouds only).
    * Field introduced in 17.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param eastWestPlacement set the eastWestPlacement.
    */
@@ -203,6 +211,7 @@ public class VsVip extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -216,6 +225,7 @@ public class VsVip extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -229,6 +239,7 @@ public class VsVip extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -339,6 +350,7 @@ public class VsVip extends AviRestResource {
    * set.
    * This is only used when fip is used for vs on azure cloud.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return useStandardAlb
    */
@@ -353,6 +365,7 @@ public class VsVip extends AviRestResource {
    * set.
    * This is only used when fip is used for vs on azure cloud.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param useStandardAlb set the useStandardAlb.
    */

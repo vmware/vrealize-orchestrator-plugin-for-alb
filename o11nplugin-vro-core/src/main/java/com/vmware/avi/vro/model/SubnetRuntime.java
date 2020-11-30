@@ -27,11 +27,11 @@ import org.springframework.stereotype.Service;
 public class SubnetRuntime extends AviRestResource {
     @JsonProperty("free_ip_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer freeIpCount = null;
+    private Integer freeIpCount;
 
     @JsonProperty("ip_alloced")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAllocInfo> ipAlloced = null;
+    private List<IpAllocInfo> ipAlloced;
 
     @JsonProperty("ip_range_runtimes")
     @JsonInclude(Include.NON_NULL)
@@ -43,18 +43,18 @@ public class SubnetRuntime extends AviRestResource {
 
     @JsonProperty("total_ip_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer totalIpCount = null;
+    private Integer totalIpCount;
 
     @JsonProperty("used_ip_count")
     @JsonInclude(Include.NON_NULL)
-    private Integer usedIpCount = null;
+    private Integer usedIpCount;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property free_ip_count of obj type subnetruntime field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Moved to staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @return freeIpCount
    */
   @VsoMethod
@@ -64,8 +64,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property free_ip_count of obj type subnetruntime field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Moved to staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @param freeIpCount set the freeIpCount.
    */
   @VsoMethod
@@ -75,8 +75,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property ip_alloced of obj type subnetruntime field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use allocated_ips in staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @return ipAlloced
    */
   @VsoMethod
@@ -86,8 +86,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the ipAlloced
-   * Placeholder for description of property ip_alloced of obj type subnetruntime field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use allocated_ips in staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @return ipAlloced
    */
   @VsoMethod
@@ -97,8 +97,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the ipAlloced
-   * Placeholder for description of property ip_alloced of obj type subnetruntime field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use allocated_ips in staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @return ipAlloced
    */
   @VsoMethod
@@ -176,8 +176,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property total_ip_count of obj type subnetruntime field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Moved to staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @return totalIpCount
    */
   @VsoMethod
@@ -187,8 +187,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property total_ip_count of obj type subnetruntime field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Moved to staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @param totalIpCount set the totalIpCount.
    */
   @VsoMethod
@@ -198,8 +198,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property used_ip_count of obj type subnetruntime field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Can be derived from total - free in staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @return usedIpCount
    */
   @VsoMethod
@@ -209,8 +209,8 @@ public class SubnetRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property used_ip_count of obj type subnetruntime field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Can be derived from total - free in staticiprangeruntime.
+   * Field deprecated in 20.1.3.
    * @param usedIpCount set the usedIpCount.
    */
   @VsoMethod

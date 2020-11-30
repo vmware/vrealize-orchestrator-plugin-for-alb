@@ -174,6 +174,7 @@ public class AvailabilityZone extends AviRestResource {
    * Group of vcenter list belong to availabilty zone.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 20.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterRefs
    */
@@ -187,6 +188,7 @@ public class AvailabilityZone extends AviRestResource {
    * Group of vcenter list belong to availabilty zone.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 20.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterRefs
    */
@@ -200,6 +202,7 @@ public class AvailabilityZone extends AviRestResource {
    * Group of vcenter list belong to availabilty zone.
    * It is a reference to an object of type vcenterserver.
    * Field introduced in 20.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterRefs
    */

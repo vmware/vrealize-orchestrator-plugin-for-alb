@@ -92,6 +92,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureServiceprincipal
    */
@@ -103,6 +104,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureServiceprincipal set the azureServiceprincipal.
    */
@@ -114,6 +116,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureUserpass
    */
@@ -125,6 +128,7 @@ public class CloudConnectorUser extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureUserpass set the azureUserpass.
    */
@@ -137,6 +141,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials for google cloud platform.
    * Field introduced in 18.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpCredentials
    */
@@ -149,6 +154,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials for google cloud platform.
    * Field introduced in 18.2.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpCredentials set the gcpCredentials.
    */
@@ -183,6 +189,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials to talk to nsx-t manager.
    * Field introduced in 20.1.1.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtCredentials
    */
@@ -195,6 +202,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials to talk to nsx-t manager.
    * Field introduced in 20.1.1.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtCredentials set the nsxtCredentials.
    */
@@ -207,6 +215,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials for oracle cloud infrastructure.
    * Field introduced in 18.2.1,18.1.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ociCredentials
    */
@@ -219,6 +228,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials for oracle cloud infrastructure.
    * Field introduced in 18.2.1,18.1.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ociCredentials set the ociCredentials.
    */
@@ -319,6 +329,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Credentials for tencent cloud.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tencentCredentials
    */
@@ -331,6 +342,7 @@ public class CloudConnectorUser extends AviRestResource {
    * This is the setter method to the attribute.
    * Credentials for tencent cloud.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tencentCredentials set the tencentCredentials.
    */

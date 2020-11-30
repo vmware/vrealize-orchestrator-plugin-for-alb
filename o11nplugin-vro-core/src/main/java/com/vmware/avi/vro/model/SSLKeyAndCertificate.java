@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.SSLCertificate;
 import com.vmware.avi.vro.model.SSLKeyParams;
 import com.vmware.avi.vro.model.OCSPConfig;
+import com.vmware.avi.vro.model.OCSPResponseInfo;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -98,6 +99,18 @@ public class SSLKeyAndCertificate extends AviRestResource {
     @JsonProperty("ocsp_config")
     @JsonInclude(Include.NON_NULL)
     private OCSPConfig ocspConfig = null;
+
+    @JsonProperty("ocsp_error_status")
+    @JsonInclude(Include.NON_NULL)
+    private String ocspErrorStatus;
+
+    @JsonProperty("ocsp_responder_url_list_from_certs")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> ocspResponderUrlListFromCerts = null;
+
+    @JsonProperty("ocsp_response_info")
+    @JsonInclude(Include.NON_NULL)
+    private OCSPResponseInfo ocspResponseInfo = null;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -289,6 +302,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enables ocsp stapling.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableOcspStapling
    */
@@ -301,6 +315,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the setter method to the attribute.
    * Enables ocsp stapling.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableOcspStapling set the enableOcspStapling.
    */
@@ -496,6 +511,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -509,6 +525,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -522,6 +539,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -561,6 +579,7 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Configuration related to ocsp.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspConfig
    */
@@ -573,12 +592,119 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is the setter method to the attribute.
    * Configuration related to ocsp.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspConfig set the ocspConfig.
    */
   @VsoMethod
   public void setOcspConfig(OCSPConfig ocspConfig) {
     this.ocspConfig = ocspConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Error reported during ocsp status query.
+   * Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR,
+   * OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT,
+   * OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST,
+   * OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
+   * OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
+   * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- ocsp_err_certstatus_disabled) edition, essentials(allowed values- ocsp_err_certstatus_disabled) edition,
+   * enterprise edition.
+   * @return ocspErrorStatus
+   */
+  @VsoMethod
+  public String getOcspErrorStatus() {
+    return ocspErrorStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Error reported during ocsp status query.
+   * Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR,
+   * OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT,
+   * OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST,
+   * OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
+   * OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
+   * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- ocsp_err_certstatus_disabled) edition, essentials(allowed values- ocsp_err_certstatus_disabled) edition,
+   * enterprise edition.
+   * @param ocspErrorStatus set the ocspErrorStatus.
+   */
+  @VsoMethod
+  public void setOcspErrorStatus(String  ocspErrorStatus) {
+    this.ocspErrorStatus = ocspErrorStatus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This is an internal field to store the ocsp responder urls contained in the certificate.
+   * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspResponderUrlListFromCerts
+   */
+  @VsoMethod
+  public List<String> getOcspResponderUrlListFromCerts() {
+    return ocspResponderUrlListFromCerts;
+  }
+
+  /**
+   * This is the setter method. this will set the ocspResponderUrlListFromCerts
+   * This is an internal field to store the ocsp responder urls contained in the certificate.
+   * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspResponderUrlListFromCerts
+   */
+  @VsoMethod
+  public void setOcspResponderUrlListFromCerts(List<String>  ocspResponderUrlListFromCerts) {
+    this.ocspResponderUrlListFromCerts = ocspResponderUrlListFromCerts;
+  }
+
+  /**
+   * This is the setter method this will set the ocspResponderUrlListFromCerts
+   * This is an internal field to store the ocsp responder urls contained in the certificate.
+   * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspResponderUrlListFromCerts
+   */
+  @VsoMethod
+  public SSLKeyAndCertificate addOcspResponderUrlListFromCertsItem(String ocspResponderUrlListFromCertsItem) {
+    if (this.ocspResponderUrlListFromCerts == null) {
+      this.ocspResponderUrlListFromCerts = new ArrayList<String>();
+    }
+    this.ocspResponderUrlListFromCerts.add(ocspResponderUrlListFromCertsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Information related to ocsp response.
+   * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ocspResponseInfo
+   */
+  @VsoMethod
+  public OCSPResponseInfo getOcspResponseInfo() {
+    return ocspResponseInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Information related to ocsp response.
+   * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ocspResponseInfo set the ocspResponseInfo.
+   */
+  @VsoMethod
+  public void setOcspResponseInfo(OCSPResponseInfo ocspResponseInfo) {
+    this.ocspResponseInfo = ocspResponseInfo;
   }
 
   /**
@@ -722,7 +848,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.certificateBase64, objSSLKeyAndCertificate.certificateBase64)&&
   Objects.equals(this.keyBase64, objSSLKeyAndCertificate.keyBase64)&&
   Objects.equals(this.enableOcspStapling, objSSLKeyAndCertificate.enableOcspStapling)&&
+  Objects.equals(this.ocspResponderUrlListFromCerts, objSSLKeyAndCertificate.ocspResponderUrlListFromCerts)&&
   Objects.equals(this.ocspConfig, objSSLKeyAndCertificate.ocspConfig)&&
+  Objects.equals(this.ocspResponseInfo, objSSLKeyAndCertificate.ocspResponseInfo)&&
+  Objects.equals(this.ocspErrorStatus, objSSLKeyAndCertificate.ocspErrorStatus)&&
   Objects.equals(this.labels, objSSLKeyAndCertificate.labels);
 }
 
@@ -748,6 +877,9 @@ public String toString() {
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ocspConfig: ").append(toIndentedString(ocspConfig)).append("\n");
+        sb.append("    ocspErrorStatus: ").append(toIndentedString(ocspErrorStatus)).append("\n");
+        sb.append("    ocspResponderUrlListFromCerts: ").append(toIndentedString(ocspResponderUrlListFromCerts)).append("\n");
+        sb.append("    ocspResponseInfo: ").append(toIndentedString(ocspResponseInfo)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

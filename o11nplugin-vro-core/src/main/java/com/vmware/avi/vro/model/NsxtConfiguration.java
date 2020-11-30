@@ -68,6 +68,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Automatically create dfw rules for virtualservice in nsx-t manager.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return automateDfwRules
    */
@@ -80,6 +81,7 @@ public class NsxtConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Automatically create dfw rules for virtualservice in nsx-t manager.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param automateDfwRules set the automateDfwRules.
    */

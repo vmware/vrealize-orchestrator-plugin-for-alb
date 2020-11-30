@@ -63,6 +63,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Attribute values used to determine access when authentication applies.
    * Field introduced in 18.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attributeValueList
    */
@@ -75,6 +76,7 @@ public class AuthAttributeMatch extends AviRestResource {
    * This is the setter method to the attribute.
    * Attribute values used to determine access when authentication applies.
    * Field introduced in 18.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param attributeValueList set the attributeValueList.
    */

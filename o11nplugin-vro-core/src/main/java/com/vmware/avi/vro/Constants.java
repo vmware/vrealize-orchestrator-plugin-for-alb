@@ -966,7 +966,7 @@ public class Constants {
 	public static final String FINDER_VRO_SEBGPPEERDOWNDETAILS = "SeBgpPeerDownDetails";
 	public static final String FINDER_VRO_NSXTIMAGEDETAILS = "NsxtImageDetails";
 	public static final String FINDER_VRO_IPTHREATDBEVENTDATA = "IPThreatDBEventData";
-	
+
 	public static final String FINDER_VRO_ACSUBJECTINFO = "ACSubjectInfo";
 	public static final String FINDER_VRO_SEGROUPANALYTICSPOLICY = "SeGroupAnalyticsPolicy";
 	public static final String FINDER_VRO_METRICSEVENTTHRESHOLD = "MetricsEventThreshold";
@@ -988,5 +988,22 @@ public class Constants {
 	public static final String FINDER_VRO_WAFALLOWLISTLOG = "WafAllowlistLog";
 	public static final String FINDER_VRO_NSXTDATASTORES = "NsxtDatastores";
 	public static final String FINDER_VRO_GCPSEGROUPCONFIG = "GCPSeGroupConfig";
+	public static final String FINDER_VRO_PORTMATCHGENERIC = "PortMatchGeneric";
+	public static final String FINDER_VRO_JWTLOG = "JwtLog";
+	public static final String FINDER_VRO_NTLMLOG = "NtlmLog";
+	public static final String FINDER_VRO_AUTHNRULEMATCH = "AuthnRuleMatch";
+	public static final String FINDER_VRO_AUTHZRULEMATCH = "AuthzRuleMatch";
+	public static final String FINDER_VRO_CLOUDROUTENOTIFDETAILS = "CloudRouteNotifDetails";
+	public static final String FINDER_VRO_LOGAGENTEVENTDETAIL = "LogAgentEventDetail";
+	public static final String FINDER_VRO_SEVSPKTBUFHIGHEVENTDETAILS = "SeVsPktBufHighEventDetails";
+	public static final String FINDER_VRO_SECUREKEYEXCHANGEDETAILS = "SecureKeyExchangeDetails";
+	public static final String FINDER_VRO_LOGAGENTTCPCLIENTEVENTDETAIL = "LogAgentTCPClientEventDetail";
+	public static final String FINDER_VRO_JWTVALIDATIONVSCONFIG = "JWTValidationVsConfig";
+	public static final String FINDER_VRO_VHMATCH = "VHMatch";
+	public static final String FINDER_VRO_JWTMATCH = "JWTMatch";
+	public static final String FINDER_VRO_JWTCLAIMMATCH = "JWTClaimMatch";
+	public static final String FINDER_VRO_DYNAMICDNSRECORD = "DynamicDnsRecord";
+	public static final String FINDER_VRO_JWTSERVERPROFILE = "JWTServerProfile";
+	public static final String FINDER_VRO_LEARNINGLOGPOLICY = "LearningLogPolicy";
 
 }
