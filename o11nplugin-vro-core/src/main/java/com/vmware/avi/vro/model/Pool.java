@@ -1,6 +1,5 @@
 package com.vmware.avi.vro.model;
 
-
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
