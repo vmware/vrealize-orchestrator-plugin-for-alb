@@ -48,6 +48,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of shared datastores to include or exclude.
    * Field introduced in 20.1.2.
+   * Allowed in basic edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxtDatastores
    */
@@ -60,6 +61,7 @@ public class PlacementScopeConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * List of shared datastores to include or exclude.
    * Field introduced in 20.1.2.
+   * Allowed in basic edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxtDatastores set the nsxtDatastores.
    */

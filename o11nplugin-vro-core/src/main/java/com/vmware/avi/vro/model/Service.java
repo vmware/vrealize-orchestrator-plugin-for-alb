@@ -53,6 +53,7 @@ public class Service extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable http2 on this port.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableHttp2
    */
@@ -65,6 +66,7 @@ public class Service extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable http2 on this port.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableHttp2 set the enableHttp2.
    */
@@ -100,6 +102,7 @@ public class Service extends AviRestResource {
    * Enable application layer specific features for the this specific service.
    * It is a reference to an object of type applicationprofile.
    * Field introduced in 17.2.4.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return overrideApplicationProfileRef
    */
@@ -113,6 +116,7 @@ public class Service extends AviRestResource {
    * Enable application layer specific features for the this specific service.
    * It is a reference to an object of type applicationprofile.
    * Field introduced in 17.2.4.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param overrideApplicationProfileRef set the overrideApplicationProfileRef.
    */

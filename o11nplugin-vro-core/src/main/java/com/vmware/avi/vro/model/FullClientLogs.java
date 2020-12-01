@@ -98,6 +98,8 @@ public class FullClientLogs extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Capture all client logs including connections and requests.
    * When deactivated, only errors will be logged.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is false.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
@@ -110,6 +112,8 @@ public class FullClientLogs extends AviRestResource {
    * This is the setter method to the attribute.
    * Capture all client logs including connections and requests.
    * When deactivated, only errors will be logged.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is false.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */

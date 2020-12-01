@@ -124,6 +124,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Used for allocating egress service source ips.
    * Field introduced in 17.2.8.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
@@ -136,6 +137,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method. this will set the egressServiceSubnets
    * Used for allocating egress service source ips.
    * Field introduced in 17.2.8.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
@@ -148,6 +150,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method this will set the egressServiceSubnets
    * Used for allocating egress service source ips.
    * Field introduced in 17.2.8.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return egressServiceSubnets
    */
@@ -258,6 +261,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.2.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
@@ -272,6 +276,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.2.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
@@ -286,6 +291,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 17.2.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworkUuids
    */
@@ -355,6 +361,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Virtual networks where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkIds
    */
@@ -367,6 +374,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method. this will set the virtualNetworkIds
    * Virtual networks where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkIds
    */
@@ -379,6 +387,7 @@ public class IpamDnsAzureProfile extends AviRestResource {
    * This is the setter method this will set the virtualNetworkIds
    * Virtual networks where virtual ips will belong.
    * Field introduced in 17.2.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return virtualNetworkIds
    */

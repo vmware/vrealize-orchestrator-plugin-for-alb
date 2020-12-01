@@ -64,6 +64,10 @@ public class HTTPApplicationProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean connectionMultiplexingEnabled = true;
 
+    @JsonProperty("detect_ntlm_app")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean detectNtlmApp = true;
+
     @JsonProperty("disable_keepalive_posts_msie6")
     @JsonInclude(Include.NON_NULL)
     private Boolean disableKeepalivePostsMsie6 = true;
@@ -257,6 +261,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Allow use of dot (.) in http header names, for instance header.app.special  pickappversionx.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return allowDotsInHeaderName
    */
@@ -268,6 +273,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Allow use of dot (.) in http header names, for instance header.app.special  pickappversionx.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param allowDotsInHeaderName set the allowDotsInHeaderName.
    */
@@ -305,6 +311,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This setting generally impacts the length of time allowed for a client to send a post.
    * Allowed values are 0-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return clientBodyTimeout
    */
@@ -320,6 +327,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This setting generally impacts the length of time allowed for a client to send a post.
    * Allowed values are 0-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param clientBodyTimeout set the clientBodyTimeout.
    */
@@ -334,6 +342,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This helps mitigate various forms of slowloris attacks.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 10000) edition, essentials(allowed values- 10000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @return clientHeaderTimeout
    */
@@ -348,6 +357,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This helps mitigate various forms of slowloris attacks.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 10000) edition, essentials(allowed values- 10000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
    * @param clientHeaderTimeout set the clientHeaderTimeout.
    */
@@ -389,6 +399,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Maximum size in kbytes of a single http header in the client request.
    * Allowed values are 1-64.
    * Unit is kb.
+   * Allowed in basic(allowed values- 12) edition, essentials(allowed values- 12) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @return clientMaxHeaderSize
    */
@@ -402,6 +413,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Maximum size in kbytes of a single http header in the client request.
    * Allowed values are 1-64.
    * Unit is kb.
+   * Allowed in basic(allowed values- 12) edition, essentials(allowed values- 12) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 12.
    * @param clientMaxHeaderSize set the clientMaxHeaderSize.
    */
@@ -486,9 +498,36 @@ public class HTTPApplicationProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Detect ntlm apps based on the http response from the server.
+   * Once detected, connection multiplexing will be disabled for that connection.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return detectNtlmApp
+   */
+  @VsoMethod
+  public Boolean getDetectNtlmApp() {
+    return detectNtlmApp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Detect ntlm apps based on the http response from the server.
+   * Once detected, connection multiplexing will be disabled for that connection.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param detectNtlmApp set the detectNtlmApp.
+   */
+  @VsoMethod
+  public void setDetectNtlmApp(Boolean  detectNtlmApp) {
+    this.detectNtlmApp = detectNtlmApp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Disable keep-alive client side connections for older browsers based off ms internet explorer 6.0 (msie6).
    * For some applications, this might break ntlm authentication for older clients based off msie6.
    * For such applications, set this option to false to allow keep-alive connections.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return disableKeepalivePostsMsie6
    */
@@ -502,6 +541,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Disable keep-alive client side connections for older browsers based off ms internet explorer 6.0 (msie6).
    * For some applications, this might break ntlm authentication for older clients based off msie6.
    * For such applications, set this option to false to allow keep-alive connections.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param disableKeepalivePostsMsie6 set the disableKeepalivePostsMsie6.
    */
@@ -563,6 +603,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Enable support for fire and forget feature.
    * If enabled, request from client is forwarded to server even if client prematurely closes the connection.
    * Field introduced in 17.2.4.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableFireAndForget
    */
@@ -576,6 +617,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Enable support for fire and forget feature.
    * If enabled, request from client is forwarded to server even if client prematurely closes the connection.
    * Field introduced in 17.2.4.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableFireAndForget set the enableFireAndForget.
    */
@@ -618,6 +660,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Use it when detailed information about the number of http post parameters is needed, e.g.
    * For waf sizing.
    * Field introduced in 18.1.5, 18.2.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableRequestBodyMetrics
    */
@@ -636,6 +679,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Use it when detailed information about the number of http post parameters is needed, e.g.
    * For waf sizing.
    * Field introduced in 18.1.5, 18.2.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableRequestBodyMetrics set the enableRequestBodyMetrics.
    */
@@ -674,6 +718,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Inserts http strict-transport-security header in the https response.
    * Hsts can help mitigate man-in-the-middle attacks by telling browsers that support hsts that they should only access this site via https.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return hstsEnabled
    */
@@ -686,6 +731,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Inserts http strict-transport-security header in the https response.
    * Hsts can help mitigate man-in-the-middle attacks by telling browsers that support hsts that they should only access this site via https.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param hstsEnabled set the hstsEnabled.
    */
@@ -698,6 +744,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Number of days for which the client should regard this virtual service as a known hsts host.
    * Allowed values are 0-10000.
+   * Allowed in basic(allowed values- 365) edition, essentials(allowed values- 365) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 365.
    * @return hstsMaxAge
    */
@@ -710,6 +757,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Number of days for which the client should regard this virtual service as a known hsts host.
    * Allowed values are 0-10000.
+   * Allowed in basic(allowed values- 365) edition, essentials(allowed values- 365) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 365.
    * @param hstsMaxAge set the hstsMaxAge.
    */
@@ -724,6 +772,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Adding the includesubdomains directive signals the user-agent that the hsts policy applies to this hsts host as well as any subdomains of the
    * host's domain name.
    * Field introduced in 17.2.13, 18.1.4, 18.2.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return hstsSubdomainsEnabled
    */
@@ -738,6 +787,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Adding the includesubdomains directive signals the user-agent that the hsts policy applies to this hsts host as well as any subdomains of the
    * host's domain name.
    * Field introduced in 17.2.13, 18.1.4, 18.2.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param hstsSubdomainsEnabled set the hstsSubdomainsEnabled.
    */
@@ -751,6 +801,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Enable http2 for traffic from clients to the virtual service.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @return http2Enabled
    */
   @VsoMethod
@@ -763,6 +814,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Enable http2 for traffic from clients to the virtual service.
    * Field deprecated in 20.1.1.
    * Field introduced in 18.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @param http2Enabled set the http2Enabled.
    */
   @VsoMethod
@@ -774,6 +826,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies the http/2 specific application profile parameters.
    * Field introduced in 18.2.10, 20.1.1.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return http2Profile
    */
@@ -786,6 +839,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies the http/2 specific application profile parameters.
    * Field introduced in 18.2.10, 20.1.1.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param http2Profile set the http2Profile.
    */
@@ -797,6 +851,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Client requests received via http will be redirected to https.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httpToHttps
    */
@@ -808,6 +863,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Client requests received via http will be redirected to https.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param httpToHttps set the httpToHttps.
    */
@@ -823,6 +879,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'auto compute the size of buffer'.
    * Field introduced in 20.1.1.
    * Unit is kb.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return httpUpstreamBufferSize
    */
@@ -838,6 +895,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'auto compute the size of buffer'.
    * Field introduced in 20.1.1.
    * Unit is kb.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param httpUpstreamBufferSize set the httpUpstreamBufferSize.
    */
@@ -850,6 +908,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Mark http cookies as httponly.
    * This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httponlyEnabled
    */
@@ -862,6 +921,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Mark http cookies as httponly.
    * This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param httponlyEnabled set the httponlyEnabled.
    */
@@ -901,6 +961,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The max idle time allowed between http requests over a keep-alive connection.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return keepaliveTimeout
    */
@@ -914,6 +975,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The max idle time allowed between http requests over a keep-alive connection.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param keepaliveTimeout set the keepaliveTimeout.
    */
@@ -1006,6 +1068,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Allowed values are 1-256.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @return maxHttp2ConcurrentStreamsPerConnection
    */
   @VsoMethod
@@ -1019,6 +1082,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Allowed values are 1-256.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @param maxHttp2ConcurrentStreamsPerConnection set the maxHttp2ConcurrentStreamsPerConnection.
    */
   @VsoMethod
@@ -1034,6 +1098,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @return maxHttp2ControlFramesPerConnection
    */
   @VsoMethod
@@ -1049,6 +1114,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @param maxHttp2ControlFramesPerConnection set the maxHttp2ControlFramesPerConnection.
    */
   @VsoMethod
@@ -1064,6 +1130,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @return maxHttp2EmptyDataFramesPerConnection
    */
   @VsoMethod
@@ -1079,6 +1146,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @param maxHttp2EmptyDataFramesPerConnection set the maxHttp2EmptyDataFramesPerConnection.
    */
   @VsoMethod
@@ -1094,6 +1162,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @return maxHttp2QueuedFramesToClientPerConnection
    */
   @VsoMethod
@@ -1109,6 +1178,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
    * Field deprecated in 18.2.10, 20.1.1.
    * Field introduced in 18.2.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * @param maxHttp2QueuedFramesToClientPerConnection set the maxHttp2QueuedFramesToClientPerConnection.
    */
   @VsoMethod
@@ -1123,6 +1193,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Allowed values are 0-1000000.
    * Special values are 0- 'unlimited requests on a connection'.
    * Field introduced in 18.2.5.
+   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return maxKeepaliveRequests
    */
@@ -1138,6 +1209,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Allowed values are 0-1000000.
    * Special values are 0- 'unlimited requests on a connection'.
    * Field introduced in 18.2.5.
+   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param maxKeepaliveRequests set the maxKeepaliveRequests.
    */
@@ -1151,6 +1223,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Maximum size in kbytes of all the http response headers.
    * Allowed values are 1-256.
    * Unit is kb.
+   * Allowed in basic(allowed values- 48) edition, essentials(allowed values- 48) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @return maxResponseHeadersSize
    */
@@ -1164,6 +1237,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Maximum size in kbytes of all the http response headers.
    * Allowed values are 1-256.
    * Unit is kb.
+   * Allowed in basic(allowed values- 48) edition, essentials(allowed values- 48) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 48.
    * @param maxResponseHeadersSize set the maxResponseHeadersSize.
    */
@@ -1333,6 +1407,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @return postAcceptTimeout
    */
@@ -1346,6 +1421,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 30000.
    * @param postAcceptTimeout set the postAcceptTimeout.
    */
@@ -1358,6 +1434,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If enabled, an http request on an ssl port will result in connection close instead of a 400 response.
    * Field introduced in 18.2.6.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resetConnHttpOnSslPort
    */
@@ -1370,6 +1447,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * If enabled, an http request on an ssl port will result in connection close instead of a 400 response.
    * Field introduced in 18.2.6.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resetConnHttpOnSslPort set the resetConnHttpOnSslPort.
    */
@@ -1407,6 +1485,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Mark server cookies with the 'secure' attribute.
    * Client browsers will not send a cookie marked as secure over an unencrypted connection.
    * If avi is terminating ssl from clients and passing it as http to the server, the server may return cookies without the secure flag set.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return secureCookieEnabled
    */
@@ -1420,6 +1499,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * Mark server cookies with the 'secure' attribute.
    * Client browsers will not send a cookie marked as secure over an unencrypted connection.
    * If avi is terminating ssl from clients and passing it as http to the server, the server may return cookies without the secure flag set.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param secureCookieEnabled set the secureCookieEnabled.
    */
@@ -1432,6 +1512,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * When terminating client ssl sessions at avi, servers may incorrectly send redirect to clients as http.
    * This option will rewrite the server's redirect responses for this virtual service from http to https.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return serverSideRedirectToHttps
    */
@@ -1444,6 +1525,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * When terminating client ssl sessions at avi, servers may incorrectly send redirect to clients as http.
    * This option will rewrite the server's redirect responses for this virtual service from http to https.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param serverSideRedirectToHttps set the serverSideRedirectToHttps.
    */
@@ -1522,6 +1604,8 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Specifies whether the client side verification is set to none, request or require.
    * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
+   * Allowed in basic(allowed values- ssl_client_certificate_none,ssl_client_certificate_require) edition, essentials(allowed values-
+   * ssl_client_certificate_none,ssl_client_certificate_require) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
    * @return sslClientCertificateMode
    */
@@ -1534,6 +1618,8 @@ public class HTTPApplicationProfile extends AviRestResource {
    * This is the setter method to the attribute.
    * Specifies whether the client side verification is set to none, request or require.
    * Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE.
+   * Allowed in basic(allowed values- ssl_client_certificate_none,ssl_client_certificate_require) edition, essentials(allowed values-
+   * ssl_client_certificate_none,ssl_client_certificate_require) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CLIENT_CERTIFICATE_NONE".
    * @param sslClientCertificateMode set the sslClientCertificateMode.
    */
@@ -1569,6 +1655,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use 'keep-alive' header timeout sent by application instead of sending the http keep-alive timeout.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useAppKeepaliveTimeout
    */
@@ -1580,6 +1667,7 @@ public class HTTPApplicationProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use 'keep-alive' header timeout sent by application instead of sending the http keep-alive timeout.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useAppKeepaliveTimeout set the useAppKeepaliveTimeout.
    */
@@ -1620,6 +1708,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * When the client connects via ssl, avi terminates the ssl, and then forwards the requests to the servers via http, so the servers can determine
    * the original protocol via this header.
    * In this example, the value will be 'https'.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return xForwardedProtoEnabled
    */
@@ -1634,6 +1723,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * When the client connects via ssl, avi terminates the ssl, and then forwards the requests to the servers via http, so the servers can determine
    * the original protocol via this header.
    * In this example, the value will be 'https'.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param xForwardedProtoEnabled set the xForwardedProtoEnabled.
    */
@@ -1754,7 +1844,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.resetConnHttpOnSslPort, objHTTPApplicationProfile.resetConnHttpOnSslPort)&&
   Objects.equals(this.httpUpstreamBufferSize, objHTTPApplicationProfile.httpUpstreamBufferSize)&&
   Objects.equals(this.enableChunkMerge, objHTTPApplicationProfile.enableChunkMerge)&&
-  Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile);
+  Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile)&&
+  Objects.equals(this.detectNtlmApp, objHTTPApplicationProfile.detectNtlmApp);
 }
 
 @Override
@@ -1770,6 +1861,7 @@ public String toString() {
         sb.append("    clientMaxRequestSize: ").append(toIndentedString(clientMaxRequestSize)).append("\n");
         sb.append("    compressionProfile: ").append(toIndentedString(compressionProfile)).append("\n");
         sb.append("    connectionMultiplexingEnabled: ").append(toIndentedString(connectionMultiplexingEnabled)).append("\n");
+        sb.append("    detectNtlmApp: ").append(toIndentedString(detectNtlmApp)).append("\n");
         sb.append("    disableKeepalivePostsMsie6: ").append(toIndentedString(disableKeepalivePostsMsie6)).append("\n");
         sb.append("    disableSniHostnameCheck: ").append(toIndentedString(disableSniHostnameCheck)).append("\n");
         sb.append("    enableChunkMerge: ").append(toIndentedString(enableChunkMerge)).append("\n");

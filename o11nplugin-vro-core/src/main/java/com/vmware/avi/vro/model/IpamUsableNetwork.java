@@ -38,6 +38,7 @@ public class IpamUsableNetwork extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Labels as key value pairs, used for selection of ipam networks.
    * Field introduced in 20.1.3.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -50,6 +51,7 @@ public class IpamUsableNetwork extends AviRestResource {
    * This is the setter method. this will set the labels
    * Labels as key value pairs, used for selection of ipam networks.
    * Field introduced in 20.1.3.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -62,6 +64,7 @@ public class IpamUsableNetwork extends AviRestResource {
    * This is the setter method this will set the labels
    * Labels as key value pairs, used for selection of ipam networks.
    * Field introduced in 20.1.3.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */

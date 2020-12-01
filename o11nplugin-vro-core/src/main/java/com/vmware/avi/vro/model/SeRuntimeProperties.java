@@ -552,6 +552,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit on maximum adf lossy log to pushper second.
+   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return connectionsLossyLogRateLimiterThreshold
    */
@@ -563,6 +564,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit on maximum adf lossy log to pushper second.
+   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param connectionsLossyLogRateLimiterThreshold set the connectionsLossyLogRateLimiterThreshold.
    */
@@ -574,6 +576,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limit on maximum adf udf or nf log to pushper second.
+   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return connectionsUdfnfLogRateLimiterThreshold
    */
@@ -585,6 +588,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limit on maximum adf udf or nf log to pushper second.
+   * Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param connectionsUdfnfLogRateLimiterThreshold set the connectionsUdfnfLogRateLimiterThreshold.
    */
@@ -718,6 +722,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return dpAggressiveHbFrequency
    */
@@ -731,6 +736,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param dpAggressiveHbFrequency set the dpAggressiveHbFrequency.
    */
@@ -743,6 +749,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return dpAggressiveHbTimeoutCount
    */
@@ -755,6 +762,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Consecutive hb failures after which failure is reported to controller,when aggressive failure mode detection is enabled.
    * (this field has been moved to se_group properties 20.1.3 onwards).
+   * Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param dpAggressiveHbTimeoutCount set the dpAggressiveHbTimeoutCount.
    */
@@ -1004,6 +1012,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable javascript console logs on the client browser when collecting client insights.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return httpRumConsoleLog
    */
@@ -1015,6 +1024,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable javascript console logs on the client browser when collecting client insights.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param httpRumConsoleLog set the httpRumConsoleLog.
    */
@@ -1026,6 +1036,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Minimum response size content length to sample for client insights.
+   * Allowed in basic(allowed values- 64) edition, essentials(allowed values- 64) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return httpRumMinContentLength
    */
@@ -1037,6 +1048,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Minimum response size content length to sample for client insights.
+   * Allowed in basic(allowed values- 64) edition, essentials(allowed values- 64) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param httpRumMinContentLength set the httpRumMinContentLength.
    */
@@ -2406,6 +2418,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Internal use only.
    * Frequency (ms) of metrics updates from se to controller.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return seMetricsInterval
    */
@@ -2419,6 +2432,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * Internal use only.
    * Frequency (ms) of metrics updates from se to controller.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param seMetricsInterval set the seMetricsInterval.
    */
@@ -2431,6 +2445,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Internal use only.
    * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seMetricsRtEnabled
    */
@@ -2443,6 +2459,8 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Internal use only.
    * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param seMetricsRtEnabled set the seMetricsRtEnabled.
    */
@@ -2550,6 +2568,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -2561,6 +2580,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method. this will set the serviceIpSubnets
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -2572,6 +2592,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method this will set the serviceIpSubnets
    * Ip ranges on which there may be virtual services (for configuring iptables/routes).
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -2990,6 +3011,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Timeout for upstream to become writable.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 3600000) edition, essentials(allowed values- 3600000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @return upstreamSendTimeout
    */
@@ -3002,6 +3024,7 @@ public class SeRuntimeProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Timeout for upstream to become writable.
    * Unit is milliseconds.
+   * Allowed in basic(allowed values- 3600000) edition, essentials(allowed values- 3600000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
    * @param upstreamSendTimeout set the upstreamSendTimeout.
    */

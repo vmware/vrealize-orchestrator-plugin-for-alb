@@ -34,7 +34,7 @@ public class NetworkRuntime extends AviRestResource {
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private List<String> seUuid = null;
+    private List<String> seUuid;
 
     @JsonProperty("subnet_runtime")
     @JsonInclude(Include.NON_NULL)
@@ -119,8 +119,8 @@ public class NetworkRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of se.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use obj_uuids.
+   * Field deprecated in 20.1.3.
    * @return seUuid
    */
   @VsoMethod
@@ -130,8 +130,8 @@ public class NetworkRuntime extends AviRestResource {
 
   /**
    * This is the setter method. this will set the seUuid
-   * Unique object identifier of se.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use obj_uuids.
+   * Field deprecated in 20.1.3.
    * @return seUuid
    */
   @VsoMethod
@@ -141,8 +141,8 @@ public class NetworkRuntime extends AviRestResource {
 
   /**
    * This is the setter method this will set the seUuid
-   * Unique object identifier of se.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use obj_uuids.
+   * Field deprecated in 20.1.3.
    * @return seUuid
    */
   @VsoMethod

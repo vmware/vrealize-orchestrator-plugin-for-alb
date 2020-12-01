@@ -40,6 +40,10 @@ public class SecureChannelMapping extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean markedForDelete = null;
 
+    @JsonProperty("metadata")
+    @JsonInclude(Include.NON_NULL)
+    private List<SecureChannelMetadata> metadata = null;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
@@ -153,6 +157,47 @@ public class SecureChannelMapping extends AviRestResource {
   public void setMarkedForDelete(Boolean  markedForDelete) {
     this.markedForDelete = markedForDelete;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Metadata associated with the securechanneltoken of the service engine.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metadata
+   */
+  @VsoMethod
+  public List<SecureChannelMetadata> getMetadata() {
+    return metadata;
+  }
+
+  /**
+   * This is the setter method. this will set the metadata
+   * Metadata associated with the securechanneltoken of the service engine.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metadata
+   */
+  @VsoMethod
+  public void setMetadata(List<SecureChannelMetadata>  metadata) {
+    this.metadata = metadata;
+  }
+
+  /**
+   * This is the setter method this will set the metadata
+   * Metadata associated with the securechanneltoken of the service engine.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metadata
+   */
+  @VsoMethod
+  public SecureChannelMapping addMetadataItem(SecureChannelMetadata metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new ArrayList<SecureChannelMetadata>();
+    }
+    this.metadata.add(metadataItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -307,7 +352,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.markedForDelete, objSecureChannelMapping.markedForDelete)&&
   Objects.equals(this.isController, objSecureChannelMapping.isController)&&
   Objects.equals(this.pubKey, objSecureChannelMapping.pubKey)&&
-  Objects.equals(this.pubKeyPem, objSecureChannelMapping.pubKeyPem);
+  Objects.equals(this.pubKeyPem, objSecureChannelMapping.pubKeyPem)&&
+  Objects.equals(this.metadata, objSecureChannelMapping.metadata);
 }
 
 @Override
@@ -318,6 +364,7 @@ public String toString() {
         sb.append("    isController: ").append(toIndentedString(isController)).append("\n");
         sb.append("    localIp: ").append(toIndentedString(localIp)).append("\n");
         sb.append("    markedForDelete: ").append(toIndentedString(markedForDelete)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    pubKey: ").append(toIndentedString(pubKey)).append("\n");
         sb.append("    pubKeyPem: ").append(toIndentedString(pubKeyPem)).append("\n");

@@ -307,6 +307,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String haMode = "HA_MODE_SHARED";
 
+    @JsonProperty("handle_per_pkt_attack")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean handlePerPktAttack = true;
+
     @JsonProperty("hardwaresecuritymodulegroup_ref")
     @JsonInclude(Include.NON_NULL)
     private String hardwaresecuritymodulegroupRef = null;
@@ -491,6 +495,14 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer natFlowUdpResponseTimeout;
 
+    @JsonProperty("netlink_poller_threads")
+    @JsonInclude(Include.NON_NULL)
+    private Integer netlinkPollerThreads = 2;
+
+    @JsonProperty("netlink_sock_buf_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer netlinkSockBufSize = 4;
+
     @JsonProperty("non_significant_log_throttle")
     @JsonInclude(Include.NON_NULL)
     private Integer nonSignificantLogThrottle = 100;
@@ -534,6 +546,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("per_app")
     @JsonInclude(Include.NON_NULL)
     private Boolean perApp = false;
+
+    @JsonProperty("per_vs_admission_control")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean perVsAdmissionControl = false;
 
     @JsonProperty("placement_mode")
     @JsonInclude(Include.NON_NULL)
@@ -623,6 +639,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String seHyperthreadedMode = "SE_CPU_HT_AUTO";
 
+    @JsonProperty("se_ip_encap_ipc")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seIpEncapIpc = 0;
+
     @JsonProperty("se_ipc_udp_port")
     @JsonInclude(Include.NON_NULL)
     private Integer seIpcUdpPort;
@@ -630,6 +650,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("se_kni_burst_factor")
     @JsonInclude(Include.NON_NULL)
     private Integer seKniBurstFactor = 0;
+
+    @JsonProperty("se_l3_encap_ipc")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seL3EncapIpc = 0;
 
     @JsonProperty("se_lro")
     @JsonInclude(Include.NON_NULL)
@@ -802,6 +826,10 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("use_hyperthreaded_cores")
     @JsonInclude(Include.NON_NULL)
     private Boolean useHyperthreadedCores = true;
+
+    @JsonProperty("use_objsync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean useObjsync = true;
 
     @JsonProperty("use_standard_alb")
     @JsonInclude(Include.NON_NULL)
@@ -1004,6 +1032,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable aggressive failover configuration for ha.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return aggressiveFailureDetection
    */
@@ -1015,6 +1044,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable aggressive failover configuration for ha.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param aggressiveFailureDetection set the aggressiveFailureDetection.
    */
@@ -1079,6 +1109,8 @@ public class ServiceEngineGroup extends AviRestResource {
    * Special values are 0- 'disable'.
    * Field introduced in 18.2.3.
    * Unit is percent.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+   * Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return appCachePercent
    */
@@ -1095,6 +1127,8 @@ public class ServiceEngineGroup extends AviRestResource {
    * Special values are 0- 'disable'.
    * Field introduced in 18.2.3.
    * Unit is percent.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+   * Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param appCachePercent set the appCachePercent.
    */
@@ -1192,6 +1226,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ssl handshakes will be handled by dedicated ssl threads.requires se reboot.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return asyncSsl
    */
@@ -1203,6 +1238,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ssl handshakes will be handled by dedicated ssl threads.requires se reboot.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param asyncSsl set the asyncSsl.
    */
@@ -1239,6 +1275,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds.
    * Only alerts are generated when the auto_rebalance is not set.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return autoRebalance
    */
@@ -1251,6 +1288,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * If set, virtual services will be automatically migrated when load on an se is less than minimum or more than maximum thresholds.
    * Only alerts are generated when the auto_rebalance is not set.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param autoRebalance set the autoRebalance.
    */
@@ -1372,6 +1410,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Redistribution of virtual services from the takeover se to the replacement se can cause momentary traffic loss.
    * If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to rest api.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return autoRedistributeActiveStandbyLoad
    */
@@ -1384,6 +1423,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Redistribution of virtual services from the takeover se to the replacement se can cause momentary traffic loss.
    * If the auto-redistribute load option is left in its default off state, any desired rebalancing requires calls to rest api.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param autoRedistributeActiveStandbyLoad set the autoRedistributeActiveStandbyLoad.
    */
@@ -2080,6 +2120,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Use both the active and standby service engines for virtual service placement in the legacy active standby ha mode.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return distributeLoadActiveStandby
    */
@@ -2091,6 +2132,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Use both the active and standby service engines for virtual service placement in the legacy active standby ha mode.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param distributeLoadActiveStandby set the distributeLoadActiveStandby.
    */
@@ -2105,6 +2147,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Requires se reboot.
    * Deprecated from 18.2.8, instead use max_queues_per_vnic.
    * Field introduced in 17.2.8.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return distributeQueues
    */
@@ -2119,6 +2162,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Requires se reboot.
    * Deprecated from 18.2.8, instead use max_queues_per_vnic.
    * Field introduced in 17.2.8.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param distributeQueues set the distributeQueues.
    */
@@ -2363,6 +2407,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable routing for this serviceenginegroup.
    * Field deprecated in 18.2.5.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * @return enableRouting
    */
   @VsoMethod
@@ -2374,6 +2419,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable routing for this serviceenginegroup.
    * Field deprecated in 18.2.5.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * @param enableRouting set the enableRouting.
    */
   @VsoMethod
@@ -2529,6 +2575,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 1 tag will advertise this floating ip when manual load distribution is enabled.
    * Field deprecated in 18.2.5.
+   * Maximum of 32 items allowed.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -2542,6 +2589,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 1 tag will advertise this floating ip when manual load distribution is enabled.
    * Field deprecated in 18.2.5.
+   * Maximum of 32 items allowed.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -2555,6 +2603,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 1 tag will advertise this floating ip when manual load distribution is enabled.
    * Field deprecated in 18.2.5.
+   * Maximum of 32 items allowed.
    * @return floatingIntfIp
    */
   @VsoMethod
@@ -2573,6 +2622,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field deprecated in 18.2.5.
+   * Maximum of 32 items allowed.
    * @return floatingIntfIpSe2
    */
   @VsoMethod
@@ -2586,6 +2636,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field deprecated in 18.2.5.
+   * Maximum of 32 items allowed.
    * @return floatingIntfIpSe2
    */
   @VsoMethod
@@ -2599,6 +2650,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field deprecated in 18.2.5.
+   * Maximum of 32 items allowed.
    * @return floatingIntfIpSe2
    */
   @VsoMethod
@@ -2715,6 +2767,10 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * High availability mode for all the virtual services using this service engine group.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Allowed in basic(allowed values- ha_mode_legacy_active_standby) edition, essentials(allowed values- ha_mode_legacy_active_standby) edition,
+   * enterprise edition.
+   * Special default for basic edition is ha_mode_legacy_active_standby, essentials edition is ha_mode_legacy_active_standby, enterprise is
+   * ha_mode_shared.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HA_MODE_SHARED".
    * @return haMode
    */
@@ -2727,12 +2783,42 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * High availability mode for all the virtual services using this service engine group.
    * Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.
+   * Allowed in basic(allowed values- ha_mode_legacy_active_standby) edition, essentials(allowed values- ha_mode_legacy_active_standby) edition,
+   * enterprise edition.
+   * Special default for basic edition is ha_mode_legacy_active_standby, essentials edition is ha_mode_legacy_active_standby, enterprise is
+   * ha_mode_shared.
    * Default value when not specified in API or module is interpreted by Avi Controller as "HA_MODE_SHARED".
    * @param haMode set the haMode.
    */
   @VsoMethod
   public void setHaMode(String  haMode) {
     this.haMode = haMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configuration to handle per packet attack handling.for example, dns reflection attack is a type of attack where a response packet is sent to the
+   * dns vs.this configuration tells if such packets should be dropped without further processing.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return handlePerPktAttack
+   */
+  @VsoMethod
+  public Boolean getHandlePerPktAttack() {
+    return handlePerPktAttack;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configuration to handle per packet attack handling.for example, dns reflection attack is a type of attack where a response packet is sent to the
+   * dns vs.this configuration tells if such packets should be dropped without further processing.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param handlePerPktAttack set the handlePerPktAttack.
+   */
+  @VsoMethod
+  public void setHandlePerPktAttack(Boolean  handlePerPktAttack) {
+    this.handlePerPktAttack = handlePerPktAttack;
   }
 
   /**
@@ -2788,6 +2874,8 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enable active health monitoring from the standby se for all placed virtual services.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return hmOnStandby
    */
@@ -2799,6 +2887,8 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enable active health monitoring from the standby se for all placed virtual services.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param hmOnStandby set the hmOnStandby.
    */
@@ -3020,6 +3110,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Iptable rules.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return iptables
    */
@@ -3031,6 +3122,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the iptables
    * Iptable rules.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return iptables
    */
@@ -3042,6 +3134,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method this will set the iptables
    * Iptable rules.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return iptables
    */
@@ -3059,6 +3152,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Labels associated with this se group.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -3071,6 +3165,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method. this will set the labels
    * Labels associated with this se group.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -3083,6 +3178,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method this will set the labels
    * Labels associated with this se group.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -3202,6 +3298,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Se will log memory allocation related failure to the se_trace file, wherever available.
    * Field introduced in 20.1.2.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return logMallocFailure
    */
@@ -3214,6 +3311,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Se will log memory allocation related failure to the se_trace file, wherever available.
    * Field introduced in 20.1.2.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param logMallocFailure set the logMallocFailure.
    */
@@ -3311,6 +3409,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This should only be used if user wants to limit the number of se_dps to less than the available cpus on the se.
    * Allowed values are 1-128.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maxNumSeDps
    */
@@ -3326,6 +3425,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This should only be used if user wants to limit the number of se_dps to less than the available cpus on the se.
    * Allowed values are 1-128.
    * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param maxNumSeDps set the maxNumSeDps.
    */
@@ -3956,6 +4056,64 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Number of threads to poll for netlink messages excluding the thread for default namespace.
+   * Requires se reboot.
+   * Allowed values are 1-32.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+   * @return netlinkPollerThreads
+   */
+  @VsoMethod
+  public Integer getNetlinkPollerThreads() {
+    return netlinkPollerThreads;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of threads to poll for netlink messages excluding the thread for default namespace.
+   * Requires se reboot.
+   * Allowed values are 1-32.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+   * @param netlinkPollerThreads set the netlinkPollerThreads.
+   */
+  @VsoMethod
+  public void setNetlinkPollerThreads(Integer  netlinkPollerThreads) {
+    this.netlinkPollerThreads = netlinkPollerThreads;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Socket buffer size for the netlink sockets.
+   * Requires se reboot.
+   * Allowed values are 1-128.
+   * Field introduced in 20.1.3.
+   * Unit is mega_bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @return netlinkSockBufSize
+   */
+  @VsoMethod
+  public Integer getNetlinkSockBufSize() {
+    return netlinkSockBufSize;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Socket buffer size for the netlink sockets.
+   * Requires se reboot.
+   * Allowed values are 1-128.
+   * Field introduced in 20.1.3.
+   * Unit is mega_bytes.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param netlinkSockBufSize set the netlinkSockBufSize.
+   */
+  @VsoMethod
+  public void setNetlinkSockBufSize(Integer  netlinkSockBufSize) {
+    this.netlinkSockBufSize = netlinkSockBufSize;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This setting limits the number of non-significant logs generated per second per core on this se.
    * Default is 100 logs per second.
    * Set it to zero (0) to deactivate throttling.
@@ -4057,6 +4215,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.1.1.
+   * Maximum of 5 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return openstackAvailabilityZones
    */
@@ -4068,6 +4227,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the openstackAvailabilityZones
    * Field introduced in 17.1.1.
+   * Maximum of 5 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return openstackAvailabilityZones
    */
@@ -4079,6 +4239,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method this will set the openstackAvailabilityZones
    * Field introduced in 17.1.1.
+   * Maximum of 5 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return openstackAvailabilityZones
    */
@@ -4225,6 +4386,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Per-app se mode is designed for deploying dedicated load balancers per app (vs).
    * In this mode, each se is limited to a max of 2 vss.
    * Vcpus in per-app ses count towards licensing usage at 25% rate.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return perApp
    */
@@ -4238,12 +4400,39 @@ public class ServiceEngineGroup extends AviRestResource {
    * Per-app se mode is designed for deploying dedicated load balancers per app (vs).
    * In this mode, each se is limited to a max of 2 vss.
    * Vcpus in per-app ses count towards licensing usage at 25% rate.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param perApp set the perApp.
    */
   @VsoMethod
   public void setPerApp(Boolean  perApp) {
     this.perApp = perApp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable/disable per vs level admission control.enabling this feature will cause the connection and packet throttling on a particular vs that has
+   * high packet buffer consumption.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return perVsAdmissionControl
+   */
+  @VsoMethod
+  public Boolean getPerVsAdmissionControl() {
+    return perVsAdmissionControl;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable/disable per vs level admission control.enabling this feature will cause the connection and packet throttling on a particular vs that has
+   * high packet buffer consumption.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param perVsAdmissionControl set the perVsAdmissionControl.
+   */
+  @VsoMethod
+  public void setPerVsAdmissionControl(Boolean  perVsAdmissionControl) {
+    this.perVsAdmissionControl = perVsAdmissionControl;
   }
 
   /**
@@ -4371,6 +4560,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Select the se bandwidth for the bandwidth license.
    * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
    * Field introduced in 17.2.5.
+   * Allowed in basic(allowed values- se_bandwidth_unlimited) edition, essentials(allowed values- se_bandwidth_unlimited) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seBandwidthType
    */
@@ -4384,6 +4574,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Select the se bandwidth for the bandwidth license.
    * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
    * Field introduced in 17.2.5.
+   * Allowed in basic(allowed values- se_bandwidth_unlimited) edition, essentials(allowed values- se_bandwidth_unlimited) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seBandwidthType set the seBandwidthType.
    */
@@ -4397,6 +4588,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Delay the cleanup of flowtable entry.
    * To be used under surveillance of avi support.
    * Field introduced in 20.1.2.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seDelayedFlowDelete
    */
@@ -4410,6 +4602,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Delay the cleanup of flowtable entry.
    * To be used under surveillance of avi support.
    * Field introduced in 20.1.2.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param seDelayedFlowDelete set the seDelayedFlowDelete.
    */
@@ -4500,7 +4693,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The highest supported se-se heartbeat protocol version.
    * This version is reported by secondary se to primary se in heartbeat response messages.
-   * Allowed values are 1-2.
+   * Allowed values are 1-3.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return seDpMaxHbVersion
@@ -4514,7 +4707,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * The highest supported se-se heartbeat protocol version.
    * This version is reported by secondary se to primary se in heartbeat response messages.
-   * Allowed values are 1-2.
+   * Allowed values are 1-3.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param seDpMaxHbVersion set the seDpMaxHbVersion.
@@ -4812,6 +5005,32 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
+   * ip encap unconditionally    ~[0,1]   don't use ip encaprequires se reboot.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return seIpEncapIpc
+   */
+  @VsoMethod
+  public Integer getSeIpEncapIpc() {
+    return seIpEncapIpc;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
+   * ip encap unconditionally    ~[0,1]   don't use ip encaprequires se reboot.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seIpEncapIpc set the seIpEncapIpc.
+   */
+  @VsoMethod
+  public void setSeIpEncapIpc(Integer  seIpEncapIpc) {
+    this.seIpEncapIpc = seIpEncapIpc;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Udp port for se_dp ipc in docker bridge mode.
    * Field deprecated in 20.1.1.
    * Field introduced in 17.1.2.
@@ -4866,6 +5085,32 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
+   * use se interface ip unconditionally    ~[0,1]   don't use se interface iprequires se reboot.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return seL3EncapIpc
+   */
+  @VsoMethod
+  public Integer getSeL3EncapIpc() {
+    return seL3EncapIpc;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
+   * use se interface ip unconditionally    ~[0,1]   don't use se interface iprequires se reboot.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seL3EncapIpc set the seL3EncapIpc.
+   */
+  @VsoMethod
+  public void setSeL3EncapIpc(Integer  seL3EncapIpc) {
+    this.seL3EncapIpc = seL3EncapIpc;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enable or disable large receive optimization for vnics.
    * Requires se reboot.
    * Field introduced in 18.2.5.
@@ -4895,6 +5140,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * The retry count for the multi-producer enqueue before yielding the cpu.
    * To be used under surveillance of avi support.
    * Field introduced in 20.1.3.
+   * Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @return seMpRingRetryCount
    */
@@ -4908,6 +5154,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * The retry count for the multi-producer enqueue before yielding the cpu.
    * To be used under surveillance of avi support.
    * Field introduced in 20.1.3.
+   * Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 500.
    * @param seMpRingRetryCount set the seMpRingRetryCount.
    */
@@ -5390,6 +5637,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Multiplier for se threads based on vcpu.
    * Allowed values are 1-10.
+   * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return seThreadMultiplier
    */
@@ -5402,6 +5650,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Multiplier for se threads based on vcpu.
    * Allowed values are 1-10.
+   * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param seThreadMultiplier set the seThreadMultiplier.
    */
@@ -5442,6 +5691,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Tunnel mode can be enabled or disabled at run-time.
    * Allowed values are 0-2.
    * Field introduced in 17.1.1.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seTunnelMode
    */
@@ -5458,6 +5708,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Tunnel mode can be enabled or disabled at run-time.
    * Allowed values are 0-2.
    * Field introduced in 17.1.1.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seTunnelMode set the seTunnelMode.
    */
@@ -5522,6 +5773,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * To be used under surveillance of avi support.
    * Allowed values are 512-32768.
    * Field introduced in 20.1.2.
+   * Allowed in basic(allowed values- 2048) edition, essentials(allowed values- 2048) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
    * @return seTxqThreshold
    */
@@ -5536,6 +5788,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * To be used under surveillance of avi support.
    * Allowed values are 512-32768.
    * Field introduced in 20.1.2.
+   * Allowed in basic(allowed values- 2048) edition, essentials(allowed values- 2048) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
    * @param seTxqThreshold set the seTxqThreshold.
    */
@@ -5716,6 +5969,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable ses to elect a primary amongst themselves in the absence of a connectivity to controller.
    * Field introduced in 18.1.2.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return selfSeElection
    */
@@ -5728,6 +5982,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable ses to elect a primary amongst themselves in the absence of a connectivity to controller.
    * Field introduced in 18.1.2.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param selfSeElection set the selfSeElection.
    */
@@ -5741,6 +5996,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Ipv6 subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 18.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIp6Subnets
    */
@@ -5754,6 +6010,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Ipv6 subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 18.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIp6Subnets
    */
@@ -5767,6 +6024,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Ipv6 subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 18.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIp6Subnets
    */
@@ -5785,6 +6043,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 17.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -5798,6 +6057,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 17.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -5811,6 +6071,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 17.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceIpSubnets
    */
@@ -6033,6 +6294,30 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setUseHyperthreadedCores(Boolean  useHyperthreadedCores) {
     this.useHyperthreadedCores = useHyperthreadedCores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable interse objsyc distribution framework.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return useObjsync
+   */
+  @VsoMethod
+  public Boolean getUseObjsync() {
+    return useObjsync;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable interse objsyc distribution framework.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param useObjsync set the useObjsync.
+   */
+  @VsoMethod
+  public void setUseObjsync(Boolean  useObjsync) {
+    this.useObjsync = useObjsync;
   }
 
   /**
@@ -6323,6 +6608,8 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ensure primary and secondary service engines are deployed on different physical hosts.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Special default for basic edition is true, essentials edition is true, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return vsHostRedundancy
    */
@@ -6334,6 +6621,8 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ensure primary and secondary service engines are deployed on different physical hosts.
+   * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+   * Special default for basic edition is true, essentials edition is true, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param vsHostRedundancy set the vsHostRedundancy.
    */
@@ -6882,7 +7171,14 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.dpHbFrequency, objServiceEngineGroup.dpHbFrequency)&&
   Objects.equals(this.dpHbTimeoutCount, objServiceEngineGroup.dpHbTimeoutCount)&&
   Objects.equals(this.pcapTxRingRdBalancingFactor, objServiceEngineGroup.pcapTxRingRdBalancingFactor)&&
-  Objects.equals(this.gcpConfig, objServiceEngineGroup.gcpConfig);
+  Objects.equals(this.gcpConfig, objServiceEngineGroup.gcpConfig)&&
+  Objects.equals(this.useObjsync, objServiceEngineGroup.useObjsync)&&
+  Objects.equals(this.seIpEncapIpc, objServiceEngineGroup.seIpEncapIpc)&&
+  Objects.equals(this.seL3EncapIpc, objServiceEngineGroup.seL3EncapIpc)&&
+  Objects.equals(this.netlinkPollerThreads, objServiceEngineGroup.netlinkPollerThreads)&&
+  Objects.equals(this.netlinkSockBufSize, objServiceEngineGroup.netlinkSockBufSize)&&
+  Objects.equals(this.perVsAdmissionControl, objServiceEngineGroup.perVsAdmissionControl)&&
+  Objects.equals(this.handlePerPktAttack, objServiceEngineGroup.handlePerPktAttack);
 }
 
 @Override
@@ -6957,6 +7253,7 @@ public String toString() {
         sb.append("    gcpConfig: ").append(toIndentedString(gcpConfig)).append("\n");
         sb.append("    gratarpPermanentPeriodicity: ").append(toIndentedString(gratarpPermanentPeriodicity)).append("\n");
         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
+        sb.append("    handlePerPktAttack: ").append(toIndentedString(handlePerPktAttack)).append("\n");
         sb.append("    hardwaresecuritymodulegroupRef: ").append(toIndentedString(hardwaresecuritymodulegroupRef)).append("\n");
         sb.append("    heapMinimumConfigMemory: ").append(toIndentedString(heapMinimumConfigMemory)).append("\n");
         sb.append("    hmOnStandby: ").append(toIndentedString(hmOnStandby)).append("\n");
@@ -7003,6 +7300,8 @@ public String toString() {
         sb.append("    natFlowTcpHandshakeTimeout: ").append(toIndentedString(natFlowTcpHandshakeTimeout)).append("\n");
         sb.append("    natFlowUdpNoresponseTimeout: ").append(toIndentedString(natFlowUdpNoresponseTimeout)).append("\n");
         sb.append("    natFlowUdpResponseTimeout: ").append(toIndentedString(natFlowUdpResponseTimeout)).append("\n");
+        sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
+        sb.append("    netlinkSockBufSize: ").append(toIndentedString(netlinkSockBufSize)).append("\n");
         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
@@ -7014,6 +7313,7 @@ public String toString() {
         sb.append("    pcapTxMode: ").append(toIndentedString(pcapTxMode)).append("\n");
         sb.append("    pcapTxRingRdBalancingFactor: ").append(toIndentedString(pcapTxRingRdBalancingFactor)).append("\n");
         sb.append("    perApp: ").append(toIndentedString(perApp)).append("\n");
+        sb.append("    perVsAdmissionControl: ").append(toIndentedString(perVsAdmissionControl)).append("\n");
         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
@@ -7036,8 +7336,10 @@ public String toString() {
         sb.append("    seFlowProbeTimer: ").append(toIndentedString(seFlowProbeTimer)).append("\n");
         sb.append("    seGroupAnalyticsPolicy: ").append(toIndentedString(seGroupAnalyticsPolicy)).append("\n");
         sb.append("    seHyperthreadedMode: ").append(toIndentedString(seHyperthreadedMode)).append("\n");
+        sb.append("    seIpEncapIpc: ").append(toIndentedString(seIpEncapIpc)).append("\n");
         sb.append("    seIpcUdpPort: ").append(toIndentedString(seIpcUdpPort)).append("\n");
         sb.append("    seKniBurstFactor: ").append(toIndentedString(seKniBurstFactor)).append("\n");
+        sb.append("    seL3EncapIpc: ").append(toIndentedString(seL3EncapIpc)).append("\n");
         sb.append("    seLro: ").append(toIndentedString(seLro)).append("\n");
         sb.append("    seMpRingRetryCount: ").append(toIndentedString(seMpRingRetryCount)).append("\n");
         sb.append("    seMtu: ").append(toIndentedString(seMtu)).append("\n");
@@ -7080,6 +7382,7 @@ public String toString() {
         sb.append("    transientSharedMemoryMax: ").append(toIndentedString(transientSharedMemoryMax)).append("\n");
         sb.append("    udfLogThrottle: ").append(toIndentedString(udfLogThrottle)).append("\n");
             sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
+        sb.append("    useObjsync: ").append(toIndentedString(useObjsync)).append("\n");
         sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vcenterClusters: ").append(toIndentedString(vcenterClusters)).append("\n");

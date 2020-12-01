@@ -38,6 +38,7 @@ import com.vmware.avi.vro.model.CloudVipUpdate;
 import com.vmware.avi.vro.model.CloudVnicChange;
 import com.vmware.avi.vro.model.CloudASGNotifDetails;
 import com.vmware.avi.vro.model.CloudAutoscalingConfigFailureDetails;
+import com.vmware.avi.vro.model.CloudRouteNotifDetails;
 import com.vmware.avi.vro.model.ClusterConfigFailedEvent;
 import com.vmware.avi.vro.model.ClusterLeaderFailoverEvent;
 import com.vmware.avi.vro.model.ClusterNodeAddEvent;
@@ -86,6 +87,7 @@ import com.vmware.avi.vro.model.IPThreatDBEventData;
 import com.vmware.avi.vro.model.LicenseDetails;
 import com.vmware.avi.vro.model.LicenseExpiryDetails;
 import com.vmware.avi.vro.model.LicenseTransactionDetails;
+import com.vmware.avi.vro.model.LogAgentEventDetail;
 import com.vmware.avi.vro.model.MarathonServicePortConflict;
 import com.vmware.avi.vro.model.MemoryBalancerInfo;
 import com.vmware.avi.vro.model.MesosSetup;
@@ -148,7 +150,9 @@ import com.vmware.avi.vro.model.SeVnicDownEventDetails;
 import com.vmware.avi.vro.model.SeVnicTxQueueStallEventDetails;
 import com.vmware.avi.vro.model.SeVnicUpEventDetails;
 import com.vmware.avi.vro.model.SeVsFaultEventDetails;
+import com.vmware.avi.vro.model.SeVsPktBufHighEventDetails;
 import com.vmware.avi.vro.model.SecMgrDataEvent;
+import com.vmware.avi.vro.model.SecureKeyExchangeDetails;
 import com.vmware.avi.vro.model.SeMigrateEventDetails;
 import com.vmware.avi.vro.model.ServerAutoScaleFailedInfo;
 import com.vmware.avi.vro.model.ServerAutoScaleInCompleteInfo;
@@ -343,6 +347,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private CloudAutoscalingConfigFailureDetails cloudAutoscalingConfigFailureDetails = null;
 
+    @JsonProperty("cloud_route_notif_details")
+    @JsonInclude(Include.NON_NULL)
+    private CloudRouteNotifDetails cloudRouteNotifDetails = null;
+
     @JsonProperty("cluster_config_failed_details")
     @JsonInclude(Include.NON_NULL)
     private ClusterConfigFailedEvent clusterConfigFailedDetails = null;
@@ -534,6 +542,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("license_transaction_details")
     @JsonInclude(Include.NON_NULL)
     private LicenseTransactionDetails licenseTransactionDetails = null;
+
+    @JsonProperty("log_agent_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private LogAgentEventDetail logAgentEventDetails = null;
 
     @JsonProperty("marathon_service_port_conflict_details")
     @JsonInclude(Include.NON_NULL)
@@ -783,9 +795,17 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private SeVsFaultEventDetails seVsFaultEventDetails = null;
 
+    @JsonProperty("se_vs_pkt_buf_high_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeVsPktBufHighEventDetails seVsPktBufHighEventDetails = null;
+
     @JsonProperty("sec_mgr_data_event")
     @JsonInclude(Include.NON_NULL)
     private SecMgrDataEvent secMgrDataEvent = null;
+
+    @JsonProperty("secure_key_exchange_info")
+    @JsonInclude(Include.NON_NULL)
+    private SecureKeyExchangeDetails secureKeyExchangeInfo = null;
 
     @JsonProperty("semigrate_event_details")
     @JsonInclude(Include.NON_NULL)
@@ -1687,6 +1707,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setCloudAutoscalingConfigFailureDetails(CloudAutoscalingConfigFailureDetails cloudAutoscalingConfigFailureDetails) {
     this.cloudAutoscalingConfigFailureDetails = cloudAutoscalingConfigFailureDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Cloud routes event.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return cloudRouteNotifDetails
+   */
+  @VsoMethod
+  public CloudRouteNotifDetails getCloudRouteNotifDetails() {
+    return cloudRouteNotifDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloud routes event.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param cloudRouteNotifDetails set the cloudRouteNotifDetails.
+   */
+  @VsoMethod
+  public void setCloudRouteNotifDetails(CloudRouteNotifDetails cloudRouteNotifDetails) {
+    this.cloudRouteNotifDetails = cloudRouteNotifDetails;
   }
 
   /**
@@ -2743,6 +2787,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setLicenseTransactionDetails(LicenseTransactionDetails licenseTransactionDetails) {
     this.licenseTransactionDetails = licenseTransactionDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property log_agent_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return logAgentEventDetails
+   */
+  @VsoMethod
+  public LogAgentEventDetail getLogAgentEventDetails() {
+    return logAgentEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property log_agent_event_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param logAgentEventDetails set the logAgentEventDetails.
+   */
+  @VsoMethod
+  public void setLogAgentEventDetails(LogAgentEventDetail logAgentEventDetails) {
+    this.logAgentEventDetails = logAgentEventDetails;
   }
 
   /**
@@ -4119,6 +4185,28 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field introduced in 18.2.11,20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seVsPktBufHighEventDetails
+   */
+  @VsoMethod
+  public SeVsPktBufHighEventDetails getSeVsPktBufHighEventDetails() {
+    return seVsPktBufHighEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 18.2.11,20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seVsPktBufHighEventDetails set the seVsPktBufHighEventDetails.
+   */
+  @VsoMethod
+  public void setSeVsPktBufHighEventDetails(SeVsPktBufHighEventDetails seVsPktBufHighEventDetails) {
+    this.seVsPktBufHighEventDetails = seVsPktBufHighEventDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property sec_mgr_data_event of obj type eventdetails field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return secMgrDataEvent
@@ -4137,6 +4225,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSecMgrDataEvent(SecMgrDataEvent secMgrDataEvent) {
     this.secMgrDataEvent = secMgrDataEvent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property secure_key_exchange_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return secureKeyExchangeInfo
+   */
+  @VsoMethod
+  public SecureKeyExchangeDetails getSecureKeyExchangeInfo() {
+    return secureKeyExchangeInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property secure_key_exchange_info of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param secureKeyExchangeInfo set the secureKeyExchangeInfo.
+   */
+  @VsoMethod
+  public void setSecureKeyExchangeInfo(SecureKeyExchangeDetails secureKeyExchangeInfo) {
+    this.secureKeyExchangeInfo = secureKeyExchangeInfo;
   }
 
   /**
@@ -5163,6 +5273,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.rateLimiterEventDetails, objEventDetails.rateLimiterEventDetails)&&
   Objects.equals(this.seHbRecoveredEventDetails, objEventDetails.seHbRecoveredEventDetails)&&
   Objects.equals(this.seBgpPeerDownDetails, objEventDetails.seBgpPeerDownDetails)&&
+  Objects.equals(this.seVsPktBufHighEventDetails, objEventDetails.seVsPktBufHighEventDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -5281,10 +5392,13 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
   Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
+  Objects.equals(this.cloudRouteNotifDetails, objEventDetails.cloudRouteNotifDetails)&&
   Objects.equals(this.licenseTransactionDetails, objEventDetails.licenseTransactionDetails)&&
   Objects.equals(this.seReconcileDetails, objEventDetails.seReconcileDetails)&&
   Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails)&&
-  Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo);
+  Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
+  Objects.equals(this.secureKeyExchangeInfo, objEventDetails.secureKeyExchangeInfo)&&
+  Objects.equals(this.logAgentEventDetails, objEventDetails.logAgentEventDetails);
 }
 
 @Override
@@ -5324,6 +5438,7 @@ public String toString() {
         sb.append("    ccVnicDetails: ").append(toIndentedString(ccVnicDetails)).append("\n");
         sb.append("    cloudAsgNotifDetails: ").append(toIndentedString(cloudAsgNotifDetails)).append("\n");
         sb.append("    cloudAutoscalingConfigFailureDetails: ").append(toIndentedString(cloudAutoscalingConfigFailureDetails)).append("\n");
+        sb.append("    cloudRouteNotifDetails: ").append(toIndentedString(cloudRouteNotifDetails)).append("\n");
         sb.append("    clusterConfigFailedDetails: ").append(toIndentedString(clusterConfigFailedDetails)).append("\n");
         sb.append("    clusterLeaderFailoverDetails: ").append(toIndentedString(clusterLeaderFailoverDetails)).append("\n");
         sb.append("    clusterNodeAddDetails: ").append(toIndentedString(clusterNodeAddDetails)).append("\n");
@@ -5372,6 +5487,7 @@ public String toString() {
         sb.append("    licenseDetails: ").append(toIndentedString(licenseDetails)).append("\n");
         sb.append("    licenseExpiryDetails: ").append(toIndentedString(licenseExpiryDetails)).append("\n");
         sb.append("    licenseTransactionDetails: ").append(toIndentedString(licenseTransactionDetails)).append("\n");
+        sb.append("    logAgentEventDetails: ").append(toIndentedString(logAgentEventDetails)).append("\n");
         sb.append("    marathonServicePortConflictDetails: ").append(toIndentedString(marathonServicePortConflictDetails)).append("\n");
         sb.append("    memoryBalancerInfo: ").append(toIndentedString(memoryBalancerInfo)).append("\n");
         sb.append("    mesosInfraDetails: ").append(toIndentedString(mesosInfraDetails)).append("\n");
@@ -5434,7 +5550,9 @@ public String toString() {
         sb.append("    seVnicTxQueueStallEventDetails: ").append(toIndentedString(seVnicTxQueueStallEventDetails)).append("\n");
         sb.append("    seVnicUpEventDetails: ").append(toIndentedString(seVnicUpEventDetails)).append("\n");
         sb.append("    seVsFaultEventDetails: ").append(toIndentedString(seVsFaultEventDetails)).append("\n");
+        sb.append("    seVsPktBufHighEventDetails: ").append(toIndentedString(seVsPktBufHighEventDetails)).append("\n");
         sb.append("    secMgrDataEvent: ").append(toIndentedString(secMgrDataEvent)).append("\n");
+        sb.append("    secureKeyExchangeInfo: ").append(toIndentedString(secureKeyExchangeInfo)).append("\n");
         sb.append("    semigrateEventDetails: ").append(toIndentedString(semigrateEventDetails)).append("\n");
         sb.append("    serverAutoscaleFailedInfo: ").append(toIndentedString(serverAutoscaleFailedInfo)).append("\n");
         sb.append("    serverAutoscaleinCompleteInfo: ").append(toIndentedString(serverAutoscaleinCompleteInfo)).append("\n");

@@ -100,6 +100,7 @@ public class WafRule extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -114,6 +115,7 @@ public class WafRule extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -128,6 +130,7 @@ public class WafRule extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.3.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -356,6 +359,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -369,6 +373,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -382,6 +387,7 @@ public class WafRule extends AviRestResource {
    * Tags for waf rule as per modsec language.
    * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */

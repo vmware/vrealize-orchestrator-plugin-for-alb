@@ -140,6 +140,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum number of cores required for controller.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @return controllerMinCores
    */
@@ -152,6 +153,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum number of cores required for controller.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 8.
    * @param controllerMinCores set the controllerMinCores.
    */
@@ -191,6 +193,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum memory required(in gb) for controller.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @return controllerMinMemory
    */
@@ -204,6 +207,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum memory required(in gb) for controller.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 24.
    * @param controllerMinMemory set the controllerMinMemory.
    */
@@ -217,6 +221,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) for controller.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @return controllerMinTotalDisk
    */
@@ -230,6 +235,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) for controller.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 128.
    * @param controllerMinTotalDisk set the controllerMinTotalDisk.
    */
@@ -344,6 +350,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Minimum  number of cores required for se.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return seMinCores
    */
@@ -356,6 +363,7 @@ public class SupportedMigrations extends AviRestResource {
    * This is the setter method to the attribute.
    * Minimum  number of cores required for se.
    * Field introduced in 18.2.10, 20.1.2.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param seMinCores set the seMinCores.
    */
@@ -395,6 +403,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum  memory required(in gb) for se.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return seMinMemory
    */
@@ -408,6 +417,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum  memory required(in gb) for se.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param seMinMemory set the seMinMemory.
    */
@@ -421,6 +431,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) for se.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return seMinTotalDisk
    */
@@ -434,6 +445,7 @@ public class SupportedMigrations extends AviRestResource {
    * Minimum space required(in gb) for se.
    * Field introduced in 18.2.10, 20.1.2.
    * Unit is gb.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param seMinTotalDisk set the seMinTotalDisk.
    */

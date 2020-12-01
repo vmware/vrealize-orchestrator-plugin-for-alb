@@ -80,6 +80,7 @@ public class WafRuleGroup extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.1.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -94,6 +95,7 @@ public class WafRuleGroup extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.1.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -108,6 +110,7 @@ public class WafRuleGroup extends AviRestResource {
    * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
    * If there are multiple excludelist entries, it will be 'logical or' of them.
    * Field introduced in 17.2.1.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return excludeList
    */
@@ -195,6 +198,7 @@ public class WafRuleGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rules as per modsec language.
    * Field introduced in 17.2.1.
+   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -207,6 +211,7 @@ public class WafRuleGroup extends AviRestResource {
    * This is the setter method. this will set the rules
    * Rules as per modsec language.
    * Field introduced in 17.2.1.
+   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -219,6 +224,7 @@ public class WafRuleGroup extends AviRestResource {
    * This is the setter method this will set the rules
    * Rules as per modsec language.
    * Field introduced in 17.2.1.
+   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */

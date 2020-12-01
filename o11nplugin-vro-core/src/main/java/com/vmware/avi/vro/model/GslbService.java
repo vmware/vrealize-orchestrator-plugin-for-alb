@@ -224,6 +224,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Fully qualified domain name of the gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -235,6 +236,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method. this will set the domainNames
    * Fully qualified domain name of the gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -246,6 +248,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method this will set the domainNames
    * Fully qualified domain name of the gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -310,6 +313,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Select list of pools belonging to this gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -321,6 +325,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method. this will set the groups
    * Select list of pools belonging to this gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -332,6 +337,7 @@ public class GslbService extends AviRestResource {
   /**
    * This is the setter method this will set the groups
    * Select list of pools belonging to this gslb service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -350,6 +356,7 @@ public class GslbService extends AviRestResource {
    * Verify vs health by applying one or more health monitors.
    * Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
    * It is a reference to an object of type healthmonitor.
+   * Maximum of 6 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -363,6 +370,7 @@ public class GslbService extends AviRestResource {
    * Verify vs health by applying one or more health monitors.
    * Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
    * It is a reference to an object of type healthmonitor.
+   * Maximum of 6 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -376,6 +384,7 @@ public class GslbService extends AviRestResource {
    * Verify vs health by applying one or more health monitors.
    * Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
    * It is a reference to an object of type healthmonitor.
+   * Maximum of 6 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return healthMonitorRefs
    */
@@ -446,6 +455,7 @@ public class GslbService extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -459,6 +469,7 @@ public class GslbService extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -472,6 +483,7 @@ public class GslbService extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */

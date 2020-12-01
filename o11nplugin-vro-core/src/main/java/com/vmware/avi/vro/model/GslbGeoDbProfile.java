@@ -85,6 +85,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * List of geodb entries.
    * An entry can either be a geodb file or an ip address group with geo properties.
    * Field introduced in 17.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
@@ -98,6 +99,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * List of geodb entries.
    * An entry can either be a geodb file or an ip address group with geo properties.
    * Field introduced in 17.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
@@ -111,6 +113,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * List of geodb entries.
    * An entry can either be a geodb file or an ip address group with geo properties.
    * Field introduced in 17.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entries
    */
@@ -153,6 +156,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -166,6 +170,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -179,6 +184,7 @@ public class GslbGeoDbProfile extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */

@@ -204,6 +204,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ldap server ip address or hostname.
    * Use ip address if an auth profile is used to configure virtual service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -216,6 +217,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method. this will set the server
    * Ldap server ip address or hostname.
    * Use ip address if an auth profile is used to configure virtual service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */
@@ -228,6 +230,7 @@ public class LdapAuthSettings extends AviRestResource {
    * This is the setter method this will set the server
    * Ldap server ip address or hostname.
    * Use ip address if an auth profile is used to configure virtual service.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return server
    */

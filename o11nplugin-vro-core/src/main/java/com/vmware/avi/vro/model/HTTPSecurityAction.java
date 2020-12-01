@@ -58,6 +58,9 @@ public class HTTPSecurityAction extends AviRestResource {
    * Type of the security action to perform.
    * Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW,
    * HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP.
+   * Allowed in basic(allowed values- http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https)
+   * edition, essentials(allowed values- http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https)
+   * edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return action
    */
@@ -71,6 +74,9 @@ public class HTTPSecurityAction extends AviRestResource {
    * Type of the security action to perform.
    * Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW,
    * HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP.
+   * Allowed in basic(allowed values- http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https)
+   * edition, essentials(allowed values- http_security_action_close_conn,http_security_action_send_response,http_security_action_redirect_to_https)
+   * edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param action set the action.
    */
@@ -153,6 +159,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Rate limiting configuration for this action.
    * Field introduced in 18.2.9.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rateProfile
    */
@@ -165,6 +172,7 @@ public class HTTPSecurityAction extends AviRestResource {
    * This is the setter method to the attribute.
    * Rate limiting configuration for this action.
    * Field introduced in 18.2.9.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rateProfile set the rateProfile.
    */

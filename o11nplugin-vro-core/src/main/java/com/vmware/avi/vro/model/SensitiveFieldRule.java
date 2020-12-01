@@ -125,6 +125,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Criterion to use for matching in the log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return match
    */
@@ -137,6 +138,7 @@ public class SensitiveFieldRule extends AviRestResource {
    * This is the setter method to the attribute.
    * Criterion to use for matching in the log.
    * Field introduced in 17.2.10, 18.1.2.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param match set the match.
    */

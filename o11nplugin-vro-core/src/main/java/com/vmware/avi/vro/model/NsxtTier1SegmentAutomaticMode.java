@@ -91,6 +91,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Tier1 logical router ids.
    * Field introduced in 20.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrIds
    */
@@ -103,6 +104,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the setter method. this will set the tier1LrIds
    * Tier1 logical router ids.
    * Field introduced in 20.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrIds
    */
@@ -115,6 +117,7 @@ public class NsxtTier1SegmentAutomaticMode extends AviRestResource {
    * This is the setter method this will set the tier1LrIds
    * Tier1 logical router ids.
    * Field introduced in 20.1.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tier1LrIds
    */

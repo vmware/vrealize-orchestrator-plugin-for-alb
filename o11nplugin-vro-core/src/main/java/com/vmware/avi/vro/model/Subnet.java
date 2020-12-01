@@ -35,11 +35,11 @@ public class Subnet extends AviRestResource {
 
     @JsonProperty("static_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddr> staticIps = null;
+    private List<IpAddr> staticIps;
 
     @JsonProperty("static_ranges")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrRange> staticRanges = null;
+    private List<IpAddrRange> staticRanges;
 
 
 
@@ -108,8 +108,8 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Specify a pool of ip addresses for use in service engines.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use static_ip_ranges.
+   * Field deprecated in 20.1.3.
    * @return staticIps
    */
   @VsoMethod
@@ -119,8 +119,8 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the setter method. this will set the staticIps
-   * Specify a pool of ip addresses for use in service engines.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use static_ip_ranges.
+   * Field deprecated in 20.1.3.
    * @return staticIps
    */
   @VsoMethod
@@ -130,8 +130,8 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the setter method this will set the staticIps
-   * Specify a pool of ip addresses for use in service engines.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use static_ip_ranges.
+   * Field deprecated in 20.1.3.
    * @return staticIps
    */
   @VsoMethod
@@ -146,8 +146,8 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property static_ranges of obj type subnet field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use static_ip_ranges.
+   * Field deprecated in 20.1.3.
    * @return staticRanges
    */
   @VsoMethod
@@ -157,8 +157,8 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the setter method. this will set the staticRanges
-   * Placeholder for description of property static_ranges of obj type subnet field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use static_ip_ranges.
+   * Field deprecated in 20.1.3.
    * @return staticRanges
    */
   @VsoMethod
@@ -168,8 +168,8 @@ public class Subnet extends AviRestResource {
 
   /**
    * This is the setter method this will set the staticRanges
-   * Placeholder for description of property static_ranges of obj type subnet field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Use static_ip_ranges.
+   * Field deprecated in 20.1.3.
    * @return staticRanges
    */
   @VsoMethod

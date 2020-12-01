@@ -336,6 +336,7 @@ public class GslbSite extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Ip address(es) of the site's cluster.
    * For a 3-node cluster, either the cluster vip is provided, or the list of controller ips in the cluster are provided.
+   * Maximum of 3 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
@@ -348,6 +349,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method. this will set the ipAddresses
    * Ip address(es) of the site's cluster.
    * For a 3-node cluster, either the cluster vip is provided, or the list of controller ips in the cluster are provided.
+   * Maximum of 3 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */
@@ -360,6 +362,7 @@ public class GslbSite extends AviRestResource {
    * This is the setter method this will set the ipAddresses
    * Ip address(es) of the site's cluster.
    * For a 3-node cluster, either the cluster vip is provided, or the list of controller ips in the cluster are provided.
+   * Maximum of 3 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipAddresses
    */

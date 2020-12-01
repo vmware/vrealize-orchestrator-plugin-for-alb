@@ -139,6 +139,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * Queries for fqdns that are subdomains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
    * Field deprecated in 18.2.6.
    * Field introduced in 17.1.6,17.2.2.
+   * Maximum of 100 items allowed.
    * @return authoritativeDomainNames
    */
   @VsoMethod
@@ -153,6 +154,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * Queries for fqdns that are subdomains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
    * Field deprecated in 18.2.6.
    * Field introduced in 17.1.6,17.2.2.
+   * Maximum of 100 items allowed.
    * @return authoritativeDomainNames
    */
   @VsoMethod
@@ -167,6 +169,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * Queries for fqdns that are subdomains of this domain and do not have any dns record in avi are dropped or nxdomain response sent.
    * Field deprecated in 18.2.6.
    * Field introduced in 17.1.6,17.2.2.
+   * Maximum of 100 items allowed.
    * @return authoritativeDomainNames
    */
   @VsoMethod
@@ -209,6 +212,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Dns zones hosted on this virtual service.
    * Field introduced in 18.2.6.
+   * Maximum of 100 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsZones
    */
@@ -221,6 +225,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method. this will set the dnsZones
    * Dns zones hosted on this virtual service.
    * Field introduced in 18.2.6.
+   * Maximum of 100 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsZones
    */
@@ -233,6 +238,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method this will set the dnsZones
    * Dns zones hosted on this virtual service.
    * Field introduced in 18.2.6.
+   * Maximum of 100 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dnsZones
    */
@@ -250,6 +256,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Subdomain names serviced by this virtual service.
    * These are configured as ends-with semantics.
+   * Maximum of 100 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -262,6 +269,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method. this will set the domainNames
    * Subdomain names serviced by this virtual service.
    * These are configured as ends-with semantics.
+   * Maximum of 100 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */
@@ -274,6 +282,7 @@ public class DnsServiceApplicationProfile extends AviRestResource {
    * This is the setter method this will set the domainNames
    * Subdomain names serviced by this virtual service.
    * These are configured as ends-with semantics.
+   * Maximum of 100 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return domainNames
    */

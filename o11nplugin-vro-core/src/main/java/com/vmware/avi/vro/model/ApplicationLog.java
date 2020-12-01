@@ -9,6 +9,9 @@ import com.vmware.avi.vro.model.SSLCipherList;
 import com.vmware.avi.vro.model.ConnErrorInfo;
 import com.vmware.avi.vro.model.DataScriptErrorTrace;
 import com.vmware.avi.vro.model.IcapLog;
+import com.vmware.avi.vro.model.JwtLog;
+import com.vmware.avi.vro.model.NtlmLog;
+import com.vmware.avi.vro.model.OutOfBandRequestLog;
 import com.vmware.avi.vro.model.PaaLog;
 import com.vmware.avi.vro.model.SamlLog;
 import com.vmware.avi.vro.model.WafLog;
@@ -195,6 +198,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private IcapLog icapLog = null;
 
+    @JsonProperty("jwt_log")
+    @JsonInclude(Include.NON_NULL)
+    private JwtLog jwtLog = null;
+
     @JsonProperty("log_id")
     @JsonInclude(Include.NON_NULL)
     private Integer logId = null;
@@ -215,9 +222,17 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String networkSecurityPolicyRuleName = null;
 
+    @JsonProperty("ntlm_log")
+    @JsonInclude(Include.NON_NULL)
+    private NtlmLog ntlmLog = null;
+
     @JsonProperty("ocsp_status_resp_sent")
     @JsonInclude(Include.NON_NULL)
     private Boolean ocspStatusRespSent = false;
+
+    @JsonProperty("oob_log")
+    @JsonInclude(Include.NON_NULL)
+    private OutOfBandRequestLog oobLog = null;
 
     @JsonProperty("paa_log")
     @JsonInclude(Include.NON_NULL)
@@ -1433,6 +1448,30 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Logs for the jwt validation process.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return jwtLog
+   */
+  @VsoMethod
+  public JwtLog getJwtLog() {
+    return jwtLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Logs for the jwt validation process.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param jwtLog set the jwtLog.
+   */
+  @VsoMethod
+  public void setJwtLog(JwtLog jwtLog) {
+    this.jwtLog = jwtLog;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property log_id of obj type applicationlog field type str  type integer.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logId
@@ -1543,6 +1582,30 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Ntlm auto-detection logs.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ntlmLog
+   */
+  @VsoMethod
+  public NtlmLog getNtlmLog() {
+    return ntlmLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ntlm auto-detection logs.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ntlmLog set the ntlmLog.
+   */
+  @VsoMethod
+  public void setNtlmLog(NtlmLog ntlmLog) {
+    this.ntlmLog = ntlmLog;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Ocsp certificate status response sent in the ssl/tls connection handshake.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -1563,6 +1626,30 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setOcspStatusRespSent(Boolean  ocspStatusRespSent) {
     this.ocspStatusRespSent = ocspStatusRespSent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Logs for http out-of-band requests.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return oobLog
+   */
+  @VsoMethod
+  public OutOfBandRequestLog getOobLog() {
+    return oobLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Logs for http out-of-band requests.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param oobLog set the oobLog.
+   */
+  @VsoMethod
+  public void setOobLog(OutOfBandRequestLog oobLog) {
+    this.oobLog = oobLog;
   }
 
   /**
@@ -3213,7 +3300,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.grpcMethodName, objApplicationLog.grpcMethodName)&&
   Objects.equals(this.grpcStatusReasonPhrase, objApplicationLog.grpcStatusReasonPhrase)&&
   Objects.equals(this.icapLog, objApplicationLog.icapLog)&&
-  Objects.equals(this.samlLog, objApplicationLog.samlLog);
+  Objects.equals(this.samlLog, objApplicationLog.samlLog)&&
+  Objects.equals(this.jwtLog, objApplicationLog.jwtLog)&&
+  Objects.equals(this.ntlmLog, objApplicationLog.ntlmLog)&&
+  Objects.equals(this.oobLog, objApplicationLog.oobLog);
 }
 
 @Override
@@ -3261,12 +3351,15 @@ public String toString() {
         sb.append("    httpSecurityPolicyRuleName: ").append(toIndentedString(httpSecurityPolicyRuleName)).append("\n");
         sb.append("    httpVersion: ").append(toIndentedString(httpVersion)).append("\n");
         sb.append("    icapLog: ").append(toIndentedString(icapLog)).append("\n");
+        sb.append("    jwtLog: ").append(toIndentedString(jwtLog)).append("\n");
         sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
+        sb.append("    ntlmLog: ").append(toIndentedString(ntlmLog)).append("\n");
         sb.append("    ocspStatusRespSent: ").append(toIndentedString(ocspStatusRespSent)).append("\n");
+        sb.append("    oobLog: ").append(toIndentedString(oobLog)).append("\n");
         sb.append("    paaLog: ").append(toIndentedString(paaLog)).append("\n");
         sb.append("    persistenceUsed: ").append(toIndentedString(persistenceUsed)).append("\n");
         sb.append("    persistentSessionId: ").append(toIndentedString(persistentSessionId)).append("\n");

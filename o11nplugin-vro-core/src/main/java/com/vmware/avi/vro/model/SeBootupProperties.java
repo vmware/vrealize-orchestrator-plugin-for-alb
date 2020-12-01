@@ -289,6 +289,7 @@ public class SeBootupProperties extends AviRestResource {
    * Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing.
    * Allowed values are 1-20.
    * Field introduced in 17.1.1.
+   * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return geoDbGranularity
    */
@@ -307,6 +308,7 @@ public class SeBootupProperties extends AviRestResource {
    * Besides, given a smaller number of members that are separated geographically, a lower resolution is sufficient for correct load-balancing.
    * Allowed values are 1-20.
    * Field introduced in 17.1.1.
+   * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param geoDbGranularity set the geoDbGranularity.
    */
@@ -457,6 +459,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Use this to emulate more/less cpus than is actually available.
    * One datapath process is started for each core.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seEmulatedCores
    */
@@ -469,6 +472,7 @@ public class SeBootupProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Use this to emulate more/less cpus than is actually available.
    * One datapath process is started for each core.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seEmulatedCores set the seEmulatedCores.
    */
@@ -479,8 +483,8 @@ public class SeBootupProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
-   * ip encap unconditionally    ~[0,1]   don't use ip encap.
+   * Determines if se-se ipc messages are encapsulated in an ip header   note  this field has been moved to se_group properties 20.1.3 onwards.
+   * 0        automatically determine based on hypervisor type    1        use ip encap unconditionally    ~[0,1]   don't use ip encap.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seIpEncapIpc
    */
@@ -491,8 +495,8 @@ public class SeBootupProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Determines if se-se ipc messages are encapsulated in an ip header       0        automatically determine based on hypervisor type    1        use
-   * ip encap unconditionally    ~[0,1]   don't use ip encap.
+   * Determines if se-se ipc messages are encapsulated in an ip header   note  this field has been moved to se_group properties 20.1.3 onwards.
+   * 0        automatically determine based on hypervisor type    1        use ip encap unconditionally    ~[0,1]   don't use ip encap.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seIpEncapIpc set the seIpEncapIpc.
    */
@@ -503,8 +507,8 @@ public class SeBootupProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
-   * use se interface ip unconditionally    ~[0,1]   don't use se interface ip.
+   * Determines if se-se ipc messages use se interface ip instead of vip    note  this field has been moved to se_group properties 20.1.3 onwards.
+   * 0        automatically determine based on hypervisor type    1        use se interface ip unconditionally    ~[0,1]   don't use se interface ip.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return seL3EncapIpc
    */
@@ -515,8 +519,8 @@ public class SeBootupProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Determines if se-se ipc messages use se interface ip instead of vip        0        automatically determine based on hypervisor type    1
-   * use se interface ip unconditionally    ~[0,1]   don't use se interface ip.
+   * Determines if se-se ipc messages use se interface ip instead of vip    note  this field has been moved to se_group properties 20.1.3 onwards.
+   * 0        automatically determine based on hypervisor type    1        use se interface ip unconditionally    ~[0,1]   don't use se interface ip.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param seL3EncapIpc set the seL3EncapIpc.
    */
