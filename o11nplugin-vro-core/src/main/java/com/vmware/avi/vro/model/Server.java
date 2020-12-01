@@ -124,6 +124,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return autoscalingGroupName
    */
@@ -136,6 +137,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of autoscaling group this server belongs to.
    * Field introduced in 17.1.2.
+   * Allowed in essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param autoscalingGroupName set the autoscalingGroupName.
    */
@@ -454,6 +456,7 @@ public class Server extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return location
    */
@@ -466,6 +469,7 @@ public class Server extends AviRestResource {
    * This is the setter method to the attribute.
    * (internal-use) geographic location of the server.currently only for internal usage.
    * Field introduced in 17.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param location set the location.
    */
@@ -597,6 +601,7 @@ public class Server extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Auto resolve server's ip using dns name.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return resolveServerByDns
    */
@@ -608,6 +613,7 @@ public class Server extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Auto resolve server's ip using dns name.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param resolveServerByDns set the resolveServerByDns.
    */

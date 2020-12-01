@@ -94,6 +94,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws access key id.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsAccessKey
    */
@@ -106,6 +107,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws access key id.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsAccessKey set the awsAccessKey.
    */
@@ -118,6 +120,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws bucket.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsBucketId
    */
@@ -130,6 +133,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws bucket.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsBucketId set the awsBucketId.
    */
@@ -142,6 +146,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Aws secret access key.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return awsSecretAccess
    */
@@ -154,6 +159,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Aws secret access key.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param awsSecretAccess set the awsSecretAccess.
    */
@@ -392,6 +398,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Cloud backup.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uploadToS3
    */
@@ -404,6 +411,7 @@ public class BackupConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Cloud backup.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uploadToS3 set the uploadToS3.
    */

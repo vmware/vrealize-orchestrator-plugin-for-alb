@@ -161,6 +161,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dynamically pick the relevant parameters for connections.
+   * Allowed in basic(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return automatic
    */
@@ -172,6 +173,7 @@ public class TCPProxyProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dynamically pick the relevant parameters for connections.
+   * Allowed in basic(allowed values- true) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param automatic set the automatic.
    */

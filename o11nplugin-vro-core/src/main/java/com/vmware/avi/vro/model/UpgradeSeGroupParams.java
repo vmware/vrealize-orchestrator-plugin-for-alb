@@ -102,6 +102,7 @@ public class UpgradeSeGroupParams extends AviRestResource {
    * Se group uuids subjected to upgrade operations.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
@@ -115,6 +116,7 @@ public class UpgradeSeGroupParams extends AviRestResource {
    * Se group uuids subjected to upgrade operations.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */
@@ -128,6 +130,7 @@ public class UpgradeSeGroupParams extends AviRestResource {
    * Se group uuids subjected to upgrade operations.
    * It is a reference to an object of type serviceenginegroup.
    * Field introduced in 18.2.6.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seGroupRefs
    */

@@ -195,6 +195,7 @@ public class RoutingService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Floating interface ips for the routingservice.
    * Field introduced in 18.2.5.
+   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
@@ -207,6 +208,7 @@ public class RoutingService extends AviRestResource {
    * This is the setter method. this will set the floatingIntfIp
    * Floating interface ips for the routingservice.
    * Field introduced in 18.2.5.
+   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
@@ -219,6 +221,7 @@ public class RoutingService extends AviRestResource {
    * This is the setter method this will set the floatingIntfIp
    * Floating interface ips for the routingservice.
    * Field introduced in 18.2.5.
+   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIp
    */
@@ -238,6 +241,7 @@ public class RoutingService extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field introduced in 18.2.5.
+   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIpSe2
    */
@@ -252,6 +256,7 @@ public class RoutingService extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field introduced in 18.2.5.
+   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIpSe2
    */
@@ -266,6 +271,7 @@ public class RoutingService extends AviRestResource {
    * Virtual services in this group must be disabled/enabled for any changes to the floating ip's to take effect.
    * Only active se hosting vs tagged with active standby se 2 tag will advertise this floating ip when manual load distribution is enabled.
    * Field introduced in 18.2.5.
+   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return floatingIntfIpSe2
    */

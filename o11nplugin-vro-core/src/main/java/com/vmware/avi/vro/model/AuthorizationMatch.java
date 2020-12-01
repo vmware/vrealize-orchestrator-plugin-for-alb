@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.JWTMatch;
 import com.vmware.avi.vro.model.HostHdrMatch;
 import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
@@ -27,6 +28,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AuthorizationMatch extends AviRestResource {
+    @JsonProperty("access_token")
+    @JsonInclude(Include.NON_NULL)
+    private JWTMatch accessToken = null;
+
     @JsonProperty("attr_matches")
     @JsonInclude(Include.NON_NULL)
     private List<AuthAttributeMatch> attrMatches = null;
@@ -47,8 +52,33 @@ public class AuthorizationMatch extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Access token claims to be matched.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return accessToken
+   */
+  @VsoMethod
+  public JWTMatch getAccessToken() {
+    return accessToken;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Access token claims to be matched.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param accessToken set the accessToken.
+   */
+  @VsoMethod
+  public void setAccessToken(JWTMatch accessToken) {
+    this.accessToken = accessToken;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Attributes whose values need to be matched.
    * Field introduced in 18.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrMatches
    */
@@ -61,6 +91,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method. this will set the attrMatches
    * Attributes whose values need to be matched.
    * Field introduced in 18.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrMatches
    */
@@ -73,6 +104,7 @@ public class AuthorizationMatch extends AviRestResource {
    * This is the setter method this will set the attrMatches
    * Attributes whose values need to be matched.
    * Field introduced in 18.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return attrMatches
    */
@@ -172,14 +204,16 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.attrMatches, objAuthorizationMatch.attrMatches)&&
   Objects.equals(this.path, objAuthorizationMatch.path)&&
   Objects.equals(this.hostHdr, objAuthorizationMatch.hostHdr)&&
-  Objects.equals(this.method, objAuthorizationMatch.method);
+  Objects.equals(this.method, objAuthorizationMatch.method)&&
+  Objects.equals(this.accessToken, objAuthorizationMatch.accessToken);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AuthorizationMatch {\n");
-      sb.append("    attrMatches: ").append(toIndentedString(attrMatches)).append("\n");
+      sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+        sb.append("    attrMatches: ").append(toIndentedString(attrMatches)).append("\n");
         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");

@@ -46,6 +46,7 @@ public class ConnPoolProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connection idle timeout.
    * Field introduced in 18.2.1.
+   * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @return upstreamConnpoolConnIdleTmo
    */
@@ -58,6 +59,7 @@ public class ConnPoolProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Connection idle timeout.
    * Field introduced in 18.2.1.
+   * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
    * @param upstreamConnpoolConnIdleTmo set the upstreamConnpoolConnIdleTmo.
    */
@@ -70,6 +72,7 @@ public class ConnPoolProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Connection life timeout.
    * Field introduced in 18.2.1.
+   * Allowed in basic(allowed values- 600000) edition, essentials(allowed values- 600000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
    * @return upstreamConnpoolConnLifeTmo
    */
@@ -82,6 +85,7 @@ public class ConnPoolProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * Connection life timeout.
    * Field introduced in 18.2.1.
+   * Allowed in basic(allowed values- 600000) edition, essentials(allowed values- 600000) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
    * @param upstreamConnpoolConnLifeTmo set the upstreamConnpoolConnLifeTmo.
    */
@@ -95,6 +99,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Maximum number of times a connection can be reused.
    * Special values are 0- 'unlimited'.
    * Field introduced in 18.2.1.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return upstreamConnpoolConnMaxReuse
    */
@@ -108,6 +113,7 @@ public class ConnPoolProperties extends AviRestResource {
    * Maximum number of times a connection can be reused.
    * Special values are 0- 'unlimited'.
    * Field introduced in 18.2.1.
+   * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param upstreamConnpoolConnMaxReuse set the upstreamConnpoolConnMaxReuse.
    */

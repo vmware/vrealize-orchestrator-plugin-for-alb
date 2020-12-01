@@ -90,6 +90,7 @@ public class WafCRS extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -102,6 +103,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method. this will set the groups
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */
@@ -114,6 +116,7 @@ public class WafCRS extends AviRestResource {
    * This is the setter method this will set the groups
    * Waf rules are sorted in groups based on their characterization.
    * Field introduced in 18.1.1.
+   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return groups
    */

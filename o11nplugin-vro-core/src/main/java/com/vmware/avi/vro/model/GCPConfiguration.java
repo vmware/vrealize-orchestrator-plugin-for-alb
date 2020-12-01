@@ -374,6 +374,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Google cloud platform zones where service engines will be distributed for ha.
    * Field introduced in 18.2.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
@@ -386,6 +387,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method. this will set the zones
    * Google cloud platform zones where service engines will be distributed for ha.
    * Field introduced in 18.2.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */
@@ -398,6 +400,7 @@ public class GCPConfiguration extends AviRestResource {
    * This is the setter method this will set the zones
    * Google cloud platform zones where service engines will be distributed for ha.
    * Field introduced in 18.2.1.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return zones
    */

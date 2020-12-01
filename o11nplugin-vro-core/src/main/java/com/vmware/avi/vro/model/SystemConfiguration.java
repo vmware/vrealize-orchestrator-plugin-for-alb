@@ -39,6 +39,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private AdminAuthConfiguration adminAuthConfiguration = null;
 
+    @JsonProperty("common_criteria_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean commonCriteriaMode = false;
+
     @JsonProperty("default_license_tier")
     @JsonInclude(Include.NON_NULL)
     private String defaultLicenseTier = "ENTERPRISE";
@@ -58,6 +62,10 @@ public class SystemConfiguration extends AviRestResource {
     @JsonProperty("email_configuration")
     @JsonInclude(Include.NON_NULL)
     private EmailConfiguration emailConfiguration = null;
+
+    @JsonProperty("enable_cors")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableCors = false;
 
     @JsonProperty("fips_mode")
     @JsonInclude(Include.NON_NULL)
@@ -141,9 +149,39 @@ public class SystemConfiguration extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Enable common criteria compliance mode (disabled by default).
+   * Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
+   * Expect possible warm start of control and data planes.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return commonCriteriaMode
+   */
+  @VsoMethod
+  public Boolean getCommonCriteriaMode() {
+    return commonCriteriaMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable common criteria compliance mode (disabled by default).
+   * Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
+   * Expect possible warm start of control and data planes.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param commonCriteriaMode set the commonCriteriaMode.
+   */
+  @VsoMethod
+  public void setCommonCriteriaMode(Boolean  commonCriteriaMode) {
+    this.commonCriteriaMode = commonCriteriaMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Specifies the default license tier which would be used by new clouds.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
    * @return defaultLicenseTier
    */
@@ -157,6 +195,8 @@ public class SystemConfiguration extends AviRestResource {
    * Specifies the default license tier which would be used by new clouds.
    * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
    * Field introduced in 17.2.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
    * @param defaultLicenseTier set the defaultLicenseTier.
    */
@@ -276,6 +316,30 @@ public class SystemConfiguration extends AviRestResource {
   @VsoMethod
   public void setEmailConfiguration(EmailConfiguration emailConfiguration) {
     this.emailConfiguration = emailConfiguration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable cors header.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableCors
+   */
+  @VsoMethod
+  public Boolean getEnableCors() {
+    return enableCors;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable cors header.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableCors set the enableCors.
+   */
+  @VsoMethod
+  public void setEnableCors(Boolean  enableCors) {
+    this.enableCors = enableCors;
   }
 
   /**
@@ -659,7 +723,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.defaultLicenseTier, objSystemConfiguration.defaultLicenseTier)&&
   Objects.equals(this.secureChannelConfiguration, objSystemConfiguration.secureChannelConfiguration)&&
   Objects.equals(this.welcomeWorkflowComplete, objSystemConfiguration.welcomeWorkflowComplete)&&
-  Objects.equals(this.fipsMode, objSystemConfiguration.fipsMode);
+  Objects.equals(this.fipsMode, objSystemConfiguration.fipsMode)&&
+  Objects.equals(this.enableCors, objSystemConfiguration.enableCors)&&
+  Objects.equals(this.commonCriteriaMode, objSystemConfiguration.commonCriteriaMode);
 }
 
 @Override
@@ -667,11 +733,13 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SystemConfiguration {\n");
       sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
+        sb.append("    commonCriteriaMode: ").append(toIndentedString(commonCriteriaMode)).append("\n");
         sb.append("    defaultLicenseTier: ").append(toIndentedString(defaultLicenseTier)).append("\n");
         sb.append("    dnsConfiguration: ").append(toIndentedString(dnsConfiguration)).append("\n");
         sb.append("    dnsVirtualserviceRefs: ").append(toIndentedString(dnsVirtualserviceRefs)).append("\n");
         sb.append("    dockerMode: ").append(toIndentedString(dockerMode)).append("\n");
         sb.append("    emailConfiguration: ").append(toIndentedString(emailConfiguration)).append("\n");
+        sb.append("    enableCors: ").append(toIndentedString(enableCors)).append("\n");
         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
         sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");

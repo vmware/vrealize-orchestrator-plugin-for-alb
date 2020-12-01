@@ -368,6 +368,7 @@ public class PortalConfiguration extends AviRestResource {
    * Maximum 2 allowed.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Maximum of 2 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -382,6 +383,7 @@ public class PortalConfiguration extends AviRestResource {
    * Maximum 2 allowed.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Maximum of 2 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */
@@ -396,6 +398,7 @@ public class PortalConfiguration extends AviRestResource {
    * Maximum 2 allowed.
    * Leave list empty to use system default certs.
    * It is a reference to an object of type sslkeyandcertificate.
+   * Maximum of 2 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslkeyandcertificateRefs
    */

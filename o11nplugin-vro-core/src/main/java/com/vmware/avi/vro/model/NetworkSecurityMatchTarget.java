@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
+import com.vmware.avi.vro.model.PortMatchGeneric;
 import com.vmware.avi.vro.model.IPReputationTypeMatch;
 import com.vmware.avi.vro.model.MicroServiceMatch;
 import com.vmware.avi.vro.model.PortMatch;
@@ -31,6 +32,10 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddrMatch clientIp = null;
+
+    @JsonProperty("client_port")
+    @JsonInclude(Include.NON_NULL)
+    private PortMatchGeneric clientPort = null;
 
     @JsonProperty("ip_reputation_type")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +75,32 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Matches the source port of incoming packets in the client side traffic.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return clientPort
+   */
+  @VsoMethod
+  public PortMatchGeneric getClientPort() {
+    return clientPort;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Matches the source port of incoming packets in the client side traffic.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param clientPort set the clientPort.
+   */
+  @VsoMethod
+  public void setClientPort(PortMatchGeneric clientPort) {
+    this.clientPort = clientPort;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipReputationType
    */
@@ -82,6 +112,7 @@ public class NetworkSecurityMatchTarget extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ipReputationType set the ipReputationType.
    */
@@ -148,7 +179,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.clientIp, objNetworkSecurityMatchTarget.clientIp)&&
   Objects.equals(this.vsPort, objNetworkSecurityMatchTarget.vsPort)&&
   Objects.equals(this.microservice, objNetworkSecurityMatchTarget.microservice)&&
-  Objects.equals(this.ipReputationType, objNetworkSecurityMatchTarget.ipReputationType);
+  Objects.equals(this.ipReputationType, objNetworkSecurityMatchTarget.ipReputationType)&&
+  Objects.equals(this.clientPort, objNetworkSecurityMatchTarget.clientPort);
 }
 
 @Override
@@ -156,6 +188,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class NetworkSecurityMatchTarget {\n");
       sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    clientPort: ").append(toIndentedString(clientPort)).append("\n");
         sb.append("    ipReputationType: ").append(toIndentedString(ipReputationType)).append("\n");
         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
         sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");

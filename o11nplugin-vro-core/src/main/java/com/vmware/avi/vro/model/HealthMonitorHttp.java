@@ -72,6 +72,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Type of the authentication method.
    * Enum options - AUTH_BASIC, AUTH_NTLM.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return authType
    */
@@ -85,6 +86,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Type of the authentication method.
    * Enum options - AUTH_BASIC, AUTH_NTLM.
    * Field introduced in 20.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param authType set the authType.
    */
@@ -194,6 +196,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * List of http response codes to match as successful.
    * Default is 2xx.
    * Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponseCode
    */
@@ -207,6 +210,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * List of http response codes to match as successful.
    * Default is 2xx.
    * Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponseCode
    */
@@ -220,6 +224,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * List of http response codes to match as successful.
    * Default is 2xx.
    * Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX.
+   * Minimum of 1 items required.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpResponseCode
    */
@@ -238,6 +243,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Match or look for this http response code indicating server maintenance.
    * A successful match results in the server being marked down.
    * Allowed values are 101-599.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceCode
    */
@@ -251,6 +257,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Match or look for this http response code indicating server maintenance.
    * A successful match results in the server being marked down.
    * Allowed values are 101-599.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceCode
    */
@@ -264,6 +271,7 @@ public class HealthMonitorHttp extends AviRestResource {
    * Match or look for this http response code indicating server maintenance.
    * A successful match results in the server being marked down.
    * Allowed values are 101-599.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return maintenanceCode
    */

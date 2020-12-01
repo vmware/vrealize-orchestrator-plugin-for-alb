@@ -78,6 +78,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.2.
+   * Maximum of 16 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
@@ -90,6 +91,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method. this will set the community
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.2.
+   * Maximum of 16 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
@@ -102,6 +104,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method this will set the community
    * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
    * Field introduced in 17.1.2.
+   * Maximum of 16 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return community
    */
@@ -165,6 +168,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Communities per ip address range.
    * Field introduced in 17.1.3.
+   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipCommunities
    */
@@ -177,6 +181,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method. this will set the ipCommunities
    * Communities per ip address range.
    * Field introduced in 17.1.3.
+   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipCommunities
    */
@@ -189,6 +194,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method this will set the ipCommunities
    * Communities per ip address range.
    * Field introduced in 17.1.3.
+   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ipCommunities
    */
@@ -305,6 +311,7 @@ public class BgpProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Bgp peers.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peers
    */
@@ -316,6 +323,7 @@ public class BgpProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the peers
    * Bgp peers.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peers
    */
@@ -327,6 +335,7 @@ public class BgpProfile extends AviRestResource {
   /**
    * This is the setter method this will set the peers
    * Bgp peers.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return peers
    */
@@ -344,6 +353,7 @@ public class BgpProfile extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Learning and advertising options for bgp peers.
    * Field introduced in 20.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingOptions
    */
@@ -356,6 +366,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method. this will set the routingOptions
    * Learning and advertising options for bgp peers.
    * Field introduced in 20.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingOptions
    */
@@ -368,6 +379,7 @@ public class BgpProfile extends AviRestResource {
    * This is the setter method this will set the routingOptions
    * Learning and advertising options for bgp peers.
    * Field introduced in 20.1.1.
+   * Maximum of 128 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return routingOptions
    */

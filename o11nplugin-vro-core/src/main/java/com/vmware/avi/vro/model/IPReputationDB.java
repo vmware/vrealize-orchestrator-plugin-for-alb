@@ -76,6 +76,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db base file.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
@@ -89,6 +90,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db base file.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
@@ -102,6 +104,7 @@ public class IPReputationDB extends AviRestResource {
    * Ip reputation db base file.
    * It is a reference to an object of type fileobject.
    * Field introduced in 20.1.1.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return baseFileRefs
    */
@@ -188,6 +191,7 @@ public class IPReputationDB extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -201,6 +205,7 @@ public class IPReputationDB extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
@@ -214,6 +219,7 @@ public class IPReputationDB extends AviRestResource {
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
    * Field introduced in 20.1.2.
+   * Maximum of 4 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */

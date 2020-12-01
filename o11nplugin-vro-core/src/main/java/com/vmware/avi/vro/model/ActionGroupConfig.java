@@ -101,6 +101,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Trigger notification to autoscale manager.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return autoscaleTriggerNotification
    */
@@ -112,6 +113,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Trigger notification to autoscale manager.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param autoscaleTriggerNotification set the autoscaleTriggerNotification.
    */
@@ -169,6 +171,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Generate alert only to external destinations.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return externalOnly
    */
@@ -180,6 +183,7 @@ public class ActionGroupConfig extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Generate alert only to external destinations.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param externalOnly set the externalOnly.
    */

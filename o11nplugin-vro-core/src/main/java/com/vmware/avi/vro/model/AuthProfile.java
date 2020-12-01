@@ -36,6 +36,10 @@ public class AuthProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private AuthProfileHTTPClientParams http = null;
 
+    @JsonProperty("jwt_profile_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String jwtProfileRef = null;
+
     @JsonProperty("ldap")
     @JsonInclude(Include.NON_NULL)
     private LdapAuthSettings ldap = null;
@@ -120,6 +124,32 @@ public class AuthProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Jwtserverprofile to be used for authentication.
+   * It is a reference to an object of type jwtserverprofile.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return jwtProfileRef
+   */
+  @VsoMethod
+  public String getJwtProfileRef() {
+    return jwtProfileRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Jwtserverprofile to be used for authentication.
+   * It is a reference to an object of type jwtserverprofile.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param jwtProfileRef set the jwtProfileRef.
+   */
+  @VsoMethod
+  public void setJwtProfileRef(String  jwtProfileRef) {
+    this.jwtProfileRef = jwtProfileRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Ldap server and directory settings.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ldap
@@ -167,6 +197,7 @@ public class AuthProfile extends AviRestResource {
    * Pingaccessagent uuid.
    * It is a reference to an object of type pingaccessagent.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return paAgentRef
    */
@@ -180,6 +211,7 @@ public class AuthProfile extends AviRestResource {
    * Pingaccessagent uuid.
    * It is a reference to an object of type pingaccessagent.
    * Field introduced in 18.2.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param paAgentRef set the paAgentRef.
    */
@@ -259,7 +291,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Type of the auth profile.
-   * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
+   * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return type
    */
@@ -271,7 +303,7 @@ public class AuthProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Type of the auth profile.
-   * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS.
+   * Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param type set the type.
    */
@@ -343,6 +375,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tacacsPlus, objAuthProfile.tacacsPlus)&&
   Objects.equals(this.saml, objAuthProfile.saml)&&
   Objects.equals(this.paAgentRef, objAuthProfile.paAgentRef)&&
+  Objects.equals(this.jwtProfileRef, objAuthProfile.jwtProfileRef)&&
   Objects.equals(this.description, objAuthProfile.description)&&
   Objects.equals(this.tenantRef, objAuthProfile.tenantRef);
 }
@@ -353,6 +386,7 @@ public String toString() {
   sb.append("class AuthProfile {\n");
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    http: ").append(toIndentedString(http)).append("\n");
+        sb.append("    jwtProfileRef: ").append(toIndentedString(jwtProfileRef)).append("\n");
         sb.append("    ldap: ").append(toIndentedString(ldap)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    paAgentRef: ").append(toIndentedString(paAgentRef)).append("\n");
