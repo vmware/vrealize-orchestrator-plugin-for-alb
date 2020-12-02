@@ -918,7 +918,8 @@ public class VirtualService extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Allowed in basic(allowed values- cloud_none,coud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise edition.
+   * Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @return cloudType
    */
@@ -931,7 +932,8 @@ public class VirtualService extends AviRestResource {
    * This is the setter method to the attribute.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-   * Allowed in basic(allowed values- cloud_none,coud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise edition.
+   * Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "CLOUD_NONE".
    * @param cloudType set the cloudType.
    */
