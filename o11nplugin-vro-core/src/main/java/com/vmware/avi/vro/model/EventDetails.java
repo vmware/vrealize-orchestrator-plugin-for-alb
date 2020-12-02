@@ -86,6 +86,7 @@ import com.vmware.avi.vro.model.RmSeIpFailEventDetails;
 import com.vmware.avi.vro.model.IPThreatDBEventData;
 import com.vmware.avi.vro.model.LicenseDetails;
 import com.vmware.avi.vro.model.LicenseExpiryDetails;
+import com.vmware.avi.vro.model.LicenseTierSwitchDetiails;
 import com.vmware.avi.vro.model.LicenseTransactionDetails;
 import com.vmware.avi.vro.model.LogAgentEventDetail;
 import com.vmware.avi.vro.model.MarathonServicePortConflict;
@@ -538,6 +539,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("license_expiry_details")
     @JsonInclude(Include.NON_NULL)
     private LicenseExpiryDetails licenseExpiryDetails = null;
+
+    @JsonProperty("license_tier_switch_details")
+    @JsonInclude(Include.NON_NULL)
+    private LicenseTierSwitchDetiails licenseTierSwitchDetails = null;
 
     @JsonProperty("license_transaction_details")
     @JsonInclude(Include.NON_NULL)
@@ -2765,6 +2770,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setLicenseExpiryDetails(LicenseExpiryDetails licenseExpiryDetails) {
     this.licenseExpiryDetails = licenseExpiryDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property license_tier_switch_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return licenseTierSwitchDetails
+   */
+  @VsoMethod
+  public LicenseTierSwitchDetiails getLicenseTierSwitchDetails() {
+    return licenseTierSwitchDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property license_tier_switch_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param licenseTierSwitchDetails set the licenseTierSwitchDetails.
+   */
+  @VsoMethod
+  public void setLicenseTierSwitchDetails(LicenseTierSwitchDetiails licenseTierSwitchDetails) {
+    this.licenseTierSwitchDetails = licenseTierSwitchDetails;
   }
 
   /**
@@ -5396,6 +5423,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.licenseTransactionDetails, objEventDetails.licenseTransactionDetails)&&
   Objects.equals(this.seReconcileDetails, objEventDetails.seReconcileDetails)&&
   Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails)&&
+  Objects.equals(this.licenseTierSwitchDetails, objEventDetails.licenseTierSwitchDetails)&&
   Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
   Objects.equals(this.secureKeyExchangeInfo, objEventDetails.secureKeyExchangeInfo)&&
   Objects.equals(this.logAgentEventDetails, objEventDetails.logAgentEventDetails);
@@ -5486,6 +5514,7 @@ public String toString() {
         sb.append("    ipThreatDbEventData: ").append(toIndentedString(ipThreatDbEventData)).append("\n");
         sb.append("    licenseDetails: ").append(toIndentedString(licenseDetails)).append("\n");
         sb.append("    licenseExpiryDetails: ").append(toIndentedString(licenseExpiryDetails)).append("\n");
+        sb.append("    licenseTierSwitchDetails: ").append(toIndentedString(licenseTierSwitchDetails)).append("\n");
         sb.append("    licenseTransactionDetails: ").append(toIndentedString(licenseTransactionDetails)).append("\n");
         sb.append("    logAgentEventDetails: ").append(toIndentedString(logAgentEventDetails)).append("\n");
         sb.append("    marathonServicePortConflictDetails: ").append(toIndentedString(marathonServicePortConflictDetails)).append("\n");
