@@ -11,6 +11,7 @@ import com.vmware.avi.vro.model.DataScriptErrorTrace;
 import com.vmware.avi.vro.model.IcapLog;
 import com.vmware.avi.vro.model.JwtLog;
 import com.vmware.avi.vro.model.NtlmLog;
+import com.vmware.avi.vro.model.OutOfBandRequestLog;
 import com.vmware.avi.vro.model.PaaLog;
 import com.vmware.avi.vro.model.SamlLog;
 import com.vmware.avi.vro.model.WafLog;
@@ -228,6 +229,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonProperty("ocsp_status_resp_sent")
     @JsonInclude(Include.NON_NULL)
     private Boolean ocspStatusRespSent = false;
+
+    @JsonProperty("oob_log")
+    @JsonInclude(Include.NON_NULL)
+    private OutOfBandRequestLog oobLog = null;
 
     @JsonProperty("paa_log")
     @JsonInclude(Include.NON_NULL)
@@ -1621,6 +1626,30 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setOcspStatusRespSent(Boolean  ocspStatusRespSent) {
     this.ocspStatusRespSent = ocspStatusRespSent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Logs for http out-of-band requests.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return oobLog
+   */
+  @VsoMethod
+  public OutOfBandRequestLog getOobLog() {
+    return oobLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Logs for http out-of-band requests.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param oobLog set the oobLog.
+   */
+  @VsoMethod
+  public void setOobLog(OutOfBandRequestLog oobLog) {
+    this.oobLog = oobLog;
   }
 
   /**
@@ -3273,7 +3302,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.icapLog, objApplicationLog.icapLog)&&
   Objects.equals(this.samlLog, objApplicationLog.samlLog)&&
   Objects.equals(this.jwtLog, objApplicationLog.jwtLog)&&
-  Objects.equals(this.ntlmLog, objApplicationLog.ntlmLog);
+  Objects.equals(this.ntlmLog, objApplicationLog.ntlmLog)&&
+  Objects.equals(this.oobLog, objApplicationLog.oobLog);
 }
 
 @Override
@@ -3329,6 +3359,7 @@ public String toString() {
         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
         sb.append("    ntlmLog: ").append(toIndentedString(ntlmLog)).append("\n");
         sb.append("    ocspStatusRespSent: ").append(toIndentedString(ocspStatusRespSent)).append("\n");
+        sb.append("    oobLog: ").append(toIndentedString(oobLog)).append("\n");
         sb.append("    paaLog: ").append(toIndentedString(paaLog)).append("\n");
         sb.append("    persistenceUsed: ").append(toIndentedString(persistenceUsed)).append("\n");
         sb.append("    persistentSessionId: ").append(toIndentedString(persistentSessionId)).append("\n");
