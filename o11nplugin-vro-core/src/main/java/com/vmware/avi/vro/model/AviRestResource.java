@@ -7,5 +7,5 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 @VsoObject(create = false, name = "AviRestResource")
 @VsoFinder(name = Constants.FINDER_VRO_AVIRESTRESOURCE, idAccessor = "getObjectID()")
 public abstract class AviRestResource {
-	
+
 }
