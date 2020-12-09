@@ -495,14 +495,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer natFlowUdpResponseTimeout;
 
-    @JsonProperty("netlink_poller_threads")
-    @JsonInclude(Include.NON_NULL)
-    private Integer netlinkPollerThreads = 2;
-
-    @JsonProperty("netlink_sock_buf_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer netlinkSockBufSize = 4;
-
     @JsonProperty("non_significant_log_throttle")
     @JsonInclude(Include.NON_NULL)
     private Integer nonSignificantLogThrottle = 100;
@@ -4056,64 +4048,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of threads to poll for netlink messages excluding the thread for default namespace.
-   * Requires se reboot.
-   * Allowed values are 1-32.
-   * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
-   * @return netlinkPollerThreads
-   */
-  @VsoMethod
-  public Integer getNetlinkPollerThreads() {
-    return netlinkPollerThreads;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of threads to poll for netlink messages excluding the thread for default namespace.
-   * Requires se reboot.
-   * Allowed values are 1-32.
-   * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
-   * @param netlinkPollerThreads set the netlinkPollerThreads.
-   */
-  @VsoMethod
-  public void setNetlinkPollerThreads(Integer  netlinkPollerThreads) {
-    this.netlinkPollerThreads = netlinkPollerThreads;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Socket buffer size for the netlink sockets.
-   * Requires se reboot.
-   * Allowed values are 1-128.
-   * Field introduced in 20.1.3.
-   * Unit is mega_bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return netlinkSockBufSize
-   */
-  @VsoMethod
-  public Integer getNetlinkSockBufSize() {
-    return netlinkSockBufSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Socket buffer size for the netlink sockets.
-   * Requires se reboot.
-   * Allowed values are 1-128.
-   * Field introduced in 20.1.3.
-   * Unit is mega_bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param netlinkSockBufSize set the netlinkSockBufSize.
-   */
-  @VsoMethod
-  public void setNetlinkSockBufSize(Integer  netlinkSockBufSize) {
-    this.netlinkSockBufSize = netlinkSockBufSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * This setting limits the number of non-significant logs generated per second per core on this se.
    * Default is 100 logs per second.
    * Set it to zero (0) to deactivate throttling.
@@ -7175,8 +7109,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.useObjsync, objServiceEngineGroup.useObjsync)&&
   Objects.equals(this.seIpEncapIpc, objServiceEngineGroup.seIpEncapIpc)&&
   Objects.equals(this.seL3EncapIpc, objServiceEngineGroup.seL3EncapIpc)&&
-  Objects.equals(this.netlinkPollerThreads, objServiceEngineGroup.netlinkPollerThreads)&&
-  Objects.equals(this.netlinkSockBufSize, objServiceEngineGroup.netlinkSockBufSize)&&
   Objects.equals(this.perVsAdmissionControl, objServiceEngineGroup.perVsAdmissionControl)&&
   Objects.equals(this.handlePerPktAttack, objServiceEngineGroup.handlePerPktAttack);
 }
@@ -7300,8 +7232,6 @@ public String toString() {
         sb.append("    natFlowTcpHandshakeTimeout: ").append(toIndentedString(natFlowTcpHandshakeTimeout)).append("\n");
         sb.append("    natFlowUdpNoresponseTimeout: ").append(toIndentedString(natFlowUdpNoresponseTimeout)).append("\n");
         sb.append("    natFlowUdpResponseTimeout: ").append(toIndentedString(natFlowUdpResponseTimeout)).append("\n");
-        sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
-        sb.append("    netlinkSockBufSize: ").append(toIndentedString(netlinkSockBufSize)).append("\n");
         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
