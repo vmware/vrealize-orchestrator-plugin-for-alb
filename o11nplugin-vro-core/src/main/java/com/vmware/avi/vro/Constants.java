@@ -436,6 +436,7 @@ public class Constants {
     public static final String FINDER_VRO_ICAPLOG = "IcapLog";
     public static final String FINDER_VRO_ICAPPROFILE = "IcapProfile";
     public static final String FINDER_VRO_ICAPREQUESTLOG = "IcapRequestLog";
+    public static final String FINDER_VRO_ICAPVIOLATION = "IcapViolation";
     public static final String FINDER_VRO_IMAGE = "Image";
     public static final String FINDER_VRO_IMAGECLOUDDATA = "ImageCloudData";
     public static final String FINDER_VRO_IMAGECLOUDSPECIFICDATA = "ImageCloudSpecificData";
@@ -578,6 +579,7 @@ public class Constants {
     public static final String FINDER_VRO_OCSPCONFIG = "OCSPConfig";
     public static final String FINDER_VRO_OCSPRESPONSEINFO = "OCSPResponseInfo";
     public static final String FINDER_VRO_OSHIFTK8SCONFIGURATION = "OShiftK8SConfiguration";
+    public static final String FINDER_VRO_OBJSYNCCONFIG = "ObjSyncConfig";
     public static final String FINDER_VRO_OPENSTACKAPIVERSIONCHECKFAILURE = "OpenStackApiVersionCheckFailure";
     public static final String FINDER_VRO_OPENSTACKCLUSTERSETUP = "OpenStackClusterSetup";
     public static final String FINDER_VRO_OPENSTACKCONFIGURATION = "OpenStackConfiguration";
