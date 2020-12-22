@@ -481,7 +481,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whitelist string group of cacheable mime types.
+   * Allowlist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -494,7 +494,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the setter method. this will set the mimeTypesGroupRefs
-   * Whitelist string group of cacheable mime types.
+   * Allowlist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -507,7 +507,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the setter method this will set the mimeTypesGroupRefs
-   * Whitelist string group of cacheable mime types.
+   * Allowlist string group of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * It is a reference to an object of type stringgroup.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -525,7 +525,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Whitelist of cacheable mime types.
+   * Allowlist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
@@ -537,7 +537,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the setter method. this will set the mimeTypesList
-   * Whitelist of cacheable mime types.
+   * Allowlist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
@@ -549,7 +549,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the setter method this will set the mimeTypesList
-   * Whitelist of cacheable mime types.
+   * Allowlist of cacheable mime types.
    * If both cacheable mime types string list and string group are empty, this defaults to *\/*.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mimeTypesList
