@@ -61,6 +61,14 @@ public class IcapRequestLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer icapResponseCode = null;
 
+    @JsonProperty("icap_server_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer icapServerIp = null;
+
+    @JsonProperty("icap_server_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer icapServerPort = null;
+
     @JsonProperty("latency")
     @JsonInclude(Include.NON_NULL)
     private Integer latency = null;
@@ -83,7 +91,7 @@ public class IcapRequestLog extends AviRestResource {
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
-    private IpAddr serverIp = null;
+    private IpAddr serverIp;
 
     @JsonProperty("source_port")
     @JsonInclude(Include.NON_NULL)
@@ -91,11 +99,15 @@ public class IcapRequestLog extends AviRestResource {
 
     @JsonProperty("threat_description")
     @JsonInclude(Include.NON_NULL)
-    private String threatDescription = null;
+    private String threatDescription;
 
     @JsonProperty("threat_id")
     @JsonInclude(Include.NON_NULL)
     private String threatId = null;
+
+    @JsonProperty("violations")
+    @JsonInclude(Include.NON_NULL)
+    private List<IcapViolation> violations = null;
 
 
 
@@ -329,6 +341,54 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Icap server ip for this connection.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return icapServerIp
+   */
+  @VsoMethod
+  public Integer getIcapServerIp() {
+    return icapServerIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Icap server ip for this connection.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param icapServerIp set the icapServerIp.
+   */
+  @VsoMethod
+  public void setIcapServerIp(Integer  icapServerIp) {
+    this.icapServerIp = icapServerIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Icap server port for this connection.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return icapServerPort
+   */
+  @VsoMethod
+  public Integer getIcapServerPort() {
+    return icapServerPort;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Icap server port for this connection.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param icapServerPort set the icapServerPort.
+   */
+  @VsoMethod
+  public void setIcapServerPort(Integer  icapServerPort) {
+    this.icapServerPort = icapServerPort;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Latency added due to icap processing.
    * This is the time taken from 1st byte of icap request sent to last byte of icap response received.
    * Field introduced in 20.1.1.
@@ -456,8 +516,8 @@ public class IcapRequestLog extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Icap server ip for this connection.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serverIp
    */
   @VsoMethod
@@ -468,8 +528,8 @@ public class IcapRequestLog extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Icap server ip for this connection.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param serverIp set the serverIp.
    */
   @VsoMethod
@@ -505,8 +565,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Detailed description of the threat found in the content.
    * Available only if request was scanned by icap server and some violations were found.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threatDescription
    */
   @VsoMethod
@@ -518,8 +578,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Detailed description of the threat found in the content.
    * Available only if request was scanned by icap server and some violations were found.
+   * Field deprecated in 20.1.3.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threatDescription set the threatDescription.
    */
   @VsoMethod
@@ -553,6 +613,50 @@ public class IcapRequestLog extends AviRestResource {
     this.threatId = threatId;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Threat found in the content.
+   * Available only if content was scanned by icap server and some violations were found.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return violations
+   */
+  @VsoMethod
+  public List<IcapViolation> getViolations() {
+    return violations;
+  }
+
+  /**
+   * This is the setter method. this will set the violations
+   * Threat found in the content.
+   * Available only if content was scanned by icap server and some violations were found.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return violations
+   */
+  @VsoMethod
+  public void setViolations(List<IcapViolation>  violations) {
+    this.violations = violations;
+  }
+
+  /**
+   * This is the setter method this will set the violations
+   * Threat found in the content.
+   * Available only if content was scanned by icap server and some violations were found.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return violations
+   */
+  @VsoMethod
+  public IcapRequestLog addViolationsItem(IcapViolation violationsItem) {
+    if (this.violations == null) {
+      this.violations = new ArrayList<IcapViolation>();
+    }
+    this.violations.add(violationsItem);
+    return this;
+  }
+
+
 
 
 @Override
@@ -581,7 +685,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.action, objIcapRequestLog.action)&&
   Objects.equals(this.reason, objIcapRequestLog.reason)&&
   Objects.equals(this.threatId, objIcapRequestLog.threatId)&&
-  Objects.equals(this.threatDescription, objIcapRequestLog.threatDescription);
+  Objects.equals(this.threatDescription, objIcapRequestLog.threatDescription)&&
+  Objects.equals(this.violations, objIcapRequestLog.violations)&&
+  Objects.equals(this.icapServerPort, objIcapRequestLog.icapServerPort)&&
+  Objects.equals(this.icapServerIp, objIcapRequestLog.icapServerIp);
 }
 
 @Override
@@ -597,6 +704,8 @@ public String toString() {
         sb.append("    icapHeadersSentToServer: ").append(toIndentedString(icapHeadersSentToServer)).append("\n");
         sb.append("    icapMethod: ").append(toIndentedString(icapMethod)).append("\n");
         sb.append("    icapResponseCode: ").append(toIndentedString(icapResponseCode)).append("\n");
+        sb.append("    icapServerIp: ").append(toIndentedString(icapServerIp)).append("\n");
+        sb.append("    icapServerPort: ").append(toIndentedString(icapServerPort)).append("\n");
         sb.append("    latency: ").append(toIndentedString(latency)).append("\n");
         sb.append("    modifiedContentLength: ").append(toIndentedString(modifiedContentLength)).append("\n");
         sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
@@ -606,6 +715,7 @@ public String toString() {
         sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
         sb.append("    threatDescription: ").append(toIndentedString(threatDescription)).append("\n");
         sb.append("    threatId: ").append(toIndentedString(threatId)).append("\n");
+        sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
       sb.append("}");
   return sb.toString();
 }

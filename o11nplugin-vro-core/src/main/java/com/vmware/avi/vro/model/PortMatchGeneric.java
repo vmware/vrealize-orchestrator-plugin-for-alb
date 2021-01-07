@@ -68,6 +68,7 @@ public class PortMatchGeneric extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Listening tcp port(s).
    * Allowed values are 1-65535.
+   * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
@@ -80,6 +81,7 @@ public class PortMatchGeneric extends AviRestResource {
    * This is the setter method. this will set the ports
    * Listening tcp port(s).
    * Allowed values are 1-65535.
+   * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */
@@ -92,6 +94,7 @@ public class PortMatchGeneric extends AviRestResource {
    * This is the setter method this will set the ports
    * Listening tcp port(s).
    * Allowed values are 1-65535.
+   * Field introduced in 20.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ports
    */

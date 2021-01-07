@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.GCPSeGroupConfig;
 import com.vmware.avi.vro.model.IpAddrPrefix;
+import com.vmware.avi.vro.model.ObjSyncConfig;
 import com.vmware.avi.vro.model.MetricsRealTimeUpdate;
 import com.vmware.avi.vro.model.DosThresholdProfile;
 import com.vmware.avi.vro.model.SeGroupAnalyticsPolicy;
@@ -495,14 +496,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer natFlowUdpResponseTimeout;
 
-    @JsonProperty("netlink_poller_threads")
-    @JsonInclude(Include.NON_NULL)
-    private Integer netlinkPollerThreads = 2;
-
-    @JsonProperty("netlink_sock_buf_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer netlinkSockBufSize = 4;
-
     @JsonProperty("non_significant_log_throttle")
     @JsonInclude(Include.NON_NULL)
     private Integer nonSignificantLogThrottle = 100;
@@ -514,6 +507,14 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("num_flow_cores_sum_changes_to_ignore")
     @JsonInclude(Include.NON_NULL)
     private Integer numFlowCoresSumChangesToIgnore = 8;
+
+    @JsonProperty("objsync_config")
+    @JsonInclude(Include.NON_NULL)
+    private ObjSyncConfig objsyncConfig = null;
+
+    @JsonProperty("objsync_port")
+    @JsonInclude(Include.NON_NULL)
+    private Integer objsyncPort = 9001;
 
     @JsonProperty("openstack_availability_zone")
     @JsonInclude(Include.NON_NULL)
@@ -829,7 +830,7 @@ public class ServiceEngineGroup extends AviRestResource {
 
     @JsonProperty("use_objsync")
     @JsonInclude(Include.NON_NULL)
-    private Boolean useObjsync = true;
+    private Boolean useObjsync = false;
 
     @JsonProperty("use_standard_alb")
     @JsonInclude(Include.NON_NULL)
@@ -4056,64 +4057,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of threads to poll for netlink messages excluding the thread for default namespace.
-   * Requires se reboot.
-   * Allowed values are 1-32.
-   * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
-   * @return netlinkPollerThreads
-   */
-  @VsoMethod
-  public Integer getNetlinkPollerThreads() {
-    return netlinkPollerThreads;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of threads to poll for netlink messages excluding the thread for default namespace.
-   * Requires se reboot.
-   * Allowed values are 1-32.
-   * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
-   * @param netlinkPollerThreads set the netlinkPollerThreads.
-   */
-  @VsoMethod
-  public void setNetlinkPollerThreads(Integer  netlinkPollerThreads) {
-    this.netlinkPollerThreads = netlinkPollerThreads;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Socket buffer size for the netlink sockets.
-   * Requires se reboot.
-   * Allowed values are 1-128.
-   * Field introduced in 20.1.3.
-   * Unit is mega_bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return netlinkSockBufSize
-   */
-  @VsoMethod
-  public Integer getNetlinkSockBufSize() {
-    return netlinkSockBufSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Socket buffer size for the netlink sockets.
-   * Requires se reboot.
-   * Allowed values are 1-128.
-   * Field introduced in 20.1.3.
-   * Unit is mega_bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param netlinkSockBufSize set the netlinkSockBufSize.
-   */
-  @VsoMethod
-  public void setNetlinkSockBufSize(Integer  netlinkSockBufSize) {
-    this.netlinkSockBufSize = netlinkSockBufSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * This setting limits the number of non-significant logs generated per second per core on this se.
    * Default is 100 logs per second.
    * Set it to zero (0) to deactivate throttling.
@@ -4190,6 +4133,60 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setNumFlowCoresSumChangesToIgnore(Integer  numFlowCoresSumChangesToIgnore) {
     this.numFlowCoresSumChangesToIgnore = numFlowCoresSumChangesToIgnore;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Configuration knobs for interse object distribution.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return objsyncConfig
+   */
+  @VsoMethod
+  public ObjSyncConfig getObjsyncConfig() {
+    return objsyncConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configuration knobs for interse object distribution.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param objsyncConfig set the objsyncConfig.
+   */
+  @VsoMethod
+  public void setObjsyncConfig(ObjSyncConfig objsyncConfig) {
+    this.objsyncConfig = objsyncConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tcp port on se management interface for interse object distribution.
+   * Supported only for externally managed security groups.
+   * Not supported on full access deployments.
+   * Requires se reboot.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 9001.
+   * @return objsyncPort
+   */
+  @VsoMethod
+  public Integer getObjsyncPort() {
+    return objsyncPort;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Tcp port on se management interface for interse object distribution.
+   * Supported only for externally managed security groups.
+   * Not supported on full access deployments.
+   * Requires se reboot.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 9001.
+   * @param objsyncPort set the objsyncPort.
+   */
+  @VsoMethod
+  public void setObjsyncPort(Integer  objsyncPort) {
+    this.objsyncPort = objsyncPort;
   }
 
   /**
@@ -5055,9 +5052,11 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Knob to control burst size used in polling kni interfaces for traffic sent from kni towards dpdk application also controls burst size used by kni
-   * module to read pkts punted from dpdk application towards kni helps minimize drops in non-vip traffic in either pathfactor of (0-2)
-   * multiplies/divides burst size by 2^n.
+   * This knob controls the resource availability and burst size used between se datapath and kni.
+   * This helps in minimising packet drops when there is higher kni traffic (non-vip traffic from and to linux).
+   * The factor takes the following values      0-default.
+   * 1-doubles the burst size and kni resources.
+   * 2-quadruples the burst size and kni resources.
    * Allowed values are 0-2.
    * Field introduced in 18.2.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -5070,9 +5069,11 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Knob to control burst size used in polling kni interfaces for traffic sent from kni towards dpdk application also controls burst size used by kni
-   * module to read pkts punted from dpdk application towards kni helps minimize drops in non-vip traffic in either pathfactor of (0-2)
-   * multiplies/divides burst size by 2^n.
+   * This knob controls the resource availability and burst size used between se datapath and kni.
+   * This helps in minimising packet drops when there is higher kni traffic (non-vip traffic from and to linux).
+   * The factor takes the following values      0-default.
+   * 1-doubles the burst size and kni resources.
+   * 2-quadruples the burst size and kni resources.
    * Allowed values are 0-2.
    * Field introduced in 18.2.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -6300,7 +6301,8 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable interse objsyc distribution framework.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return useObjsync
    */
   @VsoMethod
@@ -6312,7 +6314,8 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable interse objsyc distribution framework.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param useObjsync set the useObjsync.
    */
   @VsoMethod
@@ -7175,10 +7178,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.useObjsync, objServiceEngineGroup.useObjsync)&&
   Objects.equals(this.seIpEncapIpc, objServiceEngineGroup.seIpEncapIpc)&&
   Objects.equals(this.seL3EncapIpc, objServiceEngineGroup.seL3EncapIpc)&&
-  Objects.equals(this.netlinkPollerThreads, objServiceEngineGroup.netlinkPollerThreads)&&
-  Objects.equals(this.netlinkSockBufSize, objServiceEngineGroup.netlinkSockBufSize)&&
+  Objects.equals(this.handlePerPktAttack, objServiceEngineGroup.handlePerPktAttack)&&
   Objects.equals(this.perVsAdmissionControl, objServiceEngineGroup.perVsAdmissionControl)&&
-  Objects.equals(this.handlePerPktAttack, objServiceEngineGroup.handlePerPktAttack);
+  Objects.equals(this.objsyncPort, objServiceEngineGroup.objsyncPort)&&
+  Objects.equals(this.objsyncConfig, objServiceEngineGroup.objsyncConfig);
 }
 
 @Override
@@ -7300,11 +7303,11 @@ public String toString() {
         sb.append("    natFlowTcpHandshakeTimeout: ").append(toIndentedString(natFlowTcpHandshakeTimeout)).append("\n");
         sb.append("    natFlowUdpNoresponseTimeout: ").append(toIndentedString(natFlowUdpNoresponseTimeout)).append("\n");
         sb.append("    natFlowUdpResponseTimeout: ").append(toIndentedString(natFlowUdpResponseTimeout)).append("\n");
-        sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
-        sb.append("    netlinkSockBufSize: ").append(toIndentedString(netlinkSockBufSize)).append("\n");
         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
+        sb.append("    objsyncConfig: ").append(toIndentedString(objsyncConfig)).append("\n");
+        sb.append("    objsyncPort: ").append(toIndentedString(objsyncPort)).append("\n");
         sb.append("    openstackAvailabilityZone: ").append(toIndentedString(openstackAvailabilityZone)).append("\n");
         sb.append("    openstackAvailabilityZones: ").append(toIndentedString(openstackAvailabilityZones)).append("\n");
         sb.append("    openstackMgmtNetworkName: ").append(toIndentedString(openstackMgmtNetworkName)).append("\n");

@@ -28,6 +28,10 @@ public class SingleLicense extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer burstCores = null;
 
+    @JsonProperty("ccu")
+    @JsonInclude(Include.NON_NULL)
+    private Integer ccu = 0;
+
     @JsonProperty("cores")
     @JsonInclude(Include.NON_NULL)
     private Float cores = null;
@@ -136,6 +140,30 @@ public class SingleLicense extends AviRestResource {
   @VsoMethod
   public void setBurstCores(Integer  burstCores) {
     this.burstCores = burstCores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of concurrent vmware horizon users.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return ccu
+   */
+  @VsoMethod
+  public Integer getCcu() {
+    return ccu;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of concurrent vmware horizon users.
+   * Field introduced in 20.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param ccu set the ccu.
+   */
+  @VsoMethod
+  public void setCcu(Integer  ccu) {
+    this.ccu = ccu;
   }
 
   /**
@@ -695,7 +723,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.serialKey, objSingleLicense.serialKey)&&
   Objects.equals(this.serviceCores, objSingleLicense.serviceCores)&&
   Objects.equals(this.cpuCores, objSingleLicense.cpuCores)&&
-  Objects.equals(this.expired, objSingleLicense.expired);
+  Objects.equals(this.expired, objSingleLicense.expired)&&
+  Objects.equals(this.ccu, objSingleLicense.ccu);
 }
 
 @Override
@@ -703,6 +732,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SingleLicense {\n");
       sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
+        sb.append("    ccu: ").append(toIndentedString(ccu)).append("\n");
         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
         sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
         sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");

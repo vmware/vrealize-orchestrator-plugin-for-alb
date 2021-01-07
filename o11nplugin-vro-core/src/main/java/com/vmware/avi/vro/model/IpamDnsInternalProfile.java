@@ -183,6 +183,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 20.1.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworks
    */
@@ -197,6 +198,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 20.1.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworks
    */
@@ -211,6 +213,7 @@ public class IpamDnsInternalProfile extends AviRestResource {
    * If virtualservice does not specify a network and auto_allocate_ip is set, then the first available network from this list will be chosen for ip
    * allocation.
    * Field introduced in 20.1.3.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableNetworks
    */
