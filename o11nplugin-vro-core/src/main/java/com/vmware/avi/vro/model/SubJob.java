@@ -32,9 +32,9 @@ public class SubJob extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String metadata = null;
 
-    @JsonProperty("num_tries")
+    @JsonProperty("num_retries")
     @JsonInclude(Include.NON_NULL)
-    private Integer numTries = null;
+    private Integer numRetries = null;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -91,11 +91,11 @@ public class SubJob extends AviRestResource {
    * Number of times the sub job got scheduled.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return numTries
+   * @return numRetries
    */
   @VsoMethod
-  public Integer getNumTries() {
-    return numTries;
+  public Integer getNumRetries() {
+    return numRetries;
   }
 
   /**
@@ -103,11 +103,11 @@ public class SubJob extends AviRestResource {
    * Number of times the sub job got scheduled.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param numTries set the numTries.
+   * @param numRetries set the numRetries.
    */
   @VsoMethod
-  public void setNumTries(Integer  numTries) {
-    this.numTries = numTries;
+  public void setNumRetries(Integer  numRetries) {
+    this.numRetries = numRetries;
   }
 
   /**
@@ -154,7 +154,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.type, objSubJob.type)&&
   Objects.equals(this.expiresAt, objSubJob.expiresAt)&&
   Objects.equals(this.metadata, objSubJob.metadata)&&
-  Objects.equals(this.numTries, objSubJob.numTries);
+  Objects.equals(this.numRetries, objSubJob.numRetries);
 }
 
 @Override
@@ -163,7 +163,7 @@ public String toString() {
   sb.append("class SubJob {\n");
       sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-        sb.append("    numTries: ").append(toIndentedString(numTries)).append("\n");
+        sb.append("    numRetries: ").append(toIndentedString(numRetries)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
       sb.append("}");
   return sb.toString();

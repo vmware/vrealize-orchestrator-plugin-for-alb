@@ -1005,5 +1005,11 @@ public class Constants {
 	public static final String FINDER_VRO_DYNAMICDNSRECORD = "DynamicDnsRecord";
 	public static final String FINDER_VRO_JWTSERVERPROFILE = "JWTServerProfile";
 	public static final String FINDER_VRO_LEARNINGLOGPOLICY = "LearningLogPolicy";
+	public static final String FINDER_VRO_ICAPVIOLATION = "IcapViolation";
+	public static final String FINDER_VRO_LICENSETIERSWITCHDETIAILS = "LicenseTierSwitchDetiails";
+	public static final String FINDER_VRO_DEBUGVIRTUALSERVICEOBJSYNC = "DebugVirtualServiceObjSync";
+	public static final String FINDER_VRO_OUTOFBANDREQUESTLOG = "OutOfBandRequestLog";
+	public static final String FINDER_VRO_DSREQUESTLOG = "DSRequestLog";
+	public static final String FINDER_VRO_OBJSYNCCONFIG = "ObjSyncConfig";
 
 }
