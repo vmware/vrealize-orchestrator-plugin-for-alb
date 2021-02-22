@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VlanInterface extends AviRestResource {
     @JsonProperty("dhcp_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean dhcpEnabled = true;
+    private Boolean dhcpEnabled = null;
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
@@ -38,7 +38,7 @@ public class VlanInterface extends AviRestResource {
 
     @JsonProperty("ip6_autocfg_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean ip6AutocfgEnabled = true;
+    private Boolean ip6AutocfgEnabled = null;
 
     @JsonProperty("is_mgmt")
     @JsonInclude(Include.NON_NULL)
@@ -61,7 +61,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Placeholder for description of property dhcp_enabled of obj type vlaninterface field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return dhcpEnabled
    */
   @VsoMethod
@@ -72,7 +72,7 @@ public class VlanInterface extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Placeholder for description of property dhcp_enabled of obj type vlaninterface field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param dhcpEnabled set the dhcpEnabled.
    */
   @VsoMethod
@@ -130,7 +130,7 @@ public class VlanInterface extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable ipv6 auto configuration.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ip6AutocfgEnabled
    */
   @VsoMethod
@@ -142,7 +142,7 @@ public class VlanInterface extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable ipv6 auto configuration.
    * Field introduced in 18.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ip6AutocfgEnabled set the ip6AutocfgEnabled.
    */
   @VsoMethod

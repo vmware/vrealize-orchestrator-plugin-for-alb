@@ -60,6 +60,10 @@ public class UpgradeStatusInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String enqueueTime = null;
 
+    @JsonProperty("history")
+    @JsonInclude(Include.NON_NULL)
+    private List<OpsHistory> history = null;
+
     @JsonProperty("image_path")
     @JsonInclude(Include.NON_NULL)
     private String imagePath = null;
@@ -393,6 +397,47 @@ public class UpgradeStatusInfo extends AviRestResource {
   public void setEnqueueTime(String  enqueueTime) {
     this.enqueueTime = enqueueTime;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Record of past operations on this node.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return history
+   */
+  @VsoMethod
+  public List<OpsHistory> getHistory() {
+    return history;
+  }
+
+  /**
+   * This is the setter method. this will set the history
+   * Record of past operations on this node.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return history
+   */
+  @VsoMethod
+  public void setHistory(List<OpsHistory>  history) {
+    this.history = history;
+  }
+
+  /**
+   * This is the setter method this will set the history
+   * Record of past operations on this node.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return history
+   */
+  @VsoMethod
+  public UpgradeStatusInfo addHistoryItem(OpsHistory historyItem) {
+    if (this.history == null) {
+      this.history = new ArrayList<OpsHistory>();
+    }
+    this.history.add(historyItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -1400,7 +1445,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.afterRebootRollbackFnc, objUpgradeStatusInfo.afterRebootRollbackFnc)&&
   Objects.equals(this.tenantRef, objUpgradeStatusInfo.tenantRef)&&
   Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
-  Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents);
+  Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
+  Objects.equals(this.history, objUpgradeStatusInfo.history);
 }
 
 @Override
@@ -1415,6 +1461,7 @@ public String toString() {
         sb.append("    enableRollback: ").append(toIndentedString(enableRollback)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    enqueueTime: ").append(toIndentedString(enqueueTime)).append("\n");
+        sb.append("    history: ").append(toIndentedString(history)).append("\n");
         sb.append("    imagePath: ").append(toIndentedString(imagePath)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

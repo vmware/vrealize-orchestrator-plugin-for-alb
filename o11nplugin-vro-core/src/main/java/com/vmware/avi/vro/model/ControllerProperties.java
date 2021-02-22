@@ -224,6 +224,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer seVnicCooldown = 120;
 
+    @JsonProperty("se_vnic_gc_wait_time")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seVnicGcWaitTime = 300;
+
     @JsonProperty("secure_channel_cleanup_timeout")
     @JsonInclude(Include.NON_NULL)
     private Integer secureChannelCleanupTimeout = 60;
@@ -1256,7 +1260,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Burst limit on number of incoming requests0 to disable.
+   * Burst limit on number of incoming requests 0 to disable.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @return portalRequestBurstLimit
@@ -1268,7 +1272,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Burst limit on number of incoming requests0 to disable.
+   * Burst limit on number of incoming requests 0 to disable.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
    * @param portalRequestBurstLimit set the portalRequestBurstLimit.
@@ -1280,7 +1284,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum average number of requests allowed per second0 to disable.
+   * Maximum average number of requests allowed per second 0 to disable.
    * Field introduced in 20.1.1.
    * Unit is per_second.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1293,7 +1297,7 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum average number of requests allowed per second0 to disable.
+   * Maximum average number of requests allowed per second 0 to disable.
    * Field introduced in 20.1.1.
    * Unit is per_second.
    * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1568,6 +1572,34 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setSeVnicCooldown(Integer  seVnicCooldown) {
     this.seVnicCooldown = seVnicCooldown;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Duration to wait after last vnic addition before proceeding with vnic garbage collection.
+   * Used for testing purposes.
+   * Field introduced in 20.1.4.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+   * @return seVnicGcWaitTime
+   */
+  @VsoMethod
+  public Integer getSeVnicGcWaitTime() {
+    return seVnicGcWaitTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Duration to wait after last vnic addition before proceeding with vnic garbage collection.
+   * Used for testing purposes.
+   * Field introduced in 20.1.4.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+   * @param seVnicGcWaitTime set the seVnicGcWaitTime.
+   */
+  @VsoMethod
+  public void setSeVnicGcWaitTime(Integer  seVnicGcWaitTime) {
+    this.seVnicGcWaitTime = seVnicGcWaitTime;
   }
 
   /**
@@ -2348,7 +2380,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maxThreadsCcVipBgWorker, objControllerProperties.maxThreadsCcVipBgWorker)&&
   Objects.equals(this.asyncPatchMergePeriod, objControllerProperties.asyncPatchMergePeriod)&&
   Objects.equals(this.asyncPatchRequestCleanupDuration, objControllerProperties.asyncPatchRequestCleanupDuration)&&
-  Objects.equals(this.controllerResourceInfoCollectionPeriod, objControllerProperties.controllerResourceInfoCollectionPeriod);
+  Objects.equals(this.controllerResourceInfoCollectionPeriod, objControllerProperties.controllerResourceInfoCollectionPeriod)&&
+  Objects.equals(this.seVnicGcWaitTime, objControllerProperties.seVnicGcWaitTime);
 }
 
 @Override
@@ -2405,6 +2438,7 @@ public String toString() {
         sb.append("    seOfflineDel: ").append(toIndentedString(seOfflineDel)).append("\n");
         sb.append("    seSpawnRetryInterval: ").append(toIndentedString(seSpawnRetryInterval)).append("\n");
         sb.append("    seVnicCooldown: ").append(toIndentedString(seVnicCooldown)).append("\n");
+        sb.append("    seVnicGcWaitTime: ").append(toIndentedString(seVnicGcWaitTime)).append("\n");
         sb.append("    secureChannelCleanupTimeout: ").append(toIndentedString(secureChannelCleanupTimeout)).append("\n");
         sb.append("    secureChannelControllerTokenTimeout: ").append(toIndentedString(secureChannelControllerTokenTimeout)).append("\n");
         sb.append("    secureChannelSeTokenTimeout: ").append(toIndentedString(secureChannelSeTokenTimeout)).append("\n");

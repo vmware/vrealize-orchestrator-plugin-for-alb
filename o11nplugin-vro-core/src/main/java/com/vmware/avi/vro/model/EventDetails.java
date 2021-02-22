@@ -14,6 +14,7 @@ import com.vmware.avi.vro.model.AnomalyEventDetails;
 import com.vmware.avi.vro.model.ApicAgentBridgeDomainVrfChange;
 import com.vmware.avi.vro.model.ApicAgentGenericEventDetails;
 import com.vmware.avi.vro.model.ApicAgentVsNetworkError;
+import com.vmware.avi.vro.model.AppSignatureEventData;
 import com.vmware.avi.vro.model.AvgUptimeChangeDetails;
 import com.vmware.avi.vro.model.AWSASGDelete;
 import com.vmware.avi.vro.model.AWSASGNotifDetails;
@@ -63,6 +64,7 @@ import com.vmware.avi.vro.model.ConfigUserNotAuthrzByRule;
 import com.vmware.avi.vro.model.ContainerCloudBatchSetup;
 import com.vmware.avi.vro.model.ContainerCloudSetup;
 import com.vmware.avi.vro.model.ContainerCloudService;
+import com.vmware.avi.vro.model.ControllerDiscontinuousTimeChangeEventDetails;
 import com.vmware.avi.vro.model.ControllerLicenseReconcileDetails;
 import com.vmware.avi.vro.model.CRSDeploymentFailure;
 import com.vmware.avi.vro.model.CRSDeploymentSuccess;
@@ -126,6 +128,7 @@ import com.vmware.avi.vro.model.SchedulerActionDetails;
 import com.vmware.avi.vro.model.SeBgpPeerDownDetails;
 import com.vmware.avi.vro.model.SeBgpPeerStateChangeDetails;
 import com.vmware.avi.vro.model.SeMgrEventDetails;
+import com.vmware.avi.vro.model.SeDiscontinuousTimeChangeEventDetails;
 import com.vmware.avi.vro.model.SeDupipEventDetails;
 import com.vmware.avi.vro.model.SeGatewayHeartbeatFailedDetails;
 import com.vmware.avi.vro.model.SeGatewayHeartbeatSuccessDetails;
@@ -251,6 +254,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("apic_agent_vs_network_error")
     @JsonInclude(Include.NON_NULL)
     private ApicAgentVsNetworkError apicAgentVsNetworkError = null;
+
+    @JsonProperty("app_signature_event_data")
+    @JsonInclude(Include.NON_NULL)
+    private AppSignatureEventData appSignatureEventData = null;
 
     @JsonProperty("avg_uptime_change_details")
     @JsonInclude(Include.NON_NULL)
@@ -447,6 +454,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("container_cloud_sevice")
     @JsonInclude(Include.NON_NULL)
     private ContainerCloudService containerCloudSevice = null;
+
+    @JsonProperty("controller_discontinuous_time_change_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private ControllerDiscontinuousTimeChangeEventDetails controllerDiscontinuousTimeChangeEventDetails = null;
 
     @JsonProperty("controller_license_reconcile_details")
     @JsonInclude(Include.NON_NULL)
@@ -699,6 +710,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("se_details")
     @JsonInclude(Include.NON_NULL)
     private SeMgrEventDetails seDetails = null;
+
+    @JsonProperty("se_discontinuous_time_change_event_details")
+    @JsonInclude(Include.NON_NULL)
+    private SeDiscontinuousTimeChangeEventDetails seDiscontinuousTimeChangeEventDetails = null;
 
     @JsonProperty("se_dupip_event_details")
     @JsonInclude(Include.NON_NULL)
@@ -1182,6 +1197,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setApicAgentVsNetworkError(ApicAgentVsNetworkError apicAgentVsNetworkError) {
     this.apicAgentVsNetworkError = apicAgentVsNetworkError;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Placeholder for description of property app_signature_event_data of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return appSignatureEventData
+   */
+  @VsoMethod
+  public AppSignatureEventData getAppSignatureEventData() {
+    return appSignatureEventData;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property app_signature_event_data of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param appSignatureEventData set the appSignatureEventData.
+   */
+  @VsoMethod
+  public void setAppSignatureEventData(AppSignatureEventData appSignatureEventData) {
+    this.appSignatureEventData = appSignatureEventData;
   }
 
   /**
@@ -2264,6 +2301,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setContainerCloudSevice(ContainerCloudService containerCloudSevice) {
     this.containerCloudSevice = containerCloudSevice;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return controllerDiscontinuousTimeChangeEventDetails
+   */
+  @VsoMethod
+  public ControllerDiscontinuousTimeChangeEventDetails getControllerDiscontinuousTimeChangeEventDetails() {
+    return controllerDiscontinuousTimeChangeEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param controllerDiscontinuousTimeChangeEventDetails set the controllerDiscontinuousTimeChangeEventDetails.
+   */
+  @VsoMethod
+  public void setControllerDiscontinuousTimeChangeEventDetails(ControllerDiscontinuousTimeChangeEventDetails controllerDiscontinuousTimeChangeEventDetails) {
+    this.controllerDiscontinuousTimeChangeEventDetails = controllerDiscontinuousTimeChangeEventDetails;
   }
 
   /**
@@ -3654,6 +3713,28 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setSeDetails(SeMgrEventDetails seDetails) {
     this.seDetails = seDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seDiscontinuousTimeChangeEventDetails
+   */
+  @VsoMethod
+  public SeDiscontinuousTimeChangeEventDetails getSeDiscontinuousTimeChangeEventDetails() {
+    return seDiscontinuousTimeChangeEventDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seDiscontinuousTimeChangeEventDetails set the seDiscontinuousTimeChangeEventDetails.
+   */
+  @VsoMethod
+  public void setSeDiscontinuousTimeChangeEventDetails(SeDiscontinuousTimeChangeEventDetails seDiscontinuousTimeChangeEventDetails) {
+    this.seDiscontinuousTimeChangeEventDetails = seDiscontinuousTimeChangeEventDetails;
   }
 
   /**
@@ -5301,6 +5382,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seHbRecoveredEventDetails, objEventDetails.seHbRecoveredEventDetails)&&
   Objects.equals(this.seBgpPeerDownDetails, objEventDetails.seBgpPeerDownDetails)&&
   Objects.equals(this.seVsPktBufHighEventDetails, objEventDetails.seVsPktBufHighEventDetails)&&
+  Objects.equals(this.seDiscontinuousTimeChangeEventDetails, objEventDetails.seDiscontinuousTimeChangeEventDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -5336,6 +5418,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.clusterNodeDbFailedDetails, objEventDetails.clusterNodeDbFailedDetails)&&
   Objects.equals(this.systemUpgradeDetails, objEventDetails.systemUpgradeDetails)&&
   Objects.equals(this.memoryBalancerInfo, objEventDetails.memoryBalancerInfo)&&
+  Objects.equals(this.controllerDiscontinuousTimeChangeEventDetails, objEventDetails.controllerDiscontinuousTimeChangeEventDetails)&&
   Objects.equals(this.metricThresholdUpDetails, objEventDetails.metricThresholdUpDetails)&&
   Objects.equals(this.licenseExpiryDetails, objEventDetails.licenseExpiryDetails)&&
   Objects.equals(this.anomalyDetails, objEventDetails.anomalyDetails)&&
@@ -5413,6 +5496,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.albservicesFileUploadDetails, objEventDetails.albservicesFileUploadDetails)&&
   Objects.equals(this.crsUpdateDetails, objEventDetails.crsUpdateDetails)&&
   Objects.equals(this.ipThreatDbEventData, objEventDetails.ipThreatDbEventData)&&
+  Objects.equals(this.appSignatureEventData, objEventDetails.appSignatureEventData)&&
   Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
   Objects.equals(this.nsxtImgDetails, objEventDetails.nsxtImgDetails)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
@@ -5442,6 +5526,7 @@ public String toString() {
         sb.append("    apicAgentBdVrfDetails: ").append(toIndentedString(apicAgentBdVrfDetails)).append("\n");
         sb.append("    apicAgentGenericDetails: ").append(toIndentedString(apicAgentGenericDetails)).append("\n");
         sb.append("    apicAgentVsNetworkError: ").append(toIndentedString(apicAgentVsNetworkError)).append("\n");
+        sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
         sb.append("    avgUptimeChangeDetails: ").append(toIndentedString(avgUptimeChangeDetails)).append("\n");
         sb.append("    awsAsgDeletionDetails: ").append(toIndentedString(awsAsgDeletionDetails)).append("\n");
         sb.append("    awsAsgNotifDetails: ").append(toIndentedString(awsAsgNotifDetails)).append("\n");
@@ -5491,6 +5576,7 @@ public String toString() {
         sb.append("    containerCloudBatchSetup: ").append(toIndentedString(containerCloudBatchSetup)).append("\n");
         sb.append("    containerCloudSetup: ").append(toIndentedString(containerCloudSetup)).append("\n");
         sb.append("    containerCloudSevice: ").append(toIndentedString(containerCloudSevice)).append("\n");
+        sb.append("    controllerDiscontinuousTimeChangeEventDetails: ").append(toIndentedString(controllerDiscontinuousTimeChangeEventDetails)).append("\n");
         sb.append("    controllerLicenseReconcileDetails: ").append(toIndentedString(controllerLicenseReconcileDetails)).append("\n");
         sb.append("    crsDeploymentFailure: ").append(toIndentedString(crsDeploymentFailure)).append("\n");
         sb.append("    crsDeploymentSuccess: ").append(toIndentedString(crsDeploymentSuccess)).append("\n");
@@ -5554,6 +5640,7 @@ public String toString() {
         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
+        sb.append("    seDiscontinuousTimeChangeEventDetails: ").append(toIndentedString(seDiscontinuousTimeChangeEventDetails)).append("\n");
         sb.append("    seDupipEventDetails: ").append(toIndentedString(seDupipEventDetails)).append("\n");
         sb.append("    seGatewayHeartbeatFailedDetails: ").append(toIndentedString(seGatewayHeartbeatFailedDetails)).append("\n");
         sb.append("    seGatewayHeartbeatSuccessDetails: ").append(toIndentedString(seGatewayHeartbeatSuccessDetails)).append("\n");

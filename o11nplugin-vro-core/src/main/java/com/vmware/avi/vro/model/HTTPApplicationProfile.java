@@ -773,6 +773,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * host's domain name.
    * Field introduced in 17.2.13, 18.1.4, 18.2.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return hstsSubdomainsEnabled
    */
@@ -788,6 +789,7 @@ public class HTTPApplicationProfile extends AviRestResource {
    * host's domain name.
    * Field introduced in 17.2.13, 18.1.4, 18.2.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param hstsSubdomainsEnabled set the hstsSubdomainsEnabled.
    */
@@ -1404,7 +1406,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
+   * The max allowed length of time between a client establishing a tcp connection and avi receives the first byte of the client's http request.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
    * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.
@@ -1418,7 +1420,7 @@ public class HTTPApplicationProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The max allowed length of time between a client establishing a tcp connection until avi receives the first byte of the client's http request.
+   * The max allowed length of time between a client establishing a tcp connection and avi receives the first byte of the client's http request.
    * Allowed values are 10-100000000.
    * Unit is milliseconds.
    * Allowed in basic(allowed values- 30000) edition, essentials(allowed values- 30000) edition, enterprise edition.

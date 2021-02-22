@@ -1011,5 +1011,9 @@ public class Constants {
 	public static final String FINDER_VRO_OUTOFBANDREQUESTLOG = "OutOfBandRequestLog";
 	public static final String FINDER_VRO_DSREQUESTLOG = "DSRequestLog";
 	public static final String FINDER_VRO_OBJSYNCCONFIG = "ObjSyncConfig";
-
+	public static final String FINDER_VRO_APPSIGNATUREEVENTDATA = "AppSignatureEventData";
+	public static final String FINDER_VRO_CONTROLLERDISCONTINUOUSTIMECHANGEEVENTDETAILS = "ControllerDiscontinuousTimeChangeEventDetails";
+	public static final String FINDER_VRO_SEDISCONTINUOUSTIMECHANGEEVENTDETAILS = "SeDiscontinuousTimeChangeEventDetails";
+	public static final String FINDER_VRO_OPSHISTORY = "OpsHistory";
+	public static final String FINDER_VRO_APPSIGNATURECONFIG = "AppSignatureConfig";
 }
