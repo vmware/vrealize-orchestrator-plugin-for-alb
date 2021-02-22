@@ -56,6 +56,10 @@ public class SeUpgradeEvents extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String seRef = null;
 
+    @JsonProperty("sub_tasks")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> subTasks = null;
+
     @JsonProperty("task")
     @JsonInclude(Include.NON_NULL)
     private String task = null;
@@ -268,6 +272,47 @@ public class SeUpgradeEvents extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * List of sub_tasks executed.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return subTasks
+   */
+  @VsoMethod
+  public List<String> getSubTasks() {
+    return subTasks;
+  }
+
+  /**
+   * This is the setter method. this will set the subTasks
+   * List of sub_tasks executed.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return subTasks
+   */
+  @VsoMethod
+  public void setSubTasks(List<String>  subTasks) {
+    this.subTasks = subTasks;
+  }
+
+  /**
+   * This is the setter method this will set the subTasks
+   * List of sub_tasks executed.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return subTasks
+   */
+  @VsoMethod
+  public SeUpgradeEvents addSubTasksItem(String subTasksItem) {
+    if (this.subTasks == null) {
+      this.subTasks = new ArrayList<String>();
+    }
+    this.subTasks.add(subTasksItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL,
    * SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS,
    * SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS,
@@ -382,7 +427,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numSe, objSeUpgradeEvents.numSe)&&
   Objects.equals(this.numVs, objSeUpgradeEvents.numVs)&&
   Objects.equals(this.trafficStatus, objSeUpgradeEvents.trafficStatus)&&
-  Objects.equals(this.reason, objSeUpgradeEvents.reason);
+  Objects.equals(this.reason, objSeUpgradeEvents.reason)&&
+  Objects.equals(this.subTasks, objSeUpgradeEvents.subTasks);
 }
 
 @Override
@@ -397,6 +443,7 @@ public String toString() {
         sb.append("    seGroupHaMode: ").append(toIndentedString(seGroupHaMode)).append("\n");
         sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");
         sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
+        sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
         sb.append("    task: ").append(toIndentedString(task)).append("\n");
         sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");
         sb.append("    trafficStatus: ").append(toIndentedString(trafficStatus)).append("\n");

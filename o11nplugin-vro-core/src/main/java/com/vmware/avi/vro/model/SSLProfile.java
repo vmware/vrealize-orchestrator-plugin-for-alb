@@ -101,7 +101,7 @@ public class SSLProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Ciphers suites represented as defined by U(http://www.openssl.org/docs/apps/ciphers.html).
+   * Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AES:3DES:RC4".
    * @return acceptedCiphers
    */
@@ -112,7 +112,7 @@ public class SSLProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Ciphers suites represented as defined by U(http://www.openssl.org/docs/apps/ciphers.html).
+   * Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
    * Default value when not specified in API or module is interpreted by Avi Controller as "AES:3DES:RC4".
    * @param acceptedCiphers set the acceptedCiphers.
    */

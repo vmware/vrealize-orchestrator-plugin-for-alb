@@ -465,7 +465,7 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The uuis of the pool that was used for the request.
+   * The uuid of the pool that was used for the request.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return poolUuid
@@ -477,7 +477,7 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The uuis of the pool that was used for the request.
+   * The uuid of the pool that was used for the request.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param poolUuid set the poolUuid.

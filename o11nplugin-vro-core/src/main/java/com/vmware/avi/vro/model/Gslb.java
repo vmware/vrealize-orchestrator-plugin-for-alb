@@ -82,6 +82,10 @@ public class Gslb extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String tenantRef = null;
 
+    @JsonProperty("tenant_scoped")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean tenantScoped = true;
+
     @JsonProperty("third_party_sites")
     @JsonInclude(Include.NON_NULL)
     private List<GslbThirdPartySite> thirdPartySites = null;
@@ -492,6 +496,30 @@ public class Gslb extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return tenantScoped
+   */
+  @VsoMethod
+  public Boolean getTenantScoped() {
+    return tenantScoped;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param tenantScoped set the tenantScoped.
+   */
+  @VsoMethod
+  public void setTenantScoped(Boolean  tenantScoped) {
+    this.tenantScoped = tenantScoped;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Third party site member belonging to this gslb.
    * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -626,7 +654,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.maintenanceMode, objGslb.maintenanceMode)&&
   Objects.equals(this.isFederated, objGslb.isFederated)&&
   Objects.equals(this.description, objGslb.description)&&
-  Objects.equals(this.tenantRef, objGslb.tenantRef);
+  Objects.equals(this.tenantRef, objGslb.tenantRef)&&
+  Objects.equals(this.tenantScoped, objGslb.tenantScoped);
 }
 
 @Override
@@ -647,6 +676,7 @@ public String toString() {
         sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
         sb.append("    sites: ").append(toIndentedString(sites)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    tenantScoped: ").append(toIndentedString(tenantScoped)).append("\n");
         sb.append("    thirdPartySites: ").append(toIndentedString(thirdPartySites)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    viewId: ").append(toIndentedString(viewId)).append("\n");

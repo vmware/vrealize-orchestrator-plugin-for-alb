@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.AppSignatureConfig;
 import com.vmware.avi.vro.model.ALBServicesUser;
 import com.vmware.avi.vro.model.PortalFeatureOptIn;
 import com.vmware.avi.vro.model.IpReputationConfig;
@@ -29,6 +30,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ALBServicesConfig extends AviRestResource {
+    @JsonProperty("app_signature_config")
+    @JsonInclude(Include.NON_NULL)
+    private AppSignatureConfig appSignatureConfig = null;
+
     @JsonProperty("asset_contact")
     @JsonInclude(Include.NON_NULL)
     private ALBServicesUser assetContact = null;
@@ -43,7 +48,7 @@ public class ALBServicesConfig extends AviRestResource {
 
     @JsonProperty("mode")
     @JsonInclude(Include.NON_NULL)
-    private String mode = "SALESFORCE";
+    private String mode = "MYVMWARE";
 
     @JsonProperty("polling_interval")
     @JsonInclude(Include.NON_NULL)
@@ -78,6 +83,32 @@ public class ALBServicesConfig extends AviRestResource {
     private String uuid = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Default values to be used for application signature sync.
+   * Field introduced in 20.1.4.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return appSignatureConfig
+   */
+  @VsoMethod
+  public AppSignatureConfig getAppSignatureConfig() {
+    return appSignatureConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Default values to be used for application signature sync.
+   * Field introduced in 20.1.4.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param appSignatureConfig set the appSignatureConfig.
+   */
+  @VsoMethod
+  public void setAppSignatureConfig(AppSignatureConfig appSignatureConfig) {
+    this.appSignatureConfig = appSignatureConfig;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -156,8 +187,9 @@ public class ALBServicesConfig extends AviRestResource {
    * Mode helps log collection and upload.
    * Enum options - SALESFORCE, SYSTEST, MYVMWARE.
    * Field introduced in 20.1.2.
-   * Allowed in basic(allowed values- salesforce) edition, essentials(allowed values- salesforce) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "SALESFORCE".
+   * Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
+   * enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "MYVMWARE".
    * @return mode
    */
   @VsoMethod
@@ -170,8 +202,9 @@ public class ALBServicesConfig extends AviRestResource {
    * Mode helps log collection and upload.
    * Enum options - SALESFORCE, SYSTEST, MYVMWARE.
    * Field introduced in 20.1.2.
-   * Allowed in basic(allowed values- salesforce) edition, essentials(allowed values- salesforce) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "SALESFORCE".
+   * Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
+   * enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "MYVMWARE".
    * @param mode set the mode.
    */
   @VsoMethod
@@ -390,14 +423,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.splitProxyConfiguration, objALBServicesConfig.splitProxyConfiguration)&&
   Objects.equals(this.ipReputationConfig, objALBServicesConfig.ipReputationConfig)&&
   Objects.equals(this.useTls, objALBServicesConfig.useTls)&&
-  Objects.equals(this.mode, objALBServicesConfig.mode);
+  Objects.equals(this.mode, objALBServicesConfig.mode)&&
+  Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ALBServicesConfig {\n");
-      sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
+      sb.append("    appSignatureConfig: ").append(toIndentedString(appSignatureConfig)).append("\n");
+        sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");

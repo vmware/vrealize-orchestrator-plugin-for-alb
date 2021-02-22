@@ -197,7 +197,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable/disable http object caching.when enabling caching for the first time, se group app_cache_percent must beset to allocate shared memory
+   * Enable/disable http object caching.when enabling caching for the first time, se group app_cache_percent must be set to allocate shared memory
    * required for caching (a service engine restart is needed after setting/resetting the se group value).
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
@@ -209,7 +209,7 @@ public class HttpCacheConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable/disable http object caching.when enabling caching for the first time, se group app_cache_percent must beset to allocate shared memory
+   * Enable/disable http object caching.when enabling caching for the first time, se group app_cache_percent must be set to allocate shared memory
    * required for caching (a service engine restart is needed after setting/resetting the se group value).
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.

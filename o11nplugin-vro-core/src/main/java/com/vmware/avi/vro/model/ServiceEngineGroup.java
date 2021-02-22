@@ -592,6 +592,14 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer seDpHmDrops = 0;
 
+    @JsonProperty("se_dp_isolation")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seDpIsolation = false;
+
+    @JsonProperty("se_dp_isolation_num_non_dp_cpus")
+    @JsonInclude(Include.NON_NULL)
+    private Integer seDpIsolationNumNonDpCpus = 0;
+
     @JsonProperty("se_dp_max_hb_version")
     @JsonInclude(Include.NON_NULL)
     private Integer seDpMaxHbVersion = 2;
@@ -830,7 +838,7 @@ public class ServiceEngineGroup extends AviRestResource {
 
     @JsonProperty("use_objsync")
     @JsonInclude(Include.NON_NULL)
-    private Boolean useObjsync = false;
+    private Boolean useObjsync = true;
 
     @JsonProperty("use_standard_alb")
     @JsonInclude(Include.NON_NULL)
@@ -3564,7 +3572,6 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of virtual services that can be placed on a single service engine.
-   * East west virtual services are excluded from this limit.
    * Allowed values are 1-1000.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return maxVsPerSe
@@ -3577,7 +3584,6 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of virtual services that can be placed on a single service engine.
-   * East west virtual services are excluded from this limit.
    * Allowed values are 1-1000.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param maxVsPerSe set the maxVsPerSe.
@@ -3640,6 +3646,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Amount of memory for each of the service engine virtual machines.
+   * Changes to this setting do not affect existing ses.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
    * @return memoryPerSe
    */
@@ -3651,6 +3658,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Amount of memory for each of the service engine virtual machines.
+   * Changes to this setting do not affect existing ses.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
    * @param memoryPerSe set the memoryPerSe.
    */
@@ -4688,9 +4696,71 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Toggle support to run se datapath instances in isolation on exclusive cpus.
+   * This improves latency and performance.
+   * However, this could reduce the total number of se_dp instances created on that se instance.
+   * Supported for >= 8 cpus.
+   * Requires se reboot.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return seDpIsolation
+   */
+  @VsoMethod
+  public Boolean getSeDpIsolation() {
+    return seDpIsolation;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Toggle support to run se datapath instances in isolation on exclusive cpus.
+   * This improves latency and performance.
+   * However, this could reduce the total number of se_dp instances created on that se instance.
+   * Supported for >= 8 cpus.
+   * Requires se reboot.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param seDpIsolation set the seDpIsolation.
+   */
+  @VsoMethod
+  public void setSeDpIsolation(Boolean  seDpIsolation) {
+    this.seDpIsolation = seDpIsolation;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Number of cpus for non se-dp tasks in se datapath isolation mode.
+   * Translates total cpus minus 'num_non_dp_cpus' for datapath use.requires se reboot.
+   * Allowed values are 1-8.
+   * Special values are 0- 'auto'.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return seDpIsolationNumNonDpCpus
+   */
+  @VsoMethod
+  public Integer getSeDpIsolationNumNonDpCpus() {
+    return seDpIsolationNumNonDpCpus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Number of cpus for non se-dp tasks in se datapath isolation mode.
+   * Translates total cpus minus 'num_non_dp_cpus' for datapath use.requires se reboot.
+   * Allowed values are 1-8.
+   * Special values are 0- 'auto'.
+   * Field introduced in 20.1.4.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param seDpIsolationNumNonDpCpus set the seDpIsolationNumNonDpCpus.
+   */
+  @VsoMethod
+  public void setSeDpIsolationNumNonDpCpus(Integer  seDpIsolationNumNonDpCpus) {
+    this.seDpIsolationNumNonDpCpus = seDpIsolationNumNonDpCpus;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The highest supported se-se heartbeat protocol version.
    * This version is reported by secondary se to primary se in heartbeat response messages.
-   * Allowed values are 1-3.
+   * Allowed values are 1-2.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return seDpMaxHbVersion
@@ -4704,7 +4774,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * The highest supported se-se heartbeat protocol version.
    * This version is reported by secondary se to primary se in heartbeat response messages.
-   * Allowed values are 1-3.
+   * Allowed values are 1-2.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param seDpMaxHbVersion set the seDpMaxHbVersion.
@@ -6302,7 +6372,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Enable interse objsyc distribution framework.
    * Field introduced in 20.1.3.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useObjsync
    */
   @VsoMethod
@@ -6315,7 +6385,7 @@ public class ServiceEngineGroup extends AviRestResource {
    * Enable interse objsyc distribution framework.
    * Field introduced in 20.1.3.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useObjsync set the useObjsync.
    */
   @VsoMethod
@@ -6565,6 +6635,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Number of vcpus for each of the service engine virtual machines.
+   * Changes to this setting do not affect existing ses.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @return vcpusPerSe
    */
@@ -6576,6 +6647,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Number of vcpus for each of the service engine virtual machines.
+   * Changes to this setting do not affect existing ses.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
    * @param vcpusPerSe set the vcpusPerSe.
    */
@@ -7181,7 +7253,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.handlePerPktAttack, objServiceEngineGroup.handlePerPktAttack)&&
   Objects.equals(this.perVsAdmissionControl, objServiceEngineGroup.perVsAdmissionControl)&&
   Objects.equals(this.objsyncPort, objServiceEngineGroup.objsyncPort)&&
-  Objects.equals(this.objsyncConfig, objServiceEngineGroup.objsyncConfig);
+  Objects.equals(this.objsyncConfig, objServiceEngineGroup.objsyncConfig)&&
+  Objects.equals(this.seDpIsolation, objServiceEngineGroup.seDpIsolation)&&
+  Objects.equals(this.seDpIsolationNumNonDpCpus, objServiceEngineGroup.seDpIsolationNumNonDpCpus);
 }
 
 @Override
@@ -7327,6 +7401,8 @@ public String toString() {
         sb.append("    seDeprovisionDelay: ").append(toIndentedString(seDeprovisionDelay)).append("\n");
         sb.append("    seDosProfile: ").append(toIndentedString(seDosProfile)).append("\n");
         sb.append("    seDpHmDrops: ").append(toIndentedString(seDpHmDrops)).append("\n");
+        sb.append("    seDpIsolation: ").append(toIndentedString(seDpIsolation)).append("\n");
+        sb.append("    seDpIsolationNumNonDpCpus: ").append(toIndentedString(seDpIsolationNumNonDpCpus)).append("\n");
         sb.append("    seDpMaxHbVersion: ").append(toIndentedString(seDpMaxHbVersion)).append("\n");
         sb.append("    seDpVnicQueueStallEventSleep: ").append(toIndentedString(seDpVnicQueueStallEventSleep)).append("\n");
         sb.append("    seDpVnicQueueStallThreshold: ").append(toIndentedString(seDpVnicQueueStallThreshold)).append("\n");
