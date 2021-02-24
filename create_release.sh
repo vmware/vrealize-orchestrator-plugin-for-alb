@@ -57,9 +57,9 @@ fi
 
 # Build Project
 mvn clean install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dbuild.number=$BUILD_NUMBER
-
+cp o11nplugin-vro-core/target/o11nplugin-vro-core-$JAVA_VERSION-javadoc.jar .
 cp o11nplugin-vro/target/o11nplugin-vro-$JAVA_VERSION.dar .
-assets="$assets -a o11nplugin-vro-$JAVA_VERSION.dar"
+assets="$assets -a o11nplugin-vro-$JAVA_VERSION.dar -a o11nplugin-vro-core-$JAVA_VERSION-javadoc.jar"
 
 # Push release assets
 /usr/local/bin/hub release $hub_op $assets -F ReleaseNote $REL_TAG
