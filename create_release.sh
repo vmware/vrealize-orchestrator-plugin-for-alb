@@ -29,6 +29,7 @@ fi
 
 # Set maven version
 mvn versions:set -DnewVersion=$JAVA_VERSION
+echo "Using java version as $JAVA_VERSION"
 REL_TAG=tag-$JAVA_VERSION
 echo "Release tag is $REL_TAG"
 
