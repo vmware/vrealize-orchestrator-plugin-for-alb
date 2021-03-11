@@ -1,34 +1,36 @@
 #!/bin/bash
+set -x
 assets=""
-echo "Usage ./create_release.sh <branch> <version> <build_number> <is_final>"
+echo "Usage ./create_release.sh <branch> <version>"
 REL=$2
 BRANCH=$1
-IS_FINAL=$4
-BUILD_NUMBER=$3
 if [ $BRANCH = "eng" ]; then
     BRANCH="master"
 fi
 if [ -z $REL ]; then
-    echo "Pl. give the release version eg. 18.2.6"
+    echo "Pl. give the release version eg. 18.2.6, 20.1.3b1, 20.1.5post1"
     exit 1
 fi
-if [ -z $IS_FINAL ]; then
-	IS_FINAL=false
+
+# Convert version number to java standers
+JAVA_VERSION=$REL
+if [[ "$REL" == *"post"* ]]; then
+  version_array=($(echo "$REL" | tr 'post' '\n'))
+  VERSION_POSTFIX="${version_array[1]}"
+  JAVA_VERSION="${REL/post/\.}"
+elif  [[ "$REL" == *"b"* ]]; then
+  version_array=($(echo "$REL" | tr 'b' '\n'))
+  VERSION_POSTFIX="${version_array[1]}"
+  JAVA_VERSION="${REL/b/-beta-}"
     echo "Not a final release creating beta release for $REL"
-fi
-if [ -z $BUILD_NUMBER ]; then
-	BUILD_NUMBER=1
-    echo "Build number is $BUILD_NUMBER for release version $REL"
-fi
-
-if [ $IS_FINAL = true ]; then
-    mvn versions:set -DnewVersion=$REL
-    REL_TAG=tag-$REL
 else
-	mvn versions:set -DnewVersion=$REL-beta-$BUILD_NUMBER
-	REL_TAG=tag-$REL\b$BUILD_NUMBER
+  JAVA_VERSION=$JAVA_VERSION.RELEASE
 fi
 
+# Set maven version
+mvn versions:set -DnewVersion=$JAVA_VERSION
+echo "Using java version as $JAVA_VERSION"
+REL_TAG=tag-$JAVA_VERSION
 echo "Release tag is $REL_TAG"
 
 git tag -d $REL_TAG
@@ -48,19 +50,19 @@ do
     fi
 done
 
-mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dbuild.number=$BUILD_NUMBER
-
-if [ $IS_FINAL = true ]; then
-    cp o11nplugin-vro/target/o11nplugin-vro-$REL.dar .
-    cp o11nplugin-vro-core/target/o11nplugin-vro-core-$REL-javadoc.jar .
-    assets="$assets -a o11nplugin-vro-$REL.dar -a o11nplugin-vro-core-$REL-javadoc.jar"
+if [ -z $VERSION_POSTFIX ]; then
+	BUILD_NUMBER=1
 else
-        cp o11nplugin-vro/target/o11nplugin-vro-$REL-beta-$BUILD_NUMBER.dar .
-        cp o11nplugin-vro-core/target/o11nplugin-vro-core-$REL-beta-$BUILD_NUMBER-javadoc.jar .
-        assets="$assets -a o11nplugin-vro-$REL-beta-$BUILD_NUMBER.dar -a o11nplugin-vro-core-$REL-beta-$BUILD_NUMBER-javadoc.jar"
+  BUILD_NUMBER=$VERSION_POSTFIX
 fi
 
+# Build Project
+mvn clean install -DskipTests -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dbuild.number=$BUILD_NUMBER
+cp o11nplugin-vro-core/target/o11nplugin-vro-core-$JAVA_VERSION-javadoc.jar .
+cp o11nplugin-vro/target/o11nplugin-vro-$JAVA_VERSION.dar .
+assets="$assets -a o11nplugin-vro-$JAVA_VERSION.dar -a o11nplugin-vro-core-$JAVA_VERSION-javadoc.jar"
+
+# Push release assets
 /usr/local/bin/hub release $hub_op $assets -F ReleaseNote $REL_TAG
 
 rm -rf o11nplugin-vro-*.dar
-
