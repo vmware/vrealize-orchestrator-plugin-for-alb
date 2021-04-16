@@ -110,7 +110,7 @@ public class ControllerSizingLimits extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Controller flavor (s/m/l) for this sizing limit.
-   * Enum options - CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
+   * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return flavor
@@ -123,7 +123,7 @@ public class ControllerSizingLimits extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Controller flavor (s/m/l) for this sizing limit.
-   * Enum options - CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
+   * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param flavor set the flavor.

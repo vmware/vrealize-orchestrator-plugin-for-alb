@@ -25,6 +25,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsVip extends AviRestResource {
+    @JsonProperty("bgp_peer_labels")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> bgpPeerLabels = null;
+
     @JsonProperty("cloud_ref")
     @JsonInclude(Include.NON_NULL)
     private String cloudRef = null;
@@ -43,7 +47,11 @@ public class VsVip extends AviRestResource {
 
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
+
+    @JsonProperty("markers")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilterMatchLabel> markers = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -81,6 +89,50 @@ public class VsVip extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String vsvipCloudConfigCksum = null;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Select bgp peers, using peer label, for vsvip advertisement.
+   * Field introduced in 20.1.5.
+   * Maximum of 128 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return bgpPeerLabels
+   */
+  @VsoMethod
+  public List<String> getBgpPeerLabels() {
+    return bgpPeerLabels;
+  }
+
+  /**
+   * This is the setter method. this will set the bgpPeerLabels
+   * Select bgp peers, using peer label, for vsvip advertisement.
+   * Field introduced in 20.1.5.
+   * Maximum of 128 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return bgpPeerLabels
+   */
+  @VsoMethod
+  public void setBgpPeerLabels(List<String>  bgpPeerLabels) {
+    this.bgpPeerLabels = bgpPeerLabels;
+  }
+
+  /**
+   * This is the setter method this will set the bgpPeerLabels
+   * Select bgp peers, using peer label, for vsvip advertisement.
+   * Field introduced in 20.1.5.
+   * Maximum of 128 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return bgpPeerLabels
+   */
+  @VsoMethod
+  public VsVip addBgpPeerLabelsItem(String bgpPeerLabelsItem) {
+    if (this.bgpPeerLabels == null) {
+      this.bgpPeerLabels = new ArrayList<String>();
+    }
+    this.bgpPeerLabels.add(bgpPeerLabelsItem);
+    return this;
+  }
 
 
   /**
@@ -210,9 +262,9 @@ public class VsVip extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
+   * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -224,9 +276,9 @@ public class VsVip extends AviRestResource {
    * This is the setter method. this will set the labels
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
+   * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -238,9 +290,9 @@ public class VsVip extends AviRestResource {
    * This is the setter method this will set the labels
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
+   * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -249,6 +301,47 @@ public class VsVip extends AviRestResource {
       this.labels = new ArrayList<KeyValue>();
     }
     this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public List<RoleFilterMatchLabel> getMarkers() {
+    return markers;
+  }
+
+  /**
+   * This is the setter method. this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+    this.markers = markers;
+  }
+
+  /**
+   * This is the setter method this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public VsVip addMarkersItem(RoleFilterMatchLabel markersItem) {
+    if (this.markers == null) {
+      this.markers = new ArrayList<RoleFilterMatchLabel>();
+    }
+    this.markers.add(markersItem);
     return this;
   }
 
@@ -517,6 +610,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tier1Lr, objVsVip.tier1Lr)&&
   Objects.equals(this.labels, objVsVip.labels)&&
   Objects.equals(this.ipamSelector, objVsVip.ipamSelector)&&
+  Objects.equals(this.bgpPeerLabels, objVsVip.bgpPeerLabels)&&
+  Objects.equals(this.markers, objVsVip.markers)&&
   Objects.equals(this.tenantRef, objVsVip.tenantRef)&&
   Objects.equals(this.cloudRef, objVsVip.cloudRef)&&
   Objects.equals(this.vsvipCloudConfigCksum, objVsVip.vsvipCloudConfigCksum);
@@ -526,11 +621,13 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VsVip {\n");
-      sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+      sb.append("    bgpPeerLabels: ").append(toIndentedString(bgpPeerLabels)).append("\n");
+        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
         sb.append("    eastWestPlacement: ").append(toIndentedString(eastWestPlacement)).append("\n");
         sb.append("    ipamSelector: ").append(toIndentedString(ipamSelector)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    tier1Lr: ").append(toIndentedString(tier1Lr)).append("\n");

@@ -43,7 +43,11 @@ public class L4PolicySet extends AviRestResource {
 
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
+
+    @JsonProperty("markers")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilterMatchLabel> markers = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -159,9 +163,9 @@ public class L4PolicySet extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
+   * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -173,9 +177,9 @@ public class L4PolicySet extends AviRestResource {
    * This is the setter method. this will set the labels
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
+   * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -187,9 +191,9 @@ public class L4PolicySet extends AviRestResource {
    * This is the setter method this will set the labels
    * Key value pairs for granular object access control.
    * Also allows for classification and tagging of similar objects.
+   * Field deprecated in 20.1.5.
    * Field introduced in 20.1.2.
    * Maximum of 4 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return labels
    */
   @VsoMethod
@@ -198,6 +202,47 @@ public class L4PolicySet extends AviRestResource {
       this.labels = new ArrayList<KeyValue>();
     }
     this.labels.add(labelsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public List<RoleFilterMatchLabel> getMarkers() {
+    return markers;
+  }
+
+  /**
+   * This is the setter method. this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+    this.markers = markers;
+  }
+
+  /**
+   * This is the setter method this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public L4PolicySet addMarkersItem(RoleFilterMatchLabel markersItem) {
+    if (this.markers == null) {
+      this.markers = new ArrayList<RoleFilterMatchLabel>();
+    }
+    this.markers.add(markersItem);
     return this;
   }
 
@@ -312,6 +357,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.l4ConnectionPolicy, objL4PolicySet.l4ConnectionPolicy)&&
   Objects.equals(this.createdBy, objL4PolicySet.createdBy)&&
   Objects.equals(this.labels, objL4PolicySet.labels)&&
+  Objects.equals(this.markers, objL4PolicySet.markers)&&
   Objects.equals(this.isInternalPolicy, objL4PolicySet.isInternalPolicy)&&
   Objects.equals(this.description, objL4PolicySet.description)&&
   Objects.equals(this.tenantRef, objL4PolicySet.tenantRef);
@@ -326,6 +372,7 @@ public String toString() {
         sb.append("    isInternalPolicy: ").append(toIndentedString(isInternalPolicy)).append("\n");
         sb.append("    l4ConnectionPolicy: ").append(toIndentedString(l4ConnectionPolicy)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

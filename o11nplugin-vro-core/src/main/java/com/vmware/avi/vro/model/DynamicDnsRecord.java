@@ -75,7 +75,7 @@ public class DynamicDnsRecord extends AviRestResource {
 
     @JsonProperty("num_records_in_response")
     @JsonInclude(Include.NON_NULL)
-    private Integer numRecordsInResponse = 0;
+    private Integer numRecordsInResponse = null;
 
     @JsonProperty("service_locators")
     @JsonInclude(Include.NON_NULL)
@@ -494,7 +494,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Allowed values are 0-20.
    * Special values are 0- 'return all records'.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numRecordsInResponse
    */
   @VsoMethod
@@ -509,7 +509,7 @@ public class DynamicDnsRecord extends AviRestResource {
    * Allowed values are 0-20.
    * Special values are 0- 'return all records'.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numRecordsInResponse set the numRecordsInResponse.
    */
   @VsoMethod

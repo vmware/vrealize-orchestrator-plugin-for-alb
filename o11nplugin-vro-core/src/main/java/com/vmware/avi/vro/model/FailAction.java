@@ -116,7 +116,8 @@ public class FailAction extends AviRestResource {
    * Enables a response to client when pool experiences a failure.
    * By default tcp connection is closed.
    * Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL.
-   * Allowed in basic(allowed values- fail_action_close_conn) edition, essentials(allowed values- fail_action_close_conn) edition, enterprise edition.
+   * Allowed in basic(allowed values- fail_action_close_conn,fail_action_http_redirect) edition, essentials(allowed values- fail_action_close_conn)
+   * edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_ACTION_CLOSE_CONN".
    * @return type
    */
@@ -130,7 +131,8 @@ public class FailAction extends AviRestResource {
    * Enables a response to client when pool experiences a failure.
    * By default tcp connection is closed.
    * Enum options - FAIL_ACTION_HTTP_REDIRECT, FAIL_ACTION_HTTP_LOCAL_RSP, FAIL_ACTION_CLOSE_CONN, FAIL_ACTION_BACKUP_POOL.
-   * Allowed in basic(allowed values- fail_action_close_conn) edition, essentials(allowed values- fail_action_close_conn) edition, enterprise edition.
+   * Allowed in basic(allowed values- fail_action_close_conn,fail_action_http_redirect) edition, essentials(allowed values- fail_action_close_conn)
+   * edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as "FAIL_ACTION_CLOSE_CONN".
    * @param type set the type.
    */

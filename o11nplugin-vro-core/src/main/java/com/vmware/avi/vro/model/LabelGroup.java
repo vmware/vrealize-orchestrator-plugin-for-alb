@@ -12,63 +12,81 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The ControllerVersion is a POJO class extends AviRestResource that used for creating
- * ControllerVersion.
+ * The LabelGroup is a POJO class extends AviRestResource that used for creating
+ * LabelGroup.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "ControllerVersion")
-@VsoFinder(name = Constants.FINDER_VRO_CONTROLLERVERSION)
+@VsoObject(create = false, name = "LabelGroup")
+@VsoFinder(name = Constants.FINDER_VRO_LABELGROUP, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class ControllerVersion extends AviRestResource {
-    @JsonProperty("fips_mode")
+public class LabelGroup extends AviRestResource {
+    @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
-    private Boolean fipsMode = null;
+    private List<RoleMatchOperationMatchLabel> labels = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
 
-    @JsonProperty("patch")
+    @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
-    private String patch = null;
+    private String url = "url";
 
-    @JsonProperty("version")
+    @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
-    private String version = null;
+    private String uuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Fips mode for controller.
+   * List of allowed or suggested labels for the label group.
    * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return fipsMode
+   * @return labels
    */
   @VsoMethod
-  public Boolean getFipsMode() {
-    return fipsMode;
+  public List<RoleMatchOperationMatchLabel> getLabels() {
+    return labels;
   }
 
   /**
-   * This is the setter method to the attribute.
-   * Fips mode for controller.
+   * This is the setter method. this will set the labels
+   * List of allowed or suggested labels for the label group.
    * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param fipsMode set the fipsMode.
+   * @return labels
    */
   @VsoMethod
-  public void setFipsMode(Boolean  fipsMode) {
-    this.fipsMode = fipsMode;
+  public void setLabels(List<RoleMatchOperationMatchLabel>  labels) {
+    this.labels = labels;
   }
+
+  /**
+   * This is the setter method this will set the labels
+   * List of allowed or suggested labels for the label group.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return labels
+   */
+  @VsoMethod
+  public LabelGroup addLabelsItem(RoleMatchOperationMatchLabel labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<RoleMatchOperationMatchLabel>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Name of the label group.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -79,7 +97,8 @@ public class ControllerVersion extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * Name of the label group.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -87,54 +106,54 @@ public class ControllerVersion extends AviRestResource {
   public void setName(String  name) {
     this.name = name;
   }
-
-  /**
+/**
    * This is the getter method this will return the attribute value.
-   * Patch level for controller.
-   * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return patch
+   * Avi controller URL of the object.
+   * @return url
    */
   @VsoMethod
-  public String getPatch() {
-    return patch;
+  public String getUrl() {
+    return url;
   }
 
   /**
-   * This is the setter method to the attribute.
-   * Patch level for controller.
-   * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param patch set the patch.
+   * This is the setter method. this will set the url
+   * Avi controller URL of the object.
+   * @return url
    */
   @VsoMethod
-  public void setPatch(String  patch) {
-    this.patch = patch;
+  public void setUrl(String  url) {
+    this.url = url;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property version of obj type controllerversion field type str  type string.
+   * Uuid of the label group.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return version
+   * @return uuid
    */
   @VsoMethod
-  public String getVersion() {
-    return version;
+  public String getUuid() {
+    return uuid;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property version of obj type controllerversion field type str  type string.
+   * Uuid of the label group.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param version set the version.
+   * @param uuid set the uuid.
    */
   @VsoMethod
-  public void setVersion(String  version) {
-    this.version = version;
+  public void setUuid(String  uuid) {
+    this.uuid = uuid;
   }
 
 
+  public String getObjectID() {
+    return name + "(" + uuid  + ")";
+  }
 
 @Override
 public boolean equals(java.lang.Object o) {
@@ -144,21 +163,19 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  ControllerVersion objControllerVersion = (ControllerVersion) o;
-  return   Objects.equals(this.name, objControllerVersion.name)&&
-  Objects.equals(this.version, objControllerVersion.version)&&
-  Objects.equals(this.patch, objControllerVersion.patch)&&
-  Objects.equals(this.fipsMode, objControllerVersion.fipsMode);
+  LabelGroup objLabelGroup = (LabelGroup) o;
+  return   Objects.equals(this.uuid, objLabelGroup.uuid)&&
+  Objects.equals(this.name, objLabelGroup.name)&&
+  Objects.equals(this.labels, objLabelGroup.labels);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class ControllerVersion {\n");
-      sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
+  sb.append("class LabelGroup {\n");
+      sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");
   return sb.toString();
 }
