@@ -53,6 +53,10 @@ public class ApplicationProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private HTTPApplicationProfile httpProfile = null;
 
+    @JsonProperty("markers")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
@@ -232,6 +236,47 @@ public class ApplicationProfile extends AviRestResource {
   public void setHttpProfile(HTTPApplicationProfile httpProfile) {
     this.httpProfile = httpProfile;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public List<RoleFilterMatchLabel> getMarkers() {
+    return markers;
+  }
+
+  /**
+   * This is the setter method. this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+    this.markers = markers;
+  }
+
+  /**
+   * This is the setter method this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public ApplicationProfile addMarkersItem(RoleFilterMatchLabel markersItem) {
+    if (this.markers == null) {
+      this.markers = new ArrayList<RoleFilterMatchLabel>();
+    }
+    this.markers.add(markersItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -497,6 +542,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cloudConfigCksum, objApplicationProfile.cloudConfigCksum)&&
   Objects.equals(this.createdBy, objApplicationProfile.createdBy)&&
   Objects.equals(this.preserveDestIpPort, objApplicationProfile.preserveDestIpPort)&&
+  Objects.equals(this.markers, objApplicationProfile.markers)&&
   Objects.equals(this.description, objApplicationProfile.description)&&
   Objects.equals(this.tenantRef, objApplicationProfile.tenantRef);
 }
@@ -511,6 +557,7 @@ public String toString() {
         sb.append("    dnsServiceProfile: ").append(toIndentedString(dnsServiceProfile)).append("\n");
         sb.append("    dosRlProfile: ").append(toIndentedString(dosRlProfile)).append("\n");
         sb.append("    httpProfile: ").append(toIndentedString(httpProfile)).append("\n");
+        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");
         sb.append("    preserveClientPort: ").append(toIndentedString(preserveClientPort)).append("\n");

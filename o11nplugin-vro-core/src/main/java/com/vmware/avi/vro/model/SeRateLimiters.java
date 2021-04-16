@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class SeRateLimiters extends AviRestResource {
     @JsonProperty("arp_rl")
     @JsonInclude(Include.NON_NULL)
-    private Integer arpRl = 100;
+    private Integer arpRl = 2000;
 
     @JsonProperty("default_rl")
     @JsonInclude(Include.NON_NULL)
@@ -38,11 +38,11 @@ public class SeRateLimiters extends AviRestResource {
 
     @JsonProperty("icmp_rl")
     @JsonInclude(Include.NON_NULL)
-    private Integer icmpRl = 100;
+    private Integer icmpRl = 2000;
 
     @JsonProperty("icmp_rsp_rl")
     @JsonInclude(Include.NON_NULL)
-    private Integer icmpRspRl = 500;
+    private Integer icmpRspRl = 2000;
 
     @JsonProperty("rst_rl")
     @JsonInclude(Include.NON_NULL)
@@ -53,7 +53,7 @@ public class SeRateLimiters extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limiter for arp packets in pps.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return arpRl
    */
   @VsoMethod
@@ -64,7 +64,7 @@ public class SeRateLimiters extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limiter for arp packets in pps.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param arpRl set the arpRl.
    */
   @VsoMethod
@@ -119,7 +119,7 @@ public class SeRateLimiters extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limiter for icmp requests in pps.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return icmpRl
    */
   @VsoMethod
@@ -130,7 +130,7 @@ public class SeRateLimiters extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limiter for icmp requests in pps.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param icmpRl set the icmpRl.
    */
   @VsoMethod
@@ -141,7 +141,7 @@ public class SeRateLimiters extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Rate limiter for icmp response in pps.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @return icmpRspRl
    */
   @VsoMethod
@@ -152,7 +152,7 @@ public class SeRateLimiters extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Rate limiter for icmp response in pps.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 500.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
    * @param icmpRspRl set the icmpRspRl.
    */
   @VsoMethod

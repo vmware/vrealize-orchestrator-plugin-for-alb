@@ -12,33 +12,33 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The Role is a POJO class extends AviRestResource that used for creating
- * Role.
+ * The JWTProfile is a POJO class extends AviRestResource that used for creating
+ * JWTProfile.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "Role")
-@VsoFinder(name = Constants.FINDER_VRO_ROLE, idAccessor = "getObjectID()")
+@VsoObject(create = false, name = "JWTProfile")
+@VsoFinder(name = Constants.FINDER_VRO_JWTPROFILE, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Role extends AviRestResource {
-    @JsonProperty("allow_unlabelled_access")
+public class JWTProfile extends AviRestResource {
+    @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
-    private Boolean allowUnlabelledAccess = true;
+    private Boolean isFederated = false;
 
-    @JsonProperty("filters")
+    @JsonProperty("jwks_keys")
     @JsonInclude(Include.NON_NULL)
-    private List<RoleFilter> filters = null;
+    private List<JWSKey> jwksKeys = null;
+
+    @JsonProperty("jwt_auth_type")
+    @JsonInclude(Include.NON_NULL)
+    private String jwtAuthType = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
-
-    @JsonProperty("privileges")
-    @JsonInclude(Include.NON_NULL)
-    private List<Permission> privileges = null;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
@@ -56,81 +56,111 @@ public class Role extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Allow access to unlabelled objects.
+   * This field describes the object's replication scope.
+   * If the field is set to false, then the object is visible within the controller-cluster.
+   * If the field is set to true, then the object is replicated across the federation.
    * Field introduced in 20.1.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @return allowUnlabelledAccess
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return isFederated
    */
   @VsoMethod
-  public Boolean getAllowUnlabelledAccess() {
-    return allowUnlabelledAccess;
+  public Boolean getIsFederated() {
+    return isFederated;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Allow access to unlabelled objects.
+   * This field describes the object's replication scope.
+   * If the field is set to false, then the object is visible within the controller-cluster.
+   * If the field is set to true, then the object is replicated across the federation.
    * Field introduced in 20.1.5.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @param allowUnlabelledAccess set the allowUnlabelledAccess.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param isFederated set the isFederated.
    */
   @VsoMethod
-  public void setAllowUnlabelledAccess(Boolean  allowUnlabelledAccess) {
-    this.allowUnlabelledAccess = allowUnlabelledAccess;
+  public void setIsFederated(Boolean  isFederated) {
+    this.isFederated = isFederated;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Filters for granular object access control based on object labels.
-   * Multiple filters are merged using the and operator.
-   * If empty, all objects according to the privileges will be accessible to the user.
-   * Field introduced in 20.1.3.
-   * Maximum of 4 items allowed.
+   * Jwk keys used for signing/validating the jwt.
+   * Field introduced in 20.1.5.
+   * Minimum of 1 items required.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return filters
+   * @return jwksKeys
    */
   @VsoMethod
-  public List<RoleFilter> getFilters() {
-    return filters;
+  public List<JWSKey> getJwksKeys() {
+    return jwksKeys;
   }
 
   /**
-   * This is the setter method. this will set the filters
-   * Filters for granular object access control based on object labels.
-   * Multiple filters are merged using the and operator.
-   * If empty, all objects according to the privileges will be accessible to the user.
-   * Field introduced in 20.1.3.
-   * Maximum of 4 items allowed.
+   * This is the setter method. this will set the jwksKeys
+   * Jwk keys used for signing/validating the jwt.
+   * Field introduced in 20.1.5.
+   * Minimum of 1 items required.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return filters
+   * @return jwksKeys
    */
   @VsoMethod
-  public void setFilters(List<RoleFilter>  filters) {
-    this.filters = filters;
+  public void setJwksKeys(List<JWSKey>  jwksKeys) {
+    this.jwksKeys = jwksKeys;
   }
 
   /**
-   * This is the setter method this will set the filters
-   * Filters for granular object access control based on object labels.
-   * Multiple filters are merged using the and operator.
-   * If empty, all objects according to the privileges will be accessible to the user.
-   * Field introduced in 20.1.3.
-   * Maximum of 4 items allowed.
+   * This is the setter method this will set the jwksKeys
+   * Jwk keys used for signing/validating the jwt.
+   * Field introduced in 20.1.5.
+   * Minimum of 1 items required.
+   * Maximum of 1 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return filters
+   * @return jwksKeys
    */
   @VsoMethod
-  public Role addFiltersItem(RoleFilter filtersItem) {
-    if (this.filters == null) {
-      this.filters = new ArrayList<RoleFilter>();
+  public JWTProfile addJwksKeysItem(JWSKey jwksKeysItem) {
+    if (this.jwksKeys == null) {
+      this.jwksKeys = new ArrayList<JWSKey>();
     }
-    this.filters.add(filtersItem);
+    this.jwksKeys.add(jwksKeysItem);
     return this;
   }
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Name of the object.
+   * Jwt auth type for jwt validation.
+   * Enum options - JWT_TYPE_JWS.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return jwtAuthType
+   */
+  @VsoMethod
+  public String getJwtAuthType() {
+    return jwtAuthType;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Jwt auth type for jwt validation.
+   * Enum options - JWT_TYPE_JWS.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param jwtAuthType set the jwtAuthType.
+   */
+  @VsoMethod
+  public void setJwtAuthType(String  jwtAuthType) {
+    this.jwtAuthType = jwtAuthType;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * A user friendly name for this jwt profile.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -141,7 +171,8 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Name of the object.
+   * A user friendly name for this jwt profile.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -152,45 +183,9 @@ public class Role extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property privileges of obj type role field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return privileges
-   */
-  @VsoMethod
-  public List<Permission> getPrivileges() {
-    return privileges;
-  }
-
-  /**
-   * This is the setter method. this will set the privileges
-   * Placeholder for description of property privileges of obj type role field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return privileges
-   */
-  @VsoMethod
-  public void setPrivileges(List<Permission>  privileges) {
-    this.privileges = privileges;
-  }
-
-  /**
-   * This is the setter method this will set the privileges
-   * Placeholder for description of property privileges of obj type role field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return privileges
-   */
-  @VsoMethod
-  public Role addPrivilegesItem(Permission privilegesItem) {
-    if (this.privileges == null) {
-      this.privileges = new ArrayList<Permission>();
-    }
-    this.privileges.add(privilegesItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
+   * Uuid of the tenant.
    * It is a reference to an object of type tenant.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -201,7 +196,9 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Uuid of the tenant.
    * It is a reference to an object of type tenant.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -231,7 +228,8 @@ public class Role extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of the object.
+   * Uuid of the jwt profile.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -242,7 +240,8 @@ public class Role extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of the object.
+   * Uuid of the jwt profile.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -264,23 +263,23 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  Role objRole = (Role) o;
-  return   Objects.equals(this.uuid, objRole.uuid)&&
-  Objects.equals(this.name, objRole.name)&&
-  Objects.equals(this.privileges, objRole.privileges)&&
-  Objects.equals(this.filters, objRole.filters)&&
-  Objects.equals(this.allowUnlabelledAccess, objRole.allowUnlabelledAccess)&&
-  Objects.equals(this.tenantRef, objRole.tenantRef);
+  JWTProfile objJWTProfile = (JWTProfile) o;
+  return   Objects.equals(this.uuid, objJWTProfile.uuid)&&
+  Objects.equals(this.name, objJWTProfile.name)&&
+  Objects.equals(this.jwksKeys, objJWTProfile.jwksKeys)&&
+  Objects.equals(this.jwtAuthType, objJWTProfile.jwtAuthType)&&
+  Objects.equals(this.isFederated, objJWTProfile.isFederated)&&
+  Objects.equals(this.tenantRef, objJWTProfile.tenantRef);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class Role {\n");
-      sb.append("    allowUnlabelledAccess: ").append(toIndentedString(allowUnlabelledAccess)).append("\n");
-        sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+  sb.append("class JWTProfile {\n");
+      sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    jwksKeys: ").append(toIndentedString(jwksKeys)).append("\n");
+        sb.append("    jwtAuthType: ").append(toIndentedString(jwtAuthType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    privileges: ").append(toIndentedString(privileges)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
       sb.append("}");

@@ -80,6 +80,10 @@ public class Cloud extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean dnsResolutionOnSe = false;
 
+    @JsonProperty("dns_resolvers")
+    @JsonInclude(Include.NON_NULL)
+    private List<DnsResolver> dnsResolvers = null;
+
     @JsonProperty("docker_configuration")
     @JsonInclude(Include.NON_NULL)
     private DockerConfiguration dockerConfiguration = null;
@@ -195,6 +199,10 @@ public class Cloud extends AviRestResource {
     @JsonProperty("vcenter_configuration")
     @JsonInclude(Include.NON_NULL)
     private vCenterConfiguration vcenterConfiguration = null;
+
+    @JsonProperty("vmc_deployment")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean vmcDeployment = false;
 
     @JsonProperty("vtype")
     @JsonInclude(Include.NON_NULL)
@@ -460,6 +468,50 @@ public class Cloud extends AviRestResource {
   public void setDnsResolutionOnSe(Boolean  dnsResolutionOnSe) {
     this.dnsResolutionOnSe = dnsResolutionOnSe;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Dns resolver for the cloud.
+   * Field introduced in 20.1.5.
+   * Maximum of 1 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dnsResolvers
+   */
+  @VsoMethod
+  public List<DnsResolver> getDnsResolvers() {
+    return dnsResolvers;
+  }
+
+  /**
+   * This is the setter method. this will set the dnsResolvers
+   * Dns resolver for the cloud.
+   * Field introduced in 20.1.5.
+   * Maximum of 1 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dnsResolvers
+   */
+  @VsoMethod
+  public void setDnsResolvers(List<DnsResolver>  dnsResolvers) {
+    this.dnsResolvers = dnsResolvers;
+  }
+
+  /**
+   * This is the setter method this will set the dnsResolvers
+   * Dns resolver for the cloud.
+   * Field introduced in 20.1.5.
+   * Maximum of 1 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return dnsResolvers
+   */
+  @VsoMethod
+  public Cloud addDnsResolversItem(DnsResolver dnsResolversItem) {
+    if (this.dnsResolvers == null) {
+      this.dnsResolvers = new ArrayList<DnsResolver>();
+    }
+    this.dnsResolvers.add(dnsResolversItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -1142,6 +1194,30 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * This deployment is vmware on aws cloud.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return vmcDeployment
+   */
+  @VsoMethod
+  public Boolean getVmcDeployment() {
+    return vmcDeployment;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * This deployment is vmware on aws cloud.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param vmcDeployment set the vmcDeployment.
+   */
+  @VsoMethod
+  public void setVmcDeployment(Boolean  vmcDeployment) {
+    this.vmcDeployment = vmcDeployment;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Cloud type.
    * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
    * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
@@ -1222,7 +1298,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tenantRef, objCloud.tenantRef)&&
   Objects.equals(this.licenseTier, objCloud.licenseTier)&&
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
-  Objects.equals(this.seGroupTemplateRef, objCloud.seGroupTemplateRef);
+  Objects.equals(this.seGroupTemplateRef, objCloud.seGroupTemplateRef)&&
+  Objects.equals(this.vmcDeployment, objCloud.vmcDeployment)&&
+  Objects.equals(this.dnsResolvers, objCloud.dnsResolvers);
 }
 
 @Override
@@ -1239,6 +1317,7 @@ public String toString() {
         sb.append("    dhcpEnabled: ").append(toIndentedString(dhcpEnabled)).append("\n");
         sb.append("    dnsProviderRef: ").append(toIndentedString(dnsProviderRef)).append("\n");
         sb.append("    dnsResolutionOnSe: ").append(toIndentedString(dnsResolutionOnSe)).append("\n");
+        sb.append("    dnsResolvers: ").append(toIndentedString(dnsResolvers)).append("\n");
         sb.append("    dockerConfiguration: ").append(toIndentedString(dockerConfiguration)).append("\n");
         sb.append("    eastWestDnsProviderRef: ").append(toIndentedString(eastWestDnsProviderRef)).append("\n");
         sb.append("    eastWestIpamProviderRef: ").append(toIndentedString(eastWestIpamProviderRef)).append("\n");
@@ -1267,6 +1346,7 @@ public String toString() {
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vcaConfiguration: ").append(toIndentedString(vcaConfiguration)).append("\n");
         sb.append("    vcenterConfiguration: ").append(toIndentedString(vcenterConfiguration)).append("\n");
+        sb.append("    vmcDeployment: ").append(toIndentedString(vmcDeployment)).append("\n");
         sb.append("    vtype: ").append(toIndentedString(vtype)).append("\n");
       sb.append("}");
   return sb.toString();

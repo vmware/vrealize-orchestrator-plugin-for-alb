@@ -104,6 +104,30 @@ public class GslbSiteRuntimeStats extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer numGhmUpdTxed = null;
 
+    @JsonProperty("num_gjwt_cr_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGjwtCrRxed = null;
+
+    @JsonProperty("num_gjwt_cr_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGjwtCrTxed = null;
+
+    @JsonProperty("num_gjwt_del_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGjwtDelRxed = null;
+
+    @JsonProperty("num_gjwt_del_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGjwtDelTxed = null;
+
+    @JsonProperty("num_gjwt_upd_rxed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGjwtUpdRxed = null;
+
+    @JsonProperty("num_gjwt_upd_txed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer numGjwtUpdTxed = null;
+
     @JsonProperty("num_glb_cr_rxed")
     @JsonInclude(Include.NON_NULL)
     private Integer numGlbCrRxed = null;
@@ -640,6 +664,138 @@ public class GslbSiteRuntimeStats extends AviRestResource {
   @VsoMethod
   public void setNumGhmUpdTxed(Integer  numGhmUpdTxed) {
     this.numGhmUpdTxed = numGhmUpdTxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGjwtCrRxed
+   */
+  @VsoMethod
+  public Integer getNumGjwtCrRxed() {
+    return numGjwtCrRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGjwtCrRxed set the numGjwtCrRxed.
+   */
+  @VsoMethod
+  public void setNumGjwtCrRxed(Integer  numGjwtCrRxed) {
+    this.numGjwtCrRxed = numGjwtCrRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGjwtCrTxed
+   */
+  @VsoMethod
+  public Integer getNumGjwtCrTxed() {
+    return numGjwtCrTxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGjwtCrTxed set the numGjwtCrTxed.
+   */
+  @VsoMethod
+  public void setNumGjwtCrTxed(Integer  numGjwtCrTxed) {
+    this.numGjwtCrTxed = numGjwtCrTxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGjwtDelRxed
+   */
+  @VsoMethod
+  public Integer getNumGjwtDelRxed() {
+    return numGjwtDelRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGjwtDelRxed set the numGjwtDelRxed.
+   */
+  @VsoMethod
+  public void setNumGjwtDelRxed(Integer  numGjwtDelRxed) {
+    this.numGjwtDelRxed = numGjwtDelRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGjwtDelTxed
+   */
+  @VsoMethod
+  public Integer getNumGjwtDelTxed() {
+    return numGjwtDelTxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGjwtDelTxed set the numGjwtDelTxed.
+   */
+  @VsoMethod
+  public void setNumGjwtDelTxed(Integer  numGjwtDelTxed) {
+    this.numGjwtDelTxed = numGjwtDelTxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGjwtUpdRxed
+   */
+  @VsoMethod
+  public Integer getNumGjwtUpdRxed() {
+    return numGjwtUpdRxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGjwtUpdRxed set the numGjwtUpdRxed.
+   */
+  @VsoMethod
+  public void setNumGjwtUpdRxed(Integer  numGjwtUpdRxed) {
+    this.numGjwtUpdRxed = numGjwtUpdRxed;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return numGjwtUpdTxed
+   */
+  @VsoMethod
+  public Integer getNumGjwtUpdTxed() {
+    return numGjwtUpdTxed;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param numGjwtUpdTxed set the numGjwtUpdTxed.
+   */
+  @VsoMethod
+  public void setNumGjwtUpdTxed(Integer  numGjwtUpdTxed) {
+    this.numGjwtUpdTxed = numGjwtUpdTxed;
   }
 
   /**
@@ -1224,7 +1380,13 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.numGpkiDelTxed, objGslbSiteRuntimeStats.numGpkiDelTxed)&&
   Objects.equals(this.numGpkiDelRxed, objGslbSiteRuntimeStats.numGpkiDelRxed)&&
   Objects.equals(this.numGpkiUpdTxed, objGslbSiteRuntimeStats.numGpkiUpdTxed)&&
-  Objects.equals(this.numGpkiUpdRxed, objGslbSiteRuntimeStats.numGpkiUpdRxed);
+  Objects.equals(this.numGpkiUpdRxed, objGslbSiteRuntimeStats.numGpkiUpdRxed)&&
+  Objects.equals(this.numGjwtCrTxed, objGslbSiteRuntimeStats.numGjwtCrTxed)&&
+  Objects.equals(this.numGjwtCrRxed, objGslbSiteRuntimeStats.numGjwtCrRxed)&&
+  Objects.equals(this.numGjwtDelTxed, objGslbSiteRuntimeStats.numGjwtDelTxed)&&
+  Objects.equals(this.numGjwtDelRxed, objGslbSiteRuntimeStats.numGjwtDelRxed)&&
+  Objects.equals(this.numGjwtUpdTxed, objGslbSiteRuntimeStats.numGjwtUpdTxed)&&
+  Objects.equals(this.numGjwtUpdRxed, objGslbSiteRuntimeStats.numGjwtUpdRxed);
 }
 
 @Override
@@ -1251,6 +1413,12 @@ public String toString() {
         sb.append("    numGhmDelTxed: ").append(toIndentedString(numGhmDelTxed)).append("\n");
         sb.append("    numGhmUpdRxed: ").append(toIndentedString(numGhmUpdRxed)).append("\n");
         sb.append("    numGhmUpdTxed: ").append(toIndentedString(numGhmUpdTxed)).append("\n");
+        sb.append("    numGjwtCrRxed: ").append(toIndentedString(numGjwtCrRxed)).append("\n");
+        sb.append("    numGjwtCrTxed: ").append(toIndentedString(numGjwtCrTxed)).append("\n");
+        sb.append("    numGjwtDelRxed: ").append(toIndentedString(numGjwtDelRxed)).append("\n");
+        sb.append("    numGjwtDelTxed: ").append(toIndentedString(numGjwtDelTxed)).append("\n");
+        sb.append("    numGjwtUpdRxed: ").append(toIndentedString(numGjwtUpdRxed)).append("\n");
+        sb.append("    numGjwtUpdTxed: ").append(toIndentedString(numGjwtUpdTxed)).append("\n");
         sb.append("    numGlbCrRxed: ").append(toIndentedString(numGlbCrRxed)).append("\n");
         sb.append("    numGlbCrTxed: ").append(toIndentedString(numGlbCrTxed)).append("\n");
         sb.append("    numGlbDelRxed: ").append(toIndentedString(numGlbDelRxed)).append("\n");

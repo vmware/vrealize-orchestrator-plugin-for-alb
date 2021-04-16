@@ -46,6 +46,10 @@ public class Gslb extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<DNSConfig> dnsConfigs = null;
 
+    @JsonProperty("enable_config_by_members")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableConfigByMembers = false;
+
     @JsonProperty("error_resync_interval")
     @JsonInclude(Include.NON_NULL)
     private Integer errorResyncInterval = 300;
@@ -246,6 +250,30 @@ public class Gslb extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableConfigByMembers
+   */
+  @VsoMethod
+  public Boolean getEnableConfigByMembers() {
+    return enableConfigByMembers;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableConfigByMembers set the enableConfigByMembers.
+   */
+  @VsoMethod
+  public void setEnableConfigByMembers(Boolean  enableConfigByMembers) {
+    this.enableConfigByMembers = enableConfigByMembers;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -655,7 +683,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.isFederated, objGslb.isFederated)&&
   Objects.equals(this.description, objGslb.description)&&
   Objects.equals(this.tenantRef, objGslb.tenantRef)&&
-  Objects.equals(this.tenantScoped, objGslb.tenantScoped);
+  Objects.equals(this.tenantScoped, objGslb.tenantScoped)&&
+  Objects.equals(this.enableConfigByMembers, objGslb.enableConfigByMembers);
 }
 
 @Override
@@ -667,6 +696,7 @@ public String toString() {
         sb.append("    clientIpAddrGroup: ").append(toIndentedString(clientIpAddrGroup)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    dnsConfigs: ").append(toIndentedString(dnsConfigs)).append("\n");
+        sb.append("    enableConfigByMembers: ").append(toIndentedString(enableConfigByMembers)).append("\n");
         sb.append("    errorResyncInterval: ").append(toIndentedString(errorResyncInterval)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
         sb.append("    leaderClusterUuid: ").append(toIndentedString(leaderClusterUuid)).append("\n");

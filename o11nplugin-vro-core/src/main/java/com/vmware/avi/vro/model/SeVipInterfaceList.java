@@ -30,6 +30,10 @@ public class SeVipInterfaceList extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean isPortchannel = false;
 
+    @JsonProperty("networks")
+    @JsonInclude(Include.NON_NULL)
+    private List<DiscoveredNetwork> networks = null;
+
     @JsonProperty("vip_intf_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddr vipIntfIp = null;
@@ -69,6 +73,47 @@ public class SeVipInterfaceList extends AviRestResource {
   public void setIsPortchannel(Boolean  isPortchannel) {
     this.isPortchannel = isPortchannel;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of placement_networks reachable from this interface.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return networks
+   */
+  @VsoMethod
+  public List<DiscoveredNetwork> getNetworks() {
+    return networks;
+  }
+
+  /**
+   * This is the setter method. this will set the networks
+   * List of placement_networks reachable from this interface.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return networks
+   */
+  @VsoMethod
+  public void setNetworks(List<DiscoveredNetwork>  networks) {
+    this.networks = networks;
+  }
+
+  /**
+   * This is the setter method this will set the networks
+   * List of placement_networks reachable from this interface.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return networks
+   */
+  @VsoMethod
+  public SeVipInterfaceList addNetworksItem(DiscoveredNetwork networksItem) {
+    if (this.networks == null) {
+      this.networks = new ArrayList<DiscoveredNetwork>();
+    }
+    this.networks.add(networksItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -173,7 +218,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vlanId, objSeVipInterfaceList.vlanId)&&
   Objects.equals(this.vipIntfIp, objSeVipInterfaceList.vipIntfIp)&&
   Objects.equals(this.isPortchannel, objSeVipInterfaceList.isPortchannel)&&
-  Objects.equals(this.vipIntfIp6, objSeVipInterfaceList.vipIntfIp6);
+  Objects.equals(this.vipIntfIp6, objSeVipInterfaceList.vipIntfIp6)&&
+  Objects.equals(this.networks, objSeVipInterfaceList.networks);
 }
 
 @Override
@@ -181,6 +227,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SeVipInterfaceList {\n");
       sb.append("    isPortchannel: ").append(toIndentedString(isPortchannel)).append("\n");
+        sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
         sb.append("    vipIntfIp: ").append(toIndentedString(vipIntfIp)).append("\n");
         sb.append("    vipIntfIp6: ").append(toIndentedString(vipIntfIp6)).append("\n");
         sb.append("    vipIntfMac: ").append(toIndentedString(vipIntfMac)).append("\n");

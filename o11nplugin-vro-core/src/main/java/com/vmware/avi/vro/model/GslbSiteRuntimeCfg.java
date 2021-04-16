@@ -14,6 +14,7 @@ import com.vmware.avi.vro.model.ConfigInfo;
 import com.vmware.avi.vro.model.ConfigInfo;
 import com.vmware.avi.vro.model.ConfigInfo;
 import com.vmware.avi.vro.model.ConfigInfo;
+import com.vmware.avi.vro.model.ConfigInfo;
 import com.vmware.avi.vro.model.GslbSiteCfgSyncInfo;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -49,6 +50,10 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
     @JsonProperty("ghm_info")
     @JsonInclude(Include.NON_NULL)
     private ConfigInfo ghmInfo = null;
+
+    @JsonProperty("gjwt_info")
+    @JsonInclude(Include.NON_NULL)
+    private ConfigInfo gjwtInfo = null;
 
     @JsonProperty("glb_info")
     @JsonInclude(Include.NON_NULL)
@@ -168,6 +173,30 @@ public class GslbSiteRuntimeCfg extends AviRestResource {
   @VsoMethod
   public void setGhmInfo(ConfigInfo ghmInfo) {
     this.ghmInfo = ghmInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Gslb jwtprofile info published for a site.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gjwtInfo
+   */
+  @VsoMethod
+  public ConfigInfo getGjwtInfo() {
+    return gjwtInfo;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Gslb jwtprofile info published for a site.
+   * Field introduced in 20.1.5.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param gjwtInfo set the gjwtInfo.
+   */
+  @VsoMethod
+  public void setGjwtInfo(ConfigInfo gjwtInfo) {
+    this.gjwtInfo = gjwtInfo;
   }
 
   /**
@@ -326,7 +355,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.fdInfo, objGslbSiteRuntimeCfg.fdInfo)&&
   Objects.equals(this.gpkiInfo, objGslbSiteRuntimeCfg.gpkiInfo)&&
   Objects.equals(this.replQueue, objGslbSiteRuntimeCfg.replQueue)&&
-  Objects.equals(this.syncInfo, objGslbSiteRuntimeCfg.syncInfo);
+  Objects.equals(this.syncInfo, objGslbSiteRuntimeCfg.syncInfo)&&
+  Objects.equals(this.gjwtInfo, objGslbSiteRuntimeCfg.gjwtInfo);
 }
 
 @Override
@@ -337,6 +367,7 @@ public String toString() {
         sb.append("    gapInfo: ").append(toIndentedString(gapInfo)).append("\n");
         sb.append("    geoInfo: ").append(toIndentedString(geoInfo)).append("\n");
         sb.append("    ghmInfo: ").append(toIndentedString(ghmInfo)).append("\n");
+        sb.append("    gjwtInfo: ").append(toIndentedString(gjwtInfo)).append("\n");
         sb.append("    glbInfo: ").append(toIndentedString(glbInfo)).append("\n");
         sb.append("    gpkiInfo: ").append(toIndentedString(gpkiInfo)).append("\n");
         sb.append("    gsInfo: ").append(toIndentedString(gsInfo)).append("\n");
