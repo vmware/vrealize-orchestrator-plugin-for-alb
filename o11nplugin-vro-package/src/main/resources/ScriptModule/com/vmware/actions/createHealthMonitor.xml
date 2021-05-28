@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createHealthMonitor"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="a4663dab-6f17-4f09-8237-00df4bfabc77" version="0.1.3"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="223e67fa-ce16-46c9-82af-34bfc978b26e" version="0.1.3"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="monitorType" t="string"><![CDATA[Healthmonitor type ]]></param>
@@ -22,7 +22,7 @@
 	<param n="tcpRequest" t="string"><![CDATA[Client request data for tcp monitor]]></param>
 	<param n="maintenanceResponse" t="string"><![CDATA[Maintenance server response data for tcp monitor]]></param>
 	<param n="failedChecks" t="number"><![CDATA[Failed checks]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<script encoded="false"><![CDATA[/************************************************************
 * This action initializes health monitor properties objects *
 * and puts user input into the health monitor object        *
@@ -117,8 +117,8 @@ try{
 	var jsonData = JSON.stringify(properties);
 
 //	return jsonData
-	aviVroClient.add("healthmonitor", jsonData)
-	return aviVroClient
+	workflowRuntime.getAviVroClient().add("healthmonitor", jsonData, workflowRuntime.getWorkflowId())
+	return workflowRuntime
 
 } catch (e) {
 	throw "Error when create HealthMonitor -> "+ e

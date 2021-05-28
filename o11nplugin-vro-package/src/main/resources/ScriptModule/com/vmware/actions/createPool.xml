@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPool"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="daeebf98-7141-41ed-8168-833a5f99ceb7" version="0.1.7"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="07e753b4-33cb-4bc1-af4d-2d9a3fc67481" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="PoolServers"
 		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[Pool servers list ]]></param>
@@ -44,7 +44,7 @@
 	<param n="failActionURL" t="string"><![CDATA[Redirect url for fail action type of pool]]></param>
 	<param n="statusProtocol" t="string"><![CDATA[Add status protocol for pool fail action]]></param>
 	<param n="failActiontype" t="string"><![CDATA[Pool fail action type]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
 * and creats pool object. 						  *
@@ -204,8 +204,8 @@ try{
 	var jsonData = JSON.stringify(properties);	
 
 //	return jsonData
-	aviVroClient.add("pool", jsonData)
-	return aviVroClient
+	workflowRuntime.getAviVroClient().add("pool", jsonData, workflowRuntime.getWorkflowId())
+	return workflowRuntime
 
 } catch (e) {
 	throw "Error while creating pool object : " + e

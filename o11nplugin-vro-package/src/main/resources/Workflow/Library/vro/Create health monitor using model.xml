@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="525ce7d4-05ae-4955-bb14-134d2495d60d" version="0.0.6"
+	id="f2d558ce-2e04-426e-aeb1-1e330593aba1" version="3.0.1"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Health Monitor]]></display-name>
@@ -37,7 +37,7 @@
 			<description><![CDATA[health_monitor_name]]></description>
 		</param>
 	</input>
-	<attrib name="aviVroClient" type="Avi:AviVroClient"
+	<attrib name="workflowRuntime" type="Avi:WorkflowRuntime"
 		read-only="false">
 		<value encoded="n"><![CDATA[__NULL__]]></value>
 	</attrib>
@@ -45,18 +45,18 @@
 		<position y="45.40909090909091" x="664.5"></position>
 	</workflow-item>
 	<workflow-item name="item1" out-name="item2" type="task"
-		script-module="com.vmware.avi/getAviVroClient">
-		<display-name><![CDATA[getAviVroClient]]></display-name>
+		script-module="com.vmware.avi/initVroWorkflow">
+		<display-name><![CDATA[initVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller">
 				<description><![CDATA[Controller IP]]></description>
 			</bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="55.40909090909091" x="204.5"></position>
 	</workflow-item>
@@ -64,7 +64,7 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type"></bind>
@@ -99,24 +99,24 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				explicitly-not-bound="true"></bind>
 			<bind name="maintenance_code" type="string"
 				explicitly-not-bound="true"></bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
 			<bind name="https_response_code" type="Array/string"
 				export-name="https_response_code"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="55.40909090909091" x="344.5"></position>
 	</workflow-item>
 	<workflow-item name="item3" out-name="item0" type="task">
 		<display-name><![CDATA[Create Objects]]></display-name>
-		<script encoded="false"><![CDATA[aviVroClient.executeWorkflow();
+		<script encoded="false"><![CDATA[workflowRuntime.getAviVroClient().executeWorkflow(workflowRuntime.getWorkflowId());
 System.log("Health monitor created successfully")]]></script>
 		<in-binding>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding></out-binding>
 		<position y="55.40909090909091" x="484.5"></position>

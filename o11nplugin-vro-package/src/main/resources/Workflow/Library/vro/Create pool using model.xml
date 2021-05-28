@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="26e35159-76d5-4ae9-85e8-650384374e25" version="2.2.1"
+	id="4e6193ee-6a1d-4ffe-880d-ffad734cf9af" version="3.0.1"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Pool]]></display-name>
@@ -80,6 +80,9 @@
 		</param>
 		<param name="tier1_lr" type="string"></param>
 	</input>
+	<output>
+		<param name="actionResult" type="Any"></param>
+	</output>
 	<attrib name="configErrorCode" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
 		]]></value>
@@ -98,41 +101,43 @@
 		]]></value>
 		<description><![CDATA[AVI api version]]></description>
 	</attrib>
-	<attrib name="aviVroClient" type="Avi:AviVroClient"
-		read-only="false">
+	<attrib name="status_code" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
 		]]></value>
-	</attrib>
-	<attrib name="status_code" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
 		<description><![CDATA[status_code]]></description>
 	</attrib>
 	<attrib name="protocol" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[protocol]]></description>
 	</attrib>
 	<attrib name="fail_action_URL" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[fail_action_URL]]></description>
 	</attrib>
 	<attrib name="fail_action_type" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[fail_action_type]]></description>
+	</attrib>
+	<attrib name="workflowRuntime" type="Avi:WorkflowRuntime"
+		read-only="false">
+		<value encoded="n"><![CDATA[__NULL__]]></value>
+	</attrib>
+	<attrib name="createdObj" type="Any" read-only="false">
+		<value encoded="n"><![CDATA[Any#__NULL__]]></value>
 	</attrib>
 	<workflow-item name="item0"
 		throw-bind-name="actionEerrorCode" type="end" end-mode="0">
 		<in-binding></in-binding>
-		<position y="9.045454545454543" x="664.5"></position>
+		<position y="72.68181818181817" x="704.5"></position>
 	</workflow-item>
 	<workflow-item name="item6" out-name="item5"
 		throw-bind-name="configErrorCode" type="task">
 		<display-name><![CDATA[AVIObjectName]]></display-name>
 		<script encoded="false"><![CDATA[HealthMonitorName = Name+"_HealthMonitor"
-version=aviVroClient.cred.version
+version=workflowRuntime.getAviVroClient().cred.version
 
 
 ]]></script>
@@ -143,8 +148,8 @@ version=aviVroClient.cred.version
 			<bind name="HealthMonitorName" type="string"
 				export-name="HealthMonitorName"></bind>
 			<bind name="version" type="string" export-name="version"></bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="HealthMonitorName" type="string"
@@ -153,29 +158,19 @@ version=aviVroClient.cred.version
 		</out-binding>
 		<position y="82.68181818181817" x="104.5"></position>
 	</workflow-item>
-	<workflow-item name="item2" out-name="item0" type="task">
-		<display-name><![CDATA[createObject]]></display-name>
-		<script encoded="false"><![CDATA[System.log("Pool created successfully."+ aviVroClient.executeWorkflow());]]></script>
-		<in-binding>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
-		</in-binding>
-		<out-binding></out-binding>
-		<position y="19.045454545454543" x="484.5"></position>
-	</workflow-item>
 	<workflow-item name="item1" out-name="item6" type="task"
-		script-module="com.vmware.avi/getAviVroClient">
-		<display-name><![CDATA[getAviVroClient]]></display-name>
+		script-module="com.vmware.avi/initVroWorkflow">
+		<display-name><![CDATA[initVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller">
 				<description><![CDATA[Controller IP]]></description>
 			</bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="19.545454545454543" x="105.0"></position>
 	</workflow-item>
@@ -183,7 +178,7 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller) ;]
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type"></bind>
@@ -216,22 +211,22 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				explicitly-not-bound="true"></bind>
 			<bind name="maintenance_code" type="string"
 				explicitly-not-bound="true"></bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
 			<bind name="https_response_code" type="Array/string"
 				export-name="https_response_code"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="82.68181818181817" x="224.5"></position>
 	</workflow-item>
-	<workflow-item name="item4" out-name="item2" type="task"
+	<workflow-item name="item4" out-name="item7" type="task"
 		script-module="com.vmware.avi/createPoolObj">
 		<display-name><![CDATA[createPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,aviVroClient,PersistenceProfileRef,ratio,port,addPersistenceProfileRef,tier1_lr) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enablePool,CreateHealthMonitor,poolName,defaultServerPort,loadBalancerAlgo,serverType,lbConsistentHash,lbCustomHeaderName,ServerCloud,Tenant,HealthMonitorName,healthMonitor,Version,activePassiveHM,capacityEstimation,capacityEstimationThresh,cloudConfigCksum,deleteServerRefresh,gracefulDisableTimeout,hostCheckEnabled,lookupServerByName,rewriteHostHeaderServerName,maxConcurrentConnectionsPerServer,domainName,fewestTasksFeedbackDelay,connectionRampDuration,upstreamConnpoolConnIdleTmo,upstreamConnpoolConnLifeTmo,upstreamConnpoolConnMaxReuse,upstreamConnpoolServerMaxCache,requestQueueEnabled,useServicePort,sniEnabled,serverTimeout,enableRealtimeMetrics,statusCode,failActionURL,statusProtocol,failActiontype,workflowRuntime,PersistenceProfileRef,ratio,port,addPersistenceProfileRef,tier1_lr) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
 				export-name="pool_servers">
@@ -279,7 +274,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[New healthmonitor name]]></description>
 			</bind>
 			<bind name="healthMonitor" type="Array/string"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[List of existing healthmonitors name]]></description>
 			</bind>
 			<bind name="Version" type="string" export-name="version">
@@ -310,11 +305,11 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Add graceful disable timeout]]></description>
 			</bind>
 			<bind name="hostCheckEnabled" type="boolean"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add host check enabled]]></description>
 			</bind>
 			<bind name="lookupServerByName" type="boolean"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add lookup server by name]]></description>
 			</bind>
 			<bind name="rewriteHostHeaderServerName" type="boolean"
@@ -322,55 +317,55 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Add rewrite host header server name]]></description>
 			</bind>
 			<bind name="maxConcurrentConnectionsPerServer" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add max concurrent connections per server]]></description>
 			</bind>
 			<bind name="domainName" type="string"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add domain name]]></description>
 			</bind>
 			<bind name="fewestTasksFeedbackDelay" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add fewest tasks feedback delay]]></description>
 			</bind>
 			<bind name="connectionRampDuration" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Connection ramp]]></description>
 			</bind>
 			<bind name="upstreamConnpoolConnIdleTmo" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Connection Idle Timeout]]></description>
 			</bind>
 			<bind name="upstreamConnpoolConnLifeTmo" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Connection Life Timeout]]></description>
 			</bind>
 			<bind name="upstreamConnpoolConnMaxReuse" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Connection Max Used Times]]></description>
 			</bind>
 			<bind name="upstreamConnpoolServerMaxCache" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Max Cache Connections Per Server]]></description>
 			</bind>
 			<bind name="requestQueueEnabled" type="boolean"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add request queue enabled]]></description>
 			</bind>
 			<bind name="useServicePort" type="boolean"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Disable Port Translation]]></description>
 			</bind>
 			<bind name="sniEnabled" type="boolean"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Add sni enabled]]></description>
 			</bind>
 			<bind name="serverTimeout" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Default Server Timeout]]></description>
 			</bind>
 			<bind name="enableRealtimeMetrics" type="boolean"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Enable real time metrics]]></description>
 			</bind>
 			<bind name="statusCode" type="string" export-name="status_code">
@@ -387,22 +382,19 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				export-name="fail_action_type">
 				<description><![CDATA[Pool fail action type]]></description>
 			</bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient">
-				<description><![CDATA[Object of the plugin]]></description>
-			</bind>
 			<bind name="PersistenceProfileRef" type="string"
 				export-name="persistence_profile_ref"></bind>
 			<bind name="port" type="string" export-name="port"></bind>
-			<bind name="ratio" type="number" explicitly-not-bound="true"
-				export-name="NULL"></bind>
+			<bind name="ratio" type="number" explicitly-not-bound="true"></bind>
 			<bind name="addPersistenceProfileRef" type="boolean"
 				export-name="add_persistence_profile_ref"></bind>
 			<bind name="tier1_lr" type="string" export-name="tier1_lr"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="19.045454545454543" x="364.5"></position>
 	</workflow-item>
@@ -419,6 +411,31 @@ return (create_health_monitor == true) ;]]></script>
 		<condition name="create_health_monitor" type="boolean"
 			comparator="0" label="null">false</condition>
 		<position y="9.045454545454543" x="225.0"></position>
+	</workflow-item>
+	<workflow-item name="item7" out-name="item2" type="task"
+		script-module="com.vmware.avi/finishVroWorkflow">
+		<display-name><![CDATA[finishVroWorkflow]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRuntime) ;]]></script>
+		<in-binding>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime">
+				<description><![CDATA[Workflow runtime object]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Any" export-name="actionResult"></bind>
+		</out-binding>
+		<position y="82.68181818181817" x="365.0"></position>
+	</workflow-item>
+	<workflow-item name="item2" out-name="item0" type="task">
+		<display-name><![CDATA[Created object]]></display-name>
+		<script encoded="false"><![CDATA[System.log("Pool created successfully."+ createdObj)]]></script>
+		<in-binding>
+			<bind name="createdObj" type="Any" export-name="createdObj"></bind>
+		</in-binding>
+		<out-binding></out-binding>
+		<position y="82.68181818181817" x="504.5"></position>
 	</workflow-item>
 	<presentation>
 		<p-step>

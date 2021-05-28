@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVsVIPObj"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="cbc96b90-dab9-4801-85a7-de03725e9f87" version="0.2.1"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="057cde0a-8232-4869-9094-1073d17c0578" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -12,18 +12,18 @@
 	<param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
 	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
 	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<param n="tier1" t="string"><![CDATA[
 	]]></param>
-	<param n="ServerCloud" t="string"><![CDATA[]]>
-	</param>
+	<param n="ServerCloud" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[/************************************************************
 * This action initializes VS_VIP properties objects         *
 * and puts user input into the VS_VIP object        		*
 *************************************************************/
 
 try{
-	if(aviVroClient!=null){
+	if(workflowRuntime.getAviVroClient() !=null){
 			vsVipObject = new AviVsVip() ;
 			// Set Configuration for create VsVip
 			vsVipObject.setTenantRef("/api/tenant?name="+Tenant);
@@ -60,9 +60,9 @@ try{
 			if(ServerCloud!==null && ServerCloud!=""){
 				vsVipObject.setCloudRef("/api/cloud?name="+ServerCloud);
 			}
-			aviVroClient.addObject(vsVipObject);
+			workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId());
 			System.log("vsVipObject : "+vsVipObject);
-			return aviVroClient
+			return workflowRuntime
 		}
 		else{
 			System.log("Avi controller is null..please attach Avi controller. ")

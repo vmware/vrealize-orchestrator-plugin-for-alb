@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVRAPoolObj"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="0cfaebed-a678-43d2-9992-1bdde8e44ecc" version="1.0.5"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="c277d5cd-d249-4c7b-b3bd-7608300dde64" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="poolName" t="string"><![CDATA[Pool name]]></param>
 	<param n="ServerCloud" t="string"><![CDATA[Servercloud name]]></param>
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="HealthMonitorName" t="string"><![CDATA[New healthmonitor name]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<param n="instance_port" t="number"><![CDATA[ 	]]></param>
-	<param n="tier1_lr" t="string"><![CDATA[]]>
-	</param>
+	<param n="tier1_lr" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
 * and creats pool object. 						  *
 **************************************************/
 
 try{
-	if(aviVroClient!=null){
+	if(workflowRuntime.getAviVroClient() !=null){
 		poolObject = new AviPool();
 		var HMref ="/api/healthmonitor?name="+HealthMonitorName;
 		poolObject.addHealthMonitorRefsItem(HMref);
@@ -77,9 +77,9 @@ try{
 		poolObject.setDefaultServerPort(defaultServerPort);
 		poolObject.setName(poolName);
 			
-		aviVroClient.addObject(poolObject)
+		workflowRuntime.getAviVroClient().addObject(poolObject, workflowRuntime.getWorkflowId())
 		System.log("poolObject : "+poolObject);
-		return aviVroClient
+		return workflowRuntime
 	}else{
 		System.log("Avi client is null.. please attach Avi client")
 	}

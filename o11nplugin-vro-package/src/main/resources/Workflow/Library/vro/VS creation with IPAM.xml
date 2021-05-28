@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="c2dac770-2cf9-42aa-9e94-f121a8926d3a" version="1.1.7"
+	id="60f5dccd-ad72-462d-8597-397e8aef0f3e" version="3.0.1"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Virtual Service With IPAM]]></display-name>
@@ -114,13 +114,19 @@
 	<attrib name="autoAllocateIp" type="boolean" read-only="false">
 		<value encoded="n"><![CDATA[true]]></value>
 	</attrib>
+	<attrib name="workflowRuntime" type="Avi:WorkflowRuntime"
+		read-only="false">
+		<value encoded="n"><![CDATA[__NULL__]]></value>
+	</attrib>
+	<attrib name="createdObj" type="Any" read-only="false">
+		<value encoded="n"><![CDATA[__NULL__]]></value>
+	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
-		<position y="9.045454545454543" x="724.5"></position>
+		<position y="9.045454545454543" x="924.5"></position>
 	</workflow-item>
 	<workflow-item name="item6" out-name="item1" type="task">
 		<display-name><![CDATA[AVIObjectName]]></display-name>
-		<script encoded="false"><![CDATA[System.log("aviVroClient : "+aviVroClient);
-HealthMonitorName = Name+"_HealthMonitor"
+		<script encoded="false"><![CDATA[HealthMonitorName = Name+"_HealthMonitor"
 vsVipName = Name+"_vsvip"
 poolName = Name+"_pool"
 Tenant="admin"
@@ -132,8 +138,6 @@ System.log("HealthMonitorName : "+HealthMonitorName)
 			<bind name="Name" type="string" export-name="name"></bind>
 			<bind name="controller" type="string" export-name="controller"></bind>
 			<bind name="vsVipName" type="string" explicitly-not-bound="true"></bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="HealthMonitorName" type="string"
@@ -141,17 +145,13 @@ System.log("HealthMonitorName : "+HealthMonitorName)
 			<bind name="poolName" type="string" export-name="poolName"></bind>
 			<bind name="vsVipName" type="string" export-name="vsVipName"></bind>
 			<bind name="Tenant" type="string" export-name="Tenant"></bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
 		</out-binding>
 		<position y="100.86363636363636" x="124.5"></position>
 	</workflow-item>
 	<workflow-item name="item2" out-name="item0" type="task">
 		<display-name><![CDATA[createObject]]></display-name>
-		<script encoded="false"><![CDATA[//controllerIP = aviVroClient.getCred();
-virtualServiceObject = Server.findForType('Avi:VirtualService', System.getObjectId(virtualServiceObject));
-resp = aviVroClient.executeWorkflow();
-virtualServiceObject=resp[resp.length-1];	
+		<script encoded="false"><![CDATA[virtualServiceObject = Server.findForType('Avi:VirtualService', System.getObjectId(virtualServiceObject));
+virtualServiceObject=createdObj[createdObj.length-1];	
 System.log("Object Created:-> "+virtualServiceObject.getName());
 ]]></script>
 		<in-binding>
@@ -166,18 +166,19 @@ System.log("Object Created:-> "+virtualServiceObject.getName());
 			<bind name="vsVIP" type="boolean" export-name="vsVIP">
 				<description><![CDATA[Add Existing Shared VIP]]></description>
 			</bind>
+			<bind name="createdObj" type="Any" export-name="createdObj"></bind>
 		</in-binding>
 		<out-binding>
 			<bind name="virtualServiceObject" type="Avi:VirtualService"
 				export-name="virtualServiceObject"></bind>
 		</out-binding>
-		<position y="100.86363636363636" x="684.5"></position>
+		<position y="19.045454545454543" x="704.5"></position>
 	</workflow-item>
 	<workflow-item name="item1" out-name="item4" type="task"
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,aviVroClient,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type">
@@ -188,7 +189,7 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				<description><![CDATA[Health monitor name]]></description>
 			</bind>
 			<bind name="monitor_port" type="number"
-				explicitly-not-bound="true" export-name="NULL">
+				explicitly-not-bound="true">
 				<description><![CDATA[Monitor port]]></description>
 			</bind>
 			<bind name="time_out" type="number" export-name="time_out">
@@ -206,54 +207,51 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				export-name="failed_check">
 				<description><![CDATA[Failed check]]></description>
 			</bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient">
-				<description><![CDATA[Avi vro client]]></description>
-			</bind>
 			<bind name="tcp_response" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="command_code" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="hm_description" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="tcp_request" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="https_response_code" type="Array/string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="dns_query_name" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="is_federated" type="boolean"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="http_response_code" type="Array/string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="tcp_half_open" type="boolean"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="maintenance_code" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
 			<bind name="udp_request" type="string"
-				explicitly-not-bound="true" export-name="NULL"></bind>
-			<bind name="hm_type" type="string" explicitly-not-bound="true"
-				export-name="NULL"></bind>
+				explicitly-not-bound="true"></bind>
+			<bind name="hm_type" type="string" explicitly-not-bound="true"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				explicitly-not-bound="true"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="100.86363636363636" x="304.5"></position>
 	</workflow-item>
 	<workflow-item name="item3" out-name="item6" type="task"
-		script-module="com.vmware.avi/getAviVroClient">
-		<display-name><![CDATA[getAviVroClient]]></display-name>
+		script-module="com.vmware.avi/initVroWorkflow">
+		<display-name><![CDATA[initVroWorkflow]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-System.getModule("com.vmware.avi").getAviVroClient(controller) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]]></script>
 		<in-binding>
 			<bind name="controller" type="string" export-name="controller">
 				<description><![CDATA[Controller IP]]></description>
 			</bind>
 		</in-binding>
 		<out-binding>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="19.045454545454543" x="124.5"></position>
 	</workflow-item>
@@ -261,7 +259,7 @@ System.getModule("com.vmware.avi").getAviVroClient(controller) ;]]></script>
 		script-module="com.vmware.avi/createVRAPoolObj">
 		<display-name><![CDATA[createVRAPoolObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,aviVroClient,instance_port) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,poolName,ServerCloud,Tenant,HealthMonitorName,workflowRuntime,instance_port,tier1_lr) ;]]></script>
 		<in-binding>
 			<bind name="PoolServers" type="Array/string"
 				export-name="pool_servers">
@@ -281,16 +279,16 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 				export-name="HealthMonitorName">
 				<description><![CDATA[New healthmonitor name]]></description>
 			</bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient">
-				<description><![CDATA[Object of the plugin]]></description>
-			</bind>
 			<bind name="instance_port" type="number"
 				export-name="instance_port"></bind>
+			<bind name="tier1_lr" type="string" explicitly-not-bound="true"
+				export-name="NULL"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				explicitly-not-bound="true" export-name="NULL"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="19.045454545454543" x="304.5"></position>
 	</workflow-item>
@@ -298,7 +296,7 @@ actionResult = System.getModule("com.vmware.avi").createVRAPoolObj(PoolServers,p
 		script-module="com.vmware.avi/createIPAMVsVIPObj">
 		<display-name><![CDATA[createIPAMVsVIPObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,aviVroClient,network_management_name,app_domain_name,domain,cloud_name) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name,IPAddress,eastWestPlacement,aviAllocatedFIp,autoAllocateIp,enabled,autoAllocateFloatingIp,aviAllocatedVip,serverType,workflowRuntime,network_management_name,app_domain_name,domain,cloud_name) ;]]></script>
 		<in-binding>
 			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
@@ -308,10 +306,6 @@ actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name
 			</bind>
 			<bind name="IPAddress" type="string" explicitly-not-bound="true">
 				<description><![CDATA[Vs vip IP address]]></description>
-			</bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient">
-				<description><![CDATA[Object of the plugin]]></description>
 			</bind>
 			<bind name="autoAllocateIp" type="boolean"
 				export-name="autoAllocateIp"></bind>
@@ -331,18 +325,20 @@ actionResult = System.getModule("com.vmware.avi").createIPAMVsVIPObj(Tenant,name
 			<bind name="serverType" type="string" export-name="serverType"></bind>
 			<bind name="app_domain_name" type="string"
 				export-name="app_domain_name"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				explicitly-not-bound="true"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="19.045454545454543" x="505.0"></position>
 	</workflow-item>
-	<workflow-item name="item7" out-name="item2" type="task"
+	<workflow-item name="item7" out-name="item8" type="task"
 		script-module="com.vmware.avi/createVirtualServiceWithIPAMObj">
 		<display-name><![CDATA[createVirtualServiceWithIPAMObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,aviVroClient,network_security_policy_name,http_policy_set_name) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMObj(Name,poolgroupName,ServerCloud,Tenant,ApplicationProfile,servicePort,SSLCertificate,SSLCert,CertName,CreateSSL,serviceEngine,poolOrPoolgroup,poolName,vsVIP,existingVIP,allowInvalidClientCert,closeClientConfigUpdate,description,enableAutogw,enableRhi,enableRhiSnat,ignPoolNetReach,removeListeningPortOnVsDown,scaleoutEcmp,clientIpAddr,includeURL,excludeURL,addClientLogFliter,enabledClientLog,clientStringRef,clientDuration,logAllClientHeaders,analyticsProfile,clientInsights,significantLogThrottle,udfLogThrottle,nonSignificantLogs,nslduration,nslThrottle,metricsRealtimeUpdate,metricsRealtimeUpdateDuration,maxCpsPerClient,trafficEnabled,useBridgeIpAsVip,useVipAsSnat,vsVipName,workflowRuntime,network_security_policy_name,http_policy_set_name) ;]]></script>
 		<in-binding>
 			<bind name="Name" type="string" export-name="name">
 				<description><![CDATA[Virtual service name]]></description>
@@ -367,10 +363,6 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 			</bind>
 			<bind name="vsVipName" type="string" export-name="vsVipName">
 				<description><![CDATA[Name of the vsvip]]></description>
-			</bind>
-			<bind name="aviVroClient" type="Avi:AviVroClient"
-				export-name="aviVroClient">
-				<description><![CDATA[Object of the plugin]]></description>
 			</bind>
 			<bind name="CreateSSL" type="boolean"
 				explicitly-not-bound="true"></bind>
@@ -450,12 +442,30 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 				explicitly-not-bound="true"></bind>
 			<bind name="network_security_policy_name" type="string"
 				explicitly-not-bound="true"></bind>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Avi:AviVroClient"
-				explicitly-not-bound="true"></bind>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime"></bind>
 		</out-binding>
 		<position y="100.86363636363636" x="505.0"></position>
+	</workflow-item>
+	<workflow-item name="item8" out-name="item2" type="task"
+		script-module="com.vmware.avi/finishVroWorkflow">
+		<display-name><![CDATA[finishVroWorkflow]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRuntime) ;]]></script>
+		<in-binding>
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
+				export-name="workflowRuntime">
+				<description><![CDATA[Workflow runtime object]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Any" export-name="createdObj"></bind>
+		</out-binding>
+		<position y="100.86363636363636" x="705.0"></position>
 	</workflow-item>
 	<presentation>
 		<p-step>
@@ -503,7 +513,7 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceWithIPAMOb
 			<title><![CDATA[Pool details]]></title>
 			<p-param name="pool_servers">
 				<desc><![CDATA[pool_servers]]></desc>
-				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
+				<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[false]]></p-qual>
 			</p-param>
 			<p-param name="instance_port">
 				<desc><![CDATA[instance_port]]></desc>

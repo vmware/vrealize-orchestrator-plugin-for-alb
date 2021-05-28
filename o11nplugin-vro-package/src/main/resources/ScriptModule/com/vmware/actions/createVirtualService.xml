@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dunes-script-module name="createVirtualService"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="ef8cbb75-f0c1-463f-9e6d-c5e76240cba2" version="1.0.9"
+<dunes-script-module name="createVirtualServiceObj"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="08cf3854-fea1-455a-a829-363d69e80e97" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
 	<param n="poolgroupName" t="string"><![CDATA[Poolgroup name]]></param>
 	<param n="ServerCloud" t="string"><![CDATA[Server cloud name]]></param>
 	<param n="Tenant" t="string"><![CDATA[Tenant name ]]></param>
 	<param n="ApplicationProfile" t="string"><![CDATA[Application profile name ]]></param>
-	<param n="servicePort" t="string"><![CDATA[Virtual service port]]></param>
+	<param n="servicePort" t="number"><![CDATA[Virtual service port]]></param>
 	<param n="SSLCertificate" t="string"><![CDATA[Existing SSL certificate name]]></param>
 	<param n="SSLCert" t="boolean"><![CDATA[Use SSL certificate or not]]></param>
 	<param n="CertName" t="string"><![CDATA[New SSL certificate name]]></param>
@@ -49,7 +49,9 @@
 	<param n="useBridgeIpAsVip" t="boolean"><![CDATA[Use Bridge IP as VIP]]></param>
 	<param n="useVipAsSnat" t="boolean"><![CDATA[Use the Virtual IP as the SNAT IP for health monitoring]]></param>
 	<param n="vsVipName" t="string"><![CDATA[Name of the vsvip]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
+	<param n="network_profile" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[/*************************************************************
 * This script initializes Virtual service properties objects *
 * and puts user input into the Virtual service object        *
@@ -58,167 +60,204 @@
 
 
 try {
-	var	objectList = []
-	// Check Certificate and create it
-	var Certificate = SSLCertificate;
-	if (CreateSSL == true) {
-		Certificate = CertName;
-	}
-	var insightsSampling = {
-						      "client_ip": {
-						        "addrs": [{
-						            "type": "V4",
-						            "addr": clientIpAddr //Client IP Address
-						          }],
-						        "match_criteria": "IS_IN",
-						      }	      
-						    }
-	if (includeURL != ""){ // Include URL
-		var include = {
-				        "match_criteria": "BEGINS_WITH", //BEGINS_WITH
-				        "match_str": [ includeURL ],
-	      			}
-	    insightsSampling.sample_uris = include
-	}
-	if (excludeURL != ""){  // Exclude URL
-		var exclude =  {
-	        "match_criteria": "BEGINS_WITH", //BEGINS_WITH
-	        "match_str": [ excludeURL ],
-	      }
-	      insightsSampling.skip_uris = exclude
-	}
-	if (addClientLogFliter != false){
-		var logFilter = [{
-			  "index": 1,
-			  "client_ip": {
-			    "addrs": [
-			      {
-			        "type": "V4",
-			        "addr": clientIpAddr // Client IP Address
-			      }
-			    ],
-			    "match_criteria": "BEGINS_WITH" //BEGINS_WITH
-			  },
-			  "name": "Filter 1", // Filter Name
-			  "enabled": enabledClientLog,
-			  "uri": {
-					"string_group_refs": [
-						"/api/stringgroup?name"+ clientStringRef
-					],
-					"match_criteria": "CONTAINS" // Match
-					},
-			  "duration": clientDuration, // Duration
-			  "all_headers": logAllClientHeaders //Client log enabled
-			}]
-	}
-	
-	if (analyticsProfile != ""){
-		var analytics = {
-			"all_headers": logAllClientHeaders, // Log all headers
-			"client_insights": clientInsights, // Client Insights
-			"client_log_filters": logFilter,
-			"client_insights_sampling": insightsSampling, 
-			"significant_log_throttle": significantLogThrottle, // Significant log throttle
-    		"udf_log_throttle": udfLogThrottle //User defined filters log throttle
-		}	
-		if (nonSignificantLogs != false){ // Non-significant logs
-			analytics.full_client_logs = { 
-											"duration": nslduration, // Non-significant log duration
-											"throttle": nslThrottle, // Non-significant log throttle
-											"enabled": nonSignificantLogs 
-										}
+	if(workflowRuntime.getAviVroClient() !=null){
+		var	objectList = []
+		// Check Certificate and create it
+		var Certificate = SSLCertificate;
+		if (CreateSSL == true) {
+			Certificate = CertName;
 		}
-		if ( metricsRealtimeUpdate != false){ // Metric Update Frequency
-			analytics.metrics_realtime_update = { 
-											      "duration": metricsRealtimeUpdateDuration, 
-											      "enabled": metricsRealtimeUpdate
-		    									}
+		var insightsSampling = {
+							      "client_ip": {
+							        "addrs": [{
+							            "type": "V4",
+							            "addr": clientIpAddr //Client IP Address
+							          }],
+							        "match_criteria": "IS_IN",
+							      }	      
+							    }
+		if (includeURL){ // Include URL
+			var include = {
+					        "match_criteria": "BEGINS_WITH", //BEGINS_WITH
+					        "match_str": [ includeURL ],
+		      			}
+		    insightsSampling.sample_uris = include
 		}
-	}
-	
-	// Check the VsVip and create new VsVip if not exists.
-	var name = existingVIP;
-	if (vsVIP == false){
-		name = vsVipName
-	} 
-	
-	// Check the pool and poolgroup based on user inputs.
-	var poolgroup_ref = "/api/poolgroup?name="+poolgroupName
-	var pool_ref = null
-	if (poolOrPoolgroup != true){
-		poolgroup_ref = null
-		pool_ref = "/api/pool?name="+poolName
-	}
-	
-	// Set the service Engine  reference.
-	var serviceEngine_ref = null;
-	var analyticsProfile_ref = null;
-	if ( serviceEngine != null ){
-		serviceEngine_ref = "/api/serviceenginegroup?name="+serviceEngine
-	}
-	if ( analyticsProfile != "" ){
-		analyticsProfile_ref  = "/api/analyticsprofile?name="+analyticsProfile
-	}
-	
-	// Form a load balancer alogorithm type based on user input
-	var AppProfile = "System-HTTP";
-	var ssl = false;
-    var ssl_profile_ref = null;
-	var ssl_key_and_certificate_refs = null;
-	if (ApplicationProfile == "HTTPS" || SSLCert == true ) {
-		AppProfile= "System-Secure-HTTP";
-		ssl = true
-		ssl_profile_ref = "/api/sslprofile?name=System-Standard";
-		ssl_key_and_certificate_refs = [ "/api/sslkeyandcertificate/?name="+Certificate ];		
-	}	
-	if(ServerCloud=="" || ServerCloud==null){
-			ServerCloud="Default-Cloud";
-	}
-	
-	// Set the configuration for virtual service.
-	configuration = {
-  	"allow_invalid_client_cert": allowInvalidClientCert,
-	"close_client_conn_on_config_update": closeClientConfigUpdate,
-  	"description": description,
-  	"max_cps_per_client": maxCpsPerClient,
-	"remove_listening_port_on_vs_down": removeListeningPortOnVsDown,
-	"scaleout_ecmp": scaleoutEcmp,
-	"traffic_enabled": trafficEnabled,
-	"use_bridge_ip_as_vip": useBridgeIpAsVip, //false
-	"use_vip_as_snat": useVipAsSnat, //false
-
-    "vsvip_ref": "/api/vsvip?name="+name,
-	"cloud_ref":"/api/cloud?name="+ServerCloud,
-	"tenant_ref":"/api/tenant?name="+Tenant,
-	"pool_group_ref": poolgroup_ref,
-	"pool_ref": pool_ref,
-	"application_profile_ref": "/api/applicationprofile?name="+AppProfile,
-	//"se_group_ref": serviceEngine_ref,
-	"analytics_profile_ref": analyticsProfile_ref,
-	"name": Name, 
-	"ssl_profile_ref": ssl_profile_ref,
-	"ssl_key_and_certificate_refs": ssl_key_and_certificate_refs,
-	"enable_autogw": enableAutogw,
-	"enable_rhi": enableRhi,
-	"enable_rhi_snat": enableRhiSnat,
-	"ign_pool_net_reach": ignPoolNetReach,
-	"services": [
-	        {
-	            "enable_ssl": ssl,
-	            "port_range_end": servicePort,
-	            "port": servicePort
-	        }
-	    ],
-	}
-	
-
-
-	configuration = JSON.stringify(configuration);
+		if (excludeURL){  // Exclude URL
+			var exclude =  {
+		        "match_criteria": "BEGINS_WITH", //BEGINS_WITH
+		        "match_str": [ excludeURL ],
+		      }
+		      insightsSampling.skip_uris = exclude
+		}
+		if (addClientLogFliter){
+			var logFilter = [{
+				  "index": 1,
+				  "client_ip": {
+				    "addrs": [
+				      {
+				        "type": "V4",
+				        "addr": clientIpAddr // Client IP Address
+				      }
+				    ],
+				    "match_criteria": "BEGINS_WITH" //BEGINS_WITH
+				  },
+				  "name": "Filter 1", // Filter Name
+				  "enabled": enabledClientLog,
+				  "uri": {
+						"string_group_refs": [
+							"/api/stringgroup?name"+ clientStringRef
+						],
+						"match_criteria": "CONTAINS" // Match
+						},
+				  "duration": clientDuration, // Duration
+				  "all_headers": logAllClientHeaders //Client log enabled
+				}]
+		}
 		
-//	return configuration
-	aviVroClient.add("virtualservice", configuration)
-	return aviVroClient
-	
+		if (analyticsProfile){
+			var analytics = {
+				"all_headers": logAllClientHeaders, // Log all headers
+				"client_insights": clientInsights, // Client Insights
+				"client_log_filters": logFilter,
+				"client_insights_sampling": insightsSampling,
+				"significant_log_throttle": significantLogThrottle, // Significant log throttle
+    			"udf_log_throttle": udfLogThrottle //User defined filters log throttle
+			}	
+			if (nonSignificantLogs != false){ // Non-significant logs
+				analytics.full_client_logs = { 
+												"duration": nslduration, // Non-significant log duration
+												"throttle": nslThrottle, // Non-significant log throttle
+												"enabled": nonSignificantLogs 
+											}
+			}
+			if ( metricsRealtimeUpdate != false){ // Metric Update Frequency
+				analytics.metrics_realtime_update = { 
+												      "duration": metricsRealtimeUpdateDuration, 
+												      "enabled": metricsRealtimeUpdate
+			    									}
+			}
+		}
+		
+		// Check the VsVip and create new VsVip if not exists.
+		var name = existingVIP;
+		if (vsVIP == false){
+			name = vsVipName
+		} 
+		
+		// Check the pool and poolgroup based on user inputs.
+		var poolgroup_ref = "/api/poolgroup?name="+poolgroupName
+		var pool_ref = null
+		if (poolOrPoolgroup != true){
+			poolgroup_ref = null
+			pool_ref = "/api/pool?name="+poolName
+		}
+		
+		// Set the service Engine  reference.
+		var serviceEngine_ref = null;
+		var analyticsProfile_ref = null;
+		if ( serviceEngine != null ){
+			serviceEngine_ref = "/api/serviceenginegroup?name="+serviceEngine
+		}
+		if (analyticsProfile){
+			analyticsProfile_ref  = "/api/analyticsprofile?name="+analyticsProfile
+		}
+		
+		// Form a load balancer alogorithm type based on user input
+		var AppProfile = "System-HTTP";
+		var ssl = false;
+	    var ssl_profile_ref = null;
+		var ssl_key_and_certificate_refs = null;
+		
+		var networkProfile = "/api/networkprofile?name=System-TCP-Proxy";
+		if (ApplicationProfile == "TCP" ) {
+			AppProfile= "System-L4-Application";
+			networkProfile = "/api/networkprofile?name=System-TCP-Fast-Path";
+		}
+		if (ApplicationProfile == "UDP" ) {
+		  	AppProfile= "System-L4-Application";
+			networkProfile = "/api/networkprofile?name=System-UDP-Fast-Path";
+		}
+		if (ApplicationProfile == "HTTPS" || SSLCert == true ) {
+			AppProfile= "System-Secure-HTTP";
+			ssl = true
+			ssl_profile_ref = "/api/sslprofile?name=System-Standard";
+			ssl_key_and_certificate_refs = "/api/sslkeyandcertificate/?name="+Certificate;	
+		}	
+				
+//		virtualServiceObject = Server.findForType('Avi:VirtualService', System.getObjectId(virtualServiceObject));
+		virtualServiceObject = new AviVirtualService();
+		if (allowInvalidClientCert){
+			virtualServiceObject.setAllowInvalidClientCert(allowInvalidClientCert);
+		}
+		if (closeClientConfigUpdate){
+			virtualServiceObject.setCloseClientConnOnConfigUpdate(closeClientConfigUpdate);
+		}
+		if (description){
+			virtualServiceObject.setDescription(description);
+		}
+		if (maxCpsPerClient){
+			virtualServiceObject.setMaxCpsPerClient(maxCpsPerClient);
+		}
+		if (removeListeningPortOnVsDown){
+			virtualServiceObject.setRemoveListeningPortOnVsDown(removeListeningPortOnVsDown);
+		}
+		if (scaleoutEcmp){
+			virtualServiceObject.setScaleoutEcmp(scaleoutEcmp);
+		}
+		if (trafficEnabled){
+			virtualServiceObject.setTrafficEnabled(trafficEnabled);
+		}
+		if (useBridgeIpAsVip){
+			virtualServiceObject.setUseBridgeIpAsVip(useBridgeIpAsVip);
+		}
+		if (useVipAsSnat){
+			virtualServiceObject.setUseVipAsSnat(useVipAsSnat);
+		}
+		if(ServerCloud=="" || ServerCloud==null){
+			ServerCloud="Default-Cloud";
+		}
+		virtualServiceObject.setVsvipRef("/api/vsvip?name="+name);
+		virtualServiceObject.setCloudRef("/api/cloud?name="+ServerCloud);
+		virtualServiceObject.setTenantRef("/api/tenant?name="+Tenant);
+		virtualServiceObject.setName(Name);
+		if (enableAutogw){
+			virtualServiceObject.setEnableAutogw(enableAutogw);
+		}
+		if (enableRhi){
+			virtualServiceObject.setEnableRhi(enableRhi);
+		}
+		if (enableRhiSnat){
+			virtualServiceObject.setEnableRhiSnat(enableRhiSnat);
+		}
+		if (ignPoolNetReach){
+			virtualServiceObject.setIgnPoolNetReach(ignPoolNetReach);
+		}
+		virtualServiceObject.setApplicationProfileRef("/api/applicationprofile?name="+AppProfile);
+		virtualServiceObject.setAnalyticsProfileRef(analyticsProfile_ref);
+		virtualServiceObject.setSslProfileRef(ssl_profile_ref);
+		virtualServiceObject.addSslKeyAndCertificateRefsItem(ssl_key_and_certificate_refs);
+		virtualServiceObject.setPoolGroupRef(poolgroup_ref);
+		virtualServiceObject.setPoolRef(pool_ref);
+		//if(network_profile){
+		//	var networkProfile = "/api/networkprofile?name="+network_profile;
+		//}
+		virtualServiceObject.setNetworkProfileRef(networkProfile);
+		var serviceArray= new Array();
+		serviceObject = new AviService();
+		serviceObject.setEnableSsl(ssl);
+		serviceObject.setPortRangeEnd(servicePort);
+		serviceObject.setPort(servicePort);
+		serviceArray.push(serviceObject);
+		virtualServiceObject.setServices(serviceArray);
+
+		workflowRuntime.getAviVroClient().addObject(virtualServiceObject, workflowRuntime.getWorkflowId());
+		System.log("virtualServiceObject : "+virtualServiceObject);
+		
+		return workflowRuntime
+	}else{
+	System.log("Avi controller is null.Please attach Avi controller.")
+	}
 } catch(e) {
      throw "Error while create VS: "+ e
 }
