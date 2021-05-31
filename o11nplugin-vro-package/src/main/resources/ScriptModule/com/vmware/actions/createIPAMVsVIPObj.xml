@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createIPAMVsVIPObj"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="1983a2e1-a3d4-44af-b6fa-05d5354bf612" version="0.1.5"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="3dd8be10-050b-41d2-a523-1b77d658d8dd" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -13,7 +13,7 @@
 	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
 	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
 	<param n="serverType" t="string"><![CDATA[Server type]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<param n="network_management_name" t="string"><![CDATA[network management name]]></param>
 	<param n="app_domain_name" t="string"><![CDATA[App domain name]]></param>
 	<param n="domain" t="string"><![CDATA[Domain]]></param>
@@ -35,7 +35,7 @@ try{
 	dns_info.push(dnsinfoObject);
 	networkObject = new AviNetwork() ;
 	System.log("network_management_name : "+network_management_name);
-	networkObject= aviVroClient.getObjectByName("network",network_management_name);
+	networkObject= workflowRuntime.aviVroClient.getObjectByName("network",network_management_name);
 	var network_ref=networkObject.getUrl();
 	var discovered_networks= new Array();
 	discoveredNetworkObject = new AviDiscoveredNetwork();
@@ -82,7 +82,7 @@ try{
 		vipObject.setAviAllocatedVip(aviAllocatedVip);
 	}
 	vipObject.setAutoAllocateIpType("V4_ONLY");
-	vipObject.setDiscoveredNetworks(discovered_networks);
+	//vipObject.setDiscoveredNetworks(discovered_networks);
 	vipObject.setIpamNetworkSubnet(ipamNetworkSubnetObject);
 	vipObject.setIpAddress(IPAddrObject);
 	vipList.push(vipObject);
@@ -90,8 +90,8 @@ try{
 
 	System.log("IPAM Vs Vip data : "+vsVipObject);
 
-	aviVroClient.addObject(vsVipObject)
-	return aviVroClient
+	workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId())
+	return workflowRuntime
 
 } catch (e) {
 	throw "Error when create vsVip -> "+ e

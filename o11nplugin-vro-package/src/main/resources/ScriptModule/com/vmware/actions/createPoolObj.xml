@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPoolObj"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="d0d1e5cd-5bf4-47d2-8b64-1db0a867f383" version="0.2.3"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="d74b12d8-5662-4da9-b7fa-29c99d84a73e" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="enablePool" t="boolean"><![CDATA[Pool status]]></param>
@@ -43,21 +43,21 @@
 	<param n="failActionURL" t="string"><![CDATA[Redirect url for fail action type of pool]]></param>
 	<param n="statusProtocol" t="string"><![CDATA[Add status protocol for pool fail action]]></param>
 	<param n="failActiontype" t="string"><![CDATA[Pool fail action type]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<param n="PersistenceProfileRef" t="string"><![CDATA[Application persistence profile reference]]></param>
 	<param n="ratio" t="number"><![CDATA[Ratio]]></param>
 	<param n="port" t="string"><![CDATA[Port]]></param>
 	<param n="addPersistenceProfileRef" t="boolean"><![CDATA[
 	]]></param>
-	<param n="tier1_lr" t="string"><![CDATA[]]>
-	</param>
+	<param n="tier1_lr" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[/**************************************************
 * This script initializes pool properties objects *
 * and creats pool object. 						  *
 **************************************************/
 
 try{
-	if(aviVroClient!=null){
+	if(workflowRuntime.getAviVroClient() !=null){
 		// Check if selected healthmonitor or create new
 		poolObject = new AviPool();
 		if (CreateHealthMonitor == false){
@@ -238,9 +238,9 @@ try{
 		}	
 		// Set servers object in properties
 		poolObject.setServers(servers);	
-		aviVroClient.addObject(poolObject)
+		workflowRuntime.getAviVroClient().addObject(poolObject, workflowRuntime.getWorkflowId())
 		System.log("poolObject : "+poolObject);
-		return aviVroClient
+		return workflowRuntime
 	}else{
 		System.log("Avi client is null.. please attach Avi client")
 	}

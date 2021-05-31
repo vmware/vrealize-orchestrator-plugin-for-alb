@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createSSLCertificateObj"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="0a9191e9-b8e7-4e6d-9ed5-ac43d116ae54" version="0.0.2"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="501492ba-0d1c-4854-bc49-f3cf894a54df" version="3.0.0"
 	allowed-operations="vfe">
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Vro Client]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Vro Client]]></param>
 	<param n="SSLAlgorithm" t="string"><![CDATA[SSL algorithm type]]></param>
 	<param n="CommonName" t="string"><![CDATA[Common name for SSL certificate description]]></param>
 	<param n="RSAKeySize" t="string"><![CDATA[RSA key size]]></param>
@@ -25,7 +25,7 @@
 try {
 
 	// Check client is connect or not
-	if(aviVroClient== null){
+	if(workflowRuntime.getAviVroClient() == null){
 		System.log("aviVroClient is null...Please attach Controller & then try");
 		return null;
 	}
@@ -94,10 +94,10 @@ try {
 	sslCertificateObj.setType("SSL_CERTIFICATE_TYPE_VIRTUALSERVICE");
 	sslCertificateObj.setName(CertName);
 
-	aviVroClient.addObject(sslCertificateObj);
+	workflowRuntime.getAviVroClient().addObject(sslCertificateObj, workflowRuntime.getWorkflowId());
 	System.log("SSLCertificate object : "+sslCertificateObj);	
-
-	return aviVroClient;
+	
+	return workflowRuntime;
 	
 } catch (e) {
       throw "Error in creating SSL Certificate ->"+ e

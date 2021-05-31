@@ -1,15 +1,19 @@
 package com.vmware.avi.vro.model;
 
-import java.util.*;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vmware.avi.vro.Constants;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
-import com.vmware.avi.vro.Constants;
-import org.springframework.stereotype.Service;
 
 /**
  * The ClientLogStreamingFormat is a POJO class extends AviRestResource that used for creating

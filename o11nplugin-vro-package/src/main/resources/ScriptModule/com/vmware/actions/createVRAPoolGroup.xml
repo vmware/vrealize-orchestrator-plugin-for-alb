@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVRAPoolGroup"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="3d491515-9cdf-437c-ae83-88142172c704" version="0.0.7"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="d0efc780-2c8f-41dc-9a09-d7057bed99e1" version="3.0.0"
 	allowed-operations="vfe">
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[
 	]]></param>
 	<param n="ServerCloud" t="string"><![CDATA[
 	]]></param>
@@ -17,11 +17,11 @@
 	]]></param>
 	<param n="HealthMonitorName" t="string"><![CDATA[HealthMonitorName]]></param>
 	<script encoded="false"><![CDATA[try{
-	if(aviVroClient!=null){
+	if(workflowRuntime.getAviVroClient() !=null){
 		firstPoolName=poolGroupName+"_Pool1";
 		seconPoolName=poolGroupName+"_Pool2";
 		ratio=5;
-		var Tenant=aviVroClient.cred.tenant;
+		var Tenant=workflowRuntime.getAviVroClient().cred.tenant;
 		System.log("Tenant : "+Tenant);
 		firstPoolObject = new AviPool() ;
 		if(ServerCloud=="" || ServerCloud==null){
@@ -50,7 +50,7 @@
 		var HMref ="/api/healthmonitor?name="+HealthMonitorName;
 		firstPoolObject.addHealthMonitorRefsItem(HMref);
 		System.log("firstPoolObject : "+firstPoolObject);
-		aviVroClient.addObject(firstPoolObject);		
+		workflowRuntime.vroClient.addObject(firstPoolObject, workflowRuntime.workflowId);		
 		secondPoolObject = new AviPool() ;
 		secondPoolObject.setCloudRef("/api/cloud?name="+ServerCloud);
 		secondPoolObject.setTenantRef("/api/tenant?name="+Tenant);
@@ -73,7 +73,7 @@
 		secondPoolObject.setServers(secondPoolServers);
 		secondPoolObject.setName(seconPoolName);
 		secondPoolObject.addHealthMonitorRefsItem(HMref);
-		aviVroClient.addObject(secondPoolObject);
+		workflowRuntime.getAviVroClient().addObject(secondPoolObject, workflowRuntime.getWorkflowId());
 		System.log("secondPoolObject : "+secondPoolObject);
 		firstPoolGroupMemberObject = new AviPoolGroupMember();
 		firstPoolGroupMemberObject.setPoolRef("/api/pool?name="+firstPoolName);
@@ -85,10 +85,10 @@
 		poolGroupObject.setName(poolGroupName);
 		poolGroupObject.addMembersItem(firstPoolGroupMemberObject);
 		poolGroupObject.addMembersItem(secondPoolGroupMemberObject);
-		aviVroClient.addObject(poolGroupObject);
+		workflowRuntime.getAviVroClient().addObject(poolGroupObject, workflowRuntime.getWorkflowId());
 		System.log("Poolgroup Object : "+poolGroupObject);
 		System.log("Poolgroup created successfully");
-		return aviVroClient;
+		return workflowRuntime;
 	}else{
 		System.log("Avi client is null.. please attach Avi client");
 	}

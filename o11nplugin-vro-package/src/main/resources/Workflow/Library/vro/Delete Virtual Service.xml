@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="4712e335-42d2-4445-8b9a-bcc0a783b808" version="0.0.8"
+	id="dc90c217-aabf-4453-8376-3323a9671dc7" version="3.0.1"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Delete Virtual Service]]></display-name>
@@ -24,32 +24,32 @@
 **************************************************************/
 var url=virtualServiceObject.getUrl();
 var controller=url.substring(url.indexOf("//")+2, url.indexOf("/api"));
-var aviVroClient=null;
 vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+var workflowRuntime = new AviWorkflowRuntime();
 //System.log("controller :"+controller);
 for each(vroClient in vroClientArray){
 		if(vroClient !=null){
 		vroController=vroClient.cred.controller;
 		if(vroController==controller){
-		aviVroClient=vroClient;
+		workflowRuntime.setAviVroClient(vroClient);
 		}
 	}	
 }
 try{
-	if(aviVroClient!=null)
+	if(workflowRuntime.getAviVroClient() !=null)
 	{		
-		aviVroClient.deleteObject(virtualServiceObject);
+		workflowRuntime.getAviVroClient().deleteObject(virtualServiceObject, workflowRuntime.getWorkflowId());
 		var vsVipref=virtualServiceObject.getVsvipRef();
 		if(vsVipref!=null){
 			var vsVipUUID = vsVipref.substring(vsVipref.indexOf('vsvip-'),vsVipref.indexOf('#'));
-			aviVroClient.deleteObjectByUUID('vsvip',vsVipUUID);
+			workflowRuntime.getAviVroClient().deleteObjectByUUID('vsvip',vsVipUUID);
 		}
 		var poolref=virtualServiceObject.getPoolRef();	
 		if(poolref!=null){
 			var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
-			aviVroClient.deleteObjectByUUID('pool',poolUUID)
+			workflowRuntime.getAviVroClient().deleteObjectByUUID('pool',poolUUID,workflowRuntime.getWorkflowId())
 			var poolObject = new AviPool() ;
-			poolObject=aviVroClient.getObjectByUUID("pool",poolUUID);
+			poolObject=workflowRuntime.getAviVroClient().getObjectByUUID("pool",poolUUID, workflowRuntime.getWorkflowId());
 			var hmArray=poolObject.getHealthMonitorRefs();
 			if(hmArray!=null){
 				for (i=0; i<=hmArray.length-1; i++){
@@ -57,7 +57,7 @@ try{
 					var hmRef=virtualServiceObject.getName()+"_HealthMonitor";
 					if((HealthMonitor_ref.indexOf(hmRef))!=-1){
 						var hmUuid =HealthMonitor_ref.substring(HealthMonitor_ref.indexOf("/healthmonitor-")+1, HealthMonitor_ref.indexOf("#"));
-						aviVroClient.deleteObjectByUUID('healthmonitor',hmUuid);
+						workflowRuntime.getAviVroClient().deleteObjectByUUID('healthmonitor',hmUuid, workflowRuntime.getWorkflowId());
 		
 						}
 					}
@@ -66,9 +66,9 @@ try{
 		var poolgroupref=virtualServiceObject.getPoolGroupRef();
 		if(poolgroupref!=null){
 			var poolGroupUUID = poolgroupref.substring(poolgroupref.indexOf('poolgroup-'),poolgroupref.indexOf('#'));
-			aviVroClient.deleteObjectByUUID('poolgroup',poolGroupUUID)
+			workflowRuntime.getAviVroClient().deleteObjectByUUID('poolgroup',poolGroupUUID, workflowRuntime.getWorkflowId())
 			var poolGroupObject = new AviPoolGroup() ;
-			poolGroupObject=aviVroClient.getObjectByUUID("poolgroup",poolGroupUUID);
+			poolGroupObject=workflowRuntime.getAviVroClient().getObjectByUUID("poolgroup",poolGroupUUID, workflowRuntime.getWorkflowId());
 			var poolArray=poolGroupObject.getMembers();
 			if(poolArray!=null){
 				for (i=0; i<=poolArray.length-1; i++){
@@ -77,13 +77,13 @@ try{
 					poolref=poolMemberObject.getPoolRef();
 					if(poolref!=null){
 						var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
-						aviVroClient.deleteObjectByUUID('pool',poolUUID);
+						workflowRuntime.getAviVroClient().deleteObjectByUUID('pool',poolUUID, workflowRuntime.getWorkflowId());
 						}
 					}
 					if(poolref!=null){
 					var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
 					var poolObject = new AviPool() ;
-					poolObject=aviVroClient.getObjectByUUID("pool",poolUUID);
+					poolObject=workflowRuntime.getAviVroClient().getObjectByUUID("pool",poolUUID, workflowRuntime.getWorkflowId());
 					var hmArray=poolObject.getHealthMonitorRefs();
 					if(hmArray!=null){
 						for (i=0; i<=hmArray.length-1; i++){
@@ -97,7 +97,7 @@ try{
 				}
 			}
 		}
-		aviVroClient.executeWorkflow();
+		workflowRuntime.getAviVroClient().executeWorkflow(workflowRuntime.getWorkflowId());
 		System.log("Vs deleted successfully.");
 	}
 }catch(e){

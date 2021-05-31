@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVsVIP"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="c929c1fa-a1ef-4c1a-bf59-628215fb972e" version="0.1.5"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
+	id="4c89437b-2302-4780-b768-97ace3c95eb2" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -13,7 +13,7 @@
 	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
 	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
 	<param n="serverType" t="string"><![CDATA[Server type]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<script encoded="false"><![CDATA[/************************************************************
 * This action initializes VS_VIP properties objects         *
 * and puts user input into the VS_VIP object        		*
@@ -46,8 +46,8 @@ try{
 	var jsonData = JSON.stringify(properties);
 
 //	return jsonData
-	aviVroClient.add("vsvip", jsonData)
-	return aviVroClient
+	workflowRuntime.getAviVroClient().add("vsvip", jsonData, workflowRuntime.getWorkflowId())
+	return workflowRuntime
 
 } catch (e) {
 	throw "Error when create vsVip -> "+ e

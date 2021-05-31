@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="deleteObjectObj"
 	result-type="void" api-version="6.0.0"
-	id="5f94610e-e90f-49a6-afb5-4f7901ceea28" version="0.0.3"
+	id="b3ed519d-a02e-492c-a05d-89c251a22793" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="deleteVS" t="boolean"><![CDATA[Delete VS indicator]]></param>
 	<param n="vsname" t="string"><![CDATA[VS name which needs to delete]]></param>
@@ -11,10 +11,10 @@
 	<param n="poolgroupname" t="string"><![CDATA[Pool group name which needs to delete]]></param>
 	<param n="deleteHm" t="boolean"><![CDATA[Delete health monitor indicator]]></param>
 	<param n="hmnameArray" t="Array/string"><![CDATA[Health Monitor names which needs to delete]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Avi controller]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Avi controller]]></param>
 	<param n="vipname" t="string"><![CDATA[Vsvip name]]></param>
-	<param n="deleteVsVip" t="boolean"><![CDATA[]]>
-	</param>
+	<param n="deleteVsVip" t="boolean"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[/*************************************************************
 * This script deletes Virtual service dependent objects.     *
 *                                                            *
@@ -23,35 +23,32 @@
 try{
 
 	var msgArray=[];
-	if(aviVroClient!=null)
+	if(workflowRuntime.getAviVroClient()!=null)
 	{			
 		if(deleteVS){
-			aviVroClient.deleteObjectByName("virtualservice",vsname);
+			workflowRuntime.getAviVroClient().deleteObjectByName("virtualservice",vsname, workflowRuntime.getWorkflowId());
 			var msg = vsname+" Deleted successfully.";
 			msgArray.push(msg);
-//			aviVroClient.deleteObjectByName("vsvip",vipname);
-//			var msg = vipname+" Deleted successfully.";
-//			msgArray.push(msg);
 		}
 		if(deleteVsVip){
-			aviVroClient.deleteObjectByName("vsvip",vipname);
+			workflowRuntime.getAviVroClient().deleteObjectByName("vsvip",vipname, workflowRuntime.getWorkflowId());
 			var msg = vipname+" Deleted successfully.";
 			msgArray.push(msg);
 		}
 		if(deletePool){
-			aviVroClient.deleteObjectByName("pool",poolname);
+			workflowRuntime.getAviVroClient().deleteObjectByName("pool",poolname, workflowRuntime.getWorkflowId());
 			var msg = poolname+" Deleted successfully.";
 			msgArray.push(msg);
 		}
 		if(deleteHm){
 			for (index in hmnameArray){
 				var hmName=hmnameArray[index];
-				aviVroClient.deleteObjectByName("healthmonitor",hmName);
+				workflowRuntime.getAviVroClient().deleteObjectByName("healthmonitor",hmName, workflowRuntime.getWorkflowId());
 				var msg = hmName+" Deleted successfully.";
 				msgArray.push(msg);
 			}
 		}
-		aviVroClient.executeWorkflow();
+		workflowRuntime.getAviVroClient().executeWorkflow(workflowRuntime.getWorkflowId());
 		for (index in msgArray){
 			System.log(msgArray[index]);
 		}

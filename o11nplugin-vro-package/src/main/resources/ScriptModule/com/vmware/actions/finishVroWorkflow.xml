@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dunes-script-module name="finishVroWorkflow"
+	result-type="Any" api-version="6.0.0"
+	id="50d4f82e-9223-4975-87c2-7e5fce89b8c4" version="1.0.0"
+	allowed-operations="vfe">
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Workflow runtime object]]></param>
+	<script encoded="false"><![CDATA[/*** This action for create AVI client objects ***/
+
+System.log("Workflow ID in action:-> "+ workflowRuntime.getWorkflowId());
+resp = workflowRuntime.getAviVroClient().executeWorkflow(workflowRuntime.getWorkflowId());
+return resp;
+]]></script>
+</dunes-script-module>
