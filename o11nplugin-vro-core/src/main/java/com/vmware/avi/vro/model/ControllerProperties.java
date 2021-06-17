@@ -72,6 +72,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("check_vsvip_fqdn_syntax")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean checkVsvipFqdnSyntax = true;
+
     @JsonProperty("cleanup_expired_authtoken_timeout_period")
     @JsonInclude(Include.NON_NULL)
     private Integer cleanupExpiredAuthtokenTimeoutPeriod = 60;
@@ -642,6 +646,32 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setBmUseAnsible(Boolean  bmUseAnsible) {
     this.bmUseAnsible = bmUseAnsible;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enforce vsvip fqdn syntax checks.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return checkVsvipFqdnSyntax
+   */
+  @VsoMethod
+  public Boolean getCheckVsvipFqdnSyntax() {
+    return checkVsvipFqdnSyntax;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enforce vsvip fqdn syntax checks.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param checkVsvipFqdnSyntax set the checkVsvipFqdnSyntax.
+   */
+  @VsoMethod
+  public void setCheckVsvipFqdnSyntax(Boolean  checkVsvipFqdnSyntax) {
+    this.checkVsvipFqdnSyntax = checkVsvipFqdnSyntax;
   }
 
   /**
@@ -2453,7 +2483,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.controllerResourceInfoCollectionPeriod, objControllerProperties.controllerResourceInfoCollectionPeriod)&&
   Objects.equals(this.seVnicGcWaitTime, objControllerProperties.seVnicGcWaitTime)&&
   Objects.equals(this.resmgrLogCachingPeriod, objControllerProperties.resmgrLogCachingPeriod)&&
-  Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay);
+  Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay)&&
+  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax);
 }
 
 @Override
@@ -2472,6 +2503,7 @@ public String toString() {
         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+        sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
         sb.append("    cloudReconcile: ").append(toIndentedString(cloudReconcile)).append("\n");

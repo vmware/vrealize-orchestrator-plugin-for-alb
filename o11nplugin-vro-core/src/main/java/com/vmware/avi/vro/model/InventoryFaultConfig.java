@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.ControllerFaults;
+import com.vmware.avi.vro.model.ServiceengineFaults;
+import com.vmware.avi.vro.model.VirtualserviceFaults;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -12,33 +15,29 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The Webhook is a POJO class extends AviRestResource that used for creating
- * Webhook.
+ * The InventoryFaultConfig is a POJO class extends AviRestResource that used for creating
+ * InventoryFaultConfig.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "Webhook")
-@VsoFinder(name = Constants.FINDER_VRO_WEBHOOK, idAccessor = "getObjectID()")
+@VsoObject(create = false, name = "InventoryFaultConfig")
+@VsoFinder(name = Constants.FINDER_VRO_INVENTORYFAULTCONFIG, idAccessor = "getObjectID()")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class Webhook extends AviRestResource {
-    @JsonProperty("callback_url")
+public class InventoryFaultConfig extends AviRestResource {
+    @JsonProperty("controller_faults")
     @JsonInclude(Include.NON_NULL)
-    private String callbackUrl = null;
-
-    @JsonProperty("description")
-    @JsonInclude(Include.NON_NULL)
-    private String description = null;
-
-    @JsonProperty("markers")
-    @JsonInclude(Include.NON_NULL)
-    private List<RoleFilterMatchLabel> markers = null;
+    private ControllerFaults controllerFaults = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
+
+    @JsonProperty("serviceengine_faults")
+    @JsonInclude(Include.NON_NULL)
+    private ServiceengineFaults serviceengineFaults = null;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
@@ -52,106 +51,40 @@ public class Webhook extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String uuid = null;
 
-    @JsonProperty("verification_token")
+    @JsonProperty("virtualservice_faults")
     @JsonInclude(Include.NON_NULL)
-    private String verificationToken = null;
+    private VirtualserviceFaults virtualserviceFaults = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Callback url for the webhook.
-   * Field introduced in 17.1.1.
+   * Configure controller faults.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return callbackUrl
+   * @return controllerFaults
    */
   @VsoMethod
-  public String getCallbackUrl() {
-    return callbackUrl;
+  public ControllerFaults getControllerFaults() {
+    return controllerFaults;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Callback url for the webhook.
-   * Field introduced in 17.1.1.
+   * Configure controller faults.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param callbackUrl set the callbackUrl.
+   * @param controllerFaults set the controllerFaults.
    */
   @VsoMethod
-  public void setCallbackUrl(String  callbackUrl) {
-    this.callbackUrl = callbackUrl;
+  public void setControllerFaults(ControllerFaults controllerFaults) {
+    this.controllerFaults = controllerFaults;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return description
-   */
-  @VsoMethod
-  public String getDescription() {
-    return description;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param description set the description.
-   */
-  @VsoMethod
-  public void setDescription(String  description) {
-    this.description = description;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * List of labels to be used for granular rbac.
+   * Name.
    * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return markers
-   */
-  @VsoMethod
-  public List<RoleFilterMatchLabel> getMarkers() {
-    return markers;
-  }
-
-  /**
-   * This is the setter method. this will set the markers
-   * List of labels to be used for granular rbac.
-   * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return markers
-   */
-  @VsoMethod
-  public void setMarkers(List<RoleFilterMatchLabel>  markers) {
-    this.markers = markers;
-  }
-
-  /**
-   * This is the setter method this will set the markers
-   * List of labels to be used for granular rbac.
-   * Field introduced in 20.1.6.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return markers
-   */
-  @VsoMethod
-  public Webhook addMarkersItem(RoleFilterMatchLabel markersItem) {
-    if (this.markers == null) {
-      this.markers = new ArrayList<RoleFilterMatchLabel>();
-    }
-    this.markers.add(markersItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * The name of the webhook profile.
-   * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
    */
@@ -162,8 +95,8 @@ public class Webhook extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The name of the webhook profile.
-   * Field introduced in 17.1.1.
+   * Name.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param name set the name.
    */
@@ -174,8 +107,33 @@ public class Webhook extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure serviceengine faults.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return serviceengineFaults
+   */
+  @VsoMethod
+  public ServiceengineFaults getServiceengineFaults() {
+    return serviceengineFaults;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure serviceengine faults.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param serviceengineFaults set the serviceengineFaults.
+   */
+  @VsoMethod
+  public void setServiceengineFaults(ServiceengineFaults serviceengineFaults) {
+    this.serviceengineFaults = serviceengineFaults;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Tenant.
    * It is a reference to an object of type tenant.
-   * Field introduced in 17.1.1.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
    */
@@ -186,8 +144,9 @@ public class Webhook extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Tenant.
    * It is a reference to an object of type tenant.
-   * Field introduced in 17.1.1.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantRef set the tenantRef.
    */
@@ -217,8 +176,8 @@ public class Webhook extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Uuid of the webhook profile.
-   * Field introduced in 17.1.1.
+   * Uuid auto generated.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
    */
@@ -229,8 +188,8 @@ public class Webhook extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Uuid of the webhook profile.
-   * Field introduced in 17.1.1.
+   * Uuid auto generated.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param uuid set the uuid.
    */
@@ -241,26 +200,26 @@ public class Webhook extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Verification token sent back with the callback asquery parameters.
-   * Field introduced in 17.1.1.
+   * Configure virtualservice faults.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return verificationToken
+   * @return virtualserviceFaults
    */
   @VsoMethod
-  public String getVerificationToken() {
-    return verificationToken;
+  public VirtualserviceFaults getVirtualserviceFaults() {
+    return virtualserviceFaults;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Verification token sent back with the callback asquery parameters.
-   * Field introduced in 17.1.1.
+   * Configure virtualservice faults.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param verificationToken set the verificationToken.
+   * @param virtualserviceFaults set the virtualserviceFaults.
    */
   @VsoMethod
-  public void setVerificationToken(String  verificationToken) {
-    this.verificationToken = verificationToken;
+  public void setVirtualserviceFaults(VirtualserviceFaults virtualserviceFaults) {
+    this.virtualserviceFaults = virtualserviceFaults;
   }
 
 
@@ -276,27 +235,25 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  Webhook objWebhook = (Webhook) o;
-  return   Objects.equals(this.uuid, objWebhook.uuid)&&
-  Objects.equals(this.name, objWebhook.name)&&
-  Objects.equals(this.callbackUrl, objWebhook.callbackUrl)&&
-  Objects.equals(this.verificationToken, objWebhook.verificationToken)&&
-  Objects.equals(this.markers, objWebhook.markers)&&
-  Objects.equals(this.description, objWebhook.description)&&
-  Objects.equals(this.tenantRef, objWebhook.tenantRef);
+  InventoryFaultConfig objInventoryFaultConfig = (InventoryFaultConfig) o;
+  return   Objects.equals(this.uuid, objInventoryFaultConfig.uuid)&&
+  Objects.equals(this.name, objInventoryFaultConfig.name)&&
+  Objects.equals(this.tenantRef, objInventoryFaultConfig.tenantRef)&&
+  Objects.equals(this.virtualserviceFaults, objInventoryFaultConfig.virtualserviceFaults)&&
+  Objects.equals(this.controllerFaults, objInventoryFaultConfig.controllerFaults)&&
+  Objects.equals(this.serviceengineFaults, objInventoryFaultConfig.serviceengineFaults);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class Webhook {\n");
-      sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
+  sb.append("class InventoryFaultConfig {\n");
+      sb.append("    controllerFaults: ").append(toIndentedString(controllerFaults)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    serviceengineFaults: ").append(toIndentedString(serviceengineFaults)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
-        sb.append("    verificationToken: ").append(toIndentedString(verificationToken)).append("\n");
+        sb.append("    virtualserviceFaults: ").append(toIndentedString(virtualserviceFaults)).append("\n");
       sb.append("}");
   return sb.toString();
 }
