@@ -1,17 +1,19 @@
 package com.vmware.avi.vro;
 
+import org.json.JSONObject;
 import org.springframework.http.HttpMethod;
 
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+
 @VsoObject(create = false, name = "AviRunTimeInfo")
 @VsoFinder(name = Constants.FINDER_VRO_AVI_RUNTIME_INFO, idAccessor = "getObjectID()")
 public class AviRunTimeInfo {
 	private String url;
 	private String httpMethod;
-	private Object requestBody;
-	private Object responseBody;
+	private String requestBody;
+	private JSONObject responseBody;
 	private String httpStatuseCode;
 	
 	public String getObjectID() {
@@ -34,19 +36,19 @@ public class AviRunTimeInfo {
 		this.httpMethod = httpMethod;
 	}
 	@VsoMethod
-	public Object getRequestBody() {
+	public String getRequestBody() {
 		return requestBody;
 	}
 	@VsoMethod
-	public void setRequestBody(Object requestBody) {
+	public void setRequestBody(String requestBody) {
 		this.requestBody = requestBody;
 	}
 	@VsoMethod
-	public Object getResponseBody() {
+	public JSONObject getResponseBody() {
 		return responseBody;
 	}
 	@VsoMethod
-	public void setResponseBody(Object responseBody) {
+	public void setResponseBody(JSONObject responseBody) {
 		this.responseBody = responseBody;
 	}
 	@VsoMethod
