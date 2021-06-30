@@ -36,6 +36,10 @@ public class WafCRS extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String integrity = null;
 
+    @JsonProperty("markers")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
@@ -153,6 +157,50 @@ public class WafCRS extends AviRestResource {
   public void setIntegrity(String  integrity) {
     this.integrity = integrity;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public List<RoleFilterMatchLabel> getMarkers() {
+    return markers;
+  }
+
+  /**
+   * This is the setter method. this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+    this.markers = markers;
+  }
+
+  /**
+   * This is the setter method this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public WafCRS addMarkersItem(RoleFilterMatchLabel markersItem) {
+    if (this.markers == null) {
+      this.markers = new ArrayList<RoleFilterMatchLabel>();
+    }
+    this.markers.add(markersItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -314,7 +362,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.groups, objWafCRS.groups)&&
   Objects.equals(this.name, objWafCRS.name)&&
   Objects.equals(this.tenantRef, objWafCRS.tenantRef)&&
-  Objects.equals(this.integrity, objWafCRS.integrity);
+  Objects.equals(this.integrity, objWafCRS.integrity)&&
+  Objects.equals(this.markers, objWafCRS.markers);
 }
 
 @Override
@@ -324,6 +373,7 @@ public String toString() {
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    integrity: ").append(toIndentedString(integrity)).append("\n");
+        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

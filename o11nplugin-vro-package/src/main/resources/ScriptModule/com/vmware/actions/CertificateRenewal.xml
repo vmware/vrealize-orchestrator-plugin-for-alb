@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="CertificateRenewal"
+	result-type="string" api-version="6.0.0"
+	id="94a6e268-fe45-46c8-8f6f-373a1c05ab60" version="1.0.0"
+	allowed-operations="vfe">
+	<param n="avivroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="newcertificate" t="Text"><![CDATA[]]>
+	</param>
+	<param n="certificateName" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+//Retrieve the Certificate Object for Input certificate name
+var response = avivroClient.getObjectDataByName("sslkeyandcertificate",certificateName);
+var objectData = JSON.parse(response);
+
+//Replace certificate text with Input certificate text.
+objectData.certificate.certificate = newcertificate;
+
+
+//Execute AVI API call
+var jsonData = JSON.stringify(objectData);
+var vroClientExecution = avivroClient.callAction("sslkeyandcertificate","PUT",jsonData);
+
+
+//Error Handling
+if (vroClientExecution == true){
+
+    System.log("Certificate was successfully replaced.")
+
+}else {
+
+    throw "Certificate was NOT replaced successfully. Please validate the certificate is correct."
+    
+}
+
+]]></script>
+</dunes-script-module>

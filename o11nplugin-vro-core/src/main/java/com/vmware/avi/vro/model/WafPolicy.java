@@ -53,7 +53,11 @@ public class WafPolicy extends AviRestResource {
 
     @JsonProperty("crs_groups")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRuleGroup> crsGroups = null;
+    private List<WafRuleGroup> crsGroups;
+
+    @JsonProperty("crs_overrides")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleGroupOverrides> crsOverrides = null;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
@@ -267,10 +271,10 @@ public class WafPolicy extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Waf rules are categorized in to groups based on their characterization.
-   * These groups are system created with crs groups.
+   * This entry is deprecated.
+   * If you want to change the property of a crs group or rule (enabled, mode, exclusions), please use the crs_overrides field instead.
+   * Field deprecated in 20.1.6.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsGroups
    */
   @VsoMethod
@@ -280,10 +284,10 @@ public class WafPolicy extends AviRestResource {
 
   /**
    * This is the setter method. this will set the crsGroups
-   * Waf rules are categorized in to groups based on their characterization.
-   * These groups are system created with crs groups.
+   * This entry is deprecated.
+   * If you want to change the property of a crs group or rule (enabled, mode, exclusions), please use the crs_overrides field instead.
+   * Field deprecated in 20.1.6.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsGroups
    */
   @VsoMethod
@@ -293,10 +297,10 @@ public class WafPolicy extends AviRestResource {
 
   /**
    * This is the setter method this will set the crsGroups
-   * Waf rules are categorized in to groups based on their characterization.
-   * These groups are system created with crs groups.
+   * This entry is deprecated.
+   * If you want to change the property of a crs group or rule (enabled, mode, exclusions), please use the crs_overrides field instead.
+   * Field deprecated in 20.1.6.
    * Field introduced in 17.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return crsGroups
    */
   @VsoMethod
@@ -305,6 +309,47 @@ public class WafPolicy extends AviRestResource {
       this.crsGroups = new ArrayList<WafRuleGroup>();
     }
     this.crsGroups.add(crsGroupsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Override attributes for crs rules.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return crsOverrides
+   */
+  @VsoMethod
+  public List<WafRuleGroupOverrides> getCrsOverrides() {
+    return crsOverrides;
+  }
+
+  /**
+   * This is the setter method. this will set the crsOverrides
+   * Override attributes for crs rules.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return crsOverrides
+   */
+  @VsoMethod
+  public void setCrsOverrides(List<WafRuleGroupOverrides>  crsOverrides) {
+    this.crsOverrides = crsOverrides;
+  }
+
+  /**
+   * This is the setter method this will set the crsOverrides
+   * Override attributes for crs rules.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return crsOverrides
+   */
+  @VsoMethod
+  public WafPolicy addCrsOverridesItem(WafRuleGroupOverrides crsOverridesItem) {
+    if (this.crsOverrides == null) {
+      this.crsOverrides = new ArrayList<WafRuleGroupOverrides>();
+    }
+    this.crsOverrides.add(crsOverridesItem);
     return this;
   }
 
@@ -508,6 +553,7 @@ public class WafPolicy extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -520,6 +566,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -532,6 +579,7 @@ public class WafPolicy extends AviRestResource {
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
    * Field introduced in 20.1.5.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
    */
@@ -949,7 +997,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
   Objects.equals(this.labels, objWafPolicy.labels)&&
   Objects.equals(this.allowlist, objWafPolicy.allowlist)&&
-  Objects.equals(this.markers, objWafPolicy.markers);
+  Objects.equals(this.markers, objWafPolicy.markers)&&
+  Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides);
 }
 
 @Override
@@ -962,6 +1011,7 @@ public String toString() {
         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    crsGroups: ").append(toIndentedString(crsGroups)).append("\n");
+        sb.append("    crsOverrides: ").append(toIndentedString(crsOverrides)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");

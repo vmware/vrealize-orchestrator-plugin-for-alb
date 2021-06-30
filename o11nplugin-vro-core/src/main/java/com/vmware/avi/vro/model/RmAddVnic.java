@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class RmAddVnic extends AviRestResource {
+    @JsonProperty("mac_addr")
+    @JsonInclude(Include.NON_NULL)
+    private String macAddr = null;
+
     @JsonProperty("network_name")
     @JsonInclude(Include.NON_NULL)
     private String networkName = null;
@@ -37,6 +41,30 @@ public class RmAddVnic extends AviRestResource {
     private String subnet = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Mac_addr associated with the network.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return macAddr
+   */
+  @VsoMethod
+  public String getMacAddr() {
+    return macAddr;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Mac_addr associated with the network.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param macAddr set the macAddr.
+   */
+  @VsoMethod
+  public void setMacAddr(String  macAddr) {
+    this.macAddr = macAddr;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -117,14 +145,16 @@ public boolean equals(java.lang.Object o) {
   RmAddVnic objRmAddVnic = (RmAddVnic) o;
   return   Objects.equals(this.networkUuid, objRmAddVnic.networkUuid)&&
   Objects.equals(this.networkName, objRmAddVnic.networkName)&&
-  Objects.equals(this.subnet, objRmAddVnic.subnet);
+  Objects.equals(this.subnet, objRmAddVnic.subnet)&&
+  Objects.equals(this.macAddr, objRmAddVnic.macAddr);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class RmAddVnic {\n");
-      sb.append("    networkName: ").append(toIndentedString(networkName)).append("\n");
+      sb.append("    macAddr: ").append(toIndentedString(macAddr)).append("\n");
+        sb.append("    networkName: ").append(toIndentedString(networkName)).append("\n");
         sb.append("    networkUuid: ").append(toIndentedString(networkUuid)).append("\n");
         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
       sb.append("}");

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.NsxtClusters;
 import com.vmware.avi.vro.model.NsxtDatastores;
 import com.vmware.avi.vro.model.NsxtHosts;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -26,6 +27,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PlacementScopeConfig extends AviRestResource {
+    @JsonProperty("nsxt_clusters")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtClusters nsxtClusters = null;
+
     @JsonProperty("nsxt_datastores")
     @JsonInclude(Include.NON_NULL)
     private NsxtDatastores nsxtDatastores = null;
@@ -43,6 +48,30 @@ public class PlacementScopeConfig extends AviRestResource {
     private String vcenterRef = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of transport node clusters include or exclude.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtClusters
+   */
+  @VsoMethod
+  public NsxtClusters getNsxtClusters() {
+    return nsxtClusters;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * List of transport node clusters include or exclude.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtClusters set the nsxtClusters.
+   */
+  @VsoMethod
+  public void setNsxtClusters(NsxtClusters nsxtClusters) {
+    this.nsxtClusters = nsxtClusters;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -158,14 +187,16 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.vcenterRef, objPlacementScopeConfig.vcenterRef)&&
   Objects.equals(this.vcenterFolder, objPlacementScopeConfig.vcenterFolder)&&
   Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts)&&
-  Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores);
+  Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores)&&
+  Objects.equals(this.nsxtClusters, objPlacementScopeConfig.nsxtClusters);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PlacementScopeConfig {\n");
-      sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
+      sb.append("    nsxtClusters: ").append(toIndentedString(nsxtClusters)).append("\n");
+        sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
         sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
         sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
         sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");

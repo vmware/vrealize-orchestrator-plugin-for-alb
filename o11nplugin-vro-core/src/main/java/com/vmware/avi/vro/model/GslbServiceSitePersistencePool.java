@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class GslbServiceSitePersistencePool extends AviRestResource {
+    @JsonProperty("enable_http2")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableHttp2 = null;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
@@ -45,6 +49,30 @@ public class GslbServiceSitePersistencePool extends AviRestResource {
     private String uuid = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Site persistence pool's http2 state.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return enableHttp2
+   */
+  @VsoMethod
+  public Boolean getEnableHttp2() {
+    return enableHttp2;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Site persistence pool's http2 state.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param enableHttp2 set the enableHttp2.
+   */
+  @VsoMethod
+  public void setEnableHttp2(Boolean  enableHttp2) {
+    this.enableHttp2 = enableHttp2;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -198,14 +226,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.name, objGslbServiceSitePersistencePool.name)&&
   Objects.equals(this.numServers, objGslbServiceSitePersistencePool.numServers)&&
   Objects.equals(this.numServersUp, objGslbServiceSitePersistencePool.numServersUp)&&
-  Objects.equals(this.servers, objGslbServiceSitePersistencePool.servers);
+  Objects.equals(this.servers, objGslbServiceSitePersistencePool.servers)&&
+  Objects.equals(this.enableHttp2, objGslbServiceSitePersistencePool.enableHttp2);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GslbServiceSitePersistencePool {\n");
-      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+      sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    numServers: ").append(toIndentedString(numServers)).append("\n");
         sb.append("    numServersUp: ").append(toIndentedString(numServersUp)).append("\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");

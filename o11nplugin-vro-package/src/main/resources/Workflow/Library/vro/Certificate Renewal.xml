@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item1" object-name="workflow:name=generic"
+	id="b0af30cd-ca0b-4a7c-af03-6085fb56cd49" version="1.0.1"
+	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
+	restartMode="1" resumeFromFailedMode="0">
+	<display-name><![CDATA[Certificate Renewal]]></display-name>
+	<position y="50.0" x="100.0" />
+	<input>
+		<param name="controller" type="string" />
+		<param name="newcertificate" type="Text" />
+		<param name="certificateName" type="string" />
+	</input>
+	<attrib name="avivroClient" type="Avi:AviVroClient"
+		read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="actionResult" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<workflow-item name="item0" type="end" end-mode="0">
+		<in-binding />
+		<position y="50.0" x="495.0" />
+	</workflow-item>
+	<workflow-item name="item1" out-name="item2" type="task"
+		script-module="com.vmware.avi/getAviVroClient">
+		<display-name><![CDATA[Get vroClient]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller);
+]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="avivroClient" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="150.0" />
+	</workflow-item>
+	<workflow-item name="item2" out-name="item0" type="task"
+		script-module="com.vmware.avi/CertificateRenewal">
+		<display-name><![CDATA[Certificate Renewal]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").CertificateRenewal(avivroClient,newcertificate,certificateName);
+]]></script>
+		<in-binding>
+			<bind name="avivroClient" type="Avi:AviVroClient"
+				export-name="avivroClient" />
+			<bind name="newcertificate" type="Text"
+				export-name="newcertificate" />
+			<bind name="certificateName" type="string"
+				export-name="certificateName" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="280.0" />
+	</workflow-item>
+	<presentation />
+</workflow>

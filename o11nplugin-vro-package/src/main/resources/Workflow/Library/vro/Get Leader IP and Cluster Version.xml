@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item1" object-name="workflow:name=generic"
+	id="c96bb6be-d62e-479f-a94e-4c680958f6c4" version="1.0.1"
+	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
+	restartMode="1" resumeFromFailedMode="0">
+	<display-name><![CDATA[Get Leader IP and Cluster Version]]></display-name>
+	<position y="50.0" x="100.0" />
+	<input>
+		<param name="aviVroClient" type="Avi:AviVroClient" />
+	</input>
+	<output>
+		<param name="clusterLeader" type="string" />
+		<param name="current_version" type="string" />
+	</output>
+	<workflow-item name="item0" type="end" end-mode="0">
+		<in-binding />
+		<position y="50.0" x="300.0" />
+	</workflow-item>
+	<workflow-item name="item1" out-name="item0" type="task">
+		<display-name><![CDATA[Get Leader IP and Version]]></display-name>
+		<script encoded="false"><![CDATA[
+//Declare AVI API Object
+var myAviRunTimeInfo = new AviRunTimeInfo() ;
+myAviRunTimeInfo.setHttpMethod("GET")
+myAviRunTimeInfo.setUrl("cluster/runtime")
+
+//Start Try Catch on Run AVI API. THis will allow us to set a custom Error message on a failure.
+try {
+
+    //Run Avi API against the controller
+    myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
+    var cluster = JSON.parse(myAviRunTimeInfo.getResponseBody())
+
+} catch (e) {
+
+    throw "Please validate the provided Controller is up and run ther Workflow again. No roll backs need to be done at this point. The error received: "+e
+    
+}
+
+
+//Loop throw the nodes in the Response Output. Look for the node with Cluster Leader Role, and get MGMT IP Address.
+for (node in cluster['node_states']) {
+
+    if (cluster['node_states'][node]['role'] == "CLUSTER_LEADER") {
+
+        //System.log(cluster['node_states'][node]['mgmt_ip'])
+        var leader = cluster['node_states'][node]['mgmt_ip']
+
+    }
+}
+
+//Set MGMT IP Address to Output variable.
+var clusterLeader = leader
+
+
+
+
+//Current Avi Version
+var version = (JSON.stringify(cluster['node_info']['version']).split("(")[0]).split('"')[1]
+
+System.log(version)
+
+var current_version = version;]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+		</in-binding>
+		<out-binding>
+			<bind name="clusterLeader" type="string"
+				export-name="clusterLeader" />
+			<bind name="current_version" type="string"
+				export-name="current_version" />
+		</out-binding>
+		<description><![CDATA[Simple task with custom script capability.]]></description>
+		<position y="60.0" x="170.0" />
+	</workflow-item>
+	<presentation />
+</workflow>

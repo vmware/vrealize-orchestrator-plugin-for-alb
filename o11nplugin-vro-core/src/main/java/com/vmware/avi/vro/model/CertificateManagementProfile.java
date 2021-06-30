@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CertificateManagementProfile extends AviRestResource {
+    @JsonProperty("markers")
+    @JsonInclude(Include.NON_NULL)
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
@@ -52,6 +56,50 @@ public class CertificateManagementProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String uuid = null;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public List<RoleFilterMatchLabel> getMarkers() {
+    return markers;
+  }
+
+  /**
+   * This is the setter method. this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+    this.markers = markers;
+  }
+
+  /**
+   * This is the setter method this will set the markers
+   * List of labels to be used for granular rbac.
+   * Field introduced in 20.1.6.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return markers
+   */
+  @VsoMethod
+  public CertificateManagementProfile addMarkersItem(RoleFilterMatchLabel markersItem) {
+    if (this.markers == null) {
+      this.markers = new ArrayList<RoleFilterMatchLabel>();
+    }
+    this.markers.add(markersItem);
+    return this;
+  }
 
 
   /**
@@ -242,6 +290,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.scriptParams, objCertificateManagementProfile.scriptParams)&&
   Objects.equals(this.scriptPath, objCertificateManagementProfile.scriptPath)&&
   Objects.equals(this.runScriptRef, objCertificateManagementProfile.runScriptRef)&&
+  Objects.equals(this.markers, objCertificateManagementProfile.markers)&&
   Objects.equals(this.tenantRef, objCertificateManagementProfile.tenantRef);
 }
 
@@ -249,7 +298,8 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class CertificateManagementProfile {\n");
-      sb.append("    name: ").append(toIndentedString(name)).append("\n");
+      sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    runScriptRef: ").append(toIndentedString(runScriptRef)).append("\n");
         sb.append("    scriptParams: ").append(toIndentedString(scriptParams)).append("\n");
         sb.append("    scriptPath: ").append(toIndentedString(scriptPath)).append("\n");

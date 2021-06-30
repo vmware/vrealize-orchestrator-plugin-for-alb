@@ -28,9 +28,13 @@ public class WafApplicationSignatures extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String providerRef = null;
 
+    @JsonProperty("rule_overrides")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafRuleOverrides> ruleOverrides = null;
+
     @JsonProperty("rules")
     @JsonInclude(Include.NON_NULL)
-    private List<WafRule> rules = null;
+    private List<WafRule> rules;
 
     @JsonProperty("ruleset_version")
     @JsonInclude(Include.NON_NULL)
@@ -70,11 +74,51 @@ public class WafApplicationSignatures extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The active application specific rules.
-   * You can change attributes like enabled, waf mode and exclusions, but not the rules itself.
-   * To change the rules, you can change the tags or the rule provider.
-   * Field introduced in 20.1.1.
+   * Override attributes of application signature rules.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ruleOverrides
+   */
+  @VsoMethod
+  public List<WafRuleOverrides> getRuleOverrides() {
+    return ruleOverrides;
+  }
+
+  /**
+   * This is the setter method. this will set the ruleOverrides
+   * Override attributes of application signature rules.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ruleOverrides
+   */
+  @VsoMethod
+  public void setRuleOverrides(List<WafRuleOverrides>  ruleOverrides) {
+    this.ruleOverrides = ruleOverrides;
+  }
+
+  /**
+   * This is the setter method this will set the ruleOverrides
+   * Override attributes of application signature rules.
+   * Field introduced in 20.1.6.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ruleOverrides
+   */
+  @VsoMethod
+  public WafApplicationSignatures addRuleOverridesItem(WafRuleOverrides ruleOverridesItem) {
+    if (this.ruleOverrides == null) {
+      this.ruleOverrides = new ArrayList<WafRuleOverrides>();
+    }
+    this.ruleOverrides.add(ruleOverridesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This entry is deprecated.
+   * If you want to deactivate a certain rule, please use the rule_overrides field instead.
+   * Field deprecated in 20.1.6.
+   * Field introduced in 20.1.1.
    * @return rules
    */
   @VsoMethod
@@ -84,11 +128,10 @@ public class WafApplicationSignatures extends AviRestResource {
 
   /**
    * This is the setter method. this will set the rules
-   * The active application specific rules.
-   * You can change attributes like enabled, waf mode and exclusions, but not the rules itself.
-   * To change the rules, you can change the tags or the rule provider.
+   * This entry is deprecated.
+   * If you want to deactivate a certain rule, please use the rule_overrides field instead.
+   * Field deprecated in 20.1.6.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -98,11 +141,10 @@ public class WafApplicationSignatures extends AviRestResource {
 
   /**
    * This is the setter method this will set the rules
-   * The active application specific rules.
-   * You can change attributes like enabled, waf mode and exclusions, but not the rules itself.
-   * To change the rules, you can change the tags or the rule provider.
+   * This entry is deprecated.
+   * If you want to deactivate a certain rule, please use the rule_overrides field instead.
+   * Field deprecated in 20.1.6.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
   @VsoMethod
@@ -197,7 +239,8 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.providerRef, objWafApplicationSignatures.providerRef)&&
   Objects.equals(this.rulesetVersion, objWafApplicationSignatures.rulesetVersion)&&
   Objects.equals(this.selectedApplications, objWafApplicationSignatures.selectedApplications)&&
-  Objects.equals(this.rules, objWafApplicationSignatures.rules);
+  Objects.equals(this.rules, objWafApplicationSignatures.rules)&&
+  Objects.equals(this.ruleOverrides, objWafApplicationSignatures.ruleOverrides);
 }
 
 @Override
@@ -205,6 +248,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class WafApplicationSignatures {\n");
       sb.append("    providerRef: ").append(toIndentedString(providerRef)).append("\n");
+        sb.append("    ruleOverrides: ").append(toIndentedString(ruleOverrides)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    rulesetVersion: ").append(toIndentedString(rulesetVersion)).append("\n");
         sb.append("    selectedApplications: ").append(toIndentedString(selectedApplications)).append("\n");

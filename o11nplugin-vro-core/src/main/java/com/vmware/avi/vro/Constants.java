@@ -1,3 +1,7 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
 package com.vmware.avi.vro;
 
 public class Constants {
@@ -45,6 +49,7 @@ public class Constants {
     public static final String FINDER_VRO_ALERTTESTEMAILPARAMS = "AlertTestEmailParams";
     public static final String FINDER_VRO_ALERTTESTSYSLOGSNMPPARAMS = "AlertTestSyslogSnmpParams";
     public static final String FINDER_VRO_ALLSEUPGRADEEVENTDETAILS = "AllSeUpgradeEventDetails";
+    public static final String FINDER_VRO_ALTERNATEAUTHCONFIGURATION = "AlternateAuthConfiguration";
     public static final String FINDER_VRO_ANALYTICSPOLICY = "AnalyticsPolicy";
     public static final String FINDER_VRO_ANALYTICSPROFILE = "AnalyticsProfile";
     public static final String FINDER_VRO_ANOMALYEVENTDETAILS = "AnomalyEventDetails";
@@ -203,6 +208,8 @@ public class Constants {
     public static final String FINDER_VRO_CONTENTREWRITEPROFILE = "ContentRewriteProfile";
     public static final String FINDER_VRO_CONTROLLERCLOUDLIMITS = "ControllerCloudLimits";
     public static final String FINDER_VRO_CONTROLLERDISCONTINUOUSTIMECHANGEEVENTDETAILS = "ControllerDiscontinuousTimeChangeEventDetails";
+    public static final String FINDER_VRO_CONTROLLERFAULTS = "ControllerFaults";
+    public static final String FINDER_VRO_CONTROLLERINTERNALAUTH = "ControllerInternalAuth";
     public static final String FINDER_VRO_CONTROLLERLICENSE = "ControllerLicense";
     public static final String FINDER_VRO_CONTROLLERLICENSERECONCILEDETAILS = "ControllerLicenseReconcileDetails";
     public static final String FINDER_VRO_CONTROLLERLIMITS = "ControllerLimits";
@@ -453,6 +460,7 @@ public class Constants {
     public static final String FINDER_VRO_INFOBLOXSUBNET = "InfobloxSubnet";
     public static final String FINDER_VRO_INGATTRIBUTE = "IngAttribute";
     public static final String FINDER_VRO_INTERNALGATEWAYMONITOR = "InternalGatewayMonitor";
+    public static final String FINDER_VRO_INVENTORYFAULTCONFIG = "InventoryFaultConfig";
     public static final String FINDER_VRO_IPADDR = "IpAddr";
     public static final String FINDER_VRO_IPADDRGROUP = "IpAddrGroup";
     public static final String FINDER_VRO_IPADDRMATCH = "IpAddrMatch";
@@ -478,7 +486,6 @@ public class Constants {
     public static final String FINDER_VRO_JWSKEY = "JWSKey";
     public static final String FINDER_VRO_JWTCLAIMMATCH = "JWTClaimMatch";
     public static final String FINDER_VRO_JWTMATCH = "JWTMatch";
-    public static final String FINDER_VRO_JWTPROFILE = "JWTProfile";
     public static final String FINDER_VRO_JWTSERVERPROFILE = "JWTServerProfile";
     public static final String FINDER_VRO_JWTVALIDATIONVSCONFIG = "JWTValidationVsConfig";
     public static final String FINDER_VRO_JOBENTRY = "JobEntry";
@@ -576,6 +583,7 @@ public class Constants {
     public static final String FINDER_VRO_NETWORKSUBNETCLASH = "NetworkSubnetClash";
     public static final String FINDER_VRO_NETWORKSUBNETINFO = "NetworkSubnetInfo";
     public static final String FINDER_VRO_NSXCONFIGURATION = "NsxConfiguration";
+    public static final String FINDER_VRO_NSXTCLUSTERS = "NsxtClusters";
     public static final String FINDER_VRO_NSXTCONFIGURATION = "NsxtConfiguration";
     public static final String FINDER_VRO_NSXTCREDENTIALS = "NsxtCredentials";
     public static final String FINDER_VRO_NSXTDATASTORES = "NsxtDatastores";
@@ -833,6 +841,7 @@ public class Constants {
     public static final String FINDER_VRO_SERVICEENGINELIMITS = "ServiceEngineLimits";
     public static final String FINDER_VRO_SERVICEMATCH = "ServiceMatch";
     public static final String FINDER_VRO_SERVICEPOOLSELECTOR = "ServicePoolSelector";
+    public static final String FINDER_VRO_SERVICEENGINEFAULTS = "ServiceengineFaults";
     public static final String FINDER_VRO_SIDEBANDPROFILE = "SidebandProfile";
     public static final String FINDER_VRO_SINGLELICENSE = "SingleLicense";
     public static final String FINDER_VRO_SIPLOG = "SipLog";
@@ -966,6 +975,7 @@ public class Constants {
     public static final String FINDER_VRO_VIRTUALSERVICE = "VirtualService";
     public static final String FINDER_VRO_VIRTUALSERVICERESOURCE = "VirtualServiceResource";
     public static final String FINDER_VRO_VIRTUALSERVICERUNTIME = "VirtualServiceRuntime";
+    public static final String FINDER_VRO_VIRTUALSERVICEFAULTS = "VirtualserviceFaults";
     public static final String FINDER_VRO_VLANINTERFACE = "VlanInterface";
     public static final String FINDER_VRO_VLANRANGE = "VlanRange";
     public static final String FINDER_VRO_VRFCONTEXT = "VrfContext";
@@ -1017,8 +1027,10 @@ public class Constants {
     public static final String FINDER_VRO_WAFPROFILE = "WafProfile";
     public static final String FINDER_VRO_WAFRULE = "WafRule";
     public static final String FINDER_VRO_WAFRULEGROUP = "WafRuleGroup";
+    public static final String FINDER_VRO_WAFRULEGROUPOVERRIDES = "WafRuleGroupOverrides";
     public static final String FINDER_VRO_WAFRULELOG = "WafRuleLog";
     public static final String FINDER_VRO_WAFRULEMATCHDATA = "WafRuleMatchData";
+    public static final String FINDER_VRO_WAFRULEOVERRIDES = "WafRuleOverrides";
     public static final String FINDER_VRO_WAFWHITELISTLOG = "WafWhitelistLog";
     public static final String FINDER_VRO_WEBAPPLICATIONSIGNATURESERVICESTATUS = "WebApplicationSignatureServiceStatus";
     public static final String FINDER_VRO_WEBHOOK = "Webhook";

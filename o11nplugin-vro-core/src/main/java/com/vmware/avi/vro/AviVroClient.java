@@ -1,5 +1,6 @@
 package com.vmware.avi.vro;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -190,7 +191,7 @@ public class AviVroClient {
 	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void add(String objectType, String objectData,String workflowId, String tenant) throws AviApiException {
+	public void add(String objectType, String objectData, String workflowId, String tenant) throws AviApiException {
 		if (((null != objectType) && (!objectType.isEmpty())) && ((null != objectData) && (!objectData.isEmpty()))) {
 			JSONObject jsonObj = new JSONObject(objectData);
 			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString(),
@@ -456,6 +457,52 @@ public class AviVroClient {
 		}
 	}
 
+	/**
+	 * 
+	 * This method upload the file into the controller.
+	 * 
+	 * @param uri           is the api which upload a file
+	 * @param filePath      is file which we want to upload
+	 * @param fileUploadUri is uri where we have to upload file
+	 * @throws Exception
+	 */
+	@VsoMethod
+	public void fileUpload(String uri, String filePath, String fileUploadUri) throws Exception {
+		logger.debug("Executing fileUpload.");
+		logger.debug("uri : " + uri);
+		logger.debug("File Path : " + filePath);
+		logger.debug("File Upload Uri : " + fileUploadUri);
+		AviApi session = getSession();
+		if (uri != null && filePath != null && fileUploadUri != null) {
+			session.fileUpload(uri, filePath, fileUploadUri);
+		}
+	}	
+
+	/***
+	 * 
+	 * This method download the file from the controller.
+	 * 
+	 * @param path          is the the path from which file gets download.
+	 * @param localFilePath is a path where file needs to be download.
+	 * @param params        A map which can contains the additional values.
+	 * @return String name of the downloaded file.
+	 * @throws AviApiException
+	 * @throws IOException
+	 */
+	@VsoMethod
+	public String fileDownload(String path, String localFilePath, Map<String, String> params)
+			throws AviApiException, IOException {
+		logger.debug("Executing fileDownload...");
+		logger.debug("PATH : " + path);
+		logger.debug("Local file Path : " + localFilePath);
+		logger.debug("PARAM : " + params);
+		AviApi session = getSession();
+		if (path != null && localFilePath != null) {
+			session.fileDownload(path, localFilePath, params);
+		}
+		return localFilePath;
+	}
+
 	/****
 	 * This method will handle all HTTP methods. if its POST it will call the POST,
 	 * if its PUT it will call the PUT...and so on
@@ -471,32 +518,36 @@ public class AviVroClient {
 		if (aviObject != null) {
 			String url = aviObject.getUrl();
 			String httpMethod = aviObject.getHttpMethod();
-			ResponseEntity<Object> aviResponseEntity = null;
-			HttpEntity<Object> requestEntity = new HttpEntity<Object>(aviObject.getRequestBody(), null);
+			ResponseEntity<String> aviResponseEntity = null;
+
+			HttpEntity<String> requestEntity = null;
+			if (aviObject.getRequestBody() != null) {
+				requestEntity = new HttpEntity<String>(aviObject.getRequestBody(), null);
+			}
 			logger.info("Executing callAviAPI...");
 			switch (httpMethod) {
 			case "GET":
 				logger.debug("Executing GET Method");
-				aviResponseEntity = restTemplate.getForEntity(url, Object.class, null, null);
+				aviResponseEntity = restTemplate.getForEntity(url, String.class, null, null);
 				this.updateHttpResponse(aviObject, aviResponseEntity);
 				logger.info("GET Response : " + aviResponseEntity);
 				break;
 			case "POST":
 				logger.debug("Executing POST Method");
-				aviResponseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Object.class, null,
+				aviResponseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class, null,
 						null);
 				this.updateHttpResponse(aviObject, aviResponseEntity);
 				logger.info("POST Response : " + aviResponseEntity);
 				break;
 			case "PUT":
 				logger.debug("Executing PUT Method");
-				aviResponseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, Object.class, null, null);
+				aviResponseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, String.class, null, null);
 				this.updateHttpResponse(aviObject, aviResponseEntity);
 				logger.info("PUT Response : " + aviResponseEntity);
 				break;
 			case "DELETE":
 				logger.debug("Executing DELETE Method");
-				aviResponseEntity = restTemplate.exchange(url, HttpMethod.DELETE, null, Object.class, null, null);
+				aviResponseEntity = restTemplate.exchange(url, HttpMethod.DELETE, null, String.class, null, null);
 				this.updateHttpResponse(aviObject, aviResponseEntity);
 				logger.info("DELETE Response : " + aviResponseEntity);
 				break;
@@ -509,9 +560,11 @@ public class AviVroClient {
 	}
 
 	private void updateHttpResponse(AviRunTimeInfo runtimeInfoDto,
-			ResponseEntity<Object> albRuntimeInfoResponseEntity) {
+			ResponseEntity<String> albRuntimeInfoResponseEntity) {
 		if (albRuntimeInfoResponseEntity != null) {
-			runtimeInfoDto.setResponseBody(albRuntimeInfoResponseEntity.getBody());
+			if (albRuntimeInfoResponseEntity.getBody() != null) {
+				runtimeInfoDto.setResponseBody(new JSONObject(albRuntimeInfoResponseEntity.getBody()));
+			}
 			runtimeInfoDto.setHttpStatuseCode(albRuntimeInfoResponseEntity.getStatusCode().toString());
 		}
 	}
@@ -770,7 +823,15 @@ public class AviVroClient {
 		if ((data.has("count")) && (Integer.parseInt(data.get("count").toString()) > 0)) {
 			JSONArray objectArray = (JSONArray) data.get("results");
 			result = (JSONObject) objectArray.get(0);
+		}  
+		if(!(data.has("count"))) {
+			logger.info("Returning Data from getObjectDataByName");
+			logger.info("Existing data of " + objectType + " : " + data);
+			if (data != null) {
+				result = (JSONObject) data;
+			}
 		}
+
 		return result;
 	}
 
