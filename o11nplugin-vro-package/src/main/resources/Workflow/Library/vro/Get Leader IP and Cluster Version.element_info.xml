@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">Library.Avi</entry>
+<entry key="name">Get Leader IP and Cluster Version</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">c96bb6be-d62e-479f-a94e-4c680958f6c4</entry>
+</properties>

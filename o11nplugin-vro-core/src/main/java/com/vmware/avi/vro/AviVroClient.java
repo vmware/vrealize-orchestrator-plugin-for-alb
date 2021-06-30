@@ -468,11 +468,15 @@ public class AviVroClient {
 	 */
 	@VsoMethod
 	public void fileUpload(String uri, String filePath, String fileUploadUri) throws Exception {
+		logger.debug("Executing fileUpload.");
+		logger.debug("uri : " + uri);
+		logger.debug("File Path : " + filePath);
+		logger.debug("File Upload Uri : " + fileUploadUri);
 		AviApi session = getSession();
 		if (uri != null && filePath != null && fileUploadUri != null) {
 			session.fileUpload(uri, filePath, fileUploadUri);
 		}
-	}
+	}	
 
 	/***
 	 * 
@@ -485,8 +489,13 @@ public class AviVroClient {
 	 * @throws AviApiException
 	 * @throws IOException
 	 */
+	@VsoMethod
 	public String fileDownload(String path, String localFilePath, Map<String, String> params)
 			throws AviApiException, IOException {
+		logger.debug("Executing fileDownload...");
+		logger.debug("PATH : " + path);
+		logger.debug("Local file Path : " + localFilePath);
+		logger.debug("PARAM : " + params);
 		AviApi session = getSession();
 		if (path != null && localFilePath != null) {
 			session.fileDownload(path, localFilePath, params);
@@ -814,9 +823,15 @@ public class AviVroClient {
 		if ((data.has("count")) && (Integer.parseInt(data.get("count").toString()) > 0)) {
 			JSONArray objectArray = (JSONArray) data.get("results");
 			result = (JSONObject) objectArray.get(0);
-		}else {
-			return data;
+		}  
+		if(!(data.has("count"))) {
+			logger.info("Returning Data from getObjectDataByName");
+			logger.info("Existing data of " + objectType + " : " + data);
+			if (data != null) {
+				result = (JSONObject) data;
+			}
 		}
+
 		return result;
 	}
 

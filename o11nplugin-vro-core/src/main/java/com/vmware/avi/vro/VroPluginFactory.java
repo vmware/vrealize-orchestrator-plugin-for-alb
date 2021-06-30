@@ -86,6 +86,8 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			String controllerIp = ref.getId();
 			AviVroClient vroClient = VroPluginFactory.aviVroClientMap.get(controllerIp);
 			return vroClient;
+		case "WorkflowRuntime":
+			return new WorkflowRuntime();
 		default:
 			String location = "com.vmware.avi.vro.model." + ref.getType();
 			Class<?> cls;
