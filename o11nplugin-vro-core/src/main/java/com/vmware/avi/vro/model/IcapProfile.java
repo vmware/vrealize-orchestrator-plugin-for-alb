@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IcapNsxDefenderConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -55,6 +56,10 @@ public class IcapProfile extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
+
+    @JsonProperty("nsx_defender_config")
+    @JsonInclude(Include.NON_NULL)
+    private IcapNsxDefenderConfig nsxDefenderConfig = null;
 
     @JsonProperty("pool_group_ref")
     @JsonInclude(Include.NON_NULL)
@@ -318,6 +323,30 @@ public class IcapProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Nsxdefender specific icap configurations.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxDefenderConfig
+   */
+  @VsoMethod
+  public IcapNsxDefenderConfig getNsxDefenderConfig() {
+    return nsxDefenderConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsxdefender specific icap configurations.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxDefenderConfig set the nsxDefenderConfig.
+   */
+  @VsoMethod
+  public void setNsxDefenderConfig(IcapNsxDefenderConfig nsxDefenderConfig) {
+    this.nsxDefenderConfig = nsxDefenderConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The pool group which is used to connect to icap servers.
    * It is a reference to an object of type poolgroup.
    * Field introduced in 20.1.1.
@@ -532,7 +561,7 @@ public class IcapProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The vendor of the icap server.
-   * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
+   * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_VENDOR_OPSWAT".
    * @return vendor
@@ -545,7 +574,7 @@ public class IcapProfile extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The vendor of the icap server.
-   * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
+   * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as "ICAP_VENDOR_OPSWAT".
    * @param vendor set the vendor.
@@ -584,7 +613,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.responseTimeout, objIcapProfile.responseTimeout)&&
   Objects.equals(this.slowResponseWarningThreshold, objIcapProfile.slowResponseWarningThreshold)&&
   Objects.equals(this.failAction, objIcapProfile.failAction)&&
-  Objects.equals(this.allow204, objIcapProfile.allow204);
+  Objects.equals(this.allow204, objIcapProfile.allow204)&&
+  Objects.equals(this.nsxDefenderConfig, objIcapProfile.nsxDefenderConfig);
 }
 
 @Override
@@ -599,6 +629,7 @@ public String toString() {
         sb.append("    enablePreview: ").append(toIndentedString(enablePreview)).append("\n");
         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    nsxDefenderConfig: ").append(toIndentedString(nsxDefenderConfig)).append("\n");
         sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
         sb.append("    previewSize: ").append(toIndentedString(previewSize)).append("\n");
         sb.append("    responseTimeout: ").append(toIndentedString(responseTimeout)).append("\n");

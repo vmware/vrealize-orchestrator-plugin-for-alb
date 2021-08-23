@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getExistingServers"
+	result-type="Array/string" api-version="6.0.0"
+	id="373d5c23-ff66-483f-944c-931b89090691" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[]]>
+	</param>
+	<param n="objectName" t="string"><![CDATA[]]>
+	</param>
+	<param n="objectType" t="string"><![CDATA[]]>
+	</param>
+	<param n="field" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[try{
+	// Check the restHost is selected ot not.
+	if(controller == null){
+	  return null;
+	}
+	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
+	var aviPlugin = null;
+	for each(aviVroClient in vroClientArray){
+		if(aviVroClient != null){
+			vroController = aviVroClient.cred.controller;
+			if(vroController == controller){
+				aviPlugin = aviVroClient;
+	    	}
+  		}
+	}
+	if (aviPlugin != null){
+		var objectList = new Array();
+		var params = {};
+		if (objectName != "" || objectName != null){
+			params.name = objectName;
+		}else {
+			params = null;
+		}
+		var response = aviPlugin.get(objectType,params);
+		var objectData = JSON.parse(response);
+		var object =objectData[0];
+		if(object!=null){
+			if(field == "servers"){
+				var servers = object.servers;
+				var ServerList= new Array();
+				for each(index in servers){
+					ServerList.push(index.ip.addr)
+				}
+				System.log("ServerList : "+ServerList)
+				return ServerList;
+			}
+		}
+		else{
+			System.log("Object "+objectName+" not present on the controller") 
+		}
+	}
+}catch(e){
+	throw "Error when fetch AVI object --> "+ e
+}
+]]></script>
+</dunes-script-module>

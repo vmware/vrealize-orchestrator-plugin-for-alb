@@ -9,6 +9,7 @@ import com.vmware.avi.vro.model.CaptureFilters;
 import com.vmware.avi.vro.model.DebugVirtualServiceCapture;
 import com.vmware.avi.vro.model.DebugIpAddr;
 import com.vmware.avi.vro.model.DebugDnsOptions;
+import com.vmware.avi.vro.model.CaptureFilters;
 import com.vmware.avi.vro.model.DebugVirtualServiceObjSync;
 import com.vmware.avi.vro.model.DebugVirtualServiceSeParams;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -61,6 +62,10 @@ public class DebugVirtualService extends AviRestResource {
     @JsonProperty("flags")
     @JsonInclude(Include.NON_NULL)
     private List<DebugVsDataplane> flags = null;
+
+    @JsonProperty("latency_audit_filters")
+    @JsonInclude(Include.NON_NULL)
+    private CaptureFilters latencyAuditFilters = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -294,6 +299,32 @@ public class DebugVirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Filters for latency audit.
+   * Supported only for ingress.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return latencyAuditFilters
+   */
+  @VsoMethod
+  public CaptureFilters getLatencyAuditFilters() {
+    return latencyAuditFilters;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Filters for latency audit.
+   * Supported only for ingress.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param latencyAuditFilters set the latencyAuditFilters.
+   */
+  @VsoMethod
+  public void setLatencyAuditFilters(CaptureFilters latencyAuditFilters) {
+    this.latencyAuditFilters = latencyAuditFilters;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Name of the object.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return name
@@ -476,7 +507,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.objsync, objDebugVirtualService.objsync)&&
   Objects.equals(this.tenantRef, objDebugVirtualService.tenantRef)&&
   Objects.equals(this.cloudRef, objDebugVirtualService.cloudRef)&&
-  Objects.equals(this.resyncFlows, objDebugVirtualService.resyncFlows);
+  Objects.equals(this.resyncFlows, objDebugVirtualService.resyncFlows)&&
+  Objects.equals(this.latencyAuditFilters, objDebugVirtualService.latencyAuditFilters);
 }
 
 @Override
@@ -491,6 +523,7 @@ public String toString() {
         sb.append("    debugIp: ").append(toIndentedString(debugIp)).append("\n");
         sb.append("    dnsOptions: ").append(toIndentedString(dnsOptions)).append("\n");
         sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
+        sb.append("    latencyAuditFilters: ").append(toIndentedString(latencyAuditFilters)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    objsync: ").append(toIndentedString(objsync)).append("\n");
         sb.append("    resyncFlows: ").append(toIndentedString(resyncFlows)).append("\n");

@@ -7,10 +7,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.AppSignatureConfig;
 import com.vmware.avi.vro.model.ALBServicesUser;
+import com.vmware.avi.vro.model.CaseConfig;
 import com.vmware.avi.vro.model.PortalFeatureOptIn;
 import com.vmware.avi.vro.model.IpReputationConfig;
 import com.vmware.avi.vro.model.ProactiveSupportDefaults;
 import com.vmware.avi.vro.model.ProxyConfiguration;
+import com.vmware.avi.vro.model.UserAgentDBConfig;
+import com.vmware.avi.vro.model.WafCrsConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -38,6 +41,10 @@ public class ALBServicesConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private ALBServicesUser assetContact = null;
 
+    @JsonProperty("case_config")
+    @JsonInclude(Include.NON_NULL)
+    private CaseConfig caseConfig = null;
+
     @JsonProperty("feature_opt_in_status")
     @JsonInclude(Include.NON_NULL)
     private PortalFeatureOptIn featureOptInStatus = null;
@@ -60,7 +67,7 @@ public class ALBServicesConfig extends AviRestResource {
 
     @JsonProperty("proactive_support_defaults")
     @JsonInclude(Include.NON_NULL)
-    private ProactiveSupportDefaults proactiveSupportDefaults = null;
+    private ProactiveSupportDefaults proactiveSupportDefaults;
 
     @JsonProperty("split_proxy_configuration")
     @JsonInclude(Include.NON_NULL)
@@ -78,9 +85,17 @@ public class ALBServicesConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean useTls = true;
 
+    @JsonProperty("user_agent_db_config")
+    @JsonInclude(Include.NON_NULL)
+    private UserAgentDBConfig userAgentDbConfig = null;
+
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
     private String uuid = null;
+
+    @JsonProperty("waf_config")
+    @JsonInclude(Include.NON_NULL)
+    private WafCrsConfig wafConfig = null;
 
 
 
@@ -132,6 +147,32 @@ public class ALBServicesConfig extends AviRestResource {
   @VsoMethod
   public void setAssetContact(ALBServicesUser assetContact) {
     this.assetContact = assetContact;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Default values to be used for pulse case management.
+   * Field introduced in 21.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return caseConfig
+   */
+  @VsoMethod
+  public CaseConfig getCaseConfig() {
+    return caseConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Default values to be used for pulse case management.
+   * Field introduced in 21.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param caseConfig set the caseConfig.
+   */
+  @VsoMethod
+  public void setCaseConfig(CaseConfig caseConfig) {
+    this.caseConfig = caseConfig;
   }
 
   /**
@@ -264,9 +305,9 @@ public class ALBServicesConfig extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Default values to be used during proactive case creation and techsupport attachment.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return proactiveSupportDefaults
    */
   @VsoMethod
@@ -276,9 +317,9 @@ public class ALBServicesConfig extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Default values to be used during proactive case creation and techsupport attachment.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param proactiveSupportDefaults set the proactiveSupportDefaults.
    */
   @VsoMethod
@@ -357,6 +398,7 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Secure the controller to pulse communication over tls.
    * Field introduced in 20.1.3.
+   * Allowed in basic edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return useTls
    */
@@ -369,12 +411,39 @@ public class ALBServicesConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Secure the controller to pulse communication over tls.
    * Field introduced in 20.1.3.
+   * Allowed in basic edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param useTls set the useTls.
    */
   @VsoMethod
   public void setUseTls(Boolean  useTls) {
     this.useTls = useTls;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Default values to be used for user agent db service.
+   * Field introduced in 21.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return userAgentDbConfig
+   */
+  @VsoMethod
+  public UserAgentDBConfig getUserAgentDbConfig() {
+    return userAgentDbConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Default values to be used for user agent db service.
+   * Field introduced in 21.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param userAgentDbConfig set the userAgentDbConfig.
+   */
+  @VsoMethod
+  public void setUserAgentDbConfig(UserAgentDBConfig userAgentDbConfig) {
+    this.userAgentDbConfig = userAgentDbConfig;
   }
 
   /**
@@ -397,6 +466,32 @@ public class ALBServicesConfig extends AviRestResource {
   @VsoMethod
   public void setUuid(String  uuid) {
     this.uuid = uuid;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Default values to be used for pulse waf management.
+   * Field introduced in 21.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return wafConfig
+   */
+  @VsoMethod
+  public WafCrsConfig getWafConfig() {
+    return wafConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Default values to be used for pulse waf management.
+   * Field introduced in 21.1.1.
+   * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param wafConfig set the wafConfig.
+   */
+  @VsoMethod
+  public void setWafConfig(WafCrsConfig wafConfig) {
+    this.wafConfig = wafConfig;
   }
 
 
@@ -424,7 +519,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ipReputationConfig, objALBServicesConfig.ipReputationConfig)&&
   Objects.equals(this.useTls, objALBServicesConfig.useTls)&&
   Objects.equals(this.mode, objALBServicesConfig.mode)&&
-  Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig);
+  Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig)&&
+  Objects.equals(this.userAgentDbConfig, objALBServicesConfig.userAgentDbConfig)&&
+  Objects.equals(this.wafConfig, objALBServicesConfig.wafConfig)&&
+  Objects.equals(this.caseConfig, objALBServicesConfig.caseConfig);
 }
 
 @Override
@@ -433,6 +531,7 @@ public String toString() {
   sb.append("class ALBServicesConfig {\n");
       sb.append("    appSignatureConfig: ").append(toIndentedString(appSignatureConfig)).append("\n");
         sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
+        sb.append("    caseConfig: ").append(toIndentedString(caseConfig)).append("\n");
         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
@@ -442,7 +541,9 @@ public String toString() {
         sb.append("    splitProxyConfiguration: ").append(toIndentedString(splitProxyConfiguration)).append("\n");
             sb.append("    useSplitProxy: ").append(toIndentedString(useSplitProxy)).append("\n");
         sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");
+        sb.append("    userAgentDbConfig: ").append(toIndentedString(userAgentDbConfig)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+        sb.append("    wafConfig: ").append(toIndentedString(wafConfig)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -145,15 +145,15 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("log_agent_conn_send_buffer_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer logAgentConnSendBufferSize = 16384;
+    private Integer logAgentConnSendBufferSize;
 
     @JsonProperty("log_agent_export_msg_buffer_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer logAgentExportMsgBufferSize = 524288;
+    private Integer logAgentExportMsgBufferSize;
 
     @JsonProperty("log_agent_export_wait_time")
     @JsonInclude(Include.NON_NULL)
-    private Integer logAgentExportWaitTime = 100;
+    private Integer logAgentExportWaitTime;
 
     @JsonProperty("log_agent_file_sz_appl")
     @JsonInclude(Include.NON_NULL)
@@ -177,7 +177,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("log_agent_max_active_adf_files_per_vs")
     @JsonInclude(Include.NON_NULL)
-    private Integer logAgentMaxActiveAdfFilesPerVs = 100;
+    private Integer logAgentMaxActiveAdfFilesPerVs;
 
     @JsonProperty("log_agent_max_concurrent_rsync")
     @JsonInclude(Include.NON_NULL)
@@ -185,7 +185,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("log_agent_max_logmessage_proto_sz")
     @JsonInclude(Include.NON_NULL)
-    private Integer logAgentMaxLogmessageProtoSz = 65536;
+    private Integer logAgentMaxLogmessageProtoSz;
 
     @JsonProperty("log_agent_max_storage_excess_percent")
     @JsonInclude(Include.NON_NULL)
@@ -201,7 +201,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("log_agent_pause_interval")
     @JsonInclude(Include.NON_NULL)
-    private Integer logAgentPauseInterval = 0;
+    private Integer logAgentPauseInterval;
 
     @JsonProperty("log_agent_sleep_interval")
     @JsonInclude(Include.NON_NULL)
@@ -221,11 +221,11 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("mcache_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean mcacheEnabled = null;
+    private Boolean mcacheEnabled;
 
     @JsonProperty("mcache_fetch_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean mcacheFetchEnabled = null;
+    private Boolean mcacheFetchEnabled;
 
     @JsonProperty("mcache_max_cache_size")
     @JsonInclude(Include.NON_NULL)
@@ -233,19 +233,19 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("mcache_store_in_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean mcacheStoreInEnabled = null;
+    private Boolean mcacheStoreInEnabled;
 
     @JsonProperty("mcache_store_in_max_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer mcacheStoreInMaxSize = null;
+    private Integer mcacheStoreInMaxSize;
 
     @JsonProperty("mcache_store_in_min_size")
     @JsonInclude(Include.NON_NULL)
-    private Integer mcacheStoreInMinSize = null;
+    private Integer mcacheStoreInMinSize;
 
     @JsonProperty("mcache_store_out_enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean mcacheStoreOutEnabled = null;
+    private Boolean mcacheStoreOutEnabled;
 
     @JsonProperty("mcache_store_se_max_size")
     @JsonInclude(Include.NON_NULL)
@@ -397,7 +397,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("spdy_fwd_proxy_parse_enable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean spdyFwdProxyParseEnable = true;
+    private Boolean spdyFwdProxyParseEnable;
 
     @JsonProperty("tcp_syn_cache_max")
     @JsonInclude(Include.NON_NULL)
@@ -445,7 +445,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
     @JsonProperty("upstream_connpool_strategy")
     @JsonInclude(Include.NON_NULL)
-    private Integer upstreamConnpoolStrategy = -1;
+    private Integer upstreamConnpoolStrategy;
 
     @JsonProperty("upstream_keepalive")
     @JsonInclude(Include.NON_NULL)
@@ -1155,6 +1155,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Flag to indicate if log files are compressed upon full on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return logAgentCompressLogs
@@ -1166,6 +1167,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Flag to indicate if log files are compressed upon full on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param logAgentCompressLogs set the logAgentCompressLogs.
@@ -1177,9 +1179,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Log-agent test property used to simulate slow tcp connections.
-   * Unit is bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
+   * [deprecated]log-agent test property used to simulate slow tcp connections.
+   * Field deprecated in 21.1.1.
    * @return logAgentConnSendBufferSize
    */
   @VsoMethod
@@ -1189,9 +1190,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Log-agent test property used to simulate slow tcp connections.
-   * Unit is bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
+   * [deprecated]log-agent test property used to simulate slow tcp connections.
+   * Field deprecated in 21.1.1.
    * @param logAgentConnSendBufferSize set the logAgentConnSendBufferSize.
    */
   @VsoMethod
@@ -1201,9 +1201,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum size of data sent by log-agent to controller over the tcp connection.
-   * Unit is bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
+   * [deprecated]maximum size of data sent by log-agent to controller over the tcp connection.
+   * Field deprecated in 21.1.1.
    * @return logAgentExportMsgBufferSize
    */
   @VsoMethod
@@ -1213,9 +1212,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum size of data sent by log-agent to controller over the tcp connection.
-   * Unit is bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
+   * [deprecated]maximum size of data sent by log-agent to controller over the tcp connection.
+   * Field deprecated in 21.1.1.
    * @param logAgentExportMsgBufferSize set the logAgentExportMsgBufferSize.
    */
   @VsoMethod
@@ -1225,9 +1223,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time log-agent waits before sending data to the controller.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * [deprecated]time log-agent waits before sending data to the controller.
+   * Field deprecated in 21.1.1.
    * @return logAgentExportWaitTime
    */
   @VsoMethod
@@ -1237,9 +1234,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time log-agent waits before sending data to the controller.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * [deprecated]time log-agent waits before sending data to the controller.
+   * Field deprecated in 21.1.1.
    * @param logAgentExportWaitTime set the logAgentExportWaitTime.
    */
   @VsoMethod
@@ -1249,6 +1245,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum application log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzAppl
@@ -1260,6 +1257,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum application log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzAppl set the logAgentFileSzAppl.
@@ -1271,6 +1269,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum connection log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzConn
@@ -1282,6 +1281,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum connection log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzConn set the logAgentFileSzConn.
@@ -1293,6 +1293,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum debug log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzDebug
@@ -1304,6 +1305,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum debug log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzDebug set the logAgentFileSzDebug.
@@ -1315,6 +1317,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum event log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @return logAgentFileSzEvent
@@ -1326,6 +1329,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum event log file size before rollover.
    * Default value when not specified in API or module is interpreted by Avi Controller as 4.
    * @param logAgentFileSzEvent set the logAgentFileSzEvent.
@@ -1337,6 +1341,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Minimum storage allocated for logs irrespective of memory and cores.
    * Unit is mb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
@@ -1349,6 +1354,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Minimum storage allocated for logs irrespective of memory and cores.
    * Unit is mb.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
@@ -1361,8 +1367,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum number of virtual service log files maintained for significant logs on the service engine.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * [deprecated] maximum number of virtual service log files maintained for significant logs on the service engine.
+   * Field deprecated in 21.1.1.
    * @return logAgentMaxActiveAdfFilesPerVs
    */
   @VsoMethod
@@ -1372,8 +1378,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum number of virtual service log files maintained for significant logs on the service engine.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * [deprecated] maximum number of virtual service log files maintained for significant logs on the service engine.
+   * Field deprecated in 21.1.1.
    * @param logAgentMaxActiveAdfFilesPerVs set the logAgentMaxActiveAdfFilesPerVs.
    */
   @VsoMethod
@@ -1383,6 +1389,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum concurrent rsync requests initiated from log-agent to the controller.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @return logAgentMaxConcurrentRsync
@@ -1394,6 +1401,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum concurrent rsync requests initiated from log-agent to the controller.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
    * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
@@ -1405,8 +1413,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum size of serialized log message on the service engine.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
+   * [deprecated] maximum size of serialized log message on the service engine.
+   * Field deprecated in 21.1.1.
    * @return logAgentMaxLogmessageProtoSz
    */
   @VsoMethod
@@ -1416,8 +1424,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Maximum size of serialized log message on the service engine.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
+   * [deprecated] maximum size of serialized log message on the service engine.
+   * Field deprecated in 21.1.1.
    * @param logAgentMaxLogmessageProtoSz set the logAgentMaxLogmessageProtoSz.
    */
   @VsoMethod
@@ -1427,6 +1435,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as 110.
    * @return logAgentMaxStorageExcessPercent
@@ -1438,6 +1447,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as 110.
    * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
@@ -1449,6 +1459,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum storage on the disk not allocated for logs on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
    * @return logAgentMaxStorageIgnorePercent
@@ -1460,6 +1471,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum storage on the disk not allocated for logs on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
    * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
@@ -1471,6 +1483,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Minimum storage allocated to any given virtualservice on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return logAgentMinStoragePerVs
@@ -1482,6 +1495,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Minimum storage allocated to any given virtualservice on the service engine.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
@@ -1493,9 +1507,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time interval log-agent pauses between logs obtained from the dataplane.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * [deprecated]time interval log-agent pauses between logs obtained from the dataplane.
+   * Field deprecated in 21.1.1.
    * @return logAgentPauseInterval
    */
   @VsoMethod
@@ -1505,9 +1518,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time interval log-agent pauses between logs obtained from the dataplane.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * [deprecated]time interval log-agent pauses between logs obtained from the dataplane.
+   * Field deprecated in 21.1.1.
    * @param logAgentPauseInterval set the logAgentPauseInterval.
    */
   @VsoMethod
@@ -1517,6 +1529,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -1529,6 +1542,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -1541,6 +1555,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Timeout to purge unknown virtual service logs from the service engine.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
@@ -1553,6 +1568,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Timeout to purge unknown virtual service logs from the service engine.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
@@ -1565,6 +1581,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Maximum number of file names in a log message.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @return logMessageMaxFileListSize
@@ -1576,6 +1593,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Maximum number of file names in a log message.
    * Default value when not specified in API or module is interpreted by Avi Controller as 64.
    * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
@@ -1611,8 +1629,9 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enables mcache - controls fetch/store/store_out.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Deprecated in 21.1.1.
+   * Use enabled under caching in application profile.
+   * Field deprecated in 21.1.1.
    * @return mcacheEnabled
    */
   @VsoMethod
@@ -1622,8 +1641,9 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enables mcache - controls fetch/store/store_out.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Deprecated in 21.1.1.
+   * Use enabled under caching in application profile.
+   * Field deprecated in 21.1.1.
    * @param mcacheEnabled set the mcacheEnabled.
    */
   @VsoMethod
@@ -1634,7 +1654,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache_fetch.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return mcacheFetchEnabled
    */
   @VsoMethod
@@ -1645,7 +1665,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache_fetch.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param mcacheFetchEnabled set the mcacheFetchEnabled.
    */
   @VsoMethod
@@ -1678,7 +1698,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache_store.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return mcacheStoreInEnabled
    */
   @VsoMethod
@@ -1689,7 +1709,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache_store.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param mcacheStoreInEnabled set the mcacheStoreInEnabled.
    */
   @VsoMethod
@@ -1699,8 +1719,9 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Max object size.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Deprecated in 21.1.1.
+   * Use max_object_size under caching in application profile.
+   * Field deprecated in 21.1.1.
    * @return mcacheStoreInMaxSize
    */
   @VsoMethod
@@ -1710,8 +1731,9 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Max object size.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Deprecated in 21.1.1.
+   * Use max_object_size under caching in application profile.
+   * Field deprecated in 21.1.1.
    * @param mcacheStoreInMaxSize set the mcacheStoreInMaxSize.
    */
   @VsoMethod
@@ -1721,8 +1743,9 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Min object size.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Deprecated in 21.1.1.
+   * Use min_object_size under caching in application profile.
+   * Field deprecated in 21.1.1.
    * @return mcacheStoreInMinSize
    */
   @VsoMethod
@@ -1732,8 +1755,9 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Min object size.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Deprecated in 21.1.1.
+   * Use min_object_size under caching in application profile.
+   * Field deprecated in 21.1.1.
    * @param mcacheStoreInMinSize set the mcacheStoreInMinSize.
    */
   @VsoMethod
@@ -1744,7 +1768,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Enables mcache_store_out.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return mcacheStoreOutEnabled
    */
   @VsoMethod
@@ -1755,7 +1779,7 @@ public class SeRuntimeProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Enables mcache_store_out.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param mcacheStoreOutEnabled set the mcacheStoreOutEnabled.
    */
   @VsoMethod
@@ -2113,6 +2137,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
    * Default value when not specified in API or module is interpreted by Avi Controller as 70.
    * @return seDpLogNfEnqueuePercent
@@ -2124,6 +2149,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
    * Default value when not specified in API or module is interpreted by Avi Controller as 70.
    * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
@@ -2135,6 +2161,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @return seDpLogUdfEnqueuePercent
@@ -2146,6 +2173,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
    * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
    * Default value when not specified in API or module is interpreted by Avi Controller as 90.
    * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.
@@ -2671,8 +2699,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property spdy_fwd_proxy_parse_enable of obj type seruntimeproperties field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Field deprecated in 21.1.1.
    * @return spdyFwdProxyParseEnable
    */
   @VsoMethod
@@ -2682,8 +2709,7 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property spdy_fwd_proxy_parse_enable of obj type seruntimeproperties field type str  type boolean.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Field deprecated in 21.1.1.
    * @param spdyFwdProxyParseEnable set the spdyFwdProxyParseEnable.
    */
   @VsoMethod
@@ -2941,8 +2967,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property upstream_connpool_strategy of obj type seruntimeproperties field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+   * Deprecated in 21.1.1, set in application profile.
+   * Field deprecated in 21.1.1.
    * @return upstreamConnpoolStrategy
    */
   @VsoMethod
@@ -2952,8 +2978,8 @@ public class SeRuntimeProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property upstream_connpool_strategy of obj type seruntimeproperties field type str  type integer.
-   * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+   * Deprecated in 21.1.1, set in application profile.
+   * Field deprecated in 21.1.1.
    * @param upstreamConnpoolStrategy set the upstreamConnpoolStrategy.
    */
   @VsoMethod

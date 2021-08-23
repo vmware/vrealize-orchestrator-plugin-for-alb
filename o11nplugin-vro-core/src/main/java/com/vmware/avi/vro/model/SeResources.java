@@ -172,7 +172,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Indicates the number of datapath processes spawned.
+   * Indicates the number of active datapath processes.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numDatapathProcesses
@@ -184,7 +184,7 @@ public class SeResources extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Indicates the number of datapath processes spawned.
+   * Indicates the number of active datapath processes.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numDatapathProcesses set the numDatapathProcesses.

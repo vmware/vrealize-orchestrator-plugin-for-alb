@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dunes-script-module name="getPort" result-type="number" api-version="6.0.0" id="12989189-7a07-4df9-a5fd-4cebaae1b72f" allowed-operations="vfe" version="0.0.1">
-  <param n="controller" t="string"></param>
-  <param n="objectName" t="string"></param>
-  <param n="objectType" t="string"></param>
-  <script encoded="false"><![CDATA[try{
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="getPort"
+	result-type="number" api-version="6.0.0"
+	id="6cc788cc-401b-4e96-8772-0f641cbf0567" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[]]>
+	</param>
+	<param n="objectName" t="string"><![CDATA[]]>
+	</param>
+	<param n="objectType" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[try{
 	// Check the restHost is selected ot not.
 	if(controller == null){
 	  return null;
