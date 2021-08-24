@@ -386,7 +386,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health monitor for imap.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imapMonitor
    */
@@ -398,7 +398,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health monitor for imap.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imapMonitor set the imapMonitor.
    */
@@ -410,7 +410,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health monitor for imaps.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return imapsMonitor
    */
@@ -422,7 +422,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health monitor for imaps.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param imapsMonitor set the imapsMonitor.
    */
@@ -558,7 +558,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health monitor for pop3.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pop3Monitor
    */
@@ -570,7 +570,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health monitor for pop3.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pop3Monitor set the pop3Monitor.
    */
@@ -582,7 +582,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health monitor for pop3s.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return pop3sMonitor
    */
@@ -594,7 +594,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health monitor for pop3s.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param pop3sMonitor set the pop3sMonitor.
    */
@@ -714,7 +714,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health monitor for smtp.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return smtpMonitor
    */
@@ -726,7 +726,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health monitor for smtp.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param smtpMonitor set the smtpMonitor.
    */
@@ -738,7 +738,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Health monitor for smtps.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return smtpsMonitor
    */
@@ -750,7 +750,7 @@ public class HealthMonitor extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Health monitor for smtps.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param smtpsMonitor set the smtpsMonitor.
    */

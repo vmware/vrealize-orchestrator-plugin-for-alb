@@ -261,7 +261,6 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure ping based heartbeat check for gateway in service engines of vrf.
-   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -273,7 +272,6 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method. this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
-   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */
@@ -285,7 +283,6 @@ public class VrfContext extends AviRestResource {
   /**
    * This is the setter method this will set the gatewayMon
    * Configure ping based heartbeat check for gateway in service engines of vrf.
-   * Maximum of 32 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gatewayMon
    */

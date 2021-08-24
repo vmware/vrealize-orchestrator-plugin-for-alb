@@ -26,30 +26,29 @@ import org.springframework.stereotype.Service;
 public class Cif extends AviRestResource {
     @JsonProperty("adapter")
     @JsonInclude(Include.NON_NULL)
-    private String adapter = null;
+    private String adapter;
 
     @JsonProperty("cif")
     @JsonInclude(Include.NON_NULL)
-    private String cif = null;
+    private String cif;
 
     @JsonProperty("mac_address")
     @JsonInclude(Include.NON_NULL)
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("resources")
     @JsonInclude(Include.NON_NULL)
-    private List<String> resources = null;
+    private List<String> resources;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String seUuid;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property adapter of obj type cif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return adapter
    */
   @VsoMethod
@@ -59,8 +58,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property adapter of obj type cif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param adapter set the adapter.
    */
   @VsoMethod
@@ -70,8 +68,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cif of obj type cif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return cif
    */
   @VsoMethod
@@ -81,8 +78,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property cif of obj type cif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param cif set the cif.
    */
   @VsoMethod
@@ -92,8 +88,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property mac_address of obj type cif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return macAddress
    */
   @VsoMethod
@@ -103,8 +98,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property mac_address of obj type cif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param macAddress set the macAddress.
    */
   @VsoMethod
@@ -114,8 +108,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property resources of obj type cif field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return resources
    */
   @VsoMethod
@@ -125,8 +118,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the setter method. this will set the resources
-   * Placeholder for description of property resources of obj type cif field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return resources
    */
   @VsoMethod
@@ -136,8 +128,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the setter method this will set the resources
-   * Placeholder for description of property resources of obj type cif field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return resources
    */
   @VsoMethod
@@ -152,8 +143,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Unique object identifier of se.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return seUuid
    */
   @VsoMethod
@@ -163,8 +153,7 @@ public class Cif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Unique object identifier of se.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param seUuid set the seUuid.
    */
   @VsoMethod

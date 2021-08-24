@@ -9,6 +9,7 @@ import com.vmware.avi.vro.model.AlertMgrDebugFilter;
 import com.vmware.avi.vro.model.AutoScaleMgrDebugFilter;
 import com.vmware.avi.vro.model.CloudConnectorDebugFilter;
 import com.vmware.avi.vro.model.HSMgrDebugFilter;
+import com.vmware.avi.vro.model.LogManagerDebugFilter;
 import com.vmware.avi.vro.model.MesosMetricsDebugFilter;
 import com.vmware.avi.vro.model.MetricsMgrDebugFilter;
 import com.vmware.avi.vro.model.MetricsApiSrvDebugFilter;
@@ -51,6 +52,10 @@ public class DebugFilterUnion extends AviRestResource {
     @JsonProperty("hs_debug_filter")
     @JsonInclude(Include.NON_NULL)
     private HSMgrDebugFilter hsDebugFilter = null;
+
+    @JsonProperty("logmanager_debug_filter")
+    @JsonInclude(Include.NON_NULL)
+    private LogManagerDebugFilter logmanagerDebugFilter = null;
 
     @JsonProperty("mesos_metrics_debug_filter")
     @JsonInclude(Include.NON_NULL)
@@ -176,6 +181,30 @@ public class DebugFilterUnion extends AviRestResource {
   @VsoMethod
   public void setHsDebugFilter(HSMgrDebugFilter hsDebugFilter) {
     this.hsDebugFilter = hsDebugFilter;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Add filter to log manager debug.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return logmanagerDebugFilter
+   */
+  @VsoMethod
+  public LogManagerDebugFilter getLogmanagerDebugFilter() {
+    return logmanagerDebugFilter;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Add filter to log manager debug.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param logmanagerDebugFilter set the logmanagerDebugFilter.
+   */
+  @VsoMethod
+  public void setLogmanagerDebugFilter(LogManagerDebugFilter logmanagerDebugFilter) {
+    this.logmanagerDebugFilter = logmanagerDebugFilter;
   }
 
   /**
@@ -409,7 +438,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.stateCacheMgrDebugFilter, objDebugFilterUnion.stateCacheMgrDebugFilter)&&
   Objects.equals(this.seRpcProxyFilter, objDebugFilterUnion.seRpcProxyFilter)&&
   Objects.equals(this.metricsapiSrvDebugFilter, objDebugFilterUnion.metricsapiSrvDebugFilter)&&
-  Objects.equals(this.securitymgrDebugFilter, objDebugFilterUnion.securitymgrDebugFilter);
+  Objects.equals(this.securitymgrDebugFilter, objDebugFilterUnion.securitymgrDebugFilter)&&
+  Objects.equals(this.logmanagerDebugFilter, objDebugFilterUnion.logmanagerDebugFilter);
 }
 
 @Override
@@ -420,6 +450,7 @@ public String toString() {
         sb.append("    autoscaleMgrDebugFilter: ").append(toIndentedString(autoscaleMgrDebugFilter)).append("\n");
         sb.append("    cloudConnectorDebugFilter: ").append(toIndentedString(cloudConnectorDebugFilter)).append("\n");
         sb.append("    hsDebugFilter: ").append(toIndentedString(hsDebugFilter)).append("\n");
+        sb.append("    logmanagerDebugFilter: ").append(toIndentedString(logmanagerDebugFilter)).append("\n");
         sb.append("    mesosMetricsDebugFilter: ").append(toIndentedString(mesosMetricsDebugFilter)).append("\n");
         sb.append("    metricsDebugFilter: ").append(toIndentedString(metricsDebugFilter)).append("\n");
         sb.append("    metricsapiSrvDebugFilter: ").append(toIndentedString(metricsapiSrvDebugFilter)).append("\n");

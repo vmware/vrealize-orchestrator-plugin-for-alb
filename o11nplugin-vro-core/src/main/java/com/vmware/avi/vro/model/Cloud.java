@@ -42,11 +42,11 @@ import org.springframework.stereotype.Service;
 public class Cloud extends AviRestResource {
     @JsonProperty("apic_configuration")
     @JsonInclude(Include.NON_NULL)
-    private APICConfiguration apicConfiguration = null;
+    private APICConfiguration apicConfiguration;
 
     @JsonProperty("apic_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean apicMode = false;
+    private Boolean apicMode;
 
     @JsonProperty("autoscale_polling_interval")
     @JsonInclude(Include.NON_NULL)
@@ -142,7 +142,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("nsx_configuration")
     @JsonInclude(Include.NON_NULL)
-    private NsxConfiguration nsxConfiguration = null;
+    private NsxConfiguration nsxConfiguration;
 
     @JsonProperty("nsxt_configuration")
     @JsonInclude(Include.NON_NULL)
@@ -212,8 +212,7 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return apicConfiguration
    */
   @VsoMethod
@@ -223,8 +222,7 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param apicConfiguration set the apicConfiguration.
    */
   @VsoMethod
@@ -234,8 +232,8 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Field deprecated in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return apicMode
    */
   @VsoMethod
@@ -245,8 +243,8 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Field deprecated in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param apicMode set the apicMode.
    */
   @VsoMethod
@@ -854,8 +852,8 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configuration parameters for nsx manager.
+   * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxConfiguration
    */
   @VsoMethod
@@ -866,8 +864,8 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configuration parameters for nsx manager.
+   * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxConfiguration set the nsxConfiguration.
    */
   @VsoMethod
@@ -1195,7 +1193,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This deployment is vmware on aws cloud.
-   * Field introduced in 20.1.5.
+   * Field introduced in 20.1.5, 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return vmcDeployment
    */
@@ -1207,7 +1205,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This deployment is vmware on aws cloud.
-   * Field introduced in 20.1.5.
+   * Field introduced in 20.1.5, 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param vmcDeployment set the vmcDeployment.
    */

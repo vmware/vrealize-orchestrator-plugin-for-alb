@@ -1,6 +1,5 @@
 package com.vmware.avi.vro;
 
-
 import org.springframework.stereotype.Service;
 
 import com.vmware.o11n.plugin.sdk.annotation.VsoConstructor;
@@ -21,27 +20,32 @@ import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
 public class WorkflowRuntime {
 	private AviVroClient aviVroClient;
 	private String workflowId;
-	
+
 	public String getObjectID() {
-		return this.workflowId;
+		if (this.workflowId != null) {
+			return this.workflowId;
+		}
+		return "workflowID";
 	}
-	
+
 	@VsoMethod
 	public AviVroClient getAviVroClient() {
 		return aviVroClient;
 	}
+
 	@VsoMethod
 	public void setAviVroClient(AviVroClient aviVroClient) {
 		this.aviVroClient = aviVroClient;
 	}
+
 	@VsoMethod
 	public String getWorkflowId() {
 		return workflowId;
 	}
+
 	@VsoMethod
 	public void setWorkflowId(String workflowId) {
 		this.workflowId = workflowId;
 	}
-	
-	
+
 }

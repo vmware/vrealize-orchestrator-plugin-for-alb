@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IcapNSXDefenderLog;
+import com.vmware.avi.vro.model.IcapOPSWATLog;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -77,6 +79,14 @@ public class IcapRequestLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer modifiedContentLength = null;
 
+    @JsonProperty("nsx_defender_log")
+    @JsonInclude(Include.NON_NULL)
+    private IcapNSXDefenderLog nsxDefenderLog = null;
+
+    @JsonProperty("opswat_log")
+    @JsonInclude(Include.NON_NULL)
+    private IcapOPSWATLog opswatLog = null;
+
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
     private String poolName = null;
@@ -87,7 +97,7 @@ public class IcapRequestLog extends AviRestResource {
 
     @JsonProperty("reason")
     @JsonInclude(Include.NON_NULL)
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("server_ip")
     @JsonInclude(Include.NON_NULL)
@@ -103,11 +113,15 @@ public class IcapRequestLog extends AviRestResource {
 
     @JsonProperty("threat_id")
     @JsonInclude(Include.NON_NULL)
-    private String threatId = null;
+    private String threatId;
+
+    @JsonProperty("vendor")
+    @JsonInclude(Include.NON_NULL)
+    private String vendor = null;
 
     @JsonProperty("violations")
     @JsonInclude(Include.NON_NULL)
-    private List<IcapViolation> violations = null;
+    private List<IcapViolation> violations;
 
 
 
@@ -441,6 +455,54 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Icap log specific to nsx defender.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxDefenderLog
+   */
+  @VsoMethod
+  public IcapNSXDefenderLog getNsxDefenderLog() {
+    return nsxDefenderLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Icap log specific to nsx defender.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxDefenderLog set the nsxDefenderLog.
+   */
+  @VsoMethod
+  public void setNsxDefenderLog(IcapNSXDefenderLog nsxDefenderLog) {
+    this.nsxDefenderLog = nsxDefenderLog;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Icap log specific to opswat.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return opswatLog
+   */
+  @VsoMethod
+  public IcapOPSWATLog getOpswatLog() {
+    return opswatLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Icap log specific to opswat.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param opswatLog set the opswatLog.
+   */
+  @VsoMethod
+  public void setOpswatLog(IcapOPSWATLog opswatLog) {
+    this.opswatLog = opswatLog;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * The name of the pool that was used for the request.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -491,8 +553,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Blocking reason for the content.
    * It is available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
   @VsoMethod
@@ -504,8 +566,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Blocking reason for the content.
    * It is available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */
   @VsoMethod
@@ -591,8 +653,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Short description of the threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return threatId
    */
   @VsoMethod
@@ -604,8 +666,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method to the attribute.
    * Short description of the threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param threatId set the threatId.
    */
   @VsoMethod
@@ -615,10 +677,36 @@ public class IcapRequestLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Selected icap vendor for the request.
+   * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vendor
+   */
+  @VsoMethod
+  public String getVendor() {
+    return vendor;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Selected icap vendor for the request.
+   * Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vendor set the vendor.
+   */
+  @VsoMethod
+  public void setVendor(String  vendor) {
+    this.vendor = vendor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
    */
   @VsoMethod
@@ -630,8 +718,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method. this will set the violations
    * Threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
    */
   @VsoMethod
@@ -643,8 +731,8 @@ public class IcapRequestLog extends AviRestResource {
    * This is the setter method this will set the violations
    * Threat found in the content.
    * Available only if content was scanned by icap server and some violations were found.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return violations
    */
   @VsoMethod
@@ -688,7 +776,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.threatDescription, objIcapRequestLog.threatDescription)&&
   Objects.equals(this.violations, objIcapRequestLog.violations)&&
   Objects.equals(this.icapServerPort, objIcapRequestLog.icapServerPort)&&
-  Objects.equals(this.icapServerIp, objIcapRequestLog.icapServerIp);
+  Objects.equals(this.icapServerIp, objIcapRequestLog.icapServerIp)&&
+  Objects.equals(this.vendor, objIcapRequestLog.vendor)&&
+  Objects.equals(this.opswatLog, objIcapRequestLog.opswatLog)&&
+  Objects.equals(this.nsxDefenderLog, objIcapRequestLog.nsxDefenderLog);
 }
 
 @Override
@@ -708,6 +799,8 @@ public String toString() {
         sb.append("    icapServerPort: ").append(toIndentedString(icapServerPort)).append("\n");
         sb.append("    latency: ").append(toIndentedString(latency)).append("\n");
         sb.append("    modifiedContentLength: ").append(toIndentedString(modifiedContentLength)).append("\n");
+        sb.append("    nsxDefenderLog: ").append(toIndentedString(nsxDefenderLog)).append("\n");
+        sb.append("    opswatLog: ").append(toIndentedString(opswatLog)).append("\n");
         sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
         sb.append("    poolUuid: ").append(toIndentedString(poolUuid)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
@@ -715,6 +808,7 @@ public String toString() {
         sb.append("    sourcePort: ").append(toIndentedString(sourcePort)).append("\n");
         sb.append("    threatDescription: ").append(toIndentedString(threatDescription)).append("\n");
         sb.append("    threatId: ").append(toIndentedString(threatId)).append("\n");
+        sb.append("    vendor: ").append(toIndentedString(vendor)).append("\n");
         sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
       sb.append("}");
   return sb.toString();

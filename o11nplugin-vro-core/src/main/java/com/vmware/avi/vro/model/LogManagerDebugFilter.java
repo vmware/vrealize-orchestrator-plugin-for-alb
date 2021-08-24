@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.SystemUpgradeState;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -13,44 +12,48 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The SystemUpgradeDetails is a POJO class extends AviRestResource that used for creating
- * SystemUpgradeDetails.
+ * The LogManagerDebugFilter is a POJO class extends AviRestResource that used for creating
+ * LogManagerDebugFilter.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "SystemUpgradeDetails")
-@VsoFinder(name = Constants.FINDER_VRO_SYSTEMUPGRADEDETAILS)
+@VsoObject(create = false, name = "LogManagerDebugFilter")
+@VsoFinder(name = Constants.FINDER_VRO_LOGMANAGERDEBUGFILTER)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SystemUpgradeDetails extends AviRestResource {
-    @JsonProperty("upgrade_status")
+public class LogManagerDebugFilter extends AviRestResource {
+    @JsonProperty("entity_ref")
     @JsonInclude(Include.NON_NULL)
-    private SystemUpgradeState upgradeStatus = null;
+    private String entityRef = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Upgrade status.
+   * Uuid of the entity.
+   * It is a reference to an object of type virtualservice.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return upgradeStatus
+   * @return entityRef
    */
   @VsoMethod
-  public SystemUpgradeState getUpgradeStatus() {
-    return upgradeStatus;
+  public String getEntityRef() {
+    return entityRef;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Upgrade status.
+   * Uuid of the entity.
+   * It is a reference to an object of type virtualservice.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param upgradeStatus set the upgradeStatus.
+   * @param entityRef set the entityRef.
    */
   @VsoMethod
-  public void setUpgradeStatus(SystemUpgradeState upgradeStatus) {
-    this.upgradeStatus = upgradeStatus;
+  public void setEntityRef(String  entityRef) {
+    this.entityRef = entityRef;
   }
 
 
@@ -63,15 +66,15 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  SystemUpgradeDetails objSystemUpgradeDetails = (SystemUpgradeDetails) o;
-  return   Objects.equals(this.upgradeStatus, objSystemUpgradeDetails.upgradeStatus);
+  LogManagerDebugFilter objLogManagerDebugFilter = (LogManagerDebugFilter) o;
+  return   Objects.equals(this.entityRef, objLogManagerDebugFilter.entityRef);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class SystemUpgradeDetails {\n");
-      sb.append("    upgradeStatus: ").append(toIndentedString(upgradeStatus)).append("\n");
+  sb.append("class LogManagerDebugFilter {\n");
+      sb.append("    entityRef: ").append(toIndentedString(entityRef)).append("\n");
       sb.append("}");
   return sb.toString();
 }

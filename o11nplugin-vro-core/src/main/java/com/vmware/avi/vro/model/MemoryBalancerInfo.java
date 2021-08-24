@@ -32,6 +32,14 @@ public class MemoryBalancerInfo extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer controllerMemory = null;
 
+    @JsonProperty("controller_memory_usage_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Float controllerMemoryUsagePercent = null;
+
+    @JsonProperty("debug_message")
+    @JsonInclude(Include.NON_NULL)
+    private String debugMessage = null;
+
     @JsonProperty("limit")
     @JsonInclude(Include.NON_NULL)
     private Integer limit = null;
@@ -47,6 +55,18 @@ public class MemoryBalancerInfo extends AviRestResource {
     @JsonProperty("process")
     @JsonInclude(Include.NON_NULL)
     private String process = null;
+
+    @JsonProperty("process_mode")
+    @JsonInclude(Include.NON_NULL)
+    private String processMode = null;
+
+    @JsonProperty("process_trend")
+    @JsonInclude(Include.NON_NULL)
+    private String processTrend = null;
+
+    @JsonProperty("threshold_percent")
+    @JsonInclude(Include.NON_NULL)
+    private Float thresholdPercent = null;
 
 
 
@@ -90,7 +110,7 @@ public class MemoryBalancerInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Controller memory.
+   * Current controller memory (in gb) usage.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return controllerMemory
    */
@@ -101,7 +121,7 @@ public class MemoryBalancerInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Controller memory.
+   * Current controller memory (in gb) usage.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param controllerMemory set the controllerMemory.
    */
@@ -112,7 +132,55 @@ public class MemoryBalancerInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Limit on the memory (in mb) for the process.
+   * Percent usage of total controller memory.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return controllerMemoryUsagePercent
+   */
+  @VsoMethod
+  public Float getControllerMemoryUsagePercent() {
+    return controllerMemoryUsagePercent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Percent usage of total controller memory.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param controllerMemoryUsagePercent set the controllerMemoryUsagePercent.
+   */
+  @VsoMethod
+  public void setControllerMemoryUsagePercent(Float  controllerMemoryUsagePercent) {
+    this.controllerMemoryUsagePercent = controllerMemoryUsagePercent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Holder for debug message.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return debugMessage
+   */
+  @VsoMethod
+  public String getDebugMessage() {
+    return debugMessage;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Holder for debug message.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param debugMessage set the debugMessage.
+   */
+  @VsoMethod
+  public void setDebugMessage(String  debugMessage) {
+    this.debugMessage = debugMessage;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Limit on the memory (in kb) for the process.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return limit
    */
@@ -123,7 +191,7 @@ public class MemoryBalancerInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Limit on the memory (in mb) for the process.
+   * Limit on the memory (in kb) for the process.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param limit set the limit.
    */
@@ -134,7 +202,7 @@ public class MemoryBalancerInfo extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Amount of memory (in mb) used by the process.
+   * Amount of memory (in kb) used by the process.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return memoryUsed
    */
@@ -145,7 +213,7 @@ public class MemoryBalancerInfo extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Amount of memory (in mb) used by the process.
+   * Amount of memory (in kb) used by the process.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param memoryUsed set the memoryUsed.
    */
@@ -198,6 +266,82 @@ public class MemoryBalancerInfo extends AviRestResource {
     this.process = process;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Current mode of the process.
+   * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return processMode
+   */
+  @VsoMethod
+  public String getProcessMode() {
+    return processMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Current mode of the process.
+   * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param processMode set the processMode.
+   */
+  @VsoMethod
+  public void setProcessMode(String  processMode) {
+    this.processMode = processMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Current usage trend of the process.
+   * Enum options - UPWARD, DOWNWARD, NEUTRAL.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return processTrend
+   */
+  @VsoMethod
+  public String getProcessTrend() {
+    return processTrend;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Current usage trend of the process.
+   * Enum options - UPWARD, DOWNWARD, NEUTRAL.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param processTrend set the processTrend.
+   */
+  @VsoMethod
+  public void setProcessTrend(String  processTrend) {
+    this.processTrend = processTrend;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Percent usage of the process limit.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return thresholdPercent
+   */
+  @VsoMethod
+  public Float getThresholdPercent() {
+    return thresholdPercent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Percent usage of the process limit.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param thresholdPercent set the thresholdPercent.
+   */
+  @VsoMethod
+  public void setThresholdPercent(Float  thresholdPercent) {
+    this.thresholdPercent = thresholdPercent;
+  }
+
 
 
 @Override
@@ -214,7 +358,12 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.memoryUsed, objMemoryBalancerInfo.memoryUsed)&&
   Objects.equals(this.limit, objMemoryBalancerInfo.limit)&&
   Objects.equals(this.child, objMemoryBalancerInfo.child)&&
-  Objects.equals(this.controllerMemory, objMemoryBalancerInfo.controllerMemory);
+  Objects.equals(this.controllerMemory, objMemoryBalancerInfo.controllerMemory)&&
+  Objects.equals(this.processMode, objMemoryBalancerInfo.processMode)&&
+  Objects.equals(this.processTrend, objMemoryBalancerInfo.processTrend)&&
+  Objects.equals(this.thresholdPercent, objMemoryBalancerInfo.thresholdPercent)&&
+  Objects.equals(this.debugMessage, objMemoryBalancerInfo.debugMessage)&&
+  Objects.equals(this.controllerMemoryUsagePercent, objMemoryBalancerInfo.controllerMemoryUsagePercent);
 }
 
 @Override
@@ -223,10 +372,15 @@ public String toString() {
   sb.append("class MemoryBalancerInfo {\n");
       sb.append("    child: ").append(toIndentedString(child)).append("\n");
         sb.append("    controllerMemory: ").append(toIndentedString(controllerMemory)).append("\n");
+        sb.append("    controllerMemoryUsagePercent: ").append(toIndentedString(controllerMemoryUsagePercent)).append("\n");
+        sb.append("    debugMessage: ").append(toIndentedString(debugMessage)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    memoryUsed: ").append(toIndentedString(memoryUsed)).append("\n");
         sb.append("    pid: ").append(toIndentedString(pid)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
+        sb.append("    processMode: ").append(toIndentedString(processMode)).append("\n");
+        sb.append("    processTrend: ").append(toIndentedString(processTrend)).append("\n");
+        sb.append("    thresholdPercent: ").append(toIndentedString(thresholdPercent)).append("\n");
       sb.append("}");
   return sb.toString();
 }
