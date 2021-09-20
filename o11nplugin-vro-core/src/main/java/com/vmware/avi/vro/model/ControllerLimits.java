@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.L7limits;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -41,17 +40,9 @@ public class ControllerLimits extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer defaultRoutesPerVrfcontext = null;
 
-    @JsonProperty("gateway_mon_per_vrf")
-    @JsonInclude(Include.NON_NULL)
-    private Integer gatewayMonPerVrf = null;
-
     @JsonProperty("ips_per_ipgroup")
     @JsonInclude(Include.NON_NULL)
     private Integer ipsPerIpgroup = null;
-
-    @JsonProperty("l7_limits")
-    @JsonInclude(Include.NON_NULL)
-    private L7limits l7Limits = null;
 
     @JsonProperty("poolgroups_per_virtualservice")
     @JsonInclude(Include.NON_NULL)
@@ -71,7 +62,7 @@ public class ControllerLimits extends AviRestResource {
 
     @JsonProperty("rules_per_httppolicy")
     @JsonInclude(Include.NON_NULL)
-    private Integer rulesPerHttppolicy;
+    private Integer rulesPerHttppolicy = null;
 
     @JsonProperty("rules_per_networksecuritypolicy")
     @JsonInclude(Include.NON_NULL)
@@ -234,30 +225,6 @@ public class ControllerLimits extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum number of gateway monitors per vrfcontext.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return gatewayMonPerVrf
-   */
-  @VsoMethod
-  public Integer getGatewayMonPerVrf() {
-    return gatewayMonPerVrf;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum number of gateway monitors per vrfcontext.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param gatewayMonPerVrf set the gatewayMonPerVrf.
-   */
-  @VsoMethod
-  public void setGatewayMonPerVrf(Integer  gatewayMonPerVrf) {
-    this.gatewayMonPerVrf = gatewayMonPerVrf;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Maximum number of ip's per ipaddrgroup.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -278,30 +245,6 @@ public class ControllerLimits extends AviRestResource {
   @VsoMethod
   public void setIpsPerIpgroup(Integer  ipsPerIpgroup) {
     this.ipsPerIpgroup = ipsPerIpgroup;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * System limits that apply to layer 7 configuration objects.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return l7Limits
-   */
-  @VsoMethod
-  public L7limits getL7Limits() {
-    return l7Limits;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * System limits that apply to layer 7 configuration objects.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param l7Limits set the l7Limits.
-   */
-  @VsoMethod
-  public void setL7Limits(L7limits l7Limits) {
-    this.l7Limits = l7Limits;
   }
 
   /**
@@ -403,8 +346,8 @@ public class ControllerLimits extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Maximum number of rules per httppolicy.
-   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rulesPerHttppolicy
    */
   @VsoMethod
@@ -415,8 +358,8 @@ public class ControllerLimits extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Maximum number of rules per httppolicy.
-   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rulesPerHttppolicy set the rulesPerHttppolicy.
    */
   @VsoMethod
@@ -593,8 +536,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.stringsPerStringgroup, objControllerLimits.stringsPerStringgroup)&&
   Objects.equals(this.vsL2Scaleout, objControllerLimits.vsL2Scaleout)&&
   Objects.equals(this.vsBgpScaleout, objControllerLimits.vsBgpScaleout)&&
-  Objects.equals(this.gatewayMonPerVrf, objControllerLimits.gatewayMonPerVrf)&&
-  Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
 }
@@ -607,9 +548,7 @@ public String toString() {
         sb.append("    controllerCloudLimits: ").append(toIndentedString(controllerCloudLimits)).append("\n");
         sb.append("    controllerSizingLimits: ").append(toIndentedString(controllerSizingLimits)).append("\n");
         sb.append("    defaultRoutesPerVrfcontext: ").append(toIndentedString(defaultRoutesPerVrfcontext)).append("\n");
-        sb.append("    gatewayMonPerVrf: ").append(toIndentedString(gatewayMonPerVrf)).append("\n");
         sb.append("    ipsPerIpgroup: ").append(toIndentedString(ipsPerIpgroup)).append("\n");
-        sb.append("    l7Limits: ").append(toIndentedString(l7Limits)).append("\n");
         sb.append("    poolgroupsPerVirtualservice: ").append(toIndentedString(poolgroupsPerVirtualservice)).append("\n");
         sb.append("    poolsPerPoolgroup: ").append(toIndentedString(poolsPerPoolgroup)).append("\n");
         sb.append("    poolsPerVirtualservice: ").append(toIndentedString(poolsPerVirtualservice)).append("\n");

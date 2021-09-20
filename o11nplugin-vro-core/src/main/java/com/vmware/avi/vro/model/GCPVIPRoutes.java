@@ -28,6 +28,10 @@ public class GCPVIPRoutes extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean matchSeGroupSubnet = false;
 
+    @JsonProperty("route_priority")
+    @JsonInclude(Include.NON_NULL)
+    private Integer routePriority = 2000;
+
 
 
   /**
@@ -56,6 +60,30 @@ public class GCPVIPRoutes extends AviRestResource {
     this.matchSeGroupSubnet = matchSeGroupSubnet;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Priority of the routes created in gcp.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
+   * @return routePriority
+   */
+  @VsoMethod
+  public Integer getRoutePriority() {
+    return routePriority;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Priority of the routes created in gcp.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
+   * @param routePriority set the routePriority.
+   */
+  @VsoMethod
+  public void setRoutePriority(Integer  routePriority) {
+    this.routePriority = routePriority;
+  }
+
 
 
 @Override
@@ -67,7 +95,8 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   GCPVIPRoutes objGCPVIPRoutes = (GCPVIPRoutes) o;
-  return   Objects.equals(this.matchSeGroupSubnet, objGCPVIPRoutes.matchSeGroupSubnet);
+  return   Objects.equals(this.matchSeGroupSubnet, objGCPVIPRoutes.matchSeGroupSubnet)&&
+  Objects.equals(this.routePriority, objGCPVIPRoutes.routePriority);
 }
 
 @Override
@@ -75,6 +104,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class GCPVIPRoutes {\n");
       sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");
+        sb.append("    routePriority: ").append(toIndentedString(routePriority)).append("\n");
       sb.append("}");
   return sb.toString();
 }

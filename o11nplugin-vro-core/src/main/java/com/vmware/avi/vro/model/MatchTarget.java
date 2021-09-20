@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.BotDetectionMatch;
 import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.CookieMatch;
 import com.vmware.avi.vro.model.HostHdrMatch;
@@ -35,10 +34,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class MatchTarget extends AviRestResource {
-    @JsonProperty("bot_detection_result")
-    @JsonInclude(Include.NON_NULL)
-    private BotDetectionMatch botDetectionResult = null;
-
     @JsonProperty("client_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddrMatch clientIp = null;
@@ -46,10 +41,6 @@ public class MatchTarget extends AviRestResource {
     @JsonProperty("cookie")
     @JsonInclude(Include.NON_NULL)
     private CookieMatch cookie = null;
-
-    @JsonProperty("geo_matches")
-    @JsonInclude(Include.NON_NULL)
-    private List<GeoMatch> geoMatches = null;
 
     @JsonProperty("hdrs")
     @JsonInclude(Include.NON_NULL)
@@ -88,30 +79,6 @@ public class MatchTarget extends AviRestResource {
     private PortMatch vsPort = null;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure the bot classification result.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return botDetectionResult
-   */
-  @VsoMethod
-  public BotDetectionMatch getBotDetectionResult() {
-    return botDetectionResult;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configure the bot classification result.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param botDetectionResult set the botDetectionResult.
-   */
-  @VsoMethod
-  public void setBotDetectionResult(BotDetectionMatch botDetectionResult) {
-    this.botDetectionResult = botDetectionResult;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -156,50 +123,6 @@ public class MatchTarget extends AviRestResource {
   public void setCookie(CookieMatch cookie) {
     this.cookie = cookie;
   }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configure the geo information.
-   * Field introduced in 21.1.1.
-   * Maximum of 1 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return geoMatches
-   */
-  @VsoMethod
-  public List<GeoMatch> getGeoMatches() {
-    return geoMatches;
-  }
-
-  /**
-   * This is the setter method. this will set the geoMatches
-   * Configure the geo information.
-   * Field introduced in 21.1.1.
-   * Maximum of 1 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return geoMatches
-   */
-  @VsoMethod
-  public void setGeoMatches(List<GeoMatch>  geoMatches) {
-    this.geoMatches = geoMatches;
-  }
-
-  /**
-   * This is the setter method this will set the geoMatches
-   * Configure the geo information.
-   * Field introduced in 21.1.1.
-   * Maximum of 1 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return geoMatches
-   */
-  @VsoMethod
-  public MatchTarget addGeoMatchesItem(GeoMatch geoMatchesItem) {
-    if (this.geoMatches == null) {
-      this.geoMatches = new ArrayList<GeoMatch>();
-    }
-    this.geoMatches.add(geoMatchesItem);
-    return this;
-  }
-
 
   /**
    * This is the getter method this will return the attribute value.
@@ -438,19 +361,15 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hdrs, objMatchTarget.hdrs)&&
   Objects.equals(this.cookie, objMatchTarget.cookie)&&
   Objects.equals(this.hostHdr, objMatchTarget.hostHdr)&&
-  Objects.equals(this.ipReputationType, objMatchTarget.ipReputationType)&&
-  Objects.equals(this.geoMatches, objMatchTarget.geoMatches)&&
-  Objects.equals(this.botDetectionResult, objMatchTarget.botDetectionResult);
+  Objects.equals(this.ipReputationType, objMatchTarget.ipReputationType);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class MatchTarget {\n");
-      sb.append("    botDetectionResult: ").append(toIndentedString(botDetectionResult)).append("\n");
-        sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+      sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
-        sb.append("    geoMatches: ").append(toIndentedString(geoMatches)).append("\n");
         sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
         sb.append("    ipReputationType: ").append(toIndentedString(ipReputationType)).append("\n");

@@ -32,17 +32,13 @@ public class IpamDnsCustomProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<CustomParams> dynamicParams = null;
 
-    @JsonProperty("usable_alloc_subnets")
-    @JsonInclude(Include.NON_NULL)
-    private List<CustomIpamSubnet> usableAllocSubnets = null;
-
     @JsonProperty("usable_domains")
     @JsonInclude(Include.NON_NULL)
     private List<String> usableDomains = null;
 
     @JsonProperty("usable_subnets")
     @JsonInclude(Include.NON_NULL)
-    private List<IpAddrPrefix> usableSubnets;
+    private List<IpAddrPrefix> usableSubnets = null;
 
 
 
@@ -113,47 +109,6 @@ public class IpamDnsCustomProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Networks or subnets to use for custom ipam ip allocation.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return usableAllocSubnets
-   */
-  @VsoMethod
-  public List<CustomIpamSubnet> getUsableAllocSubnets() {
-    return usableAllocSubnets;
-  }
-
-  /**
-   * This is the setter method. this will set the usableAllocSubnets
-   * Networks or subnets to use for custom ipam ip allocation.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return usableAllocSubnets
-   */
-  @VsoMethod
-  public void setUsableAllocSubnets(List<CustomIpamSubnet>  usableAllocSubnets) {
-    this.usableAllocSubnets = usableAllocSubnets;
-  }
-
-  /**
-   * This is the setter method this will set the usableAllocSubnets
-   * Networks or subnets to use for custom ipam ip allocation.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return usableAllocSubnets
-   */
-  @VsoMethod
-  public IpamDnsCustomProfile addUsableAllocSubnetsItem(CustomIpamSubnet usableAllocSubnetsItem) {
-    if (this.usableAllocSubnets == null) {
-      this.usableAllocSubnets = new ArrayList<CustomIpamSubnet>();
-    }
-    this.usableAllocSubnets.add(usableAllocSubnetsItem);
-    return this;
-  }
-
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Usable domains.
    * Field introduced in 17.2.2.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -196,7 +151,8 @@ public class IpamDnsCustomProfile extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Usable subnets.
-   * Field deprecated in 21.1.1.
+   * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnets
    */
   @VsoMethod
@@ -207,7 +163,8 @@ public class IpamDnsCustomProfile extends AviRestResource {
   /**
    * This is the setter method. this will set the usableSubnets
    * Usable subnets.
-   * Field deprecated in 21.1.1.
+   * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnets
    */
   @VsoMethod
@@ -218,7 +175,8 @@ public class IpamDnsCustomProfile extends AviRestResource {
   /**
    * This is the setter method this will set the usableSubnets
    * Usable subnets.
-   * Field deprecated in 21.1.1.
+   * Field introduced in 17.2.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return usableSubnets
    */
   @VsoMethod
@@ -245,8 +203,7 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.customIpamDnsProfileRef, objIpamDnsCustomProfile.customIpamDnsProfileRef)&&
   Objects.equals(this.dynamicParams, objIpamDnsCustomProfile.dynamicParams)&&
   Objects.equals(this.usableSubnets, objIpamDnsCustomProfile.usableSubnets)&&
-  Objects.equals(this.usableDomains, objIpamDnsCustomProfile.usableDomains)&&
-  Objects.equals(this.usableAllocSubnets, objIpamDnsCustomProfile.usableAllocSubnets);
+  Objects.equals(this.usableDomains, objIpamDnsCustomProfile.usableDomains);
 }
 
 @Override
@@ -255,7 +212,6 @@ public String toString() {
   sb.append("class IpamDnsCustomProfile {\n");
       sb.append("    customIpamDnsProfileRef: ").append(toIndentedString(customIpamDnsProfileRef)).append("\n");
         sb.append("    dynamicParams: ").append(toIndentedString(dynamicParams)).append("\n");
-        sb.append("    usableAllocSubnets: ").append(toIndentedString(usableAllocSubnets)).append("\n");
         sb.append("    usableDomains: ").append(toIndentedString(usableDomains)).append("\n");
         sb.append("    usableSubnets: ").append(toIndentedString(usableSubnets)).append("\n");
       sb.append("}");

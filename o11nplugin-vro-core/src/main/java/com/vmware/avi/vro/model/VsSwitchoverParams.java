@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VsSwitchoverParams extends AviRestResource {
+    @JsonProperty("se_uuid")
+    @JsonInclude(Include.NON_NULL)
+    private String seUuid = null;
+
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
     private String uuid = null;
@@ -33,6 +37,28 @@ public class VsSwitchoverParams extends AviRestResource {
     private String vipId = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seUuid
+   */
+  @VsoMethod
+  public String getSeUuid() {
+    return seUuid;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seUuid set the seUuid.
+   */
+  @VsoMethod
+  public void setSeUuid(String  seUuid) {
+    this.seUuid = seUuid;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -90,6 +116,7 @@ public boolean equals(java.lang.Object o) {
   }
   VsSwitchoverParams objVsSwitchoverParams = (VsSwitchoverParams) o;
   return   Objects.equals(this.uuid, objVsSwitchoverParams.uuid)&&
+  Objects.equals(this.seUuid, objVsSwitchoverParams.seUuid)&&
   Objects.equals(this.vipId, objVsSwitchoverParams.vipId);
 }
 
@@ -97,7 +124,8 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VsSwitchoverParams {\n");
-      sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+      sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -13,7 +13,6 @@ import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IPNetworkSubnet;
 import com.vmware.avi.vro.model.JWTValidationVsConfig;
-import com.vmware.avi.vro.model.LDAPVSConfig;
 import com.vmware.avi.vro.model.PerformanceLimits;
 import com.vmware.avi.vro.model.RateProfile;
 import com.vmware.avi.vro.model.SAMLSPConfig;
@@ -61,7 +60,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("apic_contract_graph")
     @JsonInclude(Include.NON_NULL)
-    private String apicContractGraph;
+    private String apicContractGraph = null;
 
     @JsonProperty("application_profile_ref")
     @JsonInclude(Include.NON_NULL)
@@ -95,17 +94,13 @@ public class VirtualService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<String> bgpPeerLabels = null;
 
-    @JsonProperty("bot_policy_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String botPolicyRef = null;
-
     @JsonProperty("bulk_sync_kvcache")
     @JsonInclude(Include.NON_NULL)
     private Boolean bulkSyncKvcache = false;
 
     @JsonProperty("client_auth")
     @JsonInclude(Include.NON_NULL)
-    private HTTPClientAuthenticationParams clientAuth;
+    private HTTPClientAuthenticationParams clientAuth = null;
 
     @JsonProperty("close_client_conn_on_config_update")
     @JsonInclude(Include.NON_NULL)
@@ -242,10 +237,6 @@ public class VirtualService extends AviRestResource {
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
     private List<KeyValue> labels;
-
-    @JsonProperty("ldap_vs_config")
-    @JsonInclude(Include.NON_NULL)
-    private LDAPVSConfig ldapVsConfig = null;
 
     @JsonProperty("limit_doser")
     @JsonInclude(Include.NON_NULL)
@@ -616,9 +607,9 @@ public class VirtualService extends AviRestResource {
    * The name of the contract/graph associated with the virtual service.
    * Should be in the <contract name> <graph name> format.
    * This is applicable only for service integration mode with cisco apic controller.
-   * Field deprecated in 21.1.1.
    * Field introduced in 17.2.12,18.1.2.
    * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicContractGraph
    */
   @VsoMethod
@@ -631,9 +622,9 @@ public class VirtualService extends AviRestResource {
    * The name of the contract/graph associated with the virtual service.
    * Should be in the <contract name> <graph name> format.
    * This is applicable only for service integration mode with cisco apic controller.
-   * Field deprecated in 21.1.1.
    * Field introduced in 17.2.12,18.1.2.
    * Allowed in basic edition, essentials edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicContractGraph set the apicContractGraph.
    */
   @VsoMethod
@@ -851,32 +842,6 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Bot detection policy for the virtual service.
-   * It is a reference to an object of type botdetectionpolicy.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return botPolicyRef
-   */
-  @VsoMethod
-  public String getBotPolicyRef() {
-    return botPolicyRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Bot detection policy for the virtual service.
-   * It is a reference to an object of type botdetectionpolicy.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param botPolicyRef set the botPolicyRef.
-   */
-  @VsoMethod
-  public void setBotPolicyRef(String  botPolicyRef) {
-    this.botPolicyRef = botPolicyRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * (this is a beta feature).
    * Sync key-value cache to the new ses when vs is scaled out.
    * For ex  ssl sessions are stored using vs's key-value cache.
@@ -910,7 +875,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Http authentication configuration for protected resources.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientAuth
    */
   @VsoMethod
@@ -921,7 +886,7 @@ public class VirtualService extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Http authentication configuration for protected resources.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientAuth set the clientAuth.
    */
   @VsoMethod
@@ -1478,6 +1443,7 @@ public class VirtualService extends AviRestResource {
    * Error page profile to be used for this virtualservice.this profile is used to send the custom error page to the client generated by the proxy.
    * It is a reference to an object of type errorpageprofile.
    * Field introduced in 17.2.4.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return errorPageProfileRef
    */
@@ -1491,6 +1457,7 @@ public class VirtualService extends AviRestResource {
    * Error page profile to be used for this virtualservice.this profile is used to send the custom error page to the client generated by the proxy.
    * It is a reference to an object of type errorpageprofile.
    * Field introduced in 17.2.4.
+   * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param errorPageProfileRef set the errorPageProfileRef.
    */
@@ -1910,30 +1877,6 @@ public class VirtualService extends AviRestResource {
     return this;
   }
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Application-specific ldap config.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return ldapVsConfig
-   */
-  @VsoMethod
-  public LDAPVSConfig getLdapVsConfig() {
-    return ldapVsConfig;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Application-specific ldap config.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param ldapVsConfig set the ldapVsConfig.
-   */
-  @VsoMethod
-  public void setLdapVsConfig(LDAPVSConfig ldapVsConfig) {
-    this.ldapVsConfig = ldapVsConfig;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -3686,9 +3629,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.icapRequestProfileRefs, objVirtualService.icapRequestProfileRefs)&&
   Objects.equals(this.jwtConfig, objVirtualService.jwtConfig)&&
   Objects.equals(this.vhMatches, objVirtualService.vhMatches)&&
-  Objects.equals(this.vhType, objVirtualService.vhType)&&
-  Objects.equals(this.botPolicyRef, objVirtualService.botPolicyRef)&&
-  Objects.equals(this.ldapVsConfig, objVirtualService.ldapVsConfig);
+  Objects.equals(this.vhType, objVirtualService.vhType);
 }
 
 @Override
@@ -3709,7 +3650,6 @@ public String toString() {
         sb.append("    aviAllocatedVip: ").append(toIndentedString(aviAllocatedVip)).append("\n");
         sb.append("    azureAvailabilitySet: ").append(toIndentedString(azureAvailabilitySet)).append("\n");
         sb.append("    bgpPeerLabels: ").append(toIndentedString(bgpPeerLabels)).append("\n");
-        sb.append("    botPolicyRef: ").append(toIndentedString(botPolicyRef)).append("\n");
         sb.append("    bulkSyncKvcache: ").append(toIndentedString(bulkSyncKvcache)).append("\n");
         sb.append("    clientAuth: ").append(toIndentedString(clientAuth)).append("\n");
         sb.append("    closeClientConnOnConfigUpdate: ").append(toIndentedString(closeClientConnOnConfigUpdate)).append("\n");
@@ -3746,7 +3686,6 @@ public String toString() {
         sb.append("    jwtConfig: ").append(toIndentedString(jwtConfig)).append("\n");
         sb.append("    l4Policies: ").append(toIndentedString(l4Policies)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-        sb.append("    ldapVsConfig: ").append(toIndentedString(ldapVsConfig)).append("\n");
         sb.append("    limitDoser: ").append(toIndentedString(limitDoser)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    maxCpsPerClient: ").append(toIndentedString(maxCpsPerClient)).append("\n");

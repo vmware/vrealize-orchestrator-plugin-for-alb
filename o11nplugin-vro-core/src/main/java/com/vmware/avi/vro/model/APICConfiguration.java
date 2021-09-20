@@ -26,19 +26,19 @@ import org.springframework.stereotype.Service;
 public class APICConfiguration extends AviRestResource {
     @JsonProperty("apic_admin_tenant")
     @JsonInclude(Include.NON_NULL)
-    private String apicAdminTenant;
+    private String apicAdminTenant = "common";
 
     @JsonProperty("apic_domain")
     @JsonInclude(Include.NON_NULL)
-    private String apicDomain;
+    private String apicDomain = null;
 
     @JsonProperty("apic_name")
     @JsonInclude(Include.NON_NULL)
-    private List<String> apicName;
+    private List<String> apicName = null;
 
     @JsonProperty("apic_password")
     @JsonInclude(Include.NON_NULL)
-    private String apicPassword;
+    private String apicPassword = null;
 
     @JsonProperty("apic_product")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class APICConfiguration extends AviRestResource {
 
     @JsonProperty("apic_username")
     @JsonInclude(Include.NON_NULL)
-    private String apicUsername;
+    private String apicUsername = null;
 
     @JsonProperty("apic_vendor")
     @JsonInclude(Include.NON_NULL)
@@ -62,7 +62,7 @@ public class APICConfiguration extends AviRestResource {
 
     @JsonProperty("context_aware")
     @JsonInclude(Include.NON_NULL)
-    private String contextAware;
+    private String contextAware = "SINGLE_CONTEXT";
 
     @JsonProperty("deployment")
     @JsonInclude(Include.NON_NULL)
@@ -78,7 +78,7 @@ public class APICConfiguration extends AviRestResource {
 
     @JsonProperty("se_tunnel_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean seTunnelMode;
+    private Boolean seTunnelMode = true;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
@@ -89,7 +89,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Name of the avi specific tenant created within apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "common".
    * @return apicAdminTenant
    */
   @VsoMethod
@@ -100,7 +100,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Name of the avi specific tenant created within apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "common".
    * @param apicAdminTenant set the apicAdminTenant.
    */
   @VsoMethod
@@ -111,7 +111,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Vcenter's virtual machine manager domain within apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicDomain
    */
   @VsoMethod
@@ -122,7 +122,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Vcenter's virtual machine manager domain within apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicDomain set the apicDomain.
    */
   @VsoMethod
@@ -133,7 +133,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The hostname or ip address of the apic controller.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicName
    */
   @VsoMethod
@@ -144,7 +144,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method. this will set the apicName
    * The hostname or ip address of the apic controller.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicName
    */
   @VsoMethod
@@ -155,7 +155,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method this will set the apicName
    * The hostname or ip address of the apic controller.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicName
    */
   @VsoMethod
@@ -171,7 +171,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The password avi vantage will use when authenticating with apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicPassword
    */
   @VsoMethod
@@ -182,7 +182,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The password avi vantage will use when authenticating with apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicPassword set the apicPassword.
    */
   @VsoMethod
@@ -213,7 +213,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The username avi vantage will use when authenticating with apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicUsername
    */
   @VsoMethod
@@ -224,7 +224,7 @@ public class APICConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The username avi vantage will use when authenticating with apic.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicUsername set the apicUsername.
    */
   @VsoMethod
@@ -300,7 +300,7 @@ public class APICConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Context aware for supporting service graphs across vrfs.
    * Enum options - SINGLE_CONTEXT, MULTI_CONTEXT.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SINGLE_CONTEXT".
    * @return contextAware
    */
   @VsoMethod
@@ -312,7 +312,7 @@ public class APICConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Context aware for supporting service graphs across vrfs.
    * Enum options - SINGLE_CONTEXT, MULTI_CONTEXT.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SINGLE_CONTEXT".
    * @param contextAware set the contextAware.
    */
   @VsoMethod
@@ -390,8 +390,8 @@ public class APICConfiguration extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines if dsr from secondary se is active or not  false   dsr active.
    * Please ensure that apic bd's endpoint dataplane learning is disabled true    disable dsr unconditionally.
-   * Field deprecated in 21.1.1.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return seTunnelMode
    */
   @VsoMethod
@@ -403,8 +403,8 @@ public class APICConfiguration extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines if dsr from secondary se is active or not  false   dsr active.
    * Please ensure that apic bd's endpoint dataplane learning is disabled true    disable dsr unconditionally.
-   * Field deprecated in 21.1.1.
    * Field introduced in 17.2.10,18.1.2.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param seTunnelMode set the seTunnelMode.
    */
   @VsoMethod

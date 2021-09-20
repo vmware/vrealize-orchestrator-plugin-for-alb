@@ -45,10 +45,6 @@ public class SSLProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String description = null;
 
-    @JsonProperty("ec_named_curve")
-    @JsonInclude(Include.NON_NULL)
-    private String ecNamedCurve = "auto";
-
     @JsonProperty("enable_early_data")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableEarlyData = false;
@@ -76,10 +72,6 @@ public class SSLProfile extends AviRestResource {
     @JsonProperty("send_close_notify")
     @JsonInclude(Include.NON_NULL)
     private Boolean sendCloseNotify = true;
-
-    @JsonProperty("signature_algorithm")
-    @JsonInclude(Include.NON_NULL)
-    private String signatureAlgorithm = "auto";
 
     @JsonProperty("ssl_rating")
     @JsonInclude(Include.NON_NULL)
@@ -298,32 +290,6 @@ public class SSLProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 andhttps
-   * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_curves.html.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
-   * @return ecNamedCurve
-   */
-  @VsoMethod
-  public String getEcNamedCurve() {
-    return ecNamedCurve;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 andhttps
-   * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_curves.html.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
-   * @param ecNamedCurve set the ecNamedCurve.
-   */
-  @VsoMethod
-  public void setEcNamedCurve(String  ecNamedCurve) {
-    this.ecNamedCurve = ecNamedCurve;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Enable early data processing for tls1.3 connections.
    * Field introduced in 18.2.6.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
@@ -529,32 +495,6 @@ public class SSLProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 andhttps
-   * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_client_sigalgs_list.html.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
-   * @return signatureAlgorithm
-   */
-  @VsoMethod
-  public String getSignatureAlgorithm() {
-    return signatureAlgorithm;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 andhttps
-   * //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_client_sigalgs_list.html.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "auto".
-   * @param signatureAlgorithm set the signatureAlgorithm.
-   */
-  @VsoMethod
-  public void setSignatureAlgorithm(String  signatureAlgorithm) {
-    this.signatureAlgorithm = signatureAlgorithm;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Placeholder for description of property ssl_rating of obj type sslprofile field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslRating
@@ -755,8 +695,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ciphersuites, objSSLProfile.ciphersuites)&&
   Objects.equals(this.enableEarlyData, objSSLProfile.enableEarlyData)&&
   Objects.equals(this.labels, objSSLProfile.labels)&&
-  Objects.equals(this.ecNamedCurve, objSSLProfile.ecNamedCurve)&&
-  Objects.equals(this.signatureAlgorithm, objSSLProfile.signatureAlgorithm)&&
   Objects.equals(this.markers, objSSLProfile.markers)&&
   Objects.equals(this.description, objSSLProfile.description)&&
   Objects.equals(this.tenantRef, objSSLProfile.tenantRef);
@@ -771,7 +709,6 @@ public String toString() {
         sb.append("    cipherEnums: ").append(toIndentedString(cipherEnums)).append("\n");
         sb.append("    ciphersuites: ").append(toIndentedString(ciphersuites)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    ecNamedCurve: ").append(toIndentedString(ecNamedCurve)).append("\n");
         sb.append("    enableEarlyData: ").append(toIndentedString(enableEarlyData)).append("\n");
         sb.append("    enableSslSessionReuse: ").append(toIndentedString(enableSslSessionReuse)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
@@ -779,7 +716,6 @@ public String toString() {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    preferClientCipherOrdering: ").append(toIndentedString(preferClientCipherOrdering)).append("\n");
         sb.append("    sendCloseNotify: ").append(toIndentedString(sendCloseNotify)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    sslRating: ").append(toIndentedString(sslRating)).append("\n");
         sb.append("    sslSessionTimeout: ").append(toIndentedString(sslSessionTimeout)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

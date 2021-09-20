@@ -28,6 +28,10 @@ public class SensitiveLogProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<SensitiveFieldRule> headerFieldRules = null;
 
+    @JsonProperty("uri_query_field_rules")
+    @JsonInclude(Include.NON_NULL)
+    private List<SensitiveFieldRule> uriQueryFieldRules = null;
+
     @JsonProperty("waf_field_rules")
     @JsonInclude(Include.NON_NULL)
     private List<SensitiveFieldRule> wafFieldRules = null;
@@ -71,6 +75,53 @@ public class SensitiveLogProfile extends AviRestResource {
       this.headerFieldRules = new ArrayList<SensitiveFieldRule>();
     }
     this.headerFieldRules.add(headerFieldRulesItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Match sensitive uri query params in http application log.
+   * Query params from the uri are extracted and checked for matching sensitive parameter names.
+   * A successful match will mask the parameter values in accordance with this rule action.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return uriQueryFieldRules
+   */
+  @VsoMethod
+  public List<SensitiveFieldRule> getUriQueryFieldRules() {
+    return uriQueryFieldRules;
+  }
+
+  /**
+   * This is the setter method. this will set the uriQueryFieldRules
+   * Match sensitive uri query params in http application log.
+   * Query params from the uri are extracted and checked for matching sensitive parameter names.
+   * A successful match will mask the parameter values in accordance with this rule action.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return uriQueryFieldRules
+   */
+  @VsoMethod
+  public void setUriQueryFieldRules(List<SensitiveFieldRule>  uriQueryFieldRules) {
+    this.uriQueryFieldRules = uriQueryFieldRules;
+  }
+
+  /**
+   * This is the setter method this will set the uriQueryFieldRules
+   * Match sensitive uri query params in http application log.
+   * Query params from the uri are extracted and checked for matching sensitive parameter names.
+   * A successful match will mask the parameter values in accordance with this rule action.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return uriQueryFieldRules
+   */
+  @VsoMethod
+  public SensitiveLogProfile addUriQueryFieldRulesItem(SensitiveFieldRule uriQueryFieldRulesItem) {
+    if (this.uriQueryFieldRules == null) {
+      this.uriQueryFieldRules = new ArrayList<SensitiveFieldRule>();
+    }
+    this.uriQueryFieldRules.add(uriQueryFieldRulesItem);
     return this;
   }
 
@@ -128,7 +179,8 @@ public boolean equals(java.lang.Object o) {
   }
   SensitiveLogProfile objSensitiveLogProfile = (SensitiveLogProfile) o;
   return   Objects.equals(this.headerFieldRules, objSensitiveLogProfile.headerFieldRules)&&
-  Objects.equals(this.wafFieldRules, objSensitiveLogProfile.wafFieldRules);
+  Objects.equals(this.wafFieldRules, objSensitiveLogProfile.wafFieldRules)&&
+  Objects.equals(this.uriQueryFieldRules, objSensitiveLogProfile.uriQueryFieldRules);
 }
 
 @Override
@@ -136,6 +188,7 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SensitiveLogProfile {\n");
       sb.append("    headerFieldRules: ").append(toIndentedString(headerFieldRules)).append("\n");
+        sb.append("    uriQueryFieldRules: ").append(toIndentedString(uriQueryFieldRules)).append("\n");
         sb.append("    wafFieldRules: ").append(toIndentedString(wafFieldRules)).append("\n");
       sb.append("}");
   return sb.toString();

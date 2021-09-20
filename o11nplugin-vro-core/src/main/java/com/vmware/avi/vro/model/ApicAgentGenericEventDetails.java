@@ -26,53 +26,54 @@ import org.springframework.stereotype.Service;
 public class ApicAgentGenericEventDetails extends AviRestResource {
     @JsonProperty("contract_graphs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> contractGraphs;
+    private List<String> contractGraphs = null;
 
     @JsonProperty("lif_cif_attachment")
     @JsonInclude(Include.NON_NULL)
-    private List<String> lifCifAttachment;
+    private List<String> lifCifAttachment = null;
 
     @JsonProperty("lifs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> lifs;
+    private List<String> lifs = null;
 
     @JsonProperty("networks")
     @JsonInclude(Include.NON_NULL)
-    private List<String> networks;
+    private List<String> networks = null;
 
     @JsonProperty("se_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid;
+    private String seUuid = null;
 
     @JsonProperty("service_engine_vnics")
     @JsonInclude(Include.NON_NULL)
-    private List<String> serviceEngineVnics;
+    private List<String> serviceEngineVnics = null;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName;
+    private String tenantName = null;
 
     @JsonProperty("tenant_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String tenantUuid;
+    private String tenantUuid = null;
 
     @JsonProperty("vnic_network_attachment")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vnicNetworkAttachment;
+    private List<String> vnicNetworkAttachment = null;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName;
+    private String vsName = null;
 
     @JsonProperty("vs_uuid")
     @JsonInclude(Include.NON_NULL)
-    private String vsUuid;
+    private String vsUuid = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property contract_graphs of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contractGraphs
    */
   @VsoMethod
@@ -82,7 +83,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the contractGraphs
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property contract_graphs of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contractGraphs
    */
   @VsoMethod
@@ -92,7 +94,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the contractGraphs
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property contract_graphs of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return contractGraphs
    */
   @VsoMethod
@@ -107,7 +110,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lif_cif_attachment of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifCifAttachment
    */
   @VsoMethod
@@ -117,7 +121,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the lifCifAttachment
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lif_cif_attachment of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifCifAttachment
    */
   @VsoMethod
@@ -127,7 +132,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the lifCifAttachment
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lif_cif_attachment of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifCifAttachment
    */
   @VsoMethod
@@ -142,7 +148,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lifs of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifs
    */
   @VsoMethod
@@ -152,7 +159,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the lifs
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lifs of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifs
    */
   @VsoMethod
@@ -162,7 +170,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the lifs
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lifs of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifs
    */
   @VsoMethod
@@ -177,7 +186,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property networks of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -187,7 +197,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the networks
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property networks of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -197,7 +208,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the networks
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property networks of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networks
    */
   @VsoMethod
@@ -212,7 +224,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seUuid
    */
   @VsoMethod
@@ -222,7 +235,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Unique object identifier of se.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param seUuid set the seUuid.
    */
   @VsoMethod
@@ -232,7 +246,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property service_engine_vnics of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceEngineVnics
    */
   @VsoMethod
@@ -242,7 +257,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the serviceEngineVnics
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property service_engine_vnics of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceEngineVnics
    */
   @VsoMethod
@@ -252,7 +268,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the serviceEngineVnics
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property service_engine_vnics of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return serviceEngineVnics
    */
   @VsoMethod
@@ -267,7 +284,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property tenant_name of obj type apicagentgenericeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -277,7 +295,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property tenant_name of obj type apicagentgenericeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -287,7 +306,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantUuid
    */
   @VsoMethod
@@ -297,7 +317,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Unique object identifier of tenant.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantUuid set the tenantUuid.
    */
   @VsoMethod
@@ -307,7 +328,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vnic_network_attachment of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworkAttachment
    */
   @VsoMethod
@@ -317,7 +339,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method. this will set the vnicNetworkAttachment
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vnic_network_attachment of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworkAttachment
    */
   @VsoMethod
@@ -327,7 +350,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method this will set the vnicNetworkAttachment
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vnic_network_attachment of obj type apicagentgenericeventdetails field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vnicNetworkAttachment
    */
   @VsoMethod
@@ -342,7 +366,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vs_name of obj type apicagentgenericeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsName
    */
   @VsoMethod
@@ -352,7 +377,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vs_name of obj type apicagentgenericeventdetails field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -362,7 +388,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vsUuid
    */
   @VsoMethod
@@ -372,7 +399,8 @@ public class ApicAgentGenericEventDetails extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Unique object identifier of vs.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vsUuid set the vsUuid.
    */
   @VsoMethod

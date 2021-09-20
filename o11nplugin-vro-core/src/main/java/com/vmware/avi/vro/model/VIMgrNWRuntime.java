@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class VIMgrNWRuntime extends AviRestResource {
     @JsonProperty("apic_vrf_context")
     @JsonInclude(Include.NON_NULL)
-    private String apicVrfContext;
+    private String apicVrfContext = null;
 
     @JsonProperty("auto_expand")
     @JsonInclude(Include.NON_NULL)
@@ -120,7 +120,8 @@ public class VIMgrNWRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property apic_vrf_context of obj type vimgrnwruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicVrfContext
    */
   @VsoMethod
@@ -130,7 +131,8 @@ public class VIMgrNWRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property apic_vrf_context of obj type vimgrnwruntime field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicVrfContext set the apicVrfContext.
    */
   @VsoMethod

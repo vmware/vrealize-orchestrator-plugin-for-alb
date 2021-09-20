@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.DnsClientIpMatch;
-import com.vmware.avi.vro.model.DnsClientPortMatch;
 import com.vmware.avi.vro.model.DnsGeoLocationMatch;
 import com.vmware.avi.vro.model.DnsTransportProtocolMatch;
 import com.vmware.avi.vro.model.DnsQueryNameMatch;
@@ -38,10 +37,6 @@ public class DnsRuleMatchTarget extends AviRestResource {
     @JsonProperty("client_ip_address")
     @JsonInclude(Include.NON_NULL)
     private DnsClientIpMatch clientIpAddress = null;
-
-    @JsonProperty("client_port_numbers")
-    @JsonInclude(Include.NON_NULL)
-    private DnsClientPortMatch clientPortNumbers = null;
 
     @JsonProperty("geo_location")
     @JsonInclude(Include.NON_NULL)
@@ -109,30 +104,6 @@ public class DnsRuleMatchTarget extends AviRestResource {
   @VsoMethod
   public void setClientIpAddress(DnsClientIpMatch clientIpAddress) {
     this.clientIpAddress = clientIpAddress;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Port number to match against client port number.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clientPortNumbers
-   */
-  @VsoMethod
-  public DnsClientPortMatch getClientPortNumbers() {
-    return clientPortNumbers;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Port number to match against client port number.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clientPortNumbers set the clientPortNumbers.
-   */
-  @VsoMethod
-  public void setClientPortNumbers(DnsClientPortMatch clientPortNumbers) {
-    this.clientPortNumbers = clientPortNumbers;
   }
 
   /**
@@ -247,8 +218,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.queryName, objDnsRuleMatchTarget.queryName)&&
   Objects.equals(this.queryType, objDnsRuleMatchTarget.queryType)&&
   Objects.equals(this.geoLocation, objDnsRuleMatchTarget.geoLocation)&&
-  Objects.equals(this.clientIpAddress, objDnsRuleMatchTarget.clientIpAddress)&&
-  Objects.equals(this.clientPortNumbers, objDnsRuleMatchTarget.clientPortNumbers);
+  Objects.equals(this.clientIpAddress, objDnsRuleMatchTarget.clientIpAddress);
 }
 
 @Override
@@ -257,7 +227,6 @@ public String toString() {
   sb.append("class DnsRuleMatchTarget {\n");
       sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
         sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
-        sb.append("    clientPortNumbers: ").append(toIndentedString(clientPortNumbers)).append("\n");
         sb.append("    geoLocation: ").append(toIndentedString(geoLocation)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    queryName: ").append(toIndentedString(queryName)).append("\n");

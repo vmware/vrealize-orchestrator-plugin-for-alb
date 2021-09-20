@@ -32,10 +32,6 @@ public class DnsPolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String description = null;
 
-    @JsonProperty("internal")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean internal = null;
-
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
     private List<KeyValue> labels;
@@ -110,32 +106,6 @@ public class DnsPolicy extends AviRestResource {
   @VsoMethod
   public void setDescription(String  description) {
     this.description = description;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * The dns policy is created and modified by internal modules only.
-   * This should not be modified by users.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return internal
-   */
-  @VsoMethod
-  public Boolean getInternal() {
-    return internal;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * The dns policy is created and modified by internal modules only.
-   * This should not be modified by users.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param internal set the internal.
-   */
-  @VsoMethod
-  public void setInternal(Boolean  internal) {
-    this.internal = internal;
   }
 
   /**
@@ -378,7 +348,6 @@ public boolean equals(java.lang.Object o) {
   return   Objects.equals(this.uuid, objDnsPolicy.uuid)&&
   Objects.equals(this.name, objDnsPolicy.name)&&
   Objects.equals(this.rule, objDnsPolicy.rule)&&
-  Objects.equals(this.internal, objDnsPolicy.internal)&&
   Objects.equals(this.createdBy, objDnsPolicy.createdBy)&&
   Objects.equals(this.labels, objDnsPolicy.labels)&&
   Objects.equals(this.markers, objDnsPolicy.markers)&&
@@ -392,7 +361,6 @@ public String toString() {
   sb.append("class DnsPolicy {\n");
       sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

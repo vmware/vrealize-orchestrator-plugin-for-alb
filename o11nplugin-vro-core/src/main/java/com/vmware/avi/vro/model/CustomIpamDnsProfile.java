@@ -117,7 +117,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Script uri of form controller //ipamdnsscripts/<file-name>, file-name must have a .py extension and conform to pep8 naming convention.
+   * Script uri of form controller //ipamdnsscripts/<file-name>.
    * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return scriptUri
@@ -129,7 +129,7 @@ public class CustomIpamDnsProfile extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Script uri of form controller //ipamdnsscripts/<file-name>, file-name must have a .py extension and conform to pep8 naming convention.
+   * Script uri of form controller //ipamdnsscripts/<file-name>.
    * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param scriptUri set the scriptUri.

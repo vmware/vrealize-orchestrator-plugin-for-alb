@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.BotManagementLog;
 import com.vmware.avi.vro.model.SSLCipherList;
 import com.vmware.avi.vro.model.ConnErrorInfo;
 import com.vmware.avi.vro.model.DataScriptErrorTrace;
@@ -51,21 +50,9 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer appResponseTime = null;
 
-    @JsonProperty("avg_ingress_latency_be")
-    @JsonInclude(Include.NON_NULL)
-    private Integer avgIngressLatencyBe = null;
-
-    @JsonProperty("avg_ingress_latency_fe")
-    @JsonInclude(Include.NON_NULL)
-    private Integer avgIngressLatencyFe = null;
-
     @JsonProperty("body_updated")
     @JsonInclude(Include.NON_NULL)
     private String bodyUpdated = "NOT_UPDATED";
-
-    @JsonProperty("bot_management_log")
-    @JsonInclude(Include.NON_NULL)
-    private BotManagementLog botManagementLog = null;
 
     @JsonProperty("cache_disabled_by_ds")
     @JsonInclude(Include.NON_NULL)
@@ -134,14 +121,6 @@ public class ApplicationLog extends AviRestResource {
     @JsonProperty("compression_percentage")
     @JsonInclude(Include.NON_NULL)
     private Integer compressionPercentage = null;
-
-    @JsonProperty("conn_est_time_be")
-    @JsonInclude(Include.NON_NULL)
-    private Integer connEstTimeBe = null;
-
-    @JsonProperty("conn_est_time_fe")
-    @JsonInclude(Include.NON_NULL)
-    private Integer connEstTimeFe = null;
 
     @JsonProperty("connection_error_info")
     @JsonInclude(Include.NON_NULL)
@@ -226,14 +205,6 @@ public class ApplicationLog extends AviRestResource {
     @JsonProperty("log_id")
     @JsonInclude(Include.NON_NULL)
     private Integer logId = null;
-
-    @JsonProperty("max_ingress_latency_be")
-    @JsonInclude(Include.NON_NULL)
-    private Integer maxIngressLatencyBe = null;
-
-    @JsonProperty("max_ingress_latency_fe")
-    @JsonInclude(Include.NON_NULL)
-    private Integer maxIngressLatencyFe = null;
 
     @JsonProperty("method")
     @JsonInclude(Include.NON_NULL)
@@ -447,10 +418,6 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String serviceEngine = null;
 
-    @JsonProperty("session_id")
-    @JsonInclude(Include.NON_NULL)
-    private String sessionId = null;
-
     @JsonProperty("significance")
     @JsonInclude(Include.NON_NULL)
     private String significance = null;
@@ -623,54 +590,6 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Average packet processing latency for the backend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgIngressLatencyBe
-   */
-  @VsoMethod
-  public Integer getAvgIngressLatencyBe() {
-    return avgIngressLatencyBe;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Average packet processing latency for the backend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgIngressLatencyBe set the avgIngressLatencyBe.
-   */
-  @VsoMethod
-  public void setAvgIngressLatencyBe(Integer  avgIngressLatencyBe) {
-    this.avgIngressLatencyBe = avgIngressLatencyBe;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Average packet processing latency for the frontend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return avgIngressLatencyFe
-   */
-  @VsoMethod
-  public Integer getAvgIngressLatencyFe() {
-    return avgIngressLatencyFe;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Average packet processing latency for the frontend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param avgIngressLatencyFe set the avgIngressLatencyFe.
-   */
-  @VsoMethod
-  public void setAvgIngressLatencyFe(Integer  avgIngressLatencyFe) {
-    this.avgIngressLatencyFe = avgIngressLatencyFe;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT.
    * Field introduced in 17.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_UPDATED".
@@ -691,30 +610,6 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setBodyUpdated(String  bodyUpdated) {
     this.bodyUpdated = bodyUpdated;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Logs related to bot detection.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return botManagementLog
-   */
-  @VsoMethod
-  public BotManagementLog getBotManagementLog() {
-    return botManagementLog;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Logs related to bot detection.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param botManagementLog set the botManagementLog.
-   */
-  @VsoMethod
-  public void setBotManagementLog(BotManagementLog botManagementLog) {
-    this.botManagementLog = botManagementLog;
   }
 
   /**
@@ -1105,54 +1000,6 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setCompressionPercentage(Integer  compressionPercentage) {
     this.compressionPercentage = compressionPercentage;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Tcp connection establishment time for the backend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return connEstTimeBe
-   */
-  @VsoMethod
-  public Integer getConnEstTimeBe() {
-    return connEstTimeBe;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Tcp connection establishment time for the backend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param connEstTimeBe set the connEstTimeBe.
-   */
-  @VsoMethod
-  public void setConnEstTimeBe(Integer  connEstTimeBe) {
-    this.connEstTimeBe = connEstTimeBe;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Tcp connection establishment time for the frontend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return connEstTimeFe
-   */
-  @VsoMethod
-  public Integer getConnEstTimeFe() {
-    return connEstTimeFe;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Tcp connection establishment time for the frontend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param connEstTimeFe set the connEstTimeFe.
-   */
-  @VsoMethod
-  public void setConnEstTimeFe(Integer  connEstTimeFe) {
-    this.connEstTimeFe = connEstTimeFe;
   }
 
   /**
@@ -1643,54 +1490,6 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setLogId(Integer  logId) {
     this.logId = logId;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum packet processing latency for the backend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return maxIngressLatencyBe
-   */
-  @VsoMethod
-  public Integer getMaxIngressLatencyBe() {
-    return maxIngressLatencyBe;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum packet processing latency for the backend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param maxIngressLatencyBe set the maxIngressLatencyBe.
-   */
-  @VsoMethod
-  public void setMaxIngressLatencyBe(Integer  maxIngressLatencyBe) {
-    this.maxIngressLatencyBe = maxIngressLatencyBe;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum packet processing latency for the frontend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return maxIngressLatencyFe
-   */
-  @VsoMethod
-  public Integer getMaxIngressLatencyFe() {
-    return maxIngressLatencyFe;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum packet processing latency for the frontend flow.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param maxIngressLatencyFe set the maxIngressLatencyFe.
-   */
-  @VsoMethod
-  public void setMaxIngressLatencyFe(Integer  maxIngressLatencyFe) {
-    this.maxIngressLatencyFe = maxIngressLatencyFe;
   }
 
   /**
@@ -2905,30 +2704,6 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field set by datascript using avi.vs.set_session_id().
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return sessionId
-   */
-  @VsoMethod
-  public String getSessionId() {
-    return sessionId;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Field set by datascript using avi.vs.set_session_id().
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param sessionId set the sessionId.
-   */
-  @VsoMethod
-  public void setSessionId(String  sessionId) {
-    this.sessionId = sessionId;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Placeholder for description of property significance of obj type applicationlog field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return significance
@@ -3528,15 +3303,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.samlLog, objApplicationLog.samlLog)&&
   Objects.equals(this.jwtLog, objApplicationLog.jwtLog)&&
   Objects.equals(this.ntlmLog, objApplicationLog.ntlmLog)&&
-  Objects.equals(this.oobLog, objApplicationLog.oobLog)&&
-  Objects.equals(this.sessionId, objApplicationLog.sessionId)&&
-  Objects.equals(this.botManagementLog, objApplicationLog.botManagementLog)&&
-  Objects.equals(this.maxIngressLatencyFe, objApplicationLog.maxIngressLatencyFe)&&
-  Objects.equals(this.avgIngressLatencyFe, objApplicationLog.avgIngressLatencyFe)&&
-  Objects.equals(this.connEstTimeFe, objApplicationLog.connEstTimeFe)&&
-  Objects.equals(this.maxIngressLatencyBe, objApplicationLog.maxIngressLatencyBe)&&
-  Objects.equals(this.avgIngressLatencyBe, objApplicationLog.avgIngressLatencyBe)&&
-  Objects.equals(this.connEstTimeBe, objApplicationLog.connEstTimeBe);
+  Objects.equals(this.oobLog, objApplicationLog.oobLog);
 }
 
 @Override
@@ -3547,10 +3314,7 @@ public String toString() {
         sb.append("    allRequestHeaders: ").append(toIndentedString(allRequestHeaders)).append("\n");
         sb.append("    allResponseHeaders: ").append(toIndentedString(allResponseHeaders)).append("\n");
         sb.append("    appResponseTime: ").append(toIndentedString(appResponseTime)).append("\n");
-        sb.append("    avgIngressLatencyBe: ").append(toIndentedString(avgIngressLatencyBe)).append("\n");
-        sb.append("    avgIngressLatencyFe: ").append(toIndentedString(avgIngressLatencyFe)).append("\n");
         sb.append("    bodyUpdated: ").append(toIndentedString(bodyUpdated)).append("\n");
-        sb.append("    botManagementLog: ").append(toIndentedString(botManagementLog)).append("\n");
         sb.append("    cacheDisabledByDs: ").append(toIndentedString(cacheDisabledByDs)).append("\n");
         sb.append("    cacheHit: ").append(toIndentedString(cacheHit)).append("\n");
         sb.append("    cacheable: ").append(toIndentedString(cacheable)).append("\n");
@@ -3568,8 +3332,6 @@ public String toString() {
         sb.append("    clientSrcPort: ").append(toIndentedString(clientSrcPort)).append("\n");
         sb.append("    compression: ").append(toIndentedString(compression)).append("\n");
         sb.append("    compressionPercentage: ").append(toIndentedString(compressionPercentage)).append("\n");
-        sb.append("    connEstTimeBe: ").append(toIndentedString(connEstTimeBe)).append("\n");
-        sb.append("    connEstTimeFe: ").append(toIndentedString(connEstTimeFe)).append("\n");
         sb.append("    connectionErrorInfo: ").append(toIndentedString(connectionErrorInfo)).append("\n");
         sb.append("    criticalErrorEncountered: ").append(toIndentedString(criticalErrorEncountered)).append("\n");
         sb.append("    dataTransferTime: ").append(toIndentedString(dataTransferTime)).append("\n");
@@ -3591,8 +3353,6 @@ public String toString() {
         sb.append("    icapLog: ").append(toIndentedString(icapLog)).append("\n");
         sb.append("    jwtLog: ").append(toIndentedString(jwtLog)).append("\n");
         sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
-        sb.append("    maxIngressLatencyBe: ").append(toIndentedString(maxIngressLatencyBe)).append("\n");
-        sb.append("    maxIngressLatencyFe: ").append(toIndentedString(maxIngressLatencyFe)).append("\n");
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
@@ -3646,7 +3406,6 @@ public String toString() {
         sb.append("    serverSslSessionReused: ").append(toIndentedString(serverSslSessionReused)).append("\n");
         sb.append("    serversTried: ").append(toIndentedString(serversTried)).append("\n");
         sb.append("    serviceEngine: ").append(toIndentedString(serviceEngine)).append("\n");
-        sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
         sb.append("    significance: ").append(toIndentedString(significance)).append("\n");
         sb.append("    significant: ").append(toIndentedString(significant)).append("\n");
         sb.append("    significantLog: ").append(toIndentedString(significantLog)).append("\n");
