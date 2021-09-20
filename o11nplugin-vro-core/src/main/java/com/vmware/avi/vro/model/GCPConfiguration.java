@@ -43,6 +43,10 @@ public class GCPConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<String> firewallTargetTags = null;
 
+    @JsonProperty("gcp_service_account_email")
+    @JsonInclude(Include.NON_NULL)
+    private String gcpServiceAccountEmail = null;
+
     @JsonProperty("gcs_bucket_name")
     @JsonInclude(Include.NON_NULL)
     private String gcsBucketName = null;
@@ -191,6 +195,30 @@ public class GCPConfiguration extends AviRestResource {
     return this;
   }
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Email of gcp service account to be associated to the service engines.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return gcpServiceAccountEmail
+   */
+  @VsoMethod
+  public String getGcpServiceAccountEmail() {
+    return gcpServiceAccountEmail;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Email of gcp service account to be associated to the service engines.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param gcpServiceAccountEmail set the gcpServiceAccountEmail.
+   */
+  @VsoMethod
+  public void setGcpServiceAccountEmail(String  gcpServiceAccountEmail) {
+    this.gcpServiceAccountEmail = gcpServiceAccountEmail;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -436,7 +464,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.gcsBucketName, objGCPConfiguration.gcsBucketName)&&
   Objects.equals(this.encryptionKeyId, objGCPConfiguration.encryptionKeyId)&&
   Objects.equals(this.vipAllocationStrategy, objGCPConfiguration.vipAllocationStrategy)&&
-  Objects.equals(this.encryptionKeys, objGCPConfiguration.encryptionKeys);
+  Objects.equals(this.encryptionKeys, objGCPConfiguration.encryptionKeys)&&
+  Objects.equals(this.gcpServiceAccountEmail, objGCPConfiguration.gcpServiceAccountEmail);
 }
 
 @Override
@@ -447,6 +476,7 @@ public String toString() {
         sb.append("    encryptionKeyId: ").append(toIndentedString(encryptionKeyId)).append("\n");
         sb.append("    encryptionKeys: ").append(toIndentedString(encryptionKeys)).append("\n");
         sb.append("    firewallTargetTags: ").append(toIndentedString(firewallTargetTags)).append("\n");
+        sb.append("    gcpServiceAccountEmail: ").append(toIndentedString(gcpServiceAccountEmail)).append("\n");
         sb.append("    gcsBucketName: ").append(toIndentedString(gcsBucketName)).append("\n");
         sb.append("    gcsProjectId: ").append(toIndentedString(gcsProjectId)).append("\n");
         sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");

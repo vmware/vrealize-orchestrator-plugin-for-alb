@@ -48,7 +48,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * The host to which the redirect request is sent.
+   * Placeholder for description of property host of obj type failactionhttpredirect field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return host
    */
@@ -59,7 +59,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * The host to which the redirect request is sent.
+   * Placeholder for description of property host of obj type failactionhttpredirect field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param host set the host.
    */
@@ -70,8 +70,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Path configuration for the redirect request.
-   * If not set the path from the original request's uri is preserved in the redirect on pool failure.
+   * Placeholder for description of property path of obj type failactionhttpredirect field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return path
    */
@@ -82,8 +81,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Path configuration for the redirect request.
-   * If not set the path from the original request's uri is preserved in the redirect on pool failure.
+   * Placeholder for description of property path of obj type failactionhttpredirect field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param path set the path.
    */
@@ -120,8 +118,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Query configuration for the redirect request uri.
-   * If not set, the query from the original request's uri is preserved in the redirect on pool failure.
+   * Placeholder for description of property query of obj type failactionhttpredirect field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return query
    */
@@ -132,8 +129,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Query configuration for the redirect request uri.
-   * If not set, the query from the original request's uri is preserved in the redirect on pool failure.
+   * Placeholder for description of property query of obj type failactionhttpredirect field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param query set the query.
    */

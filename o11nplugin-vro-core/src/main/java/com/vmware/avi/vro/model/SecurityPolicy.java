@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.PortMatchGeneric;
 import com.vmware.avi.vro.model.DnsAttacks;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -29,10 +28,6 @@ public class SecurityPolicy extends AviRestResource {
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
     private String description = null;
-
-    @JsonProperty("dns_amplification_denyports")
-    @JsonInclude(Include.NON_NULL)
-    private PortMatchGeneric dnsAmplificationDenyports = null;
 
     @JsonProperty("dns_attacks")
     @JsonInclude(Include.NON_NULL)
@@ -100,30 +95,6 @@ public class SecurityPolicy extends AviRestResource {
   @VsoMethod
   public void setDescription(String  description) {
     this.description = description;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Source ports and port ranges to deny in dns amplification attacks.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return dnsAmplificationDenyports
-   */
-  @VsoMethod
-  public PortMatchGeneric getDnsAmplificationDenyports() {
-    return dnsAmplificationDenyports;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Source ports and port ranges to deny in dns amplification attacks.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param dnsAmplificationDenyports set the dnsAmplificationDenyports.
-   */
-  @VsoMethod
-  public void setDnsAmplificationDenyports(PortMatchGeneric dnsAmplificationDenyports) {
-    this.dnsAmplificationDenyports = dnsAmplificationDenyports;
   }
 
   /**
@@ -429,7 +400,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.networkSecurityPolicyIndex, objSecurityPolicy.networkSecurityPolicyIndex)&&
   Objects.equals(this.dnsPolicyIndex, objSecurityPolicy.dnsPolicyIndex)&&
   Objects.equals(this.labels, objSecurityPolicy.labels)&&
-  Objects.equals(this.dnsAmplificationDenyports, objSecurityPolicy.dnsAmplificationDenyports)&&
   Objects.equals(this.markers, objSecurityPolicy.markers)&&
   Objects.equals(this.description, objSecurityPolicy.description)&&
   Objects.equals(this.tenantRef, objSecurityPolicy.tenantRef);
@@ -440,7 +410,6 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SecurityPolicy {\n");
       sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    dnsAmplificationDenyports: ").append(toIndentedString(dnsAmplificationDenyports)).append("\n");
         sb.append("    dnsAttacks: ").append(toIndentedString(dnsAttacks)).append("\n");
         sb.append("    dnsPolicyIndex: ").append(toIndentedString(dnsPolicyIndex)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");

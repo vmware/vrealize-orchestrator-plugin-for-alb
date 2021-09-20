@@ -13,7 +13,6 @@ import com.vmware.avi.vro.model.DosThresholdProfile;
 import com.vmware.avi.vro.model.SeGroupAnalyticsPolicy;
 import com.vmware.avi.vro.model.RateLimiterProperties;
 import com.vmware.avi.vro.model.PortRange;
-import com.vmware.avi.vro.model.UserAgentCacheConfig;
 import com.vmware.avi.vro.model.VcenterClusters;
 import com.vmware.avi.vro.model.VcenterHosts;
 import com.vmware.avi.vro.model.VipAutoscaleGroup;
@@ -173,10 +172,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer datascriptTimeout = 1000000;
 
-    @JsonProperty("deactivate_ipv6_discovery")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean deactivateIpv6Discovery = null;
-
     @JsonProperty("dedicated_dispatcher_core")
     @JsonInclude(Include.NON_NULL)
     private Boolean dedicatedDispatcherCore = false;
@@ -225,18 +220,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean distributeVnics = false;
 
-    @JsonProperty("downstream_send_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer downstreamSendTimeout = 3600000;
-
-    @JsonProperty("dp_aggressive_deq_interval_msec")
-    @JsonInclude(Include.NON_NULL)
-    private Integer dpAggressiveDeqIntervalMsec = 1;
-
-    @JsonProperty("dp_aggressive_enq_interval_msec")
-    @JsonInclude(Include.NON_NULL)
-    private Integer dpAggressiveEnqIntervalMsec = 1;
-
     @JsonProperty("dp_aggressive_hb_frequency")
     @JsonInclude(Include.NON_NULL)
     private Integer dpAggressiveHbFrequency = 100;
@@ -244,14 +227,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("dp_aggressive_hb_timeout_count")
     @JsonInclude(Include.NON_NULL)
     private Integer dpAggressiveHbTimeoutCount = 10;
-
-    @JsonProperty("dp_deq_interval_msec")
-    @JsonInclude(Include.NON_NULL)
-    private Integer dpDeqIntervalMsec = 20;
-
-    @JsonProperty("dp_enq_interval_msec")
-    @JsonInclude(Include.NON_NULL)
-    private Integer dpEnqIntervalMsec = 20;
 
     @JsonProperty("dp_hb_frequency")
     @JsonInclude(Include.NON_NULL)
@@ -264,10 +239,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("enable_gratarp_permanent")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableGratarpPermanent = false;
-
-    @JsonProperty("enable_hsm_log")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean enableHsmLog = false;
 
     @JsonProperty("enable_hsm_priming")
     @JsonInclude(Include.NON_NULL)
@@ -365,14 +336,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean hostGatewayMonitor = false;
 
-    @JsonProperty("http_rum_console_log")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean httpRumConsoleLog = false;
-
-    @JsonProperty("http_rum_min_content_length")
-    @JsonInclude(Include.NON_NULL)
-    private Integer httpRumMinContentLength = 64;
-
     @JsonProperty("hypervisor")
     @JsonInclude(Include.NON_NULL)
     private String hypervisor = null;
@@ -397,25 +360,9 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<IptableRuleSet> iptables = null;
 
-    @JsonProperty("l7_conns_per_core")
-    @JsonInclude(Include.NON_NULL)
-    private Integer l7ConnsPerCore = 16384;
-
-    @JsonProperty("l7_resvd_listen_conns_per_core")
-    @JsonInclude(Include.NON_NULL)
-    private Integer l7ResvdListenConnsPerCore = 256;
-
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
     private List<KeyValue> labels = null;
-
-    @JsonProperty("lbaction_num_requests_to_dispatch")
-    @JsonInclude(Include.NON_NULL)
-    private Integer lbactionNumRequestsToDispatch = 4;
-
-    @JsonProperty("lbaction_rq_per_request_max_retries")
-    @JsonInclude(Include.NON_NULL)
-    private Integer lbactionRqPerRequestMaxRetries = 22;
 
     @JsonProperty("least_load_core_selection")
     @JsonInclude(Include.NON_NULL)
@@ -429,62 +376,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String licenseType = null;
 
-    @JsonProperty("log_agent_compress_logs")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean logAgentCompressLogs = true;
-
-    @JsonProperty("log_agent_debug_enabled")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean logAgentDebugEnabled = false;
-
-    @JsonProperty("log_agent_file_sz_appl")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentFileSzAppl = 4;
-
-    @JsonProperty("log_agent_file_sz_conn")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentFileSzConn = 4;
-
-    @JsonProperty("log_agent_file_sz_debug")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentFileSzDebug = 4;
-
-    @JsonProperty("log_agent_file_sz_event")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentFileSzEvent = 4;
-
-    @JsonProperty("log_agent_log_storage_min_sz")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentLogStorageMinSz = 1024;
-
-    @JsonProperty("log_agent_max_concurrent_rsync")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentMaxConcurrentRsync = 1024;
-
-    @JsonProperty("log_agent_max_storage_excess_percent")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentMaxStorageExcessPercent = 110;
-
-    @JsonProperty("log_agent_max_storage_ignore_percent")
-    @JsonInclude(Include.NON_NULL)
-    private Float logAgentMaxStorageIgnorePercent = 20.0f;
-
-    @JsonProperty("log_agent_min_storage_per_vs")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentMinStoragePerVs = 10;
-
-    @JsonProperty("log_agent_sleep_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentSleepInterval = 10;
-
-    @JsonProperty("log_agent_trace_enabled")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean logAgentTraceEnabled = true;
-
-    @JsonProperty("log_agent_unknown_vs_timer")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logAgentUnknownVsTimer = 1800;
-
     @JsonProperty("log_disksz")
     @JsonInclude(Include.NON_NULL)
     private Integer logDisksz = 10000;
@@ -492,10 +383,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("log_malloc_failure")
     @JsonInclude(Include.NON_NULL)
     private Boolean logMallocFailure = true;
-
-    @JsonProperty("log_message_max_file_list_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer logMessageMaxFileListSize = 64;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
@@ -613,25 +500,9 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer natFlowUdpResponseTimeout;
 
-    @JsonProperty("netlink_poller_threads")
-    @JsonInclude(Include.NON_NULL)
-    private Integer netlinkPollerThreads = 2;
-
-    @JsonProperty("netlink_sock_buf_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer netlinkSockBufSize = 4;
-
-    @JsonProperty("ngx_free_connection_stack")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean ngxFreeConnectionStack = false;
-
     @JsonProperty("non_significant_log_throttle")
     @JsonInclude(Include.NON_NULL)
     private Integer nonSignificantLogThrottle = 100;
-
-    @JsonProperty("ns_helper_deq_interval_msec")
-    @JsonInclude(Include.NON_NULL)
-    private Integer nsHelperDeqIntervalMsec = 20;
 
     @JsonProperty("num_dispatcher_cores")
     @JsonInclude(Include.NON_NULL)
@@ -705,18 +576,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer resyncTimeInterval = 65536;
 
-    @JsonProperty("sdb_flush_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer sdbFlushInterval = 100;
-
-    @JsonProperty("sdb_pipeline_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer sdbPipelineSize = 100;
-
-    @JsonProperty("sdb_scan_count")
-    @JsonInclude(Include.NON_NULL)
-    private Integer sdbScanCount = 1000;
-
     @JsonProperty("se_bandwidth_type")
     @JsonInclude(Include.NON_NULL)
     private String seBandwidthType = null;
@@ -745,17 +604,9 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer seDpIsolationNumNonDpCpus = 0;
 
-    @JsonProperty("se_dp_log_nf_enqueue_percent")
-    @JsonInclude(Include.NON_NULL)
-    private Integer seDpLogNfEnqueuePercent = 70;
-
-    @JsonProperty("se_dp_log_udf_enqueue_percent")
-    @JsonInclude(Include.NON_NULL)
-    private Integer seDpLogUdfEnqueuePercent = 90;
-
     @JsonProperty("se_dp_max_hb_version")
     @JsonInclude(Include.NON_NULL)
-    private Integer seDpMaxHbVersion = 3;
+    private Integer seDpMaxHbVersion = 2;
 
     @JsonProperty("se_dp_vnic_queue_stall_event_sleep")
     @JsonInclude(Include.NON_NULL)
@@ -816,18 +667,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("se_l3_encap_ipc")
     @JsonInclude(Include.NON_NULL)
     private Integer seL3EncapIpc = 0;
-
-    @JsonProperty("se_log_buffer_app_blocking_dequeue")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean seLogBufferAppBlockingDequeue = false;
-
-    @JsonProperty("se_log_buffer_conn_blocking_dequeue")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean seLogBufferConnBlockingDequeue = false;
-
-    @JsonProperty("se_log_buffer_events_blocking_dequeue")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean seLogBufferEventsBlockingDequeue = true;
 
     @JsonProperty("se_lro")
     @JsonInclude(Include.NON_NULL)
@@ -961,10 +800,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean selfSeElection = false;
 
-    @JsonProperty("send_se_ready_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer sendSeReadyTimeout = 300;
-
     @JsonProperty("service_ip6_subnets")
     @JsonInclude(Include.NON_NULL)
     private List<IpAddrPrefix> serviceIp6Subnets = null;
@@ -985,10 +820,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean sslPreprocessSniHostname = true;
 
-    @JsonProperty("ssl_sess_cache_per_vs")
-    @JsonInclude(Include.NON_NULL)
-    private Integer sslSessCachePerVs = 4096;
-
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
     private String tenantRef = null;
@@ -1001,22 +832,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer udfLogThrottle = 100;
 
-    @JsonProperty("upstream_connect_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer upstreamConnectTimeout = 3600000;
-
-    @JsonProperty("upstream_connpool_enable")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean upstreamConnpoolEnable = true;
-
-    @JsonProperty("upstream_read_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer upstreamReadTimeout = 3600000;
-
-    @JsonProperty("upstream_send_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer upstreamSendTimeout = 3600000;
-
     @JsonProperty("url")
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
@@ -1025,10 +840,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean useHyperthreadedCores = true;
 
-    @JsonProperty("use_legacy_netlink")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean useLegacyNetlink = false;
-
     @JsonProperty("use_objsync")
     @JsonInclude(Include.NON_NULL)
     private Boolean useObjsync = true;
@@ -1036,14 +847,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("use_standard_alb")
     @JsonInclude(Include.NON_NULL)
     private Boolean useStandardAlb = null;
-
-    @JsonProperty("user_agent_cache_config")
-    @JsonInclude(Include.NON_NULL)
-    private UserAgentCacheConfig userAgentCacheConfig = null;
-
-    @JsonProperty("user_defined_metric_age")
-    @JsonInclude(Include.NON_NULL)
-    private Integer userDefinedMetricAge = 60;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
@@ -1084,30 +887,6 @@ public class ServiceEngineGroup extends AviRestResource {
     @JsonProperty("vip_asg")
     @JsonInclude(Include.NON_NULL)
     private VipAutoscaleGroup vipAsg = null;
-
-    @JsonProperty("vnic_dhcp_ip_check_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vnicDhcpIpCheckInterval = 6;
-
-    @JsonProperty("vnic_dhcp_ip_max_retries")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vnicDhcpIpMaxRetries = 10;
-
-    @JsonProperty("vnic_ip_delete_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vnicIpDeleteInterval = 5;
-
-    @JsonProperty("vnic_probe_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vnicProbeInterval = 5;
-
-    @JsonProperty("vnic_rpc_retry_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vnicRpcRetryInterval = 5;
-
-    @JsonProperty("vnicdb_cmd_history_size")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vnicdbCmdHistorySize = 256;
 
     @JsonProperty("vs_host_redundancy")
     @JsonInclude(Include.NON_NULL)
@@ -2129,30 +1908,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * If activated, ipv6 address and route discovery are deactivated.requires se reboot.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return deactivateIpv6Discovery
-   */
-  @VsoMethod
-  public Boolean getDeactivateIpv6Discovery() {
-    return deactivateIpv6Discovery;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * If activated, ipv6 address and route discovery are deactivated.requires se reboot.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param deactivateIpv6Discovery set the deactivateIpv6Discovery.
-   */
-  @VsoMethod
-  public void setDeactivateIpv6Discovery(Boolean  deactivateIpv6Discovery) {
-    this.deactivateIpv6Discovery = deactivateIpv6Discovery;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
    * Don't use it for tcp/ip and ssl functions.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -2457,92 +2212,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Timeout for downstream to become writable.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @return downstreamSendTimeout
-   */
-  @VsoMethod
-  public Integer getDownstreamSendTimeout() {
-    return downstreamSendTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timeout for downstream to become writable.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @param downstreamSendTimeout set the downstreamSendTimeout.
-   */
-  @VsoMethod
-  public void setDownstreamSendTimeout(Integer  downstreamSendTimeout) {
-    this.downstreamSendTimeout = downstreamSendTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Dequeue interval for receive queue from se_dp in aggressive mode.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
-   * @return dpAggressiveDeqIntervalMsec
-   */
-  @VsoMethod
-  public Integer getDpAggressiveDeqIntervalMsec() {
-    return dpAggressiveDeqIntervalMsec;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Dequeue interval for receive queue from se_dp in aggressive mode.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
-   * @param dpAggressiveDeqIntervalMsec set the dpAggressiveDeqIntervalMsec.
-   */
-  @VsoMethod
-  public void setDpAggressiveDeqIntervalMsec(Integer  dpAggressiveDeqIntervalMsec) {
-    this.dpAggressiveDeqIntervalMsec = dpAggressiveDeqIntervalMsec;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enqueue interval for request queue to se_dp in aggressive mode.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
-   * @return dpAggressiveEnqIntervalMsec
-   */
-  @VsoMethod
-  public Integer getDpAggressiveEnqIntervalMsec() {
-    return dpAggressiveEnqIntervalMsec;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enqueue interval for request queue to se_dp in aggressive mode.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1.
-   * @param dpAggressiveEnqIntervalMsec set the dpAggressiveEnqIntervalMsec.
-   */
-  @VsoMethod
-  public void setDpAggressiveEnqIntervalMsec(Integer  dpAggressiveEnqIntervalMsec) {
-    this.dpAggressiveEnqIntervalMsec = dpAggressiveEnqIntervalMsec;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Frequency of se - se hb messages when aggressive failure mode detection is enabled.
    * Field introduced in 20.1.3.
    * Unit is milliseconds.
@@ -2589,66 +2258,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setDpAggressiveHbTimeoutCount(Integer  dpAggressiveHbTimeoutCount) {
     this.dpAggressiveHbTimeoutCount = dpAggressiveHbTimeoutCount;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Dequeue interval for receive queue from se_dp.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @return dpDeqIntervalMsec
-   */
-  @VsoMethod
-  public Integer getDpDeqIntervalMsec() {
-    return dpDeqIntervalMsec;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Dequeue interval for receive queue from se_dp.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @param dpDeqIntervalMsec set the dpDeqIntervalMsec.
-   */
-  @VsoMethod
-  public void setDpDeqIntervalMsec(Integer  dpDeqIntervalMsec) {
-    this.dpDeqIntervalMsec = dpDeqIntervalMsec;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enqueue interval for request queue to se_dp.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @return dpEnqIntervalMsec
-   */
-  @VsoMethod
-  public Integer getDpEnqIntervalMsec() {
-    return dpEnqIntervalMsec;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enqueue interval for request queue to se_dp.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @param dpEnqIntervalMsec set the dpEnqIntervalMsec.
-   */
-  @VsoMethod
-  public void setDpEnqIntervalMsec(Integer  dpEnqIntervalMsec) {
-    this.dpEnqIntervalMsec = dpEnqIntervalMsec;
   }
 
   /**
@@ -2723,30 +2332,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setEnableGratarpPermanent(Boolean  enableGratarpPermanent) {
     this.enableGratarpPermanent = enableGratarpPermanent;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable hsm luna engine logs.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return enableHsmLog
-   */
-  @VsoMethod
-  public Boolean getEnableHsmLog() {
-    return enableHsmLog;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable hsm luna engine logs.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param enableHsmLog set the enableHsmLog.
-   */
-  @VsoMethod
-  public void setEnableHsmLog(Boolean  enableHsmLog) {
-    this.enableHsmLog = enableHsmLog;
   }
 
   /**
@@ -3415,58 +3000,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable javascript console logs on the client browser when collecting client insights.
-   * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return httpRumConsoleLog
-   */
-  @VsoMethod
-  public Boolean getHttpRumConsoleLog() {
-    return httpRumConsoleLog;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable javascript console logs on the client browser when collecting client insights.
-   * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param httpRumConsoleLog set the httpRumConsoleLog.
-   */
-  @VsoMethod
-  public void setHttpRumConsoleLog(Boolean  httpRumConsoleLog) {
-    this.httpRumConsoleLog = httpRumConsoleLog;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Minimum response size content length to sample for client insights.
-   * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- 64) edition, essentials(allowed values- 64) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
-   * @return httpRumMinContentLength
-   */
-  @VsoMethod
-  public Integer getHttpRumMinContentLength() {
-    return httpRumMinContentLength;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Minimum response size content length to sample for client insights.
-   * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- 64) edition, essentials(allowed values- 64) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
-   * @param httpRumMinContentLength set the httpRumMinContentLength.
-   */
-  @VsoMethod
-  public void setHttpRumMinContentLength(Integer  httpRumMinContentLength) {
-    this.httpRumMinContentLength = httpRumMinContentLength;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Override default hypervisor.
    * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -3632,54 +3165,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of l7 connections that can be cached per core.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
-   * @return l7ConnsPerCore
-   */
-  @VsoMethod
-  public Integer getL7ConnsPerCore() {
-    return l7ConnsPerCore;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of l7 connections that can be cached per core.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
-   * @param l7ConnsPerCore set the l7ConnsPerCore.
-   */
-  @VsoMethod
-  public void setL7ConnsPerCore(Integer  l7ConnsPerCore) {
-    this.l7ConnsPerCore = l7ConnsPerCore;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Number of reserved l7 listener connections per core.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 256.
-   * @return l7ResvdListenConnsPerCore
-   */
-  @VsoMethod
-  public Integer getL7ResvdListenConnsPerCore() {
-    return l7ResvdListenConnsPerCore;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of reserved l7 listener connections per core.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 256.
-   * @param l7ResvdListenConnsPerCore set the l7ResvdListenConnsPerCore.
-   */
-  @VsoMethod
-  public void setL7ResvdListenConnsPerCore(Integer  l7ResvdListenConnsPerCore) {
-    this.l7ResvdListenConnsPerCore = l7ResvdListenConnsPerCore;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Labels associated with this se group.
    * Field introduced in 20.1.1.
    * Maximum of 1 items allowed.
@@ -3721,56 +3206,6 @@ public class ServiceEngineGroup extends AviRestResource {
     return this;
   }
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Number of requests to dispatch from the request.
-   * Queue at a regular interval.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return lbactionNumRequestsToDispatch
-   */
-  @VsoMethod
-  public Integer getLbactionNumRequestsToDispatch() {
-    return lbactionNumRequestsToDispatch;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of requests to dispatch from the request.
-   * Queue at a regular interval.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param lbactionNumRequestsToDispatch set the lbactionNumRequestsToDispatch.
-   */
-  @VsoMethod
-  public void setLbactionNumRequestsToDispatch(Integer  lbactionNumRequestsToDispatch) {
-    this.lbactionNumRequestsToDispatch = lbactionNumRequestsToDispatch;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum retries per request in the request queue.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 22.
-   * @return lbactionRqPerRequestMaxRetries
-   */
-  @VsoMethod
-  public Integer getLbactionRqPerRequestMaxRetries() {
-    return lbactionRqPerRequestMaxRetries;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum retries per request in the request queue.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 22.
-   * @param lbactionRqPerRequestMaxRetries set the lbactionRqPerRequestMaxRetries.
-   */
-  @VsoMethod
-  public void setLbactionRqPerRequestMaxRetries(Integer  lbactionRqPerRequestMaxRetries) {
-    this.lbactionRqPerRequestMaxRetries = lbactionRqPerRequestMaxRetries;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -3850,354 +3285,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Flag to indicate if log files are compressed upon full on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @return logAgentCompressLogs
-   */
-  @VsoMethod
-  public Boolean getLogAgentCompressLogs() {
-    return logAgentCompressLogs;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Flag to indicate if log files are compressed upon full on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @param logAgentCompressLogs set the logAgentCompressLogs.
-   */
-  @VsoMethod
-  public void setLogAgentCompressLogs(Boolean  logAgentCompressLogs) {
-    this.logAgentCompressLogs = logAgentCompressLogs;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable debug logs by default on service engine.
-   * This includes all other debugging logs.
-   * Debug logs can also be explcitly enabled from the cli shell.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return logAgentDebugEnabled
-   */
-  @VsoMethod
-  public Boolean getLogAgentDebugEnabled() {
-    return logAgentDebugEnabled;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable debug logs by default on service engine.
-   * This includes all other debugging logs.
-   * Debug logs can also be explcitly enabled from the cli shell.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param logAgentDebugEnabled set the logAgentDebugEnabled.
-   */
-  @VsoMethod
-  public void setLogAgentDebugEnabled(Boolean  logAgentDebugEnabled) {
-    this.logAgentDebugEnabled = logAgentDebugEnabled;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum application log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return logAgentFileSzAppl
-   */
-  @VsoMethod
-  public Integer getLogAgentFileSzAppl() {
-    return logAgentFileSzAppl;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum application log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param logAgentFileSzAppl set the logAgentFileSzAppl.
-   */
-  @VsoMethod
-  public void setLogAgentFileSzAppl(Integer  logAgentFileSzAppl) {
-    this.logAgentFileSzAppl = logAgentFileSzAppl;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum connection log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return logAgentFileSzConn
-   */
-  @VsoMethod
-  public Integer getLogAgentFileSzConn() {
-    return logAgentFileSzConn;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum connection log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param logAgentFileSzConn set the logAgentFileSzConn.
-   */
-  @VsoMethod
-  public void setLogAgentFileSzConn(Integer  logAgentFileSzConn) {
-    this.logAgentFileSzConn = logAgentFileSzConn;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum debug log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return logAgentFileSzDebug
-   */
-  @VsoMethod
-  public Integer getLogAgentFileSzDebug() {
-    return logAgentFileSzDebug;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum debug log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param logAgentFileSzDebug set the logAgentFileSzDebug.
-   */
-  @VsoMethod
-  public void setLogAgentFileSzDebug(Integer  logAgentFileSzDebug) {
-    this.logAgentFileSzDebug = logAgentFileSzDebug;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum event log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return logAgentFileSzEvent
-   */
-  @VsoMethod
-  public Integer getLogAgentFileSzEvent() {
-    return logAgentFileSzEvent;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum event log file size before rollover.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param logAgentFileSzEvent set the logAgentFileSzEvent.
-   */
-  @VsoMethod
-  public void setLogAgentFileSzEvent(Integer  logAgentFileSzEvent) {
-    this.logAgentFileSzEvent = logAgentFileSzEvent;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Minimum storage allocated for logs irrespective of memory and cores.
-   * Field introduced in 21.1.1.
-   * Unit is mb.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
-   * @return logAgentLogStorageMinSz
-   */
-  @VsoMethod
-  public Integer getLogAgentLogStorageMinSz() {
-    return logAgentLogStorageMinSz;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Minimum storage allocated for logs irrespective of memory and cores.
-   * Field introduced in 21.1.1.
-   * Unit is mb.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
-   * @param logAgentLogStorageMinSz set the logAgentLogStorageMinSz.
-   */
-  @VsoMethod
-  public void setLogAgentLogStorageMinSz(Integer  logAgentLogStorageMinSz) {
-    this.logAgentLogStorageMinSz = logAgentLogStorageMinSz;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum concurrent rsync requests initiated from log-agent to the controller.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
-   * @return logAgentMaxConcurrentRsync
-   */
-  @VsoMethod
-  public Integer getLogAgentMaxConcurrentRsync() {
-    return logAgentMaxConcurrentRsync;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum concurrent rsync requests initiated from log-agent to the controller.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
-   * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
-   */
-  @VsoMethod
-  public void setLogAgentMaxConcurrentRsync(Integer  logAgentMaxConcurrentRsync) {
-    this.logAgentMaxConcurrentRsync = logAgentMaxConcurrentRsync;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 110.
-   * @return logAgentMaxStorageExcessPercent
-   */
-  @VsoMethod
-  public Integer getLogAgentMaxStorageExcessPercent() {
-    return logAgentMaxStorageExcessPercent;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 110.
-   * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
-   */
-  @VsoMethod
-  public void setLogAgentMaxStorageExcessPercent(Integer  logAgentMaxStorageExcessPercent) {
-    this.logAgentMaxStorageExcessPercent = logAgentMaxStorageExcessPercent;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Maximum storage on the disk not allocated for logs on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
-   * @return logAgentMaxStorageIgnorePercent
-   */
-  @VsoMethod
-  public Float getLogAgentMaxStorageIgnorePercent() {
-    return logAgentMaxStorageIgnorePercent;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum storage on the disk not allocated for logs on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
-   * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
-   */
-  @VsoMethod
-  public void setLogAgentMaxStorageIgnorePercent(Float  logAgentMaxStorageIgnorePercent) {
-    this.logAgentMaxStorageIgnorePercent = logAgentMaxStorageIgnorePercent;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Minimum storage allocated to any given virtualservice on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
-   * @return logAgentMinStoragePerVs
-   */
-  @VsoMethod
-  public Integer getLogAgentMinStoragePerVs() {
-    return logAgentMinStoragePerVs;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Minimum storage allocated to any given virtualservice on the service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
-   * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
-   */
-  @VsoMethod
-  public void setLogAgentMinStoragePerVs(Integer  logAgentMinStoragePerVs) {
-    this.logAgentMinStoragePerVs = logAgentMinStoragePerVs;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
-   * @return logAgentSleepInterval
-   */
-  @VsoMethod
-  public Integer getLogAgentSleepInterval() {
-    return logAgentSleepInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
-   * @param logAgentSleepInterval set the logAgentSleepInterval.
-   */
-  @VsoMethod
-  public void setLogAgentSleepInterval(Integer  logAgentSleepInterval) {
-    this.logAgentSleepInterval = logAgentSleepInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable trace logs by default on service engine.
-   * Configuration operations are logged along with other important logs by service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @return logAgentTraceEnabled
-   */
-  @VsoMethod
-  public Boolean getLogAgentTraceEnabled() {
-    return logAgentTraceEnabled;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable trace logs by default on service engine.
-   * Configuration operations are logged along with other important logs by service engine.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @param logAgentTraceEnabled set the logAgentTraceEnabled.
-   */
-  @VsoMethod
-  public void setLogAgentTraceEnabled(Boolean  logAgentTraceEnabled) {
-    this.logAgentTraceEnabled = logAgentTraceEnabled;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Timeout to purge unknown virtual service logs from the service engine.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
-   * @return logAgentUnknownVsTimer
-   */
-  @VsoMethod
-  public Integer getLogAgentUnknownVsTimer() {
-    return logAgentUnknownVsTimer;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timeout to purge unknown virtual service logs from the service engine.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
-   * @param logAgentUnknownVsTimer set the logAgentUnknownVsTimer.
-   */
-  @VsoMethod
-  public void setLogAgentUnknownVsTimer(Integer  logAgentUnknownVsTimer) {
-    this.logAgentUnknownVsTimer = logAgentUnknownVsTimer;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Maximum disk capacity (in mb) to be allocated to an se.
    * This is exclusively used for debug and log data.
    * Unit is mb.
@@ -4250,32 +3337,8 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Maximum number of file names in a log message.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
-   * @return logMessageMaxFileListSize
-   */
-  @VsoMethod
-  public Integer getLogMessageMaxFileListSize() {
-    return logMessageMaxFileListSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Maximum number of file names in a log message.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 64.
-   * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
-   */
-  @VsoMethod
-  public void setLogMessageMaxFileListSize(Integer  logMessageMaxFileListSize) {
-    this.logMessageMaxFileListSize = logMessageMaxFileListSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * List of labels to be used for granular rbac.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.7.
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
@@ -4288,7 +3351,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method. this will set the markers
    * List of labels to be used for granular rbac.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.7.
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
@@ -4301,7 +3364,7 @@ public class ServiceEngineGroup extends AviRestResource {
   /**
    * This is the setter method this will set the markers
    * List of labels to be used for granular rbac.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.7.
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return markers
@@ -4400,9 +3463,9 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Configures the maximum number of se_dp processes that handles traffic.
+   * Configures the maximum number of se_dp processes created on the se, requires se reboot.
    * If not configured, defaults to the number of cpus on the se.
-   * If decreased, it will only take effect after se reboot.
+   * This should only be used if user wants to limit the number of se_dps to less than the available cpus on the se.
    * Allowed values are 1-128.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -4416,9 +3479,9 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Configures the maximum number of se_dp processes that handles traffic.
+   * Configures the maximum number of se_dp processes created on the se, requires se reboot.
    * If not configured, defaults to the number of cpus on the se.
-   * If decreased, it will only take effect after se reboot.
+   * This should only be used if user wants to limit the number of se_dps to less than the available cpus on the se.
    * Allowed values are 1-128.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -5054,88 +4117,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of threads to poll for netlink messages excluding the thread for default namespace.
-   * Requires se reboot.
-   * Allowed values are 1-32.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
-   * @return netlinkPollerThreads
-   */
-  @VsoMethod
-  public Integer getNetlinkPollerThreads() {
-    return netlinkPollerThreads;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of threads to poll for netlink messages excluding the thread for default namespace.
-   * Requires se reboot.
-   * Allowed values are 1-32.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
-   * @param netlinkPollerThreads set the netlinkPollerThreads.
-   */
-  @VsoMethod
-  public void setNetlinkPollerThreads(Integer  netlinkPollerThreads) {
-    this.netlinkPollerThreads = netlinkPollerThreads;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Socket buffer size for the netlink sockets.
-   * Requires se reboot.
-   * Allowed values are 1-128.
-   * Field introduced in 21.1.1.
-   * Unit is mega_bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @return netlinkSockBufSize
-   */
-  @VsoMethod
-  public Integer getNetlinkSockBufSize() {
-    return netlinkSockBufSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Socket buffer size for the netlink sockets.
-   * Requires se reboot.
-   * Allowed values are 1-128.
-   * Field introduced in 21.1.1.
-   * Unit is mega_bytes.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
-   * @param netlinkSockBufSize set the netlinkSockBufSize.
-   */
-  @VsoMethod
-  public void setNetlinkSockBufSize(Integer  netlinkSockBufSize) {
-    this.netlinkSockBufSize = netlinkSockBufSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Free the connection stack.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return ngxFreeConnectionStack
-   */
-  @VsoMethod
-  public Boolean getNgxFreeConnectionStack() {
-    return ngxFreeConnectionStack;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Free the connection stack.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param ngxFreeConnectionStack set the ngxFreeConnectionStack.
-   */
-  @VsoMethod
-  public void setNgxFreeConnectionStack(Boolean  ngxFreeConnectionStack) {
-    this.ngxFreeConnectionStack = ngxFreeConnectionStack;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * This setting limits the number of non-significant logs generated per second per core on this se.
    * Default is 100 logs per second.
    * Set it to zero (0) to deactivate throttling.
@@ -5162,36 +4143,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setNonSignificantLogThrottle(Integer  nonSignificantLogThrottle) {
     this.nonSignificantLogThrottle = nonSignificantLogThrottle;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Dequeue interval for receive queue from ns helper.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @return nsHelperDeqIntervalMsec
-   */
-  @VsoMethod
-  public Integer getNsHelperDeqIntervalMsec() {
-    return nsHelperDeqIntervalMsec;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Dequeue interval for receive queue from ns helper.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @param nsHelperDeqIntervalMsec set the nsHelperDeqIntervalMsec.
-   */
-  @VsoMethod
-  public void setNsHelperDeqIntervalMsec(Integer  nsHelperDeqIntervalMsec) {
-    this.nsHelperDeqIntervalMsec = nsHelperDeqIntervalMsec;
   }
 
   /**
@@ -5665,92 +4616,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Sdb pipeline flush interval.
-   * Allowed values are 1-10000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
-   * @return sdbFlushInterval
-   */
-  @VsoMethod
-  public Integer getSdbFlushInterval() {
-    return sdbFlushInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Sdb pipeline flush interval.
-   * Allowed values are 1-10000.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
-   * @param sdbFlushInterval set the sdbFlushInterval.
-   */
-  @VsoMethod
-  public void setSdbFlushInterval(Integer  sdbFlushInterval) {
-    this.sdbFlushInterval = sdbFlushInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Sdb pipeline size.
-   * Allowed values are 1-10000.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
-   * @return sdbPipelineSize
-   */
-  @VsoMethod
-  public Integer getSdbPipelineSize() {
-    return sdbPipelineSize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Sdb pipeline size.
-   * Allowed values are 1-10000.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
-   * @param sdbPipelineSize set the sdbPipelineSize.
-   */
-  @VsoMethod
-  public void setSdbPipelineSize(Integer  sdbPipelineSize) {
-    this.sdbPipelineSize = sdbPipelineSize;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Sdb scan count.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
-   * @return sdbScanCount
-   */
-  @VsoMethod
-  public Integer getSdbScanCount() {
-    return sdbScanCount;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Sdb scan count.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
-   * @param sdbScanCount set the sdbScanCount.
-   */
-  @VsoMethod
-  public void setSdbScanCount(Integer  sdbScanCount) {
-    this.sdbScanCount = sdbScanCount;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Select the se bandwidth for the bandwidth license.
    * Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
    * Field introduced in 17.2.5.
@@ -5951,59 +4816,11 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 70.
-   * @return seDpLogNfEnqueuePercent
-   */
-  @VsoMethod
-  public Integer getSeDpLogNfEnqueuePercent() {
-    return seDpLogNfEnqueuePercent;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 70.
-   * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
-   */
-  @VsoMethod
-  public void setSeDpLogNfEnqueuePercent(Integer  seDpLogNfEnqueuePercent) {
-    this.seDpLogNfEnqueuePercent = seDpLogNfEnqueuePercent;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 90.
-   * @return seDpLogUdfEnqueuePercent
-   */
-  @VsoMethod
-  public Integer getSeDpLogUdfEnqueuePercent() {
-    return seDpLogUdfEnqueuePercent;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 90.
-   * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.
-   */
-  @VsoMethod
-  public void setSeDpLogUdfEnqueuePercent(Integer  seDpLogUdfEnqueuePercent) {
-    this.seDpLogUdfEnqueuePercent = seDpLogUdfEnqueuePercent;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * The highest supported se-se heartbeat protocol version.
    * This version is reported by secondary se to primary se in heartbeat response messages.
-   * Allowed values are 1-3.
+   * Allowed values are 1-2.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @return seDpMaxHbVersion
    */
   @VsoMethod
@@ -6015,9 +4832,9 @@ public class ServiceEngineGroup extends AviRestResource {
    * This is the setter method to the attribute.
    * The highest supported se-se heartbeat protocol version.
    * This version is reported by secondary se to primary se in heartbeat response messages.
-   * Allowed values are 1-3.
+   * Allowed values are 1-2.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 2.
    * @param seDpMaxHbVersion set the seDpMaxHbVersion.
    */
   @VsoMethod
@@ -6419,78 +5236,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setSeL3EncapIpc(Integer  seL3EncapIpc) {
     this.seL3EncapIpc = seL3EncapIpc;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return seLogBufferAppBlockingDequeue
-   */
-  @VsoMethod
-  public Boolean getSeLogBufferAppBlockingDequeue() {
-    return seLogBufferAppBlockingDequeue;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param seLogBufferAppBlockingDequeue set the seLogBufferAppBlockingDequeue.
-   */
-  @VsoMethod
-  public void setSeLogBufferAppBlockingDequeue(Boolean  seLogBufferAppBlockingDequeue) {
-    this.seLogBufferAppBlockingDequeue = seLogBufferAppBlockingDequeue;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return seLogBufferConnBlockingDequeue
-   */
-  @VsoMethod
-  public Boolean getSeLogBufferConnBlockingDequeue() {
-    return seLogBufferConnBlockingDequeue;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param seLogBufferConnBlockingDequeue set the seLogBufferConnBlockingDequeue.
-   */
-  @VsoMethod
-  public void setSeLogBufferConnBlockingDequeue(Boolean  seLogBufferConnBlockingDequeue) {
-    this.seLogBufferConnBlockingDequeue = seLogBufferConnBlockingDequeue;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @return seLogBufferEventsBlockingDequeue
-   */
-  @VsoMethod
-  public Boolean getSeLogBufferEventsBlockingDequeue() {
-    return seLogBufferEventsBlockingDequeue;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @param seLogBufferEventsBlockingDequeue set the seLogBufferEventsBlockingDequeue.
-   */
-  @VsoMethod
-  public void setSeLogBufferEventsBlockingDequeue(Boolean  seLogBufferEventsBlockingDequeue) {
-    this.seLogBufferEventsBlockingDequeue = seLogBufferEventsBlockingDequeue;
   }
 
   /**
@@ -7377,36 +6122,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Timeout for sending se_ready without ns helper registration completion.
-   * Allowed values are 10-600.
-   * Field introduced in 21.1.1.
-   * Unit is seconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 300.
-   * @return sendSeReadyTimeout
-   */
-  @VsoMethod
-  public Integer getSendSeReadyTimeout() {
-    return sendSeReadyTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timeout for sending se_ready without ns helper registration completion.
-   * Allowed values are 10-600.
-   * Field introduced in 21.1.1.
-   * Unit is seconds.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 300.
-   * @param sendSeReadyTimeout set the sendSeReadyTimeout.
-   */
-  @VsoMethod
-  public void setSendSeReadyTimeout(Integer  sendSeReadyTimeout) {
-    this.sendSeReadyTimeout = sendSeReadyTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Ipv6 subnets assigned to the se group.
    * Required for vs group placement.
    * Field introduced in 18.1.1.
@@ -7585,30 +6300,6 @@ public class ServiceEngineGroup extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Number of ssl sessions that can be cached per vs.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
-   * @return sslSessCachePerVs
-   */
-  @VsoMethod
-  public Integer getSslSessCachePerVs() {
-    return sslSessCachePerVs;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Number of ssl sessions that can be cached per vs.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
-   * @param sslSessCachePerVs set the sslSessCachePerVs.
-   */
-  @VsoMethod
-  public void setSslSessCachePerVs(Integer  sslSessCachePerVs) {
-    this.sslSessCachePerVs = sslSessCachePerVs;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * It is a reference to an object of type tenant.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantRef
@@ -7688,110 +6379,6 @@ public class ServiceEngineGroup extends AviRestResource {
   public void setUdfLogThrottle(Integer  udfLogThrottle) {
     this.udfLogThrottle = udfLogThrottle;
   }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Timeout for backend connection.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @return upstreamConnectTimeout
-   */
-  @VsoMethod
-  public Integer getUpstreamConnectTimeout() {
-    return upstreamConnectTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timeout for backend connection.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @param upstreamConnectTimeout set the upstreamConnectTimeout.
-   */
-  @VsoMethod
-  public void setUpstreamConnectTimeout(Integer  upstreamConnectTimeout) {
-    this.upstreamConnectTimeout = upstreamConnectTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable upstream connection pool,.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @return upstreamConnpoolEnable
-   */
-  @VsoMethod
-  public Boolean getUpstreamConnpoolEnable() {
-    return upstreamConnpoolEnable;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable upstream connection pool,.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
-   * @param upstreamConnpoolEnable set the upstreamConnpoolEnable.
-   */
-  @VsoMethod
-  public void setUpstreamConnpoolEnable(Boolean  upstreamConnpoolEnable) {
-    this.upstreamConnpoolEnable = upstreamConnpoolEnable;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Timeout for data to be received from backend.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @return upstreamReadTimeout
-   */
-  @VsoMethod
-  public Integer getUpstreamReadTimeout() {
-    return upstreamReadTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timeout for data to be received from backend.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @param upstreamReadTimeout set the upstreamReadTimeout.
-   */
-  @VsoMethod
-  public void setUpstreamReadTimeout(Integer  upstreamReadTimeout) {
-    this.upstreamReadTimeout = upstreamReadTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Timeout for upstream to become writable.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic(allowed values- 3600000) edition, essentials(allowed values- 3600000) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @return upstreamSendTimeout
-   */
-  @VsoMethod
-  public Integer getUpstreamSendTimeout() {
-    return upstreamSendTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timeout for upstream to become writable.
-   * Field introduced in 21.1.1.
-   * Unit is milliseconds.
-   * Allowed in basic(allowed values- 3600000) edition, essentials(allowed values- 3600000) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 3600000.
-   * @param upstreamSendTimeout set the upstreamSendTimeout.
-   */
-  @VsoMethod
-  public void setUpstreamSendTimeout(Integer  upstreamSendTimeout) {
-    this.upstreamSendTimeout = upstreamSendTimeout;
-  }
 /**
    * This is the getter method this will return the attribute value.
    * Avi controller URL of the object.
@@ -7836,30 +6423,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setUseHyperthreadedCores(Boolean  useHyperthreadedCores) {
     this.useHyperthreadedCores = useHyperthreadedCores;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Enable legacy model of netlink notifications.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return useLegacyNetlink
-   */
-  @VsoMethod
-  public Boolean getUseLegacyNetlink() {
-    return useLegacyNetlink;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Enable legacy model of netlink notifications.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param useLegacyNetlink set the useLegacyNetlink.
-   */
-  @VsoMethod
-  public void setUseLegacyNetlink(Boolean  useLegacyNetlink) {
-    this.useLegacyNetlink = useLegacyNetlink;
   }
 
   /**
@@ -7914,56 +6477,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setUseStandardAlb(Boolean  useStandardAlb) {
     this.useStandardAlb = useStandardAlb;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Configuration for user-agent cache used in bot management.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return userAgentCacheConfig
-   */
-  @VsoMethod
-  public UserAgentCacheConfig getUserAgentCacheConfig() {
-    return userAgentCacheConfig;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Configuration for user-agent cache used in bot management.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param userAgentCacheConfig set the userAgentCacheConfig.
-   */
-  @VsoMethod
-  public void setUserAgentCacheConfig(UserAgentCacheConfig userAgentCacheConfig) {
-    this.userAgentCacheConfig = userAgentCacheConfig;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Defines in seconds how long before an unused user-defined-metric is garbage collected.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
-   * @return userDefinedMetricAge
-   */
-  @VsoMethod
-  public Integer getUserDefinedMetricAge() {
-    return userDefinedMetricAge;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Defines in seconds how long before an unused user-defined-metric is garbage collected.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
-   * @param userDefinedMetricAge set the userDefinedMetricAge.
-   */
-  @VsoMethod
-  public void setUserDefinedMetricAge(Integer  userDefinedMetricAge) {
-    this.userDefinedMetricAge = userDefinedMetricAge;
   }
 
   /**
@@ -8223,174 +6736,6 @@ public class ServiceEngineGroup extends AviRestResource {
   @VsoMethod
   public void setVipAsg(VipAutoscaleGroup vipAsg) {
     this.vipAsg = vipAsg;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Dhcp ip check interval.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 6.
-   * @return vnicDhcpIpCheckInterval
-   */
-  @VsoMethod
-  public Integer getVnicDhcpIpCheckInterval() {
-    return vnicDhcpIpCheckInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Dhcp ip check interval.
-   * Allowed values are 1-1000.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 6.
-   * @param vnicDhcpIpCheckInterval set the vnicDhcpIpCheckInterval.
-   */
-  @VsoMethod
-  public void setVnicDhcpIpCheckInterval(Integer  vnicDhcpIpCheckInterval) {
-    this.vnicDhcpIpCheckInterval = vnicDhcpIpCheckInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Dhcp ip max retries.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
-   * @return vnicDhcpIpMaxRetries
-   */
-  @VsoMethod
-  public Integer getVnicDhcpIpMaxRetries() {
-    return vnicDhcpIpMaxRetries;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Dhcp ip max retries.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 10.
-   * @param vnicDhcpIpMaxRetries set the vnicDhcpIpMaxRetries.
-   */
-  @VsoMethod
-  public void setVnicDhcpIpMaxRetries(Integer  vnicDhcpIpMaxRetries) {
-    this.vnicDhcpIpMaxRetries = vnicDhcpIpMaxRetries;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Wait interval before deleting ip.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
-   * @return vnicIpDeleteInterval
-   */
-  @VsoMethod
-  public Integer getVnicIpDeleteInterval() {
-    return vnicIpDeleteInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Wait interval before deleting ip.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
-   * @param vnicIpDeleteInterval set the vnicIpDeleteInterval.
-   */
-  @VsoMethod
-  public void setVnicIpDeleteInterval(Integer  vnicIpDeleteInterval) {
-    this.vnicIpDeleteInterval = vnicIpDeleteInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Probe vnic interval.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
-   * @return vnicProbeInterval
-   */
-  @VsoMethod
-  public Integer getVnicProbeInterval() {
-    return vnicProbeInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Probe vnic interval.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
-   * @param vnicProbeInterval set the vnicProbeInterval.
-   */
-  @VsoMethod
-  public void setVnicProbeInterval(Integer  vnicProbeInterval) {
-    this.vnicProbeInterval = vnicProbeInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Time interval for retrying the failed vnic rpc requests.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
-   * @return vnicRpcRetryInterval
-   */
-  @VsoMethod
-  public Integer getVnicRpcRetryInterval() {
-    return vnicRpcRetryInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Time interval for retrying the failed vnic rpc requests.
-   * Field introduced in 21.1.1.
-   * Unit is sec.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 5.
-   * @param vnicRpcRetryInterval set the vnicRpcRetryInterval.
-   */
-  @VsoMethod
-  public void setVnicRpcRetryInterval(Integer  vnicRpcRetryInterval) {
-    this.vnicRpcRetryInterval = vnicRpcRetryInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Size of vnicdb command history.
-   * Allowed values are 0-65535.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 256.
-   * @return vnicdbCmdHistorySize
-   */
-  @VsoMethod
-  public Integer getVnicdbCmdHistorySize() {
-    return vnicdbCmdHistorySize;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Size of vnicdb command history.
-   * Allowed values are 0-65535.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 256.
-   * @param vnicdbCmdHistorySize set the vnicdbCmdHistorySize.
-   */
-  @VsoMethod
-  public void setVnicdbCmdHistorySize(Integer  vnicdbCmdHistorySize) {
-    this.vnicdbCmdHistorySize = vnicdbCmdHistorySize;
   }
 
   /**
@@ -8963,67 +7308,12 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.useObjsync, objServiceEngineGroup.useObjsync)&&
   Objects.equals(this.seIpEncapIpc, objServiceEngineGroup.seIpEncapIpc)&&
   Objects.equals(this.seL3EncapIpc, objServiceEngineGroup.seL3EncapIpc)&&
-  Objects.equals(this.netlinkPollerThreads, objServiceEngineGroup.netlinkPollerThreads)&&
-  Objects.equals(this.netlinkSockBufSize, objServiceEngineGroup.netlinkSockBufSize)&&
   Objects.equals(this.handlePerPktAttack, objServiceEngineGroup.handlePerPktAttack)&&
   Objects.equals(this.perVsAdmissionControl, objServiceEngineGroup.perVsAdmissionControl)&&
   Objects.equals(this.objsyncPort, objServiceEngineGroup.objsyncPort)&&
   Objects.equals(this.objsyncConfig, objServiceEngineGroup.objsyncConfig)&&
-  Objects.equals(this.dpAggressiveDeqIntervalMsec, objServiceEngineGroup.dpAggressiveDeqIntervalMsec)&&
-  Objects.equals(this.dpAggressiveEnqIntervalMsec, objServiceEngineGroup.dpAggressiveEnqIntervalMsec)&&
-  Objects.equals(this.nsHelperDeqIntervalMsec, objServiceEngineGroup.nsHelperDeqIntervalMsec)&&
-  Objects.equals(this.dpDeqIntervalMsec, objServiceEngineGroup.dpDeqIntervalMsec)&&
-  Objects.equals(this.dpEnqIntervalMsec, objServiceEngineGroup.dpEnqIntervalMsec)&&
-  Objects.equals(this.sendSeReadyTimeout, objServiceEngineGroup.sendSeReadyTimeout)&&
-  Objects.equals(this.vnicDhcpIpCheckInterval, objServiceEngineGroup.vnicDhcpIpCheckInterval)&&
-  Objects.equals(this.vnicDhcpIpMaxRetries, objServiceEngineGroup.vnicDhcpIpMaxRetries)&&
-  Objects.equals(this.vnicIpDeleteInterval, objServiceEngineGroup.vnicIpDeleteInterval)&&
-  Objects.equals(this.vnicProbeInterval, objServiceEngineGroup.vnicProbeInterval)&&
-  Objects.equals(this.vnicRpcRetryInterval, objServiceEngineGroup.vnicRpcRetryInterval)&&
-  Objects.equals(this.vnicdbCmdHistorySize, objServiceEngineGroup.vnicdbCmdHistorySize)&&
   Objects.equals(this.seDpIsolation, objServiceEngineGroup.seDpIsolation)&&
   Objects.equals(this.seDpIsolationNumNonDpCpus, objServiceEngineGroup.seDpIsolationNumNonDpCpus)&&
-  Objects.equals(this.userAgentCacheConfig, objServiceEngineGroup.userAgentCacheConfig)&&
-  Objects.equals(this.sdbScanCount, objServiceEngineGroup.sdbScanCount)&&
-  Objects.equals(this.sdbPipelineSize, objServiceEngineGroup.sdbPipelineSize)&&
-  Objects.equals(this.sdbFlushInterval, objServiceEngineGroup.sdbFlushInterval)&&
-  Objects.equals(this.l7ConnsPerCore, objServiceEngineGroup.l7ConnsPerCore)&&
-  Objects.equals(this.sslSessCachePerVs, objServiceEngineGroup.sslSessCachePerVs)&&
-  Objects.equals(this.l7ResvdListenConnsPerCore, objServiceEngineGroup.l7ResvdListenConnsPerCore)&&
-  Objects.equals(this.upstreamConnpoolEnable, objServiceEngineGroup.upstreamConnpoolEnable)&&
-  Objects.equals(this.ngxFreeConnectionStack, objServiceEngineGroup.ngxFreeConnectionStack)&&
-  Objects.equals(this.httpRumConsoleLog, objServiceEngineGroup.httpRumConsoleLog)&&
-  Objects.equals(this.httpRumMinContentLength, objServiceEngineGroup.httpRumMinContentLength)&&
-  Objects.equals(this.upstreamConnectTimeout, objServiceEngineGroup.upstreamConnectTimeout)&&
-  Objects.equals(this.upstreamSendTimeout, objServiceEngineGroup.upstreamSendTimeout)&&
-  Objects.equals(this.upstreamReadTimeout, objServiceEngineGroup.upstreamReadTimeout)&&
-  Objects.equals(this.downstreamSendTimeout, objServiceEngineGroup.downstreamSendTimeout)&&
-  Objects.equals(this.lbactionNumRequestsToDispatch, objServiceEngineGroup.lbactionNumRequestsToDispatch)&&
-  Objects.equals(this.lbactionRqPerRequestMaxRetries, objServiceEngineGroup.lbactionRqPerRequestMaxRetries)&&
-  Objects.equals(this.userDefinedMetricAge, objServiceEngineGroup.userDefinedMetricAge)&&
-  Objects.equals(this.enableHsmLog, objServiceEngineGroup.enableHsmLog)&&
-  Objects.equals(this.useLegacyNetlink, objServiceEngineGroup.useLegacyNetlink)&&
-  Objects.equals(this.logAgentTraceEnabled, objServiceEngineGroup.logAgentTraceEnabled)&&
-  Objects.equals(this.logAgentDebugEnabled, objServiceEngineGroup.logAgentDebugEnabled)&&
-  Objects.equals(this.seLogBufferAppBlockingDequeue, objServiceEngineGroup.seLogBufferAppBlockingDequeue)&&
-  Objects.equals(this.seLogBufferConnBlockingDequeue, objServiceEngineGroup.seLogBufferConnBlockingDequeue)&&
-  Objects.equals(this.seLogBufferEventsBlockingDequeue, objServiceEngineGroup.seLogBufferEventsBlockingDequeue)&&
-  Objects.equals(this.logAgentFileSzDebug, objServiceEngineGroup.logAgentFileSzDebug)&&
-  Objects.equals(this.logAgentFileSzConn, objServiceEngineGroup.logAgentFileSzConn)&&
-  Objects.equals(this.logAgentFileSzAppl, objServiceEngineGroup.logAgentFileSzAppl)&&
-  Objects.equals(this.logAgentFileSzEvent, objServiceEngineGroup.logAgentFileSzEvent)&&
-  Objects.equals(this.logAgentMinStoragePerVs, objServiceEngineGroup.logAgentMinStoragePerVs)&&
-  Objects.equals(this.logAgentMaxStorageIgnorePercent, objServiceEngineGroup.logAgentMaxStorageIgnorePercent)&&
-  Objects.equals(this.logAgentMaxStorageExcessPercent, objServiceEngineGroup.logAgentMaxStorageExcessPercent)&&
-  Objects.equals(this.seDpLogNfEnqueuePercent, objServiceEngineGroup.seDpLogNfEnqueuePercent)&&
-  Objects.equals(this.seDpLogUdfEnqueuePercent, objServiceEngineGroup.seDpLogUdfEnqueuePercent)&&
-  Objects.equals(this.logAgentCompressLogs, objServiceEngineGroup.logAgentCompressLogs)&&
-  Objects.equals(this.logAgentSleepInterval, objServiceEngineGroup.logAgentSleepInterval)&&
-  Objects.equals(this.logAgentUnknownVsTimer, objServiceEngineGroup.logAgentUnknownVsTimer)&&
-  Objects.equals(this.logAgentMaxConcurrentRsync, objServiceEngineGroup.logAgentMaxConcurrentRsync)&&
-  Objects.equals(this.logAgentLogStorageMinSz, objServiceEngineGroup.logAgentLogStorageMinSz)&&
-  Objects.equals(this.logMessageMaxFileListSize, objServiceEngineGroup.logMessageMaxFileListSize)&&
-  Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery)&&
   Objects.equals(this.markers, objServiceEngineGroup.markers);
 }
 
@@ -9065,7 +7355,6 @@ public String toString() {
         sb.append("    customTag: ").append(toIndentedString(customTag)).append("\n");
         sb.append("    dataNetworkId: ").append(toIndentedString(dataNetworkId)).append("\n");
         sb.append("    datascriptTimeout: ").append(toIndentedString(datascriptTimeout)).append("\n");
-        sb.append("    deactivateIpv6Discovery: ").append(toIndentedString(deactivateIpv6Discovery)).append("\n");
         sb.append("    dedicatedDispatcherCore: ").append(toIndentedString(dedicatedDispatcherCore)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    disableAviSecuritygroups: ").append(toIndentedString(disableAviSecuritygroups)).append("\n");
@@ -9078,17 +7367,11 @@ public String toString() {
         sb.append("    distributeLoadActiveStandby: ").append(toIndentedString(distributeLoadActiveStandby)).append("\n");
         sb.append("    distributeQueues: ").append(toIndentedString(distributeQueues)).append("\n");
         sb.append("    distributeVnics: ").append(toIndentedString(distributeVnics)).append("\n");
-        sb.append("    downstreamSendTimeout: ").append(toIndentedString(downstreamSendTimeout)).append("\n");
-        sb.append("    dpAggressiveDeqIntervalMsec: ").append(toIndentedString(dpAggressiveDeqIntervalMsec)).append("\n");
-        sb.append("    dpAggressiveEnqIntervalMsec: ").append(toIndentedString(dpAggressiveEnqIntervalMsec)).append("\n");
         sb.append("    dpAggressiveHbFrequency: ").append(toIndentedString(dpAggressiveHbFrequency)).append("\n");
         sb.append("    dpAggressiveHbTimeoutCount: ").append(toIndentedString(dpAggressiveHbTimeoutCount)).append("\n");
-        sb.append("    dpDeqIntervalMsec: ").append(toIndentedString(dpDeqIntervalMsec)).append("\n");
-        sb.append("    dpEnqIntervalMsec: ").append(toIndentedString(dpEnqIntervalMsec)).append("\n");
         sb.append("    dpHbFrequency: ").append(toIndentedString(dpHbFrequency)).append("\n");
         sb.append("    dpHbTimeoutCount: ").append(toIndentedString(dpHbTimeoutCount)).append("\n");
         sb.append("    enableGratarpPermanent: ").append(toIndentedString(enableGratarpPermanent)).append("\n");
-        sb.append("    enableHsmLog: ").append(toIndentedString(enableHsmLog)).append("\n");
         sb.append("    enableHsmPriming: ").append(toIndentedString(enableHsmPriming)).append("\n");
         sb.append("    enableMultiLb: ").append(toIndentedString(enableMultiLb)).append("\n");
         sb.append("    enablePcapTxRing: ").append(toIndentedString(enablePcapTxRing)).append("\n");
@@ -9113,39 +7396,18 @@ public String toString() {
         sb.append("    hostAttributeKey: ").append(toIndentedString(hostAttributeKey)).append("\n");
         sb.append("    hostAttributeValue: ").append(toIndentedString(hostAttributeValue)).append("\n");
         sb.append("    hostGatewayMonitor: ").append(toIndentedString(hostGatewayMonitor)).append("\n");
-        sb.append("    httpRumConsoleLog: ").append(toIndentedString(httpRumConsoleLog)).append("\n");
-        sb.append("    httpRumMinContentLength: ").append(toIndentedString(httpRumMinContentLength)).append("\n");
         sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
         sb.append("    ignoreRttThreshold: ").append(toIndentedString(ignoreRttThreshold)).append("\n");
         sb.append("    ingressAccessData: ").append(toIndentedString(ingressAccessData)).append("\n");
         sb.append("    ingressAccessMgmt: ").append(toIndentedString(ingressAccessMgmt)).append("\n");
         sb.append("    instanceFlavor: ").append(toIndentedString(instanceFlavor)).append("\n");
         sb.append("    iptables: ").append(toIndentedString(iptables)).append("\n");
-        sb.append("    l7ConnsPerCore: ").append(toIndentedString(l7ConnsPerCore)).append("\n");
-        sb.append("    l7ResvdListenConnsPerCore: ").append(toIndentedString(l7ResvdListenConnsPerCore)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-        sb.append("    lbactionNumRequestsToDispatch: ").append(toIndentedString(lbactionNumRequestsToDispatch)).append("\n");
-        sb.append("    lbactionRqPerRequestMaxRetries: ").append(toIndentedString(lbactionRqPerRequestMaxRetries)).append("\n");
         sb.append("    leastLoadCoreSelection: ").append(toIndentedString(leastLoadCoreSelection)).append("\n");
         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
-        sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");
-        sb.append("    logAgentDebugEnabled: ").append(toIndentedString(logAgentDebugEnabled)).append("\n");
-        sb.append("    logAgentFileSzAppl: ").append(toIndentedString(logAgentFileSzAppl)).append("\n");
-        sb.append("    logAgentFileSzConn: ").append(toIndentedString(logAgentFileSzConn)).append("\n");
-        sb.append("    logAgentFileSzDebug: ").append(toIndentedString(logAgentFileSzDebug)).append("\n");
-        sb.append("    logAgentFileSzEvent: ").append(toIndentedString(logAgentFileSzEvent)).append("\n");
-        sb.append("    logAgentLogStorageMinSz: ").append(toIndentedString(logAgentLogStorageMinSz)).append("\n");
-        sb.append("    logAgentMaxConcurrentRsync: ").append(toIndentedString(logAgentMaxConcurrentRsync)).append("\n");
-        sb.append("    logAgentMaxStorageExcessPercent: ").append(toIndentedString(logAgentMaxStorageExcessPercent)).append("\n");
-        sb.append("    logAgentMaxStorageIgnorePercent: ").append(toIndentedString(logAgentMaxStorageIgnorePercent)).append("\n");
-        sb.append("    logAgentMinStoragePerVs: ").append(toIndentedString(logAgentMinStoragePerVs)).append("\n");
-        sb.append("    logAgentSleepInterval: ").append(toIndentedString(logAgentSleepInterval)).append("\n");
-        sb.append("    logAgentTraceEnabled: ").append(toIndentedString(logAgentTraceEnabled)).append("\n");
-        sb.append("    logAgentUnknownVsTimer: ").append(toIndentedString(logAgentUnknownVsTimer)).append("\n");
         sb.append("    logDisksz: ").append(toIndentedString(logDisksz)).append("\n");
         sb.append("    logMallocFailure: ").append(toIndentedString(logMallocFailure)).append("\n");
-        sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
@@ -9175,11 +7437,7 @@ public String toString() {
         sb.append("    natFlowTcpHandshakeTimeout: ").append(toIndentedString(natFlowTcpHandshakeTimeout)).append("\n");
         sb.append("    natFlowUdpNoresponseTimeout: ").append(toIndentedString(natFlowUdpNoresponseTimeout)).append("\n");
         sb.append("    natFlowUdpResponseTimeout: ").append(toIndentedString(natFlowUdpResponseTimeout)).append("\n");
-        sb.append("    netlinkPollerThreads: ").append(toIndentedString(netlinkPollerThreads)).append("\n");
-        sb.append("    netlinkSockBufSize: ").append(toIndentedString(netlinkSockBufSize)).append("\n");
-        sb.append("    ngxFreeConnectionStack: ").append(toIndentedString(ngxFreeConnectionStack)).append("\n");
         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
-        sb.append("    nsHelperDeqIntervalMsec: ").append(toIndentedString(nsHelperDeqIntervalMsec)).append("\n");
         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
         sb.append("    objsyncConfig: ").append(toIndentedString(objsyncConfig)).append("\n");
@@ -9198,9 +7456,6 @@ public String toString() {
         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
         sb.append("    rebootOnStop: ").append(toIndentedString(rebootOnStop)).append("\n");
         sb.append("    resyncTimeInterval: ").append(toIndentedString(resyncTimeInterval)).append("\n");
-        sb.append("    sdbFlushInterval: ").append(toIndentedString(sdbFlushInterval)).append("\n");
-        sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
-        sb.append("    sdbScanCount: ").append(toIndentedString(sdbScanCount)).append("\n");
         sb.append("    seBandwidthType: ").append(toIndentedString(seBandwidthType)).append("\n");
         sb.append("    seDelayedFlowDelete: ").append(toIndentedString(seDelayedFlowDelete)).append("\n");
         sb.append("    seDeprovisionDelay: ").append(toIndentedString(seDeprovisionDelay)).append("\n");
@@ -9208,8 +7463,6 @@ public String toString() {
         sb.append("    seDpHmDrops: ").append(toIndentedString(seDpHmDrops)).append("\n");
         sb.append("    seDpIsolation: ").append(toIndentedString(seDpIsolation)).append("\n");
         sb.append("    seDpIsolationNumNonDpCpus: ").append(toIndentedString(seDpIsolationNumNonDpCpus)).append("\n");
-        sb.append("    seDpLogNfEnqueuePercent: ").append(toIndentedString(seDpLogNfEnqueuePercent)).append("\n");
-        sb.append("    seDpLogUdfEnqueuePercent: ").append(toIndentedString(seDpLogUdfEnqueuePercent)).append("\n");
         sb.append("    seDpMaxHbVersion: ").append(toIndentedString(seDpMaxHbVersion)).append("\n");
         sb.append("    seDpVnicQueueStallEventSleep: ").append(toIndentedString(seDpVnicQueueStallEventSleep)).append("\n");
         sb.append("    seDpVnicQueueStallThreshold: ").append(toIndentedString(seDpVnicQueueStallThreshold)).append("\n");
@@ -9226,9 +7479,6 @@ public String toString() {
         sb.append("    seIpcUdpPort: ").append(toIndentedString(seIpcUdpPort)).append("\n");
         sb.append("    seKniBurstFactor: ").append(toIndentedString(seKniBurstFactor)).append("\n");
         sb.append("    seL3EncapIpc: ").append(toIndentedString(seL3EncapIpc)).append("\n");
-        sb.append("    seLogBufferAppBlockingDequeue: ").append(toIndentedString(seLogBufferAppBlockingDequeue)).append("\n");
-        sb.append("    seLogBufferConnBlockingDequeue: ").append(toIndentedString(seLogBufferConnBlockingDequeue)).append("\n");
-        sb.append("    seLogBufferEventsBlockingDequeue: ").append(toIndentedString(seLogBufferEventsBlockingDequeue)).append("\n");
         sb.append("    seLro: ").append(toIndentedString(seLro)).append("\n");
         sb.append("    seMpRingRetryCount: ").append(toIndentedString(seMpRingRetryCount)).append("\n");
         sb.append("    seMtu: ").append(toIndentedString(seMtu)).append("\n");
@@ -9262,26 +7512,17 @@ public String toString() {
         sb.append("    seVsHbMaxPktsInBatch: ").append(toIndentedString(seVsHbMaxPktsInBatch)).append("\n");
         sb.append("    seVsHbMaxVsInPkt: ").append(toIndentedString(seVsHbMaxVsInPkt)).append("\n");
         sb.append("    selfSeElection: ").append(toIndentedString(selfSeElection)).append("\n");
-        sb.append("    sendSeReadyTimeout: ").append(toIndentedString(sendSeReadyTimeout)).append("\n");
         sb.append("    serviceIp6Subnets: ").append(toIndentedString(serviceIp6Subnets)).append("\n");
         sb.append("    serviceIpSubnets: ").append(toIndentedString(serviceIpSubnets)).append("\n");
         sb.append("    shmMinimumConfigMemory: ").append(toIndentedString(shmMinimumConfigMemory)).append("\n");
         sb.append("    significantLogThrottle: ").append(toIndentedString(significantLogThrottle)).append("\n");
         sb.append("    sslPreprocessSniHostname: ").append(toIndentedString(sslPreprocessSniHostname)).append("\n");
-        sb.append("    sslSessCachePerVs: ").append(toIndentedString(sslSessCachePerVs)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    transientSharedMemoryMax: ").append(toIndentedString(transientSharedMemoryMax)).append("\n");
         sb.append("    udfLogThrottle: ").append(toIndentedString(udfLogThrottle)).append("\n");
-        sb.append("    upstreamConnectTimeout: ").append(toIndentedString(upstreamConnectTimeout)).append("\n");
-        sb.append("    upstreamConnpoolEnable: ").append(toIndentedString(upstreamConnpoolEnable)).append("\n");
-        sb.append("    upstreamReadTimeout: ").append(toIndentedString(upstreamReadTimeout)).append("\n");
-        sb.append("    upstreamSendTimeout: ").append(toIndentedString(upstreamSendTimeout)).append("\n");
             sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
-        sb.append("    useLegacyNetlink: ").append(toIndentedString(useLegacyNetlink)).append("\n");
         sb.append("    useObjsync: ").append(toIndentedString(useObjsync)).append("\n");
         sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
-        sb.append("    userAgentCacheConfig: ").append(toIndentedString(userAgentCacheConfig)).append("\n");
-        sb.append("    userDefinedMetricAge: ").append(toIndentedString(userDefinedMetricAge)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vcenterClusters: ").append(toIndentedString(vcenterClusters)).append("\n");
         sb.append("    vcenterDatastoreMode: ").append(toIndentedString(vcenterDatastoreMode)).append("\n");
@@ -9292,12 +7533,6 @@ public String toString() {
         sb.append("    vcenters: ").append(toIndentedString(vcenters)).append("\n");
         sb.append("    vcpusPerSe: ").append(toIndentedString(vcpusPerSe)).append("\n");
         sb.append("    vipAsg: ").append(toIndentedString(vipAsg)).append("\n");
-        sb.append("    vnicDhcpIpCheckInterval: ").append(toIndentedString(vnicDhcpIpCheckInterval)).append("\n");
-        sb.append("    vnicDhcpIpMaxRetries: ").append(toIndentedString(vnicDhcpIpMaxRetries)).append("\n");
-        sb.append("    vnicIpDeleteInterval: ").append(toIndentedString(vnicIpDeleteInterval)).append("\n");
-        sb.append("    vnicProbeInterval: ").append(toIndentedString(vnicProbeInterval)).append("\n");
-        sb.append("    vnicRpcRetryInterval: ").append(toIndentedString(vnicRpcRetryInterval)).append("\n");
-        sb.append("    vnicdbCmdHistorySize: ").append(toIndentedString(vnicdbCmdHistorySize)).append("\n");
         sb.append("    vsHostRedundancy: ").append(toIndentedString(vsHostRedundancy)).append("\n");
         sb.append("    vsScaleinTimeout: ").append(toIndentedString(vsScaleinTimeout)).append("\n");
         sb.append("    vsScaleinTimeoutForUpgrade: ").append(toIndentedString(vsScaleinTimeoutForUpgrade)).append("\n");

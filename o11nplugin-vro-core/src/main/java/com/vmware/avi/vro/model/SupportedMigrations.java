@@ -36,10 +36,6 @@ public class SupportedMigrations extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer controllerMinCores = 8;
 
-    @JsonProperty("controller_min_docker_version")
-    @JsonInclude(Include.NON_NULL)
-    private String controllerMinDockerVersion = "1.6.1";
-
     @JsonProperty("controller_min_free_disk_size")
     @JsonInclude(Include.NON_NULL)
     private Integer controllerMinFreeDiskSize = 10;
@@ -55,10 +51,6 @@ public class SupportedMigrations extends AviRestResource {
     @JsonProperty("max_active_versions")
     @JsonInclude(Include.NON_NULL)
     private Integer maxActiveVersions = 2;
-
-    @JsonProperty("min_supported_api_version")
-    @JsonInclude(Include.NON_NULL)
-    private String minSupportedApiVersion = null;
 
     @JsonProperty("rollback_controller_disk_space")
     @JsonInclude(Include.NON_NULL)
@@ -96,7 +88,7 @@ public class SupportedMigrations extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Minimum accepted api version.
+   * Api version of the image.
    * Field introduced in 18.2.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apiVersion
@@ -108,7 +100,7 @@ public class SupportedMigrations extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Minimum accepted api version.
+   * Api version of the image.
    * Field introduced in 18.2.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apiVersion set the apiVersion.
@@ -168,30 +160,6 @@ public class SupportedMigrations extends AviRestResource {
   @VsoMethod
   public void setControllerMinCores(Integer  controllerMinCores) {
     this.controllerMinCores = controllerMinCores;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Minimum supported docker version required for controller.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "1.6.1".
-   * @return controllerMinDockerVersion
-   */
-  @VsoMethod
-  public String getControllerMinDockerVersion() {
-    return controllerMinDockerVersion;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Minimum supported docker version required for controller.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "1.6.1".
-   * @param controllerMinDockerVersion set the controllerMinDockerVersion.
-   */
-  @VsoMethod
-  public void setControllerMinDockerVersion(String  controllerMinDockerVersion) {
-    this.controllerMinDockerVersion = controllerMinDockerVersion;
   }
 
   /**
@@ -298,30 +266,6 @@ public class SupportedMigrations extends AviRestResource {
   @VsoMethod
   public void setMaxActiveVersions(Integer  maxActiveVersions) {
     this.maxActiveVersions = maxActiveVersions;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Minimum supported api version.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return minSupportedApiVersion
-   */
-  @VsoMethod
-  public String getMinSupportedApiVersion() {
-    return minSupportedApiVersion;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Minimum supported api version.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param minSupportedApiVersion set the minSupportedApiVersion.
-   */
-  @VsoMethod
-  public void setMinSupportedApiVersion(String  minSupportedApiVersion) {
-    this.minSupportedApiVersion = minSupportedApiVersion;
   }
 
   /**
@@ -576,9 +520,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seMinCores, objSupportedMigrations.seMinCores)&&
   Objects.equals(this.controllerMinTotalDisk, objSupportedMigrations.controllerMinTotalDisk)&&
   Objects.equals(this.controllerMinMemory, objSupportedMigrations.controllerMinMemory)&&
-  Objects.equals(this.controllerMinCores, objSupportedMigrations.controllerMinCores)&&
-  Objects.equals(this.controllerMinDockerVersion, objSupportedMigrations.controllerMinDockerVersion)&&
-  Objects.equals(this.minSupportedApiVersion, objSupportedMigrations.minSupportedApiVersion);
+  Objects.equals(this.controllerMinCores, objSupportedMigrations.controllerMinCores);
 }
 
 @Override
@@ -588,12 +530,10 @@ public String toString() {
       sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    controllerHostMinFreeDiskSize: ").append(toIndentedString(controllerHostMinFreeDiskSize)).append("\n");
         sb.append("    controllerMinCores: ").append(toIndentedString(controllerMinCores)).append("\n");
-        sb.append("    controllerMinDockerVersion: ").append(toIndentedString(controllerMinDockerVersion)).append("\n");
         sb.append("    controllerMinFreeDiskSize: ").append(toIndentedString(controllerMinFreeDiskSize)).append("\n");
         sb.append("    controllerMinMemory: ").append(toIndentedString(controllerMinMemory)).append("\n");
         sb.append("    controllerMinTotalDisk: ").append(toIndentedString(controllerMinTotalDisk)).append("\n");
         sb.append("    maxActiveVersions: ").append(toIndentedString(maxActiveVersions)).append("\n");
-        sb.append("    minSupportedApiVersion: ").append(toIndentedString(minSupportedApiVersion)).append("\n");
         sb.append("    rollbackControllerDiskSpace: ").append(toIndentedString(rollbackControllerDiskSpace)).append("\n");
         sb.append("    rollbackSeDiskSpace: ").append(toIndentedString(rollbackSeDiskSpace)).append("\n");
         sb.append("    seHostMinFreeDiskSize: ").append(toIndentedString(seHostMinFreeDiskSize)).append("\n");

@@ -36,14 +36,6 @@ public class NetworkSecurityPolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String description = null;
 
-    @JsonProperty("geo_db_ref")
-    @JsonInclude(Include.NON_NULL)
-    private String geoDbRef = null;
-
-    @JsonProperty("internal")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean internal = null;
-
     @JsonProperty("ip_reputation_db_ref")
     @JsonInclude(Include.NON_NULL)
     private String ipReputationDbRef = null;
@@ -144,58 +136,6 @@ public class NetworkSecurityPolicy extends AviRestResource {
   @VsoMethod
   public void setDescription(String  description) {
     this.description = description;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Geo database.
-   * It is a reference to an object of type geodb.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return geoDbRef
-   */
-  @VsoMethod
-  public String getGeoDbRef() {
-    return geoDbRef;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Geo database.
-   * It is a reference to an object of type geodb.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param geoDbRef set the geoDbRef.
-   */
-  @VsoMethod
-  public void setGeoDbRef(String  geoDbRef) {
-    this.geoDbRef = geoDbRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Network security policy is created and modified by internal modules only.
-   * Should not be modified by users.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return internal
-   */
-  @VsoMethod
-  public Boolean getInternal() {
-    return internal;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Network security policy is created and modified by internal modules only.
-   * Should not be modified by users.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param internal set the internal.
-   */
-  @VsoMethod
-  public void setInternal(Boolean  internal) {
-    this.internal = internal;
   }
 
   /**
@@ -461,9 +401,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cloudConfigCksum, objNetworkSecurityPolicy.cloudConfigCksum)&&
   Objects.equals(this.ipReputationDbRef, objNetworkSecurityPolicy.ipReputationDbRef)&&
   Objects.equals(this.labels, objNetworkSecurityPolicy.labels)&&
-  Objects.equals(this.geoDbRef, objNetworkSecurityPolicy.geoDbRef)&&
   Objects.equals(this.markers, objNetworkSecurityPolicy.markers)&&
-  Objects.equals(this.internal, objNetworkSecurityPolicy.internal)&&
   Objects.equals(this.description, objNetworkSecurityPolicy.description)&&
   Objects.equals(this.tenantRef, objNetworkSecurityPolicy.tenantRef);
 }
@@ -475,8 +413,6 @@ public String toString() {
       sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");
-        sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
         sb.append("    ipReputationDbRef: ").append(toIndentedString(ipReputationDbRef)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");

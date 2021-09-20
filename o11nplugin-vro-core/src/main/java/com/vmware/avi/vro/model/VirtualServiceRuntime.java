@@ -34,7 +34,7 @@ import org.springframework.stereotype.Service;
 public class VirtualServiceRuntime extends AviRestResource {
     @JsonProperty("apic_extension")
     @JsonInclude(Include.NON_NULL)
-    private VsApicExtension apicExtension;
+    private VsApicExtension apicExtension = null;
 
     @JsonProperty("controller_ip")
     @JsonInclude(Include.NON_NULL)
@@ -168,7 +168,8 @@ public class VirtualServiceRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property apic_extension of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicExtension
    */
   @VsoMethod
@@ -178,7 +179,8 @@ public class VirtualServiceRuntime extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property apic_extension of obj type virtualserviceruntime field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicExtension set the apicExtension.
    */
   @VsoMethod

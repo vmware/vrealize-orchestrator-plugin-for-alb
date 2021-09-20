@@ -9,7 +9,6 @@ import com.vmware.avi.vro.model.AbPool;
 import com.vmware.avi.vro.model.PoolAnalyticsPolicy;
 import com.vmware.avi.vro.model.ConnPoolProperties;
 import com.vmware.avi.vro.model.FailAction;
-import com.vmware.avi.vro.model.HTTP2PoolProperties;
 import com.vmware.avi.vro.model.RateProfile;
 import com.vmware.avi.vro.model.HTTPServerReselect;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -53,11 +52,7 @@ public class Pool extends AviRestResource {
 
     @JsonProperty("apic_epg_name")
     @JsonInclude(Include.NON_NULL)
-    private String apicEpgName;
-
-    @JsonProperty("append_port")
-    @JsonInclude(Include.NON_NULL)
-    private String appendPort = "NON_DEFAULT_80_443";
+    private String apicEpgName = null;
 
     @JsonProperty("application_persistence_profile_ref")
     @JsonInclude(Include.NON_NULL)
@@ -158,10 +153,6 @@ public class Pool extends AviRestResource {
     @JsonProperty("host_check_enabled")
     @JsonInclude(Include.NON_NULL)
     private Boolean hostCheckEnabled = false;
-
-    @JsonProperty("http2_properties")
-    @JsonInclude(Include.NON_NULL)
-    private HTTP2PoolProperties http2Properties = null;
 
     @JsonProperty("ignore_server_port")
     @JsonInclude(Include.NON_NULL)
@@ -271,10 +262,6 @@ public class Pool extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer serverCount;
 
-    @JsonProperty("server_disable_type")
-    @JsonInclude(Include.NON_NULL)
-    private String serverDisableType = "DISALLOW_NEW_CONNECTION";
-
     @JsonProperty("server_name")
     @JsonInclude(Include.NON_NULL)
     private String serverName = null;
@@ -322,10 +309,6 @@ public class Pool extends AviRestResource {
     @JsonProperty("use_service_port")
     @JsonInclude(Include.NON_NULL)
     private Boolean useServicePort = false;
-
-    @JsonProperty("use_service_ssl_mode")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean useServiceSslMode = false;
 
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
@@ -458,7 +441,7 @@ public class Pool extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Synchronize cisco apic epg members with pool servers.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicEpgName
    */
   @VsoMethod
@@ -469,48 +452,12 @@ public class Pool extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Synchronize cisco apic epg members with pool servers.
-   * Field deprecated in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicEpgName set the apicEpgName.
    */
   @VsoMethod
   public void setApicEpgName(String  apicEpgName) {
     this.apicEpgName = apicEpgName;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Allows the option to append port to hostname in the host header while sending a request to the server.
-   * By default, port is appended for non-default ports.
-   * This setting will apply for pool's 'rewrite host header to server name', 'rewrite host header to sni' features and server's 'rewrite host header'
-   * settings as well as http healthmonitors attached to pools.
-   * Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
-   * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
-   * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
-   * @return appendPort
-   */
-  @VsoMethod
-  public String getAppendPort() {
-    return appendPort;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Allows the option to append port to hostname in the host header while sending a request to the server.
-   * By default, port is appended for non-default ports.
-   * This setting will apply for pool's 'rewrite host header to server name', 'rewrite host header to sni' features and server's 'rewrite host header'
-   * settings as well as http healthmonitors attached to pools.
-   * Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
-   * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
-   * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
-   * @param appendPort set the appendPort.
-   */
-  @VsoMethod
-  public void setAppendPort(String  appendPort) {
-    this.appendPort = appendPort;
   }
 
   /**
@@ -1221,32 +1168,6 @@ public class Pool extends AviRestResource {
   @VsoMethod
   public void setHostCheckEnabled(Boolean  hostCheckEnabled) {
     this.hostCheckEnabled = hostCheckEnabled;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Http2 pool properties.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return http2Properties
-   */
-  @VsoMethod
-  public HTTP2PoolProperties getHttp2Properties() {
-    return http2Properties;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Http2 pool properties.
-   * Field introduced in 21.1.1.
-   * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param http2Properties set the http2Properties.
-   */
-  @VsoMethod
-  public void setHttp2Properties(HTTP2PoolProperties http2Properties) {
-    this.http2Properties = http2Properties;
   }
 
   /**
@@ -2017,32 +1938,6 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Server graceful disable timeout behaviour.
-   * Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "DISALLOW_NEW_CONNECTION".
-   * @return serverDisableType
-   */
-  @VsoMethod
-  public String getServerDisableType() {
-    return serverDisableType;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Server graceful disable timeout behaviour.
-   * Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "DISALLOW_NEW_CONNECTION".
-   * @param serverDisableType set the serverDisableType.
-   */
-  @VsoMethod
-  public void setServerDisableType(String  serverDisableType) {
-    this.serverDisableType = serverDisableType;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
    * If no value is specified, avi will use the incoming host header instead.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2358,34 +2253,6 @@ public class Pool extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * This applies only when use_service_port is set to true.
-   * If enabled, ssl mode of the connection to the server is decided by the ssl mode on the virtualservice service port, on which the request was
-   * received.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @return useServiceSslMode
-   */
-  @VsoMethod
-  public Boolean getUseServiceSslMode() {
-    return useServiceSslMode;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * This applies only when use_service_port is set to true.
-   * If enabled, ssl mode of the connection to the server is decided by the ssl mode on the virtualservice service port, on which the request was
-   * received.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
-   * @param useServiceSslMode set the useServiceSslMode.
-   */
-  @VsoMethod
-  public void setUseServiceSslMode(Boolean  useServiceSslMode) {
-    this.useServiceSslMode = useServiceSslMode;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Uuid of the pool.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -2518,11 +2385,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableHttp2, objPool.enableHttp2)&&
   Objects.equals(this.ignoreServerPort, objPool.ignoreServerPort)&&
   Objects.equals(this.routingPool, objPool.routingPool)&&
-  Objects.equals(this.tier1Lr, objPool.tier1Lr)&&
-  Objects.equals(this.appendPort, objPool.appendPort)&&
-  Objects.equals(this.http2Properties, objPool.http2Properties)&&
-  Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
-  Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode);
+  Objects.equals(this.tier1Lr, objPool.tier1Lr);
 }
 
 @Override
@@ -2535,7 +2398,6 @@ public String toString() {
         sb.append("    analyticsPolicy: ").append(toIndentedString(analyticsPolicy)).append("\n");
         sb.append("    analyticsProfileRef: ").append(toIndentedString(analyticsProfileRef)).append("\n");
         sb.append("    apicEpgName: ").append(toIndentedString(apicEpgName)).append("\n");
-        sb.append("    appendPort: ").append(toIndentedString(appendPort)).append("\n");
         sb.append("    applicationPersistenceProfileRef: ").append(toIndentedString(applicationPersistenceProfileRef)).append("\n");
         sb.append("    autoscaleLaunchConfigRef: ").append(toIndentedString(autoscaleLaunchConfigRef)).append("\n");
         sb.append("    autoscaleNetworks: ").append(toIndentedString(autoscaleNetworks)).append("\n");
@@ -2561,7 +2423,6 @@ public String toString() {
         sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
         sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
         sb.append("    hostCheckEnabled: ").append(toIndentedString(hostCheckEnabled)).append("\n");
-        sb.append("    http2Properties: ").append(toIndentedString(http2Properties)).append("\n");
         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
         sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
         sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
@@ -2589,7 +2450,6 @@ public String toString() {
         sb.append("    routingPool: ").append(toIndentedString(routingPool)).append("\n");
         sb.append("    serverAutoScale: ").append(toIndentedString(serverAutoScale)).append("\n");
         sb.append("    serverCount: ").append(toIndentedString(serverCount)).append("\n");
-        sb.append("    serverDisableType: ").append(toIndentedString(serverDisableType)).append("\n");
         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
         sb.append("    serverReselect: ").append(toIndentedString(serverReselect)).append("\n");
         sb.append("    serverTimeout: ").append(toIndentedString(serverTimeout)).append("\n");
@@ -2601,7 +2461,6 @@ public String toString() {
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
         sb.append("    tier1Lr: ").append(toIndentedString(tier1Lr)).append("\n");
             sb.append("    useServicePort: ").append(toIndentedString(useServicePort)).append("\n");
-        sb.append("    useServiceSslMode: ").append(toIndentedString(useServiceSslMode)).append("\n");
         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vrfRef: ").append(toIndentedString(vrfRef)).append("\n");
       sb.append("}");

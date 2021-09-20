@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.AttackDnsAmplification;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -25,10 +24,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class AttackMetaData extends AviRestResource {
-    @JsonProperty("amplification")
-    @JsonInclude(Include.NON_NULL)
-    private AttackDnsAmplification amplification = null;
-
     @JsonProperty("ip")
     @JsonInclude(Include.NON_NULL)
     private String ip = null;
@@ -42,30 +37,6 @@ public class AttackMetaData extends AviRestResource {
     private String url = "url";
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Dns amplification attack record.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return amplification
-   */
-  @VsoMethod
-  public AttackDnsAmplification getAmplification() {
-    return amplification;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Dns amplification attack record.
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param amplification set the amplification.
-   */
-  @VsoMethod
-  public void setAmplification(AttackDnsAmplification amplification) {
-    this.amplification = amplification;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -144,16 +115,14 @@ public boolean equals(java.lang.Object o) {
   }
   AttackMetaData objAttackMetaData = (AttackMetaData) o;
   return   Objects.equals(this.ip, objAttackMetaData.ip)&&
-  Objects.equals(this.maxRespTime, objAttackMetaData.maxRespTime)&&
-  Objects.equals(this.amplification, objAttackMetaData.amplification);
+  Objects.equals(this.maxRespTime, objAttackMetaData.maxRespTime);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class AttackMetaData {\n");
-      sb.append("    amplification: ").append(toIndentedString(amplification)).append("\n");
-        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+      sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    maxRespTime: ").append(toIndentedString(maxRespTime)).append("\n");
           sb.append("}");
   return sb.toString();

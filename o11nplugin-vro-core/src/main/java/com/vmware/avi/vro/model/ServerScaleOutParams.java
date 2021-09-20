@@ -36,7 +36,7 @@ public class ServerScaleOutParams extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Reason for the manual scale-out.
+   * Reason for the manual scaleout.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return reason
    */
@@ -47,7 +47,7 @@ public class ServerScaleOutParams extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Reason for the manual scale-out.
+   * Reason for the manual scaleout.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param reason set the reason.
    */

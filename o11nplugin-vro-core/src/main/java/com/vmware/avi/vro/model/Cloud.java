@@ -42,11 +42,11 @@ import org.springframework.stereotype.Service;
 public class Cloud extends AviRestResource {
     @JsonProperty("apic_configuration")
     @JsonInclude(Include.NON_NULL)
-    private APICConfiguration apicConfiguration;
+    private APICConfiguration apicConfiguration = null;
 
     @JsonProperty("apic_mode")
     @JsonInclude(Include.NON_NULL)
-    private Boolean apicMode;
+    private Boolean apicMode = false;
 
     @JsonProperty("autoscale_polling_interval")
     @JsonInclude(Include.NON_NULL)
@@ -128,6 +128,10 @@ public class Cloud extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private LinuxServerConfiguration linuxserverConfiguration = null;
 
+    @JsonProperty("maintenance_mode")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean maintenanceMode = false;
+
     @JsonProperty("mesos_configuration")
     @JsonInclude(Include.NON_NULL)
     private MesosConfiguration mesosConfiguration;
@@ -142,7 +146,7 @@ public class Cloud extends AviRestResource {
 
     @JsonProperty("nsx_configuration")
     @JsonInclude(Include.NON_NULL)
-    private NsxConfiguration nsxConfiguration;
+    private NsxConfiguration nsxConfiguration = null;
 
     @JsonProperty("nsxt_configuration")
     @JsonInclude(Include.NON_NULL)
@@ -212,7 +216,8 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return apicConfiguration
    */
   @VsoMethod
@@ -222,7 +227,8 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param apicConfiguration set the apicConfiguration.
    */
   @VsoMethod
@@ -232,8 +238,8 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return apicMode
    */
   @VsoMethod
@@ -243,8 +249,8 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param apicMode set the apicMode.
    */
   @VsoMethod
@@ -785,6 +791,30 @@ public class Cloud extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Cloud is in maintenance mode.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return maintenanceMode
+   */
+  @VsoMethod
+  public Boolean getMaintenanceMode() {
+    return maintenanceMode;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Cloud is in maintenance mode.
+   * Field introduced in 20.1.7.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param maintenanceMode set the maintenanceMode.
+   */
+  @VsoMethod
+  public void setMaintenanceMode(Boolean  maintenanceMode) {
+    this.maintenanceMode = maintenanceMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Field deprecated in 18.2.2.
    * @return mesosConfiguration
    */
@@ -852,8 +882,8 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configuration parameters for nsx manager.
-   * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nsxConfiguration
    */
   @VsoMethod
@@ -864,8 +894,8 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Configuration parameters for nsx manager.
-   * Field deprecated in 21.1.1.
    * Field introduced in 17.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nsxConfiguration set the nsxConfiguration.
    */
   @VsoMethod
@@ -1193,7 +1223,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This deployment is vmware on aws cloud.
-   * Field introduced in 20.1.5, 21.1.1.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return vmcDeployment
    */
@@ -1205,7 +1235,7 @@ public class Cloud extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This deployment is vmware on aws cloud.
-   * Field introduced in 20.1.5, 21.1.1.
+   * Field introduced in 20.1.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param vmcDeployment set the vmcDeployment.
    */
@@ -1293,6 +1323,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.ip6AutocfgEnabled, objCloud.ip6AutocfgEnabled)&&
   Objects.equals(this.dnsResolutionOnSe, objCloud.dnsResolutionOnSe)&&
   Objects.equals(this.enableVipOnAllInterfaces, objCloud.enableVipOnAllInterfaces)&&
+  Objects.equals(this.maintenanceMode, objCloud.maintenanceMode)&&
   Objects.equals(this.tenantRef, objCloud.tenantRef)&&
   Objects.equals(this.licenseTier, objCloud.licenseTier)&&
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
@@ -1327,6 +1358,7 @@ public String toString() {
         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
         sb.append("    linuxserverConfiguration: ").append(toIndentedString(linuxserverConfiguration)).append("\n");
+        sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
         sb.append("    mesosConfiguration: ").append(toIndentedString(mesosConfiguration)).append("\n");
         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

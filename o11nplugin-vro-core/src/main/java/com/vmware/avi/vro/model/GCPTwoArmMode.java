@@ -90,7 +90,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Project id of the service engine backend data network.
    * By default, service engine project id will be used.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return backendDataVpcProjectId
    */
@@ -103,7 +103,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Project id of the service engine backend data network.
    * By default, service engine project id will be used.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param backendDataVpcProjectId set the backendDataVpcProjectId.
    */
@@ -238,7 +238,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Project id of the service engine management network.
    * By default, service engine project id will be used.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return managementVpcProjectId
    */
@@ -251,7 +251,7 @@ public class GCPTwoArmMode extends AviRestResource {
    * This is the setter method to the attribute.
    * Project id of the service engine management network.
    * By default, service engine project id will be used.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param managementVpcProjectId set the managementVpcProjectId.
    */

@@ -36,10 +36,6 @@ public class EmailConfiguration extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean disableTls = false;
 
-    @JsonProperty("email_timezone")
-    @JsonInclude(Include.NON_NULL)
-    private String emailTimezone = null;
-
     @JsonProperty("from_email")
     @JsonInclude(Include.NON_NULL)
     private String fromEmail = "admin@avicontroller.net";
@@ -124,36 +120,6 @@ public class EmailConfiguration extends AviRestResource {
   @VsoMethod
   public void setDisableTls(Boolean  disableTls) {
     this.disableTls = disableTls;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Timezone for timestamps in alert emails.
-   * Enum options - UTC, AFRICA_ABIDJAN, AFRICA_ACCRA, AFRICA_ADDIS_ABABA, AFRICA_ALGIERS, AFRICA_ASMARA, AFRICA_ASMERA, AFRICA_BAMAKO, AFRICA_BANGUI,
-   * AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA,
-   * AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM...
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return emailTimezone
-   */
-  @VsoMethod
-  public String getEmailTimezone() {
-    return emailTimezone;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Timezone for timestamps in alert emails.
-   * Enum options - UTC, AFRICA_ABIDJAN, AFRICA_ACCRA, AFRICA_ADDIS_ABABA, AFRICA_ALGIERS, AFRICA_ASMARA, AFRICA_ASMERA, AFRICA_BAMAKO, AFRICA_BANGUI,
-   * AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA,
-   * AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM...
-   * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param emailTimezone set the emailTimezone.
-   */
-  @VsoMethod
-  public void setEmailTimezone(String  emailTimezone) {
-    this.emailTimezone = emailTimezone;
   }
 
   /**
@@ -263,8 +229,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.mailServerPort, objEmailConfiguration.mailServerPort)&&
   Objects.equals(this.authUsername, objEmailConfiguration.authUsername)&&
   Objects.equals(this.authPassword, objEmailConfiguration.authPassword)&&
-  Objects.equals(this.disableTls, objEmailConfiguration.disableTls)&&
-  Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone);
+  Objects.equals(this.disableTls, objEmailConfiguration.disableTls);
 }
 
 @Override
@@ -274,7 +239,6 @@ public String toString() {
       sb.append("    authPassword: ").append(toIndentedString(authPassword)).append("\n");
         sb.append("    authUsername: ").append(toIndentedString(authUsername)).append("\n");
         sb.append("    disableTls: ").append(toIndentedString(disableTls)).append("\n");
-        sb.append("    emailTimezone: ").append(toIndentedString(emailTimezone)).append("\n");
         sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
         sb.append("    mailServerName: ").append(toIndentedString(mailServerName)).append("\n");
         sb.append("    mailServerPort: ").append(toIndentedString(mailServerPort)).append("\n");

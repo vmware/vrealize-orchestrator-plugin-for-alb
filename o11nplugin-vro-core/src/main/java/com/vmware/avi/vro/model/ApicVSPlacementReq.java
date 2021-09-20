@@ -26,33 +26,34 @@ import org.springframework.stereotype.Service;
 public class ApicVSPlacementReq extends AviRestResource {
     @JsonProperty("graph")
     @JsonInclude(Include.NON_NULL)
-    private String graph;
+    private String graph = null;
 
     @JsonProperty("lifs")
     @JsonInclude(Include.NON_NULL)
-    private List<Lif> lifs;
+    private List<Lif> lifs = null;
 
     @JsonProperty("network_rel")
     @JsonInclude(Include.NON_NULL)
-    private List<APICNetworkRel> networkRel;
+    private List<APICNetworkRel> networkRel = null;
 
     @JsonProperty("tenant_name")
     @JsonInclude(Include.NON_NULL)
-    private String tenantName;
+    private String tenantName = null;
 
     @JsonProperty("vdev")
     @JsonInclude(Include.NON_NULL)
-    private String vdev;
+    private String vdev = null;
 
     @JsonProperty("vgrp")
     @JsonInclude(Include.NON_NULL)
-    private String vgrp;
+    private String vgrp = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property graph of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return graph
    */
   @VsoMethod
@@ -62,7 +63,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property graph of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param graph set the graph.
    */
   @VsoMethod
@@ -72,7 +74,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifs
    */
   @VsoMethod
@@ -82,7 +85,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method. this will set the lifs
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifs
    */
   @VsoMethod
@@ -92,7 +96,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method this will set the lifs
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lifs
    */
   @VsoMethod
@@ -107,7 +112,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRel
    */
   @VsoMethod
@@ -117,7 +123,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method. this will set the networkRel
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRel
    */
   @VsoMethod
@@ -127,7 +134,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method this will set the networkRel
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return networkRel
    */
   @VsoMethod
@@ -142,7 +150,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property tenant_name of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tenantName
    */
   @VsoMethod
@@ -152,7 +161,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property tenant_name of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tenantName set the tenantName.
    */
   @VsoMethod
@@ -162,7 +172,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vdev of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vdev
    */
   @VsoMethod
@@ -172,7 +183,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vdev of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vdev set the vdev.
    */
   @VsoMethod
@@ -182,7 +194,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vgrp of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vgrp
    */
   @VsoMethod
@@ -192,7 +205,8 @@ public class ApicVSPlacementReq extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property vgrp of obj type apicvsplacementreq field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vgrp set the vgrp.
    */
   @VsoMethod

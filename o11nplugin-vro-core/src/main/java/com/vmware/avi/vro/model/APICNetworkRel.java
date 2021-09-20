@@ -26,21 +26,22 @@ import org.springframework.stereotype.Service;
 public class APICNetworkRel extends AviRestResource {
     @JsonProperty("connector")
     @JsonInclude(Include.NON_NULL)
-    private String connector;
+    private String connector = null;
 
     @JsonProperty("rel_key")
     @JsonInclude(Include.NON_NULL)
-    private String relKey;
+    private String relKey = null;
 
     @JsonProperty("target_network")
     @JsonInclude(Include.NON_NULL)
-    private String targetNetwork;
+    private String targetNetwork = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property connector of obj type apicnetworkrel field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connector
    */
   @VsoMethod
@@ -50,7 +51,8 @@ public class APICNetworkRel extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property connector of obj type apicnetworkrel field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param connector set the connector.
    */
   @VsoMethod
@@ -60,7 +62,8 @@ public class APICNetworkRel extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property rel_key of obj type apicnetworkrel field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return relKey
    */
   @VsoMethod
@@ -70,7 +73,8 @@ public class APICNetworkRel extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property rel_key of obj type apicnetworkrel field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param relKey set the relKey.
    */
   @VsoMethod
@@ -80,7 +84,8 @@ public class APICNetworkRel extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property target_network of obj type apicnetworkrel field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return targetNetwork
    */
   @VsoMethod
@@ -90,7 +95,8 @@ public class APICNetworkRel extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Field deprecated in 21.1.1.
+   * Placeholder for description of property target_network of obj type apicnetworkrel field type str  type string.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param targetNetwork set the targetNetwork.
    */
   @VsoMethod

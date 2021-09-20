@@ -24,41 +24,11 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class CPUUsage extends AviRestResource {
-    @JsonProperty("cpu_percent")
-    @JsonInclude(Include.NON_NULL)
-    private Float cpuPercent = null;
-
     @JsonProperty("num_cores")
     @JsonInclude(Include.NON_NULL)
     private Integer numCores = null;
 
 
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Cpu usage in percentage.
-   * Field introduced in 21.1.1.
-   * Unit is percent.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return cpuPercent
-   */
-  @VsoMethod
-  public Float getCpuPercent() {
-    return cpuPercent;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Cpu usage in percentage.
-   * Field introduced in 21.1.1.
-   * Unit is percent.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param cpuPercent set the cpuPercent.
-   */
-  @VsoMethod
-  public void setCpuPercent(Float  cpuPercent) {
-    this.cpuPercent = cpuPercent;
-  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -93,16 +63,14 @@ public boolean equals(java.lang.Object o) {
     return false;
   }
   CPUUsage objCPUUsage = (CPUUsage) o;
-  return   Objects.equals(this.numCores, objCPUUsage.numCores)&&
-  Objects.equals(this.cpuPercent, objCPUUsage.cpuPercent);
+  return   Objects.equals(this.numCores, objCPUUsage.numCores);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class CPUUsage {\n");
-      sb.append("    cpuPercent: ").append(toIndentedString(cpuPercent)).append("\n");
-        sb.append("    numCores: ").append(toIndentedString(numCores)).append("\n");
+      sb.append("    numCores: ").append(toIndentedString(numCores)).append("\n");
       sb.append("}");
   return sb.toString();
 }

@@ -34,7 +34,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.7.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return entityRef
    */
@@ -47,7 +47,7 @@ public class LogManagerDebugFilter extends AviRestResource {
    * This is the setter method to the attribute.
    * Uuid of the entity.
    * It is a reference to an object of type virtualservice.
-   * Field introduced in 21.1.1.
+   * Field introduced in 20.1.7.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param entityRef set the entityRef.
    */
