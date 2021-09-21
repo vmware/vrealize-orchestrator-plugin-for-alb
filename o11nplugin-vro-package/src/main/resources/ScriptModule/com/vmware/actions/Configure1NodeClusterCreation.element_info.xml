@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">Configure1NodeClusterCreation</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">49e3daf3-6d74-4e86-b591-a6b9b3c1b6a5</entry>
+</properties>

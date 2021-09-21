@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item3" object-name="workflow:name=generic"
+	id="9a35040d-607f-44b4-83a7-8873c7308238" version="3.0.0"
+	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
+	restartMode="1" resumeFromFailedMode="0">
+	<display-name><![CDATA[NSX-T Cloud - Add Data Segment]]></display-name>
+	<position y="50.0" x="100.0" />
+	<input>
+		<param name="controller" type="string" />
+		<param name="nsxtCloud" type="string" />
+		<param name="tier1" type="string" />
+		<param name="segment" type="string" />
+	</input>
+	<attrib name="avivroClient" type="Avi:AviVroClient"
+		read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<workflow-item name="item0" type="end" end-mode="0">
+		<in-binding />
+		<position y="50.0" x="620.0" />
+	</workflow-item>
+	<workflow-item name="item3" out-name="item6" type="task"
+		script-module="com.vmware.avi/getAviVroClient">
+		<display-name><![CDATA[Action element]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller);
+]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="avivroClient" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="180.0" />
+	</workflow-item>
+	<workflow-item name="item6" out-name="item0" type="task"
+		script-module="com.vmware.avi/addNSXTCloudDataSegment">
+		<display-name><![CDATA[Action element]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").addNSXTCloudDataSegment(avivroClient,nsxtCloud,tier1,segment);
+]]></script>
+		<in-binding>
+			<bind name="avivroClient" type="Avi:AviVroClient"
+				export-name="avivroClient" />
+			<bind name="nsxtCloud" type="string" export-name="nsxtCloud" />
+			<bind name="tier1" type="string" export-name="tier1" />
+			<bind name="segment" type="string" export-name="segment" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="440.0" />
+	</workflow-item>
+	<presentation />
+</workflow>

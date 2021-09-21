@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">Library.Avi.Deployment</entry>
+<entry key="name">NSX-T Cloud Deployment</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">8d171e5c-641e-464a-993d-63b5a4559b01</entry>
+</properties>

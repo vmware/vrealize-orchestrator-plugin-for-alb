@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">Library.Avi.Deployment</entry>
+<entry key="name">Remote Authentication Configuration</entry>
+<entry key="type">Workflow</entry>
+<entry key="id">8baf4ac9-3c0b-4758-81bb-354d7a1d5c2f</entry>
+</properties>

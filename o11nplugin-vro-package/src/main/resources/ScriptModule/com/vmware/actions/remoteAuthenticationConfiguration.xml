@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="remoteAuthenticationConfiguration" result-type="string"
+	api-version="6.0.0" id="66601741-2ca3-430c-a113-adab600fb325"
+	version="0.0.0" allowed-operations="vfe">
+	<description><![CDATA[This Action is used to configure the remote authentication of the Avi Cluster. It is able to configure SAML and LDAP authentication.]]></description>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="authType" t="string"><![CDATA[]]>
+	</param>
+	<param n="samlEntityType" t="string"><![CDATA[]]>
+	</param>
+	<param n="authProfileName" t="string"><![CDATA[]]>
+	</param>
+	<param n="org_name" t="string"><![CDATA[]]>
+	</param>
+	<param n="org_display_name" t="string"><![CDATA[]]>
+	</param>
+	<param n="org_url" t="string"><![CDATA[]]>
+	</param>
+	<param n="tech_contact_name" t="string"><![CDATA[]]>
+	</param>
+	<param n="tech_contact_email" t="string"><![CDATA[]]>
+	</param>
+	<param n="saml_fqdn" t="string"><![CDATA[]]>
+	</param>
+	<param n="ldapPort" t="string"><![CDATA[]]>
+	</param>
+	<param n="user_search_scope" t="string"><![CDATA[]]>
+	</param>
+	<param n="security_mode" t="string"><![CDATA[]]>
+	</param>
+	<param n="group_member_attribute" t="string"><![CDATA[]]>
+	</param>
+	<param n="group_search_scope" t="string"><![CDATA[]]>
+	</param>
+	<param n="group_member_is_full_dn" t="boolean"><![CDATA[]]>
+	</param>
+	<param n="group_filter" t="string"><![CDATA[]]>
+	</param>
+	<param n="ignore_referrals" t="boolean"><![CDATA[]]>
+	</param>
+	<param n="admin_bind_dn" t="string"><![CDATA[]]>
+	</param>
+	<param n="user_search_dn" t="string"><![CDATA[]]>
+	</param>
+	<param n="group_search_dn" t="string"><![CDATA[]]>
+	</param>
+	<param n="admin_bind_password" t="SecureString"><![CDATA[]]>
+	</param>
+	<param n="user_id_attribute" t="string"><![CDATA[]]>
+	</param>
+	<param n="ldapServers" t="Array/string"><![CDATA[]]>
+	</param>
+	<param n="base_dn" t="string"><![CDATA[]]>
+	</param>
+	<param n="metadata" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+
+if (authType == "saml"){
+    if (samlEntityType == "cluster"){
+        var sp = {};
+        sp['saml_entity_type'] = "AUTH_SAML_CLUSTER_VIP"
+        sp['org_name'] = org_name
+        sp['org_display_name'] = org_display_name
+        sp['org_url'] = org_url
+        sp['tech_contact_name'] = tech_contact_name
+        sp['tech_contact_email'] = tech_contact_email
+
+
+    }else if (samlEntityType == "dns"){
+        var sp = {};
+        sp['saml_entity_type'] = "AUTH_SAML_DNS_FQDN"
+        sp['fqdn'] = saml_fqdn
+        sp['org_name'] = org_name
+        sp['org_display_name'] = org_display_name
+        sp['org_url'] = org_url
+        sp['tech_contact_name'] = tech_contact_name
+        sp['tech_contact_email'] = tech_contact_email
+
+    }else if (samlEntityType == "user"){
+        var sp = {};
+        sp['saml_entity_type'] = "AUTH_SAML_APP_VS"
+
+    }
+
+    var config2 = {"type":"AUTH_PROFILE_SAML",
+    "saml":{
+        "sp":sp,
+            "idp":{
+                "metadata":metadata
+            }
+    },
+        "name":authProfileName
+    }
+
+}else if (authType == "ldap"){
+
+    var config2 = {"ldap":{
+        "port":ldapPort,
+        "bind_as_administrator":true,
+        "settings":{
+            "user_search_scope":user_search_scope,
+            "group_member_attribute":group_member_attribute,
+            "group_search_scope":group_search_scope,
+            "group_member_is_full_dn":group_member_is_full_dn,
+            "group_filter":group_filter,
+            "ignore_referrals":ignore_referrals,
+            "admin_bind_dn":admin_bind_dn,
+            "user_search_dn":user_search_dn,
+            "group_search_dn":group_search_dn,
+            "password":admin_bind_password,
+            "user_id_attribute":user_id_attribute},
+            "user_bind":{
+                "token":"<user>"
+                },
+            "email_attribute":"email",
+            "full_name_attribute":"name",
+            "server":ldapServers,
+            "base_dn":base_dn,
+            "security_mode":security_mode
+            },
+            "http":{
+                "cache_expiration_time":5},
+                "type":"AUTH_PROFILE_LDAP",
+                "name":authProfileName
+    }
+
+
+
+}
+
+
+
+
+
+
+//Execute API Call
+var user_payload = (JSON.stringify(config2));
+
+//Create ACI API Object
+var myAviRunTimeInfo = new AviRunTimeInfo();
+myAviRunTimeInfo.setHttpMethod("POST")
+myAviRunTimeInfo.setRequestBody(user_payload)
+myAviRunTimeInfo.setUrl("authprofile?include_name")
+
+//Try Catch is required incase the Object creation fails, we can have custom error message.
+try {
+
+    myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
+
+    var authProfile = myAviRunTimeInfo.getResponseBody()
+    authProfile = JSON.parse(authProfile)
+
+    System.log(authProfile.uuid)
+
+
+    if (myAviRunTimeInfo.getHttpStatuseCode().indexOf("201") <=0) {
+
+        System.log("The Auth Profile creation successfully.")
+
+    }
+
+} catch (e) {
+
+        throw "The Auth Profile was NOT created Successfully. Please validate the provided input variables, and run the deployment again."
+        
+}
+
+
+
+
+
+//Create ACI API Object
+var systemConfiguration = new AviRunTimeInfo();
+systemConfiguration.setHttpMethod("GET")
+systemConfiguration.setRequestBody(user_payload)
+systemConfiguration.setUrl("systemconfiguration")
+
+systemConfiguration = aviVroClient.callAviAPI(systemConfiguration)
+
+systemConfiguration = JSON.parse(systemConfiguration.getResponseBody())
+
+
+
+var admin_auth_configuration = {}
+
+admin_auth_configuration.allow_local_user_login = true;
+admin_auth_configuration.auth_profile_ref = authProfile.url
+
+systemConfiguration['admin_auth_configuration'] = admin_auth_configuration
+
+System.log(JSON.stringify(systemConfiguration))
+
+
+
+//Execute API Call
+var user_payload = (JSON.stringify(systemConfiguration));
+
+//Create ACI API Object
+var runTimeInfo = new AviRunTimeInfo();
+runTimeInfo.setHttpMethod("PUT")
+runTimeInfo.setRequestBody(user_payload)
+runTimeInfo.setUrl("systemconfiguration/?include_name")
+
+//Try Catch is required incase the Object creation fails, we can have custom error message.
+try {
+
+    runTimeInfo = aviVroClient.callAviAPI(runTimeInfo)
+
+
+    if (myAviRunTimeInfo.getHttpStatuseCode().indexOf("200") <=0) {
+
+        System.log("The Authentication Configuration was successfully.")
+
+    }
+
+} catch (e) {
+
+        throw "The Authentication Configuration was NOT updated Successfully. Please validate the provided input variables, and run the deployment again."
+        
+}]]></script>
+</dunes-script-module>

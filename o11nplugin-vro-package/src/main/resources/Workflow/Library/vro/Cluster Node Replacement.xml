@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="ClusterCreationVerification" result-type="string"
+	api-version="6.0.0" id="e1fe83f6-d96c-472e-bc51-52561423018c"
+	version="3.0.0" allowed-operations="vef">
+	<description><![CDATA[This Action should be failed with the ConfigureClusterCreation Action, as it will wait for Cluster Nodes to be ready and cluster status to change to "CLUSTER_UP_HA_ACTIVE".]]></description>
+	<param n="host1" t="string"><![CDATA[]]>
+	</param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+//Declare Variables
+var completed = false
+
+//Loop until Cluster is Active
+while (completed == false){
+
+        //During the upgrade, the nodes can go offline briefly while services are restarted. 
+        //This makes sure the script does not fail during that time.
+        try{
+            var myAviRunTimeInfo = new AviRunTimeInfo() ;
+            myAviRunTimeInfo.setHttpMethod("GET")
+            myAviRunTimeInfo.setUrl("cluster/runtime")
+            myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
+            var cluster = JSON.parse(myAviRunTimeInfo.getResponseBody())
+
+            System.log("Cluster Creation Progress: "+cluster['cluster_state']['progress'])
+
+        } catch (e) {
+
+            System.log("Controller Service Restart: "+ e) 
+        }
+
+        //Check if Cluster Creation encountered an error. EEnd workflow
+        if ((JSON.stringify(cluster['cluster_state']['state'])).indexOf("SUSPENDED") >= 0 || (JSON.stringify(cluster['cluster_state']['state'])).indexOf("ERROR") >= 0 || (JSON.stringify(cluster['cluster_state']['state'])).indexOf("PAUSED") >= 0) {
+                    throw ("Controller Cluster Upgrade FAILED with State "+(JSON.stringify(cluster['cluster_state']['state']+". Please manually validate the state of the Cluster and resolve any issues.")));
+                    
+                }
+        //Check if the Cluster Creation completed. End Loop
+        if ((JSON.stringify(cluster['cluster_state']['state'])).indexOf("CLUSTER_UP_HA_ACTIVE") >= 0 ) {
+                    System.log("Controller Cluster Creation has completed successfully")
+                    completed = true;
+
+                }
+
+//Sleep the workflow between checks. This prevents the logging from being overloaded.
+System.sleep(60000)
+
+}
+
+
+]]></script>
+</dunes-script-module>

@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="CreateNSXTCloud"
+	result-type="string" api-version="6.0.0"
+	id="3c6ef027-e827-4983-b43c-6905f87d39e3" version="1.0.0"
+	allowed-operations="vfe">
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="nsxManager" t="string"><![CDATA[]]>
+	</param>
+	<param n="tenant_Name" t="string"><![CDATA[]]>
+	</param>
+	<param n="prefix_Name" t="string"><![CDATA[]]>
+	</param>
+	<param n="cloud_Name" t="string"><![CDATA[]]>
+	</param>
+	<param n="vCenter_Name" t="string"><![CDATA[]]>
+	</param>
+	<param n="MGMT_Data" t="string"><![CDATA[]]>
+	</param>
+	<param n="DATA_Data" t="string"><![CDATA[]]>
+	</param>
+	<param n="vCenter_Data" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+// Retrieve JSON Objects
+MGMT_Data = JSON.parse(MGMT_Data)
+DATA_Data = JSON.parse(DATA_Data)
+vCenter_Data = JSON.parse(vCenter_Data)
+
+
+// Retrieve Tenant reference
+var tenant_Info = aviVroClient.getObjectDataByName("tenant",tenant_Name);
+tenant_Info = JSON.parse(tenant_Info)
+
+var tenantUrl = tenant_Info['url']
+
+
+//Create MGMT Object
+var management_network_config = {}
+management_network_config.tz_type = MGMT_Data['mgmt_tzType']
+management_network_config.transport_zone = MGMT_Data['mgmt_tzID']
+if (MGMT_Data['mgmt_t1ID'] != ""){
+    var overlay_segment = {}
+    overlay_segment.tier1_lr_id = MGMT_Data['mgmt_t1ID']
+    overlay_segment.segment_id = MGMT_Data['mgmt_segID']
+    management_network_config.overlay_segment = overlay_segment
+}else{
+    management_network_config.vlan_segment = MGMT_Data['mgmt_segID']
+}
+
+//Create Data Object
+var data_network_config = {}
+data_network_config.tz_type = DATA_Data['data_tzType']
+data_network_config.transport_zone = DATA_Data['data_tzID']
+if ( DATA_Data['data_tzType'] == "OVERLAY" && DATA_Data['data_t1ID'] != "" && DATA_Data['data_segID'] != "" ){
+    var tier1_segment_config = {}
+    tier1_segment_config.segment_config_mode = "TIER1_SEGMENT_MANUAL"
+    var manual = {}
+    var tier1_lrs = []
+    var overlay_segment = {}
+    overlay_segment.tier1_lr_id = DATA_Data['data_t1ID']
+    overlay_segment.segment_id = DATA_Data['data_segID']
+    tier1_lrs.push(overlay_segment)
+    manual['tier1_lrs'] = tier1_lrs
+    tier1_segment_config.manual = manual
+    data_network_config.tier1_segment_config = tier1_segment_config
+}else if ( DATA_Data['data_tzType'] == "VLAN" && DATA_Data['data_segID'] != "" ) {
+    var vlan_segments = []
+    vlan_segments.push(DATA_Data['data_segID'])
+    data_network_config.vlan_segments = vlan_segments    
+}
+
+//Create AVI API Body Objecty
+var cloud_data = {
+"name": cloud_Name,
+"tenant_ref": tenantUrl,
+"vtype": "CLOUD_NSXT",
+"nsxt_configuration": {
+"nsxt_url": nsxManager,
+"site_id": "default",
+"enforcementpoint_id": "default",
+"domain_id": "default",
+"automate_dfw_rules": false,
+"management_network_config": management_network_config,
+"data_network_config": data_network_config,
+"nsxt_credentials_ref": MGMT_Data['nsxCredUrl']
+},
+"dhcp_enabled": false,
+"mtu": 1500,
+"prefer_static_routes": false,
+"enable_vip_static_routes": false,
+"obj_name_prefix": prefix_Name,
+"license_type": "LIC_CORES",
+"state_based_dns_registration": true,
+"ip6_autocfg_enabled": false,
+"dns_resolution_on_se": false,
+"enable_vip_on_all_interfaces": false,
+"license_tier": "ENTERPRISE",
+"autoscale_polling_interval": 60,
+"vmc_deployment": false
+}
+
+cloud_data = JSON.stringify(cloud_data);
+
+
+
+
+
+// Create Cloud
+var cloud_Info = new AviRunTimeInfo();
+cloud_Info.setHttpMethod("POST")
+cloud_Info.setRequestBody(cloud_data)
+cloud_Info.setUrl("cloud")
+
+
+try{
+
+    cloud_Info = aviVroClient.callAviAPI(cloud_Info)
+
+    cloud_Response = JSON.parse(cloud_Info.getResponseBody())
+
+    var cloudUUID = cloud_Response['url']
+
+
+
+    if (cloud_Info.getHttpStatuseCode().indexOf("201") <=0) {
+
+        System.log("NSX-T Cloud was created successfully, moving on. ")
+    
+    }
+
+} catch (e) {
+
+        throw "The NSX-T Cloud was NOT created successfully, please validate the provided information and try again."
+        
+}
+
+
+
+
+
+//Create AVI API Body Object
+var vcenter_data = {
+"name": vCenter_Name,
+"tenant_ref": tenantUrl,
+"cloud_ref": cloudUUID,
+"vcenter_url": vCenter_Data['vcIP'],
+"content_lib": {
+"id": vCenter_Data['clID']
+},
+"vcenter_credentials_ref": vCenter_Data['vCenterCredUrl']
+}
+
+vcenter_data = JSON.stringify(vcenter_data);
+
+
+
+// Create vCenter Server Object
+var vcenter_Info = new AviRunTimeInfo();
+vcenter_Info.setHttpMethod("POST")
+vcenter_Info.setRequestBody(vcenter_data)
+vcenter_Info.setUrl("vcenterserver")
+
+
+try{
+
+    vcenter_Info = aviVroClient.callAviAPI(vcenter_Info)
+
+
+   if (vcenter_Info.getHttpStatuseCode().indexOf("201") <=0) {
+
+        System.log("The vCenter Object was created successfully. ")
+    
+    }
+
+} catch (e) {
+
+        throw "The vCenter Object was NOT created successfully, please validate the provided information and try again."
+        
+}
+
+]]></script>
+</dunes-script-module>

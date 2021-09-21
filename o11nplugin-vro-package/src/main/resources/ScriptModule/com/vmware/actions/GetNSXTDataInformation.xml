@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="GetNSXTDataInformation"
+	result-type="string" api-version="6.0.0"
+	id="5d3a321f-26e7-49b4-8ba7-b092b518b6b9" version="1.0.0"
+	allowed-operations="vfe">
+	<param n="data_TZ" t="string"><![CDATA[]]>
+	</param>
+	<param n="data_T1" t="string"><![CDATA[]]>
+	</param>
+	<param n="data_Seg" t="string"><![CDATA[]]>
+	</param>
+	<param n="nsxManager" t="string"><![CDATA[]]>
+	</param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="nsx_cred_name" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+//Retrieve current NSXT Credentials and populate Object
+var aviNsxtCred = aviVroClient.getObjectDataByName("cloudconnectoruser",nsx_cred_name);
+aviNsxtCred = JSON.parse(aviNsxtCred)
+
+var nsxCredUUID = aviNsxtCred['uuid']
+
+//Create AVI API Body Object
+var nsx_data = {host: nsxManager, credentials_uuid: nsxCredUUID}
+nsx_data = JSON.stringify(nsx_data);
+
+// External Array
+var DATA = {}
+
+// Retrieve Transportzone Information
+
+var data_tzInfo = new AviRunTimeInfo();
+data_tzInfo.setHttpMethod("POST")
+data_tzInfo.setRequestBody(nsx_data)
+data_tzInfo.setUrl("nsxt/transportzones")
+
+
+data_tzInfo = aviVroClient.callAviAPI(data_tzInfo)
+
+
+var data_transportZones = JSON.parse(data_tzInfo.getResponseBody())
+data_transportZones = data_transportZones['resource']['nsxt_transportzones']
+
+for (data_tz in data_transportZones) {
+    
+
+    if (data_transportZones[data_tz]['name'] == data_TZ) {
+
+        var data_tzID = data_transportZones[data_tz]['id']
+        var data_tzName = data_transportZones[data_tz]['name']
+        var data_tzType = data_transportZones[data_tz]['tz_type']
+        DATA['data_tzID'] = data_transportZones[data_tz]['id']
+        DATA['data_tzName'] = data_transportZones[data_tz]['name']
+        DATA['data_tzType'] = data_transportZones[data_tz]['tz_type']
+
+
+
+
+    }
+
+}
+
+// Retrieve T1 Information
+
+
+if (data_T1 != "") {
+
+    var data_t1Info = new AviRunTimeInfo();
+    data_t1Info.setHttpMethod("POST")
+    data_t1Info.setRequestBody(nsx_data)
+    data_t1Info.setUrl("nsxt/tier1s")
+
+ 
+    data_t1Info = aviVroClient.callAviAPI(data_t1Info)
+
+  
+    var data_t1Router = JSON.parse(data_t1Info.getResponseBody())
+    data_t1Router = data_t1Router['resource']['nsxt_tier1routers']
+   
+    for (data_t1 in data_t1Router) {
+        
+     
+        if (data_t1Router[data_t1]['name'] == data_T1) {
+          
+            var data_t1ID = data_t1Router[data_t1]['id']
+            var data_t1Name = data_t1Router[data_t1]['name']
+            DATA['data_t1ID'] = data_t1Router[data_t1]['id']
+            DATA['data_t1Name'] = data_t1Router[data_t1]['name']
+
+
+
+
+        }
+
+    }
+
+} else {
+
+     DATA['data_t1ID'] = ""
+    DATA['data_t1Name'] = ""
+
+
+}
+
+
+// Retrieve Segment Information
+
+
+if (data_T1 != "") {
+
+    //Create AVI API Body Object for Segments
+    var segment_data = {host: nsxManager, credentials_uuid: nsxCredUUID,transport_zone_id: data_tzID,tier1_id:data_t1ID}
+
+    segment_data = JSON.stringify(segment_data);
+
+    var data_segInfo = new AviRunTimeInfo();
+    data_segInfo.setHttpMethod("POST")
+    data_segInfo.setRequestBody(segment_data)
+    data_segInfo.setUrl("nsxt/segments")
+
+
+    data_segInfo = aviVroClient.callAviAPI(data_segInfo)
+
+
+    var data_Segments = JSON.parse(data_segInfo.getResponseBody())
+    data_Segments = data_Segments['resource']['nsxt_segments']
+
+    for (data_seg in data_Segments) {
+        
+
+        if (data_Segments[data_seg]['name'] == data_Seg) {
+
+            var data_segID = data_Segments[data_seg]['id']
+            var data_segName = data_Segments[data_seg]['name']
+            DATA['data_segID'] = data_Segments[data_seg]['id']
+            DATA['data_segName'] = data_Segments[data_seg]['name']
+
+
+
+
+        }
+
+    }
+
+}else {
+
+    //Create AVI API Body Object for Segments
+    var segment_data = {host: nsxManager, credentials_uuid: nsxCredUUID,transport_zone_id: data_tzID}
+
+    segment_data = JSON.stringify(segment_data);
+
+    var data_segInfo = new AviRunTimeInfo();
+    data_segInfo.setHttpMethod("POST")
+    data_segInfo.setRequestBody(segment_data)
+    data_segInfo.setUrl("nsxt/segments")
+
+
+    data_segInfo = aviVroClient.callAviAPI(data_segInfo)
+
+
+    var data_Segments = JSON.parse(data_segInfo.getResponseBody())
+    data_Segments = data_Segments['resource']['nsxt_segments']
+
+    for (data_seg in data_Segments) {
+        
+
+        if (data_Segments[data_seg]['name'] == data_Seg) {
+
+            var data_segID = data_Segments[data_seg]['id']
+            var data_segName = data_Segments[data_seg]['name']
+            DATA['data_segID'] = data_Segments[data_seg]['id']
+            DATA['data_segName'] = data_Segments[data_seg]['name']
+
+
+
+
+        }
+
+    }
+
+
+}
+
+
+DATA_Data = JSON.stringify(DATA)
+
+return DATA_Data;	]]></script>
+</dunes-script-module>
