@@ -8,7 +8,7 @@
 	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Avi SSH Command]]></display-name>
 	<description><![CDATA[Runs an SSH command.]]></description>
-	<position y="40.0" x="160.0" />
+	<position y="50.0" x="160.0" />
 	<input>
 		<param name="hostNameOrIP" type="string">
 			<description><![CDATA[Hostname or IP address of the SSH host]]></description>
@@ -50,13 +50,13 @@
 		</param>
 	</output>
 	<attrib name="output" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[Standard output]]></description>
 	</attrib>
 	<attrib name="error" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[Error output]]></description>
 	</attrib>
 	<attrib name="defaultKeyPairPath" type="Path" read-only="false">
@@ -64,13 +64,13 @@
 		<description><![CDATA[Default path to the key file]]></description>
 	</attrib>
 	<attrib name="exitCode" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[Returns 0 if successful, and a negative value if there is a failure]]></description>
 	</attrib>
 	<attrib name="logText" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 		<description><![CDATA[Log String]]></description>
 	</attrib>
 	<workflow-item name="item3" out-name="item2"
@@ -263,8 +263,8 @@ try {
 				<title><![CDATA[Encoding]]></title>
 				<p-param name="encoding">
 					<desc><![CDATA[The encoding to be used. Leave this field empty to use the default system encoding. (Example values: "UTF-8", "ISO-8859-1"...)]]></desc>
-					<p-qual kind="static" name="defaultValue" type="string"><![CDATA[]]>
-					</p-qual>
+					<p-qual kind="static" name="defaultValue" type="string"><![CDATA[
+					]]></p-qual>
 				</p-param>
 			</p-group>
 			<p-group>

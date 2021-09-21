@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item9" object-name="workflow:name=generic"
+	id="8baf4ac9-3c0b-4758-81bb-354d7a1d5c2f" version="3.0.0"
+	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
+	restartMode="1" resumeFromFailedMode="0">
+	<display-name><![CDATA[Remote Authentication Configuration]]></display-name>
+	<position y="50.0" x="100.0" />
+	<input>
+		<param name="controller" type="string" />
+		<param name="authType" type="string" />
+		<param name="samlEntityType" type="string" />
+		<param name="authProfileName" type="string" />
+		<param name="saml_entity_type" type="string" />
+		<param name="org_name" type="string" />
+		<param name="org_display_name" type="string" />
+		<param name="org_url" type="string" />
+		<param name="tech_contact_name" type="string" />
+		<param name="tech_contact_email" type="string" />
+		<param name="saml_fqdn" type="string" />
+		<param name="ldapPort" type="string" />
+		<param name="user_search_scope" type="string" />
+		<param name="security_mode" type="string" />
+		<param name="group_member_attribute" type="string" />
+		<param name="group_search_scope" type="string" />
+		<param name="group_member_is_full_dn" type="boolean" />
+		<param name="group_filter" type="string" />
+		<param name="ignore_referrals" type="boolean" />
+		<param name="admin_bind_dn" type="string" />
+		<param name="user_search_dn" type="string" />
+		<param name="group_search_dn" type="string" />
+		<param name="admin_bind_password" type="SecureString" />
+		<param name="user_id_attribute" type="string" />
+		<param name="ldapServers" type="Array/string" />
+		<param name="base_dn" type="string" />
+		<param name="metadata" type="string" />
+	</input>
+	<attrib name="aviVroClient" type="Avi:AviVroClient"
+		read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<workflow-item name="item0" type="end" end-mode="0">
+		<in-binding />
+		<position y="50.0" x="480.0" />
+	</workflow-item>
+	<workflow-item name="item9" out-name="item11" type="task"
+		script-module="com.vmware.avi/getAviVroClient">
+		<display-name><![CDATA[Action element]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller);
+]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="160.0" />
+	</workflow-item>
+	<workflow-item name="item11" out-name="item0" type="task"
+		script-module="com.vmware.avi/remoteAuthenticationConfiguration">
+		<display-name><![CDATA[Remote Authentication Configuration]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").remoteAuthenticationConfiguration(aviVroClient,authType,samlEntityType,authProfileName,org_name,org_display_name,org_url,tech_contact_name,tech_contact_email,saml_fqdn,ldapPort,user_search_scope,security_mode,group_member_attribute,group_search_scope,group_member_is_full_dn,group_filter,ignore_referrals,admin_bind_dn,user_search_dn,group_search_dn,admin_bind_password,user_id_attribute,ldapServers,base_dn,metadata);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="authType" type="string" export-name="authType" />
+			<bind name="samlEntityType" type="string"
+				export-name="samlEntityType" />
+			<bind name="authProfileName" type="string"
+				export-name="authProfileName" />
+			<bind name="org_name" type="string" export-name="org_name" />
+			<bind name="org_display_name" type="string"
+				export-name="org_display_name" />
+			<bind name="org_url" type="string" export-name="org_url" />
+			<bind name="tech_contact_name" type="string"
+				export-name="tech_contact_name" />
+			<bind name="tech_contact_email" type="string"
+				export-name="tech_contact_email" />
+			<bind name="saml_fqdn" type="string" export-name="saml_fqdn" />
+			<bind name="ldapPort" type="string" export-name="ldapPort" />
+			<bind name="user_search_scope" type="string"
+				export-name="user_search_scope" />
+			<bind name="security_mode" type="string"
+				export-name="security_mode" />
+			<bind name="group_member_attribute" type="string"
+				export-name="group_member_attribute" />
+			<bind name="group_search_scope" type="string"
+				export-name="group_search_scope" />
+			<bind name="group_member_is_full_dn" type="boolean"
+				export-name="group_member_is_full_dn" />
+			<bind name="group_filter" type="string"
+				export-name="group_filter" />
+			<bind name="ignore_referrals" type="boolean"
+				export-name="ignore_referrals" />
+			<bind name="admin_bind_dn" type="string"
+				export-name="admin_bind_dn" />
+			<bind name="user_search_dn" type="string"
+				export-name="user_search_dn" />
+			<bind name="group_search_dn" type="string"
+				export-name="group_search_dn" />
+			<bind name="admin_bind_password" type="SecureString"
+				export-name="admin_bind_password" />
+			<bind name="user_id_attribute" type="string"
+				export-name="user_id_attribute" />
+			<bind name="ldapServers" type="Array/string"
+				export-name="ldapServers" />
+			<bind name="base_dn" type="string" export-name="base_dn" />
+			<bind name="metadata" type="string" export-name="metadata" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="300.0" />
+	</workflow-item>
+	<presentation />
+</workflow>

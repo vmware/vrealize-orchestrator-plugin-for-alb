@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="GetNSXTMGMTInformation"
+	result-type="string" api-version="6.0.0"
+	id="29237a30-0c15-4eb0-b2ed-00f60fa77c03" version="1.0.0"
+	allowed-operations="vfe">
+	<param n="nsx_cred_name" t="string"><![CDATA[]]>
+	</param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="nsxManager" t="string"><![CDATA[]]>
+	</param>
+	<param n="mgmt_TZ" t="string"><![CDATA[]]>
+	</param>
+	<param n="mgmt_T1" t="string"><![CDATA[]]>
+	</param>
+	<param n="mgmt_Seg" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+// External Array
+var MGMT = {}
+
+
+//Retrieve current NSXT Credentials and populate Object
+var aviNsxtCred = aviVroClient.getObjectDataByName("cloudconnectoruser",nsx_cred_name);
+aviNsxtCred = JSON.parse(aviNsxtCred)
+
+MGMT['nsxCredUUID'] = aviNsxtCred['uuid']
+MGMT['nsxCredUrl'] = aviNsxtCred['url']
+
+var nsxCredUUID = aviNsxtCred['uuid']
+
+
+
+//Create AVI API Body Object
+var nsx_data = {host: nsxManager, credentials_uuid: nsxCredUUID}
+nsx_data = JSON.stringify(nsx_data);
+
+
+// Test NSX Manager Log in
+var myAviRunTimeInfo = new AviRunTimeInfo();
+myAviRunTimeInfo.setHttpMethod("POST")
+myAviRunTimeInfo.setRequestBody(nsx_data)
+myAviRunTimeInfo.setUrl("nsxt/verify/login")
+
+
+try{
+
+    myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
+
+
+
+    if (myAviRunTimeInfo.getHttpStatuseCode().indexOf("200") <=0) {
+
+        System.log("NSX-T Credentials work, moving on. ")
+    
+    }
+
+} catch (e) {
+
+        throw "The provided NSX-T Credentials DO NOT work, please validate the provided credentials and try again."
+        
+    }
+
+
+
+
+
+// Retrieve Transportzone Information
+
+var mgmt_tzInfo = new AviRunTimeInfo();
+mgmt_tzInfo.setHttpMethod("POST")
+mgmt_tzInfo.setRequestBody(nsx_data)
+mgmt_tzInfo.setUrl("nsxt/transportzones")
+
+
+mgmt_tzInfo = aviVroClient.callAviAPI(mgmt_tzInfo)
+
+
+var mgmt_transportZones = JSON.parse(mgmt_tzInfo.getResponseBody())
+mgmt_transportZones = mgmt_transportZones['resource']['nsxt_transportzones']
+
+for (mgmt_tz in mgmt_transportZones) {
+    
+
+    if (mgmt_transportZones[mgmt_tz]['name'] == mgmt_TZ) {
+
+        var mgmt_tzID = mgmt_transportZones[mgmt_tz]['id']
+        var mgmt_tzName = mgmt_transportZones[mgmt_tz]['name']
+        var mgmt_tzType = mgmt_transportZones[mgmt_tz]['tz_type']
+
+        MGMT['mgmt_tzID'] = mgmt_transportZones[mgmt_tz]['id']
+        MGMT['mgmt_tzName'] = mgmt_transportZones[mgmt_tz]['name']
+        MGMT['mgmt_tzType'] = mgmt_transportZones[mgmt_tz]['tz_type']
+
+
+
+    }
+
+}
+
+// Retrieve T1 Information
+if (mgmt_T1 != "") {
+    var mgmt_t1Info = new AviRunTimeInfo();
+    mgmt_t1Info.setHttpMethod("POST")
+    mgmt_t1Info.setRequestBody(nsx_data)
+    mgmt_t1Info.setUrl("nsxt/tier1s")
+
+
+    mgmt_t1Info = aviVroClient.callAviAPI(mgmt_t1Info)
+
+
+    var mgmt_t1Router = JSON.parse(mgmt_t1Info.getResponseBody())
+    mgmt_t1Router = mgmt_t1Router['resource']['nsxt_tier1routers']
+
+    for (mgmt_t1 in mgmt_t1Router) {
+        
+
+        if (mgmt_t1Router[mgmt_t1]['name'] == mgmt_T1) {
+
+            var mgmt_t1ID = mgmt_t1Router[mgmt_t1]['id']
+            var mgmt_t1Name = mgmt_t1Router[mgmt_t1]['name']
+            MGMT['mgmt_t1ID'] = mgmt_t1Router[mgmt_t1]['id']
+            MGMT['mgmt_t1Name'] = mgmt_t1Router[mgmt_t1]['name']
+
+
+
+
+        }
+
+    }
+
+}else {
+
+    MGMT['mgmt_t1ID'] = ""
+    MGMT['mgmt_t1Name'] = ""
+
+}
+
+
+// Retrieve Segment Information
+if (mgmt_T1 != "") {
+
+    //Create AVI API Body Object for Segments
+    var segment_data = {host: nsxManager, credentials_uuid: nsxCredUUID,transport_zone_id: mgmt_tzID,tier1_id:mgmt_t1ID}
+
+    segment_data = JSON.stringify(segment_data);
+
+    var mgmt_segInfo = new AviRunTimeInfo();
+    mgmt_segInfo.setHttpMethod("POST")
+    mgmt_segInfo.setRequestBody(segment_data)
+    mgmt_segInfo.setUrl("nsxt/segments")
+
+
+    mgmt_segInfo = aviVroClient.callAviAPI(mgmt_segInfo)
+
+
+    var mgmt_Segments = JSON.parse(mgmt_segInfo.getResponseBody())
+    mgmt_Segments = mgmt_Segments['resource']['nsxt_segments']
+
+    for (mgmt_seg in mgmt_Segments) {
+        
+
+        if (mgmt_Segments[mgmt_seg]['name'] == mgmt_Seg) {
+
+            var mgmt_segID = mgmt_Segments[mgmt_seg]['id']
+            var mgmt_segName = mgmt_Segments[mgmt_seg]['name']
+            MGMT['mgmt_segID'] = mgmt_Segments[mgmt_seg]['id']
+            MGMT['mgmt_segName'] = mgmt_Segments[mgmt_seg]['name']
+
+
+
+
+
+        }
+
+    }
+
+}else {
+
+    //Create AVI API Body Object for Segments
+    var segment_data = {host: nsxManager, credentials_uuid: nsxCredUUID,transport_zone_id: mgmt_tzID}
+
+    segment_data = JSON.stringify(segment_data);
+
+    var mgmt_segInfo = new AviRunTimeInfo();
+    mgmt_segInfo.setHttpMethod("POST")
+    mgmt_segInfo.setRequestBody(segment_data)
+    mgmt_segInfo.setUrl("nsxt/segments")
+
+
+    mgmt_segInfo = aviVroClient.callAviAPI(mgmt_segInfo)
+
+
+    var mgmt_Segments = JSON.parse(mgmt_segInfo.getResponseBody())
+    mgmt_Segments = mgmt_Segments['resource']['nsxt_segments']
+
+    for (mgmt_seg in mgmt_Segments) {
+        
+
+        if (mgmt_Segments[mgmt_seg]['name'] == mgmt_Seg) {
+
+            var mgmt_segID = mgmt_Segments[mgmt_seg]['id']
+            var mgmt_segName = mgmt_Segments[mgmt_seg]['name']
+            MGMT['mgmt_segID'] = mgmt_Segments[mgmt_seg]['id']
+            MGMT['mgmt_segName'] = mgmt_Segments[mgmt_seg]['name']
+
+
+
+
+        }
+
+    }
+
+
+}
+
+
+MGMT_Data = JSON.stringify(MGMT)
+
+return MGMT_Data;	]]></script>
+</dunes-script-module>

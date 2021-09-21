@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">CreateNSXTCloud</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">3c6ef027-e827-4983-b43c-6905f87d39e3</entry>
+</properties>

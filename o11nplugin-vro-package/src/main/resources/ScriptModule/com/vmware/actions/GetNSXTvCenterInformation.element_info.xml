@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">GetNSXTvCenterInformation</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">57c126e6-b4dc-4c76-ac62-063f1c2a0c6c</entry>
+</properties>

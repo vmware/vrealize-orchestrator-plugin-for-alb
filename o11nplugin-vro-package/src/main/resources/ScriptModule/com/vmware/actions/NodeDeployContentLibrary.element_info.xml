@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Exported from [server]</comment>
+<entry key="categoryPath">com.vmware.avi</entry>
+<entry key="name">NodeDeployContentLibrary</entry>
+<entry key="type">ScriptModule</entry>
+<entry key="id">afda7d1b-68b3-475a-96f0-38d5e8883c26</entry>
+</properties>

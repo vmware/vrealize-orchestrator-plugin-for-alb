@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="ConfigureClusterRecreation" result-type="string"
+	api-version="6.0.0" id="f52c5fc0-e5a8-4a00-a39f-c8cf6e1e30d4"
+	version="0.0.0" allowed-operations="vfe">
+	<description><![CDATA[This Action will initiate a Cluster re creation process using the original 3 Controller and VIP IP addresses collected.]]></description>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="clusterNodes_Orig" t="string"><![CDATA[]]>
+	</param>
+	<param n="cluster_Name" t="string"><![CDATA[]]>
+	</param>
+	<param n="cluster_VIP" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+
+//Declare Arrays
+var server_list = [];
+
+
+//Create Controller Configuration Object
+for (var node in clusterNodes_Orig) {
+    var ip_entry = {};
+    var server = {};
+    server['addr'] = clusterNodes_Orig[node]['ip'];
+    server['type'] = "V4";
+
+    ip_entry.name = clusterNodes_Orig[node]['name'];
+    ip_entry.ip = server;
+    ip_entry.vm_hostname = clusterNodes_Orig[node]['hostname'];
+    server_list.push(ip_entry);
+
+}
+
+
+//Create VIP Configuration Object
+var virtual_ip = new Object();
+virtual_ip.addr = cluster_VIP;
+virtual_ip.type = "V4";
+
+
+//Declare API Body JSON Object
+var config2 = new Object();
+
+//Populate API Body JSON Object
+config2.uuid = "";
+config2.name =  cluster_Name;
+config2.virtual_ip = virtual_ip;
+config2.nodes = server_list;
+config2.tenant_uuid =  "admin";
+
+//Execute API Call
+var user_payload = (JSON.stringify(config2));
+
+System.log(user_payload)
+var updated_response = aviVroClient.callAction("cluster","PUT", user_payload)
+
+
+//Error Handling
+if (updated_response == true) {
+
+    System.log("Controller Cluster Creation action was executed successfully.")
+
+} else {
+
+    throw "The Controller Cluster Creation action was not successful. Please delete the deployed VMs, and try the deployment again."
+}]]></script>
+</dunes-script-module>

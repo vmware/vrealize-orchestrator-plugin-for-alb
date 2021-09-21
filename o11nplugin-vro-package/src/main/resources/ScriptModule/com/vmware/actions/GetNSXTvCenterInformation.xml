@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="GetNSXTvCenterInformation" result-type="string"
+	api-version="6.0.0" id="57c126e6-b4dc-4c76-ac62-063f1c2a0c6c"
+	version="1.0.0" allowed-operations="vfe">
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="vcenter_cred_name" t="string"><![CDATA[]]>
+	</param>
+	<param n="content_Library" t="string"><![CDATA[]]>
+	</param>
+	<param n="nsxManager" t="string"><![CDATA[]]>
+	</param>
+	<param n="vcenter_IP" t="string"><![CDATA[]]>
+	</param>
+	<param n="DATA_Data" t="string"><![CDATA[]]>
+	</param>
+	<param n="nsx_cred_name" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+// Retrieve JSON Objects
+DATA_Data = JSON.parse(DATA_Data)
+
+
+// External Array
+var vCenter = {}
+
+//Retrieve current NSXT Credentials and populate Object
+var aviNsxtCred = aviVroClient.getObjectDataByName("cloudconnectoruser",nsx_cred_name);
+aviNsxtCred = JSON.parse(aviNsxtCred)
+
+var nsxCredUUID = aviNsxtCred['uuid']
+
+
+//Retrieve current vcenter Credentials and populate Object
+var avivCentertCred = aviVroClient.getObjectDataByName("cloudconnectoruser",vcenter_cred_name);
+avivCenterCred = JSON.parse(avivCentertCred)
+
+vCenter['vCenterCredUrl'] = avivCenterCred['url']
+
+var vCenterCredUUID = avivCenterCred['uuid']
+
+
+//Create AVI API Body Object
+var nsx_data = {host: nsxManager, credentials_uuid: nsxCredUUID,transport_zone_id: DATA_Data['data_tzID']}
+nsx_data = JSON.stringify(nsx_data);
+
+
+// Retrieve vCenter Information
+var vcenter_Info = new AviRunTimeInfo();
+vcenter_Info.setHttpMethod("POST")
+vcenter_Info.setRequestBody(nsx_data)
+vcenter_Info.setUrl("nsxt/vcenters")
+
+vcenter_Info = aviVroClient.callAviAPI(vcenter_Info)
+
+var vCenters = JSON.parse(vcenter_Info.getResponseBody())
+vCenters = vCenters['resource']['vcenter_ips']
+
+for (vc in vCenters) {
+
+    if (vCenters[vc]['vcenter_ip']['addr'] == vcenter_IP) {
+
+        var vcIP = vCenters[vc]['vcenter_ip']['addr']
+        vCenter['vcIP'] = vCenters[vc]['vcenter_ip']['addr']
+        
+
+
+
+
+
+    }
+
+}
+
+//Create AVI API Body Object for vCenter
+var vcenter_data = {host: vcIP, credentials_uuid: vCenterCredUUID}
+vcenter_data = JSON.stringify(vcenter_data);
+
+
+// Test vCenter Log in
+var myAviRunTimeInfo = new AviRunTimeInfo();
+myAviRunTimeInfo.setHttpMethod("POST")
+myAviRunTimeInfo.setRequestBody(vcenter_data)
+myAviRunTimeInfo.setUrl("vcenterserver/verify/login")
+
+
+try{
+
+    myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
+
+
+
+    if (myAviRunTimeInfo.getHttpStatuseCode().indexOf("200") <=0) {
+
+        System.log("vCenter Credentials work, moving on. ")
+    
+    }
+
+} catch (e) {
+
+        throw "The provided vCenter Credentials DO NOT work, please validate the provided credentials and try again."
+        
+    }
+
+
+// Retrieve Content Library Information
+var cl_Info = new AviRunTimeInfo();
+cl_Info.setHttpMethod("POST")
+cl_Info.setRequestBody(vcenter_data)
+cl_Info.setUrl("vcenter/contentlibraries")
+
+cl_Info = aviVroClient.callAviAPI(cl_Info)
+
+var contentLibrary = JSON.parse(cl_Info.getResponseBody())
+contentLibrary = contentLibrary['resource']['vcenter_clibs']
+
+for (cl in contentLibrary) { 
+
+    if (contentLibrary[cl]['name'] == content_Library) {
+
+        var clID = contentLibrary[cl]['id']
+        var clName = contentLibrary[cl]['name']
+        vCenter['clID'] = contentLibrary[cl]['id']
+        vCenter['clName'] = contentLibrary[cl]['name']
+
+    }
+
+}
+
+
+vCenter_Data = JSON.stringify(vCenter)
+
+
+return vCenter_Data;]]></script>
+</dunes-script-module>

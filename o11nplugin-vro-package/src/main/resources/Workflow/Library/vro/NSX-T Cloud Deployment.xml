@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item1" object-name="workflow:name=generic"
+	id="8d171e5c-641e-464a-993d-63b5a4559b01" version="3.0.0"
+	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
+	restartMode="1" resumeFromFailedMode="0">
+	<display-name><![CDATA[NSX-T Cloud Deployment]]></display-name>
+	<position y="50.0" x="100.0" />
+	<input>
+		<param name="controller" type="string" />
+		<param name="nsx_user" type="string" />
+		<param name="nsx_password" type="SecureString" />
+		<param name="vCenter_user" type="string" />
+		<param name="vCenter_password" type="SecureString" />
+		<param name="nsx_cred_name" type="string" />
+		<param name="nsxManager" type="string" />
+		<param name="mgmt_TZ" type="string" />
+		<param name="mgmt_T1" type="string" />
+		<param name="mgmt_Seg" type="string" />
+		<param name="data_TZ" type="string" />
+		<param name="data_T1" type="string" />
+		<param name="data_Seg" type="string" />
+		<param name="vcenter_cred_name" type="string" />
+		<param name="content_Library" type="string" />
+		<param name="vcenter_IP" type="string" />
+		<param name="tenant_Name" type="string" />
+		<param name="prefix_Name" type="string" />
+		<param name="verify_nsx_password" type="SecureString" />
+		<param name="verify_vCenter_password" type="SecureString" />
+		<param name="cloud_Name" type="string" />
+		<param name="vCenter_Name" type="string" />
+	</input>
+	<attrib name="aviVroClient" type="Avi:AviVroClient"
+		read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="MGMT_Data" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="DATA_Data" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vCenter_Data" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<workflow-item name="item0" type="end" end-mode="0">
+		<in-binding />
+		<position y="50.0" x="1500.0" />
+	</workflow-item>
+	<workflow-item name="item1" out-name="item10" type="task"
+		script-module="com.vmware.avi/getAviVroClient">
+		<display-name><![CDATA[Action element]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller);
+]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="130.0" />
+	</workflow-item>
+	<workflow-item name="item10" out-name="item11"
+		type="task" script-module="com.vmware.avi/CreateNSXTCredentialObject">
+		<display-name><![CDATA[Create NTSX-T Credential Object]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").CreateNSXTCredentialObject(aviVroClient,nsx_cred_name,nsx_user,nsx_password);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="nsx_cred_name" type="string"
+				export-name="nsx_cred_name" />
+			<bind name="nsx_user" type="string" export-name="nsx_user" />
+			<bind name="nsx_password" type="SecureString"
+				export-name="nsx_password" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="300.0" />
+	</workflow-item>
+	<workflow-item name="item11" out-name="item12"
+		type="task"
+		script-module="com.vmware.avi/CreatevCenterCredentialObject">
+		<display-name><![CDATA[Create vCenter Credential Object]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").CreatevCenterCredentialObject(aviVroClient,vcenter_cred_name,vCenter_user,vCenter_password);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="vcenter_cred_name" type="string"
+				export-name="vcenter_cred_name" />
+			<bind name="vCenter_user" type="string"
+				export-name="vCenter_user" />
+			<bind name="vCenter_password" type="SecureString"
+				export-name="vCenter_password" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="460.0" />
+	</workflow-item>
+	<workflow-item name="item12" out-name="item13"
+		type="task" script-module="com.vmware.avi/GetNSXTMGMTInformation">
+		<display-name><![CDATA[Get MGMT Information]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").GetNSXTMGMTInformation(nsx_cred_name,aviVroClient,nsxManager,mgmt_TZ,mgmt_T1,mgmt_Seg);
+]]></script>
+		<in-binding>
+			<bind name="nsx_cred_name" type="string"
+				export-name="nsx_cred_name" />
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="nsxManager" type="string" export-name="nsxManager" />
+			<bind name="mgmt_TZ" type="string" export-name="mgmt_TZ" />
+			<bind name="mgmt_T1" type="string" export-name="mgmt_T1" />
+			<bind name="mgmt_Seg" type="string" export-name="mgmt_Seg" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="MGMT_Data" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="660.0" />
+	</workflow-item>
+	<workflow-item name="item13" out-name="item14"
+		type="task" script-module="com.vmware.avi/GetNSXTDataInformation">
+		<display-name><![CDATA[Get Data Information]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").GetNSXTDataInformation(data_TZ,data_T1,data_Seg,nsxManager,aviVroClient,nsx_cred_name);
+]]></script>
+		<in-binding>
+			<bind name="data_TZ" type="string" export-name="data_TZ" />
+			<bind name="data_T1" type="string" export-name="data_T1" />
+			<bind name="data_Seg" type="string" export-name="data_Seg" />
+			<bind name="nsxManager" type="string" export-name="nsxManager" />
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="nsx_cred_name" type="string"
+				export-name="nsx_cred_name" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="DATA_Data" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="880.0" />
+	</workflow-item>
+	<workflow-item name="item14" out-name="item15"
+		type="task" script-module="com.vmware.avi/GetNSXTvCenterInformation">
+		<display-name><![CDATA[Get vCenter Information]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").GetNSXTvCenterInformation(aviVroClient,vcenter_cred_name,content_Library,nsxManager,vcenter_IP,DATA_Data,nsx_cred_name);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="vcenter_cred_name" type="string"
+				export-name="vcenter_cred_name" />
+			<bind name="content_Library" type="string"
+				export-name="content_Library" />
+			<bind name="nsxManager" type="string" export-name="nsxManager" />
+			<bind name="vcenter_IP" type="string" export-name="vcenter_IP" />
+			<bind name="DATA_Data" type="string" export-name="DATA_Data" />
+			<bind name="nsx_cred_name" type="string"
+				export-name="nsx_cred_name" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="vCenter_Data" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="1060.0" />
+	</workflow-item>
+	<workflow-item name="item15" out-name="item0" type="task"
+		script-module="com.vmware.avi/CreateNSXTCloud">
+		<display-name><![CDATA[Create NSX-T Cloud]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").CreateNSXTCloud(aviVroClient,nsxManager,tenant_Name,prefix_Name,cloud_Name,vCenter_Name,MGMT_Data,DATA_Data,vCenter_Data);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="nsxManager" type="string" export-name="nsxManager" />
+			<bind name="tenant_Name" type="string" export-name="tenant_Name" />
+			<bind name="prefix_Name" type="string" export-name="prefix_Name" />
+			<bind name="cloud_Name" type="string" export-name="cloud_Name" />
+			<bind name="vCenter_Name" type="string"
+				export-name="vCenter_Name" />
+			<bind name="MGMT_Data" type="string" export-name="MGMT_Data" />
+			<bind name="DATA_Data" type="string" export-name="DATA_Data" />
+			<bind name="vCenter_Data" type="string"
+				export-name="vCenter_Data" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string" export-name="" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="60.0" x="1250.0" />
+	</workflow-item>
+	<presentation />
+</workflow>

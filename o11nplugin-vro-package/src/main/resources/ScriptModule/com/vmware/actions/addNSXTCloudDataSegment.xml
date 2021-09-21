@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="addNSXTCloudDataSegment"
+	result-type="string" api-version="6.0.0"
+	id="05a6f01a-8988-46de-a534-edf06905554f" version="1.0.0"
+	allowed-operations="vfe">
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="nsxtCloud" t="string"><![CDATA[]]>
+	</param>
+	<param n="tier1" t="string"><![CDATA[]]>
+	</param>
+	<param n="segment" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[// Retrieve User from Cloud
+var aviNsxtCloud = avivroClient.getObjectDataByName("cloud",nsxtCloud);
+aviNsxtCloud = JSON.parse(aviNsxtCloud)
+
+var nsxtCloudUUID = aviNsxtCloud['uuid']
+var nsxtCredUUID = aviNsxtCloud['nsxt_configuration']['nsxt_credentials_ref'].split('api/cloudconnectoruser/')[1]
+nsxtCredUUID = nsxtCredUUID.split('#')[0]
+var nsxtCloudIP = aviNsxtCloud['nsxt_configuration']['nsxt_url']
+var nsxtDataTZ = aviNsxtCloud['nsxt_configuration']['data_network_config']['transport_zone']
+
+
+//Retrieve current NSXT Credentials and populate Object
+var aviNsxtCred = avivroClient.getObjectDataByUUID("cloudconnectoruser",nsxtCredUUID);
+aviNsxtCred = JSON.parse(aviNsxtCred)
+
+var nsxCredUUID = aviNsxtCred['uuid']
+var nsxCredUrl = aviNsxtCred['url']
+
+
+//Create AVI API Body Object
+var nsx_data = {host: nsxtCloudIP, credentials_uuid: nsxtCredUUID}
+nsx_data = JSON.stringify(nsx_data);
+
+var data_t1Info = new AviRunTimeInfo();
+data_t1Info.setHttpMethod("POST")
+data_t1Info.setRequestBody(nsx_data)
+data_t1Info.setUrl("nsxt/tier1s")
+
+
+data_t1Info = avivroClient.callAviAPI(data_t1Info)
+
+
+var data_t1Router = JSON.parse(data_t1Info.getResponseBody())
+ data_t1Router = data_t1Router['resource']['nsxt_tier1routers']
+
+for (data_t1 in data_t1Router) {
+        
+
+    if (data_t1Router[data_t1]['name'] == tier1) {
+
+        var data_t1ID = data_t1Router[data_t1]['id']
+        var data_t1Name = data_t1Router[data_t1]['name']
+
+
+
+
+
+    }
+
+}
+
+//Create AVI API Body Object for Segments
+var segment_data = {host: nsxtCloudIP, credentials_uuid: nsxtCredUUID,transport_zone_id: nsxtDataTZ,tier1_id:data_t1ID}
+
+segment_data = JSON.stringify(segment_data);
+
+var data_segInfo = new AviRunTimeInfo();
+data_segInfo.setHttpMethod("POST")
+data_segInfo.setRequestBody(segment_data)
+ data_segInfo.setUrl("nsxt/segments")
+
+
+data_segInfo = avivroClient.callAviAPI(data_segInfo)
+
+
+var data_Segments = JSON.parse(data_segInfo.getResponseBody())
+data_Segments = data_Segments['resource']['nsxt_segments']
+
+for (data_seg in data_Segments) {
+        
+
+    if (data_Segments[data_seg]['name'] == segment) {
+
+        var data_segID = data_Segments[data_seg]['id']
+        var data_segName = data_Segments[data_seg]['name']
+
+
+
+
+
+    }
+
+}
+
+
+
+// Remove JSON Elements
+delete aviNsxtCloud.url;
+delete aviNsxtCloud.uuid;
+delete aviNsxtCloud._last_modified;
+
+
+// Update or Add tier 1 segment information
+if (aviNsxtCloud['nsxt_configuration']['data_network_config']['tier1_segment_config']) {
+
+
+
+    var tier1_lrs = aviNsxtCloud['nsxt_configuration']['data_network_config']['tier1_segment_config']['manual']
+
+
+
+    //Update T1 lrs
+    var tier1Obj = {};
+    tier1Obj['tier1_lr_id'] = data_t1ID;
+    tier1Obj['segment_id'] = data_segID;
+
+
+    
+    tier1_lrs.tier1_lrs.push(tier1Obj)
+
+
+
+    var cloud_data = JSON.stringify(aviNsxtCloud)
+
+    // Update Cloud
+    var cloud_Info = new AviRunTimeInfo();
+    cloud_Info.setHttpMethod("PUT")
+    cloud_Info.setRequestBody(cloud_data)
+    cloud_Info.setUrl("cloud/"+ nsxtCloudUUID)
+
+
+
+    try{
+        
+        cloud_Info = aviVroClient.callAviAPI(cloud_Info)
+
+
+        if (cloud_Info.getHttpStatuseCode().indexOf("201") <=0) {
+
+             System.log("The Data Segment was added to the NSX-T Cloud. ")
+    
+        }
+
+} catch (e) {
+
+        throw "The Data Segment was NOT successfully added, please validate the provided information and try again."
+        
+}
+
+
+}else {
+
+    //Declare Arrays
+    var manual = {};
+
+
+
+    //Create T1 lrs
+    var tier1_lrs = [];
+    var tier1Obj = {};
+    tier1Obj['tier1_lr_id'] = data_t1ID;
+    tier1Obj['segment_id'] = data_segID;
+
+
+    tier1_lrs.push(tier1Obj)
+
+    manual.tier1_lrs = tier1_lrs;
+
+
+    //Create Data JSON Object
+    var tier1_segment = {};
+    tier1_segment.segment_config_mode = "TIER1_SEGMENT_MANUAL";
+    tier1_segment.manual = manual;	
+
+    aviNsxtCloud.nsxt_configuration.data_network_config.tier1_segment_config = tier1_segment
+
+    var cloud_data = JSON.stringify(aviNsxtCloud)
+
+
+    // Update Cloud
+    var cloud_Info = new AviRunTimeInfo();
+    cloud_Info.setHttpMethod("PUT")
+    cloud_Info.setRequestBody(cloud_data)
+    cloud_Info.setUrl("cloud/"+ nsxtCloudUUID)
+
+
+    try{
+
+    cloud_Info = aviVroClient.callAviAPI(cloud_Info)
+
+
+    if (cloud_Info.getHttpStatuseCode().indexOf("201") <=0) {
+
+        System.log("The Data Segment was added to the NSX-T Cloud. ")
+    
+    }
+
+} catch (e) {
+
+        throw "The Data Segment was NOT successfully added, please validate the provided information and try again."
+        
+}
+
+
+}
+
+]]></script>
+</dunes-script-module>

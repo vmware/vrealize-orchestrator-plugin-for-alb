@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module
+	name="Configure1NodeClusterCreation" result-type="string"
+	api-version="6.0.0" id="49e3daf3-6d74-4e86-b591-a6b9b3c1b6a5"
+	version="0.0.0" allowed-operations="vfe">
+	<description><![CDATA[This Action will initiate a Cluster creation process and take a 3 Node Cluster to a 1 Node Cluster.]]></description>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="vmIP_Orig" t="string"><![CDATA[]]>
+	</param>
+	<param n="vmMask_Orig" t="string"><![CDATA[]]>
+	</param>
+	<param n="vmGW_Orig" t="string"><![CDATA[]]>
+	</param>
+	<param n="vmName_Orig" t="string"><![CDATA[]]>
+	</param>
+	<param n="clusterNodes_Orig" t="string"><![CDATA[]]>
+	</param>
+	<param n="cluster_Name" t="string"><![CDATA[]]>
+	</param>
+	<param n="cluster_VIP" t="string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[
+
+
+for (var node in clusterNodes_Orig) {
+
+    if(clusterNodes_Orig[node]['role'] == "CLUSTER_LEADER") {
+
+        var clusterLeader_Name = clusterNodes_Orig[node]['name']
+
+    }
+
+
+}
+
+
+
+//Declare Arrays
+var server_list = [];
+
+
+//Create Controller Configuration Object
+for (var node in clusterNodes_Orig) {
+
+    if (clusterNodes_Orig[node]['role'] == "CLUSTER_LEADER") {
+
+        var ip_entry = {};
+        var server = {};
+        server['addr'] = clusterNodes_Orig[node]['ip'];
+        server['type'] = "V4";
+
+        ip_entry.name = clusterNodes_Orig[node]['name'];
+        ip_entry.ip = server;
+        ip_entry.vm_hostname = clusterNodes_Orig[node]['hostname'];
+        server_list.push(ip_entry);
+
+
+    }
+
+}
+
+
+//Create VIP Configuration Object
+var virtual_ip = new Object();
+virtual_ip.addr = cluster_VIP;
+virtual_ip.type = "V4";
+
+
+//Declare API Body JSON Object
+var config2 = new Object();
+
+//Populate API Body JSON Object
+config2.uuid = "";
+config2.name =  cluster_Name;
+config2.virtual_ip = virtual_ip;
+config2.nodes = server_list;
+config2.tenant_uuid =  "admin";
+
+//Execute API Call
+var user_payload = (JSON.stringify(config2));
+var updated_response = aviVroClient.callAction("cluster","PUT", user_payload)
+
+System.log(user_payload)
+
+//Error Handling
+if (updated_response == true) {
+
+    System.log("Controller Cluster Creation action was executed successfully.")
+
+} else {
+
+    throw "The Controller Cluster Creation action was not successful. Please delete the deployed VMs, and try the deployment again."
+}]]></script>
+</dunes-script-module>
