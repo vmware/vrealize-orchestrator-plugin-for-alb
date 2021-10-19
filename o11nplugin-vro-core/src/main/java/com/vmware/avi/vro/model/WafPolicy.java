@@ -75,6 +75,10 @@ public class WafPolicy extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String failureMode = "WAF_FAILURE_MODE_OPEN";
 
+    @JsonProperty("geo_db_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String geoDbRef = null;
+
     @JsonProperty("labels")
     @JsonInclude(Include.NON_NULL)
     private List<KeyValue> labels;
@@ -452,6 +456,32 @@ public class WafPolicy extends AviRestResource {
   @VsoMethod
   public void setFailureMode(String  failureMode) {
     this.failureMode = failureMode;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Geo location mapping database used by this wafpolicy.
+   * It is a reference to an object of type geodb.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return geoDbRef
+   */
+  @VsoMethod
+  public String getGeoDbRef() {
+    return geoDbRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Geo location mapping database used by this wafpolicy.
+   * It is a reference to an object of type geodb.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param geoDbRef set the geoDbRef.
+   */
+  @VsoMethod
+  public void setGeoDbRef(String  geoDbRef) {
+    this.geoDbRef = geoDbRef;
   }
 
   /**
@@ -997,6 +1027,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
   Objects.equals(this.labels, objWafPolicy.labels)&&
   Objects.equals(this.allowlist, objWafPolicy.allowlist)&&
+  Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef)&&
   Objects.equals(this.markers, objWafPolicy.markers)&&
   Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides);
 }
@@ -1016,6 +1047,7 @@ public String toString() {
         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
         sb.append("    failureMode: ").append(toIndentedString(failureMode)).append("\n");
+        sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    learning: ").append(toIndentedString(learning)).append("\n");
         sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");

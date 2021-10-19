@@ -34,7 +34,7 @@ public class HealthMonitorPop3 extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Ssl attributes for pop3s monitor.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return sslAttributes
    */
@@ -46,7 +46,7 @@ public class HealthMonitorPop3 extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Ssl attributes for pop3s monitor.
-   * Field introduced in 20.1.5.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param sslAttributes set the sslAttributes.
    */

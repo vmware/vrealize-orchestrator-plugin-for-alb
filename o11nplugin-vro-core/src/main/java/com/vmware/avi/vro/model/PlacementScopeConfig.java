@@ -27,10 +27,6 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class PlacementScopeConfig extends AviRestResource {
-    @JsonProperty("clusters")
-    @JsonInclude(Include.NON_NULL)
-    private List<ClusterHAConfig> clusters = null;
-
     @JsonProperty("nsxt_clusters")
     @JsonInclude(Include.NON_NULL)
     private NsxtClusters nsxtClusters = null;
@@ -51,50 +47,6 @@ public class PlacementScopeConfig extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String vcenterRef = null;
 
-
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Cluster vsphere ha configuration.
-   * Field introduced in 20.1.7.
-   * Allowed in basic edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusters
-   */
-  @VsoMethod
-  public List<ClusterHAConfig> getClusters() {
-    return clusters;
-  }
-
-  /**
-   * This is the setter method. this will set the clusters
-   * Cluster vsphere ha configuration.
-   * Field introduced in 20.1.7.
-   * Allowed in basic edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusters
-   */
-  @VsoMethod
-  public void setClusters(List<ClusterHAConfig>  clusters) {
-    this.clusters = clusters;
-  }
-
-  /**
-   * This is the setter method this will set the clusters
-   * Cluster vsphere ha configuration.
-   * Field introduced in 20.1.7.
-   * Allowed in basic edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusters
-   */
-  @VsoMethod
-  public PlacementScopeConfig addClustersItem(ClusterHAConfig clustersItem) {
-    if (this.clusters == null) {
-      this.clusters = new ArrayList<ClusterHAConfig>();
-    }
-    this.clusters.add(clustersItem);
-    return this;
-  }
 
 
   /**
@@ -238,16 +190,14 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vcenterFolder, objPlacementScopeConfig.vcenterFolder)&&
   Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts)&&
   Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores)&&
-  Objects.equals(this.nsxtClusters, objPlacementScopeConfig.nsxtClusters)&&
-  Objects.equals(this.clusters, objPlacementScopeConfig.clusters);
+  Objects.equals(this.nsxtClusters, objPlacementScopeConfig.nsxtClusters);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class PlacementScopeConfig {\n");
-      sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
-        sb.append("    nsxtClusters: ").append(toIndentedString(nsxtClusters)).append("\n");
+      sb.append("    nsxtClusters: ").append(toIndentedString(nsxtClusters)).append("\n");
         sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
         sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
         sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");

@@ -26,30 +26,29 @@ import org.springframework.stereotype.Service;
 public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
     @JsonProperty("bridge_domain")
     @JsonInclude(Include.NON_NULL)
-    private String bridgeDomain = null;
+    private String bridgeDomain;
 
     @JsonProperty("new_vrf")
     @JsonInclude(Include.NON_NULL)
-    private String newVrf = null;
+    private String newVrf;
 
     @JsonProperty("old_vrf")
     @JsonInclude(Include.NON_NULL)
-    private String oldVrf = null;
+    private String oldVrf;
 
     @JsonProperty("pool_list")
     @JsonInclude(Include.NON_NULL)
-    private List<String> poolList = null;
+    private List<String> poolList;
 
     @JsonProperty("vs_list")
     @JsonInclude(Include.NON_NULL)
-    private List<String> vsList = null;
+    private List<String> vsList;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property bridge_domain of obj type apicagentbridgedomainvrfchange field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return bridgeDomain
    */
   @VsoMethod
@@ -59,8 +58,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property bridge_domain of obj type apicagentbridgedomainvrfchange field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param bridgeDomain set the bridgeDomain.
    */
   @VsoMethod
@@ -70,8 +68,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property new_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return newVrf
    */
   @VsoMethod
@@ -81,8 +78,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property new_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param newVrf set the newVrf.
    */
   @VsoMethod
@@ -92,8 +88,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property old_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return oldVrf
    */
   @VsoMethod
@@ -103,8 +98,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property old_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param oldVrf set the oldVrf.
    */
   @VsoMethod
@@ -114,8 +108,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property pool_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return poolList
    */
   @VsoMethod
@@ -125,8 +118,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method. this will set the poolList
-   * Placeholder for description of property pool_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return poolList
    */
   @VsoMethod
@@ -136,8 +128,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method this will set the poolList
-   * Placeholder for description of property pool_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return poolList
    */
   @VsoMethod
@@ -152,8 +143,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return vsList
    */
   @VsoMethod
@@ -163,8 +153,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method. this will set the vsList
-   * Placeholder for description of property vs_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return vsList
    */
   @VsoMethod
@@ -174,8 +163,7 @@ public class ApicAgentBridgeDomainVrfChange extends AviRestResource {
 
   /**
    * This is the setter method this will set the vsList
-   * Placeholder for description of property vs_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return vsList
    */
   @VsoMethod

@@ -199,7 +199,7 @@ public class GCPConfiguration extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Email of gcp service account to be associated to the service engines.
-   * Field introduced in 20.1.7.
+   * Field introduced in 21.1.2.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpServiceAccountEmail
    */
@@ -211,7 +211,7 @@ public class GCPConfiguration extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Email of gcp service account to be associated to the service engines.
-   * Field introduced in 20.1.7.
+   * Field introduced in 21.1.2.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpServiceAccountEmail set the gcpServiceAccountEmail.
    */

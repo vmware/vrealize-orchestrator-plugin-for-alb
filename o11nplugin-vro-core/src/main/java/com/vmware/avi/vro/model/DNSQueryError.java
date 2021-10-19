@@ -12,96 +12,96 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The SeVersionCheckFailedEvent is a POJO class extends AviRestResource that used for creating
- * SeVersionCheckFailedEvent.
+ * The DNSQueryError is a POJO class extends AviRestResource that used for creating
+ * DNSQueryError.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "SeVersionCheckFailedEvent")
-@VsoFinder(name = Constants.FINDER_VRO_SEVERSIONCHECKFAILEDEVENT)
+@VsoObject(create = false, name = "DNSQueryError")
+@VsoFinder(name = Constants.FINDER_VRO_DNSQUERYERROR)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SeVersionCheckFailedEvent extends AviRestResource {
-    @JsonProperty("controller_version")
+public class DNSQueryError extends AviRestResource {
+    @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String controllerVersion = null;
+    private String error = null;
 
-    @JsonProperty("se_uuid")
+    @JsonProperty("error_message")
     @JsonInclude(Include.NON_NULL)
-    private String seUuid = null;
+    private String errorMessage = null;
 
-    @JsonProperty("se_version")
+    @JsonProperty("fqdn")
     @JsonInclude(Include.NON_NULL)
-    private String seVersion = null;
+    private String fqdn = null;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Software version on the controller.
+   * Placeholder for description of property error of obj type dnsqueryerror field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return controllerVersion
+   * @return error
    */
   @VsoMethod
-  public String getControllerVersion() {
-    return controllerVersion;
+  public String getError() {
+    return error;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Software version on the controller.
+   * Placeholder for description of property error of obj type dnsqueryerror field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param controllerVersion set the controllerVersion.
+   * @param error set the error.
    */
   @VsoMethod
-  public void setControllerVersion(String  controllerVersion) {
-    this.controllerVersion = controllerVersion;
+  public void setError(String  error) {
+    this.error = error;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Uuid of the se.
+   * Placeholder for description of property error_message of obj type dnsqueryerror field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return seUuid
+   * @return errorMessage
    */
   @VsoMethod
-  public String getSeUuid() {
-    return seUuid;
+  public String getErrorMessage() {
+    return errorMessage;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Uuid of the se.
+   * Placeholder for description of property error_message of obj type dnsqueryerror field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param seUuid set the seUuid.
+   * @param errorMessage set the errorMessage.
    */
   @VsoMethod
-  public void setSeUuid(String  seUuid) {
-    this.seUuid = seUuid;
+  public void setErrorMessage(String  errorMessage) {
+    this.errorMessage = errorMessage;
   }
 
   /**
    * This is the getter method this will return the attribute value.
-   * Software version on the se.
+   * Placeholder for description of property fqdn of obj type dnsqueryerror field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return seVersion
+   * @return fqdn
    */
   @VsoMethod
-  public String getSeVersion() {
-    return seVersion;
+  public String getFqdn() {
+    return fqdn;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Software version on the se.
+   * Placeholder for description of property fqdn of obj type dnsqueryerror field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param seVersion set the seVersion.
+   * @param fqdn set the fqdn.
    */
   @VsoMethod
-  public void setSeVersion(String  seVersion) {
-    this.seVersion = seVersion;
+  public void setFqdn(String  fqdn) {
+    this.fqdn = fqdn;
   }
 
 
@@ -114,19 +114,19 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  SeVersionCheckFailedEvent objSeVersionCheckFailedEvent = (SeVersionCheckFailedEvent) o;
-  return   Objects.equals(this.seUuid, objSeVersionCheckFailedEvent.seUuid)&&
-  Objects.equals(this.seVersion, objSeVersionCheckFailedEvent.seVersion)&&
-  Objects.equals(this.controllerVersion, objSeVersionCheckFailedEvent.controllerVersion);
+  DNSQueryError objDNSQueryError = (DNSQueryError) o;
+  return   Objects.equals(this.fqdn, objDNSQueryError.fqdn)&&
+  Objects.equals(this.error, objDNSQueryError.error)&&
+  Objects.equals(this.errorMessage, objDNSQueryError.errorMessage);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class SeVersionCheckFailedEvent {\n");
-      sb.append("    controllerVersion: ").append(toIndentedString(controllerVersion)).append("\n");
-        sb.append("    seUuid: ").append(toIndentedString(seUuid)).append("\n");
-        sb.append("    seVersion: ").append(toIndentedString(seVersion)).append("\n");
+  sb.append("class DNSQueryError {\n");
+      sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("    fqdn: ").append(toIndentedString(fqdn)).append("\n");
       sb.append("}");
   return sb.toString();
 }

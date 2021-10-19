@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.UserAgentCacheConfig;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -135,6 +136,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("enable_memory_balancer")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableMemoryBalancer = true;
+
+    @JsonProperty("enable_per_process_stop")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePerProcessStop = false;
 
     @JsonProperty("fatal_error_lease_time")
     @JsonInclude(Include.NON_NULL)
@@ -296,6 +301,10 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String url = "url";
 
+    @JsonProperty("user_agent_cache_config")
+    @JsonInclude(Include.NON_NULL)
+    private UserAgentCacheConfig userAgentCacheConfig = null;
+
     @JsonProperty("uuid")
     @JsonInclude(Include.NON_NULL)
     private String uuid = null;
@@ -306,7 +315,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("vs_apic_scaleout_timeout")
     @JsonInclude(Include.NON_NULL)
-    private Integer vsApicScaleoutTimeout = 360;
+    private Integer vsApicScaleoutTimeout;
 
     @JsonProperty("vs_awaiting_se_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -343,18 +352,6 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("vs_se_vnic_ip_fail")
     @JsonInclude(Include.NON_NULL)
     private Integer vsSeVnicIpFail = 120;
-
-    @JsonProperty("vsphere_ha_detection_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vsphereHaDetectionTimeout = 120;
-
-    @JsonProperty("vsphere_ha_recovery_timeout")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vsphereHaRecoveryTimeout = 480;
-
-    @JsonProperty("vsphere_ha_timer_interval")
-    @JsonInclude(Include.NON_NULL)
-    private Integer vsphereHaTimerInterval = 20;
 
     @JsonProperty("warmstart_se_reconnect_wait_time")
     @JsonInclude(Include.NON_NULL)
@@ -1066,6 +1063,32 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setEnableMemoryBalancer(Boolean  enableMemoryBalancer) {
     this.enableMemoryBalancer = enableMemoryBalancer;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits
+   * threshold limit.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enablePerProcessStop
+   */
+  @VsoMethod
+  public Boolean getEnablePerProcessStop() {
+    return enablePerProcessStop;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits
+   * threshold limit.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enablePerProcessStop set the enablePerProcessStop.
+   */
+  @VsoMethod
+  public void setEnablePerProcessStop(Boolean  enablePerProcessStop) {
+    this.enablePerProcessStop = enablePerProcessStop;
   }
 
   /**
@@ -2076,6 +2099,30 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configuration for user-agent cache used in bot management.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return userAgentCacheConfig
+   */
+  @VsoMethod
+  public UserAgentCacheConfig getUserAgentCacheConfig() {
+    return userAgentCacheConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configuration for user-agent cache used in bot management.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param userAgentCacheConfig set the userAgentCacheConfig.
+   */
+  @VsoMethod
+  public void setUserAgentCacheConfig(UserAgentCacheConfig userAgentCacheConfig) {
+    this.userAgentCacheConfig = userAgentCacheConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unique object identifier of the object.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return uuid
@@ -2121,8 +2168,8 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+   * Field deprecated in 21.1.1.
    * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @return vsApicScaleoutTimeout
    */
   @VsoMethod
@@ -2133,8 +2180,8 @@ public class ControllerProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+   * Field deprecated in 21.1.1.
    * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 360.
    * @param vsApicScaleoutTimeout set the vsApicScaleoutTimeout.
    */
   @VsoMethod
@@ -2356,92 +2403,6 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Vsphere ha monitor detection timeout.
-   * If vsphere_ha_enabled is true and the controller is not able to reach the se, placement will wait for this duration for vsphere_ha_inprogress to
-   * be marked true before taking corrective action.
-   * Field introduced in 20.1.7.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 120.
-   * @return vsphereHaDetectionTimeout
-   */
-  @VsoMethod
-  public Integer getVsphereHaDetectionTimeout() {
-    return vsphereHaDetectionTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Vsphere ha monitor detection timeout.
-   * If vsphere_ha_enabled is true and the controller is not able to reach the se, placement will wait for this duration for vsphere_ha_inprogress to
-   * be marked true before taking corrective action.
-   * Field introduced in 20.1.7.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 120.
-   * @param vsphereHaDetectionTimeout set the vsphereHaDetectionTimeout.
-   */
-  @VsoMethod
-  public void setVsphereHaDetectionTimeout(Integer  vsphereHaDetectionTimeout) {
-    this.vsphereHaDetectionTimeout = vsphereHaDetectionTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Vsphere ha monitor recovery timeout.
-   * Once vsphere_ha_inprogress is set to true (meaning host failure detected and vsphere ha will recover the service engine), placement will wait for
-   * at least this duration for the se to reconnect to the controller before taking corrective action.
-   * Field introduced in 20.1.7.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 480.
-   * @return vsphereHaRecoveryTimeout
-   */
-  @VsoMethod
-  public Integer getVsphereHaRecoveryTimeout() {
-    return vsphereHaRecoveryTimeout;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Vsphere ha monitor recovery timeout.
-   * Once vsphere_ha_inprogress is set to true (meaning host failure detected and vsphere ha will recover the service engine), placement will wait for
-   * at least this duration for the se to reconnect to the controller before taking corrective action.
-   * Field introduced in 20.1.7.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 480.
-   * @param vsphereHaRecoveryTimeout set the vsphereHaRecoveryTimeout.
-   */
-  @VsoMethod
-  public void setVsphereHaRecoveryTimeout(Integer  vsphereHaRecoveryTimeout) {
-    this.vsphereHaRecoveryTimeout = vsphereHaRecoveryTimeout;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
-   * Field introduced in 20.1.7.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @return vsphereHaTimerInterval
-   */
-  @VsoMethod
-  public Integer getVsphereHaTimerInterval() {
-    return vsphereHaTimerInterval;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
-   * Field introduced in 20.1.7.
-   * Unit is sec.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
-   * @param vsphereHaTimerInterval set the vsphereHaTimerInterval.
-   */
-  @VsoMethod
-  public void setVsphereHaTimerInterval(Integer  vsphereHaTimerInterval) {
-    this.vsphereHaTimerInterval = vsphereHaTimerInterval;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @return warmstartSeReconnectWaitTime
@@ -2581,11 +2542,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.controllerResourceInfoCollectionPeriod, objControllerProperties.controllerResourceInfoCollectionPeriod)&&
   Objects.equals(this.seVnicGcWaitTime, objControllerProperties.seVnicGcWaitTime)&&
   Objects.equals(this.resmgrLogCachingPeriod, objControllerProperties.resmgrLogCachingPeriod)&&
+  Objects.equals(this.userAgentCacheConfig, objControllerProperties.userAgentCacheConfig)&&
   Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay)&&
-  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax)&&
-  Objects.equals(this.vsphereHaTimerInterval, objControllerProperties.vsphereHaTimerInterval)&&
-  Objects.equals(this.vsphereHaDetectionTimeout, objControllerProperties.vsphereHaDetectionTimeout)&&
-  Objects.equals(this.vsphereHaRecoveryTimeout, objControllerProperties.vsphereHaRecoveryTimeout);
+  Objects.equals(this.enablePerProcessStop, objControllerProperties.enablePerProcessStop)&&
+  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax);
 }
 
 @Override
@@ -2620,6 +2580,7 @@ public String toString() {
         sb.append("    editSystemLimits: ").append(toIndentedString(editSystemLimits)).append("\n");
         sb.append("    enableApiSharding: ").append(toIndentedString(enableApiSharding)).append("\n");
         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
+        sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
@@ -2659,7 +2620,8 @@ public String toString() {
         sb.append("    upgradeFatSeLeaseTime: ").append(toIndentedString(upgradeFatSeLeaseTime)).append("\n");
         sb.append("    upgradeLeaseTime: ").append(toIndentedString(upgradeLeaseTime)).append("\n");
         sb.append("    upgradeSePerVsScaleOpsTxnTime: ").append(toIndentedString(upgradeSePerVsScaleOpsTxnTime)).append("\n");
-            sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+            sb.append("    userAgentCacheConfig: ").append(toIndentedString(userAgentCacheConfig)).append("\n");
+        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vnicOpFailTime: ").append(toIndentedString(vnicOpFailTime)).append("\n");
         sb.append("    vsApicScaleoutTimeout: ").append(toIndentedString(vsApicScaleoutTimeout)).append("\n");
         sb.append("    vsAwaitingSeTimeout: ").append(toIndentedString(vsAwaitingSeTimeout)).append("\n");
@@ -2671,9 +2633,6 @@ public String toString() {
         sb.append("    vsSePingFail: ").append(toIndentedString(vsSePingFail)).append("\n");
         sb.append("    vsSeVnicFail: ").append(toIndentedString(vsSeVnicFail)).append("\n");
         sb.append("    vsSeVnicIpFail: ").append(toIndentedString(vsSeVnicIpFail)).append("\n");
-        sb.append("    vsphereHaDetectionTimeout: ").append(toIndentedString(vsphereHaDetectionTimeout)).append("\n");
-        sb.append("    vsphereHaRecoveryTimeout: ").append(toIndentedString(vsphereHaRecoveryTimeout)).append("\n");
-        sb.append("    vsphereHaTimerInterval: ").append(toIndentedString(vsphereHaTimerInterval)).append("\n");
         sb.append("    warmstartSeReconnectWaitTime: ").append(toIndentedString(warmstartSeReconnectWaitTime)).append("\n");
         sb.append("    warmstartVsResyncWaitTime: ").append(toIndentedString(warmstartVsResyncWaitTime)).append("\n");
       sb.append("}");
