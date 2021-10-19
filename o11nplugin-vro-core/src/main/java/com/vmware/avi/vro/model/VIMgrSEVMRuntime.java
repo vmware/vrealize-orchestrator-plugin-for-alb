@@ -41,14 +41,6 @@ public class VIMgrSEVMRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String cloudRef = null;
 
-    @JsonProperty("cluster_id")
-    @JsonInclude(Include.NON_NULL)
-    private String clusterId = null;
-
-    @JsonProperty("cluster_vmgroup")
-    @JsonInclude(Include.NON_NULL)
-    private String clusterVmgroup = null;
-
     @JsonProperty("connection_state")
     @JsonInclude(Include.NON_NULL)
     private String connectionState = null;
@@ -169,14 +161,6 @@ public class VIMgrSEVMRuntime extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String vcenterDatacenterUuid = null;
 
-    @JsonProperty("vcenter_host_connection_state")
-    @JsonInclude(Include.NON_NULL)
-    private String vcenterHostConnectionState = null;
-
-    @JsonProperty("vcenter_host_ha_state")
-    @JsonInclude(Include.NON_NULL)
-    private String vcenterHostHaState = null;
-
     @JsonProperty("vcenter_instance_uuid")
     @JsonInclude(Include.NON_NULL)
     private String vcenterInstanceUuid = null;
@@ -216,14 +200,6 @@ public class VIMgrSEVMRuntime extends AviRestResource {
     @JsonProperty("vcpus")
     @JsonInclude(Include.NON_NULL)
     private Integer vcpus = null;
-
-    @JsonProperty("vsphere_ha_enabled")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean vsphereHaEnabled = null;
-
-    @JsonProperty("vsphere_ha_inprogress")
-    @JsonInclude(Include.NON_NULL)
-    private Boolean vsphereHaInprogress = null;
 
 
 
@@ -313,54 +289,6 @@ public class VIMgrSEVMRuntime extends AviRestResource {
   @VsoMethod
   public void setCloudRef(String  cloudRef) {
     this.cloudRef = cloudRef;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Serviceengine deployed on cluster.ex mob  domain-c23.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusterId
-   */
-  @VsoMethod
-  public String getClusterId() {
-    return clusterId;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Serviceengine deployed on cluster.ex mob  domain-c23.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clusterId set the clusterId.
-   */
-  @VsoMethod
-  public void setClusterId(String  clusterId) {
-    this.clusterId = clusterId;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Serviceengine added to cluster vmgroup.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return clusterVmgroup
-   */
-  @VsoMethod
-  public String getClusterVmgroup() {
-    return clusterVmgroup;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Serviceengine added to cluster vmgroup.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param clusterVmgroup set the clusterVmgroup.
-   */
-  @VsoMethod
-  public void setClusterVmgroup(String  clusterVmgroup) {
-    this.clusterVmgroup = clusterVmgroup;
   }
 
   /**
@@ -591,7 +519,7 @@ public class VIMgrSEVMRuntime extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Gcp project id in which se is created.
    * This field is applicable for gcp cloud type only.
-   * Field introduced in 20.1.7.
+   * Field introduced in 21.1.2.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return gcpSeProjectId
    */
@@ -604,7 +532,7 @@ public class VIMgrSEVMRuntime extends AviRestResource {
    * This is the setter method to the attribute.
    * Gcp project id in which se is created.
    * This field is applicable for gcp cloud type only.
-   * Field introduced in 20.1.7.
+   * Field introduced in 21.1.2.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param gcpSeProjectId set the gcpSeProjectId.
    */
@@ -1050,54 +978,6 @@ public class VIMgrSEVMRuntime extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Serviceengine host connection state in vcenter.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return vcenterHostConnectionState
-   */
-  @VsoMethod
-  public String getVcenterHostConnectionState() {
-    return vcenterHostConnectionState;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Serviceengine host connection state in vcenter.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param vcenterHostConnectionState set the vcenterHostConnectionState.
-   */
-  @VsoMethod
-  public void setVcenterHostConnectionState(String  vcenterHostConnectionState) {
-    this.vcenterHostConnectionState = vcenterHostConnectionState;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * Vcenter host ha state.ex  election, fdmunreachable, hostdown, initializationerror, networkisolated, uninitializationerror, uninitialized.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return vcenterHostHaState
-   */
-  @VsoMethod
-  public String getVcenterHostHaState() {
-    return vcenterHostHaState;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Vcenter host ha state.ex  election, fdmunreachable, hostdown, initializationerror, networkisolated, uninitializationerror, uninitialized.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param vcenterHostHaState set the vcenterHostHaState.
-   */
-  @VsoMethod
-  public void setVcenterHostHaState(String  vcenterHostHaState) {
-    this.vcenterHostHaState = vcenterHostHaState;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
    * Serviceengine instance uuid from vcenter.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1326,56 +1206,6 @@ public class VIMgrSEVMRuntime extends AviRestResource {
     this.vcpus = vcpus;
   }
 
-  /**
-   * This is the getter method this will return the attribute value.
-   * Vsphere ha on cluster enabled or not.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return vsphereHaEnabled
-   */
-  @VsoMethod
-  public Boolean getVsphereHaEnabled() {
-    return vsphereHaEnabled;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * Vsphere ha on cluster enabled or not.
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param vsphereHaEnabled set the vsphereHaEnabled.
-   */
-  @VsoMethod
-  public void setVsphereHaEnabled(Boolean  vsphereHaEnabled) {
-    this.vsphereHaEnabled = vsphereHaEnabled;
-  }
-
-  /**
-   * This is the getter method this will return the attribute value.
-   * If this flag is set to true, vcenter vsphere ha handles serviceengine failure.
-   * This flag is set dynamiclly based on underlying esx ha state(connected, hostdown..etc).
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return vsphereHaInprogress
-   */
-  @VsoMethod
-  public Boolean getVsphereHaInprogress() {
-    return vsphereHaInprogress;
-  }
-
-  /**
-   * This is the setter method to the attribute.
-   * If this flag is set to true, vcenter vsphere ha handles serviceengine failure.
-   * This flag is set dynamiclly based on underlying esx ha state(connected, hostdown..etc).
-   * Field introduced in 20.1.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param vsphereHaInprogress set the vsphereHaInprogress.
-   */
-  @VsoMethod
-  public void setVsphereHaInprogress(Boolean  vsphereHaInprogress) {
-    this.vsphereHaInprogress = vsphereHaInprogress;
-  }
-
 
   public String getObjectID() {
     return name + "(" + uuid  + ")";
@@ -1430,12 +1260,6 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vcenterUrl, objVIMgrSEVMRuntime.vcenterUrl)&&
   Objects.equals(this.vcenterRef, objVIMgrSEVMRuntime.vcenterRef)&&
   Objects.equals(this.vcenterInstanceUuid, objVIMgrSEVMRuntime.vcenterInstanceUuid)&&
-  Objects.equals(this.vcenterHostConnectionState, objVIMgrSEVMRuntime.vcenterHostConnectionState)&&
-  Objects.equals(this.clusterId, objVIMgrSEVMRuntime.clusterId)&&
-  Objects.equals(this.clusterVmgroup, objVIMgrSEVMRuntime.clusterVmgroup)&&
-  Objects.equals(this.vsphereHaInprogress, objVIMgrSEVMRuntime.vsphereHaInprogress)&&
-  Objects.equals(this.vcenterHostHaState, objVIMgrSEVMRuntime.vcenterHostHaState)&&
-  Objects.equals(this.vsphereHaEnabled, objVIMgrSEVMRuntime.vsphereHaEnabled)&&
   Objects.equals(this.tenantRef, objVIMgrSEVMRuntime.tenantRef)&&
   Objects.equals(this.cloudRef, objVIMgrSEVMRuntime.cloudRef)&&
   Objects.equals(this.gcpSeProjectId, objVIMgrSEVMRuntime.gcpSeProjectId);
@@ -1449,8 +1273,6 @@ public String toString() {
         sb.append("    azureInfo: ").append(toIndentedString(azureInfo)).append("\n");
         sb.append("    cloudName: ").append(toIndentedString(cloudName)).append("\n");
         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    clusterVmgroup: ").append(toIndentedString(clusterVmgroup)).append("\n");
         sb.append("    connectionState: ").append(toIndentedString(connectionState)).append("\n");
         sb.append("    controllerClusterUuid: ").append(toIndentedString(controllerClusterUuid)).append("\n");
         sb.append("    controllerIpAddr: ").append(toIndentedString(controllerIpAddr)).append("\n");
@@ -1480,8 +1302,6 @@ public String toString() {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
         sb.append("    vcenterDatacenterUuid: ").append(toIndentedString(vcenterDatacenterUuid)).append("\n");
-        sb.append("    vcenterHostConnectionState: ").append(toIndentedString(vcenterHostConnectionState)).append("\n");
-        sb.append("    vcenterHostHaState: ").append(toIndentedString(vcenterHostHaState)).append("\n");
         sb.append("    vcenterInstanceUuid: ").append(toIndentedString(vcenterInstanceUuid)).append("\n");
         sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");
         sb.append("    vcenterRmCookie: ").append(toIndentedString(vcenterRmCookie)).append("\n");
@@ -1492,8 +1312,6 @@ public String toString() {
         sb.append("    vcenterVappvendor: ").append(toIndentedString(vcenterVappvendor)).append("\n");
         sb.append("    vcenterVmType: ").append(toIndentedString(vcenterVmType)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
-        sb.append("    vsphereHaEnabled: ").append(toIndentedString(vsphereHaEnabled)).append("\n");
-        sb.append("    vsphereHaInprogress: ").append(toIndentedString(vsphereHaInprogress)).append("\n");
       sb.append("}");
   return sb.toString();
 }

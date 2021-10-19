@@ -421,6 +421,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
+   * Use dp_aggressive_deq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -433,6 +435,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
+   * Use dp_aggressive_deq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -445,6 +449,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
+   * Use dp_aggressive_enq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -457,6 +463,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
+   * Use dp_aggressive_enq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -491,6 +499,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
+   * Use dp_deq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
@@ -503,6 +513,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
+   * Use dp_deq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
@@ -515,6 +527,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Deprecated in 21.1.1.
+   * Use dp_enq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
@@ -527,6 +541,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
+   * Deprecated in 21.1.1.
+   * Use dp_enq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 20.
@@ -630,6 +646,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dequeue interval for receive queue from ns helper.
+   * Deprecated in 21.1.1.
+   * Use ns_helper_deq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
    * Unit is milliseconds.
@@ -644,6 +662,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dequeue interval for receive queue from ns helper.
+   * Deprecated in 21.1.1.
+   * Use ns_helper_deq_interval_msec in serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
    * Unit is milliseconds.
@@ -658,6 +678,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sdb pipeline flush interval.
+   * Deprecated in 21.1.1.
+   * Use sdb_flush_interval serviceenginegroup instead.
    * Allowed values are 1-10000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -671,6 +693,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sdb pipeline flush interval.
+   * Deprecated in 21.1.1.
+   * Use sdb_flush_interval serviceenginegroup instead.
    * Allowed values are 1-10000.
    * Unit is milliseconds.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -684,6 +708,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sdb pipeline size.
+   * Deprecated in 21.1.1.
+   * Use sdb_pipeline_size serviceenginegroup instead.
    * Allowed values are 1-10000.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @return sdbPipelineSize
@@ -696,6 +722,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sdb pipeline size.
+   * Deprecated in 21.1.1.
+   * Use sdb_pipeline_size serviceenginegroup instead.
    * Allowed values are 1-10000.
    * Default value when not specified in API or module is interpreted by Avi Controller as 100.
    * @param sdbPipelineSize set the sdbPipelineSize.
@@ -708,6 +736,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Sdb scan count.
+   * Deprecated in 21.1.1.
+   * Use sdb_scan_count serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @return sdbScanCount
@@ -720,6 +750,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Sdb scan count.
+   * Deprecated in 21.1.1.
+   * Use sdb_scan_count serviceenginegroup instead.
    * Allowed values are 1-1000.
    * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
    * @param sdbScanCount set the sdbScanCount.
@@ -780,6 +812,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Timeout for sending se_ready without ns helper registration completion.
+   * Deprecated in 21.1.1.
+   * Use send_se_ready_timeout serviceenginegroup instead.
    * Allowed values are 10-600.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
    * Unit is seconds.
@@ -794,6 +828,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Timeout for sending se_ready without ns helper registration completion.
+   * Deprecated in 21.1.1.
+   * Use send_se_ready_timeout serviceenginegroup instead.
    * Allowed values are 10-600.
    * Field introduced in 17.2.13, 18.1.3, 18.2.1.
    * Unit is seconds.
@@ -836,6 +872,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dhcp ip check interval.
+   * Deprecated in 21.1.1.
+   * Use vnic_dhcp_ip_check_interval instead.
    * Allowed values are 1-1000.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 6.
@@ -849,6 +887,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dhcp ip check interval.
+   * Deprecated in 21.1.1.
+   * Use vnic_dhcp_ip_check_interval instead.
    * Allowed values are 1-1000.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 6.
@@ -862,6 +902,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Dhcp ip max retries.
+   * Deprecated in 21.1.1.
+   * Use vnic_dhcp_ip_max_retries serviceenginegroup instead.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @return vnicDhcpIpMaxRetries
    */
@@ -873,6 +915,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Dhcp ip max retries.
+   * Deprecated in 21.1.1.
+   * Use vnic_dhcp_ip_max_retries serviceenginegroup instead.
    * Default value when not specified in API or module is interpreted by Avi Controller as 10.
    * @param vnicDhcpIpMaxRetries set the vnicDhcpIpMaxRetries.
    */
@@ -884,6 +928,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Wait interval before deleting ip.
+   * Deprecated in 21.1.1.
+   * Use vnic_ip_delete_interval serviceenginegroup instead.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return vnicIpDeleteInterval
@@ -896,6 +942,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Wait interval before deleting ip.
+   * Deprecated in 21.1.1.
+   * Use vnic_ip_delete_interval serviceenginegroup instead.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param vnicIpDeleteInterval set the vnicIpDeleteInterval.
@@ -908,6 +956,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Probe vnic interval.
+   * Deprecated in 21.1.1.
+   * Use vnic_probe_interval serviceenginegroup instead.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @return vnicProbeInterval
@@ -920,6 +970,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Probe vnic interval.
+   * Deprecated in 21.1.1.
+   * Use vnic_probe_interval serviceenginegroup instead.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
    * @param vnicProbeInterval set the vnicProbeInterval.
@@ -931,7 +983,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Time interval for retrying the failed vnic rpc requests.
+   * Time interval for retrying the failed vnic rpc requestsdeprecated in 21.1.1.
+   * Use vnic_rpc_retry_interval serviceenginegroup instead.
    * Field introduced in 18.2.6.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -944,7 +997,8 @@ public class SeAgentProperties extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Time interval for retrying the failed vnic rpc requests.
+   * Time interval for retrying the failed vnic rpc requestsdeprecated in 21.1.1.
+   * Use vnic_rpc_retry_interval serviceenginegroup instead.
    * Field introduced in 18.2.6.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -958,6 +1012,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Size of vnicdb command history.
+   * Deprecated in 21.1.1.
+   * Use vnicdb_cmd_history_size serviceenginegroup instead.
    * Allowed values are 0-65535.
    * Field introduced in 18.2.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as 256.
@@ -971,6 +1027,8 @@ public class SeAgentProperties extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Size of vnicdb command history.
+   * Deprecated in 21.1.1.
+   * Use vnicdb_cmd_history_size serviceenginegroup instead.
    * Allowed values are 0-65535.
    * Field introduced in 18.2.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as 256.

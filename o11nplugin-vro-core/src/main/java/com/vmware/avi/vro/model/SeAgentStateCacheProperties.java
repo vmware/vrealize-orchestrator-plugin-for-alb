@@ -28,6 +28,14 @@ public class SeAgentStateCacheProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer scBatchBufferFlushLimit = 300;
 
+    @JsonProperty("sc_cfg_q_batch_dequeue_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scCfgQBatchDequeueLimit = 100;
+
+    @JsonProperty("sc_cfg_q_max_size")
+    @JsonInclude(Include.NON_NULL)
+    private Integer scCfgQMaxSize = 4096;
+
     @JsonProperty("sc_dns_q_batch_dequeue_limit")
     @JsonInclude(Include.NON_NULL)
     private Integer scDnsQBatchDequeueLimit = 100;
@@ -90,6 +98,58 @@ public class SeAgentStateCacheProperties extends AviRestResource {
   @VsoMethod
   public void setScBatchBufferFlushLimit(Integer  scBatchBufferFlushLimit) {
     this.scBatchBufferFlushLimit = scBatchBufferFlushLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Max elements to dequeue in one shot from the q by the statecache thread.
+   * Allowed values are 1-10000.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @return scCfgQBatchDequeueLimit
+   */
+  @VsoMethod
+  public Integer getScCfgQBatchDequeueLimit() {
+    return scCfgQBatchDequeueLimit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Max elements to dequeue in one shot from the q by the statecache thread.
+   * Allowed values are 1-10000.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+   * @param scCfgQBatchDequeueLimit set the scCfgQBatchDequeueLimit.
+   */
+  @VsoMethod
+  public void setScCfgQBatchDequeueLimit(Integer  scCfgQBatchDequeueLimit) {
+    this.scCfgQBatchDequeueLimit = scCfgQBatchDequeueLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Max elements in the config queue between seagent main and the statecache thread.
+   * Allowed values are 1-10000.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
+   * @return scCfgQMaxSize
+   */
+  @VsoMethod
+  public Integer getScCfgQMaxSize() {
+    return scCfgQMaxSize;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Max elements in the config queue between seagent main and the statecache thread.
+   * Allowed values are 1-10000.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
+   * @param scCfgQMaxSize set the scCfgQMaxSize.
+   */
+  @VsoMethod
+  public void setScCfgQMaxSize(Integer  scCfgQMaxSize) {
+    this.scCfgQMaxSize = scCfgQMaxSize;
   }
 
   /**
@@ -354,7 +414,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.scShardCleanupMaxTime, objSeAgentStateCacheProperties.scShardCleanupMaxTime)&&
   Objects.equals(this.scBatchBufferFlushLimit, objSeAgentStateCacheProperties.scBatchBufferFlushLimit)&&
   Objects.equals(this.scDnsQMaxSize, objSeAgentStateCacheProperties.scDnsQMaxSize)&&
-  Objects.equals(this.scDnsQBatchDequeueLimit, objSeAgentStateCacheProperties.scDnsQBatchDequeueLimit);
+  Objects.equals(this.scDnsQBatchDequeueLimit, objSeAgentStateCacheProperties.scDnsQBatchDequeueLimit)&&
+  Objects.equals(this.scCfgQMaxSize, objSeAgentStateCacheProperties.scCfgQMaxSize)&&
+  Objects.equals(this.scCfgQBatchDequeueLimit, objSeAgentStateCacheProperties.scCfgQBatchDequeueLimit);
 }
 
 @Override
@@ -362,6 +424,8 @@ public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SeAgentStateCacheProperties {\n");
       sb.append("    scBatchBufferFlushLimit: ").append(toIndentedString(scBatchBufferFlushLimit)).append("\n");
+        sb.append("    scCfgQBatchDequeueLimit: ").append(toIndentedString(scCfgQBatchDequeueLimit)).append("\n");
+        sb.append("    scCfgQMaxSize: ").append(toIndentedString(scCfgQMaxSize)).append("\n");
         sb.append("    scDnsQBatchDequeueLimit: ").append(toIndentedString(scDnsQBatchDequeueLimit)).append("\n");
         sb.append("    scDnsQMaxSize: ").append(toIndentedString(scDnsQMaxSize)).append("\n");
         sb.append("    scShardCleanupMaxTime: ").append(toIndentedString(scShardCleanupMaxTime)).append("\n");

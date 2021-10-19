@@ -36,6 +36,10 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String encryptionKey = null;
 
+    @JsonProperty("http_only")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean httpOnly = false;
+
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
     private List<HttpCookiePersistenceKey> key = null;
@@ -110,6 +114,32 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
   @VsoMethod
   public void setEncryptionKey(String  encryptionKey) {
     this.encryptionKey = encryptionKey;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Sets the httponly attribute in the cookie.
+   * Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return httpOnly
+   */
+  @VsoMethod
+  public Boolean getHttpOnly() {
+    return httpOnly;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Sets the httponly attribute in the cookie.
+   * Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param httpOnly set the httpOnly.
+   */
+  @VsoMethod
+  public void setHttpOnly(Boolean  httpOnly) {
+    this.httpOnly = httpOnly;
   }
 
   /**
@@ -195,7 +225,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cookieName, objHttpCookiePersistenceProfile.cookieName)&&
   Objects.equals(this.key, objHttpCookiePersistenceProfile.key)&&
   Objects.equals(this.timeout, objHttpCookiePersistenceProfile.timeout)&&
-  Objects.equals(this.alwaysSendCookie, objHttpCookiePersistenceProfile.alwaysSendCookie);
+  Objects.equals(this.alwaysSendCookie, objHttpCookiePersistenceProfile.alwaysSendCookie)&&
+  Objects.equals(this.httpOnly, objHttpCookiePersistenceProfile.httpOnly);
 }
 
 @Override
@@ -205,6 +236,7 @@ public String toString() {
       sb.append("    alwaysSendCookie: ").append(toIndentedString(alwaysSendCookie)).append("\n");
         sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
         sb.append("    encryptionKey: ").append(toIndentedString(encryptionKey)).append("\n");
+        sb.append("    httpOnly: ").append(toIndentedString(httpOnly)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
       sb.append("}");

@@ -30,11 +30,11 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
 
     @JsonProperty("free_controller_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<String> freeControllerIps = null;
+    private List<String> freeControllerIps;
 
     @JsonProperty("free_ips")
     @JsonInclude(Include.NON_NULL)
-    private List<String> freeIps = null;
+    private List<Integer> freeIps = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -78,8 +78,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return freeControllerIps
    */
   @VsoMethod
@@ -89,8 +88,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
 
   /**
    * This is the setter method. this will set the freeControllerIps
-   * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return freeControllerIps
    */
   @VsoMethod
@@ -100,8 +98,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
 
   /**
    * This is the setter method this will set the freeControllerIps
-   * Placeholder for description of property free_controller_ips of obj type securechannelavailablelocalips field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return freeControllerIps
    */
   @VsoMethod
@@ -121,7 +118,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
    * @return freeIps
    */
   @VsoMethod
-  public List<String> getFreeIps() {
+  public List<Integer> getFreeIps() {
     return freeIps;
   }
 
@@ -132,7 +129,7 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
    * @return freeIps
    */
   @VsoMethod
-  public void setFreeIps(List<String>  freeIps) {
+  public void setFreeIps(List<Integer>  freeIps) {
     this.freeIps = freeIps;
   }
 
@@ -143,9 +140,9 @@ public class SecureChannelAvailableLocalIPs extends AviRestResource {
    * @return freeIps
    */
   @VsoMethod
-  public SecureChannelAvailableLocalIPs addFreeIpsItem(String freeIpsItem) {
+  public SecureChannelAvailableLocalIPs addFreeIpsItem(Integer freeIpsItem) {
     if (this.freeIps == null) {
-      this.freeIps = new ArrayList<String>();
+      this.freeIps = new ArrayList<Integer>();
     }
     this.freeIps.add(freeIpsItem);
     return this;

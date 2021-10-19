@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.vmware.avi.vro.model.SystemUpgradeState;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -13,44 +12,46 @@ import com.vmware.avi.vro.Constants;
 import org.springframework.stereotype.Service;
 
 /**
- * The SystemUpgradeDetails is a POJO class extends AviRestResource that used for creating
- * SystemUpgradeDetails.
+ * The BotConfigUserAgent is a POJO class extends AviRestResource that used for creating
+ * BotConfigUserAgent.
  *
  * @version 1.0
  * @since 
  *
  */
-@VsoObject(create = false, name = "SystemUpgradeDetails")
-@VsoFinder(name = Constants.FINDER_VRO_SYSTEMUPGRADEDETAILS)
+@VsoObject(create = false, name = "BotConfigUserAgent")
+@VsoFinder(name = Constants.FINDER_VRO_BOTCONFIGUSERAGENT)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
-public class SystemUpgradeDetails extends AviRestResource {
-    @JsonProperty("upgrade_status")
+public class BotConfigUserAgent extends AviRestResource {
+    @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
-    private SystemUpgradeState upgradeStatus = null;
+    private Boolean enabled = true;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Upgrade status.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @return upgradeStatus
+   * Whether user agent-based bot detection is enabled.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enabled
    */
   @VsoMethod
-  public SystemUpgradeState getUpgradeStatus() {
-    return upgradeStatus;
+  public Boolean getEnabled() {
+    return enabled;
   }
 
   /**
    * This is the setter method to the attribute.
-   * Upgrade status.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
-   * @param upgradeStatus set the upgradeStatus.
+   * Whether user agent-based bot detection is enabled.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enabled set the enabled.
    */
   @VsoMethod
-  public void setUpgradeStatus(SystemUpgradeState upgradeStatus) {
-    this.upgradeStatus = upgradeStatus;
+  public void setEnabled(Boolean  enabled) {
+    this.enabled = enabled;
   }
 
 
@@ -63,15 +64,15 @@ public boolean equals(java.lang.Object o) {
   if (o == null || getClass() != o.getClass()) {
     return false;
   }
-  SystemUpgradeDetails objSystemUpgradeDetails = (SystemUpgradeDetails) o;
-  return   Objects.equals(this.upgradeStatus, objSystemUpgradeDetails.upgradeStatus);
+  BotConfigUserAgent objBotConfigUserAgent = (BotConfigUserAgent) o;
+  return   Objects.equals(this.enabled, objBotConfigUserAgent.enabled);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
-  sb.append("class SystemUpgradeDetails {\n");
-      sb.append("    upgradeStatus: ").append(toIndentedString(upgradeStatus)).append("\n");
+  sb.append("class BotConfigUserAgent {\n");
+      sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
       sb.append("}");
   return sb.toString();
 }

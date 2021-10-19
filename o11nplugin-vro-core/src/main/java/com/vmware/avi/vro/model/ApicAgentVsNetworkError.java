@@ -26,26 +26,25 @@ import org.springframework.stereotype.Service;
 public class ApicAgentVsNetworkError extends AviRestResource {
     @JsonProperty("pool_name")
     @JsonInclude(Include.NON_NULL)
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_network")
     @JsonInclude(Include.NON_NULL)
-    private String poolNetwork = null;
+    private String poolNetwork;
 
     @JsonProperty("vs_name")
     @JsonInclude(Include.NON_NULL)
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_network")
     @JsonInclude(Include.NON_NULL)
-    private String vsNetwork = null;
+    private String vsNetwork;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property pool_name of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return poolName
    */
   @VsoMethod
@@ -55,8 +54,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property pool_name of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param poolName set the poolName.
    */
   @VsoMethod
@@ -66,8 +64,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property pool_network of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return poolNetwork
    */
   @VsoMethod
@@ -77,8 +74,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property pool_network of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param poolNetwork set the poolNetwork.
    */
   @VsoMethod
@@ -88,8 +84,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_name of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return vsName
    */
   @VsoMethod
@@ -99,8 +94,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_name of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param vsName set the vsName.
    */
   @VsoMethod
@@ -110,8 +104,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property vs_network of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return vsNetwork
    */
   @VsoMethod
@@ -121,8 +114,7 @@ public class ApicAgentVsNetworkError extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property vs_network of obj type apicagentvsnetworkerror field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param vsNetwork set the vsNetwork.
    */
   @VsoMethod

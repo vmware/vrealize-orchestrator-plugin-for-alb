@@ -26,26 +26,25 @@ import org.springframework.stereotype.Service;
 public class Lif extends AviRestResource {
     @JsonProperty("cifs")
     @JsonInclude(Include.NON_NULL)
-    private List<Cif> cifs = null;
+    private List<Cif> cifs;
 
     @JsonProperty("lif")
     @JsonInclude(Include.NON_NULL)
-    private String lif = null;
+    private String lif;
 
     @JsonProperty("lif_label")
     @JsonInclude(Include.NON_NULL)
-    private String lifLabel = null;
+    private String lifLabel;
 
     @JsonProperty("subnet")
     @JsonInclude(Include.NON_NULL)
-    private String subnet = null;
+    private String subnet;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property cifs of obj type lif field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return cifs
    */
   @VsoMethod
@@ -55,8 +54,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the setter method. this will set the cifs
-   * Placeholder for description of property cifs of obj type lif field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return cifs
    */
   @VsoMethod
@@ -66,8 +64,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the setter method this will set the cifs
-   * Placeholder for description of property cifs of obj type lif field type str  type array.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return cifs
    */
   @VsoMethod
@@ -82,8 +79,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property lif of obj type lif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return lif
    */
   @VsoMethod
@@ -93,8 +89,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property lif of obj type lif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param lif set the lif.
    */
   @VsoMethod
@@ -104,8 +99,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property lif_label of obj type lif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return lifLabel
    */
   @VsoMethod
@@ -115,8 +109,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property lif_label of obj type lif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param lifLabel set the lifLabel.
    */
   @VsoMethod
@@ -126,8 +119,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property subnet of obj type lif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @return subnet
    */
   @VsoMethod
@@ -137,8 +129,7 @@ public class Lif extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property subnet of obj type lif field type str  type string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.1.
    * @param subnet set the subnet.
    */
   @VsoMethod

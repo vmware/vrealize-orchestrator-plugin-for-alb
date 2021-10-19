@@ -54,6 +54,10 @@ public class CaptureFilters extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer srcPort = null;
 
+    @JsonProperty("src_port_range_end")
+    @JsonInclude(Include.NON_NULL)
+    private Integer srcPortRangeEnd = null;
+
     @JsonProperty("tcp_ack")
     @JsonInclude(Include.NON_NULL)
     private Boolean tcpAck = null;
@@ -254,6 +258,34 @@ public class CaptureFilters extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Source port range end filter.
+   * If specified, the source port filter will be a range.
+   * The filter range will be between src_port and src_port_range_end.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return srcPortRangeEnd
+   */
+  @VsoMethod
+  public Integer getSrcPortRangeEnd() {
+    return srcPortRangeEnd;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Source port range end filter.
+   * If specified, the source port filter will be a range.
+   * The filter range will be between src_port and src_port_range_end.
+   * Field introduced in 21.1.1.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param srcPortRangeEnd set the srcPortRangeEnd.
+   */
+  @VsoMethod
+  public void setSrcPortRangeEnd(Integer  srcPortRangeEnd) {
+    this.srcPortRangeEnd = srcPortRangeEnd;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Tcp ack flag filter.
    * Field introduced in 18.2.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -369,7 +401,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.tcpAck, objCaptureFilters.tcpAck)&&
   Objects.equals(this.tcpFin, objCaptureFilters.tcpFin)&&
   Objects.equals(this.tcpPush, objCaptureFilters.tcpPush)&&
-  Objects.equals(this.captureIpc, objCaptureFilters.captureIpc);
+  Objects.equals(this.captureIpc, objCaptureFilters.captureIpc)&&
+  Objects.equals(this.srcPortRangeEnd, objCaptureFilters.srcPortRangeEnd);
 }
 
 @Override
@@ -383,6 +416,7 @@ public String toString() {
         sb.append("    ethProto: ").append(toIndentedString(ethProto)).append("\n");
         sb.append("    ipProto: ").append(toIndentedString(ipProto)).append("\n");
         sb.append("    srcPort: ").append(toIndentedString(srcPort)).append("\n");
+        sb.append("    srcPortRangeEnd: ").append(toIndentedString(srcPortRangeEnd)).append("\n");
         sb.append("    tcpAck: ").append(toIndentedString(tcpAck)).append("\n");
         sb.append("    tcpFin: ").append(toIndentedString(tcpFin)).append("\n");
         sb.append("    tcpPush: ").append(toIndentedString(tcpPush)).append("\n");

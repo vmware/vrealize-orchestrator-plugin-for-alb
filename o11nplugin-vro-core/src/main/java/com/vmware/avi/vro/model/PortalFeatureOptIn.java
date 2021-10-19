@@ -30,29 +30,41 @@ public class PortalFeatureOptIn extends AviRestResource {
 
     @JsonProperty("enable_auto_case_creation_on_se_failure")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableAutoCaseCreationOnSeFailure = false;
+    private Boolean enableAutoCaseCreationOnSeFailure;
 
     @JsonProperty("enable_auto_case_creation_on_system_failure")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableAutoCaseCreationOnSystemFailure = false;
+    private Boolean enableAutoCaseCreationOnSystemFailure;
 
     @JsonProperty("enable_auto_download_waf_signatures")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableAutoDownloadWafSignatures = false;
+    private Boolean enableAutoDownloadWafSignatures;
 
     @JsonProperty("enable_ip_reputation")
     @JsonInclude(Include.NON_NULL)
     private Boolean enableIpReputation = false;
 
+    @JsonProperty("enable_pulse_case_management")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePulseCaseManagement = true;
+
+    @JsonProperty("enable_pulse_waf_management")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enablePulseWafManagement = true;
+
+    @JsonProperty("enable_user_agent_db_sync")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean enableUserAgentDbSync = false;
+
     @JsonProperty("enable_waf_signatures_notifications")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableWafSignaturesNotifications = true;
+    private Boolean enableWafSignaturesNotifications;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable to subscribe to automated application signature rulesets updates.
+   * Enable to receive application specific signature updates.
    * Field introduced in 20.1.4.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -65,7 +77,7 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable to subscribe to automated application signature rulesets updates.
+   * Enable to receive application specific signature updates.
    * Field introduced in 20.1.4.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -78,10 +90,10 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable pro-active support case creation when a service engine failure occurs.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableAutoCaseCreationOnSeFailure
    */
   @VsoMethod
@@ -91,10 +103,10 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable pro-active support case creation when a service engine failure occurs.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableAutoCaseCreationOnSeFailure set the enableAutoCaseCreationOnSeFailure.
    */
   @VsoMethod
@@ -104,11 +116,10 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable to allow pro-active support case creation when a system failure occurs.
-   * Manual download will still be available in the customer portal.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableAutoCaseCreationOnSystemFailure
    */
   @VsoMethod
@@ -118,11 +129,10 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable to allow pro-active support case creation when a system failure occurs.
-   * Manual download will still be available in the customer portal.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableAutoCaseCreationOnSystemFailure set the enableAutoCaseCreationOnSystemFailure.
    */
   @VsoMethod
@@ -132,10 +142,10 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable to automatically download new crs version to the controller.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableAutoDownloadWafSignatures
    */
   @VsoMethod
@@ -145,10 +155,10 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable to automatically download new crs version to the controller.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableAutoDownloadWafSignatures set the enableAutoDownloadWafSignatures.
    */
   @VsoMethod
@@ -158,8 +168,7 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable to subscribe to ip reputation updates.
-   * This is a requirement for using ip reputation in the product.
+   * Enable to receive ip reputation updates.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -172,8 +181,7 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable to subscribe to ip reputation updates.
-   * This is a requirement for using ip reputation in the product.
+   * Enable to receive ip reputation updates.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -186,11 +194,93 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enable event notifications when new crs versions are available.
-   * Field introduced in 20.1.1.
+   * Enable pulse case management.
+   * Field introduced in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enablePulseCaseManagement
+   */
+  @VsoMethod
+  public Boolean getEnablePulseCaseManagement() {
+    return enablePulseCaseManagement;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable pulse case management.
+   * Field introduced in 21.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enablePulseCaseManagement set the enablePulseCaseManagement.
+   */
+  @VsoMethod
+  public void setEnablePulseCaseManagement(Boolean  enablePulseCaseManagement) {
+    this.enablePulseCaseManagement = enablePulseCaseManagement;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable to receive waf crs updates.
+   * Field introduced in 21.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @return enablePulseWafManagement
+   */
+  @VsoMethod
+  public Boolean getEnablePulseWafManagement() {
+    return enablePulseWafManagement;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable to receive waf crs updates.
+   * Field introduced in 21.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise is true.
+   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * @param enablePulseWafManagement set the enablePulseWafManagement.
+   */
+  @VsoMethod
+  public void setEnablePulseWafManagement(Boolean  enablePulseWafManagement) {
+    this.enablePulseWafManagement = enablePulseWafManagement;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Enable to receive bot management updates.
+   * Field introduced in 21.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return enableUserAgentDbSync
+   */
+  @VsoMethod
+  public Boolean getEnableUserAgentDbSync() {
+    return enableUserAgentDbSync;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Enable to receive bot management updates.
+   * Field introduced in 21.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param enableUserAgentDbSync set the enableUserAgentDbSync.
+   */
+  @VsoMethod
+  public void setEnableUserAgentDbSync(Boolean  enableUserAgentDbSync) {
+    this.enableUserAgentDbSync = enableUserAgentDbSync;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
+   * Field introduced in 20.1.1.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Special default for basic edition is false, essentials edition is false.
    * @return enableWafSignaturesNotifications
    */
   @VsoMethod
@@ -200,11 +290,11 @@ public class PortalFeatureOptIn extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enable event notifications when new crs versions are available.
+   * This field is deprecated.
+   * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Special default for basic edition is false, essentials edition is false.
    * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
    */
   @VsoMethod
@@ -228,7 +318,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.enableAutoCaseCreationOnSystemFailure, objPortalFeatureOptIn.enableAutoCaseCreationOnSystemFailure)&&
   Objects.equals(this.enableAutoCaseCreationOnSeFailure, objPortalFeatureOptIn.enableAutoCaseCreationOnSeFailure)&&
   Objects.equals(this.enableIpReputation, objPortalFeatureOptIn.enableIpReputation)&&
-  Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync);
+  Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync)&&
+  Objects.equals(this.enableUserAgentDbSync, objPortalFeatureOptIn.enableUserAgentDbSync)&&
+  Objects.equals(this.enablePulseWafManagement, objPortalFeatureOptIn.enablePulseWafManagement)&&
+  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement);
 }
 
 @Override
@@ -240,6 +333,9 @@ public String toString() {
         sb.append("    enableAutoCaseCreationOnSystemFailure: ").append(toIndentedString(enableAutoCaseCreationOnSystemFailure)).append("\n");
         sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
         sb.append("    enableIpReputation: ").append(toIndentedString(enableIpReputation)).append("\n");
+        sb.append("    enablePulseCaseManagement: ").append(toIndentedString(enablePulseCaseManagement)).append("\n");
+        sb.append("    enablePulseWafManagement: ").append(toIndentedString(enablePulseWafManagement)).append("\n");
+        sb.append("    enableUserAgentDbSync: ").append(toIndentedString(enableUserAgentDbSync)).append("\n");
         sb.append("    enableWafSignaturesNotifications: ").append(toIndentedString(enableWafSignaturesNotifications)).append("\n");
       sb.append("}");
   return sb.toString();

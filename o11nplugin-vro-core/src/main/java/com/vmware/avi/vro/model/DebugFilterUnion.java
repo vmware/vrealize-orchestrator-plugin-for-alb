@@ -186,7 +186,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Add filter to log manager debug.
-   * Field introduced in 20.1.7.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return logmanagerDebugFilter
    */
@@ -198,7 +198,7 @@ public class DebugFilterUnion extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Add filter to log manager debug.
-   * Field introduced in 20.1.7.
+   * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param logmanagerDebugFilter set the logmanagerDebugFilter.
    */
