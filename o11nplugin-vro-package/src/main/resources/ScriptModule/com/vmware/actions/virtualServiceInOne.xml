@@ -1,47 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="virtualServiceinOne"
 	result-type="String" api-version="6.0.0"
 	id="4be91a8d-f540-46ac-acb3-9ecc1ab6a904" version="0.1.2"
 	allowed-operations="vfe">
-	<param n="loadBalancerAlgo" t="string"><![CDATA[]]>
-	</param>
-	<param n="enablePool" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="poolName" t="string"><![CDATA[]]>
-	</param>
+	<param n="loadBalancerAlgo" t="string"><![CDATA[
+	]]></param>
+	<param n="enablePool" t="boolean"><![CDATA[
+	]]></param>
+	<param n="poolName" t="string"><![CDATA[
+	]]></param>
 	<param n="PoolServers"
-		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[]]>
-	</param>
-	<param n="serverType" t="string"><![CDATA[]]>
-	</param>
-	<param n="eastWestPlacement" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="vsVipName" t="string"><![CDATA[]]>
-	</param>
-	<param n="aviAllocatedFIp" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="autoAllocateIp" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="enabled" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="aviAllocatedVip" t="boolean"><![CDATA[]]>
-	</param>
-	<param n="IPAddress" t="string"><![CDATA[]]>
-	</param>
-	<param n="aviVroClient" t="AviVro:AviVroClient"><![CDATA[]]>
-	</param>
+		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[
+	]]></param>
+	<param n="serverType" t="string"><![CDATA[
+	]]></param>
+	<param n="eastWestPlacement" t="boolean"><![CDATA[
+	]]></param>
+	<param n="vsVipName" t="string"><![CDATA[
+	]]></param>
+	<param n="aviAllocatedFIp" t="boolean"><![CDATA[
+	]]></param>
+	<param n="autoAllocateIp" t="boolean"><![CDATA[
+	]]></param>
+	<param n="enabled" t="boolean"><![CDATA[
+	]]></param>
+	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[
+	]]></param>
+	<param n="aviAllocatedVip" t="boolean"><![CDATA[
+	]]></param>
+	<param n="IPAddress" t="string"><![CDATA[
+	]]></param>
+	<param n="aviVroClient" t="AviVro:AviVroClient"><![CDATA[
+	]]></param>
 	<param n="SSLCertificate" t="string"><![CDATA[SSL Certificate]]></param>
 	<param n="servicePort" t="string"><![CDATA[Virtual service port]]></param>
 	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
 	<param n="ApplicationProfile" t="string"><![CDATA[Application profile name ]]></param>
 	<param n="poolOrPoolgroup" t="boolean"><![CDATA[Create pool or poolgroup]]></param>
 	<param n="SSLCert" t="boolean"><![CDATA[Use SSL certificate or not]]></param>
-	<param n="existingVIP" t="string"><![CDATA[]]>
-	</param>
-	<param n="vsVIP" t="boolean"><![CDATA[]]>
-	</param>
+	<param n="existingVIP" t="string"><![CDATA[
+	]]></param>
+	<param n="vsVIP" t="boolean"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[try{
 // Initialize pool property object
 	var poolProperties = new Object();

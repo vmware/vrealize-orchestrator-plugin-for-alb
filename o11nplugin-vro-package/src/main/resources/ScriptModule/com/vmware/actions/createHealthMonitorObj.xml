@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createHealthMonitorObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="912babe5-8cf5-4104-b5c2-b55ab68c9b3c" version="3.0.0"
+	id="912babe5-8cf5-4104-b5c2-b55ab68c9b3c" version="0.0.2"
 	allowed-operations="vfe">
 	<param n="healthMonitorType" t="string"><![CDATA[Health monitor type]]></param>
 	<param n="hm_type" t="string"><![CDATA[Health monitor type]]></param>

@@ -56,6 +56,10 @@
 	</param>
 	<param n="metadata" t="string"><![CDATA[]]>
 	</param>
+	<param n="groupMapping" t="Array/string"><![CDATA[]]>
+	</param>
+	<param n="userMapping" t="Array/string"><![CDATA[]]>
+	</param>
 	<script encoded="false"><![CDATA[
 
 if (authType == "saml"){
@@ -131,11 +135,6 @@ if (authType == "saml"){
 
 }
 
-
-
-
-
-
 //Execute API Call
 var user_payload = (JSON.stringify(config2));
 
@@ -145,6 +144,7 @@ myAviRunTimeInfo.setHttpMethod("POST")
 myAviRunTimeInfo.setRequestBody(user_payload)
 myAviRunTimeInfo.setUrl("authprofile?include_name")
 
+
 //Try Catch is required incase the Object creation fails, we can have custom error message.
 try {
 
@@ -153,7 +153,7 @@ try {
     var authProfile = myAviRunTimeInfo.getResponseBody()
     authProfile = JSON.parse(authProfile)
 
-    System.log(authProfile.uuid)
+    //System.log(authProfile.uuid)
 
 
     if (myAviRunTimeInfo.getHttpStatuseCode().indexOf("201") <=0) {
@@ -169,13 +169,203 @@ try {
 }
 
 
+//----------------
+// Group Mapping
+
+
+// Format groupMapping array properly
+groupmappingObj = []
+
+for (var line in groupMapping){
+
+    stringObj = groupMapping[line].toString()
+    //System.log("line number "+line+" is: "+ stringObj)
+    splitobj = stringObj.split(/\s+/)
+    groupObj = {}
+    groupObj['groupName'] = splitobj[0].split("#")[1]
+    groupObj['role'] = splitobj[1].split("#")[1]
+    groupObj['tenant'] = splitobj[2].split("#")[1]
+    groupObj['superuser'] = splitobj[3].split("#")[1]
+
+    groupmappingObj.push(groupObj)
+    
+    
+}
+
+// Format userMapping array properly
+
+for (var line in userMapping){
+
+    userstringObj = userMapping[line].toString()
+    //System.log("line number "+line+" is: "+ userstringObj)
+    splitobj = userstringObj.split(/\s+/)
+    userObj = {}
+    userObj['attributeValue'] = splitobj[1].split("#")[1]
+    userObj['attributeName'] = splitobj[2].split("#")[1]
+    userObj['role'] = splitobj[0].split("#")[1]
+    userObj['tenant'] = splitobj[3].split("#")[1]
+    userObj['superuser'] = splitobj[4].split("#")[1]
+    //System.log(JSON.stringify(userObj))
+    groupmappingObj.push(userObj)
+    
+    
+}
+
+// Retrieve tenant URL
+function tenanturl(str) {
+
+    //System.log("str "+str)
+
+    var tenantObject = aviVroClient.get("tenant")
+
+    tenantObject = JSON.parse(tenantObject)
+
+    for (var tenant in tenantObject) {
+        //System.log("array "+tenantObject[tenant]['name'])
+        if (tenantObject[tenant]['name'] == str) {
+            var tenanturl = tenantObject[tenant]['url']
+
+        }
+
+
+    }
+
+//System.log(tenanturl)
+
+return tenanturl
+
+}
+
+
+// Retrieve Role URL
+function roleurl(str) {
+    //System.log(str)
+    var myAviRunTimeInfo = new AviRunTimeInfo();
+    myAviRunTimeInfo.setHttpMethod("GET")
+    myAviRunTimeInfo.setUrl("role")
+
+
+    myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
+    var roleObject = JSON.parse(myAviRunTimeInfo.getResponseBody())
+    roleObject = roleObject['results']
+
+
+    for (var role in roleObject){
+
+        if (roleObject[role]['name'] == str) {
+            var roleurl = roleObject[role]['url']
+
+        }
+
+    }
+
+
+return roleurl;
+
+}
+
+
+// Create Mapping Object
+
+var mapping_rules = []
+
+for (var mapnum in groupmappingObj) {
+
+    if (!groupmappingObj[mapnum]['attributeName']) {
+
+
+        if(groupmappingObj[mapnum]['superuser'] == "true") {
+            
+            var mapping = {
+            "index": mapnum,
+            "group_match": {
+            "criteria": "AUTH_MATCH_CONTAINS",
+            "groups": [
+            groupmappingObj[mapnum]['groupName']
+            ]
+            },
+            "is_superuser": true
+            }
+        } else {
+        
+            var mapping = {
+            "index": mapnum,
+            "group_match": {
+            "criteria": "AUTH_MATCH_CONTAINS",
+            "groups": [
+            groupmappingObj[mapnum]['groupName']
+            ]
+            },
+            "assign_tenant": "ASSIGN_FROM_SELECT_LIST",
+            "assign_role": "ASSIGN_FROM_SELECT_LIST",
+            "tenant_refs": [
+            tenanturl(groupmappingObj[mapnum]['tenant'])
+            ],
+            "role_refs": [
+            roleurl(groupmappingObj[mapnum]['role'])
+            ]
+            }
+        }
+
+        mapping_rules.push(mapping)
+
+    }else{
+
+        
+        if(groupmappingObj[mapnum]['superuser'] == "true") {
+            
+            var mapping = {
+            "index": mapnum,
+            "attribute_match": {
+            "criteria": "AUTH_MATCH_CONTAINS",
+            "name": groupmappingObj[mapnum]['attributeName'],
+            "values": [
+            groupmappingObj[mapnum]['attributeValue']
+            ]
+            },
+            "is_superuser": true
+            }
+        }else{
+
+            var mapping = {
+            "index": mapnum,
+            "attribute_match": {
+            "criteria": "AUTH_MATCH_CONTAINS",
+            "name": groupmappingObj[mapnum]['attributeName'],
+            "values": [
+            groupmappingObj[mapnum]['attributeValue']
+            ]
+            },
+            "assign_tenant": "ASSIGN_FROM_SELECT_LIST",
+            "assign_role": "ASSIGN_FROM_SELECT_LIST",
+            "tenant_refs": [
+            tenanturl(groupmappingObj[mapnum]['tenant'])
+            ],
+            "role_refs": [
+            roleurl(groupmappingObj[mapnum]['role'])
+            ]
+            }
+        }
+
+    mapping_rules.push(mapping)
+    }
+
+}
+    
+
+
+
+
+
+
+//----------------------
 
 
 
 //Create ACI API Object
 var systemConfiguration = new AviRunTimeInfo();
 systemConfiguration.setHttpMethod("GET")
-systemConfiguration.setRequestBody(user_payload)
+//systemConfiguration.setRequestBody(user_payload)
 systemConfiguration.setUrl("systemconfiguration")
 
 systemConfiguration = aviVroClient.callAviAPI(systemConfiguration)
@@ -183,20 +373,20 @@ systemConfiguration = aviVroClient.callAviAPI(systemConfiguration)
 systemConfiguration = JSON.parse(systemConfiguration.getResponseBody())
 
 
-
 var admin_auth_configuration = {}
 
+admin_auth_configuration.mapping_rules = mapping_rules
 admin_auth_configuration.allow_local_user_login = true;
 admin_auth_configuration.auth_profile_ref = authProfile.url
 
 systemConfiguration['admin_auth_configuration'] = admin_auth_configuration
 
-System.log(JSON.stringify(systemConfiguration))
 
 
 
 //Execute API Call
 var user_payload = (JSON.stringify(systemConfiguration));
+
 
 //Create ACI API Object
 var runTimeInfo = new AviRunTimeInfo();

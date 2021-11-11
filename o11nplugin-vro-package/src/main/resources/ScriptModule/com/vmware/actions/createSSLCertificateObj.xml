@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createSSLCertificateObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
 	id="501492ba-0d1c-4854-bc49-f3cf894a54df" version="3.0.0"

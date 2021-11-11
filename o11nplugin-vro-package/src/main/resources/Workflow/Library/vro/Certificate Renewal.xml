@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="b0af30cd-ca0b-4a7c-af03-6085fb56cd49" version="1.0.1"
+	id="17829d45-8f1a-4dcd-8ba0-6c227a4c0a54" version="1.0.1"
 	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
 	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Certificate Renewal]]></display-name>
@@ -19,8 +19,8 @@
 		</value>
 	</attrib>
 	<attrib name="actionResult" type="string" read-only="false">
-		<value encoded="n"><![CDATA[]]>
-		</value>
+		<value encoded="n"><![CDATA[
+		]]></value>
 	</attrib>
 	<workflow-item name="item0" type="end" end-mode="0">
 		<in-binding />

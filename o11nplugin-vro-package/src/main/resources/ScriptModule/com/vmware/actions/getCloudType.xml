@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getCloudType"
 	result-type="boolean" api-version="6.0.0"
 	id="87c11f52-a470-477b-a3f5-c362497c5dd4" version="0.0.2"
 	allowed-operations="vfe">
-	<param n="controller" t="string"><![CDATA[]]>
-	</param>
-	<param n="cloud_name" t="string"><![CDATA[]]>
-	</param>
+	<param n="controller" t="string"><![CDATA[
+	]]></param>
+	<param n="cloud_name" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 for each(vroClient in vroClientArray){
 		if(vroClient !=null){

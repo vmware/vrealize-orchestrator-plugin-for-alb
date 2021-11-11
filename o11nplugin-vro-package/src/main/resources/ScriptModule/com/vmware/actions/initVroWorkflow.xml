@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="initVroWorkflow"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
 	id="a35e66a2-0a28-4434-8fea-1b56fd432668" version="1.0.0"

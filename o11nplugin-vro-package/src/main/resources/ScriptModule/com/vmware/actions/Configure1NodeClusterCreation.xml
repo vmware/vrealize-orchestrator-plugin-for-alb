@@ -4,22 +4,22 @@
 	api-version="6.0.0" id="49e3daf3-6d74-4e86-b591-a6b9b3c1b6a5"
 	version="0.0.0" allowed-operations="vfe">
 	<description><![CDATA[This Action will initiate a Cluster creation process and take a 3 Node Cluster to a 1 Node Cluster.]]></description>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
-	</param>
-	<param n="vmIP_Orig" t="string"><![CDATA[]]>
-	</param>
-	<param n="vmMask_Orig" t="string"><![CDATA[]]>
-	</param>
-	<param n="vmGW_Orig" t="string"><![CDATA[]]>
-	</param>
-	<param n="vmName_Orig" t="string"><![CDATA[]]>
-	</param>
-	<param n="clusterNodes_Orig" t="string"><![CDATA[]]>
-	</param>
-	<param n="cluster_Name" t="string"><![CDATA[]]>
-	</param>
-	<param n="cluster_VIP" t="string"><![CDATA[]]>
-	</param>
+	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[
+	]]></param>
+	<param n="vmIP_Orig" t="string"><![CDATA[
+	]]></param>
+	<param n="vmMask_Orig" t="string"><![CDATA[
+	]]></param>
+	<param n="vmGW_Orig" t="string"><![CDATA[
+	]]></param>
+	<param n="vmName_Orig" t="string"><![CDATA[
+	]]></param>
+	<param n="clusterNodes_Orig" t="string"><![CDATA[
+	]]></param>
+	<param n="cluster_Name" t="string"><![CDATA[
+	]]></param>
+	<param n="cluster_VIP" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[
 
 

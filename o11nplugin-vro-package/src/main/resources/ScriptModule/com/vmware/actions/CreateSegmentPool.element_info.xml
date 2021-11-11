@@ -3,7 +3,7 @@
 <properties>
 <comment>Exported from [server]</comment>
 <entry key="categoryPath">com.vmware.avi</entry>
-<entry key="name">getAviVroClient</entry>
+<entry key="name">CreateSegmentPool</entry>
 <entry key="type">ScriptModule</entry>
-<entry key="id">038aa112-fb3e-463f-8a4b-82c0a9e6fafb</entry>
+<entry key="id">7ff776e4-4dac-4f62-94fc-a06edfe47b0b</entry>
 </properties>

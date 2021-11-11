@@ -3,14 +3,14 @@
 	result-type="Array/string" api-version="6.0.0"
 	id="373d5c23-ff66-483f-944c-931b89090691" version="0.0.2"
 	allowed-operations="vfe">
-	<param n="controller" t="string"><![CDATA[]]>
-	</param>
-	<param n="objectName" t="string"><![CDATA[]]>
-	</param>
-	<param n="objectType" t="string"><![CDATA[]]>
-	</param>
-	<param n="field" t="string"><![CDATA[]]>
-	</param>
+	<param n="controller" t="string"><![CDATA[
+	]]></param>
+	<param n="objectName" t="string"><![CDATA[
+	]]></param>
+	<param n="objectType" t="string"><![CDATA[
+	]]></param>
+	<param n="field" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[try{
 	// Check the restHost is selected ot not.
 	if(controller == null){

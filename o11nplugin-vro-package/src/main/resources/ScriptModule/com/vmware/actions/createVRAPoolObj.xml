@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createVRAPoolObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="c277d5cd-d249-4c7b-b3bd-7608300dde64" version="3.0.0"
+	id="0cfaebed-a678-43d2-9992-1bdde8e44ecc" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="poolName" t="string"><![CDATA[Pool name]]></param>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getDNSProvider"
 	result-type="string" api-version="6.0.0"
 	id="0cfa03eb-cf20-45a3-800b-a6de833fff77" version="0.0.0"

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="attachVroClient"
 	result-type="void" api-version="6.0.0"
 	id="3ce70638-7356-430e-bbc0-27c6ca39c4d5" version="0.0.4"
