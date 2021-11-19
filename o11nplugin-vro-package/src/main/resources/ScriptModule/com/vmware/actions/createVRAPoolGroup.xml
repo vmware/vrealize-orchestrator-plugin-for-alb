@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createVRAPoolGroup"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="d0efc780-2c8f-41dc-9a09-d7057bed99e1" version="3.0.0"
+	id="3d491515-9cdf-437c-ae83-88142172c704" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[
 	]]></param>

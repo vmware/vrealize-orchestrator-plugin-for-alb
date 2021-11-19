@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getObjectReference"
 	result-type="string" api-version="6.0.0"
 	id="33f01eb1-694f-4fa2-a2bd-7d492b2f20d1" version="0.0.5"

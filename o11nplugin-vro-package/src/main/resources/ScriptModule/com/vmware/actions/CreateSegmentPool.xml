@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dunes-script-module name="CreateSegmentPool"
+	result-type="string" api-version="6.0.0"
+	id="7ff776e4-4dac-4f62-94fc-a06edfe47b0b" version="0.0.0"
+	allowed-operations="vfe">
+	<description><![CDATA[This Action can ben used to create Network Segment Pools. This was designed for NSX-T Cloud Segments, but will work for any Cloud Segment.]]></description>
+	<param n="avivroClient" t="Avi:AviVroClient"><![CDATA[]]>
+	</param>
+	<param n="nsxtCloud" t="string"><![CDATA[]]>
+	</param>
+	<param n="segment" t="string"><![CDATA[]]>
+	</param>
+	<param n="Segment_Pool" t="Array/string"><![CDATA[]]>
+	</param>
+	<script encoded="false"><![CDATA[// Sleep 2 minutes to wait for networks to be populated
+System.log( "Waiting for Network Segments to be populated on the Avi Controller..")
+System.sleep(120000)
+
+// Retrieve Url from Cloud
+var aviNsxtCloud = avivroClient.getObjectDataByName("cloud",nsxtCloud);
+aviNsxtCloud = JSON.parse(aviNsxtCloud)
+
+var nsxtCloudURL = aviNsxtCloud['url']
+nsxtCloudURL = nsxtCloudURL.split('#')[0]
+
+// Retrieve The Specified Segment
+var network_seg = avivroClient.get("network")
+
+// Parse the JSON Output
+network_seg = JSON.parse(network_seg)
+
+for (var seg in network_seg){
+
+    if (network_seg[seg]['name'] == segment && network_seg[seg]['cloud_ref'] == nsxtCloudURL){
+        
+        var network_segment = network_seg[seg]
+    }
+}
+
+//Set the Segment UUID as a variable to be used in the Call Action
+var network_uuid = network_segment['uuid']
+
+
+// Create Array Variable
+var configured_subnets = []
+
+// Loop through the Pool Array
+for (var entry in Segment_Pool){
+
+    // Create the JSON object for each Pool
+    var prefix_config = {}
+    var prefix = {}
+    var ip_addr = {}
+    var static_ip_ranges = []
+    var range_config = {}
+    var range = {}
+    var begin = {}
+    var end = {}
+    
+
+    ip_addr['addr'] = Segment_Pool[entry].ip_subnet;
+    ip_addr['type'] = "V4";
+
+    prefix.ip_addr = ip_addr
+    prefix.mask = Segment_Pool[entry].ip_mask
+
+    begin['addr'] = Segment_Pool[entry].ip_begin;
+    begin['type'] = "V4";
+
+    end['addr'] = Segment_Pool[entry].ip_end;
+    end['type'] = "V4";
+
+    range.begin = begin
+    range.end = end
+
+    if (Segment_Pool[entry].ip_type == "VIP"){
+        var ipType = "STATIC_IPS_FOR_VIP"
+    } else if (Segment_Pool[entry].ip_type == "SE") {
+        var ipType = "STATIC_IPS_FOR_SE"
+
+    } else if (Segment_Pool[entry].ip_type == "BOTH") {
+        var ipType = "STATIC_IPS_FOR_VIP_AND_SE"
+    }else {
+        throw "The wrong Pool TYPE was provided. You can only specify VIP, SE or BOTH. Please run the workflow again, and correct the error."
+    }
+
+
+    prefix_config['prefix'] = prefix
+    range_config['range'] = range
+    range_config['type'] = ipType
+    static_ip_ranges.push(range_config)
+
+
+    prefix_config['static_ip_ranges'] = static_ip_ranges
+    configured_subnets.push(prefix_config)
+
+
+}
+
+// Add the Pool Object to the Segment Object
+network_segment.configured_subnets = configured_subnets
+
+
+// Create Call Body
+var user_data = JSON.stringify(network_segment)
+
+
+
+    //Create ACI API Object
+    var myAviRunTimeInfo = new AviRunTimeInfo();
+    myAviRunTimeInfo.setHttpMethod("PUT")
+    myAviRunTimeInfo.setRequestBody(user_data)
+    myAviRunTimeInfo.setUrl("network/"+network_uuid)
+
+
+
+
+
+        
+    try{
+        
+        myAviRunTimeInfo = avivroClient.callAviAPI(myAviRunTimeInfo)
+
+
+
+    if (myAviRunTimeInfo.getHttpStatuseCode().indexOf("200") <=0) {
+
+        System.log("Data Segment Pool was created successfully, moving on. ")
+    
+    }
+
+} catch (e) {
+
+        throw "Data Segment Pool was NOT created successfully, please validate the provided information and try again."
+        
+}
+
+
+
+]]></script>
+</dunes-script-module>

@@ -1,53 +1,950 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dunes-script-module
-	name="ClusterCreationVerification" result-type="string"
-	api-version="6.0.0" id="e1fe83f6-d96c-472e-bc51-52561423018c"
-	version="3.0.0" allowed-operations="vef">
-	<description><![CDATA[This Action should be failed with the ConfigureClusterCreation Action, as it will wait for Cluster Nodes to be ready and cluster status to change to "CLUSTER_UP_HA_ACTIVE".]]></description>
-	<param n="host1" t="string"><![CDATA[]]>
-	</param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[]]>
-	</param>
-	<script encoded="false"><![CDATA[
-//Declare Variables
-var completed = false
+<workflow xmlns="http://vmware.com/vco/workflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
+	root-name="item32" object-name="workflow:name=generic"
+	id="62307943-f03c-4f5a-80cc-58eb585443e2" version="1.0.0"
+	api-version="6.0.0" allowed-operations="vef" editor-version="2.0"
+	restartMode="1" resumeFromFailedMode="0">
+	<display-name><![CDATA[Cluster Node Replacement]]></display-name>
+	<position y="-0.11482278211435926" x="99.37210236807194" />
+	<input>
+		<param name="ignore_warnings" type="boolean">
+			<description><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></description>
+		</param>
+		<param name="vcenterUser" type="string" />
+		<param name="vcenterPassword" type="SecureString" />
+		<param name="vcenter" type="string" />
+		<param name="auth_username" type="string" />
+		<param name="auth_password" type="SecureString" />
+		<param name="ova_path" type="string" />
+		<param name="deploymentType" type="string" />
+		<param name="sdkVcenter" type="string" />
+		<param name="contentLibraryTemplate" type="string" />
+		<param name="aviController" type="string" />
+	</input>
+	<attrib name="errorCode" type="string" read-only="false">
+		<value encoded="n"><![CDATA[
+		]]></value>
+	</attrib>
+	<attrib name="host1" type="string" read-only="false">
+		<value encoded="n"><![CDATA[
+		]]></value>
+	</attrib>
+	<attrib name="token_based_auth" type="boolean" read-only="false">
+		<value encoded="n"><![CDATA[false]]></value>
+	</attrib>
+	<attrib name="token" type="SecureString" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="aviVroClient" type="Avi:AviVroClient"
+		read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="default_password" type="SecureString"
+		read-only="false">
+		<value encoded="n"><![CDATA[15BY35T38J4EW46O61Z47G44N4AT6DO28Z50L4AI48Y30M47XC8C6676P8E5E145RED16BF6JF9E91B0W7665A2DU86BA857SD40EEAEVEE5B715ZC2A46D5P87CBAC5PDE7DFE2SF429F0AO4296C3AV543EF47T60B3AEFRD07D412XF3382E7X]]></value>
+	</attrib>
+	<attrib name="cmd1" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="sshHost" type="string" read-only="false">
+		<value encoded="n"><![CDATA[10.206.42.94]]></value>
+	</attrib>
+	<attrib name="sshPort" type="number" read-only="false">
+		<value encoded="n"><![CDATA[22.0]]></value>
+	</attrib>
+	<attrib name="sshUsername" type="string" read-only="false">
+		<value encoded="n"><![CDATA[root]]></value>
+	</attrib>
+	<attrib name="sshPassword" type="SecureString" read-only="false">
+		<value encoded="n"><![CDATA[15BR41V76M69Y4EJ65L74Q77P6FR72V6BV73X31V32O33Y21GB67D30AWC07056FV9065767S267B0DAJD6BFC3QF5472F5L8DBF394O95536E3UAC4D558Q9B7957FV1073AC6N3A8C21CG8D98A2DUA949B0BX46DAB2FR611D61FVA49D27K]]></value>
+	</attrib>
+	<attrib name="passwordAuthentication" type="boolean"
+		read-only="false">
+		<value encoded="n"><![CDATA[true]]></value>
+	</attrib>
+	<attrib name="sshCommandPath" type="Path" read-only="false">
+		<value encoded="n"><![CDATA[/]]></value>
+	</attrib>
+	<attrib name="passphrase" type="SecureString" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="encoding" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="result" type="number" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="errorText" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="outputText" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="result_1" type="number" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="errorText_1" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="outputText_1" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="result_2" type="number" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="errorText_2" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="outputText_2" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="host1_cert" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vip_host" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="username" type="string" read-only="false">
+		<value encoded="n"><![CDATA[admin]]></value>
+	</attrib>
+	<attrib name="tenant" type="string" read-only="false">
+		<value encoded="n"><![CDATA[admin]]></value>
+	</attrib>
+	<attrib name="actionResult" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vmName_Orig" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vmIP_Orig" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vmMask_Orig" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="vmGW_Orig" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="clusterNodes_Orig" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="cluster_Name" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="cluster_VIP" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_Datastore" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_Network" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_ResourcePool" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_Cluster" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_Datacenter" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_vmCPU" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_vmRAM" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_vmDiskGB" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<attrib name="orig_vmFolder" type="string" read-only="false">
+		<value encoded="n"><![CDATA[]]>
+		</value>
+	</attrib>
+	<workflow-item name="item0" type="end" end-mode="0">
+		<in-binding />
+		<position y="60.0" x="2020.0" />
+	</workflow-item>
+	<workflow-item name="item2" out-name="item5"
+		catch-name="item3" throw-bind-name="errorCode" type="link"
+		linked-workflow-id="c5a874a2-e8e7-480d-bdde-d1a80b8a3011">
+		<display-name><![CDATA[Import a certificate from URL]]></display-name>
+		<in-binding>
+			<bind name="url" type="string" export-name="host1_cert">
+				<description><![CDATA[URL or just host:port for non-HTTPS SSL services:]]></description>
+			</bind>
+			<bind name="ignoreWarnings" type="boolean"
+				export-name="ignore_warnings">
+				<description><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></description>
+			</bind>
+		</in-binding>
+		<out-binding />
+		<description><![CDATA[Imports an SSL certificate into the server trust store.]]></description>
+		<position y="10.0" x="1258.1632397810163" />
+	</workflow-item>
+	<workflow-item name="item3" throw-bind-name="errorCode"
+		type="end" end-mode="1">
+		<in-binding />
+		<position y="80.0" x="1300.0" />
+	</workflow-item>
+	<workflow-item name="item5" out-name="item39" type="task">
+		<display-name><![CDATA[Wait for Controllers to be ready]]></display-name>
+		<script encoded="false"><![CDATA[
+var host1 = createHost(host1);
+var op1 = createOp(host1, "GET", "/api/initial-data");
+var urlParamValues = "";
 
-//Loop until Cluster is Active
-while (completed == false){
 
-        //During the upgrade, the nodes can go offline briefly while services are restarted. 
-        //This makes sure the script does not fail during that time.
-        try{
-            var myAviRunTimeInfo = new AviRunTimeInfo() ;
-            myAviRunTimeInfo.setHttpMethod("GET")
-            myAviRunTimeInfo.setUrl("cluster/runtime")
-            myAviRunTimeInfo = aviVroClient.callAviAPI(myAviRunTimeInfo)
-            var cluster = JSON.parse(myAviRunTimeInfo.getResponseBody())
+// Execute request Controller 1
+var request1 = setRequest(op1);
+var response1 = request1.execute();
 
-            System.log("Cluster Creation Progress: "+cluster['cluster_state']['progress'])
+//Process response Controller 1
+var responseString1 = parseResponse(response1);
+var statusCode1 = response1.statusCode;
 
-        } catch (e) {
 
-            System.log("Controller Service Restart: "+ e) 
-        }
 
-        //Check if Cluster Creation encountered an error. EEnd workflow
-        if ((JSON.stringify(cluster['cluster_state']['state'])).indexOf("SUSPENDED") >= 0 || (JSON.stringify(cluster['cluster_state']['state'])).indexOf("ERROR") >= 0 || (JSON.stringify(cluster['cluster_state']['state'])).indexOf("PAUSED") >= 0) {
-                    throw ("Controller Cluster Upgrade FAILED with State "+(JSON.stringify(cluster['cluster_state']['state']+". Please manually validate the state of the Cluster and resolve any issues.")));
-                    
-                }
-        //Check if the Cluster Creation completed. End Loop
-        if ((JSON.stringify(cluster['cluster_state']['state'])).indexOf("CLUSTER_UP_HA_ACTIVE") >= 0 ) {
-                    System.log("Controller Cluster Creation has completed successfully")
-                    completed = true;
+// Wait for Controller 1 to be ready
+while (true) {
+	if (statusCode1 == "200") {
+        System.log("Controller 1 is up and Ready to be configured.")
+		break;
+	}
+		// Execute request
+		var request1 = setRequest(op1);
+		var response1 = request1.execute();
 
-                }
+		//Process response
+		var responseString1 = parseResponse(response1);
+		var statusCode1 = response1.statusCode;
+		System.sleep(3000);
+}
 
-//Sleep the workflow between checks. This prevents the logging from being overloaded.
-System.sleep(60000)
+
+
+// Create a transient RESTHost
+function createHost(url) {
+	System.log("Creating transient REST host with base URL: " + url);
+	
+	var host = new RESTHost(url);
+	host.name = generateNameFromUrl(url);
+	host.url = url;
+	host.hostVerification = false;
+	host.proxyHost = null;
+	host.proxyPort = 0;
+
+	
+	host = RESTHostManager.createTransientHostFrom(host);
+	
+	RESTHostManager.reloadConfiguration();
+	
+	return host;
+}
+
+// Generate a friendly name for a RESTHost or RESTOperation from a given URL,
+// removing "HTTP" and "HTTPS", and replacing non-words with '_'
+function generateNameFromUrl(url) {
+	var name = url;
+	name = name.replace(/https:\/\//i, '');
+	name = name.replace(/http:\/\//i, '');
+	name = name.replace(/\W/g, '_');
+	return name;
+}
+
+
+
+// Is a given string non-null and not empty?
+function isSet(s) {
+	return s != null && s != "";
+}
+
+// Create a transient RESTOperation
+// For POST and PUT, the default content type is application/json
+function createOp(host, method, url) {
+	var name = generateNameFromUrl(url);
+	
+	var op = new RESTOperation(name);
+	op.method = method;
+	op.urlTemplate = url;
+	op.host = host;
+	
+	op = RESTHostManager.createTransientOperationFrom(op);
+	
+	return op;
+}
+
+
+// Prepare the RESTRequest object for executing the RESTOperation
+function setRequest(op) {
+	var request = op.createRequest();
+	
+	return request;
+}
+
+// Parse the RESTResponse object returned from executing a RESTOperation
+function parseResponse(response) {
+	var statusCode = response.statusCode;
+	System.log("Status code: " + statusCode);
+	
+	var headers = response.getAllHeaders();
+	for each (var headerKey in headers.keys) {
+	}
+	
+	var contentAsString = response.contentAsString;
+	
+
+}]]></script>
+		<in-binding>
+			<bind name="host1" type="string" export-name="host1" />
+		</in-binding>
+		<out-binding />
+		<position y="10.0" x="1420.0" />
+	</workflow-item>
+	<workflow-item name="item4" out-name="item2" type="task">
+		<display-name><![CDATA[Get Controllers from base url]]></display-name>
+		<script encoded="false"><![CDATA[// Validate Controller 1 input
+var flag=(controller1.indexOf('https') == 0);
+if(flag){
+
+	host1 = controller1;
+    host1_cert = (controller1+"/api/initial-data");
+
+}else{
+	host1=("https://"+controller1);
+    host1_cert = ("https://"+controller1+"/api/initial-data");
+}
+
+System.log("Waiting 10 Minutes for the Controller's to come online");
+System.sleep(600000); // Wait for configuration to kick in]]></script>
+		<in-binding>
+			<bind name="controller1" type="string" export-name="vmIP_Orig" />
+		</in-binding>
+		<out-binding>
+			<bind name="host1" type="string" export-name="host1" />
+			<bind name="host1_cert" type="string" export-name="host1_cert" />
+		</out-binding>
+		<position y="10.0" x="1118.1632397810163" />
+	</workflow-item>
+	<workflow-item name="item17" out-name="item36"
+		type="task">
+		<display-name><![CDATA[OVF Commands]]></display-name>
+		<script encoded="false"><![CDATA[
+var encodePassword = encodeURIComponent(vcenterPassword);
+
+
+if (resourcePool != "") {
+
+    var ovfcommand;
+    ovfcommand = "ovftool --datastore="+datastore+" --net:Management="+network+
+             " --vmFolder='"+folder+"'  --name="+Controller1_name+
+             " --prop:avi.mgmt-ip.CONTROLLER="+controller1+
+             " --prop:avi.mgmt-mask.CONTROLLER="+Controller_IP_mask+
+             " --prop:avi.default-gw.CONTROLLER="+Controller_IP_GW+
+             " --powerOn"+
+             " --noSSLVerify "+ova_path+
+             " vi://"+vcenterUser+":'"+encodePassword+"'@"+vcenter+
+             "/"+datacenter+"/host/"+cluster+"/Resources/"+resourcePool;
+    //System.log(ovfcommand);  
+    cmd1 = ovfcommand;
+
+    
+    
+}else {
+    ovfcommand = "ovftool --datastore="+datastore+" --net:Management="+network+
+             " --vmFolder='"+folder+"' --name="+Controller1_name+
+             " --prop:avi.mgmt-ip.CONTROLLER="+controller1+
+             " --prop:avi.mgmt-mask.CONTROLLER="+Controller_IP_mask+
+             " --prop:avi.default-gw.CONTROLLER="+Controller_IP_GW+
+             " --powerOn"+
+             " --noSSLVerify "+ova_path+
+             " vi://"+vcenterUser+":'"+encodePassword+"'@"+vcenter+
+             "/"+datacenter+"/host/"+cluster;
+    //System.log(ovfcommand);  
+    cmd1 = ovfcommand;
+
+   
 
 }
 
 
+
+
+
+
 ]]></script>
-</dunes-script-module>
+		<in-binding>
+			<bind name="vcenterUser" type="string" export-name="vcenterUser" />
+			<bind name="vcenterPassword" type="SecureString"
+				export-name="vcenterPassword" />
+			<bind name="vcenter" type="string" export-name="vcenter" />
+			<bind name="datastore" type="string"
+				export-name="orig_Datastore" />
+			<bind name="network" type="string" export-name="orig_Network" />
+			<bind name="folder" type="string" export-name="orig_vmFolder" />
+			<bind name="Controller1_name" type="string"
+				export-name="vmName_Orig" />
+			<bind name="datacenter" type="string"
+				export-name="orig_Datacenter" />
+			<bind name="Controller_IP_mask" type="string"
+				export-name="vmMask_Orig" />
+			<bind name="Controller_IP_GW" type="string"
+				export-name="vmGW_Orig" />
+			<bind name="controller1" type="string" export-name="vmIP_Orig" />
+			<bind name="cluster" type="string" export-name="orig_Cluster" />
+			<bind name="ova_path" type="string" export-name="ova_path" />
+			<bind name="resourcePool" type="string"
+				export-name="orig_ResourcePool" />
+		</in-binding>
+		<out-binding>
+			<bind name="cmd1" type="string" export-name="cmd1" />
+		</out-binding>
+		<description><![CDATA[Simple task with custom script capability.]]></description>
+		<position y="10.0" x="820.0" />
+	</workflow-item>
+	<workflow-item name="item25" out-name="item0" type="task"
+		script-module="com.vmware.avi/ClusterCreationVerification">
+		<display-name><![CDATA[Wait for Cluster to be Ready]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").ClusterCreationVerification(host1,aviVroClient);
+]]></script>
+		<in-binding>
+			<bind name="host1" type="string" export-name="host1" />
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="10.0" x="1780.0" />
+	</workflow-item>
+	<workflow-item name="item29" out-name="item17"
+		type="condition" alt-out-name="item31" comparator="0">
+		<display-name><![CDATA[Decision]]></display-name>
+		<script encoded="false"><![CDATA[// Generated by the system, cannot be edited
+return (deploymentType === "ovfTool");]]></script>
+		<in-binding>
+			<bind name="deploymentType" type="string"
+				export-name="deploymentType" />
+		</in-binding>
+		<out-binding />
+		<condition name="deploymentType" type="string"
+			comparator="0" label="null">ovfTool</condition>
+		<description><![CDATA[Custom decision based on a custom script.]]></description>
+		<position y="0.0" x="680.0" />
+	</workflow-item>
+	<workflow-item name="item31" out-name="item4" type="task"
+		script-module="com.vmware.avi/NodeDeployContentLibrary">
+		<display-name><![CDATA[Create Controller VMs - Content Library]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").NodeDeployContentLibrary(sdkVcenter,datastore,network,folder,Controller1_name,datacenter,Controller_IP_mask,Controller_IP_GW,controller1,cluster,resourcePool,contentLibraryTemplate,vmCPU,vmRAM,vmDisk);
+]]></script>
+		<in-binding>
+			<bind name="sdkVcenter" type="string" export-name="sdkVcenter" />
+			<bind name="datastore" type="string"
+				export-name="orig_Datastore" />
+			<bind name="network" type="string" export-name="orig_Network" />
+			<bind name="folder" type="string" export-name="orig_vmFolder" />
+			<bind name="Controller1_name" type="string"
+				export-name="vmName_Orig" />
+			<bind name="datacenter" type="string"
+				export-name="orig_Datacenter" />
+			<bind name="Controller_IP_mask" type="string"
+				export-name="vmMask_Orig" />
+			<bind name="Controller_IP_GW" type="string"
+				export-name="vmGW_Orig" />
+			<bind name="controller1" type="string" export-name="vmIP_Orig" />
+			<bind name="cluster" type="string" export-name="orig_Cluster" />
+			<bind name="resourcePool" type="string"
+				export-name="orig_ResourcePool" />
+			<bind name="contentLibraryTemplate" type="string"
+				export-name="contentLibraryTemplate" />
+			<bind name="vmCPU" type="string" export-name="orig_vmCPU" />
+			<bind name="vmRAM" type="string" export-name="orig_vmRAM" />
+			<bind name="vmDisk" type="string" export-name="orig_vmDiskGB" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="100.0" x="680.0" />
+	</workflow-item>
+	<workflow-item name="item32" out-name="item33"
+		type="task" script-module="com.vmware.avi/getAviVroClient">
+		<display-name><![CDATA[Action element]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller);
+]]></script>
+		<in-binding>
+			<bind name="controller" type="string"
+				export-name="aviController">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="10.01433409540811" x="179.99999315112325" />
+	</workflow-item>
+	<workflow-item name="item33" out-name="item38"
+		type="task">
+		<display-name><![CDATA[Retrieve Cluster Node Information]]></display-name>
+		<script encoded="false"><![CDATA[
+
+
+//Verified failed node
+
+var clusterRuntimeInfo = new AviRunTimeInfo() ;
+clusterRuntimeInfo.setHttpMethod("GET")
+clusterRuntimeInfo.setUrl("cluster/runtime")
+clusterRuntimeInfo = aviVroClient.callAviAPI(clusterRuntimeInfo)
+var clusterRuntime = JSON.parse(clusterRuntimeInfo.getResponseBody())
+
+var clusterRuntimeNodes = clusterRuntime['node_states']
+
+var clusterInfo = new AviRunTimeInfo() ;
+clusterInfo.setHttpMethod("GET")
+clusterInfo.setUrl("cluster")
+clusterInfo = aviVroClient.callAviAPI(clusterInfo)
+var cluster = JSON.parse(clusterInfo.getResponseBody())
+
+var clusterNodes = cluster['nodes']
+
+
+var nodeList = [];
+var clusterCount = 0
+
+while (clusterCount != 3){
+    
+
+    for (var node  in clusterNodes ){
+
+        for (var runtimenode in  clusterRuntimeNodes ) {
+
+            if (clusterNodes[node]['ip']['addr'] == clusterRuntimeNodes[runtimenode]['mgmt_ip']) {
+
+                var nodeArray = {};
+                
+                nodeArray['ip'] = clusterRuntimeNodes[runtimenode]['mgmt_ip']
+                nodeArray['role'] = clusterRuntimeNodes[runtimenode]['role']
+                nodeArray['name'] = clusterRuntimeNodes[runtimenode]['name']   
+                nodeArray['hostname'] = clusterNodes[node]['vm_hostname']
+                nodeArray['state'] = clusterRuntimeNodes[runtimenode]['state']  
+                nodeArray['vmID'] = clusterNodes[node]['vm_mor']                  
+
+                nodeList.push(nodeArray)
+
+                clusterNodes.splice(node,1)
+                clusterRuntimeNodes.splice(runtimenode,1)
+
+
+                clusterCount = clusterCount+1
+
+
+
+                                    
+            }
+        }
+
+    }
+
+}
+
+var node_VMID = " "
+for (var nodes in nodeList){
+
+    if (nodeList[nodes]['state'] == "CLUSTER_INACTIVE") {
+
+        node_VMID = nodeList[nodes]['vmID']
+        //nodeList.splice(nodes,1)
+
+    }
+}
+
+if (node_VMID == " "){
+    throw "All of the nodes in this cluster are UP and ACTIVE. There is nothing to do... Ending Workflow."
+}
+
+System.log(node_VMID)
+
+// Set the vCenter connection
+var connections = VcPlugin.allSdkConnections;
+for (var connection in connections) {
+    var sdkName = connections[connection].name;
+    if (sdkName.indexOf(sdkVcenter) >= 0) {
+        var sdkConnection = connections[connection]
+
+    }
+}
+
+
+var allVMObj = sdkConnection.getAllVirtualMachines()
+
+for (var vm in allVMObj){
+
+    if (allVMObj[vm].id == node_VMID){
+
+        VMObj = allVMObj[vm]
+    }
+
+}
+
+
+
+System.log(VMObj.name)
+
+if(VMObj.runtime.powerState.name == "poweredOn") {
+
+    VMObj.powerOffVM_Task();
+    var newName = VMObj.name + "-Old"
+    VMObj.rename_Task(newName);
+
+}else{
+
+    var newName = VMObj.name + "-Old"
+    VMObj.rename_Task(newName);
+}
+
+  
+//Retrieve vAPP properties and store in array
+var vapp_prop = VMObj.config.vAppConfig.property
+
+var properties = new Array()
+for (prop in vapp_prop){
+
+    properties.push(vapp_prop[prop])
+
+}
+
+//--------------------------------
+
+
+
+for (property in properties){
+      /// Update subnet mask property
+    if(properties[property].id == "mgmt-ip"){
+        var mgmtIP = properties[property].value
+
+  
+    }
+    /// Update subnet mask property
+    else if (properties[property].id == "mgmt-mask"){
+        var mgmtMask = properties[property].value
+
+       
+    }
+      /// Update gateway property
+    else if (properties[property].id == "default-gw"){
+        var mgmtGW = properties[property].value
+       
+    }
+
+
+}
+
+
+
+
+
+
+//Retreive environment information
+vmName_Orig = VMObj.name
+vmIP_Orig = mgmtIP
+vmMask_Orig = mgmtMask
+vmGW_Orig = mgmtGW
+clusterNodes_Orig = nodeList
+cluster_Name = cluster['name']
+cluster_VIP = cluster['virtual_ip']['addr']
+orig_Datastore = VMObj.datastore[0].name
+orig_Network = (VMObj.network[0].name).split(" ")[0]
+orig_ResourcePool = VMObj.resourcePool.name
+orig_Cluster = VMObj.runtime.host.parent.name
+
+
+var allDCObj = sdkConnection.getAllDatacenters()
+var foundCluster = false
+
+
+while (foundCluster != true){
+
+    for (DC in allDCObj) {
+        for (CL in allDCObj[DC].hostFolder.childEntity){
+            if(allDCObj[DC].hostFolder.childEntity[CL].name == orig_Cluster){
+                orig_Datacenter = allDCObj[DC].name
+                foundCluster = true
+            }
+        }
+    }
+
+}
+
+orig_vmCPU = VMObj.config.hardware.numCPU
+orig_vmRAM = VMObj.config.hardware.memoryMB
+var vmDevices = VMObj.config.hardware.device
+
+orig_vmDiskGB = 0;
+var size = new Array();
+var h = 0;
+
+for (var i in vmDevices) {
+
+    if (vmDevices[i] instanceof VcVirtualDisk) {
+
+        size[h++] = vmDevices[i].capacityInKB / 1024 / 1024;
+
+        orig_vmDiskGB += vmDevices[i].capacityInKB / 1024 / 1024;   
+
+}
+
+}
+
+var parent = VMObj.parent;
+if (parent instanceof VcVmFolder && parent.name != "vm") {
+	orig_vmFolder = parent;
+}else{
+   orig_vmFolder = " "
+}]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="sdkVcenter" type="string" export-name="sdkVcenter" />
+		</in-binding>
+		<out-binding>
+			<bind name="vmName_Orig" type="string" export-name="vmName_Orig" />
+			<bind name="vmIP_Orig" type="string" export-name="vmIP_Orig" />
+			<bind name="vmMask_Orig" type="string" export-name="vmMask_Orig" />
+			<bind name="vmGW_Orig" type="string" export-name="vmGW_Orig" />
+			<bind name="clusterNodes_Orig" type="string"
+				export-name="clusterNodes_Orig" />
+			<bind name="cluster_Name" type="string"
+				export-name="cluster_Name" />
+			<bind name="cluster_VIP" type="string" export-name="cluster_VIP" />
+			<bind name="orig_Datastore" type="string"
+				export-name="orig_Datastore" />
+			<bind name="orig_Network" type="string"
+				export-name="orig_Network" />
+			<bind name="orig_ResourcePool" type="string"
+				export-name="orig_ResourcePool" />
+			<bind name="orig_Cluster" type="string"
+				export-name="orig_Cluster" />
+			<bind name="orig_Datacenter" type="string"
+				export-name="orig_Datacenter" />
+			<bind name="orig_vmCPU" type="string" export-name="orig_vmCPU" />
+			<bind name="orig_vmRAM" type="string" export-name="orig_vmRAM" />
+			<bind name="orig_vmDiskGB" type="string"
+				export-name="orig_vmDiskGB" />
+			<bind name="orig_vmFolder" type="string"
+				export-name="orig_vmFolder" />
+		</out-binding>
+		<description><![CDATA[Simple task with custom script capability.]]></description>
+		<position y="10.0" x="280.0" />
+	</workflow-item>
+	<workflow-item name="item35" out-name="item29"
+		type="task"
+		script-module="com.vmware.avi/ClusterCreationVerification_SingleNode">
+		<display-name><![CDATA[Single Node Cluster Verification]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").ClusterCreationVerification_SingleNode(host1,aviVroClient);
+]]></script>
+		<in-binding>
+			<bind name="host1" type="string" export-name="host1" />
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="10.0" x="570.0" />
+	</workflow-item>
+	<workflow-item name="item36" out-name="item4" type="link"
+		linked-workflow-id="4c10a3e9-c9f4-4aa4-b589-98b8a305f1c8">
+		<display-name><![CDATA[Workflow element]]></display-name>
+		<in-binding>
+			<bind name="hostNameOrIP" type="string" export-name="sshHost">
+				<description><![CDATA[Hostname or IP address of the SSH host]]></description>
+			</bind>
+			<bind name="port" type="number" export-name="sshPort">
+				<description><![CDATA[Target port]]></description>
+			</bind>
+			<bind name="username" type="string" export-name="sshUsername">
+				<description><![CDATA[Username]]></description>
+			</bind>
+			<bind name="password" type="SecureString"
+				export-name="sshPassword">
+				<description><![CDATA[Password]]></description>
+			</bind>
+			<bind name="cmd" type="string" export-name="cmd1">
+				<description><![CDATA[The SSH command to run]]></description>
+			</bind>
+			<bind name="passwordAuthentication" type="boolean"
+				export-name="passwordAuthentication">
+				<description><![CDATA[Sets authentication to password or key file]]></description>
+			</bind>
+			<bind name="path" type="Path" export-name="sshCommandPath">
+				<description><![CDATA[Path to the private key]]></description>
+			</bind>
+			<bind name="passphrase" type="SecureString"
+				export-name="passphrase">
+				<description><![CDATA[Private key pass-phrase]]></description>
+			</bind>
+			<bind name="encoding" type="string" export-name="encoding">
+				<description><![CDATA[The encoding to be used. Leave this field empty to use the default system encoding. (Example values: "UTF-8", "ISO-8859-1"...)]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="result" type="number" export-name="result">
+				<description><![CDATA[0 = OK, Negative = Error, Positive = Number of values returned, after error text]]></description>
+			</bind>
+			<bind name="errorText" type="string" export-name="errorText">
+				<description><![CDATA[Error text, if any]]></description>
+			</bind>
+			<bind name="outputText" type="string" export-name="outputText">
+				<description><![CDATA[Result of running the SSH command]]></description>
+			</bind>
+		</out-binding>
+		<description><![CDATA[ ]]></description>
+		<position y="10.0" x="960.0" />
+	</workflow-item>
+	<workflow-item name="item38" out-name="item35"
+		type="task"
+		script-module="com.vmware.avi/Configure1NodeClusterCreation">
+		<display-name><![CDATA[Set Cluster to 1 Node]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").Configure1NodeClusterCreation(aviVroClient,vmIP_Orig,vmMask_Orig,vmGW_Orig,vmName_Orig,clusterNodes_Orig,cluster_Name,cluster_VIP);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="vmIP_Orig" type="string" export-name="vmIP_Orig" />
+			<bind name="vmMask_Orig" type="string" export-name="vmMask_Orig" />
+			<bind name="vmGW_Orig" type="string" export-name="vmGW_Orig" />
+			<bind name="vmName_Orig" type="string" export-name="vmName_Orig" />
+			<bind name="clusterNodes_Orig" type="string"
+				export-name="clusterNodes_Orig" />
+			<bind name="cluster_Name" type="string"
+				export-name="cluster_Name" />
+			<bind name="cluster_VIP" type="string" export-name="cluster_VIP" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="10.0" x="440.0" />
+	</workflow-item>
+	<workflow-item name="item39" out-name="item25"
+		type="task" script-module="com.vmware.avi/ConfigureClusterRecreation">
+		<display-name><![CDATA[ConfigureClusterRecreation]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").ConfigureClusterRecreation(aviVroClient,clusterNodes_Orig,cluster_Name,cluster_VIP);
+]]></script>
+		<in-binding>
+			<bind name="aviVroClient" type="Avi:AviVroClient"
+				export-name="aviVroClient" />
+			<bind name="clusterNodes_Orig" type="string"
+				export-name="clusterNodes_Orig" />
+			<bind name="cluster_Name" type="string"
+				export-name="cluster_Name" />
+			<bind name="cluster_VIP" type="string" export-name="cluster_VIP" />
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="string"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="10.0" x="1620.0" />
+	</workflow-item>
+	<presentation>
+		<p-step>
+			<title><![CDATA[Cluster Information]]></title>
+			<p-param name="ignore_warnings">
+				<desc><![CDATA[If set to true, the certificate is accepted silently and the certificate is added to the trusted store]]></desc>
+				<p-qual kind="static" name="defaultValue" type="boolean"><![CDATA[true]]></p-qual>
+			</p-param>
+		</p-step>
+		<p-step>
+			<title><![CDATA[DNS Configuration]]></title>
+		</p-step>
+		<p-step>
+			<title><![CDATA[NTP Configuration]]></title>
+		</p-step>
+		<p-step>
+			<title><![CDATA[Backup Configuration]]></title>
+		</p-step>
+		<p-step>
+			<title><![CDATA[Licensing]]></title>
+		</p-step>
+		<p-param name="vcenterUser">
+			<desc><![CDATA[vcenterUser]]></desc>
+		</p-param>
+		<p-param name="vcenterPassword">
+			<desc><![CDATA[vcenterPassword]]></desc>
+		</p-param>
+		<p-param name="vcenter">
+			<desc><![CDATA[vcenter]]></desc>
+		</p-param>
+		<p-param name="auth_username">
+			<desc><![CDATA[auth_username]]></desc>
+		</p-param>
+		<p-param name="auth_password">
+			<desc><![CDATA[auth_password]]></desc>
+		</p-param>
+		<p-param name="ova_path">
+			<desc><![CDATA[ova_path]]></desc>
+		</p-param>
+		<p-param name="deploymentType">
+			<desc><![CDATA[deploymentType]]></desc>
+		</p-param>
+		<p-param name="sdkVcenter">
+			<desc><![CDATA[sdkVcenter]]></desc>
+		</p-param>
+		<p-param name="contentLibraryTemplate">
+			<desc><![CDATA[contentLibraryTemplate]]></desc>
+		</p-param>
+		<p-param name="aviController">
+			<desc><![CDATA[aviController]]></desc>
+		</p-param>
+	</presentation>
+</workflow>

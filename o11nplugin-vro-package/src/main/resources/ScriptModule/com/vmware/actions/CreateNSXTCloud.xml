@@ -21,6 +21,8 @@
 	</param>
 	<param n="vCenter_Data" t="string"><![CDATA[]]>
 	</param>
+	<param n="mgmt_ip_scheme" t="boolean"><![CDATA[]]>
+	</param>
 	<script encoded="false"><![CDATA[
 // Retrieve JSON Objects
 MGMT_Data = JSON.parse(MGMT_Data)
@@ -85,7 +87,7 @@ var cloud_data = {
 "data_network_config": data_network_config,
 "nsxt_credentials_ref": MGMT_Data['nsxCredUrl']
 },
-"dhcp_enabled": false,
+"dhcp_enabled": mgmt_ip_scheme,
 "mtu": 1500,
 "prefer_static_routes": false,
 "enable_vip_static_routes": false,

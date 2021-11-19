@@ -8,7 +8,7 @@
 	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Avi SSH Command]]></display-name>
 	<description><![CDATA[Runs an SSH command.]]></description>
-	<position y="50.0" x="160.0" />
+	<position y="40.0" x="160.0" />
 	<input>
 		<param name="hostNameOrIP" type="string">
 			<description><![CDATA[Hostname or IP address of the SSH host]]></description>

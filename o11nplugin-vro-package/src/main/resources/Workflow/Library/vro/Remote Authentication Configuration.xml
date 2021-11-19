@@ -36,6 +36,8 @@
 		<param name="ldapServers" type="Array/string" />
 		<param name="base_dn" type="string" />
 		<param name="metadata" type="string" />
+		<param name="groupMapping" type="Array/string" />
+		<param name="userMapping" type="Array/string" />
 	</input>
 	<attrib name="aviVroClient" type="Avi:AviVroClient"
 		read-only="false">
@@ -68,7 +70,7 @@ actionResult = System.getModule("com.vmware.avi").getAviVroClient(controller);
 		script-module="com.vmware.avi/remoteAuthenticationConfiguration">
 		<display-name><![CDATA[Remote Authentication Configuration]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").remoteAuthenticationConfiguration(aviVroClient,authType,samlEntityType,authProfileName,org_name,org_display_name,org_url,tech_contact_name,tech_contact_email,saml_fqdn,ldapPort,user_search_scope,security_mode,group_member_attribute,group_search_scope,group_member_is_full_dn,group_filter,ignore_referrals,admin_bind_dn,user_search_dn,group_search_dn,admin_bind_password,user_id_attribute,ldapServers,base_dn,metadata);
+actionResult = System.getModule("com.vmware.avi").remoteAuthenticationConfiguration(aviVroClient,authType,samlEntityType,authProfileName,org_name,org_display_name,org_url,tech_contact_name,tech_contact_email,saml_fqdn,ldapPort,user_search_scope,security_mode,group_member_attribute,group_search_scope,group_member_is_full_dn,group_filter,ignore_referrals,admin_bind_dn,user_search_dn,group_search_dn,admin_bind_password,user_id_attribute,ldapServers,base_dn,metadata,groupMapping,userMapping);
 ]]></script>
 		<in-binding>
 			<bind name="aviVroClient" type="Avi:AviVroClient"
@@ -116,6 +118,10 @@ actionResult = System.getModule("com.vmware.avi").remoteAuthenticationConfigurat
 				export-name="ldapServers" />
 			<bind name="base_dn" type="string" export-name="base_dn" />
 			<bind name="metadata" type="string" export-name="metadata" />
+			<bind name="groupMapping" type="Array/string"
+				export-name="groupMapping" />
+			<bind name="userMapping" type="Array/string"
+				export-name="userMapping" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="string" export-name="" />

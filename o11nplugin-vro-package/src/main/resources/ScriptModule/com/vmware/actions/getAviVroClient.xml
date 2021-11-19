@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getAviVroClient"
 	result-type="Avi:AviVroClient" api-version="6.0.0"
-	id="d3eacf05-96c2-401e-90b4-90dcfff2967d" version="3.0.0"
+	id="038aa112-fb3e-463f-8a4b-82c0a9e6fafb" version="4.0.0"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[Controller IP]]></param>
 	<script encoded="false"><![CDATA[var vroClientArray=Server.findAllForType('Avi:AviVroClient','');

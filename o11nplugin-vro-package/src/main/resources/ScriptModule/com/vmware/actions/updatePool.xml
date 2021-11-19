@@ -1,12 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="updatePool"
 	result-type="void" api-version="6.0.0"
-	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef6d" version="0.0.2" allowed-operations="vfe">
-	<param n="controller" t="string"></param>
-	<param n="poolname" t="string"></param>
-	<param n="serverType" t="string"></param>
+	id="0164e6e8-7b7a-403f-8f8c-d9cdf8dbef6d" version="0.0.2"
+	allowed-operations="vfe">
+	<param n="controller" t="string"><![CDATA[]]>
+	</param>
+	<param n="poolname" t="string"><![CDATA[]]>
+	</param>
+	<param n="serverType" t="string"><![CDATA[]]>
+	</param>
 	<param n="serverArray"
-		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"></param>
+		t="Array/CompositeType(IP:string,Ratio:string,Port:string):AVIServer"><![CDATA[]]>
+	</param>
 	<script encoded="false"><![CDATA[try{
 
 	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');

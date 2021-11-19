@@ -2,8 +2,8 @@
 <workflow xmlns="http://vmware.com/vco/workflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
-	root-name="item2" object-name="workflow:name=generic"
-	id="ff3dde0b-7973-443e-9673-b6977d919613" version="3.0.3"
+	root-name="item3" object-name="workflow:name=generic"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.3.5"
 	api-version="6.0.0" allowed-operations="vef" editor-version="1.6"
 	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Edit Servers In Pool]]></display-name>
@@ -18,13 +18,14 @@
 		<param name="pool_servers" type="Array/string">
 			<description><![CDATA[pool_servers]]></description>
 		</param>
-		<param name="server_cloud" type="string">
-			<description><![CDATA[server_cloud]]></description>
-		</param>
-		<param name="port" type="number">
+		<param name="port" type="string">
 			<description><![CDATA[port]]></description>
 		</param>
+		<param name="server_cloud" type="string" />
 	</input>
+	<output>
+		<param name="actionResult" type="Avi:WorkflowRuntime" />
+	</output>
 	<attrib name="actionEerrorCode" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
 		]]></value>
@@ -41,11 +42,29 @@
 	<workflow-item name="item0"
 		throw-bind-name="actionEerrorCode" type="end" end-mode="0">
 		<in-binding />
-		<position y="9.545454545454543" x="484.5" />
+		<position y="8.98455530995734" x="564.4745050666872" />
 	</workflow-item>
-	<workflow-item name="item1" out-name="item0" type="task"
+	<workflow-item name="item3" out-name="item4" type="task"
+		script-module="com.vmware.avi/initVroWorkflow">
+		<display-name><![CDATA[Action element]]></display-name>
+		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
+actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller);
+]]></script>
+		<in-binding>
+			<bind name="controller" type="string" export-name="controller">
+				<description><![CDATA[Controller IP]]></description>
+			</bind>
+		</in-binding>
+		<out-binding>
+			<bind name="actionResult" type="Avi:WorkflowRuntime"
+				export-name="actionResult" />
+		</out-binding>
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="20.0" x="180.0" />
+	</workflow-item>
+	<workflow-item name="item4" out-name="item0" type="task"
 		script-module="com.vmware.avi/updatePoolObj">
-		<display-name><![CDATA[updatePoolObj]]></display-name>
+		<display-name><![CDATA[Action element]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
 System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,tenant,workflowRuntime,ratio,port);
 ]]></script>
@@ -63,38 +82,22 @@ System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray
 			<bind name="cloud" type="string" export-name="server_cloud">
 				<description><![CDATA[Cloud name]]></description>
 			</bind>
-			<bind name="tenant" type="string" export-name="">
+			<bind name="tenant" type="string">
 				<description><![CDATA[Tenant name]]></description>
 			</bind>
-			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime">
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime">
 				<description><![CDATA[Avi Controller]]></description>
 			</bind>
-			<bind name="ratio" type="number" export-name="">
+			<bind name="ratio" type="string">
 				<description><![CDATA[Ratio]]></description>
 			</bind>
-			<bind name="port" type="number" export-name="port">
+			<bind name="port" type="string" export-name="port">
 				<description><![CDATA[Port]]></description>
 			</bind>
 		</in-binding>
 		<out-binding />
-		<position y="19.045454545454543" x="285.0" />
-	</workflow-item>
-	<workflow-item name="item2" out-name="item1" type="task"
-		script-module="com.vmware.avi/initVroWorkflow">
-		<display-name><![CDATA[initVroWorkflow]]></display-name>
-		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]]></script>
-		<in-binding>
-			<bind name="controller" type="string" export-name="controller">
-				<description><![CDATA[Controller IP]]></description>
-			</bind>
-		</in-binding>
-		<out-binding>
-			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime" />
-		</out-binding>
-		<position y="19.045454545454543" x="144.5" />
+		<description><![CDATA[Add a note to the workflow schema.]]></description>
+		<position y="30.0" x="380.0" />
 	</workflow-item>
 	<presentation>
 		<desc><![CDATA[<b>Update Pool</b> ]]></desc>
@@ -103,11 +106,6 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 			<p-qual kind="ognl" name="genericEnumeration"
 				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
 			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
-		</p-param>
-		<p-param name="server_cloud">
-			<desc><![CDATA[server_cloud]]></desc>
-			<p-qual kind="ognl" name="genericEnumeration"
-				type="Array/string"><![CDATA[GetAction("com.vmware.avi","getExistingObjectsWithController").call( #controller , "cloud" )]]></p-qual>
 		</p-param>
 		<p-param name="name">
 			<desc><![CDATA[name]]></desc>
@@ -121,7 +119,7 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 		</p-param>
 		<p-param name="port">
 			<desc><![CDATA[port]]></desc>
-			<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","getPort").call( #controller , #name , "pool" )]]></p-qual>
+			<p-qual kind="ognl" name="dataBinding" type="number"><![CDATA[GetAction("com.vmware.avi","getPort").call( #controller , #name , "pool" )]]></p-qual>
 		</p-param>
 	</presentation>
 </workflow>

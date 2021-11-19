@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="deleteObjectObj"
 	result-type="void" api-version="6.0.0"
-	id="b3ed519d-a02e-492c-a05d-89c251a22793" version="3.0.0"
+	id="5f94610e-e90f-49a6-afb5-4f7901ceea28" version="3.0.0"
 	allowed-operations="vfe">
 	<param n="deleteVS" t="boolean"><![CDATA[Delete VS indicator]]></param>
 	<param n="vsname" t="string"><![CDATA[VS name which needs to delete]]></param>

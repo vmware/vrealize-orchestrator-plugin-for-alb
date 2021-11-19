@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <workflow xmlns="http://vmware.com/vco/workflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item5" object-name="workflow:name=generic"
 	id="151a8d5b-fb5b-44f9-9f6a-388bab1c147e" version="3.0.1"
-	api-version="6.0.0" allowed-operations="vef" restartMode="1"
-	resumeFromFailedMode="0">
+	api-version="6.0.0" allowed-operations="vef" editor-version="1.6"
+	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Create VS]]></display-name>
-	<position y="9.545454545454543" x="5.0"></position>
+	<position y="9.545454545454543" x="5.0" />
 	<input>
 		<param name="name" type="string">
 			<description><![CDATA[name]]></description>
@@ -184,15 +184,17 @@
 	</attrib>
 	<attrib name="workflowRuntime" type="Avi:WorkflowRuntime"
 		read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
+		<value encoded="n"><![CDATA[]]>
+		</value>
 	</attrib>
 	<attrib name="createdObj" type="Any" read-only="false">
-		<value encoded="n"><![CDATA[__NULL__]]></value>
+		<value encoded="n"><![CDATA[]]>
+		</value>
 	</attrib>
 	<workflow-item name="item0"
 		throw-bind-name="actionEerrorCode" type="end" end-mode="0">
-		<in-binding></in-binding>
-		<position y="63.59090909090908" x="944.5"></position>
+		<in-binding />
+		<position y="63.59090909090908" x="944.5" />
 	</workflow-item>
 	<workflow-item name="item6" out-name="item8"
 		throw-bind-name="configErrorCode" type="task">
@@ -208,34 +210,34 @@ version=workflowRuntime.getAviVroClient().cred.version;
 ]]></script>
 		<in-binding>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 			<bind name="HealthMonitorName" type="string"
-				export-name="HealthMonitorName"></bind>
-			<bind name="Name" type="string" export-name="name"></bind>
-			<bind name="poolName" type="string" export-name="poolName"></bind>
-			<bind name="version" type="string" export-name="version"></bind>
-			<bind name="CertName" type="string" export-name="CertName"></bind>
+				export-name="HealthMonitorName" />
+			<bind name="Name" type="string" export-name="name" />
+			<bind name="poolName" type="string" export-name="poolName" />
+			<bind name="version" type="string" export-name="version" />
+			<bind name="CertName" type="string" export-name="CertName" />
 		</in-binding>
 		<out-binding>
 			<bind name="HealthMonitorName" type="string"
-				export-name="HealthMonitorName"></bind>
-			<bind name="poolName" type="string" export-name="poolName"></bind>
-			<bind name="vsVipName" type="string" export-name="vsVipName"></bind>
-			<bind name="Tenant" type="string" export-name="Tenant"></bind>
-			<bind name="version" type="string" export-name="version"></bind>
-			<bind name="CertName" type="string" export-name="CertName"></bind>
+				export-name="HealthMonitorName" />
+			<bind name="poolName" type="string" export-name="poolName" />
+			<bind name="vsVipName" type="string" export-name="vsVipName" />
+			<bind name="Tenant" type="string" export-name="Tenant" />
+			<bind name="version" type="string" export-name="version" />
+			<bind name="CertName" type="string" export-name="CertName" />
 		</out-binding>
-		<position y="73.59090909090908" x="104.5"></position>
+		<position y="73.59090909090908" x="104.5" />
 	</workflow-item>
 	<workflow-item name="item2" out-name="item0" type="task">
 		<display-name><![CDATA[createObject]]></display-name>
 		<script encoded="false"><![CDATA[System.log("Object Created:-> "+result);
 ]]></script>
 		<in-binding>
-			<bind name="result" type="Any" export-name="createdObj"></bind>
+			<bind name="result" type="Any" export-name="createdObj" />
 		</in-binding>
-		<out-binding></out-binding>
-		<position y="19.045454545454543" x="904.5"></position>
+		<out-binding />
+		<position y="19.045454545454543" x="904.5" />
 	</workflow-item>
 	<workflow-item name="item5" out-name="item6" type="task"
 		script-module="com.vmware.avi/initVroWorkflow">
@@ -249,9 +251,9 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="19.045454545454543" x="104.5"></position>
+		<position y="19.045454545454543" x="104.5" />
 	</workflow-item>
 	<workflow-item name="item4" out-name="item7" type="task"
 		script-module="com.vmware.avi/createHealthMonitorObj">
@@ -271,31 +273,25 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				export-name="HealthMonitorName">
 				<description><![CDATA[Health monitor name]]></description>
 			</bind>
-			<bind name="hm_description" type="string"
-				explicitly-not-bound="true">
+			<bind name="hm_description" type="string">
 				<description><![CDATA[Health monitor description]]></description>
 			</bind>
-			<bind name="is_federated" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="is_federated" type="boolean">
 				<description><![CDATA[is federated]]></description>
 			</bind>
-			<bind name="monitor_port" type="number"
-				explicitly-not-bound="true">
+			<bind name="monitor_port" type="number">
 				<description><![CDATA[Monitor port]]></description>
 			</bind>
-			<bind name="time_out" type="number" explicitly-not-bound="true">
+			<bind name="time_out" type="number">
 				<description><![CDATA[Time out]]></description>
 			</bind>
-			<bind name="send_interval" type="number"
-				explicitly-not-bound="true">
+			<bind name="send_interval" type="number">
 				<description><![CDATA[Send interval]]></description>
 			</bind>
-			<bind name="successful_check" type="number"
-				explicitly-not-bound="true">
+			<bind name="successful_check" type="number">
 				<description><![CDATA[Successful Check]]></description>
 			</bind>
-			<bind name="failed_check" type="number"
-				explicitly-not-bound="true">
+			<bind name="failed_check" type="number">
 				<description><![CDATA[Failed check]]></description>
 			</bind>
 			<bind name="command_code" type="string" export-name="command">
@@ -314,16 +310,13 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 			<bind name="tcp_request" type="string" export-name="request">
 				<description><![CDATA[TCP request]]></description>
 			</bind>
-			<bind name="tcp_response" type="string"
-				explicitly-not-bound="true">
+			<bind name="tcp_response" type="string">
 				<description><![CDATA[TCP Response]]></description>
 			</bind>
-			<bind name="tcp_half_open" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="tcp_half_open" type="boolean">
 				<description><![CDATA[TCP half open]]></description>
 			</bind>
-			<bind name="maintenance_code" type="string"
-				explicitly-not-bound="true">
+			<bind name="maintenance_code" type="string">
 				<description><![CDATA[Maintenance code]]></description>
 			</bind>
 			<bind name="https_response_code" type="Array/string"
@@ -331,13 +324,13 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				<description><![CDATA[https response code]]></description>
 			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="19.045454545454543" x="244.5"></position>
+		<position y="19.045454545454543" x="244.5" />
 	</workflow-item>
 	<workflow-item name="item7" out-name="item3" type="task"
 		script-module="com.vmware.avi/createPoolObj">
@@ -349,8 +342,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				export-name="pool_servers">
 				<description><![CDATA[Pool servers list ]]></description>
 			</bind>
-			<bind name="enablePool" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="enablePool" type="boolean">
 				<description><![CDATA[Pool status]]></description>
 			</bind>
 			<bind name="CreateHealthMonitor" type="boolean"
@@ -360,8 +352,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 			<bind name="poolName" type="string" export-name="poolName">
 				<description><![CDATA[Pool name]]></description>
 			</bind>
-			<bind name="defaultServerPort" type="string"
-				explicitly-not-bound="true">
+			<bind name="defaultServerPort" type="string">
 				<description><![CDATA[Default server port]]></description>
 			</bind>
 			<bind name="loadBalancerAlgo" type="string"
@@ -397,92 +388,70 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 			<bind name="Version" type="string" export-name="version">
 				<description><![CDATA[Avi api version]]></description>
 			</bind>
-			<bind name="activePassiveHM" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="activePassiveHM" type="boolean">
 				<description><![CDATA[Active passive healthmonitor]]></description>
 			</bind>
-			<bind name="capacityEstimation" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="capacityEstimation" type="boolean">
 				<description><![CDATA[Add capacity estimation]]></description>
 			</bind>
-			<bind name="capacityEstimationThresh" type="number"
-				explicitly-not-bound="true">
+			<bind name="capacityEstimationThresh" type="number">
 				<description><![CDATA[Add capacity estimation thresh]]></description>
 			</bind>
-			<bind name="cloudConfigCksum" type="string"
-				explicitly-not-bound="true">
+			<bind name="cloudConfigCksum" type="string">
 				<description><![CDATA[Add cloud config cksum ]]></description>
 			</bind>
-			<bind name="deleteServerRefresh" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="deleteServerRefresh" type="boolean">
 				<description><![CDATA[Delete server on dns refresh]]></description>
 			</bind>
-			<bind name="gracefulDisableTimeout" type="number"
-				explicitly-not-bound="true">
+			<bind name="gracefulDisableTimeout" type="number">
 				<description><![CDATA[Add graceful disable timeout]]></description>
 			</bind>
-			<bind name="hostCheckEnabled" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="hostCheckEnabled" type="boolean">
 				<description><![CDATA[Add host check enabled]]></description>
 			</bind>
-			<bind name="lookupServerByName" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="lookupServerByName" type="boolean">
 				<description><![CDATA[Add lookup server by name]]></description>
 			</bind>
-			<bind name="rewriteHostHeaderServerName" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="rewriteHostHeaderServerName" type="boolean">
 				<description><![CDATA[Add rewrite host header server name]]></description>
 			</bind>
-			<bind name="maxConcurrentConnectionsPerServer" type="number"
-				explicitly-not-bound="true">
+			<bind name="maxConcurrentConnectionsPerServer" type="number">
 				<description><![CDATA[Add max concurrent connections per server]]></description>
 			</bind>
-			<bind name="domainName" type="string"
-				explicitly-not-bound="true">
+			<bind name="domainName" type="string">
 				<description><![CDATA[Add domain name]]></description>
 			</bind>
-			<bind name="fewestTasksFeedbackDelay" type="number"
-				explicitly-not-bound="true">
+			<bind name="fewestTasksFeedbackDelay" type="number">
 				<description><![CDATA[Add fewest tasks feedback delay]]></description>
 			</bind>
-			<bind name="connectionRampDuration" type="number"
-				explicitly-not-bound="true">
+			<bind name="connectionRampDuration" type="number">
 				<description><![CDATA[Connection ramp]]></description>
 			</bind>
-			<bind name="upstreamConnpoolConnIdleTmo" type="number"
-				explicitly-not-bound="true">
+			<bind name="upstreamConnpoolConnIdleTmo" type="number">
 				<description><![CDATA[Connection Idle Timeout]]></description>
 			</bind>
-			<bind name="upstreamConnpoolConnLifeTmo" type="number"
-				explicitly-not-bound="true">
+			<bind name="upstreamConnpoolConnLifeTmo" type="number">
 				<description><![CDATA[Connection Life Timeout]]></description>
 			</bind>
-			<bind name="upstreamConnpoolConnMaxReuse" type="number"
-				explicitly-not-bound="true">
+			<bind name="upstreamConnpoolConnMaxReuse" type="number">
 				<description><![CDATA[Connection Max Used Times]]></description>
 			</bind>
-			<bind name="upstreamConnpoolServerMaxCache" type="number"
-				explicitly-not-bound="true">
+			<bind name="upstreamConnpoolServerMaxCache" type="number">
 				<description><![CDATA[Max Cache Connections Per Server]]></description>
 			</bind>
-			<bind name="requestQueueEnabled" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="requestQueueEnabled" type="boolean">
 				<description><![CDATA[Add request queue enabled]]></description>
 			</bind>
-			<bind name="useServicePort" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="useServicePort" type="boolean">
 				<description><![CDATA[Disable Port Translation]]></description>
 			</bind>
-			<bind name="sniEnabled" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="sniEnabled" type="boolean">
 				<description><![CDATA[Add sni enabled]]></description>
 			</bind>
-			<bind name="serverTimeout" type="number"
-				explicitly-not-bound="true">
+			<bind name="serverTimeout" type="number">
 				<description><![CDATA[Default Server Timeout]]></description>
 			</bind>
-			<bind name="enableRealtimeMetrics" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="enableRealtimeMetrics" type="boolean">
 				<description><![CDATA[Enable real time metrics]]></description>
 			</bind>
 			<bind name="statusCode" type="string" export-name="status_code">
@@ -500,20 +469,20 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				<description><![CDATA[Pool fail action type]]></description>
 			</bind>
 			<bind name="PersistenceProfileRef" type="string"
-				export-name="persistence_profile_ref"></bind>
-			<bind name="port" type="string" export-name="port"></bind>
-			<bind name="ratio" type="number" explicitly-not-bound="true"></bind>
+				export-name="persistence_profile_ref" />
+			<bind name="port" type="string" export-name="port" />
+			<bind name="ratio" type="number" />
 			<bind name="addPersistenceProfileRef" type="boolean"
-				export-name="add_persistence_profile_ref"></bind>
-			<bind name="tier1_lr" type="string" export-name="tier1_lr"></bind>
+				export-name="add_persistence_profile_ref" />
+			<bind name="tier1_lr" type="string" export-name="tier1_lr" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="73.59090909090908" x="405.0"></position>
+		<position y="73.59090909090908" x="405.0" />
 	</workflow-item>
 	<workflow-item name="item3" out-name="item9" type="task"
 		script-module="com.vmware.avi/createVsVIPObj">
@@ -530,40 +499,35 @@ actionResult = System.getModule("com.vmware.avi").createVsVIPObj(Tenant,name,IPA
 			<bind name="IPAddress" type="string" export-name="vip">
 				<description><![CDATA[Vs vip IP address]]></description>
 			</bind>
-			<bind name="eastWestPlacement" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="eastWestPlacement" type="boolean">
 				<description><![CDATA[Add east west  placement]]></description>
 			</bind>
-			<bind name="aviAllocatedFIp" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="aviAllocatedFIp" type="boolean">
 				<description><![CDATA[Allocate FIP]]></description>
 			</bind>
-			<bind name="autoAllocateIp" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="autoAllocateIp" type="boolean">
 				<description><![CDATA[Auto allocate IP]]></description>
 			</bind>
 			<bind name="enabled" type="boolean" export-name="enabled">
 				<description><![CDATA[Enabled vsvip]]></description>
 			</bind>
-			<bind name="autoAllocateFloatingIp" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="autoAllocateFloatingIp" type="boolean">
 				<description><![CDATA[Auto allocate floating IP]]></description>
 			</bind>
-			<bind name="aviAllocatedVip" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="aviAllocatedVip" type="boolean">
 				<description><![CDATA[Allocate VIP]]></description>
 			</bind>
-			<bind name="tier1" type="string" export-name="tier1_lr"></bind>
+			<bind name="tier1" type="string" export-name="tier1_lr" />
 			<bind name="ServerCloud" type="string"
-				export-name="server_cloud"></bind>
+				export-name="server_cloud" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="19.045454545454543" x="404.5"></position>
+		<position y="19.045454545454543" x="404.5" />
 	</workflow-item>
 	<workflow-item name="item1" out-name="item10" type="task"
 		script-module="com.vmware.avi/createVirtualServiceObj">
@@ -626,139 +590,108 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 				export-name="existing_vip">
 				<description><![CDATA[Existing Vs Vip name]]></description>
 			</bind>
-			<bind name="allowInvalidClientCert" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="allowInvalidClientCert" type="boolean">
 				<description><![CDATA[Allow invalid client cert]]></description>
 			</bind>
-			<bind name="closeClientConfigUpdate" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="closeClientConfigUpdate" type="boolean">
 				<description><![CDATA[Add close client connection on config update]]></description>
 			</bind>
-			<bind name="description" type="string"
-				explicitly-not-bound="true">
+			<bind name="description" type="string">
 				<description><![CDATA[Add description for VS]]></description>
 			</bind>
-			<bind name="enableAutogw" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="enableAutogw" type="boolean">
 				<description><![CDATA[Add enable autogw]]></description>
 			</bind>
-			<bind name="enableRhi" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="enableRhi" type="boolean">
 				<description><![CDATA[Add enable rhi]]></description>
 			</bind>
-			<bind name="enableRhiSnat" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="enableRhiSnat" type="boolean">
 				<description><![CDATA[Add enable_rhi snat]]></description>
 			</bind>
-			<bind name="ignPoolNetReach" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="ignPoolNetReach" type="boolean">
 				<description><![CDATA[Ignore network reachability constraints for the server pool]]></description>
 			</bind>
-			<bind name="removeListeningPortOnVsDown" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="removeListeningPortOnVsDown" type="boolean">
 				<description><![CDATA[Remove listening port if VirtualService is down]]></description>
 			</bind>
-			<bind name="scaleoutEcmp" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="scaleoutEcmp" type="boolean">
 				<description><![CDATA[Disable re-distribution of flows across service engines for a virtual service]]></description>
 			</bind>
-			<bind name="clientIpAddr" type="string"
-				explicitly-not-bound="true">
+			<bind name="clientIpAddr" type="string">
 				<description><![CDATA[Client IP Address]]></description>
 			</bind>
-			<bind name="includeURL" type="string"
-				explicitly-not-bound="true">
+			<bind name="includeURL" type="string">
 				<description><![CDATA[Add include URL for client log]]></description>
 			</bind>
-			<bind name="excludeURL" type="string"
-				explicitly-not-bound="true">
+			<bind name="excludeURL" type="string">
 				<description><![CDATA[Add exclude URL for client log]]></description>
 			</bind>
-			<bind name="addClientLogFliter" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="addClientLogFliter" type="boolean">
 				<description><![CDATA[Checkbox for  add client log fliter]]></description>
 			</bind>
-			<bind name="enabledClientLog" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="enabledClientLog" type="boolean">
 				<description><![CDATA[Checkbox for enable client log]]></description>
 			</bind>
-			<bind name="clientStringRef" type="string"
-				explicitly-not-bound="true">
+			<bind name="clientStringRef" type="string">
 				<description><![CDATA[Add string referencce for client log]]></description>
 			</bind>
-			<bind name="clientDuration" type="number"
-				explicitly-not-bound="true">
+			<bind name="clientDuration" type="number">
 				<description><![CDATA[Add client log duration]]></description>
 			</bind>
-			<bind name="logAllClientHeaders" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="logAllClientHeaders" type="boolean">
 				<description><![CDATA[Checkbox for enabled all log headers]]></description>
 			</bind>
-			<bind name="analyticsProfile" type="string"
-				explicitly-not-bound="true">
+			<bind name="analyticsProfile" type="string">
 				<description><![CDATA[Select analytics profile]]></description>
 			</bind>
-			<bind name="clientInsights" type="string"
-				explicitly-not-bound="true">
+			<bind name="clientInsights" type="string">
 				<description><![CDATA[Add client insights for analytics profile logs]]></description>
 			</bind>
-			<bind name="significantLogThrottle" type="number"
-				explicitly-not-bound="true">
+			<bind name="significantLogThrottle" type="number">
 				<description><![CDATA[Significant log throttle]]></description>
 			</bind>
-			<bind name="udfLogThrottle" type="number"
-				explicitly-not-bound="true">
+			<bind name="udfLogThrottle" type="number">
 				<description><![CDATA[User defined filters log throttle]]></description>
 			</bind>
-			<bind name="nonSignificantLogs" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="nonSignificantLogs" type="boolean">
 				<description><![CDATA[Non-significant logs]]></description>
 			</bind>
-			<bind name="nslduration" type="string"
-				explicitly-not-bound="true">
+			<bind name="nslduration" type="string">
 				<description><![CDATA[Non-significant log duration]]></description>
 			</bind>
-			<bind name="nslThrottle" type="string"
-				explicitly-not-bound="true">
+			<bind name="nslThrottle" type="string">
 				<description><![CDATA[Non-significant log throttle]]></description>
 			</bind>
-			<bind name="metricsRealtimeUpdate" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="metricsRealtimeUpdate" type="boolean">
 				<description><![CDATA[Real Time Metrics]]></description>
 			</bind>
-			<bind name="metricsRealtimeUpdateDuration" type="number"
-				explicitly-not-bound="true">
+			<bind name="metricsRealtimeUpdateDuration" type="number">
 				<description><![CDATA[Add metrics realtime update duration]]></description>
 			</bind>
-			<bind name="maxCpsPerClient" type="number"
-				explicitly-not-bound="true">
+			<bind name="maxCpsPerClient" type="number">
 				<description><![CDATA[Maximum connections per second per client IP]]></description>
 			</bind>
-			<bind name="trafficEnabled" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="trafficEnabled" type="boolean">
 				<description><![CDATA[Add traffic_enabled or not]]></description>
 			</bind>
-			<bind name="useBridgeIpAsVip" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="useBridgeIpAsVip" type="boolean">
 				<description><![CDATA[Use Bridge IP as VIP]]></description>
 			</bind>
-			<bind name="useVipAsSnat" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="useVipAsSnat" type="boolean">
 				<description><![CDATA[Use the Virtual IP as the SNAT IP for health monitoring]]></description>
 			</bind>
 			<bind name="vsVipName" type="string" export-name="vsVipName">
 				<description><![CDATA[Name of the vsvip]]></description>
 			</bind>
-			<bind name="network_profile" type="string"
-				explicitly-not-bound="true"></bind>
+			<bind name="network_profile" type="string" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="73.59090909090908" x="744.5"></position>
+		<position y="73.59090909090908" x="744.5" />
 	</workflow-item>
 	<workflow-item name="item8" out-name="item4"
 		type="condition" alt-out-name="item7" comparator="0">
@@ -767,12 +700,12 @@ actionResult = System.getModule("com.vmware.avi").createVirtualServiceObj(Name,p
 return (create_health_monitor == true) ;]]></script>
 		<in-binding>
 			<bind name="create_health_monitor" type="boolean"
-				export-name="create_health_monitor"></bind>
+				export-name="create_health_monitor" />
 		</in-binding>
-		<out-binding></out-binding>
+		<out-binding />
 		<condition name="create_health_monitor" type="boolean"
 			comparator="0" label="null">false</condition>
-		<position y="63.59090909090908" x="245.0"></position>
+		<position y="63.59090909090908" x="245.0" />
 	</workflow-item>
 	<workflow-item name="item9" out-name="item1"
 		type="condition" alt-out-name="item11" comparator="0">
@@ -781,12 +714,12 @@ return (create_health_monitor == true) ;]]></script>
 return (create_SSL_certificate == false) ;]]></script>
 		<in-binding>
 			<bind name="create_SSL_certificate" type="boolean"
-				export-name="create_SSL_certificate"></bind>
+				export-name="create_SSL_certificate" />
 		</in-binding>
-		<out-binding></out-binding>
+		<out-binding />
 		<condition name="create_SSL_certificate" type="boolean"
 			comparator="1" label="null">false</condition>
-		<position y="9.045454545454543" x="565.0"></position>
+		<position y="9.045454545454543" x="565.0" />
 	</workflow-item>
 	<workflow-item name="item11" out-name="item1" type="task"
 		script-module="com.vmware.avi/createSSLCertificateObj">
@@ -807,30 +740,25 @@ actionResult = System.getModule("com.vmware.avi").createSSLCertificateObj(workfl
 			<bind name="ECKeySize" type="string" export-name="EC_key_size">
 				<description><![CDATA[EC key size]]></description>
 			</bind>
-			<bind name="certificateBase" type="boolean"
-				explicitly-not-bound="true">
+			<bind name="certificateBase" type="boolean">
 				<description><![CDATA[States if the certificate is base64 encoded.]]></description>
 			</bind>
-			<bind name="CertName" type="string" export-name="CertName"></bind>
-			<bind name="state" type="string" explicitly-not-bound="true"></bind>
-			<bind name="organization" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="country" type="string" explicitly-not-bound="true"></bind>
-			<bind name="emailAddress" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="organizationUnit" type="string"
-				explicitly-not-bound="true"></bind>
-			<bind name="locality" type="string" explicitly-not-bound="true"></bind>
-			<bind name="distinguishedName" type="string"
-				explicitly-not-bound="true"></bind>
+			<bind name="CertName" type="string" export-name="CertName" />
+			<bind name="state" type="string" />
+			<bind name="organization" type="string" />
+			<bind name="country" type="string" />
+			<bind name="emailAddress" type="string" />
+			<bind name="organizationUnit" type="string" />
+			<bind name="locality" type="string" />
+			<bind name="distinguishedName" type="string" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="workflowRuntime"></bind>
+				export-name="workflowRuntime" />
 		</out-binding>
-		<position y="73.59090909090908" x="565.0"></position>
+		<position y="73.59090909090908" x="565.0" />
 	</workflow-item>
 	<workflow-item name="item10" out-name="item2" type="task"
 		script-module="com.vmware.avi/finishVroWorkflow">
@@ -844,9 +772,9 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 			</bind>
 		</in-binding>
 		<out-binding>
-			<bind name="actionResult" type="Any" export-name="createdObj"></bind>
+			<bind name="actionResult" type="Any" export-name="createdObj" />
 		</out-binding>
-		<position y="19.045454545454543" x="745.0"></position>
+		<position y="19.045454545454543" x="745.0" />
 	</workflow-item>
 	<presentation>
 		<p-step>
@@ -924,7 +852,6 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 		</p-step>
 		<p-step>
 			<title><![CDATA[SSL Cert]]></title>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#create_SSL_certificate==true]]></p-qual>
 			<p-param name="SSL_algorithm">
 				<desc><![CDATA[SSL_algorithm]]></desc>
 				<p-qual kind="static" name="genericEnumeration"
@@ -948,7 +875,6 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 		</p-step>
 		<p-step>
 			<title><![CDATA[PG details]]></title>
-			<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			<p-param name="fail_action_type">
 				<desc><![CDATA[fail_action_type]]></desc>
 				<p-qual kind="ognl" name="dataBinding" type="string"><![CDATA[GetAction("com.vmware.avi","readvROResourceElements").call( "failActionType" , #application_profile , #resourceElement )]]></p-qual>
@@ -1003,7 +929,6 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 		</p-step>
 		<p-step>
 			<title><![CDATA[Healthmonitor details]]></title>
-			<p-qual kind="ognl" name="visible" type="boolean"><![CDATA[#create_health_monitor==true]]></p-qual>
 			<p-param name="health_monitor_type">
 				<desc><![CDATA[health_monitor_type ]]></desc>
 				<p-qual kind="static" name="genericEnumeration"

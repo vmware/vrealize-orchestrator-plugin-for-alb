@@ -4,36 +4,36 @@
 	id="afda7d1b-68b3-475a-96f0-38d5e8883c26" version="0.0.0"
 	allowed-operations="vfe">
 	<description><![CDATA[This Action is used to deploy a single Avi Node using an ova image uploaded to a VMWare Content Library]]></description>
-	<param n="sdkVcenter" t="string"><![CDATA[]]>
-	</param>
-	<param n="datastore" t="string"><![CDATA[]]>
-	</param>
-	<param n="network" t="string"><![CDATA[]]>
-	</param>
-	<param n="folder" t="string"><![CDATA[]]>
-	</param>
-	<param n="Controller1_name" t="string"><![CDATA[]]>
-	</param>
-	<param n="datacenter" t="string"><![CDATA[]]>
-	</param>
-	<param n="Controller_IP_mask" t="string"><![CDATA[]]>
-	</param>
-	<param n="Controller_IP_GW" t="string"><![CDATA[]]>
-	</param>
-	<param n="controller1" t="string"><![CDATA[]]>
-	</param>
-	<param n="cluster" t="string"><![CDATA[]]>
-	</param>
-	<param n="resourcePool" t="string"><![CDATA[]]>
-	</param>
-	<param n="contentLibraryTemplate" t="string"><![CDATA[]]>
-	</param>
-	<param n="vmCPU" t="string"><![CDATA[]]>
-	</param>
-	<param n="vmRAM" t="string"><![CDATA[]]>
-	</param>
-	<param n="vmDisk" t="string"><![CDATA[]]>
-	</param>
+	<param n="sdkVcenter" t="string"><![CDATA[
+	]]></param>
+	<param n="datastore" t="string"><![CDATA[
+	]]></param>
+	<param n="network" t="string"><![CDATA[
+	]]></param>
+	<param n="folder" t="string"><![CDATA[
+	]]></param>
+	<param n="Controller1_name" t="string"><![CDATA[
+	]]></param>
+	<param n="datacenter" t="string"><![CDATA[
+	]]></param>
+	<param n="Controller_IP_mask" t="string"><![CDATA[
+	]]></param>
+	<param n="Controller_IP_GW" t="string"><![CDATA[
+	]]></param>
+	<param n="controller1" t="string"><![CDATA[
+	]]></param>
+	<param n="cluster" t="string"><![CDATA[
+	]]></param>
+	<param n="resourcePool" t="string"><![CDATA[
+	]]></param>
+	<param n="contentLibraryTemplate" t="string"><![CDATA[
+	]]></param>
+	<param n="vmCPU" t="string"><![CDATA[
+	]]></param>
+	<param n="vmRAM" t="string"><![CDATA[
+	]]></param>
+	<param n="vmDisk" t="string"><![CDATA[
+	]]></param>
 	<script encoded="false"><![CDATA[
 // Variable Definition
 var TemplateName = contentLibraryTemplate

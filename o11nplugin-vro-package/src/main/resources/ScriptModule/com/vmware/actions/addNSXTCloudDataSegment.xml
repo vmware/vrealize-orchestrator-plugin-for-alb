@@ -12,7 +12,7 @@
 	<param n="segment" t="string"><![CDATA[]]>
 	</param>
 	<script encoded="false"><![CDATA[// Retrieve User from Cloud
-var aviNsxtCloud = avivroClient.getObjectDataByName("cloud",nsxtCloud);
+var aviNsxtCloud = aviVroClient.getObjectDataByName("cloud",nsxtCloud);
 aviNsxtCloud = JSON.parse(aviNsxtCloud)
 
 var nsxtCloudUUID = aviNsxtCloud['uuid']
@@ -23,7 +23,7 @@ var nsxtDataTZ = aviNsxtCloud['nsxt_configuration']['data_network_config']['tran
 
 
 //Retrieve current NSXT Credentials and populate Object
-var aviNsxtCred = avivroClient.getObjectDataByUUID("cloudconnectoruser",nsxtCredUUID);
+var aviNsxtCred = aviVroClient.getObjectDataByUUID("cloudconnectoruser",nsxtCredUUID);
 aviNsxtCred = JSON.parse(aviNsxtCred)
 
 var nsxCredUUID = aviNsxtCred['uuid']
@@ -40,7 +40,7 @@ data_t1Info.setRequestBody(nsx_data)
 data_t1Info.setUrl("nsxt/tier1s")
 
 
-data_t1Info = avivroClient.callAviAPI(data_t1Info)
+data_t1Info = aviVroClient.callAviAPI(data_t1Info)
 
 
 var data_t1Router = JSON.parse(data_t1Info.getResponseBody())
@@ -73,7 +73,7 @@ data_segInfo.setRequestBody(segment_data)
  data_segInfo.setUrl("nsxt/segments")
 
 
-data_segInfo = avivroClient.callAviAPI(data_segInfo)
+data_segInfo = aviVroClient.callAviAPI(data_segInfo)
 
 
 var data_Segments = JSON.parse(data_segInfo.getResponseBody())
