@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVirtualServiceObj"
-	result-type="Avi:AviVroClient" api-version="6.0.0"
+	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
 	id="d84d0b9a-93f0-4339-8db7-db20f3c43123" version="1.1.5"
 	allowed-operations="vfe">
 	<param n="Name" t="string"><![CDATA[Virtual service name]]></param>
@@ -49,7 +49,7 @@
 	<param n="useBridgeIpAsVip" t="boolean"><![CDATA[Use Bridge IP as VIP]]></param>
 	<param n="useVipAsSnat" t="boolean"><![CDATA[Use the Virtual IP as the SNAT IP for health monitoring]]></param>
 	<param n="vsVipName" t="string"><![CDATA[Name of the vsvip]]></param>
-	<param n="aviVroClient" t="Avi:AviVroClient"><![CDATA[Object of the plugin]]></param>
+	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
 	<param n="network_profile" t="string"><![CDATA[]]>
 	</param>
 	<script encoded="false"><![CDATA[/*************************************************************
@@ -60,7 +60,7 @@
 
 
 try {
-	if(aviVroClient!=null){
+	if(workflowRuntime.getAviVroClient()!=null){
 		var	objectList = []
 		// Check Certificate and create it
 		var Certificate = SSLCertificate;
@@ -251,10 +251,10 @@ try {
 		serviceArray.push(serviceObject);
 		virtualServiceObject.setServices(serviceArray);
 
-		aviVroClient.addObject(virtualServiceObject);
+		workflowRuntime.getAviVroClient().addObject(virtualServiceObject, workflowRuntime.getWorkflowId());
 		System.log("virtualServiceObject : "+virtualServiceObject);
 		
-		return aviVroClient
+		return workflowRuntime
 	}else{
 	System.log("Avi controller is null.Please attach Avi controller.")
 	}
