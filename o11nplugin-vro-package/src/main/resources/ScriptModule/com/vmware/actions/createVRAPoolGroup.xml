@@ -50,7 +50,7 @@
 		var HMref ="/api/healthmonitor?name="+HealthMonitorName;
 		firstPoolObject.addHealthMonitorRefsItem(HMref);
 		System.log("firstPoolObject : "+firstPoolObject);
-		workflowRuntime.vroClient.addObject(firstPoolObject, workflowRuntime.workflowId);		
+		workflowRuntime.getAviVroClient().addObject(firstPoolObject, workflowRuntime.workflowId);
 		secondPoolObject = new AviPool() ;
 		secondPoolObject.setCloudRef("/api/cloud?name="+ServerCloud);
 		secondPoolObject.setTenantRef("/api/tenant?name="+Tenant);
