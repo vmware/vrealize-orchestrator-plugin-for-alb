@@ -134,7 +134,7 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("enable_advanced_analytics")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableAdvancedAnalytics = true;
+    private Boolean enableAdvancedAnalytics;
 
     @JsonProperty("enable_ondemand_metrics")
     @JsonInclude(Include.NON_NULL)
@@ -230,7 +230,7 @@ public class AnalyticsProfile extends AviRestResource {
 
     @JsonProperty("healthscore_max_server_limit")
     @JsonInclude(Include.NON_NULL)
-    private Integer healthscoreMaxServerLimit = 20;
+    private Integer healthscoreMaxServerLimit;
 
     @JsonProperty("hs_event_throttle_window")
     @JsonInclude(Include.NON_NULL)
@@ -1112,7 +1112,6 @@ public class AnalyticsProfile extends AviRestResource {
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableAdvancedAnalytics
    */
   @VsoMethod
@@ -1128,7 +1127,6 @@ public class AnalyticsProfile extends AviRestResource {
    * Field introduced in 17.2.13, 18.1.5, 18.2.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableAdvancedAnalytics set the enableAdvancedAnalytics.
    */
   @VsoMethod
@@ -1753,7 +1751,6 @@ public class AnalyticsProfile extends AviRestResource {
    * Field introduced in 17.2.13, 18.1.4.
    * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @return healthscoreMaxServerLimit
    */
   @VsoMethod
@@ -1769,7 +1766,6 @@ public class AnalyticsProfile extends AviRestResource {
    * Field introduced in 17.2.13, 18.1.4.
    * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
    * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
    * @param healthscoreMaxServerLimit set the healthscoreMaxServerLimit.
    */
   @VsoMethod

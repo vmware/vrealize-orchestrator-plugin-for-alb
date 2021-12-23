@@ -40,6 +40,10 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean httpOnly = false;
 
+    @JsonProperty("is_persistent_cookie")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean isPersistentCookie = false;
+
     @JsonProperty("key")
     @JsonInclude(Include.NON_NULL)
     private List<HttpCookiePersistenceKey> key = null;
@@ -144,6 +148,36 @@ public class HttpCookiePersistenceProfile extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * When true, the cookie used is a persistent cookie, i.e.
+   * The cookie shouldn't be used at the end of the timeout.
+   * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
+   * still open.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @return isPersistentCookie
+   */
+  @VsoMethod
+  public Boolean getIsPersistentCookie() {
+    return isPersistentCookie;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * When true, the cookie used is a persistent cookie, i.e.
+   * The cookie shouldn't be used at the end of the timeout.
+   * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
+   * still open.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as false.
+   * @param isPersistentCookie set the isPersistentCookie.
+   */
+  @VsoMethod
+  public void setIsPersistentCookie(Boolean  isPersistentCookie) {
+    this.isPersistentCookie = isPersistentCookie;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property key of obj type httpcookiepersistenceprofile field type str  type array.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return key
@@ -226,7 +260,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.key, objHttpCookiePersistenceProfile.key)&&
   Objects.equals(this.timeout, objHttpCookiePersistenceProfile.timeout)&&
   Objects.equals(this.alwaysSendCookie, objHttpCookiePersistenceProfile.alwaysSendCookie)&&
-  Objects.equals(this.httpOnly, objHttpCookiePersistenceProfile.httpOnly);
+  Objects.equals(this.httpOnly, objHttpCookiePersistenceProfile.httpOnly)&&
+  Objects.equals(this.isPersistentCookie, objHttpCookiePersistenceProfile.isPersistentCookie);
 }
 
 @Override
@@ -237,6 +272,7 @@ public String toString() {
         sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
         sb.append("    encryptionKey: ").append(toIndentedString(encryptionKey)).append("\n");
         sb.append("    httpOnly: ").append(toIndentedString(httpOnly)).append("\n");
+        sb.append("    isPersistentCookie: ").append(toIndentedString(isPersistentCookie)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
       sb.append("}");

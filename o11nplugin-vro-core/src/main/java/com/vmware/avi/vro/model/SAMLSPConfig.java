@@ -50,7 +50,7 @@ public class SAMLSPConfig extends AviRestResource {
 
     @JsonProperty("sp_metadata")
     @JsonInclude(Include.NON_NULL)
-    private String spMetadata = null;
+    private String spMetadata;
 
     @JsonProperty("use_idp_session_timeout")
     @JsonInclude(Include.NON_NULL)
@@ -231,7 +231,6 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Saml sp metadata for this application.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spMetadata
    */
   @VsoMethod
@@ -243,7 +242,6 @@ public class SAMLSPConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Saml sp metadata for this application.
    * Field introduced in 18.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param spMetadata set the spMetadata.
    */
   @VsoMethod

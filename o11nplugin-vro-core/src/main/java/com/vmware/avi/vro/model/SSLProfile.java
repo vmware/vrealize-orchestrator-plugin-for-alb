@@ -39,7 +39,7 @@ public class SSLProfile extends AviRestResource {
 
     @JsonProperty("ciphersuites")
     @JsonInclude(Include.NON_NULL)
-    private String ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256";
+    private String ciphersuites;
 
     @JsonProperty("description")
     @JsonInclude(Include.NON_NULL)
@@ -249,8 +249,6 @@ public class SSLProfile extends AviRestResource {
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Special default for basic edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, essentials edition is
    * tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, enterprise is tls_aes_256_gcm_sha384-tls_chacha20_poly1305_sha256-tls_aes_128_gcm_sha256.
-   * Default value when not specified in API or module is interpreted by Avi Controller as
-   * "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256".
    * @return ciphersuites
    */
   @VsoMethod
@@ -265,8 +263,6 @@ public class SSLProfile extends AviRestResource {
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Special default for basic edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, essentials edition is
    * tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, enterprise is tls_aes_256_gcm_sha384-tls_chacha20_poly1305_sha256-tls_aes_128_gcm_sha256.
-   * Default value when not specified in API or module is interpreted by Avi Controller as
-   * "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256".
    * @param ciphersuites set the ciphersuites.
    */
   @VsoMethod

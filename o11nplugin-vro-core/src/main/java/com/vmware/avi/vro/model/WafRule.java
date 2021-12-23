@@ -54,7 +54,7 @@ public class WafRule extends AviRestResource {
 
     @JsonProperty("phase")
     @JsonInclude(Include.NON_NULL)
-    private String phase = null;
+    private String phase;
 
     @JsonProperty("rule")
     @JsonInclude(Include.NON_NULL)
@@ -278,7 +278,6 @@ public class WafRule extends AviRestResource {
    * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
    * WAF_PHASE_LOGGING.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return phase
    */
   @VsoMethod
@@ -292,7 +291,6 @@ public class WafRule extends AviRestResource {
    * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
    * WAF_PHASE_LOGGING.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param phase set the phase.
    */
   @VsoMethod
@@ -357,10 +355,8 @@ public class WafRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Tags for waf rule as per modsec language.
-   * They are extracted from the tag actions in a modsec rule.
-   * This field is generated from the rule itself and cannot be set by the user.
+   * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -372,10 +368,8 @@ public class WafRule extends AviRestResource {
   /**
    * This is the setter method. this will set the tags
    * Tags for waf rule as per modsec language.
-   * They are extracted from the tag actions in a modsec rule.
-   * This field is generated from the rule itself and cannot be set by the user.
+   * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */
@@ -387,10 +381,8 @@ public class WafRule extends AviRestResource {
   /**
    * This is the setter method this will set the tags
    * Tags for waf rule as per modsec language.
-   * They are extracted from the tag actions in a modsec rule.
-   * This field is generated from the rule itself and cannot be set by the user.
+   * They are extracted from the tag action in a modsec rule.
    * Field introduced in 18.1.3.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tags
    */

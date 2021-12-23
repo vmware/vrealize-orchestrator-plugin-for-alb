@@ -24,9 +24,17 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SingleLicense extends AviRestResource {
+    @JsonProperty("addons")
+    @JsonInclude(Include.NON_NULL)
+    private List<String> addons = null;
+
     @JsonProperty("burst_cores")
     @JsonInclude(Include.NON_NULL)
     private Integer burstCores = null;
+
+    @JsonProperty("capacity")
+    @JsonInclude(Include.NON_NULL)
+    private Float capacity = 0.0f;
 
     @JsonProperty("ccu")
     @JsonInclude(Include.NON_NULL)
@@ -108,6 +116,10 @@ public class SingleLicense extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String tierType = null;
 
+    @JsonProperty("unit")
+    @JsonInclude(Include.NON_NULL)
+    private String unit = "SERVICE_UNIT";
+
     @JsonProperty("valid_until")
     @JsonInclude(Include.NON_NULL)
     private String validUntil = null;
@@ -116,6 +128,50 @@ public class SingleLicense extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String version = null;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Features supported by the add-on license.
+   * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return addons
+   */
+  @VsoMethod
+  public List<String> getAddons() {
+    return addons;
+  }
+
+  /**
+   * This is the setter method. this will set the addons
+   * Features supported by the add-on license.
+   * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return addons
+   */
+  @VsoMethod
+  public void setAddons(List<String>  addons) {
+    this.addons = addons;
+  }
+
+  /**
+   * This is the setter method this will set the addons
+   * Features supported by the add-on license.
+   * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return addons
+   */
+  @VsoMethod
+  public SingleLicense addAddonsItem(String addonsItem) {
+    if (this.addons == null) {
+      this.addons = new ArrayList<String>();
+    }
+    this.addons.add(addonsItem);
+    return this;
+  }
 
 
   /**
@@ -140,6 +196,30 @@ public class SingleLicense extends AviRestResource {
   @VsoMethod
   public void setBurstCores(Integer  burstCores) {
     this.burstCores = burstCores;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total licensing capacity available for all the resoures available in a single license.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
+   * @return capacity
+   */
+  @VsoMethod
+  public Float getCapacity() {
+    return capacity;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total licensing capacity available for all the resoures available in a single license.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
+   * @param capacity set the capacity.
+   */
+  @VsoMethod
+  public void setCapacity(Float  capacity) {
+    this.capacity = capacity;
   }
 
   /**
@@ -624,7 +704,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Specifies the licensed tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return tierType
@@ -637,7 +717,7 @@ public class SingleLicense extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Specifies the licensed tier.
-   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+   * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
    * Field introduced in 17.2.5.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param tierType set the tierType.
@@ -645,6 +725,32 @@ public class SingleLicense extends AviRestResource {
   @VsoMethod
   public void setTierType(String  tierType) {
     this.tierType = tierType;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Units in which resources will be licensed.
+   * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
+   * @return unit
+   */
+  @VsoMethod
+  public String getUnit() {
+    return unit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Units in which resources will be licensed.
+   * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
+   * @param unit set the unit.
+   */
+  @VsoMethod
+  public void setUnit(String  unit) {
+    this.unit = unit;
   }
 
   /**
@@ -724,14 +830,19 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.serviceCores, objSingleLicense.serviceCores)&&
   Objects.equals(this.cpuCores, objSingleLicense.cpuCores)&&
   Objects.equals(this.expired, objSingleLicense.expired)&&
-  Objects.equals(this.ccu, objSingleLicense.ccu);
+  Objects.equals(this.ccu, objSingleLicense.ccu)&&
+  Objects.equals(this.addons, objSingleLicense.addons)&&
+  Objects.equals(this.capacity, objSingleLicense.capacity)&&
+  Objects.equals(this.unit, objSingleLicense.unit);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SingleLicense {\n");
-      sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
+      sb.append("    addons: ").append(toIndentedString(addons)).append("\n");
+        sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
+        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("    ccu: ").append(toIndentedString(ccu)).append("\n");
         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
         sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
@@ -752,6 +863,7 @@ public String toString() {
         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
         sb.append("    startOn: ").append(toIndentedString(startOn)).append("\n");
         sb.append("    tierType: ").append(toIndentedString(tierType)).append("\n");
+        sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
       sb.append("}");

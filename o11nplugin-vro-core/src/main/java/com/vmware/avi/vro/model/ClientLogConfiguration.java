@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class ClientLogConfiguration extends AviRestResource {
     @JsonProperty("enable_significant_log_collection")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableSignificantLogCollection = true;
+    private Boolean enableSignificantLogCollection;
 
     @JsonProperty("filtered_log_processing")
     @JsonInclude(Include.NON_NULL)
@@ -50,7 +50,6 @@ public class ClientLogConfiguration extends AviRestResource {
    * Users can deactivate this flag to turn off default significant log collection.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableSignificantLogCollection
    */
   @VsoMethod
@@ -66,7 +65,6 @@ public class ClientLogConfiguration extends AviRestResource {
    * Users can deactivate this flag to turn off default significant log collection.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableSignificantLogCollection set the enableSignificantLogCollection.
    */
   @VsoMethod

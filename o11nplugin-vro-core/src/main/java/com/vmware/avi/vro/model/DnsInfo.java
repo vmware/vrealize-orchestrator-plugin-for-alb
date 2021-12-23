@@ -39,7 +39,7 @@ public class DnsInfo extends AviRestResource {
 
     @JsonProperty("metadata")
     @JsonInclude(Include.NON_NULL)
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("num_records_in_response")
     @JsonInclude(Include.NON_NULL)
@@ -135,7 +135,6 @@ public class DnsInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Any metadata associated with this record.
    * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return metadata
    */
   @VsoMethod
@@ -147,7 +146,6 @@ public class DnsInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Any metadata associated with this record.
    * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param metadata set the metadata.
    */
   @VsoMethod

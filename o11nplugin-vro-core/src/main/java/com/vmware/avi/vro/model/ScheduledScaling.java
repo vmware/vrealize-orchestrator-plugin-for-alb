@@ -46,7 +46,7 @@ public class ScheduledScaling extends AviRestResource {
 
     @JsonProperty("recurrence")
     @JsonInclude(Include.NON_NULL)
-    private String recurrence = null;
+    private String recurrence;
 
     @JsonProperty("schedule_max_step")
     @JsonInclude(Include.NON_NULL)
@@ -112,7 +112,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Desired number of servers during schedule intervals, it may cause scale-in or scale-out based on the value.
+   * Desired number of servers during scheduled intervals, it may cause scale-in or scale-out based on the value.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return desiredCapacity
@@ -124,7 +124,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Desired number of servers during schedule intervals, it may cause scale-in or scale-out based on the value.
+   * Desired number of servers during scheduled intervals, it may cause scale-in or scale-out based on the value.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param desiredCapacity set the desiredCapacity.
@@ -136,7 +136,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Enables the scheduled autoscaling.
+   * Enables the scheduled autoscale.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enable
@@ -148,7 +148,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Enables the scheduled autoscaling.
+   * Enables the scheduled autoscale.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enable set the enable.
@@ -160,7 +160,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Scheduled autoscale end date in iso8601 format, said day will be included in schedule and have to be in future and greater than start date.
+   * Scheduled autoscale end date in iso8601 format, said day will be included in scheduled and have to be in future and greater than start date.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return endDate
@@ -172,7 +172,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Scheduled autoscale end date in iso8601 format, said day will be included in schedule and have to be in future and greater than start date.
+   * Scheduled autoscale end date in iso8601 format, said day will be included in scheduled and have to be in future and greater than start date.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param endDate set the endDate.
@@ -184,10 +184,10 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Frequency of the scheduled autoscale.
+   * Deprecated.frequency of the scheduled autoscale.
    * Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return recurrence
    */
   @VsoMethod
@@ -197,10 +197,10 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Frequency of the scheduled autoscale.
+   * Deprecated.frequency of the scheduled autoscale.
    * Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param recurrence set the recurrence.
    */
   @VsoMethod
@@ -236,7 +236,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Scheduled autoscale start date in iso8601 format, said day will be included in schedule and have to be in future.
+   * Scheduled autoscale start date in iso8601 format, said day will be included in scheduled and have to be in future.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return startDate
@@ -248,7 +248,7 @@ public class ScheduledScaling extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Scheduled autoscale start date in iso8601 format, said day will be included in schedule and have to be in future.
+   * Scheduled autoscale start date in iso8601 format, said day will be included in scheduled and have to be in future.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param startDate set the startDate.

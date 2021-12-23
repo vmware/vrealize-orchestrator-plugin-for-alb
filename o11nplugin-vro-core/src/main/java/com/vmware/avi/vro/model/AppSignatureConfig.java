@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class AppSignatureConfig extends AviRestResource {
     @JsonProperty("app_signature_sync_interval")
     @JsonInclude(Include.NON_NULL)
-    private Integer appSignatureSyncInterval = 1440;
+    private Integer appSignatureSyncInterval;
 
 
 
@@ -38,7 +38,6 @@ public class AppSignatureConfig extends AviRestResource {
    * Unit is min.
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Special default for basic edition is 1440, essentials edition is 1440, enterprise is 1440.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @return appSignatureSyncInterval
    */
   @VsoMethod
@@ -54,7 +53,6 @@ public class AppSignatureConfig extends AviRestResource {
    * Unit is min.
    * Allowed in basic edition, essentials edition, enterprise edition.
    * Special default for basic edition is 1440, essentials edition is 1440, enterprise is 1440.
-   * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
    * @param appSignatureSyncInterval set the appSignatureSyncInterval.
    */
   @VsoMethod

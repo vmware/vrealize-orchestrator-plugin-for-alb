@@ -33,6 +33,10 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String ip = null;
 
+    @JsonProperty("ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String ip6 = null;
+
     @JsonProperty("rpc_status")
     @JsonInclude(Include.NON_NULL)
     private Integer rpcStatus = null;
@@ -93,6 +97,30 @@ public class VsInitialPlacementEventDetails extends AviRestResource {
   @VsoMethod
   public void setIp(String  ip) {
     this.ip = ip;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vip ipv6 address.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ip6
+   */
+  @VsoMethod
+  public String getIp6() {
+    return ip6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip ipv6 address.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ip6 set the ip6.
+   */
+  @VsoMethod
+  public void setIp6(String  ip6) {
+    this.ip6 = ip6;
   }
 
   /**
@@ -215,7 +243,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seAssigned, objVsInitialPlacementEventDetails.seAssigned)&&
   Objects.equals(this.rpcStatus, objVsInitialPlacementEventDetails.rpcStatus)&&
   Objects.equals(this.errorMessage, objVsInitialPlacementEventDetails.errorMessage)&&
-  Objects.equals(this.ip, objVsInitialPlacementEventDetails.ip);
+  Objects.equals(this.ip, objVsInitialPlacementEventDetails.ip)&&
+  Objects.equals(this.ip6, objVsInitialPlacementEventDetails.ip6);
 }
 
 @Override
@@ -224,6 +253,7 @@ public String toString() {
   sb.append("class VsInitialPlacementEventDetails {\n");
       sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ip6: ").append(toIndentedString(ip6)).append("\n");
         sb.append("    rpcStatus: ").append(toIndentedString(rpcStatus)).append("\n");
         sb.append("    seAssigned: ").append(toIndentedString(seAssigned)).append("\n");
         sb.append("    seRequested: ").append(toIndentedString(seRequested)).append("\n");

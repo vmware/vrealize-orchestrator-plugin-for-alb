@@ -29,7 +29,7 @@ import org.springframework.stereotype.Service;
 public class WafApplicationSignatureProvider extends AviRestResource {
     @JsonProperty("available_applications")
     @JsonInclude(Include.NON_NULL)
-    private List<WafApplicationSignatureAppVersion> availableApplications = null;
+    private List<WafApplicationSignatureAppVersion> availableApplications;
 
     @JsonProperty("last_check_for_updates_error")
     @JsonInclude(Include.NON_NULL)
@@ -49,7 +49,7 @@ public class WafApplicationSignatureProvider extends AviRestResource {
 
     @JsonProperty("ruleset_version")
     @JsonInclude(Include.NON_NULL)
-    private String rulesetVersion = null;
+    private String rulesetVersion;
 
     @JsonProperty("service_status")
     @JsonInclude(Include.NON_NULL)
@@ -73,7 +73,6 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Available application names and the ruleset version, when the rules for an application changed the last time.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availableApplications
    */
   @VsoMethod
@@ -85,7 +84,6 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method. this will set the availableApplications
    * Available application names and the ruleset version, when the rules for an application changed the last time.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availableApplications
    */
   @VsoMethod
@@ -97,7 +95,6 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method this will set the availableApplications
    * Available application names and the ruleset version, when the rules for an application changed the last time.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availableApplications
    */
   @VsoMethod
@@ -210,7 +207,6 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Version of signatures.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rulesetVersion
    */
   @VsoMethod
@@ -222,7 +218,6 @@ public class WafApplicationSignatureProvider extends AviRestResource {
    * This is the setter method to the attribute.
    * Version of signatures.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param rulesetVersion set the rulesetVersion.
    */
   @VsoMethod

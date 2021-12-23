@@ -110,11 +110,11 @@ public class SSLKeyAndCertificate extends AviRestResource {
 
     @JsonProperty("ocsp_responder_url_list_from_certs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> ocspResponderUrlListFromCerts = null;
+    private List<String> ocspResponderUrlListFromCerts;
 
     @JsonProperty("ocsp_response_info")
     @JsonInclude(Include.NON_NULL)
-    private OCSPResponseInfo ocspResponseInfo = null;
+    private OCSPResponseInfo ocspResponseInfo;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -690,7 +690,6 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is an internal field to store the ocsp responder urls contained in the certificate.
    * Field introduced in 20.1.1.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspResponderUrlListFromCerts
    */
   @VsoMethod
@@ -703,7 +702,6 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is an internal field to store the ocsp responder urls contained in the certificate.
    * Field introduced in 20.1.1.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspResponderUrlListFromCerts
    */
   @VsoMethod
@@ -716,7 +714,6 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * This is an internal field to store the ocsp responder urls contained in the certificate.
    * Field introduced in 20.1.1.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspResponderUrlListFromCerts
    */
   @VsoMethod
@@ -734,7 +731,6 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * Information related to ocsp response.
    * Field introduced in 20.1.1.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspResponseInfo
    */
   @VsoMethod
@@ -747,7 +743,6 @@ public class SSLKeyAndCertificate extends AviRestResource {
    * Information related to ocsp response.
    * Field introduced in 20.1.1.
    * Allowed in basic edition, essentials edition, enterprise edition.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspResponseInfo set the ocspResponseInfo.
    */
   @VsoMethod

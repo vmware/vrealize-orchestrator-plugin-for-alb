@@ -34,7 +34,7 @@ public class FullClientLogs extends AviRestResource {
 
     @JsonProperty("enabled")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enabled = false;
+    private Boolean enabled;
 
     @JsonProperty("throttle")
     @JsonInclude(Include.NON_NULL)
@@ -100,7 +100,6 @@ public class FullClientLogs extends AviRestResource {
    * When deactivated, only errors will be logged.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is false.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enabled
    */
   @VsoMethod
@@ -114,7 +113,6 @@ public class FullClientLogs extends AviRestResource {
    * When deactivated, only errors will be logged.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is false.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enabled set the enabled.
    */
   @VsoMethod

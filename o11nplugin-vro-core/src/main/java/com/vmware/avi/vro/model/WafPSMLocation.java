@@ -147,7 +147,6 @@ public class WafPSMLocation extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
-   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -160,7 +159,6 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method. this will set the rules
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
-   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */
@@ -173,7 +171,6 @@ public class WafPSMLocation extends AviRestResource {
    * This is the setter method this will set the rules
    * A list of rules which should be applied on this location.
    * Field introduced in 18.2.3.
-   * Maximum of 1024 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return rules
    */

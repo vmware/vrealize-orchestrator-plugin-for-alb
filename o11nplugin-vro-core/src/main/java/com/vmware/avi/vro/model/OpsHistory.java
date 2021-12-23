@@ -58,6 +58,10 @@ public class OpsHistory extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private UpgradeOpsState state = null;
 
+    @JsonProperty("statediff_ref")
+    @JsonInclude(Include.NON_NULL)
+    private String statediffRef = null;
+
     @JsonProperty("upgrade_events")
     @JsonInclude(Include.NON_NULL)
     private List<EventMap> upgradeEvents = null;
@@ -283,6 +287,32 @@ public class OpsHistory extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Record of pre/post snapshot captured for current upgrade operation.
+   * It is a reference to an object of type statediffoperation.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return statediffRef
+   */
+  @VsoMethod
+  public String getStatediffRef() {
+    return statediffRef;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Record of pre/post snapshot captured for current upgrade operation.
+   * It is a reference to an object of type statediffoperation.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param statediffRef set the statediffRef.
+   */
+  @VsoMethod
+  public void setStatediffRef(String  statediffRef) {
+    this.statediffRef = statediffRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Controller events for upgrade operation.
    * Field introduced in 20.1.4.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -366,7 +396,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.seUpgradeEvents, objOpsHistory.seUpgradeEvents)&&
   Objects.equals(this.startTime, objOpsHistory.startTime)&&
   Objects.equals(this.endTime, objOpsHistory.endTime)&&
-  Objects.equals(this.duration, objOpsHistory.duration);
+  Objects.equals(this.duration, objOpsHistory.duration)&&
+  Objects.equals(this.statediffRef, objOpsHistory.statediffRef);
 }
 
 @Override
@@ -381,6 +412,7 @@ public String toString() {
         sb.append("    segStatus: ").append(toIndentedString(segStatus)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    statediffRef: ").append(toIndentedString(statediffRef)).append("\n");
         sb.append("    upgradeEvents: ").append(toIndentedString(upgradeEvents)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
       sb.append("}");

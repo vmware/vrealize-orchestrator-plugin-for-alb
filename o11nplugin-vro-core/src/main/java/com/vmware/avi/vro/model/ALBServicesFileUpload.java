@@ -30,7 +30,7 @@ public class ALBServicesFileUpload extends AviRestResource {
 
     @JsonProperty("error")
     @JsonInclude(Include.NON_NULL)
-    private String error = null;
+    private String error;
 
     @JsonProperty("file_path")
     @JsonInclude(Include.NON_NULL)
@@ -46,7 +46,7 @@ public class ALBServicesFileUpload extends AviRestResource {
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
@@ -90,7 +90,6 @@ public class ALBServicesFileUpload extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Error reported during file upload.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return error
    */
   @VsoMethod
@@ -102,7 +101,6 @@ public class ALBServicesFileUpload extends AviRestResource {
    * This is the setter method to the attribute.
    * Error reported during file upload.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param error set the error.
    */
   @VsoMethod
@@ -187,7 +185,6 @@ public class ALBServicesFileUpload extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -202,7 +199,6 @@ public class ALBServicesFileUpload extends AviRestResource {
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod

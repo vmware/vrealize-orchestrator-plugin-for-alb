@@ -174,7 +174,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command.
-   * Field introduced in 20.1.7, 21.1.2.
+   * Field introduced in 20.1.7, 21.1.2, 21.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return deactivatePrimaryPoolOnDown
    */
@@ -186,7 +186,7 @@ public class PoolGroup extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command.
-   * Field introduced in 20.1.7, 21.1.2.
+   * Field introduced in 20.1.7, 21.1.2, 21.1.3.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param deactivatePrimaryPoolOnDown set the deactivatePrimaryPoolOnDown.
    */

@@ -46,11 +46,11 @@ public class PortalFeatureOptIn extends AviRestResource {
 
     @JsonProperty("enable_pulse_case_management")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enablePulseCaseManagement = true;
+    private Boolean enablePulseCaseManagement;
 
     @JsonProperty("enable_pulse_waf_management")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enablePulseWafManagement = true;
+    private Boolean enablePulseWafManagement;
 
     @JsonProperty("enable_user_agent_db_sync")
     @JsonInclude(Include.NON_NULL)
@@ -66,7 +66,8 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable to receive application specific signature updates.
    * Field introduced in 20.1.4.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableAppsignatureSync
    */
@@ -79,7 +80,8 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable to receive application specific signature updates.
    * Field introduced in 20.1.4.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableAppsignatureSync set the enableAppsignatureSync.
    */
@@ -170,7 +172,8 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable to receive ip reputation updates.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableIpReputation
    */
@@ -183,7 +186,8 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable to receive ip reputation updates.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableIpReputation set the enableIpReputation.
    */
@@ -196,9 +200,9 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable pulse case management.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
    * @return enablePulseCaseManagement
    */
   @VsoMethod
@@ -210,9 +214,9 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable pulse case management.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
    * @param enablePulseCaseManagement set the enablePulseCaseManagement.
    */
   @VsoMethod
@@ -224,9 +228,9 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable to receive waf crs updates.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
    * @return enablePulseWafManagement
    */
   @VsoMethod
@@ -238,9 +242,9 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable to receive waf crs updates.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
    * @param enablePulseWafManagement set the enablePulseWafManagement.
    */
   @VsoMethod
@@ -279,8 +283,9 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This field is deprecated.
    * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise edition is false.
    * @return enableWafSignaturesNotifications
    */
   @VsoMethod
@@ -293,8 +298,9 @@ public class PortalFeatureOptIn extends AviRestResource {
    * This field is deprecated.
    * Field deprecated in 21.1.1.
    * Field introduced in 20.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-   * Special default for basic edition is false, essentials edition is false.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
+   * Special default for basic edition is false, essentials edition is false, enterprise edition is false.
    * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
    */
   @VsoMethod

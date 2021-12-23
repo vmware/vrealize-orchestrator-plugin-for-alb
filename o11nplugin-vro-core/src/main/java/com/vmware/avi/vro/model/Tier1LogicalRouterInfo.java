@@ -24,6 +24,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class Tier1LogicalRouterInfo extends AviRestResource {
+    @JsonProperty("locale_service")
+    @JsonInclude(Include.NON_NULL)
+    private String localeService = null;
+
     @JsonProperty("segment_id")
     @JsonInclude(Include.NON_NULL)
     private String segmentId = null;
@@ -33,6 +37,38 @@ public class Tier1LogicalRouterInfo extends AviRestResource {
     private String tier1LrId = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Locale-services configuration, holds t1 edge-cluster information.
+   * When virtualservice is enabled with preserve client ip, serviceinsertion virtualendpoint will be created in this locale-service.
+   * By default avi controller picks default locale-service on t1.
+   * If more than one locale-services are present, this will be used for resolving the same.
+   * Example locale-service path - /infra/tier-1s/london_tier1gateway1/locale-services/london_tier1localservices-1.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return localeService
+   */
+  @VsoMethod
+  public String getLocaleService() {
+    return localeService;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Locale-services configuration, holds t1 edge-cluster information.
+   * When virtualservice is enabled with preserve client ip, serviceinsertion virtualendpoint will be created in this locale-service.
+   * By default avi controller picks default locale-service on t1.
+   * If more than one locale-services are present, this will be used for resolving the same.
+   * Example locale-service path - /infra/tier-1s/london_tier1gateway1/locale-services/london_tier1localservices-1.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param localeService set the localeService.
+   */
+  @VsoMethod
+  public void setLocaleService(String  localeService) {
+    this.localeService = localeService;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -98,14 +134,16 @@ public boolean equals(java.lang.Object o) {
   }
   Tier1LogicalRouterInfo objTier1LogicalRouterInfo = (Tier1LogicalRouterInfo) o;
   return   Objects.equals(this.tier1LrId, objTier1LogicalRouterInfo.tier1LrId)&&
-  Objects.equals(this.segmentId, objTier1LogicalRouterInfo.segmentId);
+  Objects.equals(this.segmentId, objTier1LogicalRouterInfo.segmentId)&&
+  Objects.equals(this.localeService, objTier1LogicalRouterInfo.localeService);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class Tier1LogicalRouterInfo {\n");
-      sb.append("    segmentId: ").append(toIndentedString(segmentId)).append("\n");
+      sb.append("    localeService: ").append(toIndentedString(localeService)).append("\n");
+        sb.append("    segmentId: ").append(toIndentedString(segmentId)).append("\n");
         sb.append("    tier1LrId: ").append(toIndentedString(tier1LrId)).append("\n");
       sb.append("}");
   return sb.toString();

@@ -26,15 +26,15 @@ import org.springframework.stereotype.Service;
 public class WafApplicationSignatureAppVersion extends AviRestResource {
     @JsonProperty("application")
     @JsonInclude(Include.NON_NULL)
-    private String application = null;
+    private String application;
 
     @JsonProperty("last_changed_ruleset_version")
     @JsonInclude(Include.NON_NULL)
-    private String lastChangedRulesetVersion = null;
+    private String lastChangedRulesetVersion;
 
     @JsonProperty("number_of_rules")
     @JsonInclude(Include.NON_NULL)
-    private Integer numberOfRules = null;
+    private Integer numberOfRules;
 
 
 
@@ -42,7 +42,6 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Name of an application in the rule set.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return application
    */
   @VsoMethod
@@ -54,7 +53,6 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * Name of an application in the rule set.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param application set the application.
    */
   @VsoMethod
@@ -66,7 +64,6 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The last version of the rule set when the rules corresponding to the application changed.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return lastChangedRulesetVersion
    */
   @VsoMethod
@@ -78,7 +75,6 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * The last version of the rule set when the rules corresponding to the application changed.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param lastChangedRulesetVersion set the lastChangedRulesetVersion.
    */
   @VsoMethod
@@ -90,7 +86,6 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The number of rules available for this application.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return numberOfRules
    */
   @VsoMethod
@@ -102,7 +97,6 @@ public class WafApplicationSignatureAppVersion extends AviRestResource {
    * This is the setter method to the attribute.
    * The number of rules available for this application.
    * Field introduced in 20.1.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param numberOfRules set the numberOfRules.
    */
   @VsoMethod

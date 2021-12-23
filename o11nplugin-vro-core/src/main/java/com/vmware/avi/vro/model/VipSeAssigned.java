@@ -28,13 +28,29 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class VipSeAssigned extends AviRestResource {
+    @JsonProperty("active_on_cloud")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean activeOnCloud = null;
+
+    @JsonProperty("active_on_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean activeOnSe = null;
+
     @JsonProperty("admin_down_requested")
     @JsonInclude(Include.NON_NULL)
     private Boolean adminDownRequested = false;
 
+    @JsonProperty("attach_ip_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean attachIpInProgress = null;
+
     @JsonProperty("connected")
     @JsonInclude(Include.NON_NULL)
     private Boolean connected = null;
+
+    @JsonProperty("detach_ip_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean detachIpInProgress = null;
 
     @JsonProperty("mgmt_ip")
     @JsonInclude(Include.NON_NULL)
@@ -64,6 +80,14 @@ public class VipSeAssigned extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean scaleinInProgress = false;
 
+    @JsonProperty("scaleout_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean scaleoutInProgress = null;
+
+    @JsonProperty("se_ready_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seReadyInProgress = null;
+
     @JsonProperty("snat_ip")
     @JsonInclude(Include.NON_NULL)
     private IpAddr snatIp = null;
@@ -73,6 +97,54 @@ public class VipSeAssigned extends AviRestResource {
     private Boolean standby = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vip is active on cloud.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return activeOnCloud
+   */
+  @VsoMethod
+  public Boolean getActiveOnCloud() {
+    return activeOnCloud;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is active on cloud.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param activeOnCloud set the activeOnCloud.
+   */
+  @VsoMethod
+  public void setActiveOnCloud(Boolean  activeOnCloud) {
+    this.activeOnCloud = activeOnCloud;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vip is active on this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return activeOnSe
+   */
+  @VsoMethod
+  public Boolean getActiveOnSe() {
+    return activeOnSe;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is active on this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param activeOnSe set the activeOnSe.
+   */
+  @VsoMethod
+  public void setActiveOnSe(Boolean  activeOnSe) {
+    this.activeOnSe = activeOnSe;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -98,6 +170,30 @@ public class VipSeAssigned extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Attach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attachIpInProgress
+   */
+  @VsoMethod
+  public Boolean getAttachIpInProgress() {
+    return attachIpInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Attach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param attachIpInProgress set the attachIpInProgress.
+   */
+  @VsoMethod
+  public void setAttachIpInProgress(Boolean  attachIpInProgress) {
+    this.attachIpInProgress = attachIpInProgress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property connected of obj type vipseassigned field type str  type boolean.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return connected
@@ -116,6 +212,30 @@ public class VipSeAssigned extends AviRestResource {
   @VsoMethod
   public void setConnected(Boolean  connected) {
     this.connected = connected;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Detach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return detachIpInProgress
+   */
+  @VsoMethod
+  public Boolean getDetachIpInProgress() {
+    return detachIpInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Detach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param detachIpInProgress set the detachIpInProgress.
+   */
+  @VsoMethod
+  public void setDetachIpInProgress(Boolean  detachIpInProgress) {
+    this.detachIpInProgress = detachIpInProgress;
   }
 
   /**
@@ -278,6 +398,54 @@ public class VipSeAssigned extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Vip is awaiting scaleout response from this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return scaleoutInProgress
+   */
+  @VsoMethod
+  public Boolean getScaleoutInProgress() {
+    return scaleoutInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is awaiting scaleout response from this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param scaleoutInProgress set the scaleoutInProgress.
+   */
+  @VsoMethod
+  public void setScaleoutInProgress(Boolean  scaleoutInProgress) {
+    this.scaleoutInProgress = scaleoutInProgress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vip is awaiting response from this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seReadyInProgress
+   */
+  @VsoMethod
+  public Boolean getSeReadyInProgress() {
+    return seReadyInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is awaiting response from this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seReadyInProgress set the seReadyInProgress.
+   */
+  @VsoMethod
+  public void setSeReadyInProgress(Boolean  seReadyInProgress) {
+    this.seReadyInProgress = seReadyInProgress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property snat_ip of obj type vipseassigned field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return snatIp
@@ -341,6 +509,12 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.adminDownRequested, objVipSeAssigned.adminDownRequested)&&
   Objects.equals(this.mgmtIp, objVipSeAssigned.mgmtIp)&&
   Objects.equals(this.mgmtIp6, objVipSeAssigned.mgmtIp6)&&
+  Objects.equals(this.activeOnCloud, objVipSeAssigned.activeOnCloud)&&
+  Objects.equals(this.attachIpInProgress, objVipSeAssigned.attachIpInProgress)&&
+  Objects.equals(this.detachIpInProgress, objVipSeAssigned.detachIpInProgress)&&
+  Objects.equals(this.activeOnSe, objVipSeAssigned.activeOnSe)&&
+  Objects.equals(this.scaleoutInProgress, objVipSeAssigned.scaleoutInProgress)&&
+  Objects.equals(this.seReadyInProgress, objVipSeAssigned.seReadyInProgress)&&
   Objects.equals(this.ref, objVipSeAssigned.ref);
 }
 
@@ -348,8 +522,12 @@ public boolean equals(java.lang.Object o) {
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class VipSeAssigned {\n");
-      sb.append("    adminDownRequested: ").append(toIndentedString(adminDownRequested)).append("\n");
+      sb.append("    activeOnCloud: ").append(toIndentedString(activeOnCloud)).append("\n");
+        sb.append("    activeOnSe: ").append(toIndentedString(activeOnSe)).append("\n");
+        sb.append("    adminDownRequested: ").append(toIndentedString(adminDownRequested)).append("\n");
+        sb.append("    attachIpInProgress: ").append(toIndentedString(attachIpInProgress)).append("\n");
         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
+        sb.append("    detachIpInProgress: ").append(toIndentedString(detachIpInProgress)).append("\n");
         sb.append("    mgmtIp: ").append(toIndentedString(mgmtIp)).append("\n");
         sb.append("    mgmtIp6: ").append(toIndentedString(mgmtIp6)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -357,6 +535,8 @@ public String toString() {
         sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
         sb.append("    ref: ").append(toIndentedString(ref)).append("\n");
         sb.append("    scaleinInProgress: ").append(toIndentedString(scaleinInProgress)).append("\n");
+        sb.append("    scaleoutInProgress: ").append(toIndentedString(scaleoutInProgress)).append("\n");
+        sb.append("    seReadyInProgress: ").append(toIndentedString(seReadyInProgress)).append("\n");
         sb.append("    snatIp: ").append(toIndentedString(snatIp)).append("\n");
         sb.append("    standby: ").append(toIndentedString(standby)).append("\n");
       sb.append("}");

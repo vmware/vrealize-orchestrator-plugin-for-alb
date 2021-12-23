@@ -30,7 +30,7 @@ public class ProactiveSupportDefaults extends AviRestResource {
 
     @JsonProperty("attach_tech_support")
     @JsonInclude(Include.NON_NULL)
-    private Boolean attachTechSupport = true;
+    private Boolean attachTechSupport;
 
     @JsonProperty("case_severity")
     @JsonInclude(Include.NON_NULL)
@@ -70,7 +70,6 @@ public class ProactiveSupportDefaults extends AviRestResource {
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return attachTechSupport
    */
   @VsoMethod
@@ -84,7 +83,6 @@ public class ProactiveSupportDefaults extends AviRestResource {
    * Field introduced in 20.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param attachTechSupport set the attachTechSupport.
    */
   @VsoMethod

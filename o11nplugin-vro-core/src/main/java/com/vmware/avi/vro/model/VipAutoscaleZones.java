@@ -26,11 +26,11 @@ import org.springframework.stereotype.Service;
 public class VipAutoscaleZones extends AviRestResource {
     @JsonProperty("availability_zone")
     @JsonInclude(Include.NON_NULL)
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("fip_capable")
     @JsonInclude(Include.NON_NULL)
-    private Boolean fipCapable = null;
+    private Boolean fipCapable;
 
     @JsonProperty("subnet_uuid")
     @JsonInclude(Include.NON_NULL)
@@ -42,7 +42,6 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Availability zone associated with the subnet.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return availabilityZone
    */
   @VsoMethod
@@ -54,7 +53,6 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Availability zone associated with the subnet.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param availabilityZone set the availabilityZone.
    */
   @VsoMethod
@@ -66,7 +64,6 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Determines if the subnet is capable of hosting publicly accessible ip.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return fipCapable
    */
   @VsoMethod
@@ -78,7 +75,6 @@ public class VipAutoscaleZones extends AviRestResource {
    * This is the setter method to the attribute.
    * Determines if the subnet is capable of hosting publicly accessible ip.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param fipCapable set the fipCapable.
    */
   @VsoMethod

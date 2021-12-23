@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.AdaptReplEventInfo;
 import com.vmware.avi.vro.model.RmAddNetworksEventDetails;
 import com.vmware.avi.vro.model.ALBServicesCase;
 import com.vmware.avi.vro.model.ALBServicesFileUpload;
@@ -16,6 +17,7 @@ import com.vmware.avi.vro.model.ApicAgentBridgeDomainVrfChange;
 import com.vmware.avi.vro.model.ApicAgentGenericEventDetails;
 import com.vmware.avi.vro.model.ApicAgentVsNetworkError;
 import com.vmware.avi.vro.model.AppSignatureEventData;
+import com.vmware.avi.vro.model.AttachIpStatusEventDetails;
 import com.vmware.avi.vro.model.AvgUptimeChangeDetails;
 import com.vmware.avi.vro.model.AWSASGDelete;
 import com.vmware.avi.vro.model.AWSASGNotifDetails;
@@ -62,6 +64,7 @@ import com.vmware.avi.vro.model.ConfigUserAuthrzByRule;
 import com.vmware.avi.vro.model.ConfigUserLogin;
 import com.vmware.avi.vro.model.ConfigUserLogout;
 import com.vmware.avi.vro.model.ConfigUserNotAuthrzByRule;
+import com.vmware.avi.vro.model.ConnectionEventDetails;
 import com.vmware.avi.vro.model.ContainerCloudBatchSetup;
 import com.vmware.avi.vro.model.ContainerCloudSetup;
 import com.vmware.avi.vro.model.ContainerCloudService;
@@ -74,6 +77,7 @@ import com.vmware.avi.vro.model.CRSUpdateDetails;
 import com.vmware.avi.vro.model.CloudStackSetup;
 import com.vmware.avi.vro.model.DatabaseEventInfo;
 import com.vmware.avi.vro.model.RmDeleteSeEventDetails;
+import com.vmware.avi.vro.model.DetachIpStatusEventDetails;
 import com.vmware.avi.vro.model.DisableSeMigrateEventDetails;
 import com.vmware.avi.vro.model.VinfraDiscSummaryDetails;
 import com.vmware.avi.vro.model.DNSQueryError;
@@ -102,11 +106,16 @@ import com.vmware.avi.vro.model.MetricThresoldUpDetails;
 import com.vmware.avi.vro.model.MetricsDbDiskEventDetails;
 import com.vmware.avi.vro.model.MetricsDbQueueFullEventDetails;
 import com.vmware.avi.vro.model.MetricsDbQueueHealthyEventDetails;
+import com.vmware.avi.vro.model.MetricsDbSyncFailureEventDetails;
 import com.vmware.avi.vro.model.VinfraMgmtNwChangeDetails;
 import com.vmware.avi.vro.model.RmModifyNetworksEventDetails;
 import com.vmware.avi.vro.model.NetworkSubnetInfo;
+import com.vmware.avi.vro.model.NsxtSIEndpointDetails;
 import com.vmware.avi.vro.model.NsxtImageDetails;
 import com.vmware.avi.vro.model.NsxtSetup;
+import com.vmware.avi.vro.model.NsxtSIPolicyDetails;
+import com.vmware.avi.vro.model.NsxtSIRuleDetails;
+import com.vmware.avi.vro.model.NsxtSIServiceDetails;
 import com.vmware.avi.vro.model.NetworkSubnetClash;
 import com.vmware.avi.vro.model.SummarizedInfo;
 import com.vmware.avi.vro.model.OCISetup;
@@ -188,6 +197,7 @@ import com.vmware.avi.vro.model.RmUnbindVsSeEventDetails;
 import com.vmware.avi.vro.model.UpgradeOpsEntry;
 import com.vmware.avi.vro.model.UpgradeStatusInfo;
 import com.vmware.avi.vro.model.VCASetup;
+import com.vmware.avi.vro.model.VcenterClusterDetails;
 import com.vmware.avi.vro.model.VinfraVcenterConnectivityStatus;
 import com.vmware.avi.vro.model.VinfraVcenterBadCredentials;
 import com.vmware.avi.vro.model.VinfraVcenterDiscoveryFailure;
@@ -195,6 +205,7 @@ import com.vmware.avi.vro.model.VinfraVcenterNetworkLimit;
 import com.vmware.avi.vro.model.VinfraVcenterObjDeleteDetails;
 import com.vmware.avi.vro.model.VipScaleDetails;
 import com.vmware.avi.vro.model.DNSRegisterInfo;
+import com.vmware.avi.vro.model.VipSymmetryDetails;
 import com.vmware.avi.vro.model.VinfraVmDetails;
 import com.vmware.avi.vro.model.VsAwaitingSeEventDetails;
 import com.vmware.avi.vro.model.VsErrorEventDetails;
@@ -204,6 +215,7 @@ import com.vmware.avi.vro.model.VsMigrateEventDetails;
 import com.vmware.avi.vro.model.VsPoolNwFilterEventDetails;
 import com.vmware.avi.vro.model.VsScaleInEventDetails;
 import com.vmware.avi.vro.model.VsScaleOutEventDetails;
+import com.vmware.avi.vro.model.VsSwitchoverEventDetails;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -223,6 +235,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class EventDetails extends AviRestResource {
+    @JsonProperty("adaptrepl_event")
+    @JsonInclude(Include.NON_NULL)
+    private AdaptReplEventInfo adaptreplEvent = null;
+
     @JsonProperty("add_networks_details")
     @JsonInclude(Include.NON_NULL)
     private RmAddNetworksEventDetails addNetworksDetails = null;
@@ -266,6 +282,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("app_signature_event_data")
     @JsonInclude(Include.NON_NULL)
     private AppSignatureEventData appSignatureEventData = null;
+
+    @JsonProperty("attach_ip_status_details")
+    @JsonInclude(Include.NON_NULL)
+    private AttachIpStatusEventDetails attachIpStatusDetails = null;
 
     @JsonProperty("avg_uptime_change_details")
     @JsonInclude(Include.NON_NULL)
@@ -451,6 +471,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails = null;
 
+    @JsonProperty("connection_event")
+    @JsonInclude(Include.NON_NULL)
+    private ConnectionEventDetails connectionEvent = null;
+
     @JsonProperty("container_cloud_batch_setup")
     @JsonInclude(Include.NON_NULL)
     private ContainerCloudBatchSetup containerCloudBatchSetup = null;
@@ -498,6 +522,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("delete_se_details")
     @JsonInclude(Include.NON_NULL)
     private RmDeleteSeEventDetails deleteSeDetails = null;
+
+    @JsonProperty("detach_ip_status_details")
+    @JsonInclude(Include.NON_NULL)
+    private DetachIpStatusEventDetails detachIpStatusDetails = null;
 
     @JsonProperty("disable_se_migrate_details")
     @JsonInclude(Include.NON_NULL)
@@ -611,6 +639,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private MetricsDbQueueHealthyEventDetails metricsDbQueueHealthyDetails = null;
 
+    @JsonProperty("metrics_db_sync_failure_details")
+    @JsonInclude(Include.NON_NULL)
+    private MetricsDbSyncFailureEventDetails metricsDbSyncFailureDetails = null;
+
     @JsonProperty("mgmt_nw_change_details")
     @JsonInclude(Include.NON_NULL)
     private VinfraMgmtNwChangeDetails mgmtNwChangeDetails = null;
@@ -623,6 +655,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private NetworkSubnetInfo networkSubnetDetails = null;
 
+    @JsonProperty("nsxt_endpoint_details")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtSIEndpointDetails nsxtEndpointDetails = null;
+
     @JsonProperty("nsxt_img_details")
     @JsonInclude(Include.NON_NULL)
     private NsxtImageDetails nsxtImgDetails = null;
@@ -630,6 +666,18 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("nsxt_info")
     @JsonInclude(Include.NON_NULL)
     private NsxtSetup nsxtInfo = null;
+
+    @JsonProperty("nsxt_policy_details")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtSIPolicyDetails nsxtPolicyDetails = null;
+
+    @JsonProperty("nsxt_rule_details")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtSIRuleDetails nsxtRuleDetails = null;
+
+    @JsonProperty("nsxt_service_details")
+    @JsonInclude(Include.NON_NULL)
+    private NsxtSIServiceDetails nsxtServiceDetails = null;
 
     @JsonProperty("nw_subnet_clash_details")
     @JsonInclude(Include.NON_NULL)
@@ -955,6 +1003,10 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private VCASetup vcaInfraDetails = null;
 
+    @JsonProperty("vcenter_cluster_details")
+    @JsonInclude(Include.NON_NULL)
+    private VcenterClusterDetails vcenterClusterDetails = null;
+
     @JsonProperty("vcenter_connectivity_status")
     @JsonInclude(Include.NON_NULL)
     private VinfraVcenterConnectivityStatus vcenterConnectivityStatus = null;
@@ -982,6 +1034,10 @@ public class EventDetails extends AviRestResource {
     @JsonProperty("vip_dns_info")
     @JsonInclude(Include.NON_NULL)
     private DNSRegisterInfo vipDnsInfo = null;
+
+    @JsonProperty("vip_symmetry_details")
+    @JsonInclude(Include.NON_NULL)
+    private VipSymmetryDetails vipSymmetryDetails = null;
 
     @JsonProperty("vm_details")
     @JsonInclude(Include.NON_NULL)
@@ -1019,7 +1075,37 @@ public class EventDetails extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private VsScaleOutEventDetails vsScaleoutDetails = null;
 
+    @JsonProperty("vs_switchover_details")
+    @JsonInclude(Include.NON_NULL)
+    private VsSwitchoverEventDetails vsSwitchoverDetails = null;
 
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Adaptive replication event e.g.
+   * Dns vs, config version.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return adaptreplEvent
+   */
+  @VsoMethod
+  public AdaptReplEventInfo getAdaptreplEvent() {
+    return adaptreplEvent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Adaptive replication event e.g.
+   * Dns vs, config version.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param adaptreplEvent set the adaptreplEvent.
+   */
+  @VsoMethod
+  public void setAdaptreplEvent(AdaptReplEventInfo adaptreplEvent) {
+    this.adaptreplEvent = adaptreplEvent;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -1255,6 +1341,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setAppSignatureEventData(AppSignatureEventData appSignatureEventData) {
     this.appSignatureEventData = appSignatureEventData;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Details for attach ip status.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attachIpStatusDetails
+   */
+  @VsoMethod
+  public AttachIpStatusEventDetails getAttachIpStatusDetails() {
+    return attachIpStatusDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details for attach ip status.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param attachIpStatusDetails set the attachIpStatusDetails.
+   */
+  @VsoMethod
+  public void setAttachIpStatusDetails(AttachIpStatusEventDetails attachIpStatusDetails) {
+    this.attachIpStatusDetails = attachIpStatusDetails;
   }
 
   /**
@@ -2275,6 +2385,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Connection event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return connectionEvent
+   */
+  @VsoMethod
+  public ConnectionEventDetails getConnectionEvent() {
+    return connectionEvent;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Connection event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param connectionEvent set the connectionEvent.
+   */
+  @VsoMethod
+  public void setConnectionEvent(ConnectionEventDetails connectionEvent) {
+    this.connectionEvent = connectionEvent;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property container_cloud_batch_setup of obj type eventdetails field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return containerCloudBatchSetup
@@ -2537,6 +2671,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setDeleteSeDetails(RmDeleteSeEventDetails deleteSeDetails) {
     this.deleteSeDetails = deleteSeDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Details for detach ip status.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return detachIpStatusDetails
+   */
+  @VsoMethod
+  public DetachIpStatusEventDetails getDetachIpStatusDetails() {
+    return detachIpStatusDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details for detach ip status.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param detachIpStatusDetails set the detachIpStatusDetails.
+   */
+  @VsoMethod
+  public void setDetachIpStatusDetails(DetachIpStatusEventDetails detachIpStatusDetails) {
+    this.detachIpStatusDetails = detachIpStatusDetails;
   }
 
   /**
@@ -3159,6 +3317,28 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Placeholder for description of property metrics_db_sync_failure_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return metricsDbSyncFailureDetails
+   */
+  @VsoMethod
+  public MetricsDbSyncFailureEventDetails getMetricsDbSyncFailureDetails() {
+    return metricsDbSyncFailureDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Placeholder for description of property metrics_db_sync_failure_details of obj type eventdetails field type str  type ref.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param metricsDbSyncFailureDetails set the metricsDbSyncFailureDetails.
+   */
+  @VsoMethod
+  public void setMetricsDbSyncFailureDetails(MetricsDbSyncFailureEventDetails metricsDbSyncFailureDetails) {
+    this.metricsDbSyncFailureDetails = metricsDbSyncFailureDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property mgmt_nw_change_details of obj type eventdetails field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtNwChangeDetails
@@ -3225,6 +3405,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Nsx-t serviceinsertion virtualendpoint event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtEndpointDetails
+   */
+  @VsoMethod
+  public NsxtSIEndpointDetails getNsxtEndpointDetails() {
+    return nsxtEndpointDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t serviceinsertion virtualendpoint event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtEndpointDetails set the nsxtEndpointDetails.
+   */
+  @VsoMethod
+  public void setNsxtEndpointDetails(NsxtSIEndpointDetails nsxtEndpointDetails) {
+    this.nsxtEndpointDetails = nsxtEndpointDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Nsxt image event.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -3269,6 +3473,78 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setNsxtInfo(NsxtSetup nsxtInfo) {
     this.nsxtInfo = nsxtInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Nsx-t serviceinsertion redirectpolicy event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtPolicyDetails
+   */
+  @VsoMethod
+  public NsxtSIPolicyDetails getNsxtPolicyDetails() {
+    return nsxtPolicyDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t serviceinsertion redirectpolicy event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtPolicyDetails set the nsxtPolicyDetails.
+   */
+  @VsoMethod
+  public void setNsxtPolicyDetails(NsxtSIPolicyDetails nsxtPolicyDetails) {
+    this.nsxtPolicyDetails = nsxtPolicyDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Nsx-t serviceinsertion redirectrule event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtRuleDetails
+   */
+  @VsoMethod
+  public NsxtSIRuleDetails getNsxtRuleDetails() {
+    return nsxtRuleDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t serviceinsertion redirectrule event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtRuleDetails set the nsxtRuleDetails.
+   */
+  @VsoMethod
+  public void setNsxtRuleDetails(NsxtSIRuleDetails nsxtRuleDetails) {
+    this.nsxtRuleDetails = nsxtRuleDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Nsx-t serviceinsertion service event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nsxtServiceDetails
+   */
+  @VsoMethod
+  public NsxtSIServiceDetails getNsxtServiceDetails() {
+    return nsxtServiceDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Nsx-t serviceinsertion service event.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nsxtServiceDetails set the nsxtServiceDetails.
+   */
+  @VsoMethod
+  public void setNsxtServiceDetails(NsxtSIServiceDetails nsxtServiceDetails) {
+    this.nsxtServiceDetails = nsxtServiceDetails;
   }
 
   /**
@@ -5063,6 +5339,30 @@ public class EventDetails extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Vcenter cluster event.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vcenterClusterDetails
+   */
+  @VsoMethod
+  public VcenterClusterDetails getVcenterClusterDetails() {
+    return vcenterClusterDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vcenter cluster event.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vcenterClusterDetails set the vcenterClusterDetails.
+   */
+  @VsoMethod
+  public void setVcenterClusterDetails(VcenterClusterDetails vcenterClusterDetails) {
+    this.vcenterClusterDetails = vcenterClusterDetails;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property vcenter_connectivity_status of obj type eventdetails field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vcenterConnectivityStatus
@@ -5213,6 +5513,30 @@ public class EventDetails extends AviRestResource {
   @VsoMethod
   public void setVipDnsInfo(DNSRegisterInfo vipDnsInfo) {
     this.vipDnsInfo = vipDnsInfo;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Details for vip symmetry.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vipSymmetryDetails
+   */
+  @VsoMethod
+  public VipSymmetryDetails getVipSymmetryDetails() {
+    return vipSymmetryDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details for vip symmetry.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vipSymmetryDetails set the vipSymmetryDetails.
+   */
+  @VsoMethod
+  public void setVipSymmetryDetails(VipSymmetryDetails vipSymmetryDetails) {
+    this.vipSymmetryDetails = vipSymmetryDetails;
   }
 
   /**
@@ -5413,6 +5737,30 @@ public class EventDetails extends AviRestResource {
     this.vsScaleoutDetails = vsScaleoutDetails;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Details for primary switchover status.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return vsSwitchoverDetails
+   */
+  @VsoMethod
+  public VsSwitchoverEventDetails getVsSwitchoverDetails() {
+    return vsSwitchoverDetails;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Details for primary switchover status.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param vsSwitchoverDetails set the vsSwitchoverDetails.
+   */
+  @VsoMethod
+  public void setVsSwitchoverDetails(VsSwitchoverEventDetails vsSwitchoverDetails) {
+    this.vsSwitchoverDetails = vsSwitchoverDetails;
+  }
+
 
 
 @Override
@@ -5447,6 +5795,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hostUnavailDetails, objEventDetails.hostUnavailDetails)&&
   Objects.equals(this.switchoverDetails, objEventDetails.switchoverDetails)&&
   Objects.equals(this.switchoverFailDetails, objEventDetails.switchoverFailDetails)&&
+  Objects.equals(this.attachIpStatusDetails, objEventDetails.attachIpStatusDetails)&&
+  Objects.equals(this.detachIpStatusDetails, objEventDetails.detachIpStatusDetails)&&
+  Objects.equals(this.vipSymmetryDetails, objEventDetails.vipSymmetryDetails)&&
   Objects.equals(this.vsFsmDetails, objEventDetails.vsFsmDetails)&&
   Objects.equals(this.vsPoolNwFltrDetails, objEventDetails.vsPoolNwFltrDetails)&&
   Objects.equals(this.vsScaleoutDetails, objEventDetails.vsScaleoutDetails)&&
@@ -5455,6 +5806,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vsErrorDetails, objEventDetails.vsErrorDetails)&&
   Objects.equals(this.vsAwaitingseDetails, objEventDetails.vsAwaitingseDetails)&&
   Objects.equals(this.vsInitialplacementDetails, objEventDetails.vsInitialplacementDetails)&&
+  Objects.equals(this.vsSwitchoverDetails, objEventDetails.vsSwitchoverDetails)&&
   Objects.equals(this.upgradeStatusInfo, objEventDetails.upgradeStatusInfo)&&
   Objects.equals(this.allSeupgradeEventDetails, objEventDetails.allSeupgradeEventDetails)&&
   Objects.equals(this.seupgradeEventDetails, objEventDetails.seupgradeEventDetails)&&
@@ -5535,6 +5887,7 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.burstCheckoutDetails, objEventDetails.burstCheckoutDetails)&&
   Objects.equals(this.metricsDbQueueFullDetails, objEventDetails.metricsDbQueueFullDetails)&&
   Objects.equals(this.metricsDbQueueHealthyDetails, objEventDetails.metricsDbQueueHealthyDetails)&&
+  Objects.equals(this.metricsDbSyncFailureDetails, objEventDetails.metricsDbSyncFailureDetails)&&
   Objects.equals(this.osInfraDetails, objEventDetails.osInfraDetails)&&
   Objects.equals(this.osSeVmDetails, objEventDetails.osSeVmDetails)&&
   Objects.equals(this.osVnicDetails, objEventDetails.osVnicDetails)&&
@@ -5607,6 +5960,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.appSignatureEventData, objEventDetails.appSignatureEventData)&&
   Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
   Objects.equals(this.nsxtImgDetails, objEventDetails.nsxtImgDetails)&&
+  Objects.equals(this.vcenterClusterDetails, objEventDetails.vcenterClusterDetails)&&
+  Objects.equals(this.nsxtServiceDetails, objEventDetails.nsxtServiceDetails)&&
+  Objects.equals(this.nsxtEndpointDetails, objEventDetails.nsxtEndpointDetails)&&
+  Objects.equals(this.nsxtPolicyDetails, objEventDetails.nsxtPolicyDetails)&&
+  Objects.equals(this.nsxtRuleDetails, objEventDetails.nsxtRuleDetails)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -5622,14 +5980,17 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.secureKeyExchangeInfo, objEventDetails.secureKeyExchangeInfo)&&
   Objects.equals(this.logAgentEventDetails, objEventDetails.logAgentEventDetails)&&
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
-  Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError);
+  Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
+  Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
+  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class EventDetails {\n");
-      sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
+      sb.append("    adaptreplEvent: ").append(toIndentedString(adaptreplEvent)).append("\n");
+        sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
         sb.append("    albservicesCaseDetails: ").append(toIndentedString(albservicesCaseDetails)).append("\n");
         sb.append("    albservicesFileUploadDetails: ").append(toIndentedString(albservicesFileUploadDetails)).append("\n");
         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");
@@ -5640,6 +6001,7 @@ public String toString() {
         sb.append("    apicAgentGenericDetails: ").append(toIndentedString(apicAgentGenericDetails)).append("\n");
         sb.append("    apicAgentVsNetworkError: ").append(toIndentedString(apicAgentVsNetworkError)).append("\n");
         sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
+        sb.append("    attachIpStatusDetails: ").append(toIndentedString(attachIpStatusDetails)).append("\n");
         sb.append("    avgUptimeChangeDetails: ").append(toIndentedString(avgUptimeChangeDetails)).append("\n");
         sb.append("    awsAsgDeletionDetails: ").append(toIndentedString(awsAsgDeletionDetails)).append("\n");
         sb.append("    awsAsgNotifDetails: ").append(toIndentedString(awsAsgNotifDetails)).append("\n");
@@ -5686,6 +6048,7 @@ public String toString() {
         sb.append("    configUserLoginDetails: ").append(toIndentedString(configUserLoginDetails)).append("\n");
         sb.append("    configUserLogoutDetails: ").append(toIndentedString(configUserLogoutDetails)).append("\n");
         sb.append("    configUserNotAuthrzRuleDetails: ").append(toIndentedString(configUserNotAuthrzRuleDetails)).append("\n");
+        sb.append("    connectionEvent: ").append(toIndentedString(connectionEvent)).append("\n");
         sb.append("    containerCloudBatchSetup: ").append(toIndentedString(containerCloudBatchSetup)).append("\n");
         sb.append("    containerCloudSetup: ").append(toIndentedString(containerCloudSetup)).append("\n");
         sb.append("    containerCloudSevice: ").append(toIndentedString(containerCloudSevice)).append("\n");
@@ -5698,6 +6061,7 @@ public String toString() {
         sb.append("    csInfraDetails: ").append(toIndentedString(csInfraDetails)).append("\n");
         sb.append("    databaseEventInfo: ").append(toIndentedString(databaseEventInfo)).append("\n");
         sb.append("    deleteSeDetails: ").append(toIndentedString(deleteSeDetails)).append("\n");
+        sb.append("    detachIpStatusDetails: ").append(toIndentedString(detachIpStatusDetails)).append("\n");
         sb.append("    disableSeMigrateDetails: ").append(toIndentedString(disableSeMigrateDetails)).append("\n");
         sb.append("    discSummary: ").append(toIndentedString(discSummary)).append("\n");
         sb.append("    dnsQueryError: ").append(toIndentedString(dnsQueryError)).append("\n");
@@ -5726,11 +6090,16 @@ public String toString() {
         sb.append("    metricsDbDiskDetails: ").append(toIndentedString(metricsDbDiskDetails)).append("\n");
         sb.append("    metricsDbQueueFullDetails: ").append(toIndentedString(metricsDbQueueFullDetails)).append("\n");
         sb.append("    metricsDbQueueHealthyDetails: ").append(toIndentedString(metricsDbQueueHealthyDetails)).append("\n");
+        sb.append("    metricsDbSyncFailureDetails: ").append(toIndentedString(metricsDbSyncFailureDetails)).append("\n");
         sb.append("    mgmtNwChangeDetails: ").append(toIndentedString(mgmtNwChangeDetails)).append("\n");
         sb.append("    modifyNetworksDetails: ").append(toIndentedString(modifyNetworksDetails)).append("\n");
         sb.append("    networkSubnetDetails: ").append(toIndentedString(networkSubnetDetails)).append("\n");
+        sb.append("    nsxtEndpointDetails: ").append(toIndentedString(nsxtEndpointDetails)).append("\n");
         sb.append("    nsxtImgDetails: ").append(toIndentedString(nsxtImgDetails)).append("\n");
         sb.append("    nsxtInfo: ").append(toIndentedString(nsxtInfo)).append("\n");
+        sb.append("    nsxtPolicyDetails: ").append(toIndentedString(nsxtPolicyDetails)).append("\n");
+        sb.append("    nsxtRuleDetails: ").append(toIndentedString(nsxtRuleDetails)).append("\n");
+        sb.append("    nsxtServiceDetails: ").append(toIndentedString(nsxtServiceDetails)).append("\n");
         sb.append("    nwSubnetClashDetails: ").append(toIndentedString(nwSubnetClashDetails)).append("\n");
         sb.append("    nwSummarizedDetails: ").append(toIndentedString(nwSummarizedDetails)).append("\n");
         sb.append("    ociInfo: ").append(toIndentedString(ociInfo)).append("\n");
@@ -5812,6 +6181,7 @@ public String toString() {
         sb.append("    upgradeEntry: ").append(toIndentedString(upgradeEntry)).append("\n");
         sb.append("    upgradeStatusInfo: ").append(toIndentedString(upgradeStatusInfo)).append("\n");
         sb.append("    vcaInfraDetails: ").append(toIndentedString(vcaInfraDetails)).append("\n");
+        sb.append("    vcenterClusterDetails: ").append(toIndentedString(vcenterClusterDetails)).append("\n");
         sb.append("    vcenterConnectivityStatus: ").append(toIndentedString(vcenterConnectivityStatus)).append("\n");
         sb.append("    vcenterDetails: ").append(toIndentedString(vcenterDetails)).append("\n");
         sb.append("    vcenterDiscFailure: ").append(toIndentedString(vcenterDiscFailure)).append("\n");
@@ -5819,6 +6189,7 @@ public String toString() {
         sb.append("    vcenterObjDeleteDetails: ").append(toIndentedString(vcenterObjDeleteDetails)).append("\n");
         sb.append("    vipAutoscale: ").append(toIndentedString(vipAutoscale)).append("\n");
         sb.append("    vipDnsInfo: ").append(toIndentedString(vipDnsInfo)).append("\n");
+        sb.append("    vipSymmetryDetails: ").append(toIndentedString(vipSymmetryDetails)).append("\n");
         sb.append("    vmDetails: ").append(toIndentedString(vmDetails)).append("\n");
         sb.append("    vsAwaitingseDetails: ").append(toIndentedString(vsAwaitingseDetails)).append("\n");
         sb.append("    vsErrorDetails: ").append(toIndentedString(vsErrorDetails)).append("\n");
@@ -5828,6 +6199,7 @@ public String toString() {
         sb.append("    vsPoolNwFltrDetails: ").append(toIndentedString(vsPoolNwFltrDetails)).append("\n");
         sb.append("    vsScaleinDetails: ").append(toIndentedString(vsScaleinDetails)).append("\n");
         sb.append("    vsScaleoutDetails: ").append(toIndentedString(vsScaleoutDetails)).append("\n");
+        sb.append("    vsSwitchoverDetails: ").append(toIndentedString(vsSwitchoverDetails)).append("\n");
       sb.append("}");
   return sb.toString();
 }

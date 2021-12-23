@@ -26,31 +26,31 @@ import org.springframework.stereotype.Service;
 public class OCSPResponseInfo extends AviRestResource {
     @JsonProperty("cert_status")
     @JsonInclude(Include.NON_NULL)
-    private String certStatus = null;
+    private String certStatus;
 
     @JsonProperty("next_update")
     @JsonInclude(Include.NON_NULL)
-    private String nextUpdate = null;
+    private String nextUpdate;
 
     @JsonProperty("ocsp_resp_from_responder_url")
     @JsonInclude(Include.NON_NULL)
-    private String ocspRespFromResponderUrl = null;
+    private String ocspRespFromResponderUrl;
 
     @JsonProperty("ocsp_response")
     @JsonInclude(Include.NON_NULL)
-    private String ocspResponse = null;
+    private String ocspResponse;
 
     @JsonProperty("revocation_reason")
     @JsonInclude(Include.NON_NULL)
-    private String revocationReason = null;
+    private String revocationReason;
 
     @JsonProperty("revocation_time")
     @JsonInclude(Include.NON_NULL)
-    private String revocationTime = null;
+    private String revocationTime;
 
     @JsonProperty("this_update")
     @JsonInclude(Include.NON_NULL)
-    private String thisUpdate = null;
+    private String thisUpdate;
 
 
 
@@ -59,7 +59,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * Revocation status of the certificate.
    * Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED, OCSP_CERTSTATUS_UNKNOWN.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return certStatus
    */
   @VsoMethod
@@ -72,7 +71,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * Revocation status of the certificate.
    * Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED, OCSP_CERTSTATUS_UNKNOWN.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param certStatus set the certStatus.
    */
   @VsoMethod
@@ -84,7 +82,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The time at or before which newer information will be available about the status of the certificate.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return nextUpdate
    */
   @VsoMethod
@@ -96,7 +93,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * The time at or before which newer information will be available about the status of the certificate.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param nextUpdate set the nextUpdate.
    */
   @VsoMethod
@@ -108,7 +104,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The ocsp responder url from which the response is received.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspRespFromResponderUrl
    */
   @VsoMethod
@@ -120,7 +115,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * The ocsp responder url from which the response is received.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspRespFromResponderUrl set the ocspRespFromResponderUrl.
    */
   @VsoMethod
@@ -132,7 +126,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Signed ocsp response received from the ca's ocsp responder.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return ocspResponse
    */
   @VsoMethod
@@ -144,7 +137,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Signed ocsp response received from the ca's ocsp responder.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param ocspResponse set the ocspResponse.
    */
   @VsoMethod
@@ -160,7 +152,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * OCSP_REVOCATION_REASON_CERTIFICATE_HOLD, OCSP_REVOCATION_REASON_REMOVE_FROM_CRL, OCSP_REVOCATION_REASON_PRIVILEGE_WITHDRAWN,
    * OCSP_REVOCATION_REASON_AA_COMPROMISE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return revocationReason
    */
   @VsoMethod
@@ -176,7 +167,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * OCSP_REVOCATION_REASON_CERTIFICATE_HOLD, OCSP_REVOCATION_REASON_REMOVE_FROM_CRL, OCSP_REVOCATION_REASON_PRIVILEGE_WITHDRAWN,
    * OCSP_REVOCATION_REASON_AA_COMPROMISE.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param revocationReason set the revocationReason.
    */
   @VsoMethod
@@ -188,7 +178,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Iso 8601 compatible timestamp at which the certificate was revoked or placed on hold.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return revocationTime
    */
   @VsoMethod
@@ -200,7 +189,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * Iso 8601 compatible timestamp at which the certificate was revoked or placed on hold.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param revocationTime set the revocationTime.
    */
   @VsoMethod
@@ -212,7 +200,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The most recent time at which the status being indicated is known by the ocsp responder to have been correct.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return thisUpdate
    */
   @VsoMethod
@@ -224,7 +211,6 @@ public class OCSPResponseInfo extends AviRestResource {
    * This is the setter method to the attribute.
    * The most recent time at which the status being indicated is known by the ocsp responder to have been correct.
    * Field introduced in 20.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param thisUpdate set the thisUpdate.
    */
   @VsoMethod

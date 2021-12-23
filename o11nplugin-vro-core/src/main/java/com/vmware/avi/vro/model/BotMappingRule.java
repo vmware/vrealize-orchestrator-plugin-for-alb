@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.BotClassMatcher;
 import com.vmware.avi.vro.model.BotClassification;
 import com.vmware.avi.vro.model.StringMatch;
+import com.vmware.avi.vro.model.BotMappingRuleMatchTarget;
 import com.vmware.avi.vro.model.BotTypeMatcher;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -30,7 +31,7 @@ import org.springframework.stereotype.Service;
 public class BotMappingRule extends AviRestResource {
     @JsonProperty("class_matcher")
     @JsonInclude(Include.NON_NULL)
-    private BotClassMatcher classMatcher = null;
+    private BotClassMatcher classMatcher;
 
     @JsonProperty("classification")
     @JsonInclude(Include.NON_NULL)
@@ -38,15 +39,19 @@ public class BotMappingRule extends AviRestResource {
 
     @JsonProperty("component_matcher")
     @JsonInclude(Include.NON_NULL)
-    private String componentMatcher = null;
+    private String componentMatcher;
 
     @JsonProperty("identifier_matcher")
     @JsonInclude(Include.NON_NULL)
-    private StringMatch identifierMatcher = null;
+    private StringMatch identifierMatcher;
 
     @JsonProperty("index")
     @JsonInclude(Include.NON_NULL)
     private Integer index = null;
+
+    @JsonProperty("match")
+    @JsonInclude(Include.NON_NULL)
+    private BotMappingRuleMatchTarget match = null;
 
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
@@ -54,15 +59,15 @@ public class BotMappingRule extends AviRestResource {
 
     @JsonProperty("type_matcher")
     @JsonInclude(Include.NON_NULL)
-    private BotTypeMatcher typeMatcher = null;
+    private BotTypeMatcher typeMatcher;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * How to match the botclientclass.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return classMatcher
    */
   @VsoMethod
@@ -73,8 +78,8 @@ public class BotMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * How to match the botclientclass.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param classMatcher set the classMatcher.
    */
   @VsoMethod
@@ -110,8 +115,8 @@ public class BotMappingRule extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * The component for which this mapping is used.
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return componentMatcher
    */
   @VsoMethod
@@ -123,8 +128,8 @@ public class BotMappingRule extends AviRestResource {
    * This is the setter method to the attribute.
    * The component for which this mapping is used.
    * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param componentMatcher set the componentMatcher.
    */
   @VsoMethod
@@ -135,8 +140,8 @@ public class BotMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * The list of bot identifier names and how they're matched.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return identifierMatcher
    */
   @VsoMethod
@@ -147,8 +152,8 @@ public class BotMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * The list of bot identifier names and how they're matched.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param identifierMatcher set the identifierMatcher.
    */
   @VsoMethod
@@ -182,6 +187,30 @@ public class BotMappingRule extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * How to match the request  all the specified properties must be fulfilled.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return match
+   */
+  @VsoMethod
+  public BotMappingRuleMatchTarget getMatch() {
+    return match;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * How to match the request  all the specified properties must be fulfilled.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param match set the match.
+   */
+  @VsoMethod
+  public void setMatch(BotMappingRuleMatchTarget match) {
+    this.match = match;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * A name describing the rule in a short form.
    * Field introduced in 21.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -207,8 +236,8 @@ public class BotMappingRule extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * How to match the botclienttype.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return typeMatcher
    */
   @VsoMethod
@@ -219,8 +248,8 @@ public class BotMappingRule extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * How to match the botclienttype.
+   * Field deprecated in 21.1.3.
    * Field introduced in 21.1.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param typeMatcher set the typeMatcher.
    */
   @VsoMethod
@@ -245,7 +274,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.classMatcher, objBotMappingRule.classMatcher)&&
   Objects.equals(this.typeMatcher, objBotMappingRule.typeMatcher)&&
   Objects.equals(this.identifierMatcher, objBotMappingRule.identifierMatcher)&&
-  Objects.equals(this.classification, objBotMappingRule.classification);
+  Objects.equals(this.classification, objBotMappingRule.classification)&&
+  Objects.equals(this.match, objBotMappingRule.match);
 }
 
 @Override
@@ -257,6 +287,7 @@ public String toString() {
         sb.append("    componentMatcher: ").append(toIndentedString(componentMatcher)).append("\n");
         sb.append("    identifierMatcher: ").append(toIndentedString(identifierMatcher)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    match: ").append(toIndentedString(match)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    typeMatcher: ").append(toIndentedString(typeMatcher)).append("\n");
       sb.append("}");

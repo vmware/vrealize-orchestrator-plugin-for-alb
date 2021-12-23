@@ -36,7 +36,7 @@ public class WafConfig extends AviRestResource {
 
     @JsonProperty("allowed_request_content_types")
     @JsonInclude(Include.NON_NULL)
-    private List<String> allowedRequestContentTypes = null;
+    private List<String> allowedRequestContentTypes;
 
     @JsonProperty("argument_separator")
     @JsonInclude(Include.NON_NULL)
@@ -61,6 +61,10 @@ public class WafConfig extends AviRestResource {
     @JsonProperty("confidence_override")
     @JsonInclude(Include.NON_NULL)
     private AppLearningConfidenceOverride confidenceOverride;
+
+    @JsonProperty("content_type_mappings")
+    @JsonInclude(Include.NON_NULL)
+    private List<WafContentTypeMapping> contentTypeMappings = null;
 
     @JsonProperty("cookie_format_version")
     @JsonInclude(Include.NON_NULL)
@@ -244,9 +248,8 @@ public class WafConfig extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Waf allowed content types.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.1.
-   * Maximum of 64 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypes
    */
   @VsoMethod
@@ -257,9 +260,8 @@ public class WafConfig extends AviRestResource {
   /**
    * This is the setter method. this will set the allowedRequestContentTypes
    * Waf allowed content types.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.1.
-   * Maximum of 64 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypes
    */
   @VsoMethod
@@ -270,9 +272,8 @@ public class WafConfig extends AviRestResource {
   /**
    * This is the setter method this will set the allowedRequestContentTypes
    * Waf allowed content types.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.1.
-   * Maximum of 64 items allowed.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return allowedRequestContentTypes
    */
   @VsoMethod
@@ -442,6 +443,62 @@ public class WafConfig extends AviRestResource {
   public void setConfidenceOverride(AppLearningConfidenceOverride confidenceOverride) {
     this.confidenceOverride = confidenceOverride;
   }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Waf content-types and their request body parsers.
+   * Use this field to configure which content-types should be handled by waf and which parser should be used.
+   * All content-types here are treated as 'allowed'.
+   * The order of entries matters.
+   * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
+   * Field introduced in 21.1.3.
+   * Maximum of 256 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return contentTypeMappings
+   */
+  @VsoMethod
+  public List<WafContentTypeMapping> getContentTypeMappings() {
+    return contentTypeMappings;
+  }
+
+  /**
+   * This is the setter method. this will set the contentTypeMappings
+   * Waf content-types and their request body parsers.
+   * Use this field to configure which content-types should be handled by waf and which parser should be used.
+   * All content-types here are treated as 'allowed'.
+   * The order of entries matters.
+   * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
+   * Field introduced in 21.1.3.
+   * Maximum of 256 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return contentTypeMappings
+   */
+  @VsoMethod
+  public void setContentTypeMappings(List<WafContentTypeMapping>  contentTypeMappings) {
+    this.contentTypeMappings = contentTypeMappings;
+  }
+
+  /**
+   * This is the setter method this will set the contentTypeMappings
+   * Waf content-types and their request body parsers.
+   * Use this field to configure which content-types should be handled by waf and which parser should be used.
+   * All content-types here are treated as 'allowed'.
+   * The order of entries matters.
+   * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
+   * Field introduced in 21.1.3.
+   * Maximum of 256 items allowed.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return contentTypeMappings
+   */
+  @VsoMethod
+  public WafConfig addContentTypeMappingsItem(WafContentTypeMapping contentTypeMappingsItem) {
+    if (this.contentTypeMappings == null) {
+      this.contentTypeMappings = new ArrayList<WafContentTypeMapping>();
+    }
+    this.contentTypeMappings.add(contentTypeMappingsItem);
+    return this;
+  }
+
 
   /**
    * This is the getter method this will return the attribute value.
@@ -765,7 +822,6 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
-   * Maximum of 256 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
@@ -778,7 +834,6 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the restrictedExtensions
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
-   * Maximum of 256 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
@@ -791,7 +846,6 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the restrictedExtensions
    * Waf restricted file extensions.
    * Field introduced in 17.2.1.
-   * Maximum of 256 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedExtensions
    */
@@ -809,7 +863,6 @@ public class WafConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
@@ -822,7 +875,6 @@ public class WafConfig extends AviRestResource {
    * This is the setter method. this will set the restrictedHeaders
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
@@ -835,7 +887,6 @@ public class WafConfig extends AviRestResource {
    * This is the setter method this will set the restrictedHeaders
    * Waf restricted http headers.
    * Field introduced in 17.2.1.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return restrictedHeaders
    */
@@ -906,7 +957,6 @@ public class WafConfig extends AviRestResource {
    * Waf static file extensions.
    * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
@@ -920,7 +970,6 @@ public class WafConfig extends AviRestResource {
    * Waf static file extensions.
    * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
@@ -934,7 +983,6 @@ public class WafConfig extends AviRestResource {
    * Waf static file extensions.
    * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
    * Field introduced in 17.2.5.
-   * Maximum of 64 items allowed.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return staticExtensions
    */
@@ -1067,7 +1115,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.regexRecursionLimit, objWafConfig.regexRecursionLimit)&&
   Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection)&&
   Objects.equals(this.statusHeaderName, objWafConfig.statusHeaderName)&&
-  Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader);
+  Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader)&&
+  Objects.equals(this.contentTypeMappings, objWafConfig.contentTypeMappings);
 }
 
 @Override
@@ -1083,6 +1132,7 @@ public String toString() {
         sb.append("    clientNonfileUploadMaxBodySize: ").append(toIndentedString(clientNonfileUploadMaxBodySize)).append("\n");
         sb.append("    clientRequestMaxBodySize: ").append(toIndentedString(clientRequestMaxBodySize)).append("\n");
         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
+        sb.append("    contentTypeMappings: ").append(toIndentedString(contentTypeMappings)).append("\n");
         sb.append("    cookieFormatVersion: ").append(toIndentedString(cookieFormatVersion)).append("\n");
         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
         sb.append("    ignoreIncompleteRequestBodyError: ").append(toIndentedString(ignoreIncompleteRequestBodyError)).append("\n");
