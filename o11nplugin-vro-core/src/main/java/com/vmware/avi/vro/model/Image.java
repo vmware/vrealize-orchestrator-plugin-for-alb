@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.PackageDetails;
+import com.vmware.avi.vro.model.ImageUploadOpsStatus;
 import com.vmware.avi.vro.model.SupportedMigrations;
 import com.vmware.avi.vro.model.PackageDetails;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -43,6 +44,22 @@ public class Image extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String controllerPatchUuid = null;
 
+    @JsonProperty("duration")
+    @JsonInclude(Include.NON_NULL)
+    private Integer duration = null;
+
+    @JsonProperty("end_time")
+    @JsonInclude(Include.NON_NULL)
+    private String endTime = null;
+
+    @JsonProperty("events")
+    @JsonInclude(Include.NON_NULL)
+    private List<ImageEventMap> events = null;
+
+    @JsonProperty("img_state")
+    @JsonInclude(Include.NON_NULL)
+    private ImageUploadOpsStatus imgState = null;
+
     @JsonProperty("migrations")
     @JsonInclude(Include.NON_NULL)
     private SupportedMigrations migrations = null;
@@ -50,6 +67,10 @@ public class Image extends AviRestResource {
     @JsonProperty("name")
     @JsonInclude(Include.NON_NULL)
     private String name = null;
+
+    @JsonProperty("progress")
+    @JsonInclude(Include.NON_NULL)
+    private Integer progress = 0;
 
     @JsonProperty("se_info")
     @JsonInclude(Include.NON_NULL)
@@ -63,13 +84,25 @@ public class Image extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String sePatchUuid = null;
 
+    @JsonProperty("start_time")
+    @JsonInclude(Include.NON_NULL)
+    private String startTime = null;
+
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
-    private String status = null;
+    private String status;
+
+    @JsonProperty("tasks_completed")
+    @JsonInclude(Include.NON_NULL)
+    private Integer tasksCompleted = 0;
 
     @JsonProperty("tenant_ref")
     @JsonInclude(Include.NON_NULL)
     private String tenantRef = null;
+
+    @JsonProperty("total_tasks")
+    @JsonInclude(Include.NON_NULL)
+    private Integer totalTasks = 0;
 
     @JsonProperty("type")
     @JsonInclude(Include.NON_NULL)
@@ -204,6 +237,121 @@ public class Image extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Time taken to upload the image in seconds.
+   * Field introduced in 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return duration
+   */
+  @VsoMethod
+  public Integer getDuration() {
+    return duration;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Time taken to upload the image in seconds.
+   * Field introduced in 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param duration set the duration.
+   */
+  @VsoMethod
+  public void setDuration(Integer  duration) {
+    this.duration = duration;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image upload end time.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return endTime
+   */
+  @VsoMethod
+  public String getEndTime() {
+    return endTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image upload end time.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param endTime set the endTime.
+   */
+  @VsoMethod
+  public void setEndTime(String  endTime) {
+    this.endTime = endTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image events for image upload operation.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return events
+   */
+  @VsoMethod
+  public List<ImageEventMap> getEvents() {
+    return events;
+  }
+
+  /**
+   * This is the setter method. this will set the events
+   * Image events for image upload operation.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return events
+   */
+  @VsoMethod
+  public void setEvents(List<ImageEventMap>  events) {
+    this.events = events;
+  }
+
+  /**
+   * This is the setter method this will set the events
+   * Image events for image upload operation.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return events
+   */
+  @VsoMethod
+  public Image addEventsItem(ImageEventMap eventsItem) {
+    if (this.events == null) {
+      this.events = new ArrayList<ImageEventMap>();
+    }
+    this.events.add(eventsItem);
+    return this;
+  }
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Status of the image.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return imgState
+   */
+  @VsoMethod
+  public ImageUploadOpsStatus getImgState() {
+    return imgState;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Status of the image.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param imgState set the imgState.
+   */
+  @VsoMethod
+  public void setImgState(ImageUploadOpsStatus imgState) {
+    this.imgState = imgState;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This field describes the api migration related information.
    * Field introduced in 18.2.6.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -248,6 +396,34 @@ public class Image extends AviRestResource {
   @VsoMethod
   public void setName(String  name) {
     this.name = name;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Image upload progress which holds value between 0-100.
+   * Allowed values are 0-100.
+   * Field introduced in 21.1.3.
+   * Unit is percent.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return progress
+   */
+  @VsoMethod
+  public Integer getProgress() {
+    return progress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image upload progress which holds value between 0-100.
+   * Allowed values are 0-100.
+   * Field introduced in 21.1.3.
+   * Unit is percent.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param progress set the progress.
+   */
+  @VsoMethod
+  public void setProgress(Integer  progress) {
+    this.progress = progress;
   }
 
   /**
@@ -324,12 +500,36 @@ public class Image extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Image upload start time.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return startTime
+   */
+  @VsoMethod
+  public String getStartTime() {
+    return startTime;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Image upload start time.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param startTime set the startTime.
+   */
+  @VsoMethod
+  public void setStartTime(String  startTime) {
+    this.startTime = startTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Status to check if the image is present.
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+   * Field deprecated in 21.1.3.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
    */
   @VsoMethod
@@ -343,13 +543,37 @@ public class Image extends AviRestResource {
    * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
    * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
    * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+   * Field deprecated in 21.1.3.
    * Field introduced in 18.2.6.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param status set the status.
    */
   @VsoMethod
   public void setStatus(String  status) {
     this.status = status;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Completed set of tasks for image upload.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return tasksCompleted
+   */
+  @VsoMethod
+  public Integer getTasksCompleted() {
+    return tasksCompleted;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Completed set of tasks for image upload.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param tasksCompleted set the tasksCompleted.
+   */
+  @VsoMethod
+  public void setTasksCompleted(Integer  tasksCompleted) {
+    this.tasksCompleted = tasksCompleted;
   }
 
   /**
@@ -376,6 +600,30 @@ public class Image extends AviRestResource {
   @VsoMethod
   public void setTenantRef(String  tenantRef) {
     this.tenantRef = tenantRef;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Total number of tasks for image upload.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @return totalTasks
+   */
+  @VsoMethod
+  public Integer getTotalTasks() {
+    return totalTasks;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Total number of tasks for image upload.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+   * @param totalTasks set the totalTasks.
+   */
+  @VsoMethod
+  public void setTotalTasks(Integer  totalTasks) {
+    this.totalTasks = totalTasks;
   }
 
   /**
@@ -498,6 +746,14 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.cloudInfoValues, objImage.cloudInfoValues)&&
   Objects.equals(this.controllerPatchName, objImage.controllerPatchName)&&
   Objects.equals(this.sePatchName, objImage.sePatchName)&&
+  Objects.equals(this.imgState, objImage.imgState)&&
+  Objects.equals(this.events, objImage.events)&&
+  Objects.equals(this.tasksCompleted, objImage.tasksCompleted)&&
+  Objects.equals(this.totalTasks, objImage.totalTasks)&&
+  Objects.equals(this.progress, objImage.progress)&&
+  Objects.equals(this.startTime, objImage.startTime)&&
+  Objects.equals(this.endTime, objImage.endTime)&&
+  Objects.equals(this.duration, objImage.duration)&&
   Objects.equals(this.tenantRef, objImage.tenantRef);
 }
 
@@ -509,13 +765,21 @@ public String toString() {
         sb.append("    controllerInfo: ").append(toIndentedString(controllerInfo)).append("\n");
         sb.append("    controllerPatchName: ").append(toIndentedString(controllerPatchName)).append("\n");
         sb.append("    controllerPatchUuid: ").append(toIndentedString(controllerPatchUuid)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    imgState: ").append(toIndentedString(imgState)).append("\n");
         sb.append("    migrations: ").append(toIndentedString(migrations)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("    seInfo: ").append(toIndentedString(seInfo)).append("\n");
         sb.append("    sePatchName: ").append(toIndentedString(sePatchName)).append("\n");
         sb.append("    sePatchUuid: ").append(toIndentedString(sePatchUuid)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+        sb.append("    totalTasks: ").append(toIndentedString(totalTasks)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    uberBundle: ").append(toIndentedString(uberBundle)).append("\n");
             sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

@@ -12,6 +12,7 @@ import com.vmware.avi.vro.model.DataScriptErrorTrace;
 import com.vmware.avi.vro.model.IcapLog;
 import com.vmware.avi.vro.model.JwtLog;
 import com.vmware.avi.vro.model.NtlmLog;
+import com.vmware.avi.vro.model.OauthLog;
 import com.vmware.avi.vro.model.OutOfBandRequestLog;
 import com.vmware.avi.vro.model.PaaLog;
 import com.vmware.avi.vro.model.SamlLog;
@@ -50,6 +51,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonProperty("app_response_time")
     @JsonInclude(Include.NON_NULL)
     private Integer appResponseTime = null;
+
+    @JsonProperty("auth_status")
+    @JsonInclude(Include.NON_NULL)
+    private String authStatus = "AUTH_STATUS_NO_AUTHENTICATION";
 
     @JsonProperty("avg_ingress_latency_be")
     @JsonInclude(Include.NON_NULL)
@@ -254,6 +259,10 @@ public class ApplicationLog extends AviRestResource {
     @JsonProperty("ntlm_log")
     @JsonInclude(Include.NON_NULL)
     private NtlmLog ntlmLog = null;
+
+    @JsonProperty("oauth_log")
+    @JsonInclude(Include.NON_NULL)
+    private OauthLog oauthLog = null;
 
     @JsonProperty("ocsp_status_resp_sent")
     @JsonInclude(Include.NON_NULL)
@@ -467,6 +476,14 @@ public class ApplicationLog extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private String sniHostname = null;
 
+    @JsonProperty("source_ip")
+    @JsonInclude(Include.NON_NULL)
+    private Integer sourceIp = null;
+
+    @JsonProperty("source_ip6")
+    @JsonInclude(Include.NON_NULL)
+    private String sourceIp6 = null;
+
     @JsonProperty("spdy_version")
     @JsonInclude(Include.NON_NULL)
     private String spdyVersion = null;
@@ -619,6 +636,34 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setAppResponseTime(Integer  appResponseTime) {
     this.appResponseTime = appResponseTime;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Set the session authentication status.
+   * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
+   * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
+   * @return authStatus
+   */
+  @VsoMethod
+  public String getAuthStatus() {
+    return authStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Set the session authentication status.
+   * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
+   * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
+   * @param authStatus set the authStatus.
+   */
+  @VsoMethod
+  public void setAuthStatus(String  authStatus) {
+    this.authStatus = authStatus;
   }
 
   /**
@@ -905,7 +950,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
-   * Placeholder for description of property client_ip of obj type applicationlog field type str  type integer.
+   * Ipv4 address of the client.
+   * When true client ip feature is enabled, this will be derived from the header configured in the true client ip feature, if present in the request.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientIp
    */
@@ -916,7 +962,8 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the setter method to the attribute.
-   * Placeholder for description of property client_ip of obj type applicationlog field type str  type integer.
+   * Ipv4 address of the client.
+   * When true client ip feature is enabled, this will be derived from the header configured in the true client ip feature, if present in the request.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientIp set the clientIp.
    */
@@ -1803,6 +1850,30 @@ public class ApplicationLog extends AviRestResource {
   @VsoMethod
   public void setNtlmLog(NtlmLog ntlmLog) {
     this.ntlmLog = ntlmLog;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Logs related to oauth requests.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return oauthLog
+   */
+  @VsoMethod
+  public OauthLog getOauthLog() {
+    return oauthLog;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Logs related to oauth requests.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param oauthLog set the oauthLog.
+   */
+  @VsoMethod
+  public void setOauthLog(OauthLog oauthLog) {
+    this.oauthLog = oauthLog;
   }
 
   /**
@@ -3048,6 +3119,58 @@ public class ApplicationLog extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Source ip of the client connection to the vs.
+   * This can be different from client ip when true client ip feature is enabled.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sourceIp
+   */
+  @VsoMethod
+  public Integer getSourceIp() {
+    return sourceIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Source ip of the client connection to the vs.
+   * This can be different from client ip when true client ip feature is enabled.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sourceIp set the sourceIp.
+   */
+  @VsoMethod
+  public void setSourceIp(Integer  sourceIp) {
+    this.sourceIp = sourceIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ipv6 address of the source of the client connection to the vs.
+   * This can be different from client ipv6 address when true client ip feature is enabled.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sourceIp6
+   */
+  @VsoMethod
+  public String getSourceIp6() {
+    return sourceIp6;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ipv6 address of the source of the client connection to the vs.
+   * This can be different from client ipv6 address when true client ip feature is enabled.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sourceIp6 set the sourceIp6.
+   */
+  @VsoMethod
+  public void setSourceIp6(String  sourceIp6) {
+    this.sourceIp6 = sourceIp6;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property spdy_version of obj type applicationlog field type str  type string.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spdyVersion
@@ -3536,7 +3659,11 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.connEstTimeFe, objApplicationLog.connEstTimeFe)&&
   Objects.equals(this.maxIngressLatencyBe, objApplicationLog.maxIngressLatencyBe)&&
   Objects.equals(this.avgIngressLatencyBe, objApplicationLog.avgIngressLatencyBe)&&
-  Objects.equals(this.connEstTimeBe, objApplicationLog.connEstTimeBe);
+  Objects.equals(this.connEstTimeBe, objApplicationLog.connEstTimeBe)&&
+  Objects.equals(this.sourceIp, objApplicationLog.sourceIp)&&
+  Objects.equals(this.sourceIp6, objApplicationLog.sourceIp6)&&
+  Objects.equals(this.oauthLog, objApplicationLog.oauthLog)&&
+  Objects.equals(this.authStatus, objApplicationLog.authStatus);
 }
 
 @Override
@@ -3547,6 +3674,7 @@ public String toString() {
         sb.append("    allRequestHeaders: ").append(toIndentedString(allRequestHeaders)).append("\n");
         sb.append("    allResponseHeaders: ").append(toIndentedString(allResponseHeaders)).append("\n");
         sb.append("    appResponseTime: ").append(toIndentedString(appResponseTime)).append("\n");
+        sb.append("    authStatus: ").append(toIndentedString(authStatus)).append("\n");
         sb.append("    avgIngressLatencyBe: ").append(toIndentedString(avgIngressLatencyBe)).append("\n");
         sb.append("    avgIngressLatencyFe: ").append(toIndentedString(avgIngressLatencyFe)).append("\n");
         sb.append("    bodyUpdated: ").append(toIndentedString(bodyUpdated)).append("\n");
@@ -3598,6 +3726,7 @@ public String toString() {
         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
         sb.append("    ntlmLog: ").append(toIndentedString(ntlmLog)).append("\n");
+        sb.append("    oauthLog: ").append(toIndentedString(oauthLog)).append("\n");
         sb.append("    ocspStatusRespSent: ").append(toIndentedString(ocspStatusRespSent)).append("\n");
         sb.append("    oobLog: ").append(toIndentedString(oobLog)).append("\n");
         sb.append("    paaLog: ").append(toIndentedString(paaLog)).append("\n");
@@ -3651,6 +3780,8 @@ public String toString() {
         sb.append("    significant: ").append(toIndentedString(significant)).append("\n");
         sb.append("    significantLog: ").append(toIndentedString(significantLog)).append("\n");
         sb.append("    sniHostname: ").append(toIndentedString(sniHostname)).append("\n");
+        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
+        sb.append("    sourceIp6: ").append(toIndentedString(sourceIp6)).append("\n");
         sb.append("    spdyVersion: ").append(toIndentedString(spdyVersion)).append("\n");
         sb.append("    sslCipher: ").append(toIndentedString(sslCipher)).append("\n");
         sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");

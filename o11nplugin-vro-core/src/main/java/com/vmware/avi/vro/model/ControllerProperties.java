@@ -117,6 +117,18 @@ public class ControllerProperties extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer delOfflineSeAfterRebootDelay = 300;
 
+    @JsonProperty("detach_ip_retry_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer detachIpRetryInterval = 60;
+
+    @JsonProperty("detach_ip_retry_limit")
+    @JsonInclude(Include.NON_NULL)
+    private Integer detachIpRetryLimit = 4;
+
+    @JsonProperty("detach_ip_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer detachIpTimeout = 300;
+
     @JsonProperty("dns_refresh_period")
     @JsonInclude(Include.NON_NULL)
     private Integer dnsRefreshPeriod = 60;
@@ -227,7 +239,7 @@ public class ControllerProperties extends AviRestResource {
 
     @JsonProperty("se_from_marketplace")
     @JsonInclude(Include.NON_NULL)
-    private String seFromMarketplace = "IMAGE";
+    private String seFromMarketplace = "IMAGE_SE";
 
     @JsonProperty("se_offline_del")
     @JsonInclude(Include.NON_NULL)
@@ -352,6 +364,18 @@ public class ControllerProperties extends AviRestResource {
     @JsonProperty("vs_se_vnic_ip_fail")
     @JsonInclude(Include.NON_NULL)
     private Integer vsSeVnicIpFail = 120;
+
+    @JsonProperty("vsphere_ha_detection_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsphereHaDetectionTimeout = 120;
+
+    @JsonProperty("vsphere_ha_recovery_timeout")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsphereHaRecoveryTimeout = 480;
+
+    @JsonProperty("vsphere_ha_timer_interval")
+    @JsonInclude(Include.NON_NULL)
+    private Integer vsphereHaTimerInterval = 20;
 
     @JsonProperty("warmstart_se_reconnect_wait_time")
     @JsonInclude(Include.NON_NULL)
@@ -937,6 +961,82 @@ public class ControllerProperties extends AviRestResource {
   @VsoMethod
   public void setDelOfflineSeAfterRebootDelay(Integer  delOfflineSeAfterRebootDelay) {
     this.delOfflineSeAfterRebootDelay = delOfflineSeAfterRebootDelay;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Amount of time to wait after last detach ip failure before attempting next detach ip retry.
+   * Field introduced in 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @return detachIpRetryInterval
+   */
+  @VsoMethod
+  public Integer getDetachIpRetryInterval() {
+    return detachIpRetryInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Amount of time to wait after last detach ip failure before attempting next detach ip retry.
+   * Field introduced in 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+   * @param detachIpRetryInterval set the detachIpRetryInterval.
+   */
+  @VsoMethod
+  public void setDetachIpRetryInterval(Integer  detachIpRetryInterval) {
+    this.detachIpRetryInterval = detachIpRetryInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Maximum number of detach ip retries.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @return detachIpRetryLimit
+   */
+  @VsoMethod
+  public Integer getDetachIpRetryLimit() {
+    return detachIpRetryLimit;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of detach ip retries.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+   * @param detachIpRetryLimit set the detachIpRetryLimit.
+   */
+  @VsoMethod
+  public void setDetachIpRetryLimit(Integer  detachIpRetryLimit) {
+    this.detachIpRetryLimit = detachIpRetryLimit;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Time to wait before marking detach ip as failed.
+   * Field introduced in 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+   * @return detachIpTimeout
+   */
+  @VsoMethod
+  public Integer getDetachIpTimeout() {
+    return detachIpTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Time to wait before marking detach ip as failed.
+   * Field introduced in 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+   * @param detachIpTimeout set the detachIpTimeout.
+   */
+  @VsoMethod
+  public void setDetachIpTimeout(Integer  detachIpTimeout) {
+    this.detachIpTimeout = detachIpTimeout;
   }
 
   /**
@@ -1615,9 +1715,9 @@ public class ControllerProperties extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
    * The setting is applicable only when byol license is selected.
-   * Enum options - MARKETPLACE, IMAGE.
+   * Enum options - MARKETPLACE, IMAGE_SE.
    * Field introduced in 18.1.4, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE_SE".
    * @return seFromMarketplace
    */
   @VsoMethod
@@ -1629,9 +1729,9 @@ public class ControllerProperties extends AviRestResource {
    * This is the setter method to the attribute.
    * This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
    * The setting is applicable only when byol license is selected.
-   * Enum options - MARKETPLACE, IMAGE.
+   * Enum options - MARKETPLACE, IMAGE_SE.
    * Field introduced in 18.1.4, 18.2.1.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
+   * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE_SE".
    * @param seFromMarketplace set the seFromMarketplace.
    */
   @VsoMethod
@@ -2403,6 +2503,92 @@ public class ControllerProperties extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Vsphere ha monitor detection timeout.
+   * If vsphere_ha_enabled is true and the controller is not able to reach the se, placement will wait for this duration for vsphere_ha_inprogress to
+   * be marked true before taking corrective action.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 120.
+   * @return vsphereHaDetectionTimeout
+   */
+  @VsoMethod
+  public Integer getVsphereHaDetectionTimeout() {
+    return vsphereHaDetectionTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vsphere ha monitor detection timeout.
+   * If vsphere_ha_enabled is true and the controller is not able to reach the se, placement will wait for this duration for vsphere_ha_inprogress to
+   * be marked true before taking corrective action.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 120.
+   * @param vsphereHaDetectionTimeout set the vsphereHaDetectionTimeout.
+   */
+  @VsoMethod
+  public void setVsphereHaDetectionTimeout(Integer  vsphereHaDetectionTimeout) {
+    this.vsphereHaDetectionTimeout = vsphereHaDetectionTimeout;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vsphere ha monitor recovery timeout.
+   * Once vsphere_ha_inprogress is set to true (meaning host failure detected and vsphere ha will recover the service engine), placement will wait for
+   * at least this duration for the se to reconnect to the controller before taking corrective action.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 480.
+   * @return vsphereHaRecoveryTimeout
+   */
+  @VsoMethod
+  public Integer getVsphereHaRecoveryTimeout() {
+    return vsphereHaRecoveryTimeout;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vsphere ha monitor recovery timeout.
+   * Once vsphere_ha_inprogress is set to true (meaning host failure detected and vsphere ha will recover the service engine), placement will wait for
+   * at least this duration for the se to reconnect to the controller before taking corrective action.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 480.
+   * @param vsphereHaRecoveryTimeout set the vsphereHaRecoveryTimeout.
+   */
+  @VsoMethod
+  public void setVsphereHaRecoveryTimeout(Integer  vsphereHaRecoveryTimeout) {
+    this.vsphereHaRecoveryTimeout = vsphereHaRecoveryTimeout;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @return vsphereHaTimerInterval
+   */
+  @VsoMethod
+  public Integer getVsphereHaTimerInterval() {
+    return vsphereHaTimerInterval;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
+   * Field introduced in 20.1.7, 21.1.3.
+   * Unit is sec.
+   * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+   * @param vsphereHaTimerInterval set the vsphereHaTimerInterval.
+   */
+  @VsoMethod
+  public void setVsphereHaTimerInterval(Integer  vsphereHaTimerInterval) {
+    this.vsphereHaTimerInterval = vsphereHaTimerInterval;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Unit is sec.
    * Default value when not specified in API or module is interpreted by Avi Controller as 480.
    * @return warmstartSeReconnectWaitTime
@@ -2545,7 +2731,13 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.userAgentCacheConfig, objControllerProperties.userAgentCacheConfig)&&
   Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay)&&
   Objects.equals(this.enablePerProcessStop, objControllerProperties.enablePerProcessStop)&&
-  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax);
+  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax)&&
+  Objects.equals(this.vsphereHaTimerInterval, objControllerProperties.vsphereHaTimerInterval)&&
+  Objects.equals(this.vsphereHaDetectionTimeout, objControllerProperties.vsphereHaDetectionTimeout)&&
+  Objects.equals(this.vsphereHaRecoveryTimeout, objControllerProperties.vsphereHaRecoveryTimeout)&&
+  Objects.equals(this.detachIpRetryInterval, objControllerProperties.detachIpRetryInterval)&&
+  Objects.equals(this.detachIpRetryLimit, objControllerProperties.detachIpRetryLimit)&&
+  Objects.equals(this.detachIpTimeout, objControllerProperties.detachIpTimeout);
 }
 
 @Override
@@ -2575,6 +2767,9 @@ public String toString() {
         sb.append("    deadSeDetectionTimer: ").append(toIndentedString(deadSeDetectionTimer)).append("\n");
         sb.append("    defaultMinimumApiTimeout: ").append(toIndentedString(defaultMinimumApiTimeout)).append("\n");
         sb.append("    delOfflineSeAfterRebootDelay: ").append(toIndentedString(delOfflineSeAfterRebootDelay)).append("\n");
+        sb.append("    detachIpRetryInterval: ").append(toIndentedString(detachIpRetryInterval)).append("\n");
+        sb.append("    detachIpRetryLimit: ").append(toIndentedString(detachIpRetryLimit)).append("\n");
+        sb.append("    detachIpTimeout: ").append(toIndentedString(detachIpTimeout)).append("\n");
         sb.append("    dnsRefreshPeriod: ").append(toIndentedString(dnsRefreshPeriod)).append("\n");
         sb.append("    dummy: ").append(toIndentedString(dummy)).append("\n");
         sb.append("    editSystemLimits: ").append(toIndentedString(editSystemLimits)).append("\n");
@@ -2633,6 +2828,9 @@ public String toString() {
         sb.append("    vsSePingFail: ").append(toIndentedString(vsSePingFail)).append("\n");
         sb.append("    vsSeVnicFail: ").append(toIndentedString(vsSeVnicFail)).append("\n");
         sb.append("    vsSeVnicIpFail: ").append(toIndentedString(vsSeVnicIpFail)).append("\n");
+        sb.append("    vsphereHaDetectionTimeout: ").append(toIndentedString(vsphereHaDetectionTimeout)).append("\n");
+        sb.append("    vsphereHaRecoveryTimeout: ").append(toIndentedString(vsphereHaRecoveryTimeout)).append("\n");
+        sb.append("    vsphereHaTimerInterval: ").append(toIndentedString(vsphereHaTimerInterval)).append("\n");
         sb.append("    warmstartSeReconnectWaitTime: ").append(toIndentedString(warmstartSeReconnectWaitTime)).append("\n");
         sb.append("    warmstartVsResyncWaitTime: ").append(toIndentedString(warmstartVsResyncWaitTime)).append("\n");
       sb.append("}");

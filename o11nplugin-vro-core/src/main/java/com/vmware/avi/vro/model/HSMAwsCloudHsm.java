@@ -26,7 +26,7 @@ import org.springframework.stereotype.Service;
 public class HSMAwsCloudHsm extends AviRestResource {
     @JsonProperty("client_config")
     @JsonInclude(Include.NON_NULL)
-    private String clientConfig = null;
+    private String clientConfig;
 
     @JsonProperty("cluster_cert")
     @JsonInclude(Include.NON_NULL)
@@ -46,14 +46,13 @@ public class HSMAwsCloudHsm extends AviRestResource {
 
     @JsonProperty("mgmt_config")
     @JsonInclude(Include.NON_NULL)
-    private String mgmtConfig = null;
+    private String mgmtConfig;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return clientConfig
    */
   @VsoMethod
@@ -64,7 +63,6 @@ public class HSMAwsCloudHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param clientConfig set the clientConfig.
    */
   @VsoMethod
@@ -195,7 +193,6 @@ public class HSMAwsCloudHsm extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Field introduced in 17.2.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return mgmtConfig
    */
   @VsoMethod
@@ -206,7 +203,6 @@ public class HSMAwsCloudHsm extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Field introduced in 17.2.7.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param mgmtConfig set the mgmtConfig.
    */
   @VsoMethod

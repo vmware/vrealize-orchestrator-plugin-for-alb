@@ -1,0 +1,145 @@
+package com.vmware.avi.vro.model;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
+import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
+import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
+import com.vmware.avi.vro.Constants;
+import org.springframework.stereotype.Service;
+
+/**
+ * The MetricsDbSyncFailureEventDetails is a POJO class extends AviRestResource that used for creating
+ * MetricsDbSyncFailureEventDetails.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
+@VsoObject(create = false, name = "MetricsDbSyncFailureEventDetails")
+@VsoFinder(name = Constants.FINDER_VRO_METRICSDBSYNCFAILUREEVENTDETAILS)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Service
+public class MetricsDbSyncFailureEventDetails extends AviRestResource {
+    @JsonProperty("node_name")
+    @JsonInclude(Include.NON_NULL)
+    private String nodeName = null;
+
+    @JsonProperty("process_name")
+    @JsonInclude(Include.NON_NULL)
+    private String processName = null;
+
+    @JsonProperty("timestamp")
+    @JsonInclude(Include.NON_NULL)
+    private String timestamp = null;
+
+
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Name of the node responsible for this event.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return nodeName
+   */
+  @VsoMethod
+  public String getNodeName() {
+    return nodeName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the node responsible for this event.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param nodeName set the nodeName.
+   */
+  @VsoMethod
+  public void setNodeName(String  nodeName) {
+    this.nodeName = nodeName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Name of the process responsible for this event.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return processName
+   */
+  @VsoMethod
+  public String getProcessName() {
+    return processName;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Name of the process responsible for this event.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param processName set the processName.
+   */
+  @VsoMethod
+  public void setProcessName(String  processName) {
+    this.processName = processName;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Timestamp at which this event occurred.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return timestamp
+   */
+  @VsoMethod
+  public String getTimestamp() {
+    return timestamp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Timestamp at which this event occurred.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param timestamp set the timestamp.
+   */
+  @VsoMethod
+  public void setTimestamp(String  timestamp) {
+    this.timestamp = timestamp;
+  }
+
+
+
+@Override
+public boolean equals(java.lang.Object o) {
+  if (this == o) {
+    return true;
+  }
+  if (o == null || getClass() != o.getClass()) {
+    return false;
+  }
+  MetricsDbSyncFailureEventDetails objMetricsDbSyncFailureEventDetails = (MetricsDbSyncFailureEventDetails) o;
+  return   Objects.equals(this.nodeName, objMetricsDbSyncFailureEventDetails.nodeName)&&
+  Objects.equals(this.processName, objMetricsDbSyncFailureEventDetails.processName)&&
+  Objects.equals(this.timestamp, objMetricsDbSyncFailureEventDetails.timestamp);
+}
+
+@Override
+public String toString() {
+  StringBuilder sb = new StringBuilder();
+  sb.append("class MetricsDbSyncFailureEventDetails {\n");
+      sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
+        sb.append("    processName: ").append(toIndentedString(processName)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+      sb.append("}");
+  return sb.toString();
+}
+
+/**
+* Convert the given object to string with each line indented by 4 spaces
+* (except the first line).
+*/
+private String toIndentedString(java.lang.Object o) {
+  if (o == null) {
+    return "null";
+  }
+  return o.toString().replace("\n", "\n    ");
+}
+}
+

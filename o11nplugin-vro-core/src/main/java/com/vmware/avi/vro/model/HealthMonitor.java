@@ -8,10 +8,14 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.vmware.avi.vro.model.HealthMonitorAuthInfo;
 import com.vmware.avi.vro.model.HealthMonitorDNS;
 import com.vmware.avi.vro.model.HealthMonitorExternal;
+import com.vmware.avi.vro.model.HealthMonitorFtp;
+import com.vmware.avi.vro.model.HealthMonitorFtp;
 import com.vmware.avi.vro.model.HealthMonitorHttp;
 import com.vmware.avi.vro.model.HealthMonitorHttp;
 import com.vmware.avi.vro.model.HealthMonitorImap;
 import com.vmware.avi.vro.model.HealthMonitorImap;
+import com.vmware.avi.vro.model.HealthMonitorLdap;
+import com.vmware.avi.vro.model.HealthMonitorLdap;
 import com.vmware.avi.vro.model.HealthMonitorPop3;
 import com.vmware.avi.vro.model.HealthMonitorPop3;
 import com.vmware.avi.vro.model.HealthMonitorRadius;
@@ -67,6 +71,14 @@ public class HealthMonitor extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer failedChecks = 2;
 
+    @JsonProperty("ftp_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorFtp ftpMonitor = null;
+
+    @JsonProperty("ftps_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorFtp ftpsMonitor = null;
+
     @JsonProperty("http_monitor")
     @JsonInclude(Include.NON_NULL)
     private HealthMonitorHttp httpMonitor = null;
@@ -86,6 +98,14 @@ public class HealthMonitor extends AviRestResource {
     @JsonProperty("is_federated")
     @JsonInclude(Include.NON_NULL)
     private Boolean isFederated = false;
+
+    @JsonProperty("ldap_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorLdap ldapMonitor = null;
+
+    @JsonProperty("ldaps_monitor")
+    @JsonInclude(Include.NON_NULL)
+    private HealthMonitorLdap ldapsMonitor = null;
 
     @JsonProperty("markers")
     @JsonInclude(Include.NON_NULL)
@@ -341,6 +361,54 @@ public class HealthMonitor extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Health monitor for ftp.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ftpMonitor
+   */
+  @VsoMethod
+  public HealthMonitorFtp getFtpMonitor() {
+    return ftpMonitor;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Health monitor for ftp.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ftpMonitor set the ftpMonitor.
+   */
+  @VsoMethod
+  public void setFtpMonitor(HealthMonitorFtp ftpMonitor) {
+    this.ftpMonitor = ftpMonitor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Health monitor for ftps.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ftpsMonitor
+   */
+  @VsoMethod
+  public HealthMonitorFtp getFtpsMonitor() {
+    return ftpsMonitor;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Health monitor for ftps.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ftpsMonitor set the ftpsMonitor.
+   */
+  @VsoMethod
+  public void setFtpsMonitor(HealthMonitorFtp ftpsMonitor) {
+    this.ftpsMonitor = ftpsMonitor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Placeholder for description of property http_monitor of obj type healthmonitor field type str  type ref.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return httpMonitor
@@ -459,6 +527,54 @@ public class HealthMonitor extends AviRestResource {
   @VsoMethod
   public void setIsFederated(Boolean  isFederated) {
     this.isFederated = isFederated;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Health monitor for ldap.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ldapMonitor
+   */
+  @VsoMethod
+  public HealthMonitorLdap getLdapMonitor() {
+    return ldapMonitor;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Health monitor for ldap.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ldapMonitor set the ldapMonitor.
+   */
+  @VsoMethod
+  public void setLdapMonitor(HealthMonitorLdap ldapMonitor) {
+    this.ldapMonitor = ldapMonitor;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Health monitor for ldaps.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ldapsMonitor
+   */
+  @VsoMethod
+  public HealthMonitorLdap getLdapsMonitor() {
+    return ldapsMonitor;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Health monitor for ldaps.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ldapsMonitor set the ldapsMonitor.
+   */
+  @VsoMethod
+  public void setLdapsMonitor(HealthMonitorLdap ldapsMonitor) {
+    this.ldapsMonitor = ldapsMonitor;
   }
 
   /**
@@ -832,7 +948,8 @@ public class HealthMonitor extends AviRestResource {
    * Type of the health monitor.
    * Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
    * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
-   * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS.
+   * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS,
+   * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS.
    * Allowed in basic(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition,
    * essentials(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -848,7 +965,8 @@ public class HealthMonitor extends AviRestResource {
    * Type of the health monitor.
    * Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
    * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
-   * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS.
+   * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS,
+   * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS.
    * Allowed in basic(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition,
    * essentials(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp) edition, enterprise edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -962,6 +1080,10 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.imapMonitor, objHealthMonitor.imapMonitor)&&
   Objects.equals(this.imapsMonitor, objHealthMonitor.imapsMonitor)&&
   Objects.equals(this.markers, objHealthMonitor.markers)&&
+  Objects.equals(this.ftpMonitor, objHealthMonitor.ftpMonitor)&&
+  Objects.equals(this.ftpsMonitor, objHealthMonitor.ftpsMonitor)&&
+  Objects.equals(this.ldapMonitor, objHealthMonitor.ldapMonitor)&&
+  Objects.equals(this.ldapsMonitor, objHealthMonitor.ldapsMonitor)&&
   Objects.equals(this.isFederated, objHealthMonitor.isFederated)&&
   Objects.equals(this.description, objHealthMonitor.description)&&
   Objects.equals(this.tenantRef, objHealthMonitor.tenantRef);
@@ -978,11 +1100,15 @@ public String toString() {
         sb.append("    dnsMonitor: ").append(toIndentedString(dnsMonitor)).append("\n");
         sb.append("    externalMonitor: ").append(toIndentedString(externalMonitor)).append("\n");
         sb.append("    failedChecks: ").append(toIndentedString(failedChecks)).append("\n");
+        sb.append("    ftpMonitor: ").append(toIndentedString(ftpMonitor)).append("\n");
+        sb.append("    ftpsMonitor: ").append(toIndentedString(ftpsMonitor)).append("\n");
         sb.append("    httpMonitor: ").append(toIndentedString(httpMonitor)).append("\n");
         sb.append("    httpsMonitor: ").append(toIndentedString(httpsMonitor)).append("\n");
         sb.append("    imapMonitor: ").append(toIndentedString(imapMonitor)).append("\n");
         sb.append("    imapsMonitor: ").append(toIndentedString(imapsMonitor)).append("\n");
         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+        sb.append("    ldapMonitor: ").append(toIndentedString(ldapMonitor)).append("\n");
+        sb.append("    ldapsMonitor: ").append(toIndentedString(ldapsMonitor)).append("\n");
         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
         sb.append("    monitorPort: ").append(toIndentedString(monitorPort)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

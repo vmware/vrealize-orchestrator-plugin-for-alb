@@ -34,7 +34,7 @@ public class FailActionHTTPRedirect extends AviRestResource {
 
     @JsonProperty("protocol")
     @JsonInclude(Include.NON_NULL)
-    private String protocol = "HTTPS";
+    private String protocol;
 
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
@@ -97,7 +97,6 @@ public class FailActionHTTPRedirect extends AviRestResource {
    * Enum options - HTTP, HTTPS.
    * Allowed in basic(allowed values- http) edition, enterprise edition.
    * Special default for basic edition is http, enterprise is https.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
    * @return protocol
    */
   @VsoMethod
@@ -110,7 +109,6 @@ public class FailActionHTTPRedirect extends AviRestResource {
    * Enum options - HTTP, HTTPS.
    * Allowed in basic(allowed values- http) edition, enterprise edition.
    * Special default for basic edition is http, enterprise is https.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
    * @param protocol set the protocol.
    */
   @VsoMethod

@@ -82,7 +82,7 @@ public class Network extends AviRestResource {
 
     @JsonProperty("vimgrnw_ref")
     @JsonInclude(Include.NON_NULL)
-    private String vimgrnwRef = null;
+    private String vimgrnwRef;
 
     @JsonProperty("vrf_context_ref")
     @JsonInclude(Include.NON_NULL)
@@ -476,7 +476,6 @@ public class Network extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * It is a reference to an object of type vimgrnwruntime.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return vimgrnwRef
    */
   @VsoMethod
@@ -487,7 +486,6 @@ public class Network extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * It is a reference to an object of type vimgrnwruntime.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param vimgrnwRef set the vimgrnwRef.
    */
   @VsoMethod

@@ -30,7 +30,7 @@ public class WafCrsConfig extends AviRestResource {
 
     @JsonProperty("enable_waf_signatures_notifications")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableWafSignaturesNotifications = true;
+    private Boolean enableWafSignaturesNotifications;
 
 
 
@@ -38,7 +38,8 @@ public class WafCrsConfig extends AviRestResource {
    * This is the getter method this will return the attribute value.
    * Enable to automatically download new waf signatures/crs version to the controller.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return enableAutoDownloadWafSignatures
    */
@@ -51,7 +52,8 @@ public class WafCrsConfig extends AviRestResource {
    * This is the setter method to the attribute.
    * Enable to automatically download new waf signatures/crs version to the controller.
    * Field introduced in 21.1.1.
-   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+   * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+   * edition.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param enableAutoDownloadWafSignatures set the enableAutoDownloadWafSignatures.
    */
@@ -66,7 +68,6 @@ public class WafCrsConfig extends AviRestResource {
    * Field introduced in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableWafSignaturesNotifications
    */
   @VsoMethod
@@ -80,7 +81,6 @@ public class WafCrsConfig extends AviRestResource {
    * Field introduced in 21.1.1.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
    */
   @VsoMethod

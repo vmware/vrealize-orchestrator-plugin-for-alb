@@ -14,6 +14,7 @@ import com.vmware.avi.vro.model.IpAddr;
 import com.vmware.avi.vro.model.IPNetworkSubnet;
 import com.vmware.avi.vro.model.JWTValidationVsConfig;
 import com.vmware.avi.vro.model.LDAPVSConfig;
+import com.vmware.avi.vro.model.OAuthVSConfig;
 import com.vmware.avi.vro.model.PerformanceLimits;
 import com.vmware.avi.vro.model.RateProfile;
 import com.vmware.avi.vro.model.SAMLSPConfig;
@@ -89,7 +90,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("azure_availability_set")
     @JsonInclude(Include.NON_NULL)
-    private String azureAvailabilitySet = null;
+    private String azureAvailabilitySet;
 
     @JsonProperty("bgp_peer_labels")
     @JsonInclude(Include.NON_NULL)
@@ -169,7 +170,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("enable_autogw")
     @JsonInclude(Include.NON_NULL)
-    private Boolean enableAutogw = true;
+    private Boolean enableAutogw;
 
     @JsonProperty("enable_rhi")
     @JsonInclude(Include.NON_NULL)
@@ -287,6 +288,10 @@ public class VirtualService extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private List<String> nsxSecuritygroup = null;
 
+    @JsonProperty("oauth_vs_config")
+    @JsonInclude(Include.NON_NULL)
+    private OAuthVSConfig oauthVsConfig = null;
+
     @JsonProperty("performance_limits")
     @JsonInclude(Include.NON_NULL)
     private PerformanceLimits performanceLimits = null;
@@ -353,7 +358,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("sp_pool_refs")
     @JsonInclude(Include.NON_NULL)
-    private List<String> spPoolRefs = null;
+    private List<String> spPoolRefs;
 
     @JsonProperty("ssl_key_and_certificate_refs")
     @JsonInclude(Include.NON_NULL)
@@ -445,7 +450,7 @@ public class VirtualService extends AviRestResource {
 
     @JsonProperty("vh_type")
     @JsonInclude(Include.NON_NULL)
-    private String vhType = "VS_TYPE_VH_SNI";
+    private String vhType;
 
     @JsonProperty("vip")
     @JsonInclude(Include.NON_NULL)
@@ -783,7 +788,6 @@ public class VirtualService extends AviRestResource {
    * Azure availability set to which this vs is associated.
    * Internally set by the cloud connector.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return azureAvailabilitySet
    */
   @VsoMethod
@@ -797,7 +801,6 @@ public class VirtualService extends AviRestResource {
    * Azure availability set to which this vs is associated.
    * Internally set by the cloud connector.
    * Field introduced in 17.2.12, 18.1.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @param azureAvailabilitySet set the azureAvailabilitySet.
    */
   @VsoMethod
@@ -1386,7 +1389,6 @@ public class VirtualService extends AviRestResource {
    * Response traffic to clients will be sent back to the source mac address of the connection, rather than statically sent to a default gateway.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @return enableAutogw
    */
   @VsoMethod
@@ -1399,7 +1401,6 @@ public class VirtualService extends AviRestResource {
    * Response traffic to clients will be sent back to the source mac address of the connection, rather than statically sent to a default gateway.
    * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
    * Special default for basic edition is false, essentials edition is false, enterprise is true.
-   * Default value when not specified in API or module is interpreted by Avi Controller as true.
    * @param enableAutogw set the enableAutogw.
    */
   @VsoMethod
@@ -2214,6 +2215,30 @@ public class VirtualService extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Virtualservice specific oauth config.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return oauthVsConfig
+   */
+  @VsoMethod
+  public OAuthVSConfig getOauthVsConfig() {
+    return oauthVsConfig;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Virtualservice specific oauth config.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param oauthVsConfig set the oauthVsConfig.
+   */
+  @VsoMethod
+  public void setOauthVsConfig(OAuthVSConfig oauthVsConfig) {
+    this.oauthVsConfig = oauthVsConfig;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Optional settings that determine performance limits like max connections or bandwdith etc.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return performanceLimits
@@ -2655,7 +2680,6 @@ public class VirtualService extends AviRestResource {
    * This is a read-only field for the user.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPoolRefs
    */
   @VsoMethod
@@ -2670,7 +2694,6 @@ public class VirtualService extends AviRestResource {
    * This is a read-only field for the user.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPoolRefs
    */
   @VsoMethod
@@ -2685,7 +2708,6 @@ public class VirtualService extends AviRestResource {
    * This is a read-only field for the user.
    * It is a reference to an object of type pool.
    * Field introduced in 17.2.2.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return spPoolRefs
    */
   @VsoMethod
@@ -3355,7 +3377,6 @@ public class VirtualService extends AviRestResource {
    * Field introduced in 20.1.3.
    * Allowed in basic(allowed values- vs_type_vh_enhanced) edition, enterprise edition.
    * Special default for basic edition is vs_type_vh_enhanced, enterprise is vs_type_vh_sni.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_VH_SNI".
    * @return vhType
    */
   @VsoMethod
@@ -3370,7 +3391,6 @@ public class VirtualService extends AviRestResource {
    * Field introduced in 20.1.3.
    * Allowed in basic(allowed values- vs_type_vh_enhanced) edition, enterprise edition.
    * Special default for basic edition is vs_type_vh_enhanced, enterprise is vs_type_vh_sni.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "VS_TYPE_VH_SNI".
    * @param vhType set the vhType.
    */
   @VsoMethod
@@ -3688,7 +3708,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vhMatches, objVirtualService.vhMatches)&&
   Objects.equals(this.vhType, objVirtualService.vhType)&&
   Objects.equals(this.botPolicyRef, objVirtualService.botPolicyRef)&&
-  Objects.equals(this.ldapVsConfig, objVirtualService.ldapVsConfig);
+  Objects.equals(this.ldapVsConfig, objVirtualService.ldapVsConfig)&&
+  Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig);
 }
 
 @Override
@@ -3757,6 +3778,7 @@ public String toString() {
         sb.append("    networkRef: ").append(toIndentedString(networkRef)).append("\n");
         sb.append("    networkSecurityPolicyRef: ").append(toIndentedString(networkSecurityPolicyRef)).append("\n");
         sb.append("    nsxSecuritygroup: ").append(toIndentedString(nsxSecuritygroup)).append("\n");
+        sb.append("    oauthVsConfig: ").append(toIndentedString(oauthVsConfig)).append("\n");
         sb.append("    performanceLimits: ").append(toIndentedString(performanceLimits)).append("\n");
         sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");

@@ -28,6 +28,14 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class SeList extends AviRestResource {
+    @JsonProperty("active_on_cloud")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean activeOnCloud = null;
+
+    @JsonProperty("active_on_se")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean activeOnSe = null;
+
     @JsonProperty("admin_down_requested")
     @JsonInclude(Include.NON_NULL)
     private Boolean adminDownRequested = false;
@@ -36,17 +44,33 @@ public class SeList extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean atCurrVer;
 
+    @JsonProperty("attach_ip_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean attachIpInProgress = null;
+
     @JsonProperty("attach_ip_status")
     @JsonInclude(Include.NON_NULL)
-    private String attachIpStatus = "Programming Network reachability to the Virtual Service IP in the Cloud";
+    private String attachIpStatus;
 
     @JsonProperty("attach_ip_success")
     @JsonInclude(Include.NON_NULL)
-    private Boolean attachIpSuccess = false;
+    private Boolean attachIpSuccess;
+
+    @JsonProperty("cloud_programming_done")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean cloudProgrammingDone = null;
+
+    @JsonProperty("cloud_programming_status")
+    @JsonInclude(Include.NON_NULL)
+    private String cloudProgrammingStatus = null;
 
     @JsonProperty("delete_in_progress")
     @JsonInclude(Include.NON_NULL)
     private Boolean deleteInProgress = false;
+
+    @JsonProperty("detach_ip_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean detachIpInProgress = null;
 
     @JsonProperty("download_selist_only")
     @JsonInclude(Include.NON_NULL)
@@ -112,6 +136,14 @@ public class SeList extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Boolean scaleoutInProgress = false;
 
+    @JsonProperty("se_programming_done")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seProgrammingDone = null;
+
+    @JsonProperty("se_ready_in_progress")
+    @JsonInclude(Include.NON_NULL)
+    private Boolean seReadyInProgress = null;
+
     @JsonProperty("se_ref")
     @JsonInclude(Include.NON_NULL)
     private String seRef = null;
@@ -164,6 +196,54 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Vip is active on cloud.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return activeOnCloud
+   */
+  @VsoMethod
+  public Boolean getActiveOnCloud() {
+    return activeOnCloud;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is active on cloud.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param activeOnCloud set the activeOnCloud.
+   */
+  @VsoMethod
+  public void setActiveOnCloud(Boolean  activeOnCloud) {
+    this.activeOnCloud = activeOnCloud;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vip is active on this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return activeOnSe
+   */
+  @VsoMethod
+  public Boolean getActiveOnSe() {
+    return activeOnSe;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is active on this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param activeOnSe set the activeOnSe.
+   */
+  @VsoMethod
+  public void setActiveOnSe(Boolean  activeOnSe) {
+    this.activeOnSe = activeOnSe;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This flag is set when scaling in an se in admin down mode.
    * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return adminDownRequested
@@ -210,10 +290,33 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Attach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return attachIpInProgress
+   */
+  @VsoMethod
+  public Boolean getAttachIpInProgress() {
+    return attachIpInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Attach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param attachIpInProgress set the attachIpInProgress.
+   */
+  @VsoMethod
+  public void setAttachIpInProgress(Boolean  attachIpInProgress) {
+    this.attachIpInProgress = attachIpInProgress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * This field indicates the status of programming network reachability to the virtual service ip in the cloud.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "Programming Network reachability to the Virtual Service IP
-   * in the Cloud".
    * @return attachIpStatus
    */
   @VsoMethod
@@ -224,9 +327,8 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This field indicates the status of programming network reachability to the virtual service ip in the cloud.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as "Programming Network reachability to the Virtual Service IP
-   * in the Cloud".
    * @param attachIpStatus set the attachIpStatus.
    */
   @VsoMethod
@@ -237,8 +339,8 @@ public class SeList extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * This flag indicates if network reachability to the virtual service ip in the cloud has been successfully programmed.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @return attachIpSuccess
    */
   @VsoMethod
@@ -249,13 +351,61 @@ public class SeList extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * This flag indicates if network reachability to the virtual service ip in the cloud has been successfully programmed.
+   * Field deprecated in 21.1.3.
    * Field introduced in 17.2.3.
-   * Default value when not specified in API or module is interpreted by Avi Controller as false.
    * @param attachIpSuccess set the attachIpSuccess.
    */
   @VsoMethod
   public void setAttachIpSuccess(Boolean  attachIpSuccess) {
     this.attachIpSuccess = attachIpSuccess;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * All attempts to program the vip on cloud have been made.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return cloudProgrammingDone
+   */
+  @VsoMethod
+  public Boolean getCloudProgrammingDone() {
+    return cloudProgrammingDone;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * All attempts to program the vip on cloud have been made.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param cloudProgrammingDone set the cloudProgrammingDone.
+   */
+  @VsoMethod
+  public void setCloudProgrammingDone(Boolean  cloudProgrammingDone) {
+    this.cloudProgrammingDone = cloudProgrammingDone;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Status of vip on the cloud.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return cloudProgrammingStatus
+   */
+  @VsoMethod
+  public String getCloudProgrammingStatus() {
+    return cloudProgrammingStatus;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Status of vip on the cloud.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param cloudProgrammingStatus set the cloudProgrammingStatus.
+   */
+  @VsoMethod
+  public void setCloudProgrammingStatus(String  cloudProgrammingStatus) {
+    this.cloudProgrammingStatus = cloudProgrammingStatus;
   }
 
   /**
@@ -278,6 +428,30 @@ public class SeList extends AviRestResource {
   @VsoMethod
   public void setDeleteInProgress(Boolean  deleteInProgress) {
     this.deleteInProgress = deleteInProgress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Detach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return detachIpInProgress
+   */
+  @VsoMethod
+  public Boolean getDetachIpInProgress() {
+    return detachIpInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Detach ip is in progress.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param detachIpInProgress set the detachIpInProgress.
+   */
+  @VsoMethod
+  public void setDetachIpInProgress(Boolean  detachIpInProgress) {
+    this.detachIpInProgress = detachIpInProgress;
   }
 
   /**
@@ -674,6 +848,54 @@ public class SeList extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * All attempts to program the vip on this serviceengine have been made.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seProgrammingDone
+   */
+  @VsoMethod
+  public Boolean getSeProgrammingDone() {
+    return seProgrammingDone;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * All attempts to program the vip on this serviceengine have been made.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seProgrammingDone set the seProgrammingDone.
+   */
+  @VsoMethod
+  public void setSeProgrammingDone(Boolean  seProgrammingDone) {
+    this.seProgrammingDone = seProgrammingDone;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Vip is awaiting response from this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return seReadyInProgress
+   */
+  @VsoMethod
+  public Boolean getSeReadyInProgress() {
+    return seReadyInProgress;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Vip is awaiting response from this serviceengine.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param seReadyInProgress set the seReadyInProgress.
+   */
+  @VsoMethod
+  public void setSeReadyInProgress(Boolean  seReadyInProgress) {
+    this.seReadyInProgress = seReadyInProgress;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * It is a reference to an object of type serviceengine.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return seRef
@@ -1013,18 +1235,32 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.incarnation, objSeList.incarnation)&&
   Objects.equals(this.scaleoutInProgress, objSeList.scaleoutInProgress)&&
   Objects.equals(this.mgmtIp, objSeList.mgmtIp)&&
-  Objects.equals(this.mgmtIp6, objSeList.mgmtIp6);
+  Objects.equals(this.mgmtIp6, objSeList.mgmtIp6)&&
+  Objects.equals(this.seReadyInProgress, objSeList.seReadyInProgress)&&
+  Objects.equals(this.activeOnSe, objSeList.activeOnSe)&&
+  Objects.equals(this.seProgrammingDone, objSeList.seProgrammingDone)&&
+  Objects.equals(this.attachIpInProgress, objSeList.attachIpInProgress)&&
+  Objects.equals(this.detachIpInProgress, objSeList.detachIpInProgress)&&
+  Objects.equals(this.activeOnCloud, objSeList.activeOnCloud)&&
+  Objects.equals(this.cloudProgrammingDone, objSeList.cloudProgrammingDone)&&
+  Objects.equals(this.cloudProgrammingStatus, objSeList.cloudProgrammingStatus);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class SeList {\n");
-      sb.append("    adminDownRequested: ").append(toIndentedString(adminDownRequested)).append("\n");
+      sb.append("    activeOnCloud: ").append(toIndentedString(activeOnCloud)).append("\n");
+        sb.append("    activeOnSe: ").append(toIndentedString(activeOnSe)).append("\n");
+        sb.append("    adminDownRequested: ").append(toIndentedString(adminDownRequested)).append("\n");
         sb.append("    atCurrVer: ").append(toIndentedString(atCurrVer)).append("\n");
+        sb.append("    attachIpInProgress: ").append(toIndentedString(attachIpInProgress)).append("\n");
         sb.append("    attachIpStatus: ").append(toIndentedString(attachIpStatus)).append("\n");
         sb.append("    attachIpSuccess: ").append(toIndentedString(attachIpSuccess)).append("\n");
+        sb.append("    cloudProgrammingDone: ").append(toIndentedString(cloudProgrammingDone)).append("\n");
+        sb.append("    cloudProgrammingStatus: ").append(toIndentedString(cloudProgrammingStatus)).append("\n");
         sb.append("    deleteInProgress: ").append(toIndentedString(deleteInProgress)).append("\n");
+        sb.append("    detachIpInProgress: ").append(toIndentedString(detachIpInProgress)).append("\n");
         sb.append("    downloadSelistOnly: ").append(toIndentedString(downloadSelistOnly)).append("\n");
         sb.append("    floatingIntfIp: ").append(toIndentedString(floatingIntfIp)).append("\n");
         sb.append("    geoDownload: ").append(toIndentedString(geoDownload)).append("\n");
@@ -1041,6 +1277,8 @@ public String toString() {
         sb.append("    pendingDownload: ").append(toIndentedString(pendingDownload)).append("\n");
         sb.append("    scaleinInProgress: ").append(toIndentedString(scaleinInProgress)).append("\n");
         sb.append("    scaleoutInProgress: ").append(toIndentedString(scaleoutInProgress)).append("\n");
+        sb.append("    seProgrammingDone: ").append(toIndentedString(seProgrammingDone)).append("\n");
+        sb.append("    seReadyInProgress: ").append(toIndentedString(seReadyInProgress)).append("\n");
         sb.append("    seRef: ").append(toIndentedString(seRef)).append("\n");
         sb.append("    secIdx: ").append(toIndentedString(secIdx)).append("\n");
         sb.append("    snatIp: ").append(toIndentedString(snatIp)).append("\n");

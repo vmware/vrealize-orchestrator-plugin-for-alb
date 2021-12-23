@@ -27,18 +27,18 @@ import org.springframework.stereotype.Service;
 public class MatchReplacePair extends AviRestResource {
     @JsonProperty("match_string")
     @JsonInclude(Include.NON_NULL)
-    private String matchString = null;
+    private String matchString;
 
     @JsonProperty("replacement_string")
     @JsonInclude(Include.NON_NULL)
-    private ReplaceStringVar replacementString = null;
+    private ReplaceStringVar replacementString;
 
 
 
   /**
    * This is the getter method this will return the attribute value.
    * String to be matched.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.3.
    * @return matchString
    */
   @VsoMethod
@@ -49,7 +49,7 @@ public class MatchReplacePair extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * String to be matched.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.3.
    * @param matchString set the matchString.
    */
   @VsoMethod
@@ -60,7 +60,7 @@ public class MatchReplacePair extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Replacement string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.3.
    * @return replacementString
    */
   @VsoMethod
@@ -71,7 +71,7 @@ public class MatchReplacePair extends AviRestResource {
   /**
    * This is the setter method to the attribute.
    * Replacement string.
-   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * Field deprecated in 21.1.3.
    * @param replacementString set the replacementString.
    */
   @VsoMethod

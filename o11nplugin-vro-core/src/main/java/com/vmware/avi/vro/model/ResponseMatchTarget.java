@@ -13,6 +13,7 @@ import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.avi.vro.model.ProtocolMatch;
 import com.vmware.avi.vro.model.QueryMatch;
+import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.HTTPStatusMatch;
 import com.vmware.avi.vro.model.HTTPVersionMatch;
 import com.vmware.avi.vro.model.PortMatch;
@@ -74,6 +75,10 @@ public class ResponseMatchTarget extends AviRestResource {
     @JsonProperty("rsp_hdrs")
     @JsonInclude(Include.NON_NULL)
     private List<HdrMatch> rspHdrs = null;
+
+    @JsonProperty("source_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch sourceIp = null;
 
     @JsonProperty("status")
     @JsonInclude(Include.NON_NULL)
@@ -343,6 +348,30 @@ public class ResponseMatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure source ip addresses.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sourceIp
+   */
+  @VsoMethod
+  public IpAddrMatch getSourceIp() {
+    return sourceIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure source ip addresses.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sourceIp set the sourceIp.
+   */
+  @VsoMethod
+  public void setSourceIp(IpAddrMatch sourceIp) {
+    this.sourceIp = sourceIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Configure the http status code(s).
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return status
@@ -430,7 +459,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hostHdr, objResponseMatchTarget.hostHdr)&&
   Objects.equals(this.locHdr, objResponseMatchTarget.locHdr)&&
   Objects.equals(this.status, objResponseMatchTarget.status)&&
-  Objects.equals(this.rspHdrs, objResponseMatchTarget.rspHdrs);
+  Objects.equals(this.rspHdrs, objResponseMatchTarget.rspHdrs)&&
+  Objects.equals(this.sourceIp, objResponseMatchTarget.sourceIp);
 }
 
 @Override
@@ -447,6 +477,7 @@ public String toString() {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    rspHdrs: ").append(toIndentedString(rspHdrs)).append("\n");
+        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");

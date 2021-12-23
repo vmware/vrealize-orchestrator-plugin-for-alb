@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.vmware.avi.vro.model.IPAddrLimits;
 import com.vmware.avi.vro.model.L7limits;
+import com.vmware.avi.vro.model.WAFLimits;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
 import com.vmware.o11n.plugin.sdk.annotation.VsoObject;
@@ -45,6 +47,10 @@ public class ControllerLimits extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer gatewayMonPerVrf = null;
 
+    @JsonProperty("ipaddress_limits")
+    @JsonInclude(Include.NON_NULL)
+    private IPAddrLimits ipaddressLimits = null;
+
     @JsonProperty("ips_per_ipgroup")
     @JsonInclude(Include.NON_NULL)
     private Integer ipsPerIpgroup = null;
@@ -73,6 +79,10 @@ public class ControllerLimits extends AviRestResource {
     @JsonInclude(Include.NON_NULL)
     private Integer rulesPerHttppolicy;
 
+    @JsonProperty("rules_per_nat_policy")
+    @JsonInclude(Include.NON_NULL)
+    private Integer rulesPerNatPolicy = null;
+
     @JsonProperty("rules_per_networksecuritypolicy")
     @JsonInclude(Include.NON_NULL)
     private Integer rulesPerNetworksecuritypolicy = null;
@@ -96,6 +106,10 @@ public class ControllerLimits extends AviRestResource {
     @JsonProperty("vs_l2_scaleout")
     @JsonInclude(Include.NON_NULL)
     private Integer vsL2Scaleout = null;
+
+    @JsonProperty("waf_limits")
+    @JsonInclude(Include.NON_NULL)
+    private WAFLimits wafLimits = null;
 
 
 
@@ -254,6 +268,30 @@ public class ControllerLimits extends AviRestResource {
   @VsoMethod
   public void setGatewayMonPerVrf(Integer  gatewayMonPerVrf) {
     this.gatewayMonPerVrf = gatewayMonPerVrf;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Ip address limits.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return ipaddressLimits
+   */
+  @VsoMethod
+  public IPAddrLimits getIpaddressLimits() {
+    return ipaddressLimits;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Ip address limits.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param ipaddressLimits set the ipaddressLimits.
+   */
+  @VsoMethod
+  public void setIpaddressLimits(IPAddrLimits ipaddressLimits) {
+    this.ipaddressLimits = ipaddressLimits;
   }
 
   /**
@@ -426,6 +464,30 @@ public class ControllerLimits extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Maximum number of nat rules in nat policy.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return rulesPerNatPolicy
+   */
+  @VsoMethod
+  public Integer getRulesPerNatPolicy() {
+    return rulesPerNatPolicy;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Maximum number of nat rules in nat policy.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param rulesPerNatPolicy set the rulesPerNatPolicy.
+   */
+  @VsoMethod
+  public void setRulesPerNatPolicy(Integer  rulesPerNatPolicy) {
+    this.rulesPerNatPolicy = rulesPerNatPolicy;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Maximum number of rules per networksecuritypolicy.
    * Field introduced in 20.1.1.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -568,6 +630,30 @@ public class ControllerLimits extends AviRestResource {
     this.vsL2Scaleout = vsL2Scaleout;
   }
 
+  /**
+   * This is the getter method this will return the attribute value.
+   * Waf system limits.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return wafLimits
+   */
+  @VsoMethod
+  public WAFLimits getWafLimits() {
+    return wafLimits;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Waf system limits.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param wafLimits set the wafLimits.
+   */
+  @VsoMethod
+  public void setWafLimits(WAFLimits wafLimits) {
+    this.wafLimits = wafLimits;
+  }
+
 
 
 @Override
@@ -594,6 +680,9 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.vsL2Scaleout, objControllerLimits.vsL2Scaleout)&&
   Objects.equals(this.vsBgpScaleout, objControllerLimits.vsBgpScaleout)&&
   Objects.equals(this.gatewayMonPerVrf, objControllerLimits.gatewayMonPerVrf)&&
+  Objects.equals(this.wafLimits, objControllerLimits.wafLimits)&&
+  Objects.equals(this.rulesPerNatPolicy, objControllerLimits.rulesPerNatPolicy)&&
+  Objects.equals(this.ipaddressLimits, objControllerLimits.ipaddressLimits)&&
   Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
@@ -608,6 +697,7 @@ public String toString() {
         sb.append("    controllerSizingLimits: ").append(toIndentedString(controllerSizingLimits)).append("\n");
         sb.append("    defaultRoutesPerVrfcontext: ").append(toIndentedString(defaultRoutesPerVrfcontext)).append("\n");
         sb.append("    gatewayMonPerVrf: ").append(toIndentedString(gatewayMonPerVrf)).append("\n");
+        sb.append("    ipaddressLimits: ").append(toIndentedString(ipaddressLimits)).append("\n");
         sb.append("    ipsPerIpgroup: ").append(toIndentedString(ipsPerIpgroup)).append("\n");
         sb.append("    l7Limits: ").append(toIndentedString(l7Limits)).append("\n");
         sb.append("    poolgroupsPerVirtualservice: ").append(toIndentedString(poolgroupsPerVirtualservice)).append("\n");
@@ -615,12 +705,14 @@ public String toString() {
         sb.append("    poolsPerVirtualservice: ").append(toIndentedString(poolsPerVirtualservice)).append("\n");
         sb.append("    routesPerVrfcontext: ").append(toIndentedString(routesPerVrfcontext)).append("\n");
         sb.append("    rulesPerHttppolicy: ").append(toIndentedString(rulesPerHttppolicy)).append("\n");
+        sb.append("    rulesPerNatPolicy: ").append(toIndentedString(rulesPerNatPolicy)).append("\n");
         sb.append("    rulesPerNetworksecuritypolicy: ").append(toIndentedString(rulesPerNetworksecuritypolicy)).append("\n");
         sb.append("    serversPerPool: ").append(toIndentedString(serversPerPool)).append("\n");
         sb.append("    sniChildrenPerParent: ").append(toIndentedString(sniChildrenPerParent)).append("\n");
         sb.append("    stringsPerStringgroup: ").append(toIndentedString(stringsPerStringgroup)).append("\n");
         sb.append("    vsBgpScaleout: ").append(toIndentedString(vsBgpScaleout)).append("\n");
         sb.append("    vsL2Scaleout: ").append(toIndentedString(vsL2Scaleout)).append("\n");
+        sb.append("    wafLimits: ").append(toIndentedString(wafLimits)).append("\n");
       sb.append("}");
   return sb.toString();
 }

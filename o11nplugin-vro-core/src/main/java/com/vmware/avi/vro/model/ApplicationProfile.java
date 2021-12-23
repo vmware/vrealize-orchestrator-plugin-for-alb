@@ -29,6 +29,10 @@ import org.springframework.stereotype.Service;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Service
 public class ApplicationProfile extends AviRestResource {
+    @JsonProperty("app_service_type")
+    @JsonInclude(Include.NON_NULL)
+    private String appServiceType = null;
+
     @JsonProperty("cloud_config_cksum")
     @JsonInclude(Include.NON_NULL)
     private String cloudConfigCksum = null;
@@ -98,6 +102,32 @@ public class ApplicationProfile extends AviRestResource {
     private String uuid = null;
 
 
+
+  /**
+   * This is the getter method this will return the attribute value.
+   * Specifies app service type for an application.
+   * Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return appServiceType
+   */
+  @VsoMethod
+  public String getAppServiceType() {
+    return appServiceType;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Specifies app service type for an application.
+   * Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param appServiceType set the appServiceType.
+   */
+  @VsoMethod
+  public void setAppServiceType(String  appServiceType) {
+    this.appServiceType = appServiceType;
+  }
 
   /**
    * This is the getter method this will return the attribute value.
@@ -547,14 +577,16 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.preserveDestIpPort, objApplicationProfile.preserveDestIpPort)&&
   Objects.equals(this.markers, objApplicationProfile.markers)&&
   Objects.equals(this.description, objApplicationProfile.description)&&
-  Objects.equals(this.tenantRef, objApplicationProfile.tenantRef);
+  Objects.equals(this.tenantRef, objApplicationProfile.tenantRef)&&
+  Objects.equals(this.appServiceType, objApplicationProfile.appServiceType);
 }
 
 @Override
 public String toString() {
   StringBuilder sb = new StringBuilder();
   sb.append("class ApplicationProfile {\n");
-      sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
+      sb.append("    appServiceType: ").append(toIndentedString(appServiceType)).append("\n");
+        sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    dnsServiceProfile: ").append(toIndentedString(dnsServiceProfile)).append("\n");

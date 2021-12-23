@@ -14,6 +14,7 @@ import com.vmware.avi.vro.model.MethodMatch;
 import com.vmware.avi.vro.model.PathMatch;
 import com.vmware.avi.vro.model.ProtocolMatch;
 import com.vmware.avi.vro.model.QueryMatch;
+import com.vmware.avi.vro.model.IpAddrMatch;
 import com.vmware.avi.vro.model.HTTPVersionMatch;
 import com.vmware.avi.vro.model.PortMatch;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
@@ -78,6 +79,10 @@ public class MatchTarget extends AviRestResource {
     @JsonProperty("query")
     @JsonInclude(Include.NON_NULL)
     private QueryMatch query = null;
+
+    @JsonProperty("source_ip")
+    @JsonInclude(Include.NON_NULL)
+    private IpAddrMatch sourceIp = null;
 
     @JsonProperty("version")
     @JsonInclude(Include.NON_NULL)
@@ -204,6 +209,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the getter method this will return the attribute value.
    * Configure http header(s).
+   * All configured headers must match.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -215,6 +221,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method. this will set the hdrs
    * Configure http header(s).
+   * All configured headers must match.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -226,6 +233,7 @@ public class MatchTarget extends AviRestResource {
   /**
    * This is the setter method this will set the hdrs
    * Configure http header(s).
+   * All configured headers must match.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return hdrs
    */
@@ -375,6 +383,30 @@ public class MatchTarget extends AviRestResource {
 
   /**
    * This is the getter method this will return the attribute value.
+   * Configure source ip addresses.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @return sourceIp
+   */
+  @VsoMethod
+  public IpAddrMatch getSourceIp() {
+    return sourceIp;
+  }
+
+  /**
+   * This is the setter method to the attribute.
+   * Configure source ip addresses.
+   * Field introduced in 21.1.3.
+   * Default value when not specified in API or module is interpreted by Avi Controller as null.
+   * @param sourceIp set the sourceIp.
+   */
+  @VsoMethod
+  public void setSourceIp(IpAddrMatch sourceIp) {
+    this.sourceIp = sourceIp;
+  }
+
+  /**
+   * This is the getter method this will return the attribute value.
    * Configure versions of the http protocol.
    * Default value when not specified in API or module is interpreted by Avi Controller as null.
    * @return version
@@ -440,7 +472,8 @@ public boolean equals(java.lang.Object o) {
   Objects.equals(this.hostHdr, objMatchTarget.hostHdr)&&
   Objects.equals(this.ipReputationType, objMatchTarget.ipReputationType)&&
   Objects.equals(this.geoMatches, objMatchTarget.geoMatches)&&
-  Objects.equals(this.botDetectionResult, objMatchTarget.botDetectionResult);
+  Objects.equals(this.botDetectionResult, objMatchTarget.botDetectionResult)&&
+  Objects.equals(this.sourceIp, objMatchTarget.sourceIp);
 }
 
 @Override
@@ -458,6 +491,7 @@ public String toString() {
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
+        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
       sb.append("}");
