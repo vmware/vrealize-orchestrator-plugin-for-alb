@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getObjectReference"
 	result-type="string" api-version="6.0.0"
-	id="33f01eb1-694f-4fa2-a2bd-7d492b2f20d1" version="0.0.5"
+	id="33f01eb1-694f-4fa2-a2bd-7d492b2f44d2" version="0.0.8"
 	allowed-operations="vef">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
 	<param n="objectName" t="string"><![CDATA[Object name]]></param>
@@ -13,10 +13,13 @@
 	}
 	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
 	var aviPlugin = null;
+	var controllerIp = controller.substring(0, controller.indexOf("-"));
+	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
 		if(aviVroClient != null){
 			vroController = aviVroClient.cred.controller;
-			if(vroController == controller){
+			controllerTenant = aviVroClient.cred.tenant;
+			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
 				aviPlugin = aviVroClient;
 		  	}
 		}
@@ -25,7 +28,7 @@
 		
 		var objectList = new Array();
 		var myAviVirtualService = new AviVirtualService() ;
-		myAviVirtualService = aviPlugin.getObjectByName(objectType,objectName);		
+		myAviVirtualService = aviPlugin.getObjectByName(objectType,objectName, clientTenant);		
 		if(field == "objectName"){
 			for each(index in objectData){
 				objectList.push(index.name);
@@ -38,7 +41,7 @@
 			var splitUUID =(path[path.length-1]).split('#');
 			var uuid=(splitUUID[splitUUID.length-2]);
 			var myAviPool = new AviPool() ;
-			myAviPool = aviPlugin.getObjectByUUID(path[path.length-2],uuid,null);
+			myAviPool = aviPlugin.getObjectByUUID(path[path.length-2],uuid,clientTenant);
 			var referenceName = myAviPool.getName();			
 			return referenceName;
 		}
@@ -48,7 +51,7 @@
 			var splitUUID =(path[path.length-1]).split('#');
 			var uuid=(splitUUID[splitUUID.length-2]);
 			var myAviPoolGroup = new AviPoolGroup();
-			var myAviPoolGroup = aviPlugin.getObjectByUUID(path[path.length-2],uuid,null);
+			var myAviPoolGroup = aviPlugin.getObjectByUUID(path[path.length-2],uuid,clientTenant);
 			var referenceName = myAviPoolGroup.getName();		
 			return referenceName;
 		}
@@ -58,7 +61,7 @@
 			var splitUUID =(path[path.length-1]).split('#');
 			var uuid=(splitUUID[splitUUID.length-2]);
 			var myAviVsVip = new AviVsVip() ;
-			myAviVsVip = aviPlugin.getObjectByUUID(path[path.length-2],uuid,null);
+			myAviVsVip = aviPlugin.getObjectByUUID(path[path.length-2],uuid,clientTenant);
 			//var objectData = JSON.parse(response);
 			var referenceName = myAviVsVip.getName();		
 			return referenceName;

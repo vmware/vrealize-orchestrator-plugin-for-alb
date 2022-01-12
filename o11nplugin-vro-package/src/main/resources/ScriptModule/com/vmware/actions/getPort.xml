@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getPort"
 	result-type="number" api-version="6.0.0"
-	id="12989189-7a07-4df9-a5fd-4cebaae1b72f" version="0.0.2"
+	id="12989189-7a07-4df9-a5fd-4cebaae1b74f" version="0.0.4"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
@@ -16,26 +16,30 @@
 	}
 	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
 	var aviPlugin = null;
-    System.log("vroClientArray : "+vroClientArray)
+	var controllerIp = controller.substring(0, controller.indexOf("-"));
+	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
             if(aviVroClient !=null){
-            vroController=aviVroClient.cred.controller;
-            if(vroController==controller){
-                aviPlugin=aviVroClient;
-            }
+				vroController = aviVroClient.cred.controller;
+				controllerTenant = aviVroClient.cred.tenant;
+				if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
+	                aviPlugin=aviVroClient;
+	            }
 	    }	
     }
 
 	if((aviPlugin != null) && ((objectName != null)&&(objectName != ''))){
             var myAviPool = new AviPool();
-            myAviPool = aviPlugin.getObjectByName(objectType,objectName);
+            myAviPool = aviPlugin.getObjectByName(objectType,objectName, clientTenant);
             var defaultPort = myAviPool.getDefaultServerPort();
             var servers = myAviPool.getServers();
             var Port;
-            for each(index in servers){
-                Port = index.getPort() == null ? defaultPort : index.getPort();
-            }
-             System.log("Port : "+Port)
+            if (servers != null){
+	            for each(index in servers){
+	                Port = index.getPort() == null ? defaultPort : index.getPort();
+	            }
+	        }
+            System.log("Port : "+Port)
 		    return Port;
         }
 }catch(e){

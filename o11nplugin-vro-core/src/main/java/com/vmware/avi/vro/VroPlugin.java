@@ -49,7 +49,7 @@ public class VroPlugin {
 		aviCredentials.setVersion(version);
 		AviVroClient aviVroClient = new AviVroClient();
 		aviVroClient.setCred(aviCredentials);
-		VroPluginFactory.aviVroClientMap.put(controller, aviVroClient);
+		VroPluginFactory.aviVroClientMap.put(controller+ "-" + tenant, aviVroClient);
 
 	}
 
@@ -70,7 +70,7 @@ public class VroPlugin {
 		aviCredentials.setVersion(version);
 		AviVroClient aviVroClient = new AviVroClient();
 		aviVroClient.setCred(aviCredentials);
-		VroPluginFactory.aviVroClientMap.put(controller, aviVroClient);
+		VroPluginFactory.aviVroClientMap.put(controller + "-" + tenant, aviVroClient);
 	}
 
 	/**

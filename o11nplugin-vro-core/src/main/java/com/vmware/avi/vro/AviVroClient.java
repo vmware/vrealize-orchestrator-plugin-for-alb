@@ -47,7 +47,7 @@ public class AviVroClient {
 	private static final Logger logger = LoggerFactory.getLogger(AviVroClient.class);
 
 	public String getObjectID() {
-		return cred.getController();
+		return cred.getController() + "-" + cred.getTenant();
 	}
 
 	@VsoConstructor
@@ -107,26 +107,13 @@ public class AviVroClient {
 	 * 
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
-	 * @throws JsonProcessingException
-	 * @throws AviApiException
-	 */
-	@VsoMethod
-	public void addObject(AviRestResource objectData) throws JsonProcessingException, AviApiException {
-		this.addObject(objectData, null);
-	}
-
-	/***
-	 * his method add the data into the queue with add operation and if the data is
-	 * already exist it add operation ad update
-	 * 
-	 * @param objectData contains the actual data which is used of creating object
-	 *                   on the controller
 	 * @param workflowId id of the Workflow Run
+	 * @param tenant Tenant of the controller
 	 * @throws JsonProcessingException
 	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void addObject(AviRestResource objectData, String workflowId)
+	public void addObject(AviRestResource objectData, String workflowId, String tenant)
 			throws JsonProcessingException, AviApiException {
 		if (null != objectData) {
 			logger.debug("Executing addObject: ", workflowId);
@@ -134,7 +121,8 @@ public class AviVroClient {
 			mapper.setSerializationInclusion(Include.NON_NULL);
 			String jsonStr = mapper.writeValueAsString(objectData);
 			JSONObject jsonObj = new JSONObject(jsonStr);
-			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString());
+			AviObjectMetadata aviObjectMetadata = new AviObjectMetadata(objectType, jsonObj, OPERATION.ADD.toString(), tenant);
+			aviObjectMetadata.setTenant(tenant);
 			logger.info("inside adding Object : " + workflowDataMap);
 			logger.info("Adding " + objectType + " into queue :" + workflowDataQueue);
 			if (workflowDataMap.containsKey(workflowId)) {
@@ -214,44 +202,6 @@ public class AviVroClient {
 	}
 
 	/**
-	 * This method add the data into the queue with delete operation.
-	 * 
-	 * @param objectData contains the actual data which is used of creating object
-	 *                   on the controller
-	 * @throws JsonProcessingException
-	 * @throws AviApiException
-	 */
-	@VsoMethod
-	public void deleteObject(AviRestResource objectData) throws JsonProcessingException, AviApiException {
-		this.deleteObject(objectData, null);
-	}
-
-	/***
-	 * This method add the data into the queue with delete operation.
-	 * 
-	 * @param objectType type of the object
-	 * @param name       name of the Object
-	 * @throws Exception
-	 */
-
-	@VsoMethod
-	public void deleteObjectByName(String objectType, String name) throws Exception {
-		this.deleteObjectByName(objectType, name, null);
-	}
-
-	/***
-	 * This method add the data into the queue with delete operation.
-	 * 
-	 * @param objectType type of the Object.
-	 * @param uuid       uuid of the object.
-	 * @throws Exception
-	 */
-	@VsoMethod
-	public void deleteObjectByUUID(String objectType, String uuid) throws Exception {
-		this.deleteObjectByUUID(objectType, uuid, null);
-	}
-
-	/**
 	 * this method add the data into the queue with delete operation.
 	 * 
 	 * @param objectType is the type of object.
@@ -303,26 +253,23 @@ public class AviVroClient {
 		}
 	}
 
-	/***
-	 * this method add the data into the queue with delete operation
+	/**
+	 * This method add the data into the queue with delete operation.
 	 * 
-	 * @param objectType is the type of object.
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
-	 * @param tenant     name of Tenant.
+	 * @param tenant  Name of the tenant
 	 * @throws JsonProcessingException
 	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void deleteObject(AviRestResource objectData, String workflowId)
-			throws JsonProcessingException, AviApiException {
-		this.deleteObject(objectData, workflowId, null);
+	public void deleteObject(AviRestResource objectData, String tenant) throws JsonProcessingException, AviApiException {
+		this.deleteObject(objectData, tenant, null);
 	}
 
 	/***
 	 * this method add the data into the queue with delete operation
 	 * 
-	 * @param objectType is the type of object.
 	 * @param objectData contains the actual data which is used of creating object
 	 *                   on the controller
 	 * @param tenant     name of Tenant.
@@ -331,7 +278,7 @@ public class AviVroClient {
 	 * @throws AviApiException
 	 */
 	@VsoMethod
-	public void deleteObject(AviRestResource objectData, String workflowId, String tenant)
+	public void deleteObject(AviRestResource objectData, String tenant, String workflowId)
 			throws JsonProcessingException, AviApiException {
 		if (objectData != null) {
 			String objectType = objectData.getClass().getSimpleName();
@@ -370,24 +317,11 @@ public class AviVroClient {
 	 * @param objectType type of the Object.
 	 * @param name       name of the object.
 	 * @param tenant     name of Tenant.
-	 * @throws Exception
-	 */
-	@VsoMethod
-	public void deleteObjectByName(String objectType, String name, String workflowId) throws Exception {
-		this.deleteObjectByName(objectType, name, workflowId, null);
-	}
-
-	/***
-	 * This method add the data into the queue with delete operation
-	 * 
-	 * @param objectType type of the Object.
-	 * @param name       name of the object.
-	 * @param tenant     name of Tenant.
 	 * @param workflowId id of the workflow Run
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public void deleteObjectByName(String objectType, String name, String workflowId, String tenant) throws Exception {
+	public void deleteObjectByName(String objectType, String name, String tenant, String workflowId) throws Exception {
 		if ((null != objectType) && (!objectType.isEmpty())) {
 			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
 			JSONObject jsonObject = this.getObjectDataByName(objectType, name, userHeader);
@@ -416,12 +350,12 @@ public class AviVroClient {
 	 * 
 	 * @param objectType type of the Object.
 	 * @param uuid       uuid of the object.
-	 * @param tenant     name of Tenant. on the controller
+	 * @param tenant     name of Tenant on the controller
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public void deleteObjectByUUID(String objectType, String uuid, String workflowId) throws Exception {
-		this.deleteObjectByUUID(objectType, uuid, workflowId, null);
+	public void deleteObjectByUUID(String objectType, String uuid, String tenant) throws Exception {
+		this.deleteObjectByUUID(objectType, uuid, tenant, null);
 	}
 
 	/***
@@ -429,12 +363,12 @@ public class AviVroClient {
 	 * 
 	 * @param objectType type of the Object.
 	 * @param uuid       uuid of the object.
-	 * @param tenant     name of Tenant. on the controller
 	 * @param workflowId id of the workflow Run
+	 * @param tenant     name of Tenant. on the controller
 	 * @throws Exception
 	 */
 	@VsoMethod
-	public void deleteObjectByUUID(String objectType, String uuid, String workflowId, String tenant) throws Exception {
+	public void deleteObjectByUUID(String objectType, String uuid, String tenant, String workflowId) throws Exception {
 		if ((null != objectType) && (!objectType.isEmpty())) {
 			HashMap<String, String> userHeader = this.getTenantHeader(tenant);
 			JSONObject jsonObject = this.getObjectDataByUUID(objectType, uuid, userHeader);
@@ -656,8 +590,9 @@ public class AviVroClient {
 				String operation = aviObjectMetadata.getOperation();
 				JSONObject resource = null;
 				String tenant = aviObjectMetadata.getTenant();
+				logger.debug("Creating " + objectType + "on " + tenant);
 				HashMap<String, String> userHeader = this.getTenantHeader(tenant);
-				//
+
 				if (aviObjectMetadata.getNewObject().has("uuid")) {
 					resource = getObjectDataByUUID(objectType, aviObjectMetadata.getNewObject().get("uuid").toString(),
 							userHeader);
@@ -754,19 +689,6 @@ public class AviVroClient {
 		if (!this.workflowDataQueue.isEmpty()) {
 			this.workflowDataQueue.clear();
 		}
-	}
-
-	/***
-	 * Method for getting object data.
-	 * 
-	 * @param objectType is the type of object.
-	 * @param params     is a map containing the key and values.
-	 * @return the JSONArray of the response.
-	 * @throws Exception
-	 */
-	@VsoMethod
-	public JSONArray get(String objectType, Map<String, String> params) throws Exception {
-		return this.get(objectType, params, null);
 	}
 
 	/***
@@ -890,22 +812,6 @@ public class AviVroClient {
 	@VsoMethod
 	public AviRestResource getObjectByName(String objectType, String objectName) throws Exception {
 		return this.getObjectByName(objectType, objectName, null);
-
-	}
-
-	/**
-	 * Method for getting object data based on its uuid.
-	 * 
-	 * @param objectType is the type of object.
-	 * @param uuid       uuid of the object.
-	 * @return the JSONObject of the response.
-	 * 
-	 * @throws Exception
-	 */
-
-	@VsoMethod
-	public AviRestResource getObjectByUUID(String objectType, String uuid) throws Exception {
-		return this.getObjectByUUID(objectType, uuid, null);
 
 	}
 

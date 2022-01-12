@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="fetchObjectLists"
 	result-type="Any" api-version="6.0.0"
-	id="c8fdba15-adb3-4335-9a34-ec8e3825606c" version="0.0.4"
+	id="c8fdba15-adb3-4335-9a34-ec8e3825607c" version="0.0.5"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[IP of the controller]]></param>
 	<param n="objectName" t="string"><![CDATA[Add object name]]></param>
@@ -14,10 +14,13 @@
 	}
 	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
 	var aviPlugin = null;
+	var controllerIp = controller.substring(0, controller.indexOf("-"));
+	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
 		if(aviVroClient != null){
 			vroController = aviVroClient.cred.controller;
-			if(vroController == controller){
+			controllerTenant = aviVroClient.cred.tenant;
+			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
 				aviPlugin = aviVroClient;
 	    	}
   		}
@@ -30,7 +33,7 @@
 		}else {
 			params = null;
 		}
-		var response = aviPlugin.get(objectType,params);
+		var response = aviPlugin.get(objectType,params, clientTenant);
 		var objectData = JSON.parse(response);
 		var object =objectData[0];
 		if(object!=null){
@@ -69,7 +72,7 @@
 				}
 				return poolServers;
 			}else if(field == "poolPGNames"){
-				var response = aviPlugin.get("pool",null);
+				var response = aviPlugin.get("pool",null, clientTenant);
 				var objectData = JSON.parse(response);
 				var poolNames = [];
 				for each(poolIndex in objectData){
@@ -88,21 +91,22 @@
 				}
 				System.log("ServerList : "+ServerList)
 				return ServerList;
-			}
-			else if(field == "ratio"){
-			var ratio;
-			var servers = object.servers;
-				for each(index in servers){
-					ratio=index.ratio;
-				}
-				System.log("ratio : "+ratio);
+			}else if(field == "ratio"){
+				var ratio;
+				var servers = object.servers;
+					for each(index in servers){
+						ratio=index.ratio;
+					}
+					System.log("ratio : "+ratio);
 				return ratio;
 			}else if(field == "port"){
+				var defaultPort = object.default_server_port;
 				var servers = object.servers;
-				var defaultPort = objectData[0].default_server_port;
 				var Port
-				for each(index in servers){
-					Port = index.port == null ? defaultPort : index.port
+				if (servers != null){
+					for each(index in servers){
+						Port = index.port == null ? defaultPort : index.port
+					}
 				}
 				System.log("Port : "+Port)
 				return Port;

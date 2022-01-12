@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="4e6193ee-6a1d-4ffe-880d-ffad734cf9af" version="3.0.1"
+	id="4e6193ee-6a1d-4ffe-880d-ffad736cf9af" version="3.0.3"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Pool]]></display-name>
@@ -14,9 +14,6 @@
 		</param>
 		<param name="controller" type="string">
 			<description><![CDATA[controller]]></description>
-		</param>
-		<param name="tenant" type="string">
-			<description><![CDATA[tenant]]></description>
 		</param>
 		<param name="server_cloud" type="string">
 			<description><![CDATA[server_cloud]]></description>
@@ -125,6 +122,11 @@
 		read-only="false">
 		<value encoded="n"><![CDATA[__NULL__]]></value>
 	</attrib>
+	<attrib name="Tenant" type="string" read-only="false">
+		<value encoded="n"><![CDATA[
+		]]></value>
+		<description><![CDATA[Tenant]]></description>
+	</attrib>
 	<attrib name="createdObj" type="Any" read-only="false">
 		<value encoded="n"><![CDATA[Any#__NULL__]]></value>
 	</attrib>
@@ -137,6 +139,7 @@
 		throw-bind-name="configErrorCode" type="task">
 		<display-name><![CDATA[AVIObjectName]]></display-name>
 		<script encoded="false"><![CDATA[HealthMonitorName = Name+"_HealthMonitor"
+Tenant=workflowRuntime.getAviVroClient().cred.tenant
 version=workflowRuntime.getAviVroClient().cred.version
 
 
@@ -154,6 +157,7 @@ version=workflowRuntime.getAviVroClient().cred.version
 		<out-binding>
 			<bind name="HealthMonitorName" type="string"
 				export-name="HealthMonitorName"></bind>
+			<bind name="Tenant" type="string" export-name="Tenant"></bind>
 			<bind name="version" type="string" export-name="version"></bind>
 		</out-binding>
 		<position y="82.68181818181817" x="104.5"></position>
@@ -178,7 +182,7 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type"></bind>
@@ -213,6 +217,9 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 				explicitly-not-bound="true"></bind>
 			<bind name="https_response_code" type="Array/string"
 				export-name="https_response_code"></bind>
+			<bind name="Tenant" type="string" export-name="Tenant">
+				<description><![CDATA[Tenant name]]></description>
+			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
 		</in-binding>
@@ -266,7 +273,7 @@ actionResult = System.getModule("com.vmware.avi").createPoolObj(PoolServers,enab
 				export-name="server_cloud">
 				<description><![CDATA[Servercloud name]]></description>
 			</bind>
-			<bind name="Tenant" type="string" export-name="tenant">
+			<bind name="Tenant" type="string" export-name="Tenant">
 				<description><![CDATA[Tenant name]]></description>
 			</bind>
 			<bind name="HealthMonitorName" type="string"
@@ -444,11 +451,6 @@ actionResult = System.getModule("com.vmware.avi").finishVroWorkflow(workflowRunt
 				<desc><![CDATA[controller]]></desc>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
-			</p-param>
-			<p-param name="tenant">
-				<desc><![CDATA[tenant ]]></desc>
-				<p-qual kind="static" name="defaultValue" type="string"><![CDATA[admin]]></p-qual>
-				<p-qual kind="ognl" name="notVisible" type="boolean"><![CDATA[true]]></p-qual>
 			</p-param>
 			<p-param name="server_cloud">
 				<desc><![CDATA[server_cloud]]></desc>

@@ -1,10 +1,6 @@
 package com.vmware.avi.vro;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vmware.avi.vro.model.AviRestResource;
 import com.vmware.avi.vro.model.Pool;
+import com.vmware.avi.vro.model.Tenant;
 import com.vmware.avi.vro.model.VirtualService;
 import com.vmware.o11n.plugin.sdk.spring.AbstractSpringPluginFactory;
 import com.vmware.o11n.plugin.sdk.spring.InventoryRef;
@@ -58,7 +55,8 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			String uuid = getUUID(ref.getId());
 			for (AviVroClient aviVroClient : aviVroClientMap.values()) {
 				try {
-					virtualService = (VirtualService) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid);
+					String tenant = aviVroClient.getCred().getTenant();
+					virtualService = (VirtualService) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid, tenant);
 					if (virtualService.getUuid() != null) {
 
 						return virtualService;
@@ -73,7 +71,8 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			String uuid1 = getUUID(ref.getId());
 			for (AviVroClient aviVroClient : aviVroClientMap.values()) {
 				try {
-					pool = (Pool) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid1);
+					String tenant = aviVroClient.getCred().getTenant();
+					pool = (Pool) aviVroClient.getObjectByUUID(ref.getType().toLowerCase(), uuid1, tenant);
 					if (pool.getUuid() != null) {
 						return pool;
 					}
@@ -129,9 +128,11 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 		List<AviRestResource> aviRestResources = null;
 		if (relationName.equals("VirtualService")) {
 			try {
-				AviVroClient client = VroPluginFactory.aviVroClientMap.get(parent.getId());
+				String parentId = parent.getId();
+				String tenant = parentId.substring(parentId.indexOf("-") + 1).toLowerCase();
+				AviVroClient client = VroPluginFactory.aviVroClientMap.get(parentId);
 				if (client != null) {
-					aviRestResources = client.getObject("virtualservice", null);
+					aviRestResources = client.getObject("virtualservice", null, tenant);
 				}
 			} catch (Exception e) {
 				logger.debug("Exception : " + e.getMessage());
@@ -141,7 +142,7 @@ public class VroPluginFactory extends AbstractSpringPluginFactory {
 			try {
 				HashMap<String, String> param = new HashMap<String, String>();
 				String parentId = parent.getId();
-				String uuid = parentId.substring(parentId.indexOf("(") + 1, (parentId.indexOf("::")));
+				String uuid = parentId.substring(parentId.indexOf("(") + 1, (parentId.indexOf(")")));
 				String controller = parentId.substring(parentId.indexOf("::") + 2, (parentId.length() - 1));
 				if ((controller != null) && (uuid != null)) {
 					AviVroClient client = VroPluginFactory.aviVroClientMap.get(controller);

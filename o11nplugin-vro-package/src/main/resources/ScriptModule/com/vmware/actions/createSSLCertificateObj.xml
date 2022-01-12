@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="createSSLCertificateObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="501492ba-0d1c-4854-bc49-f3cf894a54df" version="3.0.0"
+	id="501492ba-0d1c-4854-bc49-f3cf894a64df" version="3.0.1"
 	allowed-operations="vfe">
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Vro Client]]></param>
+	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="SSLAlgorithm" t="string"><![CDATA[SSL algorithm type]]></param>
 	<param n="CommonName" t="string"><![CDATA[Common name for SSL certificate description]]></param>
 	<param n="RSAKeySize" t="string"><![CDATA[RSA key size]]></param>
@@ -93,8 +94,8 @@ try {
 	sslCertificateObj.setKeyParams(keyParamsObj);
 	sslCertificateObj.setType("SSL_CERTIFICATE_TYPE_VIRTUALSERVICE");
 	sslCertificateObj.setName(CertName);
-
-	workflowRuntime.getAviVroClient().addObject(sslCertificateObj, workflowRuntime.getWorkflowId());
+	
+	workflowRuntime.getAviVroClient().addObject(sslCertificateObj, workflowRuntime.getWorkflowId(), Tenant);
 	System.log("SSLCertificate object : "+sslCertificateObj);	
 	
 	return workflowRuntime;

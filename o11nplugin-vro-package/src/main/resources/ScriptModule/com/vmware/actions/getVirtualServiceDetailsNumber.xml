@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getVirtualServiceDetailsNumber" result-type="number"
-	api-version="6.0.0" id="08cc75f3-bd2a-4cd9-89f9-7cfa3165d412"
-	version="0.0.2" allowed-operations="vfe">
+	api-version="6.0.0" id="08cc75f3-bd2a-4cd9-89f9-7cfa3165d413"
+	version="0.0.3" allowed-operations="vfe">
 	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
 	]]></param>
 	<param n="object" t="string"><![CDATA[
@@ -36,7 +36,8 @@ try{
 			if(poolref!=null){
 				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
 				var poolObject = new AviPool() ;
-				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var tenant = aviVroClient.cred.tenant
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID, tenant);
 				var servers = poolObject.servers;		
 				var port;
 				for each(index in servers){
@@ -50,12 +51,13 @@ try{
 			if(poolref!=null){
 				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
 				var poolObject = new AviPool() ;
-				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var tenant = aviVroClient.cred.tenant
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID, tenant);
 				var hmArray=poolObject.getHealthMonitorRefs();
 				var HealthMonitor_ref=hmArray[0];
 				var hmUuid =HealthMonitor_ref.substring(HealthMonitor_ref.indexOf("/healthmonitor-")+1, HealthMonitor_ref.indexOf("#"));
 				var hmObject = new AviHealthMonitor();
-				hmObject=aviVroClient.getObjectByUUID('healthmonitor',hmUuid);
+				hmObject=aviVroClient.getObjectByUUID('healthmonitor',hmUuid, tenant);
 				if(field=="monitor_port"){
 					return monitor_port=hmObject.getMonitorPort();
 				}else if(field=="time_out"){

@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="60f5dccd-ad72-462d-8597-397e8aef0f3e" version="3.0.1"
+	id="60f5dccd-ad72-462d-8597-397e8aef0f4e" version="3.0.2"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Create Virtual Service With IPAM]]></display-name>
@@ -178,7 +178,7 @@ System.log("Object Created:-> "+virtualServiceObject.getName());
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type">
@@ -230,6 +230,9 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 			<bind name="udp_request" type="string"
 				explicitly-not-bound="true"></bind>
 			<bind name="hm_type" type="string" explicitly-not-bound="true"></bind>
+			<bind name="Tenant" type="string" export-name="Tenant">
+				<description><![CDATA[Tenant name]]></description>
+			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime"></bind>
 		</in-binding>

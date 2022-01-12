@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="updatePoolObj"
 	result-type="void" api-version="6.0.0"
-	id="ff27a85c-80a6-4c41-ba81-885f49082204" version="3.0.3"
+	id="ff27a85c-80a6-4c41-ba81-885f49082205" version="3.0.4"
 	allowed-operations="vfe">
 	<param n="poolname" t="string"><![CDATA[Name of pool]]></param>
 	<param n="serverType" t="string"><![CDATA[Type of Server]]></param>
 	<param n="serverArray" t="Array/string"><![CDATA[Server Array]]></param>
 	<param n="cloud" t="string"><![CDATA[Cloud name]]></param>
-	<param n="tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Avi Controller]]></param>
 	<param n="ratio" t="number"><![CDATA[Ratio]]></param>
 	<param n="port" t="number"><![CDATA[Port]]></param>
@@ -30,8 +29,9 @@
 			updatedServers.push(serverObject);
 		}
 		poolObject.setServers(updatedServers);	
-
-		workflowRuntime.getAviVroClient().addObject(poolObject, workflowRuntime.getWorkflowId());
+		
+		var tenant = workflowRuntime.getAviVroClient().cred.tenant;
+		workflowRuntime.getAviVroClient().addObject(poolObject, workflowRuntime.getWorkflowId(), tenant);
 		System.log("Updated poolObject : "+poolObject);
 		workflowRuntime.getAviVroClient().executeWorkflow();
 		System.log("Pool "+poolname+" updated successfully")
