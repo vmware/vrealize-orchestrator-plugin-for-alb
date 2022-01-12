@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getExistingServers"
 	result-type="Array/string" api-version="6.0.0"
-	id="373d5c23-ff66-483f-944c-931b89090691" version="0.0.2"
+	id="373d5c23-ff66-483f-944c-931b89090692" version="0.0.3"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
@@ -18,10 +18,13 @@
 	}
 	var vroClientArray = Server.findAllForType('Avi:AviVroClient','');
 	var aviPlugin = null;
+	var controllerIp = controller.substring(0, controller.indexOf("-"));
+	var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
 	for each(aviVroClient in vroClientArray){
 		if(aviVroClient != null){
 			vroController = aviVroClient.cred.controller;
-			if(vroController == controller){
+			controllerTenant = aviVroClient.cred.tenant;
+			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
 				aviPlugin = aviVroClient;
 	    	}
   		}
@@ -34,7 +37,7 @@
 		}else {
 			params = null;
 		}
-		var response = aviPlugin.get(objectType,params);
+		var response = aviPlugin.get(objectType,params, clientTenant);
 		var objectData = JSON.parse(response);
 		var object =objectData[0];
 		if(object!=null){

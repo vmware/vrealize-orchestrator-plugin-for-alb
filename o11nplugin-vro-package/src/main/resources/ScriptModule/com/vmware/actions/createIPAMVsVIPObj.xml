@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createIPAMVsVIPObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="3dd8be10-050b-41d2-a523-1b77d658d8dd" version="3.0.0"
+	id="3dd8be10-050b-41d2-a523-1b77d658d9dd" version="3.0.1"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -90,7 +90,7 @@ try{
 
 	System.log("IPAM Vs Vip data : "+vsVipObject);
 
-	workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId())
+	workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId(), Tenant)
 	return workflowRuntime
 
 } catch (e) {

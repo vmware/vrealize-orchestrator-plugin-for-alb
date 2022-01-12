@@ -259,7 +259,7 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 		script-module="com.vmware.avi/createHealthMonitorObj">
 		<display-name><![CDATA[createHealthMonitorObj]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code) ;]]></script>
+actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthMonitorType,hm_type,hm_name,hm_description,is_federated,monitor_port,time_out,send_interval,successful_check,failed_check,command_code,udp_request,dns_query_name,http_response_code,tcp_request,tcp_response,tcp_half_open,maintenance_code,workflowRuntime,https_response_code, Tenant) ;]]></script>
 		<in-binding>
 			<bind name="healthMonitorType" type="string"
 				export-name="health_monitor_type">
@@ -322,6 +322,9 @@ actionResult = System.getModule("com.vmware.avi").createHealthMonitorObj(healthM
 			<bind name="https_response_code" type="Array/string"
 				export-name="https_response_code">
 				<description><![CDATA[https response code]]></description>
+			</bind>
+			<bind name="Tenant" type="string" export-name="Tenant">
+				<description><![CDATA[Tenant name]]></description>
 			</bind>
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime" />
@@ -753,6 +756,9 @@ actionResult = System.getModule("com.vmware.avi").createSSLCertificateObj(workfl
 			<bind name="distinguishedName" type="string" />
 			<bind name="workflowRuntime" type="Avi:WorkflowRuntime"
 				export-name="workflowRuntime" />
+			<bind name="Tenant" type="string" export-name="Tenant">
+				<description><![CDATA[Tenant name]]></description>
+			</bind>
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"

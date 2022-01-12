@@ -1,37 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getExistingObjectsWithController" result-type="Array/string"
-	api-version="6.0.0" id="42556c6b-8b94-45fd-b1fd-feed20a095ca"
-	version="0.0.2" allowed-operations="vfe">
+	api-version="6.0.0" id="42556c6b-8b94-45fd-b1fd-feed20a096ca"
+	version="0.0.3" allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[
 	]]></param>
 	<param n="objectType" t="string"><![CDATA[
 	]]></param>
 	<script encoded="false"><![CDATA[
+
 try{
-var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
-var aviVroClientObj= null;
-for each(aviVroClient in vroClientArray){
+	var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
+	var aviVroClientObj= null;
+	var controllerIp = controller.substring(0, controller.indexOf("-"));
+    var clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+	for each(aviVroClient in vroClientArray){
 		if(aviVroClient !=null){
-		vroController=aviVroClient.cred.controller;
-		if(vroController==controller){
-		aviVroClientObj= aviVroClient;
-		}
-	}	
-}
+			vroController = aviVroClient.cred.controller;
+			controllerTenant = aviVroClient.cred.tenant;
+			if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
+				aviVroClientObj= aviVroClient;
+			}
+		}	
+	}
 
 	if(aviVroClientObj== null){
-	System.log("Controller is null");
-	return null;
+		System.log("Controller is null");
+		return null;
 	}
+
 	var objectList = new Array();
-	var response = aviVroClientObj.get(objectType,null);
+	var response = aviVroClientObj.get(objectType, null, clientTenant);
 	var objectData = JSON.parse(response);
 	for each(index in objectData){
 		objectList.push(index.name);
 	}
 	return objectList;
 }catch(e){
-System.log("Error occured while fetching objects : "+e)
+	System.log("Error occured while fetching objects : "+e)
 }]]></script>
 </dunes-script-module>

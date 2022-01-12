@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module
 	name="getVirtualServiceDetailsList" result-type="Array/string"
-	api-version="6.0.0" id="766762db-2c4d-444d-b6c6-d45920610bae"
-	version="0.0.2" allowed-operations="vfe">
+	api-version="6.0.0" id="766762db-2c4d-444d-b6c6-d45920611bae"
+	version="0.0.3" allowed-operations="vfe">
 	<param n="vsObject" t="Avi:VirtualService"><![CDATA[
 	]]></param>
 	<param n="object" t="string"><![CDATA[
@@ -30,7 +30,8 @@ try{
 			if(poolref!=null){
 				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
 				var poolObject = new AviPool() ;
-				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var tenant = aviVroClient.cred.tenant
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID, tenant);
 				if(field == "pool_servers"){
 					var servers = poolObject.servers;
 					var ServerList= new Array();
@@ -45,7 +46,8 @@ try{
 			if(poolref!=null){
 				var poolUUID = poolref.substring(poolref.indexOf('pool-'),poolref.indexOf('#'));
 				var poolObject = new AviPool() ;
-				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID);
+				var tenant = aviVroClient.cred.tenant
+				poolObject =aviVroClient.getObjectByUUID('pool',poolUUID, tenant);
 				
                 var reference = poolObject.getHealthMonitorRefs();
                 var hmName;
@@ -56,7 +58,8 @@ try{
                 var splitUUID =(path[path.length-1]).split('#');
                 var uuid=(splitUUID[splitUUID.length-2]);
                 var myAviHealthMonitor = new AviHealthMonitor();
-                var myAviHealthMonitor = aviVroClient.getObjectByUUID(path[path.length-2],uuid,null);
+                var tenant = aviVroClient.cred.tenant
+                var myAviHealthMonitor = aviVroClient.getObjectByUUID(path[path.length-2],uuid,tenant);
                 var myAviHealthMonitorHttp= new AviHealthMonitorHttp()
                 myAviHealthMonitorHttp=myAviHealthMonitor.getHttpMonitor();
                 if(myAviHealthMonitorHttp==null){

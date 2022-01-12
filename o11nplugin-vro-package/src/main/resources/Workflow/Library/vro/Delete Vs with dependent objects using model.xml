@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item1" object-name="workflow:name=generic"
-	id="250e8578-2c8a-408f-9515-0f8cbeef726e" version="3.0.1"
+	id="250e8578-2c8a-408f-9515-0f8cbeef737e" version="3.0.3"
 	api-version="6.0.0" allowed-operations="vef" restartMode="1"
 	resumeFromFailedMode="0">
 	<display-name><![CDATA[Delete VS With Dependent Objects]]></display-name>
@@ -98,7 +98,6 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller) ;]
 			<title><![CDATA[Controller]]></title>
 			<p-param name="controller">
 				<desc><![CDATA[controller]]></desc>
-				<p-qual kind="static" name="inetAddress" type="String"><![CDATA[IPv4 address]]></p-qual>
 				<p-qual kind="ognl" name="genericEnumeration"
 					type="Array/string"><![CDATA[GetAction("com.vmware.avi","getVROControllerList").call()]]></p-qual>
 			</p-param>

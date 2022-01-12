@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="initVroWorkflow"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="a35e66a2-0a28-4434-8fea-1b56fd432668" version="1.0.0"
+	id="a35e66a2-0a28-4434-8fea-1b56fd432669" version="1.0.1"
 	allowed-operations="vfe">
 	<param n="controller" t="string"><![CDATA[Controller IP]]></param>
 	<script encoded="false"><![CDATA[var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
@@ -9,12 +9,15 @@ var workflowRuntime = new AviWorkflowRuntime();
 var initWorkflow = new Workflow() ;
 
 for each(aviVroClient in vroClientArray){
-		if(aviVroClient !=null){
-		vroController=aviVroClient.cred.controller;
-		if(vroController==controller){
-		workflowRuntime.setAviVroClient(aviVroClient)
-		workflowRuntime.setWorkflowId(initWorkflow.id)
-		return workflowRuntime; 
+	if(aviVroClient !=null){	
+		controllerIp = controller.substring(0, controller.indexOf("-"));
+		clientTenant = controller.substring(controller.indexOf("-") + 1).toLowerCase();
+		vroController = aviVroClient.cred.controller;
+		controllerTenant = aviVroClient.cred.tenant;
+		if((vroController == controllerIp)&&(controllerTenant == clientTenant)){
+			workflowRuntime.setAviVroClient(aviVroClient)
+			workflowRuntime.setWorkflowId(initWorkflow.id)
+			return workflowRuntime; 
 		}
 	}	
 }

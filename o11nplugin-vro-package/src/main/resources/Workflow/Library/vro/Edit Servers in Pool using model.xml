@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://vmware.com/vco/workflow http://vmware.com/vco/workflow/Workflow-v4.xsd"
 	root-name="item3" object-name="workflow:name=generic"
-	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917214" version="2.3.5"
+	id="3e7a83cb-b9bb-4aa1-b37d-ad4b75917225" version="2.3.6"
 	api-version="6.0.0" allowed-operations="vef" editor-version="1.6"
 	restartMode="1" resumeFromFailedMode="0">
 	<display-name><![CDATA[Edit Servers In Pool]]></display-name>
@@ -18,14 +18,11 @@
 		<param name="pool_servers" type="Array/string">
 			<description><![CDATA[pool_servers]]></description>
 		</param>
-		<param name="port" type="string">
+		<param name="port" type="number">
 			<description><![CDATA[port]]></description>
 		</param>
 		<param name="server_cloud" type="string" />
 	</input>
-	<output>
-		<param name="actionResult" type="Avi:WorkflowRuntime" />
-	</output>
 	<attrib name="actionEerrorCode" type="string" read-only="false">
 		<value encoded="n"><![CDATA[
 		]]></value>
@@ -57,7 +54,7 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller);
 		</in-binding>
 		<out-binding>
 			<bind name="actionResult" type="Avi:WorkflowRuntime"
-				export-name="actionResult" />
+				export-name="workflowRuntime" />
 		</out-binding>
 		<description><![CDATA[Add a note to the workflow schema.]]></description>
 		<position y="20.0" x="180.0" />
@@ -66,7 +63,7 @@ actionResult = System.getModule("com.vmware.avi").initVroWorkflow(controller);
 		script-module="com.vmware.avi/updatePoolObj">
 		<display-name><![CDATA[Action element]]></display-name>
 		<script encoded="false"><![CDATA[//Auto generated script, cannot be modified !
-System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,tenant,workflowRuntime,ratio,port);
+System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray,cloud,workflowRuntime,ratio,port);
 ]]></script>
 		<in-binding>
 			<bind name="poolname" type="string" export-name="name">
@@ -82,16 +79,13 @@ System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray
 			<bind name="cloud" type="string" export-name="server_cloud">
 				<description><![CDATA[Cloud name]]></description>
 			</bind>
-			<bind name="tenant" type="string">
-				<description><![CDATA[Tenant name]]></description>
-			</bind>
-			<bind name="workflowRuntime" type="Avi:WorkflowRuntime">
+			<bind name="workflowRuntime" type="Avi:WorkflowRuntime" export-name="workflowRuntime">
 				<description><![CDATA[Avi Controller]]></description>
 			</bind>
-			<bind name="ratio" type="string">
+			<bind name="ratio" type="number">
 				<description><![CDATA[Ratio]]></description>
 			</bind>
-			<bind name="port" type="string" export-name="port">
+			<bind name="port" type="number" export-name="port">
 				<description><![CDATA[Port]]></description>
 			</bind>
 		</in-binding>
@@ -111,7 +105,7 @@ System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray
 			<desc><![CDATA[name]]></desc>
 			<p-qual kind="static" name="mandatory" type="boolean"><![CDATA[true]]></p-qual>
 			<p-qual kind="ognl" name="genericEnumeration"
-				type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectsNames").call( #controller , "pool" , #server_cloud , #tenant )]]></p-qual>
+				type="Array/string"><![CDATA[GetAction("com.vmware.avi","fetchObjectsNames").call( #controller , "pool")]]></p-qual>
 		</p-param>
 		<p-param name="pool_servers">
 			<desc><![CDATA[pool_servers]]></desc>
@@ -119,7 +113,7 @@ System.getModule("com.vmware.avi").updatePoolObj(poolname,serverType,serverArray
 		</p-param>
 		<p-param name="port">
 			<desc><![CDATA[port]]></desc>
-			<p-qual kind="ognl" name="dataBinding" type="number"><![CDATA[GetAction("com.vmware.avi","getPort").call( #controller , #name , "pool" )]]></p-qual>
+			<p-qual kind="ognl" name="dataBinding" type="number"><![CDATA[GetAction("com.vmware.avi","fetchObjectLists").call( #controller , #name , "pool", "port" )]]></p-qual>
 		</p-param>
 	</presentation>
 </workflow>

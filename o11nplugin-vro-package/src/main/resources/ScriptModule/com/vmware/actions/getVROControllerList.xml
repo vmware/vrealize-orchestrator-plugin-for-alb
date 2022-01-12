@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dunes-script-module name="getVROControllerList"
 	result-type="Array/string" api-version="6.0.0"
-	id="b032f1af-de9a-4720-a315-c9375aa21ab8" version="1.0.0"
+	id="b032f1af-de9a-4720-a315-c9375aa21ab9" version="1.0.1"
 	allowed-operations="vfe">
 	<script encoded="false"><![CDATA[var vroClientArray=Server.findAllForType('Avi:AviVroClient','');
 var vroControllerList= new Array();
 for each(aviVroClient in vroClientArray){
-		if(aviVroClient !=null){
+	if(aviVroClient !=null){
 		vroController=aviVroClient.cred.controller;
-		vroControllerList.push(vroController);
+		controllerTenant = aviVroClient.cred.tenant;
+        vroControllerList.push(vroController+ "-" + controllerTenant);
 	}	
 }
 return vroControllerList;]]></script>

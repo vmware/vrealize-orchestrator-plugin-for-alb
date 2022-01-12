@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createPoolObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="d74b12d8-5662-4da9-b7fa-29c99d84a73e" version="3.0.0"
+	id="d74b12d8-5662-4da9-b7fa-29c99d84a74e" version="3.0.1"
 	allowed-operations="vfe">
 	<param n="PoolServers" t="Array/string"><![CDATA[Pool servers list ]]></param>
 	<param n="enablePool" t="boolean"><![CDATA[Pool status]]></param>
@@ -238,7 +238,7 @@ try{
 		}	
 		// Set servers object in properties
 		poolObject.setServers(servers);	
-		workflowRuntime.getAviVroClient().addObject(poolObject, workflowRuntime.getWorkflowId())
+		workflowRuntime.getAviVroClient().addObject(poolObject, workflowRuntime.getWorkflowId(), Tenant);
 		System.log("poolObject : "+poolObject);
 		return workflowRuntime
 	}else{

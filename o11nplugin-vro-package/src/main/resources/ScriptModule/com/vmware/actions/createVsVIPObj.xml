@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createVsVIPObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="057cde0a-8232-4869-9094-1073d17c0578" version="3.0.0"
+	id="057cde0a-8232-4869-9094-1073d17c0587" version="3.0.1"
 	allowed-operations="vfe">
 	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
 	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
@@ -60,7 +60,7 @@ try{
 			if(ServerCloud!==null && ServerCloud!=""){
 				vsVipObject.setCloudRef("/api/cloud?name="+ServerCloud);
 			}
-			workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId());
+			workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId(), Tenant);
 			System.log("vsVipObject : "+vsVipObject);
 			return workflowRuntime
 		}
