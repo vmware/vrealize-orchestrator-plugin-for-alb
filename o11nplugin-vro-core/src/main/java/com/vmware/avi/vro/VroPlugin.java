@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vmware.avi.sdk.AviApi;
+import com.vmware.avi.sdk.AviApiException;
 import com.vmware.avi.sdk.AviCredentials;
 import com.vmware.o11n.plugin.sdk.annotation.VsoFinder;
 import com.vmware.o11n.plugin.sdk.annotation.VsoMethod;
@@ -36,21 +37,31 @@ public class VroPlugin {
 	 * @param tenant     tenant name
 	 * @param version    version
 	 * @return instance of AviVroClient
+	 * @throws Exception
 	 */
 	@VsoMethod
 	public void addVroClient(String controller, String username, String password, String tenant, String version,
-			String token) {
-		AviCredentials aviCredentials = new AviCredentials();
-		aviCredentials.setController(controller);
-		aviCredentials.setUsername(username);
-		aviCredentials.setPassword(password);
-		aviCredentials.setToken(token);
-		aviCredentials.setTenant(tenant);
-		aviCredentials.setVersion(version);
-		AviVroClient aviVroClient = new AviVroClient();
-		aviVroClient.setCred(aviCredentials);
-		VroPluginFactory.aviVroClientMap.put(controller+ "-" + tenant, aviVroClient);
-
+			String token) throws Exception {
+		try {
+			AviCredentials aviCredentials = new AviCredentials();
+			aviCredentials.setController(controller);
+			aviCredentials.setUsername(username);
+			aviCredentials.setPassword(password);
+			aviCredentials.setToken(token);
+			aviCredentials.setTenant(tenant);
+			aviCredentials.setVersion(version);
+			AviVroClient aviVroClient = new AviVroClient();
+			aviVroClient.setCred(aviCredentials);
+			aviVroClient.get("tenant", null, tenant);
+			String addedController = controller +"-"+ tenant;
+			if (!VroPluginFactory.aviVroClientMap.containsKey(addedController)) {
+				VroPluginFactory.aviVroClientMap.put(controller+ "-" + tenant, aviVroClient);
+			}else {
+				throw new AviApiException("Controller with this tenant is already Exists.");
+			}
+		}catch (Exception e) {
+			throw new AviApiException(e.getMessage());
+		}
 	}
 
 	/****
@@ -61,16 +72,27 @@ public class VroPlugin {
 	 * @param password   password of the controller
 	 * @param tenant     tenant name
 	 * @param version    version
+	 * @throws Exception
 	 */
 	@VsoMethod
 	@Deprecated
-	public void addVroClient(String controller, String username, String password, String tenant, String version) {
-		AviCredentials aviCredentials = new AviCredentials(controller, username, password);
-		aviCredentials.setTenant(tenant);
-		aviCredentials.setVersion(version);
-		AviVroClient aviVroClient = new AviVroClient();
-		aviVroClient.setCred(aviCredentials);
-		VroPluginFactory.aviVroClientMap.put(controller + "-" + tenant, aviVroClient);
+	public void addVroClient(String controller, String username, String password, String tenant, String version) throws Exception {
+		try {
+			AviCredentials aviCredentials = new AviCredentials(controller, username, password);
+			aviCredentials.setTenant(tenant);
+			aviCredentials.setVersion(version);
+			AviVroClient aviVroClient = new AviVroClient();
+			aviVroClient.setCred(aviCredentials);
+			aviVroClient.get("tenant", null, tenant);
+			String addedController = controller +"-"+ tenant;
+			if (!VroPluginFactory.aviVroClientMap.containsKey(addedController)) {
+				VroPluginFactory.aviVroClientMap.put(controller+ "-" + tenant, aviVroClient);
+			}else {
+				throw new AviApiException("Controller with this tenant is already Exists.");
+			}
+		}catch (Exception e) {
+			throw new AviApiException(e.getMessage());
+		}
 	}
 
 	/**
