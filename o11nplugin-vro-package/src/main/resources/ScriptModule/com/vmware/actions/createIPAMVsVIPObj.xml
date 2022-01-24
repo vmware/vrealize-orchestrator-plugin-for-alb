@@ -1,100 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dunes-script-module name="createIPAMVsVIPObj"
 	result-type="Avi:WorkflowRuntime" api-version="6.0.0"
-	id="3dd8be10-050b-41d2-a523-1b77d658d9dd" version="3.0.1"
+	id="3dd8be10-050b-41d2-a523-1b77d659d9dd" version="3.0.1"
 	allowed-operations="vfe">
-	<param n="Tenant" t="string"><![CDATA[Tenant name]]></param>
-	<param n="name" t="string"><![CDATA[Vs vip name]]></param>
-	<param n="IPAddress" t="string"><![CDATA[Vs vip IP address]]></param>
-	<param n="eastWestPlacement" t="boolean"><![CDATA[Add east west  placement]]></param>
-	<param n="aviAllocatedFIp" t="boolean"><![CDATA[Allocate FIP]]></param>
-	<param n="autoAllocateIp" t="boolean"><![CDATA[Auto allocate IP]]></param>
-	<param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
-	<param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
-	<param n="aviAllocatedVip" t="boolean"><![CDATA[Allocate VIP]]></param>
-	<param n="serverType" t="string"><![CDATA[Server type]]></param>
-	<param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
-	<param n="network_management_name" t="string"><![CDATA[network management name]]></param>
-	<param n="app_domain_name" t="string"><![CDATA[App domain name]]></param>
-	<param n="domain" t="string"><![CDATA[Domain]]></param>
-	<param n="cloud_name" t="string"><![CDATA[
-	]]></param>
-	<script encoded="false"><![CDATA[/************************************************************
+	<description><![CDATA[This action for add VsVip in vRO plugin object for creation.]]></description>
+    <param n="name" t="string"><![CDATA[Vs Vip name]]></param>
+    <param n="tenant" t="string"><![CDATA[Tenant name]]></param>
+    <param n="cloudName" t="string"><![CDATA[Cloud name]]></param>
+    <param n="eastWestPlacement" t="boolean"><![CDATA[Add east west  placement]]></param>
+    <param n="enabled" t="boolean"><![CDATA[Enabled vsvip]]></param>
+    <param n="autoAllocateIp" t="boolean"><![CDATA[Auto allocate IP]]></param>
+    <param n="aviAllocatedFIp" t="string"><![CDATA[Auto allocate FIP]]></param>
+    <param n="autoAllocateFloatingIp" t="boolean"><![CDATA[Auto allocate floating IP]]></param>
+    <param n="aviAllocatedVip" t="boolean"><![CDATA[Auto allocate VIP]]></param>
+    <param n="serverType" t="string"><![CDATA[Server type]]></param>
+    <param n="network_management_name" t="string"><![CDATA[Network management name]]></param>
+    <param n="app_domain_name" t="string"><![CDATA[App domain name]]></param>
+    <param n="domain" t="string"><![CDATA[Domain]]></param>
+    <param n="subnetId" t="string"><![CDATA[Vip address allocation network]]></param>
+    <param n="addressIP" t="string"><![CDATA[IPv4 subnet]]></param>
+    <param n="availabilityZone" t="string"><![CDATA[Availability zone]]></param>
+    <param n="staticIPAddr" t="string"><![CDATA[Add static IP if present]]></param>
+    <param n="workflowRuntime" t="Avi:WorkflowRuntime"><![CDATA[Object of the plugin]]></param>
+    <param n="floatingIpAddr" t="string"><![CDATA[Add floating IP]]></param>
+    <param n="autoAllocateOrStatic" t="string"><![CDATA[Check auto allocate floating IP]]></param>
+    <script encoded="false"><![CDATA[/************************************************************
 * This action initializes VS_VIP properties objects         *
 * and puts user input into the VS_VIP object with IPAM 		*
 *************************************************************/
 
 try{
-	var dns_info = new Array();
-	dnsinfoObject = new AviDnsInfo();
-	dnsinfoObject.setNumRecordsInResponse(1);
-	dnsinfoObject.setType("DNS_RECORD_A");
-	dnsinfoObject.setAlgorithm("DNS_RECORD_RESPONSE_CONSISTENT_HASH");
-	dnsinfoObject.setTtl(30);
-	dnsinfoObject.setFqdn(domain+app_domain_name);
-	dns_info.push(dnsinfoObject);
-	networkObject = new AviNetwork() ;
-	System.log("network_management_name : "+network_management_name);
-	networkObject= workflowRuntime.aviVroClient.getObjectByName("network",network_management_name);
-	var network_ref=networkObject.getUrl();
-	var discovered_networks= new Array();
-	discoveredNetworkObject = new AviDiscoveredNetwork();
-	var subnetArray = new Array();	
-	var configuredSubnet=networkObject.getConfiguredSubnets();
-	System.log("configuredSubnet -> "+ configuredSubnet)
-	subnetObject=configuredSubnet[0];
-	var network=subnetObject.getPrefix();
-	var ip=network.ipAddr.addr;
-	System.log("ip : "+ip);
-	subnetArray.push(network);
-	discoveredNetworkObject.setSubnet(subnetArray);
-	discoveredNetworkObject.setNetworkRef(network_ref);
-	discovered_networks.push(discoveredNetworkObject);
-	ipamNetworkSubnetObject = new AviIPNetworkSubnet();
-	ipamNetworkSubnetObject.setSubnet(network);
-	ipamNetworkSubnetObject.setNetworkRef(network_ref);
-	IPAddrObject = new AviIpAddr() ;
-	//var staticIp =subnetObject.getStaticIps();
-	//System.log("staticIp -> "+ staticIp)
-	//IPAddrObject=staticIp[0];
-	IPAddrObject=network.ipAddr;
-	System.log("IPAddrObject : "+IPAddrObject);
-	vsVipObject = new AviVsVip();
-	vsVipObject.setTenantRef( "/api/tenant?name="+Tenant);
-	vsVipObject.setCloudRef("/api/cloud?name="+cloud_name);
-	if (eastWestPlacement){
-		vsVipObject.setEastWestPlacement(eastWestPlacement);
-	}
-	vsVipObject.setName(name);
-	vsVipObject.setDnsInfo(dns_info);
-	var vipList =new Array();
-	vipObject = new AviVip();
-	vipObject.setVipId(1);
-	if (aviAllocatedFIp){
-		vipObject.setAviAllocatedFip(aviAllocatedFIp);
-	}
-	vipObject.setAutoAllocateIp(autoAllocateIp);
-	vipObject.setEnabled(enabled);
-	if (autoAllocateFloatingIp){
-		vipObject.setAutoAllocateFloatingIp(autoAllocateFloatingIp);
-	}
-	if (aviAllocatedVip){
-		vipObject.setAviAllocatedVip(aviAllocatedVip);
-	}
-	vipObject.setAutoAllocateIpType("V4_ONLY");
-	//vipObject.setDiscoveredNetworks(discovered_networks);
-	vipObject.setIpamNetworkSubnet(ipamNetworkSubnetObject);
-	vipObject.setIpAddress(IPAddrObject);
-	vipList.push(vipObject);
-	vsVipObject.setVip(vipList);
+    vsVipObject = new AviVsVip();
+    vsVipObject.setName(name);
+    vsVipObject.setTenantRef("/api/tenant?name="+tenant);
+    vsVipObject.setCloudRef("/api/cloud?name="+cloudName);
+    if (eastWestPlacement){
+        vsVipObject.setEastWestPlacement(eastWestPlacement);
+    }
+    var cloudObject = new AviCloud() ;
+    cloudObject = workflowRuntime.getAviVroClient().getObjectByName('cloud',cloudName);
+    cloudType=cloudObject.getVtype();
+    System.log("Cloud Type : "+ cloudType)
 
-	System.log("IPAM Vs Vip data : "+vsVipObject);
+    if(cloudType=="CLOUD_AWS"){
+        // Configuration for AWS cloud
+        vipObject = new AviVip();
+        vipObject.setVipId(1);
 
-	workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId(), Tenant)
-	return workflowRuntime
+        if (autoAllocateOrStatic == "autoAllocateFIp"){
+            vipObject.setAutoAllocateFloatingIp(true)
+        }else if(autoAllocateOrStatic == "static"){
+            vipObject.setAutoAllocateFloatingIp(false)
+        }
 
-} catch (e) {
-	throw "Error when create vsVip -> "+ e
+        if (autoAllocateOrStatic == "none"){
+            vipObject.setAviAllocatedFip(false);
+        }else{
+            vipObject.setAviAllocatedFip(true);
+        }
+
+        if(autoAllocateOrStatic == "static"){
+            ipAddrObject = new AviIpAddr();
+            ipAddrObject.setAddr(floatingIpAddr);
+            ipAddrObject.setType("V4")
+            vipObject.setFloatingIp(ipAddrObject)
+
+        }
+
+        vipObject.setAutoAllocateIp(autoAllocateIp);
+        if (autoAllocateIp == false){
+            ipAddrObject = new AviIpAddr();
+            ipAddrObject.setAddr(staticIPAddr);
+            ipAddrObject.setType("V4")
+            vipObject.setIpAddress(ipAddrObject);
+        }
+
+        vipObject.setEnabled(enabled);
+        if (aviAllocatedVip){
+            vipObject.setAviAllocatedVip(aviAllocatedVip);
+        }
+        vipObject.setAutoAllocateIpType("V4_ONLY");
+
+        var addr = addressIP.split('/')[0]
+        var mask = addressIP.split('/')[1]
+        ipamNetworkSubnetObject = new AviIPNetworkSubnet();
+        subnetObject = new AviIpAddrPrefix();
+        ipAddrObject = new AviIpAddr();
+        ipAddrObject.setAddr(addr);
+        ipAddrObject.setType("V4")
+        subnetObject.setIpAddr(ipAddrObject);
+        subnetObject.setMask(mask);
+        ipamNetworkSubnetObject.setSubnet(subnetObject);
+        ipamNetworkSubnetObject.setNetworkRef("/api/network/"+ subnetId);
+        ipamNetworkSubnetObject.setSubnetUuid(subnetId);
+
+        vipObject.setSubnet(subnetObject);
+        vipObject.setIpamNetworkSubnet(ipamNetworkSubnetObject);
+
+        vipObject.setNetworkRef("/api/network/"+ subnetId)
+        vipObject.setAvailabilityZone(availabilityZone);
+        var vipList =new Array();
+        vipList.push(vipObject)
+        vsVipObject.setVip(vipList);
+
+    }else if(cloudType=="CLOUD_VCENTER"){
+        // Configuration for vCenter cloud
+        // Add DNS Info
+        var dns_info = new Array();
+        dnsinfoObject = new AviDnsInfo();
+        dnsinfoObject.setNumRecordsInResponse(1);
+        dnsinfoObject.setType("DNS_RECORD_A");
+        dnsinfoObject.setAlgorithm("DNS_RECORD_RESPONSE_CONSISTENT_HASH");
+        dnsinfoObject.setTtl(30);
+        dnsinfoObject.setFqdn(domain+app_domain_name);
+        dns_info.push(dnsinfoObject);
+
+        // Add Network Info
+        networkObject = new AviNetwork() ;
+        System.log("network_management_name : "+network_management_name);
+        networkObject= workflowRuntime.getAviVroClient().getObjectByName("network",network_management_name);
+        var network_ref=networkObject.getUrl();
+
+        var discovered_networks= new Array();
+        discoveredNetworkObject = new AviDiscoveredNetwork();
+        var subnetArray = new Array();
+
+        var configuredSubnet=networkObject.getConfiguredSubnets();
+        System.log("configuredSubnet -> "+ configuredSubnet)
+        subnetObject=configuredSubnet[0];
+        var network=subnetObject.getPrefix();
+        var ip=network.ipAddr.addr;
+        System.log("ip : "+ip);
+        subnetArray.push(network);
+        discoveredNetworkObject.setSubnet(subnetArray);
+        discoveredNetworkObject.setNetworkRef(network_ref);
+        discovered_networks.push(discoveredNetworkObject);
+
+        ipamNetworkSubnetObject = new AviIPNetworkSubnet();
+        ipamNetworkSubnetObject.setSubnet(network);
+        ipamNetworkSubnetObject.setNetworkRef(network_ref);
+
+        IPAddrObject = new AviIpAddr() ;
+        IPAddrObject=network.ipAddr;
+        var vipList =new Array();
+        vipObject = new AviVip();
+        vipObject.setVipId(1);
+        if (aviAllocatedFIp){
+            vipObject.setAviAllocatedFip(aviAllocatedFIp);
+        }
+        vipObject.setAutoAllocateIp(autoAllocateIp);
+        vipObject.setEnabled(enabled);
+        if (autoAllocateFloatingIp){
+            vipObject.setAutoAllocateFloatingIp(autoAllocateFloatingIp);
+        }
+        if (aviAllocatedVip){
+            vipObject.setAviAllocatedVip(aviAllocatedVip);
+        }
+        vipObject.setAutoAllocateIpType("V4_ONLY");
+        //vipObject.setDiscoveredNetworks(discovered_networks);
+        vipObject.setIpamNetworkSubnet(ipamNetworkSubnetObject);
+        vipObject.setIpAddress(IPAddrObject);
+        vipList.push(vipObject);
+        vsVipObject.setVip(vipList);
+    }
+
+    System.log("IPAM Vs Vip data : "+vsVipObject);
+
+    workflowRuntime.getAviVroClient().addObject(vsVipObject, workflowRuntime.getWorkflowId(), tenant)
+    return workflowRuntime
+
+}catch(e){
+    throw "Error when create vsVip -> "+ e
 }
 ]]></script>
 </dunes-script-module>
